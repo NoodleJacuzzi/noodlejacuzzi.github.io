@@ -21,7 +21,7 @@ function writeScene(scene) {
 			writeTransition("RainyDayZ", "Preview");
 			writeTransition("downloadRainyDayZ", "Download Rainy DayZ");
 			writeText("Rainy DayZ");
-			writeText("Discussion thread: Gimme one second");
+			writeText("Discussion thread: https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12575");
 			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.");
 			writeText("Navigate a town and city deliberately working to sabotage yourself and throw yourself into the clutches of the zombie hordes, the goal of the game here is to be defeated and attacked to collect and unlock all of the game's scenes.");
 			writeText("Tags: Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Bestiality (optional), Parasites (optional)");

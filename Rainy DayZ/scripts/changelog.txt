@@ -1,5 +1,7 @@
 First Post
 This is Rainy DayZ, an HTML game created by me, Noodle Jacuzzi. Play it, and my other titles via the master index at https://noodlejacuzzi.github.io/index.html
+Please note that this may only be a temporary hosting method.
+
 In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.
 This all might be familiar to you if you've checked out my other work, Human Alteration App, because Rainy DayZ was originally a minigame. For various reasons I've needed to trim off the minigames from HAA into their own titles, so here we are! I can assure you though that there both is and will be enough content to justify this game being its own title.
 
@@ -8,7 +10,7 @@ This game focuses heavily on themes of rape and shemale-zombification, and inclu
 If you're here from HAA, there's no new content here yet. My plan is to release a content patch after working more on HAA which will finish all of the game's 6 unfinished scenes.
 
 Current Version: Beta v1
-Most recent game files:
+Most recent game files: https://mega.nz/#!axsERCDL!gjFuAX6Z9uARnnxxh0sHT7kwm6r21ssw2PRf402Jd2g
 All you need to do is download this. Extract the game files to create the Rainy DayZ folder, then run the Rainy DayZ.html file. If errors begin popping up, I might need to separate the game files from the images.
 
 Known issues:
