@@ -5,31 +5,34 @@ function writeScene(scene) {
 			writeTransition("HAAD", "Dom Route Preview");
 			writeTransition("HAAS", "Sub Route Preview");
 			writeTransition("downloadHAA", "Download Human Alteration App");
+			document.getElementById('output').innerHTML +=`
+				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12458'">Discussion thread</p>
+				<!--<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App.html'">Play the game online</p>
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App%20Mobile.html'">Play the mobile version</p>-->
+			`;
 			writeText("Human Alteration App");
 			writeText("Discussion thread: https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12458");
 			writeText("You find yourself with a phone app that can alter people's minds and bodies. Choose between one of two routes where either you're in control of the world or the app is stolen from you. There's a clear sense of progression throughout and no focus on grinding.");
 			writeText("Dom route tags: Incest (optionally non blood-related), Mind Control, Sluttification, Degradation, Exhibitionism, Watersports (optional, not yet implemented)");
 			writeText("Sub route tags: 2D Art, Incest (optionally non blood-related), Sissification, Female-to-Shemale Transformation, Cum Eating, Sounding, NTR (mild & optional), Smothering (not yet implemented), Watersports (optional, not yet implemented)");
 			writeBig("images/PrincessQuest.jpg");
-			writeTransition("PrincessQuest", "Preview");
 			writeText("Princess Quest");
 			writeText("This game is currently contained within HAA, and will be made available as its own title soon.");
 			writeText("Play as Princess Elizabeth as she navigates caves and castle dungeons to rid her people of a demon's foul curse, unaware that she's playing right into the demon's hands.");
 			writeText("Uses art done by Neromashin. It's all from a game named 'Oujo & Onna Kishi W Do Gehin Roshutsu ~Chijoku no Misemono Dorei~' published by PinPoint. You can find the official website of the game at http://www.pin-point.biz/27_wdgr/index.html, but it's in Japanese. There is an English version coming to steam, but I've heard negative things about the translation's quality.");
 			writeText("Tags: Moral Degradation, Corruption, Tentacles, Cum Inflation, Exhibitionism");
+			writeTransition("PrincessQuest", "Preview");
 			writeBig("images/RainyDayZ.jpg");
-			writeTransition("RainyDayZ", "Preview");
-			writeTransition("downloadRainyDayZ", "Download Rainy DayZ");
 			writeText("Rainy DayZ");
-			writeText("Discussion thread: https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12575");
 			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.");
 			writeText("Navigate a town and city deliberately working to sabotage yourself and throw yourself into the clutches of the zombie hordes, the goal of the game here is to be defeated and attacked to collect and unlock all of the game's scenes.");
 			writeText("Tags: Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Bestiality (optional), Parasites (optional)");
+			writeTransition("RainyDayZ", "Preview");
+			writeTransition("downloadRainyDayZ", "Download Rainy DayZ");
 			document.getElementById('output').innerHTML +=`
-				<a href="https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html">Play the game online</a>
-				<br>
-				<a href="https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ%20Mobile.html">Play the mobile version</a>
-				<br>
+				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12575'">Discussion thread</p>
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html'">Play the game online</p>
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ%20Mobile.html'">Play the mobile version</p>
 			`;
 			break;
 		}
