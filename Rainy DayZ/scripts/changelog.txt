@@ -9,8 +9,7 @@ If you're here from HAA, there's no new content here yet. My plan is to release 
 
 Current Version: Beta v1
 Most recent game files:
-Most recent recent image pack:
-If you're new to the game, all you need to do is download these two. Extract the game files to create the Rainy DayZ folder, then extract the image pack directly into the Rainy DayZ folder. You can find a picture of what the final layout should look like in the screenshot folder:
+All you need to do is download this. Extract the game files to create the Rainy DayZ folder, then run the Rainy DayZ.html file. If errors begin popping up, I might need to separate the game files from the images.
 
 Known issues:
 [list]
