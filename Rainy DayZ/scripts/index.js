@@ -255,8 +255,8 @@ var items = [
 //Start & System Config Stuff
 function startup() {
 	saveSlot(14);
-	if(localStorage.getItem('data10')) {
-		loadSlot(10);
+	if(localStorage.getItem('data13')) {
+		loadSlot(13);
 	}
 	else{
 		sceneTransition('start');
