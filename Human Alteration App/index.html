@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Human Alteration App</title>
+		<script src="scripts/index.js"></script>
+		<script src="scripts/sceneList.js"></script>
+		<link rel="stylesheet" type="text/css" href="scripts/index.css" />
+		<link rel="stylesheet" href="scripts/princess.css">
+		<script src="scripts/princess.js" type="text/javascript"></script>
+	</head>
+	<body onload ="startup()">
+		<div id = "menu" class = "menu">
+			<p id = "title" class = "title">Human Alteration App</p>
+			<p id = "version" class = "version">V0.6.5</p>
+			<div id = "corruptionList" class = "corruptionList">
+				<p>Name</p>
+				<p id = "corrupt1List">???</p>
+				<p id = "corrupt2List">???</p>
+				<p id = "corrupt3List">???</p>
+				<p id = "corrupt4List">???</p>
+				<p id = "corrupt5List">???</p>
+				<p id = "corrupt6List">???</p>
+			</div>
+			<div id = "corruptionScore" class = "corruptionScore">
+				<p>Corruption</p>
+				<p id = "corrupt1Score">???</p>
+				<p id = "corrupt2Score">???</p>
+				<p id = "corrupt3Score">???</p>
+				<p id = "corrupt4Score">???</p>
+				<p id = "corrupt5Score">???</p>
+				<p id = "corrupt6Score">???</p>
+			</div>
+			<p id="invButton" class="switch" onclick="invButton()">INVENTORY</p>
+			<p id="warButton" class="switch" onclick="warButton()">WARDROBE</p>
+			<p id="saveButton" class="switch" onclick="saveButton()">SAVE/LOAD</p>
+			<p id="restartButton" class="switch" onclick="restartButton()">RESTART</p>
+			<p id="logButton" class="switch" onclick="selfButton()">LOGBOOK</p>
+			<p id="logButton" class="switch" onclick="disablePictures()">DISABLE IMAGES</p>
+			<p id="minimapBox"></p>
+			<p id = "playerName" class = "version">???</p>
+			<p id = "playerMoney" class = "version">$0</p>
+			<img id="playerImage" class="playerImage" src="images/none.png">
+				<br>
+			<img id="playerClothes" class="playerImage" src="images/none.png">
+				<br>
+			<img id="playerUnderwear" class="playerImage" src="images/none.png">
+		</div>
+		<div id = "wrapper" class = "wrapper">
+			<p class="demo" id="demo"></p>
+			
+			<div id="screen">
+				<div id="floor"></div>
+				<div id="ceiling"></div>
+			</div>
+			<div id="screenBox"></div>
+			<div id = "output" class = "output" onclick = "hideStuff()">
+			<p class="choiceText" onclick="sceneTransition('start')">
+				Start the game
+			</p>
+			</div>
+			<div id="footer" class="footer">
+				<p id="invButton" class="switch" onclick="invButton()">INVENTORY</p>
+				<p id="warButton" class="switch" onclick="warButton()">WARDROBE</p>
+				<p id="saveButton" class="switch" onclick="saveButton()">SAVE/LOAD</p>
+				<p id="restartButton" class="switch" onclick="restartButton()">RESTART</p>
+				<p id="logButton" class="switch" onclick="selfButton()">LOGBOOK</p>
+				<p id="logButton" class="switch" onclick="disablePictures()">DISABLE IMAGES</p>
+			</div>
+			<div id="screenButtons">
+				<div id="buttonLeft" class="buttonLeft" onclick="rotateLeft()">Left</div>
+				<div id="buttonRight" class="buttonRight" onclick="rotateRight()">Right</div>
+				<div id="buttonUp" class="buttonUp" onclick="moveUp()">Forward</div>
+				<div id="buttonDown" class="buttonDown" onclick="moveDown()">Back</div>
+			</div>
+			<div id = "inventory" class = "inventory">
+				<p class = "windowTitle" onclick="invButton()">INVENTORY</p>
+				<div class = "windowLeft" id = "windowLeft">
+				</div>
+				<div class = "windowRight" id = "windowRight">
+				</div>
+			</div>
+			<div id = "save" class = "save">
+				<p class = "windowTitle" onclick="saveButton()">SAVE/LOAD</p>
+				<div class = "saveSlot">
+					<p id = "save1Name" class = "saveName">Slot 1</p>
+					<p id = "save1Date" class = "saveDate">Jan 9th, 8:31</p>
+					<p id = "load1Button" class = "loadButton" onclick = "loadSlot(1)"></p>
+					<p id = "delete1Button" class = "deleteButton" onclick = "deleteSlot(1)"></p>
+					<p id = "save1Button" class = "saveButton" onclick = "saveSlot(1)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save2Name" class = "saveName">Slot 2</p>
+					<p id = "save2Date" class = "saveDate"></p>
+					<p id = "load2Button" class = "loadButton" onclick = "loadSlot(2)"></p>
+					<p id = "delete2Button" class = "deleteButton" onclick = "deleteSlot(2)"></p>
+					<p id = "save2Button" class = "saveButton" onclick = "saveSlot(2)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save3Name" class = "saveName">Slot 3</p>
+					<p id = "save3Date" class = "saveDate"></p>
+					<p id = "load3Button" class = "loadButton" onclick = "loadSlot(3)"></p>
+					<p id = "delete3Button" class = "deleteButton" onclick = "deleteSlot(3)"></p>
+					<p id = "save3Button" class = "saveButton" onclick = "saveSlot(3)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save4Name" class = "saveName">Slot 4</p>
+					<p id = "save4Date" class = "saveDate"></p>
+					<p id = "load4Button" class = "loadButton" onclick = "loadSlot(4)"></p>
+					<p id = "delete4Button" class = "deleteButton" onclick = "deleteSlot(4)"></p>
+					<p id = "save4Button" class = "saveButton" onclick = "saveSlot(4)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save5Name" class = "saveName">Slot 5</p>
+					<p id = "save5Date" class = "saveDate"></p>
+					<p id = "load5Button" class = "loadButton" onclick = "loadSlot(5)"></p>
+					<p id = "delete5Button" class = "deleteButton" onclick = "deleteSlot(5)"></p>
+					<p id = "save5Button" class = "saveButton" onclick = "saveSlot(5)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save6Name" class = "saveName">Slot 6</p>
+					<p id = "save6Date" class = "saveDate"></p>
+					<p id = "load6Button" class = "loadButton" onclick = "loadSlot(6)"></p>
+					<p id = "delete6Button" class = "deleteButton" onclick = "deleteSlot(6)"></p>
+					<p id = "save6Button" class = "saveButton" onclick = "saveSlot(6)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save7Name" class = "saveName">Slot 7</p>
+					<p id = "save7Date" class = "saveDate"></p>
+					<p id = "load7Button" class = "loadButton" onclick = "loadSlot(7)"></p>
+					<p id = "delete7Button" class = "deleteButton" onclick = "deleteSlot(7)"></p>
+					<p id = "save7Button" class = "saveButton" onclick = "saveSlot(7)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save8Name" class = "saveName">Slot 8</p>
+					<p id = "save8Date" class = "saveDate"></p>
+					<p id = "load8Button" class = "loadButton" onclick = "loadSlot(8)"></p>
+					<p id = "delete8Button" class = "deleteButton" onclick = "deleteSlot(8)"></p>
+					<p id = "save8Button" class = "saveButton" onclick = "saveSlot(8)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save9Name" class = "saveName"></p>
+					<p id = "save9Date" class = "saveDate"></p>
+					<p id = "load9Button" class = "loadFileButton" onclick = "loadFile()">Load from text string</p>
+					<p id = "delete9Button" class = "deleteButton" onclick = "deleteSlot(9)"></p>
+					<p id = "save9Button" class = "saveFileButton" onclick = "saveFile()">Save to text string</p>
+				</div>
+			</div>
+			<div id = "self" class = "self">
+				<p class = "windowTitle" onclick="selfButton()">LOGBOOK</p>
+				<div class = "logbookLeft" id = "logbookLeft">
+				</div>
+				<div class = "logbookRight" id = "logbookRight">
+				</div>
+			</div>
+			<div id = "wardrobe" class = "inventory" onclick = "generateClothes()">
+				<p class = "windowTitle" onclick="warButton()">WARDROBE</p>
+				<div class = "wardrobeLeft" id = "wardrobeLeft">
+				</div>
+				<div class = "wardrobeRight" id = "wardrobeRight">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
