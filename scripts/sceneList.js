@@ -6,7 +6,7 @@ function writeScene(scene) {
 			writeTransition("HAAS", "Sub Route Preview");
 			writeTransition("downloadHAA", "Download Human Alteration App");
 			writeText("Human Alteration App");
-			writeText("Discussion thread and download links: https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12458");
+			writeText("Discussion thread: https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12458");
 			writeText("You find yourself with a phone app that can alter people's minds and bodies. Choose between one of two routes where either you're in control of the world or the app is stolen from you. There's a clear sense of progression throughout and no focus on grinding.");
 			writeText("Dom route tags: Incest (optionally non blood-related), Mind Control, Sluttification, Degradation, Exhibitionism, Watersports (optional, not yet implemented)");
 			writeText("Sub route tags: 2D Art, Incest (optionally non blood-related), Sissification, Female-to-Shemale Transformation, Cum Eating, Sounding, NTR (mild & optional), Smothering (not yet implemented), Watersports (optional, not yet implemented)");
@@ -21,7 +21,7 @@ function writeScene(scene) {
 			writeTransition("RainyDayZ", "Preview");
 			writeTransition("downloadRainyDayZ", "Download Rainy DayZ");
 			writeText("Rainy DayZ");
-			writeText("This game is currently contained within HAA, and will be made available as its own title soon.");
+			writeText("Discussion thread: Gimme one second");
 			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.");
 			writeText("Navigate a town and city deliberately working to sabotage yourself and throw yourself into the clutches of the zombie hordes, the goal of the game here is to be defeated and attacked to collect and unlock all of the game's scenes.");
 			writeText("Tags: Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Bestiality (optional), Parasites (optional)");
@@ -125,6 +125,31 @@ function writeScene(scene) {
 			writeText("After an audible *POP* she pulls herself free, and you start squirting her infected load out of your body. With every squeeze you push out more, and the bulge of your overstuffed womb starts to flatten. After one last push you squirt the cum a good few inches out, but you feel something else getting pushed out as well.");
 			writeText("You look down, and standing at full mast is a brand new dick. You can feel a heavy pair of balls below it large enough to rest in the puddle of water beneath you.");
 			writeText("Your mind can't hold a complete thought anymore. This is your new life.");
+			writeTransition("start", "Go Back");
+			break;
+		}
+		case "downloadHAA": {
+			document.getElementById('output').innerHTML +=`
+			Current version: 0.6<br>
+			Most recent game files: https://mega.nz/#!Hp9hySgS!W9zUI6QTa6NkIe-5KHJhCQ98IoMuc8iXKECFh97GZXw<br>
+			Most recent image pack: https://mega.nz/#!ul92CCbZ!-FU9_N_Ne33YJ68WxnsvVqsAb_5UKrXCbrYh01ueehI<br>
+			If you're new to the game, all you need to do is download these two. Extract the game files to create the Human Alteration App folder, then extract the image pack directly into the Human Alteration App folder. You can find a picture of what the final layout should look like in the screenshot folder:<br>
+			https://mega.nz/#F!zwsBnSoT!7wiL0wOWcml2wtX7M0fXiA<br>
+			If you've already downloaded an image pack in the past, you can find all of the image upgrade packs here so that you don't need to download the whole thing again:<br>
+			https://mega.nz/#F!j9UyWQhQ!TKUlk_gNQq1fFk779dMurw<br>
+			If you'd like to see the game's overall progress and a list of what scenes have been completed, you can find the game's progress chart here:<br>
+			https://mega.nz/#F!jk0yBYwI!DsOhPJl3qB5Ec8KTsIFNtA<br>
+			(Note: I don't count the logbook & corruption events in the total scene count.)
+			`;
+			writeTransition("start", "Go Back");
+			break;
+		}
+		case "downloadRainyDayZ": {
+			document.getElementById('output').innerHTML +=`
+			Current version: Beta V1<br>
+			Most recent game files: https://mega.nz/#!axsERCDL!gjFuAX6Z9uARnnxxh0sHT7kwm6r21ssw2PRf402Jd2g<br>
+			All you need to do is download this. Extract the game files to create the Rainy DayZ folder, then run the Rainy DayZ.html file. If errors begin popping up, I might need to separate the game files from the images.
+			`;
 			writeTransition("start", "Go Back");
 			break;
 		}
