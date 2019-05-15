@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rainy DayZ</title>
+		<script src="scripts/index.js"></script>
+		<script src="scripts/sceneList.js"></script>
+		<link rel="stylesheet" type="text/css" href="scripts/index.css" />
+	</head>
+	<body onload ="startup()">
+		<div id = "menu" class = "menu">
+			<p id = "title" class = "title">Rainy DayZ</p>
+			<p id = "version" class = "version">Beta</p>
+				<p id="invButton" class="switch" onclick="generateZombieInv()">INVENTORY</p>
+			<p id="restartButton" class="switch" onclick='exitGame()'>BACK TO MENU</p>
+			<p id="logButton" class="switch" onclick="disablePictures()">DISABLE IMAGES</p>
+			<p id = "playerName" class = "version">???</p>
+			<img id="playerImage" class="playerImage" src="images/none.png">
+				<br>
+			<div id="inv"></div>
+		</div>
+		<div id = "wrapper" class = "wrapper">
+			<div id = "output" class = "output">
+			<p class="choiceText" onclick="sceneTransition('start')">
+				Start the game
+			</p>
+			</div>
+			<div id="footer" class="footer">
+				<p id="invButton" class="switch" onclick="generateZombieInv()">INVENTORY</p>
+				<p id="restartButton" class="switch" onclick='exitGame()'>BACK TO MENU</p>
+				<p id="logButton" class="switch" onclick="disablePictures()">DISABLE IMAGES</p>
+			</div>
+		</div>
+	</body>
+</html>
