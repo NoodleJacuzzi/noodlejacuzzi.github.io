@@ -254,7 +254,7 @@ var items = [
 
 //Start & System Config Stuff
 function startup() {
-	saveSlot(11);
+	saveSlot(14);
 	if(localStorage.getItem('data10')) {
 		loadSlot(10);
 	}
@@ -369,7 +369,7 @@ function sceneTransition(scene) {
 	document.getElementById('output').innerHTML = '';
 	writeScene(scene);
 	console.log("scene written");
-	saveSlot(10);
+	saveSlot(13);
 	console.log("autosaved");
 	zombieInvShowing = false;
 }
@@ -488,7 +488,7 @@ function loadFile(){
 	dataTemp = JSON.parse(dataTemp);
 	if (dataTemp.bodytypes) {
 		data = dataTemp;
-		saveSlot(10);
+		saveSlot(13);
 		loadSlot(10);
 	}
 	else {
