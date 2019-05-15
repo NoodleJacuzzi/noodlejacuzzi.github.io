@@ -277,7 +277,7 @@ function restartButton() {
 	if (restart == true) {
 		endingChoices = {family: 1, friend: 1, teacher: 1, chef: 1, office: 1, sub: 0,}
 		tokyo = false;
-		loadSlot(11);
+		loadSlot(14);
 	}
 }
 
@@ -491,7 +491,7 @@ function loadFile(){
 	if (dataTemp.bodytypes) {
 		data = dataTemp;
 		saveSlot(13);
-		loadSlot(10);
+		loadSlot(13);
 	}
 	else {
 		for (i = 0; i < data.zombieGallery.length; i++) {
