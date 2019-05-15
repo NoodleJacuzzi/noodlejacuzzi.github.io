@@ -721,7 +721,7 @@ function writeZombieEvent(n) {
 			break;
 		}
 		case "siren1": {
-			writeBig("images/real/general/sissy9.gif");
+			writeBig("images/zombie/siren1.gif");
 			writeText("Test for siren event 1.");
 			if (data.story.currentScene != "zombieGallery") {
 				writeText("<p class='choiceText' onclick='gameOver()'>Game Over</p>");
