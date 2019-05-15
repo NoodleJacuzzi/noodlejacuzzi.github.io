@@ -150,7 +150,7 @@ function writeScene(scene) {
 		case "downloadRainyDayZ": {
 			document.getElementById('output').innerHTML +=`
 			Current version: Beta V1<br>
-			Most recent game files: https://mega.nz/#!axsERCDL!gjFuAX6Z9uARnnxxh0sHT7kwm6r21ssw2PRf402Jd2g<br>
+			Most recent game files: https://mega.nz/#!TsVgwAwY!TvQDWN2k0TRkCtLkhVALG_osBJUtLbGyJcsRD8t5F0g<br>
 			All you need to do is download this. Extract the game files to create the Rainy DayZ folder, then run the Rainy DayZ.html file. If errors begin popping up, I might need to separate the game files from the images.
 			`;
 			writeTransition("start", "Go Back");
