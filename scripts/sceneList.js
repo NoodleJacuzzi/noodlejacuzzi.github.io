@@ -4,6 +4,7 @@ function writeScene(scene) {
 			writeBig("images/logo.png");
 			writeTransition("HAAD", "Dom Route Preview");
 			writeTransition("HAAS", "Sub Route Preview");
+			writeTransition("downloadHAA", "Download Human Alteration App");
 			writeText("Human Alteration App");
 			writeText("Discussion thread and download links: https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12458");
 			writeText("You find yourself with a phone app that can alter people's minds and bodies. Choose between one of two routes where either you're in control of the world or the app is stolen from you. There's a clear sense of progression throughout and no focus on grinding.");
@@ -18,11 +19,18 @@ function writeScene(scene) {
 			writeText("Tags: Moral Degradation, Corruption, Tentacles, Cum Inflation, Exhibitionism");
 			writeBig("images/RainyDayZ.jpg");
 			writeTransition("RainyDayZ", "Preview");
+			writeTransition("downloadRainyDayZ", "Download Rainy DayZ");
 			writeText("Rainy DayZ");
 			writeText("This game is currently contained within HAA, and will be made available as its own title soon.");
 			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.");
 			writeText("Navigate a town and city deliberately working to sabotage yourself and throw yourself into the clutches of the zombie hordes, the goal of the game here is to be defeated and attacked to collect and unlock all of the game's scenes.");
 			writeText("Tags: Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Bestiality (optional), Parasites (optional)");
+			document.getElementById('output').innerHTML +=`
+				<a href="https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html">Play the game online</a>
+				<br>
+				<a href="https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ%20Mobile.html">Play the mobile version</a>
+				<br>
+			`;
 			break;
 		}
 		case "HAAD" : {
