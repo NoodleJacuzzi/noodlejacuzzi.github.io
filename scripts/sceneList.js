@@ -162,8 +162,8 @@ function writeScene(scene) {
 		}
 		case "downloadPrincessQuest": {
 			document.getElementById('output').innerHTML +=`
-			Current version: Beta V1
-			Most recent game files: https://mega.nz/#!HhNjBI5A!33ShQCca0zhii9vUbG-_DBjSnXaCQWbTfxQNxKDVjD0
+			Current version: Beta V1<br>
+			Most recent game files: https://mega.nz/#!HhNjBI5A!33ShQCca0zhii9vUbG-_DBjSnXaCQWbTfxQNxKDVjD0<br>
 			All you need to do is download this. Extract the game files to create the Princess Quest folder, then run the Princess Quest.html file. If errors begin popping up, I might need to separate the game files from the images.
 			`;
 			writeTransition("start", "Go Back");
