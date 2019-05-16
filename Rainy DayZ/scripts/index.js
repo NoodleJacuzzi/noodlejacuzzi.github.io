@@ -478,7 +478,6 @@ function loadSlot(slot) {
 }
 
 function saveFile(){
-	console.log(n);
 	document.getElementById('output').innerHTML = '';
 	writeText("Copy the full length below and paste it into the input box when you want to load the data. I recommend copying to a txt file.");
 	writeText("" + JSON.stringify(data) + "");
