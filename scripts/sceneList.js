@@ -22,6 +22,10 @@ function writeScene(scene) {
 			writeText("Uses art done by Neromashin. It's all from a game named 'Oujo & Onna Kishi W Do Gehin Roshutsu ~Chijoku no Misemono Dorei~' published by PinPoint. You can find the official website of the game at http://www.pin-point.biz/27_wdgr/index.html, but it's in Japanese. There is an English version coming to steam, but I've heard negative things about the translation's quality.");
 			writeText("Tags: Moral Degradation, Corruption, Tentacles, Cum Inflation, Exhibitionism");
 			writeTransition("PrincessQuest", "Preview");
+			writeTransition("downloadPrincessQuest", "Download Princess Quest");
+			document.getElementById('output').innerHTML +=`
+				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=60&t=12578'">Discussion thread</p>
+			`;
 			writeBig("images/RainyDayZ.jpg");
 			writeText("Rainy DayZ");
 			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.");
@@ -152,6 +156,15 @@ function writeScene(scene) {
 			Current version: Beta V1<br>
 			Most recent game files: https://mega.nz/#!TsVgwAwY!TvQDWN2k0TRkCtLkhVALG_osBJUtLbGyJcsRD8t5F0g<br>
 			All you need to do is download this. Extract the game files to create the Rainy DayZ folder, then run the Rainy DayZ.html file. If errors begin popping up, I might need to separate the game files from the images.
+			`;
+			writeTransition("start", "Go Back");
+			break;
+		}
+		case "downloadPrincessQuest": {
+			document.getElementById('output').innerHTML +=`
+			Current version: Beta V1
+			Most recent game files: https://mega.nz/#!HhNjBI5A!33ShQCca0zhii9vUbG-_DBjSnXaCQWbTfxQNxKDVjD0
+			All you need to do is download this. Extract the game files to create the Princess Quest folder, then run the Princess Quest.html file. If errors begin popping up, I might need to separate the game files from the images.
 			`;
 			writeTransition("start", "Go Back");
 			break;
