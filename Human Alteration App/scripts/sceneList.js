@@ -1577,9 +1577,12 @@ function writeScene(scene) {
 							writeText("She's swallowing dryly as she eyes your crotch. At this point, you can't think of any way you could corrupt her farther.");
 						}
 						if (data.story.plugPops > 0) {
+							writeText("A plug pop is sitting in your pocket, but there's no real reason to use it on mom. You can get anal elsewhere.");
+							writeText("The idea of keeping yourself clean at all times is an appealing one though. And with her latest changes, you can imaging mom would get a kick out of pleasing you in a new way.");
 							writeTransition("deepCleaning", "Use a Plug Pop");
 						}
 						if (data.story.fruitGushers > 0) {
+							writeText("But you kinda do need to take a piss. You're about to tell her to wait outside, before an idea strikes you.");
 							writeTransition("bathroomBreak", "Eat your Fruit Gushers");
 						}
 						writeTransition("home", "Go back");
@@ -1806,11 +1809,12 @@ function writeScene(scene) {
 						writeText("As she responds, she rubs a small bulge in her abdomen.");
 						writeSpeech(data.story.sisterName, "jean", "Just testin' out one of mom's new toys~<br>What's up?");
 						if (data.story.motherScore > 3) {
+							if (data.story.popRocks > 0) {
+								writeText("She and mom have both been reveling in being your fuckpuppets, but the pop rocks in your pocket are giving you an idea for a new kind of playtime.");
+								writeTransition("familyFun", "I got some neat candy");
+							}
 							if (galleryCheck("sister6") == false) {
 								writeTransition("familyDinner", "It's dinner time");
-							}
-							if (data.story.popRocks > 0) {
-								writeTransition("familyFun", "I got some neat candy");
 							}
 							if (galleryCheck("sister6") == true && galleryCheck("sister7") == true) {
 								writeSpeech(data.story.name, "player", "Nothing, just enjoying the view.");
@@ -2374,10 +2378,15 @@ function writeScene(scene) {
 					case 5: {
 						if (data.story.teacherReady == true) {
 							writeText("She's grading papers like a real teacher would. When she notices you're staying as everyone else leaves, she shoots you a wink and sticks her tongue out.");
+							writeText("It seems like all that's in her bag are bundles and bundles of papers, probably a big test from another class.");
 							if (data.story.plugPops > 0) {
+								writeText("It doesn't seem like she brought the strap-on today. Anal actually takes a fair amount of prep time.");
+								writeText("But it doesn't have to. The plug pop in your bag could open quite a few new doors. She'd probably be pretty receptive to the idea too, since she's still searching for a way to get off with her dick being as useless as it is.");
 								writeTransition("smothering", "Give her a Plug Pop");
 							}
 							if (data.story.stretchyTaffy > 0) {
+								writeText("On the other hand you've got some stretchy taffy in your bag. If the plug could open doors, the taffy could smash them wide open.");
+								writeText("You can actually feel your dicklette harden a little at the idea. If you play your cards right, you could be the one doing the fucking, and not with a plastic pole.");
 								writeTransition("sounding", "Give her some Stretchy Taffy");
 							}
 							writeTransition("schoolClassroom", "Go back.");
@@ -2480,8 +2489,7 @@ function writeScene(scene) {
 								writeTransition("homePlayerRoom", "Finish for the day");
 							}
 							else {
-								writeText("You don't have what you need right now.");
-								writeText("You can't trigger an event right now. You'll need to corrupt her with the app by going to sleep if you want to do anything with " + data.story.chefName + ".");
+								writeText("You don't have what you need right now. Some exotic candy is just what you need to help " + data.story.chefName + "'s business out.");
 								writeTransition("volunteering", "Help " + data.story.chefName + " out");
 								writeTransition("streetsRestaurant", "Go back");
 							}
@@ -2543,6 +2551,9 @@ function writeScene(scene) {
 					}
 					case 4: {
 						if (data.story.chefReady == true) {
+							writeSpeech(data.story.chefName, "ava", data.story.name + "! It's good to see you. What can I get you?");
+							writeText("You catch her staring at your mouth as she speaks, but she at least tries to act professionally.");
+							writeText("You could volunteer to help, but you can't help but feel like deepthroating her for hours would be less fun than it sounds.");
 							if (data.story.caramelMelts > 0) {
 								writeTransition("enjoyingTheWork", "Show her the Caramel Melt");
 							}
