@@ -1,0 +1,22 @@
+This is Princess Quest, an HTML game created by me, Noodle Jacuzzi. Play a preview of it, and my other titles via the master index at https://noodlejacuzzi.github.io/index.html
+Please note that this may only be a temporary hosting method.
+
+Play as Princess Elizabeth as she navigates caves and castle dungeons to rid her people of a demon's foul curse, unaware that she's playing right into the demon's hands.
+This all might be familiar to you if you've checked out my other work, Human Alteration App, because Rainy DayZ was originally a minigame. For various reasons I've needed to trim off the minigames from HAA into their own titles, so here we are! 
+
+This game focuses on themes of Moral Degradation, Corruption, Exhibitionism, and contains a scene involving Tentacles and another involving Cum Inflation.
+
+The game uses art done by Neromashin. It's all from a game named 'Oujo & Onna Kishi W Do Gehin Roshutsu ~Chijoku no Misemono Dorei~' published by PinPoint. You can find the official website of the game at http://www.pin-point.biz/27_wdgr/index.html, but it's in Japanese. There is an English version coming to steam, but I've heard negative things about the translation's quality.
+
+If you're here from HAA, there's no new content here yet. My plan is to release a content patch after working more on HAA which will finish both of the game's unfinished scenes.
+
+Current Version: Beta V1
+Most recent game files: https://mega.nz/#!HhNjBI5A!33ShQCca0zhii9vUbG-_DBjSnXaCQWbTfxQNxKDVjD0
+All you need to do is download this. Extract the game files to create the Princess Quest folder, then run the Princess Quest.html file. If errors begin popping up, I might need to separate the game files from the images.
+There's no current way to get this running online at the moment. Turning breaks down almost immediately and the game becomes unplayable. In addition trying to get this game to work on mobile is what I imagine hell is like. Once I finish the final version I'll upload a version with just the scenes so that anyone having trouble can see them.
+
+Known issues:
+[list]
+[*] The perspective makes it look like you're standing in front of where you actually are. I got used to this over time, but a lot of people get disorientated by it. There's nothing I can do about this.
+[/list]
+If you find any bugs or typos, please let me know.

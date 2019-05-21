@@ -1,0 +1,99 @@
+div#minimapcontainer {
+position: relative;
+}
+canvas#minimap {
+ position : absolute;
+}
+canvas#minimapobjects {
+ position : absolute;
+}
+
+div#floor {
+ pointer-events: none;
+ position : absolute;
+ width : 100%;
+ height : 100%;
+ background-color : rgb(80,80,80);
+}
+
+div#ceiling {
+ pointer-events: none;
+ position : absolute;
+ width : 100%;
+ height : 50%;
+ background-color : rgb(96,96,96);
+}
+
+#screen {
+ pointer-events: none;
+ position : absolute;
+ width : 640px;
+ height : 300px;
+ border : 1px solid black;
+ overflow : hidden;
+ top: 0%;
+ right: calc(40% - 320px);
+}
+
+.demo {
+ pointer-events: none;
+	position : absolute;
+	width: 640px;
+	height: 300px;
+	top: -1.5%;
+	right: calc(40% - 320px);
+	z-index: 10000000;
+}
+
+#screenBox {
+	width: 640px;
+	height: 300px;
+	margin: auto;
+}
+#screenButtons {
+	height: 100px;
+	width: 700px;
+	margin: auto;
+}
+.buttonUp {
+	width: 200px;
+	margin: auto;
+  	border: 3px solid white;
+  	border-radius: 5px;
+	text-align: center;
+	color: white;
+	font-size: 300%;
+	cursor: pointer;
+}
+.buttonDown {
+	width: 200px;
+	margin: auto;
+  	border: 3px solid white;
+  	border-radius: 5px;
+	text-align: center;
+	color: white;
+	font-size: 300%;
+	cursor: pointer;
+}
+.buttonLeft {
+	float: left; 
+	width: 200px;
+	margin: auto;
+  	border: 3px solid white;
+  	border-radius: 5px;
+	text-align: center;
+	color: white;
+	font-size: 300%;
+	cursor: pointer;
+}
+.buttonRight {
+	float: right; 
+	width: 200px;
+	margin: auto;
+  	border: 3px solid white;
+  	border-radius: 5px;
+	text-align: center;
+	color: white;
+	font-size: 300%;
+	cursor: pointer;
+}

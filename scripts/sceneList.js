@@ -25,6 +25,8 @@ function writeScene(scene) {
 			writeTransition("downloadPrincessQuest", "Download Princess Quest");
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=60&t=12578'">Discussion thread</p>
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Princes%20Quest/Princes%20Quest.html'">Try the game online (NON-FUNCTIONAL)</p>
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Princes%20Quest/Princes%20Quest%20Mobile.html'">Play the mobile version (NON-FUNCTIONAL)</p>
 			`;
 			writeBig("images/RainyDayZ.jpg");
 			writeText("Rainy DayZ");
@@ -162,8 +164,8 @@ function writeScene(scene) {
 		}
 		case "downloadPrincessQuest": {
 			document.getElementById('output').innerHTML +=`
-			Current version: Beta V1<br>
-			Most recent game files: https://mega.nz/#!HhNjBI5A!33ShQCca0zhii9vUbG-_DBjSnXaCQWbTfxQNxKDVjD0<br>
+			Current version: v1.0 (5/20/2019)<br>
+			Most recent game files: https://mega.nz/#!HkEASQzQ!hwaochl4QNO4Col-V1h-6m_cNMOhtQQJCZIxzmMwmR4<br>
 			All you need to do is download this. Extract the game files to create the Princess Quest folder, then run the Princess Quest.html file. If errors begin popping up, I might need to separate the game files from the images.
 			`;
 			writeTransition("start", "Go Back");
