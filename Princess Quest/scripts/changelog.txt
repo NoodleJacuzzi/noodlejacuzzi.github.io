@@ -8,15 +8,28 @@ This game focuses on themes of Moral Degradation, Corruption, Exhibitionism, and
 
 The game uses art done by Neromashin. It's all from a game named 'Oujo & Onna Kishi W Do Gehin Roshutsu ~Chijoku no Misemono Dorei~' published by PinPoint. You can find the official website of the game at http://www.pin-point.biz/27_wdgr/index.html, but it's in Japanese. There is an English version coming to steam, but I've heard negative things about the translation's quality.
 
-If you're here from HAA, there's no new content here yet. My plan is to release a content patch after working more on HAA which will finish both of the game's unfinished scenes.
-
-Current Version: Beta V1
-Most recent game files: https://mega.nz/#!HhNjBI5A!33ShQCca0zhii9vUbG-_DBjSnXaCQWbTfxQNxKDVjD0
+Current Version: Complete!
+Most recent game files: https://mega.nz/#!HkEASQzQ!hwaochl4QNO4Col-V1h-6m_cNMOhtQQJCZIxzmMwmR4
 All you need to do is download this. Extract the game files to create the Princess Quest folder, then run the Princess Quest.html file. If errors begin popping up, I might need to separate the game files from the images.
-There's no current way to get this running online at the moment. Turning breaks down almost immediately and the game becomes unplayable. In addition trying to get this game to work on mobile is what I imagine hell is like. Once I finish the final version I'll upload a version with just the scenes so that anyone having trouble can see them.
+The game is running online at the moment, not sure if it'll work very well. I recommend downloading, but if you want to play online you can find it here:
+https://noodlejacuzzi.github.io/Princess%20Quest/Princess%20Quest.html
 
 Known issues:
 [list]
 [*] The perspective makes it look like you're standing in front of where you actually are. I got used to this over time, but a lot of people get disorientated by it. There's nothing I can do about this.
+[*] While playing online you can become desynced from the grid if you turn too many times or too quickly. There's no way I know of to fix this, so you'll just need to exit and restart the level.
 [/list]
 If you find any bugs or typos, please let me know.
+
+Version 0.6.5 - Finished
+New Scenes:
+- All of them! The final chapter, the epilogue, and the three bonus scenes you can unlock by collecting all of the green orbs.
+
+Bugfixes:
+- I probably fixed a few while finishing the game, but I forgot to keep track of them. Nobody's posted anything, so I assume no one has found any problems since the beta version.
+
+Other:
+- Online version!
+- Mobile version! (unplayably laggy, but if you use the cheat code you get from colelcting the orbs to unlock everything, you can read the scenes in the mobile format)
+- Saves should be compatible between beta and normal versions.
+- Chapter 4! The game is done!
