@@ -25,8 +25,8 @@ function writeScene(scene) {
 			writeTransition("downloadPrincessQuest", "Download Princess Quest");
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=60&t=12578'">Discussion thread</p>
-				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Princes%20Quest/Princes%20Quest.html'">Try the game online (NON-FUNCTIONAL)</p>
-				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Princes%20Quest/Princes%20Quest%20Mobile.html'">Play the mobile version (NON-FUNCTIONAL)</p>
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Princess%20Quest/Princess%20Quest.html'">Try the game online</p>
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Princess%20Quest/Princess%20Quest%20Mobile.html'">Try the mobile version (NON-FUNCTIONAL)</p>
 			`;
 			writeBig("images/RainyDayZ.jpg");
 			writeText("Rainy DayZ");
