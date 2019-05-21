@@ -5,7 +5,8 @@ function writeScene(scene) {
 			updateMenu();
 			hidePrincess();
 			writeBig("images/drawn/vr/title.jpg");
-			writeText("Princess Quest is a game created by Noodle Jacuzzi. You play as a young princess named Elizabeth, who seeks to free her people from the presence of a demon terrorizing the kingdom.");
+			writeText("Welcome to Princess Quest, a game created by Noodle Jacuzzi. You can find and keep up to date with my work at my master index here:<br>https://noodlejacuzzi.github.io/index.html");
+			writeText("You play as a young princess named Elizabeth, who seeks to free her people from the presence of a demon terrorizing the kingdom.");
 			writeText("All art contained here within is done by Neromashin. It's all from a game named 'Oujo & Onna Kishi W Do Gehin Roshutsu ~Chijoku no Misemono Dorei~' published by PinPoint. You can find the official website of the game at http://www.pin-point.biz/27_wdgr/index.html, but it's in Japanese. There is an English version coming to steam, but I've heard negative things about the translation's quality.");
 			writeText("Pinpoint's game includes some fetishes I personally find disturbing. This game however is much tamer. This game contains graphic content depicting exhibitionism, tentacle penetration, and princess-on-orc action in the finale. There's no option to disable specific fetishes here, since it's all a linear set of levels.");
 			if (data.story.vrScore == 4) {

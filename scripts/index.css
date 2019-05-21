@@ -103,6 +103,11 @@ a {
 	width: 400px;
 	font-size: 70%;
 }
+.centeredText {
+	text-align:center;
+	margin-left: auto;
+	margin-right: auto;
+}
 .specialText {
 	color: lightgreen;
 	font-weight: bold;

@@ -1,17 +1,23 @@
 function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
+			document.getElementById('output').innerHTML +=`
+				<p class = "centeredText">Lastest News 5/20/2019</p>
+				<p class = "centeredText">Princess Quest's final version has been finished! The full version adds 5 new scenes, for a total of 9 scenes to unlock.</p>
+			`;
+			writeTransition("news", "View all news updates");
+			writeText("<br>");
 			writeBig("images/logo.png");
 			writeTransition("HAAD", "Dom Route Preview");
 			writeTransition("HAAS", "Sub Route Preview");
 			writeTransition("downloadHAA", "Download Human Alteration App");
 			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12458'">Discussion thread</p>
+				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12458'">TFGames Discussion thread</p>
+				<p class="choiceText" onclick="window.location.href='https://f95zone.to/threads/human-alteration-app-v0-6-5-noodlejacuzzi.28823/'">F95Zone Discussion thread</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App%20Mobile.html'">Play the mobile version</p>
 			`;
 			writeText("Human Alteration App");
-			writeText("Discussion thread: https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12458");
 			writeText("You find yourself with a phone app that can alter people's minds and bodies. Choose between one of two routes where either you're in control of the world or the app is stolen from you. There's a clear sense of progression throughout and no focus on grinding.");
 			writeText("Dom route tags: Incest (optionally non blood-related), Mind Control, Sluttification, Degradation, Exhibitionism, Watersports (optional, not yet implemented)");
 			writeText("Sub route tags: 2D Art, Incest (optionally non blood-related), Sissification, Female-to-Shemale Transformation, Cum Eating, Sounding, NTR (mild & optional), Smothering (not yet implemented), Watersports (optional, not yet implemented)");
@@ -41,6 +47,13 @@ function writeScene(scene) {
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ%20Mobile.html'">Play the mobile version</p>
 			`;
+			break;
+		}
+		case "news": {
+			writeText("<b>5/20/2019</b> - Princess Quest v1.0");
+			writeText("Full game release");
+			writeText("5 new scenes, 9 scenes in the game total");
+			writeTransition("start", "Go Back");
 			break;
 		}
 		case "HAAD" : {

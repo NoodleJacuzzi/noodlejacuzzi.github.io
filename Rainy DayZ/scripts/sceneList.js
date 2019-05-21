@@ -7,7 +7,8 @@ function writeScene(scene) {
 				<p>Your name is <input type="text" id="nameSubmission" value="Emily"></p>
 			`;
 			document.getElementById('nameSubmission').defaultValue = data.story.name;
-			writeText("Rainy DayZ is a game created by Noodle Jacuzzi. In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.");
+			writeText("Rainy DayZ is a game created by Noodle Jacuzzi. You can find and keep up with all of my work at my master index here:<br>https://noodlejacuzzi.github.io/index.html");
+			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.");
 			writeText("Exploration is encouraged since there's no reward for returning to the safehouse with the supplies. Try to get all of the events if you can.");
 			writeText("Successful survival in this game is easy, and also not the point. The goal here is to sabotage this woman's efforts, and leave her to be assaulted by zombies of varying shapes and sizes. This game features a heavy emphasis on shemale content, and includes some rimming content.");
 			writeText("In addition, this game also features a dog zombie. To view his scenes (which are not yet finished) you must deliberately wound yourself, go to the forest, and either leave your weapon behind or have 0 stamina when you encounter him. If you dislike this sort of content, you can avoid it easily by doing anything other than what I've just described. To avoid any potential legal troubles, this dog is actually a woman in a very, very convincing dog suit. If you want absolutely no part in this at all, you can click the buttons below to disable some of the more contentious content.");
