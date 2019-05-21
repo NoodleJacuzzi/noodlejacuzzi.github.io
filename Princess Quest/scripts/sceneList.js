@@ -11,7 +11,7 @@ function writeScene(scene) {
 			if (data.story.vrScore == 4) {
 				writeSpecial("You've unlocked the bonus scene for collecting all of the hidden items, congratulations! As a reward, check out the bonus scenes below (note that they all feature extreme content), and you get this code: neromashin");
 				writeSpecial("This code unlocks all of the game's scenes! Wow, that sounds useless!");
-				writeSpecial("Princess Quest doesn't work when played online, so the version on github is nearly unplayable. Use this code and you can view the scenes on mobile/online. Feel free to give it out and be known as the coolest kid on the block, I'm not a cop; I can't stop you. Thanks for playing!");
+				writeSpecial("Princess Quest is wonky when played online, so the version on github is nearly unplayable in some cases. Use this code and you can view the scenes on mobile/online. Feel free to give it out and be known as the coolest kid on the block, I'm not a cop; I can't stop you. Thanks for playing!");
 			}
 			writeText("<p class = 'choiceText' onclick = 'levelSelect(1)'>Level 1 - Demonic Bargain</p>");
 			if (galleryCheck('vr1') == true) {
