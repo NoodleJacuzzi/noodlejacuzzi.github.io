@@ -308,7 +308,12 @@ input {
 	left: 200px;
 	font-size: 22px;
 }
-
+.invMoney {
+	position: absolute;
+	top: 0%;
+	left: 12%;
+	color: white;
+}
 /*Logbook*/
 .logbookLeft {
 	position:absolute;

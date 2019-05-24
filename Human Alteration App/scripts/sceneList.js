@@ -4,13 +4,13 @@ function writeScene(scene) {
 			hidePrincess();
 			updateBody(0);
 			writeBig("scripts/gamefiles/logo.png");
-			writeText("Human Alteration App is an adult game created by NoodleJacuuzi.");
+			writeText("Human Alteration App is an adult game created by NoodleJacuuzi. You can find and keep up with all of my work at my master index here:<br>https://noodlejacuzzi.github.io/index.html");
 			writeText("This game features a branching point after the prologue. One path uses pictures of real porn actresses, while the other primarily uses drawn images.");
 			document.getElementById('output').innerHTML += `<p id="picturesDisabled" class="switch" onclick="disablePictures()">Pictures are currently enabled. Click here to disable them. Disabling pictures will only stop new pictures from appearing, it won't deleted the above picture, for example. As a warning, scenes will read quite strangely without images.</p>`;
 			writeText("The dominant path features scenes of questionable consent, mind control, and hand-holding.");
 			writeText("The submissive path features scenes of sissification, sexual depictions of shemale characters, sounding, and other more extreme fetishes.");
 			writeText("Both routes feature optional watersports content, but there is no depiction of minors or scatological content.");
-			writeText("Finally, check out the virtual reality machine in either route for additional content.");
+			writeText("As of version 0.6.5, Rainy DayZ and Princess Quest have been removed from the game. You can find them via my master index at https://noodlejacuzzi.github.io/index.html");
 			writeText("As an additional note, you can click on the title of a window to close it. For example, if you click 'LOGBOOK' on the left there, you can close the new window by clicking anywhere in the 'LOGBOOK' section at the top.");
 			writeText("I might open some method of financial support in the future, but for now please support this release by submitting a review on TFgamessite or by leaving me a comment on the game's discussion thread at https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12458");
 			writeText("I'd love to hear your thoughts. If you don't want to bother with that, just leaving a like if you enjoyed the game is helpful enough.");
@@ -55,6 +55,7 @@ function writeScene(scene) {
 				`;
 			}
 			document.getElementById('output').innerHTML += `
+				<p>Please keep in mind that none of these changes will result in a lower sexual potency. Even choosing a more 'cute' bodytype will not cause you to develope submissive tendencies.</p>
 				<p>Care to change your name, <input type="text" id="nameSubmission" value="Jeffrey">?</p>
 				<p class="choiceText" onclick="changeName('player')">
 					Look in the mirror
@@ -498,31 +499,36 @@ function writeScene(scene) {
 							break;
 						}
 					}
-					switch (data.story.teacherScore) {
-						case 1:
-							writeText("School passes quickly, " + data.story.teacherName + " takes great care not to disturb you.");
-						break;
-						case 2:
-							writeText("School passes quickly, " + data.story.teacherName + " takes great care not to disturb you. Her skin is looking quite nice today.");
-						break;
-						case 3:
-							writeBig("images/real/general/titfuck3.gif");
-							writeText("You arrive at school early, " + data.story.teacherName + " is waiting and ready to take care of you.");
-						break;
-						case 4:
-							writeBig("images/real/general/deepthroat5.gif");
-							writeText("You arrive at school early, " + data.story.teacherName + " is waiting and ready to take care of you.");
-						break;
-						case 5:
-							writeBig("images/real/general/vaginal4.gif");
-							writeText("School passes the time, as usual. After a short nap you walk up behind " + data.story.teacherName + " and slide into her to relieve yourself of some lingering tension.");
-						break;
-						case 6:
-							writeBig("images/real/general/vaginal4.gif");
-							writeText("School passes the time, as usual. After a short nap you walk up behind " + data.story.teacherName + " and slide into her to relieve yourself of some lingering tension.");
-						break;
+					if (galleryCheck("mom6") == false || galleryCheck("mom7") == true) {
+						switch (data.story.teacherScore) {
+							case 1:
+								writeText("School passes quickly, " + data.story.teacherName + " takes great care not to disturb you.");
+							break;
+							case 2:
+								writeText("School passes quickly, " + data.story.teacherName + " takes great care not to disturb you. Her skin is looking quite nice today.");
+							break;
+							case 3:
+								writeBig("images/real/general/titfuck3.gif");
+								writeText("You arrive at school early, " + data.story.teacherName + " is waiting and ready to take care of you.");
+							break;
+							case 4:
+								writeBig("images/real/general/deepthroat5.gif");
+								writeText("You arrive at school early, " + data.story.teacherName + " is waiting and ready to take care of you.");
+							break;
+							case 5:
+								writeBig("images/real/general/vaginal4.gif");
+								writeText("School passes the time, as usual. After a short nap you walk up behind " + data.story.teacherName + " and slide into her to relieve yourself of some lingering tension.");
+							break;
+							case 6:
+								writeBig("images/real/general/vaginal4.gif");
+								writeText("School passes the time, as usual. After a short nap you walk up behind " + data.story.teacherName + " and slide into her to relieve yourself of some lingering tension.");
+							break;
+						}
+						writeTransition("schoolClassroom", "Finish classes for the day");
 					}
-					writeTransition("schoolClassroom", "Finish classes for the day");
+					else {
+						writeTransition("schoolClassroom", "Or pull out and go about your day");
+					}
 				}
 			}
 			else {
@@ -805,13 +811,6 @@ function writeScene(scene) {
 									</p>
 								`;
 							break;
-							case 3:
-								document.getElementById('output').innerHTML += `
-									<p class="choiceText" onclick="corrupt('chef')">
-										Think of a money-making idea
-									</p>
-								`;
-							break;
 						}
 					}
 					if (data.story.officeReady == false) {
@@ -870,7 +869,7 @@ function writeScene(scene) {
 			else {
 				writeText("You lay your head down to rest after a long day, but as you do your phone buzzes. It's your sister texting you.");
 				writeSpeech(data.story.sisterName, "jean", "Heeeey bro. How was school? Have any fun today?");
-				if (data.story.motherScore < 4 && data.story.motherReady == false) {
+				if (data.story.motherScore < 3 && data.story.motherReady == false) {
 					document.getElementById('output').innerHTML += `
 						<p class="choiceText" onclick="corrupt('mother')">
 							Talk about mom
@@ -884,21 +883,21 @@ function writeScene(scene) {
 						</p>
 					`;
 				}
-				if (data.story.teacherScore < 5 && data.story.teacherReady == false) {
+				if (data.story.teacherScore < 4 && data.story.teacherReady == false) {
 					document.getElementById('output').innerHTML += `
 						<p class="choiceText" onclick="corrupt('teacher')">
 							Talk about ` + data.story.teacherName + `
 						</p>
 					`;
 				}
-				if (data.story.chefScore < 4 && data.story.chefReady == false) {
+				if (data.story.chefScore < 3 && data.story.chefReady == false) {
 					document.getElementById('output').innerHTML += `
 						<p class="choiceText" onclick="corrupt('chef')">
 							Talk about ` + data.story.chefName + `
 						</p>
 					`;
 				}
-				if (data.story.officeScore < 4 && data.story.officeReady == false) {
+				if (data.story.officeScore < 3 && data.story.officeReady == false) {
 					document.getElementById('output').innerHTML += `
 						<p class="choiceText" onclick="corrupt('office')">
 							Talk about ` + data.story.officeName + `
@@ -941,7 +940,6 @@ function writeScene(scene) {
 						writeText("She's progressing nicely, she'd probably be on your dick in a week at this point even if you left her unchanged. You don't want to wait any longer though. One thing is that you'll change how she refers to you. 'Master' has a nice ring to it.");
 						writeText("You increase her sensitivity and libido, but not by too much. You'll also make it so that she can have an orgasm just from the feeling of someone cumming inside of her.");
 						writeText("You put a little bit of that hesitancy back into her for now so that you can enjoy breaking through that flustered persona. The next time you and her are together, big things are going to happen.");
-						writeSpecial("You've reached the end of the content for this character, future scenes are currently unfinished. Feel free to suggest ideas or changes in the discussion thread, or check out the other characters.");
 						break;
 					}
 					case 3: {
@@ -983,33 +981,41 @@ function writeScene(scene) {
 						break;
 					}
 					case 2: {
-						writeSpeech(data.story.name, "player", "I watched my sister jerk herself off. I need sleep. Maybe therapy too.");
-						writeSpeech(data.story.sisterName, "jean", "Aww don't be so sad. It really seemed like you were enjoying yourself. Mom was too, if that helps.");
-						writeSpeech(data.story.name, "player", "Good night.");
-						writeText("...");
-						writeText("A bit later, in the adjacent room...");
-						writeText("Ropes of white jizz fly through the air and land with a splatter on the ground.");
-						writeSpeech(data.story.sisterName, "jean", "<i>Ah, fuck... Jacking off is really nice. Plus I get a better view of the action too. <br>I haven't used mom for a while now, I wonder how she's doing?<br>Oooh, her lust is already that high? I wonder what will happen if I push it just a little bit higher?</i>");
-						writeText("By the time your mother enters the room, hoping for some relief, all she finds is you sleeping sister and a mess she'll need to clean up.");
-						writeSpecial("You've reached the end of the content for this character, future scenes are currently unfinished. Feel free to suggest ideas or changes in the discussion thread, or check out the other characters.");
-						break;
-					}
-					case 3: {
 						writeSpeech(data.story.sisterName, "jean", "I just wanna know if you're okay.");
 						writeSpeech(data.story.sisterName, "jean", "You there?");
 						writeSpeech(data.story.sisterName, "jean", "Hello?");
 						writeSpeech(data.story.sisterName, "jean", "Good night bro.");
 						writeText("...");
 						writeText("A bit later, in the adjacent room...");
-						writeSpeech(data.story.sisterName, "jean", "That was unacceptable! Fucking bitch, what did you think you were doing?");
-						writeSpeech(data.story.motherName, "lisa", "Y-you found out? I'm sorry, I know I'm yours-");
-						writeSpeech(data.story.sisterName, "jean", "Not that, idiot! I don't care about you sleeping around, piggy. I'm talking about with "+data.story.name+"!");
-						writeSpeech(data.story.motherName, "lisa", "I'm sorry, mistress. I just couldn't help it anymore. My mind isn't as foggy, I understand that I shouldn't take my frustrations out on "+data.story.name+". Taking advantage of him-");
-						writeSpeech(data.story.sisterName, "jean", "Is something only I'm allowed to do! He's perfect as he is. Someone like you should... Should...");
-						writeText("A smile creeps across "+data.story.sisterName+"'s face.");
+						writeText("Ropes of white jizz fly through the air and land with a splatter on the ground.");
+						writeSpeech(data.story.sisterName, "jean", "<i>Ah, fuck... Jacking off is really nice. Plus I get a better view of the action too. <br>... But what about "+data.story.name+"? He seemed pretty down, I guess mom is being pretty cold to him.</i>");
+						writeText("She stretches out on her sheets as she does her best to brainstorm ideas. There's a knock on her door before "+data.story.motherName+" walks in.");
+						writeSpeech(data.story.motherName, "lisa", "You c-call...");
+						writeText("She pauses mid word when she sees the mess on the floor. She obviously wants it, but feels a compulsion to wait for permission first.");
+						writeSpeech(data.story.sisterName, "jean", "Go ahead.<br><i>Now, what to do? It's no fun if-<br>God, could she eat any more noisily? How am I supposed to think if you're hungry for my dick twenty-four seven? I might as well give you-</i>");
+						writeText("A smile creeps across "+data.story.sisterName+"'s face as she gets off the bed.");
 						writeSpeech(data.story.motherName, "lisa", "Mistress?");
 						writeSpeech(data.story.sisterName, "jean", "I should've done this right away. He can't really appreciate you like this, and I'm getting bored of your body. Stay there, do not move, and don't touch yourself.");
 						writeText("Throughout the rest of the night, the halls of the house are filled with a fishy scent, spluttering sounds, and moans caught between clenched teeth.");
+						writeSpecial("You've reached the end of the content for this character, future scenes are currently unfinished. Feel free to suggest ideas or changes in the discussion thread, or check out the other characters.");
+						break;
+					}
+					case 3: {
+						//writeSpeech(data.story.sisterName, "jean", "I just wanna know if you're okay.");
+						//writeSpeech(data.story.sisterName, "jean", "You there?");
+						//writeSpeech(data.story.sisterName, "jean", "Hello?");
+						//writeSpeech(data.story.sisterName, "jean", "Good night bro.");
+						//writeText("...");
+						//writeText("A bit later, in the adjacent room...");
+						//writeSpeech(data.story.sisterName, "jean", "That was unacceptable! Fucking bitch, what did you think you were doing?");
+						//writeSpeech(data.story.motherName, "lisa", "Y-you found out? I'm sorry, I know I'm yours-");
+						//writeSpeech(data.story.sisterName, "jean", "Not that, idiot! I don't care about you sleeping around, piggy. I'm talking about with "+data.story.name+"!");
+						//writeSpeech(data.story.motherName, "lisa", "I'm sorry, mistress. I just couldn't help it anymore. My mind isn't as foggy, I understand that I shouldn't take my frustrations out on "+data.story.name+". Taking advantage of him-");
+						//writeSpeech(data.story.sisterName, "jean", "Is something only I'm allowed to do! He's perfect as he is. Someone like you should... Should...");
+						//writeText("A smile creeps across "+data.story.sisterName+"'s face.");
+						//writeSpeech(data.story.motherName, "lisa", "Mistress?");
+						//writeSpeech(data.story.sisterName, "jean", "I should've done this right away. He can't really appreciate you like this, and I'm getting bored of your body. Stay there, do not move, and don't touch yourself.");
+						//writeText("Throughout the rest of the night, the halls of the house are filled with a fishy scent, spluttering sounds, and moans caught between clenched teeth.");
 						break;
 					}
 				}
@@ -1048,13 +1054,13 @@ function writeScene(scene) {
 					writeText("With that out of the way, it's time to think of a way to corrupt " + data.story.sisterName + " further. She's a buttslut at this point, no question, and she's hooked on your dick too.");
 					writeText("At this point your next goal should be to open her, and your mother, up to the idea of a threesome. You can't just dive right in though, the first step should be making her desperate for release at any time. Obviously you can't be fucking her all day, and the dildo isn't tapered, so she can't use it as a buttplug. The candy advertised by the exotic shop's ticket might be just what you need.");
 					writeText("After that, it's a matter of pushing her as far past her limits as she can go.");
-					writeSpecial("You've reached the end of the content for this character, future scenes are currently unfinished. Feel free to suggest ideas or changes in the discussion thread, or check out the other characters.");
 					break;
 				}
 				case 4: {
 					writeText("You've pretty much got this in the bag at this point. " + data.story.sisterName + " is so hungry for anal at this point she'd ride mom wearing a strap-on.");
 					writeText("That's not a bad idea, actually, but that's not the point right now. You stop patting yourself on the back and get to work.");
 					writeText("Overwritting her common sense ought to do the trick. Family dinners should be a little more exciting now.");
+					writeSpecial("You've reached the end of the content for this character, future scenes are currently unfinished. Feel free to suggest ideas or changes in the discussion thread, or check out the other characters.");
 					break;
 				}
 			}
@@ -1091,15 +1097,15 @@ function writeScene(scene) {
 						writeText("You decide to shoot her a text, asking her about what she'd change about herself.");
 						writeSpeech(data.story.friendName, "riley", "Oh boy do I have some ideas. 1st we could...");
 						writeText("A lot of them are impossible to do with your skillset, unfortunately. You change what you can, but it seems like you'll need something extra to really have a fun weekend with her. Maybe some exotic candy could do the trick?");
-						writeSpecial("You've reached the end of the content for this character, future scenes are currently unfinished. Feel free to suggest ideas or changes in the discussion thread, or check out the other characters.");
 						break;
 					}
 					case 3: {
 						writeText("At some point you closed the app and have been started texting " + data.story.friendName + ". Dozens of subjects have flown by, but one in particular is sticking around.");
-						writeSpeech(data.story.friendName, "riley", "IDK. Tryed anal b4, but just hurt. Lots of guides on the internet take a rly long time to follow.");
+						writeSpeech(data.story.friendName, "riley", "IDK. Tryed anal b4, but just hurts mst of the time. Lots of guides on the internet take a rly long time to follow. Candy from lst time was fun tho.");
 						writeSpeech(data.story.name, "player", "You know I could change that with the app right? I've been getting way better at using it.");
 						writeSpeech(data.story.friendName, "riley", "o shit. Good point. I have some ideas thn.");
 						writeText("And she certainly does. You work for almost an hour while she brainstorms over the phone, but eventually you wish her a good night and...");
+						writeSpecial("You've reached the end of the content for this character, future scenes are currently unfinished. Feel free to suggest ideas or changes in the discussion thread, or check out the other characters.");
 						break;
 					}
 					case 4: {
@@ -1150,14 +1156,16 @@ function writeScene(scene) {
 						break;
 					}
 					case 3: {
-						writeSpeech(data.story.name, "player", "I saw "+data.story.friendName+" today. She seemed really down. Is that you?");
-						writeSpeech(data.story.sisterName, "jean", "Probably not? I wouldn't make her depressed, that'd be a major turn off. Plus if I just used the app to get her down, she'd probably get over it by herself.");
-						writeSpeech(data.story.name, "player", "I see. I'll talk to her later.");
-						writeSpeech(data.story.sisterName, "jean", "You go girl! Lemme know if you need a bigger booty for the seduction.");
-						writeSpeech(data.story.name, "player", "I'm going to sleep.");
+						writeSpeech(data.story.name, "player", "I saw "+data.story.friendName+" today. I found out what you did.");
+						writeSpeech(data.story.sisterName, "jean", "Oh yeah? What did you think?");
+						writeSpeech(data.story.sisterName, "jean", "... Hello?");
+						writeSpeech(data.story.name, "player", "I don't know what I think. The situation is complicated, but at least I'm getting to know her now.");
+						writeSpeech(data.story.sisterName, "jean", "No worries, you don't need to thank me yet. Enjoy the (dick)girlfriend experience and get back to me.");
+						writeSpeech(data.story.name, "player", "I'm going to sleep. Good night.");
+						writeSpeech(data.story.sisterName, "jean", "Good night <3");
 						writeText("...");
 						writeText("A bit later, in the adjacent room...");
-						writeSpeech(data.story.sisterName, "jean", "<i>Oh wow, she did a number on that card. And she even thought about giving it to "+data.story.name+" afterwards. Maybe I should give her a chance. Maybe she'll appreciate him in the same way I do? I could always use another toy around the house.<br>I guess it sucks that she's feeling down too.</i>");
+						writeSpeech(data.story.sisterName, "jean", "<i>Oh wow, she did a number on that card. And she even thought about giving it to "+data.story.name+" afterwards. Maybe I should give her a chance. Maybe she'll appreciate him in the same way I do? I could always use another toy around the house...<br>Oh alright fine. But I'll play with her one more time at least.</i>");
 						break;
 					}
 					case 4: {
@@ -1192,13 +1200,13 @@ function writeScene(scene) {
 						writeText("Alright, you've had your fun. "+data.story.teacherName+"'s mouth felt pretty nice, but if you wanted more you could get it from anywhere, and from someone you like more. You want a challenge more than you want another blowjob.");
 						writeText("At this point you set your sights on a lofty goal, one that involves reprogramming your entire class's sense of common sense.");
 						writeText("The work is hard, but engaging. After several hours you lay your phone on the table and you decide to get some rest.");
-						writeSpecial("You've reached the end of the content for this character, future scenes are currently unfinished. Feel free to suggest ideas or changes in the discussion thread, or check out the other characters.");
 						break;
 					}
 					case 3: {
 						writeText("A great success! The entire class watching you bust a nut in the teacher was a huge turn-on. AT this point you don't know what else you could really do.");
 						writeText("You have some photos that you scroll through, admiring your work. One thing that stands out is "+data.story.teacherName+"'s wedding ring. She only ever brings up her husband when she's in a really bad mood.");
 						writeText("Then again, she did seem to enjoy tormenting you in the past. Maybe he's actually a pretty cool guy? You find him in the app and mess with his common sense like you did with the class. The next time you feel like 'experimenting', you'll be doing it at "+data.story.teacherName+"'s house.");
+						writeSpecial("You've reached the end of the content for this character, future scenes are currently unfinished. Feel free to suggest ideas or changes in the discussion thread, or check out the other characters.");
 						break;
 					}
 					case 4: {
@@ -1233,10 +1241,19 @@ function writeScene(scene) {
 						writeSpeech(data.story.sisterName, "jean", "Cmon wasn't it great seeing her get taken down a peg? Or at least a little hot? Those tears weren't the only salty fluid she was leaking if you know what I mean.");
 						writeSpeech(data.story.name, "player", "Hold on are you spying on me? Can the app even do that?");
 						writeSpeech(data.story.sisterName, "jean", "Whaaaaat? Nooooo. You're going crazy from no sleep. Go to bed.");
+						writeSpeech(data.story.name, "player", "Wait");
+						writeSpeech(data.story.sisterName, "jean", "???");
+						writeSpeech(data.story.name, "player", "If you really are into humiliating her, you could at least give back my old dick size.");
+						writeSpeech(data.story.sisterName, "jean", "No.");
+						writeSpeech(data.story.name, "player", "Cmon, this is embarassing!");
+						writeSpeech(data.story.name, "player", "Hello?");
+						writeSpeech(data.story.name, "player", "Sis I know you're still awake! I can hear you over there!");
 						writeText("...");
 						writeText("A bit later, in the adjacent room...");
 						writeText("Though she is stroking herself, "+data.story.sisterName+" can't keep herself erect between fits of laughter.");
 						writeSpeech(data.story.sisterName, "jean", "Haha! Holy shit, that was great. 'It isn't normally like this!' God, that was good. Ahhh, I hate you so much.<br><i>But that was actually pretty nice. Seeing her get emasculated like that in front of my cute little bro... Ah, I'm hard again.</i>");
+						writeText("She starts jerking off again, but eventually your last few texts return to her mind.");
+						writeSpeech(data.story.sisterName, "jean", "<i>He's way cuter than before, but he does have a point. I wonder if I can do conditionals with this thing? I can... Oh, no. That's at least five hours of codewriting, fuck! Wait, hold on. Those candies could do the trick. I'll make her more open to the idea while I try to figure this shit out.</i>");
 						writeSpecial("You've reached the end of the content for this character, future scenes are currently unfinished. Feel free to suggest ideas or changes in the discussion thread, or check out the other characters.");
 						break;
 					}
@@ -1244,10 +1261,13 @@ function writeScene(scene) {
 						writeSpeech(data.story.name, "player", "I'm going to bed. I'm tired.");
 						writeSpeech(data.story.sisterName, "jean", "Alright alright, if you don't want to tell I won't smother you.");
 						writeSpeech(data.story.name, "player", "...What's that supposed to mean?");
-						writeSpeech(data.story.sisterName, "jean", "Nothing. Busy. Gnight.");
+						writeSpeech(data.story.sisterName, "jean", "Nothing at all! What did it Sound like?");
+						writeSpeech(data.story.name, "player", "Alright, now I know you're messing with me.");
 						writeText("...");
 						writeText("A bit later, in the adjacent room...");
-						writeSpeech(data.story.sisterName, "jean", "<i>No no no, it's all wrong! I don't want you in charge, you stupid whore! Fuck, why is it so hard to do conditionals in this thing? It's easier to make her go to the store, and...<br>Huh, that's a pretty neat idea. "+data.story.name+" can stay the cute little girl he was meant to be, and I get to see her face as she breaks down. Yeah, yeah!</i>");
+						writeSpeech(data.story.sisterName, "jean", "<i>Shit... Ow... Ah, fuck. It hurts, but...</i>");
+						writeText("Eventually she stops her experimenting and pulls her finger from her urethra.");
+						writeSpeech(data.story.sisterName, "jean", "<i>This is bullshit. This isn't anywhere near as fun as he made it look. Maybe I need more lube. Or keep trying to mess with the sensitivity. It was so much easier last time.<br>Fuck it, I want a new toy. Sorry bro, but the fat-ass schoolteacher is mine for tomorrow.</i>");
 						break;
 					}
 					case 4: {
@@ -1288,7 +1308,6 @@ function writeScene(scene) {
 					case 2: {
 						writeText("You hadn't expected " + data.story.chefName + " to be so much of a mouth maniac. She was on you the whole time you were at the shop. You didn't mess with her mind too much aside from sprouting a taste for your dilkmilk, maybe she's just naturally orally fixated?");
 						writeText("For now, she's hot and she wants more, so you might as well make it so that she gets more. And her business is already doing pretty well too. Next time you see her, you'll take advantage of that.");
-						writeSpecial("You've reached the end of the content for this character, future scenes are currently unfinished. Feel free to suggest ideas or changes in the discussion thread, or check out the other characters.");
 						break;
 					}
 					case 3: {
@@ -1325,6 +1344,10 @@ function writeScene(scene) {
 						writeSpeech(data.story.sisterName, "jean", "<i>Hell yeah, you go girl! Make him choke on it! Oh shit, wait, he's actually choking!<br>Ah, he's okay. I'll fix up his throat to make sure that doesn't happen next time.</i>");
 						writeText("Furious tapping ensues.");
 						writeSpeech(data.story.sisterName, "jean", "<i>Cmon, you two are my favorite people, can't you get along? Alright "+data.story.chefName+", time to get your head together. You're a strong independent woman who don't need no cocksleeve! Well, maybe a little...</i>");
+						writeText("...");
+						writeSpeech(data.story.sisterName, "jean", "Zzzz");
+						writeText("She's already fallen asleep. She got a sweet tooth, and made "+data.story.chefName+" crave candies too.");
+						writeSpeech(data.story.sisterName, "jean", "Zzzz... Bro... Take it deeper... Zzzz");
 						writeSpecial("You've reached the end of the content for this character, future scenes are currently unfinished. Feel free to suggest ideas or changes in the discussion thread, or check out the other characters.");
 						break;
 					}
@@ -1372,7 +1395,6 @@ function writeScene(scene) {
 						writeText("She even intends to go back to that alley later and try to bump into you again, perfect.");
 						writeText("But unfortunately she isn't completely ready yet. Her location log says she went back into work twice since you fished her out of the gutter. Maybe she intends to only be a part-time meat toilet? Unacceptable! Obviously you need to change her lifelong dream from 'Fortune 500 CEO' to 'STD-immune gutter whore'!");
 						writeText("Playing the villain sometimes is actually pretty fun. Once you get it out of your system, you should...");
-						writeSpecial("You've reached the end of the content for this character, future scenes are currently unfinished. Feel free to suggest ideas or changes in the discussion thread, or check out the other characters.");
 						break;
 					}
 				}
@@ -1572,6 +1594,9 @@ function writeScene(scene) {
 						writeText("You relax onto the living room couch. Simply calling 'Mom' is enough to have her quickly running to respond to you.");
 						writeSpeech(data.story.motherName, "lisa", "Master! You called?");
 						writeText("It's clear that she was just in the middle of deep-cleaning the bathroom. It's probably spotless by now, but she's nothing if not thorough these days.");
+						if (galleryCheck("mom5") == true) {
+							writeSpecial("You've reached the end of the content for this character, future scenes are currently unfinished. Feel free to suggest ideas or changes in the discussion thread, or check out the other characters.");
+						}
 						if (galleryCheck("mom5") == true && galleryCheck("mom6") == true) {
 							writeText("With how much your relationship has changed over these last few days, it seems like she's a totally different person. Thanks to the app, it seems like this is how daily life is going to be from now on.");
 							writeText("She's swallowing dryly as she eyes your crotch. At this point, you can't think of any way you could corrupt her farther.");
@@ -1582,8 +1607,8 @@ function writeScene(scene) {
 							writeTransition("deepCleaning", "Use a Plug Pop");
 						}
 						if (data.story.fruitGushers > 0) {
-							writeText("But you kinda do need to take a piss. You're about to tell her to wait outside, before an idea strikes you.");
-							writeTransition("bathroomBreak", "Eat your Fruit Gushers");
+							//writeText("But you kinda do need to take a piss. You're about to tell her to wait outside, before an idea strikes you.");
+							//writeTransition("bathroomBreak", "Eat your Fruit Gushers");
 						}
 						writeTransition("home", "Go back");
 						break;
@@ -1639,11 +1664,15 @@ function writeScene(scene) {
 							data.story.motherReady = false;
 						}
 						else {
-							writeText("There's an awkward silence when you enter the room. You mother averts her eyes away from you in shame at what she said and did, but she's clearly a lot more relaxed than she was before.");
-							writeText("Your sister said she'd be making some changes, but it doesn't seem like she's done that yet.");
-							if (data.story.friendScore > 3) {
-								writeSpeech(data.story.motherName, "lisa", "One of your friends was wandering around on the lawn. I think her name was "+data.story.friendName+"?");
-							}
+							writeSpeech(data.story.name, "player", "Hey mom, I'm home!");
+							writeSpeech(data.story.motherName, "lisa", "Welcome back! I'm in the kitchen!");
+							writeText("You follow the sound of her voice and find her jacking off over a plate of food.");
+							writeSpeech(data.story.motherName, "lisa", "Ah, I was just finishing your sister's meal. Did you want some milk with yours too, or maybe on your food?");
+							writeText("She thrusts into her fist's grip, and before long her massive pair of swinging balls tighten and spots on her apron begin to darken. There's an audible sound as the head of her dick starts pushing out a long jelly-like rope of cum onto the food.");
+							writeSpeech(data.story.motherName, "lisa", "Hah, hah... I still have more if you'd like some.");
+							writeSpeech(data.story.name, "player", "No thanks, not today. I'll just take the food dry for now.");
+							writeText("She nods with a sweet smile on her face as she picks up a sticky cord of cum that missed the plate and slurps it into her mouth.");
+							writeText("It seems like mom's been pushed as far as she ever will be. She seems content with her new lot in life.");
 							writeTransition("home", "Go back.");
 						}
 						break;
@@ -1767,6 +1796,7 @@ function writeScene(scene) {
 									writeSpeech(data.story.name, "player", "Not right now.");
 									writeText("She's been keeping herself ready for you, and thanks to the plug pop she stays tight. That said, it doesn't seem like she's getting a lot out of her toy these days.");
 									writeText("It might be time to graduate her to the next level, but you'll need something from the exotic store to do that.");
+									writeText("Not only that, but what you have planned is a little extreme for a normal human body. You'll probably want to grab some taffy from the candy shop too.");
 									writeTransition("homeSisterRoom", "Go back");
 								}
 							}
@@ -1972,7 +2002,9 @@ function writeScene(scene) {
 								writeTransition("homePlayerRoom", "Finish for the day");
 							}
 							else {
-								writeText("You don't have what you need right now.");
+								writeSpeech(data.story.friendName, "riley", "Morning! You grab the thing?");
+								writeSpeech(data.story.name, "player", "Not yet, I was gonna head out an buy it in a bit.");
+								writeText("You don't have what you need right now. There's a lot you can do with the app, but if you want this all to run smoothly, you should probably grab something from the candy shop.");
 								writeTransition("school", "Go back");
 							}
 						}
@@ -2093,38 +2125,29 @@ function writeScene(scene) {
 							data.story.friendReady = false;
 						}
 						else {
-							writeSpeech(data.story.name, "player", "Hey, " + data.story.friendName + "? Do you have some time?");
-							writeText("She turns to you, but instead of the usual blush there's just a defeated expression. She seems... Hopeless.");
-							writeSpeech(data.story.friendName, "riley", "Oh, hey "+data.story.name+".");
-							writeSpeech(data.story.name, "player", "On your way to the bathroom again?");
-							writeText("She doesn't answer with words, instead her eyes begin to water slightly.");
-							writeSpeech(data.story.name, "player", "Oh no, sorry! I'm sorry! Hey, come with me, we can talk over there.");
-							writeText("...");
-							writeSpeech(data.story.friendName, "riley", "I just... I just don't feel like doing anything anymore. I really should go, I need to...");
-							writeSpeech(data.story.name, "player", "It's okay. Hey, do you want to come over to my place some time, just to talk?");
-							writeSpeech(data.story.friendName, "riley", "I... I'd like that, thank you. I really need to go now.");
-							writeText("Luckily, it seems like your sister hasn't corrupted " + data.story.friendName + " any further yet.");
-							writeText("...");
-							writeSpeech(data.story.friendName, "riley", "<i>It's going down already? After the first time? Maybe things are changing... He even invited me to his home! I hope his mother doesn't mind all that standing around in her yard I've been doing.</i>");
-							writeTransition("school", "Go back.");
+							writeSpeech(data.story.name, "player", "Hey, " + data.story.friendName + "?");
+							writeSpeech(data.story.friendName, "riley", data.story.name+", hi! How have you been?");
+							writeSpeech(data.story.name, "player", "I've been doing alright, "+data.story.teacherName+"'s classes have been going well so far.<br>You seem a little on edge, you okay?");
+							writeSpeech(data.story.friendName, "riley", "Mhmm! I just, uh...");
+							writeSpeech(data.story.name, "player", "Need to go relieve yourself again?");
+							writeText("She holds down the hem of her skirt as she awkwardly sways from side to side, looking at the floor.");
+							writeSpeech(data.story.name, "player", "It's okay. Hey, we should hang out sometime. I want a chance to really get to know you.");
+							writeSpeech(data.story.friendName, "riley", "Get to know me?");
+							writeSpeech(data.story.name, "player", "Yeah. Just spend some time together and relax.<br>You're uh... Leaking.");
+							writeText("Her face goes bright red as she realizes a splotch of precum has left a dark spot on the front of her skirt. She runs off down the hall.");
+							writeSpeech(data.story.name, "player", "See you around!");
+							writeText("She stops her run to turn back to you, and waves in your direction before taking off again.");
+							writeSpeech(data.story.name, "player", "<i>I wonder how I can get her to relax more around me?</i>");
 						}
 						break;
 					}
 					case 4: {
 						if (data.story.friendReady == true) {
-							if (galleryCheck("friend4S") == false) {
-								writeEvent("friend4S");
-								unlockScene("friend4S");
-								data.story.time = "night";
-								writeTransition("homePlayerRoom", "Finish up for the day");
-							}
-							else {
-								writeEvent("friend5S");
-								unlockScene("friend5S");
-								data.story.time = "night";
-								writeTransition("homePlayerRoom", "Finish up for the day");
-								data.story.friendReady = false;
-							}
+							writeEvent("friend4S");
+							unlockScene("friend4S");
+							data.story.friendReady = false;
+							data.story.time = "night";
+							writeTransition("homePlayerRoom", "Finish up for the day");
 						}
 						else {
 							writeSpeech(data.story.friendName, "riley", ""+data.story.name+"! Hey, "+data.story.name+"!");
@@ -2204,7 +2227,7 @@ function writeScene(scene) {
 							writeSpeech(data.story.name, "player", "Good session today, teach. I feel very educated.");
 							writeSpeech(data.story.teacherName, "kendra", "Ngh... That is it, young man, I am putting my foot down!");
 							writeSpeech(data.story.name, "player", "Excuse me?");
-							writeSpeech(data.story.teacherName, "kendra", "Yes. Fucking me in the middle of class? Interrupting my lecture to stick your fingers in my mouth? All of that is completely fine, but the way you're holding that phone is weakening your wrist strength. That slap was not even half the strength of yesterday's. Here, studies have shown that holding it with your fingers...");
+							writeSpeech(data.story.teacherName, "kendra", "Yes. Fucking me in the middle of class? Broadcasting my voice over the intercome? All of that is completely fine, but the way you're holding that phone is weakening your wrist strength. That slap was not even half the strength of yesterday's. Here, studies have shown that holding it with your fingers...");
 							writeText("...");
 							writeSpeech(data.story.name, "player", "Oh hey, that is more comfortable, thanks.");
 							writeSpeech(data.story.teacherName, "kendra", "Not a problem. Now, I still have homework to g-");
@@ -2231,7 +2254,7 @@ function writeScene(scene) {
 							writeSpeech(data.story.teacherName, "kendra", "Nnn! More!");
 							writeText("Mostly.");
 							writeSpeech(data.story.name, "player", "Your ring?");
-							writeSpeech(data.story.teacherName, "kendra", "Ah, I'm divorcing that piece of trash. It turns out he'd been cheating on me. That, and his new impotence, both leave me with no other choice really.");
+							writeSpeech(data.story.teacherName, "kendra", "Ah, I'm divorcing that piece of sissy trash. It turns out he'd been cheating on me. That, and his new impotence, both leave me with no other choice really.");
 							writeSpeech(data.story.name, "player", "Ah, that makes sense.");
 							writeSpeech(data.story.teacherName, "kendra", "Master, I know this might sound sudden, but-");
 							writeSpeech(data.story.name, "player", "No. You're a used-cumrag right now, and even if you cleaned yourself off you'd be a cumrag on the inside too. I won't take his place.");
@@ -2344,20 +2367,7 @@ function writeScene(scene) {
 							writeSpeech(data.story.name, "player", "Do you really need to be such a bitch in class?");
 							writeSpeech(data.story.teacherName, "kendra", "We need to keep up appearances, and you really did flunk that paper. What sort of useless teacher would I be if I just let you pass because I can't get enough of how you make me feel?");
 							writeText("Luckily, it seems like your sister hasn't corrupted " + data.story.teacherName + " any further yet. While the two of you don't have enough time to get serious with each other, riling her up is enough to convincer her to bump up your grade slightly.");
-							writeText("With the power of the app in your sister's hands, schoolwork isn't a big deal for you. Still, " + data.story.teacherName + " enjoys any chance she can find to get you angry at her.");
-							writeTransition("schoolClassroom", "Go back.");
-						}
-						break;
-					}
-					case 4: {
-						if (data.story.teacherReady == true) {
-							writeEvent("teacher4S");
-							unlockScene("teacher4S");
-							data.story.time = "night";
-							writeTransition("homePlayerRoom", "Finish up for the day");
-							data.story.teacherReady = false;
-						}
-						else {
+							writeText("...");
 							writeSpeech(data.story.teacherName, "kendra", "Have you given any thought to your career lately?");
 							writeText("The seriousness of the topic catches you off guard. You and her had been fooling around a little, mostly you calling her names while she tried to make it seem like you were failing the class.");
 							writeSpeech(data.story.name, "player", "Not... really?");
@@ -2371,6 +2381,33 @@ function writeScene(scene) {
 							writeSpeech(data.story.teacherName, "kendra", "Oh? Hit a nerve? Well, fine is exactly my point. She was a gifted student in everything but discipline. A lot like you. I think you could do better than staying in this city.");
 							writeSpeech(data.story.name, "player", "...");
 							writeSpeech(data.story.teacherName, "kendra", "Haaah... Fuck, the mood is gone. You should be getting home now.");
+							writeTransition("schoolClassroom", "Go back.");
+						}
+						break;
+					}
+					case 4: {
+						if (data.story.teacherReady == true) {
+							writeEvent("teacher4S");
+							unlockScene("teacher4S");
+							data.story.time = "night";
+							writeTransition("homePlayerRoom", "Finish up for the day");
+							data.story.teacherReady = false;
+						}
+						else {
+							writeSpeech(data.story.teacherName, "kendra", "By temporary, I was expecting more 'two hours' and not 'two months'.");
+							writeText("You're holding her overstretched dick in both hands. Hours of play with dildos and taffy have left her urethra gaping wide enough you could fist her down to the prostate.");
+							writeSpeech(data.story.name, "player", "It'll go back to normal once you stop playing with it.");
+							writeSpeech(data.story.teacherName, "kendra", "But I caaan't... I finally find a way to cum on my own, and you want me to just stop?");
+							writeText("As a response, you drop her dick onto the desk. As it hits, she lets out a gutteral moan and her dick oozes precum onto some papers.");
+							writeSpeech(data.story.teacherName, "kendra", "Fuck! Shit, I'll need an excuse for these.");
+							writeText("You respond with a knowing smile, she'll figure something out.");
+							writeSpeech(data.story.name, "player", "Listen, if you want to fix it, you know how. Otherwise, you're already worthless dick will be even more useless.");
+							writeSpeech(data.story.teacherName, "kendra", "I might be a masochist, but this is too far. Just ask the sellers of the candy if there's another way!");
+							writeSpeech(data.story.name, "player", "Wah wah, you big baby. I'm going home. Try not to accidentally fuck your dick with a horse dildo while I'm gone!");
+							writeText("...");
+							writeSpeech(data.story.teacherName, "kendra", "<i>Did he actually notice the imprint of the tip? IS it that obvious?<br>... No, you can't see it. He was just fucking with me.</i>");
+							writeText("It seems like " + data.story.teacherName + " has been pushed as far as she ever will be. So long as she's careful, she should have a fun life ahead of her.");
+							
 							writeTransition("schoolClassroom", "Go back.");
 						}
 						break;
@@ -2392,19 +2429,6 @@ function writeScene(scene) {
 							writeTransition("schoolClassroom", "Go back.");
 						}
 						else {
-							writeSpeech(data.story.teacherName, "kendra", "By temporary, I was expecting more 'two hours' and not 'two months'.");
-							writeText("You're holding her overstretched dick in both hands. Hours of play with dildos and taffy have left her urethra gaping wide enough you could fist her down to the prostate.");
-							writeSpeech(data.story.name, "player", "It'll go back to normal once you stop playing with it.");
-							writeSpeech(data.story.teacherName, "kendra", "But I caaan't... I finally find a way to cum on my own, and you want me to just stop?");
-							writeText("As a response, you drop her dick onto the desk. As it hits, she lets out a gutteral moan and her dick oozes precum onto some papers.");
-							writeSpeech(data.story.teacherName, "kendra", "Fuck! Shit, I'll need an excuse for these.");
-							writeText("You respond with a knowing smile, she'll figure something out.");
-							writeSpeech(data.story.name, "player", "Listen, if you want to fix it, you know how. Otherwise, you're already worthless dick will be even more useless.");
-							writeSpeech(data.story.teacherName, "kendra", "I might be a masochist, but this is too far. Just ask the sellers of the candy if there's another way!");
-							writeSpeech(data.story.name, "player", "Wah wah, you big baby. I'm going home. Try not to accidentally fuck your dick with a horse dildo while I'm gone!");
-							writeText("...");
-							writeSpeech(data.story.teacherName, "kendra", "<i>Did he actually notice the imprint of the tip? IS it that obvious?<br>... No, you can't see it. He was just fucking with me.</i>");
-							writeText("It seems like " + data.story.teacherName + " has been pushed as far as she ever will be. So long as she's careful, she should have a fun life ahead of her.");
 							writeTransition("schoolClassroom", "Go back.");
 						}
 						break;
@@ -2545,6 +2569,8 @@ function writeScene(scene) {
 						else {
 							writeSpeech(data.story.chefName, "ava", data.story.name + "! It's so good to see you. I don't need any help right now actually, what can I do for you?");
 							writeText("Luckily, it seems like your sister hasn't corrupted " + data.story.chefName + " any further yet.");
+							writeSpeech(data.story.name, "player", "How have sales been lately?");
+							writeSpeech(data.story.chefName, "ava", "Oh they've been through the roof lately. That candy you gave me last time is still having a bit of effect, I've needed more breaks than usual to jerk off. I even came on one of the patrons, it was so embarrassing but we had a laugh about it before his wife cleaned him off.<br>Now, what can I get for my special little helper?");
 							writeTransition("streetsRestaurant", "Have the usual and leave.");
 						}
 						break;
@@ -2552,7 +2578,6 @@ function writeScene(scene) {
 					case 4: {
 						if (data.story.chefReady == true) {
 							writeSpeech(data.story.chefName, "ava", data.story.name + "! It's good to see you. What can I get you?");
-							writeText("You catch her staring at your mouth as she speaks, but she at least tries to act professionally.");
 							writeText("You could volunteer to help, but you can't help but feel like deepthroating her for hours would be less fun than it sounds.");
 							if (data.story.caramelMelts > 0) {
 								writeTransition("enjoyingTheWork", "Show her the Caramel Melt");
@@ -2563,7 +2588,8 @@ function writeScene(scene) {
 							writeTransition("streetsRestaurant", "Go back");
 						}
 						else {
-							writeSpeech(data.story.chefName, "ava", data.story.name + "! It's so good to see you. I don't need any help right now actually, what can I do for you?");
+							writeSpeech(data.story.chefName, "ava", data.story.name + "! It's so good to see you. I don't need any help right now actually, what can I do for you?<br>Sales volumes have been keeping pretty steady lately, and I'm able to keep up with demand now thanks to your help!");
+							writeText("You catch her staring at your mouth as she speaks, but she at least tries to act professionally.");
 							writeText("It seems like she's been pushed as far as she ever will be.");
 							writeTransition("streetsRestaurant", "Have the usual and leave.");
 						}
@@ -3024,7 +3050,6 @@ function writeScene(scene) {
 		case "exoticSpecial2": {
 			writeEvent("misc2");
 			unlockScene("misc2");
-			writeSpecial("Unlocked a new scene in the gallery!");
 			writeTransition("streetsExoticShop", "Go back");
 			break;
 		}
@@ -4293,6 +4318,101 @@ function writeEvent(scene) {
 			writeSpeech(data.story.motherName, "lisa", "Dinner's ready.");
 			break;
 		}
+		case "mom4": { 
+			writeText("You return home to a quiet house.");
+			writeSpeech(data.story.name, "player", "I'm hooome~");
+			writeText("Nothing. Maybe mom and "+data.story.sisterName+" are out? You search around for a bit, and find the door to mom's room open.");
+			writeText("She's asleep in her bed inside wearing close to nothing, a sign of how far her modesty has fallen.");
+			writeText("You walk in, shutting the door behind you. This is just as good a situation as any to give her a taste of her own medicine.");
+			writeText("Without hesitation, you grab onto her thong and start pulling it down her legs.");
+			writeSpeech(data.story.motherName, "lisa", "...Hmm? Huh?<br>Master? What are you doing?");
+			writeSpeech(data.story.name, "player", "I'm getting even for the fun you had last time.");
+			writeSpeech(data.story.motherName, "lisa", "What?<br>Hold on-");
+			writeText("You press the head of your dick against her cuntlips. Despite her protests, she's starting to get pretty wet.");
+			writeSpeech(data.story.motherName, "lisa", "Wait, please stop.");
+			writeText("She places her hand on your cheek. You hesitate for a bit as she locks eyes with yours.");
+			writeSpeech(data.story.motherName, "lisa", data.story.name+", listen. Things have been going crazy these last few days, and we've crossed more lines than we should have. But you don't really want this, do you? You don't want to fuck your own mother, right?");
+			writeBig("images/real/general/mom4-1.gif");
+			writeText("She's caught off guard as you thrust into her. She doesn't try to resist despite her spiel.");
+			writeSpeech(data.story.motherName, "lisa", "Ooooh~<br><i>My... My own son...</i>");
+			writeSpeech(data.story.name, "player", "Oh? Done protesting? Are you sure you don't want me to stop?");
+			writeSpeech(data.story.motherName, "lisa", "Ngh, no...");
+			writeText("Her voice is hesitant, but she wraps her legs around to to keep you inside.");
+			writeSpeech(data.story.name, "player", "Hmm? Didn't catch that.");
+			writeSpeech(data.story.motherName, "lisa", "Stay inside me! Treat me like your cocksock!");
+			writeBig("images/real/general/mom4-2.gif");
+			writeSpeech(data.story.motherName, "lisa", "Ouh god! Cumming! I'm cumming from my son's jizz!");
+			writeText("You don't stop thrusting even as you cum, and you keep pumping into her.");
+			writeSpeech(data.story.motherName, "lisa", "Ngh I'm gonna break! More!");
+			writeText("You can feel a second orgasm coming on, you'll make sure to cum inside again just to make sure this sticks.");
+			writeText("You start pumping jizz into her again, your refractory period much shorter thanks to the app.");
+			writeText("You start to slow down as her arms, wrapped around you, go slack.");
+			writeBig("images/real/general/mom4-3.gif");
+			writeText("As you pull out, globs of cum start to leak out of her, but not even close to all of it is spilling out.");
+			writeText("She's panting, but lowers a hand down to her snatch and starts fingering some of the spilt cum back inside her.");
+			writeSpeech(data.story.name, "player", "No need for that, there's plenty more where that came from.");
+			break;
+		}
+		case "mom5": {
+			writeText("You shoo her out for a moment and quickly use the bathroom. She's only just started anyways.");
+			writeSpeech(data.story.name, "player", "Hey, how long do you think you'll be at this?");
+			writeSpeech(data.story.motherName, "lisa", "Awhile at least. I'll need to get the shower, the tiles underneath the sink, the-.");
+			writeSpeech(data.story.name, "player", "I'll let you get to that then. I'm feeling kind of out of it, so I'll be taking a nap.");
+			writeSpeech(data.story.motherName, "lisa", "Alright, I hope you feel better master.");
+			writeText("...");
+			writeText("You unwrap the plug pop. For your fun, you'll need to have it inserted for about and hour.");
+			if (data.story.bodytype == 1) {
+				writeText("You do so, it leaves you feeling minty fresh on the inside, and you take a nap while it goes to work.");
+				writeText("Once you wake up you remove the plug. Your asshole is clean, soft, and a lot puffier than before. ");
+			}
+			else {
+				writeText("Taking a breath to steel yourself, you press the cool candy buttplug against your asshole.");
+				writeText("You slowly push it in, it isn't painful at all. The candy's material is so smooth it glides in with hardly any friction.");
+				writeText("There's a strange rush of feeling as the plug rests firmly in place. It feels like the cool sensation of a piece of mint gum, but in your rectum.");
+				writeText("It's actually pretty relaxing. You prod at your flaccid dick and enjoy the sensation, but it distracts from the tingling inside of you.");
+				writeText("You lay down on the bed, enjoying the friendly butterflies in your stomach.");
+				writeText("...");
+				writeText("You fell asleep, and by the time you wake up it's been well over an hour.");
+				writeText("Groggily, you sit up. The plug is still inside you, but seems a lot smaller than before.");
+				writeText("You turn over on the bed and go to pull it out, but just touching it sends a bolt of sensation along your spine.");
+				writeText("Your dick is still completely soft, but a small bead of precum leaks out of the tip.");
+				writeText("Going for broke, you grasp the handle and pull out the plug in a swift, but careful motion.");
+				writeText("You need to grit your teeth as the plug pops out, and there's a strange, but not uncomfortable pressure at the base of your dick.");
+				writeText("The plug is much smaller now, so you toss it over into the garbage can. The pressure in your groin is faded, and as you poke your dick it goes away completely. It's still the same as ever, the changes are localized elsewhere.");
+				writeText("You position yourself near the mirror to get a good look at the change. Your asshole is now puffy and soft, and is completely clean.");
+				writeText("You poke it, your finger barely depressing the soft donut-shaped hole. It feels incredible, like you could start rubbing it and cum harder than if you jerked off.");
+				writeText("You start rubbing your finger around your butthole in circles, the pressure quickly building up.");
+				writeText("You don't try to hold it back, and a very feminine moan comes out as you squirt a stream of clear precum out of your flaccid dick from rubbing your sensitive asshole.");
+				writeText("It isn't even close to enough, you could do this all day, but you have something more fun in mind planned.");
+			}
+			writeText("...");
+			writeText("You push open the door to the bathroom.");
+			writeSpeech(data.story.motherName, "lisa", "Oh, good morning! I just finished actually, let me scoot out-");
+			writeText("You place a hand on her shoulder to stop her.");
+			writeSpeech(data.story.name, "player", "No. I'm here for relief. On your knees, open your mouth.");
+			writeText("She obeys without question. As you take of your clothes she gets down on her knees and opens her mouth, letting her tongue hang out as she closes her eyes.");
+			writeSpeech(data.story.motherName, "lisa", "Aaaah-Aah!?");
+			writeText("There's suprise in her voice as you press your asshole instead of your dick against her tongue.");
+			writeSpeech(data.story.name, "player", "Come on. You're here for my relief, right?");
+			writeText("Once the suprise wears off, she gets with the program, slowly licking the puffy rim of your ass.");
+			writeBig("images/real/general/mom5-1.gif");
+			writeSpeech(data.story.motherName, "lisa", "<i>Oh god, I'm licking my own son's asshole, and it tastes good... I'm a fucking pervert!</i>");
+			writeText("Her tongue feels incredible, she's hesitant at first but really starts getting enthusiastic as she realizes how much she loves this.");
+			writeText("You let out a shuddering moan as your flaccid dick begins to start liberally leaking out clear precum onto the freshly-cleaned floor. You spread your legs to allow her better access to your asshole.");
+			writeText("She pulls back from your ass for a second, sticking a hand into her soaked yoga pants.");
+			writeSpeech(data.story.motherName, "lisa", "Fuck, master, you taste so good!");
+			writeText("She takes a deep breath of your ass, and lets it out in a shuddering moan. Soon enough her tongue is back inside your ass, her free hand wrapping around your dick to start jerking you off.");
+			writeText("The combined sensations cause your stream of precum to turn into spurts of actual cum.");
+			writeSpeech(data.story.name, "player", "F-fuuuck");
+			writeText("Once she realizes your cum is leaking out, she stops fingering herself and starts letting the cum pool in her pussyjuice soaked hand, never missing a beat between tonging your asshole and stroking your dick.");
+			writeText("Your cum just doesn't stop, your prostate working in overdrive as the cum overflows in her hand. She carefully lowers her cum-coated fingers back into her pants and starts fingering herself again, and it doesn't take to look before she's squirting herself silly in the middle of her rimjob.");
+			writeSpeech(data.story.motherName, "lisa", "Fuck! I'm fingering my son's cum into my pussy while eating his ass! <br>Cumming~!");
+			writeText("As you reach a full minute of nonstop cumming, you need to bend over onto the sink to support yourself.");
+			writeText("Your vision is starting to blur, the pleasure is getting to be too much. You reach over and push her head away from your ass. She's panting like a bitch in heat, desperate to keep tasting your asshole.");
+			writeText("You push her back and she starts coming to her senses, still audibly fingering your cum into her snatch.");
+			writeText("You're more waddling than walking as you make your way back to your room. You need some rest as soon as possible.");
+			break;
+		}
 		case "sister1": {
 			writeSpeech(data.story.sisterName, "jean", "Different? Nah, I feel fine. Is your head screwed on right?");
 			writeText("You'd been eager to see how your sister had changed as a result of the app, but when you'd seen her earlier she looked fine. Even now she doesn't seem any different. It looks like you'll need to try again.");
@@ -4371,6 +4491,76 @@ function writeEvent(scene) {
 			writeText("She nods her head up and down as you start pumping jizz into her colon while she squirts all over her bed.");
 			writeText("Once you finish, you pull out and rub yourself clearn with her face and start walking out.");
 			writeSpeech(data.story.name, "player", "Clean yourself up, it's almost dinner. I might need to use you again later, jizz-mop.");
+			break;
+		}
+		case "sister4": {
+			writeText("You leave out the plug for her to find. It takes a while to work, so you'll find some way to pass the time.");
+			writeText("...");
+			writeSpeech(data.story.name, "player", "Hey, have you seen "+data.story.sisterName+" anywhere?");
+			writeSpeech(data.story.motherName, "lisa", "I think she took her bike out for a ride. She seemed excited to get outside for once.");
+			writeSpeech(data.story.name, "player", "Huh, that's kind of weird. Thanks.");
+			writeText("She usually doesn't go outside unless she needs to these days. You go back up to her room and find that the plug is gone, so she definitely saw and took it.");
+			writeText("Out of the window you can see her arriving, so you head out to greet her.");
+			writeText("She's flush and beaming, even though she hasn't even worked up a sweat.");
+			writeSpeech(data.story.name, "player", "You have a nice ride?");
+			writeText("Instead of answering she looks from side to side to make sure no one else is watching, then turns around and bends over.");
+			writeBig("images/real/general/sister4-1.gif");
+			writeSpeech(data.story.sisterName, "jean", "I didn't want to just sit in my room all day~<br>At first it was big enough to give me a little bump on my belly, but I think it's shrunk now.");
+			writeText("The sight of the plug in her asshole is open for all to see.");
+			writeText("You aren't interested in sharing it though, or in fucking on the sidewalk, so the two of you head back inside.");
+			writeText("Your mom asks how "+data.story.sisterName+"'s ride went, but a slap on "+data.story.sisterName+"'s ass gets her back to hurrying into her room instead of answering.");
+			writeText("...");
+			writeSpeech(data.story.name, "player", "Take it out and lift your ass up.");
+			writeText("You shut the door behind you as you give the order.");
+			writeBig("images/real/general/sister4-2.gif");
+			writeSpeech(data.story.sisterName, "jean", "Oooh god, it's so sensitive now...");
+			writeText("She starts teasing herself with the plug, drawing little circles on her rim before she thrusts the tip in and out.");
+			writeSpeech(data.story.sisterName, "jean", "Hoooly shit... I bet my brain would break if you fucked my ass right now...<br>Ah! So rou-Mphh!");
+			writeText("You push her down and grab the plug from her hand and shove it into her mouth. It isn't meant for oral use, but you don't give a fuck right now.");
+			writeBig("images/real/general/sister4-3.gif");
+			writeSpeech(data.story.sisterName, "jean", "MMPPH!");
+			writeText("Her asshole is plump and smooth now thanks to the toy, enough that you can thrust in and out without any lube. She's enjoying this too, probably a lot more than she should as she sucks on the plug.");
+			writeText("At this point her ass has been remodeled into a hole made for your pleasure, you can feel every squeeze as you slam your hips against her cheeks.");
+			writeSpeech(data.story.name, "player", "Fucking tease, take it!");
+			writeText("With one more big slam you start to cum, still roughly fucking her as you do.");
+			writeText("You pull the plug out of her mouth with a *POP!*");
+			writeText("It really wasn't meant for this sort of use. Her lips have been plumped up and she's drooling, her mind probably gone from the brutal assfuck she just got.");
+			writeText("You toss the plug into the trash, ready for round two even if she isn't.");
+			break;
+		}
+		case "sister5": {
+			writeText("You hum loudly as you enter the room as though you were a king's procession, and drop the massive horsecock dildo onto the foot of "+data.story.sisterName+"'s bed.");
+			writeSpeech(data.story.name, "player", "Sis, meet your new best friend.");
+			writeText("She pulls her ass off the dildo stuck to the wall. At this point she probably either sleeps with the dildo inside of her, or she keeps it stuck to the bedframe a few inches above where her head would be at night.");
+			writeText("She hefts up the horsecock, unable to wrap her fingers around it, and swallows dryly.");
+			writeSpeech(data.story.sisterName, "jean", "I... Uh...");
+			writeText("You toss her the taffy packet.");
+			writeSpeech(data.story.name, "player", "This'll help you stretch to fit it, no risk of tearing.");
+			writeText("She takes a moment to comprehend, but quickly puts down the dildo and tears open the packaging.");
+			writeText("At this point her ass is so hungry she was considering impaling herself on the dildo even though it was thicker than her calf.");
+			writeSpeech(data.story.sisterName, "jean", "How long does it take to kick in?");
+			writeSpeech(data.story.name, "player", "Dunno. Give it a minute at least.");
+			writeText("...");
+			writeText("The credits roll on an episode of Tokyo Pop, twenty minutes have passed. "+data.story.sisterName+" straightens out, noting that her body is a lot more flexible than before.");
+			writeText("With a thud you plant the horsecock onto the floor, content to just watch this time.");
+			writeSpeech(data.story.name, "player", "Y'know, there's something pretty satisfying about just watching. It's hot in a different way when I'm seeing things without my dick in something.");
+			writeSpeech(data.story.sisterName, "jean", "Weirdo.");
+			writeText("She giggles, then straddles the over-a-foot-long horsecock.");
+			writeSpeech(data.story.sisterName, "jean", "Nnnngh~");
+			writeText("You can see the deformation of her abdoment before the dildo is even halfway inside of her. At this point, she might as well be fucking herself on a baseball bat.");
+			writeSpeech(data.story.sisterName, "jean", "Gghhh, fuck this is huge.");
+			writeText("You reach out and rub the distension, enjoying her quivering as you massage the bulge of the horsecock.");
+			writeText("She's panting now, barely adjusted to the massive intrusion remodeling her asshole and rectum.");
+			writeText("Slowly sliding down, she bottoms out. The dick is so long it needs to bend near the top to conform to her intestines.");
+			writeSpeech(data.story.sisterName, "jean", "Fuck... I can fucking taste it, holy shit.");
+			writeText("She sounds like she's already on the edge as she rubs the bulge only a few inches below her ribcage, before she starts standing back up off of it.");
+			writeSpeech(data.story.sisterName, "jean", "Nnnnngh~!");
+			writeText("You can see her pussy clench as she has her first of many orgasm of the day, all of which will be caused by a massive piece of plastic horse dick ruining her asshole.");
+			writeText("...");
+			writeBig("images/real/general/sister5-1.gif");
+			writeSpeech(data.story.sisterName, "jean", "Fuck, fuck, fuck~!");
+			writeText("You're intently watching as her pussy begins to spasm for the twelfth time in the last hour. It's a slow burn of pleasure, not the quick pounding she's used to.");
+			writeText("She'll have time to adjust soon enough. Once her legs give out, you'll be helping her learn to adjust to a faster pace. She won't be walking for the rest of the day, that's for sure. ");
 			break;
 		}
 		case "friend1": {
@@ -4464,6 +4654,31 @@ function writeEvent(scene) {
 			writeSpeech(data.story.friendName, "riley", "Sure, that sounds great.");
 			break;
 		}
+		case "friend3": {
+			writeText("The two of you chat for a bit, but the real goal of the day for both of you is to head off to her place right away.");
+			writeText("...");
+			writeSpeech(data.story.name, "player", "So, you ready?");
+			writeSpeech(data.story.friendName, "riley", "Yeah. I've just never been super into anal, y'know?");
+			writeSpeech(data.story.name, "player", "Hey don't worry. At the very least this'll make sure you have a great time.");
+			writeText("She nods as she unwraps the caramel melt, before popping it into her mouth and munching.");
+			writeSpeech(data.story.friendName, "riley", "...I's hoowey.");
+			writeSpeech(data.story.name, "player", "It says it should kick in immediately.");
+			writeText("She swallows, and lifts a hand to her throat before swallowing again.");
+			writeSpeech(data.story.friendName, "riley", "Ho-ho boy.");
+			writeText("She's taking slow, deep breaths through mouth and squirming, rubbing her legs together.");
+			writeSpeech(data.story.name, "player", "Here, lemme see.");
+			writeText("You hold up a finger and she takes it into her mouth. You start rubbing it against against the back of her throat, but instead of gagging, she starts moaning, and you can see her erection tent her skirt as she begins to suck on your digit.");
+			writeSpeech(data.story.name, "player", "Alright, time for training to begin.");
+			writeText("...");
+			writeBig("images/real/general/friend3-1.gif");
+			writeText("Fifteen minutes in and there's no trace of a dislike of anal. If anything, there's a strong hatred of breathing as she starts taking down your cock again.");
+			writeText("You've had to grab her by the hair a few times now, not to thrust, but to keep her from choking herself on your dick. Each time you push her back, she slides down onto her dildo.");
+			writeText("There aren't any tears or running mascara, but she'll probably still be tasting dick on her tongue tomorrow morning. You let go once she's taken another breath and she resumes fucking her face on your cock.");
+			writeBig("images/real/general/friend3-2.gif");
+			writeText("The dildo isn't even necessary. She's squirting out another load from her untouched dick almost completely from the feeling of the throatfucking.");
+			writeText("The candy is supposed to have a mild residual effect after it wears off, so you can probably mark this down as a success.");
+			break;
+		}
 		case "teacher1": {
 			writeText("You walk up to " + data.story.teacherName + "'s desk after everyone else has left. She pretends like she doesn't notice you, trying not to bother you in any way.");
 			writeSpeech(data.story.name, "player", "It's fine, I'm not busy right now.");
@@ -4547,6 +4762,36 @@ function writeEvent(scene) {
 			writeText("Her voice is weak and scratchy, but loyal. That should be enough for today.");
 			break;
 		}
+		case "teacher3": {
+			writeSpeech(data.story.teacherName, "kendra", "Alright. D-gngh... Daniel, do you have an answer?");
+			writeText("The student needs to speak up to be heard over the sound of flesh slapping flesh.");
+			writeSpeech(data.story.teacherName, "kendra", "Nngh... Very... Very good.");
+			writeBig("images/real/general/teacher3-1.gif");
+			writeSpeech(data.story.teacherName, "kendra", "Gnngh~...");
+			writeText("A few of the students seem worried, one even asks if she's okay.");
+			writeSpeech(data.story.teacherName, "kendra", "Cumming~!<br>...C-coming to to my senses, I mean. I'm fine.");
+			writeText("She's barely able to stand, and needs to support herself on her desk as you rail her from behind.");
+			writeText("Having had their perception changed by the app, not one realizes what's actually happening as you're fucking the teacher right in front of them.");
+			writeText("From their perspective, "+data.story.teacherName+" is writhing on the spot, her clothes are disheveled, and she's grunting suggestively giving them all mixed feelings. ");
+			writeSpeech(data.story.name, "player", "How does it feel? Is being made into a bitch in front of your class making you cum?");
+			writeBig("images/real/general/teacher3-3.gif");
+			writeText("Her perception has been altered too, she can't hear or see you. Her clenching pussy is enough of an answer though.");
+			writeText("One student comes up to the desk, asking if she spilt a water bottle.");
+			writeSpeech(data.story.name, "player", "Nope! She's squirting in front of all of you right onto the carpet!");
+			writeSpeech(data.story.teacherName, "kendra", "Yes, my apologies Tommy. I think we'll need to dismiss class early today.");
+			writeText("This sort of freedom is intoxicating. You can say or do anything you want, and nobody notices!");
+			writeText("You slam "+data.story.teacherName+" down onto the desk tits-first and get back to getting off. The class awkwardly shambles out of the room as she starts to lose control of her voice.");
+			writeText("You figure you can get a full day of fun out of this bit before you get bored.");
+			writeText("...");
+			writeBig("images/real/general/teacher3-2.gif");
+			writeSpeech(data.story.teacherName, "kendra", "Oh god, I'm cumming again~!");
+			writeText("There's a bang at the door before the principle forces his way in. He's confused at the situation, unable to see or hear you, but he's pretty pissed that "+data.story.teacherName+" has been broadcasting her moans over the intercom.");
+			writeSpeech(data.story.teacherName, "kendra", "I'm sorry! I don't know what's happening!");
+			writeText("Alright, this is more trouble than it's worth. Once you're finished, you pull out of "+data.story.teacherName+" and leave her lying on the desk. You easily walk past the principle, who is screaming bloody murder about firing her.");
+			writeText("She's been a bitch to you, but you actually feel bad for a moment. She's facing joblessness, maybe even homelessness. She could use at least one break.");
+			writeText("So you turn the app on the principle, crank up his lust and infidelity, and walk out the door.");
+			break;
+		}
 		case "chef1": {
 			writeText("You wave over to " + data.story.chefName + " once you've taken a seat. The cafe is pretty busy today, but she still comes straight over to you");
 			writeSpeech(data.story.chefName, "ava", data.story.name + "! Thank goodness. I'm really sorry to ask this, but-");
@@ -4618,6 +4863,29 @@ function writeEvent(scene) {
 			writeBig("images/real/general/deepthroatFinish4.gif");
 			writeSpeech(data.story.name, "player", "So, you believe me now?");
 			writeText("She doesn't respond with words. Instead, she licks her lips and moves back in for round 2.");
+			break;
+		}
+		case "chef3": {
+			writeSpeech("Tired College Student", "scripts/gamefiles/none.png", "What the hell? Closed? In the middle of the day?<br>Man, come on, I need my coffee!");
+			writeText("The man knocks on the glass door a few time, but no one answers.");
+			writeSpeech("Tired College Student", "scripts/gamefiles/none.png", "Fuck... Guess nobody's here.");
+			writeText("...");
+			writeBig("images/real/general/chef3-1.gif");
+			writeText("Meanwhile, inside the store " +data.story.chefName+ " is a little distracted.");
+			writeSpeech(data.story.name, "player", "We've run through your entire supply of condoms, isn't it about time to stop?");
+			writeSpeech(data.story.chefName, "ava", "No! More~!");
+			writeSpeech(data.story.name, "player", "I'm going to cum inside of you unprotected, is that what you want?");
+			writeSpeech(data.story.chefName, "ava", "Yes! Pump me full of jizz until it starts squirting out of me!");
+			writeSpeech(data.story.name, "player", "Fine, take it then, slut!");
+			writeSpeech(data.story.chefName, "ava", "Nggh~! Yes yes yes!");
+			writeText("...");
+			writeBig("images/real/general/chef3-2.gif");
+			writeSpeech(data.story.chefName, "ava", "*Mwah*<br>Come on, just one more time?");
+			writeSpeech(data.story.name, "player", "Nnn, no, I can't...");
+			writeSpeech(data.story.chefName, "ava", "Please? It tastes so good, I just want one more.");
+			writeSpeech(data.story.name, "player", "Alright FINE!");
+			writeText("You grab her by the hair and start jackhammering into her. Her eyes roll back into her head as glurking sounds fill the shop.");
+			writeText("On the tables are the numerous used condoms, snacks for her to enjoy later. You really do spoil her too much.");
 			break;
 		}
 		case "office1": {
@@ -4696,6 +4964,30 @@ function writeEvent(scene) {
 			writeText("Wordlessly, you free her from her bindings as she has another orgasm from the feeling of how gaped she is. Two dicks at once will do that to a whore.");
 			writeText("She's babbling, maybe in a dream right now talking about how she'll be the one to run this town.");
 			writeText("She's clearly lost her mind at this point. What she does from now on is her prerogative.");
+			break;
+		}
+		case "office4": {
+			writeText("You're walking through the alleyway when something neat catches your eye, and you stop to check it out.");
+			writeSpeech(data.story.name, "player", "Whoa, a gloryhole!");
+			writeBig("images/real/general/office2-1.gif");
+			writeText("There's several holes of varying sizes lined up side by side, with a familiar set of lips being visible through one.");
+			writeText("This is the first time you've ever seen a real one, you almost want to use it.");
+			writeText("That said, you can get head whenever you want. The idea of sticking your dick in a public cocksucker's mouth also doesn't seem very sanitary. You hear someone coming down the alleyway behind you, so you turn a corner and head to the other side of the hole for a better view.");
+			writeText("...");
+			writeBig("images/real/general/office4-2.gif");
+			writeSpeech(data.story.officeName, "alexis", "Glrk, glrk, glrk");
+			writeText(data.story.officeName+" is taking these dicks like a champ, you knew it'd be a lot hotter watch from this side. Even while she's sucking on one, she's aligning another with her ass to pleasure both at once.");
+			writeText("This must've taken actual construction work to make. Maybe she's been funneling her paycheck into installing a gloryhole fixture?");
+			writeText("She doesn't even check to see if anyone's paying her before she starts taking stranger dick in her ass. Speaking of which...");
+			writeSpeech(data.story.name, "player", "Hey, you don't mind if you take a some cash from your donation box, yeah?");
+			writeText("She lifts a middle finger at you, but is too occupied taking dick to stop you.");
+			writeSpeech(data.story.name, "player", "Hey, just keep fucking if it's fine.");
+			writeText("You can actually see the look of indecisiveness in her eyes as she weighs going without a cock in her mouth for five seconds versus losing revenue. But once the dick she's sucking starts cumming, she's made her choice. She deepthroats the entire length while still making sure to please the cock in her ass with a nice assfuck rhythm.");
+			writeText("You grab some bills and, after taking a few moments more to enjoy the show, decide to leave.");
+			writeSpecial("You 'earned' $20!");
+			if (data.story.currentScene != "gallery") {
+				data.story.money +=20;
+			}
 			break;
 		}
 		case "misc1": {
@@ -4830,9 +5122,9 @@ function writeEvent(scene) {
 			}
 			break;
 		}
-		case "misc5": { //To-do for next update
-			break;
-		}
+		//case "misc5": { //To-do for next update
+			//break;
+		//}
 		//Sub route
 		case "misc1S": {
 			writeText("The soothing water of the bath is exactly what you needed, and after only a few minutes soaking your fatigue has floated away. As you soak you can feel the thought of the terms of service drift farther and father from the front of your mind.");
@@ -4955,7 +5247,10 @@ function writeEvent(scene) {
 			writeDrawn("images/drawn/aya/mom2-6.jpg", "Art by Aya");
 			writeText("She pulls the sides of the condom up until it slides off, and holds the cum balloon between two pinched fingers.");
 			writeSpeech(data.story.sisterName, "jean", "Here's your reward, piggy.");
-			writeText("She drops the filled condom into your mother's waiting hands. You take the opportunity to leave, feeling sticky in your clothes. As you leave, you can hear the sounds of loud, shameless slurping behind you.");
+			writeText("She drops the filled condom into your mother's waiting hands, and you take the opportunity to leave, feeling sticky in your clothes. As you leave, you can hear the sounds of loud, shameless slurping behind you.");
+			writeSpeech(data.story.sisterName, "jean", "Bro? Where are you going?");
+			writeText("...");
+			writeText("There are a few knocks on your door afterwards, but you aren't insterested in talking right now.");
 			break;
 		}
 		case "sister1S": { 
@@ -5170,6 +5465,23 @@ function writeEvent(scene) {
 			writeText("With one splurt after another, the toilet begins to overflow as her balls rhythmically tighten and relax like clockwork.");
 			writeText("...");
 			writeText("Back in the classroom, you volunteered to take over " + data.story.friendName + "'s cleaning she'd shirked. Hopefully she'll pay you back another day by telling you what she'd meant to say before.");
+			break;
+		}
+		case "friend5S": {
+			writeText("...");
+			writeSpeech(data.story.name, "player", "Hey, " + data.story.friendName + "? Do you-");
+			writeText("She turns to you, but instead of the usual blush there's just a defeated expression. She seems... Hopeless.");
+			writeSpeech(data.story.friendName, "riley", "Oh, hey "+data.story.name+".");
+			writeSpeech(data.story.name, "player", "On your way to the bathroom again?");
+			writeText("She doesn't answer with words, instead her eyes begin to water slightly.");
+			writeSpeech(data.story.name, "player", "Oh no, sorry! I'm sorry! Hey, come with me, we can talk over there.");
+			writeText("...");
+			writeSpeech(data.story.friendName, "riley", "I just... I just don't feel like doing anything anymore. I really should go, I need to...");
+			writeSpeech(data.story.name, "player", "It's okay. Hey, do you want to come over to my place some time, just to talk?");
+			writeSpeech(data.story.friendName, "riley", "I... I'd like that, thank you. I really need to go now.");
+			writeText("Luckily, it seems like your sister hasn't corrupted " + data.story.friendName + " any further yet.");
+			writeText("...");
+			writeSpeech(data.story.friendName, "riley", "<i>It's going down already? After the first time? Maybe things are changing... He even invited me to his home! I hope his mother doesn't mind all that standing around in her yard I've been doing.</i>");
 			break;
 		}
 		case "teacher1S": {

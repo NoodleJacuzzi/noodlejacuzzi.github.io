@@ -43,7 +43,7 @@ var misc5 = {
 }
 var data = {
 	story: {
-		name: "You", 
+		name: "You", version: 0.7,
 		currentScene: "start", money: 20, route: "dom", skill: 0, playingGame: false,
 		popRocks: 0, caramelMelts: 0, plugPops: 0, stretchyTaffy: 0, fruitGushers: 0, 
 		vrMachine: false, princessGame: false, zombieGame: false, laptop: false, creamer: false, doll: false, toy: false, horse: false, onahole: false,
@@ -125,7 +125,6 @@ var data = {
 		{index: 'chef1', name: "Creamer", unlocked: false, hint: 'Coffee shop owner corruption level 1. Requires Creamer. Talk to her during the day.'},
 		{index: 'chef2', name: "From the Tap", unlocked: false, hint: 'Coffee shop owner corruption level 2. Talk to her during the day.'},
 		{index: 'chef3', name: "Restaurant's Closed", unlocked: false, hint: 'Coffee shop owner corruption level 3. Talk to her during the day.'},
-		{index: 'chef4', name: "Overflow", unlocked: false, hint: 'Coffee shop owner corruption level 4. Requires Pop Rocks. Talk to her during the day.'},
 		{index: 'vr1', name: "Chapter 1", unlocked: false, hint: 'Complete chapter 1 of princess quest.'},
 		{index: 'vr2', name: "Chapter 2", unlocked: false, hint: 'Complete chapter 2 of princess quest.'},
 		{index: 'vr3', name: "Chapter 3", unlocked: false, hint: 'Complete chapter 3 of princess quest.'},
@@ -189,31 +188,26 @@ var underwearSubArray = [
 var gallerySubArray = [
 	{index: 'mom1S', name: "Sister's Experiment", unlocked: false, hint: 'Corruption level 1. Talk to her during the day.'},
 	{index: 'mom2S', name: "Desperate Maid", unlocked: false, hint: 'Corruption level 2. Talk to her during the day.'},
-	{index: 'mom3S', name: "Finally Snapping", unlocked: false, hint: 'Corruption level 3. Talk to her during the day.'},
-	{index: 'mom4S', name: "Loving Milk-Tank", unlocked: false, hint: 'Corruption level 4. Talk to her during the day. Requires friend corruption of at least 5'},
+	{index: 'mom3S', name: "Loving Milk-Tank", unlocked: false, hint: 'Corruption level 3. Talk to her during the day.'},
 	{index: 'sister1S', name: "Taste of Revenge", unlocked: false, hint: 'After reaching corruption level 2 with all other characters, talk to her with a Pop Rock.'},
-	{index: 'sister2S', name: "Hole in the Wall", unlocked: false, hint: 'Talk to her with a Pop Rock after completing the event "Taste of Revenge".'},
-	{index: 'sister3S', name: "Hole in the Wall 2", unlocked: false, hint: 'Talk to her with a Stretchy Taffy after completing the event "Hole in the Wall".'},
+	{index: 'sister2S', name: "Punishment", unlocked: false, hint: 'Talk to her with a Pop Rock after completing the event "Taste of Revenge".'},
+	{index: 'sister3S', name: "Tokyo Pop", unlocked: false, hint: 'Talk to her after learning about the Tokyo Pop filming and after completing the event "Punishment".'},
 	{index: 'friend1S', name: "Confession Interrupted", unlocked: false, hint: 'Corruption level 1. Talk to her during the day.'},
 	{index: 'friend2S', name: "Bathroom Stall", unlocked: false, hint: 'Corruption level 2. Talk to her during the day.'},
 	{index: 'friend3S', name: "Love Letter", unlocked: false, hint: 'Corruption level 3. Talk to her during the day.'},
-	{index: 'friend4S', name: "Meeting Mom", unlocked: false, hint: 'Corruption level 4. Talk to her during the day.'},
-	{index: 'friend5S', name: "Romance", unlocked: false, hint: 'Corruption level 4. Talk to her after completing the event "Finally Snapping".'},
+	{index: 'friend4S', name: "True Romance", unlocked: false, hint: 'Corruption level 4. Talk to her during the day.'},
 	{index: 'teacher1S', name: "Hungry Eyes", unlocked: false, hint: 'Corruption level 1. Talk to her during the day.'},
 	{index: 'teacher2S', name: "Disfunction", unlocked: false, hint: 'Corruption level 2. Talk to her during the day.'},
-	{index: 'teacher3S', name: "Exploration", unlocked: false, hint: 'Corruption level 3. Talk to her during the day.'},
-	{index: 'teacher4S', name: "Strap-On", unlocked: false, hint: 'Corruption level 4. Talk to her during the day.'},
-	{index: 'teacher5S', name: "Smothering", unlocked: false, hint: 'Corruption level 5. Talk to her during the day with a Plug Pop.'},
-	{index: 'teacher6S', name: "Sounding", unlocked: false, hint: 'Corruption level 5. Talk to her during the day with a Stretchy Taffy.'},
+	{index: 'teacher3S', name: "Exploration", unlocked: false, hint: 'Corruption level 3. Talk to her during the day with a Plug Pop.'},
+	{index: 'teacher4S', name: "Sounding", unlocked: false, hint: 'Corruption level 3. Talk to her during the day with a Stretchy Taffy.'},
+	{index: 'teacher5S', name: "Fisting", unlocked: false, hint: 'Corruption level 4. Talk to her during the day.'},
 	{index: 'office1S', name: "Public Indecency", unlocked: false, hint: 'Corruption level 1. Talk to her during the day.'},
 	{index: 'office2S', name: "Public Flasher", unlocked: false, hint: 'Corruption level 2. Talk to her during the day.'},
 	{index: 'office3S', name: "Superhero", unlocked: false, hint: 'Corruption level 3. Talk to her during the day.'},
-	{index: 'office4S', name: "Sidekick", unlocked: false, hint: 'Corruption level 4. Talk to her during the day.'},
 	{index: 'chef1S', name: "Rewarding Meal", unlocked: false, hint: 'Corruption level 1. Talk to her during the day.'},
 	{index: 'chef2S', name: "Direct Feeding", unlocked: false, hint: 'Corruption level 2. Talk to her during the day.'},
-	{index: 'chef3S', name: "Food Preparation", unlocked: false, hint: 'Corruption level 3. Talk to her during the day.'},
-	{index: 'chef4S', name: "Enjoying the Work", unlocked: false, hint: 'Corruption level 4. Talk to her during the day with a Caramel Melts.'},
-	{index: 'chef5S', name: "Chef's Special", unlocked: false, hint: 'Watersports Content! Corruption level 4. Talk to her during the day with a Fruit Gushers.'},
+	{index: 'chef3S', name: "Food Preparation", unlocked: false, hint: 'Corruption level 3. Talk to her during the day with a Pop Rock.'},
+	{index: 'chef4S', name: "Enjoying the Work", unlocked: false, hint: 'Corruption level 4. Talk to her during the day.'},
 	{index: 'doll1', name: "Awakening", unlocked: false, hint: 'Purchase the doll, then talk to her in your room.'},
 	{index: 'doll2', name: "Frustrations", unlocked: false, hint: 'Talk to the her at least a day after completing the event "Awakening".'},
 	{index: 'doll3', name: "Borrowed", unlocked: false, hint: 'Talk to the her at least a day after completing the event "Frustrations".'},
@@ -736,6 +730,79 @@ function laptop(genre) {
 	writeTransition("laptop", "Finish");
 }
 
+function addendum(n) {
+	switch (n) {
+		case "riley1": {
+			writeSpeech(data.story.name, "player", "You go ahead and enjoy yourself.");
+			writeText(""+data.story.friendName+" smiles and licks her lips as she starts disrobing. Sean wants to start shouting questions, but stops mid-word as he sees "+data.story.friendName+"'s dick.");
+			writeSpeech("Sean", "scripts/gamefiles/none.png", "<i>W-what the hell? Why does she have a dick? And why it so... Whoa, back up. I'm not gay or any shit like that...</i>");
+			writeSpeech(data.story.friendName, "riley", "Turn around, lemme see the goods.");
+			writeText("He wants to argue, to storm out, or even to start throwing punches to try and salvage some pride. But he can't bring himself to disobey for some reason, and the thought of breaking one of his nails punching somebody just sounds awful.");
+			writeText("He turns around, showing off his huge new bubble butt, a result of the app in the hands of a master.");
+			writeSpeech("Sean", "scripts/gamefiles/none.png", "<i>Fucking...why the fuck am I showing them my asshole? Why do I want them to see it? Am I getting off on this?</i>");
+			writeText("His conflicted thoughts are sent flying as "+data.story.friendName+" slaps his ass, causing his booty to jiggle and leaving a bright red handprint.");
+			writeSpeech("Sean", "scripts/gamefiles/none.png", "Ngh...");
+			writeText(""+data.story.friendName+" was close to all the cheerleaders at school, there's no way she wouldn't blab about this. The rumor would spread like wildfire about his now puny dick, how he bent over and lost his anal virginity without any resistance.");
+			writeText("He can feel a bead of precum form at the tip of his clitty as he imagines being known as the school's new buttslut.");
+			writeText("...");
+			writeBig("images/real/general/friend5-1.gif");
+			writeSpeech("Shannon", "scripts/gamefiles/none.png", "More! Fuck me harder! God, being a girl is so much better!");
+			writeText("There's no resistance, no crying out in pain. Sean, now Shannon, took to the first minutes of the rest of her life with glee.");
+			writeText("A hyper sensitive prostate probably helped smooth things along, especially since she started spurting like a bitch from the very first moment she had "+data.story.friendName+"'s cock inside her.");
+			writeText("You grunt as you fire off rope of semen onto Shanon's face. Shanon worshipfully takes it, trying to catch whatever she can on her tongue.");
+			writeText("Grabbing onto Shanon's hips, "+data.story.friendName+" pulls them back and slams herself into Shannon as they both start moaning. ");
+			writeText("With every clench of "+data.story.friendName+"'s balls, Shannon is following suit with a much smaller, more pathetic spurt of her own onto the bedsheets.");
+			writeText("...");
+			writeText("Shannon is unconscious on the bed, her cute little dicklette resting in a pool of her wasted cum. Her gaping, cum-coated ass twitches, but can't close fully.");
+			writeSpeech(data.story.name, "player", "So what will you do with her?");
+			writeSpeech(data.story.friendName, "riley", "Well, everyone in the crew hated Sean, but I think they'll have a change of heart once they see the new him. Throwing in a dedicated fucksleeve and pussylicker could get me some brownie points with the captain. <br>And if things don't work out, I can always use him to motivate the football team. ");
+			if (data.story.currentScene != "gallery") {
+				data.story.time = "night";
+				writeTransition("homePlayerRoom", "Finish up for the day");
+				data.story.motherReady = false;
+			}
+			else {
+				writeTransition("gallery", "Go back");
+			}
+			break;
+		}
+		case "riley2": {
+			writeSpeech(data.story.name, "player", "I'll take you up on that.");
+			writeText("You start taking of your clothes. Sean wants to keep arguing, but stops mid-word once he sees you dick.");
+			writeSpeech("Sean", "scripts/gamefiles/none.png", "W-what the hell? Why is it so... Whoa, back up. I'm not gay or any shit like that...");
+			writeSpeech(data.story.friendName, "riley", "Turn around Sean, show him the goods.");
+			writeText("He wants to argue, to storm out, or even to start throwing punches to try and salvage some pride. But he can't bring himself to disobey for some reason, and the thought of breaking one of his nails throwing a punch just sounds awful.");
+			writeText("He turns around, showing off his huge new bubble butt, a result of the app in the hands of a master.");
+			writeSpeech("Sean", "scripts/gamefiles/none.png", "Fucking...why the fuck am I showing them my asshole? Why do I want them to see it? Am I getting off on this?");
+			writeText("His conflicted thoughts are sent flying as "+data.story.friendName+" slaps his ass, causing his booty to jiggle and leaving a bright red handprint.");
+			writeSpeech("Sean", "scripts/gamefiles/none.png", "Ngh...");
+			writeText(""+data.story.friendName+" was close to all the cheerleaders at school, there's no way she wouldn't blab about this. The rumor would spread like wildfire about his now puny dick, how he bent over and lost his anal virginity without any resistance.");
+			writeText("He can feel a bead of precum form at the tip of his clitty as he imagines being known as the school's new buttslut.");
+			writeText("...");
+			writeBig("images/real/general/friend5-1.gif");
+			writeSpeech("Shannon", "scripts/gamefiles/none.png", "More! Fuck me harder! God, being a girl is so much better!");
+			writeText("There's no resistance, no crying out in pain. Sean, now Shannon, took to the first minutes of the rest of her life with glee.");
+			writeText("A hyper sensitive prostate probably helped smooth things along, especially since she started spurting like a bitch from the very first moment she had your cock inside her.");
+			writeText(""+data.story.friendName+" grunts as she fires a rope of semen onto Shanon's face. Shanon worshipfully takes it, trying to catch whatever she can on her tongue.");
+			writeText("Grabbing onto Shanon's hips, you pull them back and slam yourself into her as you start to fill her ass.");
+			writeText("With every rope of jizz you fire off, she's following suit with a much smaller, more pathetic spurt of her own onto the bedsheets.");
+			writeText("...");
+			writeText("Shannon is unconscious on the bed, her cute little dicklette resting in a pool of her wasted cum. Her gaping, cum-coated ass twitches, but can't close fully.");
+			writeSpeech(data.story.name, "player", "So what will you do with her?");
+			writeSpeech(data.story.friendName, "riley", "Well, everyone in the crew hated Sean, but I think they'll have a change of heart once they see the new him. Throwing in a dedicated fucksleeve and pussylicker could get me some brownie points with the captain. <br>And if things don't work out, I can always use him to motivate the football team. ");
+			if (data.story.currentScene != "gallery") {
+				data.story.time = "night";
+				writeTransition("homePlayerRoom", "Finish up for the day");
+				data.story.motherReady = false;
+			}
+			else {
+				writeTransition("gallery", "Go back");
+			}
+			break;
+		}
+	}
+}
+
 //Menu updating
 function updateMenu() {
 	document.getElementById('playerName').innerHTML = data.story.name;
@@ -1007,6 +1074,7 @@ function loadSlot(slot) {
 	wear('clothing', data.story.clothing);
 	wear('underwear', data.story.underwear);
 	sceneTransition(data.story.currentScene);
+	updateSave();
 }
 
 function saveFile(){
@@ -1032,6 +1100,7 @@ function loadFile(){
 		saveSlot(10);
 		loadSlot(10);
 	}
+	updateSave();
 }
 
 function generateSave() {
@@ -1054,6 +1123,36 @@ function generateSave() {
 			var buttonName = 'save' + i + 'Date';
 			document.getElementById(buttonName).innerHTML = "";
 		}
+	}
+}
+
+function updateSave() {
+	if (typeof data.story.version == 'undefined') {
+		if (data.story.route == "sub") {
+			data.galleryArray[2].name = "Loving Milk-Tank";
+			data.galleryArray[5].name = "Punishment";
+			data.galleryArray[6].name = "Tokyo Pop";
+			data.galleryArray[6].hint = 'Talk to her after learning about the Tokyo Pop filming and after completing the event "Punishment".'
+			data.galleryArray[10].name = "True Romance";
+			data.galleryArray[14].hint = 'Corruption level 3. Talk to her during the day with a Plug Pop.'
+			data.galleryArray[15].name = "Sounding";
+			data.galleryArray[15].hint = 'Corruption level 3. Talk to her during the day with a Stretchy Taffy.'
+			data.galleryArray[16].name = "Fisting";
+			data.galleryArray[16].hint = 'Corruption level 4. Talk to her during the day.'
+			data.galleryArray[24].hint = "Corruption level 3. Talk to her during the day with a Pop Rock.";
+			data.galleryArray[25].hint = "Corruption level 4. Talk to her during the day.";
+			data.galleryArray[3].name = "REMOVED";
+			data.galleryArray.splice(3, 1);
+			data.galleryArray.splice(10, 1);
+			data.galleryArray.splice(15, 1);
+			data.galleryArray.splice(18, 1);
+			data.galleryArray.splice(22, 1);
+		}
+		else {
+			data.galleryArray.splice(31, 1);
+		}
+		data.story.version = 0.7;
+		alert("Older version save data detected. Your save data has been automatically updated for version 0.7");
 	}
 }
 
