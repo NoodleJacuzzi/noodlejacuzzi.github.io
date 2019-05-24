@@ -2,8 +2,8 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 5/20/2019</p>
-				<p class = "centeredText">Princess Quest's final version has been finished! The full version adds 5 new scenes, for a total of 9 scenes to unlock.</p>
+				<p class = "centeredText">Lastest News 5/24/2019</p>
+				<p class = "centeredText">Version 0.7 of Human Alteration App</p>
 			`;
 			writeTransition("news", "View all news updates");
 			writeText("<br>");
@@ -50,6 +50,9 @@ function writeScene(scene) {
 			break;
 		}
 		case "news": {
+			writeText("<b>5/20/2019</b> - Human Alteration App v0.7");
+			writeText("Dom Route Update");
+			writeText("7 new dom route scenes");
 			writeText("<b>5/20/2019</b> - Princess Quest v1.0");
 			writeText("Full game release");
 			writeText("5 new scenes, 9 scenes in the game total");
