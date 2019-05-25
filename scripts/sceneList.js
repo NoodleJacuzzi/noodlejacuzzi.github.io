@@ -155,9 +155,9 @@ function writeScene(scene) {
 		}
 		case "downloadHAA": {
 			document.getElementById('output').innerHTML +=`
-			Current version: 0.6<br>
-			Most recent game files: https://mega.nz/#!Hp9hySgS!W9zUI6QTa6NkIe-5KHJhCQ98IoMuc8iXKECFh97GZXw<br>
-			Most recent image pack: https://mega.nz/#!ul92CCbZ!-FU9_N_Ne33YJ68WxnsvVqsAb_5UKrXCbrYh01ueehI<br>
+			Current version: 0.7<br>
+			Most recent game files: https://mega.nz/#!npNBmKYb!STguHSmmao2Ghyth09CCv2G1dywaLoqRe8tRZjTyQ3A<br>
+			Most recent image pack: https://mega.nz/#!ztclnarA!6ImNtiI7qmGs1I1l6DnonkOPild-NkmoKL6ujgO1-D4<br>
 			If you're new to the game, all you need to do is download these two. Extract the game files to create the Human Alteration App folder, then extract the image pack directly into the Human Alteration App folder. You can find a picture of what the final layout should look like in the screenshot folder:<br>
 			https://mega.nz/#F!zwsBnSoT!7wiL0wOWcml2wtX7M0fXiA<br>
 			If you've already downloaded an image pack in the past, you can find all of the image upgrade packs here so that you don't need to download the whole thing again:<br>
