@@ -5627,9 +5627,7 @@ function writeEvent(scene) {
 			writeSpeech(data.story.chefName, "ava", "No refusing. I've come into some money lately, and I want to thank you for all your help with this place over the years. Use it for school, or anything else you need.");
 			writeText("You nod and thank her. As you leave, she heads back into the kitchen.");
 			writeSpecial("You earned $20!");
-			if (data.story.currentScene != "gallery") {
 				data.story.money +=20;
-			}
 			updateMenu();
 			writeText("...");
 			writeText("Meanwhile, in the kitchen.");
@@ -5655,9 +5653,7 @@ function writeEvent(scene) {
 			writeText("When that happens Ava needs to work in the back for awhile, and you run the shop.");
 			writeText("By the end of it the cafe is cleared out and she hands you another bundle of bills, probably too much for how little effort was involved, but she won't take no for an answer.");
 			writeSpecial("You earned $30!");
-			if (data.story.currentScene != "gallery") {
 				data.story.money +=30;
-			}
 			updateMenu();
 			writeText("This time she takes you into the back of the shop instead of making you wait out in the front.");
 			writeSpeech(data.story.chefName, "ava", "Did you enjoy your reward from last time, "+data.story.name+"?");
