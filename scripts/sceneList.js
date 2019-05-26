@@ -17,12 +17,12 @@ function writeScene(scene) {
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App%20Mobile.html'">Play the mobile version</p>
 			`;
-			writeText("Human Alteration App");
+			writeText("Human Alteration App v0.7");
 			writeText("You find yourself with a phone app that can alter people's minds and bodies. Choose between one of two routes where either you're in control of the world or the app is stolen from you. There's a clear sense of progression throughout and no focus on grinding.");
 			writeText("Dom route tags: Incest (optionally non blood-related), Mind Control, Sluttification, Degradation, Exhibitionism, Watersports (optional, not yet implemented)");
 			writeText("Sub route tags: 2D Art, Incest (optionally non blood-related), Sissification, Female-to-Shemale Transformation, Cum Eating, Sounding, NTR (mild & optional), Smothering (not yet implemented), Watersports (optional, not yet implemented)");
 			writeBig("images/PrincessQuest.jpg");
-			writeText("Princess Quest");
+			writeText("Princess Quest v1.0");
 			writeText("Play as Princess Elizabeth as she navigates caves and castle dungeons to rid her people of a demon's foul curse, unaware that she's playing right into the demon's hands.");
 			writeText("Uses art done by Neromashin. It's all from a game named 'Oujo & Onna Kishi W Do Gehin Roshutsu ~Chijoku no Misemono Dorei~' published by PinPoint. You can find the official website of the game at http://www.pin-point.biz/27_wdgr/index.html, but it's in Japanese. There is an English version coming to steam, but I've heard negative things about the translation's quality.");
 			writeText("As a note, I really do not reccommend playing this on mobile. There have also been a few issues with playing it online. As it's only 4 megs, downloading it is the reccomended way to play.");
@@ -35,7 +35,7 @@ function writeScene(scene) {
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Princess%20Quest/Princess%20Quest%20Mobile.html'">Try the mobile version (NON-FUNCTIONAL)</p>
 			`;
 			writeBig("images/RainyDayZ.jpg");
-			writeText("Rainy DayZ");
+			writeText("Rainy DayZ v0.9");
 			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.");
 			writeText("Navigate a town and city deliberately working to sabotage yourself and throw yourself into the clutches of the zombie hordes, the goal of the game here is to be defeated and attacked to collect and unlock all of the game's scenes.");
 			writeText("Tags: Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Bestiality (optional), Parasites (optional)");
