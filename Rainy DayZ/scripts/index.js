@@ -11,6 +11,7 @@ var zombieInvShowing = false;
 var imagesDisabled = false;
 var incest = true;
 var tokyo = false;
+var scenesCollected;
 var endingChoices = {
 	family: 1,
 	friend: 1,
@@ -577,6 +578,13 @@ function galleryView(scene) {
 function purchase() {
 	var goof = document.getElementById('cheatSubmission').value;
 	switch (goof) {
+		case "cold mile": {
+			for (i = 0; i < data.zombieGallery.length; i++) {
+				data.zombieGallery[i].unlocked = true;
+			}
+			alert("You've unlocked all scenes in the gallery!");
+			break;
+		}
 		case "sub route": {
 			updateBody(1);
 			data.bodytypes.sub = true;
@@ -618,7 +626,7 @@ function purchase() {
 			break;
 		}
 	}
-			sceneTransition(data.story.currentScene);
+	sceneTransition(data.story.currentScene);
 }
 //Logbook
 //Inventory
@@ -714,7 +722,6 @@ function clearData() {
 	data.zombieData.factoryZombie = true;
 	data.zombieInventory = [];
 	addItem("Baseball Bat");
-	addItem("Medical Kit");
 }
 function zombieFooter() {
 	switch (data.zombieData.stamina) {
@@ -780,6 +787,14 @@ function toggle(fetish) {
 				document.getElementById('wormContent').innerHTML = ``;
 			}
 		break;
+	}
+}
+function countScenes() {
+	scenesCollected = 0;
+	for (i = 0; i < data.zombieGallery.length; i++) {
+		if (data.zombieGallery[i].unlocked == true) {
+			scenesCollected += 1;
+		}
 	}
 }
 

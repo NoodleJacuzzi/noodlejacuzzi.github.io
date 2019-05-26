@@ -27,7 +27,7 @@ function writeScene(scene) {
 			}
 			else {
 				writeText("<span id = 'rimButton' class = 'choiceText' onclick = 'toggle(`rim`)'>Enable rimjob content</i>");
-				writeText("<span id = 'rimContent'>Scene 'Siren 2' disabled. <br>Scene 'Hunter 2' disabled.</span>");
+				writeText("<span id = 'rimContent'>Scene 'Hunter 2' disabled.</span>");
 			}
 			if (data.zombieData.wormDisabled == false) {
 				writeText("<span id = 'wormButton' class = 'choiceText' onclick = 'toggle(`worm`)'>Disable sounding (urethral insertion) content</i>");
@@ -68,19 +68,35 @@ function writeScene(scene) {
 			if (data.story.zombieGame > 1) {
 				writeTransition("zombieGuide", "Read the strategy guide");
 			}
+			countScenes();
 			writeTransition("start", "Back to the start screen");
-			document.getElementById('output').innerHTML += `
-				<p>Enter cheat code: <input type="text" id="cheatSubmission" value=""></p>
-				<p class='choiceText' onclick='purchase()'>Submit</p>
-			`;
-			writeTransition("bodySwap", "Change character image");
+			writeTransition("cheat", "Enter cheat codes");
+			if (scenesCollected > 0) {
+				if (scenesCollected = 14) {
+					writeText("You've collected every scene in the game, congratulations! Thanks so much for playing, as a reward have a cheat code: cold mile");
+					writeText("This code will unlock all of the scenes, so you don't need to copy a save file if you want to view the game's scenes on another device. I hope you enjoyed the game, if you have any suggestions or criticisms please let me know about them in the TFgames thread or wherever you found the game.");
+					writeText("This is all the game has to offer for now, I hope you'll check out my other works at https://noodlejacuzzi.github.io/index.html");
+					writeText("If not, and this is the last of my work you see, then goodbye and I hope you have a great day.");
+				}
+				else {
+					writeText("You've collected "+scenesCollected+" out of 14 scenes.");
+				}
+			}
 			break;
 		}
-		case "bodySwap": {
+		case "cheat": {
 			document.getElementById('output').innerHTML += `
-				<img id="playerImg" class="bigPicture" src="images/zombie/basic.jpg">
+				<p class='centeredText'>Enter cheat code: <input type="text" id="cheatSubmission" value=""></p>
+				<p class='choiceText' onclick='purchase()'>Submit</p>
+			`;
+			writeTransition("mainMenu", "Go back");
+			document.getElementById('output').innerHTML += `
+				<img id="playerImg" class="medPicture" src="images/zombie/basic.jpg">
 			`;
 			updateBody(data.story.bodytype);
+			document.getElementById('output').innerHTML += `
+				<p class='centeredText'>If you've unlocked any other profile pictures, you can change them here:</p>
+			`;
 			if (data.bodytypes.basic == true) {
 				document.getElementById('output').innerHTML += `
 					<p class='choiceText' onclick='updateBody(0)'>Basic</p>
@@ -126,7 +142,8 @@ function writeScene(scene) {
 					<p class='choiceText' onclick='updateBody(8)'>Elizabeth</p>
 				`;
 			}
-			writeTransition("mainMenu", "Go back");
+		}
+		case "bodySwap": {
 			break;
 		}
 		case "zombieGame": {
@@ -216,7 +233,8 @@ function writeScene(scene) {
 				`;
 				updateBody(data.story.bodytype);
 				writeText("It's cloudy and overcast today, just like it's been for months now. Your stockpile of food has run dry, so you need to find some more before you get hungry. Not only that, but with the weather getting worse you'll need to find enough to keep you fed for at least a few days.");
-				writeText("You remember there was a convenience store in the city. At this point it's your only hope. You have a medical kit strapped to your side in case of emergencies, and a large wooden bat in your hands in case you see one of <b>them</b>.");
+				writeText("You remember there was a convenience store in the city. At this point it's your only hope. You carry a large wooden bat in your hands in case you see one of <b>them</b>.");
+				writeText("You only have so much room for carrying things. Trying to pick up more than six objects is too much for you, and you'll need to carry food and water back on the return trip.");
 				writeSpeech(data.story.name, "zombie", "<i>It's time to get moving.</i>");
 				writeText("You can get to the city via the highway, it isn't too long of a trek. For now, you'll need to <span class='choiceText' onclick='sceneTransition(`townStreets`)'>open the door</span> and head out into town.");
 				zombieFooter();
@@ -237,7 +255,7 @@ function writeScene(scene) {
 				writeText("On the main street surrounded by an iron fence, a <span class='choiceText' onclick='sceneTransition(`blueHouse`)'>blue house</span> is practically calling your name. You've tried to break in before, but this time you have a key.");
 			}
 			else {
-				writeText("On the main street surrounded by an iron fence, a lone blue house stands tall, taunting you. You've tried to break in before, but the entire house is locked down. Every window and back door are barricaded closed, and the front door is deadbolted shut.");
+				writeText("On the main street surrounded by an iron fence, a lone blue house stands tall, taunting you. You've tried to break in before, but the entire house is locked down. Every window and back door are barricaded closed, and the front door is deadbolted shut. Maybe you can find a key for the house somewhere?");
 			}
 			if (data.zombieData.townZombie == true) {
 				writeText("You think you hear a <span class='choiceText' onclick='sceneTransition(`townZombie`)'>zombie</span> skulking around. Taking it out now might make moving around easier.");
@@ -282,7 +300,7 @@ function writeScene(scene) {
 			writeText("Success! The key works and you're able to break into the home. Unfortunately, the owners are already gone, and they took everything they owned with them. You navigate the rooms one by one but there's barely anything here.");
 			writeText("On a large table there's a bowl full of old, moldy fruit. Curiously, only the lemons have been eaten. It almost looks like something tore into each of them and left the rinds in the bowl, ignoring the other fruit.");
 			writeText("The place is pretty well secured though. If it weren't for the occasional sound in the walls, probably a rat, you'd be tempted to make this into your new safehouse.");
-			if (itemCheck("Air Freshener") == true) {
+			if (itemCheck("House Key") == true) {
 				if (data.zombieData.infected == false) {
 					writeText("The master bedroom isn't even all that dusty. The whole room is cozy, and still warm despite the weather. The large, queen-sized bed sits at the west side of the room. You're exhausted from the journey and you still have a ways to go, maybe you should take a <span class='choiceText' onclick='writeZombieEvent(`worms1`)'>rest?</span>");
 				}
@@ -307,21 +325,21 @@ function writeScene(scene) {
 				writeText("There's an empty spot on the table where you took the flashlight from.");
 			}
 			writeText("There's also a large empty box on the table. At first you think you might be able to store a snack in there for later, but you can't really think of a good reason to do that.");
-			if (itemCheck("Medical Kit") == true) {
+			if (data.zombieData.wounded == false) {
 				writeText("Over the side of the table you think you can see <span class='choiceText' onclick='sceneTransition(`greenInjury`)'>something metal</span>. A spike of sharp metal is in the way and is too heavy to move, but you can probably just grab the thing around it.");
 			}
 			else {
-				writeText("On closer inspection, the object you injured yourself for is a broken screwdriver. The spike blocking the way is still wet with some of your blood. It isn't rusty though, so no chance of tetanus.");
+				writeText("On close inspection, the gleaming object behind the table is a broken screwdriver. The spike blocking the way is still wet with some blood. It isn't rusty though, so no chance of tetanus.");
 			}
 			writeText("You can <span class='choiceText' onclick='sceneTransition(`townStreets`)'>leave</span> through the front door at any time.");
 			zombieFooter();
 			break;
 		}
 		case "greenInjury": {
-			removeItem("Medical Kit");
+			data.zombieData.wounded = true;
 			writeText("You lean on the table and reach for the object, but your arm isn't long enough. You stretch as far as you can, and your fingertips rub against the object.");
 			writeText("The push is enough to knock the object over, farther than you could hope to reach. To make matters worse you lose your balance, causing the spike to slash against your arm. 'Fuck!' You exclaim. It really hurts.");
-			writeText("The next few moments are spent cleaning the wound and patching yourself up. You've emptied your medical kit.");
+			writeSpecial("You are now wounded!");
 			writeText("There's no point in whining about it. You should <span class='choiceText' onclick='sceneTransition(`greenHouse`)'>move on</span> and keep searching.");
 			break;
 		}
@@ -376,6 +394,9 @@ function writeScene(scene) {
 				writeText("But an idea strikes you as you get ready to start sneaking. Your <span class='choiceText' onclick='writeZombieEvent(`horde1`)'>bag of marbles</span> makes a small click as you hold it in your hand. You could use it as a distraction to make your way through more safely.");
 				writeText("Although it doesn't seem like it's necessary, since they have no idea you're here anyway.");
 			}
+			else {
+				writeText("If you had some things to throw, you might be able to cause a distraction to get by. But for now, sneaking is your only option.");
+			}
 			zombieFooter();
 			if (itemCheck("Food Supply") == true) {
 				writeZombieEvent("horde2");
@@ -394,7 +415,7 @@ function writeScene(scene) {
 					writeText("You're well fed and prepared for a journey, you feel like you could head through the <span class='choiceText' onclick='sceneTransition(`highway`)'>highway</span> even considering the danger.");
 				}
 				else {
-					writeText("You don't feel like you have enough energy to risk the highway.");
+					writeText("You don't feel like you have enough energy to risk taking the highway.");
 				}
 				if (itemCheck("Factory Key") == true) {
 					writeText("The factory's gate key is sitting in your pocket. The path to the <span class='choiceText' onclick='sceneTransition(`factoryGate`)'>factory</span> should be relatively high and dry, especially compared to the highway.");
@@ -409,30 +430,28 @@ function writeScene(scene) {
 			if (itemCheck("Snack") == false) {
 				writeText("On the table, amid a pile of trash looks like a sealed can of food you can take as a <span class='choiceText' onclick='addItem(`Snack`)'>snack</span>.");
 			}
-			if (itemCheck("Factory Key") == false) {
-				writeText("Hanging from the wall is a small silver <span class='choiceText' onclick='addItem(`Factory Key`)'>key</span> with the words 'Ridgewood Factory' engraved on it.");
-			}
+			writeText("Hanging from the wall is a small mangled key, it's so mashed up you can't make out the text on it anymore.");
 			writeText("The halls are claustrophobic and dark, each door you pass by has been smashed open, not a good sign. An even worse sign is the smell coming from some of the rooms, the smell of infected semen. Down two flights of stairs is a much heavier door held closed by a simple latch. Inside is some sort of <span class='choiceText' onclick='sceneTransition(`apartmentBasement`)'>basement room</span>.");
-			writeText("Despite how dangerous the situation seems, you still have a way out by heading back out <span class='choiceText' onclick='sceneTransition(`cityStreets`)'>through the window</span>.");
+			writeText("Despite how dangerous the situation seems, you still have a way out by <span class='choiceText' onclick='sceneTransition(`cityStreets`)'>heading back out through the window</span>.");
 			zombieFooter();
 			break;
 		}
 		case "apartmentBasement": {
 			writeText("The room is small, and there's an odd smell to the room. You think you hear something for a moment, but there isn't a second sound.");
 			if (itemCheck("Air Freshener") == false) {
-				writeText("Resting on a desk are a few objects, the first one you notice is a neon green <span class='choiceText' onclick='addItem(`Air Freshener`)'>lemon-scented air freshener</span>. You could use this to mask your scent, although the rain is already doing a pretty good job of that.");
+				writeText("Resting on a desk are a few objects, the first one you notice is a neon green lemon-scented air freshener. You could use this to mask your scent, although the rain is already doing a pretty good job of that.");
 			}
 			else {
 				writeText("Resting on a desk are a few objects, but you already took the air freshener. You notice that the smell of the room seems a little more powerful now.");
 			}
-			if (itemCheck("Medical Kit") == false && data.zombieData.wounded == false) {
+			if (data.zombieData.wounded == false) {
 				writeText("In the corner of the room is a wastebasket filled with a variety of objects. If you really feel like you need to, you could <span class='choiceText' onclick='sceneTransition(`apartmentInjury`)'>reach inside</span> to search for anything useful.");
 			}
 			else {
-				writeText("In the corner of the room is a wastebasket filled with a variety of objects. You don't really feel like you need to search through it right now.");
+				writeText("In the corner of the room is a wastebasket filled with a variety of objects splattered with a few drops of blood. You don't really feel like you need to search through it right now.");
 			}
 			if (itemCheck("House Key") == false) {
-				writeText("There's a pile of clothes in the corner. A quick look through them reveals a single <span class='choiceText' onclick='addItem(`House Key`)'>blue key</span>.");
+				writeText("There's a pile of clothes in the corner. A quick look through them reveals a single <span class='choiceText' onclick='addItem(`House Key`)'>blue key with a lemon-scented air freshener attached</span>.");
 			}
 			else {
 				writeText("There's a pile of clothes in the corner.");
@@ -443,9 +462,9 @@ function writeScene(scene) {
 			break;
 		}
 		case "apartmentInjury": {
-			writeText("You start rummaging through the wastebasket but quickly pull your hand out. You need to hold back your voice as you stem the small flow of blood. <b>You're bleeding!</b> A small knife was left inside the basket.");
-			writeText("You already used your medical kit, so there's nothing to do now but wait. You can clean yourself up a bit more later, but once the bleeding stops you can go back to <span class='choiceText' onclick='sceneTransition(`apartmentBasement`)'>searching the room</span>.");
 			data.zombieData.wounded = true;
+			writeText("You start rummaging through the wastebasket but quickly pull your hand out. You need to hold back your voice as you stem the small flow of blood. <b>You're bleeding!</b> A small knife was left inside the basket.");
+			writeText("You don't have a medical kit, so there's nothing to do now but wait. You can clean yourself up a bit more later, but once the bleeding stops you can go back to <span class='choiceText' onclick='sceneTransition(`apartmentBasement`)'>searching the room</span>.");
 			break;
 		}
 		case "journal": {
@@ -513,6 +532,11 @@ function writeScene(scene) {
 			if (data.zombieData.infected == false) {
 				writeText("The golden rule is to not snack on scavenged stuff, so you spend a little bit longer looking around for something you can eat right now. Behind the counter and inside a sealed container is a single glazed donut. It has a bit of a smell, and is probably stale right now, but in this moment you could be the last person on earth to <span class='choiceText' onclick='writeZombieEvent(`tainted`)'>eat a donut</span>.");
 			}
+			else {
+				if (itemCheck("Factory Key") == false) {
+					writeText("Underneath the container of the infected food is a <span class='choiceText' onclick='addItem(`Factory Key`)'>small silver key</span> with the words 'Ridgewood Factory' engraved on it.");
+				}
+			}
 			if (itemCheck("Food Supply") == true && itemCheck("Water Supply") == true) {
 				writeText("The wind outside is howling and shaking the windows, it might be time to <span class='choiceText' onclick='sceneTransition(`cityStreets`)'>leave</span> soon.");
 			}
@@ -563,8 +587,14 @@ function writeScene(scene) {
 				if (itemCheck("Flashlight") == true) {
 					writeText("Navigating in the darkness with something in the room could be risky. You could use your <span class='choiceText' onclick='writeZombieEvent(`siren1`)'>flashlight</span> to find your way out of the building.");
 				}
+				else {
+					writeText("It's way too dark to try finding whatever might be in the room with you, so hunting it down isn't an option.");
+				}
 				if (itemCheck("Rope") == true) {
 					writeText("You could <span class='choiceText' onclick='writeZombieEvent(`siren2`)'>set a trap with your rope</span> and make some noise to lure whatever's in the area to it. It probably can't chase you down if it's tied down.");
+				}
+				else {
+					writeText("If you had something to make a trap with, you could snare whatever might be in the room with you and escape.");
 				}
 			}
 			writeText("If you aren't too worried about the snoring sound, you could just quietly <span class='choiceText' onclick='sceneTransition(`townStreets`)'>sneak out of the factory</span>. It should be a straight and simple shot back to town.");
@@ -578,6 +608,12 @@ function writeScene(scene) {
 				writeSpecial("You feel exhausted, but you've almost made it through the forest.");
 			}
 			writeText("The foliage grows thinner and the wind grows stronger, it should only be another few minutes before you arrive in town. Your elation is put to a quick end when the snap of a twig tells you you're being followed from a good distance away.");
+			if (itemCheck("Baseball Bat") == true) {
+				writeText("Obviously you can't dump the supplies, but you could <span class = 'choiceText' onclick = 'removeItem(`Baseball Bat`)'>leave your weapon behind</span> to try and escape faster.");
+			}
+			else {
+				writeText("You've already dropped your weapon to try and save yourself, but you can still hear whatever is following you gaining on you.");
+			}
 			if (data.zombieData.wounded == true) {
 				if (itemCheck("Baseball Bat") == false) {
 					writeText("Wounded and without a weapon, all you can hope to do is <span class='choiceText' onclick='writeZombieEvent(`hunter2`)'>make this easier on yourself and give up</span>.");
@@ -593,7 +629,7 @@ function writeScene(scene) {
 				}
 			}
 			else {
-				writeText("You break out into a sprint, trees rushing past you as you desperately try to outpace whatever's following you. Soon enough you break through the treeline and <span class='choiceText' onclick='sceneTransition(`townStreets`)'>arrive in town</span>.");
+				writeText("You break out into a sprint, trees rushing past you as you desperately try to outpace whatever's following you. Thankfully you aren't wounded. Soon enough you break through the treeline and <span class='choiceText' onclick='sceneTransition(`townStreets`)'>arrive in town</span>.");
 			}
 			zombieFooter();
 			break;
@@ -722,21 +758,51 @@ function writeZombieEvent(n) {
 			break;
 		}
 		case "siren1": {
+			writeText("You turn on your flashlight. The best defense is a good offense, so the best course of action is to find what's chasing you and take them on directly.");
+			writeText("There, in the corner! You see a flash of blond hair as something runs just out of sight.");
+			writeText("You make chase, and you can hear a soft giggling as you run. For some reason it almost seems to replay in your head as you think about the sound, over and over.");
+			writeText("You almost get lost for a second until another giggle gives them away. They're pretty fast, but you won't give up the chase!");
+			writeText("...");
+			writeText("Many corners turned, many catwalks crossed, and lots of laughing later, you finally catch up to her and corner her in a dead end.");
+			writeText("She turns around to face you, biting her lip and looking sad that the game is over. She's beautiful, not a trace of the dirt or sweat you'd find on any other zombie.");
+			writeText("Her dick is flaccid and cute, she wiggles it from side to side when she notices you're staring.");
+			writeText("You can feel yourself hardening, and she can see it through your clothes. She turns around and wiggles her ass at you invitingly.");
+			writeText("There's a strange scent in the air, it's somehow relaxing and energizing at the same time. You can't remember why you started chasing her in the first place as she giggles again.");
+			writeText("... Oh, that's right! You were going to punish this naughty girl for running away from you, of course!");
+			writeText("...");
 			writeBig("images/zombie/siren1.gif");
-			writeText("Test for siren event 1.");
+			writeText("Everything just feels nice. You can't even remember why you ever wanted to leave the factory in the first place. Thrusting into her ass feels so good...");
+			writeText("And she likes it too. She lets out happy little giggles whenever she cums on the floor, and the nice scent in the air just gets stronger.");
+			writeText("She leans back and kisses you, and you feel yourself cumming again into her ass. Every time you do, it almost feels like your dick gets a little shorter, and your body gets a little softer, but you don't mind.");
+			writeText("You don't think you could stop even if you wanted to.");
 			if (data.story.currentScene != "zombieGallery") {
 				writeText("<p class='choiceText' onclick='gameOver()'>Game Over</p>");
 			}
 			break;
 		}
 		case "siren2": {
-			if (data.zombieData.rimDisabled == false) {
-				writeBig("images/zombie/siren2.gif");
-				writeText("Test for siren event 2.");
-			}
-			else {
-				writeText("This scene has been disabled by your fetish settings. If you should for some reason want to watch it, you can still view it in the gallery after changing these settings.");
-			}
+			writeText("With some rope and a decent amount of hunting knowledge, your snare trap is set. If anyone tries to approach you while you rest, they'll be strung up and you can escape.");
+			writeText("All you need to do now is wait, so you create a bit of cover using a sheet of cloth between some boxes.");
+			writeText("...");
+			writeText("You wake up with a jolt as you hear the rope of your trap make a loud *CRACK* sound as it tightens around something.");
+			writeText("Your trap has been sprung, you knew someone was following you!");
+			writeText("You exit your makeshift shelter, ready to start running, but you stumble when whatever you trapped begins... Whining?");
+			writeText("It sounds like the fake sort of crying a child would do when they want attention but for some reason you can't seem to keep it out of the front of your mind. The sound is ringing in your ears over and over, and your vision starts to blur as your body moves on autopilot.");
+			writeText("<b>HELP</b>");
+			writeText("Soon enough you're where you set your trap, and suspended in midair by her leg is a naked woman.");
+			writeText("<b<HELP ME</b>");
+			writeText("You need the noise to stop. The ringing in your ears is making you see stars.");
+			writeText("<b>I'M STUCK</b>");
+			writeText("But slowly the painful ringing stops, and whatever was making the sound goes quiet. As your mind unclouds, you realize you've just finished undoing the know of your trap.");
+			writeText("You step back, the zombie is freed. Worse than that, you can hear the sounds of other zombies closing in, obviously alerted by the sound.");
+			writeText("The zombie you freed tackles you. She's light, and a lot weaker than the others, so you should have no trouble thr-");
+			writeText("... All your worries start to fade away as her lips meet yours. What were you thinking about?");
+			writeText("She's so soft. Her dick is so small compared to yours. Why are you wearing clothes again? You take them off with her help.");
+			writeText("...");
+			writeBig("images/zombie/siren2.gif");
+			writeText("You can't close your ass anymore, and you lost count of how many of them have used you already.");
+			writeText("You blissfully giggle as her palm cups your cheek, and she gives you another kiss.");
+			writeText("Every zombie in the factory came running when she was in trouble, so she had to repay them somehow. And you helped! You're a great helper. You're going to be helping her for as long as she wants, and she'll keep rewarding you with those beautiful lips of hers.");
 			if (data.story.currentScene != "zombieGallery") {
 				writeText("<p class='choiceText' onclick='gameOver()'>Game Over</p>");
 			}
@@ -744,8 +810,19 @@ function writeZombieEvent(n) {
 		}
 		case "hunter1": {
 			if (data.zombieData.beastDisabled == false) {
+				writeText("You drop your pack and heft your bat. There's only one thing left to do now.");
+				writeText("One of the zombified dogs comes out from behind a tree. You're wounded and have almost no energy left, but you still have some fight in you.");
+				writeText("He bars his teeth and growls, and yoh get ready to start swinging.");
+				writeSpeech(data.story.name, "zombie", "Come get some, motherfucker.");
+				writeText("...");
 				writeBig("images/zombie/hunter1.gif");
-				writeText("Test for hunter event 1.");
+				writeSpeech(data.story.name, "zombie", "Yes! Yes! Deeper!");
+				writeText("You couldn't even take down the first one, smacking him with the bat just made him angry.");
+				writeText("But that made him fuck you harder, so who's the real winner here?");
+				writeText("It's pretty clearly you as you cum for the third time on his massive dogcock, before he stops his quick thrusting and goes balls deep into you.");
+				writeSpeech(data.story.name, "zombie", "Oooooh...");
+				writeText("You can feel his inflated knot inside you as he starts to fill you with hot cum.");
+				writeText("Maybe if you act bratty enough to one of the other members of the pack, they'll treat you like the bitch you are and start using your face.");
 			}
 			else {
 				writeText("This scene has been disabled by your fetish settings. If you should for some reason want to watch it, you can still view it in the gallery after changing these settings.");
@@ -760,8 +837,21 @@ function writeZombieEvent(n) {
 				writeText("This scene has been disabled by your fetish settings. If you should for some reason want to watch it, you can still view it in the gallery after changing these settings.");
 			}
 			else {
+				writeText("You feel a jolt of pain go through your arm, your wound must be worse than you thought. You fall over, you can't keep running. You drop whatever you can, your pack, the supplies, anything weighing you down.");
+				writeText("But it isn't enough. They surround you quickly. Even if you had your weapon, you'd need more energy than you have to fight them off.");
+				writeText("You can feel your eyes start to water as one of the infected dogs comes out from behind a tree.");
+				writeSpeech(data.story.name, "zombie", "Please, no...");
+				writeText("You try to crawl away, but when you start moving he lets out a growl that stops you in your tracks.");
+				writeText("But he isn't attacking yet. You still hold on to one last glimmer of hope. He comes up and starts sniffing your, face, before backing off to start walking circles around you.");
+				writeText("You realize you'll need to be completely submissive if you don't want to be torn to shreds. He stops in front of you and turns around. He looks over his sholder at you expectantly. He can't seriously mean...");
+				writeText("...");
 				writeBig("images/zombie/hunter2.gif");
-				writeText("Test for hunter event 2.");
+				writeSpeech(data.story.name, "zombie", "*Slurp*<br><i>Oh god, I can't believe I'm doing this... </i>");
+				writeText("With every lick you can feel your fear fading away into a mess of feelings, lust being the dominant one.");
+				writeText("He's panting, his huge cock is hanging down and dripping with precum as you make out with his asshole.");
+				writeText("But he might not be enjoying it as much as you are. You switch from slurping licks to worshipful kisses and back again.");
+				writeText("More of them are starting to fill the clearing, surrounding you. Each of them look just as hungry as the first one did.");
+				writeText("You push your tongue deeper into his ass as he starts to cum onto the dirt floor. This is your life now.");
 			}
 			if (data.story.currentScene != "zombieGallery") {
 				writeText("<p class='choiceText' onclick='gameOver()'>Game Over</p>");
@@ -833,8 +923,31 @@ function writeZombieEvent(n) {
 			break;
 		}
 		case "survivor": {
+			writeText("Rational thought went out the window the moment you saw her. A human woman? Here, in town? Your body moved on autopilot when you tackled her down to the ground.");
+			writeText("She struggled, sure, but she's probably been running on maybe an hour of sleep in the last three days. She gives up and just goes limp soon enough.");
+			writeSpeech(data.story.name, "zombie", "Hey, relax, I'm human.");
+			writeText("That gets her attention. She stops stuggling long enough for you maneuver yourself to sit down on her hips, pinning her to the ground.");
+			writeText("Now listen, you're got two choices. We do this the easy way, or the hard way.");
+			writeText("She tells you to let her go, that she doesn't have any supplies left, and that you should just leave her out here to die.");
+			writeText("Her voice dies in her throat once you've started taking your pants off. The moment she sees your cock, she starts to struggle again.");
+			writeSpeech(data.story.name, "zombie", "Calm down, calm down. You know better than to scream out here, right? Good. <br>Look, I'm special alright? I'm infected, but I can still think and talk like normal. I can make you special too.");
+			writeText("She stops struggling, the glob of precum you pumped onto her coat while talking probably helped.");
+			writeSpeech(data.story.name, "zombie", "Think about it. I'm a walking vaccine. You don't need to worry about being infected, you can eat or take whatever you want safely.");
+			writeText("You're bullshitting, but she doesn't need to know that. You push your dick against her cheek, and let out a small moan as you pump out another dollop onto her cheek.");
+			writeSpeech(data.story.name, "zombie", "So, again, the easy way, or the hard way?");
+			writeText("...");
+			writeText("The two of you started fucking like rabbits the moment your clothes came off. Apparently your sperm has the same aphrodisiac effect as the other zombies, good to know.");
+			writeSpeech(data.story.name, "zombie", "Gonna cum! Gonna cum inside you, you ready?");
+			writeText("She shudders in response, unable to form words. Your thrusts are getting more shallow, her body has already begun to change.");
+			writeSpeech(data.story.name, "zombie", "Cumming!");
+			writeText("Her body jerks with each load of cum you pump into her womb. You feel a pressure at the head of your dick, so you pull out. She writhes on the table, but soon enough her change is complete.");
 			writeBig("images/zombie/survivor.gif");
-			writeText("Test for survivor event.");
+			writeText("A brand new set of balls hangs below a fresh dick.");
+			writeSpeech(data.story.name, "zombie", "So? How does it feel?");
+			writeText("Any sort of thought or feeling aside from hunger is gone from her eyes. Her hands wrap around her new dick and she starts jerking off.");
+			writeText("This isn't right. There's no recognition to your words, all she's focused on is her dick. At this point, it seems like...");
+			writeText("Like she's just a regular infected.");
+			writeText("You start to leave as she has her first orgasm, pumping out sperm hard enough to splatter the walls of the room. You need to get home and figure this out");
 			break;
 		}
 		case "tainted": {
@@ -858,8 +971,18 @@ function writeZombieEvent(n) {
 			break;
 		}
 		case "infected": {
+			writeText("You're safe! Every time you skirted death has been worth it. A full month's storage of food and water, all in the safety of your well-barricaded home.");
+			writeText("The storm rages outside, but it's muffled by the thick walls. This place used to be someone's bunker, but they never got the chance to use it. They left plenty of things lying around, some more useful than others.");
+			writeText("As you take off your gear and lay down to relax, you feel your cock start to harden. You still have one last thing ti deal with.");
+			writeText("Luckily you have plenty of time now. You can study your strain of infection, maybe even find some kind of vaccine for the infection.");
+			writeText("But more importantly, starting now, you need to practice some discipline. You are the one who controls the dick, not the other way around.");
+			writeText("...");
 			writeBig("images/zombie/infected.gif");
-			writeText("Test for infected event.");
+			writeSpeech(data.story.name, "zombie", "Wanna cum, wanna cum!");
+			writeText("A whole month in complete solitary with nothing but an insatiable dick to entertain yourself with? You didn't even last a week.");
+			writeText("Some of the stuff you thought was useless turned out to be pretty amazing. Now you wouldn't trade those boxes of adult toys for all the food in the world.");
+			writeText("The storm ended a long time ago, and you haven't exactly been conserving food or water lately. It isn't your fault though! Why bother saving resources, when it feels so much better just to pump them out as cum instead?");
+			writeText("You'll need to leave soon to get more supplies. Something tells you that next time you leave, you'll find something a lot more fun than buttplugs and fleshlights, and you won't want to come back.");
 			break;
 		}
 		case "journalBasic": {
@@ -887,6 +1010,7 @@ function writeZombieEvent(n) {
 			writeText("These fuckers are the most dangerous types I've ever seen. Normal zombies are tough to deal with, but they have weaknesses. These ones are smart, really smart. They can open doors, use tools, climb up ladders, the works.");
 			writeText("They aren't anywhere near as strong though, I think I could take one in a fight if I had to, but the most dangerous part of them is their pheromones.");
 			writeText("See, their bodies are way softer, and their dicks are so small I don't think they even can get erections. What they do is emit pheromones that turn men into sex fiends, and try to seduce the men into fucking their asses. They infect the men like an STD while still pumping spunk all over everything.");
+			writeText("Not only that, but they can make this weird screech sound. I hurt like a glass shard in the head, but for some reason whenever a man heard it they started running out of cover towards her.");
 			writeText("They got Tommy, so the building is compromised. I was able to stay safe and eventually everyone else left the building. Sirens still get horny like normal zombies but they can't cum from their dicks, so they need to keep an entourage with them when they aren't hunting. When they find prey they'll ditch their fuckbudies, who are still covered in pheromones.");
 			writeText("The one that got Tommy was headed to the south last time I saw her, maybe she's heading to that unfinished place at Ridgewood?");
 			writeText("<span class='choiceText' onclick='sceneTransition(`journal`)'>Finish reading the section</span>.");
