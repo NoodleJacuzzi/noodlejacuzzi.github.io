@@ -2,8 +2,8 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 5/24/2019</p>
-				<p class = "centeredText">Version 0.7 of Human Alteration App</p>
+				<p class = "centeredText">Lastest News 5/26/2019</p>
+				<p class = "centeredText">Version 1.0 of Rainy DayZ</p>
 			`;
 			writeTransition("news", "View all news updates");
 			writeText("<br>");
@@ -35,7 +35,7 @@ function writeScene(scene) {
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Princess%20Quest/Princess%20Quest%20Mobile.html'">Try the mobile version (NON-FUNCTIONAL)</p>
 			`;
 			writeBig("images/RainyDayZ.jpg");
-			writeText("Rainy DayZ v0.9");
+			writeText("Rainy DayZ v1.0");
 			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.");
 			writeText("Navigate a town and city deliberately working to sabotage yourself and throw yourself into the clutches of the zombie hordes, the goal of the game here is to be defeated and attacked to collect and unlock all of the game's scenes.");
 			writeText("Tags: Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Bestiality (optional), Parasites (optional)");
@@ -49,7 +49,10 @@ function writeScene(scene) {
 			break;
 		}
 		case "news": {
-			writeText("<b>5/20/2019</b> - Human Alteration App v0.7");
+			writeText("<b>5/26/2019</b> - Rainy DayZ v1.0");
+			writeText("Full game release");
+			writeText("6 new scenes, 14 scenes in the game total");
+			writeText("<b>5/24/2019</b> - Human Alteration App v0.7");
 			writeText("Dom Route Update");
 			writeText("7 new dom route scenes");
 			writeText("<b>5/20/2019</b> - Princess Quest v1.0");
@@ -171,9 +174,10 @@ function writeScene(scene) {
 		}
 		case "downloadRainyDayZ": {
 			document.getElementById('output').innerHTML +=`
-			Current version: Beta V1<br>
-			Most recent game files: https://mega.nz/#!TsVgwAwY!TvQDWN2k0TRkCtLkhVALG_osBJUtLbGyJcsRD8t5F0g<br>
-			All you need to do is download this. Extract the game files to create the Rainy DayZ folder, then run the Rainy DayZ.html file. If errors begin popping up, I might need to separate the game files from the images.
+			Current Version: Complete v1.0<br>
+			Most recent game files: https://mega.nz/#!7sMS0AAY!vO_5Kk9YPBT3B5xN4TgEuBIznj7ClPy0Zvchivqkg1A<br>
+			All you need to do is download this. Extract the game files to create the Rainy DayZ folder, then run the Rainy DayZ.html file. If errors begin popping up, I might need to separate the game files from the images.<br>
+			If you already have the beta version installed, don't download the whole thing all over again. Download this game files upgrade pack and overwrite the old Rainy DayZ folder to update your game: https://mega.nz/#!KlEW0ITZ!k4F9j99y9vfqrOkGcvYxRUjLbI3TA2B4SKXJTcCp0BU
 			`;
 			writeTransition("start", "Go Back");
 			break;
