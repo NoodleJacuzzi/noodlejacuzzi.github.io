@@ -158,15 +158,15 @@ function writeScene(scene) {
 		}
 		case "downloadHAA": {
 			document.getElementById('output').innerHTML +=`
-			Current version: 0.7<br>
-			Most recent game files: https://mega.nz/#!npNBmKYb!STguHSmmao2Ghyth09CCv2G1dywaLoqRe8tRZjTyQ3A<br>
-			Most recent image pack: https://mega.nz/#!ztclnarA!6ImNtiI7qmGs1I1l6DnonkOPild-NkmoKL6ujgO1-D4<br>
+			Current version: 0.7<br><br>
+			Most recent game files: https://mega.nz/#!npNBmKYb!STguHSmmao2Ghyth09CCv2G1dywaLoqRe8tRZjTyQ3A<br><br>
+			Most recent image pack: https://mega.nz/#!ztclnarA!6ImNtiI7qmGs1I1l6DnonkOPild-NkmoKL6ujgO1-D4<br><br>
 			If you're new to the game, all you need to do is download these two. Extract the game files to create the Human Alteration App folder, then extract the image pack directly into the Human Alteration App folder. You can find a picture of what the final layout should look like in the screenshot folder:<br>
-			https://mega.nz/#F!zwsBnSoT!7wiL0wOWcml2wtX7M0fXiA<br>
+			https://mega.nz/#F!zwsBnSoT!7wiL0wOWcml2wtX7M0fXiA<br><br>
 			If you've already downloaded an image pack in the past, you can find all of the image upgrade packs here so that you don't need to download the whole thing again:<br>
-			https://mega.nz/#F!j9UyWQhQ!TKUlk_gNQq1fFk779dMurw<br>
+			https://mega.nz/#F!j9UyWQhQ!TKUlk_gNQq1fFk779dMurw<br><br>
 			If you'd like to see the game's overall progress and a list of what scenes have been completed, you can find the game's progress chart here:<br>
-			https://mega.nz/#F!jk0yBYwI!DsOhPJl3qB5Ec8KTsIFNtA<br>
+			https://mega.nz/#F!jk0yBYwI!DsOhPJl3qB5Ec8KTsIFNtA<br><br>
 			(Note: I don't count the logbook & corruption events in the total scene count.)
 			`;
 			writeTransition("start", "Go Back");
@@ -174,9 +174,9 @@ function writeScene(scene) {
 		}
 		case "downloadRainyDayZ": {
 			document.getElementById('output').innerHTML +=`
-			Current Version: Complete v1.0<br>
-			Most recent game files: https://mega.nz/#!7sMS0AAY!vO_5Kk9YPBT3B5xN4TgEuBIznj7ClPy0Zvchivqkg1A<br>
-			All you need to do is download this. Extract the game files to create the Rainy DayZ folder, then run the Rainy DayZ.html file. If errors begin popping up, I might need to separate the game files from the images.<br>
+			Current Version: Complete v1.0<br><br>
+			Most recent game files: https://mega.nz/#!7sMS0AAY!vO_5Kk9YPBT3B5xN4TgEuBIznj7ClPy0Zvchivqkg1A<br><br>
+			All you need to do is download this. Extract the game files to create the Rainy DayZ folder, then run the Rainy DayZ.html file. If errors begin popping up, I might need to separate the game files from the images.<br><br>
 			If you already have the beta version installed, don't download the whole thing all over again. Download this game files upgrade pack and overwrite the old Rainy DayZ folder to update your game: https://mega.nz/#!KlEW0ITZ!k4F9j99y9vfqrOkGcvYxRUjLbI3TA2B4SKXJTcCp0BU
 			`;
 			writeTransition("start", "Go Back");
@@ -184,8 +184,8 @@ function writeScene(scene) {
 		}
 		case "downloadPrincessQuest": {
 			document.getElementById('output').innerHTML +=`
-			Current version: v1.0 (5/20/2019)<br>
-			Most recent game files: https://mega.nz/#!Gl9whSBL!S0FswXAxehzhP3cMGOPa5-mp-CjFRtTHQ4-3BjCITX8<br>
+			Current version: v1.0 (5/20/2019)<br><br>
+			Most recent game files: https://mega.nz/#!Gl9whSBL!S0FswXAxehzhP3cMGOPa5-mp-CjFRtTHQ4-3BjCITX8<br><br>
 			All you need to do is download this. Extract the game files to create the Princess Quest folder, then run the Princess Quest.html file. If errors begin popping up, I might need to separate the game files from the images.
 			`;
 			writeTransition("start", "Go Back");
