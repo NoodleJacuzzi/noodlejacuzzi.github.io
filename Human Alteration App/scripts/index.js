@@ -11,6 +11,7 @@ var zombieInvShowing = false;
 var imagesDisabled = false;
 var incest = true;
 var tokyo = false;
+var randNum;
 var endingChoices = {
 	family: 1,
 	friend: 1,
@@ -43,7 +44,7 @@ var misc5 = {
 }
 var data = {
 	story: {
-		name: "You", version: 0.7,
+		name: "You", version: 0.75, freeSample: false,
 		currentScene: "start", money: 20, route: "dom", skill: 0, playingGame: false,
 		popRocks: 0, caramelMelts: 0, plugPops: 0, stretchyTaffy: 0, fruitGushers: 0, 
 		vrMachine: false, princessGame: false, zombieGame: false, laptop: false, creamer: false, doll: false, toy: false, horse: false, onahole: false,
@@ -192,6 +193,8 @@ var gallerySubArray = [
 	{index: 'sister1S', name: "Taste of Revenge", unlocked: false, hint: 'After reaching corruption level 2 with all other characters, talk to her with a Pop Rock.'},
 	{index: 'sister2S', name: "Punishment", unlocked: false, hint: 'Talk to her with a Pop Rock after completing the event "Taste of Revenge".'},
 	{index: 'sister3S', name: "Tokyo Pop", unlocked: false, hint: 'Talk to her after learning about the Tokyo Pop filming and after completing the event "Punishment".'},
+	{index: 'sister4S', name: "New Toy", unlocked: false, hint: 'Talk to her after triggering the event "Student Teacher Dynamic".'},
+	{index: 'sister5S', name: "Pushing Limits", unlocked: false, hint: 'Talk to her after triggering the event "New Toy".'},
 	{index: 'friend1S', name: "Confession Interrupted", unlocked: false, hint: 'Corruption level 1. Talk to her during the day.'},
 	{index: 'friend2S', name: "Bathroom Stall", unlocked: false, hint: 'Corruption level 2. Talk to her during the day.'},
 	{index: 'friend3S', name: "Love Letter", unlocked: false, hint: 'Corruption level 3. Talk to her during the day.'},
@@ -200,10 +203,11 @@ var gallerySubArray = [
 	{index: 'teacher2S', name: "Disfunction", unlocked: false, hint: 'Corruption level 2. Talk to her during the day.'},
 	{index: 'teacher3S', name: "Exploration", unlocked: false, hint: 'Corruption level 3. Talk to her during the day with a Plug Pop.'},
 	{index: 'teacher4S', name: "Sounding", unlocked: false, hint: 'Corruption level 3. Talk to her during the day with a Stretchy Taffy.'},
-	{index: 'teacher5S', name: "Fisting", unlocked: false, hint: 'Corruption level 4. Talk to her during the day.'},
+	{index: 'teacher5S', name: "Student Teacher Dynamic", unlocked: false, hint: 'Corruption level 4. Talk to her during the day.'},
 	{index: 'office1S', name: "Public Indecency", unlocked: false, hint: 'Corruption level 1. Talk to her during the day.'},
 	{index: 'office2S', name: "Public Flasher", unlocked: false, hint: 'Corruption level 2. Talk to her during the day.'},
 	{index: 'office3S', name: "Superhero", unlocked: false, hint: 'Corruption level 3. Talk to her during the day.'},
+	{index: 'office4S', name: "Public Punishment", unlocked: false, hint: 'Corruption level 4. Talk to her during the day.'},
 	{index: 'chef1S', name: "Rewarding Meal", unlocked: false, hint: 'Corruption level 1. Talk to her during the day.'},
 	{index: 'chef2S', name: "Direct Feeding", unlocked: false, hint: 'Corruption level 2. Talk to her during the day.'},
 	{index: 'chef3S', name: "Food Preparation", unlocked: false, hint: 'Corruption level 3. Talk to her during the day with a Pop Rock.'},
@@ -402,6 +406,10 @@ function changeEnding(c, n) {
 			break;
 		}
 	}
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
 }
 
 //Showing / Hiding Windows
@@ -708,22 +716,72 @@ function sceneTransition(scene) {
 }
 
 function laptop(genre) {
+	randNum = getRandomInt(3);
 	document.getElementById('output').innerHTML = '';
 	switch(genre) {
 		case "straight": {
-			writeBig("images/real/general/vaginal6.gif");
+			switch (randNum) {
+				case 0:
+					writeBig("images/real/general/vaginal6.gif");
+				break;
+				case 1:
+					writeBig("images/real/general/mom4-1.gif");
+				break;
+				case 2:
+					writeBig("images/real/general/teacher3-1.gif");
+				break;
+			}
 			break;
 		}
 		case "throat": {
-			writeBig("images/real/general/deepthroat4.gif");
+			switch (randNum) {
+				case 0:
+					writeBig("images/real/general/deepthroat4.gif");
+				break;
+				case 1:
+					writeBig("images/real/general/deepthroat2.gif");
+				break;
+				case 2:
+					writeBig("images/real/general/deepthroat7.gif");
+				break;
+			}
 			break;
 		}
 		case "anal": {
-			writeBig("images/real/general/anal7.gif");
+			switch (randNum) {
+				case 0:
+					writeBig("images/real/general/anal7.gif");
+				break;
+				case 1:
+					writeBig("images/real/general/office3-3.gif");
+				break;
+				case 2:
+					writeBig("images/real/general/office4-2.gif");
+				break;
+			}
 			break;
 		}
 		case "gay": {
-			writeBig("images/real/general/sissy3.gif");
+			switch (randNum) {
+				case 0:
+					writeBig("images/real/general/sissy3.gif");
+				break;
+				case 1:
+					writeBig("images/real/general/sissy9.gif");
+				break;
+				case 2:
+					writeBig("images/real/general/friend3-2.gif");
+				break;
+			}
+			break;
+		}
+		case "sub": {
+			writeBig("images/drawn/aya/friend2-6.jpg");
+			writeBig("images/drawn/aya/mom2-4.jpg");
+			writeBig("images/drawn/aya/office2-2.jpg");
+			writeText("Numerous images of girlcock fill your screen, a message appears flashing in and out.");
+			writeText("There are better ways to get your rocks off in my new world, little bro.");
+			writeText("It seems like porn is out of the question.");
 			break;
 		}
 	}
@@ -790,6 +848,52 @@ function addendum(n) {
 			writeText("Shannon is unconscious on the bed, her cute little dicklette resting in a pool of her wasted cum. Her gaping, cum-coated ass twitches, but can't close fully.");
 			writeSpeech(data.story.name, "player", "So what will you do with her?");
 			writeSpeech(data.story.friendName, "riley", "Well, everyone in the crew hated Sean, but I think they'll have a change of heart once they see the new him. Throwing in a dedicated fucksleeve and pussylicker could get me some brownie points with the captain. <br>And if things don't work out, I can always use him to motivate the football team. ");
+			if (data.story.currentScene != "gallery") {
+				data.story.time = "night";
+				writeTransition("homePlayerRoom", "Finish up for the day");
+				data.story.motherReady = false;
+			}
+			else {
+				writeTransition("gallery", "Go back");
+			}
+			break;
+		}
+		case "alexis1": {
+			writeDrawn("images/drawn/aya/office3-3.jpg", "Art by Aya");
+			writeText("Reach out and squeeze her balls between your fingers in an act of defiance.");
+			writeSpeech(data.story.officeName, "alexis", "Eeek!");
+			writeText("This should teach her to attack innocent citizens... Or not.");
+			writeDrawn("images/drawn/aya/office3-4.jpg", "Art by Aya");
+			writeText("She starts stroking herself as you squeeze her balls. The harder you squeeze, the faster she jerks herself off and the farther her eyes roll back.");
+			writeText("You let go of her nutsack, but it's too late.");
+			writeDrawn("images/drawn/aya/office3-5.jpg", "Art by Aya");
+			writeText("Her jizz arcs through the air, splattering cum on her face and her cowtits.");
+			writeDrawn("images/drawn/aya/office3-6.jpg", "Art by Aya");
+			writeText("She's silent as she stares at you with a hungry expression, her tongue slips out of her mouth and she licks up a stray grob of cum off her lips.");
+			writeText("While she's distracted, you quickly get out of there. ");
+			if (data.story.currentScene != "gallery") {
+				data.story.time = "night";
+				writeTransition("homePlayerRoom", "Finish up for the day");
+				data.story.motherReady = false;
+			}
+			else {
+				writeTransition("gallery", "Go back");
+			}
+			break;
+		}
+		case "alexis2": {
+			writeDrawn("images/drawn/aya/office3-7.jpg", "Art by Aya");
+			writeText("Don't bother fighting it and lean forward to take the head if your dick into your mouth.");
+			writeText("She bites down on a gloved knuckle as her cockhead slides down a willing mouth.");
+			writeDrawn("images/drawn/aya/office3-8.jpg", "Art by Aya");
+			writeText("Her hips buck as you slide deeper down on her shaft. No gagging or choking, your new body was made for taking dick like this.");
+			writeText("Her eyes roll back as you go down far enough to kiss her tightening ballsack, before you pull out just enough for the head of her dick to start spurting on the back of your tongue.");
+			writeDrawn("images/drawn/aya/office3-9.jpg", "Art by Aya");
+			writeSpeech(data.story.officeName, "alexis", "Mmmm! ");
+			writeText("She legs shake as she practically starts pissing a river of cum down your throat. Her eyes roll back so far you wonder if her brain just broke.");
+			writeText("Making a seal with your lips, you pull off her dick as noisily as you can manage while staring right at her.");
+			writeDrawn("images/drawn/aya/office3-10.jpg", "Art by Aya");
+			writeText("You wipe off a rope of cum from your mouth and start walking home as "+data.story.officeName+" drunkenly giggles to herself. ");
 			if (data.story.currentScene != "gallery") {
 				data.story.time = "night";
 				writeTransition("homePlayerRoom", "Finish up for the day");
@@ -1152,7 +1256,20 @@ function updateSave() {
 			data.galleryArray.splice(31, 1);
 		}
 		data.story.version = 0.7;
-		alert("Older version save data detected. Your save data has been automatically updated for version 0.7");
+	}
+	if (data.story.version == 0.7) {
+		if (data.story.route == "sub") {
+			var office4 = {index: 'office4S', name: "Public Punishment", unlocked: false, hint: 'Corruption level 4. Talk to her during the day.'};
+			var sister4 = {index: 'sister4S', name: "New Toy", unlocked: false, hint: 'Talk to her after triggering the event "Student Teacher Dynamic".'};
+			var sister5 = {index: 'sister4S', name: "Pushing Limits", unlocked: false, hint: 'Talk to her after triggering the event "New Toy".'};
+			data.galleryArray.push(office4);
+			data.galleryArray.push(sister4);
+			data.galleryArray.push(sister5);
+			data.story.freeSample = false;
+			data.galleryArray[14].name = "Student Teacher Dynamic";
+		}
+		data.story.version = 0.75;
+		alert("Older version save data detected. Your save data has been automatically updated for version 0.7.5");
 	}
 }
 
@@ -2210,26 +2327,30 @@ function generateExoticShop() {
 		}
 	}
 	if (data.story.toy == false) {
-		document.getElementById('output').innerHTML += `
-		<br>
-		<div class = "shopItem" onclick = "purchase('toy')">
-			<p class = "shopName">Adult Toy</p>
-			<p class = "shopDesc">You know what this is, and what it can do.</p>
-			<p class = "shopPrice">$5</p>
-			<img class="shopImage" src="images/real/items/adultToy.jpg">
-		</div>
-		`;
+		if (data.story.route == "dom") {
+			document.getElementById('output').innerHTML += `
+			<br>
+			<div class = "shopItem" onclick = "purchase('toy')">
+				<p class = "shopName">Adult Toy</p>
+				<p class = "shopDesc">You know what this is, and what it can do.</p>
+				<p class = "shopPrice">$5</p>
+				<img class="shopImage" src="images/real/items/adultToy.jpg">
+			</div>
+			`;
+		}
 	}
 	if (data.story.onahole == false) {
-		document.getElementById('output').innerHTML += `
-		<br>
-		<div class = "shopItem" onclick = "purchase('onahole')">
-			<p class = "shopName">Onahole</p>
-			<p class = "shopDesc">You're an app user, so you shouldn't need this. Unless you're feeling creative, that is.</p>
-			<p class = "shopPrice">$5</p>
-			<img class="shopImage" src="images/real/items/onahole.jpg">
-		</div>
-		`;
+		if (data.story.route == "dom") {
+			document.getElementById('output').innerHTML += `
+			<br>
+			<div class = "shopItem" onclick = "purchase('onahole')">
+				<p class = "shopName">Onahole</p>
+				<p class = "shopDesc">You're an app user, so you shouldn't need this. Unless you're feeling creative, that is.</p>
+				<p class = "shopPrice">$5</p>
+				<img class="shopImage" src="images/real/items/onahole.jpg">
+			</div>
+			`;
+		}
 	}
 	if (data.story.vrMachine == false) {
 		/*document.getElementById('output').innerHTML += `
@@ -2320,15 +2441,17 @@ function generateExoticShop() {
 		}
 	}
 	if (data.story.horse == false) {
-		document.getElementById('output').innerHTML += `
-		<br>
-		<div class = "shopItem" onclick = "purchase('horse')">
-			<p class = "shopName">Horse Toy</p>
-			<p class = "shopDesc">This is the meat that can't be beat! Warning, not for the faint of heart / inflexible of body.</p>
-			<p class = "shopPrice">$5</p>
-			<img class="shopImage" src="images/real/items/horseToy.jpg">
-		</div>
-		`;
+		if (data.story.route == "dom") {
+			document.getElementById('output').innerHTML += `
+			<br>
+			<div class = "shopItem" onclick = "purchase('horse')">
+				<p class = "shopName">Horse Toy</p>
+				<p class = "shopDesc">This is the meat that can't be beat! Warning, not for the faint of heart / inflexible of body.</p>
+				<p class = "shopPrice">$5</p>
+				<img class="shopImage" src="images/real/items/horseToy.jpg">
+			</div>
+			`;
+		}
 	}
 	if (data.story.beautyTicket == false) {
 		if (data.story.route == "dom") {
