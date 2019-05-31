@@ -2,8 +2,8 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 5/26/2019</p>
-				<p class = "centeredText">Version 1.0 of Rainy DayZ</p>
+				<p class = "centeredText">Lastest News 5/31/2019</p>
+				<p class = "centeredText">Version 0.7.5 of HAA</p>
 			`;
 			writeTransition("news", "View all news updates");
 			writeText("<br>");
@@ -17,7 +17,7 @@ function writeScene(scene) {
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App%20Mobile.html'">Play the mobile version</p>
 			`;
-			writeText("Human Alteration App v0.7");
+			writeText("Human Alteration App v0.7.5");
 			writeText("You find yourself with a phone app that can alter people's minds and bodies. Choose between one of two routes where either you're in control of the world or the app is stolen from you. There's a clear sense of progression throughout and no focus on grinding.");
 			writeText("Dom route tags: Incest (optionally non blood-related), Mind Control, Sluttification, Degradation, Exhibitionism, Watersports (optional, not yet implemented)");
 			writeText("Sub route tags: 2D Art, Incest (optionally non blood-related), Sissification, Female-to-Shemale Transformation, Cum Eating, Sounding, NTR (mild & optional), Smothering (not yet implemented), Watersports (optional, not yet implemented)");
@@ -49,6 +49,9 @@ function writeScene(scene) {
 			break;
 		}
 		case "news": {
+			writeText("<b>5/31/2019</b> - Human Alteration App v0.7.5");
+			writeText("Sub Route Update");
+			writeText("11 new sub route scenes");
 			writeText("<b>5/26/2019</b> - Rainy DayZ v1.0");
 			writeText("Full game release");
 			writeText("6 new scenes, 14 scenes in the game total");
@@ -158,15 +161,15 @@ function writeScene(scene) {
 		}
 		case "downloadHAA": {
 			document.getElementById('output').innerHTML +=`
-			Current version: 0.7<br><br>
-			Most recent game files: https://mega.nz/#!npNBmKYb!STguHSmmao2Ghyth09CCv2G1dywaLoqRe8tRZjTyQ3A<br><br>
-			Most recent image pack: https://mega.nz/#!ztclnarA!6ImNtiI7qmGs1I1l6DnonkOPild-NkmoKL6ujgO1-D4<br><br>
-			If you're new to the game, all you need to do is download these two. Extract the game files to create the Human Alteration App folder, then extract the image pack directly into the Human Alteration App folder. You can find a picture of what the final layout should look like in the screenshot folder:<br>
-			https://mega.nz/#F!zwsBnSoT!7wiL0wOWcml2wtX7M0fXiA<br><br>
-			If you've already downloaded an image pack in the past, you can find all of the image upgrade packs here so that you don't need to download the whole thing again:<br>
-			https://mega.nz/#F!j9UyWQhQ!TKUlk_gNQq1fFk779dMurw<br><br>
-			If you'd like to see the game's overall progress and a list of what scenes have been completed, you can find the game's progress chart here:<br>
-			https://mega.nz/#F!jk0yBYwI!DsOhPJl3qB5Ec8KTsIFNtA<br><br>
+			Current version: 0.7.5
+			Most recent game files: https://mega.nz/#!389RjYDR!Rq2L2Fzph7EbFY2xa3GF_15L1xnUWCN1Y3CiLmrgqto
+			Most recent image pack: https://mega.nz/#!z19SWYZZ!_5nAlQMaQ47ItCugxRnME6-xptlezy_waIUnNcNRR4U
+			If you're new to the game, all you need to do is download these two. Extract the game files to create the Human Alteration App folder, then extract the image pack directly into the Human Alteration App folder. You can find a picture of what the final layout should look like in the screenshot folder:
+			https://mega.nz/#F!zwsBnSoT!7wiL0wOWcml2wtX7M0fXiA
+			If you've already downloaded an image pack in the past, you can find all of the image upgrade packs here so that you don't need to download the whole thing again:
+			https://mega.nz/#F!j9UyWQhQ!TKUlk_gNQq1fFk779dMurw
+			If you'd like to see the game's overall progress and a list of what scenes have been completed, you can find the game's progress chart here:
+			https://mega.nz/#F!jk0yBYwI!DsOhPJl3qB5Ec8KTsIFNtA
 			(Note: I don't count the logbook & corruption events in the total scene count.)
 			`;
 			writeTransition("start", "Go Back");
