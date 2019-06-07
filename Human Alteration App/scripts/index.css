@@ -68,6 +68,7 @@ html, body {
     margin: auto;
 	max-width: 50%;
     min-width: 25%;
+	max-height: 700px;
   	padding: 20px, 1px;
   	border: 3px solid white;
   	border-radius: 5px;

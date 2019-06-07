@@ -1,0 +1,72 @@
+//////------******Main Text:******------\\\\\\
+Salutations, I'm Noodle Jacuzzi, and I make games!
+I'm the creator of Human Alteration App, Rainy DayZ, and Princess Quest. You can find an up-to-date list of all my work (with demos) at my master index here:
+https://noodlejacuzzi.github.io/index.html
+
+I'm always open to comments, suggestions, and criticism. If you'd like to contact me, leave a message here or comment in any of the discussion threads about my games on TFgames or F95zone.
+
+I intend for 2 releases each month, and not charging if that release is some new engine that doesn't have any meaningful content. 
+To avoid burnout while still managing a consistent schedule, I'll take breaks from working on whatever main game I'm actively developing to work on small side projects. For an example of this, see Princess Quest compared to Human Alteration App. If you'd like to commission one, it's the $40 tier over there.
+This'll keep me working and engaged, but I understand if you pledged to support something like HAA, and aren't interested in supporting, for example, an update to Rainy DayZ. If you want to take a break as a patron, I completely understand. I recommend showing some love to the patreon pages of SexTheHex (https://www.patreon.com/sexthehex) and SlutWriter (https://www.patreon.com/slutwriter), both of whom are talented writers that deserve even more attention.
+
+Commission Rules
+No scat, guro, loli, or anything that breaks patreon's rules. 
+You need to provide your own images / gifs. High quality stuff preferably, stick to real porn if possible since that has a consistently higher level of quality. It'll make the scene better, I promise. 
+Be detailed and descriptive, or your scene might be shorter and veer way off from what you intended.
+Finally, please remain polite and respectful, and I will do the same with you.
+
+I'll aim for finishing commissions at the end of each month. If I haven't added them to their game yet, they'll be available in the index, or in html files you can download for offline viewing. 
+
+I encourage emailing or messaging me before pledging for a commission to make sure that your request is feasible.
+
+//////------******Tiers:******------\\\\\\
+$1 - Patron
+Vote in polls on upcoming content
+Get status updates/previews on upcoming content
+Think of this as a tip jar to show support. I might add other features in the future, like a Discord server.
+
+$3 - Fan
+Patron's benefits
+Chance for a commission
+Each month at least one random fan will be chosen to get a full scene commission.
+
+$10 - Supporter
+Patron's benefits
+Commission a scene
+You'll get a full commissioned scene for a game I've done of your choice. See the Commission Rules section for more.
+
+$40 - Sponsor
+Patron's benefits
+Commission a game
+I'll start working with you to create an HTML game or an extension of a game I've already finished. This includes building the game's framework and 1-5 scenes with the game's first release. You can get more scenes for it by remaining a sponsor or by dropping down a tier afterwards.
+Please email me first before pledging to make sure your idea is feasible first, please.
+
+Version 0.8 - Dom Route update
+Game files: https://mega.nz/#!P9kizKiT!TvsXacHWPQAGIUXItwH09D8qB5GKL6XtVob7l57VM5g
+Image pack: https://mega.nz/#!z19SWYZZ!_5nAlQMaQ47ItCugxRnME6-xptlezy_waIUnNcNRR4U (no new images since 0.7.5)
+
+New Scenes:
+- 9 new sub route scenes, all pre-ending content for the dom route is finished! For a character-by character basis, it is:
+- 2 new scenes for Lisa (both of which feature watersports, and the second is short)
+- 2 new scenes for Jean
+- 2 new scenes for Riley
+- 2 new scenes for Kendra
+- 1 new miscellaneous scene for improving your skill with the app. Buy the onahole, then go to the streets with advanced skill in the app.
+
+Bugfixes:
+- I accidently removed the max image height from the desktop version. If it annoys you, you can remove "max-height: 700px;" from .bigPicture in the index.css file.
+
+Other:
+- Removed some unused scene slots from the save file. If you're playing a save from a version older than 0.8, the game will automatically update your save file. If this causes any problems, you can click "break the game" at home or click "save to text file", then send me the results.
+- There are no new images since 0.7.5, I planned ahead and already included this version's images. If you're fresh to the game, you can download the game's files and the most recent image pack and enjoy the game without downloading anything else. First, extract the HAA game files rar, then extract the HAA images rar directly into the Human Alteration App folder. You can find a picture of what the final layout should look like in the screenshot folder:
+https://mega.nz/#F!zwsBnSoT!7wiL0wOWcml2wtX7M0fXiA
+- If you aren't new to the game, you can download the image upgrade packs here: https://mega.nz/#F!j9UyWQhQ!TKUlk_gNQq1fFk779dMurw
+Just extract the upgrade pack into the Human Alteration App folder, and your image pack will be updated.
+- You can see the progress chart here: https://mega.nz/#F!jk0yBYwI!DsOhPJl3qB5Ec8KTsIFNtA
+
+Today's Topic: What would you write?
+[list]
+[*]If you could make a scene that would make it into the game, what would it entail?
+[*]What content / tags would you want featured?
+[*]What images would you use?
+[/list]

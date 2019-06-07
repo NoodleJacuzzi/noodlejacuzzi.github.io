@@ -32,16 +32,6 @@ var endingsLocked = {
 	office2: false,
 	office3: false,
 }
-var misc5 = {
-	name: "Jennifer",
-	hairColor: "Blonde",
-	breasts: "Small",
-	nipple: "Normal",
-	ass: "Flat",
-	genitals: "Vagina",
-	preference: "vaginal",
-	exhibitionism: "low",
-}
 var data = {
 	story: {
 		name: "You", version: 0.75, freeSample: false,
@@ -136,11 +126,6 @@ var data = {
 		{index: 'misc3', name: "Gina Special", unlocked: false, hint: 'After purchasing the clothing ticket, go to the clothing shop.'},
 		{index: 'misc4', name: "Gina Special 2", unlocked: false, hint: 'After purchasing the clothing ticket, purchase the special deal in the clothing shop.'},
 		{index: 'misc5', name: "Human Onahole", unlocked: false, hint: 'Go to the streets with skill level of advanced. Requires Onahole. Increases skill level to master.'},
-		{index: 'dream1', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-		{index: 'dream2', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-		{index: 'dream3', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-		{index: 'dream4', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-		{index: 'dream5', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
 	],
 		zombieData: {
 		scene: "",
@@ -216,20 +201,11 @@ var gallerySubArray = [
 	{index: 'doll2', name: "Frustrations", unlocked: false, hint: 'Talk to the her at least a day after completing the event "Awakening".'},
 	{index: 'doll3', name: "Borrowed", unlocked: false, hint: 'Talk to the her at least a day after completing the event "Frustrations".'},
 	{index: 'misc1S', name: "Take a Break", unlocked: false, hint: 'Complete the prologue'},
-	{index: 'misc2S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-	{index: 'misc3S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-	{index: 'misc4S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-	{index: 'misc5S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
 	{index: 'vr1', name: "Chapter 1", unlocked: false, hint: 'Complete chapter 1 of princess quest.'},
 	{index: 'vr2', name: "Chapter 2", unlocked: false, hint: 'Complete chapter 2 of princess quest.'},
 	{index: 'vr3', name: "Chapter 3", unlocked: false, hint: 'Complete chapter 3 of princess quest.'},
 	{index: 'vr4', name: "Chapter 4", unlocked: false, hint: 'Complete chapter 4 of princess quest.'},
 	{index: 'vr5', name: "Epilogue", unlocked: false, hint: 'Collect all of the secret items in princess quest.'},
-	{index: 'dream1S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-	{index: 'dream2S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-	{index: 'dream3S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-	{index: 'dream4S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-	{index: 'dream5S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
 ];
 
 var zombie = {
@@ -1256,6 +1232,7 @@ function updateSave() {
 			data.galleryArray.splice(31, 1);
 		}
 		data.story.version = 0.7;
+		console.log("Updating save to version 0.7");
 	}
 	if (data.story.version == 0.7) {
 		if (data.story.route == "sub") {
@@ -1269,7 +1246,21 @@ function updateSave() {
 			data.galleryArray[14].name = "Student Teacher Dynamic";
 		}
 		data.story.version = 0.75;
-		alert("Older version save data detected. Your save data has been automatically updated for version 0.7.5");
+		console.log("Updating save to version 0.7.5");
+	}
+	if (data.story.version == 0.75) {
+		if (data.story.route == "dom") {
+			data.galleryArray.splice(41, 5);
+		}
+		if (data.story.route == "sub") {
+			console.log(data.galleryArray[35].index);
+			console.log(data.galleryArray[26].index);
+			data.galleryArray.splice(35, 5);
+			data.galleryArray.splice(26, 4);
+		}
+		data.story.version = 0.8;
+		console.log("Updating save to version 0.8");
+		alert("Older version save data detected. Your save data has been automatically updated for version 0.8");
 	}
 }
 
@@ -1393,6 +1384,8 @@ function switchDesc(n) {
 				<p class = "selfDesc">
 					<span id = "otherName">Name: Kendra</span>
 					<br> <br>
+					<span id = "otherCorruption">Corruption: 0</span>
+					<br> <br>
 					<span id = "otherStatus">Status: Single Mother</span>
 					<br> <br>
 					<span id = "otherClothes">Her preferred outfit is a brown sweater-dress that goes down to her thighs.</span>
@@ -1409,6 +1402,8 @@ function switchDesc(n) {
 			document.getElementById('logbookRight').innerHTML += `
 				<p class = "selfDesc">
 					<span id = "otherName">Name: Kendra</span>
+					<br> <br>
+					<span id = "otherCorruption">Corruption: 0</span>
 					<br> <br>
 					<span id = "otherStatus">Status: Single Mother</span>
 					<br> <br>
@@ -1427,6 +1422,8 @@ function switchDesc(n) {
 				<p class = "selfDesc">
 					<span id = "otherName">Name: Kendra</span>
 					<br> <br>
+					<span id = "otherCorruption">Corruption: 0</span>
+					<br> <br>
 					<span id = "otherStatus">Status: Single Mother</span>
 					<br> <br>
 					<span id = "otherClothes">Her preferred outfit is a brown sweater-dress that goes down to her thighs.</span>
@@ -1443,6 +1440,8 @@ function switchDesc(n) {
 			document.getElementById('logbookRight').innerHTML += `
 				<p class = "selfDesc">
 					<span id = "otherName">Name: Kendra</span>
+					<br> <br>
+					<span id = "otherCorruption">Corruption: 0</span>
 					<br> <br>
 					<span id = "otherStatus">Status: Single Mother</span>
 					<br> <br>
@@ -1461,6 +1460,8 @@ function switchDesc(n) {
 				<p class = "selfDesc">
 					<span id = "otherName">Name: Kendra</span>
 					<br> <br>
+					<span id = "otherCorruption">Corruption: 0</span>
+					<br> <br>
 					<span id = "otherStatus">Status: Single Mother</span>
 					<br> <br>
 					<span id = "otherClothes">Her preferred outfit is a brown sweater-dress that goes down to her thighs.</span>
@@ -1477,6 +1478,8 @@ function switchDesc(n) {
 			document.getElementById('logbookRight').innerHTML += `
 				<p class = "selfDesc">
 					<span id = "otherName">Name: Kendra</span>
+					<br> <br>
+					<span id = "otherCorruption">Corruption: 0</span>
 					<br> <br>
 					<span id = "otherStatus">Status: Single Mother</span>
 					<br> <br>
@@ -1663,6 +1666,7 @@ function generateSelf(n) {
 			break;
 		}
 		case "mom": {
+			document.getElementById('otherCorruption').innerHTML = "Corruption: " + data.story.motherScore;
 			if (data.story.route == "dom") {
 				switch (data.story.motherScore) {
 					case 0: {
@@ -1723,6 +1727,7 @@ function generateSelf(n) {
 			break;
 		}
 		case 'sister': {
+			document.getElementById('otherCorruption').innerHTML = "Corruption: " + data.story.sisterScore;
 			if (data.story.route == "dom") {
 				switch (data.story.sisterScore) {
 					case 0: {
@@ -1792,6 +1797,7 @@ function generateSelf(n) {
 			break;
 		}
 		case 'chef':{
+			document.getElementById('otherCorruption').innerHTML = "Corruption: " + data.story.chefScore;
 			if (data.story.route == "dom") {
 				switch (data.story.chefScore) {
 					case 0: {
@@ -1852,6 +1858,7 @@ function generateSelf(n) {
 			break;
 		}
 		case 'friend':{
+			document.getElementById('otherCorruption').innerHTML = "Corruption: " + data.story.friendScore;
 			if (data.story.route == "dom") {
 				switch (data.story.friendScore) {
 					case 0: {
@@ -1921,6 +1928,7 @@ function generateSelf(n) {
 			break;
 		}
 		case 'office':{
+			document.getElementById('otherCorruption').innerHTML = "Corruption: " + data.story.officeScore;
 			if (data.story.route == "dom") {
 				switch (data.story.officeScore) {
 					case 0: {
@@ -1972,6 +1980,7 @@ function generateSelf(n) {
 			break;
 		}
 		case 'teacher':{
+			document.getElementById('otherCorruption').innerHTML = "Corruption: " + data.story.teacherScore;
 			if (data.story.route == "dom") {
 				switch (data.story.teacherScore) {
 					case 0: {
