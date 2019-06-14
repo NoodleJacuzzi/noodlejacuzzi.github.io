@@ -34,7 +34,7 @@ var endingsLocked = {
 }
 var data = {
 	story: {
-		name: "You", version: 0.75, freeSample: false,
+		name: "You", version: 0.8, freeSample: false,
 		currentScene: "start", money: 20, route: "dom", skill: 0, playingGame: false,
 		popRocks: 0, caramelMelts: 0, plugPops: 0, stretchyTaffy: 0, fruitGushers: 0, 
 		vrMachine: false, princessGame: false, zombieGame: false, laptop: false, creamer: false, doll: false, toy: false, horse: false, onahole: false,
@@ -1238,7 +1238,7 @@ function updateSave() {
 		if (data.story.route == "sub") {
 			var office4 = {index: 'office4S', name: "Public Punishment", unlocked: false, hint: 'Corruption level 4. Talk to her during the day.'};
 			var sister4 = {index: 'sister4S', name: "New Toy", unlocked: false, hint: 'Talk to her after triggering the event "Student Teacher Dynamic".'};
-			var sister5 = {index: 'sister4S', name: "Pushing Limits", unlocked: false, hint: 'Talk to her after triggering the event "New Toy".'};
+			var sister5 = {index: 'sister5S', name: "Pushing Limits", unlocked: false, hint: 'Talk to her after triggering the event "New Toy".'};
 			data.galleryArray.push(office4);
 			data.galleryArray.push(sister4);
 			data.galleryArray.push(sister5);

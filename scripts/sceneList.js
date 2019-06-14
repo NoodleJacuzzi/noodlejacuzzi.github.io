@@ -2,21 +2,21 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 6/7/2019</p>
-				<p class = "centeredText">Version 0.8 of HAA</p>
+				<p class = "centeredText">Lastest News 6/14/2019</p>
+				<p class = "centeredText">Version 0.9 of HAA</p>
+				<p class = "centeredText">Thank you to Brandon and Lasse Bannow, who've pledged their support!</p>
 			`;
 			writeTransition("news", "View all news updates");
 			writeText("<br>");
 			writeTransition("commissions", "Commissioned scenes (Currently none)");
 			document.getElementById('output').innerHTML +=`
 				<br>
-				<p class = "centeredText">Today's Discussion Thread: What would you write?</p>
-				<p class = "centeredText">If you could make a scene that would make it into HAA, what would it entail?</p>
-				<p class = "centeredText">What content / tags would you want featured?</p>
-				<p class = "centeredText">What images would you use?</p>
-				<p class = "centeredText">I'd love to hear your thoughts on my Patreon or in one of the discussion threads below.</p>
-				<br><br>
+				<p class = "centeredText">Today's Discussion Thread: Reccomendations</p>
+				<p class = "centeredText">I'd like to use this opportunity to expand some horizons. If you have a game, story, doujin, or porn video with themes or content similar to the ones in Human Alteration App, Rainy DayZ, or Princess Quest, I'd love to hear about them.</p>
+				<p class = "centeredText">As an incentive, feel free to check out some of my personal recommendations in the TFgames thread. I'll put them up here within a few days.</p>
 			`;
+			//writeTransition("recommendations", "Recommendations");
+			writeText("<br><br>");
 			writeBig("images/logo.png");
 			writeTransition("HAAD", "Dom Route Preview");
 			writeTransition("HAAS", "Sub Route Preview");
@@ -27,7 +27,7 @@ function writeScene(scene) {
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App%20Mobile.html'">Play the mobile version</p>
 			`;
-			writeText("Human Alteration App v0.8");
+			writeText("Human Alteration App v0.9");
 			writeText("You find yourself with a phone app that can alter people's minds and bodies. Choose between one of two routes where either you're in control of the world or the app is stolen from you. There's a clear sense of progression throughout and no focus on grinding.");
 			writeText("Dom route tags: Incest (optionally non blood-related), Mind Control, Sluttification, Degradation, Exhibitionism, Watersports (optional, not yet implemented)");
 			writeText("Sub route tags: 2D Art, Incest (optionally non blood-related), Sissification, Female-to-Shemale Transformation, Cum Eating, Sounding, NTR (mild & optional), Smothering (not yet implemented), Watersports (optional, not yet implemented)");
@@ -59,6 +59,9 @@ function writeScene(scene) {
 			break;
 		}
 		case "news": {
+			writeText("<b>6/14/2019</b> - Human Alteration App v0.9");
+			writeText("Sub Route Complete");
+			writeText("2 new sub route scenes, 3 endings");
 			writeText("<b>6/7/2019</b> - Human Alteration App v0.8");
 			writeText("Dom Route Update");
 			writeText("9 new dom route scenes");
@@ -179,9 +182,9 @@ function writeScene(scene) {
 		}
 		case "downloadHAA": {
 			document.getElementById('output').innerHTML +=`
-			Current version: 0.8<br><br>
-			Most recent game files: https://mega.nz/#!P9kizKiT!TvsXacHWPQAGIUXItwH09D8qB5GKL6XtVob7l57VM5g<br><br>
-			Most recent image pack: https://mega.nz/#!z19SWYZZ!_5nAlQMaQ47ItCugxRnME6-xptlezy_waIUnNcNRR4U (no new images since version 0.7.5)<br><br>
+			Current version: 0.9<br><br>
+			Most recent game files: https://mega.nz/#!7wU1gKjR!v_K9v9caBeyyyblkQhvCdV-ZPY7bXbFe0oFBbKxPoSA<br><br>
+			Most recent image pack: https://mega.nz/#!vpMhXALY!SybsA5DWLgG1fiXickprPMXtNP--gxXxqyPtWfCUr4E<br><br>
 			If you're new to the game, all you need to do is download these two. Extract the game files to create the Human Alteration App folder, then extract the image pack directly into the Human Alteration App folder. You can find a picture of what the final layout should look like in the screenshot folder:<br><br>
 			https://mega.nz/#F!zwsBnSoT!7wiL0wOWcml2wtX7M0fXiA<br><br>
 			If you've already downloaded an image pack in the past, you can find all of the image upgrade packs here so that you don't need to download the whole thing again:<br><br>

@@ -41,7 +41,7 @@ Commission a game
 I'll start working with you to create an HTML game or an extension of a game I've already finished. This includes building the game's framework and 1-5 scenes with the game's first release. You can get more scenes for it by remaining a sponsor or by dropping down a tier afterwards.
 Please email me first before pledging to make sure your idea is feasible first, please.
 
-Version 0.8 - Dom Route update
+HAA Version 0.8 - Dom Route update
 Game files: https://mega.nz/#!P9kizKiT!TvsXacHWPQAGIUXItwH09D8qB5GKL6XtVob7l57VM5g
 Image pack: https://mega.nz/#!z19SWYZZ!_5nAlQMaQ47ItCugxRnME6-xptlezy_waIUnNcNRR4U (no new images since 0.7.5)
 
@@ -54,7 +54,7 @@ New Scenes:
 - 1 new miscellaneous scene for improving your skill with the app. Buy the onahole, then go to the streets with advanced skill in the app.
 
 Bugfixes:
-- I accidently removed the max image height from the desktop version. If it annoys you, you can remove "max-height: 700px;" from .bigPicture in the index.css file.
+- I accidentally removed the max image height from the desktop version. If it annoys you, you can remove "max-height: 700px;" from .bigPicture in the index.css file.
 
 Other:
 - Removed some unused scene slots from the save file. If you're playing a save from a version older than 0.8, the game will automatically update your save file. If this causes any problems, you can click "break the game" at home or click "save to text file", then send me the results.
