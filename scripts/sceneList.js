@@ -4,7 +4,7 @@ function writeScene(scene) {
 			document.getElementById('output').innerHTML +=`
 				<p class = "centeredText">Lastest News 6/14/2019</p>
 				<p class = "centeredText">Version 0.9 of HAA</p>
-				<p class = "centeredText">Thank you to Brandon and Lasse Bannow, who've pledged their support!</p>
+				<p class = "centeredText">Thank you to Lasse Bannow, and Brandon, who've pledged their support!</p>
 			`;
 			writeTransition("news", "View all news updates");
 			writeText("<br>");
