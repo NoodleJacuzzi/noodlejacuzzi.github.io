@@ -2,9 +2,9 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 6/14/2019</p>
-				<p class = "centeredText">Version 0.9 of HAA</p>
-				<p class = "centeredText">Thank you to Lasse Bannow, and Brandon, who've pledged their support!</p>
+				<p class = "centeredText">Lastest News 6/20/2019</p>
+				<p class = "centeredText">Delay of HAA v1.0</p>
+				<p class = "centeredText">For personal reasons, HAA v1.0 is delayed to 6/28</p>
 			`;
 			writeTransition("news", "View all news updates");
 			writeText("<br>");
@@ -62,6 +62,7 @@ function writeScene(scene) {
 			writeText("<b>6/14/2019</b> - Human Alteration App v0.9");
 			writeText("Sub Route Complete");
 			writeText("2 new sub route scenes, 3 endings");
+			writeText("Thank you to Lasse Bannow, and Brandon, who've pledged their support!");
 			writeText("<b>6/7/2019</b> - Human Alteration App v0.8");
 			writeText("Dom Route Update");
 			writeText("9 new dom route scenes");
