@@ -6,6 +6,7 @@ function writeScene(scene) {
 				<p class = "centeredText">HAA v1.0</p>
 				<p class = "centeredText">Dom Route Complete</p>
 				<p class = "centeredText">15 short ending scenes</p>
+				<p class = "centeredText">Thank you to Lasse Bannow, Brandon, and Chronos Edge for your support!</p>
 			`;
 			writeTransition("news", "View all news updates");
 			writeText("<br>");
