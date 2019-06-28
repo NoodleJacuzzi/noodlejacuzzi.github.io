@@ -2,9 +2,10 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 6/20/2019</p>
-				<p class = "centeredText">Delay of HAA v1.0</p>
-				<p class = "centeredText">For personal reasons, HAA v1.0 is delayed to 6/28</p>
+				<p class = "centeredText">Lastest News 6/28/2019</p>
+				<p class = "centeredText">HAA v1.0</p>
+				<p class = "centeredText">Dom Route Complete</p>
+				<p class = "centeredText">15 short ending scenes</p>
 			`;
 			writeTransition("news", "View all news updates");
 			writeText("<br>");
@@ -27,7 +28,7 @@ function writeScene(scene) {
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App%20Mobile.html'">Play the mobile version</p>
 			`;
-			writeText("Human Alteration App v0.9");
+			writeText("Human Alteration App v1.0");
 			writeText("You find yourself with a phone app that can alter people's minds and bodies. Choose between one of two routes where either you're in control of the world or the app is stolen from you. There's a clear sense of progression throughout and no focus on grinding.");
 			writeText("Dom route tags: Incest (optionally non blood-related), Mind Control, Sluttification, Degradation, Exhibitionism, Watersports (optional, not yet implemented)");
 			writeText("Sub route tags: 2D Art, Incest (optionally non blood-related), Sissification, Female-to-Shemale Transformation, Cum Eating, Sounding, NTR (mild & optional), Smothering (not yet implemented), Watersports (optional, not yet implemented)");
@@ -183,9 +184,9 @@ function writeScene(scene) {
 		}
 		case "downloadHAA": {
 			document.getElementById('output').innerHTML +=`
-			Current version: 0.9<br><br>
-			Most recent game files: https://mega.nz/#!7wU1gKjR!v_K9v9caBeyyyblkQhvCdV-ZPY7bXbFe0oFBbKxPoSA<br><br>
-			Most recent image pack: https://mega.nz/#!vpMhXALY!SybsA5DWLgG1fiXickprPMXtNP--gxXxqyPtWfCUr4E<br><br>
+			Current version: 1.0<br><br>
+			Most recent game files: https://mega.nz/#!L0MlzSqA!C4WqcHPCZQYRu1qcxVvIc_85SWYx5dBH2Gu6_SrDVZU<br><br>
+			Most recent image pack: !!!Error when uploading, play online or upgrade 0.9's image pack until I reupload tomorrow!!!<br><br>
 			If you're new to the game, all you need to do is download these two. Extract the game files to create the Human Alteration App folder, then extract the image pack directly into the Human Alteration App folder. You can find a picture of what the final layout should look like in the screenshot folder:<br><br>
 			https://mega.nz/#F!zwsBnSoT!7wiL0wOWcml2wtX7M0fXiA<br><br>
 			If you've already downloaded an image pack in the past, you can find all of the image upgrade packs here so that you don't need to download the whole thing again:<br><br>

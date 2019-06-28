@@ -280,13 +280,13 @@ function changeEnding(c, n) {
 				break;
 				case 2:
 					if (endingsLocked.family2 == false) {
-						document.getElementById('familyEnd').innerHTML = 'familyEnd2';
-						document.getElementById('images/real/lisa/profile1.jpg').src = 'images/real/lisa/profile2.jpg';
+						document.getElementById('familyEnd').innerHTML = 'Stress Relief Sister';
+						document.getElementById('images/real/lisa/profile1.jpg').src = 'images/real/jean/profile2.jpg';
 					}
 				break;
 				case 3:
 					if (endingsLocked.family3 == false) {
-						document.getElementById('familyEnd').innerHTML = 'familyEnd3';
+						document.getElementById('familyEnd').innerHTML = 'Camwhore Mother';
 						document.getElementById('images/real/lisa/profile1.jpg').src = 'images/real/lisa/profile5.jpg';
 					}
 				break;
@@ -297,18 +297,18 @@ function changeEnding(c, n) {
 			endingChoices.friend = n;
 			switch (n) {
 				case 1:
-					document.getElementById('friendEnd').innerHTML = 'App Companion';
+					document.getElementById('friendEnd').innerHTML = 'Genderswapped';
 					document.getElementById('images/real/riley/profile1.jpg').src = 'images/real/riley/profile1.jpg';
 				break;
 				case 2:
 					if (endingsLocked.friend2 == false) {
-						document.getElementById('friendEnd').innerHTML = 'friendEnd2';
+						document.getElementById('friendEnd').innerHTML = "Honey, I'm Home!";
 						document.getElementById('images/real/riley/profile1.jpg').src = 'images/real/riley/profile3.jpg';
 					}
 				break;
 				case 3:
 					if (endingsLocked.friend3 == false) {
-						document.getElementById('friendEnd').innerHTML = 'friendEnd3';
+						document.getElementById('friendEnd').innerHTML = 'App Companion';
 						document.getElementById('images/real/riley/profile1.jpg').src = 'images/real/riley/profile5.jpg';
 					}
 				break;
@@ -324,13 +324,13 @@ function changeEnding(c, n) {
 				break;
 				case 2:
 					if (endingsLocked.teacher2 == false) {
-						document.getElementById('teacherEnd').innerHTML = 'teacherEnd2';
+						document.getElementById('teacherEnd').innerHTML = 'Personal Pet';
 						document.getElementById('images/real/kendra/profile1.jpg').src = 'images/real/kendra/casual2.jpg';
 					}
 				break;
 				case 3:
 					if (endingsLocked.teacher3 == false) {
-						document.getElementById('teacherEnd').innerHTML = 'teacherEnd3';
+						document.getElementById('teacherEnd').innerHTML = 'Donated Urinal';
 						document.getElementById('images/real/kendra/profile1.jpg').src = 'images/real/kendra/casual4.jpg';
 					}
 				break;
@@ -346,13 +346,13 @@ function changeEnding(c, n) {
 				break;
 				case 2:
 					if (endingsLocked.chef2 == false) {
-						document.getElementById('chefEnd').innerHTML = 'chefEnd2';
+						document.getElementById('chefEnd').innerHTML = 'Volunteer Work';
 						document.getElementById('images/real/ava/profile1.jpg').src = 'images/real/ava/profile3.jpg';
 					}
 				break;
 				case 3:
 					if (endingsLocked.chef3 == false) {
-						document.getElementById('chefEnd').innerHTML = 'chefEnd3';
+						document.getElementById('chefEnd').innerHTML = 'Cumguzzler Cafe';
 						document.getElementById('images/real/ava/profile1.jpg').src = 'images/real/ava/profile5.jpg';
 					}
 				break;
@@ -368,14 +368,14 @@ function changeEnding(c, n) {
 				break;
 				case 2:
 					if (endingsLocked.office2 == false) {
-						document.getElementById('officeEnd').innerHTML = 'officeEnd2';
-						document.getElementById('images/real/alexis/profile3.jpg').src = 'images/real/alexis/profile3.jpg';
+						document.getElementById('officeEnd').innerHTML = 'Public Fixture';
+						document.getElementById('images/real/alexis/profile1.jpg').src = 'images/real/alexis/profile3.jpg';
 					}
 				break;
 				case 3:
 					if (endingsLocked.office3 == false) {
-						document.getElementById('officeEnd').innerHTML = 'officeEnd3';
-						document.getElementById('images/real/alexis/profile4.jpg').src = 'images/real/alexis/profile4.jpg';
+						document.getElementById('officeEnd').innerHTML = 'Fruits of Progress';
+						document.getElementById('images/real/alexis/profile1.jpg').src = 'images/real/alexis/profile4.jpg';
 					}
 				break;
 			}
