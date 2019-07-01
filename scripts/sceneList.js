@@ -2,10 +2,10 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 6/28/2019</p>
-				<p class = "centeredText">HAA v1.0</p>
-				<p class = "centeredText">Dom Route Complete</p>
-				<p class = "centeredText">15 short ending scenes</p>
+				<p class = "centeredText">Lastest News 6/30/2019</p>
+				<p class = "centeredText">Human Alteration App Typofix & July Poll</p>
+				<p class = "centeredText">Several typos fixed, beauty ticket requirement removed</p>
+				<p class = "centeredText">July content poll up on Patreon. Vote now!</p>
 				<p class = "centeredText">Thank you to Lasse Bannow, Brandon, and Chronos Edge for your support!</p>
 			`;
 			writeTransition("news", "View all news updates");
@@ -61,6 +61,12 @@ function writeScene(scene) {
 			break;
 		}
 		case "news": {
+			writeText("<b>6/30/2019</b> - Human Alteration App Typofix & July Poll");
+			writeText("Several typos fixed, beauty ticket requirement removed");
+			writeText("July content poll up on Patreon. Vote now!");
+			writeText("<b>6/14/2019</b> - Human Alteration App v1.0");
+			writeText("Dom Route Complete");
+			writeText("15 short ending scenes");
 			writeText("<b>6/14/2019</b> - Human Alteration App v0.9");
 			writeText("Sub Route Complete");
 			writeText("2 new sub route scenes, 3 endings");
@@ -96,9 +102,9 @@ function writeScene(scene) {
 			writeSpeech("Lisa", "scripts/gamefiles/real/oldfile0.jpg", "God, oh god... What's happening to me? Got to get help... Got to...");
 			writeText("Your mother slides out of bed, her hand still furiously jilling herself. She can't even make it halfway to the door before she leans back onto the wall.");
 			writeBig("images/solo1.gif");
-			writeText("Her rubbing reaches a crescendo and her body convulses, but even afther hand keeps rubbing. Her moans and whimpers are quick and panicked.");
+			writeText("Her rubbing reaches a crescendo and her body convulses, but even after hand keeps rubbing. Her moans and whimpers are quick and panicked.");
 			writeText("You may have raised some of those values too far. You bring up the app and change factors like libido and cooldown period, and soon enough your mother slumps against the wall, exhausted.");
-			writeText("If you wan't to take full advantage of the app, you'll need to develop your skills with it. Since it seems like breakfast is off the table for now, you start getting ready for school");
+			writeText("If you want to take full advantage of the app, you'll need to develop your skills with it. Since it seems like breakfast is off the table for now, you start getting ready for school");
 			writeText("...");
 			writeText("You spend your free time studying the app and its nature.");
 			writeText("You have a plan now, and a few people you can use for guinea pigs. From now on you'll be able to corrupt individuals after going to bed, but for now you can explore the town freely. What you do from this point on is up to you.");
@@ -186,8 +192,11 @@ function writeScene(scene) {
 		case "downloadHAA": {
 			document.getElementById('output').innerHTML +=`
 			Current version: 1.0<br><br>
-			Most recent game files: https://mega.nz/#!L0MlzSqA!C4WqcHPCZQYRu1qcxVvIc_85SWYx5dBH2Gu6_SrDVZU<br><br>
-			Most recent image pack: !!!Error when uploading, play online or upgrade 0.9's image pack until I reupload tomorrow!!!<br><br>
+			All-in-one download (273 megs): https://mega.nz/#!PhdXyITa!Sc2j54dPKwc2a5zO7zNTuC0h-IIvYx9-xmv-KSUWYo4<br><br>
+			Dom route only (221 megs): https://mega.nz/#!v4NFgawY!5JbAsDvKVP1voR9sCuQ--YpHPExuXLb1HxOJGhEykBY<br><br>
+			Sub route only (99 megs): https://mega.nz/#!npNnDY4L!Kcy-DxBbxgxD8dENyrWMxECZHHVglUOn9qmJlrByKqk<br><br>
+			Most recent game files: https://mega.nz/#!Xgk3ESCL!ceY7R-jG3nTZ-6PguAcYtE0y-GNcymqs8svrPXHXFoA<br><br>
+			Most recent image pack: https://mega.nz/#!e1FnDK4J!8tUkRruq4YN1qURHRUsG4CPQTI5iTi1z3Cvgo6CNcd4<br><br>
 			If you're new to the game, all you need to do is download these two. Extract the game files to create the Human Alteration App folder, then extract the image pack directly into the Human Alteration App folder. You can find a picture of what the final layout should look like in the screenshot folder:<br><br>
 			https://mega.nz/#F!zwsBnSoT!7wiL0wOWcml2wtX7M0fXiA<br><br>
 			If you've already downloaded an image pack in the past, you can find all of the image upgrade packs here so that you don't need to download the whole thing again:<br><br>

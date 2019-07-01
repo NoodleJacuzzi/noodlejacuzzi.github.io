@@ -2499,7 +2499,7 @@ function generateExoticShop() {
 			`;
 		}
 	}
-	if (data.story.clothingTicket == true && data.story.beautyTicket == true && data.story.candyTicket == true && galleryCheck("misc1") == false) {
+	if (data.story.clothingTicket == true && data.story.candyTicket == true && galleryCheck("misc1") == false) {
 		document.getElementById('output').innerHTML += `
 		<br>
 		<div class = "shopItem" onclick = "purchase('exoticSpecial1')">

@@ -1234,7 +1234,7 @@ function writeScene(scene) {
 						break;
 					}
 					case 3: {
-						writeText("A great success! The entire class watching you bust a nut in the teacher was a huge turn-on. AT this point you don't know what else you could really do.");
+						writeText("A great success! The entire class watching you bust a nut in the teacher was a huge turn-on. At this point you don't know what else you could really do.");
 						writeText("You have some photos that you scroll through, admiring your work. One thing that stands out is "+data.story.teacherName+"'s wedding ring. She only ever brings up her husband when she's in a really bad mood.");
 						writeText("Then again, she did seem to enjoy tormenting you in the past. Maybe he's actually a pretty cool guy? You find him in the app and mess with his common sense like you did with the class. The next time you feel like 'experimenting', you'll be doing it at "+data.story.teacherName+"'s house.");
 						break;
@@ -3614,7 +3614,7 @@ function writeScene(scene) {
 				case 2:
 					writeSpeech(data.story.name, "player", ""+data.story.friendName+"? I'm back!");
 					writeSpeech(data.story.friendName, "riley", "In the kitchen, honey!");
-					writeText("You close the door and walk in. This is the third dinner date she's invited you on, and you're always excited to see wjat she's prepared.");
+					writeText("You close the door and walk in. This is the third dinner date she's invited you on, and you're always excited to see what she's prepared.");
 					writeText("And you aren't just talking about the food.");
 					writeText("You turn the corner into the kitchen as she places a wooden spoon into a drying rack.");
 					writeSpeech(data.story.friendName, "riley", "You're early.");
@@ -3632,11 +3632,11 @@ function writeScene(scene) {
 					writeSpeech("???", "", "B-but miss! She pinned me down, and was rubbing herself against my face!");
 					writeSpeech(data.story.friendName, "riley", "And so what? She was rubbing her fat cock against your face, and you were completely soft?");
 					writeText("The boy remains silent. He's shivering a little, his flaccid dicklette hanging out for the world to see.");
-					writeSpeech(data.story.friendName, "riley", "How about this then. If you really aren't some pathetic little pervert, you'll have no problem staying soft, yeah? If you can stay soft until I'm done with you, you can go right home. You'll even get some of your inches back for good behavior.");
+					writeSpeech(data.story.friendName, "riley", "I'll make you a deal. If you really aren't some pathetic little pervert, you'll have no problem staying soft, yeah? If you can stay soft until I'm done with you, you can go right home. You'll even get some of your inches back for good behavior.");
 					writeText("The boy perks up at this, eager to reclaim some of his lost manhood. "+data.story.friendName+" slides her underwear out of the way to let her fat cock dangle free, and rubs it against the boi's penis.");
 					writeSpeech(data.story.friendName, "riley", "You're doing well, try not to imaging what'll happen if you fail though. Your prick is too small for more shrinking, I'll just have you turned into a total buttslut instead. <br>You'd like that, wouldn't you? Being turned into a total slut for fat cock?");
 					writeText("The boi bites his lip, sweat forming on his forehead as he desperately tries to think of something, anything else.");
-					writeText("It's been over two weeks since his last orgasm since he just can't seem to get the technique right to reach a hands free one. He's pent up, but bis shaft is still flaccid by the end of the teasing.");
+					writeText("It's been over two weeks since his last orgasm since he just can't seem to get the technique right to reach a hands free one. He's pent up, but his shaft is still flaccid by the end of the teasing.");
 					writeSpeech(data.story.friendName, "riley", "Oh my, you have quite the will, don't you? Alright then, you can go.");
 					writeSpeech("???", "", "R-really? And my d-dick?");
 					writeSpeech(data.story.friendName, "riley", "Of course! Just one last thing though, need to talk to the principal. Honey?");
@@ -3660,7 +3660,7 @@ function writeScene(scene) {
 					writeText("Male students, specifically. "+data.story.teacherName+"'s classes have become predominantly male by a wide margin, the reasons for that become clear when "+data.story.teacherName+" bends over to present her reward.");
 					writeText("And the student doesn't hesitate. She isn't wearing underwear, and he's already hard.");
 					writeBig("images/real/general/teacher3-1.gif");
-					writeText("For as effective as she is at getting them to do the research, more and more of class time is being spend on duck-frenzy orgies lately.");
+					writeText("For as effective as she is at getting them to do the research, more and more of class time is being spend on fuck-frenzy orgies lately.");
 				break;
 				case 2:
 					writeSpeech(data.story.name, "player", "I'm heading out!");
@@ -3715,7 +3715,7 @@ function writeScene(scene) {
 					writeSpeech(data.story.name, "player", "Thank you, come again! Don't miss out on our deal on Tuesday!");
 					writeText("The woman waves goodbye, eager to return later.");
 					writeSpeech(data.story.chefName, "ava", "Thanks again so much, "+data.story.name+". I don't know what I'd do-");
-					writeText("You don't wait for her to finish before you grab her and bend her over the table.");
+					writeText("You don't wait for her to finish before you grab her and tear open her top.");
 					writeSpeech(data.story.chefName, "ava", "O-oh my, you can't wait even one minute for me to close the blinds?");
 					writeSpeech(data.story.name, "player", "Let them watch.");
 					writeBig("images/real/general/chef2.gif");
@@ -3743,7 +3743,7 @@ function writeScene(scene) {
 				case 1:
 					writeSpeech("???", "", "And so that's how we can increase efficiency in marketing by 20%.<br>... "+data.story.officeName+"?");
 					writeSpeech(data.story.officeName, "alexis", "Glurk... Glurk... *pop*!<br>Mmm, sorry stud, what was that?");
-					writeText(""+data.story.officeName+" had shattered her glass ceiling weeks ago and became the CEO of a major company. With her very 'hands-on' reward structure for efficient employees, she had achieve a remarkably low turnover ratio.");
+					writeText(""+data.story.officeName+" had shattered her glass ceiling weeks ago and became the CEO of a major company. With her very 'hands-on' reward structure for efficient employees, she had achieved a remarkably low turnover ratio.");
 					writeText("Nothing got her hotter than seeing her company hang just at the edge of making it into the Fortune 500. Nothing except for a fat dick, of course.");
 					writeText("At first it was a secret. An office fling here and there, but soon enough "+data.story.officeName+" was the one offering blowjobs around the water cooler. Walking into the men's bathrooms naked. Heading into the conference room early and having an employee blindfold her and tie her to the ceiling to hang naked like the sex toy she is."); 
 					writeText("Honestly, if it weren't for the fact that seeing profit graphs make her squirt like a firehose, she'd be tempted to just make herself a permanent office sextoy to be passed around and abused.");
@@ -3751,11 +3751,11 @@ function writeScene(scene) {
 				case 2:
 					writeText("Somewhere in the shadier parts of town, a rumor is circulating.");
 					writeBig("images/real/general/analSquirt1.gif");
-					writeText("Rumors of a woman who would do absolutely anything in exchange for fucking her.");
+					writeText("Rumors of a woman who would do absolutely anything in exchange for even the nastiest fuck.");
 					writeBig("images/real/general/office1.gif");
-					writeText("She's already given up the keys to her house and car, burned her clothes to show how willing she is.");
+					writeText("She's already given up the keys to her house and car, and burned her clothes to show how willing she is.");
 					writeBig("images/real/general/office2.gif");
-					writeText("They say if you head down the dark alleyway at night a d let your dick out, she'll be able to smell it wherever you are. No matter how clean, although the rumors say she prefers them unwashed.");
+					writeText("They say if you head down the dark alleyway at night and let your dick out, she'll be able to smell it wherever you are. No matter how clean, although the rumors say she prefers them unwashed.");
 					writeText("They say she's too voracious for any one man, that you'll need at least five grown men to fuck her into unconsciousness. God help you if she finds you alone.");
 				break;
 				case 3:
