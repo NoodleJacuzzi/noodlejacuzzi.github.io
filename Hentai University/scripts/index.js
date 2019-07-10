@@ -22,7 +22,7 @@ var data = {
 		hacking: 0,
 		counseling: 0,
 		lastText: 100,
-		dayID: 0,
+		dayID: 1,
 	},
 	story: [
 		{index: "mom", met: true, fName: "Emily", lName: "Smith", trust: 0, encountered: false, textEvent: "",},
@@ -123,6 +123,7 @@ function startup() {
 	tempScene = data.player.currentScene;
 	if(localStorage.getItem('data110')) {
 		//loadSlot(110);
+		sceneTransition('start');
 	}
 	else{
 		sceneTransition('start');
