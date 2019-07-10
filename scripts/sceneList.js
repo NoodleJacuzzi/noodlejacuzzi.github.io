@@ -2,12 +2,11 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 7/10/2019</p>
-				<p class = "centeredText">Hentai University Demo</p>
-				<p class = "centeredText">Demo version of my latest game and the July poll winner, Hentai University is now available.</p>
-				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html'">Play the demo online</p>
-				<p class = "centeredText">I'll have a dedicated section for it once version 1 is finished.</p>
-				<p class = "centeredText">Thank you to Lasse Bannow, Chronos Edge, Brandon, and Wild Bill for your support!</p>
+				<p class = "centeredText">Lastest News 6/30/2019</p>
+				<p class = "centeredText">Human Alteration App Typofix & July Poll</p>
+				<p class = "centeredText">Several typos fixed, beauty ticket requirement removed</p>
+				<p class = "centeredText">July content poll up on Patreon. Vote now!</p>
+				<p class = "centeredText">Thank you to Lasse Bannow, Brandon, and Chronos Edge for your support!</p>
 			`;
 			writeTransition("news", "View all news updates");
 			writeText("<br>");
@@ -62,9 +61,6 @@ function writeScene(scene) {
 			break;
 		}
 		case "news": {
-			writeText("<b>7/10/2019</b> - Hentai University Demo");
-			writeText("Demo version of my latest game and the July poll winner, Hentai University is now available.");
-			writeText("I'll have a dedicated section for it once version 1 is finished.");
 			writeText("<b>6/30/2019</b> - Human Alteration App Typofix & July Poll");
 			writeText("Several typos fixed, beauty ticket requirement removed");
 			writeText("July content poll up on Patreon. Vote now!");
