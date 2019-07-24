@@ -7,7 +7,10 @@ var randNum;
 var tempScene;
 var data = {
 	player: {
-		name: "You",
+		fName: "You",
+		lName: "",
+		age: "25",
+		color: "Blue",
 		artifact1: "",
 		artifact2: "",
 		character: "red",
@@ -50,7 +53,7 @@ var logbookArray = [
 ];
 
 var artifactArray = [
-	{index: "bracelet", equipable: false, title: "Reprehensive Bracelet", desc2: "A partially tarnished silver bracelet.", desc: "When worn, the wearer can become imperceivable and erase memories of themselves & their actions."},
+	{index: "bracelet", equipable: false, title: "Reprehensive Bracelet", desc: "A partially tarnished silver bracelet.", desc2: "When worn, the wearer can become imperceivable and erase memories of themselves & their actions."},
 	{index: "erotibox", equipable: false, title: "Erotibox", desc: "N/A", desc2: "N/A"},
 	{index: "coin", equipable: true, title: "Midas Coin", desc: "An old gold coin from ancient Greece.", desc2: "When worn, the wearer can barter sexual acts as if they were currency."},
 ];
@@ -170,7 +173,7 @@ function writeSpeech (name, img, text) {
 		img = "scripts/gamefiles/none.png";
 	}
 	if (name == "player") {
-		name = data.player.name;
+		name = data.player.fName;
 		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
 	}
 	if (name == "notes") {
@@ -195,32 +198,38 @@ function writeSpeech (name, img, text) {
 }
 
 function writeArtifact (name) {
-	console.log("Now writing artifact tab");
+	console.log("Now writing artifact tab id " + name);
 	var researchStatus = 0;
 	var researchTotal = 0;
+	var desc2 = "";
 	for (i = 0; i < artifactArray.length; i++) {
 		if (artifactArray[i].index == name) {
 			var jam = i;
 			var title = artifactArray[i].title;
 			var desc = artifactArray[i].desc;
+			var artifactResearchCheck = name + "1";
 			if (artifactArray[i].equipable == true) {
-				var artifactResearchCheck = name + "1";
-				console.log(galleryCheck(artifactResearchCheck));
+				console.log("artifact is equippable");
 				if (galleryCheck(artifactResearchCheck) == true) {
+					console.log("artifact has been researched");
 					var equip = "Equip";
-					var desc2 = artifactArray[jam].desc2;
+					desc2 = artifactArray[jam].desc2;
 				}
 				else {
+					console.log("artifact has not been researched");
 					var equip = "";
-					var desc2 = "";
+					desc2 = "";
 				}
 			}
 			else {
+				console.log("artifact is not equippable");
 				if (galleryCheck(artifactResearchCheck) == true) {
-					var desc2 = artifactArray[jam].desc2;
+					console.log("artifact has been researched");
+					desc2 = artifactArray[jam].desc2;
 				}
 				else {
-					var desc2 = "";
+					console.log("artifact has not been researched");
+					desc2 = "";
 				}
 				var equip = "";
 			}
@@ -344,7 +353,7 @@ function checkForEvents() {
 
 //Menu
 function updateMenu() {
-	document.getElementById('playerName').innerHTML = data.player.name;
+	document.getElementById('playerName').innerHTML = data.player.fName + ' ' + data.player.lName;
 	document.getElementById('day').innerHTML = "Day " + data.player.day + " - " + data.player.time;
 	document.getElementById('playerImage').src = "scripts/gamefiles/characters/"+data.player.character+".jpg";
 	if (data.player.artifact1 != "") {
@@ -368,7 +377,7 @@ function updateMenu() {
 }
 
 function changeName() {
-	data.player.name = document.getElementById('nameSubmission').value;
+	data.player.fName = document.getElementById('nameSubmission').value;
 	updateMenu();
 }
 
@@ -392,8 +401,11 @@ function renameEveryone() {
 }
 
 function renamePlayer() {
-	data.player.name = document.getElementById('nameSubmission').value;
-	sceneTransition("prologue2");
+	data.player.fName = document.getElementById('nameSubmission').value;
+	data.player.lName = document.getElementById('lastSubmission').value;
+	data.player.age = document.getElementById('ageSubmission').value;
+	data.player.color = document.getElementById('colorSubmission').value;
+	sceneTransition("prologue3");
 }
 
 function equip(n) {
@@ -417,6 +429,7 @@ function checkArtifact(n) {
 		return false;
 	}
 }
+
 //Saving
 function saveSlot(slot) {
 	saveName = "data" + slot;
@@ -459,7 +472,7 @@ function loadFile(){
 	data = JSON.parse(data);
 	saveSlot(160);
 	loadSlot(160);
-	if (data.player.name == null) {
+	if (data.player.fName == null) {
 		alert("Invalid pasted data! If we tried to use this, the game would completely break!");
 		loadSlot(161);
 	}
@@ -575,7 +588,7 @@ function galleryCheck(n) {
 function generateNav() {
 	console.log('now generating logbook navigation');
 	document.getElementById('logbookLeft').innerHTML = ``;
-	document.getElementById('logbookLeft').innerHTML += `<p class = "logbookSwitch" onclick = "switchDesc('player')">` + data.player.name + `</p>`;
+	document.getElementById('logbookLeft').innerHTML += `<p class = "logbookSwitch" onclick = "switchDesc('player')">` + data.player.fName + `</p>`;
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].met == true) {
 			document.getElementById('logbookLeft').innerHTML += `<p class = "logbookSwitch" onclick = "switchDesc('`+i+`')">` + data.story[i].fName + `</p>`;
@@ -608,9 +621,10 @@ function switchDesc(n) {
 			`;
 		}
 		document.getElementById('logbookRight').innerHTML += `
-			<p class = "selfDesc">Name: `+data.player.name+`</p><br><br>
+			<p class = "selfDesc">Name: `+data.player.fName+` `+data.player.lName+`</p><br><br>
 			<p class = "selfDesc">Day: `+data.player.day+`</p><br><br>
 			<p class = "selfDesc">Time: `+data.player.time+`</p><br><br>
+			<p class = "selfDesc">Not super sure what to put here. Obviously the logbook entries for the girls, and probably a list of what artifacts you've got equipped.</p><br><br>
 		`;
 	}
 }

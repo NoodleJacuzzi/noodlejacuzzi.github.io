@@ -69,7 +69,10 @@ V0.0
 		Show all characters in rename list (COMPLETE)
 		Scene images (COMPLETE)
 		Home events (COMPLETE)
-		Location images
+		Location images (COMPLETE)
+		Name entry function (COMPLETE)
+		UpdateName to show last name (COMPLETE)
+		Replace NAMES with actual names (COMPLETE)
 	v0.5 - Reprehensive Bangle
 		Prologue skip
 		Scene Outlines

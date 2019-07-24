@@ -51,20 +51,20 @@ function writeScene(scene) {
 			break;
 		}
 		case "prologue2": {
-			writeText("First Name: <input type='text' id='nameSubmission' value='Thomas'>");
-			writeText("Last Name: <input type='text' id='lastSubmission' value='Thomas'>");
-			writeText("Age: <input type='text' id='ageSubmission' value='Thomas'>");
-			writeText("Favorite Color: <input type='text' id='colorSubmission' value='Thomas'>");
-			writeText("Here would be where you enter details about yourself and pick your character's image, including an option to disable the image from appearing on the left side menu.");
-			writeTransition("prologue3", "Finish");
-			//writeFunction("renamePlayer()", "Finish");
+			writeText("First Name: <input type='text' id='nameSubmission' value='Swallows'>");
+			writeText("Last Name: <input type='text' id='lastSubmission' value='Deeznuts'>");
+			writeText("Age: <input type='text' id='ageSubmission' value='25'>");
+			writeText("Favorite Color: <input type='text' id='colorSubmission' value='Blue'>");
+			writeText("Here would be where you enter details about yourself and pick your character's image, including an option to disable the image from appearing on the left side menu. I'll put that selection in the actual release, so enjoy being a red blob for now.");
+			//writeTransition("prologue3", "Finish");
+			writeFunction("renamePlayer()", "Finish");
 			break;
 		}
 		case "prologue3": {
 			writeText("You place the filled out form back onto the table. Everything's... Hazy, to say the least.");
 			writeText("There's a moment of silence before a large metal door behind you opens. A vaguely familiar face greets you.");
 			writeBig("scripts/gamefiles/characters/assistant.jpg");
-			writeSpeech("assistant", "", "Mr. LAST! Glad you're back. After the fifth attempt management said we should give up on you.");
+			writeSpeech("assistant", "", "Mr. "+data.player.lName+"! Glad you're back. After the fifth attempt management said we should give up on you.");
 			writeText("She tosses you a coat and a change of clothes. Looking over yourself, you're wearing what almost resembles a hospital gown.");
 			writeText("It's all coming back to you, you grabbed some earings, and...");
 			writeBig("images/prologue1.gif");
@@ -76,7 +76,7 @@ function writeScene(scene) {
 		case "prologue4": {
 			writeSpeech("assistant", "", "Are you feeling alright? The amnestics should have blocked most of it out.");
 			writeSpeech("player", "", "Yeah... Yeah I'm alright.");
-			writeText("You are FIRST LAST, researcher at the Anomaly Vault Research Office, responsible for the research and potential applications of artifacts found around the world.");
+			writeText("You are "+data.player.fName+" "+data.player.lName+", researcher at the Anomaly Vault Research Office, responsible for the research and potential applications of artifacts found around the world.");
 			writeSpeech("assistant", "", "It'll all come back slowly, try not to push yourself. Mrs. Jensen says you're fine to head home for the day, so get some rest alright?");
 			writeText("She steps aside after handing you a glass of water.");
 			writeSpeech("assistant", "", "First door on the left, the drivers will take you home. Try not to recall the events of the research, alright?");
@@ -275,14 +275,14 @@ function writeScene(scene) {
 			updateMenu();
 			writeBig("scripts/gamefiles/items/bracelet.jpg");
 			writeSpeech("player", "", "This is experiment log RB-01, now commencing.");
-			writeText("You slip on the bracelet and turn towards ASSISTANT.");
+			writeText("You slip on the bracelet and turn towards "+data.story[1].fName+".");
 			writeSpeech("player", "", "So? Anything?");
 			writeSpeech("assistant", "", "No sir, no immediate effect.");
 			writeSpeech("player", "", "Interesting. Maybe it's something that needs to be activated to work. Huh, I can't get this off.");
-			writeText("ASSISTANT looks up from her notes before looking around with a confused look on her face.");
+			writeText(""+data.story[1].fName+" looks up from her notes before looking around with a confused look on her face.");
 			writeSpeech("assistant", "", "What was I...?");
-			writeSpeech("player", "", "ASSISTANT?");
-			writeSpeech("assistant", "", "Ah! Oh, Mr. LAST, sorry. I must've been distracted for a moment.");
+			writeSpeech("player", "", ""+data.story[1].fName+"?");
+			writeSpeech("assistant", "", "Ah! Oh, Mr. "+data.player.lName+", sorry. I must've been distracted for a moment.");
 			writeSpeech("player", "", "Interesting.");
 			writeText("...");
 			writeSpeech("player", "", "I just smashed your favorite mug, and you don't even remember it?");
@@ -292,7 +292,7 @@ function writeScene(scene) {
 			writeText("...");
 			writeSpeech("player", "", "Hey! Bitch!");
 			writeBig("images/braceletResearch.gif");
-			writeText("You slap ASSISTANT hard on the ass, and she does a little jump on the spot while letting out a squeak. But instead of getting mad she just rubs her ass and looks around to see if anyone saw.");
+			writeText("You slap "+data.story[1].fName+" hard on the ass, and she does a little jump on the spot while letting out a squeak. But instead of getting mad she just rubs her ass and looks around to see if anyone saw.");
 			writeText("...");
 			writeSpeech("notes", "", "Findings:<br>The bracelet allows the wearer to be unperceived by others but only when the wearer desires to go unnoticed.<br>If the wearer wishes, any action they take will go unnoticed, including physical actions such as pinching and molesting. People affected by these actions will still feel the repercussions, but they will ignore the actions as if they were run of the mill occurrences.<br>The wearer can erase memories from other people's minds. This effect is limited to memories of the wearer or the wearer's indirect actions.");
 			writeSpecial("Each artifact will have a research scene like this one. They won't be erotic in nature, that is saved for later scenes where you continue to research the artifact or bring it home. These scenes just explain the nature and capabilities of an artifact so that you understand what you're getting into.");
@@ -332,12 +332,12 @@ function writeEvent(scene) {
 		}
 		case "prologue2": {
 			writeSpeech("Security", "scripts/gamefiles/logo.png", "Identification?");
-			writeSpeech("player", "", "FIRST LAST, Aleph.");
+			writeSpeech("player", "", ""+data.player.fName+" "+data.player.lName+", Aleph.");
 			writeSpeech("Security", "scripts/gamefiles/logo.png", "Confirmed. Line secured, recipient?");
-			writeSpeech("player", "", "LAST's office.");
+			writeSpeech("player", "", ""+data.player.lName+"'s office.");
 			writeSpeech("Security", "scripts/gamefiles/logo.png", "Confirmed, hold.");
 			writeText("...");
-			writeSpeech("assistant", "", "LAST's office.");
+			writeSpeech("assistant", "", ""+data.player.lName+"'s office.");
 			writeSpeech("player", "", "Hey Veronica, just letting you know I'm home safe.");
 			writeSpeech("assistant", "", "Oh good! I'm just cleaning up and prepping, we've got a new artifact tomorrow.");
 			writeSpeech("player", "", "We're not working on the earings?");
@@ -355,7 +355,7 @@ function writeEvent(scene) {
 			writeSpeech("girlfriend", "", "Hey, are you alright? You sound kind of strange.");
 			writeBig("images/bracelet1-1.gif");
 			writeSpeech("roommate", "", "Y-yeah, I'm fine. I've just been a bit... B-bit...!");
-			writeText("ROOMMATE clasps her hand over her mouth as she cums, her legs shaking.");
+			writeText(""+data.story[0].fName+" clasps her hand over her mouth as she cums, her legs shaking.");
 			writeSpeech("roommate", "", "<i>What the hell is going on? Did I just cum?</i><br>Sorry, I uh-");
 			writeSpeech("girlfriend", "", "Don't lie to me, I know what's going on you little slut.");
 			writeSpeech("roommate", "", "W-what?");
@@ -368,7 +368,7 @@ function writeEvent(scene) {
 			writeText("Her eyes roll back as she cums again on your dick.");
 			writeSpeech("girlfriend", "", "Well you have fun alright? Love you!");
 			writeSpeech("roommate", "", "Lov-");
-			writeText("You grab ROOMMATE's phone and throw it aside before grabbing ROOMMATE by the hair so you can finish yourself off with her mouth.");
+			writeText("You grab "+data.story[0].fName+"'s phone and throw it aside before grabbing "+data.story[0].fName+" by the hair so you can finish yourself off with her mouth.");
 			writeText("...");
 			writeSpecial("This is a scene where you use an artifact on your roommate.");
 			writeSpecial("Essentially the basic game loop is that you research artifacts at work and then come home to use artifacts to trigger scenes at home. Maximum focus on the content with minimal interruptions.");
