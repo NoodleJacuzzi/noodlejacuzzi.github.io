@@ -351,7 +351,9 @@ function writeEvent(scene) {
 			break;
 		}
 		case "prologue3": {
-			writeSpeech("girlfriend", "", "And? What did she say?");
+			writeText("Just as you're about to start messing with "+data.story[0].fName+", her phone starts ringing. It's from her girlfriend, "+data.story[2].fName+".");
+			writeText("...");
+			writeSpeech("girlfriend", "", "So? What did she say?");
 			writeSpeech("roommate", "", "She uh... Um... Nnn...");
 			writeSpeech("girlfriend", "", "Hey, are you alright? You sound kind of strange.");
 			writeBig("images/bracelet1-1.gif");
