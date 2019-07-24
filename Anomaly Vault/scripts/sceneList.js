@@ -33,7 +33,8 @@ function writeScene(scene) {
 			break;
 		}
 		case "contentList": {
-			writeSpeech("Reprehensive Bangle", "scripts/gamefiles/items/reprehensiveBangle.jpg", "Tag List:<br>Unperceived Sex<br>Memory Alteration");
+			writeSpeech("Reprehensive Bangle", "scripts/gamefiles/items/bracelet.jpg", "Tag List:<br>Unperceived Sex<br>Memory Alteration");
+			writeTransition("start", "Back to the start screen");
 			break;
 		}
 		case "prologue": {
