@@ -1,0 +1,280 @@
+Homestead Reclamation Office
+V0.0
+	Clear Unused Stuff
+		Inventory (COMPLETE)
+		Phone (COMPLETE)
+		Logbook (COMPLETE)
+		Skills (COMPLETE)
+		Scene list (COMPLETE)
+	Menu Details
+		Artifact Images (COMPLETE)
+		updateMenu (COMPLETE)
+	Logbook
+		Display character image (COMPLETE)
+		Change character image (COMPLETE)
+		Rename everyone (COMPLETE)
+		Generate nav (COMPLETE)
+		switch desc (COMPLETE)
+	Gallery
+		Artifact list (COMPLETE)
+		Girls list (COMPLETE)
+		Generate scenes (COMPLETE)
+	Update Menu Stuff
+		Logbook (COMPLETE)
+		Name (COMPLETE)
+	Characters
+		Models Selected (COMPLETE)
+		Character images (COMPLETE)
+		Character images cropped (COMPLETE)
+		Profile images (COMPLETE)
+		Gifs collected (COMPLETE)
+		Resources folder on phone scoured (COMPLETE)
+		research notes writeSpeech (COMPLETE)
+		player images
+		Webms converted
+	Framework
+		Start Screen (COMPLETE)
+		Prologue (COMPLETE)
+		Location images - home, work, bedroom, beach, store, gym, town
+		Home Framework (COMPLETE)
+		Work Framework (COMPLETE)
+		Player room (COMPLETE)
+		Time/Day System (COMPLETE)
+		Passing Time (COMPLETE)
+		Skipping Work (COMPLETE)
+		Leaving early (COMPLETE)
+		Getting late, head home (COMPLETE)
+		New Day (COMPLETE)
+		Day 0 (COMPLETE)
+		Day 1 - Acquiring the bracelet
+		write switch case shortcut for notepad++
+	Artifacts
+		writeArtifact (COMPLETE)
+		Track Research Status (COMPLETE)
+		Artifacts equipabble (COMPLETE)
+		Taking Artifacts Home (COMPLETE)
+		Switching Held Artifacts (COMPLETE)
+		First Research (COMPLETE)
+		Artifact descriptions (COMPLETE)
+		Secondary descriptions after first research (COMPLETE)
+		checkForEvents (COMPLETE)
+	Demo
+		Getting the bracelet (COMPLETE)
+		Research events (COMPLETE)
+		Equipping (COMPLETE)
+		Outdoor events (COMPLETE)
+		Dream events (COMPLETE)
+		Demo finish (COMPLETE)
+		Character Descriptions (COMPLETE)
+		Show all characters in rename list (COMPLETE)
+		Scene images (COMPLETE)
+		Home events (COMPLETE)
+		Location images
+	v0.5 - Reprehensive Bangle
+		Prologue skip
+		Scene Outlines
+		Content List
+		Images assigned
+		Description
+		First Research
+		Home Usage - Roommate, School
+		Dream
+	v1 - Erotibox
+		Scene Outlines
+		Content List
+		Images assigned
+		Description
+		First Research
+		All other research
+	Cheating
+		Cheat room
+		Cheat function
+		Player Images
+		Change player image
+	V1
+		Artifact Selection - 2 of Destiny-Link Rings, Time-Stopwatch, Midas Coin, Erotification Box, Appreciation Bracelet
+		
+Time cycle:
+Morning:
+	Home - sleep in, go to work
+	Work - do research, go home early
+Noon:
+	Home - artifact scenes, take a nap, go to sleep
+	Work - do research, go home early
+Evening:
+	Home - artifact scenes, take a nap, go to sleep
+	Work - Go home
+Night:
+	Home - go to sleep
+
+Reprehensive Bangle (Allows you to be unnoticed / erase memories, first artifact you obtain)
+	
+Lovey Earings (Allows you to hear the subject's thoughts)
+
+Prologue
+	Hello there! Whoever you are and wherever you came from, welcome to the Homestead Artifact Office!
+	You're probably feeling a little bit like you've just come into existence, right? Not to worry, you'vel ikely been alive for several years.
+	You're coming down off an amnestic high. Get too close to a dangerous artifact, huh? We've all been there. You, like many others in your office, have just been mind-wiped.
+	Now, we've all heard the stories about the downsides. Stories about erectil-
+	The screen goes dark, and the introduction video stops playing.
+	Hello?
+	A feminine voice comes alive over the speaker.
+	Can you understand me?
+	After a second of confusion you nod your head and try to say something, but your throat is so dry it just comes out as a cough.
+	This speaker is one-way, so I can't hear you. But the fact that you didn't try to rape the window is a good sign. Try filling out the form in front of you.
+	You hear a *click* as metal bindings release your arms, and a small metal table lifts from the ground with a pencil and paper on it.
+	Use the pencil to fill out the form, and please do not attempt to pleasure yourself with either object.
+
+Fill out the form
+	Image
+	First Name
+	Last Name
+	Age
+	Favorite color
+
+Finish
+	You place the filled out form back onto the table. Everything's... Hazy, to say the least.
+	There's a moment of silence before a large metal door behind you opens. A vaguely familiar face greets you.
+	[image]
+	Mr. LAST! Glad you're back. After the fifth attempt management said we should give up on you.
+	She tosses you a coat and a change of clothes. Looking over yourself, you're wearing what almost resembles a hospital gown.
+	It's all coming back to you, you grabbed some earings, and...
+	
+and...
+	[image]
+	[image]
+	[image]
+	...Mr. LAST?
+	
+... Mr. LAST?
+	Are you feeling alright? The amnestics should have blocked most of it out.
+	Yeah... Yeah I'm alright.
+	You are FIRST LAST, researcher at the Homestead Reclamation Office, responsible for the research and potential applications of artifacts found around the world.
+	It'll all come back slowly, try not to push yourself. Charlie says you're fine to head home for the day, so get some rest alright?
+	She steps aside after handing you a glass of water.
+	First door on the left, the drivers will take you home. Try not to recall the events of the research, alright?
+	See you tomorrow.
+	
+See you tomorrow
+	Everything's almost happening by itself. You're ushered into a black car with darkened windows, and in a flash the car's door opens again and you're allowed to leave.
+	You walk up to what is probably your doorstep and fish out a key on autopilot.
+	The place is warm and lived in, and a voice calls out to you from another room.
+	Welcome home. I picked up some-
+	[image]
+	Holy crap, you alright?
+	Yeah got splashed with some chemicals, I'll be alright, just need some rest.
+	Alright. I picked up some Chinese if you're hungry.
+	Thanks (to home)
+	
+home
+	You're still feeling groggy from the amnestics, you should probably try to sleep it off. 
+	Talk with ROOMIE
+	Call your office
+	Go to bed early
+	
+Roomie
+	Oh hey, feeling better?
+	Yeah I'll be fine. Anything new with you?
+	Hell yeah, I got a date! I'm going out with the home ecc teacher, that blonde girl you met at Tiffany's?
+	Right, right, of course I remember. You both work at uh...
+	St. Prince's University.
+	Yeah, that place. Good for you, she's a catch.
+	Thanks. You really should get some rest by the way, you still look like you've gone a week without sleep.
+	Go back
+
+Call your office
+	Identification?
+	FIRST LAST, Aleph.
+	Confirmed. Line secured, recipient?
+	LAST's office.
+	Confirmed, hold.
+	...
+	LAST's office.
+	Hey ASSISTANT, just letting you know I'm home safe.
+	Oh good! I'm just cleaning up and prepping, we've got a new artifact tomorrow.
+	We're not working on the earings?
+	Nope! Charlie says you've fried your brain too many times, so we're shelving the lovey-doves. We've got some kind of invisibility bracelet up next.
+	Invisibility?
+	Well, not really. It says it makes you unpercievable, we had to bake the room to get it off the last subject.
+	Alright, thanks for the heads up. See you tomorrow.
+	Bye!
+	
+Characters
+	Assistant - Veronica Rodriguez
+	Roommate - Sophia Leone
+	Roommate's Girlfriend - Asa Akira
+	Boss - Peta Jensen
+	Lovely Madame - Sunny Leone
+	Librarian - Mia Malkova
+	Gym Owner - Karlee Grey
+	Beach Lifeguard - Anissa Kate
+	Organization Chair - Priya Rai
+	
+Potential girls:
+	Sunny Leone
+	Ava Adams
+	Alexis Texas
+	Kendra Lust
+	Lisa Ann
+	Dakota Skye
+	Elsa Jean
+	Peta Jensen
+	Rhiannon Rider
+	Riley Reid
+	Karlee Grey
+	Gina Valentina
+
+Time-Stopwatch
+	A bronze stopwatch which appears at first glance to be broken, as the second hand jumps backwards every second. When the button at the top is pressed, the clock begins to record the time as normal but time stops for everyone except person holding the watch, and anyone the watch-holder is making eye contact with as the button is pressed. Current research shows that this is a near-universal effect, and that the watch-holder continues to age as normal. When the button is pressed again, time resumes and anyone whom the watch0holder interacted with will suddenly feel every action inflicted upon them all at once.
+	Public Stripping
+	In-Class Timestop
+	Year-long marathon
+	Bestowal of Power 1 - The girl is introduced
+	Bestowal of Power 2 - The girl tests it out
+	Bestowal of Power 3 - The girl embarrasses a wife
+	Bestowal of power 4 - The girl is humiliated
+Appreciation Bracelet
+	An indestructible bracelet made from partially tarnished silver. Despite being made for a woman's arm, it can resize itself to fit on anyone's arm and does not cause a skin reaction even to those allergic to silver. While being worn the wearer will often feel as though they are being watched, hearing voices in their ears and feeling someone touch their skin. Some particularly sensitive subjects say that the presence calls itself "Lovely Madame", and that it enjoys exploring the bodies of whoever wears the bracelet. Inside the bracelet is an inscription reading "For Those Who Feel Unappreciated".
+	Lovely Madame Interview
+	Lovely Madame Training
+	Gift to the Roommate
+	Stroll on the modern street
+Midas Coin
+	A single gold coin with an inscription written in ancient Greek. When held, sexual activities performed by the holder will be 'normalized', and not perceived to be socially outrageous no matter how depraved the action. In addition, sexual acts will be seen to have 'value', meaning that the holder can exchange sexual acts as though they had a cash value.
+	Convenience Store Purchase
+	Doing chores for a blowjob
+	Alleyway Mugging
+Erotification Box (Can't be taken home)
+	A large kennel-like cage covered by an unknown canvas substance. When an object is inserted and the door is locked a bright purple glow fills the box. Once the light recedes the door can be opened to reveal that the object inside has changed, usually to a similar object that is erotic in nature.
+	Test Subject's Interview Video - Test Subject Porno
+	Clockwork Pocket Watch - Watch that shows how far the holder is from their next orgasm
+	Mona Lisa Replication - Erotic Version of the Mona Lisa
+	Chessboard - Erotic chessboard, losing gives you an orgasm
+	$20 - Porn Site Gift Card, Erotic-Picture Money, 'Stripper Money'
+	Water Bottle - Bottle of Aphrodisiac-Infused Water
+	Buttplug - Candy Buttplug
+	Test Subject - Temporarily Sex-ified subject
+Destiny-Link Ring
+	A set of rings, one made from obsidian with a diamond inset, and one made from ivory with an opal inset. When worn any action taken against one ring-wearer will affect the other ring-wearer as well.
+	Girlfriend-Girlfriend fun
+	Linking while one is asleep
+	You masturbate while roommate is teaching
+Super Truth Serum
+	A self-refilling vial of green liquid, tastes like mint. When drunk, everything you say becomes the 'truth'. Not in the reality warping way, but in that everyone around you will believe whatever you say.
+Alternate Reality Mirror
+	An antique mirror dating back to the victorian era. If a person stares into the yes of their own reflection long enough, they will 'switch places' with an alternate reality version of themselves. In these alternate realities social norms, the flow of history, and the physical body of the person switched can all be completely different.
+Parasite Eggs
+	A set of small flexible egg-shaped balls with a number of spongy nubs on them. Female test subjects have shown an almost hypnotic desire to consume them. Current research shows that consumption can alter the fundamental properties of a woman's reproductive system as well as altering their personality.
+	Super want to be impregnated, pokes a hole in a condom and then cums as they feel it inside them.
+Kid Gloves Charm 
+	Harm you deal to others delivers sexual pleasure rather than pain. In addition, damage dealt to others is merely superficial at worst, and will heal within a single night's sleep.)
+	
+Other artifacts outside the fetish limit zone:
+	Watersports artifact
+	Anal-obsession artifact
+	Rimming artifact - Free rimjobs sign
+	Semen Drinking artifact
+	Effeminizing artifact
+	Shotafictation artifact - You're percieved as being very young, and women around you want to assault/take advantage of you. They spy on you while changing, for example. Nakani is also good.
+	Toy artifact - Makes the woman immobile, makes others think she's a sex toy.
+	Sexual conquest artifact - You get those instant-loss scenes. It's revealed afterwards that the power was inside you all along.

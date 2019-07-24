@@ -1,0 +1,50 @@
+mom1A (complete)
+	Meeting at player's home, morning. Emily knocks on the door to introduce herself. You can introduce yourself firmly or passively.
+mom1B (complete)
+	Meeting in apartment complex, evening. Emily is struggling to get groceries inside. You can offer to help and introduce yourself or just walk on by.
+mom2A
+	Apartment complex, evening. Emily is getting her bags inside. She's a bit lonely, so she'd appreciate some company.
+mom2B
+	Shopping district, evening. Emily is shopping, and is ready to head home. She's a bit lonely, so she'd appreciate some company.
+mom3 (complete)
+	Apartment complex, evening. Emily is buzzed, and offers to give you her phone number. You note that she's got a very strong will while drunk, showing she'd make a terrible hypnosis target.
+mom4
+	Vintage street, evening. She's on her way home from a friend's house, and is feeling lonely (1-1 and 1-2). She wants a beer on the way back, and you can offer one. When you do you unlock her first scene (2-) where she gives you a handjob. You can do this scene at any time if you have a beer, and it skips/clears all of the phone events.
+mom5
+	Apartment complex, evening. You say that you need to talk, and that you're into her. She asks you to come with her and you have a long walk.
+mom6 (4-)
+mom7 (5-)
+
+momPhone1
+	Right after getting her phone number. Just responding increases trust. You ask if she slept alright, and she says she hasn't slept that well in years. It was probably the booze though.
+momPhone2
+	Result of ignoring momPhone1, she's annoyed and asks for a response.
+momPhone3
+	These phone events each increase trust by 1, and can be skipped by triggering mom4.
+	She's been looking into horoscopes lately, she's a taurus. She asks what star sign you are, and gives a vague answer based on which one you pick.
+momPhone4
+	She talks about the beach, and thinks about going. You say she'd need a swimsuit and she sends a picture from her last visit. You ask who took the picture, and she goes silent.
+momPhone5
+	She apologizes for stopping so abruptly last time. You say it's no big deal, and you won't pry. You say that if she ever needs someone to talk to, you're there. She thanks you.
+momPhone6
+	She greets you, saying good morning. She notes that she's never actually asked what you do. You can either respond saying you're a school counselor or lie and say you're a federal agent.
+momPhone7
+	She says she'll be heading to Vintage Street in a bit to meet up with an old friend. She doesn't need company, but walking back might be a pain (and kind of lonely). She also says she'll need a beer, and you say you could bring one. This phone event does not clear itself so you can review it.
+	
+Kuro1
+	Meeting at the school entrance, morning. She's being accosted by a teacher for her attire, and makes a blowjob face at you. You note that this is a pretty regular occurrence, and can offer to take her to your office for some counseling. If you do, once inside, she notices you staring and offers to give you a handjob for money. You decline, saying maybe later. She gives you her phone number and offers her services, saying the roof is pretty secluded in the evening.
+Kuro2
+	She gives an unenthusiastic handjob while on the phone with someone. Optional, and can be triggered again later as roleplay.
+Kuro3
+	She lets you jerk off onto her while she's texting someone. Optional, and can be triggered again later as roleplay.
+Kuro4A
+	She lets you fuck her with a rubber on while she plays a game on your phone. Because of hypnotic commands to increase sensitivity the scene cuts to several hours later at the tail end of a long session. If you haven't finished her phone conversations this ends early.
+Kuro4B
+	An alternate version of Kuro4A where you have already gotten her "bad" scene, but have since finished her phone storyline. You fuck her with a rubber on as normal and the hypnotic commands kick in.
+Kuro5
+	She's really desperate to get a taste of you for some reason, as she's developed a taste for you as a result of hypnosis.
+Kuro6 
+	A full-day sex marathon
+	
+KuroPhone1
+	
