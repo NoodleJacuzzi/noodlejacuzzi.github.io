@@ -276,10 +276,12 @@ V0.0
 		Skills increase infinitely (complete)
 		Noncharacter events (complete)
 		Add homes to logbook (complete)
-		Better end of day system
-		Better writeEncounter system
-		Better checkForEvents system
-		Remove nap text
+		Max image height (complete)
+		Clean out demo events (complete)
+		Unlock the autosave (complete)
+		Better end of day system (complete)
+		Remove nap text (complete)
+		Adding Buttons (complete)
 		Rename images to accurately show scene locations (mom's 1-1 is actually in mom4)
 	Navigation
 		Replacement School Entrance Image (complete)
@@ -315,6 +317,11 @@ V0.0
 		Disable artists
 		Note that disabling artists does not disable them in the laptop's porn
 		Check Artists
+	Townfolk
+		Tag list
+		Disabled tags
+		randomEncounter function (checks tags)
+		tagCheck function - 'scene', 'tags', if no tags are disabled go to the scene, otherwise create a warning message with a 'proceed' (which takes you to the scene) or a 'go back' which refreshes the 
 	Hacking
 		Hacking array
 		Hack Names
@@ -342,7 +349,7 @@ V1.0 Mom, Kuro Gal, Suave, Purple & Chubby
 	Use indexes instead of #s (COMPLETE)
 	scenes in galleryArray (COMPLETE)
 	Mom prewriting
-	Mom framework
+	Mom framework (COMPLETE)
 	Mom's encounters
 	Mom's phone events
 	Mom's scenes

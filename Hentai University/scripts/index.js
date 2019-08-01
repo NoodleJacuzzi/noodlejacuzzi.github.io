@@ -45,37 +45,24 @@ var data = {
 var galleryArray = [
 	{index: "mom1", name: "Drinking Buddy", hint: "Emily Smith's event"},
 	{index: "mom2", name: "Breaking Tensions", hint: "Emily Smith's event"},
-	{index: "mom3", name: "Letting Loose", hint: "Emily Smith's event"},
-	{index: "mom4", name: "Errands", hint: "Emily Smith's event"},
-	{index: "mom5", name: "Beach Body", hint: "Emily Smith's event"},
-	{index: "kuro1", name: "Handjob: $", hint: "Steph Black's event"},
-	{index: "kuro2", name: "Footjob: $$", hint: "Steph Black's event"},
-	{index: "kuro3", name: "Vaginal: $$$", hint: "Steph Black's event"},
-	{index: "kuro4", name: "A Bargain Deal", hint: "Steph Black's event"},
-	{index: "kuro5", name: "Freebie Night", hint: "Steph Black's event"},
-	{index: "kuro6", name: "Orange Bikini", hint: "Steph Black's event"},
 	{index: "purple1", name: "Daughter's Payment 1", hint: "Mary Williams' event"},
 	{index: "purple2", name: "Daughter's Payment 2", hint: "Mary Williams' event"},
 	{index: "purple3", name: "Family Bonding", hint: "Mary Williams' event"},
-	{index: "purple4", name: "World Travels 1", hint: "Mary Williams' event"},
-	{index: "purple5", name: "World Travels 2", hint: "Mary Williams' event"},
 	{index: "chubby1", name: "Mother's Payment", hint: "Margaret Willams' event"},
 	{index: "tomgirl1", name: "Fascination", hint: "Sam White's event"},
 	{index: "tomgirl2", name: "Probing", hint: "Sam White's event"},
 	{index: "tomgirl3", name: "Gym Excursion", hint: "Sam White's event"},
 	{index: "tomgirl4", name: "Relief", hint: "Sam White's event"},
 	{index: "tomgirl5", name: "Full Blown Gay Anal Sex", hint: "Sam White's event"},
-	{index: "tomgirl6", name: "Bikini", hint: "Sam White's event"},
-	{index: "tomgirl7", name: "Girl's Uniform", hint: "Sam White's event"},
-	{index: "tomgirl8", name: "Lingere", hint: "Sam White's event"},
-	{index: "tomgirl9", name: "Bunny Outfit", hint: "Sam White's event"},
 ]
 
 var itemArray = [ //If price is 0 it isn't for sale
-	{name: "Butt", key: false, price: 0, image: "scripts/gamefiles/none.png", description: ""},
-	{name: "Hypnosis Textbook", key: false, price: 50, image: "scripts/gamefiles/none.png", description: "A textbook on hypnosis, you can read it at home to improve your skill."},
-	{name: "Hacking Textbook", key: false, price: 50, image: "scripts/gamefiles/none.png", description: "A textbook on hacking, you can read it at home to improve your skill."},
-	{name: "Counseling Textbook", key: false, price: 50, image: "scripts/gamefiles/none.png", description: "A textbook on counseling, you can read it at home to improve your skill."},
+	{name: "Butt", key: true, price: 0, image: "scripts/gamefiles/items/butt.jpg", description: ""},
+	{name: "Beer", key: true, price: 5, image: "scripts/gamefiles/items/beer.jpg", description: "A can of beer. You don't drink it, but some people do."},
+	{name: "Petunia", key: true, price: 10, image: "scripts/gamefiles/items/petunia.jpg", description: "A beautiful purple flower."},
+	{name: "Hypnosis Textbook", key: false, price: 50, image: "scripts/gamefiles/items/hypnosisTextbook.jpg", description: "A textbook on hypnosis, you can read it at home to improve your skill."},
+	{name: "Hacking Textbook", key: false, price: 50, image: "scripts/gamefiles/items/hackingTextbook.jpg", description: "A textbook on hacking, you can read it at home to improve your skill."},
+	{name: "Counseling Textbook", key: false, price: 50, image: "scripts/gamefiles/items/counselingTextbook.jpg", description: "A textbook on counseling, you can read it at home to improve your skill."},
 	{name: "Lady", key: true, price: 5, image: "scripts/gamefiles/profiles/lady.jpg", description: "For if you'd like to play as a cute lady. Unlocks the 'Lady' character portrait. Aesthetic change only, art by Nusumenaihxseki"},
 ]
 
@@ -122,8 +109,7 @@ function startup() {
 	//console.log(data);
 	tempScene = data.player.currentScene;
 	if(localStorage.getItem('data110')) {
-		//loadSlot(110);
-		sceneTransition('start');
+		loadSlot(110);
 	}
 	else{
 		sceneTransition('start');
@@ -170,7 +156,7 @@ function nap() {
 	passTime();
 	document.getElementById('output').innerHTML = '';
 	writeText("You get a lovely nap in.");
-	writeTransition(data.player.currentScene, "Get up");
+	sceneTransition(data.player.currentScene);
 }
 
 //Showing & hiding windows
@@ -280,6 +266,7 @@ function writeSpeech (name, img, text) {
 	}
 	if (name == "player") {
 		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
+		name = data.player.name;
 	}
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].index == name) {
@@ -313,36 +300,31 @@ function writeTab (name, img, scene, text) {
 	if (data.story[tabIndex].trust == 0) {
 		name = "???";
 	}
-	if (data.story[tabTrust]) {
-		switch (true) {
-			case (data.story[tabIndex].trust > 99): {
-				tabTrust = "Fully Hypnotized";
-				break;
-			}
-			case (data.story[tabIndex].trust > 79): {
-				tabTrust = "Trusting";
-				break;
-			}
-			case (data.story[tabIndex].trust > 59): {
-				tabTrust = "Friendly";
-				break;
-			}
-			case (data.story[tabIndex].trust > 39): {
-				tabTrust = "Relaxed";
-				break;
-			}
-			case (data.story[tabIndex].trust > 19): {
-				tabTrust = "Wary";
-				break;
-			}
-			default: {
-				tabTrust = "Unknown";
-				break;
-			}
+	switch (true) {
+		case (data.story[tabIndex].trust > 99): {
+			tabTrust = "Love";
+			break;
 		}
-	}
-	else {
-		tabTrust = "Unknown";
+		case (data.story[tabIndex].trust > 79): {
+			tabTrust = "Trusting";
+			break;
+		}
+		case (data.story[tabIndex].trust > 59): {
+			tabTrust = "Friendly";
+			break;
+		}
+		case (data.story[tabIndex].trust > 39): {
+			tabTrust = "Relaxed";
+			break;
+		}
+		case (data.story[tabIndex].trust > 19): {
+			tabTrust = "Wary";
+			break;
+		}
+		default: {
+			tabTrust = "Unknown";
+			break;
+		}
 	}
 	console.log(tabIndex);
 	console.log("Now generating tab for " + name + ", linking to scene " + scene + " with the text " + text);
@@ -386,90 +368,16 @@ function writeBG (scene) {
 	checkForEvents();
 }
 
-function writePlayerHouse() {
-	var bg = "images/locations/playerHouse" + data.player.time + ".jpg";
-	if (imagesDisabled != true) {
-		switch (data.player.time) {
-			case "Morning": {
-				document.getElementById('output').innerHTML += `
-					<div class="playerRoom">
-						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
-						<div class="pictureButton" onclick="sceneTransition('gameConsole')"
-						style="top: 54%; left: 72%; max-width: 25%;">Game Console</div>
-						<div class="pictureButton" onclick="sceneTransition('wardrobe')"
-						style="top: 62%; left: 1%; max-width: 25%;">Wardrobe</div>
-						<div class="pictureButton" onclick="sceneTransition('laptop')"
-						style="top: 40%; left: 5%; max-width: 20%;">Use the computer</div>
-						<div class="pictureButton" onclick="nap()"
-						style="top: 52%; left: 35%; max-width: 35%;">Take a nap</div>
-						<div class="pictureButton" onclick="sceneTransition('apartmentOutside')"
-						style="top: 79%; left: 20%; max-width: 25%;">Leave the Apartment</div>
-						<div class="pictureButton" onclick="sceneTransition('playerOffice')"
-						style="top: 79%; left: 50%; max-width: 25%;">Head Straight to Work</div>
-					</div>
-				`;
-				checkForEvents();
-				break;
-			}
-			case "Evening": {
-				document.getElementById('output').innerHTML += `
-					<div class="playerRoom">
-						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
-						<div class="pictureButton" onclick="sceneTransition('gameConsole')"
-						style="top: 54%; left: 72%; max-width: 25%;">Game Console</div>
-						<div class="pictureButton" onclick="sceneTransition('wardrobe')"
-						style="top: 62%; left: 1%; max-width: 25%;">Wardrobe</div>
-						<div class="pictureButton" onclick="sceneTransition('laptop')"
-						style="top: 40%; left: 5%; max-width: 20%;">Use the computer</div>
-						<div class="pictureButton" onclick="sceneTransition('newDay')"
-						style="top: 52%; left: 35%; max-width: 22%;">Go to sleep</div> 
-						<div class="pictureButton" onclick="sceneTransition('apartmentOutside')"
-						style="top: 79%; left: 20%; max-width: 25%;">Leave the Apartment</div>
-						<div class="pictureButton" onclick="sceneTransition('playerOffice')"
-						style="top: 79%; left: 50%; max-width: 25%;">Head Straight to Work</div>
-					</div>
-				`;
-				checkForEvents();
-				break;
-			}
-			case "Night": {
-				document.getElementById('output').innerHTML += `
-					<div class="playerRoom">
-						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
-						<div class="pictureButton" onclick="sceneTransition('gameConsole')"
-						style="top: 54%; left: 72%; max-width: 25%;">Game Console</div>
-						<div class="pictureButton" onclick="sceneTransition('wardrobe')"
-						style="top: 62%; left: 1%; max-width: 25%;">Wardrobe</div>
-						<div class="pictureButton" onclick="sceneTransition('laptop')"
-						style="top: 40%; left: 5%; max-width: 20%;">Use the computer</div>
-						<div class="pictureButton" onclick="sceneTransition('newDay')"
-						style="top: 52%; left: 35%; max-width: 22%;">Go to sleep</div>
-					</div>
-				`;
-				checkForEvents();
-				break;
-			}
-		}
+function writeButton(name, func, top, left) {
+	if (imagesDisabled == true) {
+		writeFunction(func, name);
 	}
 	else {
-		switch (data.player.time) {
-			case "Morning": {
-				writeFunction("nap()", "Take a nap until evening");
-				writeTransition("apartmentOutside", "Leave the apartment");
-				writeTransition("playerOffice", "Head straight to work");
-				break;
-			}
-			case "Evening": {
-				writeTransition("newDay", "Go to sleep early");
-				writeTransition("apartmentOutside", "Leave the apartment");
-				writeTransition("playerOffice", "Head straight to work");
-				break;
-			}
-			case "Night": {
-				writeTransition("newDay", "Go to sleep");
-				break;
-			}
-		}
+		console.log(name + '' + func);
+		document.getElementsByClassName('playerRoom')[0].innerHTML += `
+			<div class="pictureButton" onclick='`+func+`'
+			style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+name+`</div>
+		`;
 	}
 }
 
@@ -511,7 +419,7 @@ function sceneTransition(scene) {
 	writeScene(scene);
 	data.player.currentScene = scene;
 	console.log(data.player.currentScene);
-	//saveSlot(110);
+	saveSlot(110);
 	console.log("scene transition end");
 }
 
@@ -687,7 +595,7 @@ function unlockScene(n) {
 		writeSpecial("You unlocked a new scene in the gallery!");
 	}
 	else {
-		console.log("Error, no scene named "+n+" found.");
+		console.log("Error, no scene named "+n+" found to unlock.");
 	}
 }
 
@@ -711,7 +619,9 @@ function generateGalleryPage(n) {
 	writeBig("images/"+n+"/profile.jpg");
 	for (i = 0; i < data.gallery.length; i++) {
 		if (data.gallery[i].index.includes(n)) {
-			writeFunction ("writeEvent('"+data.gallery[i].index+"')", data.gallery[i].name)
+			if (data.gallery[i].unlocked == true) {
+				writeFunction ("writeEvent('"+data.gallery[i].index+"')", data.gallery[i].name)
+			}
 		}
 	}
 	writeTransition(data.player.currentScene, "Go back");
@@ -727,8 +637,9 @@ function galleryCheck(n) {
 
 //Logbook
 function generateNav() {
+	document.getElementById('logbookLeft').innerHTML = '';
 	for (i = 0; i < data.story.length; i++) {
-		if (data.story[i].met == true) {
+		if (data.story[i].trust > 0) {
 			document.getElementById('logbookLeft').innerHTML += `<p class = "logbookSwitch" onclick = "switchDesc('`+i+`')">` + data.story[i].fName + `</p>`;
 		}
 	}
@@ -737,6 +648,20 @@ function generateNav() {
 
 function switchDesc(n) {
 	if (n != "player") {
+		var scenesUnlocked = 0;
+		var scenesTotal = 0;
+		var indexer = data.story[n].index;
+		console.log("searching for " + indexer + " in gallery");
+		for (x = 0; x < galleryArray.length; x++) {
+			console.log(galleryArray[x].index);
+			if (galleryArray[x].index.includes(indexer)) {
+				console.log("Index does include " + indexer);
+				scenesTotal += 1;
+				if (galleryCheck(galleryArray[x].index) == true) {
+					scenesUnlocked += 1;
+				}
+			}
+		}
 		console.log("Displaying logbook page for character "+data.story[n].fName+".");
 		var tabTrust;
 		switch (true) {
@@ -773,6 +698,7 @@ function switchDesc(n) {
 		document.getElementById('logbookRight').innerHTML += `
 			<p class = "selfDesc">Name: `+data.story[n].fName+` `+data.story[n].lName+`</p><br><br>
 			<p class = "selfDesc">Trust: `+tabTrust+`</p><br><br>
+			<p class = "selfDesc">Scenes Unlocked: `+scenesUnlocked+`/`+scenesTotal+`</p><br><br>
 			<p class = "selfDesc">`+logbookArray[n].desc+`</p><br><br>
 			<p class = "selfDesc">`+logbookArray[n].body+`</p><br><br>
 			<p class = "selfDesc">`+logbookArray[n].clothes+`</p><br><br>
@@ -884,6 +810,11 @@ function generateShop() {
 				}
 			}
 		}
+	}
+	if (data.player.time == "Night") {
+		document.getElementById('output').innerHTML = '';
+		writeText("The sun has set and the streetlights fizzle on. It'd be best to head home now, otherwise you'll have trouble getting up on time tomorrow.");
+		writeTransition("playerHouse", "Head home");
 	}
 }
 
@@ -1007,6 +938,7 @@ function changeBody(n) {
 
 //Phone
 function notification() {
+	writeText("Bzzt! You got a text!");
 	document.getElementById('phoneButton').innerHTML = "PHONE(*)";
 	document.getElementById('phoneButtonMobile').innerHTML = "PHONE(*)";
 }

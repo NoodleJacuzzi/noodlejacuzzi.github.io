@@ -2,24 +2,27 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 7/10/2019</p>
-				<p class = "centeredText">Hentai University Demo</p>
-				<p class = "centeredText">Demo version of my latest game and the July poll winner, Hentai University is now available.</p>
-				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html'">Play the demo online</p>
-				<p class = "centeredText">I'll have a dedicated section for it once version 1 is finished.</p>
-				<p class = "centeredText">Thank you to Lasse Bannow, Chronos Edge, Brandon, and Wild Bill for your support!</p>
+				<p class = "centeredText">Lastest News 7/31/2019</p>
+				<p class = "centeredText">Hentai University V1</p>
+				<p class = "centeredText">Winner of the July Poll, Hentai University is now available. See more info below</p>
+				<p class = "centeredText">Thank you to: Swallows999, Lasse Bannow, ChronosEdge, Brandon, Roy, and Wild Bill for supporting my work!</p>
 			`;
 			writeTransition("news", "View all news updates");
 			writeText("<br>");
 			writeTransition("commissions", "Commissioned scenes (Currently none)");
-			document.getElementById('output').innerHTML +=`
-				<br>
-				<p class = "centeredText">Today's Discussion Thread: Reccomendations</p>
-				<p class = "centeredText">I'd like to use this opportunity to expand some horizons. If you have a game, story, doujin, or porn video with themes or content similar to the ones in Human Alteration App, Rainy DayZ, or Princess Quest, I'd love to hear about them.</p>
-				<p class = "centeredText">As an incentive, feel free to check out some of my personal recommendations in the TFgames thread. I'll put them up here within a few days.</p>
-			`;
 			//writeTransition("recommendations", "Recommendations");
 			writeText("<br><br>");
+			writeBig("images/HentaiUniversity.png");
+			writeText("Hentai University v1");
+			writeText("You play as a young man with a strong grasp on hypnotic magic, and have embedded yourself as a counselor in a school with a fantastically attractive student body. The faculty and your neighbors in town look pretty good too.");
+			writeText("This game uses art by Enoshima Iki, Nagi Ichi, and Oreteki18kin, and is meant to be similar in feel to Hentai High School, but without the focus on school management, more emphasis on wandering / corruption, and a much higher quality body of images.");
+			writeText("The end goal here is a town packed with dozens of characters using a framework I can continually add more content to.");
+			writeText("Tags: Hypnosis, optionally features many other tags based on characters such as incest, dubcon, and gay content");
+			writeTransition("downloadHentaiUniversity", "Download Hentai University");
+			document.getElementById('output').innerHTML +=`
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html'">Play the game online</p>
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">Play the mobile version</p>
+			`;
 			writeBig("images/logo.png");
 			writeTransition("HAAD", "Dom Route Preview");
 			writeTransition("HAAS", "Sub Route Preview");
@@ -62,6 +65,8 @@ function writeScene(scene) {
 			break;
 		}
 		case "news": {
+			writeText("<b>7/31/2019</b> - Hentai University V1");
+			writeText("Winner of the July Poll, Hentai University is now available. See more info below");
 			writeText("<b>7/10/2019</b> - Hentai University Demo");
 			writeText("Demo version of my latest game and the July poll winner, Hentai University is now available.");
 			writeText("I'll have a dedicated section for it once version 1 is finished.");
@@ -190,6 +195,21 @@ function writeScene(scene) {
 			writeText("After an audible *POP* she pulls herself free, and you start squirting her infected load out of your body. With every squeeze you push out more, and the bulge of your overstuffed womb starts to flatten. After one last push you squirt the cum a good few inches out, but you feel something else getting pushed out as well.");
 			writeText("You look down, and standing at full mast is a brand new dick. You can feel a heavy pair of balls below it large enough to rest in the puddle of water beneath you.");
 			writeText("Your mind can't hold a complete thought anymore. This is your new life.");
+			writeTransition("start", "Go Back");
+			break;
+		}
+		case "downloadHentaiUniversity": {
+			document.getElementById('output').innerHTML +=`
+			Current version: V1<br><br>
+			Most recent game files: https://mega.nz/#!mmB0gYpI!Z0k4fH5KYVfm0Qfk3scT5MlfG-SiYpmjWFBrzeqgz7s<br><br>
+			Most recent image pack: https://mega.nz/#!23RAnKSS!g5EDZB-3uUUHTxtPaNkViZZ8fKy9yd7bVOCeSOta_ZA<br><br>
+			If you're new to the game, all you need to do is download these two. Extract the game files to create the Hentai University folder, then extract the image pack directly into the Hentai University folder. <br><br>
+			Essentially, the folder should look like this:<br><br>
+			scrpts<br>
+			images<br>
+			Hentai University.html<br>
+			Hentai University Mobile.html<br>
+			`;
 			writeTransition("start", "Go Back");
 			break;
 		}

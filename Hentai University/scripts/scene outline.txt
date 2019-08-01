@@ -1,22 +1,31 @@
-mom1A
-	Meeting at player's home, morning. Emily knocks on the door to introduce herself. You can introduce yourself firmly or passively.
-mom1B
-	Meeting in apartment complex, evening. Emily is struggling to get groceries inside. You can offer to help and introduce yourself or just walk on by.
-mom2A
-	Apartment complex, evening. Emily is getting her bags inside. She's a bit lonely, so she'd appreciate some company.
-mom2B
-	Shopping district, evening. Emily is shopping, and is ready to head home. She's a bit lonely, so she'd appreciate some company.
-mom3
-	Apartment complex, evening. Emily is buzzed, and offers to give you her phone number. You note that she's got a very strong will while drunk, showing she'd make a terrible hypnosis target.
-mom4
-	Vintage street, evening. She's on her way home from a friend's house, and is feeling lonely (1-1 and 1-2). She wants a beer on the way back, and you can offer one or buy one for her. If you do you unlock her first scene (2-) where she gives you a handjob. You can do this scene at any time if you have a beer, and it skips/clears all of the phone events.
-mom5
-	Apartment complex, evening. You say that you need to talk, and that you're into her. She asks you to come with her and you have a long walk.
-mom6 (4-)
-mom7 (5-)
-
+Still need to do:
+	Transitions out of all encounters (COMPLETE)
+	Trust tracking for all encounters (COMPLETE)
+	Track unlocked scenes / total (COMPLETE)
+	Scenes in galleryArray (COMPLETE)
+	Tomgirl's event tabs (COMPLETE)
+	Mom's event tabs (COMPLETE)
+	Mom's phone events (COMPLETE)
+	Mom's phone triggers (COMPLETE)
+	Purchase beer (COMPLETE)
+	Purchase purple flower (COMPLETE)
+	All scenes unlocked phone message (COMPLETE)
+	Fix porn(COMPLETE)
+	Purple flower gift scene - leads to meditation
+Release:
+	Image pack
+	Upload to github
+	Upload to mega
+	Github section
+	Github sidebar
+	Github download
+	Patreon post
+	
 momPhone1
-	Right after getting her phone number. Just responding increases trust.
+	Right after getting her phone number. Just responding increases trust. You ask if she slept alright, and she says she hasn't slept that well in years. It was probably the booze though.
+					writePhoneSpeech("mom", "", "Hello. This is "+data.story[0].fName+".");
+					writePhoneChoices("Sleep well?", "Who?");
+momPhone1A
 momPhone2
 	Result of ignoring momPhone1, she's annoyed and asks for a response.
 momPhone3
@@ -47,4 +56,31 @@ Kuro6
 	A full-day sex marathon
 	
 KuroPhone1
+	Leads to KuroPhone2 or KuroPhone3
 	
+KuroPhone2
+	Leads to KuroPhone3
+KuroPhone3
+	Leads to KuroPhone4 or KuroPhone5
+KuroPhone4
+	Leads to KuroPhone6
+KuroPhone5
+	Leads to KuroPhone6
+KuroPhone6
+	You send her a hypnosis image skipping her trust to get directly to Kuro4B
+	
+
+Chubby1
+	She welcomes you back in and the two of you talk over tea. She asks if purple is a bother, and you can either respond that working through her issues will take time (chubby1A) or that everything is going well (chubby1B)
+Chubby1A
+	She responds knowingly, saying that her father left her with quite a few issues. You can tell her you have a plan (+5 trust) or tell her that, while you will help, purple's future depends on a strong family relationship to fall back on (+10 trust).
+Chubby1B
+	She's glad purple is doing well, since purple's growing distant. You can either tell her you have a plan to help with that (+5 trust), or you can help her work out how to communicate more effectively with purple (+10 trust).
+Chubby2 (optional, only if 1 is failed)
+	She offers you tea again, and asks you to spend some time going over exactly what your plan is.
+Chubby3
+	She invites you to walk through town with her, and confides that she just doesn't know what to do. You can either comfort her emotionally (+5 trust) or you can offer hypnosis as a suggestion (+10 trust).
+Chubby4 (optional, only if 3 is failed)
+	She invites you in, apologizing for how she reacted before. She wants to become as good at emotional management as you, so you can offer to train her. At the end of the training, you offer hypnosis as a method to understand herself better.
+Chubby5
+	She's open to the idea of a full hypnosis session, and offers you free reign of her mind. This triggers her scene. If purple isn't corrupted, chubby gives you free reign to her daughter, allowing you to skip right to Purple's first scene.
