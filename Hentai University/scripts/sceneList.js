@@ -22,6 +22,7 @@ function writeScene(scene) {
 			writeTransition("nagiTest", "See a Nagi Ichi example <br>(AT LEAST 90% GAY)");
 			writeText("I'm always open to comments or criticism. If you feel like school management would add a lot to the game, you'd like me to consider adding another artist, or you'd like to suggest content of your own, you can shoot me a message at anytime on TFgames, F95zone, or my Patreon page at https://www.patreon.com/noodlejacuzzi");
 			writeText("You can also send me a message on discord (I'm NoodleJacuzzi#4120) or an email at noodlejacuzzi@gmail.com");
+			writeText("Thank you to: Swallows999, Lasse Bannow, ChronosEdge, Brandon, Roy, and Wild Bill for supporting my work!");
 			break;
 		}
 		case "prologue": {
