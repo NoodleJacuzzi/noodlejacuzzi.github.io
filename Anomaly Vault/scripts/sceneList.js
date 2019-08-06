@@ -7,14 +7,22 @@ function writeScene(scene) {
 			writeText("Anomaly Vault is an adult game created by NoodleJacuuzi. You can find and keep up with all of my work, including Human Alteration App, Princess Quest, Rainy DayZ, and Hentai University at my master index here:");
 			writeText("https://noodlejacuzzi.github.io/index.html");
 			writeText("As a content warning this game features numerous bizarre fetishes which may be too extreme for some. At the bottom of this page you can find a fetish list, detailing the tags associated with each of this game's artifacts. If there's a specific topic you'd like to avoid, stay away from the related artifacts. This game contains no underage or scatological content.");
+			writeText("In addition, there is a section called the Dark Vault. In here are several more divisive fetishes, currently including (temporary) male-to-female transformation. These scenes are optional for progression, and are not counted in the total scene count on the menu or in the logbook.");
 			writeTransition("prologue", "Start the game");
+			writeTransition("startWardrobe", "Change your profile image");
 			//writeTransition("prologueSkip", "Skip the prologue");
 			writeText("Other notes:");
 			writeText("This game was commissioned via Patreon by <span class = 'switch' onclick='window.location.href=`https://www.patreon.com/swallows999`'>Swallows999</p>");
+			writeText("You can also change your profile image by using the wardrobe in your room. You can also cheat in your room if you know a code.");
 			writeText("You can click on the title of a window to close it. For example, if you click 'LOGBOOK' on the left (or bottom on mobile), you can close the new window by clicking anywhere in the 'LOGBOOK' section at the top.");
 			writeText("I'm always open to comments or criticism. If you have an idea for an artist or scene or you'd like to suggest content of your own, you can shoot me a message at anytime on TFgames, F95zone, or my Patreon page at https://www.patreon.com/noodlejacuzzi");
 			writeText("You can also send me a message on discord (I'm NoodleJacuzzi#4120) or an email at noodlejacuzzi@gmail.com");
 			writeTransition("contentList", "See a breakdown of each artifact's content");
+			break;
+		}
+		case "startWardrobe": {
+			writeWardrobe();
+			writeTransition("start", "Go back");
 			break;
 		}
 		case "demo": {
@@ -33,9 +41,27 @@ function writeScene(scene) {
 			break;
 		}
 		case "contentList": {
-			writeSpeech("Reprehensive Bangle", "scripts/gamefiles/items/bracelet.jpg", "<br>Tag List:<br>Unperceived Sex<br>Memory Alteration<br>Dubious Consent<br>Seduction of women in committed relationships");
-			writeSpeech("Erotibox", "scripts/gamefiles/items/erotibox.jpg", "<br>Tag List:<br>Corruption<br>Mind Control<br>Emma Watson Deepfake");
-			writeSpeech("Exchange Gas", "scripts/gamefiles/items/gas.jpg", "DARK VAULT<br>Tag List:<br>Genderswap<br>Cock Worship");
+			var researchTotal = 0;
+			for (i = 0; i < galleryArray.length; i++) {
+				if (galleryArray[i].index.includes('bracelet')) {
+					researchTotal += 1;
+				}
+			}
+			writeSpeech("Reprehensive Bangle", "scripts/gamefiles/items/bracelet.jpg", researchTotal+" total scenes implemented<br>Tag List:<br>Unperceived Sex<br>Memory Alteration<br>Dubious Consent<br>Seduction of women in committed relationships");
+			researchTotal = 0;
+			for (i = 0; i < galleryArray.length; i++) {
+				if (galleryArray[i].index.includes('erotibox')) {
+					researchTotal += 1;
+				}
+			}
+			writeSpeech("Erotibox", "scripts/gamefiles/items/erotibox.jpg", researchTotal+" total scenes implemented<br>Tag List:<br>Corruption<br>Mind Control<br>Emma Watson Deepfake");
+			researchTotal = 0;
+			for (i = 0; i < galleryArray.length; i++) {
+				if (galleryArray[i].index.includes('gas')) {
+					researchTotal += 1;
+				}
+			}
+			writeSpeech("Exchange Gas", "scripts/gamefiles/items/gas.jpg", researchTotal+" total scenes implemented (DARK VAULT)<br>Tag List:<br>Genderswap<br>Cock Worship");
 			writeTransition("start", "Back to the start screen");
 			break;
 		}
@@ -216,7 +242,6 @@ function writeScene(scene) {
 						writeTransition("wardrobe", "Open the wardrobe");
 						writeTransition("gallery", "Review your research notes");
 						writeTransition("cheat", "Cheat");
-						writeFunction("nap()", "Take a nap");
 						writeTransition("newDay", "Go to sleep");
 						writeTransition("home", "Leave your room");
 					}
@@ -338,7 +363,6 @@ function writeScene(scene) {
 						}
 						case "Noon": {
 							checkForEvents();
-							writeFunction("nap()", "Waste time");
 							writeTransition("home", "Go home early");
 							break;
 						}
@@ -361,6 +385,17 @@ function writeScene(scene) {
 			writeText("Request authorized. Which artifact will you requisition?");
 			writeText("WARNING: Dark Vault artifacts pose a significant risk to the researcher and, by extension, to Anomaly Vault. Great care has been taken to ensure that these artifacts cannot be removed from their testing area under any circumstance.");
 			writeText("In the event of misuse, onstaff security will seal the testing rooms and the researcher inside. Great care must be taken with these items.");
+			var researchStatus = 0;
+			var researchTotal = 0;
+			for (i = 0; i < galleryArray.length; i++) {
+				if (galleryArray[i].dark == true) {
+					researchTotal += 1;
+					if (galleryCheck(galleryArray[i].index) == true) {
+						researchStatus += 1;
+					}
+				}
+			}
+			writeText(researchStatus+" of "+researchTotal+" total dark vault scenes obtained.");
 			writeArtifact("gas");
 			writeTransition("work", "Go back");
 			break;
@@ -369,6 +404,13 @@ function writeScene(scene) {
 		case "braceletResearch": {
 			tempScene = 'work';
 			researchLevel('bracelet');
+			break;
+		}
+		case "braceletFailed": {
+			writeText("Wracking your brain, you just don't have any more ideas for how to research the bracelet in a clinical setting.");
+			writeText("You've already finished researching this artifact, but there might be more to do with it if you bring it home, if you haven't already.");
+			writeText("Maybe you'll be hit with inspiration soon.");
+			writeTransition("work", "Go back");
 			break;
 		}
 		case "erotiboxResearch": {
@@ -418,6 +460,7 @@ function writeScene(scene) {
 		case "erotiboxFailed": {
 			writeText("You barely escaped with your life last time, you shouldn't do anything as risky as human tests again.");
 			writeText("But at the moment you can't think of anything else to put in the box. Maybe inspiration will strike you again some day in the future?");
+			writeTransition("work", "Go back");
 			break;
 		}
 		case "gasResearch": {
@@ -425,71 +468,8 @@ function writeScene(scene) {
 			researchLevel('gas');
 			break;
 		}
-		case "bracelet": {
-			var researchScenes = 0;
-			var researchName1 = scene+"Research";
-			var researchName2 = "";
-			var researchCounter = 1;
-			console.log('researchName1 = ' +researchName1);
-			for (i = 0; i < data.gallery.length; i++) {
-				researchName2 = researchName1 + researchCounter;
-				console.log('researchName2 = ' +researchName2);
-				if (data.gallery[i].index.includes(researchName2)) {
-					console.log('found scene named ' +data.gallery[i].index+ ', incresing research scenes');
-					researchScenes += 1;
-					researchCounter += 1;
-				}
-			}
-			console.log('researchScenes = ' + researchScenes);
-			var sceneTarget = 'failed';
-			for (i = 0; i < researchScenes; i++) {
-				researchName2 = scene+"research"+i;
-				if (galleryCheck(researchName2) == false) {
-					sceneTarget = researchName2;
-					break;
-				}
-			}
-			console.log('sceneTarget = ' + sceneTarget);
-			if (sceneTarget != 'failed') {
-				writeEvent(researchName2);
-			}
-			break;
-		}
-		case "bracelet": {
-			data.player.artifact1 = "bracelet";
-			updateMenu();
-			writeBig("scripts/gamefiles/items/bracelet.jpg");
-			writeSpeech("player", "", "This is experiment log RB-01, now commencing.");
-			writeText("You slip on the bracelet and turn towards "+data.story[1].fName+".");
-			writeSpeech("player", "", "So? Anything?");
-			writeSpeech("assistant", "", "No sir, no immediate effect.");
-			writeSpeech("player", "", "Interesting. Maybe it's something that needs to be activated to work. Huh, I can't get this off.");
-			writeText(""+data.story[1].fName+" looks up from her notes before looking around with a confused look on her face.");
-			writeSpeech("assistant", "", "What was I...?");
-			writeSpeech("player", "", ""+data.story[1].fName+"?");
-			writeSpeech("assistant", "", "Ah! Oh, Mr. "+data.player.lName+", sorry. I must've been distracted for a moment.");
-			writeSpeech("player", "", "Interesting.");
-			writeText("...");
-			writeSpeech("player", "", "I just smashed your favorite mug, and you don't even remember it?");
-			writeSpeech("assistant", "", "You did what?!");
-			writeText("She's obviously mad, but once you focus on the memory of dropping the cup, she takes on a more neutral expression.");
-			writeSpeech("assistant", "", "Hey, have you seen my coffee cup anywhere?");
-			writeText("...");
-			writeSpeech("player", "", "Hey! Bitch!");
-			writeBig("images/braceletResearch.gif");
-			writeText("You slap "+data.story[1].fName+" hard on the ass, and she does a little jump on the spot while letting out a squeak. But instead of getting mad she just rubs her ass and looks around to see if anyone saw.");
-			writeText("...");
-			writeSpeech("notes", "", "Findings:<br>The bracelet allows the wearer to be unperceived by others but only when the wearer desires to go unnoticed.<br>If the wearer wishes, any action they take will go unnoticed, including physical actions such as pinching and molesting. People affected by these actions will still feel the repercussions, but they will ignore the actions as if they were run of the mill occurrences.<br>The wearer can erase memories from other people's minds. This effect is limited to memories of the wearer or the wearer's indirect actions.");
-			writeSpecial("Each artifact will have a research scene like this one. They won't be erotic in nature, that is saved for later scenes where you continue to research the artifact or bring it home. These scenes just explain the nature and capabilities of an artifact so that you understand what you're getting into.");
-			writeText("You now have the bracelet equipped. Let's hop on back home.");
-			writeTransition("home", "Go home");
-			break;
-		}
-		case "coin": {
-			break;
-		}
-		case "playerHouse": {
-			writeTransition("home", "You broke something! The error code is 'home'");
+		case "gasFailed": {
+			writeEvent('gasResearch3');
 			break;
 		}
 		default: {
@@ -500,7 +480,7 @@ function writeScene(scene) {
 			writeText("Browser:" + navigator.appCodeName  + "");
 			writeText("OS:" + navigator.platform  + "");
 			writeBig("images/butts.jpg");
-			writeTransition("start", "Go back");
+			writeTransition("room", "Go back");
 		}
 	}
 }
@@ -733,8 +713,8 @@ function writeEvent(scene) {
 			writeSpeech("girlfriend", "", "You worry too much. I... Um~... Come here.");
 			writeText(girlfriendF+" pulls "+roommateF+" close as you give a few thrusts, your balls clench as you feel yourself going over the edge.");
 			writeBig("images/bracelet/home3-2.gif");
-			writeText(girlfriendF+" leans as far forwards as she can beneath you and pulls "+roommateF+" into a deep kiss. You can feel her "+girlfriendF+"'s pussy clench. She's french-kissing her girlfriend while a man pumps jizz into her womb.");
-			writeText("You pull out, spent, and watch as "+roommateF+"'s hole gapes a little open once you pull out. She must've cum at least twelve times by your count, but she's damn good at hiding it.");
+			writeText(girlfriendF+" leans as far forwards as she can beneath you and pulls "+roommateF+" into a deep kiss. You can feel "+girlfriendF+"'s pussy clench. She's french-kissing her girlfriend while a man pumps jizz into her womb.");
+			writeText("You pull out, spent, and watch as "+girlfriendF+"'s hole gapes a little open once you pull out. She must've cum at least twelve times by your count, but she's damn good at hiding it.");
 			break;
 		}
 		case "braceletHome4": {
@@ -799,6 +779,31 @@ function writeEvent(scene) {
 			writeSpeech("gym", "", "Ggghg~! L-love y-NNNh~!<br><i>Again! I'm cumming while fantasizing about getting fucked in the ass!</i>");
 			writeSpeech("player", "", "Hope you're ready for round two, slut!");
 			writeBig("images/bracelet/outdoor2-4.gif");
+			break;
+		}
+		case "braceletOutdoor4": {
+			writeText("You decide to head down to a local upscale wine bar that only allowed women, named 'Madam Pompadour'. It was a popular evening hangout for the more affluent women in the city:  like business executives off work for the night, lawyers desiring some stress relief and wealthy trophy wives with nothing to do. Tonight was your night to get lucky!");
+			writeText("When you arrive, you simply walk past the bouncer and enter the exclusive pub. You quickly spot two lovely ladies at the bar, you imagine chatting about something unimportant. With an eager grin, you walk up right behind the black woman wearing a sexy red dress.");
+			writeSpeech("player", "", "Hey slut, I'm going to fuck you in the ass in a second if you don't stop me.");
+			writeBig("images/bracelet/outdoor4-1.gif");
+			writeText("You unceremoniously lift up the hem of her dress and begin pounding her asshole, taking the gorgeous black woman from behind on her barstool. She gasps and grunts at the sudden intrusion, her confused body tensing as she was suddenly forced into anal sex… but she otherwise has no idea you're there. She bravely continues her conversation with her coworker.");
+			writeSpeech("Black Woman", "scripts/gamefiles/none.png", "O-oh, oh fuck…! Agh… t-that's crazy…");
+			writeSpeech("Blonde Woman", "scripts/gamefiles/none.png", "Thank you! That's what I said, but does Michael ever listen to me? Of course not.");
+			writeSpeech("Black Woman", "scripts/gamefiles/none.png", "Ungh! Uh-huh… y-yeah.");
+			writeBig("images/bracelet/outdoor4-2.gif");
+			writeText("It's almost impressive watching the ebony beauty struggle to speak, her wild eyes shifting around her as she searches for the cause of her discomfort. You give it to her hard and fast, railing her tight ass with your throbbing cock, all the while patrons drink and chat around you, as if the erotic scene so completely and utterly normal, it wasn't even worth their attention.");
+			writeSpeech("Blonde Woman", "scripts/gamefiles/none.png", "What about you? How's has the promotion been?");
+			writeSpeech("Black Woman", "scripts/gamefiles/none.png", "Ah! Uh, w-well, you know. It's been alright. Hnngh…! J-just a lot of stress, I guess.");
+			writeText("Your hands leave her smooth hips and travel around to her heavy chest, groping her bouncing tits through her skimpy red dress. The blonde bimbo in front of her continues blabbering as if nothing was happening, her friend was getting her tits massaged in front of her while having anal sex and no one in the bar is any the wiser.");
+			writeBig("images/bracelet/outdoor4-3.gif");
+			writeSpeech("Black Woman", "scripts/gamefiles/none.png", "Jesus! Ah, god! Yes, fuck…!");
+			writeSpeech("Blonde Woman", "scripts/gamefiles/none.png", "Damn, I had no idea it was so bad. I could always try to find you a new position at my place?");
+			writeText("It was easy to tell that the girl you were fucking was starting to enjoy it… well, easy for you. To the rest of the bar, she just seemed like an over-worked office girl loudly voicing her stress out. With your balls churning, you grab the blonde and roughly pull her to the ground to blow your load on her face.");
+			writeBig("images/bracelet/outdoor4-4.gif");
+			writeText("After you finish coating the unaware blonde with a layer of fresh sperm, you watch in amusement as she stumbles back up to her seat, wiping the gooey strings of spunk from her eyes.");
+			writeSpeech("Blonde Woman", "scripts/gamefiles/none.png", "Shit, sorry, maybe I've had too much… I can't believe I fell out of my chair in front of everyone.");
+			writeText("You head behind the bar and grab a bottle of wine, taking sips right from the bottle like a barbarian as you people-watch and observe the other patrons. After an hour or two you head home for the night.");
+			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.patreon.com/swallows999`'>Swallows999</span>");
 			break;
 		}
 		case "braceletDream1": {
@@ -1064,8 +1069,6 @@ function checkForEvents() {
 						}
 					}
 				}
-			}
-			if (data.player.artifact1 == "bracelet") {
 				if (galleryCheck('braceletOutdoor1') == false) {
 					writeFunction("writeEvent('braceletOutdoor1')", "Take the bracelet to the gym");
 				}
@@ -1073,6 +1076,9 @@ function checkForEvents() {
 					if (galleryCheck('braceletOutdoor2') == false) {
 						writeFunction("writeEvent('braceletOutdoor2')", "Take the bracelet to the gym again");
 					}
+				}
+				if (galleryCheck('braceletOutdoor4') == false) {
+					writeFunction("writeEvent('braceletOutdoor4')", "Head out to a bar for some fun");
 				}
 			}
 			switch (data.player.artifact2) {

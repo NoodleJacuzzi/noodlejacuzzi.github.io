@@ -45,8 +45,21 @@ Second Dream (COMPLETE)
 Different morning picture for room (COMPLETE)
 Lock off dark vault to different gallery section (COMPLETE)
 Event placeholders (COMPLETE)
-Player images
-Crop gifs
+Player images (COMPLETE)
+Crop gifs (COMPLETE)
+Show all Swallows999 scenes (COMPLETE)
+Swallows portrait (COMPLETE)
+List scene count on the menu (COMPLETE)
+List total scenes for each artifact in fetish list (COMPLETE)
+List dark vault scenes in the dark vault (COMPLETE)
+Dark vault start message (COMPLETE)
+Replace player's logbook entry (COMPLETE)
+List artifacts in logbook (COMPLETE)
+List total scene count in logbook (COMPLETE)
+List artifact scene count in logbook (COMPLETE)
+Remove nap and waste time (COMPLETE)
+Unique failed scene for each artifact (COMPLETE)
+Change player image at start (COMPLETE)
 Show most recent master index update on start screen
 Use prerequisites for scenes to make checking for events easier
 
@@ -60,6 +73,9 @@ Home2 - Sexting (COMPLETE)
 Home3 - Fucking with Asa (COMPLETE)
 Outdoor1 - Gym Teacher's Exercise Plan (COMPLETE)
 Outdoor2 - Gym Teacher's Home (COMPLETE)
+Outdoor4 - Bar Room Fun Image Prep (COMPLETE)
+Outdoor4 - Bar Room Fun (COMPLETE)
+Outdoor4 - Add to data var (COMPLETE)
 Dream 1 - Bracelet's Fate (COMPLETE)
 
 	Erotibox
@@ -136,8 +152,8 @@ Research 5 - Pavlovian Payoff
 Home 4 - Dinner Date
 Outdoor 3 - The phantom in my house
 	Karlee has been living with an invisible fuckbuddy in her house for the last few days
-Outdoor 4 - Library Science 1
-Outdoor 5 - Library Science 2
+Outdoor 5 - Library Science 1
+Outdoor 6 - Library Science 2
 
 Poll for dark vault artifact
 
