@@ -596,7 +596,7 @@ function renameEveryone() {
 		var sheet = 'nameSubmission' + i + '2';
 		data.story[i].lName = document.getElementById(sheet).value;
 	}
-	sceneTransition("playerHouse");
+	sceneTransition("room");
 }
 
 function renamePlayer() {
