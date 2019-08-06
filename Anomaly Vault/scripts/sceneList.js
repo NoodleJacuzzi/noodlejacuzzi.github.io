@@ -34,8 +34,8 @@ function writeScene(scene) {
 		}
 		case "contentList": {
 			writeSpeech("Reprehensive Bangle", "scripts/gamefiles/items/bracelet.jpg", "<br>Tag List:<br>Unperceived Sex<br>Memory Alteration<br>Dubious Consent<br>Seduction of women in committed relationships");
-			writeSpeech("Erotibox", "scripts/gamefiles/items/box.jpg", "<br>Tag List:<br>Corruption<br>Mind Control<br>Emma Watson Deepfake");
-			writeSpeech("Exchange Gas", "scripts/gamefiles/items/box.jpg", "DARK VAULT<br>Tag List:<br>Genderswap<br>Cock Worship");
+			writeSpeech("Erotibox", "scripts/gamefiles/items/erotibox.jpg", "<br>Tag List:<br>Corruption<br>Mind Control<br>Emma Watson Deepfake");
+			writeSpeech("Exchange Gas", "scripts/gamefiles/items/gas.jpg", "DARK VAULT<br>Tag List:<br>Genderswap<br>Cock Worship");
 			writeTransition("start", "Back to the start screen");
 			break;
 		}
