@@ -48,6 +48,7 @@ V0.0
 		Day 0 (COMPLETE)
 		Day 1 - Acquiring the bracelet
 		write switch case shortcut for notepad++
+		write "++" shortcut for notepad++
 	Artifacts
 		writeArtifact (COMPLETE)
 		Track Research Status (COMPLETE)
@@ -74,7 +75,7 @@ V0.0
 		UpdateName to show last name (COMPLETE)
 		Replace NAMES with actual names (COMPLETE)
 	v0.5 - Reprehensive Bangle
-		Prologue skip
+		Fix bugs
 		Scene Outlines
 		Content List
 		Images assigned
@@ -114,94 +115,6 @@ Reprehensive Bangle (Allows you to be unnoticed / erase memories, first artifact
 	
 Lovey Earings (Allows you to hear the subject's thoughts)
 
-Prologue
-	Hello there! Whoever you are and wherever you came from, welcome to the Homestead Artifact Office!
-	You're probably feeling a little bit like you've just come into existence, right? Not to worry, you'vel ikely been alive for several years.
-	You're coming down off an amnestic high. Get too close to a dangerous artifact, huh? We've all been there. You, like many others in your office, have just been mind-wiped.
-	Now, we've all heard the stories about the downsides. Stories about erectil-
-	The screen goes dark, and the introduction video stops playing.
-	Hello?
-	A feminine voice comes alive over the speaker.
-	Can you understand me?
-	After a second of confusion you nod your head and try to say something, but your throat is so dry it just comes out as a cough.
-	This speaker is one-way, so I can't hear you. But the fact that you didn't try to rape the window is a good sign. Try filling out the form in front of you.
-	You hear a *click* as metal bindings release your arms, and a small metal table lifts from the ground with a pencil and paper on it.
-	Use the pencil to fill out the form, and please do not attempt to pleasure yourself with either object.
-
-Fill out the form
-	Image
-	First Name
-	Last Name
-	Age
-	Favorite color
-
-Finish
-	You place the filled out form back onto the table. Everything's... Hazy, to say the least.
-	There's a moment of silence before a large metal door behind you opens. A vaguely familiar face greets you.
-	[image]
-	Mr. LAST! Glad you're back. After the fifth attempt management said we should give up on you.
-	She tosses you a coat and a change of clothes. Looking over yourself, you're wearing what almost resembles a hospital gown.
-	It's all coming back to you, you grabbed some earings, and...
-	
-and...
-	[image]
-	[image]
-	[image]
-	...Mr. LAST?
-	
-... Mr. LAST?
-	Are you feeling alright? The amnestics should have blocked most of it out.
-	Yeah... Yeah I'm alright.
-	You are FIRST LAST, researcher at the Homestead Reclamation Office, responsible for the research and potential applications of artifacts found around the world.
-	It'll all come back slowly, try not to push yourself. Charlie says you're fine to head home for the day, so get some rest alright?
-	She steps aside after handing you a glass of water.
-	First door on the left, the drivers will take you home. Try not to recall the events of the research, alright?
-	See you tomorrow.
-	
-See you tomorrow
-	Everything's almost happening by itself. You're ushered into a black car with darkened windows, and in a flash the car's door opens again and you're allowed to leave.
-	You walk up to what is probably your doorstep and fish out a key on autopilot.
-	The place is warm and lived in, and a voice calls out to you from another room.
-	Welcome home. I picked up some-
-	[image]
-	Holy crap, you alright?
-	Yeah got splashed with some chemicals, I'll be alright, just need some rest.
-	Alright. I picked up some Chinese if you're hungry.
-	Thanks (to home)
-	
-home
-	You're still feeling groggy from the amnestics, you should probably try to sleep it off. 
-	Talk with ROOMIE
-	Call your office
-	Go to bed early
-	
-Roomie
-	Oh hey, feeling better?
-	Yeah I'll be fine. Anything new with you?
-	Hell yeah, I got a date! I'm going out with the home ecc teacher, that blonde girl you met at Tiffany's?
-	Right, right, of course I remember. You both work at uh...
-	St. Prince's University.
-	Yeah, that place. Good for you, she's a catch.
-	Thanks. You really should get some rest by the way, you still look like you've gone a week without sleep.
-	Go back
-
-Call your office
-	Identification?
-	FIRST LAST, Aleph.
-	Confirmed. Line secured, recipient?
-	LAST's office.
-	Confirmed, hold.
-	...
-	LAST's office.
-	Hey ASSISTANT, just letting you know I'm home safe.
-	Oh good! I'm just cleaning up and prepping, we've got a new artifact tomorrow.
-	We're not working on the earings?
-	Nope! Charlie says you've fried your brain too many times, so we're shelving the lovey-doves. We've got some kind of invisibility bracelet up next.
-	Invisibility?
-	Well, not really. It says it makes you unpercievable, we had to bake the room to get it off the last subject.
-	Alright, thanks for the heads up. See you tomorrow.
-	Bye!
-	
 Characters
 	Assistant - Veronica Rodriguez
 	Roommate - Sophia Leone
@@ -214,17 +127,14 @@ Characters
 	Organization Chair - Priya Rai
 	
 Potential girls:
-	Sunny Leone
 	Ava Adams
 	Alexis Texas
 	Kendra Lust
 	Lisa Ann
 	Dakota Skye
 	Elsa Jean
-	Peta Jensen
 	Rhiannon Rider
 	Riley Reid
-	Karlee Grey
 	Gina Valentina
 
 Time-Stopwatch
@@ -249,6 +159,7 @@ Midas Coin
 	Alleyway Mugging
 Erotification Box (Can't be taken home)
 	A large kennel-like cage covered by an unknown canvas substance. When an object is inserted and the door is locked a bright purple glow fills the box. Once the light recedes the door can be opened to reveal that the object inside has changed, usually to a similar object that is erotic in nature.
+	Emma Watson Video - Deepfake video
 	Test Subject's Interview Video - Test Subject Porno
 	Clockwork Pocket Watch - Watch that shows how far the holder is from their next orgasm
 	Mona Lisa Replication - Erotic Version of the Mona Lisa

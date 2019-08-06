@@ -1,50 +1,178 @@
-mom1A (complete)
-	Meeting at player's home, morning. Emily knocks on the door to introduce herself. You can introduce yourself firmly or passively.
-mom1B (complete)
-	Meeting in apartment complex, evening. Emily is struggling to get groceries inside. You can offer to help and introduce yourself or just walk on by.
-mom2A
-	Apartment complex, evening. Emily is getting her bags inside. She's a bit lonely, so she'd appreciate some company.
-mom2B
-	Shopping district, evening. Emily is shopping, and is ready to head home. She's a bit lonely, so she'd appreciate some company.
-mom3 (complete)
-	Apartment complex, evening. Emily is buzzed, and offers to give you her phone number. You note that she's got a very strong will while drunk, showing she'd make a terrible hypnosis target.
-mom4
-	Vintage street, evening. She's on her way home from a friend's house, and is feeling lonely (1-1 and 1-2). She wants a beer on the way back, and you can offer one. When you do you unlock her first scene (2-) where she gives you a handjob. You can do this scene at any time if you have a beer, and it skips/clears all of the phone events.
-mom5
-	Apartment complex, evening. You say that you need to talk, and that you're into her. She asks you to come with her and you have a long walk.
-mom6 (4-)
-mom7 (5-)
+{index: "coin", equipable: true, title: "Midas Coin", desc: "An old gold coin from ancient Greece.", desc2: "When worn, the wearer can barter sexual acts as if they were currency."},
 
-momPhone1
-	Right after getting her phone number. Just responding increases trust. You ask if she slept alright, and she says she hasn't slept that well in years. It was probably the booze though.
-momPhone2
-	Result of ignoring momPhone1, she's annoyed and asks for a response.
-momPhone3
-	These phone events each increase trust by 1, and can be skipped by triggering mom4.
-	She's been looking into horoscopes lately, she's a taurus. She asks what star sign you are, and gives a vague answer based on which one you pick.
-momPhone4
-	She talks about the beach, and thinks about going. You say she'd need a swimsuit and she sends a picture from her last visit. You ask who took the picture, and she goes silent.
-momPhone5
-	She apologizes for stopping so abruptly last time. You say it's no big deal, and you won't pry. You say that if she ever needs someone to talk to, you're there. She thanks you.
-momPhone6
-	She greets you, saying good morning. She notes that she's never actually asked what you do. You can either respond saying you're a school counselor or lie and say you're a federal agent.
-momPhone7
-	She says she'll be heading to Vintage Street in a bit to meet up with an old friend. She doesn't need company, but walking back might be a pain (and kind of lonely). She also says she'll need a beer, and you say you could bring one. This phone event does not clear itself so you can review it.
-	
-Kuro1
-	Meeting at the school entrance, morning. She's being accosted by a teacher for her attire, and makes a blowjob face at you. You note that this is a pretty regular occurrence, and can offer to take her to your office for some counseling. If you do, once inside, she notices you staring and offers to give you a handjob for money. You decline, saying maybe later. She gives you her phone number and offers her services, saying the roof is pretty secluded in the evening.
-Kuro2
-	She gives an unenthusiastic handjob while on the phone with someone. Optional, and can be triggered again later as roleplay.
-Kuro3
-	She lets you jerk off onto her while she's texting someone. Optional, and can be triggered again later as roleplay.
-Kuro4A
-	She lets you fuck her with a rubber on while she plays a game on your phone. Because of hypnotic commands to increase sensitivity the scene cuts to several hours later at the tail end of a long session. If you haven't finished her phone conversations this ends early.
-Kuro4B
-	An alternate version of Kuro4A where you have already gotten her "bad" scene, but have since finished her phone storyline. You fuck her with a rubber on as normal and the hypnotic commands kick in.
-Kuro5
-	She's really desperate to get a taste of you for some reason, as she's developed a taste for you as a result of hypnosis.
-Kuro6 
-	A full-day sex marathon
-	
-KuroPhone1
-	
+V1
+	System Stuff
+Scenes in gallery array (COMPLETE)
+Unlock assistant & roommate in tutorial (COMPLETE)
+Exchange Gas image (COMPLETE)
+Unlock girls automatically in writeEvent (COMPLETE)
+Girlfriend Logbook (COMPLETE)
+Boss Logbook (COMPLETE)
+Librarian Logbook (COMPLETE)
+Madame Logbook (COMPLETE)
+Gym Logbook (COMPLETE)
+Lifeguard Logbook (COMPLETE)
+Chair Logbook (COMPLETE)
+Fix bugs (COMPLETE)
+Day 1 Planned (COMPLETE)
+Day 1 Full (COMPLETE)
+Jensen's Memo (COMPLETE)
+Dark vault scene (COMPLETE)
+writeEvent passes the time automatically (COMPLETE)
+Auto-pick relevant research function (COMPLETE)
+Failed event does not pass time (COMPLETE)
+writeEvent default change (COMPLETE)
+Full failed event (COMPLETE)
+Add gas to artifact array (COMPLETE)
+Day 2 Message (COMPLETE)
+Drive to work (COMPLETE)
+Skip drive (COMPLETE)
+Dreams (COMPLETE)
+Skip dreamless sleep (COMPLETE)
+Check for home events (COMPLETE)
+Check for work events (COMPLETE)
+Bracelet checkForEvents (COMPLETE)
+Name shortcuts (COMPLETE)
+Day/noon/evening/night timer (COMPLETE)
+Sort scenes in gallery by galleryArray order (COMPLETE)
+Mobile Version (COMPLETE)
+Placeholder events (COMPLETE)
+Assign event images (COMPLETE)
+Replace prologue pictures (COMPLETE)
+Rename images already used (COMPLETE)
+First dream (COMPLETE)
+Second Dream (COMPLETE)
+Different morning picture for room (COMPLETE)
+Lock off dark vault to different gallery section (COMPLETE)
+Event placeholders (COMPLETE)
+Player images
+Crop gifs
+Show most recent master index update on start screen
+Use prerequisites for scenes to make checking for events easier
+
+	Bracelet
+Research1 - First Research (COMPLETE)
+Research2 - Caught Jilling (COMPLETE)
+Research3 - New Ideas (COMPLETE)
+Research Failed (COMPLETE)
+Home1 - Stay-Home Sophia (COMPLETE)
+Home2 - Sexting (COMPLETE)
+Home3 - Fucking with Asa (COMPLETE)
+Outdoor1 - Gym Teacher's Exercise Plan (COMPLETE)
+Outdoor2 - Gym Teacher's Home (COMPLETE)
+Dream 1 - Bracelet's Fate (COMPLETE)
+
+	Erotibox
+Research1 - Demo Reel - Deepfake (COMPLETE)
+Research3 - Mona Lisa - Work of Art (COMPLETE)
+Research4 - Chessboard - Loss/Win Board (COMPLETE)
+Research5 - $20 - Stripper Money (COMPLETE)
+Research6 - Water Bottle - Aphrodisiac Fluid (COMPLETE)
+Research8 - Assistant - Sex Fiend (COMPLETE)
+Research Failed (COMPLETE)
+
+
+Research2 - Pocket Watch - Orgasm Watch (NEED IMAGES)
+Research7 - Buttplug - Candy Buttplug (NEED IMAGES)
+
+Exchange Gas (dark vault)
+Research 1 - Test on assistant
+Research 2 - Test on yourself
+Research 3 - Test on yourself again (only obtainable after 1 and 2, bad end)
+	Now, if you apply pressure here, and push in here...
+	[image3-1]
+	Oooohhhhh~~!!!!
+	Hey, this is the third time you've cum, slut. You're going to teach me how to play with myself, right? You promised.
+	Y-yeah. I'll show you how to cum...
+	...
+	[image3-2]
+
+V2
+Alternate Reality Mirror
+Mirror 1-1 Gender Dynamics Research
+Mirror 1-2 Train Molester
+Mirror 1-3 Abduction
+Mirror 1-4 Rape
+Mirror 1-5 Virgin Teasing
+Mirror 1-Failure
+Mirror 2-1 Free Use Research
+Mirror 2-2 Casual Greeting
+Mirror 2-3 Phonecall About a Delay
+Mirror 2-Failure
+
+Time stopwatch
+Research 1 - First Research
+Research 2 - Endless Marathon
+Research Failed
+Home 1 - Public Stripping
+Home 2 - In-class fun
+Outdoor 1 - Bestowal of Power 1
+Outdoor 2 - Bestowal of Power 2
+Outdoor 2 - Bestowal of Power 3
+Outdoor 2 - Bestowal of Power 4
+Dream 1 - Stopwatch's Fate
+
+Gummy Dicks (Dark vault)
+Research 1 - Test it on yourself (bad end)
+
+V3
+Midas Coin
+Research 1 - First Research
+Research 2 - Trade for a Soda
+Research Failed
+Outdoor 1 - Haggling
+Outdoor 2 - Flaunting Wealth
+Outdoor 3 - Street Mugging
+Dream 1 - Fate of Midas
+Dream 2 - Morning Glory
+
+Super Truth Serum
+Research 1 - First Research
+Research 2 - Jensen's Secret
+
+More Bracelet
+Research 4 - Pavlovian Conditioning
+Research 5 - Pavlovian Payoff
+Home 4 - Dinner Date
+Outdoor 3 - The phantom in my house
+	Karlee has been living with an invisible fuckbuddy in her house for the last few days
+Outdoor 4 - Library Science 1
+Outdoor 5 - Library Science 2
+
+Poll for dark vault artifact
+
+V4
+Appreciation Perfume
+Research 1 - First Research
+Research 2 - Assistant
+Research Failed
+Home 1 - Mild Rubbing
+Home 2 - Cunnilingus
+Home 3 - School Play
+Home 4 - Phantastic Threesome
+Outdoor 1 - Public Display
+Dream 1 - Abrubt Awakening
+
+CEO Pass
+
+Poll for dark vault artifact
+
+V5
+Erotibox Ending
+Mirror 1 Ending
+Mirror 2 Ending
+
+V6
+Time Stopwatch Ending
+Midas Coin Ending
+Appreciation Perfume Ending
+CEO Pass Ending
+
+V? Poll Artifacts
+Free Rimjob Sign
+Kid Gloves Charm
+Ovorbs
+Pineapple Juice
+Stiff Voodoo Doll
+Chaddicus Shades
+Ring of Denial

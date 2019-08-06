@@ -10,16 +10,14 @@
 		<div id = "menu" class = "menu">
 			<p id = "title" class = "title">Anomaly Vault</p>
 			<p id = "title" class = "switch" onclick="window.location.href='https://noodlejacuzzi.github.io/index.html'">Noodle Jacuzzi</p>
-			<p id = "version" class = "version">V0.0</p>
+			<p id = "version" class = "version">Version 1</p>
 			<p id="logButton" class="switch" onclick="selfButton()">LOGBOOK</p>
 			<p id="saveButton" class="switch" onclick="saveButton()">SAVE/LOAD</p>
 			<p id="restartButton" class="switch" onclick="restartButton()">RESTART</p>
 			<p id="logButton" class="switch" onclick="disablePictures()">DISABLE IMAGES</p>
-			<p id="invButton" class="switch"  onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App%20Mobile.html'">MOBILE VERSION</p>
+			<p id="invButton" class="switch"  onclick="window.location.href='https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault%20Mobile.html'">MOBILE VERSION</p>
 			<img id="playerImage" class="playerImage" src="images/none.png">
-			<br>
 			<img id="playerArtifact1" class="playerImage" src="images/none.png">
-			<br>
 			<img id="playerArtifact2" class="playerImage" src="images/none.png">
 			<p id = "playerName" class = "version">???</p>
 			<p id = "day" class = "version">Day 1</p>
@@ -35,6 +33,8 @@
 				<p id="restartButton" class="switch" onclick="restartButton()">RESTART</p>
 				<p id="logButton" class="switch" onclick="disablePictures()">DISABLE IMAGES</p>
 				<p id="logButton" class="switch" onclick="selfButton()">LOGBOOK</p>
+				<p id="logButton" class="switch" onclick="selfButton()" style="color:white">Artifact 1:<br><span id ="playerArtifact1Mobile"></span></p>
+				<p id="logButton" class="switch" onclick="selfButton()" style="color:white">Artifact 2:<br><span id ="playerArtifact1Mobile"></span></p>
 			</div>
 			<div id = "save" class = "save">
 				<p class = "windowTitle" onclick="saveButton()">SAVE/LOAD</p>
