@@ -13,7 +13,8 @@ function writeScene(scene) {
 			//writeTransition("prologueSkip", "Skip the prologue");
 			writeText("Other notes:");
 			writeText("This game was commissioned via Patreon by <span class = 'switch' onclick='window.location.href=`https://www.patreon.com/swallows999`'>Swallows999</p>");
-			writeText("You can also change your profile image by using the wardrobe in your room. You can also cheat in your room if you know a code.");
+			writeText("Swallows actually wrote some content for the game, you can unlock his scenes like normal, and he has a special section in the gallery. If you'd like to put your scene in the game, feel free to send it to me.");
+			writeText("You can change your profile image in game by using the wardrobe in your room. You can also cheat in your room if you know a code.");
 			writeText("You can click on the title of a window to close it. For example, if you click 'LOGBOOK' on the left (or bottom on mobile), you can close the new window by clicking anywhere in the 'LOGBOOK' section at the top.");
 			writeText("I'm always open to comments or criticism. If you have an idea for an artist or scene or you'd like to suggest content of your own, you can shoot me a message at anytime on TFgames, F95zone, or my Patreon page at https://www.patreon.com/noodlejacuzzi");
 			writeText("You can also send me a message on discord (I'm NoodleJacuzzi#4120) or an email at noodlejacuzzi@gmail.com");
@@ -219,7 +220,6 @@ function writeScene(scene) {
 						writeTransition("wardrobe", "Open the wardrobe");
 						writeTransition("gallery", "Review your research notes");
 						writeTransition("cheat", "Cheat");
-						writeFunction("nap()", "Take a nap");
 						writeTransition("newDay", "Go to sleep");
 						writeTransition("home", "Leave your room");
 					}
