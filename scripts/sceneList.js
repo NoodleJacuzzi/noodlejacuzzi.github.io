@@ -2,9 +2,9 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 7/31/2019</p>
-				<p class = "centeredText">Hentai University V1</p>
-				<p class = "centeredText">Winner of the July Poll, Hentai University is now available. See more info below</p>
+				<p class = "centeredText">Lastest News 8/7/2019</p>
+				<p class = "centeredText">Anomaly Vault V1</p>
+				<p class = "centeredText">Sponsored game by Swallows999, similar in tone to Human Alteration App's dom route. See more info below</p>
 				<p class = "centeredText">Thank you to: Swallows999, Lasse Bannow, ChronosEdge, Brandon, Roy, and Wild Bill for supporting my work!</p>
 			`;
 			writeTransition("news", "View all news updates");
@@ -12,6 +12,19 @@ function writeScene(scene) {
 			writeTransition("commissions", "Commissioned scenes (Currently none)");
 			//writeTransition("recommendations", "Recommendations");
 			writeText("<br><br>");
+			writeBig("images/AnomalyVault.png");
+			writeText("Anomaly Vault v1");
+			writeText("You play as a researcher performing experiments on various reality warping artifacts, currently including a presence-erasing bracelet and a crate that converts anything inside into a hypersexualized version of itself.");
+			writeText("The game uses real porn gifs, and is similar in tone to Human Alteration App's dom route.");
+			writeText("The themes and fetishes of the game are governed by what artifacts you interact with, hopefully as time passes you'll find and artifact you really connect with. Let me know if you have any artifact / scene ideas!");
+			writeText("Nonoptional Tags: Unpercieved Sex, Ignored Sex, Dubious Consent, Seduction of Women in Committed Relationships");
+			writeText("Optional Tags: Corruption, Mind Control, Deepfake, Genderbending (both M to F and F to M) among others. See the content list below.");
+			writeTransition("downloadAnomalyVault", "Download Anomaly Vault");
+			document.getElementById('output').innerHTML +=`
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault.html'">Play the game online</p>
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault%20Mobile.html'">Play the mobile version</p>
+			`;
+			writeTransition("artifactList", "See a roadmap of current / planned content");
 			writeBig("images/HentaiUniversity.png");
 			writeText("Hentai University v1");
 			writeText("You play as a young man with a strong grasp on hypnotic magic, and have embedded yourself as a counselor in a school with a fantastically attractive student body. The faculty and your neighbors in town look pretty good too.");
@@ -65,6 +78,8 @@ function writeScene(scene) {
 			break;
 		}
 		case "news": {
+			writeText("<b>8/7/2019</b> - Anomaly Vault V1");
+			writeText("Sponsored game by Swallows999, similar in tone to Human Alteration App's dom route.");
 			writeText("<b>7/31/2019</b> - Hentai University V1");
 			writeText("Winner of the July Poll, Hentai University is now available. See more info below");
 			writeText("<b>7/10/2019</b> - Hentai University Demo");
@@ -95,6 +110,115 @@ function writeScene(scene) {
 			writeText("<b>5/20/2019</b> - Princess Quest v1.0");
 			writeText("Full game release");
 			writeText("5 new scenes, 9 scenes in the game total");
+			writeTransition("start", "Go Back");
+			break;
+		}
+		case "artifactList": {
+			writeText("Main Game Artifacts:");
+			writeText("These are added to the game specifically to appeal to the game's sponsor, Swallows999. They have more scenes, and are planned to be implemented in this order:");
+			writeText(`
+				<b>Reprehensive Bracelet (IMPLEMENTED)</b>
+				<br> A partially tarnished silver bracelet. When worn, the wearer can become imperceivable and erase memories of themselves & their actions.
+				<br>Tags: Unpercieved Sex, Memory Alteration
+			`);
+			writeText(`
+				<b>Erotibox (IMPLEMENTED)</b>
+				<br>A wooden crate, anything put inside becomes a heavily sexualized version of itself.
+				<br>Tags: Corruption, Mind Control, Deepfake
+			`);
+			writeText(`
+				<b>Alternate Reality Mirror</b>
+				<br>An antique mirror, stepping through it leads to another dimension of earth depending on the engraving that changes each day. Current engravings include Public Fun Is Not Unusual, a world where public sex is common, and Little Men Are Fun Toys, a world where gender dynamics are reversed from our own.
+				<br>Tags: Public Sex, Ignored Sex, Gender Dynamic Reversal, Reverse Rape
+			`);
+			writeText(`
+				<b>Time Stopwatch</b>
+				<br>A broken bronze stopwatch. When the button on top is pressed, time stops for everyone except the user and anyone they're touching.
+				<br>Tags: Time Stop, Rape
+			`);
+			writeText(`
+				<b>Midas Coin</b>
+				<br>An old golden Greek coin. When held, the holder can bargain sexual acts as though they were bartering with money, the more depraved actions they commit, the larger the monetary value of those actions.
+				<br>Tags: Public Sex, Sluttification, Reverse Rape
+			`);
+			writeText(`
+				<b>Super Truth Serum</b>
+				<br>A mint-flavored drink contained in several small vials. Whatever the drinker says becomes seen as absolute truth by the people around them.
+				<br>Tags: Mind Control, Dubious Consent
+			`);
+			writeText(`
+				<b>Appreciation Perfume</b>
+				<br>A bottle of scentless purple perfume. When sprayed, whoever inhales the perfume will be 'appreciated' (ie groping, fondling, molestation, etc) by a phantom known as the Lovely Madame. The more often the perfume is inhaled, the more tangible the phantom is.
+				<br>Tags: Molestation, Ghosts, Public Groping
+			`);
+			writeText(`
+				<b>CEO Pass</b>
+				<br>An ID card from a fictitious company, whoever holds it will be able to molest / assault women as they please, and the recipient's minds will rationalize it, or even cause them to enjoy the treatment.
+				<br>Tags: Domination, Molestation, Sexual Assault, Dubious Consent
+			`);
+			writeText("Dark Vault Artifacts:");
+			writeText("These are more divisive in fetishes covered. They're locked away in the Dark Vault and generally have less scenes overall. There's no planned order to implement these, just whichever I feel like adding at any time. These can be upgraded to main game artifacts at the sponsor's request, so I'll also use this place to store random ideas.");
+			writeText("These aren't in any order, but the ones on the bottom are less thought through than the ones on top. Let me know if any of these sound particularly interesting.");
+			writeText(`
+				<b>Exchange Gas (IMPLEMENTED)</b>
+				<br>Several gas grenades containing a blue and pink mixture. Anyone who inhales the gas will quickly be altered biologically to become a member of the opposite gender, 'genderswapping' them. The length of time they spend genderswapped changes depending on how much gas was inhaled, and if they receive the DNA of someone of their original gender.
+				<br>Tags: Genderswapping, (Someone Else's) Cock Worship
+			`);
+			writeText(`
+				<b>Gummy Dicks</b>
+				<br>A box of assorted gummy candies, all individually shaped into the form of flaccid male genitalia. When eaten by a male subject, they cause erectile dysfunction and alter the minds of the eater to receive greater pleasure from anal stimulation, while also altering their bodies to become more feminine. 
+				<br>Tags: Prostate Stimulation, Sissification, Flaccid Orgasm
+			`);
+			writeText(`
+				<b>Sissy's Tool Kit</b>
+				<br>A plastic makeup kit. When opened, objects will appear inside and in the room which are designed to encourage the opener to 'explore themselves'. These range from makeup to unknown body-modifying drugs and a 3-man group of naked men.
+				<br>Tags: Sissification, Feminization, Gay(?) Sex
+			`);
+			writeText(`
+				<b>Pineapple Juice!</b>
+				<br>A container of pineapple juice, the logo on the front is of a woman drinking from an anthropomorphic pineapple who appears to be very happy to be drunk from. Drinking this permanently alters the bodily fluids (except for blood and other essential fluids) to become delicious and highly addictive. 
+				<br>Tags: Semen Drinking, Watersports
+			`);
+			writeText(`
+				<b>Charity's Cage</b>
+				<br>A small metal cage designed to contain flaccid male genitalia. Various abnormal effects occur when worn, with other subjects treating the wearer more harshly. At some point the cage is released, but the trigger is unknown.
+				<br>Tags: Femdom, Denial, Chastity
+			`);
+			writeText(`
+				<b>Succubus Onahole</b>
+				<br>A soft plastic fleshlight, no abnormal qualities are shown until male genitalia is inserted into the artifact. Once inserted, men will feel intense euphoria, followed by panic as they claim that tentacles are probing them from inside the artifact. Long-term effects include extreme increases in semen production and mental derangement.
+				<br>Tags: Body Modification, Urethral Penetration, Excessive Semen
+			`);
+			writeText(`
+				<b>'Free Rimjobs!' Sign</b>
+				<br>A cardboard rectangle with the text "Free Rimjobs" written on it. Containment is difficult as after being seen, the sign will teleport into the possession of a random person the viewer knows and finds attractive. That person will then feel compelled to offer their services and provide sexual acts to the viewer in public.
+				<br>Tags: Rimjob, Sluttification, Whoring, Public Sex
+			`);
+			writeText(`
+				<b>Ovorbs</b>
+				<br>A pair of small bumpy metal orbs. When swallowed by female subjects the subjects experience a variety of bodily changes and feel compelled to become pregnant, and many of the body changes are to facilitate this.
+				<br>Tags: Body Modification, Sluttification, Creampie
+			`);
+			writeText(`
+				<b>Stiff Voodoo Doll</b>
+				<br>A doll made from straw and twine. When a target's hair is wrapped around the doll, the hair will disintegrate and the target will become unable to move. People around the target will feel compelled to treat the target as a highly-realistic sex toy. The target remains conscious through the entire process, lasting exactly 24 hours before movement is once again possible.
+				<br>Tags: Public Use, Dubious Consent, Mind Break
+			`);
+			writeText(`
+				<b>Chaddicus Shades</b>
+				<br>A pair of aviator sunglasses which, when worn, increase the wearer's confidence by several dozen degrees. Women will feel compelled to argue with the wearer, at which point some mysterious process causes the argument to almost immediately devolve into sex, with the wearer as the dominant partner.
+				<br>Tags: Instant-Loss, Sexual Assault, Dubious Consent
+			`);
+			writeText(`
+				<b>Denial Pills</b>
+				<br>A bottle of pills featuring a frustrated face on the front accompanied by Chinese text translating roughly to "STRUGGLE!". When taken subjects have shown to become completely incapable of orgasm, but develop an extreme sexual hunger and desire for relief. Research has shown that once the denial period is finished, subjects typically release far more sexual fluid than should be humanly possible.
+				<br>Tags: Orgasm Denial, 
+			`);
+			writeText(`
+				<b>Lovey Doves</b>
+				<br>A pair of earing that increase the charisma of the wearer, causing them to be able to seduce anyone at will without restriction. Asexual and castrated individuals are not resistant to this effect. In addition, the user will also lose control of their sense of reason and attempt to cause as large an orgy as possible, sometimes displaying unusally high levels of problem solving ability to make this happen.
+				<br>Tags: Threesome, Mind Control, Public Sex
+			`);
 			writeTransition("start", "Go Back");
 			break;
 		}
@@ -195,6 +319,20 @@ function writeScene(scene) {
 			writeText("After an audible *POP* she pulls herself free, and you start squirting her infected load out of your body. With every squeeze you push out more, and the bulge of your overstuffed womb starts to flatten. After one last push you squirt the cum a good few inches out, but you feel something else getting pushed out as well.");
 			writeText("You look down, and standing at full mast is a brand new dick. You can feel a heavy pair of balls below it large enough to rest in the puddle of water beneath you.");
 			writeText("Your mind can't hold a complete thought anymore. This is your new life.");
+			writeTransition("start", "Go Back");
+			break;
+		}
+		case "downloadAnomalyVault": {
+			document.getElementById('output').innerHTML +=`
+			Current version: V1<br><br>
+			Most recent game files: https://mega.nz/#!a3JQVAbZ!PDdywM-hmP3hLgvsOEsCqiNyS1thoTmh3DO3fq5LZVo<br><br>
+			Most recent image pack: https://mega.nz/#!qqQkBaBb!NkWYOkCRw2ZAgp_5A2SAFsUIETwzIjjauO3UA6h2xfo<br><br>
+			If you're new to the game, all you need to do is download these two. Extract the game files to create the Anomaly Vault folder, then extract the images to create the images folder. Make sure the images folder is in the Anomaly Vault folder and you're good to go. The final layout should look like this:<br><br>
+			images<br>
+			scripts<br>
+			Anomaly Vault.html<br>
+			Anomaly Vault Mobile.html<br>
+			`;
 			writeTransition("start", "Go Back");
 			break;
 		}

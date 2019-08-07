@@ -59,8 +59,8 @@ var galleryArray = [
 	{index: "erotiboxResearch6", dark: false, girl: "", name: "Water Bottle - Aphrodisiac Drink", hint: ""},
 	{index: "erotiboxResearch8", dark: false, girl: "assistant", name: "Assistant - Sex Fiend", hint: ""},
 	//Exchange Gas Events
-	{index: "gasResearch1", dark: true, girl: "assistant", name: "Exchange Gas - Assistant Test", hint: ""},
-	{index: "gasResearch2", dark: true, girl: "", name: "Exchange Gas - Personal Test", hint: ""},
+	{index: "gasResearch1", dark: true, girl: "assistant", name: "Exchange Gas - Personal Test", hint: ""},
+	{index: "gasResearch2", dark: true, girl: "", name: "Exchange Gas - Assistant Test", hint: ""},
 	{index: "gasResearch3", dark: true, girl: "assistant", name: "Exchange Gas - Final Test", hint: ""},
 ]
 
@@ -286,6 +286,14 @@ function writeSpeech (name, img, text) {
 	if (name == "notes") {
 		name = "Research Notes";
 		img = "scripts/gamefiles/profiles/notes.png";
+	}
+	if (name == "gasF") {
+		name = data.player.fName;
+		img = "scripts/gamefiles/profiles/gasF.jpg";
+	}
+	if (name == "gasM") {
+		name = assistantF;
+		img = "scripts/gamefiles/profiles/gasM.jpg";
 	}
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].index == name) {

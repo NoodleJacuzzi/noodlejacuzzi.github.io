@@ -63,6 +63,69 @@ Change player image at start (COMPLETE)
 Show most recent master index update on start screen
 Use prerequisites for scenes to make checking for events easier
 
+	Release Preparation
+			Upload to MEGA (COMPLETE)
+			Patreon Post
+Salutations everyone, this is the release of version one of a game commissioned by Swallows999, Anomaly Vault!
+
+You play as a researcher performing experiments on bizarre reality-warping artifacts, thematically and tonally it's very similar to the dom route of Human Alteration App.
+It contains 19 total scenes, primarily focusing on themes of unpercieved sex and reality alteration among other fetishes, with more to come in the future.
+There's more info in the game's start screen, I hope you all enjoy. If you have any content ideas please let me know.
+One thing I'd like to note that isn't covered by the game's start screen is that if anyone has an image they'd like to use for their profile image, let me know and I can implement it into the game.
+You can play the game online at https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault.html
+Or play the mobile version online at https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault%20Mobile.html
+And you can find the offline version links in my index at https://noodlejacuzzi.github.io/index.html
+As for the rest of the month, I'll need some prep time to work on Hentai University's system stuff. I should be able to get a playable version of Bitch Medicenter and maybe an expansion for Rainy DayZ out by the end of the month. I'll put a poll up next week if I don't have enough time to do both and need to pick one.
+			TFgames synopsis
+Anomaly Vault is an HTML game made by Noodle Jacuzzi. Check it out and keep up to date with all other games via my master index here: https://noodlejacuzzi.github.io/index.html
+You play as a researcher performing experiments on various reality warping artifacts, currently including a presence-erasing bracelet and a crate that converts anything inside into a hypersexualized version of itself.
+The game uses real porn gifs, and if you enjoy it I highly recommend also giving Human Alteration App a shot here: https://tfgames.site/index.php?module=viewgame&id=2016
+The themes and fetishes of the game are governed by what artifacts you interact with, hopefully as time passes you'll find and artifact you really connect with. Let me know if you have any artifact / scene ideas!
+Nonoptional Tags: Unpercieved Sex, Ignored Sex, Dubious Consent, Seduction of Women in Committed Relationships
+Optional Tags: Corruption, Mind Control, Deepfake, Genderbending (both M to F and F to M)
+Tags I intend to include in the future, all will be optional: Time Stop, Public Molestation, Sluttification, Wormhole Sex, Memory/Truth Alteration, Femdom, Rough Sex, and others depending on what artifact ideas I have. Check out my index for a list of artifacts I'll be adding/am considering adding.
+You can also find some screenshots of the game here if you need them: https://mega.nz/#F!7jZQQCzL!gkaVTE_kPzZWWCGDxWJoYA
+TFgames plot
+You are Swallows Deeznuts! Or whatever you decide to name yourself. Perform experiments with artifacts for sexual gain until you're satisfied, with endings in the future depicting you attempting to use the artifacts to take over and dominate the Anomaly Vault.
+			TFgames changelog
+v1: August 2019, First upload
+- 19 Total scenes:
+- 10 Reprehensive Bracelet scenes
+- 6 Erotibox scenes
+- 3 Exchange Gas scenes
+			TFgames forum post
+This is Anomaly Vault, an HTML game about you, a researcher at Anomaly Vault, experimenting on reality-bending artifacts for sexual gain. Inpsirations come from all around, but the game's structure is owed mostly to The Company and is thematically close to Human Alteration App's dominant route.
+I've made a few games now, you can find a link to each of them in my index. If you'd like to support me or try to get more content for some of my games you like, consider supporting my Patreon at https://www.patreon.com/noodlejacuzzi
+I don't lock off content, so if you aren't interested you don't lose out on anything. If you'd like your owen profile picture in the game, or would like a scene of your own, that's the place to head.
+
+This game uses real porn images and gifs, and covers a variety of fetishes. Check the game's content list to see what each artifact focuses on. 
+If you're interested in where the game will be going as progress continues, check out my index in my signature. I have a big list of the artifacts I'll be adding / am considering adding.
+The whole game is hand-coded html, and is not made in Twine. The game was designed with images in mind, so some scenes might read clunkily without them.
+This game was sponsored by Swallows999 via patreon. He's not a major fan of TF content, so the TF content in the game will primarily be found in the Dark Vault. Please don't hesitate to:
+Give suggestions for scenes / artifacts
+Point out errors / typos / bugs found in the game
+Give suggestions on the game overall, like its structure or code.
+
+Currently on Version 1
+
+Most recent game files: https://mega.nz/#!a3JQVAbZ!PDdywM-hmP3hLgvsOEsCqiNyS1thoTmh3DO3fq5LZVo
+Most recent image pack: https://mega.nz/#!qqQkBaBb!NkWYOkCRw2ZAgp_5A2SAFsUIETwzIjjauO3UA6h2xfo
+If you're new to the game, all you need to do is download these two. Extract the game files to create the Anomaly Vault folder, then extract the images to create the images folder. Make sure the images folder is in the Anomaly Vault folder and you're good to go. The final layout should look like this:
+images
+scripts
+Anomaly Vault.html
+Anomaly Vault Mobile.html
+
+You can also play the game online here:
+Online play link: https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault.html
+Online mobile play link: https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault%20Mobile.html
+
+Known issues:
+None at the moment
+
+FAQ:
+No questions yet. Ask them away!
+
 	Bracelet
 Research1 - First Research (COMPLETE)
 Research2 - Caught Jilling (COMPLETE)
@@ -87,21 +150,15 @@ Research6 - Water Bottle - Aphrodisiac Fluid (COMPLETE)
 Research8 - Assistant - Sex Fiend (COMPLETE)
 Research Failed (COMPLETE)
 
-
 Research2 - Pocket Watch - Orgasm Watch (NEED IMAGES)
 Research7 - Buttplug - Candy Buttplug (NEED IMAGES)
 
 Exchange Gas (dark vault)
-Research 1 - Test on assistant
-Research 2 - Test on yourself
-Research 3 - Test on yourself again (only obtainable after 1 and 2, bad end)
-	Now, if you apply pressure here, and push in here...
-	[image3-1]
-	Oooohhhhh~~!!!!
-	Hey, this is the third time you've cum, slut. You're going to teach me how to play with myself, right? You promised.
-	Y-yeah. I'll show you how to cum...
-	...
-	[image3-2]
+Profile pics
+Writespeech setup
+Research 1 - Test on assistant (COMPLETE)
+Research 2 - Test on yourself (COMPLETE)
+Research 3 - Test on yourself again (COMPLETE)
 
 V2
 Alternate Reality Mirror
