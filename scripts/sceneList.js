@@ -24,6 +24,7 @@ function writeScene(scene) {
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault%20Mobile.html'">Play the mobile version</p>
 				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=75&t=12954'">TFgames Thread</p>
+				<p class="choiceText" onclick="window.location.href='https://f95zone.to/threads/anomaly-vault-v1-noodlejacuzzi.34746/'">F95Zone Thread</p>
 			`;
 			writeTransition("artifactList", "See a roadmap of current / planned content");
 			writeBig("images/HentaiUniversity.png");
