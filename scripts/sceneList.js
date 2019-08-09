@@ -220,6 +220,21 @@ function writeScene(scene) {
 				<br>A pair of earing that increase the charisma of the wearer, causing them to be able to seduce anyone at will without restriction. Asexual and castrated individuals are not resistant to this effect. In addition, the user will also lose control of their sense of reason and attempt to cause as large an orgy as possible, sometimes displaying unusally high levels of problem solving ability to make this happen.
 				<br>Tags: Threesome, Mind Control, Public Sex
 			`);
+			writeText(`
+				<b>Kid Gloves Charm</b>
+				<br>A silver pair of earings that, when worn, cause any physical  or emotional pain the wearer inflicts to be recieved as pleasure. Any injuries caused will also be surface level at worst. The longer the charm is on the wearer's person, the rougher they will treat members of the opposite sex.
+				<br>Tags: Rough Sex (spanking, hair pulling), Rougher Sex (going even farther beyond)
+			`);
+			writeText(`
+				<b>Destiny-Link Rings</b>
+				<br>A pair of golden rings. When worn by a pair of people, sensations such as pleasure, happiness, guilt, etc experienced by one ring wearer will be transferred and felt by the other ring weaer.
+				<br>Tags: Shared sensation, Long-distance sex
+			`);
+			writeText(`
+				<b>Vintage Cloth</b>
+				<br>A sheet of cloth. When used to cover a person, once the cloth is removed the subject will be wearing a completely different set of clothing, typically the clothing of a fictional character most commonly from the superhero genre (although exceptions have been found). Afterwards, subjects were convinced that they were the characters they are dressed as, although they act much more flirtatious and are more open to sex than their character would normally be.
+				<br>Tags: Cosplay Sex, Sluttification, Mind Control
+			`);
 			writeTransition("start", "Go Back");
 			break;
 		}
