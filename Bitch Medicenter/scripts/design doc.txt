@@ -56,6 +56,16 @@ V 0
 		Wife blocks images (COMPLETE)
 		Better number placement (COMPLETE)
 		Remove testing from start (COMPLETE)
+		Add keywords to treatment plan (COMPLETE)
+		Add new patron (COMPLETE)
+		Get alternate Chechik Images (COMPLETE)
+		Player fName and lName variable placeholder
+		Player image variable placeholder
+		Assistant fName and lName variable placeholder
+		Assistant image variable placeholder
+		Variable placeholder for all character names
+		Variable placeholder for swipe strength
+		Remove top margin
 		WifeA scene
 		WifeAA scene
 		Upload to github
@@ -81,10 +91,14 @@ V 0
 		NaggerAA
 	Free Play
 		Re-enable random play
+		No status quotes
 		Save current seed
 		Restart current seed
-		Choose image set
-		Random image set
+		Unlock image sets
+		Choose preferred image set
+		Random image set (random by default)
+		Change swipe intensity
+		Show swipe intensity in text
 	Cheat Menu
 		Unlock everything
 V2

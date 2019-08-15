@@ -16,7 +16,7 @@ function writeScene(scene) {
 			//writeTransition("blocks", "Test modification game");
 			//writeFunction("triad('1', 'test2')", "Test Hypnosis Game");
 			writeText("Other notes:");
-			writeText("This game was made possible via Patreon, thank you to Swallows999, Lasse Bannow, ChronosEdge, Brandon, Roy, and Wild Bill for supporting my work.");
+			writeText("This game was made possible via Patreon, thank you to Swallows999, Lasse Bannow, ChronosEdge, MrManPerson, Brandon, Roy, and Wild Bill for supporting my work.");
 			writeText("I'm always open to comments or criticism. If you have an idea for an artist or scene or you'd like to suggest content of your own, you can shoot me a message at anytime on TFgames, F95zone, or my Patreon page at https://www.patreon.com/noodlejacuzzi");
 			writeText("You can also send me a message on discord (I'm NoodleJacuzzi#4120) or an email at noodlejacuzzi@gmail.com");
 			break;
@@ -56,9 +56,9 @@ function writeScene(scene) {
 			writeBig("scripts/gamefiles/characters/wife.jpg");
 			writeText("IDENTIFYING INFORMATION:<br>The subject is a 27-year old housewife without children, living with her husband. She was admitted voluntarily. She is currently in Waiting Room A.");
 			writeText("CHIEF COMPLAINT:<br>Subject claims to suffer from a near nonexistent libido. This has caused a great amount of personal and marital stress. Methods such as traditional therapy and perscription drugs have proven ineffective.");
-			writeText("TREATMENT PLAN A - MODIFICATION:<br>A modification plan that would forcibly increase her sex drive. However, because of the disparity between physical and mental, a 'mind break' state could occur.");
+			writeText("TREATMENT PLAN A - MODIFICATION:<br>KEYWORDS: Sensitivity Increase, Sluttification, Mind Break<br>A modification plan that would forcibly increase her sex drive. However, because of the disparity between physical and mental, a 'mind break' state could occur.");
 			writeTransition("wifeA", "Begin treatment plan A");
-			writeText("TREATMENT PLAN B - HYPNOSIS:<br>A hypnosis plan that would enable her to enjoy depravity more on a mental level than a physical one. However, serious risk exists that she could fall much further than intended.");
+			writeText("TREATMENT PLAN B - HYPNOSIS:<br>KEYWORDS: Cheating, Sluttification, Corruption<br>A hypnosis plan that would enable her to enjoy depravity more on a mental level than a physical one. However, serious risk exists that she could fall much further than intended.");
 			writeSpecial("ERROR - Hypnosis treatment plans unavailable. Please submit a report to the site manager if hypnosis plan is essential.");
 			writeTransition("caseSelect", "Go back to file selection");
 			break;

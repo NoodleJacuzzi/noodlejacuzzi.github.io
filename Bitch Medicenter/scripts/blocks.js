@@ -1609,7 +1609,7 @@ document.addEventListener("touchend", function(e){
 	console.log(deltaX);
 	console.log(deltaY);
 
-	if(deltaX > 200 && Math.abs(deltaX) >= Math.abs(deltaY)){//right swipe
+	if(deltaX > data.player.swipeStrength && Math.abs(deltaX) >= Math.abs(deltaY)){//right swipe
 		if (blockGame == true) {
 		e.preventDefault();
 
@@ -1893,7 +1893,7 @@ document.addEventListener("touchend", function(e){
 		}
 	}
 
-	else if(deltaX < -200 && Math.abs(deltaX) >= Math.abs(deltaY)){//left swipe
+	else if(deltaX < -data.player.swipeStrength && Math.abs(deltaX) >= Math.abs(deltaY)){//left swipe
 		if (blockGame == true) {
 		e.preventDefault();
 
@@ -2179,7 +2179,7 @@ document.addEventListener("touchend", function(e){
 	}
 	}
 
-	else if(deltaY < -200 && Math.abs(deltaX) <= Math.abs(deltaY)){//upper swipe
+	else if(deltaY < -data.player.swipeStrength && Math.abs(deltaX) <= Math.abs(deltaY)){//upper swipe
 		if (blockGame == true) {
 		e.preventDefault();
 
@@ -2463,7 +2463,7 @@ document.addEventListener("touchend", function(e){
 	}
 	}
 
-	else if(deltaY > 200 && Math.abs(deltaX) <= Math.abs(deltaY)){//lower swipe
+	else if(deltaY > data.player.swipeStrength && Math.abs(deltaX) <= Math.abs(deltaY)){//lower swipe
 		if (blockGame == true) {
 		e.preventDefault();
 

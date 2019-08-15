@@ -12,13 +12,29 @@ var data = {
 	player: {
 		version: 0,
 		currentScene: "start",
+		fName: "You",
+		lName: "",
+		swipeStrength: 200,
+		image: "basic",
 	},
+	characters: [
+		{index: "assistant", fName: "???", lName: "???", },
+		{index: "wife", fName: "Adrianna", lName: "Chechik", },
+		{index: "jock", fName: "Derrick", lName: "Pierce", },
+		{index: "milf", fName: "Lisa", lName: "Anne",},
+		{index: "nagger", fName: "???", lName: "Skye",},
+		{index: "girlfriend", fName: "???", lName: "???",},
+		{index: "shemale", fName: "???", lName: "???", },
+		{index: "camwhore", fName: "???", lName: "???", },
+		{index: "schoolboy", fName: "???", lName: "???", },
+		{index: "otherkin", fName: "???", lName: "???", },
+	],
 	gallery: [
 	],
 }
 
 var galleryArray = [
-{index: "wifeA", name: "Wife Treatment Plan A - Hypnosis",},
+	{index: "wifeA", name: "Wife Treatment Plan A - Hypnosis",},
 ]
 
 var characterArray = [
