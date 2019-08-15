@@ -1,0 +1,197 @@
+V 0
+	Framework
+		Start screen (COMPLETE)
+		Blocks test (COMPLETE)
+		Start note about hypnosis game (COMPLETE)
+		Systems settings (COMPLETE)
+		Case selection (COMPLETE)
+		Prologue
+		Credits
+	System settings menu
+		systemSettings function (COMPLETE)
+		Back to start transition (COMPLETE)
+		Disable images (COMPLETE)
+		Export save (COMPLETE)
+		Import save (COMPLETE)
+		Reset save data (COMPLETE)
+		Mobile version link (COMPLETE)
+	Case selection
+		List characters (COMPLETE)
+		writeCase (COMPLETE)
+		Example case file (COMPLETE)
+		wifeA in galleryArray (COMPLETE)
+		Skip scene if already unlocked (COMPLETE)
+		Lead into test game (COMPLETE)
+	Modification Game - 2048
+		Game board (COMPLETE)
+		Moving blocks (COMPLETE)
+		Combining Blocks (COMPLETE)
+		Game generation (COMPLETE)
+		Master variable (COMPLETE)
+		Block images (COMPLETE)
+		Generate board based on currentScene (COMPLETE)
+		Victory() (COMPLETE)
+		Multiple rounds (COMPLETE)
+		Fix round start keypress bug (COMPLETE)
+		Show target score (COMPLETE)
+		Update caseStage and caseTotal (COMPLETE)
+		victory() function progresses (COMPLETE)
+		victory() unlocks finish treatment button (COMPLETE)
+		Current Status Quote (COMPLETE)
+		Restart stage button (COMPLETE)
+		Character specific images (COMPLETE)
+		Test mobile control scheme (COMPLETE)
+	Prologue
+		Prologue scene framework (COMPLETE)
+		Job advertisement (COMPLETE)
+		Job acceptance letter (COMPLETE)
+		Responsibility outline (COMPLETE)
+		Modification game tutorial (COMPLETE)
+		Note about hypnosis game (COMPLETE)
+	Demo
+		Jock portrait (COMPLETE)
+		Milf portrait (COMPLETE)
+		Nagger portrait (COMPLETE)
+		Extract/convert/crop/assign images
+		Wife blocks images
+		WifeA scene
+		WifeAA scene
+		Upload to github
+		Patreon Post
+	V1
+		Jock images collected/assigned
+		Jock blocks
+		Jock file
+		Jock status messages
+		JockA
+		JockAA
+		Milf images extracted/converted/cropped/assigned
+		Milf blocks
+		Milf file
+		Milf status images
+		MilfA
+		MilfAA
+		Nagger images extracted/converted/cropped/assigned
+		Nagger blocks
+		Nagger file
+		Nagger status images
+		NaggerA
+		NaggerAA
+	Images
+		Character Images
+		WriteSpeech images
+		WriteSpeech setup
+		Scene Images
+	Character Setup
+		Character Names
+		Character Tabs
+		Interview Stage
+		Character Blocks Images
+		Character Triad Images
+	Scene Layout
+		Scene Outline - Each character has their tab, an interview, a result scene for each treatment, and a "where are they now" scene for each treatment
+		Images Collected
+		Images cropped / converted
+		Scenes prewritten
+	Cheat Menu
+		Unlock everything
+V2
+	Framework
+		Start screen hypnosis message change
+		Prologue Triad introduction
+	Hypnosis Game - Triple Triad
+		Game board
+		Different Board sizes
+		Placing cards
+		Card images
+		Enemy AI
+		Flipping cards
+		Victory
+		Defeat
+		Restart
+		Game generation
+		Master variable
+		Current Status Quote
+		
+Characters
+	Jock - Mike
+		Preamble: Subject states that he finds it difficult to become aroused when bedding women, citing a heavy reliance on viagra and other drugs. He claims it is a biological issue, but several in-depth screenings show signs of heavily repressed masochistic and homosexual leanings.
+		Interview:
+		Treatment A Plan: A hypnosis plan that would encourage him to be more accommodating of other men satisfying the needs of future girlfriends, reducing personal stress.
+		Treatment A Result:
+		Treatment A Fallout:
+		Treatment B Plan: A modification plan that would give him a more effeminate body better able to realize his repressed homosexual desires.
+		Treatment B Result:
+		Treatment B Fallout:
+	Wife - Adriana Chechik
+		Preamble: Subject is a housewife of middle age who suffers from a near nonexistent libido, which has caused a great deal of marital stress. 
+		Interview:
+		Treatment A Plan: The Dinner Party A hypnosis plan that would enable her to enjoy depravity more on a mental level than a physical one. However, serious risk exists that she could fall much further than intended.
+		Treatment A Result:
+		Treatment A Fallout:
+		Treatment B Plan: The Fever Dream A modification plan that would forcibly increase her sex drive. However, because of the disparity between physical and mental, a "mind break" state could occur.
+		Treatment B Result:
+		Treatment B Fallout:
+	Milf - Lisa Anne
+		Preamble: Subject's son is being bullied by schoolmates. Subject was not aware that this is a sexual satisfaction improvement services, and was under the impression, although she would not refer to her son as such, that this was a hospital for "little bitches".
+		Interview:
+		Treatment A Plan: Moms guide to throwing a party - A hypnotic conditioning that would encourage her to pay for her son's safety with her own body.
+		Treatment A Result:
+		Treatment A Fallout:
+		Treatment B Plan: I want it harder! - A modification plan performed on the son to increase physical ability and aggression.
+		Treatment B Result:
+		Treatment B Fallout:
+	Nagger - Dakota Skye
+		Preamble: Subject arrives consistently nearly every day to whine about her lackluster love life, demanding the clinic satisfy her desires.
+		Interview:
+		Treatment A Plan: She's Dumping You Hypnotic conditioning to get her to shut the fuck up and stop bothering anyone on command.
+		Treatment A Result:
+		Treatment A Fallout:
+		Treatment B Plan: Ho' Alone A modification plan that would greatly improve durability and allow her to become a "stress tool" for the security staff.
+		Treatment B Result:
+		Treatment B Fallout:
+	Girlfriend
+		Preamble: Subject is struggling to enjoy sexual relations without finding a healthy outlet for her dominant desires. While the subject's boyfriend is open to such play, she finds herself unable to engage properly.
+		Interview:
+		Treatment A Plan: A hypnotic conditioning that would create a strong dominant streak.
+		Treatment A Result:
+		Treatment A Fallout:
+		Treatment B Plan: A modification plan wherein she can be given the equipment to dominate others.
+		Treatment B Result:
+		Treatment B Fallout:
+	Shemale
+		Preamble: Subject suffers from severe anxiety over her nature as trans, preventing her from forming meaningful connections over a perceived fear of others becoming aware of her body.
+		Interview:
+		Treatment A Plan: Hypnotic conditioning that would relax her perspective on being watched.
+		Treatment A Result:
+		Treatment A Fallout:
+		Treatment B Plan: A modification plan that would completely remove the concept of shame from her brain.
+		Treatment B Result:
+		Treatment B Fallout:
+	Camwhore
+		Preamble: Subject seeks an alternate career path based on her attractive body and seeks a referral or guidance on the matter.
+		Interview:
+		Treatment A Plan: Hypnotic conditioning that would improve her chances at selling her body successfully.
+		Treatment A Result:
+		Treatment A Fallout:
+		Treatment B Plan: A modification plan that would make her attract more attention as a "cam girl".
+		Treatment B Result:
+		Treatment B Fallout:
+	Schoolboy
+		Preamble: Subject suffers from a hyperactive bladder and seeks medical assistance.
+		Interview:
+		Treatment A Plan: Hypnotically conditioning a pleasure response from urination at the cost of ejaculation ability.
+		Treatment A Result:
+		Treatment A Fallout:
+		Treatment B Plan: A modification plan that would alter his urine to have an attractive smell and addictive qualities.
+		Treatment B Result:
+		Treatment B Fallout:
+	Otherkin
+		Preamble: Subject believes that on a spiritual level she is a horse, the four legged mammal. She seeks medical assistance here as no other clinic will offer treatment, and is willing to sign away her rights as a human.
+		Interview:
+		Treatment A Plan: Hypnotic conditioning to cause her to assume the role of a broodmare.
+		Treatment A Result:
+		Treatment A Fallout:
+		Treatment B Plan: Proceed with the planned modification treatment to transform her into a "centaur", keeping in mind the clinic only keeps access to male horses.
+		Treatment B Result:
+		Treatment B Fallout:

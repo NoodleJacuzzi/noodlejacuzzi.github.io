@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bitch Medicenter</title>
+		<script src="scripts/index.js"></script>
+		<script src="scripts/sceneList.js"></script>
+		<link rel="stylesheet" type="text/css" href="scripts/index.css" />
+		<link rel="stylesheet" type="text/css" href="scripts/blocks.css">
+	<script type="text/javascript" src = "scripts/blocks.js"></script>
+	</head>
+	<body onload ="startup()">
+		<div id = "menu" class = "menu">
+			<p id = "title" class = "title">Bitch Medicenter</p>
+			<p id = "title" class = "switch" onclick="window.location.href='https://noodlejacuzzi.github.io/index.html'">Noodle Jacuzzi</p>
+			<p id = "version" class = "version">Version 1</p>
+			<p id="logButton" class="switch" onclick="selfButton()">LOGBOOK</p>
+			<p id="saveButton" class="switch" onclick="saveButton()">SAVE/LOAD</p>
+			<p id="restartButton" class="switch" onclick="restartButton()">RESTART</p>
+			<p id="logButton" class="switch" onclick="disablePictures()">DISABLE IMAGES</p>
+			<p id="invButton" class="switch"  onclick="window.location.href='https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault%20Mobile.html'">MOBILE VERSION</p>
+			<img id="playerImage" class="playerImage" src="images/none.png">
+			<p id = 'scenesTotal'></p>
+			<img id="playerArtifact1" class="playerImage" src="images/none.png">
+			<p id = 'artifact1Total'></p>
+			<img id="playerArtifact2" class="playerImage" src="images/none.png">
+			<p id = 'artifact2Total'></p>
+			<p id = "playerName" class = "version">???</p>
+			<p id = "day" class = "version">Day 1</p>
+		</div>
+		<div id = "wrapper" class = "wrapper">
+			<div id = "output" class = "output">
+			<p class="choiceText" onclick="sceneTransition('start')">
+				Start the game
+			</p>
+			<p class="choiceText" onclick="restartButton()">
+				Critical error. Click to reboot.
+			</p>
+			</div>
+			<div id="footer" class="footer">
+				<p id="saveButton" class="switch" onclick="saveButton()">SAVE/LOAD</p>
+				<p id="restartButton" class="switch" onclick="restartButton()">RESTART</p>
+				<p id="logButton" class="switch" onclick="disablePictures()">DISABLE IMAGES</p>
+				<p id="logButton" class="switch" onclick="selfButton()">LOGBOOK</p>
+				<p id="logButton" class="switch" onclick="selfButton()" style="color:white">Artifact 1:<br><span id ="playerArtifact1Mobile"></span></p>
+				<p id="logButton" class="switch" onclick="selfButton()" style="color:white">Artifact 2:<br><span id ="playerArtifact1Mobile"></span></p>
+			</div>
+			
+			</div>
+	</body>
+</html>
