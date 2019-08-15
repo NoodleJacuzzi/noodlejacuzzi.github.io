@@ -52,8 +52,10 @@ V 0
 		Jock portrait (COMPLETE)
 		Milf portrait (COMPLETE)
 		Nagger portrait (COMPLETE)
-		Extract/convert/crop/assign images
-		Wife blocks images
+		Extract/convert/crop/assign images (COMPLETE)
+		Wife blocks images (COMPLETE)
+		Better number placement (COMPLETE)
+		Remove testing from start (COMPLETE)
 		WifeA scene
 		WifeAA scene
 		Upload to github
@@ -77,22 +79,12 @@ V 0
 		Nagger status images
 		NaggerA
 		NaggerAA
-	Images
-		Character Images
-		WriteSpeech images
-		WriteSpeech setup
-		Scene Images
-	Character Setup
-		Character Names
-		Character Tabs
-		Interview Stage
-		Character Blocks Images
-		Character Triad Images
-	Scene Layout
-		Scene Outline - Each character has their tab, an interview, a result scene for each treatment, and a "where are they now" scene for each treatment
-		Images Collected
-		Images cropped / converted
-		Scenes prewritten
+	Free Play
+		Re-enable random play
+		Save current seed
+		Restart current seed
+		Choose image set
+		Random image set
 	Cheat Menu
 		Unlock everything
 V2

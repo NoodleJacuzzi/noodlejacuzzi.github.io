@@ -51,6 +51,9 @@
 
 .tile-number{
 	font-weight: bold;
+	margin-left: 60%;
+	margin-bottom: 60%;
+	text-shadow: 1px 1px #000000;
 }
 
 .tile2{
@@ -96,15 +99,14 @@
 	background-size: cover;
 }
 .tile128{
-	font-size: 30px;
+	font-size: 26px;
 	color:#f9f6f2;
 	background:#f1d96b;
-	font-size:37px;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 .tile256{
-	font-size: 30px;
+	font-size: 26px;
 	color:#f9f6f2;
 	background:#f2cf4d;
 	background-repeat: no-repeat;
@@ -144,5 +146,8 @@
 		background: #bbada0;
 		border-radius:5px;
 		margin: auto;
+	}
+	.scoreBox{
+		margin-left: 25%;
 	}
 }

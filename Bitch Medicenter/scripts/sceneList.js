@@ -8,15 +8,15 @@ function writeScene(scene) {
 			writeMed("scripts/gamefiles/logo.png");
 			writeText("Bitch Medicenter is an adult game created by NoodleJacuuzi. You can find and keep up with all of my work, including Human Alteration App, Princess Quest, Rainy DayZ, Hentai University, and Anomaly Vault at my master index here:");
 			writeText("https://noodlejacuzzi.github.io/index.html");
+			writeText("I especially recommend Human Alteration App's Dom Route and Anomaly Vault in particular, as they have a very similar tone and style to this game.");
 			writeText("This game features heavy use of themes of hypnosis and body modification. While all content in this game can be considered optional due to its structure, these two themes make up a large amount of the game's content.");
 			writeText("If there's a specific topic you'd like to avoid, you can read a potential treatment plan for each character detailing what will happen in the resulting scene. This game contains no underage or scatological content.");
 			writeText("The hypnosis and modification treatment plans each use a different type of minigame. Until I finish the hypnosis game, this game is exclusively focused on body modification content.");
 			writeTransition("homeScreen", "Begin the game");
-			writeTransition("blocks", "Test modification game");
-			writeFunction("triad('1', 'test2')", "Test Hypnosis Game");
-			writeTransition("patreon", "Credits");
+			//writeTransition("blocks", "Test modification game");
+			//writeFunction("triad('1', 'test2')", "Test Hypnosis Game");
 			writeText("Other notes:");
-			writeText("This game was made possible via Patreon, thank you to everyone who's supported me. Because this game has no definitive ending, the list that would normally be in the credits is here on the start screen.");
+			writeText("This game was made possible via Patreon, thank you to Swallows999, Lasse Bannow, ChronosEdge, Brandon, Roy, and Wild Bill for supporting my work.");
 			writeText("I'm always open to comments or criticism. If you have an idea for an artist or scene or you'd like to suggest content of your own, you can shoot me a message at anytime on TFgames, F95zone, or my Patreon page at https://www.patreon.com/noodlejacuzzi");
 			writeText("You can also send me a message on discord (I'm NoodleJacuzzi#4120) or an email at noodlejacuzzi@gmail.com");
 			break;
@@ -27,6 +27,7 @@ function writeScene(scene) {
 			writeTransition("caseSelect", "View case files");
 			writeTransition("prologue", "Review introduction documents");
 			writeFunction("systemSettings()", "Change system settings");
+			writeTransition("start", "Exit terminal");
 			break;
 		}
 		case "caseSelect": {
@@ -147,7 +148,7 @@ function writeScene(scene) {
 			writeText("Browser:" + navigator.appCodeName  + "");
 			writeText("OS:" + navigator.platform  + "");
 			writeBig("images/butts.jpg");
-			writeTransition("room", "Go back");
+			writeTransition("start", "Go back");
 		}
 	}
 }

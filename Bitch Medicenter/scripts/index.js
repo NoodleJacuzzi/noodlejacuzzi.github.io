@@ -248,17 +248,15 @@ function saveFile(){
 function loadFile(){
 	data = prompt("Please paste the data", "");
 	data = JSON.parse(data);
-	if (data != null) {
-		saveSlot(180);
-		loadSlot(180);
-	}
 	if (data.player.version == null) {
 		alert("Invalid pasted data! If we tried to use this, the game would completely break!");
 		loadSlot(181);
 	}
 	else {
-		saveSlot(180);
-		loadSlot(180);
+		if (data != null) {
+			saveSlot(180);
+			loadSlot(180);
+		}
 	}
 }
 

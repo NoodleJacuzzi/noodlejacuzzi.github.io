@@ -5,14 +5,14 @@ var tileImages = ['url("./images/none.png")', 'url("./images/none.png")', 'url("
 var tileImagesEmpty = ['url("./images/none.png")', 'url("./images/none.png")', 'url("./images/none.png")', 'url("./images/none.png")', 'url("./images/none.png")', 'url("./images/none.png")', 'url("./images/none.png")', 'url("./images/none.png")',]
 
 var wifeImages = [
-'url("./images/dream1-1.gif")', //2
-'url("./images/none.png")', //4
-'url("./images/none.png")', //8
-'url("./images/none.png")', //16
-'url("./images/none.png")', //32
-'url("./images/none.png")', //64
-'url("./images/none.png")', //128
-'url("./images/none.png")', //256
+'url("./images/block2.gif")', //2
+'url("./images/wifeA-8.gif")', //4
+'url("./images/block8.gif")', //8
+'url("./images/block16.gif")', //16
+'url("./images/block32.gif")', //32
+'url("./images/block64.gif")', //64
+'url("./images/block128.gif")', //128
+'url("./images/wifeA-10.gif")', //256
 ]
 
 function blocks() {
@@ -98,6 +98,118 @@ var score = 0;
 var moveCount = 0, combineCount = 0;
 var emptyCount; 
 var isMoveOver = 1;
+
+var maps = [// goal of all is 128
+	[
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		2, 4, 8, 16,
+		32, 64, 128, 256,
+	],
+	[//tutorial
+		64, 32, 16, 8,
+		2, 4, 0, 0,
+		0, 0, 0, 0,
+		0, 0, 0, 2,
+	],
+	[ //64
+		8, 16, 0, 8,
+		0, 0, 16, 0,
+		0, 0, 0, 0,
+		0, 0, 16, 0,
+	],
+	[
+		2, 4, 8, 16,
+		64, 0, 0, 2,
+		0, 0, 0, 0,
+		32, 0, 0, 0,
+	],
+	[
+		32, 8, 0, 32,
+		0, 0, 0, 0,
+		32, 0, 0, 32,
+		0, 4, 0, 4,
+	],
+	[
+		8, 4, 0, 0,
+		0, 4, 8, 16,
+		16, 2, 4, 32,
+		0, 32, 2, 0,
+	],
+	[
+		4, 8, 0, 0,
+		16, 16, 8, 0,
+		16, 16, 32, 0,
+		4, 8, 0, 0,
+	],
+	[
+		16, 8, 4, 2,
+		32, 0, 0, 0,
+		0, 0, 0, 0,
+		64, 2, 0, 0,
+	],
+	[
+		16, 2, 16, 0,
+		16, 0, 0, 16,
+		16, 0, 0, 16,
+		16, 0, 0, 16,
+	],
+];
+
+function generateBlocksBoard() {
+	restart();
+	switch (tempScene) {
+		case "wifeA": {
+			tileImages = wifeImages;
+			switch (caseStage) {
+				case 0:
+					target = 252;
+					n = 1;
+				break;
+				case 1:
+					target = 96;
+					n = 2;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
+					n = 0;
+					blockGame = false;
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
+		}
+	}
+	for (i = 0; i < 16; i++) {
+		if (maps[n][i] != 0) {
+			makeTile(maps[n][i], i);
+		}
+	}
+	document.getElementById("score-target").innerHTML = target;
+	document.getElementById("caseStage").innerHTML = caseStage + 1;
+	document.getElementById("caseTotal").innerHTML = "3";
+	if (galleryCheck(tempScene) == true) {
+		document.getElementById("skipButton").innerHTML = "Skip Treatment";
+	}
+	else {
+		document.getElementById("skipButton").innerHTML = "";
+	}
+	if (caseStage == 3) {
+		document.getElementById('blocksControlsTop').innerHTML = '';
+		document.getElementById('blocksControlsBottom').innerHTML = '';
+		document.getElementById("finishButton").innerHTML = "Finish Treatment";
+	}
+	else {
+		document.getElementById("finishButton").innerHTML = "";
+	}
+	updateImages();
+}
+
 function makeTile(n, x) {
 	console.log('making tile');
 	var newTile = document.createElement("div");
@@ -214,63 +326,6 @@ function seededGame(n) {
 	}
 }
 
-var maps = [// goal of all is 128
-	[
-		0, 0, 0, 0,
-		0, 0, 0, 0,
-		0, 0, 0, 0,
-		0, 0, 0, 0,
-	],
-	[//tutorial
-		64, 32, 16, 8,
-		2, 4, 0, 0,
-		0, 0, 0, 0,
-		0, 0, 0, 2,
-	],
-	[ //64
-		8, 16, 0, 8,
-		0, 0, 16, 0,
-		0, 0, 0, 0,
-		0, 0, 16, 0,
-	],
-	[
-		2, 4, 8, 16,
-		64, 0, 0, 2,
-		0, 0, 0, 0,
-		32, 0, 0, 0,
-	],
-	[
-		32, 8, 0, 32,
-		0, 0, 0, 0,
-		32, 0, 0, 32,
-		0, 4, 0, 4,
-	],
-	[
-		8, 4, 0, 0,
-		0, 4, 8, 16,
-		16, 2, 4, 32,
-		0, 32, 2, 0,
-	],
-	[
-		4, 8, 0, 0,
-		16, 16, 8, 0,
-		16, 16, 32, 0,
-		4, 8, 0, 0,
-	],
-	[
-		16, 8, 4, 2,
-		32, 0, 0, 0,
-		0, 0, 0, 0,
-		64, 2, 0, 0,
-	],
-	[
-		16, 2, 16, 0,
-		16, 0, 0, 16,
-		16, 0, 0, 16,
-		16, 0, 0, 16,
-	],
-];
-
 function game() {
 	var n = 0;
 	console.log("now beginning game for case "+tempScene+", with current stage #"+caseStage);
@@ -353,58 +408,6 @@ function blocksVictory() {
 	caseStage += 1;
 	isMoveOver = 0;
 	generateBlocksBoard();
-}
-
-function generateBlocksBoard() {
-	restart();
-	switch (tempScene) {
-		case "wifeA": {
-			tileImages = wifeImages;
-			switch (caseStage) {
-				case 0:
-					target = 252;
-					n = 1;
-				break;
-				case 1:
-					target = 96;
-					n = 2;
-					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
-				break;
-				case 2:
-					n = 3;
-					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
-				break;
-				case 3:
-					n = 0;
-					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired with 'bitch in heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
-				break;
-			}
-			break;
-		}
-	}
-	for (i = 0; i < 16; i++) {
-		if (maps[n][i] != 0) {
-			makeTile(maps[n][i], i);
-		}
-	}
-	document.getElementById("score-target").innerHTML = target;
-	document.getElementById("caseStage").innerHTML = caseStage + 1;
-	document.getElementById("caseTotal").innerHTML = "3";
-	if (galleryCheck(tempScene) == true) {
-		document.getElementById("skipButton").innerHTML = "Skip Treatment";
-	}
-	else {
-		document.getElementById("skipButton").innerHTML = "";
-	}
-	if (caseStage == 3) {
-		document.getElementById('blocksControlsTop').innerHTML = '';
-		document.getElementById('blocksControlsBottom').innerHTML = '';
-		document.getElementById("finishButton").innerHTML = "Finish Treatment";
-	}
-	else {
-		document.getElementById("finishButton").innerHTML = "";
-	}
-	updateImages();
 }
 
 function moveY(a,b){//called to move a tile from one cell to another, format -> moveX(cell1,cell2)
@@ -1595,7 +1598,7 @@ var x1,y1;
 document.addEventListener("touchstart", function(e){
 	if(!e) e = event.which;
 
-	e.preventDefault();
+	//e.preventDefault();
 	x1 = e.changedTouches[0].pageX;
 	y1 = e.changedTouches[0].pageY;
 });
@@ -1603,8 +1606,11 @@ document.addEventListener("touchstart", function(e){
 document.addEventListener("touchend", function(e){
 	deltaX = e.changedTouches[0].pageX - x1;
 	deltaY = e.changedTouches[0].pageY - y1;
+	console.log(deltaX);
+	console.log(deltaY);
 
-	if(deltaX > 0 && Math.abs(deltaX) >= Math.abs(deltaY)){//right swipe
+	if(deltaX > 200 && Math.abs(deltaX) >= Math.abs(deltaY)){//right swipe
+		if (blockGame == true) {
 		e.preventDefault();
 
 			if(isMoveOver == 1){
@@ -1884,9 +1890,11 @@ document.addEventListener("touchend", function(e){
 				}
 				
 			}, (transitionTime+20));
+		}
 	}
 
-	else if(deltaX < 0 && Math.abs(deltaX) >= Math.abs(deltaY)){//left swipe
+	else if(deltaX < -200 && Math.abs(deltaX) >= Math.abs(deltaY)){//left swipe
+		if (blockGame == true) {
 		e.preventDefault();
 
 		if(isMoveOver == 1){
@@ -2169,8 +2177,10 @@ document.addEventListener("touchend", function(e){
 			}, (transitionTime+20));
 			
 	}
+	}
 
-	else if(deltaY < 0 && Math.abs(deltaX) <= Math.abs(deltaY)){//upper swipe
+	else if(deltaY < -200 && Math.abs(deltaX) <= Math.abs(deltaY)){//upper swipe
+		if (blockGame == true) {
 		e.preventDefault();
 
 		if(isMoveOver == 1){
@@ -2451,8 +2461,10 @@ document.addEventListener("touchend", function(e){
 				
 			}, (transitionTime+20));
 	}
+	}
 
-	else if(deltaY > 0 && Math.abs(deltaX) <= Math.abs(deltaY)){//lower swipe
+	else if(deltaY > 200 && Math.abs(deltaX) <= Math.abs(deltaY)){//lower swipe
+		if (blockGame == true) {
 		e.preventDefault();
 
 		if(isMoveOver == 1){
@@ -2732,5 +2744,6 @@ document.addEventListener("touchend", function(e){
 				}
 				
 			}, (transitionTime+20));
+	}
 	}
 });
