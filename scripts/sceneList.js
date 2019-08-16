@@ -129,12 +129,12 @@ function writeScene(scene) {
 				<br>Tags: Corruption, Mind Control, Deepfake
 			`);
 			writeText(`
-				<b>Alternate Reality Mirror</b>
+				<b>Alternate Reality Mirror (COMING IN V2)</b>
 				<br>An antique mirror, stepping through it leads to another dimension of earth depending on the engraving that changes each day. Current engravings include Public Fun Is Not Unusual, a world where public sex is common, and Little Men Are Fun Toys, a world where gender dynamics are reversed from our own.
 				<br>Tags: Public Sex, Ignored Sex, Gender Dynamic Reversal, Reverse Rape
 			`);
 			writeText(`
-				<b>Time Stopwatch</b>
+				<b>Time Stopwatch (COMING IN V2)</b>
 				<br>A broken bronze stopwatch. When the button on top is pressed, time stops for everyone except the user and anyone they're touching.
 				<br>Tags: Time Stop, Rape
 			`);
@@ -158,6 +158,16 @@ function writeScene(scene) {
 				<br>An ID card from a fictitious company, whoever holds it will be able to molest / assault women as they please, and the recipient's minds will rationalize it, or even cause them to enjoy the treatment.
 				<br>Tags: Domination, Molestation, Sexual Assault, Dubious Consent
 			`);
+			writeText(`
+				<b>Chaddicus Shades</b>
+				<br>A pair of aviator sunglasses which, when worn, increase the wearer's confidence by several dozen degrees. Women will feel compelled to argue with the wearer, at which point some mysterious process causes the argument to almost immediately devolve into sex, with the wearer as the dominant partner.
+				<br>Tags: Instant-Loss, Sexual Assault, Dubious Consent
+			`);
+			writeText(`
+				<b>'Free _____!' Sign</b>
+				<br>A cardboard rectangle with the text "Free _____" written on it. When a sexual act is written on it, it teleports out of the writer's possession and into the possession of someone the writer finds attractive. That person will then feel compelled to offer their services and provide sexual acts to the viewer in public.
+				<br>Tags: Sluttification, Whoring, Public Sex, Rimjob, Group Sex,
+			`);
 			writeText("Dark Vault Artifacts:");
 			writeText("These are more divisive in fetishes covered. They're locked away in the Dark Vault and generally have less scenes overall. There's no planned order to implement these, just whichever I feel like adding at any time. These can be upgraded to main game artifacts at the sponsor's request, so I'll also use this place to store random ideas.");
 			writeText("These aren't in any order, but the ones on the bottom are less thought through than the ones on top. Let me know if any of these sound particularly interesting.");
@@ -167,7 +177,17 @@ function writeScene(scene) {
 				<br>Tags: Genderswapping, (Someone Else's) Cock Worship
 			`);
 			writeText(`
-				<b>Gummy Dicks</b>
+				<b>Succubus Onahole (COMING IN V2)</b>
+				<br>A soft plastic fleshlight, no abnormal qualities are shown until male genitalia is inserted into the artifact. Once inserted, men will feel intense euphoria, followed by panic as they claim that tentacles are probing them from inside the artifact. Long-term effects include extreme increases in semen production and mental derangement.
+				<br>Tags: Body Modification, Urethral Penetration, Excessive Semen
+			`);
+			writeText(`
+				<b>Punification Cage (COMING IN V2)</b>
+				<br>A small plastic cage designed to contain flaccid male genitalia. Wearing it almost immediately triggers a powerful orgasm, but in all cases resulted in an extreme decrease in genital size.
+				<br>Tags: Shemale, Chastity, Size Theft
+			`);
+			writeText(`
+				<b>Gummy Dicks (COMING IN V2)</b>
 				<br>A box of assorted gummy candies, all individually shaped into the form of flaccid male genitalia. When eaten by a male subject, they cause erectile dysfunction and alter the minds of the eater to receive greater pleasure from anal stimulation, while also altering their bodies to become more feminine. 
 				<br>Tags: Prostate Stimulation, Sissification, Flaccid Orgasm
 			`);
@@ -183,18 +203,8 @@ function writeScene(scene) {
 			`);
 			writeText(`
 				<b>Charity's Cage</b>
-				<br>A small metal cage designed to contain flaccid male genitalia. Various abnormal effects occur when worn, with other subjects treating the wearer more harshly. At some point the cage is released, but the trigger is unknown.
-				<br>Tags: Femdom, Denial, Chastity
-			`);
-			writeText(`
-				<b>Succubus Onahole</b>
-				<br>A soft plastic fleshlight, no abnormal qualities are shown until male genitalia is inserted into the artifact. Once inserted, men will feel intense euphoria, followed by panic as they claim that tentacles are probing them from inside the artifact. Long-term effects include extreme increases in semen production and mental derangement.
-				<br>Tags: Body Modification, Urethral Penetration, Excessive Semen
-			`);
-			writeText(`
-				<b>'Free Rimjobs!' Sign</b>
-				<br>A cardboard rectangle with the text "Free Rimjobs" written on it. Containment is difficult as after being seen, the sign will teleport into the possession of a random person the viewer knows and finds attractive. That person will then feel compelled to offer their services and provide sexual acts to the viewer in public.
-				<br>Tags: Rimjob, Sluttification, Whoring, Public Sex
+				<br>A small metal cage designed to contain flaccid male genitalia. Wearers of the cage experience genital shrinkage, and whoever holds the key will suddenly grow male genetalia equal to the 'stolen' length.
+				<br>Tags: Shemale, Chastity, Size Theft
 			`);
 			writeText(`
 				<b>Ovorbs</b>
@@ -205,11 +215,6 @@ function writeScene(scene) {
 				<b>Stiff Voodoo Doll</b>
 				<br>A doll made from straw and twine. When a target's hair is wrapped around the doll, the hair will disintegrate and the target will become unable to move. People around the target will feel compelled to treat the target as a highly-realistic sex toy. The target remains conscious through the entire process, lasting exactly 24 hours before movement is once again possible.
 				<br>Tags: Public Use, Dubious Consent, Mind Break
-			`);
-			writeText(`
-				<b>Chaddicus Shades</b>
-				<br>A pair of aviator sunglasses which, when worn, increase the wearer's confidence by several dozen degrees. Women will feel compelled to argue with the wearer, at which point some mysterious process causes the argument to almost immediately devolve into sex, with the wearer as the dominant partner.
-				<br>Tags: Instant-Loss, Sexual Assault, Dubious Consent
 			`);
 			writeText(`
 				<b>Denial Pills</b>

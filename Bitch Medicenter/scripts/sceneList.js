@@ -16,7 +16,7 @@ function writeScene(scene) {
 			//writeTransition("blocks", "Test modification game");
 			//writeFunction("triad('1', 'test2')", "Test Hypnosis Game");
 			writeText("Other notes:");
-			writeText("This game was made possible via Patreon, thank you to Swallows999, Lasse Bannow, ChronosEdge, MrManPerson, Brandon, Roy, and Wild Bill for supporting my work.");
+			writeText("This game was made possible via Patreon, thank you to Swallows999, Lasse Bannow, ChronosEdge, MrManPerson, Brandon, Roy, Wild Bill, Skyrim mod lvr, murgatroid, and qwerty for supporting my work.");
 			writeText("I'm always open to comments or criticism. If you have an idea for an artist or scene or you'd like to suggest content of your own, you can shoot me a message at anytime on TFgames, F95zone, or my Patreon page at https://www.patreon.com/noodlejacuzzi");
 			writeText("You can also send me a message on discord (I'm NoodleJacuzzi#4120) or an email at noodlejacuzzi@gmail.com");
 			break;
@@ -167,7 +167,7 @@ function writeEvent(scene) {
 			writeText("Her words stop in her mouth as her body siezes, her brain finally catching up to the unfamiliar sensations running through her nerves.");
 			writeSpeech("wife", "", "Ghh... What the f-fuuckk?");
 			writeText("Nerves are alight, she looks around in a dazed panic and finds a note on the nearby table.");
-			writeText("'Sorry! Our assistant is out at the moment, so she won't be able to escort you out. You basically have a whole new body, so we've taken the liberty of calling you a cab.<br>We know you're itching to try it out, but take it slow for now. Because your body is so sensitive, you might end up as what we in the professional world call a 'broken slut' if you dive right in to the new world of sexual pleasure available.");
+			writeText("'Sorry! Our assistant is out at the moment, so she won't be able to escort you out. You basically have a whole new body, so we've taken the liberty of calling you a cab.<br>We know you're itching to try it out, but take it slow for now. Because your body is so sensitive, you might end up as what we in the professional world call a 'broken slut' if you dive right in to the new world of sexual pleasure available.'");
 			writeBig("images/wife/wifeA-0.gif");
 			writeSpeech("wife", "", "Nnn... Gotta... Cab... Cumming~!");
 			writeText("Her first orgasm in god knows how many years runs through her, taking her breath and rational thought away. She'll be politely escorted out by security to make room for new patients eventually.");
