@@ -5,14 +5,14 @@ var tileImages = ['url("./images/none.png")', 'url("./images/none.png")', 'url("
 var tileImagesEmpty = ['url("./images/none.png")', 'url("./images/none.png")', 'url("./images/none.png")', 'url("./images/none.png")', 'url("./images/none.png")', 'url("./images/none.png")', 'url("./images/none.png")', 'url("./images/none.png")',]
 
 var wifeImages = [
-'url("./images/block2.gif")', //2
-'url("./images/wifeA-8.gif")', //4
-'url("./images/block8.gif")', //8
-'url("./images/block16.gif")', //16
-'url("./images/block32.gif")', //32
-'url("./images/block64.gif")', //64
-'url("./images/block128.gif")', //128
-'url("./images/wifeA-10.gif")', //256
+'url("./images/wife/block2.gif")', //2
+'url("./images/wife/wifeA-8.gif")', //4
+'url("./images/wife/block8.gif")', //8
+'url("./images/wife/block16.gif")', //16
+'url("./images/wife/block32.gif")', //32
+'url("./images/wife/block64.gif")', //64
+'url("./images/wife/block128.gif")', //128
+'url("./images/wife/wifeA-10.gif")', //256
 ]
 
 function blocks() {

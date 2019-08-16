@@ -107,7 +107,7 @@ function systemSettings() {
 			Play the mobile version
 		</p>
 	`;
-	writeTransition("start", "Back to start");
+	writeTransition("homeScreen", "Back to the home screen");
 }
 
 //Blocks

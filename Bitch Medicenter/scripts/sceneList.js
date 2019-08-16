@@ -162,10 +162,63 @@ function writeEvent(scene) {
 			break;
 		}
 		case "wifeA": {
-			writeFunction("writeEvent('wifeAA')", "Two weeks later");
+			writeText(characterArray[0].fName+" groans as she suddenly comes to her senses. She's been out for a few hours, but to her it feels like she just went under a few seconds ago.");
+			writeSpeech("wife", "", "Mmm... Wha? Is it already over? No scarring, have they even st-");
+			writeText("Her words stop in her mouth as her body siezes, her brain finally catching up to the unfamiliar sensations running through her nerves.");
+			writeSpeech("wife", "", "Ghh... What the f-fuuckk?");
+			writeText("Nerves are alight, she looks around in a dazed panic and finds a note on the nearby table.");
+			writeText("'Sorry! Our assistant is out at the moment, so she won't be able to escort you out. You basically have a whole new body, so we've taken the liberty of calling you a cab.<br>We know you're itching to try it out, but take it slow for now. Because your body is so sensitive, you might end up as what we in the professional world call a 'broken slut' if you dive right in to the new world of sexual pleasure available.");
+			writeBig("images/wife/wifeA-0.gif");
+			writeSpeech("wife", "", "Nnn... Gotta... Cab... Cumming~!");
+			writeText("Her first orgasm in god knows how many years runs through her, taking her breath and rational thought away. She'll be politely escorted out by security to make room for new patients eventually.");
+			writeFunction("writeEvent('wifeAA')", "That night...");
 			break;
 		}
 		case "wifeAA": {
+			writeSpeech("Mr. "+characterArray[0].lName, "none", "Honey! I'm home!");
+			writeText(characterArray[0].fName+"'s husband wearily makes his way to the bedroom and takes off his suit, puts on an old t-shirt and starts getting ready for bed.");
+			writeSpeech("Mr. "+characterArray[0].lName, "none", "You didn't wait too long, did you? I had dinner on my way home. How was the appointment?");
+			writeSpeech("wife", "", "G-good~! Everything's... Everything's fine now~!");
+			writeText("He's a little confused at her tone, but relaxes once he hears "+characterArray[0].fName+" open the bathroom door.");
+			writeSpeech("Mr. "+characterArray[0].lName, "none", "I got offered a few extra hours this month. I'm thinking of-<br>H-honey? What are you wearing?");
+			writeText("He doesn't have time to admire "+characterArray[0].fName+"'s red lingerie as he's suddenly pushed down onto the bed.");
+			writeBig("images/wife/wifeA-1.gif");
+			writeSpeech("wife", "", "I can't wait any more... My hands aren't enough.");
+			writeSpeech("Mr. "+characterArray[0].lName, "none", "Mmm... What's gotten into-?");
+			writeSpeech("wife", "", "Shut up. Here's what's going to happen. I'm going to suck you off, then you're going to pound that fat dick into me until I can't think anymore, okay?.");
+			writeSpeech("Mr. "+characterArray[0].lName, "none", "Wait, your appointment. You didn't go to that modification-gah!");
+			writeBig("images/wife/wifeA-2.gif");
+			writeText("He doesn't have a chance to finish his sentence as "+characterArray[0].fName+"plants her pussy against his lips, showing more enthusiasm than she's ever shown before in all her years of marriage.");
+			writeBig("images/wife/wifeA-3.gif");
+			writeSpeech("wife", "", "Mmm~ Mmm~ Mmmwah~!<br><i>Holy shit, I didn't know this could feel good... Do I even have a gag reflex anymore?</i>");
+			writeText("For as much fun as giving a blowjob is with her newly enhanced nerves, she knows she needs something deeper. She pulls the cock out of her mouth with a *POP* and maneuvers to press her husbands cock against the entrance to her pussy.");
+			writeText("But dark urges and curiosity overtake her, and she moves the cockhead to her other hole's entrance. Even after years of pleading and birthday requests, she'd never entertained the thought of anal sex for even a minute.");
+			writeSpeech("wife", "", "<i>I've never done something like this before... I bet... I bet it'd feel...</i>");
+			writeBig("images/wife/wifeA-4.gif");
+			writeSpeech("wife", "", "Aaaah~! Goood~!");
+			writeBig("images/wife/wifeA-5.gif");
+			writeSpeech("wife", "", "Yes! Yes, fuck yes! Fuck me into pieces with your huge cock!");
+			writeText("She was wet, <b>sopping</b> wet.");
+			writeSpeech("wife", "", "God, you should have done this years ago! Broken me, turned me into the bitch in heat I deserve to be!");
+			writeSpeech("Mr. "+characterArray[0].lName, "none", "Shut up!");
+			writeBig("images/wife/wifeA-6.gif");
+			writeSpeech("wife", "", "Nnngh~!<br><i>God, I'm being used like a cheap whore! I need... I need more!</i>");
+			writeText("And her wish is granted as her husband lifts her enough to push her off the bed, forcing her face down and her ass up in the air as he pounds her slutty asshole.");
+			writeBig("images/wife/wifeA-7.gif");
+			writeSpeech("Mr. "+characterArray[0].lName, "none", "YOU *SLAM*<br>FUCKING *SLAM*<br>WHORE!*SLAM*<br>YOU SOLD YOUR BODY TO THAT MEDICENTER, FOR WHAT?!");
+			writeSpeech("wife", "", "Ghhg~! For this! And now that I have a taste for this, for real <b>sex</b>, I'll never go back!");
+			writeText("At this he pulls his cock out, and "+characterArray[0].fName+" experiences a moment of genuine terror at the thought of going even one minute without a hard cock inside her.");
+			writeSpeech("Mr. "+characterArray[0].lName, "none", "Lets see what else they've done to you.");
+			writeText(""+characterArray[0].fName+" is eager to get back on top, desperate for any more addictive pleasure as his raw cock pushes into her cunt.");
+			writeBig("images/wife/wifeA-8.gif");
+			writeSpeech("wife", "", "Oh my god! Oh my gawd~!!!");
+			writeText("She might as well have been a virgin for all the good her experience did. 300% vaginal sensitivity up? It felt more like the sensitivity was 300 times stronger.");
+			writeBig("images/wife/wifeA-9.gif");
+			writeText("The overload of sensations begins to fry her brain, more powerful than any drug on the market. Chemicals her brain never expected to deal with were running rampant through her body, and a sensation she'd never felt before began to build up to a bursting point.");
+			writeBig("images/wife/wifeA-10.gif");
+			writeText("She <b>squirts</b>. She sprays in an arc powerful enough to shoot several feet forwards. Her voice has gone hoarse from screaming.");
+			writeText("You've done a fine job. The client's request for a more satisfying sex life has been met. In the long term she'll basically be a sex junkie, but that's not your problem.");
+			writeText("If she could form words right now, she'd probably give you a glowing review! Great work!");
 			writeTransition("caseSelect", "Finish");
 			break;
 		}
