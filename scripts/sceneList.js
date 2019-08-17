@@ -2,10 +2,11 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 8/7/2019</p>
-				<p class = "centeredText">Anomaly Vault V1</p>
-				<p class = "centeredText">Sponsored game by Swallows999, similar in tone to Human Alteration App's dom route. See more info below</p>
-				<p class = "centeredText">Thank you to: Swallows999, Lasse Bannow, ChronosEdge, Brandon, Roy, and Wild Bill for supporting my work!</p>
+				<p class = "centeredText">Lastest News 8/16/2019</p>
+				<p class = "centeredText">Bitch Medicenter Demo</p>
+				<p class = "centeredText">Demo version of my game Bitch Medicenter is now available. You're working as a technician for a mind & body modification clinic.</p>
+				<p class = "centeredText">Check it out here: https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter.html</p>
+				<p class = "centeredText">Thank you to: Swallows999, Lasse Bannow, Mr.ManPerson, ChronosEdge, Brandon, Murgatroid99, Qwerty, Roy, Skyrim Mod Lvr, and Wild Bill for supporting my work!</p>
 			`;
 			writeTransition("news", "View all news updates");
 			writeText("<br>");
@@ -80,6 +81,8 @@ function writeScene(scene) {
 			break;
 		}
 		case "news": {
+			writeText("<b>8/16/2019</b> - Bitch Medicenter Demo");
+			writeText("Demo version of my game Bitch Medicenter is now available.");
 			writeText("<b>8/7/2019</b> - Anomaly Vault V1");
 			writeText("Sponsored game by Swallows999, similar in tone to Human Alteration App's dom route.");
 			writeText("<b>7/31/2019</b> - Hentai University V1");
@@ -168,6 +171,11 @@ function writeScene(scene) {
 				<br>A cardboard rectangle with the text "Free _____" written on it. When a sexual act is written on it, it teleports out of the writer's possession and into the possession of someone the writer finds attractive. That person will then feel compelled to offer their services and provide sexual acts to the viewer in public.
 				<br>Tags: Sluttification, Whoring, Public Sex, Rimjob, Group Sex,
 			`);
+			writeText(`
+				<b>Vintage Cloth</b>
+				<br>A sheet of cloth. When used to cover a person, once the cloth is removed the subject will be wearing a completely different set of clothing, typically the clothing of a fictional character most commonly from the superhero genre (although exceptions have been found). Afterwards, subjects were convinced that they were the characters they are dressed as, although they act much more flirtatious and are more open to sex than their character would normally be.
+				<br>Tags: Cosplay Sex, Sluttification, Mind Control
+			`);
 			writeText("Dark Vault Artifacts:");
 			writeText("These are more divisive in fetishes covered. They're locked away in the Dark Vault and generally have less scenes overall. There's no planned order to implement these, just whichever I feel like adding at any time. These can be upgraded to main game artifacts at the sponsor's request, so I'll also use this place to store random ideas.");
 			writeText("These aren't in any order, but the ones on the bottom are less thought through than the ones on top. Let me know if any of these sound particularly interesting.");
@@ -235,11 +243,6 @@ function writeScene(scene) {
 				<b>Destiny-Link Rings</b>
 				<br>A pair of golden rings. When worn by a pair of people, sensations such as pleasure, happiness, guilt, etc experienced by one ring wearer will be transferred and felt by the other ring weaer.
 				<br>Tags: Shared sensation, Long-distance sex
-			`);
-			writeText(`
-				<b>Vintage Cloth</b>
-				<br>A sheet of cloth. When used to cover a person, once the cloth is removed the subject will be wearing a completely different set of clothing, typically the clothing of a fictional character most commonly from the superhero genre (although exceptions have been found). Afterwards, subjects were convinced that they were the characters they are dressed as, although they act much more flirtatious and are more open to sex than their character would normally be.
-				<br>Tags: Cosplay Sex, Sluttification, Mind Control
 			`);
 			writeTransition("start", "Go Back");
 			break;
