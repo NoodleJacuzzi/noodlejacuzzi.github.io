@@ -1,0 +1,224 @@
+{index: "coin", equipable: true, title: "Midas Coin", desc: "An old gold coin from ancient Greece.", desc2: "When worn, the wearer can barter sexual acts as if they were currency."},
+
+V1
+	System Stuff
+Scenes in gallery array (COMPLETE)
+Unlock assistant & roommate in tutorial (COMPLETE)
+Exchange Gas image (COMPLETE)
+Unlock girls automatically in writeEvent (COMPLETE)
+Girlfriend Logbook (COMPLETE)
+Boss Logbook (COMPLETE)
+Librarian Logbook (COMPLETE)
+Madame Logbook (COMPLETE)
+Gym Logbook (COMPLETE)
+Lifeguard Logbook (COMPLETE)
+Chair Logbook (COMPLETE)
+Fix bugs (COMPLETE)
+Day 1 Planned (COMPLETE)
+Day 1 Full (COMPLETE)
+Jensen's Memo (COMPLETE)
+Dark vault scene (COMPLETE)
+writeEvent passes the time automatically (COMPLETE)
+Auto-pick relevant research function (COMPLETE)
+Failed event does not pass time (COMPLETE)
+writeEvent default change (COMPLETE)
+Full failed event (COMPLETE)
+Add gas to artifact array (COMPLETE)
+Day 2 Message (COMPLETE)
+Drive to work (COMPLETE)
+Skip drive (COMPLETE)
+Dreams (COMPLETE)
+Skip dreamless sleep (COMPLETE)
+Check for home events (COMPLETE)
+Check for work events (COMPLETE)
+Bracelet checkForEvents (COMPLETE)
+Name shortcuts (COMPLETE)
+Day/noon/evening/night timer (COMPLETE)
+Sort scenes in gallery by galleryArray order (COMPLETE)
+Mobile Version (COMPLETE)
+Placeholder events (COMPLETE)
+Assign event images (COMPLETE)
+Replace prologue pictures (COMPLETE)
+Rename images already used (COMPLETE)
+First dream (COMPLETE)
+Second Dream (COMPLETE)
+Different morning picture for room (COMPLETE)
+Lock off dark vault to different gallery section (COMPLETE)
+Event placeholders (COMPLETE)
+Player images (COMPLETE)
+Crop gifs (COMPLETE)
+Show all Swallows999 scenes (COMPLETE)
+Swallows portrait (COMPLETE)
+List scene count on the menu (COMPLETE)
+List total scenes for each artifact in fetish list (COMPLETE)
+List dark vault scenes in the dark vault (COMPLETE)
+Dark vault start message (COMPLETE)
+Replace player's logbook entry (COMPLETE)
+List artifacts in logbook (COMPLETE)
+List total scene count in logbook (COMPLETE)
+List artifact scene count in logbook (COMPLETE)
+Remove nap and waste time (COMPLETE)
+Unique failed scene for each artifact (COMPLETE)
+Change player image at start (COMPLETE)
+Show most recent master index update on start screen
+Use prerequisites for scenes to make checking for events easier
+
+	Bracelet
+Research1 - First Research (COMPLETE)
+Research2 - Caught Jilling (COMPLETE)
+Research3 - New Ideas (COMPLETE)
+Research Failed (COMPLETE)
+Home1 - Stay-Home Sophia (COMPLETE)
+Home2 - Sexting (COMPLETE)
+Home3 - Fucking with Asa (COMPLETE)
+Outdoor1 - Gym Teacher's Exercise Plan (COMPLETE)
+Outdoor2 - Gym Teacher's Home (COMPLETE)
+Outdoor4 - Bar Room Fun Image Prep (COMPLETE)
+Outdoor4 - Bar Room Fun (COMPLETE)
+Outdoor4 - Add to data var (COMPLETE)
+Dream 1 - Bracelet's Fate (COMPLETE)
+
+	Erotibox
+Research1 - Demo Reel - Deepfake (COMPLETE)
+Research3 - Mona Lisa - Work of Art (COMPLETE)
+Research4 - Chessboard - Loss/Win Board (COMPLETE)
+Research5 - $20 - Stripper Money (COMPLETE)
+Research6 - Water Bottle - Aphrodisiac Fluid (COMPLETE)
+Research8 - Assistant - Sex Fiend (COMPLETE)
+Research Failed (COMPLETE)
+
+Research2 - Pocket Watch - Orgasm Watch (NEED IMAGES)
+Research7 - Buttplug - Candy Buttplug (NEED IMAGES)
+
+Exchange Gas (dark vault)
+Profile pics (COMPLETE)
+Writespeech setup (COMPLETE)
+Research 1 - Test on assistant (COMPLETE)
+Research 2 - Test on yourself (COMPLETE)
+Research 3 - Test on yourself again (COMPLETE)
+
+V2
+Alternate Reality Mirror
+Mirror 1-1 Gender Dynamics Research
+Mirror 1-2 Train Molester
+Mirror 1-3 Abduction
+Mirror 1-4 Rape
+Mirror 1-5 Virgin Teasing
+Mirror 1-Failure
+Mirror 2-1 Free Use Research
+Mirror 2-2 Casual Greeting
+Mirror 2-3 Phonecall About a Delay
+Mirror 2-4 Before-school Bondage
+Mirror 2-Failure
+
+Time stopwatch
+Research 1 - First Research
+Research 2 - Endless Marathon
+Research Failed
+Home 1 - Public Stripping
+Home 2 - In-class fun
+Outdoor 1 - Bestowal of Power 1
+Outdoor 2 - Bestowal of Power 2
+Outdoor 3 - Bestowal of Power 3
+Outdoor 4 - Bestowal of Power 4
+Dream 1 - Stopwatch's Fate
+
+Gummy Dicks (Dark vault)
+Research 1 - Test it on yourself (bad end)
+
+V3
+Midas Coin
+Research 1 - First Research
+	...
+	"So, this candy bar?"
+	"That's like, a real quick dick flash. Maybe a dick pic if I'm really hungry and I don't want to share?"
+	"And your glasses?"
+	"I'm not selling my glasses. Why are you asking all this anyway?"
+	"No real reason. So you wouldn't sell them, even if I were to say... Fuck you in the ass bareback?"
+	There's a very real indecision in her eyes for a moment.
+	"She'd take it. People like to act like they'd have integrity, but when you're facing a deal like that, all for a pair of glasses?"
+	"... Yeah I'd probably take it. Did you need something, Mrs. BossL?"
+	"I need the two of you to focus and get back to work."
+Research 2 - Trade for a Soda
+Research Failed
+Outdoor 1 - Haggling
+Outdoor 2 - Flaunting Wealth
+Outdoor 3 - Street Mugging
+Dream 1 - Fate of Midas
+Dream 2 - Morning Glory
+
+Super Truth Serum
+Research 1 - First Research
+Research 2 - Jensen's Secret
+		You have an incredibly powerful anal fetish
+		You want to be treated like the buttslut bitch you are
+Outdoor 1 - Public Train
+		Only attractive women will stay in this train car
+		Women go into heat when they see me, and desperately need my cock to satisfy them
+		Every woman here is completely comfortable doing whatever they need to in order to please me
+Outdoor 2 - Librarian
+		You can't help but follow my every command
+		You want to deny it, but secretly you're in love with getting fucked
+Outdoor 3 - Lifeguard
+		Sensitivity up
+		Exhibitionism
+		
+More Bracelet
+Prologue extension - Jensen
+Research 4 - Pavlovian Conditioning (jensen)
+Research 5 - Pavlovian Payoff (jensen)
+Research 6 - The top level (priya)
+	You head up to the top floor to learn about the boss. Upon realizing she's hot, you decide to have soem fun with her. She's surprisingly active and you cum quickly, and she reveals that she knew you were there.
+	"Have you had your fun, Mr. Last?"
+	"W-what?"
+	...
+	"There's a reason you were put back to work so quickly. This is not your usual corporation Mr. Last. We are not here to suppress, we are here to experiment. We are here to use these artifacts as they desire to be used."
+	Then she uses her ring to reset you back to the start of the day without your memory.
+Outdoor 3 - The phantom in my house
+	Karlee has been living with an invisible fuckbuddy in her house for the last few days
+Outdoor 5 - Library Science 1
+Outdoor 6 - Library Science 2
+
+Poll for dark vault artifact
+
+V4
+Appreciation Perfume
+	The bargain is set. You're equals, and she'll make a show out of playing with women in exchange for you letting her go wild.
+Research 1 - First Research
+Research 2 - Assistant
+Research Failed
+Home 1 - Mild Rubbing
+Home 2 - Cunnilingus
+Home 3 - School Play
+Home 4 - Phantastic Threesome
+Outdoor 1 - Public Display
+Dream 1 - Abrubt Awakening
+
+Mirror 3-1 First Research (You are a sacred male, destined to inseminate women)
+Mirror 3-2 Worshipped by one
+Mirror 3-3 Worshiped by many
+Mirror 3-4 Seen in a crowd
+
+CEO Pass
+
+Poll for dark vault artifact
+
+V5
+Erotibox Ending
+Mirror 1 Ending
+Mirror 2 Ending
+
+V6
+Time Stopwatch Ending
+Midas Coin Ending
+Appreciation Perfume Ending
+CEO Pass Ending
+
+V? Poll Artifacts
+Free Rimjob Sign
+Kid Gloves Charm
+Ovorbs
+Pineapple Juice
+Stiff Voodoo Doll
+Chaddicus Shades
+Ring of Denial

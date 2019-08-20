@@ -1,0 +1,301 @@
+Artifacts for consideration:
+	Add to Main Artifacts
+		Chaddicus Shades
+			Use it on Veronica (pushover)
+			Use it on Mrs. Jensen
+			Use it on Sophia (she's guilty)
+			Use it on Asa (she walks in on you using it on Sophia)
+			Use it on Mia (she's excited to get used in the library)
+			Use it on Karlee (you beat up her boyfriend)
+			Use it on Priya (ending, revealed that the glasses are powerless?)
+		'Free ____' Sign
+			Rimjobs (Door-to-door, solo, and group)
+			Blowjobs
+			Pussy
+			Anal
+			Group Sex
+
+	Staying in Dark Vault?
+		Vintage Cloth
+			Wonder Woman
+			Mystique
+			Black Widow
+			French Maid (male)
+			Noblewoman
+			Velma
+		Stiff Sex Doll
+			Use it on Veronica (she's secretly into it)
+			Use it on Mrs. Jensen (take out revenge fantasies, Veronica uses her too)
+			Use it on Sophia (she's used by her students)
+			Use it on Priya (she flips it and you're doll-ified)
+
+Anomaly Vault
+V0.0
+	Clear Unused Stuff
+		Inventory (COMPLETE)
+		Phone (COMPLETE)
+		Logbook (COMPLETE)
+		Skills (COMPLETE)
+		Scene list (COMPLETE)
+	Menu Details
+		Artifact Images (COMPLETE)
+		updateMenu (COMPLETE)
+	Logbook
+		Display character image (COMPLETE)
+		Change character image (COMPLETE)
+		Rename everyone (COMPLETE)
+		Generate nav (COMPLETE)
+		switch desc (COMPLETE)
+	Gallery
+		Artifact list (COMPLETE)
+		Girls list (COMPLETE)
+		Generate scenes (COMPLETE)
+	Update Menu Stuff
+		Logbook (COMPLETE)
+		Name (COMPLETE)
+	Characters
+		Models Selected (COMPLETE)
+		Character images (COMPLETE)
+		Character images cropped (COMPLETE)
+		Profile images (COMPLETE)
+		Gifs collected (COMPLETE)
+		Resources folder on phone scoured (COMPLETE)
+		research notes writeSpeech (COMPLETE)
+		player images
+		Webms converted
+	Framework
+		Start Screen (COMPLETE)
+		Prologue (COMPLETE)
+		Location images - home, work, bedroom, beach, store, gym, town
+		Home Framework (COMPLETE)
+		Work Framework (COMPLETE)
+		Player room (COMPLETE)
+		Time/Day System (COMPLETE)
+		Passing Time (COMPLETE)
+		Skipping Work (COMPLETE)
+		Leaving early (COMPLETE)
+		Getting late, head home (COMPLETE)
+		New Day (COMPLETE)
+		Day 0 (COMPLETE)
+		Day 1 - Acquiring the bracelet
+		write switch case shortcut for notepad++
+		write "++" shortcut for notepad++
+	Artifacts
+		writeArtifact (COMPLETE)
+		Track Research Status (COMPLETE)
+		Artifacts equipabble (COMPLETE)
+		Taking Artifacts Home (COMPLETE)
+		Switching Held Artifacts (COMPLETE)
+		First Research (COMPLETE)
+		Artifact descriptions (COMPLETE)
+		Secondary descriptions after first research (COMPLETE)
+		checkForEvents (COMPLETE)
+	Demo
+		Getting the bracelet (COMPLETE)
+		Research events (COMPLETE)
+		Equipping (COMPLETE)
+		Outdoor events (COMPLETE)
+		Dream events (COMPLETE)
+		Demo finish (COMPLETE)
+		Character Descriptions (COMPLETE)
+		Show all characters in rename list (COMPLETE)
+		Scene images (COMPLETE)
+		Home events (COMPLETE)
+		Location images (COMPLETE)
+		Name entry function (COMPLETE)
+		UpdateName to show last name (COMPLETE)
+		Replace NAMES with actual names (COMPLETE)
+	v0.5 - Reprehensive Bangle
+		Fix bugs (COMPLETE)
+		Scene Outlines (COMPLETE)
+		Content List (COMPLETE)
+		Images assigned (COMPLETE)
+		Description (COMPLETE)
+		First Research (COMPLETE)
+		Home Usage - Roommate, School (COMPLETE)
+		Dream (COMPLETE)
+	v1 - Erotibox
+		Scene Outlines (COMPLETE)
+		Content List (COMPLETE)
+		Images assigned (COMPLETE)
+		Description (COMPLETE)
+		First Research (COMPLETE)
+		All other research (COMPLETE)
+	Cheating
+		Cheat room (COMPLETE)
+		Cheat function (COMPLETE)
+		Player Images (COMPLETE)
+		Change player image (COMPLETE)
+	v2
+		Erotibox finale warning (COMPLETE)
+		Cage picture (COMPLETE)
+		Cage writeArtifact in dark vault (COMPLETE)
+		Cage scenes placeholder (COMPLETE)
+		Cage images assigned (COMPLETE)
+		Cage research 1 (COMPLETE)
+		Onahole picture (COMPLETE)
+		Onahole writeArtifact in dark vault (COMPLETE)
+		Onahole scenes placeholder (COMPLETE)
+		Onahole images assigned (COMPLETE)
+		Onahole research 1 (COMPLETE)
+		Gummy picture (COMPLETE)
+		Gummy writeArtifact in dark vault (COMPLETE)
+		Gummy scenes placeholder (COMPLETE)
+		Gummy images assigned (COMPLETE)
+		Gummy research 1 (COMPLETE)
+		Gummy research 2 (COMPLETE)
+		Mirror in artifactArray (COMPLETE)
+		Mirror writeArtifact (COMPLETE)
+		Mirror research hub (COMPLETE)
+		Mirror scene selection within each dimension after finishing first research (COMPLETE)
+		Mirror scenes placeholder (COMPLETE)
+		Mirror scenes in galleryArray (COMPLETE)
+		Mirror images assigned
+		Assign mirror girls in galleryArray
+		Mirror dimension 1-1 (COMPLETE)
+		Mirror dimension 1-2
+		Mirror dimension 1-3
+		Mirror dimension 1-4
+		Mirror dimension 1-5
+		Mirror dimension 1-Failed
+		Mirror dimension 2-1 (COMPLETE)
+		Mirror dimension 2-2
+		Mirror dimension 2-3
+		Mirror dimension 2-4
+		Mirror dimension 2-Failed
+		Stopwatch in artifactArray (COMPLETE)
+		Stopwatch writeArtifact (COMPLETE)
+		Stopwatch scenes placeholder (COMPLETE)
+		Stopwatch scenes in galleryArray (COMPLETE)
+		Assign stopwatch girls in galleryArray (COMPLETE)
+		Stopwatch images assigned (COMPLETE)
+		Stopwatch research Failed (COMPLETE)
+		Stopwatch research 1 (COMPLETE)
+		Stopwatch research 2
+		Stopwatch research 3
+		Stopwatch home 1
+		Stopwatch home 2
+		Stopwatch outdoor 1
+		Stopwatch dream 1
+		Crop images
+		Unlock girls by using includes in the writeEvent girl checker
+		Remove toolkit images
+		Add new artifacts to artifact fetish list
+		Update index roadmap
+		Upload images to MEGA
+		Upload image upgrade pack to MEGA
+		Upload game files to MEGA
+		Update index menu
+		Update index AV section
+		Update index news
+		Patreon post
+		TFgames game update
+		TFgames add download links
+		TFgames new post
+		TFgames first post update
+		F95zone post
+	v3
+		Convert toolkit images
+		Toolkit picture
+		Toolkit writeArtifact in dark vault
+		Toolkit scenes placeholder
+		Toolkit images assigned (COMPLETE)
+		Toolkit research 1
+		Toolkit research 2
+		Toolkit research 3
+		Toolkit research 4
+		
+Time cycle:
+Morning:
+	Home - sleep in, go to work
+	Work - do research, go home early
+Noon:
+	Home - artifact scenes, take a nap, go to sleep
+	Work - do research, go home early
+Evening:
+	Home - artifact scenes, take a nap, go to sleep
+	Work - Go home
+Night:
+	Home - go to sleep
+
+Reprehensive Bangle (Allows you to be unnoticed / erase memories, first artifact you obtain)
+	
+Lovey Earings (Allows you to hear the subject's thoughts)
+
+Characters
+	Assistant - Veronica Rodriguez
+	Roommate - Sophia Leone
+	Roommate's Girlfriend - Asa Akira
+	Boss - Peta Jensen
+	Lovely Madame - Sunny Leone
+	Librarian - Mia Malkova
+	Gym Owner - Karlee Grey
+	Beach Lifeguard - Anissa Kate
+	Organization Chair - Priya Rai
+	
+Potential girls:
+	Ava Adams
+	Alexis Texas
+	Kendra Lust
+	Lisa Ann
+	Dakota Skye
+	Elsa Jean
+	Rhiannon Rider
+	Riley Reid
+	Gina Valentina
+
+Time-Stopwatch
+	A bronze stopwatch which appears at first glance to be broken, as the second hand jumps backwards every second. When the button at the top is pressed, the clock begins to record the time as normal but time stops for everyone except person holding the watch, and anyone the watch-holder is making eye contact with as the button is pressed. Current research shows that this is a near-universal effect, and that the watch-holder continues to age as normal. When the button is pressed again, time resumes and anyone whom the watch0holder interacted with will suddenly feel every action inflicted upon them all at once.
+	Public Stripping
+	In-Class Timestop
+	Year-long marathon
+	Bestowal of Power 1 - The girl is introduced
+	Bestowal of Power 2 - The girl tests it out
+	Bestowal of Power 3 - The girl embarrasses a wife
+	Bestowal of power 4 - The girl is humiliated
+Appreciation Bracelet
+	An indestructible bracelet made from partially tarnished silver. Despite being made for a woman's arm, it can resize itself to fit on anyone's arm and does not cause a skin reaction even to those allergic to silver. While being worn the wearer will often feel as though they are being watched, hearing voices in their ears and feeling someone touch their skin. Some particularly sensitive subjects say that the presence calls itself "Lovely Madame", and that it enjoys exploring the bodies of whoever wears the bracelet. Inside the bracelet is an inscription reading "For Those Who Feel Unappreciated".
+	Lovely Madame Interview
+	Lovely Madame Training
+	Gift to the Roommate
+	Stroll on the modern street
+Midas Coin
+	A single gold coin with an inscription written in ancient Greek. When held, sexual activities performed by the holder will be 'normalized', and not perceived to be socially outrageous no matter how depraved the action. In addition, sexual acts will be seen to have 'value', meaning that the holder can exchange sexual acts as though they had a cash value.
+	Convenience Store Purchase
+	Doing chores for a blowjob
+	Alleyway Mugging
+Erotification Box (Can't be taken home)
+	A large kennel-like cage covered by an unknown canvas substance. When an object is inserted and the door is locked a bright purple glow fills the box. Once the light recedes the door can be opened to reveal that the object inside has changed, usually to a similar object that is erotic in nature.
+	Emma Watson Video - Deepfake video
+	Test Subject's Interview Video - Test Subject Porno
+	Clockwork Pocket Watch - Watch that shows how far the holder is from their next orgasm
+	Mona Lisa Replication - Erotic Version of the Mona Lisa
+	Chessboard - Erotic chessboard, losing gives you an orgasm
+	$20 - Porn Site Gift Card, Erotic-Picture Money, 'Stripper Money'
+	Water Bottle - Bottle of Aphrodisiac-Infused Water
+	Buttplug - Candy Buttplug
+	Test Subject - Temporarily Sex-ified subject
+Destiny-Link Ring
+	A set of rings, one made from obsidian with a diamond inset, and one made from ivory with an opal inset. When worn any action taken against one ring-wearer will affect the other ring-wearer as well.
+	Girlfriend-Girlfriend fun
+	Linking while one is asleep
+	You masturbate while roommate is teaching
+Super Truth Serum
+	A self-refilling vial of green liquid, tastes like mint. When drunk, everything you say becomes the 'truth'. Not in the reality warping way, but in that everyone around you will believe whatever you say.
+Alternate Reality Mirror
+	An antique mirror dating back to the victorian era. If a person stares into the yes of their own reflection long enough, they will 'switch places' with an alternate reality version of themselves. In these alternate realities social norms, the flow of history, and the physical body of the person switched can all be completely different.
+Parasite Eggs
+	A set of small flexible egg-shaped balls with a number of spongy nubs on them. Female test subjects have shown an almost hypnotic desire to consume them. Current research shows that consumption can alter the fundamental properties of a woman's reproductive system as well as altering their personality.
+	Super want to be impregnated, pokes a hole in a condom and then cums as they feel it inside them.
+Kid Gloves Charm 
+	Harm you deal to others delivers sexual pleasure rather than pain. In addition, damage dealt to others is merely superficial at worst, and will heal within a single night's sleep.)
+	
+Other artifacts outside the fetish limit zone:
+	Watersports artifact
+	Anal-obsession artifact
+	Rimming artifact - Free rimjobs sign
+	Semen Drinking artifact
+	Effeminizing artifact
+	Shotafictation artifact - You're percieved as being very young, and women around you want to assault/take advantage of you. They spy on you while changing, for example. Nakani is also good.
+	Toy artifact - Makes the woman immobile, makes others think she's a sex toy.
+	Sexual conquest artifact - You get those instant-loss scenes. It's revealed afterwards that the power was inside you all along.
