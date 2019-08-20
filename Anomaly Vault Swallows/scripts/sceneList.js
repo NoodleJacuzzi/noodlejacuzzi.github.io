@@ -1402,7 +1402,7 @@ function writeEvent(scene) {
 		case "mirrorResearch2-1": {
 			writeText("As you're pulled through the mirror you suddenly feel very exposed. Looking down, you can see that your clothes have disappeared.");
 			writeText("On instinct, you move to cover yourself and feel more than a little panicked. That fades once a familiar face comes up to you.");
-			writeBig("images/mirror/research1-1.jpg");
+			writeBig("images/mirror/research2-1-1.jpg");
 			writeSpeech("assistant", "", "Hi! Welcome to our dimension, my name is "+assistantF+".");
 			writeSpeech("player", "", data.player.fName+". Um...");
 			writeSpeech("assistant", "", "Ah, right, sorry. Here you go.");
@@ -1412,7 +1412,7 @@ function writeEvent(scene) {
 			writeText("Everyone looks gorgeous, you recognize some familiar faces and some look vaguely like more attractive versions of people you know.");
 			writeSpeech("assistant", "", "Sorry we only had the robe. You're only our second foray into dimension-hopping. Oh! "+bossF+" will want to see you, she should be here any minute now.");
 			writeSpeech("boss", "", "I'm already here.");
-			writeBig("images/mirror/research1-2.jpg");
+			writeBig("images/mirror/research2-1-2.jpg");
 			writeSpeech("boss", "", "You look surprised to see me. Fuck, wait, am I a bitch in your dimension too?");
 			writeText("...");
 			writeText("You spend the next few hours learning about this dimension. The robe is uncomfortable, but you haven't quite acclimated to total public nudity yet. You'll need to ditch the robe later though.");
