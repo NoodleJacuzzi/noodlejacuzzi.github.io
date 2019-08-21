@@ -423,13 +423,13 @@ function writeScene(scene) {
 					writeFunction("writeEvent('mirrorResearch1-2')", "Take a train around town");
 				}
 				if (galleryCheck('mirrorResearch1-3') == false) {
-					//writeFunction("writeEvent('mirrorResearch1-3')", "Go see a movie");
+					writeFunction("writeEvent('mirrorResearch1-3')", "Go see a movie");
 				}
 				if (galleryCheck('mirrorResearch1-4') == false) {
-					//writeFunction("writeEvent('mirrorResearch1-4')", "Go to a bar");
+					writeFunction("writeEvent('mirrorResearch1-4')", "Go to a bar");
 				}
 				if (galleryCheck('mirrorResearch1-5') == false) {
-					//writeFunction("writeEvent('mirrorResearch1-5')", "Go to the red light district");
+					writeFunction("writeEvent('mirrorResearch1-5')", "Go to the red light district");
 				}
 				writeTransition("work", "Head back to your dimension");
 			}
@@ -443,16 +443,16 @@ function writeScene(scene) {
 			if (galleryCheck('mirrorResearch2-1') == true) {
 				writeSpeech("assistant", "", "Alright babe, forms are filled. Get those clothes off and you're free to roam the city. Stay clean, and stay away from sharp stuff. You don't have the instincts that come with the nudist lifestyle.");
 				if (galleryCheck('mirrorResearch2-2') == false) {
-					//writeFunction("writeEvent('mirrorResearch2-2')", "Talk to some locals");
+					writeFunction("writeEvent('mirrorResearch2-2')", "Talk to some locals");
 				}
 				if (galleryCheck('mirrorResearch2-3') == false) {
-					//writeFunction("writeEvent('mirrorResearch2-3')", "Walk around the city");
+					writeFunction("writeEvent('mirrorResearch2-3')", "Walk around the city");
 				}
 				if (galleryCheck('mirrorResearch2-4') == false) {
-					//writeFunction("writeEvent('mirrorResearch2-4')", "Check out public education");
+					writeFunction("writeEvent('mirrorResearch2-4')", "Check out public education");
 				}
 				if (galleryCheck('mirrorResearch2-5') == false) {
-					//writeFunction("writeEvent('mirrorResearch2-5')", "Check out a nearby gym");
+					writeFunction("writeEvent('mirrorResearch2-5')", "Check out a nearby gym");
 				}
 				writeTransition("work", "Head back to your dimension");
 			}
