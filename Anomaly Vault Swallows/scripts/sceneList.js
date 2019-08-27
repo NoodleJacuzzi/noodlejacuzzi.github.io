@@ -16,6 +16,7 @@ function writeScene(scene) {
 			writeText("Swallows actually wrote some content for the game, you can unlock his scenes like normal, and he has a special section in the gallery. If you'd like to put your scene in the game, feel free to send it to me.");
 			writeText("You can change your profile image in game by using the wardrobe in your room. You can also cheat in your room if you know a code.");
 			writeText("You can click on the title of a window to close it. For example, if you click 'LOGBOOK' on the left (or bottom on mobile), you can close the new window by clicking anywhere in the 'LOGBOOK' section at the top.");
+			writeText("This game is very gameplay-light. There's no filler. If you'd like something a bit more gamey, I'd suggest checking out Bitch Medicenter, a game that's currently on my master index. It's just a demo at the moment, but I'd love to take your feedback.");
 			writeText("I'm always open to comments or criticism. If you have an idea for an artist or scene or you'd like to suggest content of your own, you can shoot me a message at anytime on TFgames, F95zone, or my Patreon page at https://www.patreon.com/noodlejacuzzi");
 			writeText("You can also send me a message on discord (I'm NoodleJacuzzi#4120) or an email at noodlejacuzzi@gmail.com");
 			writeTransition("contentList", "See a breakdown of each artifact's content");
@@ -43,6 +44,7 @@ function writeScene(scene) {
 			break;
 		}
 		case "contentList": {
+			//Calculate bracelet stuff
 			var researchTotal = 0;
 			for (i = 0; i < galleryArray.length; i++) {
 				if (galleryArray[i].index.includes('bracelet')) {
@@ -50,6 +52,7 @@ function writeScene(scene) {
 				}
 			}
 			writeSpeech("Reprehensive Bangle", "scripts/gamefiles/items/bracelet.jpg", researchTotal+" total scenes implemented<br>Tag List:<br>Unperceived Sex<br>Memory Alteration<br>Dubious Consent<br>Seduction of women in committed relationships");
+			//Calculate erotibox stuff
 			researchTotal = 0;
 			for (i = 0; i < galleryArray.length; i++) {
 				if (galleryArray[i].index.includes('erotibox')) {
@@ -57,6 +60,23 @@ function writeScene(scene) {
 				}
 			}
 			writeSpeech("Erotibox", "scripts/gamefiles/items/erotibox.jpg", researchTotal+" total scenes implemented<br>Tag List:<br>Corruption<br>Mind Control<br>Emma Watson Deepfake");
+			//Calculate mirror stuff
+			researchTotal = 0;
+			for (i = 0; i < galleryArray.length; i++) {
+				if (galleryArray[i].index.includes('mirror')) {
+					researchTotal += 1;
+				}
+			}
+			writeSpeech("Antique Mirror", "scripts/gamefiles/items/mirror.jpg", researchTotal+" total scenes implemented<br>Free Use Dimension Tag List:<br>Free Use<br>Ignored Sex<br>Exhibitionism<br>Bondage<br>Gender Dynamics Dimension Tag List:<br>Femdom<br>Sexual Molestation<br>Reverse Rape");
+			//Calculate stopwatch stuff
+			researchTotal = 0;
+			for (i = 0; i < galleryArray.length; i++) {
+				if (galleryArray[i].index.includes('stopwatch')) {
+					researchTotal += 1;
+				}
+			}
+			writeSpeech("Time Stopwatch", "scripts/gamefiles/items/stopwatch.jpg", researchTotal+" total scenes implemented<br>Tag List:<br>Time-Stop<br>Emotionless Sex<br>Mind Break<br>Embarassed Nude Female<br>Humiliation");
+			//Calculate gas stuff
 			researchTotal = 0;
 			for (i = 0; i < galleryArray.length; i++) {
 				if (galleryArray[i].index.includes('gas')) {
@@ -64,6 +84,30 @@ function writeScene(scene) {
 				}
 			}
 			writeSpeech("Exchange Gas", "scripts/gamefiles/items/gas.jpg", researchTotal+" total scenes implemented (DARK VAULT)<br>Tag List:<br>Genderswap<br>Cock Worship");
+			//Calculate gummy stuff
+			researchTotal = 0;
+			for (i = 0; i < galleryArray.length; i++) {
+				if (galleryArray[i].index.includes('gummy')) {
+					researchTotal += 1;
+				}
+			}
+			writeSpeech("Gummy Dicks", "scripts/gamefiles/items/gummy.jpg", researchTotal+" total scenes implemented (DARK VAULT)<br>Tag List:<br>Sissification<br>Prostate Stimulation");
+			//Calculate cage stuff
+			researchTotal = 0;
+			for (i = 0; i < galleryArray.length; i++) {
+				if (galleryArray[i].index.includes('cage')) {
+					researchTotal += 1;
+				}
+			}
+			writeSpeech("Punification", "scripts/gamefiles/items/cage.jpg", researchTotal+" total scenes implemented (DARK VAULT)<br>Tag List:<br>Cock Shrinking<br>De-masculinization");
+			//Calculate onahole stuff
+			researchTotal = 0;
+			for (i = 0; i < galleryArray.length; i++) {
+				if (galleryArray[i].index.includes('onahole')) {
+					researchTotal += 1;
+				}
+			}
+			writeSpeech("Succubus Onahole", "scripts/gamefiles/items/onahole.jpg", researchTotal+" total scenes implemented (DARK VAULT)<br>Tag List:<br>Tentacles<br>Urethral Penetration (Sounding)<br>Ball Growth");
 			writeTransition("start", "Back to the start screen");
 			break;
 		}
@@ -401,6 +445,7 @@ function writeScene(scene) {
 			writeArtifact("gummy");
 			writeArtifact("cage");
 			writeArtifact("onahole");
+			listCheats();
 			writeTransition("work", "Go back");
 			break;
 		}
@@ -432,10 +477,31 @@ function writeScene(scene) {
 					writeFunction("writeEvent('mirrorResearch1-5')", "Go to the red light district");
 				}
 				writeTransition("work", "Head back to your dimension");
+				var mirrorTotal = 0;
+				var mirrorUnlocks = 0;
+				for (i = 0; i < galleryArray.length; i++) {
+					if (galleryArray[i].index.includes('mirror1')) {
+						mirrorTotal += 1;
+						if (galleryCheck(galleryArray[i]) == true) {
+							mirrorUnlocks += 1;
+						}
+					}
+				}
+				if (mirrorUnlocks == mirrorTotal) {
+					sceneTransition('mirrorFailed1');
+				}
 			}
 			else {
 				writeEvent('mirrorResearch1-1');
 			}
+			break;
+		}
+		case "mirrorFailed1": {
+			writeText("With how many times you've been in this dimension, the room almost seems to blur just by looking at the mirror.");
+			writeText("The blur period has been lasting longer each time, a nagging feeling in your gut tells you that if you go through again, the jump could be permanent.");
+			writeText("That might not be a bad thing, but it's a big descision you should leave for later.");
+			writeSpecial("You've finished all of this dimension's content for now!");
+			writeTransition("mirrorResearch", "Go back");
 			break;
 		}
 		case "mirrorResearch2": {
@@ -448,17 +514,38 @@ function writeScene(scene) {
 				if (galleryCheck('mirrorResearch2-3') == false) {
 					writeFunction("writeEvent('mirrorResearch2-3')", "Walk around the city");
 				}
-				if (galleryCheck('mirrorResearch2-4') == false) {
-					writeFunction("writeEvent('mirrorResearch2-4')", "Check out public education");
-				}
 				if (galleryCheck('mirrorResearch2-5') == false) {
 					writeFunction("writeEvent('mirrorResearch2-5')", "Check out a nearby gym");
 				}
+				if (galleryCheck('mirrorResearch2-4') == false) {
+					writeFunction("writeEvent('mirrorResearch2-4')", "Check out public education");
+				}
 				writeTransition("work", "Head back to your dimension");
+				var mirrorTotal = 0;
+				var mirrorUnlocks = 0;
+				for (i = 0; i < galleryArray.length; i++) {
+					if (galleryArray[i].index.includes('mirror2')) {
+						mirrorTotal += 1;
+						if (galleryCheck(galleryArray[i]) == true) {
+							mirrorUnlocks += 1;
+						}
+					}
+				}
+				if (mirrorUnlocks == mirrorTotal) {
+					sceneTransition('mirrorFailed2');
+				}
 			}
 			else {
 				writeEvent('mirrorResearch2-1');
 			}
+			break;
+		}
+		case "mirrorFailed2": {
+			writeText("With how many times you've been in this dimension, the room almost seems to blur just by looking at the mirror.");
+			writeText("The blur period has been lasting longer each time, a nagging feeling in your gut tells you that if you go through again, the jump could be permanent.");
+			writeText("That might not be a bad thing, but it's a big descision you should leave for later.");
+			writeSpecial("You've finished all of this dimension's content for now!");
+			writeTransition("mirrorResearch", "Go back");
 			break;
 		}
 		case "stopwatchResearch": {
@@ -567,6 +654,144 @@ function writeScene(scene) {
 			writeEvent('cageResearch1');
 			break;
 		}
+		case "doctorResearch": {
+			writeBig("imagebox/cheats/doctor1.jpg");
+			writeSpeech("'Plague' Doctor", "scripts/gamefiles/items/doctor.jpg", "Ah, wonderful! Finally, another one. Doctor, spectator, or test subject?");
+			writeSpeech("player", "", "Spectator.");
+			writeText("You're carefully to respond quickly and directly. The good doctor tends to 'lecture' fellow medical practitioners. As for what she does to test subjects...");
+			writeSpeech("'Plague' Doctor", "scripts/gamefiles/items/doctor.jpg", "Wonders abound! Very good then. This one is nearly finished!");
+			writeText("Her gloves secret some unknown substance, when the substance makes contact with someone who's been injected with her syringe, the results are... Interesting.");
+			writeBig("imagebox/cheats/doctor2.gif", "Art by");
+			writeSpeech("'Plague' Doctor", "scripts/gamefiles/items/doctor.jpg", "Look, he's almost cured. Soon his life will be an unending climax! Unneeded organs be damned!<br>Now, you've come to report this, yes? Head on to your superiors and let them know of my progress! Quickly man!");
+			writeTransition("darkVault", "Finish");
+			break;
+		}
+		case "talismanResearch": {
+			writeBig("scripts/gamefiles/items/talisman.jpg");
+			writeText("There are many things you are not allowed to do here at the facility, but at the top of that list is that you are not allowed to touch this talisman.");
+			writeText("That one. The one just two lines up (if you're playing with images of course). That talisman specifically.");
+			writeText("But oh, you're a curious one. So you touch it. You touch it <b>real good.</b>");
+			writeText("And then everything goes black. You fucked up!");
+			writeText("Faintly, as if through some thin mortal coil, you can hear someone very excited to be in a new body. They're pretty excited to have a dick too, but that's neither here nor there.");
+			writeText("Still, could've been worse. It could've been some giant lizard, or a big peanut.");
+			writeText("Oh, right. Bad end. Wake up or whatever.");
+			writeTransition("darkVault", "Finish");
+			break;
+		}
+		case "blueResearch": {
+			writeBig("scripts/gamefiles/items/blue.jpg");
+			writeText("Warning messages blare as you disable the security systems.");
+			writeText("Desperate voices play over the loudspeakers as the blast door opens.");
+			writeText("Familiar faces try to rush in to stop you, but it's too late.");
+			writeSpeech("player", "", "We will meet again as stars.");
+			writeText("And the lord escapes. All will become one.");
+			writeTransition("darkVault", "Blue Star");
+			break;
+		}
+		case "fringeResearch": {
+			writeText("You slide open the viewport on the very secret and secure door. Inside, you can see...");
+			writeText("Yourself?");
+			writeSpeech("player", "", "If this is about my last meal, I want-");
+			writeText("You could hear a pin drop as the two of <b>you</b> make eye contact.");
+			writeSpeech("player", "", "Shit. Fuck. Okay, don't panic, me. Listen, you need to get out. They never actually erased your mem-");
+			writeText("There's a blinding white flash in the room. When your eyes are un-fucked by the bloom, you can see the room is empty save for a pile of dust where... you... were standing.");
+			writeSpeech("Intercom Voice", "none", "Consider this a warning. We have insurance in case of a bad end, you are not irreplaceable.");
+			writeTransition("darkVault", "Finish");
+			break;
+		}
+		case "magicalResearch": {
+			writeBig("images/cheats/magical1.gif");
+			writeTransition("darkVault", "Finish");
+			break;
+		}
+		case "umbrellaResearch": {
+			writeText("I'll be honest with you, zombies add some rad design space. I don't want to just do them as a one-off joke. The scenes I have planned will take some time, please be patient (and send me any zombie porn vids you have ty).");
+			writeText("Rainy DayZ has zombies btw. Probably not your kinda thing but if it is, check it out.");
+			writeTransition("darkVault", "Finish");
+			break;
+		}
+		case "silentResearch": {
+			writeText("HA HA FUCK YOU, ALL YOU GET ARE PACHINKO MACHINES.");
+			writeText("PACHINKOOOOOOOOO");
+			writeText("HERE'S A RAD PLAYABLE TEASER WITH A SWEET TRAILER");
+			writeText("MONEEEEEEEEEEEY!!!!!");
+			writeText("AND NOW IT'S GONE HAHAHAHAHAHA");
+			writeText("BET YOU WANTED REAL CONTENT HUH?");
+			writeText("...");
+			writeText("Oh, okay then. I'll add an actual nurse scene in the next version.");
+			writeText("Somebody! Anybody! Cry out for a silent-hill themed text-based horror porn game!");
+			writeText("Btw, I liked the first movie. It wasn't A+ or anything, but I still had a good time.");
+			writeTransition("darkVault", "Finish");
+			break;
+		}
+		case "kettleResearch": {
+			writeText("The instructions say to hold the kettle in your hand, then think of anything your mind desires. There's several notes complaining that all they got was a ferret.");
+			document.getElementById('output').innerHTML += `
+				<p class='centeredText'>What do you wish for?: <input type="text" id="kettleSubmission" value=""></p>
+				<p class='choiceText' onclick='kettleWish()'>Wish</p>
+			`;
+			writeTransition("darkVault", "Finish");
+			break;
+		}
+		case "ethicsResearch": {
+			ethicsCounter += 1;
+			switch (ethicsCounter) {
+				case 1:
+					writeText("Sometimes the best thing for you to do is forgive someone. Not because they deserve it, but because you do. Letting that hate out of your heart can make your life a happier one.");
+				break;
+				case 2:
+					writeText("If you act a certain way to please someone, you're letting that person control you. If you act against them put of spite, you're still letting them control you. If you don't let yourself care about them, don't use their actions to justify yours, is what you're doing 'correct'? If not, then you are doing the wrong thing.");
+				break;
+				case 3:
+					writeText("No animal kills itself to escape pain, and neither do any humans. You contemplate suicide to escape 'dread', the thought of a future living with the pain every day. 'Dread' is a force thay has killed many, you are not weak because you feel it. You are strong because you can keep living in spite of 'dread'.");
+				break;
+				case 4:
+					writeText("A man experiences loneliness every day, he has no friends or lover. Every day he sees a familiar face who smiles at him, always genuinely glad to see him. Who is that man? No one. You could be that man to the next person you meet.");
+				break;
+				case 5:
+					writeText("All your opinions and facts come from experience, from people and sources you respect. But everyone else's opinions and facts come from places they respect just as much. You are a stranger to them, why trust you over the people they respect? To understand that others have just as much clout as you do, that is what it means to know nothing, and to be humbled.");
+				break;
+				case 6:
+					writeText("If I gave you a coin right now, what would you do with it? Study it? Accept it cautiously? What if I gave you live-saving medicine you didn't need? Would you be greedy to keep or sell it? Or would I be greedy to give it away to someone who did not need it?");
+				break;
+				case 7:
+					writeText("The face you show every day isn't your true one. No one will ever know who you really are inside. Yet, all it would take is complete honesty about every thought and the perfect words to describe them, and you would be understood by everyone. If you could, would you speak those words to someone?");
+				break;
+				case 8:
+					writeText("Wake up. You've been living your life on autopilot. You don't appreciate a clear airway until you are sick, the same is true here. If you appreciate yourself, then take time to enjoy this moment. ");
+				break;
+				case 9:
+					writeText("To say 'I love you' would mean nothing in this context. I am a rock speaking meaningless words. Yet, if I could fill my words with the meaning of an honest 'I love you', I certainly would.");
+				break;
+				case 10:
+					writeText("Think about what you ate today. If you were sent back in time to that moment without keeping any knowledge, you would eat that same meal again. There are no branching points. Given the same circumstance and knowledge, you would end up here in this moment no matter how many times you replayed your life.");
+				break;
+				case 11:
+					writeText("The last time you cried, for how long did you feel sad? The next time you feel angry or hurt, remember how long it stuck with you last time. Please, wait at least that long to make a major decision.");
+				break;
+				case 12:
+					writeText("When faced with a choice, always make the decision you can live with given the worst-case scenario. If you cannot afford a car should you crash it, you cannot afford a car.");
+				break;
+				case 13:
+					writeText("How many snowflakes in an avalanche are responsible for a person's death? All of them? Just the ones that crushed a person? Perhaps it is mountain's fault for catching too much snow, or the snow's fault for falling at all.");
+				break;
+				case 14:
+					writeText("Two men cross the street. One only gives out one hundred dollars to charity every year, you do not know why. The second gives out thousands. But, he confesses, he only gives because it is his fetish. Which man can be considered more 'good'?");
+				break;
+				case 15:
+					writeText("You can justify an action based on the circumstance. Violence can become self-defense. Public urination can become saving someone from a jellyfish sting. What is more valuable, the motivation, the circumstance, or the result? What if one is positive while the others negative?");
+				break;
+				case 16:
+					writeText("A ship named 'The Argo' is rebuilt over three years, and its broken pieces put into one pile. Eventually not a single original piece remains in the sailing ship, and every original piece is in the pile. The ship that still sails is 'The Argo' , because that identity is given to it by the people. The ship has no identity before the shipwrights and the sailors give it one.");
+				break;
+				default:
+					writeText("The rock is silent. If you speak to it, it might repeat what you have to say. Try to take its words with a grain of salt though.");
+				break;
+			}
+			writeTransition("ethicsResearch", "Another");
+			writeTransition("darkVault", "Finish");
+			break;
+		}
 		default: {
 			writeText("Something went wrong, and you've encountered a bug. Keep in mind where you just where and what you did, and let me know so I can fix it.");
 			writeText("Here's a list of important details. If you message me directly with these jams, I should have a better idea of what caused the problem:");
@@ -623,9 +848,13 @@ function writeEvent(scene) {
 			writeText("In addition you should now be able to submit requests for Dark Vault artifacts.");
 			writeText("The Dark Vault is a storage site for artifacts which have already been heavily researched and have been deemed potentially dangerous to researchers. Take great care not to threaten the company through inappropriate handling.");
 			writeText("Research into these items is not considered mandatory by company policy, so take great care to understand the risks of these items before you submit any requests for them.");
+			writeText("It should not be a surprise to you that Anomaly Vault will not prioritize your health over scientific progress. If you are unable to work, report immediately for termination.");
 			writeText("Sincerely,");
 			writeText(data.story[3].fName + " " + data.story[3].lName);
+			//writeSpeech("player", "", "Geez, blunt much?");
+			//writeText("The memo is from Mrs. " + data.story[3].lName+", your direct superior. She's known around the office for being a hard-ass. It's best to comply at times like these though. You wouldn't want to get transferred to the aviary department to work with the man-hunting birds.");
 			data.player.time="Morning";
+			//data.story[3].met = true;
 			break;
 		}
 		case "dream1": {
@@ -910,9 +1139,6 @@ function writeEvent(scene) {
 			writeText("Familiar faces you've never seen before writhe in barely contained pleasure. The bracelet is on your arm and you're taking advantage of the women who spurned you.");
 			writeText("But at the end of a long day you begin your walk home. As you're crossing the street a car doesn't hit the brakes and is headed right for you.");
 			writeText("Too late, you realize you'd been invisible to the world.");
-			break;
-		}
-		case "erotiboxResearch": {
 			break;
 		}
 		case "erotiboxResearch1": {
@@ -1253,7 +1479,7 @@ function writeEvent(scene) {
 			writeSpeech("assistant", "", "-Thi-");
 			writeText("Her word stops behind clenched teeth, you expected a scream. Instead she seizes up as her back arches, hundreds of orgasms firing through her body at once. Her cunt and womb clench around three hundred loads of your jizz that weren't there before.");
 			writeSpeech("player", "", "Oh fuck! Fucking hell, no!");
-			writeText("It turns out that the recorded didn't work in the stopped time.");
+			writeText("It turns out that the recorder didn't work in the stopped time.");
 			writeSpeech("player", "", "Fuck, we'll need to do it again. I'll get a notepad, you want a sandwich or anything?");
 			writeSpeech("assistant", "", "...");
 			writeText("Once all the seizing and squirting has stopped she flops onto the floor, twitching occasionally as she squirts again.");
@@ -1355,7 +1581,6 @@ function writeEvent(scene) {
 			writeText("You spend the next few hours being briefed on this dimension's details.");
 			writeSpeech("notes", "", "Findings:<br>In this dimension gender dynamics, as in the attitude that men and women have towards each other is reversed and heavily exaggerated. Women are considered the dominant gender, while men are viewed to be naturally more submissive. <br>Women are expected to be the breadwinners, to lose their virginity to be considered an adult, and to be able to take charge of the situation.<br>Men are to stay home and to be accepting of sexual harassment.<br>Most notably, the scales are tipped further in a woman's favor than even your world's 1920s. Rape isn't even considered an offense so long as no other crime, like violent assault or pedophilia, are committed.");
 			writeText("Without the bracelet in this dimension, you could be in trouble here. You'll be pulled out whenever the "+data.player.fName+" of this world touches the mirror though, so you'll never be trapped.");
-			tempScene = 'work';
 			break;
 		}
 		case "mirrorResearch1-2": {
@@ -1380,29 +1605,142 @@ function writeEvent(scene) {
 			writeSpeech("girlfriend", "", "It was nice meeting you. This is my stop.");
 			writeText("She hangs around long enough to give you a chance to hide your dick before she leaves. Inside your pocket you find a small piece of paper with her number on it.");
 			writeText("But before your eyes reality begins to shimmer, you're being sent back to your reality.");
+			if (tempScene == 'work') {
+				tempScene = 'mirrorResearch';
+			}
 			break;
 		}
 		case "mirrorResearch1-3": {
+			writeText("You opted to go see a movie. Luckily a big-named superhero movie is still showing. It's a bit of a ripoff, there really wasn't infinite war, just like three hours of it.");
+			writeText("Most people liked it, a lot of the conversation is dominated by groups of women, or women trying to explain seventeen movies worth of backstory to their boyfriends.");
+			writeText("Some people were a little angry, saying things like 'how come the only male avenger dies'? Or 'Did you hear they're making Sif a man? Just make new male characters instead of genderswapping women!'");
+			writeText("It's a bit overcast outside, but the walk back to the facility is still cool and pleasant. You're taken out of your train of thought when you notice that a woman wearing a hoodie has been following you for a few minutes now.");
+			writeText("Another woman in a hoodie steps out of an alleyway in front of you, leaving you surrounded.");
+			writeSpeech("gym", "", "Hey mister, you wanna have some fun?");
+			writeText("It's "+data.story[6].fName+", she works at a gym in your dimension. With the body you have in this dimension, there's no way you can take them.");
+			writeSpeech("player", "", "... Fuck it, why not. I've got some time to kill.");
+			writeText("She's happy to hear this, but you regret your choice when the woman behind you suddenly grabs your arms and "+data.story[6].fName+" pulls a cloth out of her pocket, alongside a bottle of fluid.");
+			writeSpeech("player", "", "Okay, now hold on ju-Mmmph!");
+			writeText("The cloth has a damp, slightly sweet smell to it.");
+			writeText("...");
+			writeSpeech("player", "", "Mmm...<br><i>Fuck, my head... How long was I out? Am I gagged?</i>");
 			writeBig("imagebox/mirror/research1-3-1.gif");
+			writeSpeech("gym", "", "Remember girls, mouths only!");
+			writeText("Several woman are crowded around your crotch, some of them pushing at each other to kiss and suck at your head. your arms and legs are bound down to a table.");
+			writeSpeech("player", "", "Mmmph~<br><i>Is this some sort of sex dungeon? Do we have these in my dimension?<br>No, probably not. Thank god they didn't want to take my kidneys. Now, how do I get-ooou~</i>");
 			writeBig("imagebox/mirror/research1-3-2.gif");
+			writeSpeech("gym", "", "The show is starting in a few minutes, get your fill before then but stop before he cums.");
+			writeText("Your balls feel packed and sore, they must have been at this while you were out. But all too soon "+data.story[6].fName+" starts pulling them away, wearing some kind of domanatrix gear.");
+			writeText("The woman who were sucking you off obediently back away, a hungry look in their eyes as "+data.story[6].fName+" picks up a fleshlight from a nearby table.");
+			writeSpeech("gym", "", "Now, are you sluts ready for the show?");
+			writeText("The crowd cheers and whoops as "+data.story[6].fName+" slowly slides the fleshlight down your cock.");
+			writeSpeech("gym", "", "Look at him squirm... Men like to pretend they're above it all, but they get horny just like we do.");
+			writeText("Despite being trapped, you'll have a way out once your double goes back through the mirror. You opt to just enjoy the treatment as "+data.story[6].fName+" picks up the pace.");
 			writeBig("imagebox/mirror/research1-3-3.gif");
+			writeText("But then suddenly she stops and pulls the fleshlight off.");
+			writeSpeech("gym", "", "Now, whenever a man cums, remember that his dick will shrink a little. Always ruin his orgasm if you want him to have a big dick forever.");
+			writeSpeech("player", "", "MMmmph!<br><i>That's not fucking true! Let me cum you biii~</i>");
 			writeBig("imagebox/mirror/research1-3-4.gif");
+			writeText(""+data.story[6].fName+" massages your balls in her hand. Even without touching your shaft, the hours of teasing while you were out and the feeling of being so close are enough to push you over the edge.");
+			writeText("There are squeals from the crowd as your eyes roll back. You can hear "+data.story[6].fName+" say something and then you feel tongues running along your abdomen licking up the cum.");
+			writeSpeech("gym", "", "And, while it's less satisfying to him, ruining an orgasm means that there's no cooldown period. He's ready to go again right away!");
+			writeText("You feel drained, but she is right on that note. You still feel like you're ready to burst and the fleshlight show continues.");
+			writeText("...");
+			writeSpeech("gym", "", "Now, don't go anywhere okay little mister? I'll take good care of you so you can be our star again tomorrow.");
+			writeText("Once the show is over "+data.story[6].fName+" leaves to go get cleaned up, and reality around you starts to blur. Your double is using the mirror, pulling you back into your dimension.");
+			if (tempScene == 'work') {
+				tempScene = 'mirrorResearch';
+			}
 			break;
 		}
 		case "mirrorResearch1-4": {
-			writeBig("imagebox/mirror/research1-4-1.gif");
+			writeSpeech("player", "", "Scotch please. Make it a double.");
+			writeSpeech("Bartender", "none", "You sure you can handle it, sir?");
+			writeSpeech("player", "", "I think I know my limits, thanks.");
+			writeText("...");
+			writeText("You did not know your limits. Male bodies in this dimension must be much worse at handling liquor. You underestimated how trashed you'd get since the glasses were smaller than you're used to.");
+			writeSpeech("player", "", "Ghhhg... Sorry about this...");
+			writeSpeech("librarian", "", "No problem, don't worry about it. Do you live somewhere around here?");
+			writeText("A nice lady opted to help you out, she looks kind of familiar.");
+			writeText("But now you have a problem. You have no idea where you live in this dimension, and you can't exactly take a public taxi to Anomaly Vault. So, you think a little outside the box.");
+			writeSpeech("player", "", "Hey, wanna fuck? We can go back to your place.");
+			writeSpeech("librarian", "", "Hah! Hehe, uh...<br>Oh, uh... I think that's just the alchohol talking. Can I call you a taxi?");
+			writeSpeech("player", "", "Nah, I've got nowhere to go. I think I saw a bench down the block, you can leave me there if you want.");
+			writeSpeech("librarian", "", "Funny guy.<br>You really have nowhere to go? You can come back to my place if you need somewhere to stay for the night.");
+			writeText("...");
+			writeText("The next few moments are sort of a blur. You passed out on her floor, but wake up in a still-drunk groggy haze.");
 			writeBig("imagebox/mirror/research1-4-2.gif");
+			writeSpeech("player", "", "Mmmgh... Ggh~");
+			writeSpeech("librarian", "", "Mmm~! You're so big!<br>Walking around in clothes like that, getting drunk without anywhere to go. You really were asking for this, weren't you?");
+			writeBig("imagebox/mirror/research1-4-1.gif");
+			writeSpeech("librarian", "", "Aaaah~!<br>Aah, I can't get enough of that-");
+			writeText("Reality starts to get blurry. Well, more blurry than it was before. Your double must be using the mirror.");
+			writeSpeech("librarian", "", "W-What's going on? I'm sorry!");
+			writeText("As you phase out of reality, you can't help but think that this must be a really strange circumstance for her. Within seconds, you're gone without a trace and standing in front of the mirror in your own dimension again.");
+			if (tempScene == 'work') {
+				tempScene = 'mirrorResearch';
+			}
 			break;
 		}
 		case "mirrorResearch1-5": {
+			writeText("You decide to take a stroll around the red light district. It's a different atmosphere than you're used to, it almost feels like you could get attacked at any time. You wouldn't be able to fight someone off, so you're a little on edge.");
+			writeText("Standing on the side of a street is a pretty twinky looking guy, leaning against a wall and taking a drag from a cigarette.");
+			writeText("If you squint he could pass for 16, but upon closer inspection he's got thick bags under his eyes and his hands are shaking a little.");
+			writeSpeech("Streetwalker", "none", "You need something?");
+			writeText("You keep walking. Something about that guy just screams wrong.");
+			writeText("You're ready to start headed home, this place wasn't built for people like you to have fun. Most of the shops are advertising fit trappish-looking men in briefs.");
+			writeText("That is, until you see someone familiar.");
+			writeSpeech("player", "", "Holy shit...");
+			writeText("Standing in front of one of the seedier looking shops is "+roommateF+"! She might not know you in this dimension, so you'll need to keep it subtle.");
+			writeSpeech("player", "", "Enjoying the view?");
+			writeText("She jumps and turns around.");
+			writeSpeech("roommate", "", "I-I was, uh<br>I was just-");
+			writeSpeech("player", "", "Don't worry about it, I don't judge. Care for some company?");
+			writeSpeech("roommate", "", "It's... I, uh...");
+			writeText("...");
+			writeText("The two of you spend some awkward moments trying to get a conversation started. Once she's done having a panic attack the two of you talk while walking down the street.");
+			writeText("She doesn't recognize you, and it doesn't seem like she's a teacher in this dimension either. You spend a bit of time asking questions until she suddenly stops.");
+			writeSpeech("roommate", "", "So-so, you're a uh... You're a... <span style='font-size: 30%'>prostitute?</span>");
+			writeSpeech("player", "", "Uhh... Yeah sure, why not. You interested?");
+			writeText("Her voice is a whisper now, and she looks around as if feeling judged.");
+			writeSpeech("roommate", "", "It... It's my first time. I don't know how much-");
+			writeSpeech("player", "", "Twenty bucks.");
+			writeSpeech("roommate", "", "T-twenty!?");
+			writeText("...");
+			writeSpeech("roommate", "", "S-so we're really doing this? For as long as I want for just $20?");
+			writeSpeech("player", "", "I mean, I could put my clothes back on.");
+			writeSpeech("roommate", "", "No! No, I can do this.<br><i>Is this really happening? $20 is way too cheap, there must be something wrong, but...<br>God he's so hot. And he's taking his clothes off...</i>");
+			writeText("She goes quiet once your pants are off.");
 			writeBig("imagebox/mirror/research1-5-1.gif");
+			writeSpeech("roommate", "", "<i>Aahh~! This is it! This is what I needed...<br>It's so salty... This is what kept me distracted through school... I just want more of this...</i>");
+			writeText("She does one long lick from balls to tip and lets out a shuddering breath.");
+			writeSpeech("player", "", "You cum already?");
+			writeSpeech("roommate", "", "Mmm...~<br>A-ah! Sorry! I can go... I can go again.");
+			writeText("You lay back on the bed, giving her a chance to get ready while you relax.");
+			writeSpeech("player", "", "Take as long as you need. I'm still hard, so-<br>Oh? Wow, you don't take very long to recuperate.");
+			writeSpeech("roommate", "", "I've always... Had a really high drive-<br>Aaah~!");
 			writeBig("imagebox/mirror/research1-5-2.gif");
+			writeSpeech("roommate", "", "It's here! This is it!");
+			writeSpeech("player", "", "Y-Nnng, you're tight.<br>You're a woman now, huh?");
+			writeSpeech("roommate", "", "N-not yet! We aren't-Nggh~");
+			writeSpeech("player", "", "We almost are... I'm gonna cum soon.");
+			writeSpeech("roommate", "", "Ah~! Do it inside!");
+			writeBig("imagebox/mirror/research1-5-3.gif");
+			writeSpeech("roommate", "", "Cumming~!");
+			writeText("And just like that the world begins to blur.");
+			writeSpeech("player", "", "Ah, shit. Out of time.");
+			writeSpeech("roommate", "", "W-wait, what? What's going on? Why do you look so-");
+			writeSpeech("player", "", "Sorry, I gotta go now. Go get that teaching degree, alright?");
+			writeText(" Within seconds, you're gone without a trace and standing in front of the mirror in your own dimension again. You've left her panicked look behind, hopefully she'll be alright.");
+			if (tempScene == 'work') {
+				tempScene = 'mirrorResearch';
+			}
 			break;
 		}
 		case "mirrorResearch2-1": {
 			writeText("As you're pulled through the mirror you suddenly feel very exposed. Looking down, you can see that your clothes have disappeared.");
 			writeText("On instinct, you move to cover yourself and feel more than a little panicked. That fades once a familiar face comes up to you.");
-			writeBig("images/mirror/research2-1-1.jpg");
+			writeBig("imagebox/mirror/research2-1-1.jpg");
 			writeSpeech("assistant", "", "Hi! Welcome to our dimension, my name is "+assistantF+".");
 			writeSpeech("player", "", data.player.fName+". Um...");
 			writeSpeech("assistant", "", "Ah, right, sorry. Here you go.");
@@ -1412,38 +1750,93 @@ function writeEvent(scene) {
 			writeText("Everyone looks gorgeous, you recognize some familiar faces and some look vaguely like more attractive versions of people you know.");
 			writeSpeech("assistant", "", "Sorry we only had the robe. You're only our second foray into dimension-hopping. Oh! "+bossF+" will want to see you, she should be here any minute now.");
 			writeSpeech("boss", "", "I'm already here.");
-			writeBig("images/mirror/research2-1-2.jpg");
+			writeBig("imagebox/mirror/research2-1-2.jpg");
 			writeSpeech("boss", "", "You look surprised to see me. Fuck, wait, am I a bitch in your dimension too?");
 			writeText("...");
 			writeText("You spend the next few hours learning about this dimension. The robe is uncomfortable, but you haven't quite acclimated to total public nudity yet. You'll need to ditch the robe later though.");
 			writeSpeech("notes", "", "Findings:<br>In this dimension public nudity and sexuality are considered completely normal, with prudishness being comparable to your dimension's deviancy. Going naked whenever possible is the default, and clothes are typically only worn for the sake of safety or for teasing. A very common fetish is flashing, since wearing clothes giving most people an exotic feeling that makes nudity even more exciting.<br>Public sex is also considered normal. Since women have a lower refractory period, most public sex involves a man using a woman's mouth, pussy, or ass to relieve himself. Society as a whole has been built around the idea of sex being as accessible as asking for directions.");
-			tempScene = 'work';
 			break;
 		}
 		case "mirrorResearch2-2": {
+			writeSpeech("player", "", "Alright, time to do some actual research. My bracelet still works here, so... Uh...");
 			writeBig("imagebox/mirror/research2-2-1.gif");
+			writeText("A woman walks by completely topless. In the distance a man is 'airing out' his junk in public mid-conversation with some women. A man drives by with a fleshlight built into his car.");
+			writeText("The world is... Bizzare. Even though you've been using the bracelet for awhile now, this just isn't the public you're used to.");
+			writeText("Adult stores are everywhere. Sex shops which proudly display which celebrity their toys are modeled after, TV stores which are showing 4k resolution porn at a high volume.");
+			writeText("There's the faint scent of sweat in the air, although it seems like hygene is pretty good overall. You pop into one of the stores for a quick moment.");
 			writeBig("imagebox/mirror/research2-2-2.gif");
+			writeSpeech("Blonde Woman", "none", "Ah! C-careful! If you go any harder I'll squirt!");
+			writeText("The place is really tidy, a couple of people are jerking or jilling off, but they're careful to finish into tissues.");
+			writeText("You pop into the bathroom for a quick moment.");
 			writeBig("imagebox/mirror/research2-2-3.gif");
+			writeText("But it seems like it's occupied. You almost walk back out on instinct, but this is a great chance for some research.");
+			writeSpeech("player", "", "Excuse me, miss? Could you tell me how you're feeling right now?");
+			writeText("Without missing a beat she sizes you up.");
+			writeSpeech("Brunette", "none", "Mmm~ You one of those perverts who likes to watch? You've got a lot of clothes on...<br>How does it look like I'm feeling? I'm getting helped out by a clerk's fat dick~!");
+			writeSpeech("player", "", "I see, thank you.");
+			writeText("You use the restroom and head out. It doesn't seem like she even knew who she was fucking.");
 			writeBig("imagebox/mirror/research2-2-4.gif");
+			writeText("There's a sunbathing woman getting fingered by another woman across the way. Does that even count as progressive? Is there any distinction between same-sex relationships if everyone is okay with sex all the time?");
+			writeText("Before you have a chance to learn more reality around you begins to shimmer and blur. It seems your double is using the mirror. They probably got cold feet from wearing multiple layers of clothes for once.");
+			if (tempScene == 'work') {
+				tempScene = 'mirrorResearch';
+			}
 			break;
 		}
 		case "mirrorResearch2-3": {
-			writeBig("imagebox/mirror/research2-3-1.gif");
+			writeText("The locals are interesting, but it might be worth it to get a good idea of what society is like here. You take some time to look into what the public utilities are, hoping that your double doesn't get cold feet and pull you back too quickly.");
+			writeText("...");
+			writeSpeech("player", "", "<i>What the fuck is a 'free use office'? Is it like some kind of restroom?</i>");
 			writeBig("imagebox/mirror/research2-3-2.gif");
+			writeText("Nope. It's a bunch of naked men and women stuck in restraint.");
+			writeText("Even though public use is common here, it seems like they still have dedicated locations where you can relief yourself sexually. Or maybe this is for the more introverted people of society, who'd rather they didn't need to make face-to-face contact with the people they're fucking.");
+			writeBig("imagebox/mirror/research2-3-1.gif");
+			writeText("You decide to have some fun yourself. Although it goes by too quickly, and too soon reality is blurring around you.");
+			writeText("These visits don't last long enough for your taste. You'll probably bring up to "+assistantF+" that she should distract your double next time.");
+			if (tempScene == 'work') {
+				tempScene = 'mirrorResearch';
+			}
 			break;
 		}
 		case "mirrorResearch2-4": {
+			writeText("The public transit in this dimension is pretty nice. There are dedicated school buses for university students in addition to a pretty comprehensive transit system overall.");
+			writeText("It makes sense. You'd need to keep alert while driving. But on a bus...");
 			writeBig("imagebox/mirror/research2-4-1.gif");
+			writeSpeech("Blonde Schoolgirl", "none", "Geez Louise, you're pretty excited this morning.");
+			writeSpeech("Louise", "none", "Nah, my pussy just needs some rubbing in the morning. I like how new silk feels, got to break it in.");
+			writeText("It's pretty strange to see university students so optimistic in the morning.");
+			writeText("...");
+			writeText("After the bus ride the students are filed off to basement rooms one group at a time.");
 			writeBig("imagebox/mirror/research2-4-2.gif");
+			writeSpeech("roommate", "", "C-cumming~! No more, I can't keep going~!");
+			writeText("Students and teachers need to be able to focus during class, so in the morning they're 'broken'. They're made to cum so many times past their normal limits that they can enter a dazed state perfect for an almost hypnotic lecturing style.");
 			writeBig("imagebox/mirror/research2-4-3.gif");
+			writeSpeech("roommate", "", "NNNNgh~!!!!");
+			writeText("Students are cycled through this room to be tired out once or twice per day depending on their needs, but some teachers need to spend almost half their shift here.");
+			writeText("As "+roommateF+" is broken down with repeated orgasms, you opt to wander more around the school.");
+			writeText("Most classrooms seem pretty normal, with the students having been drained it's not like there are orgies in every room.");
+			writeText("A female student drags an instructor into a nearby locker room for some relief.");
 			writeBig("imagebox/mirror/research2-4-4.gif");
+			writeText("Sometimes needs pop up and its best to resolve these in a way that isn't distracting for other students.");
+			writeText("The world around you is shimmering, soon enough you're back home.");
+			if (tempScene == 'work') {
+				tempScene = 'mirrorResearch';
+			}
 			break;
 		}
 		case "mirrorResearch2-5": {
+			writeText("The gym has a very casual and open environment.");
 			writeBig("imagebox/mirror/research2-5-1.gif");
+			writeText("One of the most commonly used devices is some kind of dildo-bike, it seems to be this dimension's replacement for the treadmill.");
 			writeBig("imagebox/mirror/research2-5-2.gif");
+			writeText("Some of the fancier looking ones are vibrating based on the speed of the pedaling. Others have built in fleshlights, but it seems like male patrons more commonly use the women instead.");
 			writeBig("imagebox/mirror/research2-5-3.gif");
+			writeText("As you walk around further you can hear some grunting from one of the back rooms, so you go and investigate.");
 			writeBig("imagebox/mirror/research2-5-4.gif");
+			writeText("The gym's owner is serving as some sort of group fuckdoll. It might be fun to join, but all too quickly the world around you begins to shimmer again and you're back home.");
+			if (tempScene == 'work') {
+				tempScene = 'mirrorResearch';
+			}
 			break;
 		}
 		case "cageResearch1": {
@@ -1565,22 +1958,25 @@ function writeEvent(scene) {
 		console.log('passing time');
 		passTime();
 	}
-	writeTransition(tempScene, "Finish");
-	var girl = "";
+	var girl = "pepsimuyo";
 	for (i = 0; i < galleryArray.length; i++) {
 		if (galleryArray[i].index == scene) {
 			girl = galleryArray[i].girl;
 		}
 	}
-	console.log('attempting to unlock logbook for '+girl);
-	for (i = 0; i < data.story.length; i++) {
-		if (data.story[i].index == girl) {
-			data.story[i].met = true;
+	if (girl != "") {
+		console.log('attempting to unlock logbook for '+girl);
+		for (i = 0; i < data.story.length; i++) {
+			if (data.story[i].index.includes(girl) == true) {
+				data.story[i].met = true;
+			}
 		}
+		
 	}
 	if (galleryCheck(scene) != true) {
 		unlockScene(scene);
 	}
+	writeTransition(tempScene, "Finish");
 }
 
 function checkDay() { //For checking for holidays, payday, and for new text messages, alt-2 to close

@@ -176,6 +176,12 @@ function writeScene(scene) {
 				<br>A sheet of cloth. When used to cover a person, once the cloth is removed the subject will be wearing a completely different set of clothing, typically the clothing of a fictional character most commonly from the superhero genre (although exceptions have been found). Afterwards, subjects were convinced that they were the characters they are dressed as, although they act much more flirtatious and are more open to sex than their character would normally be.
 				<br>Tags: Cosplay Sex, Sluttification, Mind Control
 			`);
+			writeText(`
+				<b>Libitum Scripts</b>
+				<br>A set of scripts meant to be acted out as a play on a stage. On the front of each script is a blank cast list, and each script contains a highly-eroticised situation in which the cast perform various roles, but ultimately each play devolves into sex between cast members. When someone fills out the cast list with people they know, they suddenly find themselves in an unknown location, and the events of the script unfold with the chosen cast appearing and playing their roles.
+				<br>Subjects chosen to be members of the cast retain some of their personality, but are compelled to complete the scene even if they feel the acts are degrading or humiliating.
+				<br>Tags: Mind Control, Heavily depends on the script being acted out (cheating, incest, and many other situational fetishes are possible)
+			`);
 			writeText("Dark Vault Artifacts:");
 			writeText("These are more divisive in fetishes covered. They're locked away in the Dark Vault and generally have less scenes overall. There's no planned order to implement these, just whichever I feel like adding at any time. These can be upgraded to main game artifacts at the sponsor's request, so I'll also use this place to store random ideas.");
 			writeText("These aren't in any order, but the ones on the bottom are less thought through than the ones on top. Let me know if any of these sound particularly interesting.");
@@ -244,6 +250,12 @@ function writeScene(scene) {
 				<br>A pair of golden rings. When worn by a pair of people, sensations such as pleasure, happiness, guilt, etc experienced by one ring wearer will be transferred and felt by the other ring weaer.
 				<br>Tags: Shared sensation, Long-distance sex
 			`);
+			//writeText(`
+				//<b>Megavitamin of Youth</b>
+				//<br>A gummy megavitamin, aquisition records show it was created by putting water from the fountain of youth into the erotibox. A subject who eats the megavitamin appears to look younger to the people around them. As a side-effect, it greatly increases the cruelty and reduces the ability for empathy of the subject.
+				//<br>EXTRA NOTE: The player (male), would eat this. It'd make you look like a youthful teenager and the women of the cast would go full cougar over you.
+				//<br>Tags: Ara Ara~, De-aging, Male Domination, Female Degradation
+			//`);
 			writeTransition("start", "Go Back");
 			break;
 		}
