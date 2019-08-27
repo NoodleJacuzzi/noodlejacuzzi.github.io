@@ -1156,6 +1156,15 @@ function cheat() {
 			}
 			break;
 		}
+		case "noodlemaster": {
+			for (x = 0; x < galleryArray.length; x++) {
+				if (galleryCheck(galleryArray[x].index)== false) {
+					unlockScene(galleryArray[x].index);
+				}
+			}
+			goofMessage = "Master code accepted. All scenes unlocked."
+			break;
+		}
 		case "haa": {
 			goofMessage = "Sorry. Nothing's here right now. Please keep this code in mind for later though."
 			break;
@@ -1169,7 +1178,7 @@ function cheat() {
 			break;
 		}
 		case "princess quest": {
-			goofMessage = "Sorry, there will never be anything here. If I were going to include a reference to princess quest, it would probably end up too similar to the succubus onahole."
+			goofMessage = "Sorry. Nothing's here right now. Please keep this code in mind for later though."
 			break;
 		}
 		case "bitch medicenter": {
