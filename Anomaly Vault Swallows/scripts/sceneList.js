@@ -479,14 +479,16 @@ function writeScene(scene) {
 				writeTransition("work", "Head back to your dimension");
 				var mirrorTotal = 0;
 				var mirrorUnlocks = 0;
-				for (i = 0; i < galleryArray.length; i++) {
-					if (galleryArray[i].index.includes('mirror1')) {
+				for (a = 0; a < galleryArray.length; a++) {
+					if (galleryArray[a].index.includes('mirrorResearch1')) {
 						mirrorTotal += 1;
-						if (galleryCheck(galleryArray[i]) == true) {
+						if (galleryCheck(galleryArray[a]) == true) {
 							mirrorUnlocks += 1;
 						}
 					}
 				}
+				console.log("mirror unlocks is " +mirrorUnlocks);
+				console.log("mirror total is " +mirrorTotal);
 				if (mirrorUnlocks == mirrorTotal) {
 					sceneTransition('mirrorFailed1');
 				}
@@ -523,10 +525,10 @@ function writeScene(scene) {
 				writeTransition("work", "Head back to your dimension");
 				var mirrorTotal = 0;
 				var mirrorUnlocks = 0;
-				for (i = 0; i < galleryArray.length; i++) {
-					if (galleryArray[i].index.includes('mirror2')) {
+				for (a = 0; a < galleryArray.length; a++) {
+					if (galleryArray[a].index.includes('mirrorResearch2')) {
 						mirrorTotal += 1;
-						if (galleryCheck(galleryArray[i]) == true) {
+						if (galleryCheck(galleryArray[a]) == true) {
 							mirrorUnlocks += 1;
 						}
 					}
@@ -634,6 +636,7 @@ function writeScene(scene) {
 			break;
 		}
 		case "gasFailed": {
+			tempScene = "work";
 			writeEvent('gasResearch3');
 			break;
 		}
@@ -643,14 +646,17 @@ function writeScene(scene) {
 			break;
 		}
 		case "gummyFailed": {
+			tempScene = "work";
 			writeEvent('gummyResearch2');
 			break;
 		}
 		case "onaholeResearch": {
+			tempScene = "work";
 			writeEvent('onaholeResearch1');
 			break;
 		}
 		case "cageResearch": {
+			tempScene = "work";
 			writeEvent('cageResearch1');
 			break;
 		}
@@ -1911,7 +1917,7 @@ function writeEvent(scene) {
 			writeBig("imagebox/gummy/research1-2.gif");
 			writeText("Your body keeps changing, but the changes are growing more internal. You feel so on-edge you could cum from just one stroke of your cock, but your dick is completely soft.");
 			writeText("The itch, the need to cum, it's coming from your ass now. Your brain doesn't even register your flaccid dick as a source of pleasure anymore.");
-			writeText("Every swallow you change further, looking like a pornstar with painted nails and a winking asshole. You roll over, desparate for relief as you deepthroat the dick one last time to try and get out any of the sissifying juice left.");
+			writeText("Every swallow you change further, looking like a pornstar with painted nails and a winking asshole. You roll over, desperate for relief as you deepthroat the dick one last time to try and get out any of the sissifying juice left.");
 			writeText("Trying to jerk off does nothing, but just rubbing your fingers along the rim of your ass has you trembling. You feel... enhanced. Aimless tingling running through your nerves.");
 			writeSpeech("player", "", "Need... Need to cum~...");
 			writeBig("imagebox/gummy/research1-3.gif");
@@ -1925,7 +1931,7 @@ function writeEvent(scene) {
 			break;
 		}
 		case "gummyResearch2": {
-			writeSpeech("boss", "", data.player.name+"~? How's the milking going?");
+			writeSpeech("boss", "", data.player.fName+"~? How's the milking going?");
 			writeBig("imagebox/gummy/research2-1.gif");
 			writeSpeech("player", "", "C-cumming! Cumming again!");
 			writeText("It's strange. Here you are, hand on your dick, but all you can focus on is the dildo in your ass as you pump sissy cum out of yourself.");
