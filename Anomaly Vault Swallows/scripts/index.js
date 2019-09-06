@@ -992,7 +992,7 @@ function generateLogbookGallery(n) {
 
 //Cheating
 function cheat() {
-	//If you're reading this, then after you post the list of these cheats on F95zone or TFgames please give a suggestion for more cheats. Thanks for reading my code.
+	//If you're reading this, then please link to my patreon post instead of posting the cheats. The release post of v2 already has a list of cheat codes, and is visible to non-patrons
 	var goof = document.getElementById('cheatSubmission').value;
 	goof = goof.toLowerCase();
 	var goofMessage = "Code does not exist";

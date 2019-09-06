@@ -184,11 +184,6 @@ V0.0
 		Mirror failed placeholders (COMPLETE)
 		Mirror dimension 1-Failed (COMPLETE)
 		Mirror dimension 2-Failed (COMPLETE)
-		magicalResearch
-		New bracelet images set
-		Bracelet research 4
-		Bracelet research 5
-		Bracelet research 6
 		Add new artifacts to artifact fetish list (COMPLETE)
 		Opening message describing / unlocking Peta (COMPLETE)
 		Unlock girls by using includes in the writeEvent girl checker (COMPLETE)
@@ -207,15 +202,18 @@ V0.0
 		kettleEntry function (COMPLETE)
 		kettleResearch (COMPLETE)
 		ethicsResearch (COMPLETE)
-		Don't include toolkit images
-		Update index roadmap
-		Upload images to MEGA
-		Upload image upgrade pack to MEGA
-		Upload game files to MEGA
-		Update index menu
-		Update index AV section
-		Update index news
+		magicalResearch (COMPLETE)
+		Don't include toolkit images (COMPLETE)
+		Update index roadmap (COMPLETE)
+		Upload images to MEGA (COMPLETE)
+		Upload image upgrade pack to MEGA (COMPLETE)
+		Upload game files to MEGA (COMPLETE)
+		Update index menu (COMPLETE)
+		Update index news (COMPLETE)
+		Update index AV section (COMPLETE)
+		Write changelog (COMPLETE)
 		Patreon post
+		Add patreon post link
 		TFgames game update
 		TFgames add download links
 		TFgames new post
@@ -223,6 +221,10 @@ V0.0
 		F95zone post
 	v2.5
 		Unlock artifacts one-by-one
+		New bracelet images set
+		Bracelet research 4
+		Bracelet research 5
+		Bracelet research 6
 		Dark Vault Introduction Scene
 		Toolbox Department
 		Toolbox head image
