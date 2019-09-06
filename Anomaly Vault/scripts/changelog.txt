@@ -1,0 +1,89 @@
+This is Anomaly Vault, an HTML game about you, a researcher at Anomaly Vault, experimenting on reality-bending artifacts for sexual gain. Inspirations come from all around, but the game's structure is owed mostly to The Company and is thematically close to Human Alteration App's dominant route.
+I've made a few games now, you can find a link to each of them in my index. If you'd like to support me or try to get more content for some of my games you like, consider supporting my Patreon at https://www.patreon.com/noodlejacuzzi
+I don't lock off content, so if you aren't interested you don't lose out on anything. If you'd like your own profile picture in the game, or would like a scene of your own, that's the place to head.
+
+This game uses real porn images and gifs, and covers a variety of fetishes. Check the game's content list to see what each artifact focuses on. 
+If you're interested in where the game will be going as progress continues, check out my index in my signature. I have a big list of the artifacts I'll be adding / am considering adding.
+The whole game is hand-coded html, and is not made in Twine. The game was designed with images in mind, so some scenes might read clunkily without them.
+This game was sponsored by Swallows999 via patreon. He's not a major fan of TF content, so the TF content in the game will primarily be found in a section called the Dark Vault. Check out the planned content roadmap in the index to see if anything really sticks out as interesting to you and I can put it on a front burner.
+
+Please don't hesitate to:
+[list]
+[*]Give suggestions for scenes / artifacts
+[*]Point out errors / typos / bugs found in the game
+[*]Give suggestions on the game overall, like its structure or code.
+[/list]
+
+Currently on Version 2
+Most recent game files: https://mega.nz/#!Sr5ikIjK!mtDhSl0qL1ZuAaaXOr8xAgEQGwnugctW3rajdLO3Uus
+Most recent image pack: https://mega.nz/#!LjpmACjJ!yANM5Mf-gElrSvSxFn_omIQu1Pjy8xI64kJZ14Iun9Q
+If you're new to the game, all you need to do is download these two. Extract the game files to create the Anomaly Vault folder, then extract the images to create the images folder. Make sure the images folder is in the Anomaly Vault folder and you're good to go. The final layout should look like this:
+images
+scripts
+Anomaly Vault.html
+Anomaly Vault Mobile.html
+
+If you're playing an older version, you can download individual upgrade packs here:
+https://mega.nz/#F!rqhGnIwY!hzTrpPJOzhn3bNWEXNhToA
+
+You can also play the game online here:
+Online play link: https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault.html
+Online mobile play link: https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault%20Mobile.html
+
+Known issues:
+The cheat to unlock all scenes isn't unlocking the research scenes with the Reprehensive Bracelet.
+
+FAQ:
+Q. What are the cheats?
+A. Head over to my patreon. The most recent release post will include a list of the game's cheats. The post isn't locked behind a paywall either, non-patrons will be able to see it. Please link to the post instead of pasting the cheats directly.
+In addition, please let me know if you have any other cheat ideas. The ones I have are for one-shot artifacts with a humerous tone.
+
+Q. The game is corrupted when I try to extract it!
+A. Try updating your extraction program (ie make sure 7zip is up to date)
+
+Q. How would I go about writing a scene of my own?
+A. Shoot it over to me. There are a few formatting rules to follow, so you might want to message me first.
+
+Q. Can you add [fetish]?
+A. Probably, feel free to let me know what you have in mind. Also check the roadmap on my index (https://noodlejacuzzi.github.io/index.html) for the artifacts I already have planned. I have a lot, so I'd like to focus on the things people are excited over or are fun to write.
+
+Q. Will you add more narrative elements?
+A. Probably. Please give suggestions for exactly what you think would work, that'd be most helpful.
+
+Version 2.0 - Time Stopwatch & Antique Mirror
+New Scenes:
+- 10 Antique Mirror scenes (split between a free-use and femdom dimension)
+- 7 Time stopwatch scenes
+- 4 Dark Vault scenes (gummy dicks, punification cage, and succubus onahole)
+
+Bugfixes / other changes:
+- The disable images button is now a toggle. It'll refresh the page for you, which is what actually re-enables the images.
+- There's now a warning for the final scene in the Erotibox letting you know it might be a bad idea to stick Veronica in there.
+- There are now more cheat codes. See the note in my FAQ or below for more info.
+- Unrecognized cheats will no longer give a 'code accepted' message.
+- The roadmap on my index has been updated with new artifacts. Feel free to check them out and let me know which ones you'd like to see soon.
+
+On cheat codes (copied from my FAQ):
+Head over to my patreon. The most recent AV release post will include a list of the game's cheats. The post isn't locked behind a paywall either, non-patrons will be able to see it. Please link to the post instead of pasting the cheats directly.
+In addition, please let me know if you have any other cheat ideas. The ones I have are for one-shot artifacts with a humerous tone.
+
+The primary fetishes that this patch focuses on are:
+Femdom
+Free Use
+Time-stop
+ENF / Embarassed Nude Female
+Humiliation
+
+And the dark-vault fetishes are:
+Urethral Insertion (sounding)
+Ball Growth
+Sissification
+Prostate Growth
+Cock Shrinking
+
+Also included in many scenes are the game's usual themes and sprinklings of unpercieved sex.
+Due to the nature of the game, all of the above content is completely optional.
+
+This update more than doubles the size of the game, AV is actually almost as large as HAA's dom route now if you discount the endings. I'm hoping to add more narrative elements in the future, feel free to give suggestions.
+The winner of the September content poll was for me to focus on another of my games, Bitch Medicenter. Please check out its demo if you have the time, I'll be posting it here once v1 is finished. 
+I'll be working on that and on Anomaly Vault's V3 for this month, I hope you all enjoy.

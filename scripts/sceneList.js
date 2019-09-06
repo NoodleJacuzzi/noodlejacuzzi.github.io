@@ -2,11 +2,11 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 8/16/2019</p>
-				<p class = "centeredText">Bitch Medicenter Demo</p>
-				<p class = "centeredText">Demo version of my game Bitch Medicenter is now available. You're working as a technician for a mind & body modification clinic.</p>
-				<p class = "centeredText">Check it out here: https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter.html</p>
-				<p class = "centeredText">Thank you to: Swallows999, Lasse Bannow, Mr.ManPerson, ChronosEdge, Brandon, Murgatroid99, Qwerty, Roy, Skyrim Mod Lvr, and Wild Bill for supporting my work!</p>
+				<p class = "centeredText">Lastest News 9/6/2019</p>
+				<p class = "centeredText">Anomaly Vault v2</p>
+				<p class = "centeredText">Version 2 of Anomaly Vault, featuring the Time-Stopwatch and the Antique Mirror which leads to alternate dimensions.</p>
+				<p class = "centeredText">Head over to my patreon for more info (the post is visible to non-patrons), there's a list of cheats available there too.</p>
+				<p class = "centeredText">Thank you to: Thank you to MrManPerson, Lasse Bannow, ChronosEdge, brandon, Debarre Sonny, Drashin, Mirza Hasan, murgatroid99, qwerty, Roy, Skyrim mod lvr, Wild Bill, and Will Osboldstone. Special thanks to Swallows999 for sponsoring the game!</p>
 			`;
 			writeTransition("news", "View all news updates");
 			writeText("<br>");
@@ -14,7 +14,7 @@ function writeScene(scene) {
 			//writeTransition("recommendations", "Recommendations");
 			writeText("<br><br>");
 			writeBig("images/AnomalyVault.png");
-			writeText("Anomaly Vault v1");
+			writeText("Anomaly Vault v2");
 			writeText("You play as a researcher performing experiments on various reality warping artifacts, currently including a presence-erasing bracelet and a crate that converts anything inside into a hypersexualized version of itself.");
 			writeText("The game uses real porn gifs, and is similar in tone to Human Alteration App's dom route.");
 			writeText("The themes and fetishes of the game are governed by what artifacts you interact with, hopefully as time passes you'll find and artifact you really connect with. Let me know if you have any artifact / scene ideas!");
@@ -81,6 +81,9 @@ function writeScene(scene) {
 			break;
 		}
 		case "news": {
+			writeText("<b>9/6/2019</b> - Anomaly Vault v2");
+			writeText("Version 2 of Anomaly Vault, featuring the Time-Stopwatch and the Antique Mirror which leads to alternate dimensions.");
+			writeText("Head over to my patreon for more info (the post is visible to non-patrons), there's a list of cheats available there too.");
 			writeText("<b>8/16/2019</b> - Bitch Medicenter Demo");
 			writeText("Demo version of my game Bitch Medicenter is now available.");
 			writeText("<b>8/7/2019</b> - Anomaly Vault V1");
@@ -132,22 +135,22 @@ function writeScene(scene) {
 				<br>Tags: Corruption, Mind Control, Deepfake
 			`);
 			writeText(`
-				<b>Alternate Reality Mirror (COMING IN V2)</b>
+				<b>Alternate Reality Mirror (IMPLEMENTED)</b>
 				<br>An antique mirror, stepping through it leads to another dimension of earth depending on the engraving that changes each day. Current engravings include Public Fun Is Not Unusual, a world where public sex is common, and Little Men Are Fun Toys, a world where gender dynamics are reversed from our own.
 				<br>Tags: Public Sex, Ignored Sex, Gender Dynamic Reversal, Reverse Rape
 			`);
 			writeText(`
-				<b>Time Stopwatch (COMING IN V2)</b>
+				<b>Time Stopwatch (IMPLEMENTED)</b>
 				<br>A broken bronze stopwatch. When the button on top is pressed, time stops for everyone except the user and anyone they're touching.
 				<br>Tags: Time Stop, Rape
 			`);
 			writeText(`
-				<b>Midas Coin</b>
+				<b>Midas Coin (COMING IN V3)</b>
 				<br>An old golden Greek coin. When held, the holder can bargain sexual acts as though they were bartering with money, the more depraved actions they commit, the larger the monetary value of those actions.
 				<br>Tags: Public Sex, Sluttification, Reverse Rape
 			`);
 			writeText(`
-				<b>Super Truth Serum</b>
+				<b>Super Truth Serum (COMING IN V3)</b>
 				<br>A mint-flavored drink contained in several small vials. Whatever the drinker says becomes seen as absolute truth by the people around them.
 				<br>Tags: Mind Control, Dubious Consent
 			`);
@@ -191,17 +194,17 @@ function writeScene(scene) {
 				<br>Tags: Genderswapping, (Someone Else's) Cock Worship
 			`);
 			writeText(`
-				<b>Succubus Onahole (COMING IN V2)</b>
+				<b>Succubus Onahole (IMPLEMENTED)</b>
 				<br>A soft plastic fleshlight, no abnormal qualities are shown until male genitalia is inserted into the artifact. Once inserted, men will feel intense euphoria, followed by panic as they claim that tentacles are probing them from inside the artifact. Long-term effects include extreme increases in semen production and mental derangement.
 				<br>Tags: Body Modification, Urethral Penetration, Excessive Semen
 			`);
 			writeText(`
-				<b>Punification Cage (COMING IN V2)</b>
+				<b>Punification Cage (IMPLEMENTED)</b>
 				<br>A small plastic cage designed to contain flaccid male genitalia. Wearing it almost immediately triggers a powerful orgasm, but in all cases resulted in an extreme decrease in genital size.
 				<br>Tags: Shemale, Chastity, Size Theft
 			`);
 			writeText(`
-				<b>Gummy Dicks (COMING IN V2)</b>
+				<b>Gummy Dicks (IMPLEMENTED)</b>
 				<br>A box of assorted gummy candies, all individually shaped into the form of flaccid male genitalia. When eaten by a male subject, they cause erectile dysfunction and alter the minds of the eater to receive greater pleasure from anal stimulation, while also altering their bodies to become more feminine. 
 				<br>Tags: Prostate Stimulation, Sissification, Flaccid Orgasm
 			`);
@@ -249,6 +252,11 @@ function writeScene(scene) {
 				<b>Destiny-Link Rings</b>
 				<br>A pair of golden rings. When worn by a pair of people, sensations such as pleasure, happiness, guilt, etc experienced by one ring wearer will be transferred and felt by the other ring weaer.
 				<br>Tags: Shared sensation, Long-distance sex
+			`);
+			writeText(`
+				<b>Self-Fufilling Pills</b>
+				<br>A small tin container with a single red piece of breath freshener inside. When eaten the subject will develope a sixth sense when looking at woman, showing visions in their mind of rejection and obscenely disgraceful behavior. Typically these fantasies involve the women eloping with men other than the subject.
+				<br>Tags: Gangbang, sluttification, cuckholding
 			`);
 			//writeText(`
 				//<b>Megavitamin of Youth</b>
@@ -362,13 +370,15 @@ function writeScene(scene) {
 		case "downloadAnomalyVault": {
 			document.getElementById('output').innerHTML +=`
 			Current version: V1<br><br>
-			Most recent game files: https://mega.nz/#!a3JQVAbZ!PDdywM-hmP3hLgvsOEsCqiNyS1thoTmh3DO3fq5LZVo<br><br>
-			Most recent image pack: https://mega.nz/#!qqQkBaBb!NkWYOkCRw2ZAgp_5A2SAFsUIETwzIjjauO3UA6h2xfo<br><br>
+			Most recent game files: https://mega.nz/#!Sr5ikIjK!mtDhSl0qL1ZuAaaXOr8xAgEQGwnugctW3rajdLO3Uus<br><br>
+			Most recent image pack: https://mega.nz/#!LjpmACjJ!yANM5Mf-gElrSvSxFn_omIQu1Pjy8xI64kJZ14Iun9Q<br><br>
 			If you're new to the game, all you need to do is download these two. Extract the game files to create the Anomaly Vault folder, then extract the images to create the images folder. Make sure the images folder is in the Anomaly Vault folder and you're good to go. The final layout should look like this:<br><br>
 			images<br>
 			scripts<br>
 			Anomaly Vault.html<br>
-			Anomaly Vault Mobile.html<br>
+			Anomaly Vault Mobile.html<br><br>
+			If you're playing an older version, you can download individual upgrade packs here:<br>
+			https://mega.nz/#F!rqhGnIwY!hzTrpPJOzhn3bNWEXNhToA<br>
 			`;
 			writeTransition("start", "Go Back");
 			break;

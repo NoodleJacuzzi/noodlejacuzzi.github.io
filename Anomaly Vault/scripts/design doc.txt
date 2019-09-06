@@ -1,4 +1,35 @@
-Homestead Reclamation Office
+Artifacts for consideration:
+	Add to Main Artifacts
+		Chaddicus Shades
+			Use it on Veronica (pushover)
+			Use it on Mrs. Jensen
+			Use it on Sophia (she's guilty)
+			Use it on Asa (she walks in on you using it on Sophia)
+			Use it on Mia (she's excited to get used in the library)
+			Use it on Karlee (you beat up her boyfriend)
+			Use it on Priya (ending, revealed that the glasses are powerless?)
+		'Free ____' Sign
+			Rimjobs (Door-to-door, solo, and group)
+			Blowjobs
+			Pussy
+			Anal
+			Group Sex
+
+	Staying in Dark Vault?
+		Vintage Cloth
+			Wonder Woman
+			Mystique
+			Black Widow
+			French Maid (male)
+			Noblewoman
+			Velma
+		Stiff Sex Doll
+			Use it on Veronica (she's secretly into it)
+			Use it on Mrs. Jensen (take out revenge fantasies, Veronica uses her too)
+			Use it on Sophia (she's used by her students)
+			Use it on Priya (she flips it and you're doll-ified)
+
+Anomaly Vault
 V0.0
 	Clear Unused Stuff
 		Inventory (COMPLETE)
@@ -75,28 +106,161 @@ V0.0
 		UpdateName to show last name (COMPLETE)
 		Replace NAMES with actual names (COMPLETE)
 	v0.5 - Reprehensive Bangle
-		Fix bugs
-		Scene Outlines
-		Content List
-		Images assigned
-		Description
-		First Research
-		Home Usage - Roommate, School
-		Dream
+		Fix bugs (COMPLETE)
+		Scene Outlines (COMPLETE)
+		Content List (COMPLETE)
+		Images assigned (COMPLETE)
+		Description (COMPLETE)
+		First Research (COMPLETE)
+		Home Usage - Roommate, School (COMPLETE)
+		Dream (COMPLETE)
 	v1 - Erotibox
-		Scene Outlines
-		Content List
-		Images assigned
-		Description
-		First Research
-		All other research
+		Scene Outlines (COMPLETE)
+		Content List (COMPLETE)
+		Images assigned (COMPLETE)
+		Description (COMPLETE)
+		First Research (COMPLETE)
+		All other research (COMPLETE)
 	Cheating
-		Cheat room
-		Cheat function
-		Player Images
-		Change player image
-	V1
-		Artifact Selection - 2 of Destiny-Link Rings, Time-Stopwatch, Midas Coin, Erotification Box, Appreciation Bracelet
+		Cheat room (COMPLETE)
+		Cheat function (COMPLETE)
+		Player Images (COMPLETE)
+		Change player image (COMPLETE)
+	v2
+		Erotibox finale warning (COMPLETE)
+		Cage picture (COMPLETE)
+		Cage writeArtifact in dark vault (COMPLETE)
+		Cage scenes placeholder (COMPLETE)
+		Cage images assigned (COMPLETE)
+		Cage research 1 (COMPLETE)
+		Onahole picture (COMPLETE)
+		Onahole writeArtifact in dark vault (COMPLETE)
+		Onahole scenes placeholder (COMPLETE)
+		Onahole images assigned (COMPLETE)
+		Onahole research 1 (COMPLETE)
+		Gummy picture (COMPLETE)
+		Gummy writeArtifact in dark vault (COMPLETE)
+		Gummy scenes placeholder (COMPLETE)
+		Gummy images assigned (COMPLETE)
+		Gummy research 1 (COMPLETE)
+		Gummy research 2 (COMPLETE)
+		Stopwatch in artifactArray (COMPLETE)
+		Stopwatch writeArtifact (COMPLETE)
+		Stopwatch scenes placeholder (COMPLETE)
+		Stopwatch scenes in galleryArray (COMPLETE)
+		Assign stopwatch girls in galleryArray (COMPLETE)
+		Stopwatch images assigned (COMPLETE)
+		Stopwatch research Failed (COMPLETE)
+		Stopwatch research 1 (COMPLETE)
+		Stopwatch research 2 (COMPLETE)
+		Stopwatch research 3 (COMPLETE)
+		Stopwatch home 1 (COMPLETE)
+		Stopwatch home 2 (COMPLETE)
+		Stopwatch outdoor 1 (COMPLETE)
+		Stopwatch dream 1 (COMPLETE)
+		Crop images (COMPLETE)
+		All artifact images (COMPLETE)
+		Mirror in artifactArray (COMPLETE)
+		Mirror writeArtifact (COMPLETE)
+		Mirror research hub (COMPLETE)
+		Mirror scene selection within each dimension after finishing first research (COMPLETE)
+		Mirror scenes placeholder (COMPLETE)
+		Mirror scenes in galleryArray (COMPLETE)
+		Mirror images assigned (COMPLETE)
+		Assign mirror girls in galleryArray (COMPLETE)
+		Fix gallery mirror scenes sending you back to work (COMPLETE) 
+		Mirror should send you to dimension selection (COMPLETE)
+		Re-enable images button (COMPLETE)
+		Mirror dimension 1-1 (COMPLETE)
+		Mirror dimension 1-2 (COMPLETE)
+		Mirror dimension 1-3 (COMPLETE)
+		Mirror dimension 1-4 (COMPLETE)
+		Mirror dimension 1-5 (COMPLETE)
+		Mirror dimension 2-1 (COMPLETE)
+		Mirror dimension 2-2 (COMPLETE)
+		Mirror dimension 2-3 (COMPLETE)
+		Mirror dimension 2-4 (COMPLETE)
+		Mirror dimension 2-5 (COMPLETE)
+		Mirror failed placeholders (COMPLETE)
+		Mirror dimension 1-Failed (COMPLETE)
+		Mirror dimension 2-Failed (COMPLETE)
+		Add new artifacts to artifact fetish list (COMPLETE)
+		Opening message describing / unlocking Peta (COMPLETE)
+		Unlock girls by using includes in the writeEvent girl checker (COMPLETE)
+		New cheats (COMPLETE)
+		No 'code accepted' for bad cheats (COMPLETE)
+		Unlocking cheat artifacts (COMPLETE)
+		doctorResearch (COMPLETE)
+		talismanResearch (COMPLETE)
+		blueResearch (COMPLETE)
+		fringeResearch (COMPLETE)
+		silentResearch (COMPLETE)
+		umbrellaResearch (COMPLETE)
+		crop magicalResearch image (COMPLETE)
+		ethicsResearch counter (COMPLETE)
+		kettleResearch counter (COMPLETE)
+		kettleEntry function (COMPLETE)
+		kettleResearch (COMPLETE)
+		ethicsResearch (COMPLETE)
+		magicalResearch (COMPLETE)
+		Don't include toolkit images (COMPLETE)
+		Update index roadmap (COMPLETE)
+		Upload images to MEGA (COMPLETE)
+		Upload image upgrade pack to MEGA (COMPLETE)
+		Upload game files to MEGA (COMPLETE)
+		Update index menu (COMPLETE)
+		Update index news (COMPLETE)
+		Update index AV section (COMPLETE)
+		Write changelog (COMPLETE)
+		Patreon post
+		Add patreon post link
+		TFgames game update
+		TFgames add download links
+		TFgames new post
+		TFgames first post update
+		F95zone post
+	v2.5
+		Unlock artifacts one-by-one
+		New bracelet images set
+		Bracelet research 4
+		Bracelet research 5
+		Bracelet research 6
+		Dark Vault Introduction Scene
+		Toolbox Department
+		Toolbox head image
+		Toolbox Introduction Scene
+		Friend Magazine - Girl-renaming artifact
+		Wind-up clock - Returns you to day 1 / jumps you to day 100
+		Mobium Loop - Freezes the time unless you nap or sleep
+		Lonely Auditorium - Increases text size / picture size
+		Researcher's Notes - Unlocks the gallery
+		Wardrobe Lamp - Unlocks the wardrobe
+		Skip intro at game start - Equips bracelet and sets you to day 100
+		Master cheat to unlock all scenes
+		Erotibox uses a slider
+		Box of games in toolbox department
+		Cryptogreek cheat
+		Noodlejacuzzi, HAA, Princess Quest, Rainy DayZ, Bitch MEdicenter, Hentai University cheats all point to the box of games
+		Free-roam in mirror world - Uses HU navigation
+			Dogs-rule dimension snippet
+			Free-use dimension snippet
+			Gender dynamics dimension snippet
+			Male worship dimension snippet
+			2d dimension snippet
+	v3
+		silentResearch images collected / converted / cropped
+		silentResearch for real
+		umbrellaResearch images collected / converted / cropped
+		umbrellaResearch
+		Convert toolkit images
+		Toolkit picture
+		Toolkit writeArtifact in dark vault
+		Toolkit scenes placeholder
+		Toolkit images assigned (COMPLETE)
+		Toolkit research 1
+		Toolkit research 2
+		Toolkit research 3
+		Toolkit research 4
 		
 Time cycle:
 Morning:
