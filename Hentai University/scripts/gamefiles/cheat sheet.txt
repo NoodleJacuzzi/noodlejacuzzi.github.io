@@ -1,0 +1,34 @@
+Cheat sheet:
+writeText("White Text");
+writeSpecial("Green Text");
+writeSpeech("character", "image", "Character's speech");
+writeTransition("target scene", "Text the player clicks");
+writeBig("images/image.jpg", "Artist source");
+writeTab("character", "image", "target encounter", "Text the player clicks");
+writeEvent('event');
+writeFunction("function()", "Text the player clicks");
+
+writePhoneSpeech("character", "", "Character's speech");
+writePhoneBig("images/image.jpg", "Artist source");
+
+Useful notes:
+data.story[0].trust = 1; //Sets the trust of character 0 (Emily Smith) to 1
+data.player.currentScene = "playerHouse"; //Changes where the player will end up if they end the event or refresh the page, useful for if an event is meant to take place in the player's house, but started in the gym.
+passTime(); Advances the time, from Morning, to Evening, to Night (when the player is automatically sent home)
+if (data.player.dayID > 3) {
+	//Returns true about 50% of the time (dayID is randomly set from 1 to 8 at the start of the day)
+}
+if (checkItem('beer')) {
+	//Returns true if the player has the item beer
+}
+removeItem('beer'); //Removes the oldest item named 'beer' from the player's inventory
+if (galleryCheck('mom1')) {
+	//Returns true if the player has unlocked the scene 'mom1'
+}
+data.story[0].textEvent = 'momPhone1'; //When the player next opens the phone, it will show the event 'momPhone1'.
+notification(); //Displays a message that the player got a text, and puts a * next to the player's phone button
+
+The plan, laid out:
+You work on scenes for the game Hentai University and create v2. There's no minimum or maximum amount of content for you to add, but the more content you add the more patrons it attracts, the more money you end up making.
+Next month, in the second half of September, I post Hentai University v2 on patreon and on f95zone, making sure to credit you as the commissioned author.
+At the end of september I pay you 25% of my patreon income for that month (currently $12.50 at the time of writing this). Then based on Hentai University's reception you will be commissioned again to make v3.

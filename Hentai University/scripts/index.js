@@ -23,13 +23,22 @@ var data = {
 		counseling: 0,
 		lastText: 100,
 		dayID: 1,
+		version: 2,
 	},
 	story: [
-		{index: "mom", met: true, fName: "Emily", lName: "Smith", trust: 0, encountered: false, textEvent: "",},
+		{index: "mom", met: false, fName: "Emily", lName: "Smith", trust: 0, encountered: false, textEvent: "",},
 		{index: "kuro", met: false, fName: "Steph", lName: "Black", trust: 0, encountered: false, textEvent: "",},
 		{index: "tomgirl", met: false, fName: "Sam", lName: "White", trust: 0, encountered: false, textEvent: "",},
 		{index: "purple", met: false, fName: "Mary", lName: "Williams", trust: 0, encountered: false, textEvent: "",},
 		{index: "chubby", met: false, fName: "Margaret", lName: "Williams", trust: 0, encountered: false, textEvent: "",},
+		{index: "maid", met: false, fName: "Lena", lName: "Rogers", trust: 0, encountered: false, textEvent: "",},
+		{index: "mistress", met: false, fName: "Anna", lName: "Fletcher", trust: 0, encountered: false, textEvent: "",},
+		{index: "meji", met: false, fName: "Reese", lName: "Kieran", trust: 0, encountered: false, textEvent: "",},
+		{index: "principal", met: false, fName: "Victoria", lName: "Devons", trust: 0, encountered: false, textEvent: "",},
+		{index: "secretary", met: false, fName: "Lisa", lName: "Jones", trust: 0, encountered: false, textEvent: "",},
+		{index: "neet", met: false, fName: "Tia", lName: "Sun", trust: 0, encountered: false, textEvent: "",},
+		{index: "scarf", met: false, fName: "Casandra", lName: "Hamilton", trust: 0, encountered: false, textEvent: "",},
+		{index: "green", met: false, fName: "Emma", lName: "Hamilton", trust: 0, encountered: false, textEvent: "",},
 	],
 	gallery: [
 	],
@@ -54,10 +63,18 @@ var galleryArray = [
 	{index: "tomgirl3", name: "Gym Excursion", hint: "Sam White's event"},
 	{index: "tomgirl4", name: "Relief", hint: "Sam White's event"},
 	{index: "tomgirl5", name: "Full Blown Gay Anal Sex", hint: "Sam White's event"},
+	{index: "kuro1", name: "Free First Handy", hint: "Steph Black's event"},
+	{index: "kuro2", name: "Another Handjob", hint: "Steph Black's event"},
+	{index: "kuro3", name: "Ignored Back-Blaster", hint: "Steph Black's event"},
+	{index: "meji1", name: "Beginner's Training", hint: "Reese Kieran's event"},
+	{index: "meji2", name: "Feeling Numb", hint: "Reese Kieran's event"},
+	{index: "meji3", name: "Backing Up Leotard", hint: "Reese Kieran's event"},
+	{index: "meji4", name: "Finally Finishing", hint: "Reese Kieran's event"},
 ]
 
 var itemArray = [ //If price is 0 it isn't for sale
 	{name: "Butt", key: true, price: 0, image: "scripts/gamefiles/items/butt.jpg", description: ""},
+	{name: "Leotard", key: true, price: 20, image: "scripts/gamefiles/items/leotard.jpg", description: "A womens' sports-leotard."},
 	{name: "Beer", key: true, price: 5, image: "scripts/gamefiles/items/beer.jpg", description: "A can of beer. You don't drink it, but some people do."},
 	{name: "Petunia", key: true, price: 10, image: "scripts/gamefiles/items/petunia.jpg", description: "A beautiful purple flower."},
 	{name: "Hypnosis Textbook", key: false, price: 50, image: "scripts/gamefiles/items/hypnosisTextbook.jpg", description: "A textbook on hypnosis, you can read it at home to improve your skill."},
@@ -97,6 +114,54 @@ var logbookArray = [
 	clothes: "She prefers softer colors, her baggy clothes actually make her look larger than she is.",
 	home: "She lives on Vintage Street with her daughter. She tends to sleep through the evenings.",
 	tags: "Mom-Daughter Threesome, Public Sex, Gangbang",},
+	{index: "maid", 
+	desc: "A woman that works as a certain rich woman's personal maid. Off-work, she's surprising lax for a maid.",
+	body: "She's surprisingly pretty fit, even if her outfits tend to hide that.",
+	clothes: "She usually wears her maid uniform and, even when wearing casual outfits, she's prefers whites, grays, and blacks.",
+	home: "She spends most of her time in-town, running errands for her employer.",
+	tags: "Casual Sex, FFM Threesome",},
+	{index: "mistress", 
+	desc: "A fairly rich young woman that has her maid handle taking care of her.",
+	body: "Her relaxed lifestyle has her a bit more plump than most, which her custom-cut outfits seem to highlight quite well.",
+	clothes: "She generally prefers clothes with colors that match her hair or complexion.",
+	home: "She lives at the top of a particularly large complex near the Park District.",
+	tags: "Public Sex, FFM Threesome",},
+	{index: "meji", 
+	desc: "A very outwardly-confident young man with a crossdressing habit. Despite wanting to 'keep it a secret', he goes to some <i>very</i> crowded places when dressed-up.",
+	body: "He has a slim, effeminate figure that's well-suited for crossdressing. He usually lets down his ponytail whenever he wears women's clothing.",
+	clothes: "He usually wears a school uniform - the male version while at school, and a girl's uniform when around the town.",
+	home: "He usually hangs out around the Class B hallway.",
+	tags: "Crossdressing, Anal Orgasms, Orgasm Denial",},
+	{index: "principal", 
+	desc: "The principal of the university you work at. She's pretty kind but is suprisingly strong willed.",
+	body: "She's probably in her early thirties, but could be as young as 25.",
+	clothes: "She prefers an older style of dress with a white blouse and a black pencil skirt, but her shirt is worn out enough that you can clearly make out her bra underneath.",
+	home: "You have no idea where she lives, she's pretty private when it comes to her personal life. With her, it's all business all the time.",
+	tags: "No scenes yet, sorry! In the future she'll send you on more missions for special scenes, and her content will be based on your Counseling skill.",},
+	{index: "secretary", 
+	desc: "The principal's personal secretary. She handles a great deal of general paperwork for the school, although a lot of it needs to be corrected.",
+	body: "She has pretty much no confidence in herself at all. Supposedly she laments not having a boyfriend, but she never actually makes any effort to make new friends.",
+	clothes: "Her clothes tend to look new or very well kept, and she dresses quite conservatively.",
+	home: "She lives somewhere in town, probably close to the principal's home since they tend to arrive at the same time.",
+	tags: "No scenes yet, sorry!",},
+	{index: "neet", 
+	desc: "A university student, supposedly. You've never seen her in a class in session, and nobody seems to know how long she's been attending.",
+	body: "She's very well endowed despite being short, but she could really take some time to take care of herself. Notably, her hair is a mess.",
+	clothes: "You aren't sure if she even owns anything aside from the school uniform, and it always looks perpetually wrinkled.",
+	home: "According to her file, she lives in the computer lab.",
+	tags: "No scenes yet, sorry!",},
+	{index: "scarf", 
+	desc: "A fellow university teacher. Her sister works here too. She's an expert hypnotist suffering from a 'artist's block'.",
+	body: "It's not clear how old she is. When you really focus, there's a slight blur around her body whenever you look at her.",
+	clothes: "Her preferred outfit is a v-neck shirt and a yellow scarf. She must be wearing some sort of herbal perfume because your head feels fuzzy around her.",
+	home: "She lives somewhere south of the shopping district, but spends most of her time at the school. ",
+	tags: "No scenes yet, sorry! In the future her content will be dependent on increasing your Hypnosis skill.",},
+	{index: "green", 
+	desc: "A fellow university teacher. Her sister works here too. Her personality flips when around her sister, acting almost like she's in a trance.",
+	body: "She's the younger sister, and keeps herself more in shape.",
+	clothes: "She prefers to wear green over any other color, it goes well with her sister's outfits.",
+	home: "She lives somewhere south of the shopping district, but spends most of her time at the school. ",
+	tags: "No scenes yet, sorry!",},
 ];
 
 //Startup & Systems config
@@ -254,6 +319,49 @@ function showPhone() {
 	phoneHidden = false;
 	document.getElementById("phone").style.visibility = "visible"; 
 	generateContacts();
+}
+
+function listTextbooks() {
+	if (checkItem("Hypnosis Textbook") == false && checkItem("Hacking Textbook") == false && checkItem("Counseling Textbook") == false) {
+		writeText("<p class='centeredText'>You don't have any textbooks to read.<span>");
+	}
+	if (checkItem("Hypnosis Textbook") == true) {
+		writeFunction("textbooks('hypnosis')", "Read your hypnosis textbook");
+	}
+	if (checkItem("Hacking Textbook") == true) {
+		writeFunction("textbooks('hypnosis')", "Read your hacking textbook");
+	}
+	if (checkItem("Counseling Textbook") == true) {
+		writeFunction("textbooks('hypnosis')", "Read your counseling textbook");
+	}
+	writeTransition(data.player.currentScene, "Go back");
+}
+
+function textbook(n) {
+	switch (n) {
+		case "hypnosis":
+			data.player.hypnosis += 1;
+			removeItem("Hypnosis Textbook");
+			passTime();
+			writeText("You read through the textbook. It's a bit mind-numbing, which is probably appropriate. The tricks in here help you see things in a new light, it's a different sort of feeling from being trained.");
+			writeSpecial("Your skill in hypnosis has improved!");
+		break;
+		case "hacking":
+			data.player.hacking += 1;
+			removeItem("Hacking Textbook");
+			passTime();
+			writeText("You read through the textbook. It's a bit mind-numbing, but still interesting. The tricks in here help you see things in a new light, it's a different sort of feeling from being trained.");
+			writeSpecial("Your skill in hacking has improved!");
+		break;
+		case "counseling":
+			data.player.counseling += 1;
+			removeItem("Counseling Textbook");
+			passTime();
+			writeText("You read through the textbook. It's a bit mind-numbing, but the pictures are interesting. The tricks in here help you see things in a new light, it's a different sort of feeling from being trained.");
+			writeSpecial("Your skill in counseling has improved!");
+		break;
+	}
+	writeTransition(data.player.currentScene, "Finish");
 }
 
 //Scene creation
@@ -579,6 +687,18 @@ function generateSave() {
 }
 
 function updateSave() {
+	if (data.player.version == undefined) {
+		console.log('version 1 detected, updating save');
+		data.player.version = 2;
+		data.story[5] = {index: "maid", met: false, fName: "Lena", lName: "Rogers", trust: 0, encountered: false, textEvent: "",};
+		data.story[6] = {index: "mistress", met: false, fName: "Anna", lName: "Fletcher", trust: 0, encountered: false, textEvent: "",};
+		data.story[7] = {index: "meji", met: false, fName: "Reese", lName: "Kieran", trust: 0, encountered: false, textEvent: "",};
+		data.story[8] = {index: "principal", met: false, fName: "Victoria", lName: "Devons", trust: 0, encountered: false, textEvent: "",};
+		data.story[9] = {index: "secretary", met: false, fName: "Lisa", lName: "Jones", trust: 0, encountered: false, textEvent: "",};
+		data.story[10] = {index: "neet", met: false, fName: "Tia", lName: "Sun", trust: 0, encountered: false, textEvent: "",};
+		data.story[11] = {index: "scarf", met: false, fName: "Casandra", lName: "Hamilton", trust: 0, encountered: false, textEvent: "",};
+		data.story[12] = {index: "green", met: false, fName: "Emma", lName: "Hamilton", trust: 0, encountered: false, textEvent: "",};
+	}
 	saveSlot(110);
 }
 
@@ -601,7 +721,7 @@ function unlockScene(n) {
 
 function generateGalleryNav() {
 	for (i = 0; i < data.story.length; i++) {
-		if (data.story[i].met == true) {
+		if (data.story[i].trust > 0) {
 			document.getElementById('output').innerHTML += `
 			<div class = "textBox" onclick="generateGalleryPage('` + data.story[i].index + `')" >
 				<img class = "textThumb" src = "scripts/gamefiles/profiles/`+ data.story[i].index +`.jpg">
@@ -619,7 +739,7 @@ function generateGalleryPage(n) {
 	writeBig("images/"+n+"/profile.jpg");
 	for (i = 0; i < data.gallery.length; i++) {
 		if (data.gallery[i].index.includes(n)) {
-			if (data.gallery[i].unlocked == true) {
+			if (galleryCheck(data.gallery[i].index) == true) {
 				writeFunction ("writeEvent('"+data.gallery[i].index+"')", data.gallery[i].name)
 			}
 		}

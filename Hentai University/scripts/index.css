@@ -116,7 +116,7 @@ p {
 	display: block;
     margin: auto;
 	width: 100%;
-	max-height: 700px;
+	max-height: 70vh;
   	padding: 20px, 1px;
   	border: 3px solid white;
   	border-radius: 5px;

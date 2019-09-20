@@ -307,6 +307,41 @@ V0.0
 		Append buttons to scene (COMPLETE)
 		paperwork scene (COMPLETE)
 		textbooks scene (COMPLETE)
+	v2
+		Fix wrapper reset in encounters (COMPLETE)
+		Add leotard to the shop (COMPLETE)
+		Fix money generation (COMPLETE)
+		Add characters to the data var (COMPLETE)
+		Add characters to the logbook (COMPLETE)
+		Add leotard image for shop (COMPLETE)
+		Make shortcut from office to home (COMPLETE)
+		Allow textbook reading in home (COMPLETE)
+		Profile images (COMPLETE)
+		Set up character images (COMPLETE)
+		Skill checker logbooks (COMPLETE)
+		Standardize height of BG images (COMPLETE)
+		Fix gallery (COMPLETE)
+		Update older save files (COMPLETE)
+		Principal's encounters (COMPLETE)
+		Scarf's encounters (COMPLETE)
+		Remove purple's first event from office unless victoria has given mission (COMPLETE)
+		Copypaste Kuro (COMPLETE)
+		Copypaste Meji (COMPLETE)
+		Replace any mention of Victoria / Vicky (COMPLETE)
+		Rework Meji intro (COMPLETE)
+		Remove trust building from events when in gallery (COMPLETE)
+		Copypaste laid and maidy (COMPLETE)
+		Kuro texts
+		Text rewards
+		Add patrons list
+		Neet's encounters
+		Maid encounters
+		Maid placeholders
+		Implement Maid's scenes
+		Lady encounters
+		Lady placeholders
+		Implement Lady's scenes
+		
 	Future
 		Disable unused areas
 		Skill Tutor Scenes (1/8 chance)
@@ -373,11 +408,10 @@ V1.0 Mom, Kuro Gal, Suave, Purple & Chubby
 	items in itemsArray
 	
 Character Ideas:
-Green & Scarf
-Neet
-Principal & Maid
-Business
-Kendo
+Green & Scarf - Hypnotist and sister
+Neet - Techie and hacking enthusiast
+Principal & Maid - Counseling expert
+Business - Seeks to get you fired, secretly does porn
 Suave
 Twins
 Blonde & Kashiwari
@@ -390,10 +424,12 @@ Pervert Ranger Green
 
 Student
 Yandere
+Kendo
 Tomboy
 Bimbo
 Black
 Office Trio
+
 
 	
 Areas: (OUTDATED, STUDENTS & FACULTY ARE AT SCHOOL, OTHERS ARE AT APARTMENT COMPLEX)
