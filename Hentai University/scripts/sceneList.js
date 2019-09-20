@@ -4263,7 +4263,7 @@ function checkForEvents() {
 				}
 				break;
 			}
-			case (data.story[1].trust >= 20 && data.story[1].trust <= 22): { //level 3
+			case (data.story[1].trust >= 20 && data.story[1].trust < 22): { //level 3
 				if (tempScene == "roof") {
 					if (data.player.time == "Morning") {
 						writeTab ("kuro", "", "kuro4", data.story[1].fName+" is leaning against the fence.");
