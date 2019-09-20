@@ -4122,6 +4122,9 @@ function writePhoneEvent(n) {
 }
 
 function checkForEvents() {
+	if (data.story[8].met == false) {
+		data.story[8].met = "";
+	}
 	switch (true) { //Check for misc events
 		case (tempScene == "parkDistrict"): {
 			if (data.player.dayID > 0) {
