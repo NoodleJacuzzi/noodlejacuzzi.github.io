@@ -3217,7 +3217,7 @@ function writeEncounter(n, scene) {
 					writeText("...");
 					writeSpeech("scarf", "", "I'm quite convinced. Very well then.");
 					writeText(data.story[11].fName+" teaches you the sensitivity increase technique.");
-					data.player.hypnosis =+ 1;
+					data.player.hypnosis += 1;
 					updateMenu();
 					writeSpecial("Your skill in hypnosis has improved!");
 					writeTransition(data.player.currentScene, "Finish");
