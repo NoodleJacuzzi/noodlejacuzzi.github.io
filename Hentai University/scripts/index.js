@@ -324,6 +324,7 @@ function showPhone() {
 }
 
 function listTextbooks() {
+		document.getElementById('output').innerHTML = '';
 	if (checkItem("Hypnosis Textbook") == false && checkItem("Hacking Textbook") == false && checkItem("Counseling Textbook") == false) {
 		writeText("<p class='centeredText'>You don't have any textbooks to read.<span>");
 	}
@@ -340,6 +341,7 @@ function listTextbooks() {
 }
 
 function textbook(n) {
+		document.getElementById('output').innerHTML = '';
 	switch (n) {
 		case "hypnosis":
 			data.player.hypnosis += 1;
