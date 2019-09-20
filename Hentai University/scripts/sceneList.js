@@ -664,7 +664,7 @@ function writeScene(scene) {
 function writeEvent(scene) {
 	wrapper.scrollTop = 0;
 	//document.getElementById('output').innerHTML = '';
-	if (scene.includes("porn")) {
+	if (scene.includes("porn") || data.player.currentScene == 'gallery') {
 		document.getElementById('output').innerHTML = '';
 	}
 	switch (scene) {
@@ -1467,10 +1467,10 @@ function writeEvent(scene) {
 			writeSpeech("meji","","T-Thank you, sir~...!");
 			writeText("As he leaves, you can't help but wonder if he'll be as thankful when he's back to normal and can't feel his hand when he touches his dick...");
 			if (data.player.currentScene != 'gallery') {
-			data.player.currentScene = 'playerOffice';
-			writeTransition(data.player.currentScene, "Finish up");
-			data.story[7].trust += 1;
-			passTime();
+				data.player.currentScene = 'playerOffice';
+				writeTransition(data.player.currentScene, "Finish up");
+				data.story[7].trust += 1;
+				passTime();
 			}
 			break;
 		}
@@ -1994,6 +1994,9 @@ function writeEvent(scene) {
 			writeTransition(data.player.currentScene, "Finish");
 			break;
 		}
+	}
+	if (data.player.currentScene == 'gallery') {
+		writeTransition(data.player.currentScene, "Finish");
 	}
 	if (galleryCheck(scene) != true) {
 		unlockScene(scene);
@@ -2987,7 +2990,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("secretary", "", "Excuse me! Sorry!");
 					writeSpeech("player", "", "No problem. Is "+data.story[8].fName+" in?");
 					writeSpeech("secretary", "", "Uh... Yes, yes. Give me... What's your name?");
-					writeSpeech("player", "", data.story.name+". I'm the new hire. Nice to meet you.");
+					writeSpeech("player", "", data.player.name+". I'm the new hire. Nice to meet you.");
 					writeSpeech("secretary", "", "Mhm. Go ahead. Aww man...");
 					writeText("While she's busy rummaging through desk drawers, you go ahead and...");
 					writeFunction("writeEncounter('principal', 'introduction2')", "Go into the office");
@@ -2999,12 +3002,12 @@ function writeEncounter(n, scene) {
 					writeSpeech("???", "none", "Just a moment!");
 					writeBig("images/principal/profile.jpg", "Art by Oreteki18Kin");
 					if (data.story.day == 1) {
-						writeSpeech("principal", "", "Ah, you must be "+data.story.name+". Quite punctual to meet with me so soon, a good habit.");
+						writeSpeech("principal", "", "Ah, you must be "+data.player.name+". Quite punctual to meet with me so soon, a good habit.");
 						writeSpeech("player", "", "I'm very forward thinking. Forward in general, really.");
 						writeSpeech("principal", "", "So, your supervisor should have filled you in on your responsibilities already. Correct? We've never had a dedicated counselor here, so I'm afraid there's not much framework for you.");
 					}
 					else {
-						writeSpeech("principal", "", "Ah, you must be "+data.story.name+". It's good to meet you. I take it you're more punctual with students?");
+						writeSpeech("principal", "", "Ah, you must be "+data.player.name+". It's good to meet you. I take it you're more punctual with students?");
 						writeSpeech("player", "", "Of course, ma'am. Sorry for not meeting with you sooner.");
 						writeSpeech("principal", "", "It's not an issue. This meeting isn't mandatory, your supervisor should have filled you in on your responsibilities already. Correct? We've never had a dedicated counselor here, so I'm afraid there's not much framework for you.");
 					}
@@ -3062,7 +3065,7 @@ function writeEncounter(n, scene) {
 						if (data.story[8].met.includes('scarfF') != true) {
 							writeSpeech("principal", "", "Have you had a chance to speak with Ms. "+data.story[11].lName+" yet?");
 							if (data.story[11].trust > 20) {
-								writeFunction("writeEncounter('principal', 'purpleCaseEnd')", "Report on "+data.story[11].fName+"'s case.");
+								writeFunction("writeEncounter('principal', 'scarfCaseEnd')", "Report on "+data.story[11].fName+"'s case.");
 							}
 						}
 					}
@@ -3231,7 +3234,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("green", "", "That's me, hello! Or did you mean my sister?");
 					writeSpeech("player", "", "Oh, you're related? That's interesting. Could you...");
 					writeText("...");
-					writeText("You explained the situation to "+data.story[11].fName+".");
+					writeText("You explained the situation to "+data.story[10].fName+".");
 					writeSpeech("green", "", "That certainly sounds like her. I'll give her the message, but I don't think she'll listen.");
 					writeSpeech("player", "", "Alright, plan B then.");
 					writeText("You look around to make sure you and "+data.story[11].fName+" are alone. This is probably overkill for making sure the room gets cleaned, but you were probably going to hypnotize all the teachers at some point.");
@@ -4080,6 +4083,36 @@ function writePhoneEvent(n) {
 				case "tomgirlReward": {
 					writePhoneImage("images/tomgirl/9-5.jpg", "Art by Nagi Ichi");
 					writePhoneSpeech("tomgirl", "", "You've finished all of "+data.story[2].fName+"'s content for this version, congratulations!");
+					break;
+				}
+			}
+			break;
+		}
+		case "maid" : {
+			switch (n) {
+				case "maidReward" : {
+					writePhoneImage("images/maid/fin.jpg", "Art by Oreteki18kin");
+					writePhoneSpeech("maid", "", "You've finished all of "+data.story[5].fName+"'s content for this version, congratulations!");
+					break;
+				}
+			}
+			break;
+		}
+		case "mistress" : {
+			switch (n) {
+				case "mistressReward" : {
+					writePhoneImage("images/mistress/fin.jpg", "Art by Oreteki18kin");
+					writePhoneSpeech("mistress", "", "You've finished all of "+data.story[6].fName+"'s content for this version, congratulations!");
+					break;
+				}
+			}
+			break;
+		}
+		case "meji" : {
+			switch (n) {
+				case "mejiReward" : {
+					writePhoneImage("images/meji/fin.jpg", "Art by Nagi Ichi");
+					writePhoneSpeech("meji", "", "You've finished all of "+data.story[7].fName+"'s content for this version, congratulations!");
 					break;
 				}
 			}

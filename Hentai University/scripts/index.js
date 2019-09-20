@@ -66,6 +66,8 @@ var galleryArray = [
 	{index: "kuro1", name: "Free First Handy", hint: "Steph Black's event"},
 	{index: "kuro2", name: "Another Handjob", hint: "Steph Black's event"},
 	{index: "kuro3", name: "Ignored Back-Blaster", hint: "Steph Black's event"},
+	{index: "maid1", name: "Casual Titjob", hint: "Lena Rogers's event"},
+	{index: "mistress1", name: "Penthouse Blowies", hint: "Anna Fletcher's event"},
 	{index: "meji1", name: "Beginner's Training", hint: "Reese Kieran's event"},
 	{index: "meji2", name: "Feeling Numb", hint: "Reese Kieran's event"},
 	{index: "meji3", name: "Backing Up Leotard", hint: "Reese Kieran's event"},
