@@ -4540,6 +4540,16 @@ function writePhoneEvent(n) {
 			}
 			break;
 		}
+		case "kuro" : {
+			switch (n) {
+				case "maidReward" : {
+					writePhoneImage("images/kuro/7-4.jpg", "Art by Enoshima Iki");
+					writePhoneSpeech("kuro", "", "You've finished all of "+data.story[1].fName+"'s content for this version, congratulations!");
+					break;
+				}
+			}
+			break;
+		}
 		case "maid" : {
 			switch (n) {
 				case "maidReward" : {
