@@ -329,13 +329,13 @@ function listTextbooks() {
 		writeText("<p class='centeredText'>You don't have any textbooks to read.<span>");
 	}
 	if (checkItem("Hypnosis Textbook") == true) {
-		writeFunction("textbooks('hypnosis')", "Read your hypnosis textbook");
+		writeFunction("textbook('hypnosis')", "Read your hypnosis textbook");
 	}
 	if (checkItem("Hacking Textbook") == true) {
-		writeFunction("textbooks('hypnosis')", "Read your hacking textbook");
+		writeFunction("textbook('hypnosis')", "Read your hacking textbook");
 	}
 	if (checkItem("Counseling Textbook") == true) {
-		writeFunction("textbooks('hypnosis')", "Read your counseling textbook");
+		writeFunction("textbook('hypnosis')", "Read your counseling textbook");
 	}
 	writeTransition(data.player.currentScene, "Go back");
 }

@@ -837,6 +837,7 @@ function writeEvent(scene) {
 				writeSpeech("kuro","","Um... You <i>do</i> realize you don't have enough, right?");
 				writeFunction("writeEncounter('kuro', 'kuro4')", "Choose something else");
 				writeTransition(data.player.currentScene, "Leave her be");
+				scene = "kuro1";
 				break;
 			}
 			document.getElementById('output').innerHTML = '';
@@ -880,6 +881,7 @@ function writeEvent(scene) {
 				writeSpeech("kuro","","Um... You <i>do</i> realize you don't have enough, right?");
 				writeFunction("writeEncounter('kuro', 'kuro4')", "Choose something else");
 				writeTransition(data.player.currentScene, "Leave her be");
+				scene = "kuro1";
 				break;
 			}
 			document.getElementById('output').innerHTML = '';
@@ -3875,252 +3877,6 @@ function writeEncounter(n, scene) {
 	}
 }
 
-
-function writePhoneEvent(n) {
-	saveSlot(110);
-	console.log("Writing event " + n + " for " + data.story[data.player.lastText].index);
-	data.player.lastText = parseInt(data.player.lastText);
-	switch (data.story[data.player.lastText].index) {
-		case "mom": { //alt 3 to close
-			switch (n) {
-				case "mom1": { //alt 5 to close
-					writePhoneImage("images/mom/profile.jpg", "Mom 1");
-					writePhoneSpeech("mom", "", "Hello! I can send texts now!");
-					writePhoneChoices("That's nice", "Who is this?");
-					break;
-				}
-				case "mom1A": { //alt 5 to close
-					textStage += 1;
-					writePhoneEvent("mom1");
-					textStage -= 1;
-					writePhoneSpeech("mom", "", "This is Emily, don't you have my information saved?");
-					writePhoneChoices("NEW PHONE WHO DIS", "I'm messing with you, Em");
-					break;
-				}
-				case "mom1AB": { //alt 5 to close
-					textStage += 1;
-					writePhoneEvent("mom1A");
-					textStage -= 1;
-					writePhoneImage("images/mom/profile.jpg", "Art by Enoshima Iki");
-					writePhoneSpeech("mom", "", "WOOO");
-					data.story[data.player.lastText].textEvent = "";
-					break;
-				}
-				case "mom1B": { //alt 5 to close
-					writePhoneEvent("mom1A");
-					writePhoneImage("images/mom/profile.jpg", "Art by Enoshima Iki");
-					writePhoneSpeech("mom", "", "message B");
-					break;
-				}
-				case "momAngry": {
-					writePhoneSpeech("mom", "", "You haven't been answering my texts!");
-				}
-				case "momPhone1": {
-					writePhoneSpeech("mom", "", "Hello. This is "+data.story[0].fName+".");
-					writePhoneChoices("Sleep well?", "Who?");
-					break;
-				}
-				case "momPhone1A": {
-					writePhoneSpeech("player", "", "Sleep well?");
-					writePhoneSpeech("mom", "", "Yes. I have not slept that well in years, thank you.");
-					writePhoneSpeech("mom", "", "It was probably the booze though.");
-					writePhoneSpeech("mom", "", "I will talk to you again later.");
-					writePhoneSpeech("player", "", "Take care.");
-					data.story[0].trust = 81;
-					break;
-				}
-				case "momPhone1B": {
-					writePhoneSpeech("player", "", "Who?");
-					writePhoneSpeech("mom", "", "Sorry. I must have the wrong number. Please have a nice day.");
-					writePhoneSpeech("mom", "", "Wait");
-					writePhoneSpeech("mom", "", "You jerk I can see your picture attached to the number");
-					writePhoneSpeech("player", "", "Sorry, I couldn't resist. How're you doing?");
-					writePhoneSpeech("mom", "", "I am doing well. Still hungover. Good night.");
-					writePhoneSpeech("player", "", "Take care. Talk to you later.");
-					data.story[0].trust = 81;
-					break;
-				}
-				case "momPhone2": {
-					writePhoneSpeech("mom", "", "Good morning. I have been thinking about going to the beach sometime.");
-					writePhoneSpeech("mom", "", "Have you been to the beach before?");
-					writePhoneChoices("Yep. I had a good time.", "Not recently, no.");
-					break;
-				}
-				case "momPhone2A": {
-					writePhoneSpeech("player", "", "Yep. I had a good time. I'd go again with you, though.");
-					writePhoneSpeech("mom", "", "Flirt!");
-					writePhoneSpeech("mom", "", "I still have my old bikini though.");
-					writePhoneSpeech("player", "", "I must see it. You cannot tease me like this.");
-					writePhoneImage("images/mom/7-2.jpg", "Art by Enoshima Iki");
-					writePhoneSpeech("mom", "", "Do not go sharing it around.");
-					writePhoneSpeech("player", "", "Whoaaaaa!");
-					writePhoneSpeech("player", "", "Gorgeous.");
-					writePhoneSpeech("player", "", "Wait, who took the picture?");
-					writePhoneSpeech("player", "", "Hello?");
-					data.story[0].trust = 82;
-					break;
-				}
-				case "momPhone2B": {
-					writePhoneSpeech("player", "", "Not recently, no. I'd go if you came in a bikini though.");
-					writePhoneSpeech("mom", "", "Flirt! I don't even know if my old one still fits.");
-					writePhoneSpeech("player", "", "I'll buy you a new one. What did the old one look like?");
-					writePhoneSpeech("mom", "", "Horndog! I know what you are planning.");
-					writePhoneSpeech("player", "", "You can't blame me for trying.");
-					writePhoneImage("images/mom/7-2.jpg", "Art by Enoshima Iki");
-					writePhoneSpeech("mom", "", "Do not go sharing it around.");
-					writePhoneSpeech("player", "", "Whoaaaaa!");
-					writePhoneSpeech("player", "", "Gorgeous.");
-					writePhoneSpeech("player", "", "Wait, who took the picture?");
-					writePhoneSpeech("player", "", "Hello?");
-					data.story[0].trust = 82;
-					break;
-				}
-				case "momPhone3": {
-					writePhoneSpeech("mom", "", "Good morning. I am sorry about missing your texts.");
-					writePhoneSpeech("mom", "", "I went to bed after sending the picture.");
-					writePhoneChoices("It's fine. What's up?", "I won't pry");
-					break;
-				}
-				case "momPhone3A": {
-					writePhoneSpeech("player", "", "It's fine. What's up with you?");
-					writePhoneSpeech("mom", "", "Nothing very different. A TV show I like is on a marathon today.");
-					writePhoneSpeech("mom", "", "It is about housewives.");
-					writePhoneSpeech("player", "", "Sounds neat. Enjoy yourself, alright?");
-					writePhoneSpeech("mom", "", "I will!");
-					data.story[0].trust = 83;
-					break;
-				}
-				case "momPhone3B": {
-					writePhoneSpeech("player", "", "I won't pry. If you need someone to talk to, I'm here.");
-					writePhoneSpeech("mom", "", "I appreciate it, but I really am alright.");
-					writePhoneSpeech("mom", "", "I will talk to you later.");
-					writePhoneSpeech("mom", "", "Thank you.");
-					writePhoneSpeech("player", "", "No problem.");
-					data.story[0].trust = 83;
-					break;
-				}
-				case "momPhone4": {
-					writePhoneSpeech("mom", "", "Good morning again.");
-					writePhoneSpeech("mom", "", "I was wondering what you do.");
-					writePhoneSpeech("player", "", "To pass the time?");
-					writePhoneSpeech("mom", "", "No. For your job. What do you do for a -living-.");
-					writePhoneChoices("I'm a school counselor", "I's a federal agent", "I'm a hypnotist");
-					break;
-				}
-				case "momPhone4A": {
-					writePhoneSpeech("player", "", "Ah, gotcha. I'm a school counselor.");
-					writePhoneSpeech("mom", "", "Ooh. Like helping kids? Do you work at that highschool down the road?");
-					writePhoneSpeech("player", "", "No. That's been under construction for years. Pretty sure it's condemned by now.");
-					writePhoneSpeech("player", "", "I'm at the university across town.");
-					writePhoneSpeech("mom", "", "They have counselors there?.");
-					writePhoneSpeech("player", "", "Not usually, I'm worth it tho ;)");
-					writePhoneSpeech("mom", "", "Haha! You are smooth. Talk to you later.");
-					writePhoneSpeech("player", "", "Later");
-					data.story[0].trust = 84;
-					break;
-				}
-				case "momPhone4B": {
-					writePhoneSpeech("player", "", "I'm a federal agent, I'm here on a sting operation drug bust.");
-					writePhoneSpeech("mom", "", "Oh no!");
-					writePhoneSpeech("mom", "", "Will you be leaving after?");
-					writePhoneSpeech("mom", "", "Have you already caught them?");
-					writePhoneSpeech("player", "", "That was a joke.");
-					writePhoneSpeech("mom", "", "I knew that");
-					writePhoneSpeech("mom", "", "You cannot fool me");
-					writePhoneSpeech("mom", "", "Got to go");
-					writePhoneSpeech("player", "", "No problem. Talk to you later.");
-					data.story[0].trust = 84;
-					break;
-				}
-				case "momPhone4C": {
-					writePhoneSpeech("player", "", "I'm a hypnotist. I bend people's will to live like a king here.");
-					writePhoneSpeech("mom", "", "haha");
-					writePhoneSpeech("mom", "", "Can you hypnotize the landlord to reduce my rent?");
-					writePhoneSpeech("player", "", "Sure.");
-					writePhoneSpeech("mom", "", "Thank you haha.");
-					writePhoneSpeech("player", "", "No problem.");
-					writePhoneSpeech("mom", "", "Got to go");
-					writePhoneSpeech("player", "", "No problem. Talk to you later.");
-					data.story[0].trust = 84;
-					break;
-				}
-				case "momPhone5": {
-					writePhoneSpeech("mom", "", "I will be out of the house soon. Going to visit a friend on Vintage Street.");
-					writePhoneSpeech("player", "", "Want some company?");
-					writePhoneSpeech("mom", "", "Only if you bring beer.");
-					writePhoneSpeech("mom", "", "But it is a long way back. I might see you on my way home.");
-					writePhoneSpeech("player", "", "I'll be sure to say hi.");
-					writePhoneSpeech("mom", "", "And booze?");
-					writePhoneSpeech("player", "", "I'll see if I can grab some.");
-					writePhoneSpeech("mom", "", "Thank you");
-					writePhoneSpeech("mom", "", "I saw a thing in a magazine the other day. Watch");
-					writePhoneSpeech("mom", "", "<3");
-					writePhoneSpeech("mom", "", "It is a heart.");
-					writePhoneSpeech("player", "", "<3 You too.");
-					data.story[0].trust = 85;
-					break;
-				}
-				case "momReward": {
-					writePhoneImage("images/mom/7-4.jpg", "Art by Enoshima Iki");
-					writePhoneSpeech("mom", "", "You've finished all of "+data.story[0].fName+"'s content for this version, congratulations!");
-					break;
-				}
-			}
-			break;
-		}
-		case "purple": {
-			switch (n) {
-				case "purpleReward": {
-					writePhoneImage("images/purple/4-2.jpg", "Art by Oreteki18kin");
-					writePhoneSpeech("purple", "", "You've finished all of "+data.story[3].fName+"'s & "+data.story[4].fName+"'s content for this version, congratulations!");
-					break;
-				}
-			}
-			break;
-		}
-		case "tomgirl": {
-			switch (n) {
-				case "tomgirlReward": {
-					writePhoneImage("images/tomgirl/9-5.jpg", "Art by Nagi Ichi");
-					writePhoneSpeech("tomgirl", "", "You've finished all of "+data.story[2].fName+"'s content for this version, congratulations!");
-					break;
-				}
-			}
-			break;
-		}
-		case "maid" : {
-			switch (n) {
-				case "maidReward" : {
-					writePhoneImage("images/maid/fin.jpg", "Art by Oreteki18kin");
-					writePhoneSpeech("maid", "", "You've finished all of "+data.story[5].fName+"'s content for this version, congratulations!");
-					break;
-				}
-			}
-			break;
-		}
-		case "mistress" : {
-			switch (n) {
-				case "mistressReward" : {
-					writePhoneImage("images/mistress/fin.jpg", "Art by Oreteki18kin");
-					writePhoneSpeech("mistress", "", "You've finished all of "+data.story[6].fName+"'s content for this version, congratulations!");
-					break;
-				}
-			}
-			break;
-		}
-		case "meji" : {
-			switch (n) {
-				case "mejiReward" : {
-					writePhoneImage("images/meji/fin.jpg", "Art by Nagi Ichi");
-					writePhoneSpeech("meji", "", "You've finished all of "+data.story[7].fName+"'s content for this version, congratulations!");
-					break;
-				}
-			}
-			break;
-		}
-	}
-}
-
 function checkForEvents() {
 	if (data.story[8].met == false) {
 		data.story[8].met = "";
@@ -4528,6 +4284,251 @@ function checkForPhoneEvents() {
 		if (data.story[3].textEvent != "purpleReward") {
 			data.story[3].textEvent = "purpleReward";
 			notification();
+		}
+	}
+}
+
+function writePhoneEvent(n) {
+	saveSlot(110);
+	console.log("Writing event " + n + " for " + data.story[data.player.lastText].index);
+	data.player.lastText = parseInt(data.player.lastText);
+	switch (data.story[data.player.lastText].index) {
+		case "mom": { //alt 3 to close
+			switch (n) {
+				case "mom1": { //alt 5 to close
+					writePhoneImage("images/mom/profile.jpg", "Mom 1");
+					writePhoneSpeech("mom", "", "Hello! I can send texts now!");
+					writePhoneChoices("That's nice", "Who is this?");
+					break;
+				}
+				case "mom1A": { //alt 5 to close
+					textStage += 1;
+					writePhoneEvent("mom1");
+					textStage -= 1;
+					writePhoneSpeech("mom", "", "This is Emily, don't you have my information saved?");
+					writePhoneChoices("NEW PHONE WHO DIS", "I'm messing with you, Em");
+					break;
+				}
+				case "mom1AB": { //alt 5 to close
+					textStage += 1;
+					writePhoneEvent("mom1A");
+					textStage -= 1;
+					writePhoneImage("images/mom/profile.jpg", "Art by Enoshima Iki");
+					writePhoneSpeech("mom", "", "WOOO");
+					data.story[data.player.lastText].textEvent = "";
+					break;
+				}
+				case "mom1B": { //alt 5 to close
+					writePhoneEvent("mom1A");
+					writePhoneImage("images/mom/profile.jpg", "Art by Enoshima Iki");
+					writePhoneSpeech("mom", "", "message B");
+					break;
+				}
+				case "momAngry": {
+					writePhoneSpeech("mom", "", "You haven't been answering my texts!");
+				}
+				case "momPhone1": {
+					writePhoneSpeech("mom", "", "Hello. This is "+data.story[0].fName+".");
+					writePhoneChoices("Sleep well?", "Who?");
+					break;
+				}
+				case "momPhone1A": {
+					writePhoneSpeech("player", "", "Sleep well?");
+					writePhoneSpeech("mom", "", "Yes. I have not slept that well in years, thank you.");
+					writePhoneSpeech("mom", "", "It was probably the booze though.");
+					writePhoneSpeech("mom", "", "I will talk to you again later.");
+					writePhoneSpeech("player", "", "Take care.");
+					data.story[0].trust = 81;
+					break;
+				}
+				case "momPhone1B": {
+					writePhoneSpeech("player", "", "Who?");
+					writePhoneSpeech("mom", "", "Sorry. I must have the wrong number. Please have a nice day.");
+					writePhoneSpeech("mom", "", "Wait");
+					writePhoneSpeech("mom", "", "You jerk I can see your picture attached to the number");
+					writePhoneSpeech("player", "", "Sorry, I couldn't resist. How're you doing?");
+					writePhoneSpeech("mom", "", "I am doing well. Still hungover. Good night.");
+					writePhoneSpeech("player", "", "Take care. Talk to you later.");
+					data.story[0].trust = 81;
+					break;
+				}
+				case "momPhone2": {
+					writePhoneSpeech("mom", "", "Good morning. I have been thinking about going to the beach sometime.");
+					writePhoneSpeech("mom", "", "Have you been to the beach before?");
+					writePhoneChoices("Yep. I had a good time.", "Not recently, no.");
+					break;
+				}
+				case "momPhone2A": {
+					writePhoneSpeech("player", "", "Yep. I had a good time. I'd go again with you, though.");
+					writePhoneSpeech("mom", "", "Flirt!");
+					writePhoneSpeech("mom", "", "I still have my old bikini though.");
+					writePhoneSpeech("player", "", "I must see it. You cannot tease me like this.");
+					writePhoneImage("images/mom/7-2.jpg", "Art by Enoshima Iki");
+					writePhoneSpeech("mom", "", "Do not go sharing it around.");
+					writePhoneSpeech("player", "", "Whoaaaaa!");
+					writePhoneSpeech("player", "", "Gorgeous.");
+					writePhoneSpeech("player", "", "Wait, who took the picture?");
+					writePhoneSpeech("player", "", "Hello?");
+					data.story[0].trust = 82;
+					break;
+				}
+				case "momPhone2B": {
+					writePhoneSpeech("player", "", "Not recently, no. I'd go if you came in a bikini though.");
+					writePhoneSpeech("mom", "", "Flirt! I don't even know if my old one still fits.");
+					writePhoneSpeech("player", "", "I'll buy you a new one. What did the old one look like?");
+					writePhoneSpeech("mom", "", "Horndog! I know what you are planning.");
+					writePhoneSpeech("player", "", "You can't blame me for trying.");
+					writePhoneImage("images/mom/7-2.jpg", "Art by Enoshima Iki");
+					writePhoneSpeech("mom", "", "Do not go sharing it around.");
+					writePhoneSpeech("player", "", "Whoaaaaa!");
+					writePhoneSpeech("player", "", "Gorgeous.");
+					writePhoneSpeech("player", "", "Wait, who took the picture?");
+					writePhoneSpeech("player", "", "Hello?");
+					data.story[0].trust = 82;
+					break;
+				}
+				case "momPhone3": {
+					writePhoneSpeech("mom", "", "Good morning. I am sorry about missing your texts.");
+					writePhoneSpeech("mom", "", "I went to bed after sending the picture.");
+					writePhoneChoices("It's fine. What's up?", "I won't pry");
+					break;
+				}
+				case "momPhone3A": {
+					writePhoneSpeech("player", "", "It's fine. What's up with you?");
+					writePhoneSpeech("mom", "", "Nothing very different. A TV show I like is on a marathon today.");
+					writePhoneSpeech("mom", "", "It is about housewives.");
+					writePhoneSpeech("player", "", "Sounds neat. Enjoy yourself, alright?");
+					writePhoneSpeech("mom", "", "I will!");
+					data.story[0].trust = 83;
+					break;
+				}
+				case "momPhone3B": {
+					writePhoneSpeech("player", "", "I won't pry. If you need someone to talk to, I'm here.");
+					writePhoneSpeech("mom", "", "I appreciate it, but I really am alright.");
+					writePhoneSpeech("mom", "", "I will talk to you later.");
+					writePhoneSpeech("mom", "", "Thank you.");
+					writePhoneSpeech("player", "", "No problem.");
+					data.story[0].trust = 83;
+					break;
+				}
+				case "momPhone4": {
+					writePhoneSpeech("mom", "", "Good morning again.");
+					writePhoneSpeech("mom", "", "I was wondering what you do.");
+					writePhoneSpeech("player", "", "To pass the time?");
+					writePhoneSpeech("mom", "", "No. For your job. What do you do for a -living-.");
+					writePhoneChoices("I'm a school counselor", "I's a federal agent", "I'm a hypnotist");
+					break;
+				}
+				case "momPhone4A": {
+					writePhoneSpeech("player", "", "Ah, gotcha. I'm a school counselor.");
+					writePhoneSpeech("mom", "", "Ooh. Like helping kids? Do you work at that highschool down the road?");
+					writePhoneSpeech("player", "", "No. That's been under construction for years. Pretty sure it's condemned by now.");
+					writePhoneSpeech("player", "", "I'm at the university across town.");
+					writePhoneSpeech("mom", "", "They have counselors there?.");
+					writePhoneSpeech("player", "", "Not usually, I'm worth it tho ;)");
+					writePhoneSpeech("mom", "", "Haha! You are smooth. Talk to you later.");
+					writePhoneSpeech("player", "", "Later");
+					data.story[0].trust = 84;
+					break;
+				}
+				case "momPhone4B": {
+					writePhoneSpeech("player", "", "I'm a federal agent, I'm here on a sting operation drug bust.");
+					writePhoneSpeech("mom", "", "Oh no!");
+					writePhoneSpeech("mom", "", "Will you be leaving after?");
+					writePhoneSpeech("mom", "", "Have you already caught them?");
+					writePhoneSpeech("player", "", "That was a joke.");
+					writePhoneSpeech("mom", "", "I knew that");
+					writePhoneSpeech("mom", "", "You cannot fool me");
+					writePhoneSpeech("mom", "", "Got to go");
+					writePhoneSpeech("player", "", "No problem. Talk to you later.");
+					data.story[0].trust = 84;
+					break;
+				}
+				case "momPhone4C": {
+					writePhoneSpeech("player", "", "I'm a hypnotist. I bend people's will to live like a king here.");
+					writePhoneSpeech("mom", "", "haha");
+					writePhoneSpeech("mom", "", "Can you hypnotize the landlord to reduce my rent?");
+					writePhoneSpeech("player", "", "Sure.");
+					writePhoneSpeech("mom", "", "Thank you haha.");
+					writePhoneSpeech("player", "", "No problem.");
+					writePhoneSpeech("mom", "", "Got to go");
+					writePhoneSpeech("player", "", "No problem. Talk to you later.");
+					data.story[0].trust = 84;
+					break;
+				}
+				case "momPhone5": {
+					writePhoneSpeech("mom", "", "I will be out of the house soon. Going to visit a friend on Vintage Street.");
+					writePhoneSpeech("player", "", "Want some company?");
+					writePhoneSpeech("mom", "", "Only if you bring beer.");
+					writePhoneSpeech("mom", "", "But it is a long way back. I might see you on my way home.");
+					writePhoneSpeech("player", "", "I'll be sure to say hi.");
+					writePhoneSpeech("mom", "", "And booze?");
+					writePhoneSpeech("player", "", "I'll see if I can grab some.");
+					writePhoneSpeech("mom", "", "Thank you");
+					writePhoneSpeech("mom", "", "I saw a thing in a magazine the other day. Watch");
+					writePhoneSpeech("mom", "", "<3");
+					writePhoneSpeech("mom", "", "It is a heart.");
+					writePhoneSpeech("player", "", "<3 You too.");
+					data.story[0].trust = 85;
+					break;
+				}
+				case "momReward": {
+					writePhoneImage("images/mom/7-4.jpg", "Art by Enoshima Iki");
+					writePhoneSpeech("mom", "", "You've finished all of "+data.story[0].fName+"'s content for this version, congratulations!");
+					break;
+				}
+			}
+			break;
+		}
+		case "purple": {
+			switch (n) {
+				case "purpleReward": {
+					writePhoneImage("images/purple/4-2.jpg", "Art by Oreteki18kin");
+					writePhoneSpeech("purple", "", "You've finished all of "+data.story[3].fName+"'s & "+data.story[4].fName+"'s content for this version, congratulations!");
+					break;
+				}
+			}
+			break;
+		}
+		case "tomgirl": {
+			switch (n) {
+				case "tomgirlReward": {
+					writePhoneImage("images/tomgirl/9-5.jpg", "Art by Nagi Ichi");
+					writePhoneSpeech("tomgirl", "", "You've finished all of "+data.story[2].fName+"'s content for this version, congratulations!");
+					break;
+				}
+			}
+			break;
+		}
+		case "maid" : {
+			switch (n) {
+				case "maidReward" : {
+					writePhoneImage("images/maid/fin.jpg", "Art by Oreteki18kin");
+					writePhoneSpeech("maid", "", "You've finished all of "+data.story[5].fName+"'s content for this version, congratulations!");
+					break;
+				}
+			}
+			break;
+		}
+		case "mistress" : {
+			switch (n) {
+				case "mistressReward" : {
+					writePhoneImage("images/mistress/fin.jpg", "Art by Oreteki18kin");
+					writePhoneSpeech("mistress", "", "You've finished all of "+data.story[6].fName+"'s content for this version, congratulations!");
+					break;
+				}
+			}
+			break;
+		}
+		case "meji" : {
+			switch (n) {
+				case "mejiReward" : {
+					writePhoneImage("images/meji/fin.jpg", "Art by Nagi Ichi");
+					writePhoneSpeech("meji", "", "You've finished all of "+data.story[7].fName+"'s content for this version, congratulations!");
+					break;
+				}
+			}
+			break;
 		}
 	}
 }
