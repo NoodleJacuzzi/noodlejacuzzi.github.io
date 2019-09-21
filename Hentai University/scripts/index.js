@@ -368,6 +368,20 @@ function textbook(n) {
 	writeTransition(data.player.currentScene, "Finish");
 }
 
+function creatorButton(n) {
+	switch (n) {
+		case "noodle":
+			window.open('https://noodlejacuzzi.github.io/index.html');
+		break;
+		case "crypto":
+			window.open('https://www.reddit.com/user/CaptainCryptogreek');
+		break;
+		case "patreon":
+			window.open('https://www.patreon.com/noodlejacuzzi');
+		break;
+	}
+}
+
 //Scene creation
 function writeSpeech (name, img, text) {
 	if (img == "") {

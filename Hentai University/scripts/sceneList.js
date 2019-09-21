@@ -3,10 +3,10 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			writeBig("scripts/gamefiles/logo2.png");
-			writeText("Hentai University is an adult game created by NoodleJacuuzi and CaptainCryptoGreek. You can find and keep up with all NoodleJacuzzi's games, including Human Alteration App, Princess Quest, and Rainy DayZ at the master index here:");
-			writeText("https://noodlejacuzzi.github.io/index.html");
-			writeText("You can find more of CaptainCryptoGreek's work here:");
-			writeText("https://www.reddit.com/user/CaptainCryptogreek");
+			writeText("Hentai University is an adult game created by NoodleJacuuzi and Captain Cryptogreek. You can find and keep up with all NoodleJacuzzi's games, including Human Alteration App, Princess Quest, and Rainy DayZ at the master index here:");
+			writeFunction("creatorButton('noodle')", "Noodle Jacuzzi's Index");
+			writeText("You can find more of Captain Cryptogreek's work here:");
+			writeFunction("creatorButton('crypto')", "Captain Cryptogreek on Reddit");
 			writeText("This game is based (loosely) on the design of Hentai High School by Capta1n and the Hentai High School + project. However, there are no elements of school management. The smaller scale means it will be more feasible to complete than those games.");
 			writeText("As a content warning, this game features hypnosis and dubious consent between partners, and mostly depicts straight M/F sex. There are several male characters who have scenes depicting undoubtably homosexual content, but they universally have a trap/twink bodytype and no specific character relationships are ever forced on the player. Finally, all characters are portrayed as being 18 or older. Every single character is a high-school graduate, and we currently don't intend to add any character who looks underage.");
 			writeText("If you'd like to avoid any specific fetishes, each character's logbook page lists the fetishes their scenes cover. Keep in mind that, as you are a hypnotist, hypnosis/mind control is so common we won't list it in the tags.");
@@ -21,9 +21,10 @@ function writeScene(scene) {
 			writeText("All three of the artists who's works we've used have different styles, and all work is censored due to Japan's censorship laws. we don't ever intend to mix and match within scenes, but it is worth noting that each have their own appeal / flaws. Oreteki is a divisive artist due to his style of drawing labia lips, and Nagi Ichi's work is 90% M/M. If these features are a dealbreaker for you, consider simply avoiding characters by these artists.");
 			writeTransition("oretekiTest", "See a Oreteki18kin example <br>(LONG LABIA LIPS/FLAPS)");
 			writeTransition("nagiTest", "See a Nagi Ichi example <br>(AT LEAST 90% GAY)");
-			writeText("We're always open to comments or criticism. If you feel like school management would add a lot to the game, you'd like us to consider adding another artist, or you'd like to suggest content of your own, you can shoot us a message anywhere this game is posted. You can find the Patreon page at https://www.patreon.com/noodlejacuzzi");
+			writeText("We're always open to comments or criticism. If you feel like school management would add a lot to the game, you'd like us to consider adding another artist, or you'd like to suggest content of your own, you can shoot us a message anywhere this game is posted. You can find the Patreon here:");
+			writeFunction("creatorButton('patreon')", "Patreon Link");
 			writeText("You can also send us a message directly. Noodlejacuzzi is on discord (NoodleJacuzzi#4120) or you can send an email at noodlejacuzzi@gmail.com");
-			writeText("Captain CryptoGreek can be messaged on his reddit account where he regularly posts captions. You can also shoot him an email if you'd like him to proofread or you'd like to commission his skills at cryptogreekcaptions@gmail.com");
+			writeText("Captain Cryptogreek can be messaged on his reddit account where he regularly posts captions. You can also shoot him an email if you'd like him to proofread or you'd like to commission his skills at cryptogreekcaptions@gmail.com");
 			writeText("Thank you to: Swallows999, MrManPerson, Lasse Bannow, ChronosEdge, brandon, Debarre Sonny, Drashin, iNoH8+, Mirza Hasan, murgatroid99, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Wild Bill, Will Osboldstone, and 凱 陳 for funding this game! The patreon funds are split as captain Cryptogreek has taken over as lead writer for the game.");
 			break;
 		}
