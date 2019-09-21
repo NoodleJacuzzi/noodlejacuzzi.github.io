@@ -22,7 +22,7 @@ function writeScene(scene) {
 			writeTransition("nagiTest", "See a Nagi Ichi example <br>(AT LEAST 90% GAY)");
 			writeText("I'm always open to comments or criticism. If you feel like school management would add a lot to the game, you'd like me to consider adding another artist, or you'd like to suggest content of your own, you can shoot me a message at anytime on TFgames, F95zone, or my Patreon page at https://www.patreon.com/noodlejacuzzi");
 			writeText("You can also send me a message on discord (I'm NoodleJacuzzi#4120) or an email at noodlejacuzzi@gmail.com");
-			writeText("Thank you to: Swallows999, Lasse Bannow, ChronosEdge, Brandon, Roy, and Wild Bill for supporting my work!");
+			writeText("Thank you to: Swallows999, MrManPerson, Lasse Bannow, ChronosEdge, brandon, Debarre Sonny, Drashin, iNoH8+, Mirza Hasan, murgatroid99, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Wild Bill, Will Osboldstone, and 凱 陳 for supporting my work!");
 			break;
 		}
 		case "prologue": {
@@ -400,7 +400,7 @@ function writeScene(scene) {
 			else {
 				writeTransition("playerHouse", "Head straight back home");
 				if (checkItem("Hypnosis Textbook") == false && checkItem("Hacking Textbook") == false && checkItem("Counseling Textbook") == false) {
-					writeText("<p class='centeredText'>You could study her if you had some material to work with.<span>");
+					writeText("<p class='centeredText'>You could study here if you had some material to work with.<span>");
 				}
 				if (checkItem("Hypnosis Textbook") == true) {
 					writeTransition("hypnosisTextbook", "Read your hypnosis textbook");
@@ -791,7 +791,7 @@ function writeEvent(scene) {
 			writeText("Her phone starts ringing suddenly, her hand slowing down for just a second before picking back up.");
 			writeSpeech("kuro","","Sorry, gotta take this.");
 			writeBig("images/kuro/2-1.jpg", "Art by Enoshima Iki");
-			writeSpeech("kuro","","Hey 'Ki! Sorry, but this isn't exactly the best time.");
+			writeSpeech("kuro","","Hey! Sorry, but this isn't exactly the best time.");
 			writeText("She starts picking up speed, her grip tightening firmly around your shaft.");
 			writeText("When your precum starts getting smeared around, she starts moving even faster, stroking your sensitive head with every rise and fall.");
 			writeSpeech("kuro","","A guy, yeah.");
@@ -807,9 +807,9 @@ function writeEvent(scene) {
 			writeText("She aims your cock straight up, and...!");
 			writeBig("images/kuro/2-2.jpg", "Art by Enoshima Iki");
 			writeText("You try to keep your groan as quiet as possible, but you can still faintly hear something over her phone as you paint yourself and "+data.story[1].fName+"'s hand.");
-			writeSpeech("kuro","","Hah~! Oh my God, 'Ki, you are <i>such</i> a slut!");
+			writeSpeech("kuro","","Hah~! Oh my God, you are <i>such</i> a slut!");
 			writeText("Her hand has slowed to barely more than a crawl, milking the very last drops out before she raises her cum-covered hand and looks you in the eyes.");
-			writeSpeech("kuro","","One sec, 'Ki, gotta clean up real quick - his load was <i>huge.</i>");
+			writeSpeech("kuro","","One sec, gotta clean up real quick - his load was <i>huge.</i>");
 			writeText("Maintaining eye-contact, she brings her hand to her mouth and rolls her lollipop around, exposing her slick, wet tongue as she laps up your jizz with a smirk.");
 			writeSpeech("kuro","","You know, hun...");
 			writeText("She leans forward, pulling the phone far enough away not to be overhead...");
@@ -850,13 +850,13 @@ function writeEvent(scene) {
 			writeSpeech("kuro","","Let's make just a little more noise this time, okay?");
 			writeText("Sliding her lollipop into her cheek, she runs her wet tongue across and palm and fingers, covering it in her saliva.");
 			writeText("The slick sensation of her hand, tightening and letting go quickly and rhythmically, immediately has you biting back a moan.");
-			writeText("Then, "+data.story[1].fName+" raises her phone, the screen showing 'Kiki' on the other end of the line.");
+			writeText("Then, "+data.story[1].fName+" raises her phone, the screen showing some other girl's name on the other end of the line.");
 			writeSpeech("kuro","","Don't worry about her leaking anything about you, stud. Even if I actually <i>did</i> tell her your name, her <i>pussy's</i> the only thing that'd be leaking anywhere.");
 			writeText("She relaxes back a bit, bringing the phone to her ear.");
 			writeSpeech("kuro","","Honestly, having her listen while I get you off... I didn't realize how much of a <i>turn-on</i> it'd be.");
 			writeText("As she picks up speed, she angles the phone a bit more and turns up her volume.");
 			writeText("A second later, you hear the sound of a woman moaning, audibly fingerfucking herself to the sound of the fast, sloppy handjob "+data.story[1].fName+"'s giving you.");
-			writeText("Between both Ki's voice and " +data.story[1].fName+"'s hand, you barely last a few minutes before you start spurting.");
+			writeText("Between both her voice and " +data.story[1].fName+"'s hand, you barely last a few minutes before you start spurting.");
 			writeText("After a few seconds...");
 			writeBig("images/kuro/2-3.jpg", "Art by Enoshima Iki");
 			writeSpeech("kuro","","So, how was it?");
@@ -899,7 +899,7 @@ function writeEvent(scene) {
 			writeText("Following her voice, you quickly spot her lazing on her bed, phone in hand.");
 			writeBig("images/kuro/3-1.jpg");
 			writeText("She's gently bouncing her legs on the bed, shifting yet another lollipop in her mouth.");
-			writeSpeech("kuro","","Mm, don't mind the phone. I'm just texting 'Ki, so nobody'll hear you... this time.");
+			writeSpeech("kuro","","Mm, don't mind the phone. I'm just texting, so nobody'll hear you... this time.");
 			writeText("She shifts a bit, her shift sliding further up and exposing more of her back.");
 			writeSpeech("kuro","","You don't plan on making a girl wait, do you?");
 			writeText("...");
@@ -914,7 +914,7 @@ function writeEvent(scene) {
 			writeBig("images/kuro/3-4.jpg");
 			writeSpeech("kuro","","Ah, you're finished. And it looks like you shot a pretty big load, too... Not too bad.");
 			writeText("She shifts around a bit, angling her phone down.");
-			writeSpeech("kuro","","There's not a whole lot a girl can do when you're the one jerking, but it looks like you still enjoyed yourself. Anyway, I'm meeting with 'Ki in a bit, so I have to get changed. Later, hun.");
+			writeSpeech("kuro","","There's not a whole lot a girl can do when you're the one jerking, but it looks like you still enjoyed yourself. Anyway, I'm meeting with someone in a bit, so I have to get changed. Later, hun.");
 			writeText("She calmly pulls her cum-covered socks off, walking out of the room, and something about the devil-may-care attitude just <i>gets</i> you this time.");
 			writeSpeech("player","","Hey, "+data.story[1].fName+". There's a picture I wanted to show you sometime. Mind if I text it to you later?");
 			writeText("She pauses, before shrugging.");
@@ -2256,7 +2256,7 @@ function writeEncounter(n, scene) {
 					writeText("When you arrive, she sits down casually, crossing her legs underneath her.");
 					writeSpeech("kuro","","So, what am I in for?");
 					writeSpeech("player","","I was curious about the shouting I heard, Miss...?");
-					writeSpeech("kuro","","Ah, just call me Steph~! Most older guys do.");
+					writeSpeech("kuro","","Ah, just call me "+data.story[1].fName+"~! Most older guys do.");
 					writeText("You pause.");
 					writeSpeech("kuro","","As for the shouting, that was just that council guy getting on my case about my skirt again. He's <i>suuuper</i> strict about the length!");
 					writeText("She casually lifts the hem of her skirt, just barely hiding her panties.");
@@ -3471,7 +3471,7 @@ function writeEncounter(n, scene) {
 					writeText("Three students are having a pretty loud discussion of their 'conquests' as they walk by.");
 					writeBig("images/meji/1-1.jpg", "Art by Nagi Ichi");
 					writeText("You recognize the one in the middle pretty easily - one of the 'high profile cases' when it comes to needing counseling.");
-					writeText("Reese Kieran, a rich-kid delinquent attending university because it's what's 'expected of him'. Counseling is a hard-sell when people don't want to work for something, but given your abilities...");
+					writeText(data.story[7].fName+ " "+data.story[7].lName+", a rich-kid delinquent attending university because it's what's 'expected of him'. Counseling is a hard-sell when people don't want to work for something, but given your abilities...");
 					writeFunction("writeEncounter('meji', 'meji1aa')", "Invite him to your office");
 					writeTransition(data.player.currentScene, "Leave and let "+data.story[8].fName+" handle him");
 					break;
@@ -4268,6 +4268,28 @@ function checkForPhoneEvents() {
 			break;
 		}
 	}
+	switch (data.story[1].trust) {
+		case 1: {
+			if (data.story[1].textEvent != "kuroPhone1") {
+				//data.story[1].textEvent = "kuroPhone1";
+				//notification();
+			}
+			break;
+		}
+		case 2: {
+			if (data.story[1].textEvent != "kuroPhone2") {
+				//data.story[1].textEvent = "kuroPhone2";
+				//notification();
+			}
+			break;
+		}
+	}
+	if (data.story[1].trust == 22) {
+		if (data.story[1].textEvent != "kuroReward") {
+			data.story[1].textEvent = "kuroReward";
+			notification();
+		}
+	}
 	if (data.story[0].trust == 100) {
 		if (data.story[0].textEvent != "momReward") {
 			data.story[0].textEvent = "momReward";
@@ -4283,6 +4305,24 @@ function checkForPhoneEvents() {
 	if (data.story[3].trust == 100) {
 		if (data.story[3].textEvent != "purpleReward") {
 			data.story[3].textEvent = "purpleReward";
+			notification();
+		}
+	}
+	if (data.story[5].trust == 21) {
+		if (data.story[5].textEvent != "maidReward") {
+			data.story[5].textEvent = "maidReward";
+			notification();
+		}
+	}
+	if (data.story[6].trust == 41) {
+		if (data.story[6].textEvent != "mistressReward") {
+			data.story[6].textEvent = "mistressReward";
+			notification();
+		}
+	}
+	if (data.story[7].trust == 50) {
+		if (data.story[7].textEvent != "mejiReward") {
+			data.story[7].textEvent = "mejiReward";
 			notification();
 		}
 	}
