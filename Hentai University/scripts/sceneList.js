@@ -4320,7 +4320,7 @@ function checkForPhoneEvents() {
 			notification();
 		}
 	}
-	if (data.story[7].trust == 50) {
+	if (data.story[7].trust == 25 || data.story[7].trust == 45) {
 		if (data.story[7].textEvent != "mejiReward") {
 			data.story[7].textEvent = "mejiReward";
 			notification();
