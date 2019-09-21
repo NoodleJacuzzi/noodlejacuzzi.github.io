@@ -3,7 +3,7 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			writeBig("scripts/gamefiles/logo2.png");
-			writeText("Hentai University is an adult game created by NoodleJacuuzi. You can find and keep up with all of my work, including Human Alteration App, Princess Quest, and Rainy DayZ at my master index here:");
+			writeText("Hentai University is an adult game created by NoodleJacuuzi and CaptainCryptoGreek. You can find and keep up with all NoodleJacuzzi's games, including Human Alteration App, Princess Quest, and Rainy DayZ at the master index here:");
 			writeText("https://noodlejacuzzi.github.io/index.html");
 			writeText("This game is based (loosely) on the design of Hentai High School by Capta1n and the Hentai High School + project. However, there are no elements of school management or system of global corruption. The smaller scale means it will be more feasible to complete than either of those games.");
 			writeText("As a content warning, this game features hypnosis and dubious consent between partners, and mostly depicts straight M/F sex. There are several male characters who have scenes depicting undoubtably homosexual content, but they universally have a trap/twink bodytype and no specific character relationships are ever forced on the player. Finally, all characters are portrayed as being 18 or older. Every single character is a high-school graduate, and I currently don't intend to add any character who looks underage.");
