@@ -4542,7 +4542,7 @@ function writePhoneEvent(n) {
 		}
 		case "kuro" : {
 			switch (n) {
-				case "maidReward" : {
+				case "kuroReward" : {
 					writePhoneImage("images/kuro/7-4.jpg", "Art by Enoshima Iki");
 					writePhoneSpeech("kuro", "", "You've finished all of "+data.story[1].fName+"'s content for this version, congratulations!");
 					break;
