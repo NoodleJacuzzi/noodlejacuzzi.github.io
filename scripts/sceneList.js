@@ -2,11 +2,10 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 9/6/2019</p>
-				<p class = "centeredText">Anomaly Vault v2</p>
-				<p class = "centeredText">Version 2 of Anomaly Vault, featuring the Time-Stopwatch and the Antique Mirror which leads to alternate dimensions.</p>
-				<p class = "centeredText">Head over to my patreon for more info (the post is visible to non-patrons), there's a list of cheats available there too.</p>
-				<p class = "centeredText">Thank you to: Thank you to MrManPerson, Lasse Bannow, ChronosEdge, brandon, Debarre Sonny, Drashin, Mirza Hasan, murgatroid99, qwerty, Roy, Skyrim mod lvr, Wild Bill, and Will Osboldstone. Special thanks to Swallows999 for sponsoring the game!</p>
+				<p class = "centeredText">Lastest News 9/20/2019</p>
+				<p class = "centeredText">Hentai University v2</p>
+				<p class = "centeredText">Version 2 of Hentai University is available now, featuring more characters and framework for future plotlines</p>
+				<p class = "centeredText">Thank you to: Swallows999, MrManPerson, Lasse Bannow, ChronosEdge, brandon, Debarre Sonny, Drashin, iNoH8+, Mirza Hasan, murgatroid99, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Wild Bill, Will Osboldstone, and 凱 陳 for supporting my work!</p>
 			`;
 			writeTransition("news", "View all news updates");
 			writeText("<br>");
@@ -29,7 +28,7 @@ function writeScene(scene) {
 			`;
 			writeTransition("artifactList", "See a roadmap of current / planned content");
 			writeBig("images/HentaiUniversity.png");
-			writeText("Hentai University v1");
+			writeText("Hentai University v2");
 			writeText("You play as a young man with a strong grasp on hypnotic magic, and have embedded yourself as a counselor in a school with a fantastically attractive student body. The faculty and your neighbors in town look pretty good too.");
 			writeText("This game uses art by Enoshima Iki, Nagi Ichi, and Oreteki18kin, and is meant to be similar in feel to Hentai High School, but without the focus on school management, more emphasis on wandering / corruption, and a much higher quality body of images.");
 			writeText("The end goal here is a town packed with dozens of characters using a framework I can continually add more content to.");
@@ -81,6 +80,8 @@ function writeScene(scene) {
 			break;
 		}
 		case "news": {
+			writeText("<b>9/20/2019</b> - Hentai University v2");
+			writeText("Version 2 of Hentai University is available now, featuring more characters and framework for future plotlines");
 			writeText("<b>9/6/2019</b> - Anomaly Vault v2");
 			writeText("Version 2 of Anomaly Vault, featuring the Time-Stopwatch and the Antique Mirror which leads to alternate dimensions.");
 			writeText("Head over to my patreon for more info (the post is visible to non-patrons), there's a list of cheats available there too.");
@@ -385,9 +386,8 @@ function writeScene(scene) {
 		}
 		case "downloadHentaiUniversity": {
 			document.getElementById('output').innerHTML +=`
-			Current version: V1<br><br>
-			Most recent game files: https://mega.nz/#!mmB0gYpI!Z0k4fH5KYVfm0Qfk3scT5MlfG-SiYpmjWFBrzeqgz7s<br><br>
-			Most recent image pack: https://mega.nz/#!23RAnKSS!g5EDZB-3uUUHTxtPaNkViZZ8fKy9yd7bVOCeSOta_ZA<br><br>
+			Most recent game files: https://mega.nz/#!T7RFDQgL!bxeA2m_F3n7iNCDO184M-KFb-guzAHWXlvZMwyuPfR0<br><br>
+			Most recent image pack: https://mega.nz/#!jiAzhaIL!vWauyGzchx2V-IvtpdbEFNERrtcBF6uq5hMRbBZxNqQ<br><br>
 			If you're new to the game, all you need to do is download these two. Extract the game files to create the Hentai University folder, then extract the image pack directly into the Hentai University folder. <br><br>
 			Essentially, the folder should look like this:<br><br>
 			scrpts<br>
