@@ -215,6 +215,8 @@ function writeScene(scene) {
 						document.getElementById('output').innerHTML += `
 							<div class="playerRoom">
 								<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
+								<div class="pictureButton" onclick="listTextbooks()"
+								style="top: 20%; left: 72%; max-width: 25%;">Read a Book</div>
 								<div class="pictureButton" onclick="sceneTransition('gameConsole')"
 								style="top: 54%; left: 79%; max-width: 20%;">Game Console</div>
 								<div class="pictureButton" onclick="sceneTransition('wardrobe')"

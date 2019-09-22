@@ -332,10 +332,10 @@ function listTextbooks() {
 		writeFunction("textbook('hypnosis')", "Read your hypnosis textbook");
 	}
 	if (checkItem("Hacking Textbook") == true) {
-		writeFunction("textbook('hypnosis')", "Read your hacking textbook");
+		writeFunction("textbook('hacking')", "Read your hacking textbook");
 	}
 	if (checkItem("Counseling Textbook") == true) {
-		writeFunction("textbook('hypnosis')", "Read your counseling textbook");
+		writeFunction("textbook('counseling')", "Read your counseling textbook");
 	}
 	writeTransition(data.player.currentScene, "Go back");
 }
@@ -1087,6 +1087,7 @@ function writePhoneSpeech (name, img, text) {
 	}
 	if (name == "player") {
 		img = data.player.character;
+		name = data.player.name;
 	}
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].index == name) {
