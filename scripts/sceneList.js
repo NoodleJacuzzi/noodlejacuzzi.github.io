@@ -386,7 +386,7 @@ function writeScene(scene) {
 		}
 		case "downloadHentaiUniversity": {
 			document.getElementById('output').innerHTML +=`
-			Most recent game files: https://mega.nz/#!T7RFDQgL!bxeA2m_F3n7iNCDO184M-KFb-guzAHWXlvZMwyuPfR0<br><br>
+			Most recent game files: https://mega.nz/#!H2pmSKJI!Pz-IxHdX-_4tKGLE4aodI16oSZX8A9gwIe9yARFKZmg<br><br>
 			Most recent image pack: https://mega.nz/#!jiAzhaIL!vWauyGzchx2V-IvtpdbEFNERrtcBF6uq5hMRbBZxNqQ<br><br>
 			If you're new to the game, all you need to do is download these two. Extract the game files to create the Hentai University folder, then extract the image pack directly into the Hentai University folder. <br><br>
 			Essentially, the folder should look like this:<br><br>

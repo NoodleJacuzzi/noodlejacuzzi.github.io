@@ -3239,7 +3239,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("green", "", "That's me, hello! Or did you mean my sister?");
 					writeSpeech("player", "", "Oh, you're related? That's interesting. Could you...");
 					writeText("...");
-					writeText("You explained the situation to "+data.story[10].fName+".");
+					writeText("You explained the situation to "+data.story[11].fName+".");
 					writeSpeech("green", "", "That certainly sounds like her. I'll give her the message, but I don't think she'll listen.");
 					writeSpeech("player", "", "Alright, plan B then.");
 					writeText("You look around to make sure you and "+data.story[11].fName+" are alone. This is probably overkill for making sure the room gets cleaned, but you were probably going to hypnotize all the teachers at some point.");
