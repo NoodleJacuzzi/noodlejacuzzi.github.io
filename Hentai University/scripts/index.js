@@ -189,7 +189,6 @@ function disablePictures() {
 	document.getElementById("playerImage").style.border = "none";
 	imagesDisabled = true;
 	sceneTransition(data.player.currentScene);
-	document.getElementById('picturesDisabled').innerHTML = `Pictures have been disabled. No large image should appear after this screen. Refresh the game to restore them. Dialog images will still appear, and shop / inventory items will appear to be broken.`;
 }
 
 function restartButton() {
