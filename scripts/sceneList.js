@@ -88,6 +88,9 @@ function writeScene(scene) {
 			break;
 		}
 		case "news": {
+			writeText("<b>9/23/2019</b> - Bitch Medicenter Demo");
+			writeText("I've added another scene to Bitch Medicenter, comissioned by MrManPerson. Find the game's section below underneath Anomaly Vault and Hentai University.");
+			writeText("Have any ideas for more Human Alteration Content? I'm considering working on that game again to flesh out some areas like the clothing system. I'd love to hear your suggestions!");
 			writeText("<b>9/20/2019</b> - Hentai University v2");
 			writeText("Version 2 of Hentai University is available now, featuring more characters and framework for future plotlines");
 			writeText("<b>9/6/2019</b> - Anomaly Vault v2");
