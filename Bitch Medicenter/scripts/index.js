@@ -48,7 +48,7 @@ var characterArray = [
 	{index: "nagger", fName: "Dakota", lName: "Skye", 
 	desc: "Subject is struggling to enjoy sexual relations without finding a healthy outlet for her dominant desires. While the subject's boyfriend is open to such play, she finds herself unable to engage properly.",},
 	{index: "girlfriend", fName: "Kylie", lName: "Quinn", 
-	desc: "Subject is a housewife of middle age who suffers from a near nonexistent libido, which has caused a great deal of marital stress.",},
+	desc: "Subject is struggling to enjoy sexual relations without finding a healthy outlet for her dominant desires. While the subject's boyfriend is open to such play, she finds herself unable to engage properly.",},
 	{index: "girlfriendPost", fName: "Kylie", lName: "Quinn", 
 	desc: "Subject is a housewife of middle age who suffers from a near nonexistent libido, which has caused a great deal of marital stress.",},
 	{index: "boyfriend", fName: "Michael", lName: "Vegas", 
