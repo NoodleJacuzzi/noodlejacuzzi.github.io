@@ -2,10 +2,11 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 9/20/2019</p>
-				<p class = "centeredText">Hentai University v2</p>
-				<p class = "centeredText">Version 2 of Hentai University is available now, featuring more characters and framework for future plotlines</p>
-				<p class = "centeredText">Thank you to: Swallows999, MrManPerson, Lasse Bannow, ChronosEdge, brandon, Debarre Sonny, Drashin, iNoH8+, Mirza Hasan, murgatroid99, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Wild Bill, Will Osboldstone, and 凱 陳 for supporting my work!</p>
+				<p class = "centeredText">Lastest News 9/23/2019</p>
+				<p class = "centeredText">Bitch Medicenter Demo</p>
+				<p class = "centeredText">I've added another scene to Bitch Medicenter, comissioned by MrManPerson. Find the game's section below underneath Anomaly Vault and Hentai University.</p>
+				<p class = "centeredText">Have any ideas for more Human Alteration Content? I'm considering working on that game again to flesh out some areas like the clothing system. I'd love to hear your suggestions!</p>
+				<p class = "centeredText">Thank you to: Swallows999, MrManPerson, Lasse B, ChronosEdge, Andy Amundy, brandon, Debarre Sonny, Drashin, iNoH8+, Mirza Hasan, murgatroid99, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Snaked, Wild Bill, Will Osboldstone, and 凱 陳 for supporting my work!</p>
 			`;
 			writeTransition("news", "View all news updates");
 			writeText("<br>");
@@ -37,6 +38,13 @@ function writeScene(scene) {
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">Play the mobile version</p>
+			`;
+			writeBig("images/bitchMedicenter.png");
+			writeText("Bitch Medicenter Demo");
+			writeText("You're a doctor / sexual therapist who prescribes special body and mind-altering products to help with failed marriages, self worth issue, and etc. Basically, you're modifying people's minds and bodies. Currently in a demo state with only one of the two minigames finished.");
+			document.getElementById('output').innerHTML +=`
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter.html'">Play the demo online</p>
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter%20Mobile.html'">Play the mobile version</p>
 			`;
 			writeBig("images/logo.png");
 			writeTransition("HAAD", "Dom Route Preview");

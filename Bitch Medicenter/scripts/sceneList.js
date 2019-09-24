@@ -16,7 +16,7 @@ function writeScene(scene) {
 			//writeTransition("blocks", "Test modification game");
 			//writeFunction("triad('1', 'test2')", "Test Hypnosis Game");
 			writeText("Other notes:");
-			writeText("This game was made possible via Patreon, thank you to Swallows999, Lasse Bannow, ChronosEdge, MrManPerson, Brandon, Roy, Wild Bill, Skyrim mod lvr, murgatroid, and qwerty for supporting my work.");
+			writeText("This game was made possible via Patreon, thank you to Swallows999, MrManPerson, Lasse B, ChronosEdge, Andy Amundy, brandon, Debarre Sonny, Drashin, iNoH8+, Mirza Hasan, murgatroid99, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Snaked, Wild Bill, Will Osboldstone, and 凱 陳 for supporting my work.");
 			writeText("I'm always open to comments or criticism. If you have an idea for an artist or scene or you'd like to suggest content of your own, you can shoot me a message at anytime on TFgames, F95zone, or my Patreon page at https://www.patreon.com/noodlejacuzzi");
 			writeText("You can also send me a message on discord (I'm NoodleJacuzzi#4120) or an email at noodlejacuzzi@gmail.com");
 			break;
