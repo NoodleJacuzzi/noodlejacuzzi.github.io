@@ -33,6 +33,7 @@ function writeScene(scene) {
 		case "caseSelect": {
 			writeText("Query accepted. The following case files are available:");
 			writeCase("wife");
+			writeCase("girlfriend");
 			writeTransition("potentialCases", "Request additional case files");
 			writeTransition("homeScreen", "Go back to the home screen");
 			break;
@@ -64,6 +65,22 @@ function writeScene(scene) {
 			break;
 		}
 		case "wifeA": {
+			blockGame = true;
+			blocks();
+			break;
+		}
+		case "girlfriendFile": {
+			writeBig("scripts/gamefiles/characters/girlfriend.jpg");
+			writeText("IDENTIFYING INFORMATION:<br>The subject is a 23-year old college student in a committed relationship with a 24-year old man. She and her boyfriend were admitted voluntarily, and are both in Waiting Room B.");
+			writeText("CHIEF COMPLAINT:<br>Subject claims that sex is unsatisfying and that she suffers from low libido. Brainwave scans show signs of extremely repressed dominant tendencies and unrealized gender dysphoria. Similar, albeit submissive tendencies, have been found in the subject's bodyfriend, likely this is the cause of low sexual desire between the pair.");
+			writeText("TREATMENT PLAN A - MODIFICATION:<br>KEYWORDS: Female-to-Shemale, Male-to-Sissy, Prostate growth<br>A modification plan that cause the subject to grow a sizable penis, and alter her byfriend to be more physically receptive to the idea.");
+			writeTransition("girlfriendA", "Begin treatment plan A");
+			writeText("TREATMENT PLAN B - HYPNOSIS:<br>KEYWORDS: Femdom, Submissive Male, Humiliation, Chastity<br>A hypnosis plan that would release the repressed desires of both the subject and her boyfriend. Several device recommendations would also be provided for a more fulfilling sexual relationship.");
+			writeSpecial("ERROR - Hypnosis treatment plans unavailable. Please submit a report to the site manager if hypnosis plan is essential.");
+			writeTransition("caseSelect", "Go back to file selection");
+			break;
+		}
+		case "girlfriendA": {
 			blockGame = true;
 			blocks();
 			break;
@@ -219,6 +236,67 @@ function writeEvent(scene) {
 			writeText("She <b>squirts</b>. She sprays in an arc powerful enough to shoot several feet forwards. Her voice has gone hoarse from screaming.");
 			writeText("You've done a fine job. The client's request for a more satisfying sex life has been met. In the long term she'll basically be a sex junkie, but that's not your problem.");
 			writeText("If she could form words right now, she'd probably give you a glowing review! Great work!");
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "girlfriendA": {
+			writeText("Once the anasthesia has worn off, the pair  begin to grogilly come to their senses and find themselves in a soft bed.");
+			writeSpeech("<del>Michael</del> <ins>Michelle</ins>", "scripts/gamefiles/profiles/boyfriendPost.jpg", "Fuck... My head...");
+			writeSpeech("girlfriendPost", "", "Mmm...~ Is it over?");
+			writeBig("scripts/gamefiles/characters/boyfriendPost.jpg");
+			writeSpeech("boyfriendPost", "", "What the fuck!? What the hell happened to me?");
+			writeText(characterArray[6].fName+" begins to panic as he runs his hands along his new body. All of his former muscle mass is gone, and his prized package has lost nearly all of its former girth.");
+			writeSpeech("girlfriendPost", "", "What's wrong ho-");
+			writeBig("images/girlfriend/girlfriendA-1.gif");
+			writeSpeech("girlfriendPost", "", "Ooooh~...");
+			writeBig("images/girlfriend/girlfriendA-2.gif");
+			writeSpeech("boyfriendPost", "", "Are you al-<br>Holy shit! You've got a cock!");
+			writeText(characterArray[4].fName+" just nods halfheartedly, still staring at her boyfriend's new ass. New sensations pooling in her mind from her untouched and backed-up cock.");
+			writeText(characterArray[6].fName+" leaps off the bed and faces one of the security cameras, furious.");
+			writeSpeech("boyfriendPost", "", "You god damn chop-shop motherfuckers! You'd better turn us back!");
+			writeSpeech("girlfriendPost", "", "Mmm~... Honey, there's no reversion policy. Or refunds. That's why this place is so cheap...");
+			writeSpeech("boyfriendPost", "", "I... Fuck! Come on, we're leaving. And then we're suing this place to the god damn foundations!");
+			writeText(characterArray[4].fName+" just nods again as she's pulled out of the room. Dark, unfamiliar desires are pounding in her head. As her boyfriend's fat ass jiggles while they make their escape, she licks her lips.");
+			writeFunction("writeEvent('girlfriendAA')", "Later");
+			break;
+		}
+		case "girlfriendAA": {
+			writeText("It's been only two days since the alteration, but already the pair's relationship had begun to change.");
+			writeText(characterArray[4].fName+" had been encouraging "+characterArray[6].fName+" to take a moment to enjoy the changes, promising that they'd get transformed back to normal at a more reputable clinic.");
+			writeText("And to his credit, "+characterArray[6].fName+" had certainly tried. He'd really gone at it and tried fapping, but to no avail. Even the most hardcore of porn could get him off with how his new pecker was acting.");
+			writeText("Just touching it was enough to kill any hope of a boner, almost like his brain was programmed not to recieve pleasure from his dick. No matter how much he tried to jerk off, nothing happened.");
+			writeText(characterArray[4].fName+" offered to help, giving an enthusiastic blowjob to his pathetic little member, but it wasn't even close to enough.");
+			writeBig("images/girlfriend/girlfriendA-3.gif");
+			writeText("But when her tongue strayed lower to get a taste of that perfect puffy donut of an asshole, his attitude changed.");
+			writeText("Whereas before he'd always been strong and silent during sex, hardly making a peep, now he's squirming and moaning uncontrollably.");
+			writeText("And finally, after what felt like an agonizing two days of no-release torment, his little clitty begins to leak a few drops of cum.");
+			writeText("His eyes roll back in his head, the sensation of cumming even this piddling amount is much stronger than even his strongest of past orgasms.");
+			writeText("Huffing and exhausted, he finally looks back down as he no longer feels his girlfriend's tongue in his ass.");
+			writeBig("images/girlfriend/girlfriendA-4.gif");
+			writeFunction("writeEvent('girlfriendAAA')", "Later");
+			break;
+		}
+		case "girlfriendAAA": {
+			writeSpeech("boyfriendPost", "", "Ah~! Ah~! Yes! Fuck me harder!");
+			writeSpeech("girlfriendPost", "", "It's ringing... and... Ah! Hello! Is this Bitch Medicenter? I was calling about my recent alteration, my name is "+characterArray[4].fName+" "+characterArray[4].lName+".");
+			writeBig("images/girlfriend/girlfriendA-5.gif");
+			writeSpeech("boyfriendPost", "", "Ghh~! I can feel your cock slamming against my bitch-button!");
+			writeSpeech("girlfriendPost", "", "Mhmm. I just wanted to apologize for our behavior as we left. I'm here with him right now, and we really do enjoy... Oh? This is a common occurence?");
+			writeSpeech("boyfriendPost", "", "Gonna cum! My clitty is leaking!");
+			writeSpeech("girlfriendPost", "", "Shut up, bitch!<br>Ah, sorry, I'm with him right now. He's insatiable, although I guess I am too. Anyways, thank you so much! We'll be leaving a positivie review for sure!<br>Alright, thank you.");
+			writeText("As she hangs up the phone "+characterArray[4].fName+" slows her rhythm and pulls her cock out of her boyfriend's ass.");
+			writeSpeech("boyfriendPost", "", "Noo~... Did I do something wrong?");
+			writeText(characterArray[4].fName+" responds by grabbing "+characterArray[6].fName+"'s leg and yanking him off the bed, causing him to land face-first in the puddle of boicum he made.");
+			writeText("As he obediently cleans up his mess, she lays back on the bed.");
+			writeSpeech("girlfriendPost", "", "You want my cum? Earn it.");
+			writeSpeech("boyfriendPost", "", "Yes mistress!");
+			writeText("He eagerly clims atop her, giggling absent-mindedly as his mistress's cock fills his ass again.");
+			writeBig("images/girlfriend/girlfriendA-6.gif");
+			writeText("He bounces up and down. His clitty's sensitivity is way down, so the only time he even feels anything from it anymore is when it's slapping on his mistress's abdomen.");
+			writeSpeech("girlfriendPost", "", "Mmmm~... Good girl. Enjoy your reward.");
+			writeText("And soon enough her modified cum begins to pump into his hole. The changes made to it have had some major effects on "+characterArray[6].fName+"'s brain. Just a drop is enough to send him into a sexual frenzy now, so when a pint of it floods his ass it sends powerful, almsot electric shocks up his spine.");
+			writeText("His body shaking and mouth hanging wordlessly open, he shows his appreciation the only way he knows how.");
+			writeBig("images/girlfriend/girlfriendA-7.gif");
 			writeTransition("caseSelect", "Finish");
 			break;
 		}

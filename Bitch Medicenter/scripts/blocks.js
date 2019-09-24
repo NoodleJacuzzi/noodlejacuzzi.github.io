@@ -15,6 +15,17 @@ var wifeImages = [
 'url("./images/wife/wifeA-10.gif")', //256
 ]
 
+var girlfriendImages = [
+'url("./images/girlfriend/block2.gif")', //2
+'url("./images/girlfriend/block4.gif")', //4
+'url("./images/girlfriend/block8.gif")', //8
+'url("./images/girlfriend/block16.gif")', //16
+'url("./images/girlfriend/block32.gif")', //32
+'url("./images/girlfriend/block64.gif")', //64
+'url("./images/girlfriend/block128.gif")', //128
+'url("./images/girlfriend/girlfriendA-3.gif")', //256
+]
+
 function blocks() {
 	caseStage = 0;
 	document.getElementById('output').innerHTML = `
@@ -99,50 +110,62 @@ var moveCount = 0, combineCount = 0;
 var emptyCount; 
 var isMoveOver = 1;
 
-var maps = [// goal of all is 128
+var maps = [
 	[
 		0, 0, 0, 0,
 		0, 0, 0, 0,
 		2, 4, 8, 16,
 		32, 64, 128, 256,
 	],
-	[//tutorial
+	[//tutorial wife 1
 		64, 32, 16, 8,
 		2, 4, 0, 0,
 		0, 0, 0, 0,
 		0, 0, 0, 2,
 	],
-	[ //64
+	[ //wife 2
 		8, 16, 0, 8,
 		0, 0, 16, 0,
 		0, 0, 0, 0,
 		0, 0, 16, 0,
 	],
-	[
+	[ //wife 3
 		2, 4, 8, 16,
 		64, 0, 0, 2,
 		0, 0, 0, 0,
 		32, 0, 0, 0,
 	],
-	[
+	[ //girlfriend1
+		2, 2, 0, 0,
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		0, 2, 0, 2,
+	],
+	[ //girlfriend2
+		2, 2, 4, 2,
+		0, 0, 0, 0,
+		0, 0, 0, 0,
+		2, 2, 0, 2,
+	],
+	[ //girlfriend1
 		32, 8, 0, 32,
 		0, 0, 0, 0,
 		32, 0, 0, 32,
 		0, 4, 0, 4,
 	],
-	[
+	[ //girlfriend2
 		8, 4, 0, 0,
 		0, 4, 8, 16,
 		16, 2, 4, 32,
 		0, 32, 2, 0,
 	],
-	[
+	[ //girlfriend3
 		4, 8, 0, 0,
 		16, 16, 8, 0,
 		16, 16, 32, 0,
 		4, 8, 0, 0,
 	],
-	[
+	[ //girlfriend4
 		16, 8, 4, 2,
 		32, 0, 0, 0,
 		0, 0, 0, 0,
@@ -157,6 +180,7 @@ var maps = [// goal of all is 128
 ];
 
 function generateBlocksBoard() {
+	var gameDone = false;
 	restart();
 	switch (tempScene) {
 		case "wifeA": {
@@ -165,6 +189,7 @@ function generateBlocksBoard() {
 				case 0:
 					target = 252;
 					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
 				break;
 				case 1:
 					target = 96;
@@ -179,7 +204,41 @@ function generateBlocksBoard() {
 				case 3:
 					n = 0;
 					blockGame = false;
+					gameDone = true;
 					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
+		}
+		case "girlfriendA": {
+			tileImages = girlfriendImages;
+			switch (caseStage) {
+				case 0:
+					target = 16;
+					n = 4;
+					document.getElementById("caseTotal").innerHTML = "4";
+					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Patients restrained. <br>Girlfriend identified as patient A, boyfriend identified as patient B.";
+				break;
+				case 1:
+					target = 44;
+					n = 5;
+					document.getElementById("modificationStatus").innerHTML = "Patients injected with aphrodisiac<br>Altering Patient A's ovaries and dominant tendencies increased.<br>Altering Patient B's prostate and submissive tendencies increased.";
+				break;
+				case 2:
+					target = 280;
+					n = 6;
+					document.getElementById("modificationStatus").innerHTML = "Patient B's prostate now at 300% sensitivity and size increased by 200%.<br>Patient B's anal rim transformed into erogenous zone.<br>Patient B's penis now at 1% sensitivity and size reduced by 80%.<br>Now altering Patient B's appearance, 'Fat Bottomed Bitch' template selected.<br>Changing self-identity to suit template.";
+				break;
+				case 3:
+					target = 372;
+					n = 7;
+					document.getElementById("modificationStatus").innerHTML = "Patient A's genetalia is now fully functioning penis. Orgasm prevented.<br>Penis length 4 inches. Orgasm prevented.<br>Penis length 6 inches. Orgasm prevented.<br>Penis length 8 inches. Orgasm prevented.<br>Sperm cells converted into addictive aphrodisiac. Orgasm prevented.";
+				break;
+				case 4:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "<b>Modification Plan Complete</b>";
 				break;
 			}
 			break;
@@ -192,14 +251,13 @@ function generateBlocksBoard() {
 	}
 	document.getElementById("score-target").innerHTML = target;
 	document.getElementById("caseStage").innerHTML = caseStage + 1;
-	document.getElementById("caseTotal").innerHTML = "3";
 	if (galleryCheck(tempScene) == true) {
 		document.getElementById("skipButton").innerHTML = "Skip Treatment";
 	}
 	else {
 		document.getElementById("skipButton").innerHTML = "";
 	}
-	if (caseStage == 3) {
+	if (gameDone == true) {
 		document.getElementById('blocksControlsTop').innerHTML = '';
 		document.getElementById('blocksControlsBottom').innerHTML = '';
 		document.getElementById("finishButton").innerHTML = "Finish Treatment";

@@ -34,7 +34,8 @@ var data = {
 }
 
 var galleryArray = [
-	{index: "wifeA", name: "Wife Treatment Plan A - Hypnosis",},
+	{index: "wifeA", name: "Wife Treatment Plan A - Modification",},
+	{index: "girlfriendA", name: "Girlfriend Treatment Plan A - Modification",},
 ]
 
 var characterArray = [
@@ -46,7 +47,13 @@ var characterArray = [
 	desc: "Subject's son is being bullied by schoolmates. Subject was not aware that this is a sexual satisfaction improvement services, and was under the impression, although she would not refer to her son as such, that this was a hospital for 'little bitches'.",},
 	{index: "nagger", fName: "Dakota", lName: "Skye", 
 	desc: "Subject is struggling to enjoy sexual relations without finding a healthy outlet for her dominant desires. While the subject's boyfriend is open to such play, she finds herself unable to engage properly.",},
-	{index: "girlfriend", fName: "Girlfriend", lName: "???", 
+	{index: "girlfriend", fName: "Kylie", lName: "Quinn", 
+	desc: "Subject is a housewife of middle age who suffers from a near nonexistent libido, which has caused a great deal of marital stress.",},
+	{index: "girlfriendPost", fName: "Kylie", lName: "Quinn", 
+	desc: "Subject is a housewife of middle age who suffers from a near nonexistent libido, which has caused a great deal of marital stress.",},
+	{index: "boyfriend", fName: "Michael", lName: "Vegas", 
+	desc: "Subject is a housewife of middle age who suffers from a near nonexistent libido, which has caused a great deal of marital stress.",},
+	{index: "boyfriendPost", fName: "Michelle", lName: "Vegas", 
 	desc: "Subject is a housewife of middle age who suffers from a near nonexistent libido, which has caused a great deal of marital stress.",},
 	{index: "shemale", fName: "Shemale", lName: "???", 
 	desc: "Subject suffers from severe anxiety over her nature as trans, preventing her from forming meaningful connections over a perceived fear of others becoming aware of her body.",},

@@ -111,6 +111,7 @@ V2
 		Card images
 		Enemy AI
 		Flipping cards
+		Diagonal cards - cards that have a number in one or more diagonal directions
 		Victory
 		Defeat
 		Restart
