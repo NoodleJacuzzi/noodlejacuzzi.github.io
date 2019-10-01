@@ -854,9 +854,14 @@ function writeEvent(scene) {
 			writeSpeech("kuro","","Hey! Sorry, but this isn't exactly the best time.");
 			writeText("She starts picking up speed, her grip tightening firmly around your shaft.");
 			writeText("When your precum starts getting smeared around, she starts moving even faster, stroking your sensitive head with every rise and fall.");
-			writeSpeech("kuro","","A guy, yeah.");
+			writeSpeech("kuro","","A "+data.player.gender+", yeah.");
 			writeText("Her eyes move to yours for a moment, her lips quirking up into a small smile.");
-			writeSpeech("kuro","","He's... a new guy at school. And he's not a bad size...");
+			if (data.player.gender == "man") {
+				writeSpeech("kuro","","He's... a new guy at school. And he's not a bad size...");
+			}
+			if (data.player.gender == "woman") {
+				writeSpeech("kuro","","She's... a new counselor at school. And she's not a bad size...");
+			}
 			writeText("Her eyes drift down as she says that, her lollipop rolling around in her mouth for a second.");
 			writeText("She changes her grip again, the sound of her jacking you off getting even louder.");
 			writeText("After a second, "+data.story[1].fName+" laughs.");
@@ -869,7 +874,12 @@ function writeEvent(scene) {
 			writeText("You try to keep your groan as quiet as possible, but you can still faintly hear something over her phone as you paint yourself and "+data.story[1].fName+"'s hand.");
 			writeSpeech("kuro","","Hah~! Oh my God, you are <i>such</i> a slut!");
 			writeText("Her hand has slowed to barely more than a crawl, milking the very last drops out before she raises her cum-covered hand and looks you in the eyes.");
+			if (data.player.gender == "man") {
 			writeSpeech("kuro","","One sec, gotta clean up real quick - his load was <i>huge.</i>");
+			}
+			if (data.player.gender == "woman") {
+			writeSpeech("kuro","","One sec, gotta clean up real quick - her load was <i>huge.</i>");
+			}
 			writeText("Maintaining eye-contact, she brings her hand to her mouth and rolls her lollipop around, exposing her slick, wet tongue as she laps up your jizz with a smirk.");
 			writeSpeech("kuro","","You know, hun...");
 			writeText("She leans forward, pulling the phone far enough away not to be overhead...");
@@ -879,7 +889,12 @@ function writeEvent(scene) {
 			writeText("She looks you over appraisingly.");
 			writeSpeech("kuro","","Maybe later, but for now?");
 			writeText("She gives you a saucy wink, moving for the door.");
+			if (data.player.gender == "man") {
 			writeSpeech("kuro","","He's <i>all</i> mine.");
+			}
+			if (data.player.gender == "woman") {
+			writeSpeech("kuro","","She's <i>all</i> mine.");
+			}
 			writeText("With surprising precision, she unlocks and opens the door just enough to slip through, the sound of it shutting almost immediately resounding.");
 			writeText("You are, in all honesty, a little spent. It actually takes you a moment to realize that she couldn't have locked it behind her, which you quickly jump up to fix.");
 			writeText("Still... That was one <i>Hell</i> of a handjob.");
@@ -922,7 +937,12 @@ function writeEvent(scene) {
 			writeSpeech("kuro","","So, how was it?");
 			writeSpeech("kuro","","Ah, you didn't... Well, that's fine.");
 			writeText("She smiles, raising her hand to her mouth again as she laps up some of your cum.");
+			if (data.player.gender == "man") {
 			writeSpeech("kuro","","It doesn't look like this guy has a problem with trying again some other time.");
+			}
+			if (data.player.gender == "woman") {
+			writeSpeech("kuro","","It doesn't look like this girl has a problem with trying again some other time.");
+			}
 			writeText("She double-checks her clothes for any leftover jizz on her before she gets up and leaves, winking to you just before slipping through the door.");
 			if (data.player.currentScene != 'gallery') {
 			if(data.story[1].trust < 22){
@@ -1083,7 +1103,7 @@ function writeEvent(scene) {
 			writeSpeech("tomgirl", "", "Mmph *slurp* Mm-mm!");
 			writeSpeech("player", "", "Hey don't feel too bad. Tell you what, since you wore something nice, you can go ahead and play with yourself as you blow me. I know you want to.");
 			writeBig("images/tomgirl/4-2.jpg", "Art by Nagi Ichi");
-			writeSpeech("tomgirl", "", "Mmmph...<i><br>Ignore him "+data.story[2].fName+", this is just a reflexive boner. Just keep him happy so he doesn't go any farther.<br>Any farther... With something like this...</i>");
+			writeSpeech("tomgirl", "", "Mmmph...<i><br>Ignore it "+data.story[2].fName+", this is just a reflexive boner. Just keep him happy so he doesn't go any farther.<br>Any farther... With something like this...</i>");
 			writeBig("images/tomgirl/4-3.jpg", "Art by Nagi Ichi");
 			writeSpeech("player", "", "Oh wow! Now that's the energy I like!");
 			writeText("He doesn't even seem to hear you, completely lost in trying to thrust you down his throat as far as he can manage. Which isn't that far, but points of enthusiasm.");
@@ -1276,9 +1296,9 @@ function writeEvent(scene) {
 			writeText("One look at the bulge in your pants is all she needs to see.");
 			writeText("...");
 			writeBig("images/chubby/1-3.jpg", "Art by Oreteki18kin");
-			writeSpeech("chubby", "", "Hmmhmm~ It's so warm and wet inside me, isn't it? Is it to your liking? I haven't had a"+data.player.gender+"in years, never someone like you, master.");
+			writeSpeech("chubby", "", "Hmmhmm~ It's so warm and wet inside me, isn't it? Is it to your liking? I haven't had a "+data.player.gender+" in years, never someone like you, master.");
 			writeSpeech("player", "", "You feel amazing, almost as tight as your daughter's pussy.");
-			writeSpeech("chubby", "", "So polite! But, you know how a"+data.player.gender+"like you shows his honesty, right? <br>Not~<br>With~<br>Words~");
+			writeSpeech("chubby", "", "So polite! But, you know how a "+data.player.gender+" like you shows his honesty, right? <br>Not~<br>With~<br>Words~");
 			writeText("Each word is punctuated with a gyration of her hips and a rhythmic clench of her pussy.");
 			writeSpeech("chubby", "", "You're so cute master, you've got such a dreamy look on your face. Will you cum inside me? Will you pump enough sperm inside me to make me cumdrunk?");
 			writeText("You can feel your balls clenching as you hear the front door opening and shutting after.");
@@ -2311,12 +2331,17 @@ function writeEncounter(n, scene) {
 				}
 				case "kuro2" : {//if you invite her to your office
 					writeText("She pauses for a second before smirking.");
-					writeSpeech("kuro","","Lead the way, Mr. Counselor~!");
+					if (data.player.gender == "man") {
+						writeSpeech("kuro","","Lead the way, Mr. Counselor~!");
+					}
+					if (data.player.gender == "woman") {
+						writeSpeech("kuro","","Lead the way, Ms. Counselor~!");
+					}
 					writeText("...");
 					writeText("When you arrive, she sits down casually, crossing her legs underneath her.");
 					writeSpeech("kuro","","So, what am I in for?");
 					writeSpeech("player","","I was curious about the shouting I heard, Miss...?");
-					writeSpeech("kuro","","Ah, just call me "+data.story[1].fName+"~! Most older guys do.");
+					writeSpeech("kuro","","Ah, just call me "+data.story[1].fName+"~! Most of the older guys do.");
 					writeText("You pause.");
 					writeSpeech("kuro","","As for the shouting, that was just that council guy getting on my case about my skirt again. He's <i>suuuper</i> strict about the length!");
 					writeText("She casually lifts the hem of her skirt, just barely hiding her panties.");
@@ -2392,8 +2417,8 @@ function writeEncounter(n, scene) {
 						writeText("When you arrive in your office, she smirks.");
 						writeSpeech("kuro","","Y'know, the last teacher that had me in their office almost seemed afraid to let the door close.");
 						writeText("She gently pushes it, letting it slowly inch shut as she plops down.");
-						writeFunction("writeEncounter('kuro', 'kuro3b')", "Stop the door from shutting");
 						writeFunction("writeEvent('kuro1')", "Let it close");
+						writeFunction("writeEncounter('kuro', 'kuro3b')", "Stop the door from shutting");
 						break;
 					}
 				}
@@ -2439,15 +2464,15 @@ function writeEncounter(n, scene) {
 						if(galleryCheck('kuro3') != true){
 							writeFunction("writeEvent('kuro3')", "Jerk off on her ($10)"); //REMOVE IF SEEN
 						}
-						// if(data.story[1].trust > 21){ // remove if seen
+						/if(data.story[1].trust > 21){ // remove if seen
 						// 	writeFunction("writeEvent('kuro4')", "Ask for a blowjob ($15)");
-						// }
-						//if(data.story[1].trust < 40){ // remove if seen
+						}
+						if(data.story[1].trust < 40){ // remove if seen
 							//writeFunction("writeEncounter('kuro', 'kuro4a')", "Ask about sex ($?)");
-						//}
-						//else{ // maybe || kuro4d not seen?
+						}
+						else{ // maybe || kuro4d not seen?
 							//writeFunction("writeEncounter('kuro', 'kuro4a')", "Have sex ($30)");
-						//}
+						}
 						writeTransition(data.player.currentScene, "Leave her be");
 						break;
 					}
@@ -3318,7 +3343,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("scarf", "", "Cleaning? You wanted the room to be... Ah, you must be trying to appeal to the principal. Fine. I'll have her clean up after me. I'll be keeping an eye on you. You wanted my sister yes? I could be entreated to... share, her. If you can entertain me.");
 					writeSpeech("player", "", "I take it that dicking you here wouldn't be enough?");
 					writeSpeech("scarf", "", "Such confidence~! But you are correct. I have a... refined, pallete. Bring me your conquests, and I might teach you some of the spells I've learned over the years.");
-					writeSpecial("You've earned "+data.story[10].fName+"'s attention! She can improve your hypnosis skills. Someday, you might be able to bring characters you've hypnotised to unlock new scenes!");
+					writeSpecial("You've earned "+data.story[12].fName+"'s attention! She can improve your hypnosis skills. Someday, you might be able to bring characters you've hypnotised to unlock new scenes!");
 					data.story[11].trust = 40;
 					data.story[12].trust = 40;
 					writeTransition(data.player.currentScene, "Finish");
@@ -4259,12 +4284,13 @@ function checkForEvents() {
 				if (tempScene == "street") {
 					if (data.player.time == "Evening") {
 						document.getElementById('output').innerHTML +=`
-						<div class = "textBox">
-						<img class = "textThumb" src = "scripts/gamefiles/profiles/meji2.jpg">
-						<p class = "textName">???</p>
-						<p> Status: Unknown</p>
-						<p class="switch" onclick="writeEncounter('meji', 'meji2')">You spot someone vaguely familiar...</p>
-						</div>
+						<div class = "textBox char_meji">
+							<img class = "textThumb" src = "scripts/gamefiles/profiles/meji2.jpg">
+							<div class="textBoxContent">
+							<p class = "textName">???</p>
+							<p class="status"> Status: Unknown</p>
+							<p class="switch" onclick="writeEncounter('meji', 'meji2')">You spot someone vaguely familiar...</p>
+						</div>	</div>
 						<br>
 						`;
 					}
