@@ -2464,7 +2464,7 @@ function writeEncounter(n, scene) {
 						if(galleryCheck('kuro3') != true){
 							writeFunction("writeEvent('kuro3')", "Jerk off on her ($10)"); //REMOVE IF SEEN
 						}
-						/if(data.story[1].trust > 21){ // remove if seen
+						if(data.story[1].trust > 21){ // remove if seen
 						// 	writeFunction("writeEvent('kuro4')", "Ask for a blowjob ($15)");
 						}
 						if(data.story[1].trust < 40){ // remove if seen
