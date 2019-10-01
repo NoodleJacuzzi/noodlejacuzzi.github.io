@@ -2442,12 +2442,12 @@ function writeEncounter(n, scene) {
 						// if(data.story[1].trust > 21){ // remove if seen
 						// 	writeFunction("writeEvent('kuro4')", "Ask for a blowjob ($15)");
 						// }
-						if(data.story[1].trust < 40){ // remove if seen
-							writeFunction("writeEncounter('kuro', 'kuro4a')", "Ask about sex ($?)");
-						}
-						else{ // maybe || kuro4d not seen?
-							writeFunction("writeEncounter('kuro', 'kuro4a')", "Have sex ($30)");
-						}
+						//if(data.story[1].trust < 40){ // remove if seen
+							//writeFunction("writeEncounter('kuro', 'kuro4a')", "Ask about sex ($?)");
+						//}
+						//else{ // maybe || kuro4d not seen?
+							//writeFunction("writeEncounter('kuro', 'kuro4a')", "Have sex ($30)");
+						//}
 						writeTransition(data.player.currentScene, "Leave her be");
 						break;
 					}
