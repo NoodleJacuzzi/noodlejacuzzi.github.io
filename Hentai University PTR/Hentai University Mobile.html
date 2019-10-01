@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hentai University</title>
+		<script src="scripts/index.js"></script>
+		<script src="scripts/sceneList.js"></script>
+		<link rel="stylesheet" type="text/css" href="scripts/mobile.css" />
+	</head>
+	<body onload ="startup()">
+		<div id = "menu" class = "menu">
+			<p id = "title" class = "title">Hentai University</p>
+			<p id = "title" class = "switch" onclick="window.location.href='https://noodlejacuzzi.github.io/index.html'">Noodle Jacuzzi</p>
+			<p id = "version" class = "version">V0.0</p>
+			<p id="invButton" class="switch" onclick="invButton()">INVENTORY</p>
+			<p id="phoneButton" class="switch" onclick="phoneButton()">PHONE</p>
+			<p id="logButton" class="switch" onclick="selfButton()">LOGBOOK</p>
+			<p id="saveButton" class="switch" onclick="saveButton()">SAVE/LOAD</p>
+			<p id="restartButton" class="switch" onclick="restartButton()">RESTART</p>
+			<p id="logButton" class="switch" onclick="disablePictures()">DISABLE IMAGES</p>
+			<p id="invButton" class="switch"  onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App%20Mobile.html'">MOBILE VERSION</p>
+			<img id="playerImage" class="playerImage" src="images/none.png">
+			<p id = "playerName" class = "version">???</p>
+			<p id = "playerMoney" class = "version">$0</p>
+			<p id = "day" class = "version">Day 1</p>
+			<p id = "skills" class = "version"><b>Skills:</b></p>
+			<p id = "playerHypnosis" class = "version">Hypnosis: 1</p>
+			<p id = "playerHacking" class = "version">Hacking: 1</p>
+			<p id = "playerCounseling" class = "version">Lockpicking: 1</p>
+		</div>
+		<div id = "wrapper" class = "wrapper">
+			<div id="wrapperBG"></div>
+			<div id = "output" class = "output" onclick = "hideStuff()">
+			<p class="choiceText" onclick="sceneTransition('start')">
+				Start the game
+			</p>
+			</div>
+			<div id="footer" class="footer">
+				<p id="saveButton" class="switch" onclick="saveButton()">SAVE/LOAD</p>
+				<p id="restartButton" class="switch" onclick="restartButton()">RESTART</p>
+				<p id="logButton" class="switch" onclick="disablePictures()">DISABLE IMAGES</p>
+				<p id="invButton" class="switch" onclick="invButton()">INVENTORY</p>
+				<p id="logButton" class="switch" onclick="selfButton()">LOGBOOK</p>
+				<p id="phoneButtonMobile" class="switch" onclick="phoneButton()">PHONE</p>
+			</div>
+			<div id = "inventory" class = "popup  inventory">
+				<h1 class = "windowTitle" onclick="invButton()">INVENTORY</h1>
+				<div class = "logbookLeft" id = "windowLeft">
+				</div>
+				<div class = "logbookRight" id = "windowRight">
+				</div>
+			</div>
+			<div id = "save" class = "popup save">
+				<h1 class = "windowTitle" onclick="saveButton()">SAVE/LOAD</h1>
+
+				<div class="saveList">
+				<div class = "saveSlot">
+					<p id = "save101Name" class = "saveName">Slot 1</p>
+					<p id = "save101Date" class = "saveDate">Jan 9th, 8:31</p>
+					<p id = "load101Button" class = "loadButton button" onclick = "loadSlot(101)"></p>
+					<p id = "delete101Button" class = "deleteButton button" onclick = "deleteSlot(101)"></p>
+					<p id = "save101Button" class = "saveButton button" onclick = "saveSlot(101)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save102Name" class = "saveName">Slot 2</p>
+					<p id = "save102Date" class = "saveDate"></p>
+					<p id = "load102Button" class = "loadButton button" onclick = "loadSlot(102)"></p>
+					<p id = "delete102Button" class = "deleteButton button" onclick = "deleteSlot(102)"></p>
+					<p id = "save102Button" class = "saveButton button" onclick = "saveSlot(102)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save103Name" class = "saveName">Slot 3</p>
+					<p id = "save103Date" class = "saveDate"></p>
+					<p id = "load103Button" class = "loadButton button" onclick = "loadSlot(103)"></p>
+					<p id = "delete103Button" class = "deleteButton button" onclick = "deleteSlot(103)"></p>
+					<p id = "save103Button" class = "saveButton button" onclick = "saveSlot(103)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save104Name" class = "saveName">Slot 4</p>
+					<p id = "save104Date" class = "saveDate"></p>
+					<p id = "load104Button" class = "loadButton button" onclick = "loadSlot(104)"></p>
+					<p id = "delete104Button" class = "deleteButton button" onclick = "deleteSlot(104)"></p>
+					<p id = "save104Button" class = "saveButton button" onclick = "saveSlot(104)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save105Name" class = "saveName">Slot 5</p>
+					<p id = "save105Date" class = "saveDate"></p>
+					<p id = "load105Button" class = "loadButton button" onclick = "loadSlot(105)"></p>
+					<p id = "delete105Button" class = "deleteButton button" button onclick = "deleteSlot(105)"></p>
+					<p id = "save105Button" class = "saveButton button" onclick = "saveSlot(105)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save106Name" class = "saveName">Slot 6</p>
+					<p id = "save106Date" class = "saveDate"></p>
+					<p id = "load106Button" class = "loadButton button" onclick = "loadSlot(106)"></p>
+					<p id = "delete106Button" class = "deleteButton button" onclick = "deleteSlot(106)"></p>
+					<p id = "save106Button" class = "saveButton button" onclick = "saveSlot(106)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save107Name" class = "saveName">Slot 7</p>
+					<p id = "save107Date" class = "saveDate"></p>
+					<p id = "load107Button" class = "loadButton button" onclick = "loadSlot(107)"></p>
+					<p id = "delete107Button" class = "deleteButton button" onclick = "deleteSlot(107)"></p>
+					<p id = "save107Button" class = "saveButton button" onclick = "saveSlot(107)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save108Name" class = "saveName">Slot 8</p>
+					<p id = "save108Date" class = "saveDate"></p>
+					<p id = "load108Button" class = "loadButton button" onclick = "loadSlot(108)"></p>
+					<p id = "delete108Button" class = "deleteButton button" onclick = "deleteSlot(108)"></p>
+					<p id = "save108Button" class = "saveButton button" onclick = "saveSlot(108)">SAVE</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save109Name" class = "saveName">Manual</p>
+					<p id = "save109Date" class = "saveDate"></p>
+					<p id = "load109Button" class = "loadFileButton button" onclick = "loadFile()">Load from text string</p>
+					<!-- <p id = "delete109Button" class = "deleteButton button" onclick = "deleteSlot(9)"></p> -->
+					<p id = "save109Button" class = "saveFileButton button" onclick = "saveFile()">Save to text string</p>
+				</div>
+			</div>
+
+			</div>
+			<div id = "self" class = "self popup">
+				<h1 class = "windowTitle" onclick="selfButton()">LOGBOOK</h1>
+				<div class = "logbookLeft" id = "logbookLeft">
+				</div>
+				<div class = "logbookRight" id = "logbookRight">
+				</div>
+			</div>
+			<div id = "phone" class = "popup self">
+				<h1 id = "phoneWindow" class = "windowTitle" onclick="phoneButton()">PHONE</h1>
+				<div class = "logbookLeft" id = "phoneLeft">
+				</div>
+				<div class = "logbookRight" id = "phoneRight">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

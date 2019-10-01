@@ -1,0 +1,86 @@
+Still need to do:
+	Transitions out of all encounters (COMPLETE)
+	Trust tracking for all encounters (COMPLETE)
+	Track unlocked scenes / total (COMPLETE)
+	Scenes in galleryArray (COMPLETE)
+	Tomgirl's event tabs (COMPLETE)
+	Mom's event tabs (COMPLETE)
+	Mom's phone events (COMPLETE)
+	Mom's phone triggers (COMPLETE)
+	Purchase beer (COMPLETE)
+	Purchase purple flower (COMPLETE)
+	All scenes unlocked phone message (COMPLETE)
+	Fix porn(COMPLETE)
+	Purple flower gift scene - leads to meditation(COMPLETE)
+Release:
+	Image pack(COMPLETE)
+	Upload to github(COMPLETE)
+	Upload to mega(COMPLETE)
+	Github section(COMPLETE)
+	Github sidebar(COMPLETE)
+	Github download(COMPLETE)
+	Patreon post(COMPLETE)
+	
+momPhone1
+	Right after getting her phone number. Just responding increases trust. You ask if she slept alright, and she says she hasn't slept that well in years. It was probably the booze though.
+					writePhoneSpeech("mom", "", "Hello. This is "+data.story[0].fName+".");
+					writePhoneChoices("Sleep well?", "Who?");
+momPhone1A
+momPhone2
+	Result of ignoring momPhone1, she's annoyed and asks for a response.
+momPhone3
+	These phone events each increase trust by 1, and can be skipped by triggering mom4.
+	She's been looking into horoscopes lately, she's a taurus. She asks what star sign you are, and gives a vague answer based on which one you pick.
+momPhone4
+	She talks about the beach, and thinks about going. You say she'd need a swimsuit and she sends a picture from her last visit. You ask who took the picture, and she goes silent.
+momPhone5
+	She apologizes for stopping so abruptly last time. You say it's no big deal, and you won't pry. You say that if she ever needs someone to talk to, you're there. She thanks you.
+momPhone6
+	She greets you, saying good morning. She notes that she's never actually asked what you do. You can either respond saying you're a school counselor or lie and say you're a federal agent.
+momPhone7
+	She says she'll be heading to Vintage Street in a bit to meet up with an old friend. She doesn't need company, but walking back might be a pain (and kind of lonely). She also says she'll need a beer, and you say you could bring one. This phone event does not clear itself so you can review it.
+	
+Kuro1
+	Meeting at the school entrance, morning. She's being accosted by a teacher for her attire, and makes a blowjob face at you. You note that this is a pretty regular occurrence, and can offer to take her to your office for some counseling. If you do, once inside, she notices you staring and offers to give you a handjob for money. You decline, saying maybe later. She gives you her phone number and offers her services, saying the roof is pretty secluded in the evening.
+Kuro2
+	She gives an unenthusiastic handjob while on the phone with someone. Optional, and can be triggered again later as roleplay.
+Kuro3
+	She lets you jerk off onto her while she's texting someone. Optional, and can be triggered again later as roleplay.
+Kuro4A
+	She lets you fuck her with a rubber on while she plays a game on your phone. Because of hypnotic commands to increase sensitivity the scene cuts to several hours later at the tail end of a long session. If you haven't finished her phone conversations this ends early.
+Kuro4B
+	An alternate version of Kuro4A where you have already gotten her "bad" scene, but have since finished her phone storyline. You fuck her with a rubber on as normal and the hypnotic commands kick in.
+Kuro5
+	She's really desperate to get a taste of you for some reason, as she's developed a taste for you as a result of hypnosis.
+Kuro6 
+	A full-day sex marathon
+	
+KuroPhone1
+	Leads to KuroPhone2 or KuroPhone3
+	
+KuroPhone2
+	Leads to KuroPhone3
+KuroPhone3
+	Leads to KuroPhone4 or KuroPhone5
+KuroPhone4
+	Leads to KuroPhone6
+KuroPhone5
+	Leads to KuroPhone6
+KuroPhone6
+	You send her a hypnosis image skipping her trust to get directly to Kuro4B
+	
+
+Chubby1
+	She welcomes you back in and the two of you talk over tea. She asks if purple is a bother, and you can either respond that working through her issues will take time (chubby1A) or that everything is going well (chubby1B)
+Chubby1A
+	She responds knowingly, saying that her father left her with quite a few issues. You can tell her you have a plan (+5 trust) or tell her that, while you will help, purple's future depends on a strong family relationship to fall back on (+10 trust).
+Chubby1B
+	She's glad purple is doing well, since purple's growing distant. You can either tell her you have a plan to help with that (+5 trust), or you can help her work out how to communicate more effectively with purple (+10 trust).
+Chubby2 (optional, only if 1 is failed)
+	She offers you tea again, and asks you to spend some time going over exactly what your plan is.
+Chubby3
+	She invites you to walk through town with her, and confides that she just doesn't know what to do. You can either comfort her emotionally (+5 trust) or you can offer hypnosis as a suggestion (+10 trust).
+Chubby4 (optional, only if 3 is failed)
+	She invites you in, apologizing for how she reacted before. She wants to become as good at emotional management as you, so you can offer to train her. At the end of the training, you offer hypnosis as a method to understand herself better.
+Chubby5
+	She's open to the idea of a full hypnosis session, and offers you free reign of her mind. This triggers her scene. If purple isn't corrupted, chubby gives you free reign to her daughter, allowing you to skip right to Purple's first scene.
