@@ -1373,7 +1373,7 @@ function writeEvent(scene) {
 			writeText("She doesn't bother waiting for a response.");
 			writeSpeech("maid","","Aaaaand... sent.");
 			writeText("She flops back casually against the couch, grabbing a box of tissues from beneath it and starting to wipe off her chest.");
-			writeSpeech("maid","","Hey, do you mind if I introduce the two of you later? She's wanted to spice things up with a guy for a while now.");
+			writeSpeech("maid","","Hey, do you mind if I introduce the two of you later? She's wanted to spice things up with a real dick for a while now.");
 			writeText("Feeling drained down to the last drop, you just nod.");
 			writeSpeech("maid","","Nice! Thanks so much, hun. You're a sweetie.");
 			writeText("She gives you a quick peck on the cheek.");
@@ -1403,7 +1403,7 @@ function writeEvent(scene) {
 			writeSpeech("mistress","","The coat stains a bit too easily.");
 			writeText("With that, she sits down on the couch and, with all of your knowledge of hypnotic counseling and sexual experience, it becomes clear...");
 			writeText("She has absolutely no idea what to do at this point.");
-			writeSpeech("player","","So, no offense meant, but... Is this your first time taking a guy home?");
+			writeSpeech("player","","So, no offense meant, but... Is this your first time taking someone home?");
 			writeText("She flushes.");
 			writeSpeech("mistress","","In my defense, I was really, <i>really</i> turned on.");
 			writeSpeech("player","","It's fine, don't worry about it. If you need to take some time to just relax a bit, just take it. It's not like getting a little stiff ever killed anyone.");
@@ -3389,7 +3389,7 @@ function writeEncounter(n, scene) {
 					writeText("She moves into the driver's seat, the engine coming to life.");
 					writeSpeech("player","","I'd say that's unnecesary, but I get the feeling that's the wrong answer. Instead, I'll just look forward to it.");
 					writeText("She laughs.");
-					writeSpeech("maid","","You're a smart man. I'll see you later, then.");
+					writeSpeech("maid","","You're a smart one. I'll see you later, then.");
 					writeText("With that, her car pulls out, leaving you alone.");
 					writeTransition(data.player.currentScene, "Go home");
 					data.story[5].trust = 20;
@@ -4107,7 +4107,7 @@ function checkForEvents() {
 				}
 				break;
 			}
-			case (data.story[1].trust >= 20 && data.story[1].trust < 22): { //level 3
+			case (data.story[1].trust >= 21 && data.story[1].trust < 23): { //level 3
 				if (tempScene == "roof") {
 					if (data.player.time == "Morning") {
 						writeTab ("kuro", "", "kuro4", data.story[1].fName+" is leaning against the fence.");
