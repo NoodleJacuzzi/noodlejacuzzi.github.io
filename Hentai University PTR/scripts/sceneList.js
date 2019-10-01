@@ -1009,7 +1009,7 @@ function writeEvent(scene) {
 			data.player.currentScene = "vintageStreet";
 			passTime();
 			writeTransition(data.player.currentScene, "Leave");
-			if(data.story[1].trust < 22){
+			if(data.story[1].trust < 24){
 				data.story[1].trust += 1;
 			}
 			}
@@ -2406,8 +2406,8 @@ function writeEncounter(n, scene) {
 						writeSpeech("kuro","","Lead the way, "+data.player.title+" Counselor.");
 						writeText("...");
 						writeText("When you arrive in your office, she casually bumps her hip against the door, pushing it.");
-						writeFunction("writeEncounter('kuro', 'kuro3b')", "Stop the door from shutting");
 						writeFunction("writeEvent('kuro1')", "Let it close");
+						writeFunction("writeEncounter('kuro', 'kuro3b')", "Stop the door from shutting");
 						break;
 					}
 					else{
