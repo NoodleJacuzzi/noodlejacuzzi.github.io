@@ -339,7 +339,7 @@ V0.0
 		Link to captain crypto greek in game's menu (COMPLETE)
 		Denote shared patreon (COMPLETE)
 		Link to captain crypto greek in start scene (COMPLETE)
-		Kuro texts
+		Kuro texts (COMPLETE)
 		Neet's encounters
 		Maid encounters
 		Maid placeholders

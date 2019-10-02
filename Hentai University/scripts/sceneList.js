@@ -2,30 +2,32 @@ function writeScene(scene) {
 	console.log("Now writing scene ID " + scene + ", the time is " + data.player.time);
 	switch(scene) {
 		case "start" : {
+			document.getElementById('playerImage').src = "scripts/gamefiles/none.png";
 			writeBig("scripts/gamefiles/logo2.png");
-			writeText("Hentai University is an adult game created by NoodleJacuuzi and Captain Cryptogreek. You can find and keep up with all NoodleJacuzzi's games, including Human Alteration App, Princess Quest, and Rainy DayZ at the master index here:");
-			writeFunction("creatorButton('noodle')", "Noodle Jacuzzi's Index");
-			writeText("You can find more of Captain Cryptogreek's work here:");
-			writeFunction("creatorButton('crypto')", "Captain Cryptogreek on Reddit");
-			writeText("This game is based (loosely) on the design of Hentai High School by Capta1n and the Hentai High School + project. However, there are no elements of school management. The smaller scale means it will be more feasible to complete than those games.");
+			writeText("Hentai University is an adult game created by NoodleJacuuzi and Captain Cryptogreek. You can find and keep up with all NoodleJacuzzi's games, including Human Alteration App, Princess Quest, and Rainy DayZ at the master index here: <a href='https://noodlejacuzzi.github.io/index.html'>Noodle Jacuzzi's Index</a>");
+			writeText("You can find more of Captain Cryptogreek's work here: <a href='https://www.reddit.com/user/CaptainCryptogreek'>Captain Cryptogreek on Reddit</a>");
+			writeText("This game is based (loosely) on the design of Hentai High School by Capta1n and the Hentai High School + project. However, there are no elements of school management or system of global corruption. The smaller scale means it will be more feasible to complete than either of those games.");
 			writeText("As a content warning, this game features hypnosis and dubious consent between partners, and mostly depicts straight M/F sex. There are several male characters who have scenes depicting undoubtably homosexual content, but they universally have a trap/twink bodytype and no specific character relationships are ever forced on the player. Finally, all characters are portrayed as being 18 or older. Every single character is a high-school graduate, and we currently don't intend to add any character who looks underage.");
 			writeText("If you'd like to avoid any specific fetishes, each character's logbook page lists the fetishes their scenes cover. Keep in mind that, as you are a hypnotist, hypnosis/mind control is so common we won't list it in the tags.");
-			writeTransition("prologue", "Start the game");
+			writeTransition("prologue", "Start the game as a man");
+			writeTransition("prologueAlt", "Start the game as a futanari");
+			writeText("<hr>");
 			writeText("Other notes:");
+			writeText("We're always open to comments or criticism. If you feel like school management would add a lot to the game, you'd like us to consider adding another artist, or you'd like to suggest content of your own, you can shoot us a message anywhere this game is posted. You can find the Patreon here: <a href='https://www.patreon.com/noodlejacuzzi'>Patreon Link</a><br>");
+			writeText("You can also send us a message directly. Noodlejacuzzi is on discord (NoodleJacuzzi#4120) or you can send an email at noodlejacuzzi@gmail.com");
+			writeText("Captain Cryptogreek can be messaged on his reddit account where he regularly posts captions. You can also shoot him an email if you'd like him to proofread or you'd like to commission his skills at cryptogreekcaptions@gmail.com");
+			writeText("Thank you to: Swallows999, MrManPerson, Lasse Bannow, ChronosEdge, brandon, Debarre Sonny, Drashin, iNoH8+, Mirza Hasan, murgatroid99, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Wild Bill, Will Osboldstone, and 凱 陳 for funding this game! The patreon funds are split as Captain Cryptogreek has taken over as lead writer for the game.");
+			writeSpecial("And special thanks to Stiggy752 for the game's new CSS!");
+			writeText("I've added the option to start as a futanari. This only changes your character's image and the pronouns used (so that you're ma'am instead of sir). Please let Noodle Jacuzzi know if anyone is still referring to your as 'sir' when inappropriate, thank you.");
 			writeText("The game is more freeform and slower paced than my previous works. If you get stuck, please let us know. There isn't currently a guide, but we can easily feature an FAQ here.");
 			writeText("You can click on the title of a window to close it. For example, if you click 'LOGBOOK' on the left (or bottom on mobile), you can close the new window by clicking anywhere in the 'LOGBOOK' section at the top.");
 			writeText("This game uses art by three artists. Enoshima Iki, Nagi Ichi, and Oreteki18kin. Hover over an image for the artist who created it. Check it out:");
 			writeMed("images/mom/profile.jpg", "Art by Enoshima Iki");
 			writeMed("images/tomgirl/profile.jpg", "Art by Nagi Ichi");
 			writeMed("images/purple/profile.jpg", "Art by Oreteki18kin");
-			writeText("All three of the artists who's works we've used have different styles, and all work is censored due to Japan's censorship laws. we don't ever intend to mix and match within scenes, but it is worth noting that each have their own appeal / flaws. Oreteki is a divisive artist due to his style of drawing labia lips, and Nagi Ichi's work is 90% M/M. If these features are a dealbreaker for you, consider simply avoiding characters by these artists.");
-			writeTransition("oretekiTest", "See a Oreteki18kin example <br>(LONG LABIA LIPS/FLAPS)");
+			writeText("All three of the artists who's works we've used have different styles, and all work is censored due to Japan's censorship laws. We don't ever intend to mix and match within scenes, but it is worth noting that each have their own appeal / flaws. Oreteki is a divisive artist due to his style of drawing labia lips, and Nagi Ichi's work is 90% M/M. If these features are a dealbreaker for you, consider simply avoiding characters by these artists.");
+			writeTransition("oretekiTest", "See an Oreteki18kin example <br>(LONG LABIA LIPS/FLAPS)");
 			writeTransition("nagiTest", "See a Nagi Ichi example <br>(AT LEAST 90% GAY)");
-			writeText("We're always open to comments or criticism. If you feel like school management would add a lot to the game, you'd like us to consider adding another artist, or you'd like to suggest content of your own, you can shoot us a message anywhere this game is posted. You can find the Patreon here:");
-			writeFunction("creatorButton('patreon')", "Patreon Link");
-			writeText("You can also send us a message directly. Noodlejacuzzi is on discord (NoodleJacuzzi#4120) or you can send an email at noodlejacuzzi@gmail.com");
-			writeText("Captain Cryptogreek can be messaged on his reddit account where he regularly posts captions. You can also shoot him an email if you'd like him to proofread or you'd like to commission his skills at cryptogreekcaptions@gmail.com");
-			writeText("Thank you to: Swallows999, MrManPerson, Lasse Bannow, ChronosEdge, brandon, Debarre Sonny, Drashin, iNoH8+, Mirza Hasan, murgatroid99, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Wild Bill, Will Osboldstone, and 凱 陳 for funding this game! The patreon funds are split as captain Cryptogreek has taken over as lead writer for the game.");
 			break;
 		}
 		case "prologue": {
@@ -38,8 +40,27 @@ function writeScene(scene) {
 			writeFunction("renamePlayer()", "Finish reading the paper");
 			break;
 		}
+		case "prologueAlt": {
+			data.player.gender = "woman";
+			data.player.title = "Miss";
+			data.player.honorific = "ma'am";
+			if (checkBody("basil") != true) {
+				var goof = {index: "basil", artist: "Art by Ishimura",};
+				data.bodytypes.push(goof);
+			}
+			var pepsi = data.bodytypes.length-1;
+			changeBody(pepsi);
+			writeText("Dear <input type='text' id='nameSubmission' value='Tomara'>");
+			writeText("It is with immense pleasure that I write to inform you today of your successful acceptance into the role of school counselor.");
+			writeText("Due to a variety of reasons, few women of your background have ever been considered for a position here, but your outstanding collection of references and qualifications have  made it clear that you belong here.");
+			writeText("I am told that you have already finished the moving process. The dedication required to uproot yourself will not be taken lightly.");
+			writeText("I have no doubt that the lives of our students will improve with the addition of a full time counselor, and I very much look forwards to meeting you.");
+			writeText("- Yours, Principal "+data.story[8].fName+".");
+			writeFunction("renamePlayer()", "Finish reading the paper");
+			break;
+		}
 		case "prologue2": {
-			writeBig("scripts/gamefiles/characters/basic.jpg", "Art by Ishimura");
+			writeBig("scripts/gamefiles/characters/"+data.player.character+".jpg", "Art by Ishimura");
 			writeText("You are " + data.player.name + ", amateur hypnotist.");
 			writeText("The time spent collecting and hypnotizing references almost wasn't worth it, especially with how long faking your credentials took. But it paid off in the end.");
 			writeText("Today you'll be sliding right into your new position as a school counselor. Your direct supervisor is well under your control, so you have completely free range for as long as you play it safe.");
@@ -128,9 +149,32 @@ function writeScene(scene) {
 			writeTransition("playerHouse", "Cancel and leave");
 			break;
 		}
-		//Characters
-		case "mom": {
-			writeTransition("start", "Go back");
+		case "paperwork": {
+			writeText("You can do paperwork here, earning some quick overtime cash based on your Counseling skill. Would you like to spend a few hours doing that?");
+			writeTransition("filing", "Yes");
+			writeTransition("playerOffice", "No");
+			break;
+		}
+		case "filing": {
+			var moneyMade = 5 + data.player.counseling;
+			if (data.player.currentScene != scene) {
+				passTime();
+				data.player.money += moneyMade;
+				updateMenu();
+			}
+			writeText("You spent some time doing paperwork. It's a slow and boring job, but money is money after all.");
+			writeSpecial("You earned $" + moneyMade + "!");
+			if (data.player.time != "Night") {
+				writeTransition("playerOffice", "Finish up");
+			}
+			else {
+				writeTransition("playerHouse", "It's getting late, head home");
+			}
+			break;
+		}
+		case "hypnosisTutor": {
+			writeText("Testing one two three");
+			writeTransition("playerHouse", "Go back home");
 			break;
 		}
 		//Sandbox
@@ -138,6 +182,7 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -168,6 +213,8 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -190,6 +237,7 @@ function writeScene(scene) {
 			if (imagesDisabled != true) {
 				switch (data.player.time) {
 					case "Morning": {
+						document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 						document.getElementById('output').innerHTML += `
 							<div class="playerRoom">
 								<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -212,13 +260,14 @@ function writeScene(scene) {
 						break;
 					}
 					case "Evening": {
+						document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 						document.getElementById('output').innerHTML += `
 							<div class="playerRoom">
 								<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
-								<div class="pictureButton" onclick="listTextbooks()"
-								style="top: 20%; left: 72%; max-width: 25%;">Read a Book</div>
 								<div class="pictureButton" onclick="sceneTransition('gameConsole')"
 								style="top: 54%; left: 79%; max-width: 20%;">Game Console</div>
+								<div class="pictureButton" onclick="listTextbooks()"
+								style="top: 20%; left: 72%; max-width: 25%;">Read a Book</div>
 								<div class="pictureButton" onclick="sceneTransition('wardrobe')"
 								style="top: 62%; left: 1%; max-width: 25%;">Wardrobe</div>
 								<div class="pictureButton" onclick="sceneTransition('laptop')"
@@ -234,6 +283,8 @@ function writeScene(scene) {
 						break;
 					}
 					case "Night": {
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 						document.getElementById('output').innerHTML += `
 							<div class="playerRoom">
 								<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -278,6 +329,8 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -304,7 +357,10 @@ function writeScene(scene) {
 		case "northHallway": {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
+
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -332,6 +388,8 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -359,6 +417,8 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -386,6 +446,8 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -429,6 +491,8 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -447,6 +511,8 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -465,6 +531,7 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -483,6 +550,8 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -501,6 +570,8 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -519,6 +590,8 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -537,6 +610,8 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -555,6 +630,8 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -573,6 +650,8 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -591,6 +670,8 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -609,6 +690,8 @@ function writeScene(scene) {
 			//writeBG(scene);
 			if (imagesDisabled != true) {
 				var bg = "images/locations/" + scene + data.player.time + ".jpg";
+				
+				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 				document.getElementById('output').innerHTML += `
 					<div class="playerRoom">
 						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
@@ -622,34 +705,6 @@ function writeScene(scene) {
 			if (imagesDisabled == true) {
 				writeTransition("street", "Head into town");
 			}
-			break;
-		}
-		case "paperwork": {
-			writeText("You can do paperwork here, earning some quick overtime cash based on your Counseling skill. Would you like to spend a few hours doing that?");
-			writeTransition("filing", "Yes");
-			writeTransition("playerOffice", "No");
-			break;
-		}
-		case "filing": {
-			var moneyMade = 5 + data.player.counseling;
-			if (data.player.currentScene != scene) {
-				passTime();
-				data.player.money += moneyMade;
-				updateMenu();
-			}
-			writeText("You spent some time doing paperwork. It's a slow and boring job, but money is money after all.");
-			writeSpecial("You earned $" + moneyMade + "!");
-			if (data.player.time != "Night") {
-				writeTransition("playerOffice", "Finish up");
-			}
-			else {
-				writeTransition("playerHouse", "It's getting late, head home");
-			}
-			break;
-		}
-		case "hypnosisTutor": {
-			writeText("Testing one two three");
-			writeTransition("playerHouse", "Go back home");
 			break;
 		}
 		default: {
@@ -799,9 +854,14 @@ function writeEvent(scene) {
 			writeSpeech("kuro","","Hey! Sorry, but this isn't exactly the best time.");
 			writeText("She starts picking up speed, her grip tightening firmly around your shaft.");
 			writeText("When your precum starts getting smeared around, she starts moving even faster, stroking your sensitive head with every rise and fall.");
-			writeSpeech("kuro","","A guy, yeah.");
+			writeSpeech("kuro","","A "+data.player.gender+", yeah.");
 			writeText("Her eyes move to yours for a moment, her lips quirking up into a small smile.");
-			writeSpeech("kuro","","He's... a new guy at school. And he's not a bad size...");
+			if (data.player.gender == "man") {
+				writeSpeech("kuro","","He's... a new guy at school. And he's not a bad size...");
+			}
+			if (data.player.gender == "woman") {
+				writeSpeech("kuro","","She's... a new counselor at school. And she's not a bad size...");
+			}
 			writeText("Her eyes drift down as she says that, her lollipop rolling around in her mouth for a second.");
 			writeText("She changes her grip again, the sound of her jacking you off getting even louder.");
 			writeText("After a second, "+data.story[1].fName+" laughs.");
@@ -814,7 +874,12 @@ function writeEvent(scene) {
 			writeText("You try to keep your groan as quiet as possible, but you can still faintly hear something over her phone as you paint yourself and "+data.story[1].fName+"'s hand.");
 			writeSpeech("kuro","","Hah~! Oh my God, you are <i>such</i> a slut!");
 			writeText("Her hand has slowed to barely more than a crawl, milking the very last drops out before she raises her cum-covered hand and looks you in the eyes.");
+			if (data.player.gender == "man") {
 			writeSpeech("kuro","","One sec, gotta clean up real quick - his load was <i>huge.</i>");
+			}
+			if (data.player.gender == "woman") {
+			writeSpeech("kuro","","One sec, gotta clean up real quick - her load was <i>huge.</i>");
+			}
 			writeText("Maintaining eye-contact, she brings her hand to her mouth and rolls her lollipop around, exposing her slick, wet tongue as she laps up your jizz with a smirk.");
 			writeSpeech("kuro","","You know, hun...");
 			writeText("She leans forward, pulling the phone far enough away not to be overhead...");
@@ -824,7 +889,12 @@ function writeEvent(scene) {
 			writeText("She looks you over appraisingly.");
 			writeSpeech("kuro","","Maybe later, but for now?");
 			writeText("She gives you a saucy wink, moving for the door.");
+			if (data.player.gender == "man") {
 			writeSpeech("kuro","","He's <i>all</i> mine.");
+			}
+			if (data.player.gender == "woman") {
+			writeSpeech("kuro","","She's <i>all</i> mine.");
+			}
 			writeText("With surprising precision, she unlocks and opens the door just enough to slip through, the sound of it shutting almost immediately resounding.");
 			writeText("You are, in all honesty, a little spent. It actually takes you a moment to realize that she couldn't have locked it behind her, which you quickly jump up to fix.");
 			writeText("Still... That was one <i>Hell</i> of a handjob.");
@@ -867,7 +937,12 @@ function writeEvent(scene) {
 			writeSpeech("kuro","","So, how was it?");
 			writeSpeech("kuro","","Ah, you didn't... Well, that's fine.");
 			writeText("She smiles, raising her hand to her mouth again as she laps up some of your cum.");
+			if (data.player.gender == "man") {
 			writeSpeech("kuro","","It doesn't look like this guy has a problem with trying again some other time.");
+			}
+			if (data.player.gender == "woman") {
+			writeSpeech("kuro","","It doesn't look like this girl has a problem with trying again some other time.");
+			}
 			writeText("She double-checks her clothes for any leftover jizz on her before she gets up and leaves, winking to you just before slipping through the door.");
 			if (data.player.currentScene != 'gallery') {
 			if(data.story[1].trust < 22){
@@ -925,16 +1000,17 @@ function writeEvent(scene) {
 			writeText("She pauses, before shrugging.");
 			writeSpeech("kuro","","Sure, knock yourself out.");
 			if(data.player.hacking == 0){
-				writeText("With that, she walks out of sight, leaving you to get your clothes on and start thinking about what you'll need for a bit of <i>digital</i> hypnosis. Maybe there's someone at school who's better with computers...?");
+				//writeText("With that, she walks out of sight, leaving you to get your clothes on and start thinking about what you'll need for a bit of <i>digital</i> hypnosis. Maybe there's someone at school who's better with computers...?");
 			}
 			else{
-				writeText("With that, she walks out of sight. Considering your skill with digital devices, it shouldn't be too hard to put something together that'll <i>really</i> catch her attention...");
+				//writeText("With that, she walks out of sight. Considering your skill with digital devices, it shouldn't be too hard to put something together that'll <i>really</i> catch her attention...");
 			}
+			writeText("You have an idea, but no idea how to pull it off. Maybe inspiration will strike you later? For now, you're finished.");
 			if (data.player.currentScene != 'gallery') {
 			data.player.currentScene = "vintageStreet";
 			passTime();
 			writeTransition(data.player.currentScene, "Leave");
-			if(data.story[1].trust < 22){
+			if(data.story[1].trust < 24){
 				data.story[1].trust += 1;
 			}
 			}
@@ -1028,7 +1104,7 @@ function writeEvent(scene) {
 			writeSpeech("tomgirl", "", "Mmph *slurp* Mm-mm!");
 			writeSpeech("player", "", "Hey don't feel too bad. Tell you what, since you wore something nice, you can go ahead and play with yourself as you blow me. I know you want to.");
 			writeBig("images/tomgirl/4-2.jpg", "Art by Nagi Ichi");
-			writeSpeech("tomgirl", "", "Mmmph...<i><br>Ignore him "+data.story[2].fName+", this is just a reflexive boner. Just keep him happy so he doesn't go any farther.<br>Any farther... With something like this...</i>");
+			writeSpeech("tomgirl", "", "Mmmph...<i><br>Ignore it "+data.story[2].fName+", this is just a reflexive boner. Just keep him happy so he doesn't go any farther.<br>Any farther... With something like this...</i>");
 			writeBig("images/tomgirl/4-3.jpg", "Art by Nagi Ichi");
 			writeSpeech("player", "", "Oh wow! Now that's the energy I like!");
 			writeText("He doesn't even seem to hear you, completely lost in trying to thrust you down his throat as far as he can manage. Which isn't that far, but points of enthusiasm.");
@@ -1109,7 +1185,7 @@ function writeEvent(scene) {
 			writeSpeech("tomgirl", "", "Cumming... I'm cumming again~...");
 			writeText("His dick twitches and bobs, dryly cumming for the fourth time.");
 			writeSpeech("player", "", "You're mine now. You'll never have a normal life again.");
-			writeSpeech("tomgirl", "", "Y-yes sir~!");
+			writeSpeech("tomgirl", "", "Y-yes "+data.player.honorific+"~!");
 			writeText("The two of you go for a few more rounds before you cum inside his ass. You let him fall onto the bed, twitching and broken.");
 			writeText("With him completely broken, he'll probably take a break from school for now. Once he comes back, he'll be a completely different 'man'.");
 			data.story[2].trust = 100;
@@ -1221,9 +1297,9 @@ function writeEvent(scene) {
 			writeText("One look at the bulge in your pants is all she needs to see.");
 			writeText("...");
 			writeBig("images/chubby/1-3.jpg", "Art by Oreteki18kin");
-			writeSpeech("chubby", "", "Hmmhmm~ It's so warm and wet inside me, isn't it? Is it to your liking? I haven't had a man in years, never someone like you, master.");
+			writeSpeech("chubby", "", "Hmmhmm~ It's so warm and wet inside me, isn't it? Is it to your liking? I haven't had a "+data.player.gender+" in years, never someone like you, master.");
 			writeSpeech("player", "", "You feel amazing, almost as tight as your daughter's pussy.");
-			writeSpeech("chubby", "", "So polite! But, you know how a man like you shows his honesty, right? <br>Not~<br>With~<br>Words~");
+			writeSpeech("chubby", "", "So polite! But, you know how a "+data.player.gender+" like you shows his honesty, right? <br>Not~<br>With~<br>Words~");
 			writeText("Each word is punctuated with a gyration of her hips and a rhythmic clench of her pussy.");
 			writeSpeech("chubby", "", "You're so cute master, you've got such a dreamy look on your face. Will you cum inside me? Will you pump enough sperm inside me to make me cumdrunk?");
 			writeText("You can feel your balls clenching as you hear the front door opening and shutting after.");
@@ -1298,7 +1374,7 @@ function writeEvent(scene) {
 			writeText("She doesn't bother waiting for a response.");
 			writeSpeech("maid","","Aaaaand... sent.");
 			writeText("She flops back casually against the couch, grabbing a box of tissues from beneath it and starting to wipe off her chest.");
-			writeSpeech("maid","","Hey, do you mind if I introduce the two of you later? She's wanted to spice things up with a guy for a while now.");
+			writeSpeech("maid","","Hey, do you mind if I introduce the two of you later? She's wanted to spice things up with a real dick for a while now.");
 			writeText("Feeling drained down to the last drop, you just nod.");
 			writeSpeech("maid","","Nice! Thanks so much, hun. You're a sweetie.");
 			writeText("She gives you a quick peck on the cheek.");
@@ -1328,7 +1404,7 @@ function writeEvent(scene) {
 			writeSpeech("mistress","","The coat stains a bit too easily.");
 			writeText("With that, she sits down on the couch and, with all of your knowledge of hypnotic counseling and sexual experience, it becomes clear...");
 			writeText("She has absolutely no idea what to do at this point.");
-			writeSpeech("player","","So, no offense meant, but... Is this your first time taking a guy home?");
+			writeSpeech("player","","So, no offense meant, but... Is this your first time taking someone home?");
 			writeText("She flushes.");
 			writeSpeech("mistress","","In my defense, I was really, <i>really</i> turned on.");
 			writeSpeech("player","","It's fine, don't worry about it. If you need to take some time to just relax a bit, just take it. It's not like getting a little stiff ever killed anyone.");
@@ -1417,7 +1493,7 @@ function writeEvent(scene) {
 			writeSpeech("player","","Hm... This might shock him out of it, but...");
 			writeText("You carefully start pushing your finger into him, and you notice his eyes starting to open.");
 			writeBig("images/meji/3-1.jpg", "Art by Nagi Ichi");
-			writeSpeech("meji","","Haa... Ah...? S-Sir, what is...");
+			writeSpeech("meji","","Haa... Ah...? S-"+data.player.honorific+", what is...");
 			writeText("Shame starts to flood his face, but you push your finger a bit deeper and...");
 			writeSpeech("meji","","<i>N-Nn~...!</i>");
 			writeText("The rapid clenching of his ass almost feels like it's sucking on you, "+data.story[7].fName+ "hanging his head a bit.");
@@ -1471,7 +1547,7 @@ function writeEvent(scene) {
 			writeText("It gives you time to clean up, at least...");
 			writeText("...");
 			writeText("After he recovers a bit, you pull him out of trance - he's still a bit out of it, of course, but when you tell him you'll be calling him back in sometime soon, you see him shudder in pleasure.");
-			writeSpeech("meji","","T-Thank you, sir~...!");
+			writeSpeech("meji","","T-Thank you, "+data.player.honorific+"~...!");
 			writeText("As he leaves, you can't help but wonder if he'll be as thankful when he's back to normal and can't feel his hand when he touches his dick...");
 			if (data.player.currentScene != 'gallery') {
 				data.player.currentScene = 'playerOffice';
@@ -1534,7 +1610,7 @@ function writeEvent(scene) {
 			writeSpeech("meji","","Yes!");
 			writeText("Every 'yes' has him breathing deeper, has him squirming more and more.");
 			writeSpeech("player","","Yes <i>what?</i>");
-			writeSpeech("meji","","<i>Y-Yes, sir~!</i>");
+			writeSpeech("meji","","<i>Y-Yes, "+data.player.honorific+"~!</i>");
 			writeText("You grin, picking up speed.");
 			writeBig("images/meji/4-2.jpg","Art by Nagi Ichi");
 			writeSpeech("player","","You know what you are, don't you?");
@@ -1554,7 +1630,7 @@ function writeEvent(scene) {
 			writeText("You swing your hand down, slapping his ass as his entire body tightens, a quiet moan escaping his lips.");
 			writeSpeech("player","","And each time we fuck, it'll get <i>better</i> and <i>better</i> until eventually...");
 			writeSpeech("player","","You can start spurting without ever even <i>needing</i> to touch that dick of yours. <i>Is that clear?</i>");
-			writeSpeech("meji","","<i>Y-Yes...<b> sir~...!</b></i>");
+			writeSpeech("meji","","<i>Y-Yes...<b> "+data.player.honorific+"~...!</b></i>");
 			writeText("You give him another, gentler slap on the ass.");
 			writeSpeech("player","","Good girl...");
 			writeText("...");
@@ -1597,7 +1673,7 @@ function writeEvent(scene) {
 			writeSpeech("meji","","I, um... I didn't want to get caught, so I thought if I got myself ready earlier-");
 			writeText("A loud slap across his ass turns his words into a throaty moan.");
 			writeSpeech("player","","You really <i>are</i> a good little bitch.");
-			writeSpeech("meji","","...Thank you, sir~.");
+			writeSpeech("meji","","...Thank you, "+data.player.honorific+"~.");
 			writeText("At that, though, you quickly strip and grab something from your bag.");
 			writeText("There's no way in Hell that the tubing would work for his legs, but it's obvious how much he enjoys being bound, so...");
 			writeText("He tenses at the sound of the tape being pulled, but he holds still as you wrap it around his smoothly shaved legs.");
@@ -1632,7 +1708,7 @@ function writeEvent(scene) {
 			writeBig("images/meji/5-4.jpg");
 			writeText("More of it spills out than you intended, but the rapid tensing of "+data.story[7].fName+"'s ass keeps a lot of it in place.");
 			writeText("He manages to stay upright this time, even as you slide the leotard over his spasming asshole.");
-			writeSpeech("meji","","Th-Thank you... sir...");
+			writeSpeech("meji","","Th-Thank you... "+data.player.honorific+"...");
 			writeText("You give him one last swat to the ass, relishing the hitched breathing and spasming as he goes limp.");
 			writeText("Just before he does, though, you spot a single bead of cum beneath him, separate from the rest.");
 			writeText("He didn't orgasm, but he got close. One more time, and he might actually come from just anal...");
@@ -1656,7 +1732,7 @@ function writeEvent(scene) {
 			document.getElementById('output').innerHTML = '';
 			writeSpeech("player","","You seem like you had fun last time.");
 			writeText(data.story[7].fName+" stands up a bit straighter, nodding.");
-			writeSpeech("meji","","A <i>lot</i> of fun, sir. I, um... actually would've liked to keep going, but...");
+			writeSpeech("meji","","A <i>lot</i> of fun, "+data.player.honorific+". I, um... actually would've liked to keep going, but...");
 			writeSpeech("player","","You didn't want to get seen?");
 			writeText("He slowly nods, shyly looking to the side.");
 			writeSpeech("meji","","Yeah. I didn't want you to get caught and lose your job, or... worse.");
@@ -1667,12 +1743,12 @@ function writeEvent(scene) {
 			writeText("You step closer to him, his voice squeaking as you do.");
 			writeSpeech("player","","<i>Now.</i>");
 			writeText("He stiffens.");
-			writeSpeech("meji","","Yes, sir~");
+			writeSpeech("meji","","Yes, "+data.player.honorific+"~");
 			writeText("...");
 			writeText("The moment his front door is shut, he starts pulling off his male uniform, revealing the leotard beneath.");
 			writeText("You start stripping as well, barely taking in the general lack of decoration. The moment your pants are off, "+data.story[7].fName+" leads you by the hand to a large living-room.");
 			writeText("As he turns to face you, smiling wide, you can see the twitching outline of his cock as his eyes drift down to yours.");
-			writeSpeech("meji","","How do you want me, sir~?");
+			writeSpeech("meji","","How do you want me, "+data.player.honorific+"~?");
 			writeText("You think for a moment...");
 			writeSpeech("player","","This time... You choose.");
 			writeText("He pauses for a moment.");
@@ -1685,7 +1761,7 @@ function writeEvent(scene) {
 			writeSpeech("player","","Fuck...!");
 			writeText("Hearing that, "+data.story[7].fName+" starts rotating and grinding his hips against you with a smile, relishing in the feeling of your half-hard cock growing to full mast.");
 			writeText("He slowly lifts himself up, sliding the leotard to the side to expose his pink, well-fucked hole.");
-			writeSpeech("meji","","A-Are you ready, sir?");
+			writeSpeech("meji","","A-Are you ready, "+data.player.honorific+"?");
 			writeSpeech("player","",data.story[7].fName+", I was ready to bend you over in an alley and <i>fuck you sense-</i>");
 			writeText("He immediately drops his full body weight down, swallowing your cock balls-deep in one smooth motion and shutting you up completely.");
 			writeBig("images/meji/6-1.jpg", "Art by Nagi Ichi");
@@ -1702,12 +1778,12 @@ function writeEvent(scene) {
 			writeText("He slows, almost to a stop, and brings his hand to his stomach, ignoring his cock completely.");
 			writeSpeech("meji","","Fucking me senseless one day, and then turning around and leaving me to fill myself up with some plastic toy... And then you let <i>me</i> choose how today goes?");
 			writeText("Without even moving, you can feel his ass start tightening rhythmically around you, rapidly milking your length as you see the muscles in his abs rapidly tighten along with it.");
-			writeSpeech("meji","","This is your fault, <i><b>sir,</b></i>, and the only way to make up for it is to <i>draing your balls inside of me <b>down to the last drop.</b></i>");
+			writeSpeech("meji","","This is your fault, <i><b>"+data.player.honorific+",</b></i>, and the only way to make up for it is to <i>draing your balls inside of me <b>down to the last drop.</b></i>");
 			writeText("You open your mouth to reply, but he quickly starts bouncing again, the tightening only speeding up, and you feel yourself lose it.");
 			writeBig("images/meji/6-2.jpg", "Art by Nagi Ichi");
 			writeSpeech("meji","","F-Fuck, it's hot...!");
 			writeText("He slows down just a bit, adjusting his position before grinning.");
-			writeSpeech("meji","","S-So... Let's see how many shots you have in you. Are you ready, <i><b>sir~?</b></i>");
+			writeSpeech("meji","","S-So... Let's see how many shots you have in you. Are you ready, <i><b>"+data.player.honorific+"~?</b></i>");
 			writeText("...");
 			writeText("You didn't even bother trying to track of how long you two fucked.");
 			writeText("You'd changed positions a few times, but it always came back to cowgirl and, as you're finally starting to flag, you feel it.");
@@ -2256,12 +2332,17 @@ function writeEncounter(n, scene) {
 				}
 				case "kuro2" : {//if you invite her to your office
 					writeText("She pauses for a second before smirking.");
-					writeSpeech("kuro","","Lead the way, Mr. Counselor~!");
+					if (data.player.gender == "man") {
+						writeSpeech("kuro","","Lead the way, Mr. Counselor~!");
+					}
+					if (data.player.gender == "woman") {
+						writeSpeech("kuro","","Lead the way, Ms. Counselor~!");
+					}
 					writeText("...");
 					writeText("When you arrive, she sits down casually, crossing her legs underneath her.");
 					writeSpeech("kuro","","So, what am I in for?");
 					writeSpeech("player","","I was curious about the shouting I heard, Miss...?");
-					writeSpeech("kuro","","Ah, just call me "+data.story[1].fName+"~! Most older guys do.");
+					writeSpeech("kuro","","Ah, just call me "+data.story[1].fName+"~! Most of the older guys do.");
 					writeText("You pause.");
 					writeSpeech("kuro","","As for the shouting, that was just that council guy getting on my case about my skirt again. He's <i>suuuper</i> strict about the length!");
 					writeText("She casually lifts the hem of her skirt, just barely hiding her panties.");
@@ -2283,7 +2364,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("kuro","","Right, right! That guy really oughtta learn to relax, and <i>open up</i> to new ideas, y'know?");
 					writeText("She lets go of her skirt's hem, but not before pulling it taut for just an instant.");
 					writeText("Blue with black fringe, huh? It's a pretty good combination.");
-					writeSpeech("kuro","","You seem like a pretty... <i>open</i> guy, Mister Counselor. If you're ever up for seeing how open <i>I</i> can be... Well, I like to hang our on the roof.");
+					writeSpeech("kuro","","You seem like a pretty... <i>open</i> guy, "+data.player.title+" Counselor. If you're ever up for seeing how open <i>I</i> can be... Well, I like to hang out on the roof.");
 					writeText("She walks past you, starting to whistle innocently as you feel her finger brush gently against your hip.");
 					writeText("You get the feeling that this could turn out pretty fun, if you play your cards right.");
 					data.player.currentScene = "playerOffice";
@@ -2323,22 +2404,22 @@ function writeEncounter(n, scene) {
 				case "kuro3a" : {
 					if(data.story[1].trust == 3){
 						writeSpeech("kuro","","Mm. Maybe this time, we'll make ourselves a little more comfortable?");
-						writeSpeech("kuro","","Lead the way, Mister Counselor.");
+						writeSpeech("kuro","","Lead the way, "+data.player.title+" Counselor.");
 						writeText("...");
 						writeText("When you arrive in your office, she casually bumps her hip against the door, pushing it.");
-						writeFunction("writeEncounter('kuro', 'kuro3b')", "Stop the door from shutting");
 						writeFunction("writeEvent('kuro1')", "Let it close");
+						writeFunction("writeEncounter('kuro', 'kuro3b')", "Stop the door from shutting");
 						break;
 					}
 					else{
 						writeSpeech("kuro","","Taking charge early, huh? I can't say I dislike it~!");
-						writeSpeech("kuro","","Lead the way, Mister Counselor!");
+						writeSpeech("kuro","","Lead the way, "+data.player.title+" Counselor!");
 						writeText("...");
 						writeText("When you arrive in your office, she smirks.");
 						writeSpeech("kuro","","Y'know, the last teacher that had me in their office almost seemed afraid to let the door close.");
 						writeText("She gently pushes it, letting it slowly inch shut as she plops down.");
-						writeFunction("writeEncounter('kuro', 'kuro3b')", "Stop the door from shutting");
 						writeFunction("writeEvent('kuro1')", "Let it close");
+						writeFunction("writeEncounter('kuro', 'kuro3b')", "Stop the door from shutting");
 						break;
 					}
 				}
@@ -2346,7 +2427,7 @@ function writeEncounter(n, scene) {
 				case "kuro3b" : {
 					if(data.story[1].trust == 3){
 						writeText("She sighs, shaking her head.");
-						writeSpeech("kuro","","I might like playing around, but this isn't my kind of game, sir.");
+						writeSpeech("kuro","","I might like playing around, but this isn't my kind of game, "+data.player.honorific+".");
 						writeText("She turns on her heel, leaving.");
 						data.player.currentScene = "playerOffice";
 						passTime();
@@ -2384,14 +2465,14 @@ function writeEncounter(n, scene) {
 						if(galleryCheck('kuro3') != true){
 							writeFunction("writeEvent('kuro3')", "Jerk off on her ($10)"); //REMOVE IF SEEN
 						}
-						// if(data.story[1].trust > 21){ // remove if seen
+						if(data.story[1].trust > 21){ // remove if seen
 						// 	writeFunction("writeEvent('kuro4')", "Ask for a blowjob ($15)");
-						// }
+						}
 						if(data.story[1].trust < 40){ // remove if seen
-							writeFunction("writeEncounter('kuro', 'kuro4a')", "Ask about sex ($?)");
+							//writeFunction("writeEncounter('kuro', 'kuro4a')", "Ask about sex ($?)");
 						}
 						else{ // maybe || kuro4d not seen?
-							writeFunction("writeEncounter('kuro', 'kuro4a')", "Have sex ($30)");
+							//writeFunction("writeEncounter('kuro', 'kuro4a')", "Have sex ($30)");
 						}
 						writeTransition(data.player.currentScene, "Leave her be");
 						break;
@@ -2494,7 +2575,7 @@ function writeEncounter(n, scene) {
 					writeText("*SNAP*");
 					writeSpeech("tomgirl", "", "Huh? Sorry, I think I doze-");
 					writeSpeech("player", "", ""+data.story[2].fName+" "+data.story[2].lName+".");
-					writeSpeech("tomgirl", "", "Y-yes sir?");
+					writeSpeech("tomgirl", "", "Y-yes "+data.player.honorific+"?");
 					writeSpeech("player", "", "I'm not actually a school counselor. I'm a practicing hypnotist who intends to enslave whoever I want at my whim.");
 					writeSpeech("tomgirl", "", "... Excuse me?");
 					writeSpeech("player", "", "You're my next target. By the time I'm done with you, you'll be nothing more than a loyal sex slave begging for my touch.");
@@ -2664,9 +2745,9 @@ function writeEncounter(n, scene) {
 				}
 				case "purple2A": {
 					writeSpeech("chubby", "", "Good luck at school honey, see you later!");
-					writeSpeech("purple", "", "See you later mom! Oh, uh, hi sir.");
+					writeSpeech("purple", "", "See you later mom! Oh, uh, hi "+data.player.honorific+".");
 					writeSpeech("player", "", "Good morning "+data.story[3].fName+". On your way to school?");
-					writeSpeech("purple", "", "Yes sir. You?");
+					writeSpeech("purple", "", "Yes "+data.player.honorific+". You?");
 					writeFunction("writeEncounter('purple', 'purple2C')", "'No, I was actually hoping to speak with your mother.'");
 					writeTransition(data.player.currentScene, "'Yes, I'll meet you there.");
 					break;
@@ -2839,7 +2920,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("player", "", "Just relax. Everything is under control. This is all normal. Everything is normal.");
 					writeText("...");
 					writeText("*SNAP*");
-					writeSpeech("purple", "", "Gah! Uh... Oh, sorry. I got distracted. I don't think your method works, sir.");
+					writeSpeech("purple", "", "Gah! Uh... Oh, sorry. I got distracted. I don't think your method works, "+data.player.honorific+".");
 					writeSpeech("player", "", "You might want to check your clock.");
 					writeSpeech("purple", "", "Hmm? Oh my god! It's been hours? Whoa!");
 					writeSpeech("player", "", "And you can call me master from now on. It's just what's <b>normal</b>.");
@@ -2902,7 +2983,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("purple", "", "Ah! Master! I've been waiting for-");
 					writeSpeech("player", "", "Shh! Calling me master in public isn't <b>normal</b>.");
 					writeText("She enthusiasm is instantly halted as she looks around.");
-					writeSpeech("purple", "", "Sorry sir. Would you like to head home with me now?");
+					writeSpeech("purple", "", "Sorry "+data.player.honorific+". Would you like to head home with me now?");
 					writeFunction("writeEncounter('purple', 'purple7B')", "Of course. Let's go");
 					data.player.currentScene = 'playerOffice';
 					writeTransition(data.player.currentScene, "Not right now");
@@ -2913,7 +2994,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("chubby", "", "Welcome home! Oh, hello "+data.player.name+"!");
 					writeSpeech("player", "", "Good to see you again "+data.story[4].fName+". I'm here to help your daughter in a more relaxed environment. We'll be heading up to her room, if that's fine.");
 					writeSpeech("chubby", "", "Oh, well I don't-");
-					writeSpeech("purple", "", "It's fine, mom! I'll see you up there, alright sir?");
+					writeSpeech("purple", "", "It's fine, mom! I'll see you up there, alright "+data.player.honorific+"?");
 					writeText(""+data.story[3].fName+" runs upstairs. "+data.story[4].fName+" is left shocked and turns to you.");
 					writeSpeech("chubby", "", "My goodness, she's just like her old self! I...");
 					writeText("Tears are starting to form in "+data.story[3].fName+"'s eyes.");
@@ -3241,16 +3322,16 @@ function writeEncounter(n, scene) {
 					writeSpeech("green", "", "That's me, hello! Or did you mean my sister?");
 					writeSpeech("player", "", "Oh, you're related? That's interesting. Could you...");
 					writeText("...");
-					writeText("You explained the situation to "+data.story[11].fName+".");
+					writeText("You explained the situation to "+data.story[12].fName+".");
 					writeSpeech("green", "", "That certainly sounds like her. I'll give her the message, but I don't think she'll listen.");
 					writeSpeech("player", "", "Alright, plan B then.");
-					writeText("You look around to make sure you and "+data.story[11].fName+" are alone. This is probably overkill for making sure the room gets cleaned, but you were probably going to hypnotize all the teachers at some point.");
+					writeText("You look around to make sure you and "+data.story[12].fName+" are alone. This is probably overkill for making sure the room gets cleaned, but you were probably going to hypnotize all the teachers at some point.");
 					writeSpeech("player", "", "Alright, could you just look at this coin here? Watch it swing back and forth, back and- Wait what?");
-					writeText(data.story[11].fName+" suddenly stands up with a angry glare in her eyes.");
+					writeText(data.story[12].fName+" suddenly stands up with a angry glare in her eyes.");
 					writeSpeech("green", "", "So you're the piece of shit that's been doing all this...");
 					writeSpeech("player", "", "Fuck, wait.");
 					writeText("She starts charging towards you. You've never actually fought anybody, and your hypnosis has never backfired this hard before. It likes like you have no choice but to fight.");
-					writeText("... Or that's what you thought. You hear someone snapping their fingers and "+data.story[11].fName+" goes slump on the ground.");
+					writeText("... Or that's what you thought. You hear someone snapping their fingers and "+data.story[12].fName+" goes slump on the ground.");
 					writeSpeech("scarf", "", "You shouldn't play with other people's toys, you know.");
 					writeBig("images/scarf/profile.jpg", "Art by Enoshima Iki");
 					writeSpeech("scarf", "", "Well I suppose it can't be helped. Two artists like us, we're bound to bump into each other.");
@@ -3263,7 +3344,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("scarf", "", "Cleaning? You wanted the room to be... Ah, you must be trying to appeal to the principal. Fine. I'll have her clean up after me. I'll be keeping an eye on you. You wanted my sister yes? I could be entreated to... share, her. If you can entertain me.");
 					writeSpeech("player", "", "I take it that dicking you here wouldn't be enough?");
 					writeSpeech("scarf", "", "Such confidence~! But you are correct. I have a... refined, pallete. Bring me your conquests, and I might teach you some of the spells I've learned over the years.");
-					writeSpecial("You've earned "+data.story[10].fName+"'s attention! She can improve your hypnosis skills. Someday, you might be able to bring characters you've hypnotised to unlock new scenes!");
+					writeSpecial("You've earned "+data.story[12].fName+"'s attention! She can improve your hypnosis skills. Someday, you might be able to bring characters you've hypnotised to unlock new scenes!");
 					data.story[11].trust = 40;
 					data.story[12].trust = 40;
 					writeTransition(data.player.currentScene, "Finish");
@@ -3309,7 +3390,7 @@ function writeEncounter(n, scene) {
 					writeText("She moves into the driver's seat, the engine coming to life.");
 					writeSpeech("player","","I'd say that's unnecesary, but I get the feeling that's the wrong answer. Instead, I'll just look forward to it.");
 					writeText("She laughs.");
-					writeSpeech("maid","","You're a smart man. I'll see you later, then.");
+					writeSpeech("maid","","You're a smart one. I'll see you later, then.");
 					writeText("With that, her car pulls out, leaving you alone.");
 					writeTransition(data.player.currentScene, "Go home");
 					data.story[5].trust = 20;
@@ -3497,7 +3578,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("meji","","So, how's this supposed to go down? You ask a couple of questions, I answer, you tell "+data.story[10].fName+" everything's fine?");
 					writeSpeech("player","","...In a manner of speaking, yes. She didn't give very many details about you, so I'd like to know why you think she'd drop your name specifically.");
 					writeText("That was a blatant lie, of course. His file had more than a few incidents laid out in excruciating detail... but your methods require a certain level of trust when starting out.");
-					writeText("Well, that or having some seriously repressed desires, but that can be a bit of a gamble. No need to put him on the defensive just yet...");
+					writeText("Well, that or having some seriously repressed de"+data.player.honorific+"es, but that can be a bit of a gamble. No need to put him on the defensive just yet...");
 					writeText("He scoffs, leaning back a bit.");
 					writeSpeech("meji","","God, where the fuck do I <i>begin?</i> I swear, she has to have it out for me for something...");
 					writeText("Off to a good start, then.");
@@ -3603,7 +3684,7 @@ function writeEncounter(n, scene) {
 							writeText(data.story[7].fName+" sees you approaching and pales. Muttering something to his group, he quickly approaches you.");
 							writeSpeech("meji","","Y-Yo. Uh, I mean...");
 							writeText("He takes a moment to breathe, before he starts looking confident again.");
-							writeSpeech("meji","","Thank you, sir. For not... telling anyone.");
+							writeSpeech("meji","","Thank you, "+data.player.honorific+". For not... telling anyone.");
 						}
 						else{
 							writeText("This is test-text. If you see this in-game, then something's fucky.");
@@ -3630,7 +3711,7 @@ function writeEncounter(n, scene) {
 						else if(data.story[7].trust == 21){
 							writeText("When you approach, "+data.story[7].fName+" quickly separates from his friends and walks up to you.");
 							writeText("His face is clearly flushed, he's walking a bit oddly, and he seems to fidget a bit with the crotch of his pants.");
-							writeSpeech("meji","","Hello, sir. I wanted to speak with you, maybe in your office...?");
+							writeSpeech("meji","","Hello, "+data.player.honorific+". I wanted to speak with you, maybe in your office...?");
 							writeFunction("writeEncounter('meji','meji3z')", "Take him to your office");
 							writeTransition(data.player.currentScene, "Leave him be for now");
 							break;
@@ -3656,7 +3737,7 @@ function writeEncounter(n, scene) {
 								writeSpeech("meji","","Is now a good time? I, uh... I still haven't been able to <i>finish</i>. I was hoping you could help...?");
 							}
 							else{
-								writeSpeech("meji","","Hello, sir. I was wondering if now would be a good time for some <i>counseling...?</i>");
+								writeSpeech("meji","","Hello, "+data.player.honorific+". I was wondering if now would be a good time for some <i>counseling...?</i>");
 							}
 							if(galleryCheck('meji2') != true){
 								writeFunction("writeEvent('meji2')", "Fuck his ass");
@@ -3780,7 +3861,7 @@ function writeEncounter(n, scene) {
 						writeSpeech("meji","","...<i>Oh.</i> I mean, I don't have a problem with something like that, but... I don't really have any spending money right now.");
 					}
 					else{
-						writeSpeech("meji","","...Sorry, sir, but I don't have the money for something like that. I don't usually keep much money on-hand for things like that...");
+						writeSpeech("meji","","...Sorry, "+data.player.honorific+", but I don't have the money for something like that. I don't usually keep much money on-hand for things like that...");
 					}
 					writeText("Hm. Well, that is a problem... But then again, there's no reason <i>you</i> can't buy something, if you're interested in seeing him in it. Maybe there's something at the shopping district...?");
 					writeFunction("writeEncounter('meji','meji3')", "Choose something else");
@@ -3794,7 +3875,7 @@ function writeEncounter(n, scene) {
 						writeText("He looks up at you, as flushed as usual as he grins.");
 						writeSpeech("meji","","If this is your way of requesting something...");
 						writeText("His voice goes much quieter.");
-						writeSpeech("meji","","<i>Then just tell me when to come to your office, sir.</i>");
+						writeSpeech("meji","","<i>Then just tell me when to come to your office, "+data.player.honorific+".</i>");
 						writeText("Hoo boy. That would normally be how this goes but, this time...");
 						writeSpeech("player","","The last club meeting in the room behind the gym finishes in an hour.");
 						writeText("He tenses sharply.");
@@ -3803,12 +3884,12 @@ function writeEncounter(n, scene) {
 					}
 					else{
 						writeText("His face is clearly flushed and, you note, you can see him starting to tent his pants already.");
-						writeSpeech("meji","","...When do you want me, sir?");
+						writeSpeech("meji","","...When do you want me, "+data.player.honorific+"?");
 						writeText("Normally, you'd just take him to your office now, but...");
 						writeSpeech("player","","The last club meeting in the room behind the gym finishes in an hour.");
 						writeText("He tenses sharply.");
 						writeSpeech("player","","If you're not up for it, though-");
-						writeSpeech("meji","","Thank you for the gift, sir. I won't be late.");
+						writeSpeech("meji","","Thank you for the gift, "+data.player.honorific+". I won't be late.");
 					}
 					writeText("He quickly strides off in the direction of the gym, probably to scope it out.");
 					writeFunction("writeEvent('meji3')", "Burn a little time and meet up with him");
@@ -4027,7 +4108,7 @@ function checkForEvents() {
 				}
 				break;
 			}
-			case (data.story[1].trust >= 20 && data.story[1].trust < 22): { //level 3
+			case (data.story[1].trust >= 21 && data.story[1].trust < 23): { //level 3
 				if (tempScene == "roof") {
 					if (data.player.time == "Morning") {
 						writeTab ("kuro", "", "kuro4", data.story[1].fName+" is leaning against the fence.");
@@ -4204,12 +4285,13 @@ function checkForEvents() {
 				if (tempScene == "street") {
 					if (data.player.time == "Evening") {
 						document.getElementById('output').innerHTML +=`
-						<div class = "textBox">
-						<img class = "textThumb" src = "scripts/gamefiles/profiles/meji2.jpg">
-						<p class = "textName">???</p>
-						<p> Status: Unknown</p>
-						<p class="switch" onclick="writeEncounter('meji', 'meji2')">You spot someone vaguely familiar...</p>
-						</div>
+						<div class = "textBox char_meji">
+							<img class = "textThumb" src = "scripts/gamefiles/profiles/meji2.jpg">
+							<div class="textBoxContent">
+							<p class = "textName">???</p>
+							<p class="status"> Status: Unknown</p>
+							<p class="switch" onclick="writeEncounter('meji', 'meji2')">You spot someone vaguely familiar...</p>
+						</div>	</div>
 						<br>
 						`;
 					}
@@ -4276,20 +4358,41 @@ function checkForPhoneEvents() {
 	switch (data.story[1].trust) {
 		case 1: {
 			if (data.story[1].textEvent != "kuroPhone1") {
-				//data.story[1].textEvent = "kuroPhone1";
-				//notification();
+				data.story[1].textEvent = "kuroPhone1";
+				notification();
 			}
 			break;
 		}
 		case 2: {
-			if (data.story[1].textEvent != "kuroPhone2") {
-				//data.story[1].textEvent = "kuroPhone2";
-				//notification();
+			if (data.story[1].textEvent != "kuroPhone1") {
+				data.story[1].textEvent = "kuroPhone1";
+				notification();
+			}
+			break;
+		}
+		case 20 : {
+			if(data.story[1].textEvent != "kuroPhone2") {
+				data.story[1].textEvent = "kuroPhone2";
+				notification();
+			}
+			break;
+		}
+		case 22 : {
+			if(data.story[1].textEvent != "kuroPhone3") {
+				data.story[1].textEvent = "kuroPhone3";
+				notification();
+			}
+			break;
+		}
+		case 24 : {
+			if(data.story[1].textEvent != "kuroPhone4") {
+				data.story[1].textEvent = "kuroPhone4";
+				notification();
 			}
 			break;
 		}
 	}
-	if (data.story[1].trust == 22) {
+	if (data.story[1].trust == 25) {
 		if (data.story[1].textEvent != "kuroReward") {
 			data.story[1].textEvent = "kuroReward";
 			notification();
@@ -4334,9 +4437,11 @@ function checkForPhoneEvents() {
 }
 
 function writePhoneEvent(n) {
+	phoneRight.scrollTop = 0;
 	saveSlot(110);
 	console.log("Writing event " + n + " for " + data.story[data.player.lastText].index);
 	data.player.lastText = parseInt(data.player.lastText);
+	console.log("test");
 	switch (data.story[data.player.lastText].index) {
 		case "mom": { //alt 3 to close
 			switch (n) {
@@ -4547,6 +4652,208 @@ function writePhoneEvent(n) {
 		}
 		case "kuro" : {
 			switch (n) {
+				case "kuroPhone1" : {
+					writePhoneSpeech("kuro","","Heyhey~! Got your number from the principle");
+					if(data.story[1].trust == 1){
+						writePhoneSpeech("kuro","","She seemed way cool about it, which kinda makes sense (no offense)");
+						writePhoneSpeech("kuro","","Guess you cum highly rec'd huh?");
+						writePhoneSpeech("kuro","","Hope your more interesting than she makes you sound tho, lol!");
+						writePhoneChoices("I'm good at my job","I'd say I'm interesting");
+						break;
+					}
+					else{
+						writePhoneSpeech("kuro","","She seemed way cool about it");
+						writePhoneSpeech("kuro","","TOTALLY wasnt expecting that");
+						writePhoneSpeech("kuro","","Guess you cum highly rec'd huh?");
+						writePhoneSpeech("kuro","","Hope your more interesting than she makes you sound tho");
+						writePhoneSpeech("kuro","","If you're free cum up to the roof sometime!");
+						writePhoneChoices("My office is more private","Look forward to it");
+						break;
+					}
+				}
+				case "kuroPhone1A" : {
+					if (data.story[1].trust == 1){
+						if(data.story[1].trust < 3){
+							data.story[1].trust = 3;
+						}
+						writePhoneSpeech("player","","I'm good at counseling, and it sounds like she knows it.");
+						writePhoneSpeech("kuro","","I'll try not to hold it against you");
+						writePhoneSpeech("kuro","","Kidding~! See you on the roof~!");
+						break;
+					}
+					else{
+						if(data.story[1].trust < 3){
+							data.story[1].trust = 3;
+						}
+						writePhoneSpeech("player","","Why not meet up at my office? It's a bit more private than the roof.");
+						writePhoneSpeech("kuro","","Lesson num.1: girls like it WAY more when you cum to them");
+						writePhoneSpeech("kuro","","Maybe next time I'll cum when you call for me? lol");
+						break;
+					}
+				}
+				case "kuroPhone1B" : {
+					if(data.story[1].trust == 1){
+						if(data.story[1].trust < 3){
+							data.story[1].trust = 3;
+						}
+						writePhoneSpeech("player","","Oh, I'd say that I'm pretty interesting.");
+						writePhoneSpeech("kuro","","Mm is that so?");
+						writePhoneSpeech("kuro","","Im looking forward to how you prove it~!");
+						break;
+					}
+					else{
+						if(data.story[1].trust < 3){
+							data.story[1].trust = 3;
+						}
+						writePhoneSpeech("player","","Look forward to it.");
+						writePhoneSpeech("kuro","","Straight to the point");
+						writePhoneSpeech("kuro","","I like it");
+						writePhoneSpeech("kuro","","Seeya there~!");
+						break;
+					}
+				}
+				case "kuroPhone2" : {
+					if(data.story[1].trust < 21){
+						data.story[1].trust = 21;
+					}
+					writePhoneSpeech("kuro","","Gmorning mister counciler!! Howya doin?");
+					writePhoneChoices("Good morning, Stephanie","Morning Steph","What's the hizzity-hizzaps, Steph-dawg?");
+					break;
+				}
+				case "kuroPhone2A" : {
+					writePhoneSpeech("player","","Good morning, Stephanie. I'm doing well - how are you?");
+					writePhoneSpeech("kuro","","It's STEPH silly!!! it's way cuter!");
+					writePhoneSpeech("kuro","","Hope your having a good day... and that maybe i can make it better~");
+					writePhoneSpeech("kuro","","Maybe come up to the roof later? (.^_~.)");
+					writePhoneSpeech("kuro","","I'll be waiting hun!");
+					break;
+				}
+				case "kuroPhone2B" : {
+					writePhoneSpeech("player","","Morning Steph. Pretty good, you?");
+					writePhoneSpeech("kuro","","Pretty good pretty good! could do with a little more fun tho >(^*^)>");
+					writePhoneSpeech("kuro","","Maybe with you?");
+					writePhoneSpeech("kuro","","Thats only if you come up to the roof later tho! .(^-^).");
+					writePhoneSpeech("kuro","","Ill be waiting~");
+					break;
+				}
+				case "kuroPhone2C" : {
+					writePhoneSpeech("player","","What's the hizzity-hizzaps, Steph-dawg?");
+					writePhoneSpeech("kuro","","...");
+					writePhoneSpeech("kuro","","Honey...");
+					writePhoneSpeech("kuro","","No.");
+					writePhoneSpeech("kuro","","Just...");
+					writePhoneSpeech("kuro","","No.");
+					writePhoneSpeech("kuro","","We can still meet up.");
+					writePhoneSpeech("kuro","","Just please Don't.");
+					break;
+				}
+				case "kuroPhone3" : {
+					if(data.story[1].trust < 23){
+						data.story[1].trust = 23;
+					}
+					writePhoneSpeech("kuro","","Heyhey~! Wanna see something cool?");
+					writePhoneChoices("Sure","Nah");
+					break;
+				}
+				case "kuroPhone3A" : {
+					writePhoneSpeech("player","","Sure. What is it?");
+					writePhoneImage("images/kuro/3-1.jpg", "Art by Enoshima Iki");
+					writePhoneSpeech("kuro","","Had a friend over last night and took some pics~!");
+					writePhoneSpeech("kuro","","You like?");
+					writePhoneChoices("Beautiful","Not bad, but messy","What friend?");
+					break;
+				}
+				case "kuroPhone3B" : {
+					writePhoneSpeech("player","","Nah.");
+					writePhoneSpeech("kuro","","Lol your supposed to say yeah!");
+					writePhoneSpeech("kuro","","Maybe shoulda said something sexy tho");
+					writePhoneSpeech("kuro","","Maybe that would make you go yes maam");
+					writePhoneSpeech("kuro","","Here");
+					writePhoneImage("images/kuro/3-1.jpg", "Art by Enoshima Iki");
+					writePhoneSpeech("kuro","","Had a friend over last night and took some pics~!");
+					writePhoneSpeech("kuro","","You like?");
+					writePhoneChoices("Beautiful","Not bad, but messy","What friend?");
+					break;
+				}
+				case "kuroPhone3AA" : {
+					writePhoneSpeech("player","","You look incredible.");
+					writePhoneSpeech("kuro","","Flatterer!!! Youll make me blush!!!");
+					writePhoneSpeech("kuro","","Hope you enjoy the pic (and enjoy yourself to it too)");
+					writePhoneSpeech("kuro","","V(^-')v");
+					break;
+				}
+				case "kuroPhone3AB" : {
+					writePhoneSpeech("player","","Not a bad angle, but your bed's a bit messy.");
+					writePhoneSpeech("kuro","","A cute girl sends you a pic of their ass and you comment on their bed? smh");
+					writePhoneSpeech("kuro","","Still, the dense ones can be cute too");
+					writePhoneSpeech("kuro","","Check me out on the roof and Ill show you how your supposed to act! lol");
+					break;
+				}
+				case "kuroPhone3AC" : {
+					writePhoneSpeech("player","","Who was the friend?");
+					writePhoneSpeech("kuro","","Ooh, getting jealous? Dont worry, its not some other guy");
+					writePhoneSpeech("kuro","","A girlfriend was SUPER interested in what she heard, so she came over");
+					writePhoneSpeech("kuro","","Besides, your my only client for now anyway");
+					writePhoneSpeech("kuro","","Feel privileged!");
+					writePhoneSpeech("kuro","","Ooh, gtg she's calling now, sry");
+					break;
+				}
+				case "kuroPhone3BA" : {
+					writePhoneSpeech("player","","You look incredible.");
+					writePhoneSpeech("kuro","","Flatterer!!! Youll make me blush!!!");
+					writePhoneSpeech("kuro","","Hope you enjoy the pic (and enjoy yourself to it too)");
+					writePhoneSpeech("kuro","","V(^-')v");
+					break;
+				}
+				case "kuroPhone3BB" : {
+					writePhoneSpeech("player","","Not a bad angle, but your bed's a bit messy.");
+					writePhoneSpeech("kuro","","A cute girl sends you a pic of their ass and you comment on their bed? smh");
+					writePhoneSpeech("kuro","","Still, the dense ones can be cute too");
+					writePhoneSpeech("kuro","","Check me out on the roof and Ill show you how your supposed to act! lol");
+					break;
+				}
+				case "kuroPhone3BC" : {
+					writePhoneSpeech("player","","Who was the friend?");
+					writePhoneSpeech("kuro","","Ooh, getting jealous? Dont worry, its not some other guy");
+					writePhoneSpeech("kuro","","A girlfriend was SUPER interested in what she heard, so she came over");
+					writePhoneSpeech("kuro","","Besides, your my only client for now anyway");
+					writePhoneSpeech("kuro","","Feel privileged!");
+					writePhoneSpeech("kuro","","Ooh, gtg she's calling, sry");
+					break;
+				}
+				case "kuroPhone4" : {
+					if(data.story[1].trust < 25){
+						data.story[1].trust = 25;
+					}
+					writePhoneSpeech("kuro","","Hi hi~! Talked to my phone-buddy about that hj i gave ya");
+					writePhoneSpeech("kuro","","You wouldnt BELIEVE how turned on she was!!!");
+					writePhoneSpeech("kuro","","You had her fucking herself like CRAZY");
+					writePhoneSpeech("kuro","","Im starting to think NOT introducing you guys would be too cruel!");
+					writePhoneSpeech("kuro","","What do you think?");
+					writePhoneChoices("I'm satisfied with you","I'd love to meet her");
+					break;
+				}
+				case "kuroPhone4A" : {
+					writePhoneSpeech("kuro","","Well arent you the perfect flatterer?");
+					writePhoneSpeech("kuro","","If you go saying stuff like that ill get too turned on to stay at school all day lol");
+					writePhoneSpeech("kuro","","Still gotta look out for a sister tho, so here (~>^.^)~>");
+					writePhoneImage("images/kuro/nikki.jpg", "Art by Enoshima Iki");
+					writePhoneSpeech("kuro","","Even if you don't go spurting on your phone screen shell cum like CRAZY knowing some dude shes never met might be jerking it to her");
+					writePhoneSpeech("kuro","","The way she talked about bumping into people around campus with no idea if they blasted rope to her ass got ME crazy turned on");
+					writePhoneSpeech("kuro","","Maybe youll see her around the university if you ever decide one sexy bitch isnt enough for ya~");
+					break;
+				}
+				case "kuroPhone4B" : {
+					writePhoneSpeech("kuro","","Oof, shes gonna get so turned on hearing that");
+					writePhoneSpeech("kuro","","here");
+					writePhoneImage("images/kuro/nikki.jpg", "Art by Enoshima Iki");
+					writePhoneSpeech("kuro","","She wanted you to have a pic of her, she said shes gonna cum like CRAZY knowing some guy shes never met might be jerking it to her");
+					writePhoneSpeech("kuro","","She totally went on about not knowing which guy at school has been jerking it to a pic of her ass");
+					writePhoneSpeech("kuro","","If you see her around the university you could totally whisper that you enjoyed the pic");
+					writePhoneSpeech("kuro","","I bet that slut would totally cum on the spot~!");
+					writePhoneSpeech("kuro","","Fuck im runnign late gtg");
+					break;
+				}
 				case "kuroReward" : {
 					writePhoneImage("images/kuro/7-4.jpg", "Art by Enoshima Iki");
 					writePhoneSpeech("kuro", "", "You've finished all of "+data.story[1].fName+"'s content for this version, congratulations!");

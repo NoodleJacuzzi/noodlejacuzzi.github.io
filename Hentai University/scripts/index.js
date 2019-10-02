@@ -13,6 +13,9 @@ var data = {
 	player: {
 		name: "You",
 		character: "basic",
+		gender: "man",
+		title: "Mister",
+		honorific: "sir",
 		characterArtist: "Art by Ishimura",
 		currentScene: "start",
 		time: "Morning",
@@ -23,7 +26,7 @@ var data = {
 		counseling: 0,
 		lastText: 100,
 		dayID: 1,
-		version: 2,
+		version: 3,
 	},
 	story: [
 		{index: "mom", met: false, fName: "Emily", lName: "Smith", trust: 0, encountered: false, textEvent: "",},
@@ -82,7 +85,7 @@ var itemArray = [ //If price is 0 it isn't for sale
 	{name: "Hypnosis Textbook", key: false, price: 50, image: "scripts/gamefiles/items/hypnosisTextbook.jpg", description: "A textbook on hypnosis, you can read it at home to improve your skill."},
 	{name: "Hacking Textbook", key: false, price: 50, image: "scripts/gamefiles/items/hackingTextbook.jpg", description: "A textbook on hacking, you can read it at home to improve your skill."},
 	{name: "Counseling Textbook", key: false, price: 50, image: "scripts/gamefiles/items/counselingTextbook.jpg", description: "A textbook on counseling, you can read it at home to improve your skill."},
-	{name: "Lady", key: true, price: 5, image: "scripts/gamefiles/profiles/lady.jpg", description: "For if you'd like to play as a cute lady. Unlocks the 'Lady' character portrait. Aesthetic change only, art by Nusumenaihxseki"},
+	{name: "Lady", key: true, price: 0, image: "scripts/gamefiles/profiles/lady.jpg", description: "For if you'd like to play as a cute lady. Unlocks the 'Lady' character portrait. Aesthetic change only, art by Nusumenaihxseki"},
 ]
 
 var logbookArray = [
@@ -367,22 +370,9 @@ function textbook(n) {
 	writeTransition(data.player.currentScene, "Finish");
 }
 
-function creatorButton(n) {
-	switch (n) {
-		case "noodle":
-			window.open('https://noodlejacuzzi.github.io/index.html');
-		break;
-		case "crypto":
-			window.open('https://www.reddit.com/user/CaptainCryptogreek');
-		break;
-		case "patreon":
-			window.open('https://www.patreon.com/noodlejacuzzi');
-		break;
-	}
-}
-
 //Scene creation
 function writeSpeech (name, img, text) {
+	var cssName = name;
 	if (img == "") {
 		img = "scripts/gamefiles/profiles/"+name+".jpg";
 	}
@@ -399,13 +389,14 @@ function writeSpeech (name, img, text) {
 		}
 	}
 	document.getElementById('output').innerHTML +=`
-	<div class = "textBox">
+	<div class = "textBox char_`+cssName+`">
 		<img class = "textThumb" src = "
 			`+ img +`
 		">
+		<div class="textBoxContent">
 		<p class = "textName">`+ name + `</p>
 		<p>` + text + `</p>
-	</div>
+	</div></div>
 	<br>
 	`;
 }
@@ -413,6 +404,7 @@ function writeSpeech (name, img, text) {
 function writeTab (name, img, scene, text) {
 	tabIndex;
 	var tabTrust;
+	var cssName = name;
 	if (img == "") {
 		img = "scripts/gamefiles/profiles/"+name+".jpg";
 	}
@@ -427,39 +419,40 @@ function writeTab (name, img, scene, text) {
 	}
 	switch (true) {
 		case (data.story[tabIndex].trust > 99): {
-			tabTrust = "Love";
+			tabTrust = "<span class='love'>Love</span>";
 			break;
 		}
 		case (data.story[tabIndex].trust > 79): {
-			tabTrust = "Trusting";
+			tabTrust = "<span class='trusting'>Trusting</span>";
 			break;
 		}
 		case (data.story[tabIndex].trust > 59): {
-			tabTrust = "Friendly";
+			tabTrust = "<span class='friendly'>Friendly</span>";
 			break;
 		}
 		case (data.story[tabIndex].trust > 39): {
-			tabTrust = "Relaxed";
+			tabTrust = "<span class='relaxed'>Relaxed</span></span>";
 			break;
 		}
 		case (data.story[tabIndex].trust > 19): {
-			tabTrust = "Wary";
+			tabTrust = "<span class='wary'>Wary</span>";
 			break;
 		}
 		default: {
-			tabTrust = "Unknown";
+			tabTrust = "<span class='unkown'>Unknown";
 			break;
 		}
 	}
 	console.log(tabIndex);
 	console.log("Now generating tab for " + name + ", linking to scene " + scene + " with the text " + text);
 	document.getElementById('output').innerHTML +=`
-	<div class = "textBox">
+	<div class = "textBox char_`+cssName+`">
 		<img class = "textThumb" src = "`+ img +`">
+		<div class="textBoxContent">
 		<p class = "textName">` + name + `</p>
-		<p> Status: ` + tabTrust + `</p>
+		<p class="status"> Status: ` + tabTrust + `</p>
 		<p class="switch" onclick="writeEncounter('`+data.story[tabIndex].index+`', '`+scene+`')">` + text + `</p>
-	</div>
+	</div>	</div>
 	<br>
 	`;
 }
@@ -484,11 +477,14 @@ function writeMed (img, cap) {
 
 function writeBG (scene) {
 	var bg = "images/locations/" + scene + data.player.time + ".jpg";
+	console.log("hi1");
 	if (imagesDisabled != true) {
+		console.log("hi");
 	document.getElementById('output').innerHTML += `
 		<img class="backgroundPicture" src="` + bg + `">
 		<br>
 	`;
+	document.getElementById('output').style.backgroundImage = "url("+bg+")";
 	}
 	checkForEvents();
 }
@@ -716,6 +712,13 @@ function updateSave() {
 		data.story[11] = {index: "scarf", met: false, fName: "Casandra", lName: "Hamilton", trust: 0, encountered: false, textEvent: "",};
 		data.story[12] = {index: "green", met: false, fName: "Emma", lName: "Hamilton", trust: 0, encountered: false, textEvent: "",};
 	}
+	if (data.player.version == 2) {
+		console.log('version 2 detected, updating save');
+		data.player.version = 3;
+		data.player.title = "man";
+		data.player.title = "Mister";
+		data.player.honorific = "sir";
+	}
 	saveSlot(110);
 }
 
@@ -742,9 +745,9 @@ function generateGalleryNav() {
 			document.getElementById('output').innerHTML += `
 			<div class = "textBox" onclick="generateGalleryPage('` + data.story[i].index + `')" >
 				<img class = "textThumb" src = "scripts/gamefiles/profiles/`+ data.story[i].index +`.jpg">
-				<br>
+				<div class="textBoxContent">
 				<span class = "choiceText" onclick="generateGalleryPage('` + data.story[i].index + `')">`+data.story[i].fName + ` ` + data.story[i].lName +`</span>
-			</div>
+			</div></div>
 			<br>
 			`;
 		}
@@ -777,7 +780,7 @@ function generateNav() {
 	document.getElementById('logbookLeft').innerHTML = '';
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].trust > 0) {
-			document.getElementById('logbookLeft').innerHTML += `<p class = "logbookSwitch" onclick = "switchDesc('`+i+`')">` + data.story[i].fName + `</p>`;
+			document.getElementById('logbookLeft').innerHTML += `<h3 class = "button" onclick = "switchDesc('`+i+`')">` + data.story[i].fName + `</h3>`;
 		}
 	}
 	switchDesc('player');
@@ -833,15 +836,18 @@ function switchDesc(n) {
 			`;
 		}
 		document.getElementById('logbookRight').innerHTML += `
-			<p class = "selfDesc">Name: `+data.story[n].fName+` `+data.story[n].lName+`</p><br><br>
-			<p class = "selfDesc">Trust: `+tabTrust+`</p><br><br>
-			<p class = "selfDesc">Scenes Unlocked: `+scenesUnlocked+`/`+scenesTotal+`</p><br><br>
-			<p class = "selfDesc">`+logbookArray[n].desc+`</p><br><br>
-			<p class = "selfDesc">`+logbookArray[n].body+`</p><br><br>
-			<p class = "selfDesc">`+logbookArray[n].clothes+`</p><br><br>
-			<p class = "selfDesc">`+logbookArray[n].home+`</p><br><br>
-			<p class = "selfDesc">`+logbookArray[n].tags+`</p>br><br>
-			<p class = "selfDesc">   </p>br><br>
+		<div class=" lb_primary">
+			<h2 class = "selfDesc lb_Name char_`+data.story[n].index+`">`+data.story[n].fName+` `+data.story[n].lName+`</h2>
+			<p class = "selfDesc lb_trust ">Trust: <span class="`+tabTrust+`">`+tabTrust+`</p></span>
+			<p class = "selfDesc lb_scenes">Scenes Unlocked: `+scenesUnlocked+`/`+scenesTotal+`</p>
+		</div><div class=" lb_secondary">
+			<p class = "selfDesc lb_desc">`+logbookArray[n].desc+`</p>
+			<p class = "selfDesc lb_body">`+logbookArray[n].body+`</p>
+			<p class = "selfDesc lb_clothes">`+logbookArray[n].clothes+`</p>
+			<p class = "selfDesc lb_home">`+logbookArray[n].home+`</p>
+			<p class = "selfDesc lb_tags">`+logbookArray[n].tags+`</p>
+			<p class = "selfDesc">   </p>
+		</div>
 		`;
 	}
 	else {
@@ -851,25 +857,25 @@ function switchDesc(n) {
 			`;
 		}
 		document.getElementById('logbookRight').innerHTML += `
-			<p class = "selfDesc">Name: `+data.player.name+`</p><br><br>
-			<p class = "selfDesc">Day: `+data.player.day+`</p><br><br>
-			<p class = "selfDesc">Time: `+data.player.time+`</p><br><br>
-			<p class = "selfDesc">Money: $`+data.player.money+`</p><br><br>
-			<p class = "selfDesc">Skills: </p><br><br>
+		<h2 class = "selfDesc lb_Name char_player">`+data.player.name+`</h2>
+			<p class = "selfDesc">Day: `+data.player.day+`</p>
+			<p class = "selfDesc">Time: `+data.player.time+`</p>
+			<p class = "selfDesc">Money: $`+data.player.money+`</p>
+			<p class = "selfDesc">Skills: </p>
 		`;
 		if (data.player.hypnosis > 0) {
 			document.getElementById('logbookRight').innerHTML += `
-				<p class = "selfDesc">Hypnosis: `+data.player.hypnosis+`</p><br><br>
+				<p class = "selfDesc">Hypnosis: `+data.player.hypnosis+`</p>
 			`;
 		}
 		if (data.player.hacking > 0) {
 			document.getElementById('logbookRight').innerHTML += `
-				<p class = "selfDesc">Hacking: `+data.player.hacking+`</p><br><br>
+				<p class = "selfDesc">Hacking: `+data.player.hacking+`</p>
 			`;
 		}
 		if (data.player.counseling > 0) {
 			document.getElementById('logbookRight').innerHTML += `
-				<p class = "selfDesc">Conseling: `+data.player.counseling+`</p><br><br>
+				<p class = "selfDesc">Conseling: `+data.player.counseling+`</p>
 			`;
 		}
 	}
@@ -906,7 +912,7 @@ function generateInv() {
 			<div class = "item">
 				<p class = "itemName">`+data.items[i].name+`</p>
 				<img class ="itemImage" src="`+data.items[i].image+`">
-			<div>
+			</div>
 			`;
 		}
 	}
@@ -1032,6 +1038,40 @@ function cheat() {
 			}
 			break;
 		}
+		case "thomas": {
+			data.player.gender = "man";
+			data.player.title = "Mister";
+			data.player.honorific = "sir";
+			if (checkBody("basic") != true) {
+				var goof = {index: "basic", artist: "Art by Ishimura",};
+				data.bodytypes.push(goof);
+			}
+			for (i = 0; i < data.bodytypes.length; i++) {
+				if (data.bodytypes[i].index.includes('basic')) {
+					changeBody(i);
+					break;
+				}
+			}
+			data.player.currentScene = "prologue";
+			break;
+		}
+		case "tomara": {
+			data.player.gender = "woman";
+			data.player.title = "Miss";
+			data.player.honorific = "ma'am";
+			if (checkBody("basil") != true) {
+				var goof = {index: "basil", artist: "Art by Ishimura",};
+				data.bodytypes.push(goof);
+			}
+			for (i = 0; i < data.bodytypes.length; i++) {
+				if (data.bodytypes[i].index.includes('basil')) {
+					changeBody(i);
+					break;
+				}
+			}
+			data.player.currentScene = "prologueAlt";
+			break;
+		}
 		case "new name": {
 			data.player.currentScene = "renamingRoom";
 			break;
@@ -1081,26 +1121,29 @@ function notification() {
 }
 
 function writePhoneSpeech (name, img, text) {
+	var cssName;
 	if (img == "") {
 		img = name;
 	}
 	if (name == "player") {
 		img = data.player.character;
-		name = data.player.name;
 	}
+
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].index == name) {
 			name = data.story[i].fName + ' ' + data.story[i].lName
+			cssName = data.story[i].index;
 		}
 	}
 	document.getElementById('phoneRight').innerHTML +=`
-	<div class = "textBox">
-		<img class = "textThumb" src = "
+	<div class = "phoneTextBox">
+		<img class = "phoneTextThumb" src = "
 			scripts/gamefiles/profiles/`+ img +`.jpg
 		">
-		<p class = "textName">`+ name + `</p>
+		<div class="phoneTextBoxContent">
+		<p class = "phoneTextName">`+ name + `</p>
 		<p class = "selfDesc">` + text + `</p>
-	</div>
+	</div></div>
 	<br>
 	`
 }
@@ -1151,7 +1194,7 @@ function generateContacts() {
 	document.getElementById('phoneLeft').innerHTML = ``;
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].textEvent!= "") {
-			document.getElementById('phoneLeft').innerHTML += `<p class = "logbookSwitch" onclick = "switchContact('`+i+`')">` + data.story[i].fName + `</p>`;
+			document.getElementById('phoneLeft').innerHTML += `<h3 class = "button char_` + data.story[i].index + `" onclick = "switchContact('`+i+`')">` + data.story[i].fName + `</h3 >`;
 			data.player.lastText = i;
 		}
 	}
