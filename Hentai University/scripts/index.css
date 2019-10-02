@@ -63,12 +63,12 @@ html, body {
 }
 
 .phonePicture {
-	display: block;
+    display: block;
     margin: auto;
-	max-height: 500px;
-  	padding: 20px, 1px;
-  	border: 3px solid white;
-  	border-radius: 5px;
+    max-height: 100%;
+    max-width: 100%;
+      border: 3px solid;
+      border-radius: 5px;
 }
 .backgroundPicture {
 	display: block;
