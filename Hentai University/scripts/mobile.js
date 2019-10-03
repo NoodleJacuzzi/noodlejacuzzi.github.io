@@ -151,7 +151,7 @@ function writePhoneImage (img, cap) {
 	console.log("writing phone image "+cap);
 	if (imagesDisabled != true) {
 		document.getElementById('phoneRight').innerHTML += `
-			<img class="phonePicture" src="` + img + `" title="` + cap + `">
+			<img class="selfImage" src="` + img + `" title="` + cap + `">
 			<br>
 		`;
 	}
