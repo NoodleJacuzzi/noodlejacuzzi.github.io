@@ -2,11 +2,11 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 9/23/2019</p>
-				<p class = "centeredText">Bitch Medicenter Demo</p>
-				<p class = "centeredText">I've added another scene to Bitch Medicenter, comissioned by MrManPerson. Find the game's section below underneath Anomaly Vault and Hentai University.</p>
-				<p class = "centeredText">Have any ideas for more Human Alteration Content? I'm considering working on that game again to flesh out some areas like the clothing system. I'd love to hear your suggestions!</p>
-				<p class = "centeredText">Thank you to: Swallows999, MrManPerson, Lasse B, ChronosEdge, Andy Amundy, brandon, Debarre Sonny, Drashin, iNoH8+, Mirza Hasan, murgatroid99, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Snaked, Wild Bill, Will Osboldstone, and 凱 陳 for supporting my work!</p>
+				<p class = "centeredText">Lastest News 10/7/2019</p>
+				<p class = "centeredText">Discord Server</p>
+				<p class = "centeredText">I now have a discord server. Feel free to drop in whenever!</p>
+				<p class = "centeredText">https://discord.gg/B3AszYM</p>
+				<p class = "centeredText">Thank you to: Swallows999, MrManPerson, Lasse B, ChronosEdge, Judavarius, Adonnak, Andy Amundy, Angel, Ariados, Blaise Fenn, brandon, Debarre Sonny, Drashin, iNoH8+, Jane, Karan Raj Gupta, lm Carma, marvin diaz, Mirza Hasan, murgatroid99, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Snaked, stratum, Wild Bill, Will Osboldstone, and 凱 陳 for supporting my work!</p>
 			`;
 			writeTransition("news", "View all news updates");
 			writeText("<br>");
@@ -88,6 +88,9 @@ function writeScene(scene) {
 			break;
 		}
 		case "news": {
+			writeText("<b>10/7/2019</b> - Discord Server");
+			writeText("I now have a discord server. Feel free to drop in whenever!");
+			writeText("https://discord.gg/B3AszYM");
 			writeText("<b>9/23/2019</b> - Bitch Medicenter Demo");
 			writeText("I've added another scene to Bitch Medicenter, comissioned by MrManPerson. Find the game's section below underneath Anomaly Vault and Hentai University.");
 			writeText("Have any ideas for more Human Alteration Content? I'm considering working on that game again to flesh out some areas like the clothing system. I'd love to hear your suggestions!");
@@ -397,14 +400,9 @@ function writeScene(scene) {
 		}
 		case "downloadHentaiUniversity": {
 			document.getElementById('output').innerHTML +=`
-			Most recent game files: https://mega.nz/#!H2pmSKJI!Pz-IxHdX-_4tKGLE4aodI16oSZX8A9gwIe9yARFKZmg<br><br>
-			Most recent image pack: https://mega.nz/#!jiAzhaIL!vWauyGzchx2V-IvtpdbEFNERrtcBF6uq5hMRbBZxNqQ<br><br>
-			If you're new to the game, all you need to do is download these two. Extract the game files to create the Hentai University folder, then extract the image pack directly into the Hentai University folder. <br><br>
-			Essentially, the folder should look like this:<br><br>
-			scrpts<br>
-			images<br>
-			Hentai University.html<br>
-			Hentai University Mobile.html<br>
+			Current version: v2.5<br><br>
+			Most recent game files: https://mega.nz/#!TiJHUCLS!gdhSTXcC9fqGdG6ZPCl4lHRhcnod5n1Vzk3xRUW8PgE<br><br>
+			I've switched to a one-download style for this game. Just extract and play!
 			`;
 			writeTransition("start", "Go Back");
 			break;
