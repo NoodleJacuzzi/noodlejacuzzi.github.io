@@ -2,16 +2,17 @@
 <html>
 	<head>
 		<title>Hentai University</title>
+		<script src="scripts/locations.js"></script>
 		<script src="scripts/index.js"></script>
-		<script src="scripts/sceneList.js"></script>
 		<link rel="stylesheet" type="text/css" href="scripts/index.css" />
 	</head>
 	<body onload ="startup()">
 		<div id = "menu" class = "menu">
 			<div id="titlePanel">
 				<p id = "title" class = "title">Hentai University</p>
-				<p id = "version" class = "version">V2.0</p>
-				<p id = "version" class = "version">Updates are in progress, will post this version soon</p>
+				<p id = "version" class = "version">V2.9</p>
+				<p id = "version" class = "version">Testing server, report any bugs</p>
+				<!--<p id = "version" class = "version">Updates are in progress, will post this version soon</p>-->
 				<p id = "author">
 					<a href="https://noodlejacuzzi.github.io/index.html">Noodle Jacuzzi</a><br>
 					<a href="https://www.reddit.com/user/CaptainCryptogreek">Captain Cryptogreek</a><br>
@@ -47,7 +48,7 @@
 		<div id = "wrapper" class = "wrapper">
 			<div id="wrapperBG"></div>
 			<div id = "output" class = "output" onclick = "hideStuff()">
-			<p class="choiceText" onclick="sceneTransition('start')">
+			<p class="choiceText" onclick="writeEvent('system', 'start')">
 				Start the game
 			</p>
 			</div>

@@ -1,177 +1,6 @@
 function writeScene(scene) {
 	console.log("Now writing scene ID " + scene + ", the time is " + data.player.time);
 	switch(scene) {
-		case "start" : {
-			document.getElementById('playerImage').src = "scripts/gamefiles/none.png";
-			writeBig("scripts/gamefiles/logo2.png");
-			writeText("Hentai University is an adult game created by NoodleJacuuzi and Captain Cryptogreek. You can find and keep up with all NoodleJacuzzi's games, including Human Alteration App, Princess Quest, and Rainy DayZ at the master index here: <a href='https://noodlejacuzzi.github.io/index.html'>Noodle Jacuzzi's Index</a>");
-			writeText("You can find more of Captain Cryptogreek's work here: <a href='https://www.reddit.com/user/CaptainCryptogreek'>Captain Cryptogreek on Reddit</a>");
-			writeText("This game is based (loosely) on the design of Hentai High School by Capta1n and the Hentai High School + project. However, there are no elements of school management or system of global corruption. The smaller scale means it will be more feasible to complete than either of those games.");
-			writeText("As a content warning, this game features hypnosis and dubious consent between partners, and mostly depicts straight M/F sex. There are several male characters who have scenes depicting undoubtably homosexual content, but they universally have a trap/twink bodytype and no specific character relationships are ever forced on the player. Finally, all characters are portrayed as being 18 or older. Every single character is a high-school graduate, and we currently don't intend to add any character who looks underage.");
-			writeText("If you'd like to avoid any specific fetishes, each character's logbook page lists the fetishes their scenes cover. Keep in mind that, as you are a hypnotist, hypnosis/mind control is so common we won't list it in the tags.");
-			writeTransition("prologue", "Start the game as a man");
-			writeTransition("prologueAlt", "Start the game as a futanari");
-			writeText("<hr>");
-			writeText("Other notes:");
-			writeText("We're always open to comments or criticism. If you feel like school management would add a lot to the game, you'd like us to consider adding another artist, or you'd like to suggest content of your own, you can shoot us a message anywhere this game is posted. You can find the Patreon here: <a href='https://www.patreon.com/noodlejacuzzi'>Patreon Link</a><br>");
-			writeText("You can also send us a message directly. Noodlejacuzzi is on discord (NoodleJacuzzi#4120) or you can send an email at noodlejacuzzi@gmail.com");
-			writeText("Captain Cryptogreek can be messaged on his reddit account where he regularly posts captions. You can also shoot him an email if you'd like him to proofread or you'd like to commission his skills at cryptogreekcaptions@gmail.com");
-			writeText("Thank you to: Swallows999, MrManPerson, Lasse Bannow, ChronosEdge, brandon, Debarre Sonny, Drashin, iNoH8+, Mirza Hasan, murgatroid99, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Wild Bill, Will Osboldstone, and 凱 陳 for funding this game! The patreon funds are split as Captain Cryptogreek has taken over as lead writer for the game.");
-			writeSpecial("And special thanks to Stiggy752 for the game's new CSS!");
-			writeText("I've added the option to start as a futanari. This only changes your character's image and the pronouns used (so that you're ma'am instead of sir). Please let Noodle Jacuzzi know if anyone is still referring to your as 'sir' when inappropriate, thank you.");
-			writeText("The game is more freeform and slower paced than my previous works. If you get stuck, please let us know. There isn't currently a guide, but we can easily feature an FAQ here.");
-			writeText("You can click on the title of a window to close it. For example, if you click 'LOGBOOK' on the left (or bottom on mobile), you can close the new window by clicking anywhere in the 'LOGBOOK' section at the top.");
-			writeText("This game uses art by three artists. Enoshima Iki, Nagi Ichi, and Oreteki18kin. Hover over an image for the artist who created it. Check it out:");
-			writeMed("images/mom/profile.jpg", "Art by Enoshima Iki");
-			writeMed("images/tomgirl/profile.jpg", "Art by Nagi Ichi");
-			writeMed("images/purple/profile.jpg", "Art by Oreteki18kin");
-			writeText("All three of the artists who's works we've used have different styles, and all work is censored due to Japan's censorship laws. We don't ever intend to mix and match within scenes, but it is worth noting that each have their own appeal / flaws. Oreteki is a divisive artist due to his style of drawing labia lips, and Nagi Ichi's work is 90% M/M. If these features are a dealbreaker for you, consider simply avoiding characters by these artists.");
-			writeTransition("oretekiTest", "See an Oreteki18kin example <br>(LONG LABIA LIPS/FLAPS)");
-			writeTransition("nagiTest", "See a Nagi Ichi example <br>(AT LEAST 90% GAY)");
-			break;
-		}
-		case "prologue": {
-			writeText("Dear <input type='text' id='nameSubmission' value='Thomas'>");
-			writeText("It is with immense pleasure that I write to inform you today of your successful acceptance into the role of school counselor.");
-			writeText("Due to a variety of reasons, few men have ever been considered for a position here, but your outstanding collection of references and qualifications have  made it clear that you belong here.");
-			writeText("I am told that you have already finished the moving process. The dedication required to uproot yourself will not be taken lightly.");
-			writeText("I have no doubt that the lives of our students will improve with the addition of a full time counselor, and I very much look forwards to meeting you.");
-			writeText("- Yours, Principal "+data.story[8].fName+".");
-			writeFunction("renamePlayer()", "Finish reading the paper");
-			break;
-		}
-		case "prologueAlt": {
-			data.player.gender = "woman";
-			data.player.title = "Miss";
-			data.player.honorific = "ma'am";
-			if (checkBody("basil") != true) {
-				var goof = {index: "basil", artist: "Art by Ishimura",};
-				data.bodytypes.push(goof);
-			}
-			var pepsi = data.bodytypes.length-1;
-			changeBody(pepsi);
-			writeText("Dear <input type='text' id='nameSubmission' value='Tomara'>");
-			writeText("It is with immense pleasure that I write to inform you today of your successful acceptance into the role of school counselor.");
-			writeText("Due to a variety of reasons, few women of your background have ever been considered for a position here, but your outstanding collection of references and qualifications have  made it clear that you belong here.");
-			writeText("I am told that you have already finished the moving process. The dedication required to uproot yourself will not be taken lightly.");
-			writeText("I have no doubt that the lives of our students will improve with the addition of a full time counselor, and I very much look forwards to meeting you.");
-			writeText("- Yours, Principal "+data.story[8].fName+".");
-			writeFunction("renamePlayer()", "Finish reading the paper");
-			break;
-		}
-		case "prologue2": {
-			writeBig("scripts/gamefiles/characters/"+data.player.character+".jpg", "Art by Ishimura");
-			writeText("You are " + data.player.name + ", amateur hypnotist.");
-			writeText("The time spent collecting and hypnotizing references almost wasn't worth it, especially with how long faking your credentials took. But it paid off in the end.");
-			writeText("Today you'll be sliding right into your new position as a school counselor. Your direct supervisor is well under your control, so you have completely free range for as long as you play it safe.");
-			writeText("The house is free too, so you could just sleep in all day and get paid every five days like clockwork. But there's a lot more on offer here to enjoy.");
-			writeText("This town is a hotspot of beautiful women, and the school it surrounds is often referred to by its nickname.");
-			writeText("<b>Hentai University</b>");
-			writeTransition("playerHouse", "Get started");
-			break;
-		}
-		case "oretekiTest": {
-			writeBig("images/porn/5A-3.jpg", "Art by Oreteki18Kin");
-			writeTransition("start", "go back");
-			break;
-		}
-		case "nagiTest": {
-			writeBig("images/tomgirl/7-5.jpg", "Art by Nagi Ichi");
-			writeTransition("start", "go back");
-			break;
-		}
-		case "cheat": {
-			document.getElementById('output').innerHTML += `
-				<p class='centeredText'>You can enter cheat codes here. For example, use the code 'new name' to rename all of the game's other characters.</p>
-				<p class='centeredText'>Enter cheat code: <input type="text" id="cheatSubmission" value=""></p>
-				<p class='choiceText' onclick='cheat()'>Submit</p>
-			`;
-			writeTransition("gameConsole", "Go back");
-			break;
-		}
-		case "newDay": {
-			if (data.player.currentScene != scene) {
-				randNum = getRandomInt(8);
-				randNum += 1;
-				data.player.dayID = randNum;
-				console.log("Today's day ID is " + data.player.dayID);
-				data.player.day += 1;
-			}
-			for (i = 0; i < data.story.length; i++) {
-				data.story[i].encountered = false;
-			}
-			data.player.time = "Morning";
-			updateMenu();
-			checkDay();
-			checkForPhoneEvents();
-			break;
-		}
-		case "laptop": {
-			writeTransition("porn", "Look up porn");
-			writeTransition("gallery", "View the gallery");
-			writeTransition("playerHouse", "Finish up");
-			break;
-		}
-		case "porn": {
-			if (data.player.time == "Night") {
-				writeText("Looking out your window, you notice it's already night! You'll need to get some sleep.");
-				writeTransition("playerHouse", "Go back");
-			}
-			else {
-				writePorn();
-				writeTransition("laptop", "Go back");
-			}
-			break;
-		}
-		case "gallery" : {
-			generateGalleryNav();
-			writeTransition("playerHouse", "Finish up");
-			break;
-		}
-		case "gameConsole": {
-			writeTransition("cheat", "Enter cheat code");
-			writeTransition("playerHouse", "Go back");
-			break;
-		}
-		case "wardrobe": {
-			writeWardrobe();
-			writeTransition("playerHouse", "Go back");
-			break;
-		}
-		case "renamingRoom": {
-			for (i = 0; i < data.story.length; i++) {
-				writeMed("images/"+data.story[i].index+"/profile.jpg");
-				document.getElementById('output').innerHTML += `
-				<p class="centeredText"><input type="text" id="nameSubmission`+i+`1" value="`+data.story[i].fName+`"> <input type="text" id="nameSubmission`+i+`2" value="`+data.story[i].lName+`"></p>
-				`;
-			}
-			writeFunction("renameEveryone()", "Rename characters");
-			writeTransition("playerHouse", "Cancel and leave");
-			break;
-		}
-		case "paperwork": {
-			writeText("You can do paperwork here, earning some quick overtime cash based on your Counseling skill. Would you like to spend a few hours doing that?");
-			writeTransition("filing", "Yes");
-			writeTransition("playerOffice", "No");
-			break;
-		}
-		case "filing": {
-			var moneyMade = 5 + data.player.counseling;
-			if (data.player.currentScene != scene) {
-				passTime();
-				data.player.money += moneyMade;
-				updateMenu();
-			}
-			writeText("You spent some time doing paperwork. It's a slow and boring job, but money is money after all.");
-			writeSpecial("You earned $" + moneyMade + "!");
-			if (data.player.time != "Night") {
-				writeTransition("playerOffice", "Finish up");
-			}
-			else {
-				writeTransition("playerHouse", "It's getting late, head home");
-			}
-			break;
-		}
 		case "hypnosisTutor": {
 			writeText("Testing one two three");
 			writeTransition("playerHouse", "Go back home");
@@ -728,6 +557,10 @@ function writeEvent(scene) {
 		document.getElementById('output').innerHTML = '';
 	}
 	switch (scene) {
+		case "paperwork": {
+			alert('failure');
+			break;
+		}
 		case "mom1": {
 			writeSpeech("player", "", ""+data.story[0].fName+"! Hey!");
 				writeText("She has a familiar despondent look in her eyes, but it softens as she sees you waving from across the street.");
@@ -902,7 +735,7 @@ function writeEvent(scene) {
 				data.player.currentScene = "playerOffice";
 				passTime();
 				data.story[1].trust = 20;
-				writeTransition(data.player.currentScene, "Clean yourself up");
+				writeFunction("changeLocation(data.player.location)", "Clean yourself up");
 			}
 			break;
 		}
@@ -911,7 +744,7 @@ function writeEvent(scene) {
 			if(data.player.money < 5){
 				writeSpeech("kuro","","Um... You <i>do</i> realize you don't have enough, right?");
 				writeFunction("writeEncounter('kuro', 'kuro4')", "Choose something else");
-				writeTransition(data.player.currentScene, "Leave her be");
+				writeFunction("changeLocation(data.player.location)", "Leave her be");
 				scene = "kuro1";
 				break;
 			}
@@ -951,7 +784,7 @@ function writeEvent(scene) {
 			unlockScene("kuro2");
 			data.player.currentScene = "playerOffice";
 			passTime();
-			writeTransition(data.player.currentScene, "Lock the door and clean yourself up");
+			writeFunction("changeLocation(data.player.location)", "Lock the door and clean yourself up");
 			}
 			break;
 		}
@@ -960,7 +793,7 @@ function writeEvent(scene) {
 			if(data.player.money < 10){
 				writeSpeech("kuro","","Um... You <i>do</i> realize you don't have enough, right?");
 				writeFunction("writeEncounter('kuro', 'kuro4')", "Choose something else");
-				writeTransition(data.player.currentScene, "Leave her be");
+				writeFunction("changeLocation(data.player.location)", "Leave her be");
 				scene = "kuro1";
 				break;
 			}
@@ -1000,15 +833,16 @@ function writeEvent(scene) {
 			writeText("She pauses, before shrugging.");
 			writeSpeech("kuro","","Sure, knock yourself out.");
 			if(data.player.hacking == 0){
-				writeText("With that, she walks out of sight, leaving you to get your clothes on and start thinking about what you'll need for a bit of <i>digital</i> hypnosis. Maybe there's someone at school who's better with computers...?");
+				//writeText("With that, she walks out of sight, leaving you to get your clothes on and start thinking about what you'll need for a bit of <i>digital</i> hypnosis. Maybe there's someone at school who's better with computers...?");
 			}
 			else{
-				writeText("With that, she walks out of sight. Considering your skill with digital devices, it shouldn't be too hard to put something together that'll <i>really</i> catch her attention...");
+				//writeText("With that, she walks out of sight. Considering your skill with digital devices, it shouldn't be too hard to put something together that'll <i>really</i> catch her attention...");
 			}
+			writeText("You have an idea, but no idea how to pull it off. Maybe inspiration will strike you later? For now, you're finished.");
 			if (data.player.currentScene != 'gallery') {
 			data.player.currentScene = "vintageStreet";
 			passTime();
-			writeTransition(data.player.currentScene, "Leave");
+			writeFunction("changeLocation(data.player.location)", "Leave");
 			if(data.story[1].trust < 24){
 				data.story[1].trust += 1;
 			}
@@ -1382,7 +1216,7 @@ function writeEvent(scene) {
 			writeText("...");
 			writeText("It takes a while, but you do manage to pull yourself out of the afterglow and away from the couch.");
 			writeText("You're pretty interested in meeting this boss of hers but, for now, maybe it's better to head home and shower...");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			if (data.player.currentScene != 'gallery') {
 				
 			data.story[5].trust += 1;
@@ -1467,7 +1301,7 @@ function writeEvent(scene) {
 			writeText("Being an expert in sexual sign language, you ignore her way of saying that she'll handle clean-up. Between the both of you, you get finished far faster, and it gives her a chance to wash her face.");
 			writeText("Just before you exit the apartment, you feel her pull on your shirt gently.");
 			writeText("Her lips just barely brush against your cheek before you're pushed all the way through the door, "+data.story[6].fName+" winking as she shuts it behind her.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			if (data.player.currentScene != 'gallery') {
 				
 			data.story[6].trust += 1;
@@ -1550,7 +1384,7 @@ function writeEvent(scene) {
 			writeText("As he leaves, you can't help but wonder if he'll be as thankful when he's back to normal and can't feel his hand when he touches his dick...");
 			if (data.player.currentScene != 'gallery') {
 				data.player.currentScene = 'playerOffice';
-				writeTransition(data.player.currentScene, "Finish up");
+				writeFunction("changeLocation(data.player.location)", "Finish up");
 				data.story[7].trust += 1;
 				passTime();
 			}
@@ -1638,7 +1472,7 @@ function writeEvent(scene) {
 			writeText("That's your good deed for the day. Now, to deal with the <i>rest</i> of the day...");
 			if (data.player.currentScene != 'gallery') {
 			data.player.currentScene = 'playerOffice';
-			writeTransition(data.player.currentScene, "Finish up");
+			writeFunction("changeLocation(data.player.location)", "Finish up");
 			data.story[7].trust += 1;
 			passTime();
 			}
@@ -1721,7 +1555,7 @@ function writeEvent(scene) {
 			writeText("With that, he darts out of the room, leaving you with a bit of time left before dark and a raging hard-on.");
 			if (data.player.currentScene != 'gallery') {
 			data.player.currentScene = 'gym';
-			writeTransition(data.player.currentScene, "Get going");
+			writeFunction("changeLocation(data.player.location)", "Get going");
 			data.story[7].trust += 1;
 			passTime();
 			}
@@ -1797,7 +1631,7 @@ function writeEvent(scene) {
 			writeText("Despite how much you want to sleep yourself, you opt to get up, move him onto the couch, and finally head home.");
 			writeText("Good fucking <i>God</i>, you need a shower...");
 			if (data.player.currentScene != 'gallery') {
-			writeTransition(data.player.currentScene, "Go home and sleep");
+			writeFunction("changeLocation(data.player.location)", "Go home and sleep");
 			data.story[7].trust += 1;
 			passTime();
 			passTime();
@@ -1812,7 +1646,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Oreteki18Kin");
 			writeText("It looks like there's no audio for this video.");
 			writeSpeech("Comments", "scripts/gamefiles/none.png", "Anonymous: Lol what a stupid hat<br>Anonymous: Holy shit is that Angelica from Pop Pop girls?<br>Anonymous: Obviously not you fucking idiot, why would she be doing porn?<br>");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn0B": {
@@ -1824,7 +1658,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Enoshima Iki");
 			writeText("It looks like there's no audio for this video.");
 			writeSpeech("Comments", "scripts/gamefiles/none.png", "Anonymous: You're living the life bro<br>Anonymous: Cat outfits are stupid (USER WAS BANNED FOR THIS POST)");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn0C": {
@@ -1835,7 +1669,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Akushizu");
 			writeText("It looks like there's no audio for this video.");
 			writeSpeech("Comments", "scripts/gamefiles/none.png", "Anonymous: Isn't blackmail like this actually illegal?<br>Anonymous: Holy shit guys I think I go to the same school as her<br>Anonymous: Pics or it didn't happen");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn1A": {
@@ -1846,7 +1680,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Oreteki18Kin");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Oreteki18Kin");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn1B": {
@@ -1857,7 +1691,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Enoshima Iki");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Enoshima Iki");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn1C": {
@@ -1866,7 +1700,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+".jpg", "Art by Akushizu");
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Akushizu");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn2A": {
@@ -1875,7 +1709,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+".jpg", "Art by Oreteki18Kin");
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Oreteki18Kin");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn2B": {
@@ -1885,7 +1719,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Enoshima Iki");
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Enoshima Iki");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn2C": {
@@ -1896,7 +1730,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Butakoma 330G");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Butakoma 330G");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn3A": {
@@ -1907,7 +1741,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Butakoma 330G");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Butakoma 330G");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn3B": {
@@ -1918,7 +1752,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Butakoma 330G");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Butakoma 330G");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn3C": {
@@ -1928,7 +1762,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Akushizu");
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Akushizu");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn4A": {
@@ -1937,7 +1771,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+".jpg", "Art by Enoshima Iki");
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Enoshima Iki");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn4B": {
@@ -1947,7 +1781,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Butakoma 330G");
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Butakoma 330G");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn4C": {
@@ -1957,7 +1791,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Akushizu");
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Akushizu");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn5A": {
@@ -1968,7 +1802,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Oreteki18Kin");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Oreteki18Kin");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn5B": {
@@ -1979,7 +1813,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Butakoma 330G");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Butakoma 330G");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn5C": {
@@ -1990,7 +1824,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Akushizu");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Akushizu");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn6A": {
@@ -2001,7 +1835,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Enoshima Iki");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Enoshima Iki");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn6B": {
@@ -2013,7 +1847,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Oreteki18Kin");
 			writeBig("images/porn/"+sheet+"-5.jpg", "Art by Oreteki18Kin");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn6C": {
@@ -2027,7 +1861,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-6.jpg", "Art by Akushizu");
 			writeBig("images/porn/"+sheet+"-7.jpg", "Art by Akushizu");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn7A": {
@@ -2037,7 +1871,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Oreteki18Kin");
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Oreteki18Kin");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn7B": {
@@ -2050,7 +1884,7 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-5.jpg", "Art by Akushizu");
 			writeBig("images/porn/"+sheet+"-6.jpg", "Art by Akushizu");
 			writeText("It looks like there's no audio for this video.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn7C": {
@@ -2062,23 +1896,23 @@ function writeEvent(scene) {
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Enoshima Iki");
 			writeText("It looks like there's no audio for this video.");
 			writeSpeech("Comments", "scripts/gamefiles/none.png", "Anonymous: Whoa holy shit is this a mod?<br>Anonymous: Sauce plz<br>Anonymous: Lurk moar dumbass<br>Anonymous: Is this actually programmed into the game?");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "specialDay": {
 			data.player.time = "Evening";
 			data.player.currentScene = "schoolEntrance";
-			writeTransition(data.player.currentScene, "Say goodbye");
+			writeFunction("changeLocation(data.player.location)", "Say goodbye");
 			break;
 		}
 		default: {
 			writeText("This event is not yet finished, but do not fret! You've still unlocked the ability to view this scene later via the gallery. In a future version, once this scene has been completed you'll be able to watch this scene from there so long as you have a laptop.");
-			writeTransition(data.player.currentScene, "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 	}
 	if (data.player.currentScene == 'gallery') {
-		writeTransition(data.player.currentScene, "Finish");
+		writeFunction("changeLocation(data.player.location)", "Finish");
 	}
 	if (galleryCheck(scene) != true) {
 		unlockScene(scene);
@@ -2133,7 +1967,7 @@ function writeEncounter(n, scene) {
 					passTime();
 					data.story[0].trust = 40;
 					data.story[0].encountered = true;
-					writeTransition(data.player.currentScene, "Go back inside");
+					writeFunction("changeLocation(data.player.location)", "Go back inside");
 					break;
 				}
 				case "mom1B": {
@@ -2164,7 +1998,7 @@ function writeEncounter(n, scene) {
 					passTime();
 					data.story[0].trust = 40;
 					data.story[0].encountered = true;
-					writeTransition(data.player.currentScene, "Go back");
+					writeFunction("changeLocation(data.player.location)", "Go back");
 					break;
 				}
 				case "mom2A": {
@@ -2190,7 +2024,7 @@ function writeEncounter(n, scene) {
 					writeText("...");
 					writeText("The conversation carries on for several hours of what feels like small talk. This time both of you are carrying of the conversation, and " + data.story[0].fName + " follows along with what you say with patient attentiveness.");
 					writeText("It's soothing to just whittle away the time, and you feel like you both understand each other better. Eventually though you make it back to the apartment complex and you wish each other well before you go your separate ways.");
-					writeTransition(data.player.currentScene, "Go back");
+					writeFunction("changeLocation(data.player.location)", "Go back");
 					break;
 				}
 				case "mom2AB": {
@@ -2199,7 +2033,7 @@ function writeEncounter(n, scene) {
 					writeText("Eventually, " + data.story[0].fName + " brings up something about the weather and the two of you are wrapped up in smalltalk.");
 					writeText("The conversation carries on for several hours of what feels like small talk. This time both of you are carrying of the conversation, and " + data.story[0].fName + " follows along with what you say with patient attentiveness.");
 					writeText("It's soothing to just whittle away the time, and you feel like you both understand each other better. Eventually though you make it back to the apartment complex and you wish each other well before you go your separate ways. ");
-					writeTransition(data.player.currentScene, "Go back");
+					writeFunction("changeLocation(data.player.location)", "Go back");
 					break;
 				}
 				case "mom2B": {
@@ -2226,7 +2060,7 @@ function writeEncounter(n, scene) {
 					writeText("...");
 					writeText("The conversation carries on for several hours of what feels like small talk. This time both of you are carrying of the conversation, and " + data.story[0].fName + " follows along with what you say with patient attentiveness.");
 					writeText("It's soothing to just whittle away the time, and you feel like you both understand each other better. Eventually though you make it back to the apartment complex and you wish each other well before you go your separate ways.");
-					writeTransition(data.player.currentScene, "Go back");
+					writeFunction("changeLocation(data.player.location)", "Go back");
 					break;
 				}
 				case "mom2BB": {
@@ -2235,7 +2069,7 @@ function writeEncounter(n, scene) {
 					writeText("Eventually, " + data.story[0].fName + " brings up something about the weather and the two of you are wrapped up in smalltalk.");
 					writeText("The conversation carries on for several hours of what feels like small talk. This time both of you are carrying of the conversation, and " + data.story[0].fName + " follows along with what you say with patient attentiveness.");
 					writeText("It's soothing to just whittle away the time, and you feel like you both understand each other better. Eventually though you make it back to the apartment complex and you wish each other well before you go your separate ways. ");
-					writeTransition(data.player.currentScene, "Go back");
+					writeFunction("changeLocation(data.player.location)", "Go back");
 					break;
 				}
 				case "mom3": {
@@ -2261,7 +2095,7 @@ function writeEncounter(n, scene) {
 					writeText("You get her into bed without much trouble despite her protests. Before you leave she grabs onto your hand for a few moments before she's out like a light.");
 					passTime();
 					data.story[0].trust = 80;
-					writeTransition(data.player.currentScene, "Go back");
+					writeFunction("changeLocation(data.player.location)", "Go back");
 					break;
 				}
 				case "mom4": {
@@ -2274,7 +2108,7 @@ function writeEncounter(n, scene) {
 					data.story[0].trust = 90;
 					data.story[0].textEvent = '';
 					data.player.currentScene = "apartmentOutside";
-					writeTransition(data.player.currentScene, "Go back");
+					writeFunction("changeLocation(data.player.location)", "Go back");
 					break;
 				}
 				case "mom5": {
@@ -2286,7 +2120,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("player", "", "It's a date.");
 					passTime();
 					data.story[0].trust = 100;
-					writeTransition(data.player.currentScene, "Go back");
+					writeFunction("changeLocation(data.player.location)", "Go back");
 					break;
 				}
 				case "mom6": {
@@ -2296,7 +2130,7 @@ function writeEncounter(n, scene) {
 					writeFunction("writeEncounter('mom','momBeach')", "Go to the beach");
 					writeFunction("writeEncounter('mom','momEnding')", "Settle down with " + data.story[0].fName);
 					passTime();
-					writeTransition(data.player.currentScene, "Go back");
+					writeFunction("changeLocation(data.player.location)", "Go back");
 					break;
 				}
 			}
@@ -2326,7 +2160,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("kuro","","Heya~! Looks like the two of us were being a bit loud, huh? Sorry~!");
 					writeText("She slides her lollipop back into her mouth with a wink, starting to walk off.");
 					writeFunction("writeEncounter('kuro', 'kuro2')", "Invite "+data.story[1].fName+" to your office");
-					writeTransition(data.player.currentScene, "Just let her go");
+					writeFunction("changeLocation(data.player.location)", "Just let her go");
 					break;
 				}
 				case "kuro2" : {//if you invite her to your office
@@ -2368,7 +2202,7 @@ function writeEncounter(n, scene) {
 					writeText("You get the feeling that this could turn out pretty fun, if you play your cards right.");
 					data.player.currentScene = "playerOffice";
 					passTime();
-					writeTransition(data.player.currentScene, "Go back");
+					writeFunction("changeLocation(data.player.location)", "Go back");
 					data.story[1].trust = 2;
 					break;
 				}
@@ -2385,7 +2219,7 @@ function writeEncounter(n, scene) {
 					writeText("Well. This looks like it might turn out interestingly...");
 					data.player.currentScene = "playerOffice";
 					passTime();
-					writeTransition(data.player.currentScene, "Go back");
+					writeFunction("changeLocation(data.player.location)", "Go back");
 					data.story[1].trust = 1;
 					break;
 				}
@@ -2396,7 +2230,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("kuro","","Mmm... I was starting to wonder if you were even coming.");
 					writeSpeech("player","","Didn't mean to make you wait.");
 					writeFunction("writeEncounter('kuro', 'kuro3a')", "Invite "+data.story[1].fName+" to your office");
-					writeTransition(data.player.currentScene, "Tell her she's probably late for class and leave");
+					writeFunction("changeLocation(data.player.location)", "Tell her she's probably late for class and leave");
 					break;
 				}
 				//go to your office for private affairs
@@ -2430,7 +2264,7 @@ function writeEncounter(n, scene) {
 						writeText("She turns on her heel, leaving.");
 						data.player.currentScene = "playerOffice";
 						passTime();
-						writeTransition(data.player.currentScene, "Go back");
+						writeFunction("changeLocation(data.player.location)", "Go back");
 						break;
 					}
 					else{
@@ -2449,7 +2283,7 @@ function writeEncounter(n, scene) {
 						writeText("Getting her to open up might be a bit more... difficult, than expected.");
 						data.player.currentScene = "playerOffice";
 						passTime();
-						writeTransition(data.player.currentScene, "Go back");
+						writeFunction("changeLocation(data.player.location)", "Go back");
 						data.story[1].trust = 3;
 						break;
 					}
@@ -2473,7 +2307,7 @@ function writeEncounter(n, scene) {
 						else{ // maybe || kuro4d not seen?
 							//writeFunction("writeEncounter('kuro', 'kuro4a')", "Have sex ($30)");
 						}
-						writeTransition(data.player.currentScene, "Leave her be");
+						writeFunction("changeLocation(data.player.location)", "Leave her be");
 						break;
 					}
 					else{
@@ -2484,7 +2318,7 @@ function writeEncounter(n, scene) {
 						writeFunction("writeEvent('kuro6')", "69 each other");
 						//more scenes may be implemented later
 						data.player.currentScene = "roof";
-						writeTransition(data.player.currentScene, "Leave her be");
+						writeFunction("changeLocation(data.player.location)", "Leave her be");
 						break;
 					}
 					break;
@@ -2493,7 +2327,7 @@ function writeEncounter(n, scene) {
 					if(data.story[1].trust<40){
 						writeSpeech("kuro","","Ah. No offense, but that sort of thing is... y'know? I'd need to get to know you better as a client before we can do stuff like that. Sorry, hun.");
 						writeFunction("writeEncounter('kuro', 'kuro4')", "Choose something else");
-						writeTransition(data.player.currentScene, "Leave her be");
+						writeFunction("changeLocation(data.player.location)", "Leave her be");
 						// if(data.player.money >= 100){
 						// 	writeFunction("writeEncounter('kuro', 'kuro4b')", "Offer $100");
 						// }
@@ -2551,7 +2385,7 @@ function writeEncounter(n, scene) {
 					writeText("He's staring at you, so you decide to...");
 					writeBig("images/tomgirl/1-3.jpg", "Art by Nagi Ichi");
 					writeFunction("writeEncounter('tomgirl', 'tomgirl2')", "Invite "+data.story[2].fName+" to your office");
-					writeTransition(data.player.currentScene, "Walk on by");
+					writeFunction("changeLocation(data.player.location)", "Walk on by");
 					break;
 				}
 				case "tomgirl2": {
@@ -2589,7 +2423,7 @@ function writeEncounter(n, scene) {
 					writeText("He runs off without a response. Oh well, you have him in your grasp.");
 					data.player.currentScene = "playerOffice";
 					passTime();
-					writeTransition(data.player.currentScene, "Go back");
+					writeFunction("changeLocation(data.player.location)", "Go back");
 					data.story[2].trust = 2;
 					break;
 				}
@@ -2640,7 +2474,7 @@ function writeEncounter(n, scene) {
 					if (galleryCheck('tomgirl4') != true) {
 						writeFunction("writeEvent('tomgirl4')", "'I want a video of you'");
 					}
-					writeTransition(data.player.currentScene, "Nevermind");
+					writeFunction("changeLocation(data.player.location)", "Nevermind");
 					passTime();
 					break;
 				}
@@ -2655,7 +2489,7 @@ function writeEncounter(n, scene) {
 				writeEvent('tomgirl5');
 				data.player.currentScene = "vintageStreet";
 				passTime();
-				writeTransition(data.player.currentScene, "Finish");
+				writeFunction("changeLocation(data.player.location)", "Finish");
 				break;
 			}
 			}
@@ -2674,7 +2508,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("chubby", "", "I see, of course. Thank you. I'll let her know about the um...");
 					writeSpeech("player", "", "Meditation.");
 					writeSpeech("chubby", "", "Thank you. You really have gone above and beyond, the university is lucky to have you.");
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					removeItem('petunia');
 					data.story[3].trust = 80;
 					data.story[3].encountered = true;
@@ -2683,7 +2517,7 @@ function writeEncounter(n, scene) {
 				}
 				case "chubby2": {
 					writeEvent('chubby1');
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					data.story[3].trust = 100;
 					data.story[4].trust = 100;
 					passTime();
@@ -2713,7 +2547,7 @@ function writeEncounter(n, scene) {
 					writeText("She's had trouble with her grades since her father passed away, despite still keeping up attendance.");
 					writeText("She seems cute enough, if you wanted to you could call her to your office for some 'counseling'.");
 					writeFunction("writeEncounter('purple', 'purple1C')", "Call her to your office.");
-					writeTransition(data.player.currentScene, "Go back");
+					writeFunction("changeLocation(data.player.location)", "Go back");
 					break;
 				}
 				case "purple1B": {
@@ -2723,7 +2557,7 @@ function writeEncounter(n, scene) {
 					writeText("She's had trouble with her grades since her father passed away, despite still keeping up attendance.");
 					writeText("She seems cute enough, if you wanted to you could call her over for some 'counseling'.");
 					writeFunction("writeEncounter('purple', 'purple1C')", "Call her to your office.");
-					writeTransition(data.player.currentScene, "Go back");
+					writeFunction("changeLocation(data.player.location)", "Go back");
 					break;
 				}
 				case "purple1C": {
@@ -2739,7 +2573,7 @@ function writeEncounter(n, scene) {
 					data.player.currentScene = 'playerOffice';
 					data.story[3].trust = 20;
 					passTime();
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
 				case "purple2A": {
@@ -2748,7 +2582,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("player", "", "Good morning "+data.story[3].fName+". On your way to school?");
 					writeSpeech("purple", "", "Yes "+data.player.honorific+". You?");
 					writeFunction("writeEncounter('purple', 'purple2C')", "'No, I was actually hoping to speak with your mother.'");
-					writeTransition(data.player.currentScene, "'Yes, I'll meet you there.");
+					writeFunction("changeLocation(data.player.location)", "'Yes, I'll meet you there.");
 					break;
 				}
 				case "purple2B": {
@@ -2757,7 +2591,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("player", "", "It's completely fine. Is your mother waiting for you?");
 					writeText("She nods.");
 					writeFunction("writeEncounter('purple', 'purple2C')", "'I'd like to meet her, if possible.'");
-					writeTransition(data.player.currentScene, "'Stay safe getting home then.");
+					writeFunction("changeLocation(data.player.location)", "'Stay safe getting home then.");
 					break;
 				}
 				case "purple2C": {
@@ -2779,7 +2613,7 @@ function writeEncounter(n, scene) {
 					data.story[3].trust = 40;
 					data.story[4].trust = 40;
 					passTime();
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
 				case "purple3": {
@@ -2869,7 +2703,7 @@ function writeEncounter(n, scene) {
 					writeText("She packs up her bags, now much more trusting of you.");
 					data.story[3].trust = 80;
 					data.player.currentScene = 'playerOffice';
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					passTime();
 					break;
 				}
@@ -2885,7 +2719,7 @@ function writeEncounter(n, scene) {
 					writeText("She packs up her bags, the idea of hypnosis still floating around in her mind.");
 					data.story[3].trust = 60;
 					data.player.currentScene = 'playerOffice';
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					passTime();
 					break;
 				}
@@ -2902,7 +2736,7 @@ function writeEncounter(n, scene) {
 					writeText("If you want to break down her barriers, it might be worth talking to her mother again.");
 					data.story[3].trust = 50;
 					data.player.currentScene = 'playerOffice';
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					passTime();
 					break;
 				}
@@ -2928,7 +2762,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("purple", "", "Of course master! I'll catch you later!");
 					data.player.currentScene = 'playerOffice';
 					data.story[3].trust = 90;
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					passTime();
 					break;
 				}
@@ -2953,7 +2787,7 @@ function writeEncounter(n, scene) {
 					writeText("She packs up her bags, now much more trusting of you.");
 					data.story[3].trust = 80;
 					data.player.currentScene = 'playerOffice';
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					passTime();
 					break;
 				}
@@ -2966,7 +2800,7 @@ function writeEncounter(n, scene) {
 					writeText("She spoke of the petunia last time, it seems like she has a great deal of emotional attachment to the flower.");
 					writeText("A gift might get her out of the funk, but you can't give it too her directly. You're just the school counselor after all.");
 					writeText("The best course of action would be to speak to "+data.story[4].fName+".");
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
 				case "purple6": {
@@ -2975,7 +2809,7 @@ function writeEncounter(n, scene) {
 					writeText("...");
 					writeText("The conversation is short and terse, you can't find a way to connect with her.");
 					writeText("Before too long she decides that it'd be best to go, she's got schoolwork to deal with after all.");
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
 				case "purple7A": {
@@ -2985,7 +2819,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("purple", "", "Sorry "+data.player.honorific+". Would you like to head home with me now?");
 					writeFunction("writeEncounter('purple', 'purple7B')", "Of course. Let's go");
 					data.player.currentScene = 'playerOffice';
-					writeTransition(data.player.currentScene, "Not right now");
+					writeFunction("changeLocation(data.player.location)", "Not right now");
 					break;
 				}
 				case "purple7B": {
@@ -3009,7 +2843,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("player", "", "I really got through to her. She said to let you know she'd be up there for a while. Working through feelings and all that.");
 					writeSpeech("chubby", "", "No problem. Thank you again. If you ever need anything, just let me know.");
 					data.player.currentScene = 'vintageStreet';
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					data.story[3].trust = 95;
 					passTime();
 					break;
@@ -3044,14 +2878,14 @@ function writeEncounter(n, scene) {
 					writeSpeech("chubby", "", "Language like that is for in private young lady, or you'll get master in trouble!");
 					writeText("She'll need some time and some direction from her daughter, but "+data.story[4].fName+" is well under your control now. You'll come back later to enjoy her, and her daughter too.");
 					data.player.currentScene = 'vintageStreet';
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					data.story[3].trust = 99;
 					passTime();
 					break;
 				}
 				case "purple9": {
 					writeEvent('chubby1');
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					data.story[3].trust = 100;
 					data.story[4].trust = 100;
 					passTime();
@@ -3113,7 +2947,7 @@ function writeEncounter(n, scene) {
 					data.story[8].trust = 40;
 					data.story[8].met = "";
 					data.story[9].trust = 20;
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
 				case "caseSelect": {
@@ -3156,14 +2990,14 @@ function writeEncounter(n, scene) {
 							}
 						}
 					}
-					writeTransition(data.player.currentScene, "Go back");
+					writeFunction("changeLocation(data.player.location)", "Go back");
 					break;
 				}
 				case "kuroCaseStart": {
 					writeText("You take "+data.story[1].fName+"'s file.");
 					writeSpeech("player", "", "I can certainly try.");
 					writeSpeech("principal", "", "Thank you. I believe she's usually being held up in the mornings at the school's entrance.");
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					data.story[8].met += "kuroS";
 					if (data.story[1].trust > 20) {
 						writeEncounter('principal', 'kuroCaseEarly');
@@ -3179,7 +3013,7 @@ function writeEncounter(n, scene) {
 					data.player.counseling += 1;
 					updateMenu();
 					writeSpecial("Your 'counseling' ability has improved! This means a pay bump, and "+data.story[8].fName+" trusts you more!");
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
 				case "kuroCaseEarly": {
@@ -3191,13 +3025,13 @@ function writeEncounter(n, scene) {
 					data.player.counseling += 1;
 					updateMenu();
 					writeSpecial("Your 'counseling' ability has improved! This means a pay bump, and "+data.story[8].fName+" trusts you more!");
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
 				case "purpleCaseStart": {
 					writeSpeech("player", "", "I can give it a shot. The loss of a parent is pretty heavy though.<br><i>She probably won't be satisfied unless I can get her back to a healthy mindset. I'll probably need to use hypnosis for this.</i>");
 					writeSpeech("principal", "", "Wonderful! I'll be waiting to hear about how it goes. I'll have the file sent to your office, and she's in class B, take the east hallway. I believe she lives on Vintage Street as well.");
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					data.story[8].met += "purpleS";
 					if (data.story[3].trust > 80) {
 						writeEncounter('principal', 'purpleCaseEarly');
@@ -3215,7 +3049,7 @@ function writeEncounter(n, scene) {
 					data.player.counseling += 1;
 					updateMenu();
 					writeSpecial("Your 'counseling' ability has improved! This means a pay bump, and "+data.story[8].fName+" trusts you more!");
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
 				case "purpleCaseEarly": {
@@ -3231,7 +3065,7 @@ function writeEncounter(n, scene) {
 					data.player.counseling += 1;
 					updateMenu();
 					writeSpecial("Your 'counseling' ability has improved! This means a pay bump, and "+data.story[8].fName+" trusts you more!");
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
 				case "scarfCaseStart": {
@@ -3241,7 +3075,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("principal", "", "She isn't picking up after herself! The teacher's lounge is always such a mess at the end of the day, and her desk is the worst!<br>Sorry, I lost control of myself for a moment.");
 					writeSpeech("player", "", "<i>That's her idea of losing control?</i><br>Alright, I guess I can ask her to pick up after herself.");
 					writeSpeech("principal", "", "Thank you, I would really appreciate it. She teaches in Class B, down the east hallway.");
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					data.story[8].met += "scarfS";
 					break;
 				}
@@ -3252,7 +3086,7 @@ function writeEncounter(n, scene) {
 					data.player.counseling += 1;
 					updateMenu();
 					writeSpecial("Your 'counseling' ability has improved! This means a pay bump, and "+data.story[8].fName+" trusts you more!");
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
 				case "neetCaseStart": {
@@ -3285,7 +3119,7 @@ function writeEncounter(n, scene) {
 					writeSpeech("player", "", "Could I just have a second please?");
 					writeText("... And she's gone, what a pain. This really isn't your job, but it'll help you get closer to "+data.story[8].fName+".");
 					writeText("In any case if she isn't interested in chatting in the halls, maybe you'll find her in the teacher's lounge?");
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
 				case "caseSelect": {
@@ -3294,7 +3128,7 @@ function writeEncounter(n, scene) {
 						writeSpeech("player", "", "<i>I should ask about a technique to use on "+data.story[7].fName+"</i>");
 						writeFunction("writeEncounter('scarf','mejiTraining')", "Ask about the technique");
 					}
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
 				case "mejiTraining": {
@@ -3307,7 +3141,7 @@ function writeEncounter(n, scene) {
 					data.player.hypnosis += 1;
 					updateMenu();
 					writeSpecial("Your skill in hypnosis has improved!");
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
 			}
@@ -3343,10 +3177,10 @@ function writeEncounter(n, scene) {
 					writeSpeech("scarf", "", "Cleaning? You wanted the room to be... Ah, you must be trying to appeal to the principal. Fine. I'll have her clean up after me. I'll be keeping an eye on you. You wanted my sister yes? I could be entreated to... share, her. If you can entertain me.");
 					writeSpeech("player", "", "I take it that dicking you here wouldn't be enough?");
 					writeSpeech("scarf", "", "Such confidence~! But you are correct. I have a... refined, pallete. Bring me your conquests, and I might teach you some of the spells I've learned over the years.");
-					writeSpecial("You've earned "+data.story[12].fName+"'s attention! She can improve your hypnosis skills. Someday, you might be able to bring characters you've hypnotised to unlock new scenes!");
+					writeSpecial("You've earned "+data.story[11].fName+"'s attention! She can improve your hypnosis skills. Someday, you might be able to bring characters you've hypnotised to unlock new scenes!");
 					data.story[11].trust = 40;
 					data.story[12].trust = 40;
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
 			}
@@ -3360,7 +3194,7 @@ function writeEncounter(n, scene) {
 					writeText("After a few more seconds, she notices you staring.");
 					writeSpeech("maid","","May I help you?");
 					writeFunction("writeEncounter('maid', 'maid1a')", "Apologize for staring");
-					writeTransition(data.player.currentScene, "Say 'no' and leave");
+					writeFunction("changeLocation(data.player.location)", "Say 'no' and leave");
 					break;
 				}
 				case "maid1a" : {
@@ -3391,7 +3225,7 @@ function writeEncounter(n, scene) {
 					writeText("She laughs.");
 					writeSpeech("maid","","You're a smart one. I'll see you later, then.");
 					writeText("With that, her car pulls out, leaving you alone.");
-					writeTransition(data.player.currentScene, "Go home");
+					writeFunction("changeLocation(data.player.location)", "Go home");
 					data.story[5].trust = 20;
 					passTime();
 					break;
@@ -3488,7 +3322,7 @@ function writeEncounter(n, scene) {
 					writeText("She very nearly trips over one of the branches, but keeps her balance... despite the two<i> very</i> clear challenges to it.");
 					writeText("She moves away from the few of the trees, looking more than a bit embarrassed as she brushes at her coat.");
 					writeFunction("writeEncounter('mistress', 'mistress1a')", "Ask if she's lost");
-					writeTransition(data.player.currentScene, "Nod politely to her and leave");
+					writeFunction("changeLocation(data.player.location)", "Nod politely to her and leave");
 					break;
 				}
 				case "mistress1a" : {
@@ -3507,7 +3341,7 @@ function writeEncounter(n, scene) {
 					writeText("She quickly darts down the path, leaving you alone.");
 					writeText("That was... something. It doesn't actually seem like she got lost, but...");
 					writeText("Well, it's not like it's your business right now. You could probably ask her about it, though, if you see her again.");
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					data.story[6].trust = 40;
 					passTime();
 					break;
@@ -3558,7 +3392,7 @@ function writeEncounter(n, scene) {
 					writeText("You recognize the one in the middle pretty easily - one of the 'high profile cases' when it comes to needing counseling.");
 					writeText(data.story[7].fName+ " "+data.story[7].lName+", a rich-kid delinquent attending university because it's what's 'expected of him'. Counseling is a hard-sell when people don't want to work for something, but given your abilities...");
 					writeFunction("writeEncounter('meji', 'meji1aa')", "Invite him to your office");
-					writeTransition(data.player.currentScene, "Leave and let "+data.story[8].fName+" handle him");
+					writeFunction("changeLocation(data.player.location)", "Leave and let "+data.story[8].fName+" handle him");
 					break;
 				}
 				case "meji1aa" : {
@@ -3585,7 +3419,7 @@ function writeEncounter(n, scene) {
 					writeText("He ends up spending a good amount of time ranting about the principal, several instructors, and a few of the students before he finally realizes the time and leaves.");
 					writeText("From the seems of things, he needed a place to just rant. Aside from that group of his, at least. He's not ready for full-hypnosis just yet, but you get the feeling he's already rather open to suggestions...");
 					data.player.currentScene = 'playerOffice';
-					writeTransition(data.player.currentScene, "Finish");
+					writeFunction("changeLocation(data.player.location)", "Finish");
 					passTime();
 					break;
 				}
@@ -3595,7 +3429,7 @@ function writeEncounter(n, scene) {
 					writeText("He starts moving suddenly, darting off towards a few of the harder-to-navigate alleys, but it doesn't take a genius to figure out how to follow him.");
 					writeText("He's panicking, so he'll probably head in the opposite direction of you while using the alleys to make himself hard to follow...");
 					writeFunction("writeEncounter('meji','meji2a')", "Go to where he's most likely to come out");
-					writeTransition(data.player.currentScene, "Leave him be");
+					writeFunction("changeLocation(data.player.location)", "Leave him be");
 					break;
 				}
 				case "meji2a" : {
@@ -3627,7 +3461,7 @@ function writeEncounter(n, scene) {
 					writeText("When you do get to his place, he just mumbles a quick thanks and practically sprints through the door, his face bright red.");
 					writeText("Speaking to him at school again should be pretty interesting...");
 					data.player.currentScene = 'vintageStreet';
-					writeTransition(data.player.currentScene, "Leave him be");
+					writeFunction("changeLocation(data.player.location)", "Leave him be");
 					data.story[7].trust = 40;
 					passTime();
 					break;
@@ -3655,7 +3489,7 @@ function writeEncounter(n, scene) {
 					writeText("He swallows nervously, nodding once before running off quickly.");
 					writeText("...All in all, it didn't exactly build <i>trust</i> between you two, but you can already tell that things are going to get <i>interesting.</i>");
 					data.player.currentScene = 'vintageStreet';
-					writeTransition(data.player.currentScene, "Head home");
+					writeFunction("changeLocation(data.player.location)", "Head home");
 					data.story[7].trust = 20;
 					passTime();
 					break;
@@ -3690,7 +3524,7 @@ function writeEncounter(n, scene) {
 						}
 
 						writeFunction("writeEncounter('meji','meji3a')", "Invite him to your office for hypnotic training");
-						writeTransition(data.player.currentScene, "Leave him be for now");
+						writeFunction("changeLocation(data.player.location)", "Leave him be for now");
 						break;
 					}
 
@@ -3702,7 +3536,7 @@ function writeEncounter(n, scene) {
 							writeText("He seems to walk a bit oddly as he approaches, and you can see a flash of something in his eyes.");
 							writeSpeech("meji","","I think we, uh... need to talk about last time?");
 							writeFunction("writeEncounter('meji','meji3z')", "Take him to your office");
-							writeTransition(data.player.currentScene, "Leave him be for now");
+							writeFunction("changeLocation(data.player.location)", "Leave him be for now");
 							break;
 						}
 
@@ -3712,20 +3546,20 @@ function writeEncounter(n, scene) {
 							writeText("His face is clearly flushed, he's walking a bit oddly, and he seems to fidget a bit with the crotch of his pants.");
 							writeSpeech("meji","","Hello, "+data.player.honorific+". I wanted to speak with you, maybe in your office...?");
 							writeFunction("writeEncounter('meji','meji3z')", "Take him to your office");
-							writeTransition(data.player.currentScene, "Leave him be for now");
+							writeFunction("changeLocation(data.player.location)", "Leave him be for now");
 							break;
 						}
 						else if(data.story[7].trust == 22 || data.story[7].trust == 42){
 							if(data.player.hypnosis < 2){
 								writeText("You can see " +data.story[7].fName+ " up ahead with his friends. Unfortunately, you can't really help him just yet.");
 								writeText("Maybe the shopping district might have something to help? Their stock is pretty... <i>varied.</i>");
-								writeTransition(data.player.currentScene, "Leave him be for now");
+								writeFunction("changeLocation(data.player.location)", "Leave him be for now");
 								break;
 							}
 							else{
 								writeText("You can see " +data.story[7].fName+ " up ahead with his friends. With a better understanding of your abilities, you should be able to help him out now.");
 								writeFunction("writeEvent('meji2')", "Invite him to your office");
-								writeTransition(data.player.currentScene, "Leave him be for now");
+								writeFunction("changeLocation(data.player.location)", "Leave him be for now");
 								break;
 							}
 						}
@@ -3753,7 +3587,7 @@ function writeEncounter(n, scene) {
 								writeFunction("writeEncounter('meji','meji3b')", "Tell him you want to see something new");
 							}
 						}
-						writeTransition(data.player.currentScene, "Leave him be for now");
+						writeFunction("changeLocation(data.player.location)", "Leave him be for now");
 					}
 					break;
 				}
@@ -3802,7 +3636,7 @@ function writeEncounter(n, scene) {
 						writeText("Might be a good idea to practice on someone else to improve, or find some other way to improve your hypnosis.");
 					}
 					data.player.currentScene = 'playerOffice';
-					writeTransition(data.player.currentScene, "Get back to work");
+					writeFunction("changeLocation(data.player.location)", "Get back to work");
 					data.story[7].trust += 1;
 					passTime();
 					break;
@@ -3864,7 +3698,7 @@ function writeEncounter(n, scene) {
 					}
 					writeText("Hm. Well, that is a problem... But then again, there's no reason <i>you</i> can't buy something, if you're interested in seeing him in it. Maybe there's something at the shopping district...?");
 					writeFunction("writeEncounter('meji','meji3')", "Choose something else");
-					writeTransition(data.player.currentScene, "Leave him be for now");
+					writeFunction("changeLocation(data.player.location)", "Leave him be for now");
 					break;
 				}
 				case "meji3c" : {
@@ -4440,6 +4274,7 @@ function writePhoneEvent(n) {
 	saveSlot(110);
 	console.log("Writing event " + n + " for " + data.story[data.player.lastText].index);
 	data.player.lastText = parseInt(data.player.lastText);
+	console.log("test");
 	switch (data.story[data.player.lastText].index) {
 		case "mom": { //alt 3 to close
 			switch (n) {
@@ -4755,7 +4590,7 @@ function writePhoneEvent(n) {
 				}
 				case "kuroPhone3A" : {
 					writePhoneSpeech("player","","Sure. What is it?");
-					writePhoneImage("images/kuro/3-1.jpg");
+					writePhoneImage("images/kuro/3-1.jpg", "Art by Enoshima Iki");
 					writePhoneSpeech("kuro","","Had a friend over last night and took some pics~!");
 					writePhoneSpeech("kuro","","You like?");
 					writePhoneChoices("Beautiful","Not bad, but messy","What friend?");
@@ -4767,7 +4602,7 @@ function writePhoneEvent(n) {
 					writePhoneSpeech("kuro","","Maybe shoulda said something sexy tho");
 					writePhoneSpeech("kuro","","Maybe that would make you go yes maam");
 					writePhoneSpeech("kuro","","Here");
-					writePhoneImage("images/kuro/3-1.jpg");
+					writePhoneImage("images/kuro/3-1.jpg", "Art by Enoshima Iki");
 					writePhoneSpeech("kuro","","Had a friend over last night and took some pics~!");
 					writePhoneSpeech("kuro","","You like?");
 					writePhoneChoices("Beautiful","Not bad, but messy","What friend?");
@@ -4844,7 +4679,7 @@ function writePhoneEvent(n) {
 				case "kuroPhone4B" : {
 					writePhoneSpeech("kuro","","Oof, shes gonna get so turned on hearing that");
 					writePhoneSpeech("kuro","","here");
-					writePhoneImage("images/kuro/profile.jpg", "Art by Enoshima Iki");
+					writePhoneImage("images/kuro/nikki.jpg", "Art by Enoshima Iki");
 					writePhoneSpeech("kuro","","She wanted you to have a pic of her, she said shes gonna cum like CRAZY knowing some guy shes never met might be jerking it to her");
 					writePhoneSpeech("kuro","","She totally went on about not knowing which guy at school has been jerking it to a pic of her ass");
 					writePhoneSpeech("kuro","","If you see her around the university you could totally whisper that you enjoyed the pic");

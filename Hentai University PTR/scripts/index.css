@@ -58,17 +58,17 @@ html, body {
 /*Output Zone*/
 
 #phone .button {
-    color: var(--character-color);
+    /*color: var(--character-color);*/
 
 }
 
 .phonePicture {
-	display: block;
+    display: block;
     margin: auto;
-	max-height: 500px;
-  	padding: 20px, 1px;
-  	border: 3px solid white;
-  	border-radius: 5px;
+    max-height: 100%;
+    max-width: 100%;
+      border: 3px solid;
+      border-radius: 5px;
 }
 .backgroundPicture {
 	display: block;
@@ -453,7 +453,7 @@ p{margin: 15px 0;}
     flex-wrap: nowrap;
     background-color: rgba(0,0,0,0.5);
     border-bottom: 5px solid;
-	border-color: var(--character-color);
+	/*border-color: var(--character-color);*/
     margin: 15px 0;
     padding: 15px;
     border-radius: 15px;
@@ -515,12 +515,12 @@ img.textThumb {
     width: 150px;
     border-radius: 15px;
     margin-right: 30px;
-    box-shadow: -5px 5px var( --character-color);
+    /*box-shadow: -5px 5px var( --character-color);*/
     flex: none;
 }
 
 .textName {
-    color: var( --character-color);
+    /*color: var( --character-color);*/
 }
 
 

@@ -5,6 +5,9 @@ var saveHidden = true;
 var selfHidden = true;
 var phoneHidden = true;
 var imagesDisabled = false;
+var requestType = "";
+var eventName = "";
+var eventCharacter = "";
 var tabIndex;
 var randNum;
 var textStage = 0;
@@ -26,22 +29,23 @@ var data = {
 		counseling: 0,
 		lastText: 100,
 		dayID: 1,
-		version: 3,
+		version: 4,
+		location: "",
 	},
 	story: [
-		{index: "mom", met: false, fName: "Emily", lName: "Smith", trust: 0, encountered: false, textEvent: "",},
-		{index: "kuro", met: false, fName: "Steph", lName: "Black", trust: 0, encountered: false, textEvent: "",},
-		{index: "tomgirl", met: false, fName: "Sam", lName: "White", trust: 0, encountered: false, textEvent: "",},
-		{index: "purple", met: false, fName: "Mary", lName: "Williams", trust: 0, encountered: false, textEvent: "",},
-		{index: "chubby", met: false, fName: "Margaret", lName: "Williams", trust: 0, encountered: false, textEvent: "",},
-		{index: "maid", met: false, fName: "Lena", lName: "Rogers", trust: 0, encountered: false, textEvent: "",},
-		{index: "mistress", met: false, fName: "Anna", lName: "Fletcher", trust: 0, encountered: false, textEvent: "",},
-		{index: "meji", met: false, fName: "Reese", lName: "Kieran", trust: 0, encountered: false, textEvent: "",},
-		{index: "principal", met: false, fName: "Victoria", lName: "Devons", trust: 0, encountered: false, textEvent: "",},
-		{index: "secretary", met: false, fName: "Lisa", lName: "Jones", trust: 0, encountered: false, textEvent: "",},
-		{index: "neet", met: false, fName: "Tia", lName: "Sun", trust: 0, encountered: false, textEvent: "",},
-		{index: "scarf", met: false, fName: "Casandra", lName: "Hamilton", trust: 0, encountered: false, textEvent: "",},
-		{index: "green", met: false, fName: "Emma", lName: "Hamilton", trust: 0, encountered: false, textEvent: "",},
+		{index: "mom", met: false, fName: "Emily", lName: "Smith", trust: 0, encountered: false, textEvent: "", color: "#CCCCCC",},
+		{index: "kuro", met: false, fName: "Steph", lName: "Black", trust: 0, encountered: false, textEvent: "", color: "#fde1a5"},
+		{index: "tomgirl", met: false, fName: "Sam", lName: "White", trust: 0, encountered: false, textEvent: "", color: "#a79e9a"},
+		{index: "purple", met: false, fName: "Mary", lName: "Williams", trust: 0, encountered: false, textEvent: "", color: "#cb86ef"},
+		{index: "chubby", met: false, fName: "Margaret", lName: "Williams", trust: 0, encountered: false, textEvent: "", color: "#da924b"},
+		{index: "maid", met: false, fName: "Lena", lName: "Rogers", trust: 0, encountered: false, textEvent: "", color: "#CCCCCC"},
+		{index: "mistress", met: false, fName: "Anna", lName: "Fletcher", trust: 0, encountered: false, textEvent: "", color: "#ed9082"},
+		{index: "meji", met: false, fName: "Reese", lName: "Kieran", trust: 0, encountered: false, textEvent: "", color: "#7e52a3"},
+		{index: "principal", met: false, fName: "Victoria", lName: "Devons", trust: 0, encountered: false, textEvent: "", color: "#e47311"},
+		{index: "secretary", met: false, fName: "Lisa", lName: "Jones", trust: 0, encountered: false, textEvent: "", color: "#888888"},
+		{index: "neet", met: false, fName: "Tia", lName: "Sun", trust: 0, encountered: false, textEvent: "", textColor: "#da924b"},
+		{index: "scarf", met: false, fName: "Casandra", lName: "Hamilton", trust: 0, encountered: false, textEvent: "", color: "#954655"},
+		{index: "green", met: false, fName: "Emma", lName: "Hamilton", trust: 0, encountered: false, textEvent: "", color: "#677b4c"},
 	],
 	gallery: [
 	],
@@ -54,7 +58,7 @@ var data = {
 	],
 }
 
-var galleryArray = [
+var galleryArray = [ //obsolete
 	{index: "mom1", name: "Drinking Buddy", hint: "Emily Smith's event"},
 	{index: "mom2", name: "Breaking Tensions", hint: "Emily Smith's event"},
 	{index: "purple1", name: "Daughter's Payment 1", hint: "Mary Williams' event"},
@@ -77,104 +81,16 @@ var galleryArray = [
 	{index: "meji4", name: "Finally Finishing", hint: "Reese Kieran's event"},
 ]
 
-var itemArray = [ //If price is 0 it isn't for sale
-	{name: "Butt", key: true, price: 0, image: "scripts/gamefiles/items/butt.jpg", description: ""},
-	{name: "Leotard", key: true, price: 20, image: "scripts/gamefiles/items/leotard.jpg", description: "A womens' sports-leotard."},
-	{name: "Beer", key: true, price: 5, image: "scripts/gamefiles/items/beer.jpg", description: "A can of beer. You don't drink it, but some people do."},
-	{name: "Petunia", key: true, price: 10, image: "scripts/gamefiles/items/petunia.jpg", description: "A beautiful purple flower."},
-	{name: "Hypnosis Textbook", key: false, price: 50, image: "scripts/gamefiles/items/hypnosisTextbook.jpg", description: "A textbook on hypnosis, you can read it at home to improve your skill."},
-	{name: "Hacking Textbook", key: false, price: 50, image: "scripts/gamefiles/items/hackingTextbook.jpg", description: "A textbook on hacking, you can read it at home to improve your skill."},
-	{name: "Counseling Textbook", key: false, price: 50, image: "scripts/gamefiles/items/counselingTextbook.jpg", description: "A textbook on counseling, you can read it at home to improve your skill."},
-	{name: "Lady", key: true, price: 5, image: "scripts/gamefiles/profiles/lady.jpg", description: "For if you'd like to play as a cute lady. Unlocks the 'Lady' character portrait. Aesthetic change only, art by Nusumenaihxseki"},
-]
+var itemArray = [];
 
-var logbookArray = [
-	{index: "mom", 
-	desc: "A widowed woman, she's older than you. She honestly seems lonely sometimes, even though she can be a bit blunt.",
-	body: "She's probably into her fourties, but she'd never tell. She has light hair and a very curvaceous body.",
-	clothes: "Her preferred outfit is a v-neck shirt thin enough that you can faintly make out her black bra through it and a pair of jeans.",
-	home: "She lives in the same apartment complex as you. She occasionally goes to buy groceries in the shopping district.",
-	tags: "Unshaven, Drunken Sex, Vanilla, Pregnancy (Ending)",},
-	{index: "kuro", 
-	desc: "A university student with an incredibly chilled-out view on sex. She prefers texting over any other form of communication.",
-	body: "You have no idea how she made it into this school, but it's clear enough how she paid for it at least. She's gorgeous and her blond hair and full tan make it clear that isn't an accident.",
-	clothes: "Her preferred outfit is a riff on the school uniform, with a microskirt so short she's gotten chewed out at school more than once.",
-	home: "She mostly hangs out on the roof before and after classes.",
-	tags: "Prostitution, Unenthusiastic Sex (at first), Cum on Clothes",},
-	{index: "tomgirl", 
-	desc: "A university student who worries about his masculinity, mostly due to his effeminate figure.",
-	body: "He's about a foot shorter than you and looks twinkier than a snack cake. He's also more than a little obvious in checking out your ass when he thinks nobody's looking.",
-	clothes: "His preferred outfit is the school uniform, although he'd probably look better in a skirt.",
-	home: "His designated classroom is class B.",
-	tags: "Tomgirl, Sissification, Prostate Stimulation, Anal",},
-	{index: "purple", 
-	desc: "A university student who's been having trouble making the grade. If she doesn't pick up the slack, she could face being expelled.",
-	body: "Still, she doesn't have any intention of using her body to make the grade, at least for now.",
-	clothes: "She's pretty hot and she knows it, preferring to wear her jacket open and with a shorter skirt than is regulation.",
-	home: "Her designated classroom is class A. Sometimes she heads to the hallway outside your office in the mornings.",
-	tags: "Mom-Daughter Threesome, Public Sex, Gangbang",},
-	{index: "chubby", 
-	desc: "The mother of a university student, she's struggling to help her daughter improve her grades.",
-	body: "She's a bit out of shape, but has a pretty good looking mom-bod with huge breasts. You've never seen her without a smile on her face.",
-	clothes: "She prefers softer colors, her baggy clothes actually make her look larger than she is.",
-	home: "She lives on Vintage Street with her daughter. She tends to sleep through the evenings.",
-	tags: "Mom-Daughter Threesome, Public Sex, Gangbang",},
-	{index: "maid", 
-	desc: "A woman that works as a certain rich woman's personal maid. Off-work, she's surprising lax for a maid.",
-	body: "She's surprisingly pretty fit, even if her outfits tend to hide that.",
-	clothes: "She usually wears her maid uniform and, even when wearing casual outfits, she's prefers whites, grays, and blacks.",
-	home: "She spends most of her time in-town, running errands for her employer.",
-	tags: "Casual Sex, FFM Threesome",},
-	{index: "mistress", 
-	desc: "A fairly rich young woman that has her maid handle taking care of her.",
-	body: "Her relaxed lifestyle has her a bit more plump than most, which her custom-cut outfits seem to highlight quite well.",
-	clothes: "She generally prefers clothes with colors that match her hair or complexion.",
-	home: "She lives at the top of a particularly large complex near the Park District.",
-	tags: "Public Sex, FFM Threesome",},
-	{index: "meji", 
-	desc: "A very outwardly-confident young man with a crossdressing habit. Despite wanting to 'keep it a secret', he goes to some <i>very</i> crowded places when dressed-up.",
-	body: "He has a slim, effeminate figure that's well-suited for crossdressing. He usually lets down his ponytail whenever he wears women's clothing.",
-	clothes: "He usually wears a school uniform - the male version while at school, and a girl's uniform when around the town.",
-	home: "He usually hangs out around the Class B hallway.",
-	tags: "Crossdressing, Anal Orgasms, Orgasm Denial",},
-	{index: "principal", 
-	desc: "The principal of the university you work at. She's pretty kind but is suprisingly strong willed.",
-	body: "She's probably in her early thirties, but could be as young as 25.",
-	clothes: "She prefers an older style of dress with a white blouse and a black pencil skirt, but her shirt is worn out enough that you can clearly make out her bra underneath.",
-	home: "You have no idea where she lives, she's pretty private when it comes to her personal life. With her, it's all business all the time.",
-	tags: "No scenes yet, sorry! In the future she'll send you on more missions for special scenes, and her content will be based on your Counseling skill.",},
-	{index: "secretary", 
-	desc: "The principal's personal secretary. She handles a great deal of general paperwork for the school, although a lot of it needs to be corrected.",
-	body: "She has pretty much no confidence in herself at all. Supposedly she laments not having a boyfriend, but she never actually makes any effort to make new friends.",
-	clothes: "Her clothes tend to look new or very well kept, and she dresses quite conservatively.",
-	home: "She lives somewhere in town, probably close to the principal's home since they tend to arrive at the same time.",
-	tags: "No scenes yet, sorry!",},
-	{index: "neet", 
-	desc: "A university student, supposedly. You've never seen her in a class in session, and nobody seems to know how long she's been attending.",
-	body: "She's very well endowed despite being short, but she could really take some time to take care of herself. Notably, her hair is a mess.",
-	clothes: "You aren't sure if she even owns anything aside from the school uniform, and it always looks perpetually wrinkled.",
-	home: "According to her file, she lives in the computer lab.",
-	tags: "No scenes yet, sorry!",},
-	{index: "scarf", 
-	desc: "A fellow university teacher. Her sister works here too. She's an expert hypnotist suffering from a 'artist's block'.",
-	body: "It's not clear how old she is. When you really focus, there's a slight blur around her body whenever you look at her.",
-	clothes: "Her preferred outfit is a v-neck shirt and a yellow scarf. She must be wearing some sort of herbal perfume because your head feels fuzzy around her.",
-	home: "She lives somewhere south of the shopping district, but spends most of her time at the school. ",
-	tags: "No scenes yet, sorry! In the future her content will be dependent on increasing your Hypnosis skill.",},
-	{index: "green", 
-	desc: "A fellow university teacher. Her sister works here too. Her personality flips when around her sister, acting almost like she's in a trance.",
-	body: "She's the younger sister, and keeps herself more in shape.",
-	clothes: "She prefers to wear green over any other color, it goes well with her sister's outfits.",
-	home: "She lives somewhere south of the shopping district, but spends most of her time at the school. ",
-	tags: "No scenes yet, sorry!",},
-];
+var logbookArray = [];
 
 //Startup & Systems config
 function startup() {
 	saveSlot(111);
-	document.getElementById("inventory").style.visibility = "hidden"; 
-	document.getElementById("save").style.visibility = "hidden"; 
-	document.getElementById("self").style.visibility = "hidden"; 
+	wrapper.scrollTop = 0;
+	updateMenu();
+	hideStuff();
 	//alert(data.player.currentScene);
 	//console.log(data);
 	tempScene = data.player.currentScene;
@@ -182,7 +98,7 @@ function startup() {
 		loadSlot(110);
 	}
 	else{
-		sceneTransition('start');
+		loadEvent('system', 'start');
 	}
 }
 
@@ -221,11 +137,67 @@ function passTime() {
 	}
 }
 
-function nap() {
+function nap() { //Obsolete
 	passTime();
 	document.getElementById('output').innerHTML = '';
 	writeText("You get a lovely nap in.");
 	sceneTransition(data.player.currentScene);
+}
+
+function loadCharacter(name) {
+	for (loadIndex = 0; loadIndex < data.story.length; loadIndex++) {
+		if (data.story[loadIndex].index == name) {
+			alert(name+' found already in the data variable, aborting function');
+			name = 'failed';
+		}
+	}
+	if (name != 'failed') {
+		requestType = "load";
+		var filename = "scripts/characters/"+name+".js";
+		var fileref=document.createElement('script');
+		fileref.setAttribute("src", filename);
+		
+		//Append new script file
+		document.getElementsByTagName("head")[0].appendChild(fileref);
+		
+		//Delete script file afterwards
+		var select = document.getElementsByTagName("head")[0];
+		select.removeChild(select.lastChild);
+	}
+}
+
+function loadShop() {
+	console.log('now importing shop data from character js files');
+	itemArray = [];
+	var targetFile = 'system';
+	requestType = "shop";
+	var filename = "scripts/characters/"+targetFile+".js";
+	var fileref=document.createElement('script');
+	fileref.setAttribute("src", filename);
+	
+	//Append new script file
+	document.getElementsByTagName("head")[0].appendChild(fileref);
+	console.log(targetFile+ ' import successful');
+	
+	//Delete script file afterwards
+	var select = document.getElementsByTagName("head")[0];
+	select.removeChild(select.lastChild);
+	
+	for (i = 0; i < data.story.length; i++) {
+		console.log('test');
+		targetFile = data.story[i].index;
+		var filename = "scripts/characters/"+targetFile+".js";
+		var fileref=document.createElement('script');
+		fileref.setAttribute("src", filename);
+		
+		//Append new script file
+		document.getElementsByTagName("head")[0].appendChild(fileref);
+		console.log(targetFile+ ' import successful');
+		
+		//Delete script file afterwards
+		var select = document.getElementsByTagName("head")[0];
+		select.removeChild(select.lastChild);
+	}
 }
 
 //Showing & hiding windows
@@ -339,7 +311,7 @@ function listTextbooks() {
 	if (checkItem("Counseling Textbook") == true) {
 		writeFunction("textbook('counseling')", "Read your counseling textbook");
 	}
-	writeTransition(data.player.currentScene, "Go back");
+	writeFunction("changeLocation(data.player.location)", "Go back");
 }
 
 function textbook(n) {
@@ -367,12 +339,55 @@ function textbook(n) {
 			writeSpecial("Your skill in counseling has improved!");
 		break;
 	}
-	writeTransition(data.player.currentScene, "Finish");
+	writeFunction("changeLocation(data.player.location)", "Finish");
+}
+
+function raiseTrust(name, n) {
+	for (trustIndex = 0; trustIndex < data.story.length; trustIndex++) {
+		if (data.story[trustIndex].index == name) {
+			console.log('raising the trust of '+name+' by '+n);
+			data.story[trustIndex].trust += n;
+		}
+	}
+}
+
+function setTrust(name, n) {
+	for (trustIndex = 0; trustIndex < data.story.length; trustIndex++) {
+		if (data.story[trustIndex].index == name) {
+			console.log('setting the trust of '+name+' to '+n);
+			data.story[trustIndex].trust = n;
+		}
+	}
+}
+
+function checkTrust(name) {
+	for (y = 0; y < data.story.length; y++) {
+		if (data.story[y].index == name) {
+			return data.story[y].trust;
+		}
+	}
+}
+
+function fName(name) {
+	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
+		if (data.story[characterIndex].index == name) {
+			return data.story[characterIndex].fName;
+		}
+	}
+}
+
+function lName(name) {
+	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
+		if (data.story[characterIndex].index == name) {
+			return data.story[characterIndex].lName;
+		}
+	}
 }
 
 //Scene creation
 function writeSpeech (name, img, text) {
 	var cssName = name;
+	var cssColor = "#CCCCCC";
 	if (img == "") {
 		img = "scripts/gamefiles/profiles/"+name+".jpg";
 	}
@@ -382,21 +397,23 @@ function writeSpeech (name, img, text) {
 	if (name == "player") {
 		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
 		name = data.player.name;
+		cssColor = "#86b4dc";
 	}
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].index == name) {
-			name = data.story[i].fName + ' ' + data.story[i].lName
+			name = data.story[i].fName + ' ' + data.story[i].lName;
+			cssColor = data.story[i].color;
 		}
 	}
 	document.getElementById('output').innerHTML +=`
-	<div class = "textBox char_`+cssName+`">
-		<img class = "textThumb" src = "
+	<div class="textBox" style="border-color: `+cssColor+`">
+		<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "
 			`+ img +`
 		">
 		<div class="textBoxContent">
-		<p class = "textName">`+ name + `</p>
-		<p>` + text + `</p>
-	</div></div>
+		<p class = "textName" style="color:`+cssColor+`">`+ name + `</p>
+		<p>` + replaceCodenames(text) + `</p>
+	</div>
 	<br>
 	`;
 }
@@ -475,7 +492,7 @@ function writeMed (img, cap) {
 	}
 }
 
-function writeBG (scene) {
+function writeBG (scene) { //obsolete
 	var bg = "images/locations/" + scene + data.player.time + ".jpg";
 	console.log("hi1");
 	if (imagesDisabled != true) {
@@ -502,7 +519,7 @@ function writeButton(name, func, top, left) {
 	}
 }
 
-function writeTransition (name, scene) {
+function writeTransition (name, scene) { //obsolete
 	document.getElementById('output').innerHTML += `
 		<p class="choiceText" onclick="sceneTransition('` + name + `')">
 			` + scene + `
@@ -520,17 +537,38 @@ function writeFunction (name, func) {
 
 function writeSpecial (text) {
 	document.getElementById('output').innerHTML += `
-		<p class = "specialText">` + text + `</p>
+		<p class = "specialText">` + replaceCodenames(text) + `</p>
 	`;
 }
 
 function writeText (text) {
 	document.getElementById('output').innerHTML += `
-		<p class='rawText'>` + text + `</p>
+		<p class='rawText'>` + replaceCodenames(text) + `</p>
 	`;
 }
+
+function replaceCodenames(text) {
+	var codenameCheck = "";
+	text = text.replace('playerF', data.player.name);
+	text = text.replace('playerGender', data.player.gender);
+	text = text.replace('playerG', data.player.gender);
+	text = text.replace('playerMan', data.player.gender);
+	text = text.replace('playerTitle', data.player.title);
+	text = text.replace('playerT', data.player.title);
+	text = text.replace('playerMister', data.player.title);
+	text = text.replace('playerHonorific', data.player.honorific);
+	text = text.replace('playerH', data.player.honorific);
+	text = text.replace('playerHonorific', data.player.honorific);
+	for (codenameIndex = 0; codenameIndex < data.story.length; codenameIndex++) {
+		codenameCheck = data.story[codenameIndex].index + "F";
+		text = text.replace(codenameCheck, data.story[codenameIndex].fName);
+		codenameCheck = data.story[codenameIndex].index + "L";
+		text = text.replace(codenameCheck, data.story[codenameIndex].lName);
+	}
+	return text;
+}
 	
-function sceneTransition(scene) {
+function sceneTransition(scene) { //obsolete
 	console.log("scene transition started");
 	wrapper.scrollTop = 0;
 	updateMenu();
@@ -550,20 +588,209 @@ function writePorn() {
 	document.getElementById('output').innerHTML = '';
 	if (imagesDisabled != true) {
 		document.getElementById('output').innerHTML += `
-			<img class="medPicture" onclick="writeEvent('porn`+pornID+`A')" src="images/porn/` + pornID + `A.jpg">
+			<img class="medPicture" onclick="writeEncounter('porn`+pornID+`A')" src="images/porn/` + pornID + `A.jpg">
 			<br>
 		`;
 		document.getElementById('output').innerHTML += `
-			<img class="medPicture" onclick="writeEvent('porn`+pornID+`B')" src="images/porn/` + pornID + `B.jpg">
+			<img class="medPicture" onclick="writeEncounter('porn`+pornID+`B')" src="images/porn/` + pornID + `B.jpg">
 			<br>
 		`;
 		document.getElementById('output').innerHTML += `
-			<img class="medPicture" onclick="writeEvent('porn`+pornID+`C')" src="images/porn/` + pornID + `C.jpg">
+			<img class="medPicture" onclick="writeEncounter('porn`+pornID+`C')" src="images/porn/` + pornID + `C.jpg">
 			<br>
 		`;
 	}
 	else {
 		writeText("The porn system is disabled without images.");
+	}
+}
+
+function loadEncounter(js, name) {
+	var targetFile = 'system';
+	requestType = 'encounter';
+	eventName = name;
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].index == js) {
+			data.story[i].encountered = true;
+			targetFile = data.story[i].index;
+		}
+	}
+	var filename = "scripts/characters/"+targetFile+".js";
+	console.log('Attempting to load '+targetFile+'.js for scene ID '+name);
+	//Create slot for new scripts file
+	var fileref=document.createElement('script');
+	fileref.setAttribute("src", filename);
+	//console.log(fileref);
+	//Append new script file
+	document.getElementsByTagName("head")[0].appendChild(fileref);
+	//console.log(document.getElementsByTagName("head")[0].children);
+	//Delete script file afterwards
+	var select = document.getElementsByTagName("head")[0];
+	select.removeChild(select.lastChild);
+	
+}
+
+function loadEvent(js, name) {
+	var targetFile = 'system';
+	requestType = 'event';
+	eventName = name;
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].index == js) {
+			targetFile = data.story[i].index;
+		}
+	}
+	var filename = "scripts/characters/"+targetFile+".js";
+	console.log('Attempting to load '+targetFile+'.js for scene ID '+name);
+	//Create slot for new scripts file
+	var fileref=document.createElement('script');
+	fileref.setAttribute("src", filename);
+	//console.log(fileref);
+	//Append new script file
+	document.getElementsByTagName("head")[0].appendChild(fileref);
+	//console.log(document.getElementsByTagName("head")[0].children);
+	//Delete script file afterwards
+	var select = document.getElementsByTagName("head")[0];
+	select.removeChild(select.lastChild);
+}
+
+function loadPhoneEvent(js, name) {
+	var targetFile = 'system';
+	requestType = 'phoneEvent';
+	eventName = name;
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].index == js) {
+			targetFile = data.story[i].index;
+		}
+	}
+	var filename = "scripts/characters/"+targetFile+".js";
+	console.log('Attempting to load '+targetFile+'.js for scene ID '+name);
+	//Create slot for new scripts file
+	var fileref=document.createElement('script');
+	fileref.setAttribute("src", filename);
+	//console.log(fileref);
+	//Append new script file
+	document.getElementsByTagName("head")[0].appendChild(fileref);
+	//console.log(document.getElementsByTagName("head")[0].children);
+	//Delete script file afterwards
+	var select = document.getElementsByTagName("head")[0];
+	select.removeChild(select.lastChild);
+}
+
+function checkForEncounters() {
+	var targetFile = 'system';
+	requestType = 'check';
+	var filename = "scripts/characters/"+targetFile+".js";
+	console.log('Attempting to load '+targetFile+'.js to check for encounters');
+	var fileref=document.createElement('script');
+	fileref.setAttribute("src", filename);
+	
+	//Append new script file
+	document.getElementsByTagName("head")[0].appendChild(fileref);
+	
+	//Delete script file afterwards
+	var select = document.getElementsByTagName("head")[0];
+	select.removeChild(select.lastChild);
+	
+	for (x = 0; x < data.story.length; x++) {
+		targetFile = data.story[x].index;
+		var filename = "scripts/characters/"+targetFile+".js";
+		console.log('Attempting to load '+targetFile+'.js to check for encounters');
+		var fileref=document.createElement('script');
+		fileref.setAttribute("src", filename);
+		
+		//Append new script file
+		document.getElementsByTagName("head")[0].appendChild(fileref);
+		
+		//Delete script file afterwards
+		var select = document.getElementsByTagName("head")[0];
+		select.removeChild(select.lastChild);
+	}
+}
+
+function encounteredCheck(name) {
+	for (e = 0; e < data.story.length; e++) {
+		if (data.story[e].index == name) {
+			if (data.story[e].encountered == true) {
+				return true;
+				break;
+			}
+			else {
+				return false;
+			}
+		}
+	}
+}
+
+function printEncounterButton(character, scene, text, top, left) {
+	document.getElementsByClassName('playerRoom')[0].innerHTML += `
+		<div class="pictureButton" onclick='loadEncounter("`+character+`", "`+scene+`")'
+		style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+text+`</div>
+	`;
+}
+
+function printEncounterTab(name, scene, text) {
+	if (character != "system") {
+		var tabTrust;
+		var cancelTab = false;
+		var cssName = name;
+		var img = "scripts/gamefiles/profiles/"+name+".jpg";
+		for (z = 0; z < data.story.length; z++) {
+			if (data.story[z].index == name) {
+				tabIndex = z;
+				if (text.includes(name)) {
+					text = text.replace(name, data.story[z].fName);
+				}
+				name = data.story[z].fName + ' ' + data.story[z].lName;
+				var cssColor = data.story[z].color;
+				if (data.story[z].encounter == true) {
+					cancelTab = true;
+				}
+			}
+		}
+		if (data.story[tabIndex].trust == 0) {
+			name = "???";
+		}
+		switch (true) {
+			case (data.story[tabIndex].trust > 99): {
+				tabTrust = "<span class='love'>Love</span>";
+				break;
+			}
+			case (data.story[tabIndex].trust > 79): {
+				tabTrust = "<span class='trusting'>Trusting</span>";
+				break;
+			}
+			case (data.story[tabIndex].trust > 59): {
+				tabTrust = "<span class='friendly'>Friendly</span>";
+				break;
+			}
+			case (data.story[tabIndex].trust > 39): {
+				tabTrust = "<span class='relaxed'>Relaxed</span></span>";
+				break;
+			}
+			case (data.story[tabIndex].trust > 19): {
+				tabTrust = "<span class='wary'>Wary</span>";
+				break;
+			}
+			default: {
+				tabTrust = "<span class='unkown'>Unknown";
+				break;
+			}
+		}
+		//console.log(tabIndex);
+		console.log(cssColor);
+		if (cancelTab != true) {
+			console.log("Now generating tab for " + name + ", linking to scene " + scene + " with the text " + text);
+			document.getElementById('output').innerHTML +=`
+			<div class = "textBox" style="border-color: `+cssColor+`">
+				<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "`+ img +`">
+				<div class="textBoxContent">
+				<p class = "textName" style="color:`+cssColor+`">` + name + `</p>
+				<p class="status"> Status: ` + tabTrust + `</p>
+				<p class="switch" onclick="loadEncounter('`+data.story[tabIndex].index+`', '`+scene+`')">` + text + `</p>
+			</div>	</div>
+			<br>
+			`;
+		}
 	}
 }
 
@@ -620,7 +847,7 @@ function renameEveryone() {
 
 function renamePlayer() {
 	data.player.name = document.getElementById('nameSubmission').value;
-	sceneTransition("prologue2");
+	loadEncounter("system", "prologue2");
 }
 
 //Saving
@@ -648,7 +875,13 @@ function loadSlot(slot) {
 	data = localStorage.getItem(saveName);
 	data = JSON.parse(data);
 	console.log("loaded data");
-	sceneTransition(data.player.currentScene);
+	if (data.player.location != "") {
+		changeLocation(data.player.location);
+	}
+	else {
+		loadEncounter('system', 'start');
+	}
+	//sceneTransition(data.player.currentScene);
 	updateSave();
 }
 
@@ -657,7 +890,7 @@ function saveFile(){
 	document.getElementById('output').innerHTML = '';
 	writeText("Copy the full length below and paste it into the input box when you want to load the data. I recommend copying to a txt file.");
 	writeText("" + JSON.stringify(data) + "");
-	writeTransition(data.player.currentScene, "Finished copying");
+	writeFunction("changeLocation(data.player.location)", "Finished copying");
 }
 
 function loadFile(){
@@ -719,24 +952,31 @@ function updateSave() {
 		data.player.title = "Mister";
 		data.player.honorific = "sir";
 	}
+	if (data.player.version == 3) {
+		console.log('version 2.5 detected, updating save');
+		data.player.version = 4;
+		alert('older save version detected! Moving you to bakc to your house. Feel free to restart if needed.');
+		data.player.location = 'playerHouse';
+		data.story[0].color = "#CCCCCC";
+		data.story[1].color = "#fde1a5";
+		data.story[2].color = "#a79e9a";
+		data.story[3].color = "#cb86ef";
+		data.story[4].color = "#da924b";
+		data.story[5].color = "#CCCCCC";
+		data.story[6].color = "#ed9082";
+		data.story[7].color = "#7e52a3";
+		data.story[8].color = "#e47311";
+		data.story[9].color = "#888888";
+		data.story[10].color = "#da924b";
+		data.story[11].color = "#954655";
+		data.story[12].color = "#677b4c";
+	}
 	saveSlot(110);
 }
 
 //Gallery
 function unlockScene(n) {
-	var unlockedScene = "";
-	for (i = 0; i < galleryArray.length; i++) {
-		if (galleryArray[i].index == n) {
-			unlockedScene = galleryArray[i];
-		}
-	}
-	if (unlockedScene != "") {
-		data.gallery.push(unlockedScene);
-		writeSpecial("You unlocked a new scene in the gallery!");
-	}
-	else {
-		console.log("Error, no scene named "+n+" found to unlock.");
-	}
+	//Obsolete function
 }
 
 function generateGalleryNav() {
@@ -760,11 +1000,11 @@ function generateGalleryPage(n) {
 	for (i = 0; i < data.gallery.length; i++) {
 		if (data.gallery[i].index.includes(n)) {
 			if (galleryCheck(data.gallery[i].index) == true) {
-				writeFunction ("writeEvent('"+data.gallery[i].index+"')", data.gallery[i].name)
+				writeFunction("loadEvent('"+n+"','"+data.gallery[i].index+"')", data.gallery[i].name)
 			}
 		}
 	}
-	writeTransition(data.player.currentScene, "Go back");
+	writeFunction("changeLocation(data.player.location)", "Go back");
 }
 
 function galleryCheck(n) {
@@ -778,9 +1018,25 @@ function galleryCheck(n) {
 //Logbook
 function generateNav() {
 	document.getElementById('logbookLeft').innerHTML = '';
+	requestType = "logbook";
+	logbookArray = [];
+	for (i = 0; i < data.story.length; i++) {
+		targetFile = data.story[i].index;
+		var filename = "scripts/characters/"+targetFile+".js";
+		var fileref=document.createElement('script');
+		fileref.setAttribute("src", filename);
+		
+		//Append new script file
+		document.getElementsByTagName("head")[0].appendChild(fileref);
+		console.log(targetFile+ ' import successful');
+		
+		//Delete script file afterwards
+		var select = document.getElementsByTagName("head")[0];
+		select.removeChild(select.lastChild);
+	}
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].trust > 0) {
-			document.getElementById('logbookLeft').innerHTML += `<h3 class = "button" onclick = "switchDesc('`+i+`')">` + data.story[i].fName + `</h3>`;
+			document.getElementById('logbookLeft').innerHTML += `<h3 class = "button" onclick = "switchDesc('`+data.story[i].index+`')">` + data.story[i].fName + `</h3>`;
 		}
 	}
 	switchDesc('player');
@@ -790,38 +1046,47 @@ function switchDesc(n) {
 	if (n != "player") {
 		var scenesUnlocked = 0;
 		var scenesTotal = 0;
-		var indexer = data.story[n].index;
-		console.log("searching for " + indexer + " in gallery");
+		for (logbookIndex = 0; logbookIndex < logbookArray.length; logbookIndex++) {
+			if (logbookArray[logbookIndex].index == n) {
+				var logCounter = logbookIndex
+			}
+		}
+		for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
+			if (data.story[characterIndex].index == n) {
+				var characterCounter = characterIndex
+			}
+		}
+		console.log("searching for " + n + " in gallery");
 		for (x = 0; x < galleryArray.length; x++) {
 			console.log(galleryArray[x].index);
-			if (galleryArray[x].index.includes(indexer)) {
-				console.log("Index does include " + indexer);
+			if (galleryArray[x].index.includes(n)) {
+				console.log("Index does include " + n);
 				scenesTotal += 1;
 				if (galleryCheck(galleryArray[x].index) == true) {
 					scenesUnlocked += 1;
 				}
 			}
 		}
-		console.log("Displaying logbook page for character "+data.story[n].fName+".");
+		console.log("Displaying logbook page for character "+data.story[characterCounter].fName+".");
 		var tabTrust;
 		switch (true) {
-			case (data.story[n].trust > 99): {
+			case (data.story[characterCounter].trust > 99): {
 				tabTrust = "Devoted";
 				break;
 			}
-			case (data.story[n].trust > 79): {
+			case (data.story[characterCounter].trust > 79): {
 				tabTrust = "Trusting";
 				break;
 			}
-			case (data.story[n].trust > 59): {
+			case (data.story[characterCounter].trust > 59): {
 				tabTrust = "Friendly";
 				break;
 			}
-			case (data.story[n].trust > 39): {
+			case (data.story[characterCounter].trust > 39): {
 				tabTrust = "Relaxed";
 				break;
 			}
-			case (data.story[n].trust > 19): {
+			case (data.story[characterCounter].trust > 19): {
 				tabTrust = "Wary";
 				break;
 			}
@@ -832,20 +1097,20 @@ function switchDesc(n) {
 		}
 		if (imagesDisabled != true) {
 			document.getElementById('logbookRight').innerHTML = `
-				<img id="selfImage" class="selfImage" src="images/`+data.story[n].index+`/profile.jpg">
+				<img id="selfImage" class="selfImage" src="images/`+data.story[characterCounter].index+`/profile.jpg">
 			`;
 		}
 		document.getElementById('logbookRight').innerHTML += `
 		<div class=" lb_primary">
-			<h2 class = "selfDesc lb_Name char_`+data.story[n].index+`">`+data.story[n].fName+` `+data.story[n].lName+`</h2>
+			<h2 class = "selfDesc" style = "color: `+data.story[characterCounter].color+`">`+data.story[characterCounter].fName+` `+data.story[characterCounter].lName+`</h2>
 			<p class = "selfDesc lb_trust ">Trust: <span class="`+tabTrust+`">`+tabTrust+`</p></span>
 			<p class = "selfDesc lb_scenes">Scenes Unlocked: `+scenesUnlocked+`/`+scenesTotal+`</p>
 		</div><div class=" lb_secondary">
-			<p class = "selfDesc lb_desc">`+logbookArray[n].desc+`</p>
-			<p class = "selfDesc lb_body">`+logbookArray[n].body+`</p>
-			<p class = "selfDesc lb_clothes">`+logbookArray[n].clothes+`</p>
-			<p class = "selfDesc lb_home">`+logbookArray[n].home+`</p>
-			<p class = "selfDesc lb_tags">`+logbookArray[n].tags+`</p>
+			<p class = "selfDesc lb_desc">`+logbookArray[logCounter].desc+`</p>
+			<p class = "selfDesc lb_body">`+logbookArray[logCounter].body+`</p>
+			<p class = "selfDesc lb_clothes">`+logbookArray[logCounter].clothes+`</p>
+			<p class = "selfDesc lb_home">`+logbookArray[logCounter].home+`</p>
+			<p class = "selfDesc lb_tags">`+logbookArray[logCounter].tags+`</p>
 			<p class = "selfDesc">   </p>
 		</div>
 		`;
@@ -923,7 +1188,7 @@ function clearInv() {
 	document.getElementById('windowRight').innerHTML = ""
 }
 
-function generateShop() {
+function generateShop() { //obsolete
 	console.log("Now generating shop");
 	for (i = 0; i < itemArray.length; i++) {
 		console.log("generating item "+ i + ": " + itemArray[i].name);
@@ -961,14 +1226,17 @@ function generateShop() {
 	}
 }
 
-function purchase(n) {
-	console.log("purchasing " + itemArray[n].name);
-	if (data.player.money >= itemArray[n].price) {
+function purchase(name, image, price, key) {
+	console.log("purchasing " + name);
+	if (data.player.money >= price) {
+		data.player.money -= price;
 		flashMoney();
-		data.player.money -= itemArray[n].price;
-		data.items.push(itemArray[n]);
+		updateMenu();
+		var purchasedItem = {name: name, key: key, price: price, image: image};
+		console.log(purchasedItem);
+		data.items.push(purchasedItem);
 	}
-	sceneTransition(data.player.currentScene);
+	loadEncounter("system", "shop");
 }
 
 function checkItem(n) {
@@ -990,6 +1258,12 @@ function removeItem(n) {
 			break;
 		}
 	}
+}
+
+function addItem(name, key, image) {
+	var purchasedItem = {name: name, key: key, image: image};
+	console.log(purchasedItem);
+	data.items.push(purchasedItem);
 }
 
 //Cheating
@@ -1077,9 +1351,28 @@ function cheat() {
 			break;
 		}
 	}
-	sceneTransition(data.player.currentScene);
+	writeEncounter(cheat);
 	if (goof == "null") {
 		writeText("You've already used this code before.");
+	}
+}
+
+function modCharacter() {
+	var goof = document.getElementById('indexSubmission').value;
+	goof = goof.toLowerCase();
+	console.log("Loading character " + goof);
+	loadCharacter(goof);
+	document.getElementById('output').innerHTML = '';
+	writeBig("images/"+goof+"/profile.jpg", "New character");
+	writeText("Loaded the index file, has been added to the game! If the above image is broken, one of the following has happened:");
+	writeText("The character you added does not have a profile.jpg image in their images folder.");
+	writeText("The images folder isn't named appropriately, or is in the wrong place. It should be in Hentai University/images");
+	writeText("You mistyped the index. If this is the case, load an older save immediately and try again.");
+	if (data.player.location == "") {
+		writeFunction("writeEncounter('system', 'start')", "Back to the start menu");
+	}
+	else {
+		writeFunction("loadEncounter('system', 'gameConsole')", "Back to the console");
 	}
 }
 
@@ -1114,8 +1407,27 @@ function changeBody(n) {
 }
 
 //Phone
-function notification() {
-	writeText("Bzzt! You got a text!");
+
+function checkForPhone() { 
+	requestType = "phoneCheck";
+	for (i = 0; i < data.story.length; i++) {
+		targetFile = data.story[i].index;
+		var filename = "scripts/characters/"+targetFile+".js";
+		var fileref=document.createElement('script');
+		fileref.setAttribute("src", filename);
+		
+		//Append new script file
+		document.getElementsByTagName("head")[0].appendChild(fileref);
+		console.log(targetFile+ ' import successful');
+		
+		//Delete script file afterwards
+		var select = document.getElementsByTagName("head")[0];
+		select.removeChild(select.lastChild);
+	}
+}
+
+function notification(name) {
+	writeText("Bzzt! You got a text from "+fName(name)+"!");
 	document.getElementById('phoneButton').innerHTML = "PHONE(*)";
 	document.getElementById('phoneButtonMobile').innerHTML = "PHONE(*)";
 }
@@ -1142,7 +1454,7 @@ function writePhoneSpeech (name, img, text) {
 		">
 		<div class="phoneTextBoxContent">
 		<p class = "phoneTextName">`+ name + `</p>
-		<p class = "selfDesc">` + text + `</p>
+		<p class = "selfDesc">` + replaceCodenames(text) + `</p>
 	</div></div>
 	<br>
 	`
@@ -1194,7 +1506,7 @@ function generateContacts() {
 	document.getElementById('phoneLeft').innerHTML = ``;
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].textEvent!= "") {
-			document.getElementById('phoneLeft').innerHTML += `<h3 class = "button char_` + data.story[i].index + `" onclick = "switchContact('`+i+`')">` + data.story[i].fName + `</h3 >`;
+			document.getElementById('phoneLeft').innerHTML += `<h3 class = "button char_` + data.story[i].index + `" style = "color: `+data.story[i].color+`" onclick = "switchContact('`+i+`')">` + data.story[i].fName + `</h3 >`;
 			data.player.lastText = i;
 		}
 	}
@@ -1215,7 +1527,7 @@ function switchContact(n) {
 	document.getElementById('phoneRight').innerHTML = '';
 	document.getElementById('phoneWindow').innerHTML = data.story[n].fName;
 	data.player.lastText = n;
-	writePhoneEvent(data.story[data.player.lastText].textEvent);
+	loadPhoneEvent(data.story[data.player.lastText].index, data.story[data.player.lastText].textEvent);
 }
 
 function phoneImages() {
