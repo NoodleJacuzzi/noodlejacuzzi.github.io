@@ -1,183 +1,3 @@
-Travel between the complex and the school interacting with characters to improve their trust score until they're fully yours. Then, various scenes are unlocked by interacting with that character or by inviting them on events.
-Each character has an individual plotline and story divided into two halves: The trust phase, and the addicted phase.
-Wander around town and the school improving techniques, collecting money and items, and talking to characters
-
-Mom
-	Encounters
-		Level 1 (trust 0) - Meeting
-			Player's home - morning (25%)
-			Apartment complex - evening (75%)
-		Level 2
-			Apartment complex - evening (75%)
-			Shopping district - evening  (25%)
-		Level 3
-			Apartment complex - evening (75%)
-			Phone (25%)
-		Level 4
-			Apartment complex - morning
-			Apartment complex - evening
-			Vintage street - evening (25%)
-			Phone
-		Level 5
-			Apartment complex - evening
-			Phone
-	Scenes
-	
-Kuro
-	Encounters
-		Level 1
-			School entrance - morning (notes that she spends time on the roof)
-		Level 2
-			Player's office - morning, 1/3 chance
-			Roof - evening
-		Level 3
-			Phone1
-			Phone2 (only needed if the player failed the other level 3 event)
-			Roof - evening
-		Level 4
-			Phone3
-			Phone4 (only needed if the player failed the other level 4 event)
-			Roof - evening
-		Level 5
-			Phone5 (if they succeeded level 3)
-			Phone6 (if they did level 4)
-			Roof - evening
-			
-Suave
-	Encounters
-		Level 1
-			Classroom B - morning
-		Level 2
-			Player's office - morning, 1/3 chance
-			Classroom B - morning
-		
-Purple
-	Encounters
-		Level 1
-			Classroom B - morning (75%)
-				Purple1A
-			Office/north hall - morning (25%)
-				Purple1B
-		Level 2
-			Vintage Street - morning
-				Purple2A
-			Classroom B - evening
-				Purple2B
-		Level 3+
-			Office/north hall - morning (25%)
-				Purple3
-				Purple4 (optional, only if 3 is failed)
-				Purple5
-				Purple6 (optional, only if 5 is failed)
-				Purple7
-			Classroom B - evening (75%)
-				Same as above
-	Notes:
-		After purple3, you can buy the purple flower. It's noted that giving it to purple would be really creepy.
-	Scene list
-		Purple1A
-			You see her in the classroom, note her failing grades and how her father left the country, and can offer to counsel her.
-		Purple1B
-			You're sent her file, note her failing grades and how her father left the country, and can call her in for counseling.
-		Purple2A
-			You see her in the morning as she's leaving and ask to speak with her mother.
-		Purple2B
-			You catch her as she's leaving, and ask to walk home with her to meet her mother.
-		Purple3
-			You have a sit down and ask what she is struggling with. You can either help her work through her schoolwork (purple3A) or offer to talk about her feelings (purple3B). You also learn her favorite flower is a purple one, and the purple flower is unlocked in the store.
-		Purple3A
-			You help her through her schoolwork, either guiding her towards the correct path (+5 trust) or working through the path for her (+10 trust)
-		Purple3B
-			You offer to talk her through her feelings. You can either push her towards meditation (+5 trust) or allow her to vent (+10 trust)
-		Purple4
-			She's struggling to put what you've mentioned into practice (calming down and working through things one at a time). You can spend a few hours working with her to learn patience.
-		Purple5
-			You bring up the idea of hypnotism, but she isn't open enough to you yet. She asks if she should hate her father, and you can either tell her to bear that anger (+10 trust) or throw it away as worthless (+5 trust).
-		Purple6
-			She's having trouble taking your previous advice, and is finally open to a bit of hypnosis. You can spend the day planting the seed to allow for full control.
-		Purple7
-			Her mind is finally clear, and she's open to taking you home for a more in-depth hypnosis session.
-			
-
-Chubby
-	Encounters
-		Level 3 (auto set to level 3 after purple level 2)
-			Vintage Street - morning
-				Chubby1
-					She welcomes you back in and the two of you talk over tea. She asks if purple is a bother, and you can either respond that working through her issues will take time (chubby1A) or that everything is going well (chubby1B)
-				Chubby1A
-					She responds knowingly, saying that her father left her with quite a few issues. You can tell her you have a plan (+5 trust) or tell her that, while you will help, purple's future depends on a strong family relationship to fall back on (+10 trust).
-				Chubby1B
-					She's glad purple is doing well, since purple's growing distant. You can either tell her you have a plan to help with that (+5 trust), or you can help her work out how to communicate more effectively with purple (+10 trust).
-				Chubby2 (optional, only if 1 is failed)
-					She offers you tea again, and asks you to spend some time going over exactly what your plan is.
-				Chubby3
-					She invites you to walk through town with her, and confides that she just doesn't know what to do. You can either comfort her emotionally (+5 trust) or you can offer hypnosis as a suggestion (+10 trust).
-				Chubby4 (optional, only if 3 is failed)
-					She invites you in, apologizing for how she reacted before. She wants to become as good at emotional management as you, so you can offer to train her. At the end of the training, you offer hypnosis as a method to understand herself better.
-				Chubby5
-					She's open to the idea of a full hypnosis session, and offers you free reign of her mind.
-	Notes
-		She sleeps through the evenings, so says her logbook
-		You can buy the purple flower after purple3, which can trigger chubby6 at any time after chubby1 (skipping immediately to 100 trust)
-
-Data variables list
-	Name
-	Character (profile image)
-	Location
-	Time
-	Money
-	Skills
-		Hypnosis
-		Hacking
-		Lockpicking
-	Items (empty, things are appended)
-	Scenes (empty, they are appended)
-	
-Story variables list (added to and changed between versions)
-	Version
-	Mom
-		Met
-		Image
-		Trust
-		NextEvent
-		Encountered (so that encounters don't repeat, reset every day)
-		Desc
-		TextHistory
-		NewText
-	Kuro
-		Met
-		Image
-		Trust
-		NextEvent
-		Encountered
-		Desc
-	Suave
-		Met
-		Image
-		Trust
-		NextEvent
-		Encountered
-		Desc
-	Purple
-		Met
-		Image
-		Trust
-		NextEvent
-		Encountered
-		Desc
-		
-Gallery array (scenes are copied to the data.scenes array when they're unlocked)
-	Character
-	Name
-	Hint
-	
-Items array
-	Name
-	Image
-	Type (key or consumable)
-	Desc
-
 V0.0
 	WriteSpeech
 		Auto replace name (if name is in the story variable as an index, replace the name with the character's fName and lName)
@@ -340,19 +160,96 @@ V0.0
 		Denote shared patreon (COMPLETE)
 		Link to captain crypto greek in start scene (COMPLETE)
 		Kuro texts (COMPLETE)
+		Fix emma's renaming (COMPLETE)
+		Fix textbooks (COMPLETE)
+		Visual overhaul (COMPLETE)
+	v3
+		Locations.js (COMPLETE)
+		LocationArray (COMPLETE)
+		ChangeBG (COMPLETE)
+		buttons in location array (COMPLETE)
+		Load outside JS files (COMPLETE)
+		new writeEvent function - character, event (COMPLETE)
+		replace scene transitions (COMPLETE)
+		checkForEvents from js files (COMPLETE)
+		writeEvents in js files (COMPLETE)
+		add to data.story on load (COMPLETE)
+		call from character js files (COMPLETE)
+		character details in character js files (COMPLETE)
+		append to shop from character js files (COMPLETE)
+		Writing encounters
+			System scenes should be encounters, not events (COMPLETE)
+			Import encounter list (COMPLETE)
+			Write encounter buttons (COMPLETE)
+			Write encounter tabs (COMPLETE)
+			Check time requirements (COMPLETE)
+			Check trust requirements (COMPLETE)
+			Replace codenames with character names (COMPLETE)
+			Check item requirements (COMPLETE)
+			Check day requirements (COMPLETE)
+			Check if encountered (COMPLETE)
+			Unlocking scenes (COMPLETE)
+			Record character being encountered (COMPLETE)
+			Test encounters
+		Shopping
+			import item arrays from js files (COMPLETE)
+			Shop event BG (COMPLETE)
+			Remove shop location (COMPLETE)
+			Replace purchase function (COMPLETE)
+		Logbook & other
+			character color in data.story (COMPLETE)
+			location in data.player (COMPLETE)
+			load logbook array on clicking the button (COMPLETE)
+		Future Proofing
+			fix napping (COMPLETE)
+			raiseTrust(character) function (COMPLETE)
+			setTrust(character) function (COMPLETE)
+			fName(character) function - returns first name (COMPLETE)
+			lName(character) function - returns last name (COMPLETE)
+			Write the target's name in the notification (COMPLETE)
+		Phone
+			phoneEventArray (COMPLETE)
+			checkForPhoneEvents (COMPLETE)
+			Add character names to notification calls (COMPLETE)
+			writePhoneEvent (COMPLETE)
+		fix the gallery (COMPLETE)
+		mom transfer (COMPLETE)
+		kuro transfer (COMPLETE)
+		tomgirl transfer (COMPLETE)
+		purple transfer (COMPLETE)
+		chubby tranfer (COMPLETE)
+		principal transfer (COMPLETE)
+		secretary transfer (COMPLETE)
+		mistress transfer (COMPLETE)
+		maid transfer (COMPLETE)
+		scarf transfer (COMPLETE)
+		green transfer (COMPLETE)
+		Replace trust changes (COMPLETE)
+		Replace trust checks (COMPLETE)
+		Replace name calling with fName() and lName() (COMPLETE)
+		Replace codenames in text (COMPLETE)
+		Remove encountercheck for scarf (COMPLETE)
+		meji transfer (COMPLETE)
+		Principal gives items (COMPLETE)
+		Remove encountercheck for principal (COMPLETE)
+		fix porn (COMPLETE)
+		add new characters via game console (COMPLETE)
+		update saves (COMPLETE)
+		Brandon's typos (COMPLETE)
+	v3
+		Remind crypto to fix kuro
+		Remind crypto to fix meji
+		Purple's 99 trust event plays chubby ushering you through the door
 		Neet's encounters
-		Maid encounters
-		Maid placeholders
-		Implement Maid's scenes
-		Lady encounters
-		Lady placeholders
-		Implement Lady's scenes
+		Hacking minigame
+		Fix logbook to show events from character js file
+	Pocket University
+	Pervert Ranger
+	Triad
+	Grid Fantasy
+		
 		
 	Future
-		Disable unused areas
-		Skill Tutor Scenes (1/8 chance)
-		Skill Payoff Scenes (1/2 chance)
-		Paperwork scene (1/1 chance)
 		Conditional porn
 		Add artists to data array
 		Disable artists
@@ -378,156 +275,3 @@ V0.0
 		Defeat
 		Hack rewards
 		Hack retrying
-	
-V1.0 Mom, Kuro Gal, Suave, Purple & Chubby
-	Profiles (COMPLETE)
-	CGs (COMPLETE)
-	Logbooks (COMPLETE)
-	writeSpeech (COMPLETE)
-	player's home image map (COMPLETE)
-	player's home tooltips (COMPLETE)
-	Show trust in logbook (COMPLETE)
-	Use indexes instead of #s (COMPLETE)
-	scenes in galleryArray (COMPLETE)
-	Mom prewriting
-	Mom framework (COMPLETE)
-	Mom's encounters
-	Mom's phone events
-	Mom's scenes
-	Kuro prewriting
-	Kuro framework
-	Kuro's encounters
-	Kuro's phone events
-	Kuro's scenes
-	Tomgirl prewriting
-	Tomgirl framework
-	Tomgirl's encounters
-	Tomgirl's phone events
-	Tomgirl's scenes
-	purple & chubby prewriting
-	purple & chubby framework
-	Purple's encounters
-	Purple's scenes
-	Chubby's encounters
-	Chubby's scenes
-	story variables
-	items in itemsArray
-	
-Character Ideas:
-Green & Scarf - Hypnotist and sister
-Neet - Techie and hacking enthusiast
-Principal & Maid - Counseling expert
-Business - Seeks to get you fired, secretly does porn
-Suave
-Twins
-Blonde & Kashiwari
-Shrine & Shrine Daughter
-Ecolonun the Tentacle
-Pervert Ranger Red
-Pervert Ranger Blue
-Pervert Ranger Yellow
-Pervert Ranger Green
-
-Student
-Yandere
-Kendo
-Tomboy
-Bimbo
-Black
-Office Trio
-
-
-	
-Areas: (OUTDATED, STUDENTS & FACULTY ARE AT SCHOOL, OTHERS ARE AT APARTMENT COMPLEX)
-Apartment Complex
-	Player's house
-		Player's laptop
-		Player's wardrobe
-		Scene recollection
-		take a nap
-		sleep through the day
-		read a book (only available if you haven't read the book, once read its price is set to 0, making it invisible)
-		Game library
-			FUTURE: Warrior maiden
-			FUTURE: Mage mother
-			FUTURE: Adventurer duo
-			FUTURE: Arabian Prince
-			FUTURE: Beastkin
-
-Vintage Street
-
-School Entrance
-	North Hallway
-		FUTURE: Principal's office
-		Your office
-			Player's laptop
-			Player's wardrobe
-			Scene recollection
-			Student File Cabinet
-			take a nap
-		Teacher's Lounge
-		Roof
-	West Hallway
-		Classroom A
-		Library
-		Cafeteria
-	East Hallway
-		Classroom B
-		Computer Room
-		Gym
-		
-Other
-	parkDistrict
-	shoppingDistrict
-			
-			
-Enoshima Street
-	Business
-	Gyaru
-	Mom
-	Neet
-	Scarf & green
-	Student
-	Yandere
-Nagi Street
-	Kendo
-	Suave
-	Tomboy
-	Tomgirl
-	Twins
-	Shopping District
-Oreteki Street
-	Bimbo
-	Black
-	Kashiwari & Blonde
-	Blueblood & maid
-	Chubby
-	Pink
-	President
-	Purple & Mama
-	Shrine
-	
-case "basic":
-		data.player.characterArtist = "Art by Ishimura";
-	break;
-	case "doll":
-		data.player.characterArtist = "Art by Outtasync";
-	break;
-	case "elizabeth":
-		data.player.characterArtist = "Art by Neromashin";
-	break;
-	case "goblin":
-		data.player.characterArtist = "Art by HuffsLove";
-	break;
-	case "komi":
-		data.player.characterArtist = "Art by Oda Tomohito";
-	break;
-	case "lady":
-		data.player.characterArtist = "Art by Nusumenaihxseki";
-	break;
-	case "sub":
-		data.player.characterArtist = "Art by Aya";
-	break;
-	default:
-		data.player.characterArtist = "Unknown artist.";
-	break;

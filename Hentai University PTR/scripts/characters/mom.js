@@ -326,7 +326,7 @@ function writeEvent(name) { //Plays the actual event.
 			unlockedScene = eventArray[i];
 		}
 	}
-	if (unlockedScene != "") {
+	if (unlockedScene != "" && galleryCheck(name) != true) {
 		data.gallery.push(unlockedScene);
 		writeSpecial("You unlocked a new scene in the gallery!");
 	}
@@ -344,6 +344,7 @@ var phoneArray = [//Lists the potential text events the player can receive at th
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
+	phoneRight.scrollTop = 0;
 	switch (name) {
 		case "momPhone1": {
 			//Write the event's text here using writePhoneSpeech, writePhoneImage for images, and writePhoneChoices

@@ -17,7 +17,7 @@ var locationArray = [
 	],},
 	{index: "schoolEntrance", buttons: [
 		{name: "Head into Town", top: 50, left: 25, type: "location", target: "street", time: "MorningEvening",},
-		{name: "Upper Floor", top: 60, left: 30, type: "location", target: "northHallway", time: "MorningEvening",},
+		{name: "Upper Floor", top: 50, left: 65, type: "location", target: "northHallway", time: "MorningEvening",},
 		{name: "West Hallway", top: 79, left: 2, type: "location", target: "westHallway", time: "MorningEvening",},
 		{name: "East Hallway", top: 79, left: 73, type: "location", target: "eastHallway", time: "MorningEvening",},
 	],},

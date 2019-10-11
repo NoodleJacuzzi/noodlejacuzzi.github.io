@@ -17,7 +17,7 @@ var newItems = [//Lists the shop items unique to this character
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-	{index: "introduction", name: "A teacher is walking down the hall.", location: 'eastHallway', time: "MorningEvening", itemReq: "File T-1", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "introduction1", name: "A teacher is walking down the hall.", location: 'eastHallway', time: "MorningEvening", itemReq: "File T-1", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "caseSelect", name: "scarf is here.", location: 'teacherLounge', time: "MorningEvening", itemReq: "", trustMin: 2, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
@@ -31,7 +31,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Excuse me, could I have-");
 			writeText("But she just keeps walking, uninterested in conversation. It's like you're not even there.");
 			writeSpeech("player", "", "Could I just have a second please?");
-			writeText("... And she's gone, what a pain. This really isn't your job, but it'll help you get closer to "+fname('principal')+".");
+			writeText("... And she's gone, what a pain. This really isn't your job, but it'll help you get closer to "+fName('principal')+".");
 			writeText("In any case if she isn't interested in chatting in the halls, maybe you'll find her in the teacher's lounge?");
 			raiseTrust('scarf', 1);
 			writeFunction("changeLocation(data.player.location)", "Finish");
@@ -89,7 +89,7 @@ function writeEvent(name) { //Plays the actual event.
 			unlockedScene = eventArray[i];
 		}
 	}
-	if (unlockedScene != "") {
+	if (unlockedScene != "" && galleryCheck(name) != true) {
 		data.gallery.push(unlockedScene);
 		writeSpecial("You unlocked a new scene in the gallery!");
 	}

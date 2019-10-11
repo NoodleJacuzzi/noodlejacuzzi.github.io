@@ -14,7 +14,7 @@ var newItems = [//Lists the shop items unique to this character
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "kuro1", name: "Someone is being chewed out at the gate", location: 'schoolEntrance', time: "Morning", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "kuro3", name: "kuro is leaning against the fence", location: 'roof', time: "Morning", itemReq: "", trustMin: 1, trustMax: 3, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "kuro3", name: "kuro is leaning against the fence", location: 'roof', time: "Morning", itemReq: "", trustMin: 1, trustMax: 4, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "kuro4", name: "kuro is leaning against the fence", location: 'roof', time: "Morning", itemReq: "", trustMin: 21, trustMax: 23, type: "tab", top: 0, left: 0, day: "both",},
 ]
 
@@ -66,7 +66,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("kuro","","Right, right! That guy really oughtta learn to relax, and <i>open up</i> to new ideas, y'know?");
 			writeText("She lets go of her skirt's hem, but not before pulling it taut for just an instant.");
 			writeText("Blue with black fringe, huh? It's a pretty good combination.");
-			writeSpeech("kuro","","You seem like a pretty... <i>open</i> one, "+data.player.title+" Counselor. If you're ever up for seeing how open <i>I</i> can be... Well, I like to hang out on the roof.");
+			writeSpeech("kuro","","You seem like you're pretty... <i>open</i>, "+data.player.title+" Counselor. If you're ever up for seeing how open <i>I</i> can be... Well, I like to hang out on the roof.");
 			writeText("She walks past you, starting to whistle innocently as you feel her finger brush gently against your hip.");
 			writeText("You get the feeling that this could turn out pretty fun, if you play your cards right.");
 			data.player.location = "playerOffice";
@@ -104,7 +104,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		//go to your office for private affairs
 		case "kuro3a" : {
-			if(checkTrust('kuro') == 3){
+			if(checkTrust('kuro') == 4){
 				writeSpeech("kuro","","Mm. Maybe this time, we'll make ourselves a little more comfortable?");
 				writeSpeech("kuro","","Lead the way, "+data.player.title+" Counselor.");
 				writeText("...");
@@ -127,7 +127,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		//basically rejecting her
 		case "kuro3b" : {
-			if(checkTrust('kuro') == 3){
+			if(checkTrust('kuro') == 4){
 				writeText("She sighs, shaking her head.");
 				writeSpeech("kuro","","I might like playing around, but this isn't my kind of game, "+data.player.honorific+".");
 				writeText("She turns on her heel, leaving.");
@@ -153,7 +153,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				data.player.location = "playerOffice";
 				passTime();
 				writeFunction("changeLocation(data.player.location)", "Go back");
-				setTrust('kuro', 3);
+				setTrust('kuro', 4);
 				break;
 			}
 		}
@@ -454,7 +454,7 @@ function writeEvent(name) { //Plays the actual event.
 			unlockedScene = eventArray[i];
 		}
 	}
-	if (unlockedScene != "") {
+	if (unlockedScene != "" && galleryCheck(name) != true) {
 		data.gallery.push(unlockedScene);
 		writeSpecial("You unlocked a new scene in the gallery!");
 	}
@@ -473,6 +473,7 @@ var phoneArray = [//Lists the potential text events the player can receive at th
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
+	phoneRight.scrollTop = 0;
 	switch (name) {
 		case "kuroPhone1" : {
 			writePhoneSpeech("kuro","","Heyhey~! Got your number from the principle");

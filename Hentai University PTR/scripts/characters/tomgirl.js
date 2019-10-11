@@ -331,7 +331,7 @@ function writeEvent(name) { //Plays the actual event.
 			unlockedScene = eventArray[i];
 		}
 	}
-	if (unlockedScene != "") {
+	if (unlockedScene != "" && galleryCheck(name) != true) {
 		data.gallery.push(unlockedScene);
 		writeSpecial("You unlocked a new scene in the gallery!");
 	}

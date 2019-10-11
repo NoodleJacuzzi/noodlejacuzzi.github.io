@@ -120,7 +120,7 @@ function writeEncounter(scene) {
 			document.getElementById('output').innerHTML += `
 				<p class='centeredText'>You can enter cheat codes here. For example, use the code 'new name' to rename all of the game's other characters.</p>
 				<p class='centeredText'>Enter cheat code: <input type="text" id="cheatSubmission" value=""></p>
-				<p class='choiceText' onclick='cheat()'>Submit</p>
+				<p class='choiceText' onclick='diagnostic()'>Submit</p>
 			`;
 			writeFunction("loadEncounter('system', 'gameConsole')", "Go back");
 			break;
@@ -279,7 +279,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Oreteki18Kin");
 			writeText("It looks like there's no audio for this video.");
 			writeSpeech("Comments", "scripts/gamefiles/none.png", "Anonymous: Lol what a stupid hat<br>Anonymous: Holy shit is that Angelica from Pop Pop girls?<br>Anonymous: Obviously not you fucking idiot, why would she be doing porn?<br>");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn0B": {
@@ -291,7 +291,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Enoshima Iki");
 			writeText("It looks like there's no audio for this video.");
 			writeSpeech("Comments", "scripts/gamefiles/none.png", "Anonymous: You're living the life bro<br>Anonymous: Cat outfits are stupid (USER WAS BANNED FOR THIS POST)");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn0C": {
@@ -302,7 +302,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Akushizu");
 			writeText("It looks like there's no audio for this video.");
 			writeSpeech("Comments", "scripts/gamefiles/none.png", "Anonymous: Isn't blackmail like this actually illegal?<br>Anonymous: Holy shit guys I think I go to the same school as her<br>Anonymous: Pics or it didn't happen");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn1A": {
@@ -313,7 +313,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Oreteki18Kin");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Oreteki18Kin");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn1B": {
@@ -324,7 +324,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Enoshima Iki");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Enoshima Iki");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn1C": {
@@ -333,7 +333,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+".jpg", "Art by Akushizu");
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Akushizu");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn2A": {
@@ -342,7 +342,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+".jpg", "Art by Oreteki18Kin");
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Oreteki18Kin");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn2B": {
@@ -352,7 +352,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Enoshima Iki");
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Enoshima Iki");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn2C": {
@@ -363,7 +363,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Butakoma 330G");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Butakoma 330G");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn3A": {
@@ -374,7 +374,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Butakoma 330G");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Butakoma 330G");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn3B": {
@@ -385,7 +385,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Butakoma 330G");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Butakoma 330G");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn3C": {
@@ -395,7 +395,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Akushizu");
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Akushizu");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn4A": {
@@ -404,7 +404,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+".jpg", "Art by Enoshima Iki");
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Enoshima Iki");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn4B": {
@@ -414,7 +414,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Butakoma 330G");
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Butakoma 330G");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn4C": {
@@ -424,7 +424,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Akushizu");
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Akushizu");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn5A": {
@@ -435,7 +435,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Oreteki18Kin");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Oreteki18Kin");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn5B": {
@@ -446,7 +446,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Butakoma 330G");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Butakoma 330G");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn5C": {
@@ -457,7 +457,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Akushizu");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Akushizu");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn6A": {
@@ -468,7 +468,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Enoshima Iki");
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Enoshima Iki");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn6B": {
@@ -480,7 +480,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Oreteki18Kin");
 			writeBig("images/porn/"+sheet+"-5.jpg", "Art by Oreteki18Kin");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn6C": {
@@ -494,7 +494,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-6.jpg", "Art by Akushizu");
 			writeBig("images/porn/"+sheet+"-7.jpg", "Art by Akushizu");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn7A": {
@@ -504,7 +504,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-2.jpg", "Art by Oreteki18Kin");
 			writeBig("images/porn/"+sheet+"-3.jpg", "Art by Oreteki18Kin");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn7B": {
@@ -517,7 +517,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-5.jpg", "Art by Akushizu");
 			writeBig("images/porn/"+sheet+"-6.jpg", "Art by Akushizu");
 			writeText("It looks like there's no audio for this video.");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "porn7C": {
@@ -529,7 +529,7 @@ function writeEncounter(scene) {
 			writeBig("images/porn/"+sheet+"-4.jpg", "Art by Enoshima Iki");
 			writeText("It looks like there's no audio for this video.");
 			writeSpeech("Comments", "scripts/gamefiles/none.png", "Anonymous: Whoa holy shit is this a mod?<br>Anonymous: Sauce plz<br>Anonymous: Lurk moar dumbass<br>Anonymous: Is this actually programmed into the game?");
-			writeFunction("writePorn()", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		default: {
@@ -548,7 +548,7 @@ switch (requestType) {
 	case "event": {
 		writeEncounter(eventName);
 		if (data.player.location == 'gallery' && eventName != 'gallery') {
-			writeFunction("changeLocation('playerHouse')", "Finish");
+			//writeFunction("changeLocation('playerHouse')", "Finish");
 		}
 		break;
 	}

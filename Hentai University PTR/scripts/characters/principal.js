@@ -17,8 +17,8 @@ var newItems = [//Lists the shop items unique to this character
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-	{index: "introduction1", name: "The principal's office is here. You should introduce yourself.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "caseSelect", name: "Enter the principal's office.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 41, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "introduction1", name: "Principal principal's Office is here. You should introduce yourself.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "caseSelect", name: "Enter Principal principal's Office.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 41, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -240,7 +240,7 @@ function writeEvent(name) { //Plays the actual event.
 			unlockedScene = eventArray[i];
 		}
 	}
-	if (unlockedScene != "") {
+	if (unlockedScene != "" && galleryCheck(name) != true) {
 		data.gallery.push(unlockedScene);
 		writeSpecial("You unlocked a new scene in the gallery!");
 	}

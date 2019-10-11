@@ -26,7 +26,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "purple4", name: "purple is standing outside your office.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 80, trustMax: 80, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "purple7A", name: "purple is standing outside your office.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 90, trustMax: 90, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "purple8", name: "purple is standing outside your office.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 95, trustMax: 95, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "purple9", name: "purple is standing outside your office.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 99, trustMax: 99, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "purple9", name: "purple's house is here.", location: 'vintageStreet', time: "MorningEvening", itemReq: "", trustMin: 99, trustMax: 99, type: "tab", top: 0, left: 0, day: "both",},
 ]
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -510,7 +510,7 @@ function writeEvent(name) { //Plays the actual event.
 			unlockedScene = eventArray[i];
 		}
 	}
-	if (unlockedScene != "") {
+	if (unlockedScene != "" && galleryCheck(name) != true) {
 		data.gallery.push(unlockedScene);
 		writeSpecial("You unlocked a new scene in the gallery!");
 	}
