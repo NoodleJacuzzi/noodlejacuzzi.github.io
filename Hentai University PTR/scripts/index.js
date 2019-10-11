@@ -1095,13 +1095,14 @@ function clearInv() {
 function diagnostic() {
 	var goof = document.getElementById('cheatSubmission').value;
 	goof = goof.toLowerCase();
-	console.log("Testing cheat code " + goof);
-	loadEncounter('system', 'cheat');
+	console.log("Testing code " + goof);
+	writeEncounter('cheat');
 	switch (goof) {
 		case "human alteration app": {
 			if (checkBody("sub") != true) {
 				var goof = {index: "sub"};
 				data.bodytypes.push(goof);
+				writeSpecial("Unlocked a new bodytype! Change via the wardrobe.");
 			}
 			else {
 				goof = "null";
@@ -1112,6 +1113,7 @@ function diagnostic() {
 			if (checkBody("sub") != true) {
 				var goof = {index: "sub", artist: "Art by Aya",};
 				data.bodytypes.push(goof);
+				writeSpecial("Unlocked a new bodytype! Change via the wardrobe.");
 			}
 			else {
 				goof = "null";
@@ -1119,9 +1121,10 @@ function diagnostic() {
 			break;
 		}
 		case "princess quest": {
-			if (checkBody("sub") != true) {
+			if (checkBody("elizabeth") != true) {
 				var goof = {index: "elizabeth", artist: "Art by Neromashin",};
 				data.bodytypes.push(goof);
+				writeSpecial("Unlocked a new bodytype! Change via the wardrobe.");
 			}
 			else {
 				goof = "null";
@@ -1129,9 +1132,10 @@ function diagnostic() {
 			break;
 		}
 		case "rainy dayz": {
-			if (checkBody("sub") != true) {
+			if (checkBody("jill") != true) {
 				var goof = {index: "jill", artist: "Unknown artist",};
 				data.bodytypes.push(goof);
+				writeSpecial("Unlocked a new bodytype! Change via the wardrobe.");
 			}
 			else {
 				goof = "null";
@@ -1237,6 +1241,7 @@ function writePhoneSpeech (name, img, text) {
 	}
 	if (name == "player") {
 		img = data.player.character;
+		name = data.player.name
 	}
 
 	for (i = 0; i < data.story.length; i++) {
