@@ -128,7 +128,7 @@ function changeLocation(n) {
 		loadEvent('system', 'laptop');
 	}
 	wrapper.scrollTop = 0;
-	var bg = "images/locations/" + scene + data.player.time + ".jpg";
+	var bg = "images/locations/" + n + data.player.time + ".jpg";
 	document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 	updateMenu();
 	hideStuff();
