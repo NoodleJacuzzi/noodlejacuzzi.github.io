@@ -237,12 +237,18 @@ V0.0
 		update saves (COMPLETE)
 		Brandon's typos (COMPLETE)
 	v3
-		Remind crypto to fix kuro
-		Remind crypto to fix meji
+		Kuro fix (COMPLETE)
+		Meji fix (COMPLETE)
+		purple8 clears the screen too early (COMPLETE)
+		chubby still uses data.story[4] (COMPLETE)
+		chubby line 60 still uses "his" (COMPLETE)
+		chubby line 69 uses "he" (COMPLETE)
+		chubby1 event has no finish button (COMPLETE)
+		dark square when opening a window (COMPLETE)
+		BG images not appearing (COMPLETE)
+		Fix logbook to show events from character js file
 		Purple's 99 trust event plays chubby ushering you through the door
 		Neet's encounters
-		Hacking minigame
-		Fix logbook to show events from character js file
 	Pocket University
 	Pervert Ranger
 	Triad
