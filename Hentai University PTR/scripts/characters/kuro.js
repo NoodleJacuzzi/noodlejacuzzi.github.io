@@ -364,7 +364,6 @@ function writeEvent(name) { //Plays the actual event.
 			if(checkTrust('kuro') < 22){
 					raiseTrust('kuro', 1);
 			}
-			unlockScene("kuro2");
 			data.player.location = "playerOffice";
 			passTime();
 			writeFunction("changeLocation(data.player.location)", "Lock the door and clean yourself up");
