@@ -246,8 +246,8 @@ V0.0
 		chubby1 event has no finish button (COMPLETE)
 		dark square when opening a window (COMPLETE)
 		BG images not appearing (COMPLETE)
+		Purple's 99 trust event plays chubby ushering you through the door (COMPLETE)
 		Fix logbook to show events from character js file
-		Purple's 99 trust event plays chubby ushering you through the door
 		Neet's encounters
 	Pocket University
 	Pervert Ranger
