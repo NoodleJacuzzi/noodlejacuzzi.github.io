@@ -55,19 +55,11 @@ var logbookArray = [];
 
 //Startup & Systems config
 function startup() {
-	saveSlot(111);
 	wrapper.scrollTop = 0;
-	updateMenu();
 	hideStuff();
 	//alert(data.player.currentScene);
 	//console.log(data);
-	tempScene = data.player.currentScene;
-	if(localStorage.getItem('data110')) {
-		loadSlot(110);
-	}
-	else{
-		loadEvent('system', 'start');
-	}
+	loadEvent('system', 'start');
 }
 
 function proceed() {
