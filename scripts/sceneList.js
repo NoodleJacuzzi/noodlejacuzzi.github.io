@@ -224,6 +224,11 @@ function writeScene(scene) {
 				<br>Tags: Prostate Stimulation, Sissification, Flaccid Orgasm
 			`);
 			writeText(`
+				<b>Bimbo Dust</b>
+				<br>A bag full of an off-white powder. It has been tested, and is not cocaine. When baked into confectionary and mixed with sugar, it has a powerful inteligence-draining, body-altering affect on anyone who consumes it.
+				<br>Tags: Bimbofication
+			`);
+			writeText(`
 				<b>Sissy's Tool Kit</b>
 				<br>A plastic makeup kit. When opened, objects will appear inside and in the room which are designed to encourage the opener to 'explore themselves'. These range from makeup to unknown body-modifying drugs and a 3-man group of naked men.
 				<br>Tags: Sissification, Feminization, Gay(?) Sex

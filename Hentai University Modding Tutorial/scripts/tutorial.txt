@@ -1,0 +1,467 @@
+Hello and welcome to the Hentai University modding tutorial!
+This engine was create by my, Noodle Jacuzzi. Experience with coding in javascript is helpful here, but it shouldn't be necessary.
+
+Table of contents:
+Getting started
+Image collection
+The character js file
+Logbook
+Adding items
+Encounters
+Events
+The phone
+Function & shortcut cheat sheet
+My stance on endorsing mods
+
+	Part 1: Getting Started
+For this tutorial I'll be adding a character named Tia Sun, and I'll be walking you through the process of implementation step-by-step.
+The very first step of adding your own character is the most important one: planning.
+You'll need a bevy of images for your character, I recommend collecting them from a single artist CG set.
+I'll be using [Izakaya Yocchan (Enoshima Iki)] Sunao de Otonashikute Mucchimuchi na Imouto no Love Love Hatsujouki, making sure only to use textless images. You can create your own images or pick singles off of a site like Gelbooru if you prefer.
+
+Now this is important. Each character has a unique <b>codename</b>. This is unrelated to their actual name and must be unique otherwise the game will break. This also helps you to avoid accidently using the character's name where you shouldn't. Because the girl I've chosen looks like a hsut-in, I'll be using the codename neet.
+
+There are only two images required for each character: the profiles. 
+
+First up I'll find a good single shot of the character standing in their normal outfit. Copy that image.
+Then, I go to the Hentai University/images folder. Then I'll create a folder and name it with my character's code name. In this case, the folder will be named neet.
+Add in your profile image, name it profile.jpg (it must be a .jpg image)
+
+Then, I'll put it into an image editor (I use paint.net) to crop out the character's face.
+Save this in the scripts/gamefiles/profiles folder as [your codename here].jpg
+
+So, we've got the profile images. Next we need to actually make the js file.
+
+	Part 2: the js file
+Hentai University uses a system where it loads everything relating to the character from a single js file. I made a blank one you can use, so go to the Hentai University/scripts/characters folder and make a copy of blank character.js
+
+Name this file CODENAME.js and open it up in your preferred text editor. I personally use notepad++, and I don't recommend using vanilla notepad since it's difficult to pick out mistakes.
+
+Now this file looks pretty complicated but just bear with me. We'll be going over every relevant part of this file bit by bit.
+
+Up at the top is probably the most important part of your character. This var character line is what is added to your save file to make the character appear in game. Lets get started with creating!
+
+	Part 3: var character
+[empty code image]
+1: The character's index, aka their codename. In your case, write CODENAME inbetween the two double quotation marks.
+2: The character's first name.
+3: The character's last name.
+4, 5, 6, and 7: Ignore these, they're meant to be left as-is.
+8: This is the character's color, used for their text boxes. This is in hex format, google hex color picker for a tool you can use for color picking.
+9: This is you! Enter your username here so the character can be credited. Don't feel too bad about keeping anonymous.
+10: This is the character's artist. If you're using more than one artist like if you collected singles from Gelbooru, leave this blank.
+
+Be careful not to delete the commas in this step.
+
+[filled out code image]
+With the var all filled out, the next step is the logbook.
+
+
+	Part 4: logbook
+[empty code image]
+This is a pretty straightforward step. Basically fill in the double quotation marks here with relevant details.
+First is the index, this should be the character's codename. For your character, fill in the space between the double quotation marks with CODENAME, so the line reads:
+index: "CODENAME",
+
+Once again, be careful not to accidently delete the commas.
+
+After that, each of the following lines relates to a different paragraph on the logbook's page for your character. You can write anything you want in each of them, the names here are more suggestions than rules.
+
+[filled-out code image]
+
+Here's what the logbook will look like once we're all finished implementing the character:
+
+[in-game image]
+
+Now on to the next step.
+
+	Part 5: newItems
+[empty code image]
+
+Here's where you can add new items to the shop. If you'd like to add an item to the inventory that the player doesn't need to buy, I'll explain how to do that in a few sections.
+You can fill in the placeholder already in place. If you want to add more items, copy the placeholder like this:
+[empty code image 2]
+
+Now we'll go step by step here.
+[filled out code image]
+1: The item's name. Be sure not to mispell here, this is important.
+2: Defines whether this is a key item or not. Key items can only be purchased once and are kept on a different side of the inventory from non-key items. Non-key items can be purchased any number of times.
+3: The price of the item. If the price is set to 0, it won't appear in the shop.
+4: The item's image. It does not need to be in the items folder in the gamefiles, just have a path leading wherever you'd like.
+5: The item's description.
+
+[in-game image]
+
+Alright, on to the next step: encounters.
+
+	Part 6: Encounter array.
+[empty code image]
+This is what makes the encounter buttons appear on the map. These are non-erotic scenes that are not meant to be repeatable, and by default you'll only encounter a character once per day.
+You may need a lot of these, so be ready to make copies like so:
+[empty code image 2]
+Be careful not to accidentally delete any of the commas.
+
+Lets go through this step-by-step. You'll need to do this for every encounter you want.
+1: the encounter's index. The button this will make will point to a specific encounter, this is a sort of pointer that tells the system what encounter to play. You can use encounter names like 'introduction', but to keep things consistent I use the character's index (CODENAME for you) and add a number and / or a letter for organization.
+2: This is what appears on the encounter button. If you use the character's codename here it'll replace the codename with your character's first name.
+3: The location where the encounter takes place. There's a list of all the game's locations in the cheat sheet section. Locations have no spaces and use what's called camelcase, where each new word starts with a capital letter and the first word is uncapitalized. Park District would be parkDistrict. West Hallway would be westHallway.
+4: The time the location takes place. Morning if the encounter should only appear in the morning, and Evening if the the encounter should only appear in the evening. Write MorningEvening if the encounter can appear at any time.
+5: Any items that would be required for the encounter to appear. Use the item's name, including capitalization and spaces. For example, if you need the Hypnosis Textbook for the scene to appear, the line would be:<br>itemReq: "Hypnosis Textbook",
+6: The minimum trust at which the encounter can appear. Trust is set to 0 by default.
+7. The maximum trust at which the encounter can appear. Trust uses a greater-than-or-equal to system. For example:<br>trustMin: 0, trustMax: 0 - The encounter will only appear when the character's trust equals 0.<br>trustMin: 5, trustMax: 10 - The encounter will only appear if the character's trust is anywhere from 5 to 10.
+8: The type of button created. This should be left as "tab".
+9 and 10: The position of the button. If you're leaving the type as "tab" you can safely ignore these.
+11: The type of day the encounter to appear on, "even", "odd", or "both".
+
+Fill these out until you have whatever amount of encounters you feel is appropriate.
+
+[filled-out code image]
+[in-game image]
+
+	Part 7: writeEncounter
+You will only be using a small part of this block of code. This part, specifically:
+[empty code image]
+In order to add more encounters, copy this block of code like so:
+[empty code image 2]
+
+Here you'll be writing out the encounters you listed in the encounterArray. There's a lot of things you can do here, but here are some important notes:
+Replace the placeholder in the case "placeholder" line with the index of the encounter you're writing.
+Make sure you're writing your code above the break;, otherwise your code won't appear on screen.
+
+Since there's a lot to cover here, here's a list of what you can do already built into the game's engine:
+writeText - Write plain dialogue
+writeSpeech - Write a character speaking
+names & honorific shortcuts
+writeBig - Write an image
+passTime - Cause time to progress
+checkTrust - check if the player has a certain amount of trust with the character
+setTrust & raiseTrust - Change the character's trust level
+addItem - Add an item to the player's inventory
+checkItem - Check if the player has a specific item in their inventory
+removeItem - Remove an item from the player's inventory
+money - Raising & lowering the player's money
+changeLocation - Changing the player's location
+writeFunction - make a button on the player's screen
+writeEncounter - Link to another encounter
+writeEvent - write an event/link to an event
+loadEncounter and loadEvent - loading from another js file
+Go back - Ending an encounter
+
+That's a lot! But in the future there will probably be more. The more functions I can use, the more control modders will have over the characters they add.
+
+Something to keep in mind is that in notepad++ you can hit alt-3 to close the brackets so you can more easily oversee all the encounters you created.
+
+[filled out code image]
+[in game image]
+
+Next up we'll be moving on to events!
+
+	Part 8: eventArray
+[empty code image]
+Same as always, if you need to add more just copy the line:
+[empty code image 2]
+
+This is the list of events available for each character. Events can be any length, they're the meat of the game. Events are replayable in the gallery, so there's one big iron-clad rule here:
+Because events are repeatable via the gallery, <b>do not do things like change trust or add items in an event.</b>
+Place your event inside an encounter with the writeEvent function, and change variables in the encounter.
+
+1: This is the event's index. Similarly to encounters, this is the pointer that tells the system which event to play.
+2: This is the event's name. This is what appears in the gallery, so try to be at least a little descriptive.
+
+[filled out code image]
+Got your events all added? Great! The next step will be to write them.
+
+	Part 9: writeEvent
+Here we are! I hope you like writing erotic fiction.
+
+There's a pretty big block of code in this function, but the only part you need to use is here:
+[empty code image 2]
+Just copy the section just like you did in writeEncounter to add more events.
+
+Writing an event is identical to writing an encounter. The same functions, tips and tricks apply.
+
+writeText - Write plain dialogue
+writeSpecial - Write green dialogue
+writeSpeech - Write a character speaking
+weight - styling your text
+names & honorific shortcuts
+writeBig - Write an image
+passTime - Cause time to progress
+checkTrust - check if the player has a certain amount of trust with the character
+setTrust & raiseTrust - Change the character's trust level
+addItem - Add an item to the player's inventory
+checkItem - Check if the player has a specific item in their inventory
+removeItem - Remove an item from the player's inventory
+money - Raising & lowering the player's money
+changeLocation - Changing the player's location
+writeFunction - make a button on the player's screen
+writeEncounter - Link to another encounter
+writeEvent - write an event/link to an event
+loadEncounter and loadEvent - loading from another js file
+Go back - Ending an encounter / event
+
+Best of luck to you! Once you've done all of that, the next section is an optional one:
+
+	Part 10: phoneArray
+[empty code image]
+Here we are in the array used for text messages. Just like the event array this section is pretty short.
+Same as always, to add more entries just copy the relevant lines of code:
+[empty code image 2]
+
+1: The index of the text, works effectively the same as all the other indexes you've been working with.
+2: At the start of the day, if you have a certain amount of trust with a character you can recieve a text message. This is that certain amount of trust.<br>For example, if it's set to 60, then when the player goes to sleep, they'll wake up and if they have 60 trust with your character they will get a *bzzt* you got a text!
+
+[filled-out code image]
+Added them all? Great!
+
+	Part 11: writePhoneEvent
+[empty code image]
+Same as writeEncounter and writeEvent. Copy the relevant code blocks to add more entries, don't skimp out on the break;
+[empty code image 2]
+
+Alright, time for more writing! But the phone works a little differently. We don't use writeText and writeBig here, instead there are a few important functions we have for writing phone texts.
+
+writePhoneSpeech - Write texts / dialogue
+writePhoneImage - Write images which are saved to the phone
+writePhoneChoices - Write choices for a dynamic experience
+phone and trust - Viewing texts is repeatable, here are some good practices to follow.
+
+[filled-out code image]
+[in-game code image]
+
+Got your events ready? Alright! Your character is ready, let's get them set up!
+
+	Part 12: Finalization
+Alright, just to double check. Your character's js file is named CODENAME.js and is located in the Hentai University/scripts/characters folder? You have the profile in the Hentai University/scripts/profiles folder? You've got your images all neatly in the Hentai University/images/CODENAME folder?
+Great! Now we'll actually get them working. Testing is probably the most important part.
+Open up Hentai University.html and go to your house. Open the game console and click "Load a mod character"
+Type the character's code name, so for you you'll type in CODENAME
+Make sure not to mispell it!
+
+And that's it! Test until the character is in a bug-free state.
+
+After you're all done testing, use a program like 7zip to zip up all of your precious files so that other people can use them.
+
+	Part 13: Endorsement
+I'd really like to support modding for the game. Absolutely feel free to send me your character's files after you're finished testing.
+If you'd like I can include your character in the game too as a fully-implemented character. But if that's going to happen, some other things need to happen first.
+I'll need to proof your work, fixing typos and such. If it's in a broken / typo-infested state, I'll probably send it back to you with a few notes on what needs fixing.
+
+Keep in mind I'm funded by patreon, so there are some hard limits to what I can implement. Hypnosis already crosses some lines.
+So listen. I won't tell you not to make things like bestiality or scat, but I can't put that stuff in the game myself, and I'd rather it not be on my public discord.
+If some thread or space is made dedicated to modding this game, please let me know. I'll put a link to it here in this guide.
+There are some things that I can't put into the game, but my very handsome and close friend Joodle Nacuzzi has a few ideas for some fun things he'd like to put in the game that can't be put up on my discord.
+
+Aside from that, feel free to message me for help or advice. There's my email, noodlejacuzzi@gmail.com, and the game's discord at https://discord.gg/B3AszYM
+
+And this game would absolutely not exist if not for the people who support me on patreon. I love making games, but rebuilding Hentai University's entire engine to improve broken pieces and to allow for mod support, as well as making this tutorial took a total of 20 hours of time spent writing code.
+Thank you, truly, to everyone who's supported me.
+
+	writeText - Write plain dialogue
+
+A function that writes plain text.
+writeText("");
+Write your text between the two double-quotes. Be careful not to use double quotes in the text.
+writeText("I'm a astronaut!"); - This is fine.
+writeText("And so she said "I want to go to the market", like a bitch!"); - This is not fine, and will break the game.
+
+Example: writeText("I went down to the market to pick up some milk and eggs.");
+[example image]
+
+
+	writeSpecial - Write green dialogue
+
+A function that writes special green text, used for rewards like getting a new item or getting paid.
+writeSpecial("");
+Write your text between the two double-quotes. Be careful not to use double quotes in the text.
+
+Example: writeSpecial("You earned fifty buccaroos!.");
+
+[example image]
+
+	writeSpeech - Write a character speaking
+
+A function that writes dialogue.
+writeSpeech("", "", "");
+The first set of quotes is for the name / the code name.
+The second set of quotes is for the profile image used for the dialogue. Leave this blank if you're writing dialogue for an established character or the player, as its set up to automatically find an image if this spot is left empty.
+The third set of quotes is for the actual dialogue.
+
+For the player's dialogue, write player between the first set of double quotes.<br>Leave the second pair of double quotes alone.<br>Write the dialogue inbetween the third pair of quotes.
+writeSpeech("player", "", "Hello, this is him, yes.");
+
+For your character's dialogue, write CODENAME between the first set of double quotes.<br>Leave the second pair of double quotes alone.<br>Write the dialogue inbetween the third pair of quotes.
+writeSpeech("neet", "", "Why are you talking like that?");
+
+For some rando's dialogue, write the rando's name between the first set of double quotes.<br>Write none between the second pair of double quotes, or specify a specific image to use here.<br>Write the dialogue inbetween the third pair of quotes.
+writeSpeech("???", "none", "I have no image, my existence is blank.");
+writeSpeech("Goblin Girl", "scripts/gamefiles/profiles/doll.jpg", "I don't fit with the game thematically!");
+
+[example image]
+
+	weight - styling your text
+
+Add some <b>Ooomph</b> to your text by boldening or italicizing. 
+&lt;b&gt;Text between these two will be bold&lt;/b&gt;
+&lt;i&gt;Text between these two will be italicized&lt;/i&gt;
+
+[example image]
+
+	names & honorific shortcuts
+
+The game's engine is built with some automatic text replacement functions.
+
+For a character's first name, use their code name and append an F
+For a character's last name, use their code name and append an L
+For the player's name, write playerF
+
+[example image]
+
+For the player's gender (man or woman), write playerG, playerGender, or playerMan
+For the player's title (Mister or Miss), write playerT, playerTitle, or playerMister
+For the player's honorific (sir or ma'am), write playerH, playerHonorific, or playerSir
+
+[example image]
+
+	writeBig - Write an image
+
+Writes an image.
+The first part is the image path, telling the system where the image is. The second part is what appears when you hover over the image. I try to use this to credit the image's original artist.
+
+writeBig("images/neet/profile.jpg", "Art by Somebody");
+[example image]
+
+	passTime - Cause time to progress
+
+passTime();
+Just write this if the event causes time to progress. Using it at morning causes it to become evening, using it at evening makes it night. Don't use this to start a new day, it'll become morning but the day number will be the same.
+
+	checkTrust - check if the player has a certain amount of trust with the character
+
+This returns the character's trust. This doesn't do anything by itself, we need an if statement to do anything with it. Here's some framework you can copy and use.
+
+if (checkTrust('CODENAME') == 0) {
+	//This will occur if the character's trust is exactly 0.
+}
+else {
+	//This will occur if the character's trust is not 0. You can delete the else { line above and the } line below if you don't need them.
+}
+
+	setTrust & raiseTrust - Change the character's trust level
+
+Using these two functions you can set the character's trust to a specific level or raise it.
+
+setTrust('CODENAME', 20);
+
+This sets the trust of the character to 20.
+
+raiseTrust('CODENAME', 1);
+
+This raises the trust of the character by 1.
+
+This is important for making sure the next relevant event will play. If you're stuck trying to get an encounter to trigger, click "save to file" at the bottom of your save menu and check what trust you're at.
+Once again, <b>do not alter trust in events</b>, as events can be repeated in the gallery.
+
+	addItem - Add an item to the player's inventory
+
+addItem("", true, "");
+The first set of quotes is for the item's name.
+The second set of quotes is for if the item is a key item or not. True or false.
+The third set of quotes is the image path.
+
+addItem("Petunia", true, "scripts/gamefiles/items/flower.jpg");
+
+[example image]
+
+	checkItem - Check if the player has a specific item in their inventory
+
+This is another function that does nothing by itself. You'll need an if statement.
+
+if (checkTrust('CODENAME') == 0) {
+	//This will occur if the player does have the item.
+}
+else {
+	//This will occur if the player does not have the item. You can delete the else { line above and the } line below if you don't need them.
+}
+
+[example image]
+
+	removeItem - Remove an item from the player's inventory
+
+removeItem("");
+
+This will remove an item from the player's inventory. Make sure to use checkItem to be sure they actually have it first!
+
+removeItem("Petunia");
+
+	money - Raising & lowering the player's money
+
+No functions for this, this is just plain javascript. Insert these lines to manipulate money.
+
+data.player.money = 30
+This sets the player's money to $30.
+
+data.player.money += 10;
+This adds $10 to the player's money.
+
+data.player.money -= 20;
+This adds $20 to the player's money.
+
+	writeFunction - make a button on the player's screen
+
+writeFunction("('')", "");
+This will cause a button to appear, which when clicked will do something.
+The first set of quotes is the function to trigger.
+The second set of quotes is the text the player can actually read.
+
+writeFunction("writeText('Hello!')", "Click this button to write some text.");
+
+[example image]
+
+	changeLocation - Changing the player's location
+
+writeFunction("changeLocation('playerHouse')", "Finish");
+
+This will make a button that says 'Finish' that, when clicked, will take the player back to their house.
+
+	writeEncounter - Link to another encounter
+
+writeEncounter("");
+This immediately overwrites whatever is on screen to write the encounter. Put the desired encounter's index between the double-quotes.
+
+You can use writeFunction in tandem with this to make a button that effectively continues on to the next scene.
+
+writeFunction("writeEncounter('neet1')", "Continue on");
+
+This creates a button which reads 'Continue on' that, when clicked, will trigger the encounter with the index neet1.
+
+	writeEvent - write an event/link to an event
+
+writeEvent("");
+
+This immediately overwrites whatever is on screen to write the event. Put the desired event's index between the double-quotes.
+
+You can use writeFunction in tandem with this to make a button that writes an event when clicked.
+writeFunction("writeEvent('neet1')", "Continue on");
+
+This creates a button which reads 'Continue on' that, when clicked, will trigger the event with the index neet1.
+
+	Changing the background
+GET BACKGROUND CHANGING STUFF
+
+	loadEncounter and loadEvent - loading from another js file
+
+This should be considered an advanced function, and you will probably never need to use it.
+
+This game loads multiple js files all the time. I'm not completely sure why you would want to, but here's how you load up an encounter different js file.
+
+loadEncounter("", "");
+
+And here's how you load an event:
+
+loadEvent("", "");
+
+The first sets of double quotes are for the files you want to load. Use the codenames. If you wanted to load an encounter from your js file you would write CODENAME.js between the first two double-quotes.
+The second sets of double quotes are for the index of the encounter/event you want to load. Careful, if you mispell the index you'll get a blank screen.
+
+PERSONALIZED TUTORIAL: The reader can save their codename for personalization. Replace CODENAME with the desired codename.
