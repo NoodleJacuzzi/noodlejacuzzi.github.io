@@ -9,6 +9,9 @@ function writeScene(scene) {
 				<p class = "centeredText">Thank you to: Swallows999, MrManPerson, Lasse B, ChronosEdge, Judavarius, Adonnak, Andy Amundy, Angel, Ariados, Blaise Fenn, brandon, Debarre Sonny, Drashin, iNoH8+, Jane, Karan Raj Gupta, lm Carma, marvin diaz, Mirza Hasan, murgatroid99, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Snaked, stratum, Wild Bill, Will Osboldstone, and 凱 陳 for supporting my work!</p>
 			`;
 			writeTransition("news", "View all news updates");
+			document.getElementById('output').innerHTML +=`
+				<p class="choiceText" onclick="window.location.href='https://discord.gg/B3AszYM'">Visit my discord server</p>
+			`;
 			writeText("<br>");
 			writeTransition("commissions", "Commissioned scenes (Currently none)");
 			//writeTransition("recommendations", "Recommendations");
@@ -30,6 +33,7 @@ function writeScene(scene) {
 			writeTransition("artifactList", "See a roadmap of current / planned content");
 			writeBig("images/HentaiUniversity.png");
 			writeText("Hentai University v2");
+			writeText("A game made in cooperation with author Captain Cryptogreek, who works as the game's lead writer.");
 			writeText("You play as a young man with a strong grasp on hypnotic magic, and have embedded yourself as a counselor in a school with a fantastically attractive student body. The faculty and your neighbors in town look pretty good too.");
 			writeText("This game uses art by Enoshima Iki, Nagi Ichi, and Oreteki18kin, and is meant to be similar in feel to Hentai High School, but without the focus on school management, more emphasis on wandering / corruption, and a much higher quality body of images.");
 			writeText("The end goal here is a town packed with dozens of characters using a framework I can continually add more content to.");
@@ -38,6 +42,8 @@ function writeScene(scene) {
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">Play the mobile version</p>
+				<p class="choiceText" onclick="window.location.href='https://f95zone.to/threads/hentai-university-v2-5-noodlejacuzzi.37312/'">F95Zone Thread</p>
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/30871183'">List of cheat codes</p>
 			`;
 			writeBig("images/bitchMedicenter.png");
 			writeText("Bitch Medicenter Demo");
