@@ -125,7 +125,8 @@ function changeLocation(n) {
 		changeBG(locationArray[locationTarget].bg);
 		if (data.player.time == "Night" && data.player.location != "playerHouse") {
 			console.log(data.player.location);
-			n = "playerHouse";
+			n = 'playerHouse';
+			data.player.location = "playerHouse";
 			writeText("The sun has set and the streetlights fizzle on. It'd be best to head home now, otherwise you'll have trouble getting up on time tomorrow.");
 			writeFunction("changeLocation('playerHouse')", "Go Back Home");
 		}
@@ -147,13 +148,13 @@ function changeLocation(n) {
 					);
 				}
 			}
-			data.player.location = n;
 			if (data.player.time != "Night" && data.player.location != "map"  && data.player.location != "schoolMap" && checkItem("Town Map") == true) {
 				document.getElementsByClassName('playerRoom')[0].innerHTML += `
 					<div class="pictureButton" onclick="changeLocation('map')" style="top: 0%; left: 0%; max-width: 30%;">Use Map</div>
 				`;
 			}
 			checkForEncounters();
+			data.player.location = n;
 		}
 	}
 	if (n == 'gallery') {
