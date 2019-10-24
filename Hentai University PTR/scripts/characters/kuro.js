@@ -7,7 +7,7 @@ var logbook = { //Logbook details for each character.
 	clothes: "Her preferred outfit is a riff on the school uniform, with a microskirt so short she's gotten chewed out at school more than once.",
 	home: "She mostly hangs out on the roof before and after classes.",
 	tags: "Prostitution, Phone Sex, Cum on Clothes",
-	artist: "Enoshima Iki",
+	artist: "Artist: Enoshima Iki",
 	author: "Captain Cryptogreek",
 };
 
@@ -235,6 +235,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "kuro5" : {
+			passTime();
 			writeText("kuroF smiles, her lollipop sliding into her cheek.");
 			if(data.player.gender == "man"){
 				writeSpeech("kuro","","Heyhey, Mister Counselor~! I was worried that you were gonna keep little ol' me waiting.");
@@ -296,6 +297,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "kuro6" : {
+			passTime();
 			setTrust('kuro',64);
 			writeText("Her eyes settle on you almost immediately, her expression very controlled as she shifts slightly.");
 			if(data.player.gender == "man"){

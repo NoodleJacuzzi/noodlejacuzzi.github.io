@@ -11,6 +11,8 @@ var logbook = { //Logbook details for each character.
 	clothes: "He usually wears a school uniform - the male version while at school, and a girl's uniform when around the town.",
 	home: "He usually hangs out around the Class B hallway.",
 	tags: "Crossdressing, Anal Orgasms, Orgasm Denial",
+	artist: "Artist: Nagi Ichi",
+	author: "Captain Cryptogreek",
 };
 
 var newItems = [//Lists the shop items unique to this character
