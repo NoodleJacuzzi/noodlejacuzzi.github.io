@@ -161,12 +161,14 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
+	{index: "neetReward", trust: 3,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
-		case "placeholder": {
-			//Write the event's text here using writePhoneSpeech, writePhoneImage, and writePhoneChoices
+		case "momReward": {
+			writePhoneImage("images/neet/reward.jpg", "Art by Enoshima Iki");
+			writePhoneSpeech("neet", "", "You've finished all of neetF's content for this version, more is coming soon!");
 			break;
 		}
 		default: {

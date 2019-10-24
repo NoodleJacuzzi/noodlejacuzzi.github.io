@@ -422,12 +422,17 @@ div#wrapperBG::after {
 	font-weight: bold;
     display: block;
     width: fit-content;
+	padding-top: 60px;
+	padding-bottom: 60px;
     margin: 15px auto;
-	line-height: 3;
+	line-height: 1;
 }
 
 
 .pictureButton,.pictureButton:hover {
+	font-size: 40px;
+	padding-top: 15px;
+	padding-bottom: 15px;
     padding: 15px;
     opacity: 1;
     border: 0;
@@ -892,4 +897,8 @@ position: absolute;
 .ghost {
 	position: absolute;
 	cursor: pointer;
+}
+
+input {
+	font-size: 100%;
 }

@@ -1815,12 +1815,12 @@ function captureGhost(n) {
 		}
 		default: {
 			if (countGhosts() == 30) {
-				writeSpecial("You caught 10 ghosts! Open the app to claim your reward.");
+				writeSpecial("You caught 30 ghosts! Open the app to claim your reward.");
 				data.player.ghost += 'REWARD4';
 			}
 			else {
 				if (countGhosts() == 10) {
-					writeSpecial("You caught 30 ghosts! Open the app to claim your reward.");
+					writeSpecial("You caught 10 ghosts! Open the app to claim your reward.");
 					data.player.ghost += 'REWARD1';
 				}
 				else {
