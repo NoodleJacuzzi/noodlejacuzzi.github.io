@@ -11,6 +11,8 @@ var logbook = { //Logbook details for each character.
 	clothes: "She prefers an older style of dress with a white blouse and a black pencil skirt, but her shirt is worn out enough that you can clearly make out her bra underneath.",
 	home: "You have no idea where she lives, she's pretty private when it comes to her personal life. With her, it's all business all the time.",
 	tags: "No scenes yet, sorry! In the future she'll send you on more missions for special scenes, and her content will be based on your Counseling skill.",
+	artist: "Artist: Oreteki18kin",
+	author: "Noodle Jacuzzi",
 };
 
 var newItems = [//Lists the shop items unique to this character
@@ -100,6 +102,18 @@ function writeEncounter(name) { //Plays the actual encounter.
 					}
 				}
 			}
+			if (data.story[8].met.includes('neetS') != true) {
+				writeSpeech("principal", "", "There've been reports of a... Um... 'Gremlin', in the computer lab. I know it's ridiculous, but...");
+				writeFunction("writeEncounter('neetCaseStart')", fName('neet')+" "+lName('neet')+"'s file");
+			}
+			else {
+				if (data.story[8].met.includes('neetF') != true) {
+					writeSpeech("principal", "", "Have you looked into the reports of the creature in the computer lab? I've heard that gremlins come out later in the day.");
+					if(checkTrust('neet') > 0) {
+						writeFunction("writeEncounter('neetCaseEnd')", "Report on "+fName('neet')+"'s case.");
+					}
+				}
+			}
 			if (data.story[8].met.includes('scarfS') != true) {
 				writeSpeech("principal", "", "I don't necessarily want to point the blame at anyone in particular, but there is one teacher I feel hasn't been performing at her best lately. I know it isn't your job, but could you speak to her?");
 				writeFunction("writeEncounter('scarfCaseStart')", fName('scarf')+" "+lName('scarf')+"'s file");
@@ -121,7 +135,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("principal", "", "Thank you. I believe she's usually being held up in the mornings at the school's entrance.");
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			data.story[8].met += "kuroS";
-			addItem("File A-1", true, "scripts/gamefiles/profiles/kuro.jpg")
+			addItem("File A-1", true, "images/kuro/kuro.jpg")
 			if(checkTrust('kuro')) {
 				writeEncounter('kuroCaseEarly');
 			}
@@ -158,7 +172,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("principal", "", "Wonderful! I'll be waiting to hear about how it goes. I'll have the file sent to your office, and she's in class B, take the east hallway. I believe she lives on Vintage Street as well.");
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			data.story[8].met += "purpleS";
-			addItem("File B-1", true, "scripts/gamefiles/profiles/purple.jpg")
+			addItem("File B-1", true, "images/purple/purple.jpg")
 			if(checkTrust('purple') > 80) {
 				writeEncounter('purpleCaseEarly');
 			}
@@ -196,6 +210,53 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
+		case "neetCaseStart": {
+			writeSpeech("player", "", "Gremlin?");
+			writeSpeech("principal", "", "Yes, I asked security to look into it, but they thought I was joking.");
+			writeSpeech("player", "", "Why not say you heard there was a rat? That's less likely to sound like a joke.");
+			writeSpeech("principal", "", "That's horrible! How could I lie to public employees like that? I-");
+			writeSpeech("player", "", "Gotcha. Alright, I'll check it out.");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			data.story[8].met += "neetS";
+			addItem("File B-2", true, "images/neet/neet.jpg")
+			if(checkTrust('neet') > 0) {
+				writeEncounter('neetCaseEarly');
+			}
+			break;
+		}
+		case "neetCaseEnd": {
+			writeSpeech("player", "", "I found your gremlin, it's a student.");
+			writeSpeech("principal", "", "Oh thank goodness. Well, who is it? I can't have students around here looking like goblins, the school's image will be hurt.");
+			writeSpeech("player", "", "Her name is Tia Sun, it's not a problem. Whoever reported her must've mistaken her silhouette, the room is really dark.");
+			writeSpeech("principal", "", "I see. Thank you for taking the matter seriously, I appreciate it.");
+			data.story[8].met += "neetF";
+			data.player.counseling += 1;
+			removeItem("File B-2");
+			updateMenu();
+			writeSpecial("Your 'counseling' ability has improved! This means a pay bump, and "+fName('principal')+" trusts you more!");
+			writeSpeech("principal", "", "Sun, hmm? I don't recall anyone by that name enrolled here. I'll look into the matter, thank you again.");
+			writeSpeech("player", "", "No problem, Mrs. principalL.");
+			writeSpeech("principal", "", "I shall see you around then. It's <i>Ms.</i> principalL, by the way.");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "neetCaseEarly": {
+			writeSpeech("player", "", "Ah, "+fName('neet')+".");
+			writeSpeech("principal", "", "You named it?");
+			writeSpeech("player", "", "Her. Tia Sun.");
+			writeSpeech("principal", "", "... I see. Well, pets are not allowed on the premises, and I can't have one of our employees owning a goblin, so-");
+			writeSpeech("player", "", "She's a student, Mrs. principalL.");
+			writeSpeech("principal", "", "Oh. Oh! Goodness me, I misunderstood. Someone else must have misunderstood as well, I'll send them a memo with the proper definition of 'gremlin'. Thank you, playerF.");
+			writeSpeech("player", "", "No problem, Mrs. principalL.");
+			writeSpeech("principal", "", "I shall see you around then. It's <i>Ms.</i> principalL, by the way.");
+			data.story[8].met += "neetF";
+			removeItem("File B-2");
+			data.player.counseling += 1;
+			updateMenu();
+			writeSpecial("Your 'counseling' ability has improved! This means a pay bump, and "+fName('principal')+" trusts you more!");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
 		case "scarfCaseStart": {
 			writeSpeech("player", "", "So what do you mean 'not up to her best'?");
 			writeSpeech("principal", "", "Well, she has't recieved any complaints, and her students are doing fine on their psychology tests, it's just that...");
@@ -205,7 +266,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("principal", "", "Thank you, I would really appreciate it. She teaches in Class B, down the east hallway.");
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			data.story[8].met += "scarfS";
-			addItem("File T-1", true, "scripts/gamefiles/profiles/scarf.jpg")
+			addItem("File T-1", true, "images/scarf/scarf.jpg")
 			break;
 		}
 		case "scarfCaseEnd": {
@@ -268,7 +329,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 }
 
 //Don't touch anything below this, or things will break.
-console.log(character.index+'.js loaded correctly. request type is '+requestType)
+//console.log(character.index+'.js loaded correctly. request type is '+requestType)
 
 switch (requestType) {
 	case "encounter": {

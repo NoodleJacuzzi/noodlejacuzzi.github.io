@@ -5,6 +5,8 @@ var eventArray = [
 ];
 var newItems = [ //If price is 0 it isn't for sale
 	{name: "Butt", 				key: true, 		price: 0, 	image: "scripts/gamefiles/items/butt.jpg", description: ""},
+	{name: "Ghost AR", 			key: true, 		price: 0, 	image: "scripts/gamefiles/items/ghostAR.jpg", description: "The brand new mobile game Ghost AR! Track ghosts around the city, collect them all and save the world from their ghastly threat!"},
+	{name: "Town Map", 			key: true, 		price: 20, 	image: "scripts/gamefiles/items/map.jpg", description: "Allows you to navigate around town more easily."},
 	{name: "Hypnosis Textbook", key: false, 	price: 50, 	image: "scripts/gamefiles/items/hypnosisTextbook.jpg", description: "A textbook on hypnosis, you can read it at home to improve your skill."},
 	{name: "Hacking Textbook", 	key: false, 	price: 50, 	image: "scripts/gamefiles/items/hackingTextbook.jpg", description: "A textbook on hacking, you can read it at home to improve your skill."},
 	{name: "Counseling Textbook", key: false, 	price: 50, 	image: "scripts/gamefiles/items/counselingTextbook.jpg", description: "A textbook on counseling, you can read it at home to improve your skill."},
@@ -12,17 +14,17 @@ var newItems = [ //If price is 0 it isn't for sale
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default. Tab appears below the map, button appears on the map itself
-	{index: "paperwork", 	name: "File some Paperwork", 	location: 'playerOffice', time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 65, day: "both",},
-	{index: "listTextbooks", name: "Read a Book", 			location: 'playerHouse', time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 20, left: 72, day: "both",},
-	{index: "listTextbooks", name: "Read a Book", 			location: 'playerOffice', time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 20, left: 72, day: "both",},
-	{index: "gameConsole", 	name: "Game Console", 			location: 'playerHouse', time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 62, left: 72, day: "both",},
-	{index: "wardrobe", 	name: "Wardrobe", 				location: 'playerHouse', time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 62, left: 1, day: "both",},
-	{index: "laptop", 		name: "Use the Computer", 		location: 'playerHouse', time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 5, day: "both",},
-	{index: "nap", 			name: "Take a Nap", 			location: 'playerHouse', time: "Morning", 			itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
-	{index: "nap", 			name: "Take a Nap", 			location: 'playerOffice', time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
-	{index: "newDay", 		name: "Go to Bed", 				location: 'playerHouse', time: "EveningNight", 		itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
-	{index: "shop", 		name: "General Store", 			location: 'shoppingDistrict', 	time: "MorningEvening", itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 60, day: "both",},
-]
+	{index: "paperwork", 	name: "File some Paperwork", 	location: 'playerOffice', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 65, day: "both",},
+	{index: "listTextbooks", name: "Read a Book", 			location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 20, left: 72, day: "both",},
+	{index: "listTextbooks", name: "Read a Book", 			location: 'playerOffice', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 20, left: 72, day: "both",},
+	{index: "gameConsole", 	name: "Game Console", 			location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 62, left: 72, day: "both",},
+	{index: "wardrobe", 	name: "Wardrobe", 				location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 62, left: 1, day: "both",},
+	{index: "laptop", 		name: "Use the Computer", 		location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 5, day: "both",},
+	{index: "nap", 			name: "Take a Nap", 			location: 'playerHouse', 		time: "Morning", 			itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
+	{index: "nap", 			name: "Take a Nap", 			location: 'playerOffice', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
+	{index: "newDay", 		name: "Go to Bed", 				location: 'playerHouse', 		time: "EveningNight", 		itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
+	{index: "shop", 		name: "General Store", 			location: 'shoppingDistrict', 	time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 60, day: "both",},
+];
 
 function writeEncounter(scene) {
 	console.log('now writing encounter '+scene);
@@ -35,6 +37,8 @@ function writeEncounter(scene) {
 		case "start" : {
 			updateMenu();
 			document.getElementById('playerImage').src = "scripts/gamefiles/none.png";
+			var bg = "scripts/gamefiles/logo2.png";
+			document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 			writeBig("scripts/gamefiles/logo2.png");
 			writeText("Hentai University is an adult game created by NoodleJacuuzi and Captain Cryptogreek. You can find and keep up with all NoodleJacuzzi's games, including Human Alteration App, Princess Quest, and Rainy DayZ at the master index here: <a href='https://noodlejacuzzi.github.io/index.html'>Noodle Jacuzzi's Index</a>");
 			writeText("You can find more of Captain Cryptogreek's work here: <a href='https://www.reddit.com/user/CaptainCryptogreek'>Captain Cryptogreek on Reddit</a>");
@@ -45,7 +49,8 @@ function writeEncounter(scene) {
 			writeFunction("loadEncounter('system', 'prologueAlt')", "Start the game as a futanari");
 			writeText("<hr>");
 			writeText("Other notes:");
-			writeText("We're always open to comments or criticism. If you feel like school management would add a lot to the game, you'd like us to consider adding another artist, or you'd like to suggest content of your own, you can shoot us a message anywhere this game is posted. You can find the Patreon here: <a href='https://www.patreon.com/noodlejacuzzi'>Patreon Link</a><br>");
+			writeText("Are <b>you</b> interested in getting your own character into Hentai University? Well, you're in luck! Hentai University v3 includes <b>Mod Support!</b> Hop over to the game's <a href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'>Modding Tutorial</a> if you're interested.");
+			writeText("We're always open to comments or criticism. If you feel like school management would add a lot to the game, you'd like us to consider adding another artist, or you'd like to suggest content of your own, you can shoot us a message anywhere this game is posted. You can find the Patreon here: <a href='https://www.patreon.com/noodlejacuzzi'>Patreon Link</a>");
 			writeText("You can also send us a message directly. Noodlejacuzzi is on discord (NoodleJacuzzi#4120) or you can send an email at noodlejacuzzi@gmail.com");
 			writeText("Captain Cryptogreek can be messaged on his reddit account where he regularly posts captions. You can also shoot him an email if you'd like him to proofread or you'd like to commission his skills at cryptogreekcaptions@gmail.com");
 			writeText("Thank you to: Swallows999, MrManPerson, Lasse Bannow, ChronosEdge, brandon, Debarre Sonny, Drashin, iNoH8+, Mirza Hasan, murgatroid99, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Wild Bill, Will Osboldstone, and 凱 陳 for funding this game! The patreon funds are split as Captain Cryptogreek has taken over as lead writer for the game.");
@@ -119,6 +124,7 @@ function writeEncounter(scene) {
 		case "cheat": {
 			document.getElementById('output').innerHTML += `
 				<p class='centeredText'>You can enter cheat codes here. For example, use the code 'new name' to rename all of the game's other characters.</p>
+				<p class='centeredText'>I keep a list of all of these on my patreon, go there, even if you aren't a patron, to find them.</p>
 				<p class='centeredText'>Enter cheat code: <input type="text" id="cheatSubmission" value=""></p>
 				<p class='choiceText' onclick='diagnostic()'>Submit</p>
 			`;
@@ -248,21 +254,7 @@ function writeEncounter(scene) {
 			break;
 		}
 		case "shop": {
-			if (imagesDisabled != true) {
-				var bg = "images/locations/store.jpg";
-				
-				document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
-				document.getElementById('output').innerHTML += `
-					<div class="playerRoom">
-						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
-						<div class="pictureButton" onclick="changeLocation('street')"
-						style="top: 30%; left: 25%; max-width: 30%;">Go back outside</div>
-					</div>
-				`;
-			}
-			else {
-				writeFunction("changeLocation('street')", "Go back outside");
-			}
+			changeLocation('store');
 			loadShop();
 			break;
 		}

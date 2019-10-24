@@ -11,6 +11,8 @@ var logbook = { //Logbook details for each character.
 	clothes: "She usually wears her maid uniform and, even when wearing casual outfits, she's prefers whites, grays, and blacks.",
 	home: "She spends most of her time in-town, running errands for her employer.",
 	tags: "Casual Sex, FFM Threesome",
+	artist: "Artist: Oreteki18kin",
+	author: "Captain Cryptogreek",
 };
 
 var newItems = [//Lists the shop items unique to this character
@@ -263,7 +265,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 }
 
 //Don't touch anything below this, or things will break.
-console.log(character.index+'.js loaded correctly. request type is '+requestType)
+//console.log(character.index+'.js loaded correctly. request type is '+requestType)
 
 switch (requestType) {
 	case "encounter": {

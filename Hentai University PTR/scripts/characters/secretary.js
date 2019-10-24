@@ -11,6 +11,8 @@ var logbook = { //Logbook details for each character.
 	clothes: "Her clothes tend to look new or very well kept, and she dresses quite conservatively.",
 	home: "She lives somewhere in town, probably close to the principal's home since they tend to arrive at the same time.",
 	tags: "No scenes yet, sorry!",
+	artist: "Artist: Oreteki18kin",
+	author: "Noodle Jacuzzi",
 };
 
 var newItems = [//Lists the shop items unique to this character
@@ -106,7 +108,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 }
 
 //Don't touch anything below this, or things will break.
-console.log(character.index+'.js loaded correctly. request type is '+requestType)
+//console.log(character.index+'.js loaded correctly. request type is '+requestType)
 
 switch (requestType) {
 	case "encounter": {

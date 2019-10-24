@@ -7,6 +7,8 @@ var logbook = { //Logbook details for each character.
 	clothes: "His preferred outfit is the school uniform, although he'd probably look better in a skirt.",
 	home: "His designated classroom is class A.",
 	tags: "Tomgirl, Sissification, Prostate Stimulation, Anal",
+	artist: "Nagi Ichi",
+	author: "Noodle Jacuzzi",
 };
 
 var newItems = [//Lists the shop items unique to this character
@@ -359,7 +361,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 }
 
 //Don't touch anything below this, or things will break.
-console.log('tomgirl.js loaded correctly. request type is '+requestType)
+//console.log('tomgirl.js loaded correctly. request type is '+requestType)
 
 switch (requestType) {
 	case "encounter": {

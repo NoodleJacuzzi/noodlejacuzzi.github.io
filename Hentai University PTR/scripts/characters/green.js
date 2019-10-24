@@ -11,6 +11,8 @@ var logbook = { //Logbook details for each character.
 	clothes: "She prefers to wear green over any other color, it goes well with her sister's outfits.",
 	home: "She lives somewhere south of the shopping district, but spends most of her time at the school. ",
 	tags: "No scenes yet, sorry!",
+	artist: "Artist: Enoshima Iki",
+	author: "Noodle Jacuzzi",
 };
 
 var newItems = [//Lists the shop items unique to this character
@@ -46,13 +48,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Her words are slow and measured, just looking at her makes your brain fuzz over a little.");
 			writeSpeech("player", "", "Are you a hypnotist, like me?");
 			writeSpeech("scarf", "", "Like you? Well, maybe in some ways. I'm someone who's already had my fun, so to speak. I became bored of the power some time ago, like you will someday.");
-			writeSpeech("player", "", "Not going to happen.");
+			writeSpeech("player", "", "Not going to happen. Not while I have a working dick.");
 			writeSpeech("scarf", "", "Oho~. So passionate. I'll take your word for it, I suppose. Was there a reason you tried to hypnotize my sister, perchance? She was moments from killing you, I was very thorough planting traps in her mind in case anyone tried to steal my toy.");
 			writeText("...");
 			writeSpeech("scarf", "", "Cleaning? You wanted the room to be... Ah, you must be trying to appeal to the principal. Fine. I'll have her clean up after me. I'll be keeping an eye on you. You wanted my sister yes? I could be entreated to... share, her. If you can entertain me.");
 			writeSpeech("player", "", "I take it that dicking you here wouldn't be enough?");
 			writeSpeech("scarf", "", "Such confidence~! But you are correct. I have a... refined, pallete. Bring me your conquests, and I might teach you some of the spells I've learned over the years.");
-			writeSpecial("You've earned "+fName('scarf')+"'s attention! She can improve your hypnosis skills. Someday, you might be able to bring characters you've hypnotised to unlock new scenes!");
+			writeSpecial("You've earned "+fName('scarf')+"'s attention! She can improve your hypnosis skills. Someday, you might be able to bring characters you've hypnotized to unlock new scenes!");
 			setTrust('scarf', 40);
 			setTrust('green', 40);
 			writeFunction("changeLocation(data.player.location)", "Finish");
@@ -115,7 +117,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 }
 
 //Don't touch anything below this, or things will break.
-console.log(character.index+'.js loaded correctly. request type is '+requestType)
+//console.log(character.index+'.js loaded correctly. request type is '+requestType)
 
 switch (requestType) {
 	case "encounter": {

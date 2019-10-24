@@ -10,6 +10,7 @@
 		<div id = "menu" class = "menu">
 			<div id="titlePanel">
 				<p id = "title" class = "title">Hentai University</p>
+				<div id="closeButton" class="closeButton" onclick="closeButton()"><</div>
 				<p id = "version" class = "version">V2.9</p>
 				<p id = "version" class = "version">Testing server, report any bugs</p>
 				<!--<p id = "version" class = "version">Updates are in progress, will post this version soon</p>-->
@@ -28,7 +29,7 @@
 				</div>
 				<h4 id="restartButton" class="button" onclick="restartButton()">RESTART</h4>
 				<div id="buttonMenuSecondary" class="flexbox">
-					<h4 id="logButton" class="button" onclick="disablePictures()">DISABLE IMAGES</p>
+					<h4 id="logButton" class="button" onclick="disablePictures()">TOGGLE IMAGES</p>
 					<h4 id="invButton" class="button"  onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">MOBILE VERSION</p>
 				</div>
 			</div>
@@ -45,6 +46,7 @@
 				</div>
 			</div>
 		</div>
+			<div id="openButton" class="openButton" onclick="openButton()">></div>
 		<div id = "wrapper" class = "wrapper">
 			<div id="wrapperBG"></div>
 			<div id = "output" class = "output" onclick = "hideStuff()">

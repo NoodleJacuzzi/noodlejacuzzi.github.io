@@ -1,4 +1,4 @@
-var character = {index: "", fName: "", lName: "", trust: 0, encountered: false, textEvent: "", met: false, textColor: "#CCCCCC", author: "", artist: ""};
+var character = {index: "neet", fName: "Tia", lName: "Sun", trust: 0, encountered: false, textEvent: "", met: false, textColor: "#da924b", author: "NoodleJacuzzi", artist: "Enoshima Iki"};
 
 var logbook = {
 	index: "", 
@@ -7,21 +7,31 @@ var logbook = {
 	clothes: "",
 	home: "",
 	tags: "",
+	artist: "",
+	author: "",
 };
 
-var newItems = [//Lists the shop items unique to this character
+var newItems = [
+	{name: "", 				key: true, 		price: 0, 	image: "scripts/gamefiles/items/.jpg", description: ""},
+	{name: "", 				key: true, 		price: 0, 	image: "scripts/gamefiles/items/.jpg", description: ""},
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-	{index: "placeholder", name: "", location: '', time: "MorningEvening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "placeholder", name: "", location: '', time: "", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "placeholder", name: "", location: '', time: "", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
-			writeFunction("changeLocation('playerHouse')", "Go back");
+		case "neet1": {
+			writeText("You walk into the room.");
+			writeSpeech("player", "", "Hello, neetF.");
+			writeSpeech("neet", "", "And hello to you, playerMister playerF.");
+			writeSpecial("You made a new friend!");
+			writeFunction("changeLocation('playerHouse')", "Go home");
+			writeBig("images/neet/profile.jpg", "Art by Enoshima Iki");
 			break;
 		}
 		default: {
@@ -31,7 +41,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 	}
 }
 
-var eventArray = [ //Lists the events of the character for unlocking and replaying in the gallery.
+var eventArray = [
+	{index: "placeholder", name: "Event Name"},
 	{index: "placeholder", name: "Event Name"},
 ];
 
@@ -86,6 +97,14 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 console.log(character.index+'.js loaded correctly. request type is '+requestType)
 
 switch (requestType) {
+	case "load": {
+		data.story.push(character);
+		console.log(character);
+		console.log(data.story);
+		writeSpecial(character.fName+" has been added to the game!");
+		writeSpeech(character.index, "", character.fName+ " " + character.lName + ", written by "+ logbook.author + ", art by "+ logbook.artist+".");
+		break;
+	}
 	case "encounter": {
 		writeEncounter(eventName);
 		break;

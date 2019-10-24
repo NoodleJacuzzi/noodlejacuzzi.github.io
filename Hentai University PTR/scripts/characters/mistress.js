@@ -11,6 +11,8 @@ var logbook = { //Logbook details for each character.
 	clothes: "She generally prefers clothes with colors that match her hair or complexion.",
 	home: "She lives at the top of a particularly large complex near the Park District.",
 	tags: "Public Sex, FFM Threesome",
+	artist: "Artist: Oreteki18kin",
+	author: "Captain Cryptogreek",
 };
 
 var newItems = [//Lists the shop items unique to this character
@@ -28,7 +30,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "mistress1" : {//Introduce Mistress as being lost (she's actually an exhibitionist)
 			writeText("From the looks of it, it looks like she might be lost...? She seems to be looking around quite a bit but, after a moment, she spots you.");
 			writeBig("images/mistress/1-1.jpg", "Art by Oreteki18kin");
-			writeSpeech("???","scripts/gamefiles/profiles/mistress.jpg","O-Oh! Hello there!");
+			writeSpeech("???","images/mistress/mistress.jpg","O-Oh! Hello there!");
 			writeText("She very nearly trips over one of the branches, but keeps her balance... despite the two<i> very</i> clear challenges to it.");
 			writeText("She moves away from the few of the trees, looking more than a bit embarrassed as she brushes at her coat.");
 			writeFunction("writeEncounter('mistress1a')", "Ask if she's lost");
@@ -38,7 +40,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "mistress1a" : {
 			writeSpeech("player","","Did you get turned around or something?");
 			writeText("She looks confused for a second, but quickly nods.");
-			writeSpeech("???","scripts/gamefiles/profiles/mistress.jpg","Y-Yeah... I just got a little lost, that's all!");
+			writeSpeech("???","images/mistress/mistress.jpg","Y-Yeah... I just got a little lost, that's all!");
 			writeText("She finishes brushing herself off, smiling as she offers her hand.");
 			writeSpeech("mistress","","I'm "+fName('mistress')+" "+lName('mistress')+". It's a pleasure!");
 			writeText("You shake her hand, noting that it's a little warm as she seems to blush a bit.");
@@ -209,7 +211,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 }
 
 //Don't touch anything below this, or things will break.
-console.log(character.index+'.js loaded correctly. request type is '+requestType)
+//console.log(character.index+'.js loaded correctly. request type is '+requestType)
 
 switch (requestType) {
 	case "encounter": {

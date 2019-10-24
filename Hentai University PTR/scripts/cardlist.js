@@ -3,7 +3,7 @@
 {name: "Sinister Serpent", 	frame: "effect", type: "monster", tribe: "beast", 	atk: 3, haste: false, protector: false, defender: false, immortal: false, effect: "When you summon this, add a copy of this to your hand."},
 {name: "White Dolphin", 	frame: "effect", type: "monster", tribe: "beast", 	atk: 3, haste: false, protector: false, defender: false, immortal: false, effect: "When you summon this, add a 5-ATK tribute monster to your hand."},
 {name: "Guardian Angel", 	frame: "effect", type: "monster", tribe: "bird", 	atk: 3, haste: false, protector: true, defender: false, immortal: false, effect: "Protector (this monster must be attacked before others)"},
-{name: "Crimson Sonbird", 	frame: "effect", type: "monster", tribe: "bird", 	atk: 3, haste: true, protector: false, defender: false, immortal: false, effect: "Haste (this can attack immediately)"},
+{name: "Crimson Skullbird", frame: "effect", type: "monster", tribe: "bird", 	atk: 3, haste: true, protector: false, defender: false, immortal: false, effect: "Haste (this can attack immediately)"},
 {name: "Skull Red Bird", 	frame: "effect", type: "monster", tribe: "bird", 	atk: 3, haste: false, protector: false, defender: false, immortal: false, effect: "When you summon this, your opponent discards a card a random."},
 {name: "Prophecy Angel", 	frame: "effect", type: "monster", tribe: "bird", 	atk: 3, haste: false, protector: false, defender: false, immortal: false, effect: "When you summon this, if you have 5 or less LP, this gets +2 ATK and protector."},
 {name: "Baby Dragon", 		frame: "effect", type: "monster", tribe: "dragon", 	atk: 3, haste: false, protector: false, defender: false, immortal: false, effect: "When this dies, summon a 3-ATK dragon."},

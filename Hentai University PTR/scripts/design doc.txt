@@ -247,37 +247,296 @@ V0.0
 		dark square when opening a window (COMPLETE)
 		BG images not appearing (COMPLETE)
 		Purple's 99 trust event plays chubby ushering you through the door (COMPLETE)
+		Modding tutorial (COMPLETE)
+		Fix mobile version (COMPLETE)
+		pervert mode cheat (COMPLETE)
+		prude cheat (COMPLETE)
+		vegetarian cheat (COMPLETE)
+		town navigation item (COMPLETE)
+		town navigation mode (COMPLETE)
+		Neet js (COMPLETE)
+		Neet intro (COMPLETE)
+		Neet 2 (COMPLETE)
+		Neet 3 (COMPLETE)
+		Scarf1 (COMPLETE)
+		Scarf2 (COMPLETE)
+		Principal neet mission (COMPLETE)
+		Item in shop (COMPLETE)
+		Activate ghost hunting (COMPLETE)
+		Ghost images folder (COMPLETE)
+		Ghost image names (COMPLETE)
+		loadGhost function (COMPLETE)
+		Overlay sprite onto map (COMPLETE)
+		Ghost image css (COMPLETE)
+		Adjust sprite position (COMPLETE)
+		Opacity based on difficulty (COMPLETE)
+		Day ID matters (COMPLETE)
+		Onclick to capture (COMPLETE)
+		checkGhost function (COMPLETE)
+		Dynamic ghost size (COMPLETE)
+		Total caught requirements (COMPLETE)
+		Reward for special ghosts (COMPLETE)
+		Test rewarding (COMPLETE)
+		different types of rewards (COMPLETE)
+		Position all ghosts (COMPLETE)
+		generateGhostLog (COMPLETE)
+		Total captured (COMPLETE)
+		Visibility boost (COMPLETE)
+		Rewards (COMPLETE)
+		Reward - Hypnosis boost (COMPLETE)
+		Reward - Hex Maniac profile (COMPLETE)
+		Reward - Ancient Shrine Details (COMPLETE)
+		Map as a location (COMPLETE)
+		General store as a location (COMPLETE)
+		School map image (COMPLETE)
+		School navigation (COMPLETE)
+		Cash money cheat (COMPLETE)
+		Nuclear option (COMPLETE)
+		Button to hide menu (COMPLETE)
+		Link to cheat post at start (COMPLETE)
+		Link to cheat post in index (COMPLETE)
+		Mention cryptogreek in description (COMPLETE)
+		Link to discord in index (COMPLETE)
+		Windows are hidden by default in css (COMPLETE)
+		Fix ghosts in mobile (COMPLETE)
+		Link to mod tutorial at start (COMPLETE)
+		Test game
+		Change kuro, meji, maid, and lady reward points & pictures
+		Remove onload console log for kuro & meji
+		Update Patron list
+		Link to mod tutorial in index
+		Update index menu
+		Update index download link
+		Update index HU section
+		Update index news
+		Patreon post
+		Patreon cheat list update
+		F95zone post
+	v3.5
 		Fix logbook to show events from character js file
-		Neet's encounters
-	Pocket University
-	Pervert Ranger
-	Triad
-	Grid Fantasy
+		Disabling images does not change navigation
+		Add clearText function to clear a character's text event
+		Ancient shrine location
+		Ghost AR
+			Ghost log picture
+			Ghost lore displayed
+			Silver pendant item
+			Full ghost array
+			Ghost girl
+			Ghost milf
+	v4
+		Pepsiman cheat
+		Phone app selection
+		Remove spookwave cheat
+		Re-enable Ghost AR in the shop
+		Microtransaction - Higher visibility
+		Microtransaction - No day requirements
+		Hacking reduces microtransaction cost
+		Ghost gyaru - Ward
+		
+		
+		
+	Cheats
+		Money generation
+		Stat raising
+	Principal
+		Plan route
+	Mom
+	Tomgirl
+	Purple
+	Scarf
+		Plan route (COMPLETE)
+		Filler green content - She's still in the lounge, but you can't do anything with her until the challenge starts
+		scarf3 - the challenge is declared
+		scarf4 - find a way to hypnotize green
+		scarf4a - go out drinking
+		scarf4b - drug her
+		scarf4c - walk her home
+		scarf4d - snap your fingers - requires hypnosis of 4
+		scarf4e - hit with a chair confirmation
+		scarf4ea - hit her with a chair - bad end
+		scarf4f - look through her class records - classroom A
+		scarf4g - ask her about a student's success - she'll say 'he passed the test'
+		scarf5 - battle of the minds 1 - round 1, bunny
+		scarf6 - battle of the minds 2 - round 2, beach
+		scarf7 - battle of the minds 3 - round 3, beach again but you break through the illusion and creampie her
+		scarf8 - final round - in a battle of the minds, you dominate her and see her true self
+	Neet
+		Plan route (COMPLETE)
+		Text to meet up with her
+		neet4a - The big reveal
+		neet4aa - Try to hypnotize her
+		neet5a - Have a long chat
+		neet5aa - 'We'll have plenty of time'
+		neet5ab - 'Enjoy who you are'
+		neet5aba - 'You'll find someone'
+		neet5abb - 'How about me?
+		neet5b - Walk her home
+		neet5ba - 'Don't hold yourself back'
+		neet5bb - 'What do you do for fun?'
+		neet5c - Go for a run around school
+		neet5ca - 'Let's stop here'
+		neet5cb - 'You gotta push your limits'
+		neet5cba - 'Let's get changed'
+		neet5cbb - 'You look great'
+		Date trust - if you do well on 2 dates, you can skip the third
+		neet6a - A little bit of hypnotism, leads to route A
+		neetA1 - hypnotize her, she starts masturbating
+		neetA2 - Walk her home, she's sure something is wrong
+		neetA3 - Titjob & acceptance
+		neet6b - Help her improve, leads to route B
+		neetB1 - Stay at her place - rubbing
+		neetB2 - Stay at her place again - fellatio
+		neetB3 - Go for another run
+		neetB4 - Erotic outfit
+	Phone Upgrade
+		App selection
+		CSS Improvement
+		App Icons
+		Logbook
+		Radio
+		CCG Collection
+		CCG Deck Building
+		Game icons
+		Admin Mode
+			Cheat to unlock
+			Change character names
+			Block character
+			Reset character
+		Settings
+			Game font
+			Color scheme
+			Image size
+			Map size
+			Navigation type
+			Disable images
+	Phone Games
+		Pocket University
+			Item in shop
+			Button in phone
+			Buttons
+			Tokens
+			Microtransactions
+			Hack - Lower token costs
+			Tutorial
+			University stats
+			Corrupt
+			Teach
+			Organize
+			Unlock PU-only students
+			Unlock in-game characters
+			Unlock game boards
+			Enroll students / faculty
+			Unenroll
+			Game board icons
+			Generate game board
+			Rolling
+			Visually moving
+			Total number of rolls
+			Unlock more rolls
+			Good events - unlock students, get money, improve counseling, get tokens
+			Dangerous events
+			Misc events - go back 3 spaces, etc
+			Sexual events - Use enrolled students
+			Victory
+			Failure
+			More game boards
+		Triad
+			Item in shop
+			Button in phone
+			Ruleset selection - basic, random, same, plus
+			Unlocking rulesets
+			Win tracking
+			Win rewards for each ruleset - cards, hacking skill, etc
+			Card frames
+			Card images
+			Card numbers
+			Card selection
+			Card unlocking
+			Random rule
+			Game board
+			Placing cards
+			Enemy AI
+			Flipping cards
+			Tracking total cards
+			Same rule
+			Same animation
+			Plus rule
+			Plus animation
+			Victory
+			Defeat
+			Restart
+			Quit
+		Pervert Ranger Red
+			Distribute chapters - park, library, shop, principal's office
+			Hypnosis improvement
+		Grid Fantasy
+	Chemistry Lab
+		Introduction
+		Counseling requirement
+		Ingredient collecting - once and done
+		Bitch Potion - Trap content
+		Bimbo Potion
+		Petrification Potion
+		Genderswap Potion
+		Shotafication Potion - For seducing cougars
+	Area upgrades
+		Library
+			Storybook
+			Hypnosis Book
+			Hacking Book
+			Counseling Book
+			Pervert Ranger Chapter
 		
 		
 	Future
 		Conditional porn
-		Add artists to data array
 		Disable artists
-		Note that disabling artists does not disable them in the laptop's porn
 		Check Artists
-	Townfolk
-		Tag list
-		Disabled tags
-		randomEncounter function (checks tags)
-		tagCheck function - 'scene', 'tags', if no tags are disabled go to the scene, otherwise create a warning message with a 'proceed' (which takes you to the scene) or a 'go back' which refreshes the 
-	Hacking
-		Hacking array
-		Hack Names
-		Hack Check
-		Adding hacks
-		Hacking tab in phone
-		Hacking game generation
-		Different Board sizes
-		Placing cards
-		Enemy AI
-		Flipping cards
-		Victory
-		Defeat
-		Hack rewards
-		Hack retrying
+		
+		
+Outlines in greater detail
+	scarf
+		Plan route
+		scarf3 - the challenge is declared. You may do anything you like to green, hypnotize her to any degree your like, you just need to get her to say 'he passed the test'
+		scarf4 - find a way to hypnotize green, just a hub where you select your method
+		scarf4a - go out drinking - you take her to a bar and get her wasted. You fuck and hypnotize her, but she doesn't remember any of it the next day.
+		scarf4b - drug her
+		scarf4c - walk her home
+		scarf4d - snap your fingers - requires hypnosis of 4
+		scarf4e - hit with a chair confirmation
+		scarf4ea - hit her with a chair - bad end
+		scarf4f - look through her class records - classroom A
+		scarf4g - ask her about a student's success - she'll say 'he passed the test'
+		scarf5 - battle of the minds 1 - round 1, bunny
+		scarf6 - battle of the minds 2 - round 2, beach
+		scarf7 - battle of the minds 3 - round 3, beach again but you break through the illusion and creampie her
+		scarf8 - final round - in a battle of the minds, you dominate her and see her true self
+	Neet
+		Plan route (COMPLETE)
+		Text to meet up with her
+		neet4a - The big reveal
+		neet4aa - Try to hypnotize her
+		neet5a - Have a long chat
+		neet5aa - 'We'll have plenty of time'
+		neet5ab - 'Enjoy who you are'
+		neet5aba - 'You'll find someone'
+		neet5abb - 'How about me?
+		neet5b - Walk her home
+		neet5ba - 'Don't hold yourself back'
+		neet5bb - 'What do you do for fun?'
+		neet5c - Go for a run around school
+		neet5ca - 'Let's stop here'
+		neet5cb - 'You gotta push your limits'
+		neet5cba - 'Let's get changed'
+		neet5cbb - 'You look great'
+		Date trust - if you do well on 2 dates, you can skip the third
+		neet6a - A little bit of hypnotism, leads to route A
+		neetA1 - hypnotize her, she starts masturbating
+		neetA2 - Walk her home, she's sure something is wrong
+		neetA3 - Titjob & acceptance
+		neet6b - Help her improve, leads to route B
+		neetB1 - Stay at her place - rubbing
+		neetB2 - Stay at her place again - fellatio
+		neetB3 - Go for another run
+		neetB4 - Erotic outfit

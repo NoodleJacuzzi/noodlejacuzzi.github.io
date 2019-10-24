@@ -2,45 +2,65 @@
 <html>
 	<head>
 		<title>Hentai University</title>
+		<script src="scripts/locations.js"></script>
 		<script src="scripts/index.js"></script>
-		<script src="scripts/sceneList.js"></script>
 		<link rel="stylesheet" type="text/css" href="scripts/mobile.css" />
 	</head>
 	<body onload ="startup()">
 		<div id = "menu" class = "menu">
-			<p id = "title" class = "title">Hentai University</p>
-			<p id = "title" class = "switch" onclick="window.location.href='https://noodlejacuzzi.github.io/index.html'">Noodle Jacuzzi</p>
-			<p id = "version" class = "version">V0.0</p>
-			<p id="invButton" class="switch" onclick="invButton()">INVENTORY</p>
-			<p id="phoneButton" class="switch" onclick="phoneButton()">PHONE</p>
-			<p id="logButton" class="switch" onclick="selfButton()">LOGBOOK</p>
-			<p id="saveButton" class="switch" onclick="saveButton()">SAVE/LOAD</p>
-			<p id="restartButton" class="switch" onclick="restartButton()">RESTART</p>
-			<p id="logButton" class="switch" onclick="disablePictures()">DISABLE IMAGES</p>
-			<p id="invButton" class="switch"  onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App%20Mobile.html'">MOBILE VERSION</p>
-			<img id="playerImage" class="playerImage" src="images/none.png">
-			<p id = "playerName" class = "version">???</p>
-			<p id = "playerMoney" class = "version">$0</p>
-			<p id = "day" class = "version">Day 1</p>
-			<p id = "skills" class = "version"><b>Skills:</b></p>
-			<p id = "playerHypnosis" class = "version">Hypnosis: 1</p>
-			<p id = "playerHacking" class = "version">Hacking: 1</p>
-			<p id = "playerCounseling" class = "version">Lockpicking: 1</p>
+			<div id="titlePanel">
+				<p id = "title" class = "title">Hentai University</p>
+				<p id = "version" class = "version">V2.9</p>
+				<p id = "version" class = "version">Testing server, report any bugs</p>
+				<!--<p id = "version" class = "version">Updates are in progress, will post this version soon</p>-->
+				<p id = "author">
+					<a href="https://noodlejacuzzi.github.io/index.html">Noodle Jacuzzi</a><br>
+					<a href="https://www.reddit.com/user/CaptainCryptogreek">Captain Cryptogreek</a><br>
+					<a href="https://www.patreon.com/noodlejacuzzi">Patreon</a>
+				</p>
+			</div>
+			<div id="buttonMenu">
+				<div id="buttonMenuPrimary" class="flexbox">
+					<h4 id="invButton" class="button" onclick="invButton()">INVENTORY</h4>
+					<h4 id="phoneButton" class="button" onclick="phoneButton()">PHONE</h4>
+					<h4 id="logButton" class="button" onclick="selfButton()">LOGBOOK</h4>
+					<h4 id="saveButton" class="button" onclick="saveButton()">SAVE/LOAD</h4>
+				</div>
+				<h4 id="restartButton" class="button" onclick="restartButton()">RESTART</h4>
+				<div id="buttonMenuSecondary" class="flexbox">
+					<h4 id="logButton" class="button" onclick="disablePictures()">DISABLE IMAGES</p>
+					<h4 id="invButton" class="button"  onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">MOBILE VERSION</p>
+				</div>
+			</div>
+			<div id="playerPanel" class="flexbox">
+				<img id="playerImage" class="playerImage" src="images/none.png">
+				<div id="playerStats">
+					<h3 id = "playerName" class = "char_player version">???</h3>
+					<p id = "playerMoney" class = "version">$0</p>
+					<p id = "day" class = "version">Day 1</p>
+					<p id = "skills" class = "version"><b>Skills:</b></p>
+					<p id = "playerHypnosis" class = "version">Hypnosis: 1</p>
+					<p id = "playerHacking" class = "version">Hacking: 1</p>
+					<p id = "playerCounseling" class = "version">Lockpicking: 1</p>
+				</div>
+			</div>
 		</div>
 		<div id = "wrapper" class = "wrapper">
 			<div id="wrapperBG"></div>
 			<div id = "output" class = "output" onclick = "hideStuff()">
-			<p class="choiceText" onclick="sceneTransition('start')">
+			<p class="choiceText" onclick="writeEvent('system', 'start')">
 				Start the game
 			</p>
 			</div>
 			<div id="footer" class="footer">
-				<p id="saveButton" class="switch" onclick="saveButton()">SAVE/LOAD</p>
-				<p id="restartButton" class="switch" onclick="restartButton()">RESTART</p>
-				<p id="logButton" class="switch" onclick="disablePictures()">DISABLE IMAGES</p>
-				<p id="invButton" class="switch" onclick="invButton()">INVENTORY</p>
-				<p id="logButton" class="switch" onclick="selfButton()">LOGBOOK</p>
-				<p id="phoneButtonMobile" class="switch" onclick="phoneButton()">PHONE</p>
+				<div id="buttonMenuPrimary" class="flexbox">
+				<h4 id="saveButton" class="button" onclick="saveButton()">SAVE/LOAD</h4>
+				<h4 id="invButton" class="button" onclick="invButton()">INVENTORY</h4>
+				<h4 id="logButton" class="button" onclick="selfButton()">LOGBOOK</h4>
+				<h4 id="logButton" class="button" onclick="disablePictures()">TOGGLE IMAGES</h4>
+				<h4 id="restartButton" class="button" onclick="restartButton()">RESTART</h4>
+				<h4 id="phoneButtonMobile" class="button" onclick="phoneButton()">PHONE</h4>
+				</div>
 			</div>
 			<div id = "inventory" class = "popup  inventory">
 				<h1 class = "windowTitle" onclick="invButton()">INVENTORY</h1>

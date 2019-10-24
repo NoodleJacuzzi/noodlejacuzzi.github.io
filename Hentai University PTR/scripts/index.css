@@ -631,14 +631,11 @@ div.self, .inventory,.save {
   	border: 3px solid;
   	border-radius: 5px;
 	padding: 0px;
+	visibility: hidden;
 }
 
 .lb_Name{
 color:var(--character-color);
-}
-
-.lb_primary, .lb_secondary {
-    margin-bottom: 60px;
 }
 
 .logbookRight {
@@ -880,4 +877,31 @@ position: absolute;
 	margin: 0px;
 	padding: 0px;
 	font-weight: bold;
+}
+
+.closeButton {
+	top:15px;
+	left: 340px;
+	position: absolute;
+	font-size: 50px;
+  	border: 5px solid white;
+  	border-radius: 20px;
+	color:white;
+	
+}
+
+.openButton {
+	top:15px;
+	left: 20px;
+	position: absolute;
+	font-size: 50px;
+	visibility: hidden;
+  	border: 5px solid white;
+  	border-radius: 20px;
+	color:white;
+}
+
+.ghost {
+	position: absolute;
+	cursor: pointer;
 }

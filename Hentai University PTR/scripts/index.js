@@ -5,6 +5,7 @@ var saveHidden = true;
 var selfHidden = true;
 var phoneHidden = true;
 var imagesDisabled = false;
+var ghostBoost = 0;
 var requestType = "";
 var eventName = "";
 var eventCharacter = "";
@@ -33,6 +34,7 @@ var data = {
 		dayID: 1,
 		version: 4,
 		location: "",
+		pervert: false,
 	},
 	story: [
 		{index: "mom", met: false, fName: "Emily", lName: "Smith", trust: 0, encountered: false, textEvent: "", color: "#CCCCCC",},
@@ -60,6 +62,167 @@ var data = {
 	],
 }
 
+var ghostArray = [
+	{name: "Ancient Chaplain", 		difficulty: 3, rarity: "01", time:"MorningEvening", top: 35, left: 20, requirement: 0, location: "computerRoom", 
+	description: ""},
+	{name: "Ancient Titan Saturn", 	difficulty: 1, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "beach", 
+	description: ""},
+	{name: "Antique Vision", 		difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "map", 
+	description: ""},
+	{name: "Anubis", 				difficulty: 1, rarity: "012", time:"MorningEvening", top: 10, left: 70, requirement: 0, location: "classroomA", 
+	description: ""},
+	{name: "Arbiter",			 	difficulty: 2, rarity: "012", time:"MorningEvening", top: 30, left: 90, requirement: 0, location: "apartmentOutside", 
+	description: ""},
+	{name: "Awoken Deus",		 	difficulty: 1, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 5, location: "library", 
+	description: ""},
+	{name: "Awoken Cultist", 		difficulty: 4, rarity: "0", time:"MorningEvening", top: 40, left: 50, requirement: 0, location: "schoolEntrance", 
+	description: ""},
+	{name: "Bearington", 			difficulty: 10, rarity: "01234567", time:"MorningEvening", top: 40, left: 40, requirement: 0, location: "gym", 
+	description: ""},
+	{name: "Beetle", 				difficulty: 5, rarity: "0123", time:"MorningEvening", top: 60, left: 60, requirement: 0, location: "eastHallway", 
+	description: ""},
+	{name: "Bloom", 				difficulty: 4, rarity: "45", time:"MorningEvening", top: 20, left: 0, requirement: 0, location: "parkDistrict", 
+	description: ""},
+	{name: "Blue Dahlia", 			difficulty: 4, rarity: "0123", time:"MorningEvening", top: 0, left: 10, requirement: 0, location: "schoolEntrance", 
+	description: ""},
+	{name: "Bronze Hound", 			difficulty: 3, rarity: "012", time:"MorningEvening", top: 30, left: 30, requirement: 0, location: "library", 
+	description: ""},
+	{name: "Cosmic Guide",		 	difficulty: 3, rarity: "345", time:"MorningEvening", top: 50, left: 50, requirement: 0, location: "library", 
+	description: ""},
+	{name: "Cupid", 				difficulty: 4, rarity: "67", time:"MorningEvening", top: 20, left: 50, requirement: 0, location: "playerHouse", 
+	description: ""},
+	{name: "Deus Ex Machina", 		difficulty: 2, rarity: "23", time:"MorningEvening", top: 20, left: 40, requirement: 0, location: "computerRoom", 
+	description: ""},
+	{name: "Director",			 	difficulty: 1, rarity: "345", time:"MorningEvening", top: 6, left: 20, requirement: 0, location: "classroomA", 
+	description: ""},
+	{name: "Echo", 					difficulty: 5, rarity: "67", time:"MorningEvening", top: 20, left: 20, requirement: 0, location: "playerOffice", 
+	description: ""},
+	{name: "Father", 				difficulty: 2, rarity: "0123", time:"MorningEvening", top: 45, left: 30, requirement: 0, location: "northHallway", 
+	description: ""},
+	{name: "Flarecatcher", 			difficulty: 3, rarity: "012", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "westHallway", 
+	description: ""},
+	{name: "Flower Man", 			difficulty: 4, rarity: "4567", time:"MorningEvening", top: 52, left: 10, requirement: 0, location: "parkDistrict", 
+	description: ""},
+	{name: "Flying Spaghetti Monster", 	difficulty: 1, rarity: "01234567", time:"MorningEvening", top: 0, left: 55, requirement: 5, location: "playerOffice", 
+	description: ""},
+	{name: "Frontier Vision",	 	difficulty: 2, rarity: "01234567", time:"MorningEvening", top: 73, left: 20, requirement: 5, location: "schoolMap", 
+	description: ""},
+	{name: "Gehennas", 				difficulty: 1, rarity: "67", time:"MorningEvening", top: 25, left: 35, requirement: 0, location: "westHallway", 
+	description: ""},
+	{name: "Grey", 					difficulty: 5, rarity: "4567", time:"MorningEvening", top: 50, left: 70, requirement: 0, location: "roof", 
+	description: ""},
+	{name: "Hare", 					difficulty: 3, rarity: "67", time:"MorningEvening", top: 0, left: 40, requirement: 0, location: "classroomA", 
+	description: ""},
+	{name: "Hauntings", 			difficulty: 4, rarity: "345", time:"MorningEvening", top: 10, left: 90, requirement: 0, location: "playerHouse", 
+	description: ""},
+	{name: "IFO", 					difficulty: 2, rarity: "345", time:"MorningEvening", top: 25, left: 0, requirement: 0, location: "apartmentOutside", 
+	description: "An Identified Flying Object. It's a saucer, from another world."},
+	{name: "Investigator", 			difficulty: 4, rarity: "4567", time:"MorningEvening", top:10, left: 65, requirement: 0, location: "schoolEntrance", 
+	description: ""},
+	{name: "Iron Fey", 				difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 30, left: 85, requirement: 0, location: "eastHallway", 
+	description: ""},
+	{name: "Ivory Fey", 			difficulty: 4, rarity: "01", time:"MorningEvening", top: 20, left: 50, requirement: 0, location: "parkDistrict", 
+	description: ""},
+	{name: "Jester", 				difficulty: 2, rarity: "012", time:"MorningEvening", top: 100, left: 0, requirement: 0, location: "playerHouse", 
+	description: ""},
+	{name: "Kappa", 				difficulty: 4, rarity: "67", time:"MorningEvening", top: 30, left: 40, requirement: 0, location: "classroomB", 
+	description: ""},
+	{name: "Karma's Head", 			difficulty: 2, rarity: "67", time:"MorningEvening", top: 0, left: 30, requirement: 0, location: "street", 
+	description: ""},
+	{name: "Karma's Left Hand", 	difficulty: 2, rarity: "67", time:"MorningEvening", top: 0, left: 40, requirement: 0, location: "street", 
+	description: ""},
+	{name: "Karma's Right Hand", 	difficulty: 2, rarity: "67", time:"MorningEvening", top: 0, left: 20, requirement: 0, location: "street", 
+	description: ""},
+	{name: "Laid Foundation", 		difficulty: 4, rarity: "012345", time:"MorningEvening", top: 60, left: 60, requirement: 0, location: "street", 
+	description: ""},
+	{name: "Lime Man", 				difficulty: 4, rarity: "345", time:"MorningEvening", top: 33, left: 10, requirement: 0, location: "westHallway", 
+	description: ""},
+	{name: "Loyalty", 				difficulty: 2, rarity: "45", time:"MorningEvening", top: 60, left: 0, requirement: 0, location: "playerOffice", 
+	description: ""},
+	{name: "Macabula", 				difficulty: 3, rarity: "4567", time:"MorningEvening", top: 20, left: 20, requirement: 0, location: "eastHallway", 
+	description: ""},
+	{name: "Mad Clown", 			difficulty: 4, rarity: "012345", time:"MorningEvening", top: 10, left: 40, requirement: 0, location: "shoppingDistrict", 
+	description: ""},
+	{name: "Maiden in Black", 		difficulty: 1, rarity: "67", time:"MorningEvening", top: 40, left: 35, requirement: 0, location: "apartmentOutside", 
+	description: ""},
+	{name: "Maudlin", 				difficulty: 4, rarity: "01234567", time:"MorningEvening", top: 40, left: 20, requirement: 0, location: "shoppingDistrict", 
+	description: "The archetypal ghost."},
+	{name: "Maudlos", 				difficulty: 4, rarity: "01234567", time:"MorningEvening", top: 30, left: 40, requirement: 5, location: "", 
+	description: "The archetypal ghost 2."},
+	{name: "Megalodon", 			difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "pool", 
+	description: ""},
+	{name: "Moriarty", 				difficulty: 2, rarity: "23", time:"MorningEvening", top: 60, left: 60, requirement: 0, location: "playerOffice", 
+	description: ""},
+	{name: "Myconid", 				difficulty: 4, rarity: "45", time:"MorningEvening", top: 43, left: 0, requirement: 0, location: "classroomB", 
+	description: ""},
+	{name: "Neptune Guardian", 	difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 100, left: 0, requirement: 0, location: "classroomA", 
+	description: ""},
+	{name: "Nyarlethotep", 			difficulty: 1, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "ward", 
+	description: ""},
+	{name: "Offering of Valentine", difficulty: 5, rarity: "67", time:"MorningEvening", top: 50, left: 80, requirement: 0, location: "shoppingDistrict", 
+	description: ""},
+	{name: "Parasyte Apostle", 		difficulty: 2, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "ward", 
+	description: ""},
+	{name: "Parasyte Core", 		difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "ward", 
+	description: ""},
+	{name: "Phoenix", 				difficulty: 3, rarity: "0123", time:"MorningEvening", top: 10, left: 80, requirement: 0, location: "gym", 
+	description: ""},
+	{name: "Preacher", 				difficulty: 3, rarity: "45", time:"MorningEvening", top: 40, left: 80, requirement: 0, location: "computerRoom", 
+	description: ""},
+	{name: "Priest of His Name", 	difficulty: 1, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "", 
+	description: "Give thanks to Him, uncaring, above! Don thy sacred headgear, strain thy heart to fight hypocrisy! Blessed thy be, touched by his noodly appendage!"},
+	{name: "Psychic Grey", 			difficulty: 4, rarity: "67", time:"MorningEvening", top: 35, left: 0, requirement: 0, location: "computerRoom", 
+	description: ""},
+	{name: "Radiance", 				difficulty: 0, rarity: "0123", time:"MorningEvening", top: 5, left: 40, requirement: 0, location: "vintageStreet", 
+	description: ""},
+	{name: "Ramen Man", 			difficulty: 4, rarity: "4567", time:"MorningEvening", top: 50, left: 20, requirement: 0, location: "vintageStreet", 
+	description: "One of four men, guardians of virtues. Kindness is as valuable to him as accomplishment."},
+	{name: "Reaper Cloth", 			difficulty: 2, rarity: "0123", time:"MorningEvening", top: 23, left: 80, requirement: 0, location: "vintageStreet", 
+	description: ""},
+	{name: "Ruby Fey", 				difficulty: 4, rarity: "67", time:"MorningEvening", top: 40, left: 30, requirement: 0, location: "parkDistrict", 
+	description: ""},
+	{name: "Salvation", 			difficulty: 3, rarity: "0123", time:"MorningEvening", top: 20, left: 10, requirement: 0, location: "roof", 
+	description: "When the core was taken from my body, a wonderful light embraced me. Empty as I was, I was finally free."},
+	{name: "Saturn Guardian", 	difficulty: 2, rarity: "23", time:"MorningEvening", top: 15, left: 50, requirement: 0, location: "classroomB", 
+	description: ""},
+	{name: "Silverteeth", 			difficulty: 3, rarity: "67", time:"MorningEvening", top: 40, left: 66, requirement: 0, location: "library", 
+	description: ""},
+	{name: "Sonata", 				difficulty: 3, rarity: "4567", time:"MorningEvening", top: 20, left: 70, requirement: 0, location: "northHallway", 
+	description: ""},
+	{name: "Sphinx", 				difficulty: 4, rarity: "01234567", time:"MorningEvening", top: 30, left: 60, requirement: 0, location: "store", 
+	description: ""},
+	{name: "Stalker", 				difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "restaurant", 
+	description: ""},
+	{name: "Still Water", 			difficulty: 4, rarity: "4567", time:"MorningEvening", top: 50, left: 0, requirement: 0, location: "gym", 
+	description: ""},
+	{name: "Suika", 				difficulty: 4, rarity: "01234567", time:"MorningEvening", top: 40, left: 80, requirement: 0, location: "teacherLounge", 
+	description: "A being from another world, a place of shrines and fairies."},
+	{name: "Sushi Man", 			difficulty: 4, rarity: "0123", time:"MorningEvening", top: 9, left: 50, requirement: 0, location: "teacherLounge", 
+	description: "One of four men, guardians of virtue. It is his burden to smell strongly, he offers praise to the clean."},
+	{name: "The Man in Yellow", 	difficulty: 2, rarity: "4567", time:"MorningEvening", top: 10, left: 30, requirement: 0, location: "teacherLounge", 
+	description: ""},
+	{name: "Titania", 				difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "shrine", 
+	description: ""},
+	{name: "Tortured Soul", 		difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "gym", 
+	description: ""},
+	{name: "Tsukomo", 				difficulty: 1, rarity: "23", time:"MorningEvening", top: 35, left:60, requirement: 0, location: "parkDistrict", 
+	description: ""},
+	{name: "UFO", 					difficulty: 2, rarity: "4567", time:"MorningEvening", top: 0, left: 70, requirement: 0, location: "roof", 
+	description: ""},
+	{name: "Unawoken Cultist", 		difficulty: 4, rarity: "01", time:"MorningEvening", top: 40, left: 80, requirement: 0, location: "classroomB", 
+	description: ""},
+	{name: "Virtue", 				difficulty: 3, rarity: "0123", time:"MorningEvening", top: 70, left: 80, requirement: 0, location: "vintageStreet", 
+	description: ""},
+	{name: "White Night", 			difficulty: 1, rarity: "01", time:"MorningEvening", top: 30, left: 30, requirement: 0, location: "playerOffice", 
+	description: ""},
+	{name: "Woman in Black", 		difficulty: 1, rarity: "4567", time:"MorningEvening", top: 60, left: 55, requirement: 0, location: "vintageStreet", 
+	description: ""},
+	{name: "Yatagarasu", 			difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "pool", 
+	description: ""},
+	{name: "Yorihime", 				difficulty: 1, rarity: "01", time:"MorningEvening", top: 70, left: 85, requirement: 0, location: "playerOffice", 
+	description: "A being from another world, a place of shrines and fairies."},
+];
+
 //Startup & Systems config
 function startup() {
 	saveSlot(111);
@@ -82,11 +245,16 @@ function restartButton() {
 }
 
 function disablePictures() {
-	document.getElementById("playerImage").style.visibility = "hidden";		
-	document.getElementById("playerImage").style.width = "0%";
-	document.getElementById("playerImage").style.border = "none";
-	imagesDisabled = true;
-	changeLocation(data.player.location);
+	if (imagesDisabled == false) {
+		document.getElementById("playerImage").style.visibility = "hidden";		
+		document.getElementById("playerImage").style.width = "0%";
+		document.getElementById("playerImage").style.border = "none";
+		imagesDisabled = true;
+		changeLocation(data.player.location);
+	}
+	else {
+		location.reload();
+	}
 }
 
 function getRandomInt(max) {
@@ -296,7 +464,7 @@ function checkForEncounters() {
 	var targetFile = 'system';
 	requestType = 'check';
 	var filename = "scripts/characters/"+targetFile+".js";
-	console.log('Attempting to load '+targetFile+'.js to check for encounters');
+	//console.log('Attempting to load '+targetFile+'.js to check for encounters');
 	var fileref=document.createElement('script');
 	fileref.setAttribute("src", filename);
 	
@@ -310,7 +478,7 @@ function checkForEncounters() {
 	for (x = 0; x < data.story.length; x++) {
 		targetFile = data.story[x].index;
 		var filename = "scripts/characters/"+targetFile+".js";
-		console.log('Attempting to load '+targetFile+'.js to check for encounters');
+		//console.log('Attempting to load '+targetFile+'.js to check for encounters');
 		var fileref=document.createElement('script');
 		fileref.setAttribute("src", filename);
 		
@@ -324,10 +492,16 @@ function checkForEncounters() {
 }
 
 function printEncounterButton(character, scene, text, top, left) {
-	document.getElementsByClassName('playerRoom')[0].innerHTML += `
-		<div class="pictureButton" onclick='loadEncounter("`+character+`", "`+scene+`")'
-		style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+text+`</div>
-	`;
+	if (imagesDisabled == false) {
+		document.getElementsByClassName('playerRoom')[0].innerHTML += `
+			<div class="pictureButton" onclick='loadEncounter("`+character+`", "`+scene+`")'
+			style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+text+`</div>
+		`;
+	}
+	else {
+		console.log('loading button for encounter '+scene+' with character '+character);
+		writeFunction("loadEncounter("+character+", "+scene+")", text);
+	}
 }
 
 function printEncounterTab(name, scene, text) {
@@ -335,7 +509,15 @@ function printEncounterTab(name, scene, text) {
 		var tabTrust;
 		var cancelTab = false;
 		var cssName = name;
-		var img = "scripts/gamefiles/profiles/"+name+".jpg";
+		var img = "images/"+name+"/"+name+".jpg";
+		if (data.player.pervert != true) {
+			var checkForError = "";
+			img = "images/"+name+"/"+name+".jpg";
+		}
+		else {
+			var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+name+`.jpg'"`;
+			img = "images/"+name+"/"+name+"P.jpg";
+		}
 		for (z = 0; z < data.story.length; z++) {
 			if (data.story[z].index == name) {
 				tabIndex = z;
@@ -384,7 +566,7 @@ function printEncounterTab(name, scene, text) {
 			console.log("Now generating tab for " + name + ", linking to scene " + scene + " with the text " + text);
 			document.getElementById('output').innerHTML +=`
 			<div class = "textBox" style="border-color: `+cssColor+`">
-				<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "`+ img +`">
+				<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "`+ img +`" `+checkForError+`>
 				<div class="textBoxContent">
 				<p class = "textName" style="color:`+cssColor+`">` + name + `</p>
 				<p class="status"> Status: ` + tabTrust + `</p>
@@ -410,21 +592,29 @@ function writeSpecial (text) {
 
 function writeSpeech (name, img, text) {
 	var cssName = name;
+	var fullName = name;
 	var cssColor = "#CCCCCC";
 	if (img == "") {
-		img = "scripts/gamefiles/profiles/"+name+".jpg";
+		if (data.player.pervert != true) {
+			var checkForError = "";
+			img = "images/"+name+"/"+name+".jpg";
+		}
+		else {
+			var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+name+`.jpg'"`;
+			img = "images/"+name+"/"+name+"P.jpg";
+		}
 	}
 	if (img == "none") {
 		img = "scripts/gamefiles/none.png";
 	}
 	if (name == "player") {
 		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
-		name = data.player.name;
+		fullName = data.player.name;
 		cssColor = "#86b4dc";
 	}
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].index == name) {
-			name = data.story[i].fName + ' ' + data.story[i].lName;
+			fullName = data.story[i].fName + ' ' + data.story[i].lName;
 			cssColor = data.story[i].color;
 		}
 	}
@@ -432,9 +622,9 @@ function writeSpeech (name, img, text) {
 	<div class="textBox" style="border-color: `+cssColor+`">
 		<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "
 			`+ img +`
-		">
+		"`+checkForError+`>
 		<div class="textBoxContent">
-		<p class = "textName" style="color:`+cssColor+`">`+ name + `</p>
+		<p class = "textName" style="color:`+cssColor+`">`+ fullName + `</p>
 		<p>` + replaceCodenames(text) + `</p>
 	</div>
 	<br>
@@ -442,9 +632,21 @@ function writeSpeech (name, img, text) {
 }
 
 function writeBig (img, cap) {
+	if (img.includes('profile') == true) {
+		if (data.player.pervert != true) {
+			var checkForError = "";
+			var pervertImage = img;
+		}
+		else {
+			var backupImage = img;
+			var checkForError = `onerror ="javascript:this.src='`+backupImage+`'"`;
+			img = img.replace('profile', 'profileP');
+			console.log(img);
+		}
+	}
 	if (imagesDisabled != true) {
 	document.getElementById('output').innerHTML += `
-		<img class="bigPicture" src="` + img + `" title="` + cap + `">
+		<img class="bigPicture" src="` + img + `"`+checkForError+` title="` + cap + `">
 		<br>
 	`;
 	}
@@ -630,6 +832,18 @@ function showPhone() {
 	phoneHidden = false;
 	document.getElementById("phone").style.visibility = "visible"; 
 	generateContacts();
+}
+
+function closeButton() {
+	document.getElementById("menu").style.width = "0px";	
+	document.getElementById("closeButton").style.visibility = "hidden";	
+	document.getElementById("openButton").style.visibility = "visible";	
+}
+
+function openButton() {
+	document.getElementById("menu").style.width = "400px";	
+	document.getElementById("closeButton").style.visibility = "visible";	
+	document.getElementById("openButton").style.visibility = "hidden";	
 }
 
 //Menu
@@ -819,7 +1033,7 @@ function generateGalleryNav() {
 		if (data.story[i].trust > 0) {
 			document.getElementById('output').innerHTML += `
 			<div class = "textBox" onclick="generateGalleryPage('` + data.story[i].index + `')" >
-				<img class = "textThumb" src = "scripts/gamefiles/profiles/`+ data.story[i].index +`.jpg">
+				<img class = "textThumb" src = "images/`+ data.story[i].index +`/`+ data.story[i].index +`.jpg">
 				<div class="textBoxContent">
 				<span class = "choiceText" onclick="generateGalleryPage('` + data.story[i].index + `')">`+data.story[i].fName + ` ` + data.story[i].lName +`</span>
 			</div></div>
@@ -930,10 +1144,19 @@ function switchDesc(n) {
 				break;
 			}
 		}
-		if (imagesDisabled != true) {
-			document.getElementById('logbookRight').innerHTML = `
-				<img id="selfImage" class="selfImage" src="images/`+data.story[characterCounter].index+`/profile.jpg">
-			`;
+		if (data.player.pervert != true) {
+			if (imagesDisabled != true) {
+				document.getElementById('logbookRight').innerHTML = `
+					<img id="selfImage" class="selfImage" src="images/`+data.story[characterCounter].index+`/profile.jpg">
+				`;
+			}
+		}
+		else {
+			if (imagesDisabled != true) {
+				document.getElementById('logbookRight').innerHTML = `
+					<img id="selfImage" class="selfImage" src="images/`+data.story[characterCounter].index+`/profileP.jpg" onerror ="javascript:this.src='images/`+data.story[characterCounter].index+`/profile.jpg'">
+				`;
+			}
 		}
 		document.getElementById('logbookRight').innerHTML += `
 		<div class=" lb_primary">
@@ -946,7 +1169,8 @@ function switchDesc(n) {
 			<p class = "selfDesc lb_clothes">`+logbookArray[logCounter].clothes+`</p>
 			<p class = "selfDesc lb_home">`+logbookArray[logCounter].home+`</p>
 			<p class = "selfDesc lb_tags">`+logbookArray[logCounter].tags+`</p>
-			<p class = "selfDesc">   </p>
+			<p class = "selfDesc lb_tags">Artist: `+logbookArray[logCounter].artist+`</p>
+			<p class = "selfDesc lb_tags">Author: `+logbookArray[logCounter].author+`</p>
 		</div>
 		`;
 	}
@@ -1000,7 +1224,7 @@ function loadShop() {
 	select.removeChild(select.lastChild);
 	
 	for (i = 0; i < data.story.length; i++) {
-		console.log('test');
+		//console.log('test');
 		targetFile = data.story[i].index;
 		var filename = "scripts/characters/"+targetFile+".js";
 		var fileref=document.createElement('script');
@@ -1100,7 +1324,7 @@ function diagnostic() {
 	switch (goof) {
 		case "human alteration app": {
 			if (checkBody("sub") != true) {
-				var goof = {index: "sub"};
+				var goof = {index: "sub", artist: "Art by Aya",};
 				data.bodytypes.push(goof);
 				writeSpecial("Unlocked a new bodytype! Change via the wardrobe.");
 			}
@@ -1176,8 +1400,53 @@ function diagnostic() {
 			loadEncounter('system', 'prologue');
 			break;
 		}
+		case "pervert": {
+			data.player.pervert = true;
+			writeSpecial("Pervert mode activated!");
+			break;
+		}
+		case "prude": {
+			data.player.pervert = false;
+			writeSpecial("Pervert mode deactivated!");
+			break;
+		}
+		case "vegetarian": {
+			setTrust('tomgirl', -1);
+			setTrust('meji', -1);
+			writeSpecial("Trap / male characters have been deactivated. You might need to use this code again in the future when more traps are added.");
+			break;
+		}
+		case "cash money": {
+			data.player.money += 100;
+			updateMenu();
+			writeSpecial("You got $100! This should be all you need, but you could always make more.");
+			break;
+		}
+		case "nuclear option": {
+			break;
+		}
 		case "new name": {
 			loadEncounter('system', 'renamingRoom');
+			break;
+		}
+		case "spookwave": {
+			if (checkItem('Ghost AR') != true) {
+				addItem('Ghost AR', true, 'scripts/gamefiles/items/ghostAR.jpg');
+				writeSpecial("Happy Halloween! This is an in-progress version of a minigame, hopefully the first of many. Open your phone, click on 'Ghost AR', and ghosts will appear around town.");
+			}
+			else {
+				writeText("You've already used this cheat, playerSir.");
+			}
+			break;
+		}
+		case "eyestrain": {
+			if (checkItem('Ghost AR') != true) {
+				writeSpecial("You need to use the 'spookwave' cheat before you can use this one.");
+			}
+			else {
+				ghostBoost += .2;
+				writeSpecial("Increased the visibility of ghosts! You can repeat this code if you need to. Refreshing the game will undo this code.");
+			}
 			break;
 		}
 	}
@@ -1237,13 +1506,21 @@ function notification(name) {
 function writePhoneSpeech (name, img, text) {
 	var cssName;
 	if (img == "") {
-		img = name;
+		if (data.player.pervert != true) {
+			var checkForError = "";
+			img = "images/"+name+"/"+name;
+			console.log(img);
+		}
+		else {
+			var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+name+`.jpg'"`;
+			img = "images/"+name+"/"+name+"P";
+			console.log(img);
+		}
 	}
 	if (name == "player") {
-		img = data.player.character;
-		name = data.player.name
+		img = "scripts/gamefiles/profiles/"+data.player.character;
+		name = data.player.name;
 	}
-
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].index == name) {
 			name = data.story[i].fName + ' ' + data.story[i].lName
@@ -1253,8 +1530,8 @@ function writePhoneSpeech (name, img, text) {
 	document.getElementById('phoneRight').innerHTML +=`
 	<div class = "phoneTextBox">
 		<img class = "phoneTextThumb" src = "
-			scripts/gamefiles/profiles/`+ img +`.jpg
-		">
+			`+ img +`.jpg
+		"`+checkForError+`>
 		<div class="phoneTextBoxContent">
 		<p class = "phoneTextName">`+ name + `</p>
 		<p class = "selfDesc">` + replaceCodenames(text) + `</p>
@@ -1285,10 +1562,14 @@ function writePhoneChoices (text1, text2, text3) {
 				<p class="choiceText" onclick="phoneChoice('A')">
 					` + text1 + `
 				</p>
+		`;
+		if (typeof text2 != 'undefined') {
+			choiceList += `
 				<p class="choiceText" onclick="phoneChoice('B')">
 					` + text2 + `
 				</p>
 		`;
+		}
 		if (typeof text3 != 'undefined') {
 			choiceList += `
 				<p class="choiceText" onclick="phoneChoice('C')">
@@ -1324,6 +1605,9 @@ function generateContacts() {
 	}
 	else {
 		document.getElementById('phoneWindow').innerHTML = "PHONE";
+	}
+	if (checkItem('Ghost AR') == true) {
+		document.getElementById('phoneLeft').innerHTML += `<p class = "logbookSwitch" onclick = "ghostAR()">Ghost AR</p>`;
 	}
 	if (imagesDisabled != true) {
 		document.getElementById('phoneLeft').innerHTML += `<p class = "logbookSwitch" onclick = "phoneImages()">Saved Images</p>`;
@@ -1371,4 +1655,181 @@ function checkPhoneImages(n) {
 function deleteImage(n) {
 	data.phoneImages.splice(n, 1);
 	phoneImages();
+}
+
+// Ghost AR game
+function ghostAR() {
+	if (data.player.ghost == undefined) {
+		console.log('Installing Ghost AR');
+		data.player.ghost = "";
+		document.getElementById('phoneRight').innerHTML = ``;
+		document.getElementById('phoneRight').innerHTML +=`
+		<div class = "phoneTextBox">
+			<img class = "phoneTextThumb" src = "scripts/gamefiles/items/ghostIcon.png">
+			<div class="phoneTextBoxContent">
+			<p class = "phoneTextName">System</p>
+			<p class = "selfDesc">Ghost hunting is enabled! Good luck hunting!</p>
+		</div></div>
+		<br>
+		`;
+	}
+	else {
+		if (data.player.ghost.includes('REWARD')) {
+			document.getElementById('phoneRight').innerHTML = ``;
+			if (data.player.ghost.includes('REWARD1')) {
+				data.player.ghost = data.player.ghost.replace('REWARD1', 'claimed');
+				data.player.hypnosis += 1;
+				updateMenu();
+				document.getElementById('phoneRight').innerHTML +=`
+				<div class = "phoneTextBox">
+					<img class = "phoneTextThumb" src = "scripts/gamefiles/items/ghostIcon.png">
+					<div class="phoneTextBoxContent">
+					<p class = "phoneTextName">System</p>
+					<p class = "selfDesc">Congratulations! For your discipline, you've earned a reward!</p>
+				</div></div>
+				<br>
+				<p class="rawText">The reward is a link to some occult documents. Most are nonsense, but there's one on hypnosis that is actually pretty thorough.</p>
+				<p class="specialText">Your hypnosis skill has improved!</p>
+				`;
+			}
+			if (data.player.ghost.includes('REWARD2')) {
+				data.player.ghost = data.player.ghost.replace('REWARD2', 'claimed');
+				data.player.money += 10;
+				updateMenu();
+				document.getElementById('phoneRight').innerHTML +=`
+				<div class = "phoneTextBox">
+					<img class = "phoneTextThumb" src = "scripts/gamefiles/items/ghostIcon.png">
+					<div class="phoneTextBoxContent">
+					<p class = "phoneTextName">System</p>
+					<p class = "selfDesc">Congratulations! For your discipline, you've earned a reward!</p>
+				</div></div>
+				<br>
+				<p class="rawText">The reward is a link to a short survey. You're rewarded for your participation.</p>
+				<p class="specialText">You earned $10!</p>
+				`;
+			}
+			if (data.player.ghost.includes('REWARD3')) {
+				data.player.ghost = data.player.ghost.replace('REWARD3', 'claimed');
+				if (checkItem('Secret Shrine Location') != true) {
+					addItem('Secret Shrine Location', true, 'scripts/gamefiles/items/shrine.jpg');
+				}
+				updateMenu();
+				document.getElementById('phoneRight').innerHTML +=`
+				<div class = "phoneTextBox">
+					<img class = "phoneTextThumb" src = "scripts/gamefiles/items/ghostIcon.png">
+					<div class="phoneTextBoxContent">
+					<p class = "phoneTextName">System</p>
+					<p class = "selfDesc">Congratulations! For your discipline, you've earned a reward!</p>
+				</div></div>
+				<br>
+				<p class="rawText">The reward is a link to a to a historical page on the town, there's a neat shrine that isn't on most maps in the park district.</p>
+				<p class="specialText">You gained the location of the secret shrine!</p>
+				`;
+			}
+			if (data.player.ghost.includes('REWARD4')) {
+				data.player.ghost = data.player.ghost.replace('REWARD4', 'claimed');
+				var goof = {index: "hex", artist: "Art by Unknown Artist",};
+				data.bodytypes.push(goof);
+				document.getElementById('phoneRight').innerHTML +=`
+				<div class = "phoneTextBox">
+					<img class = "phoneTextThumb" src = "scripts/gamefiles/items/ghostIcon.png">
+					<div class="phoneTextBoxContent">
+					<p class = "phoneTextName">System</p>
+					<p class = "selfDesc">Congratulations! For your discipline, you've earned a reward!</p>
+				</div></div>
+				<br>
+				<p class="rawText">The reward is a link to a very, very detailed cosplay guide. You have most of these materials at home!</p>
+				<p class="specialText">You gained a new profile image, head back home and use the wardrobe to change!</p>
+				`;
+			}
+		}
+		else {
+			generateGhostCollection();
+		}
+	}
+}
+
+function generateGhostCollection() {
+	document.getElementById('phoneRight').innerHTML +=`
+	<div class = "phoneTextBox">
+		<img class = "phoneTextThumb" src = "scripts/gamefiles/items/ghostIcon.png">
+		<div class="phoneTextBoxContent">
+		<p class = "phoneTextName">System</p>
+		<p class = "selfDesc">You've caught `+countGhosts()+` ghosts!</p>
+	</div></div>
+	<br>
+	`;
+}
+
+function checkForGhosts(location) {
+	for (i = 0; i < ghostArray.length; i++) {
+		if (ghostArray[i].rarity.includes(data.player.dayID) == true) {
+			if (ghostArray[i].requirement <= countGhosts() && ghostArray[i].location.includes(location) == true) {
+				if (!data.player.ghost.includes(ghostArray[i].name)) {
+					var ghostOpacity = ghostArray[i].difficulty*7;
+					ghostOpacity = ghostOpacity/100;
+					ghostOpacity += ghostBoost;
+					console.log(ghostOpacity);
+					console.log('Ghost detected! ' +ghostArray[i].name);
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<img class = "ghost" src = "images/ghosts/`+ghostArray[i].name+`.png" style="width: 15%; top: `+ghostArray[i].top+`%; left: `+ghostArray[i].left+`%; opacity: `+ghostOpacity+`;" onclick='captureGhost("`+ghostArray[i].name+`")'>
+					`;
+				}
+			}
+		}
+	}
+}
+
+function checkGhost(n) {
+	if (data.player.ghost.includes(n)) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+function countGhosts() {
+	var ghostNumber = 0;
+	for (x = 0; x < ghostArray.length; x++) {
+		if (data.player.ghost.includes(ghostArray[x].name)) {
+			console.log('test');
+			ghostNumber += 1;
+		}
+	}
+	console.log(ghostNumber);
+	return ghostNumber;
+}
+
+function captureGhost(n) {
+	data.player.ghost += n;
+	changeLocation(data.player.location);
+	switch (n) {
+		case "Maudlos": {
+			writeSpecial("Special ghost caught! Open the app to claim your reward.");
+			data.player.ghost += 'REWARD3';
+			break;
+		}
+		case "UFO": {
+			writeSpecial("Special ghost caught! Open the app to claim your reward.");
+			data.player.ghost += 'REWARD2';
+			break;
+		}
+		default: {
+			if (countGhosts() == 30) {
+				writeSpecial("You caught 10 ghosts! Open the app to claim your reward.");
+				data.player.ghost += 'REWARD4';
+			}
+			else {
+				if (countGhosts() == 10) {
+					writeSpecial("You caught 30 ghosts! Open the app to claim your reward.");
+					data.player.ghost += 'REWARD1';
+				}
+				else {
+					writeText("You caught a ghost!");
+				}
+			}
+			break;
+		}
+	}
 }

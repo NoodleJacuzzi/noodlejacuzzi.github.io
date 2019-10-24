@@ -7,6 +7,8 @@ var logbook = { //Logbook details for each character.
 	clothes: "She's pretty hot and she knows it, preferring to wear her jacket open and with a shorter skirt than is regulation.",
 	home: "Her designated classroom is class B. Sometimes she heads to the hallway outside your office in the mornings.",
 	tags: "Mom-Daughter Threesome, Corruption",
+	artist: "Artist: Oreteki18kin",
+	author: "Noodle Jacuzzi",
 };
 
 var newItems = [//Lists the shop items unique to this character
@@ -537,7 +539,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 }
 
 //Don't touch anything below this, or things will break.
-console.log(character.index+'.js loaded correctly. request type is '+requestType)
+//console.log(character.index+'.js loaded correctly. request type is '+requestType)
 
 switch (requestType) {
 	case "encounter": {

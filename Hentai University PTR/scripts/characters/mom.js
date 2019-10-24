@@ -7,6 +7,8 @@ var logbook = { //Logbook details for each character.
 	clothes: "Her preferred outfit is a v-neck shirt thin enough that you can faintly make out her black bra through it and a pair of jeans.",
 	home: "She lives in the same apartment complex as you. She occasionally goes to buy groceries in the shopping district.",
 	tags: "Unshaven, Drunken Sex, Vanilla, Pregnancy (Ending)",
+	artist: "Enoshima Iki",
+	author: "Noodle Jacuzzi",
 };
 
 var newItems = [//Lists the shop items unique to this character
@@ -505,7 +507,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 }
 
 //Don't touch anything below this, or things will break.
-console.log('mom.js loaded correctly. request type is '+requestType)
+//console.log('mom.js loaded correctly. request type is '+requestType)
 
 switch (requestType) {
 	case "encounter": {

@@ -76,6 +76,33 @@ var locationArray = [
 	{index: "shoppingDistrict", buttons: [
 		{name: "Back into Town", top: 79, left: 0, type: "location", target: "street", time: "MorningEvening",},
 	],},
+	{index: "store", buttons: [
+		{name: "Go Outside", top: 30, left: 25, type: "location", target: "shoppingDistrict", time: "MorningEvening",},
+	],},
+	{index: "map", buttons: [
+		{name: "University", top: 35, left: 23, type: "location", target: "schoolMap", time: "MorningEvening",},
+		{name: "Streets", top: 55, left: 40, type: "location", target: "street", time: "MorningEvening",},
+		{name: "Your Home", top: 45, left: 70, type: "location", target: "playerHouse", time: "MorningEvening",},
+		{name: "Shopping District", top: 20, left: 60, type: "location", target: "shoppingDistrict", time: "MorningEvening",},
+		{name: "Vintage Street", top: 10, left: 30, type: "location", target: "shoppingDistrict", time: "MorningEvening",},
+		{name: "Park District", top: 65, left: 10, type: "location", target: "shoppingDistrict", time: "MorningEvening",},
+	],},
+	{index: "schoolMap", buttons: [
+		{name: "Back to Town", 			top: 82, 	left: 40, 	type: "location", target: "map", time: "MorningEvening",},
+		{name: "School Entrance", 		top: 67, 	left: 40, 	type: "location", target: "schoolEntrance", time: "MorningEvening",},
+		{name: "West Hallway", 			top: 45, 	left: 25, 	type: "location", target: "westHallway", time: "MorningEvening",},
+		{name: "Classroom A", 			top: 25, 	left: 2, 	type: "location", target: "classroomA", time: "MorningEvening",},
+		{name: "Cafeteria", 			top: 45, 	left: 2, 	type: "location", target: "cafeteria", time: "MorningEvening",},
+		{name: "Library", 				top: 65, 	left: 2, 	type: "location", target: "library", time: "MorningEvening",},
+		{name: "East Hallway", 			top: 45, 	left: 55, 	type: "location", target: "eastHallway", time: "MorningEvening",},
+		{name: "Classroom B", 			top: 25, 	left: 80, 	type: "location", target: "classroomB", time: "MorningEvening",},
+		{name: "Computer Room", 		top: 45, 	left: 77, 	type: "location", target: "computerRoom", time: "MorningEvening",},
+		{name: "Gym", 					top: 65, 	left: 80, 	type: "location", target: "gym", time: "MorningEvening",},
+		{name: "North Hallway 2F", 		top: 17, 	left: 38, 	type: "location", target: "northHallway", time: "MorningEvening",},
+		{name: "Your Office",			top: 2, 	left: 20, 	type: "location", target: "playerOffice", time: "MorningEvening",},
+		{name: "Teacher's Lounge", 		top: 2, 	left: 62, 	type: "location", target: "teacherLounge", time: "MorningEvening",},
+		{name: "Roof", 					top: 0, 	left: 45, 	type: "location", target: "roof", time: "MorningEvening",},
+	],},
 ];
 
 function changeLocation(n) {
@@ -120,6 +147,12 @@ function changeLocation(n) {
 					);
 				}
 			}
+			data.player.location = n;
+			if (data.player.time != "Night" && data.player.location != "map"  && data.player.location != "schoolMap" && checkItem("Town Map") == true) {
+				document.getElementsByClassName('playerRoom')[0].innerHTML += `
+					<div class="pictureButton" onclick="changeLocation('map')" style="top: 0%; left: 0%; max-width: 30%;">Use Map</div>
+				`;
+			}
 			checkForEncounters();
 		}
 	}
@@ -132,7 +165,9 @@ function changeLocation(n) {
 	document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 	updateMenu();
 	hideStuff();
-	data.player.location = n;
+	if (data.player.ghost != undefined) {
+		checkForGhosts(n);
+	}
 	saveSlot(110);
 }
 
