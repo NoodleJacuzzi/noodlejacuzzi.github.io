@@ -418,12 +418,12 @@ div#wrapperBG::after {
 }
 
 .pictureButton, .choiceText{
-	font-size:2.5rem;
+	font-size: 70px;
 	font-weight: bold;
     display: block;
     width: fit-content;
     margin: 15px auto;
-	line-height: 1;
+	line-height: 3;
 }
 
 
