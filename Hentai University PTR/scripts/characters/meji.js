@@ -11,8 +11,6 @@ var logbook = { //Logbook details for each character.
 	clothes: "He usually wears a school uniform - the male version while at school, and a girl's uniform when around the town.",
 	home: "He usually hangs out around the Class B hallway.",
 	tags: "Crossdressing, Anal Orgasms, Orgasm Denial",
-	artist: "Nagi Ichi",
-	author: "Captain Cryptogreek",
 };
 
 var newItems = [//Lists the shop items unique to this character
@@ -23,7 +21,10 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "meji1a", name: "A particularly loud student is walking down the hall.", location: 'westHallway', time: "Morning", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "meji2", name: "You spot a familiar face.", location: 'street', time: "Evening", itemReq: "", trustMin: 10, trustMax: 10, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "meji3", name: "You can see meji coming down the hall with his friends.", location: 'westHallway', time: "Morning", itemReq: "", trustMin: 20, trustMax: 24, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "meji4", name: "It looks like meji is standing in the hallway alone, like he's waiting for something.", location: 'westHallway', time: "Morning", itemReq: "", trustMin: 25, trustMax: 25, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "meji3", name: "You can see meji coming down the hall with his friends.", location: 'westHallway', time: "Morning", itemReq: "", trustMin: 40, trustMax: 44, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "meji4", name: "It looks like meji is standing in the hallway alone, like he's waiting for something.", location: 'westHallway', time: "Morning", itemReq: "", trustMin: 45, trustMax: 45, type: "tab", top: 0, left: 0, day: "both",},
+	//{index: "meji5", name: "meji's leaning against the wall, adjusting his shirt a bit while he looks around.", location: 'westHallway', time: "Morning", itemReq: "", trustMin: 46, trustMax: 46, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -378,21 +379,119 @@ function writeEncounter(name) { //Plays the actual encounter.
 
 		//This will likely be the stopping point for this version
 
-
-		case "meji4" : { // - NOT WRITTEN
-			//you give meji the option to just leave and you'll stop this
-			//no more blackmail, no more surprise-anal, and no more talking
-			//you even drop the hypnosis that makes his dick numb
-			//you give him time to think about it
+		case "meji4" : {
+			writeText("When you start to approach, "+data.story[7].fName+" perks up visibly.");
+			if(data.story[7].trust > 40){
+				writeText("He smiles widely as he leans against the wall.");
+				if(data.player.gender == "man"){
+					writeSpeech("meji","","Just the guy I was looking for. You aren't busy, are you?");
+				}
+				else{
+					writeSpeech("meji","","Just the lady I was looking for. You aren't busy, are you?");
+				}
+				writeSpeech("player","","I can make time. What's the matter?");
+				writeSpeech("meji","","<i>Personal</i> stuff. Your office?");
+				writeSpeech("player","","Sounds good.");
+			}
+			else{
+				writeText("He clasps his hands in front of him as he stands a bit straighter.");
+				writeSpeech("meji","","Good morning. Are you busy? I was hoping we could talk about... something.");
+				writeSpeech("player","","Is this more of a <i>private</i> discussion?");
+				writeText("He nods, fiddling with his hands in front of him.");
+				writeSpeech("player","","The office, then.");
+			}
+			writeText("...");
+			writeText(data.story[7].fName+" relaxes a bit as the familiar <b>click</b> of the lock rings out.");
+			if(data.story[7].trust > 40){
+				writeText("He sits down on the bed, resting his hands behind him. It's probably not an accident that that pose thrusts his chest out.");
+				writeText("Despite that, though, he seems to be avoiding eye-contact.");
+				writeSpeech("player","","So, what sort of personal stuff did you want to talk about?");
+				writeSpeech("meji","","...Last time felt good, right? I mean, you came a <i>lot</i>, but like... You really enjoyed it, yeah? I know that, after cumming the first time, it can get really sensitive, but I don't think I ever really slowed down.");
+				writeText("He shifts a bit in his seat, starting to kick his legs gently.");
+				writeSpeech("meji","","I just want to make sure I didn't go too far, or something.");
+				writeText("You take a moment to sit down next to him, resting a hand on his thigh.");
+				writeSpeech("player","","You were fine, "+data.story[7].fName+". The whole point was to go as far as <i>you</i> wanted, and if I wasn't enjoying it, I'd have just told you.");
+				writeText("He relaxes a bit, exhaling deeply.");
+				writeSpeech("meji","","Okay. Thanks, I just... wanted to be sure. I've been having a lot of fun with this, and I don't want to go ruining it just 'cause I was feeling a little <i>too</i> pent-up.");
+				writeSpeech("player","","It's all good. Remember, if you're ever feeling that pent-up again, I'm happy to help you <i>unload</i>... as long as you're willing to the do the same for me, of course.");
+				writeText("With that, you feel his pants shift under your palm as his hand traces around your thigh.");
+				writeSpeech("meji","","If you're not careful, "+data.player.honorific+", I'll take statements like that as permission to help you unload every chance I get~. In fact...");
+				writeText("His hand slides further up, just barely missing your crotch as he runs his fingers to your hips.");
+				writeSpeech("meji","","Maybe that <i>is</i> permission...?");
+				writeFunction("writeEncounter('meji4a')", "Lean back and nod");
+				writeFunction("writeEncounter('meji4b')", "Maybe later");
+			}
+			else{
+				writeText("He pauses for a second before sitting on the bed and brushing off his pants. A slow, deep breath later...");
+				writeSpeech("meji","","I... wasn't too forceful last time, was I? I know you gave me permission and all, but you were gone when I woke up.");
+				writeText("He continues fidgeting, one of his hands shifting against his hip as he does.");
+				writeSpeech("meji","","I don't mean to come off as clingy, "+data.player.honorific+", it's just... I didn't go too far, did I? You're not still sore or anything?");
+				writeText("You take a moment to sit down next to him, resting a hand on his thigh.");
+				writeSpeech("player","","You were fine. A bit controlling, maybe, but that was kind of the point. I <i>wanted</i> you to get off, and if I wasn't enjoying myself, I'd have just told you... which probably would've just made you try even harder.");
+				writeText("His face flushes again as you feel his pants shift under your palm.");
+				writeSpeech("player","","If I don't want you to do something, during sex or otherwise, I'll tell you. If I <i>do</i> want you to do something, I'll tell you that, too. Games are the most fun when <i>everyone</i> enjoys themselves, after all.");
+				writeSpeech("meji","","...Thank you. This, what we've been doing, has been great. I didn't want to ruin it just because I was too desperate to get myself off and ended up getting too rough.");
+				writeSpeech("player","","It's all good. Honestly, the only lingering problem I have from last time is the throbbing erection I get when I think about it.");
+				writeText("At that, "+data.story[7].fName+" leans a bit closer to you, one of his hands resting on your thigh.");
+				writeSpeech("meji","","That sounds like a bit of a problem, "+data.player.honorific+". A very <i>big</i> problem, at that...");
+				writeText("He slowly looks up, smiling gently as he locks eyes with you.");
+				writeSpeech("meji","","Would you like me to <i>take responsibility?</i>");
+				writeFunction("writeEncounter('meji4a')", "Lean back and nod");
+				writeFunction("writeEncounter('meji4b')", "Maybe later");
+			}
 			break;
 		}
-		case "meji5" : { // - NOT WRITTEN
-			//initiated from your office/outside of it (he's waiting for you)
-			//he's back, and he gives in completely
-			//even without the hypnosis, he still can't feel his cock
-			//he couldn't even get close to cumming until he started fingering his ass and thinking about you
-			//now, he wants to fuck, and he's willing to beg
-			//basically choose either meji6.1 or meji6.3, and use meji6 for the next interactions
+		case "meji4a" : {
+			raiseTrust('meji',1);
+			writeEvent("meji5");
+			passTime();
+			writeText("His hands move towards his bikini bottoms for a moment, but he stops.");
+			if(checkTrust('meji')>40){
+				writeSpeech("meji","","Crap... It's getting late.");
+				writeText("He gestures to the clock, frowning.");
+				writeSpeech("meji","","Sorry, I wasn't originally planning on doing anything with you today. Thought you might still be sore, so I kinda made plans...");
+				writeSpeech("player","","That's fine. This <i>was</i> kind of spur-of-the-moment. Thanks for checking up with me, though. And for the <i>fun</i>, of course.");
+				writeText("He smiles, standing up and stretching his legs a bit as he picks up his clothes.");
+				writeSpeech("meji","","I'm happy to do it. Plus, I get the feeling you'll be <i>very</i> enthusiastic about paying me back for <i>every single <b>drop.</b></i>");
+				writeText("He winks as he slides his pants up, hiding his underwear as he wipes the last of his spit from his chin.");
+				writeSpeech("meji","","How do I look? Did I miss anything?");
+				writeSpeech("player","","You got it all. Not a soul out there would suspect that you just sucked off your counselor in women's swimwear.");
+				writeText("He scoffs, swinging jokingly at you.");
+				writeSpeech("meji","","Ah, quit it. The fact that I can still taste you is enough of a turn-on, "+data.player.honorific+" - keep talking like that, and I'll rip through my jeans.");
+				writeText("mejiF unlocks the door, leaning against it for a second.");
+				writeSpeech("meji","","Thanks for the talk, by the way. See you later!");
+			}
+			else{
+				writeSpeech("meji","","Damn... It's getting late.");
+				writeText("He gestures to the clock, frowning.");
+				writeSpeech("meji","","Sorry, I wasn't sure that we were doing anything today. I thought you might still be sore, so I... kinda made plans...");
+				writeSpeech("player","","That's fine. This <i>was</i> rather spur-of-the-moment, after all.");
+				writeText("He smiles, standing up and stretching his legs a bit as he picks up his clothes.");
+				writeSpeech("meji","","Thank you, "+data.player.honorific+". I'll make sure to keep my schedule open after school.");
+				writeText("He quickly slides his pants up, hiding his underwear as he wipes the last of his spit from his chin.");
+				writeSpeech("meji","","I didn't miss anything, did I?");
+				writeSpeech("player","","You got it all. Not a soul out there would suspect that you just sucked off your counselor in women's swimwear.");
+				writeText("He looks down to the floor, smiling as his face gets a little flushed.");
+				writeSpeech("meji","","Or that I can still <i>taste</i> you, "+data.player.honorific+". Don't go making me wait <i>too</i> long, please?");
+				writeText("mejiF unlocks the door, leaning against it for a second.");
+				writeSpeech("meji","","...Thanks for the talk, by the way. It means a lot.");
+			}
+			writeText("He leaves quickly, shutting the door behind him and leaving you with whatever business you have planned for the day.");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "meji4b" : {
+			writeSpeech("player","","Not today, sorry. I'm a bit tied up with some other business.");
+			writeText("He smiles, nodding.");
+			writeSpeech("meji","","That's fine - I kinda thought you might be. I hope you won't make me wait <i>too</i> long, though~! I actually have something I'd like to show you next time, so let's both look forward to it.");
+			writeSpeech("player","","Sure thing, mejiF.");
+			writeText("With that, he stands up and (after checking the buttons on his shirt) exits the room, leaving you to your business.");
+			writeFunction("changeLocation(data.player.location)", "Get back to work");
+			break;
+		}
+
+
+		case "meji5" : {
 			break;
 		}
 		case "meji6" : { // - NOT WRITTEN
@@ -429,6 +528,7 @@ var eventArray = [ //Lists the events of the character for unlocking and replayi
 	{index: "meji2", name: "Feeling Numb"},
 	{index: "meji3", name: "Backing Up Leotard"},
 	{index: "meji4", name: "Finally Finishing"},
+	{index: "meji5", name: "Lingerie Blowjob"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -683,9 +783,9 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("With that, he darts out of the room, leaving you with a bit of time left before dark and a raging hard-on.");
 			if (data.player.location != 'gallery') {
 			data.player.location = 'gym';
-			writeFunction("changeLocation(data.player.location)", "Get going");
-			raiseTrust('meji', 1);
-			passTime();
+				writeFunction("changeLocation(data.player.location)", "Get going");
+				raiseTrust('meji', 1);
+				passTime();
 			}
 			break;
 		}
@@ -766,6 +866,69 @@ function writeEvent(name) { //Plays the actual event.
 			}
 			break;
 		}
+		case "meji5" : {
+			if (data.player.location != 'gallery' && (checkTrust('meji') == 26 || checkTrust('meji') == 46)) {
+				writeText("mejiF grins as he raises his free hand to his shirt.");
+				writeSpeech("meji","","I was hoping I'd get to show you this soon. See, I recently saved up just enough cash to pick up something I think we'll <i>both</i> enjoy...");
+				writeText("He slides down between your legs, pulling off his clothes with practiced ease as you do the same.");
+			}
+			writeText("He spreads his legs out a bit, looking up at you from your thighs as his tongue rolls out of his mouth.");
+			writeBig("images/meji/7-1.jpg", "Art by Nagi Ichi");
+			writeSpeech("meji","","How's the view up there?");
+			writeSpeech("player","","Absolutely stunning.");
+			writeText("His blush gets deeper as he starts running his hand up and down your shaft, his tongue spreading his spit around your head.");
+			writeText("His other hands slowly runs up your thigh and, after a moment, he pushes forward.");
+			writeText("He takes your head into his mouth as he starts twisting his head a bit, his tongue and lips teasing at your tip as his slick hand jerks you off.");
+			writeSpeech("player","","<i>Fuck...</i> You've got a gift for this, you know that?");
+			writeText("You can feel him hum in agreement around your cock before he starts pulling away. The suction feels incredible as he keeps sliding back, until...");
+			writeText("<font size='+2'><b><i>*POP~!*</i></b></font>");
+			writeText("He grins up at you as he brings his other hand down to your cock as well.");
+			writeSpeech("meji","","I've been practicing with some toys. Still, though...");
+			writeText("He pauses to drag his tongue around your tip, teasing your slit just a bit before pulling back.");
+			writeSpeech("meji","","I'm kinda surprised that this is my first time with you in my mouth. Three times in my ass, <i>and God knows how many loads down there,</i> and I'm only just now sucking you off. Kinda weird, isn't it?");
+			writeSpeech("player","","A bit, sure. But that just means we have a lot of time to make up for, doesn't it?");
+			writeSpeech("meji","","My thoughts <i>exactly</i>, "+data.player.honorific+"~!");
+			writeText("Going back down on you, he wraps his lips around your head and starts bobbing up and down, his hand picking up speed.");
+			writeBig("images/meji/7-2.jpg","Art by Nagi Ichi");
+			writeText("The wet, sloppy sound of his blowjob gets louder as he starts bobbing lower each time, slowly inching his way down your shaft as he starts using fewer fingers to stroke your length.");
+			writeText("After a few dozen more bounces, his hand moves down to gently toy with your sack, his lips nearly going down to your base with every bob.");
+			writeText("He tries pushing all the way down, your cockhead pressing against the entrace to his throat, but he can't <i>quite</i> get all the way down.");
+			writeText("After a few more tries, he puts both of his palms on the ground as he pulls his mouth off of you, gasping loudly and looking up to your eyes as he catches his breath.");
+			writeSpeech("player","","You okay, mejiF?");
+			writeSpeech("meji","","Y-Yeah. Just... having a bit of trouble relaxing my throat. It'll be easier once I get you past it the first time...");
+			writeSpeech("player","","In that case... Want some help?");
+			writeText("He pauses, then nods with a smile.");
+			writeSpeech("meji","","I'll leave it to you. And remember, it's my first time - <i>don't</i> be gentle~!");
+			writeText("Grabbing the back of his head, you shift your hips forward as his arms spread out a bit. You stand just a bit straighter, and start to slowly push in.");
+			writeText("Making it to the throat barrier already feels great, the blowjob completely soaking your cock and his mouth, and you feel your head press against the entrance.");
+			writeSpeech("player","","Okay... Hum when you're ready.");
+			writeText("He starts to take a few slow, deep breaths...");
+			writeSpeech("meji","","Hmm- <font size='+2'><i><b>HGPH~!!</b></i></font>");
+			writeText("Just as he started to hum, you bucked your hips forward and forced your cock into his throat, moaning throatily as he starts gagging around you.");
+			writeText("You quickly pop yourself back out, giving mejiF a few seconds to cough and collect himself...");
+			writeText("Except, instead of coughing, he just smirks and looks up at you playfully.");
+			writeSpeech("meji","","I-Is that... a-all you're gunna give, to this pussy...?");
+			writeText("Your hand goes back to his head, gripping his hair tightly. You feel him shiver in pleasure as you jerk his head towards your length.");
+			writeSpeech("player","","Squeeze my thigh when you need air.");
+			writeText("His mouth engulfs your length as you start pulling his head against your hips, pushing into his throat as he tries matching your pace.");
+			writeText("He's practically fucking his own throat after a few seconds, his hands going behind you to grab your ass. The rare moments that he stops for air are impressively far apart as he keeps bouncing up and down.");
+			writeText("When he starts <i>swallowing around you</i>, you realize just how close you've gotten.");
+			writeSpeech("player","","mejiF, I'm...!");
+			writeText("You can feel him start humming around you, barely able to stay standing as one of his hands starts massaging your spit-slick balls again.");
+			writeText("When you finally cum, it feels like you're shooting your load directly into his stomach as his throat and tongue milk every drop out of you.");
+			writeText("The seconds drag on as he keeps swallowing around your shaft until, finally, you feel your head pop out of his throat, along his tongue, and past his lips.");
+			writeText("He pauses for just a moment, before gently pressing his lips against your head for a wet, sloppy kiss.");
+			writeBig("images/meji/7-3.jpg");
+			writeText("He gives you a smug smirk and leans back.");
+			writeSpeech("meji","","Not bad for my first <i>real</i> blowjob, right?");
+			writeSpeech("player","","mejiF.");
+			writeText("He pauses.");
+			writeSpeech("meji","","...Y-Yeah?");
+			writeSpeech("player","","You were <i>amazing</i>.");
+			writeText("The smugness immediately disappears, replaced by a face-wide blush as his eyes going to pretty much anywhere except for yours.");
+			writeSpeech("meji","","...Thanks.");
+			break;
+		}
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong event. Error code: Failed to write event ("+name+") in "+character.index+".js");
 			break;
@@ -788,13 +951,15 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "placeholder", trust: 200,},
+	{index: "mejiReward", trust: 26,},
+	{index: "mejiReward", trust: 46,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
-		case "placeholder": {
-			//Write the event's text here using writePhoneSpeech, writePhoneImage, and writePhoneChoices
+		case "mejiReward": {
+			writePhoneImage("images/meji/fin.jpg", "Art by Nagi Ichi");
+			writePhoneSpeech("meji", "", "You've finished all of mejiF's content for this version, congratulations!");
 			break;
 		}
 		default: {
@@ -805,7 +970,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 }
 
 //Don't touch anything below this, or things will break.
-//console.log(character.index+'.js loaded correctly. request type is '+requestType)
+console.log(character.index+'.js loaded correctly. request type is '+requestType)
 
 switch (requestType) {
 	case "encounter": {
