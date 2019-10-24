@@ -344,7 +344,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "purple8": {
-			writeEvent('purple3');
+			writeEvent('purple2');
 			writeText("...");
 			writeSpeech("player", "", "Well, I'll be going now.");
 			writeSpeech("chubby", "", "Come back anytime!");
@@ -430,6 +430,17 @@ function writeEvent(name) { //Plays the actual event.
 			break;
 		}
 		case "purple2": {
+			writeSpeech("player", "", "Hello "+fName('purple')+", here for another-");
+			writeText("She pulls you into your office and closes the door behind you before pulling you into a deep kiss.");
+			writeText("It's desperate and hungry, she's forcing her tongue into your mouth but starts shuddering when you push back.");
+			writeSpeech("purple", "", "*mwah*! Master... I need more. I haven't been able to stop playing with myself. Even in class, I...");
+			writeSpeech("player", "", "Say no more. It's not safe here, let's head to your place.");
+			writeText("...");
+			writeSpeech("purple", "", "Mom, I'm home! And I brought the counselor with me! We're gonna go in my room, okay?");
+			writeSpeech("chubby", "", "Alright honey! Dinner's in an hour!");
+			writeText("The two of you head upstairs before "+fName('chubby')+" can get another word out.");
+			writeSpeech("chubby", "", "<i>I wonder what they're doing up there...</i>");
+			writeText("...");
 			writeBig("images/purple/2-1.jpg", "Art by Oreteki18kin");
 			writeSpeech("purple", "", "Ehehe... I'm ready for you. Fish it out! Please!");
 			writeText("You pull down your pants and "+fName('purple')+" squirms in appreciation.");
@@ -455,22 +466,10 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Her cunt thoroughly filled with cum, you pull out only to hear a sound from behind you.");
 			writeSpeech("player", "", "We've got a voyeur. Come with me, "+fName('purple')+".");
 			writeSpeech("purple", "", "Mhm...");
+			writeFunction("writeEvent('purple3')", "Head downstairs");
 			break;
 		}
 		case "purple3": {
-			writeSpeech("player", "", "Hello "+fName('purple')+", here for another-");
-			writeText("She pulls you into your office and closes the door behind you before pulling you into a deep kiss.");
-			writeText("It's desperate and hungry, she's forcing her tongue into your mouth but starts shuddering when you push back.");
-			writeSpeech("purple", "", "*mwah*! Master... I need more. I haven't been able to stop playing with myself. Even in class, I...");
-			writeSpeech("player", "", "Say no more. It's not safe here, let's head to your place.");
-			writeText("...");
-			writeSpeech("purple", "", "Mom, I'm home! And I brought the counselor with me! We're gonna go in my room, okay?");
-			writeSpeech("chubby", "", "Alright honey! Dinner's in an hour!");
-			writeText("The two of you head upstairs before "+fName('chubby')+" can get another word out.");
-			writeSpeech("chubby", "", "<i>I wonder what they're doing up there...</i>");
-			writeText("...");
-			writeEvent('purple2');
-			writeText("...");
 			writeText(""+fName('chubby')+" is breathing rapidly as she holds her phone.");
 			writeSpeech("chubby", "", "Oh god, oh god... Who do I even call? What is happening?");
 			writeText("The images of what she saw are burnt into her brain. Images of her own daughter having... Having SEX right in front of her!");
