@@ -382,8 +382,8 @@ div#wrapperBG::after {
 
 .button, .pictureButton, .choiceText, .shopItem, .logbookSwitch{
     background: rgba(0,0,0,0.75);
-    padding: 15px;
-    margin: 15px;
+    padding: 25px;
+    margin: 25px;
     border: none;
     border-bottom: 8px solid;
     border-radius: 5px;
@@ -406,7 +406,7 @@ div#wrapperBG::after {
 
 .footer .button {
 	font-size: 300%;
-	height: 200px;
+	height: 150px;
 	width: 33%;
 	margin: auto;
 	margin-top: 50px;
@@ -437,7 +437,7 @@ div#wrapperBG::after {
 .playerRoom {
     width: 100%;
 	height: 70vh;
-	margin-bottom: 30px;
+	margin-bottom: 60px;
 }
 
 
@@ -652,7 +652,7 @@ color:var(--character-color);
 .logbookRight {
 	left:20%;
 	height: 80%;
-	width: 80%;
+	width: 70%;
     left: unset;
     padding: 15px;
     overflow-y: auto;
@@ -661,7 +661,7 @@ color:var(--character-color);
 
 .logbookLeft {
 	height: 80%;
-	width: 20%;
+	width: 30%;
     top: unset;
     padding: 0;
    overflow-y: scroll;

@@ -85,7 +85,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			else {
 				if (data.story[8].met.includes('kuroF') != true) {
 					writeSpeech("principal", "", "Have you had a chance to speak with Ms. "+lName('kuro')+" yet?");
-					if(checkTrust('kuro')) {
+					if(checkTrust('kuro') > 0) {
 						writeFunction("writeEncounter('kuroCaseEnd')", "Report on "+fName('kuro')+"'s case.");
 					}
 				}
@@ -97,7 +97,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			else {
 				if (data.story[8].met.includes('purpleF') != true) {
 					writeSpeech("principal", "", "Have you had a chance to speak with Ms. "+lName('purple')+" yet?");
-					if(checkTrust('kuro')) {
+					if(checkTrust('purple') > 0) {
 						writeFunction("writeEncounter('purpleCaseEnd')", "Report on "+fName('purple')+"'s case.");
 					}
 				}
