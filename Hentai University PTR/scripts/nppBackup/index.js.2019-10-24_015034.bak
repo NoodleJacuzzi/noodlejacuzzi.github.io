@@ -1217,6 +1217,7 @@ function loadShop() {
 	
 	//Append new script file
 	document.getElementsByTagName("head")[0].appendChild(fileref);
+	console.log(targetFile+ ' import successful');
 	
 	//Delete script file afterwards
 	var select = document.getElementsByTagName("head")[0];
@@ -1231,6 +1232,7 @@ function loadShop() {
 		
 		//Append new script file
 		document.getElementsByTagName("head")[0].appendChild(fileref);
+		console.log(targetFile+ ' import successful');
 		
 		//Delete script file afterwards
 		var select = document.getElementsByTagName("head")[0];

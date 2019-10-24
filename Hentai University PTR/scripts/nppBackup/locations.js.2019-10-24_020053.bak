@@ -153,12 +153,7 @@ function changeLocation(n) {
 					<div class="pictureButton" onclick="changeLocation('map')" style="top: 0%; left: 0%; max-width: 30%;">Use Map</div>
 				`;
 			}
-			if (n == "store") {
-				loadShop();
-			}
-			else {
-				checkForEncounters();
-			}
+			checkForEncounters();
 			data.player.location = n;
 		}
 	}

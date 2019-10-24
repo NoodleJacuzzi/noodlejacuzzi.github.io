@@ -254,7 +254,9 @@ function writeEncounter(scene) {
 			break;
 		}
 		case "shop": {
+			console.log('now loading shop location');
 			changeLocation('store');
+			loadShop();
 			break;
 		}
 		case "nap": {

@@ -254,7 +254,9 @@ function writeEncounter(scene) {
 			break;
 		}
 		case "shop": {
+			console.log('now loading shop location');
 			changeLocation('store');
+			loadShop();
 			break;
 		}
 		case "nap": {
@@ -564,6 +566,7 @@ switch (requestType) {
 			console.log("generating item "+ item + ": " + newItems[item].name + newItems[item].description + newItems[item].image + newItems[item].price + newItems[item].key);
 			if (newItems[item].price != 0) {
 				if (newItems[item].key == false) {
+						console.log('now generating key item');
 					document.getElementById('output').innerHTML += `
 						<div class = "shopItem" onclick = "purchase('`+newItems[item].name+`','`+newItems[item].image+`','`+newItems[item].price+`','`+newItems[item].key+`')">
 							<p class = "shopName">`+newItems[item].name+`</p>
@@ -576,6 +579,7 @@ switch (requestType) {
 				}
 				else {
 					if (checkItem(newItems[item].name) == false) {
+						console.log('now generating non-key item');
 						document.getElementById('output').innerHTML += `
 						<div class = "shopItem" onclick = "purchase('`+newItems[item].name+`','`+newItems[item].image+`','`+newItems[item].price+`','`+newItems[item].key+`')">
 								<p class = "shopName">`+newItems[item].name+`</p>

@@ -255,6 +255,7 @@ function writeEncounter(scene) {
 		}
 		case "shop": {
 			changeLocation('store');
+			loadShop();
 			break;
 		}
 		case "nap": {

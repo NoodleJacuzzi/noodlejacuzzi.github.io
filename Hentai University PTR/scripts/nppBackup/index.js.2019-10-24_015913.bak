@@ -1236,6 +1236,7 @@ function loadShop() {
 		var select = document.getElementsByTagName("head")[0];
 		select.removeChild(select.lastChild);
 	}
+	requestType = "";
 }
 
 function purchase(name, image, price, key) {
