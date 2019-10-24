@@ -343,6 +343,7 @@ var phoneArray = [//Lists the potential text events the player can receive at th
 	{index: "momPhone3", trust: 82,},
 	{index: "momPhone4", trust: 83,},
 	{index: "momPhone5", trust: 84,},
+	{index: "momReward", trust: 100,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
