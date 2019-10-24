@@ -78,7 +78,6 @@ p {
 	display: block;
     margin: auto;
 	width: 100%;
-	max-height: 70vh;
   	padding: 20px, 1px;
   	border: 3px solid white;
   	border-radius: 5px;
@@ -371,6 +370,7 @@ div#wrapperBG::after {
 
 .backgroundPicture{
         border-radius: 15px;
+	height: 70vh;
 }
 
 
@@ -406,7 +406,7 @@ div#wrapperBG::after {
 
 .footer .button {
 	font-size: 300%;
-	height: 100px;
+	height: 200px;
 	width: 33%;
 	margin: auto;
 	margin-top: 50px;
@@ -436,7 +436,8 @@ div#wrapperBG::after {
 
 .playerRoom {
     width: 100%;
-    margin-bottom:60px;
+	height: 70vh;
+	margin-bottom: 30px;
 }
 
 

@@ -549,7 +549,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player","","Hm... This might shock him out of it, but...");
 			writeText("You carefully start pushing your finger into him, and you notice his eyes starting to open.");
 			writeBig("images/meji/3-1.jpg", "Art by Nagi Ichi");
-			if (data.player.gender = "man") {
+			if (data.player.gender == "man") {
 				writeSpeech("meji","","Haa... Ah...? S-"+data.player.honorific+", what is...");
 			}
 			else {

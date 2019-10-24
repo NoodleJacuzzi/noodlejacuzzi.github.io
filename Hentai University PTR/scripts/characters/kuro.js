@@ -7,6 +7,8 @@ var logbook = { //Logbook details for each character.
 	clothes: "Her preferred outfit is a riff on the school uniform, with a microskirt so short she's gotten chewed out at school more than once.",
 	home: "She mostly hangs out on the roof before and after classes.",
 	tags: "Prostitution, Phone Sex, Cum on Clothes",
+	artist: "Enoshima Iki",
+	author: "Captain Cryptogreek",
 };
 
 var newItems = [//Lists the shop items unique to this character

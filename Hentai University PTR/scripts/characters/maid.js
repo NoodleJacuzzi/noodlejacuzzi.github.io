@@ -20,7 +20,7 @@ var newItems = [//Lists the shop items unique to this character
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "maid1", name: "You see a woman in an unusual outfit looking through some items, looking for something.", location: 'shoppingDistrict', time: "Evening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "odd",},
-	{index: "maid2", name: "You can see maid nearby. It looks like she just finished shopping.", location: 'shoppingDistrict', time: "Evening", itemReq: "", trustMin: 20, trustMax: 20, type: "tab", top: 0, left: 0, day: "odd",},
+	{index: "maid2", name: "You can see maid nearby. It looks like she just finished shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 20, trustMax: 20, type: "tab", top: 0, left: 0, day: "odd",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -192,7 +192,10 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("maid","","Thinking of you, babe~!");
 			writeText("Her spit-slick tits shift around your length, her shoulders wiggling as she shakes her whole body.");
 			writeText("After a few seconds, she presses herself entirely against you, rubbing her breasts up and down your crotch as your head pokes out of and into her cleavage.");
-			writeSpeech("maid","","Don't forget to moan for the audience, "+data.player.name+".");
+			if(data.player.gender == "Man")
+				writeSpeech("maid","","Don't forget to moan for the audience, sir.");
+			else
+				writeSpeech("maid","","Don't forget to moan for the audience, miss.");
 			writeText("Like she has to remind you...");
 			writeText("You don't even bother trying to keep quiet as her head ducks down, her tongue teasing your tip every time it pops out.");
 			writeText("Seconds quickly turn to minutes as she slowly changes things up.");
@@ -247,14 +250,14 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "placeholder", trust: 200,},
+	{index: "maidReward", trust: 21,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
-		case "mistressReward" : {
-			writePhoneImage("images/mistress/fin.jpg", "Art by Oreteki18kin");
-			writePhoneSpeech("mistress", "", "You've finished all of "+data.story[6].fName+"'s content for this version, congratulations!");
+		case "maidReward" : {
+			writePhoneImage("images/maid/fin.jpg", "Art by Oreteki18kin");
+			writePhoneSpeech("maid", "", "You've finished all of maidF's content for this version, congratulations!");
 			break;
 		}
 		default: {
