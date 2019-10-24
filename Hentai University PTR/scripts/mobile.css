@@ -839,6 +839,7 @@ display: flex;
 }
 
 .saveName, .loadButton, .saveButton, .deleteButton, .loadFileButton, .saveFileButton {
+	font-size: 250%;
     position: unset;
     flex: 1 1 auto;
     max-width: fit-content;
@@ -856,7 +857,7 @@ position: absolute;
     display: block;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.25rem;
+	font-size: 250%;
 }
 
 .phoneTextBox {
