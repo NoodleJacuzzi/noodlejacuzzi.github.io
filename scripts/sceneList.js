@@ -2,11 +2,11 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 10/7/2019</p>
-				<p class = "centeredText">Discord Server</p>
-				<p class = "centeredText">I now have a discord server. Feel free to drop in whenever!</p>
-				<p class = "centeredText">https://discord.gg/B3AszYM</p>
-				<p class = "centeredText">Thank you to: Swallows999, MrManPerson, Lasse B, ChronosEdge, Judavarius, Adonnak, Andy Amundy, Angel, Ariados, Blaise Fenn, brandon, Debarre Sonny, Drashin, iNoH8+, Jane, Karan Raj Gupta, lm Carma, marvin diaz, Mirza Hasan, murgatroid99, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Snaked, stratum, Wild Bill, Will Osboldstone, and 凱 陳 for supporting my work!</p>
+				<p class = "centeredText">Lastest News 10/25/2019</p>
+				<p class = "centeredText">Hentai University v3</p>
+				<p class = "centeredText">The release of Hentai University v3, with some new scenes and the entire engine rebuilt for (hopefully) easy mod support!</p>
+				<p class = "centeredText"></p>
+				<p class = "centeredText">Thank you to: Swallows999, Ben Dover, MrManPerson, Lasse B, ChronosEdge, Judavarius, Lunarghost, Scal, Adonnak, Andy Amundy, Angel, Ariados, Blaise Fenn, brandon, Debarre Sonny, Drashin, Gwen Yurick, iNoH8+, Jane, Jesse Greene, joe, joe mulhall, Karan Raj Gupta, lm Carma, marvin diaz, Mirza Hasan, murgatroid99, Nha, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Slipokk, Snaked, stratum, Wild Bill, Will Osboldstone, and 凱 陳 for supporting my work!</p>
 			`;
 			writeTransition("news", "View all news updates");
 			document.getElementById('output').innerHTML +=`
@@ -32,16 +32,17 @@ function writeScene(scene) {
 			`;
 			writeTransition("artifactList", "See a roadmap of current / planned content");
 			writeBig("images/HentaiUniversity.png");
-			writeText("Hentai University v2");
+			writeText("Hentai University v3");
 			writeText("A game made in cooperation with author Captain Cryptogreek, who works as the game's lead writer.");
 			writeText("You play as a young man with a strong grasp on hypnotic magic, and have embedded yourself as a counselor in a school with a fantastically attractive student body. The faculty and your neighbors in town look pretty good too.");
 			writeText("This game uses art by Enoshima Iki, Nagi Ichi, and Oreteki18kin, and is meant to be similar in feel to Hentai High School, but without the focus on school management, more emphasis on wandering / corruption, and a much higher quality body of images.");
 			writeText("The end goal here is a town packed with dozens of characters using a framework I can continually add more content to.");
 			writeText("Tags: Hypnosis, optionally features many other tags based on characters such as incest, dubcon, and gay content");
-			writeTransition("downloadHentaiUniversity", "Download Hentai University");
 			document.getElementById('output').innerHTML +=`
+				<p class="choiceText" onclick="window.location.href='https://mega.nz/#!OjIghCxS!FdX889-4heqi95kfXxQ_gWOFwKawxTF0WUl96-LqD-I'">Download the game</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">Play the mobile version</p>
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'">Modding Tutorial</p>
 				<p class="choiceText" onclick="window.location.href='https://f95zone.to/threads/hentai-university-v2-5-noodlejacuzzi.37312/'">F95Zone Thread</p>
 				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/30871183'">List of cheat codes</p>
 			`;
@@ -94,6 +95,11 @@ function writeScene(scene) {
 			break;
 		}
 		case "news": {
+			writeText("<b>10/25/2019</b> - Hentai University v3");
+			writeText("The release of Hentai University v3, with some new scenes and the entire engine rebuilt for (hopefully) easy mod support!");
+			writeText("<b>10/7/2019</b> - Discord Server");
+			writeText("I now have a discord server. Feel free to drop in whenever!");
+			writeText("https://discord.gg/B3AszYM");
 			writeText("<b>10/7/2019</b> - Discord Server");
 			writeText("I now have a discord server. Feel free to drop in whenever!");
 			writeText("https://discord.gg/B3AszYM");
