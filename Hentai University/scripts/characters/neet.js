@@ -166,7 +166,7 @@ var phoneArray = [//Lists the potential text events the player can receive at th
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
-		case "momReward": {
+		case "neetReward": {
 			writePhoneImage("images/neet/reward.jpg", "Art by Enoshima Iki");
 			writePhoneSpeech("neet", "", "You've finished all of neetF's content for this version, more is coming soon!");
 			break;
