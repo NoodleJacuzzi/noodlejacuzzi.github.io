@@ -229,6 +229,7 @@ function startup() {
 	wrapper.scrollTop = 0;
 	updateMenu();
 	hideStuff();
+	preloadImages();
 	if(localStorage.getItem('data110')) {
 		loadSlot(110);
 	}
@@ -237,6 +238,17 @@ function startup() {
 	}
 }
 
+function preloadImages(url)
+{
+    var preloaded=new Image();
+	for (i = 0; i < locationArray.length; i++) {
+		preloaded.src="images/locations/"+locationArray[i].index+"Morning.jpg";
+		preloaded.src="images/locations/"+locationArray[i].index+"Evening.jpg";
+	}
+	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
+		preloaded.src="images/"+data.story[characterIndex].index+"/"+data.story[characterIndex].index+".jpg";
+	}
+}
 function restartButton() {
 	var restart = confirm ("restart the game?");
 	if (restart == true) {
@@ -341,6 +353,52 @@ function checkTrust(name) {
 	for (y = 0; y < data.story.length; y++) {
 		if (data.story[y].index == name) {
 			return data.story[y].trust;
+		}
+	}
+}
+
+function addFlag(character, flag) {
+	console.log(character+flag);
+	for (flagIndex = 0; flagIndex < data.story.length; flagIndex++) {
+		if (data.story[flagIndex].index == character) {
+			if (data.story[flagIndex].met == false) {
+				data.story[flagIndex].met = "";
+			}
+			console.log('adding the flag named '+flag+' to '+character);
+			data.story[flagIndex].met += flag;
+		}
+	}
+}
+
+function removeFlag(character, flag) {
+	for (flagIndex = 0; flagIndex < data.story.length; flagIndex++) {
+		if (data.story[flagIndex].index == character) {
+			if (data.story[flagIndex].met == false) {
+				data.story[flagIndex].met = "";
+			}
+			if (data.story[flagIndex].met.includes(flag) == true) {
+				console.log('Removing flag '+flag+' from '+character);
+				data.story[flagIndex].met = data.story[flagIndex].met.replace(flag, "");
+			}
+			else {
+				console.log('error! flag '+flag+' not found!');
+			}
+		}
+	}
+}
+
+function checkFlag(character, flag) {
+	for (flagIndex = 0; flagIndex < data.story.length; flagIndex++) {
+		if (data.story[flagIndex].index == character) {
+			if (data.story[flagIndex].met == false) {
+				data.story[flagIndex].met = "";
+			}
+			if (data.story[flagIndex].met.includes(flag) == true) {
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 	}
 }
@@ -1421,6 +1479,11 @@ function diagnostic() {
 			break;
 		}
 		case "nuclear option": {
+			data.player.hypnosis = 3;
+			data.player.hacking = 3;
+			data.player.counseling = 3;
+			updateMenu();
+			writeSpecial("All of your stats have been set to 3. You can keep improving them past this point, but you shouldn't see any skill-related roadblocks from here on!");
 			break;
 		}
 		case "new name": {
