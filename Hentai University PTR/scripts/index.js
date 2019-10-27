@@ -240,6 +240,7 @@ function startup() {
 
 function preloadImages(url)
 {
+	console.log("preloading start");
     var preloaded=new Image();
 	for (i = 0; i < locationArray.length; i++) {
 		preloaded.src="images/locations/"+locationArray[i].index+"Morning.jpg";
@@ -248,6 +249,7 @@ function preloadImages(url)
 	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
 		preloaded.src="images/"+data.story[characterIndex].index+"/"+data.story[characterIndex].index+".jpg";
 	}
+	console.log("preloading finished");
 }
 function restartButton() {
 	var restart = confirm ("restart the game?");
