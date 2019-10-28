@@ -238,19 +238,22 @@ function startup() {
 	}
 }
 
-function preloadImages(url)
-{
+function preloadImages(){
 	console.log("preloading start");
-    var preloaded=new Image();
+    var preloaded = new Image();
 	for (i = 0; i < locationArray.length; i++) {
-		preloaded.src="images/locations/"+locationArray[i].index+"Morning.jpg";
-		preloaded.src="images/locations/"+locationArray[i].index+"Evening.jpg";
+		var bg = "images/locations/"+locationArray[i].index+"Morning.jpg";
+		document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
+		var bg = "images/locations/"+locationArray[i].index+"Evening.jpg";
+		document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 	}
 	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
-		preloaded.src="images/"+data.story[characterIndex].index+"/"+data.story[characterIndex].index+".jpg";
+		var bg = "images/"+data.story[characterIndex].index+"/"+data.story[characterIndex].index+".jpg";
+		document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 	}
 	console.log("preloading finished");
 }
+
 function restartButton() {
 	var restart = confirm ("restart the game?");
 	if (restart == true) {
@@ -1854,8 +1857,8 @@ function checkGhost(n) {
 
 function countGhosts() {
 	var ghostNumber = 0;
-	for (x = 0; x < ghostArray.length; x++) {
-		if (data.player.ghost.includes(ghostArray[x].name)) {
+	for (ghostIndex = 0; ghostIndex < ghostArray.length; ghostIndex++) {
+		if (data.player.ghost.includes(ghostArray[ghostIndex].name)) {
 			console.log('test');
 			ghostNumber += 1;
 		}
