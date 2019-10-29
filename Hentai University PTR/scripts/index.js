@@ -61,7 +61,7 @@ var data = {
 	phoneImages: [
 	],
 }
-
+ 
 var ghostArray = [
 	{name: "Ancient Chaplain", 		difficulty: 3, rarity: "01", time:"MorningEvening", top: 35, left: 20, requirement: 0, location: "computerRoom", 
 	description: ""},

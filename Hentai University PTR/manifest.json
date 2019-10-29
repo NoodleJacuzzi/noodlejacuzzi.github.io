@@ -1,0 +1,13 @@
+{
+  "name": "Hentai University",
+  "short_name": "HU",
+  "lang": "en-US",
+  "start_url": "index.html",
+  "display": "standalone",
+  "theme_color": "#dedede",
+  "icons": [
+    {
+      "src": "scripts/gamefiles/logo2.png"
+    }
+  ]
+}
