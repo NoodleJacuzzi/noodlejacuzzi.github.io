@@ -83,6 +83,7 @@ function writeEncounter(scene) {
 			writeBig("images/5-2.jpg", "Filled out code. I'm leaving my tag section blank for now, but you'll want to use tags separated by commas.");
 			writeText("Here's an image for what the final product will look like after we're all done with this tutorial:");
 			writeBig("images/5-3.jpg", "What it'll look like ingame once we're finished.");
+			writeText("EDIT: I've since added two more categories to the logbook, artist and author. These should be pretty self explanatory, just the character's artist (use 'Various' if you're using images from multiple artists) and your username. Same as in the character var basically.");
 			writeFunction("writeEncounter('newItems')", "Continue to the next section, adding new items");
 			break;
 		}
@@ -497,6 +498,7 @@ function writeEncounter(scene) {
 			writeText("cafeteria - The school cafeteria");
 			writeText("library - The school library");
 			writeText("eastHallway - The hallway outside classroom B, also leads to the computer room and gym.");
+			writeText("classroomB - Classroom B.");
 			writeText("computerRoom - The school computer room.");
 			writeText("gym - The school gym.");
 			writeText("If I forgot one, let me know please!");
