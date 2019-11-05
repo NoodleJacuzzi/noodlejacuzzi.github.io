@@ -186,7 +186,7 @@ function writeEncounter(scene) {
 			writeText("this is another array, just like with events and encounters.");
 			writeText("At the start of the day, if the player's trust is exactly equal to the trust value, the player will receive a text from the character. It'll check if they already have received the text of course.");
 			writeText("Carefully plan out when you want the player to receive texts, keep in mind you can't check the player's text history. The only way to progress with a character is by increasing / decreasing trust.");
-			writeFunction("writeEncounter(writePhoneEvent'')", "Continue to the next section, writing phone events");
+			writeFunction("writeEncounter('writePhoneEvent')", "Continue to the next section, writing phone events");
 			break;
 		}
 		case "writePhoneEvent": {
@@ -531,7 +531,7 @@ function writeEncounter(scene) {
 			writeSpecial(`writePhoneChoice("To my house", "To the school")`);
 			writeText("The player clicks 'To the school', the second option, which leads to the phone event CODENAMEPhone1AB.");
 			writeText("Here's a diagram:");
-			writeBig("images/14-4", "A handy chart!");
+			writeBig("images/14-4.jpg", "A handy chart!");
 			writeFunction("writeEncounter('functionCheatSheet')", "Go back to the cheat sheet");
 			break;
 		}
