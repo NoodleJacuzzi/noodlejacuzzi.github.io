@@ -300,20 +300,30 @@ V0.0
 		Windows are hidden by default in css (COMPLETE)
 		Fix ghosts in mobile (COMPLETE)
 		Link to mod tutorial at start (COMPLETE)
-		Test game
-		Change kuro, meji, maid, and lady reward points & pictures
-		Remove onload console log for kuro & meji
-		Update Patron list
-		Link to mod tutorial in index
-		Update index menu
-		Update index download link
-		Update index HU section
-		Update index news
-		Patreon post
-		Patreon cheat list update
-		F95zone post
+		Test game (COMPLETE)
+		Change kuro, meji, maid, and lady reward points & pictures (COMPLETE)
+		Remove onload console log for kuro & meji (COMPLETE)
+		Update Patron list (COMPLETE)
+		Link to mod tutorial in index (COMPLETE)
+		Update index menu (COMPLETE)
+		Update index download link (COMPLETE)
+		Update index HU section (COMPLETE)
+		Update index news (COMPLETE)
+		Patreon post (COMPLETE)
+		Patreon cheat list update (COMPLETE)
+		F95zone post (COMPLETE)
 	v3.5
+		fix textColor bug (COMPLETE)
+		allow for custom tab pictures / names (COMPLETE)
+		Fix broken image in tutorial (COMPLETE)
+		dialogue engine should use index checking in first argument to find character names, not rely on the second argument being empty (COMPLETE)
+		grab images from the character's folder in images if 'images' is not present in string (COMPLETE)
 		Fix logbook to show events from character js file
+		Add pink to pervert mode
+		Custom writeCharacterTab pictures / names (COMPLETE)
+		RaiseStat function
+		raiseStat messages - hypnosis: sensitivity increase, group hypnosis, etc
+		Stat-based skills in logbook
 		Disabling images does not change navigation
 		Add clearText function to clear a character's text event
 		Ancient shrine location
@@ -341,6 +351,7 @@ V0.0
 		Stat raising
 	Principal
 		Plan route
+		Principal and secretary shared scenes are unlocked for both characters (the same index between .js files so it appears in both gallery pages)
 	Mom
 	Tomgirl
 	Purple
@@ -357,9 +368,9 @@ V0.0
 		scarf4ea - hit her with a chair - bad end
 		scarf4f - look through her class records - classroom A
 		scarf4g - ask her about a student's success - she'll say 'he passed the test'
-		scarf5 - battle of the minds 1 - round 1, bunny
-		scarf6 - battle of the minds 2 - round 2, beach
-		scarf7 - battle of the minds 3 - round 3, beach again but you break through the illusion and creampie her
+		Battle 1 - the casino (resist the temptation and break free of the illusion mid-titjob, or fall into the dream and remain a slave in the casino)
+		Battle 2 - the bathhouse (green is here. You can have sex with her (4-n), and sink deeper into the dream (5-n, ending with 5-6 or 5-7 depending on choice), and finally let go of your sense of self, failing the test (6-n))
+		Battle 3 - the beach (resist the temptation and break free of the illusion mid-fuck, or fall into the dream and remain on the beach forever. The first time you click escape it swaps the position of the escape and succumb button, so you might misclick)
 		scarf8 - final round - in a battle of the minds, you dominate her and see her true self
 	Neet
 		Plan route (COMPLETE)
