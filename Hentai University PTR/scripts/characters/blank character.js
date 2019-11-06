@@ -1,4 +1,4 @@
-var character = {index: "neet", fName: "Tia", lName: "Sun", trust: 0, encountered: false, textEvent: "", met: false, textColor: "#da924b", author: "NoodleJacuzzi", artist: "Enoshima Iki"};
+var character = {index: "neet", fName: "Tia", lName: "Sun", trust: 0, encountered: false, textEvent: "", met: false, color: "#da924b", author: "NoodleJacuzzi", artist: "Enoshima Iki"};
 
 var logbook = {
 	index: "", 
@@ -17,8 +17,8 @@ var newItems = [
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-	{index: "placeholder", name: "", location: '', time: "", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "placeholder", name: "", location: '', time: "", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "placeholder", name: "", location: '', time: "", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	{index: "placeholder", name: "", location: '', time: "", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -132,6 +132,12 @@ switch (requestType) {
 	case "check": {
 		if (encounteredCheck(character.index) != true) {
 			for (i = 0; i < encounterArray.length; i++) {
+				if (encounterArray[i].altImage == undefined) {
+					encounterArray[i].altImage == "";
+				}
+				if (encounterArray[i].altName == undefined) {
+					encounterArray[i].altName == "";
+				}
 				if (encounterArray[i].location.includes(data.player.location)) { //check the location
 					if (encounterArray[i].time.includes(data.player.time)) { //check the time
 						if (encounterArray[i].trustMin <= checkTrust(character.index) && encounterArray[i].trustMax >= checkTrust(character.index)) { //check the trust requirements
@@ -141,7 +147,7 @@ switch (requestType) {
 								}
 								else {
 									if (encounterArray[i].type == "tab") { //check the type of the encounter (tab / button)
-										printEncounterTab(character.index, encounterArray[i].index, encounterArray[i].name);
+										printEncounterTab(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].altImage, encounterArray[i].altName);
 									}
 									else {
 										printEncounterButton(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].top, encounterArray[i].left);
@@ -154,7 +160,7 @@ switch (requestType) {
 								}
 								else {
 									if (encounterArray[i].type == "tab") { //check the type of the encounter (tab / button)
-										printEncounterTab(character.index, encounterArray[i].index, encounterArray[i].name);
+										printEncounterTab(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].altImage, encounterArray[i].altName);
 									}
 									else {
 										printEncounterButton(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].top, encounterArray[i].left);
@@ -167,7 +173,7 @@ switch (requestType) {
 								}
 								else {
 									if (encounterArray[i].type == "tab") { //check the type of the encounter (tab / button)
-										printEncounterTab(character.index, encounterArray[i].index, encounterArray[i].name);
+										printEncounterTab(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].altImage, encounterArray[i].altName);
 									}
 									else {
 										printEncounterButton(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].top, encounterArray[i].left);

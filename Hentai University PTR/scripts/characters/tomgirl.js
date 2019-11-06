@@ -1,4 +1,4 @@
-var character = {index: "tomgirl", met: false, fName: "Sam", lName: "White", trust: 0, encountered: false, textEvent: "", textColor: "#a79e9a",};
+var character = {index: "tomgirl", met: false, fName: "Sam", lName: "White", trust: 0, encountered: false, textEvent: "", color: "#a79e9a",};
 
 var logbook = { //Logbook details for each character.
 	index: "tomgirl", 

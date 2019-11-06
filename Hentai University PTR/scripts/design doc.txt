@@ -300,20 +300,30 @@ V0.0
 		Windows are hidden by default in css (COMPLETE)
 		Fix ghosts in mobile (COMPLETE)
 		Link to mod tutorial at start (COMPLETE)
-		Test game
-		Change kuro, meji, maid, and lady reward points & pictures
-		Remove onload console log for kuro & meji
-		Update Patron list
-		Link to mod tutorial in index
-		Update index menu
-		Update index download link
-		Update index HU section
-		Update index news
-		Patreon post
-		Patreon cheat list update
-		F95zone post
+		Test game (COMPLETE)
+		Change kuro, meji, maid, and lady reward points & pictures (COMPLETE)
+		Remove onload console log for kuro & meji (COMPLETE)
+		Update Patron list (COMPLETE)
+		Link to mod tutorial in index (COMPLETE)
+		Update index menu (COMPLETE)
+		Update index download link (COMPLETE)
+		Update index HU section (COMPLETE)
+		Update index news (COMPLETE)
+		Patreon post (COMPLETE)
+		Patreon cheat list update (COMPLETE)
+		F95zone post (COMPLETE)
 	v3.5
+		fix textColor bug (COMPLETE)
+		allow for custom tab pictures / names (COMPLETE)
+		Fix broken image in tutorial (COMPLETE)
+		dialogue engine should use index checking in first argument to find character names, not rely on the second argument being empty (COMPLETE)
+		grab images from the character's folder in images if 'images' is not present in string (COMPLETE)
 		Fix logbook to show events from character js file
+		Add pink to pervert mode
+		Custom writeCharacterTab pictures / names (COMPLETE)
+		RaiseStat function
+		raiseStat messages - hypnosis: sensitivity increase, group hypnosis, etc
+		Stat-based skills in logbook
 		Disabling images does not change navigation
 		Add clearText function to clear a character's text event
 		Ancient shrine location

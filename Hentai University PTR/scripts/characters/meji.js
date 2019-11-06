@@ -1,4 +1,4 @@
-var character = {index: "meji", met: false, fName: "Reese", lName: "Kieran", trust: 0, encountered: false, textEvent: "", textColor: "#7e52a3"};
+var character = {index: "meji", met: false, fName: "Reese", lName: "Kieran", trust: 0, encountered: false, textEvent: "", color: "#7e52a3"};
 
 //General tutorial stuff:
 //writeText("text"); - Writes some plain old text.

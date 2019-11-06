@@ -1,4 +1,4 @@
-var character = {index: "principal", met: false, fName: "Victoria", lName: "Devons", trust: 0, encountered: false, textEvent: "", textColor: "#e47311",};
+var character = {index: "principal", met: false, fName: "Victoria", lName: "Devons", trust: 0, encountered: false, textEvent: "", color: "#e47311",};
 
 //General tutorial stuff:
 //writeText("text"); - Writes some plain old text.
@@ -111,6 +111,18 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeSpeech("principal", "", "Have you looked into the reports of the creature in the computer lab? I've heard that gremlins come out later in the day.");
 					if(checkTrust('neet') > 0) {
 						writeFunction("writeEncounter('neetCaseEnd')", "Report on "+fName('neet')+"'s case.");
+					}
+				}
+			}
+			if (data.story[8].met.includes('starletS') != true) {
+				writeSpeech("principal", "", "I've got a student who isn't taking career planning week seriously. She's a good student who I think has a lot of potential. Could you help her out?");
+				writeFunction("writeEncounter('starletCaseStart')", "Beige file");
+			}
+			else {
+				if (data.story[8].met.includes('starletF') != true) {
+					writeSpeech("principal", "", "Have you spoken with Miss starletL yet? Gotten her to change her mind?");
+					if(checkTrust('starlet') > 81) {
+						writeFunction("writeEncounter('starletCaseEnd')", "Report on starletL's case.");
 					}
 				}
 			}
@@ -254,6 +266,37 @@ function writeEncounter(name) { //Plays the actual encounter.
 			data.player.counseling += 1;
 			updateMenu();
 			writeSpecial("Your 'counseling' ability has improved! This means a pay bump, and "+fName('principal')+" trusts you more!");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "starletCaseStart": {
+			loadCharacter('starlet');
+			loadCharacter('pornstar');
+			writeText("You take the file.");
+			writeSpeech("player", "", "So what do you mean she isn't taking it seriously? Is she causing trouble?");
+			writeSpeech("principal", "", "No! She's incredibly polite and well-behaved, and is otherwise a model student aside from her C average.");
+			writeSpeech("player", "", "So then what's the problem? I don't see any... Hold on, are there pages missing?");
+			writeSpeech("principal", "", "Yes, well... I'm sorry! I can't do it. Please, just try to talk some sense into her. I can't even bring up the subject to her mother, I'm at a loss.");
+			writeSpeech("player", "", "<i>Something must be seriously wrong if she can't even discuss it. I might be going in over my head, but...</i><br>I'll do my best. But I can't make any promises.");
+			writeSpeech("principal", "", "Thank you so much... If you'll excuse me for a moment, just thinking about it makes me need to wash my hands. Good luck.");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			data.story[8].met += "starletS";
+			addItem("File A-3", true, "images/starlet/starlet.jpg")
+			break;
+		}
+		case "starletCaseEnd": {
+			writeSpeech("principal", "", "Please, please tell me you've solved the issue.");
+			writeSpeech("player", "", "I have. I even spoke with starletF's mother about the problem. starletF will be getting some practical experience to help guide her down the correct path.");
+			writeSpeech("principal", "", "Thank goodness... You truly are dependable. I was skeptical at first, but you've already proven yourself invaluable to the school.");
+			writeText("principalF reaches across the table to shake your hand, then sanitizes it afterwards.");
+			data.story[8].met += "starletF";
+			data.player.counseling += 1;
+			removeItem("File A=3");
+			updateMenu();
+			writeSpecial("Your 'counseling' ability has improved! This means a pay bump, and "+fName('principal')+" trusts you more!");
+			writeSpeech("principal", "", "Ah, has she settled on a career path yet?");
+			writeSpeech("player", "", "Yes. Her grades will probably still hover where they are, but she has a solid future ahead of her.");
+			writeSpeech("principal", "", "Wonderful!");
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}

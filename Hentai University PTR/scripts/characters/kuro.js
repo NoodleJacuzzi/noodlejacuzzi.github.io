@@ -1,4 +1,4 @@
-var character = {index: "kuro", met: false, fName: "Steph", lName: "Black", trust: 0, encountered: false, textEvent: "", textColor: "#fde1a5",};
+var character = {index: "kuro", met: false, fName: "Steph", lName: "Black", trust: 0, encountered: false, textEvent: "", color: "#fde1a5",};
 
 var logbook = { //Logbook details for each character.
 	index: "kuro", 
@@ -562,7 +562,7 @@ function writeEvent(name) { //Plays the actual event.
 			}
 			writeText("She double-checks her clothes for any leftover jizz on her before she gets up and leaves, winking to you just before slipping through the door.");
 			if (data.player.location != 'gallery') {
-				if(checkTrust('kuro') < 22){
+				if(checkTrust('kuro') < 24){
 					raiseTrust('kuro', 1);
 				}
 				data.player.location = "playerOffice";

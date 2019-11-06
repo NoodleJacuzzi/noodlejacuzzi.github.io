@@ -47,7 +47,7 @@ var data = {
 		{index: "meji", met: false, fName: "Reese", lName: "Kieran", trust: 0, encountered: false, textEvent: "", color: "#7e52a3"},
 		{index: "principal", met: false, fName: "Victoria", lName: "Devons", trust: 0, encountered: false, textEvent: "", color: "#e47311"},
 		{index: "secretary", met: false, fName: "Lisa", lName: "Jones", trust: 0, encountered: false, textEvent: "", color: "#888888"},
-		{index: "neet", met: false, fName: "Tia", lName: "Sun", trust: 0, encountered: false, textEvent: "", color: "#da924b"},
+		{index: "neet", met: false, fName: "Tia", lName: "Sun", trust: 0, encountered: false, textEvent: "", textColor: "#da924b"},
 		{index: "scarf", met: false, fName: "Casandra", lName: "Hamilton", trust: 0, encountered: false, textEvent: "", color: "#954655"},
 		{index: "green", met: false, fName: "Emma", lName: "Hamilton", trust: 0, encountered: false, textEvent: "", color: "#677b4c"},
 	],
@@ -242,14 +242,11 @@ function preloadImages(){
 	console.log("preloading start");
     var preloaded = new Image();
 	for (i = 0; i < locationArray.length; i++) {
-		var bg = "images/locations/"+locationArray[i].index+"Morning.jpg";
-		document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
-		var bg = "images/locations/"+locationArray[i].index+"Evening.jpg";
-		document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
+		preloaded.src="images/locations/"+locationArray[i].index+"Morning.jpg";
+		preloaded.src="images/locations/"+locationArray[i].index+"Evening.jpg";
 	}
 	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
-		var bg = "images/"+data.story[characterIndex].index+"/"+data.story[characterIndex].index+".jpg";
-		document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
+		preloaded.src="images/"+data.story[characterIndex].index+"/"+data.story[characterIndex].index+".jpg";
 	}
 	console.log("preloading finished");
 }
@@ -440,24 +437,22 @@ function lName(name) {
 
 function replaceCodenames(text) {
 	var codenameCheck = "";
-	for (geminiLoop = 0; geminiLoop < 5; geminiLoop++) {
-		text = text.replace('playerF', data.player.name);
-		text = text.replace('playerGender', data.player.gender);
-		text = text.replace('playerG', data.player.gender);
-		text = text.replace('playerMan', data.player.gender);
-		text = text.replace('playerTitle', data.player.title);
-		text = text.replace('playerT', data.player.title);
-		text = text.replace('playerMister', data.player.title);
-		text = text.replace('playerHonorific', data.player.honorific);
-		text = text.replace('playerH', data.player.honorific);
-		text = text.replace('playerSir', data.player.honorific);
-		for (codenameIndex = 0; codenameIndex < data.story.length; codenameIndex++) {
-			codenameCheck = data.story[codenameIndex].index + "F";
-			text = text.replace(codenameCheck, data.story[codenameIndex].fName);
-			codenameCheck = data.story[codenameIndex].index + "L";
-			text = text.replace(codenameCheck, data.story[codenameIndex].lName);
-		}
-	} 
+	text = text.replace('playerF', data.player.name);
+	text = text.replace('playerGender', data.player.gender);
+	text = text.replace('playerG', data.player.gender);
+	text = text.replace('playerMan', data.player.gender);
+	text = text.replace('playerTitle', data.player.title);
+	text = text.replace('playerT', data.player.title);
+	text = text.replace('playerMister', data.player.title);
+	text = text.replace('playerHonorific', data.player.honorific);
+	text = text.replace('playerH', data.player.honorific);
+	text = text.replace('playerSir', data.player.honorific);
+	for (codenameIndex = 0; codenameIndex < data.story.length; codenameIndex++) {
+		codenameCheck = data.story[codenameIndex].index + "F";
+		text = text.replace(codenameCheck, data.story[codenameIndex].fName);
+		codenameCheck = data.story[codenameIndex].index + "L";
+		text = text.replace(codenameCheck, data.story[codenameIndex].lName);
+	}
 	return text;
 }
 
@@ -556,7 +551,7 @@ function checkForEncounters() {
 	}
 }
 
-function printEncounterButton(character, scene, text, top, left, altName, altImage) {
+function printEncounterButton(character, scene, text, top, left) {
 	if (imagesDisabled == false) {
 		document.getElementsByClassName('playerRoom')[0].innerHTML += `
 			<div class="pictureButton" onclick='loadEncounter("`+character+`", "`+scene+`")'
@@ -569,12 +564,20 @@ function printEncounterButton(character, scene, text, top, left, altName, altIma
 	}
 }
 
-function printEncounterTab(name, scene, text, altImage, altName) {
+function printEncounterTab(name, scene, text) {
 	if (character != "system") {
 		var tabTrust;
 		var cancelTab = false;
 		var cssName = name;
 		var img = "images/"+name+"/"+name+".jpg";
+		if (data.player.pervert != true) {
+			var checkForError = "";
+			img = "images/"+name+"/"+name+".jpg";
+		}
+		else {
+			var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+name+`.jpg'"`;
+			img = "images/"+name+"/"+name+"P.jpg";
+		}
 		for (z = 0; z < data.story.length; z++) {
 			if (data.story[z].index == name) {
 				tabIndex = z;
@@ -616,39 +619,6 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 				tabTrust = "<span class='unkown'>Unknown";
 				break;
 			}
-		}
-		if (data.player.pervert != true) {
-			var checkForError = "";
-			img = "images/"+cssName+"/"+cssName+".jpg";
-		}
-		else {
-			var checkForError = `onerror ="javascript:this.src='images/`+cssName+`/`+cssName+`.jpg'"`;
-			img = "images/"+cssName+"/"+cssName+"P.jpg";
-		}
-		if (altImage == undefined) {
-			altImage = "";
-		}
-		if (altName == undefined) {
-			altName = "";
-		}
-		if (altImage != "") {
-			if (altImage.includes("images") == true) {
-				img = altImage;
-			}
-			else {
-				if (data.player.pervert != true) {
-					var checkForError = "";
-					img = "images/"+cssName+"/"+altImage;
-				}
-				else {
-					var checkForError = `onerror ="javascript:this.src='images/`+cssName+`/`+altImage+`'"`;
-					img = img.replace(".jpg", "");
-					img = "images/"+cssName+"/"+altImage+"P.jpg";
-				}
-			}
-		}
-		if (altName != "") {
-			name = altName;
 		}
 		//console.log(tabIndex);
 		console.log(cssColor);
@@ -694,19 +664,6 @@ function writeSpeech (name, img, text) {
 			img = "images/"+name+"/"+name+"P.jpg";
 		}
 	}
-	else {
-		if (img.includes("images") != true) {
-			if (data.player.pervert != true) {
-				var checkForError = "";
-				img = "images/"+cssName+"/"+img;
-			}
-			else {
-				var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+img+`'"`;
-				img = img.replace(".jpg", "");
-				img = "images/"+cssName+"/"+img+"P.jpg";
-			}
-		}
-	}
 	if (img == "none") {
 		img = "scripts/gamefiles/none.png";
 	}
@@ -719,7 +676,6 @@ function writeSpeech (name, img, text) {
 		if (data.story[i].index == name) {
 			fullName = data.story[i].fName + ' ' + data.story[i].lName;
 			cssColor = data.story[i].color;
-			
 		}
 	}
 	document.getElementById('output').innerHTML +=`
@@ -768,7 +724,7 @@ function writeMed (img, cap) {
 function writeFunction (name, func) {
 	document.getElementById('output').innerHTML += `
 		<p class="choiceText" onclick="` + name + `">
-			` + replaceCodenames(func) + `
+			` + func + `
 		</p>
 	`;
 }

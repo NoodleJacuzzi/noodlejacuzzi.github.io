@@ -1,90 +1,72 @@
-var character = {index: "chubby", met: false, fName: "Margaret", lName: "Williams", trust: 0, encountered: false, textEvent: "", color: "#da924b",};
+var character = {index: "pornstar", fName: "Andrea", lName: "Cummings", trust: 0, encountered: false, textEvent: "", met: false, color: "#454857", author: "NoodleJacuzzi", artist: "Oreteki18kin"};
 
-//General tutorial stuff:
-//writeText("text"); - Writes some plain old text.
-//writeSpeech("character", "image", "dialogue") - Writes some dialogue. Leave "image" blank to find the appropriate image and name automatically.
-
-var logbook = { //Logbook details for each character.
-	index: "chubby", 
-	desc: "The mother of a university student, she's struggling to help her daughter improve her grades.",
-	body: "She's a bit out of shape, but has a pretty good looking mom-bod with huge breasts. You've never seen her without a smile on her face.",
-	clothes: "She prefers softer colors, her baggy clothes actually make her look larger than she is.",
-	home: "She lives on Vintage Street with her daughter. She tends to sleep through the evenings.",
-	tags: "Mom-Daughter Threesome",
-	artist: "Artist: Oreteki18kin",
-	author: "Noodle Jacuzzi",
+var logbook = {
+	index: "pornstar", 
+	desc: "The mother of a would-be pornstar, she owns a major porn production company here in town.",
+	body: "She's got jet black hair unlike her daughter, but there's no doubt that thiccness runs in the gene pool.",
+	clothes: "She dresses surprisingly conservatively, wearing a blouse, blazer, and pencil skirt that all scream 'ordinary, but expensive'.",
+	home: "You don't know where she lives. You've never seen her out and about, maybe she lives out of town?",
+	tags: "Mother-daughter threesome",
+	artist: "Oreteki18kin",
+	author: "NoodleJacuzzi",
 };
 
-var newItems = [//Lists the shop items unique to this character
+var newItems = [
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-]
+];
 
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "test": {
-			writeBig("images/tomgirl/1-2.jpg", "Art by Nagi Ichi");
-			writeSpeech("???", "none", "Bro, it's not just the fact that they're missing! The whole thing just screams lazy!");
-			writeSpeech("tomgirl", "", "Dude, I don't care about your virtual animals. I-");
-			writeText("Two students are having a heated discussion about something, and one of them turns towards you as you walk up the stairs.");
-			writeText("The one looking at you has an effeminate look to him, but gives off a pretty disrespectful vibe. His name is "+fName('tomgirl')+" "+lName('tomgirl')+" if you remember your files right.");
-			writeText("He's staring at you, so you decide to...");
-			writeBig("images/tomgirl/1-3.jpg", "Art by Nagi Ichi");
-			writeFunction("loadEncounter('tomgirl', 'tomgirl2')", "Invite "+fName('tomgirl')+" to your office");
-			writeFunction("changeLocation(data.player.location)", "Walk on by");
+		case "placeholder": {
+			break;
+		}
+		default: {
+			writePhoneSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
 		}
 	}
 }
 
-var eventArray = [ //Lists the events of the character for unlocking and replaying in the gallery.
-	{index: "chubby1", name: "Mother's Payment"},
+var eventArray = [
+	{index: "pornstar1", name: "Prove Yourself"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "chubby1": {
-			writeSpeech("chubby", "", "Ah, hello!");
-			writeText("chubbyF ushers you in quickly and closes the door.");
-			writeSpeech("chubby", "", "Welcome back, master. I'm afraid purpleF is out right now. She's meeting with some friends. She's been doing so well lately, thank you again for all you've done.");
-			writeSpeech("player", "", "No problem. I'm actually here for you.");
-			writeSpeech("chubby", "", "Oh? Ah, I see.");
-			writeText("One look at the bulge in your pants is all she needs to see.");
-			writeText("...");
-			writeBig("images/chubby/1-3.jpg", "Art by Oreteki18kin");
-			writeSpeech("chubby", "", "Hmmhmm~ It's so warm and wet inside me, isn't it? Is it to your liking? I haven't had a "+data.player.gender+" in years, never someone like you, master.");
-			writeSpeech("player", "", "You feel amazing, almost as tight as your daughter's pussy.");
-			writeSpeech("chubby", "", "So polite! But, you know how a "+data.player.gender+" like you shows their honesty, right? <br>Not~<br>With~<br>Words~");
-			writeText("Each word is punctuated with a gyration of her hips and a rhythmic clench of her pussy.");
-			writeSpeech("chubby", "", "You're so cute master, you've got such a dreamy look on your face. Will you cum inside me? Will you pump enough sperm inside me to make me cumdrunk?");
-			writeText("You can feel your balls clenching as you hear the front door opening and shutting after.");
-			writeBig("images/chubby/1-4.jpg", "Art by Oreteki18kin");
-			writeSpeech("chubby", "", "Cumming~<br>Welcome home honey! Master is here!");
-			writeSpeech("purple", "", "Master?!");
-			writeText("purpleF runs into the room as your cock flops out of her mother.");
-			writeBig("images/chubby/1-2.jpg", "Art by Oreteki18kin");
-			if (data.player.gender = "man") {
-				writeSpeech("chubby", "", "Don't worry honey, I saved you some. I'm sure he'll be ready for another round after he watches you suck his cum out of my pussy.");
+		case "pornstar1": {
+			writeBig("images/pornstar/1-1.jpg", "Art by Oreteki");
+			writeSpeech("pornstar", "", "Your credentials set a high bar, were they overselling you?");
+			writeSpeech("player", "", "All this to test if I'm worthy of your daughter?");
+			writeSpeech("pornstar", "", "Of course not! But hearing about how my little girl shot her first creampie...<br>I'm just horny, now hurry up and-");
+			writeBig("images/pornstar/1-2.jpg", "Art by Oreteki");
+			writeSpeech("pornstar", "", "Ah~! Oh my, so forwards!");
+			writeSpeech("player", "", "Shut up! What the fuck is wrong with your head? 'My little girl got creampied'! How the hell does that get you off?");
+			writeSpeech("pornstar", "", "Nnngh~! More! I love when you talk dirty to me. Tell me what it was like.<br>She said it was ass to pussy. Did she feel good-Nnngh~!");
+			writeSpeech("player", "", "SHUT. UP. You and your daughter are both fucked in the head! I fucked her into the ground and she liked it!");
+			writeSpeech("pornstar", "", "Yes~! I wish I was there!");
+			writeSpeech("player", "", "YOU GOD.<br>DAMN.<br><b>SLUT!</b>");
+			writeSpeech("pornstar", "", "Fuck yes~! Rougher~! Cumming~!");
+			writeBig("images/pornstar/1-3.jpg", "Art by Oreteki");
+			writeText("You collapse backwards, spent.");
+			if (data.player.gender == "man") {
+				writeSpeech("pornstar", "", "Spectacular! Keep that energy up on camera and my daughter will be a star~!<br>Mmm, and so virile. Maybe I should take you home. My husband does love watching men in glasses.");
 			}
 			else {
-				writeSpeech("chubby", "", "Don't worry honey, I saved you some. I'm sure she'll be ready for another round after she watches you suck her cum out of my pussy.");
+				writeSpeech("pornstar", "", "Spectacular! Keep that energy up on camera and my daughter will be a star~!<br>Mmm, and so virile. Maybe I should take you home. My husband does love watching big-dicked women in glasses.");
 			}
-			writeText("...");
-			writeBig("images/purple/3-3.jpg", "Art by Oreteki18kin");
-			writeText("You collapse backwards onto the bedspread, totally spent.");
-			writeSpeech("chubby", "", "Now now purpleF, no need to be greedy.");
-			writeText("The daughter doesn't have the stamina of the mother. After only two rounds purpleF couldn't take any more, and now she grimaces as she sucks the results of your fourth and fifth round off her mother's tits.");
-			writeSpeech("chubby", "", "Now, what do we say for master?");
-			writeSpeech("purple", "", "*Mwah*!<br>Thank you for filling us up master!");
-			writeText("After a short break, you opt to get a move on as they fall asleep coated in your pungent cum.");
-			if (data.player.location == "vintageStreet") {
-				writeFunction("changeLocation(data.player.location)", "Finish");
-			}
+			writeText("What the fuck is wrong with this family? What the fuck is wrong with this town? You dimly hear pornstarF call you a taxi, then you feel large hands lift you up and cart you out the door.");
+			writeText("Soon enough you're back home.");
+			writeFunction("changeLocation('playerHouse')", "Go back");
+			break;
+		}
+		default: {
+			writePhoneSpeech("player", "", "Error! You must've called the wrong event. Error code: Failed to write event ("+name+") in "+character.index+".js");
 			break;
 		}
 	}
@@ -105,10 +87,16 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
+	{index: "placeholder", trust: 200,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
+	phoneRight.scrollTop = 0;
 	switch (name) {
+		case "placeholder": {
+			//Write the event's text here using writePhoneSpeech, writePhoneImage, and writePhoneChoices
+			break;
+		}
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong event. Error code: Failed to write phone event("+name+") in "+character.index+".js");
 			break;
@@ -117,18 +105,21 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 }
 
 //Don't touch anything below this, or things will break.
-//console.log(character.index+'.js loaded correctly. request type is '+requestType)
+console.log(character.index+'.js loaded correctly. request type is '+requestType)
 
 switch (requestType) {
+	case "load": {
+		data.story.push(character);
+		console.log(character);
+		console.log(data.story);
+		break;
+	}
 	case "encounter": {
 		writeEncounter(eventName);
 		break;
 	}
 	case "event": {
 		writeEvent(eventName);
-		if (data.player.location == 'gallery' && eventName != 'gallery') {
-			writeFunction("loadEncounter('system', 'gallery')", "Finish");
-		}
 		break;
 	}
 	case "unlock": {
