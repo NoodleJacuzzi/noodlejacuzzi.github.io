@@ -381,7 +381,7 @@ function writeScene(scene) {
 							writeFunction("writeEvent('prologueMemo')", data.story[2].lName+"'s Memo");
 							writeArtifact("bracelet");
 							writeArtifact("erotibox");
-							writeTransition("darkVault", "Request a Dark Vault artifact");
+							writeTransition("vault", "Request a Dark Vault artifact");
 							break;
 						}
 						case "Evening": {
@@ -755,7 +755,7 @@ function writeScene(scene) {
 		}
 		case "katyaIntro": {
 			writeSpeech("player", "", "What's up?");
-			writeSpeech("assistant", "", "The other day I got a text from my sister, she's getting into college nearby");
+			writeSpeech("assistant", "", "The other day I got a text from my sister, she's getting into college nearby.");
 			writeSpeech("player", "", "Nice!");
 			writeSpeech("assistant", "", "Yeah it's great. It's just that I commute pretty far to get here, and she doesn't have a car, so...");
 			writeSpeech("player", "", "We work for a shadowy corporation dealing in mystical artifacts. You can't just get her a driver?");
@@ -768,14 +768,14 @@ function writeScene(scene) {
 			break;
 		}
 		case "katyaYes": {
-			writeSpeech("player", "", "I'll need to run it by roommateF first, but there shouldn't be a problem.");
-			writeSpeech("assistant", "", "Yes! Thank you so much!");
-			writeText("She gives you a big hug before pulling out her phone and calling her sister.");
-			writeSpeech("assistant", "", "sisterF! Great news!");
-			writeText("Likewise, you call up roommateF. She gives the okay for assistantF's sister to use the spare room.");
 			var goof = {index: "sister", image: "", met: false, fName: "Katya", lName: "Rodriguez", desc:"Your assistant's sister, she'll be rooming with you.",};
 			data.story.push(goof);
 			data.player.color += "katya";
+			writeSpeech("player", "", "I'll need to run it by roommateF first, but there shouldn't be a problem.");
+			writeSpeech("assistant", "", "Yes! Thank you so much!");
+			writeText("She gives you a big hug before pulling out her phone and calling her sister.");
+			writeSpeech("assistant", "", "Katya! Great news!");
+			writeText("Likewise, you call up roommateF. She gives the okay for assistantF's sister to use the spare room.");
 			writeTransition("work", "Finish");
 			break;
 		}
@@ -1342,7 +1342,7 @@ function writeEvent(scene) {
 			break;
 		}
 		case "braceletResearch4": {
-			writeText("As you disrobed to enjoy bossL with the bracelet's power, she suprised you by calling assistantF into her office. She started chewing out assistantF over something about report formatting.");
+			writeText("As you disrobed to enjoy bossL with the bracelet's power, she surprised you by calling assistantF into her office. She started chewing out assistantF over something about report formatting.");
 			writeText("You didn't pay too much attention to what she was saying.");
 			writeBig("images/bracelet/research4-1.gif");
 			writeSpeech("boss", "", "Do... Do I make myself clear, assistantL?");
@@ -1374,7 +1374,7 @@ function writeEvent(scene) {
 			writeText("Your hands are on her neck, enjoying the bulge your dick makes as you thrust in and out.");
 			writeBig("images/bracelet/research5-2.gif");
 			writeSpeech("player", "", "Gah! What the hell are you-");
-			writeText("You jump in place as chairF grabs you by the ass to pull you deeper, taking you down to the balls. She moans as you feel her tongue slide out to run along your balls as she moans, clearly enjoying her prize.");
+			writeText("You jump in place as chairF grabs you by the ass to pull you deeper, taking you down to the balls. You feel her tongue slide out to run along your balls as she moans, clearly enjoying her prize.");
 			writeSpeech("player", "", "F-fuck~<br>Can you see me?");
 			writeText("She pulls back for a moment then slams her face down onto your crotch again.");
 			writeSpeech("player", "", "God damn! Gonna cum!");
@@ -1490,7 +1490,7 @@ function writeEvent(scene) {
 			writeBig("images/bracelet/katya1-1.gif");
 			writeSpeech("Ashley", "none", "Aw, did you start playing already?");
 			writeSpeech("Molly", "none", "Yup, I forgot to bring my controller so you're playing the winner.");
-			writeText(" While the girls chit-chat, you salivate at the spread of teen pussy in front of you. For the past few years, you've watched your neighbor's daughter grow up to be a beautiful young woman... and it was time to reap the benefits!");
+			writeText(" While the girls chit-chat, you salivate at the spread of teen pussy in front of you.");
 			writeSpeech("player", "", " Hey girls, mind if I help you get comfortable?");
 			writeText(" It takes you no time at all to strip sisterF and her friends completely bottomless; the three of them are totally unaware of your presence even as their jeans slip off their shapely legs, revealing their shaved slits ripe for the taking.");
 			writeBig("images/bracelet/katya1-2.gif");
@@ -1511,6 +1511,7 @@ function writeEvent(scene) {
 			writeBig("images/bracelet/katya1-5.gif");
 			writeText(" By the time you round back to your neighbor's barely legal daughter, you only manage a few thrusts...");
 			writeText(" ... before your throbbing cock slams inside her wet pussy and floods it with thick cum.");
+			writeBig("images/bracelet/katya1-6.gif");
 			writeText(" After you pull out, the girls are still completely unaware, albeit out of breath and blushing red. The room reeks of hardcore sex and their bodies glisten with sweat, but they don't seem to mind. Their eyes are still glued to the TV as they play their game, even as sisterF's used pussy steadily oozes out your semen.");
 			//writeText(" In the end, they have a sleepover... and so do you.");
 			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.patreon.com/swallows999`'>Swallows999</span>");
@@ -2396,7 +2397,7 @@ function writeEvent(scene) {
 			break;
 		}
 		case "coinOutdoor1": {
-			writeText("You fiddle with the coin, approaching Karlee at the counter.");
+			writeText("You fiddle with the coin, approaching Karlee at the counter to discuss some membership fees.");
 			writeSpeech("gym","","Oh, hey. It's playerF, right? I remember signing you up, but haven't seen you around.");
 			writeSpeech("player","","That's me. I was actually planning on discussing those membership fees.");
 			writeText("She gives a bit of a tired smile.");
@@ -2488,11 +2489,11 @@ function writeEvent(scene) {
 			writeSpeech("boss", "", "I'll need to throw you in a ditch somewhere afterwards, can't have this getting back to bite my perfect ass. Any last words?");
 			writeSpeech("player", "", "Uh, I have a few actually! First, you aren't going to shoot! Next...");
 			writeText("...");
-			writeBig("images/serum/research2-1.gif");
+			writeBig("images/serum/research3-1.gif");
 			writeSpeech("boss", "", "Ah~! Ah~! Harder! Ruin me!");
 			writeSpeech("player", "", "You fucking <b>BITCH</b>! Were you seriously about to kill me to get your rocks off!");
 			writeSpeech("boss", "", "I'm sorry master~! I don't know what came over me, I just needed to be fucked so bad~! Punish me, please!");
-			writeBig("images/serum/research2-2.gif");
+			writeBig("images/serum/research3-2.gif");
 			writeSpeech("boss", "", "Ah, yes~! More~!");
 			writeSpeech("player", "", "Oh, you'll get more, slut.");
 			break;
@@ -2822,14 +2823,14 @@ function checkForEvents() {
 				if (galleryCheck('braceletOutdoor1') == false) {
 					writeFunction("writeEvent('braceletOutdoor1')", "Take the bracelet to the gym");
 				}
-				if (data.player.color.includes('katyaIntro') == true) {
-					if (galleryCheck('braceletHome4') == false) {
-						writeFunction("writeEvent('braceletHome4')", "sisterF brought some friends over");
-					}
-				}
 				else {
 					if (galleryCheck('braceletOutdoor2') == false) {
 						writeFunction("writeEvent('braceletOutdoor2')", "Take the bracelet to the gym again");
+					}
+				}
+				if (data.player.color.includes('katyaIntro') == true) {
+					if (galleryCheck('braceletHome4') == false) {
+						writeFunction("writeEvent('braceletHome4')", "sisterF brought some friends over");
 					}
 				}
 				if (galleryCheck('braceletOutdoor4') == false) {

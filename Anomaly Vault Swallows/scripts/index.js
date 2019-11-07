@@ -629,6 +629,7 @@ function researchLevel(name) {
 
 function replaceCodenames(text) {
 	var codenameCheck = "";
+	for (geminiLoop = 0; geminiLoop < 5; geminiLoop++) {
 	text = text.replace('playerF', data.player.fName);
 	text = text.replace('playerL', data.player.lName);
 	for (codenameIndex = 0; codenameIndex < data.story.length; codenameIndex++) {
@@ -636,6 +637,7 @@ function replaceCodenames(text) {
 		text = text.replace(codenameCheck, data.story[codenameIndex].fName);
 		codenameCheck = data.story[codenameIndex].index + "L";
 		text = text.replace(codenameCheck, data.story[codenameIndex].lName);
+	}
 	}
 	return text;
 }
