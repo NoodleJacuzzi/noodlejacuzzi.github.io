@@ -141,7 +141,7 @@ function writeScene(scene) {
 			writeText("There's a moment of silence before a large metal door behind you opens. A vaguely familiar face greets you.");
 			writeBig("scripts/gamefiles/characters/assistant.jpg");
 			data.story[1].met = true;
-			writeSpeech("assistant", "", "Mr. "+data.player.lName+"! Glad you're back. After the fifth attempt management said we should give up on you.");
+			writeSpeech("assistant", "", "Mr. playerL! Glad you're back. After the fifth attempt management said we should give up on you.");
 			writeText("She tosses you a coat and a change of clothes. Looking over yourself, you're wearing what almost resembles a hospital gown.");
 			writeText("It's all coming back to you, you grabbed some earings, and...");
 			writeBig("images/misc/dream1-1.gif");
@@ -151,7 +151,7 @@ function writeScene(scene) {
 		case "prologue4": {
 			writeSpeech("assistant", "", "Are you feeling alright? The amnestics should have blocked most of it out.");
 			writeSpeech("player", "", "Yeah... Yeah I'm alright.");
-			writeText("You are "+data.player.fName+" "+data.player.lName+", researcher at the Anomaly Vault Research Office, responsible for the research and potential applications of artifacts found around the world.");
+			writeText("You are playerF playerL, researcher at the Anomaly Vault Research Office, responsible for the research and potential applications of artifacts found around the world.");
 			writeSpeech("assistant", "", "It'll all come back slowly, try not to push yourself. Mrs. Jensen says you're fine to head home for the day, so get some rest alright?");
 			writeText("She steps aside after handing you a glass of water.");
 			writeSpeech("assistant", "", "First door on the left, the drivers will take you home. Try not to recall the events of the research, alright?");
@@ -427,28 +427,369 @@ function writeScene(scene) {
 			}
 			break;
 		}
-		case "darkVault": {
-			
-			writeText("Request authorized. Which artifact will you requisition?");
-			writeText("WARNING: Dark Vault artifacts pose a significant risk to the researcher and, by extension, to Anomaly Vault. Great care has been taken to ensure that these artifacts cannot be removed from their testing area under any circumstance.");
-			writeText("In the event of misuse, onstaff security will seal the testing rooms and the researcher inside. Great care must be taken with these items.");
-			var researchStatus = 0;
-			var researchTotal = 0;
-			for (i = 0; i < galleryArray.length; i++) {
-				if (galleryArray[i].dark == true) {
-					researchTotal += 1;
-					if (galleryCheck(galleryArray[i].index) == true) {
-						researchStatus += 1;
-					}
+		case "newtown": {
+			document.getElementById('output').innerHTML += `
+				<div class="playerRoom">
+					<img class="backgroundPicture" src="scripts/gamefiles/locations/`+scene+`.jpg" usemap="#roomMap">
+				</div>
+			`;
+			writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
+			switch (data.player.time) {
+				case "Night": {
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('room')" style="top: 40%; left: 40%; max-width: 30%;">Go Home</div>
+					`;
+					break;
+				}
+				default: {
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('work')" style="top: 50%; left: 40%; max-width: 30%;">Anomaly Vault</div>
+					`;
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('studio')" style="top: 40%; left: 20%; max-width: 30%;">Gym</div>
+					`;
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('home')" style="top: 50%; left: 70%; max-width: 30%;">Go Home</div>
+					`;
 				}
 			}
-			writeText(researchStatus+" of "+researchTotal+" total dark vault scenes obtained.");
-			writeArtifact("gas");
-			writeArtifact("gummy");
-			writeArtifact("cage");
-			writeArtifact("onahole");
-			listCheats();
+			break;
+		}
+		case "newhome": {
+			document.getElementById('output').innerHTML += `
+				<div class="playerRoom">
+					<img class="backgroundPicture" src="scripts/gamefiles/locations/`+scene+`.jpg" usemap="#roomMap">
+				</div>
+			`;
+			writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
+			switch (data.player.time) {
+				case "Night": {
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('room')" style="top: 40%; left: 40%;
+						">Your Room</div>
+					`;
+					break;
+				}
+				default: {
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('room')" style="top: 20%; left: 55%;
+						">Your Room</div>
+					`;
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('town')" style="top: 75%; left: 75%; max-width: 30%;">Leave</div>
+					`;
+					writeTab('roommate', "roommateF's room");
+					writeTab('girlfriend', "girlfriendF is on the couch");
+					writeTab('sister', "sisterF's room");
+				}
+			}
+			break;
+		}
+		case "newroom": {
+			document.getElementById('output').innerHTML += `
+				<div class="playerRoom">
+					<img class="backgroundPicture" src="scripts/gamefiles/locations/`+scene+`.jpg" usemap="#roomMap">
+				</div>
+			`;
+			writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
+			switch (data.player.time) {
+				case "Night": {
+					break;
+				}
+				default: {
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('home')" style="top: 70%; left: 10%; max-width: 30%;">Leave</div>
+					`;
+				}
+			}
+			break;
+		}
+		case "newstudio": {
+			document.getElementById('output').innerHTML += `
+				<div class="playerRoom">
+					<img class="backgroundPicture" src="scripts/gamefiles/locations/`+scene+`.jpg" usemap="#roomMap">
+				</div>
+			`;
+			writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
+			switch (data.player.time) {
+				case "Night": {
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('room')" style="top: 40%; left: 40%; max-width: 30%;">Go Home</div>
+					`;
+					break;
+				}
+				default: {
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('town')" style="top: 70%; left: 50%; max-width: 30%;">Leave</div>
+					`;
+					writeTab('gym', "Go to the receptionist's desk");
+				}
+			}
+			break;
+		}
+		case "newwork": {
+			document.getElementById('output').innerHTML += `
+				<div class="playerRoom">
+					<img class="backgroundPicture" src="scripts/gamefiles/locations/`+scene+`.jpg" usemap="#roomMap">
+				</div>
+			`;
+			writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
+			switch (data.player.time) {
+				case "Night": {
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('room')" style="top: 40%; left: 40%; max-width: 30%;">Go Home</div>
+					`;
+					break;
+				}
+				default: {
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('office')" style="top: 40%; left: 50%;">Your Office</div>
+					`;
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('vault')" style="top: 70%; left: 15%;">Dark Vault</div>
+					`;
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('basement')" style="top: 40%; left: 15%;">Basement</div>
+					`;
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('town')" style="top: 70%; left: 50%;">Leave</div>
+					`;
+					writeTab('boss', "Mrs. bossL's office");
+					writeTab('chair', "Go to top floor");
+				}
+			}
+			break;
+		}
+		case "newoffice": {
+			document.getElementById('output').innerHTML += `
+				<div class="playerRoom">
+					<img class="backgroundPicture" src="scripts/gamefiles/locations/`+scene+`.jpg" usemap="#roomMap">
+				</div>
+			`;
+			writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
+			switch (data.player.time) {
+				case "Night": {
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('room')" style="top: 40%; left: 40%; max-width: 30%;">Go Home</div>
+					`;
+					break;
+				}
+				default: {
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('work')" style="top: 70%; left: 75%;
+						">Leave</div>
+					`;
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('lab')" style="top: 35%; left: 35%;">Research Artifacts</div>
+					`;
+					writeTab('assistant', "Your assistant's desk");
+				}
+			}
+			break;
+		}
+		case "newbasement": {
+			document.getElementById('output').innerHTML += `
+				<div class="playerRoom">
+					<img class="backgroundPicture" src="scripts/gamefiles/locations/`+scene+`.jpg" usemap="#roomMap">
+				</div>
+			`;
+			writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
+			switch (data.player.time) {
+				case "Night": {
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('room')" style="top: 40%; left: 40%; max-width: 30%;">Go Home</div>
+					`;
+					break;
+				}
+				default: {
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('storage')" style="top: 40%; left: 70%;">Storage Department</div>
+					`;
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('toolkit')" style="top: 70%; left: 15%;">Toolkit Department</div>
+					`;
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('prison')" style="top: 40%; left: 15%;">Prison Department</div>
+					`;
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<div class="pictureButton" onclick="sceneTransition('work')" style="top: 70%; left: 70%;">Back</div>
+					`;
+				}
+			}
+			break;
+		}
+		case "newmorning": {
+			document.getElementById('output').innerHTML += `
+				<div class="playerRoom">
+					<img class="backgroundPicture" src="scripts/gamefiles/locations/`+scene+`.jpg" usemap="#roomMap">
+				</div>
+			`;
+			document.getElementsByClassName('playerRoom')[0].innerHTML += `
+				<div class="pictureButton" onclick="sceneTransition('home')" style="top: 70%; left: 10%; max-width: 30%;">Get Out of Bed</div>
+			`;
+			break;
+		}
+		case "vault": {
+			if (data.player.time == "Night") {
+				writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
+				writeTransition("room", "Go Home");
+			}
+			else {
+				writeText("Request authorized. Which artifact will you requisition?");
+				writeText("WARNING: Dark Vault artifacts pose a significant risk to the researcher and, by extension, to Anomaly Vault. Great care has been taken to ensure that these artifacts cannot be removed from their testing area under any circumstance.");
+				writeText("In the event of misuse, onstaff security will seal the testing rooms and the researcher inside. Great care must be taken with these items.");
+				var researchStatus = 0;
+				var researchTotal = 0;
+				for (i = 0; i < galleryArray.length; i++) {
+					if (galleryArray[i].dark == true) {
+						researchTotal += 1;
+						if (galleryCheck(galleryArray[i].index) == true) {
+							researchStatus += 1;
+						}
+					}
+				}
+				writeText(researchStatus+" of "+researchTotal+" total dark vault scenes obtained.");
+				writeArtifact("gas");
+				writeArtifact("gummy");
+				writeArtifact("cage");
+				writeArtifact("onahole");
+				writeArtifact("toolkit");
+				listCheats();
+				writeTransition("work", "Go back");
+			}
+			break;
+		}
+		case "newlab": {
+			if (data.player.time == "Night") {
+				writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
+				writeTransition("room", "Go Home");
+			}
+			else {
+				writeText("The iron door of the Testing Lab closes behind you. The file registry shows a list of available artifacts.");
+				checkForEvents();
+				writeTransition("office", "Go back");
+			}
+			break;
+		}
+		case "newprison": {
+			if (data.player.time == "Night") {
+				writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
+				writeTransition("room", "Go Home");
+			}
+			else {
+				writeText("With a buzz, the prison department's door opens.");
+				writeSpeech("Security", "none", "Entry granted to playerF. Proceed with caution.");
+				writeTransition("basement", "Go back");
+			}
+			break;
+		}
+		case "newtoolkit": {
+			if (data.player.time == "Night") {
+				writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
+				writeTransition("room", "Go Home");
+			}
+			else {
+				writeText("With a buzz, the prison department's door opens.");
+				writeSpeech("Department Head", "none", "Yo. Help yourself.");
+				writeTransition("basement", "Go back");
+			}
+			break;
+		}
+		case "newstorage": {
+			if (data.player.time == "Night") {
+				writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
+				writeTransition("room", "Go Home");
+			}
+			else {
+				writeText("You press the small button and the storage department monitor comes alive.");
+				writeText("Scores of artifacts are kept underground either for safety or storage purposes. After authenticating yourself you're free to choose one to bring up.");
+				writeTransition("basement", "Go back");
+			}
+			break;
+		}
+		//Characters
+		case "roommate": {
+			writeText("After a knock on the door, roommateF answers.");
+			writeSpeech("roommate", "", "Hey, what's up?");
+			checkForEvents();
+			writeTransition("home", "Go back");
+			break;
+		}
+		case "sister": {
+			writeText("You knock, and quickly enough sisterF shouts through the door.");
+			writeSpeech("roommate", "", "Yeah?");
+			checkForEvents();
+			writeTransition("home", "Go back");
+			break;
+		}
+		case "girlfriend": {
+			writeText("girlfriendF is relaxing on the couch, waiting for roommateF to get ready.");
+			checkForEvents();
+			writeTransition("home", "Go back");
+			break;
+		}
+		case "assistant": {
+			writeText("assistantF's desk is meticulously organized.");
+			writeSpeech("asssitant", "", "'Did not show any...' Hmm. I might need to put a pin in this one. Need something?");
+			checkForEvents();
+			writeTransition("office", "Go back");
+			break;
+		}
+		case "boss": {
+			writeText("The door to Mrs. bossL's office is closed. She prefers scheduled appointments, but you can knock in case of emergency.");
+			checkForEvents();
 			writeTransition("work", "Go back");
+			break;
+		}
+		case "chair": {
+			writeText("The elevator is open, you could head up if you needed something.");
+			checkForEvents();
+			writeTransition("work", "Go back");
+			break;
+		}
+		case "gym": {
+			writeText("gymF is currently talking to a patron, but it seems like they're just finishing up.");
+			checkForEvents();
+			writeTransition("gym", "Go back");
+			break;
+		}
+		case "katyaIntro": {
+			writeSpeech("player", "", "What's up?");
+			writeSpeech("assistant", "", "The other day I got a text from my sister, she's getting into college nearby");
+			writeSpeech("player", "", "Nice!");
+			writeSpeech("assistant", "", "Yeah it's great. It's just that I commute pretty far to get here, and she doesn't have a car, so...");
+			writeSpeech("player", "", "We work for a shadowy corporation dealing in mystical artifacts. You can't just get her a driver?");
+			writeSpeech("assistant", "", "I considered that, but since Mrs. bossL is in charge of the budget, I'd need to get her to sign off.");
+			writeSpeech("player", "", "Ah. So you want me to...?");
+			writeSpeech("assistant", "", "I was wondering if my sister could stay at your place, just for a little while until she gets her footing.");
+			writeSpeech("player", "", "<i>Another woman living with me could be a pretty good target for some fun...</i>");
+			writeTransition("katyaYes", "No problem");
+			writeTransition("work", "I'll get back to you on that");
+			break;
+		}
+		case "katyaYes": {
+			writeSpeech("player", "", "I'll need to run it by roommateF first, but there shouldn't be a problem.");
+			writeSpeech("assistant", "", "Yes! Thank you so much!");
+			writeText("She gives you a big hug before pulling out her phone and calling her sister.");
+			writeSpeech("assistant", "", "sisterF! Great news!");
+			writeText("Likewise, you call up roommateF. She gives the okay for assistantF's sister to use the spare room.");
+			var goof = {index: "sister", image: "", met: false, fName: "Katya", lName: "Rodriguez", desc:"Your assistant's sister, she'll be rooming with you.",};
+			data.story.push(goof);
+			data.player.color += "katya";
+			writeTransition("work", "Finish");
+			break;
+		}
+		case "katyaMeeting": {
+			writeText("There's a knock at your door. You go to answer it and a young woman is standing in your doorway.");
+			writeBig("scripts/gamefiles/characters/sister.jpg");
+			writeSpeech("sister", "", "You must be the guy, yeah? Thanks for the room!");
+			writeSpeech("player", "", "The guy? Oh, you're assistantF's sister?");
+			writeText("She pushes past you and takes a look around.");
+			writeSpeech("sister", "", "Hey, not bad. assistantF said I had a guest room? It upstairs?");
+			writeSpeech("player", "", "Yep, first door on the left. Bathroom's on the right, dinner's-");
+			writeSpeech("sister", "", "Thanks!");
+			writeText("She runs off, ignoring you. Oh well, at least she's cute.");
+			data.player.color += "katyaIntro";
 			break;
 		}
 		//Artifacts
@@ -580,6 +921,30 @@ function writeScene(scene) {
 			writeTransition("work", "Go back");
 			break;
 		}
+		case "coinResearch": {
+			tempScene = 'work';
+			researchLevel('coin');
+			break;
+		}
+		case "coinFailed": {
+			writeText("");
+			writeText("You've already finished researching this artifact, but there might be more to do with it if you bring it home, if you haven't already.");
+			writeText("Maybe you'll be hit with inspiration soon.");
+			writeTransition("work", "Go back");
+			break;
+		}
+		case "serumResearch": {
+			tempScene = 'work';
+			researchLevel('serum');
+			break;
+		}
+		case "serumFailed": {
+			writeText("");
+			writeText("You've already finished researching this artifact, but there might be more to do with it in the future.");
+			writeText("Maybe you'll be hit with inspiration soon.");
+			writeTransition("work", "Go back");
+			break;
+		}
 		case "erotiboxResearch": {
 			tempScene = 'work';
 			if (galleryCheck('erotiboxResearch1') != true) {
@@ -640,6 +1005,16 @@ function writeScene(scene) {
 		case "gasFailed": {
 			tempScene = "work";
 			writeEvent('gasResearch3');
+			break;
+		}
+		case "toolkitResearch": {
+			tempScene = 'work';
+			researchLevel('toolkit');
+			break;
+		}
+		case "toolkitFailed": {
+			tempScene = "work";
+			writeEvent('toolkitResearch3');
 			break;
 		}
 		case "gummyResearch": {
@@ -837,12 +1212,12 @@ function writeEvent(scene) {
 		}
 		case "prologue2": {
 			writeSpeech("Security", "scripts/gamefiles/logo.png", "Identification?");
-			writeSpeech("player", "", ""+data.player.fName+" "+data.player.lName+", Aleph.");
+			writeSpeech("player", "", "playerF playerL, Aleph.");
 			writeSpeech("Security", "scripts/gamefiles/logo.png", "Confirmed. Line secured, recipient?");
-			writeSpeech("player", "", ""+data.player.lName+"'s office.");
+			writeSpeech("player", "", "playerL's office.");
 			writeSpeech("Security", "scripts/gamefiles/logo.png", "Confirmed, hold.");
 			writeText("...");
-			writeSpeech("assistant", "", ""+data.player.lName+"'s office.");
+			writeSpeech("assistant", "", "playerL's office.");
 			writeSpeech("player", "", "Hey Veronica, just letting you know I'm home safe.");
 			writeSpeech("assistant", "", "Oh good! I'm just cleaning up and prepping, we've got a new artifact tomorrow.");
 			writeSpeech("player", "", "We're not working on the earings?");
@@ -894,14 +1269,14 @@ function writeEvent(scene) {
 			updateMenu();
 			writeBig("scripts/gamefiles/items/bracelet.jpg");
 			writeSpeech("player", "", "This is experiment log RB-01, now commencing.");
-			writeText("You slip on the bracelet and turn towards "+data.story[1].fName+".");
+			writeText("You slip on the bracelet and turn towards assistantF.");
 			writeSpeech("player", "", "So? Anything?");
 			writeSpeech("assistant", "", "No sir, no immediate effect.");
 			writeSpeech("player", "", "Interesting. Maybe it's something that needs to be activated to work. Huh, I can't get this off.");
-			writeText(""+data.story[1].fName+" looks up from her notes before looking around with a confused look on her face.");
+			writeText("assistantF looks up from her notes before looking around with a confused look on her face.");
 			writeSpeech("assistant", "", "What was I...?");
-			writeSpeech("player", "", ""+data.story[1].fName+"?");
-			writeSpeech("assistant", "", "Ah! Oh, Mr. "+data.player.lName+", sorry. I must've been distracted for a moment.");
+			writeSpeech("player", "", "assistantF?");
+			writeSpeech("assistant", "", "Ah! Oh, Mr. playerL, sorry. I must've been distracted for a moment.");
 			writeSpeech("player", "", "Interesting.");
 			writeText("...");
 			writeSpeech("player", "", "I just smashed your favorite mug, and you don't even remember it?");
@@ -916,14 +1291,14 @@ function writeEvent(scene) {
 			writeText("...");
 			writeSpeech("player", "", "Hey! Bitch!");
 			writeBig("images/bracelet/research1-1.gif");
-			writeText("You slap "+data.story[1].fName+" hard on the ass, and she does a little jump on the spot while letting out a squeak. But instead of getting mad she just rubs her ass and looks around to see if anyone saw.");
+			writeText("You slap assistantF hard on the ass, and she does a little jump on the spot while letting out a squeak. But instead of getting mad she just rubs her ass and looks around to see if anyone saw.");
 			writeText("...");
 			writeSpeech("notes", "", "Findings:<br>The bracelet allows the wearer to be unperceived by others but only when the wearer desires to go unnoticed.<br>If the wearer wishes, any action they take will go unnoticed, including physical actions such as pinching and molesting. People affected by these actions will still feel the repercussions, but they will ignore the actions as if they were run of the mill occurrences.<br>The wearer can erase memories from other people's minds. This effect is limited to memories of the wearer or the wearer's indirect actions.");
 			break;
 		}
 		case "braceletResearch2": {
 			writeText("It takes some time to get used to, but walking around completely unnoticed is actually pretty nice. You need to actively want to be seen for anyone to notice you, so you accidentally bump into a few people as a result of not paying attention.");
-			writeText("You walk into your office and can see "+assistantF+" leaning back on her chair, her face looking a little flushed.");
+			writeText("You walk into your office and can see assistantF leaning back on her chair, her face looking a little flushed.");
 			writeSpeech("player", "", "No way...");
 			writeBig("images/bracelet/research2-1.gif");
 			writeSpeech("player", "", "Holy shit, you are! You little slut, you're trying to get off at work!");
@@ -937,14 +1312,14 @@ function writeEvent(scene) {
 			writeSpeech("player", "", "Damn right it will. I wonder if I can...");
 			writeText("You push her down onto the floor while she strokes her clit. She doesn't seem to notice, instead trying to get her watch off with her free hand until you take it.");
 			writeSpeech("player", "", "Here, and...");
-			writeText("You push your cock into "+assistantF+"'s mouth and make her start stroking the base with her free hand. In just a moment she's doing it  of her own volition, happily sucking on your head while she pleasures herself.");
+			writeText("You push your cock into assistantF's mouth and make her start stroking the base with her free hand. In just a moment she's doing it  of her own volition, happily sucking on your head while she pleasures herself.");
 			writeSpeech("assistant", "", "Mmm~... Mmm~...<br><i>God, he feels so real today... I'm going to get caught if I keep this up.</i>");
 			writeBig("images/bracelet/research2-3.gif");
 			writeSpeech("player", "", "Nggh... Gonna-");
-			writeText("You can hear the sound of a door closing across the hallway, and "+assistantF+" jerks up at the sound.");
+			writeText("You can hear the sound of a door closing across the hallway, and assistantF jerks up at the sound.");
 			writeSpeech("assistant", "", "Shit... Fuck, he'll be back any second.");
-			writeText("Leaving you tragically unfinished, "+assistantF+" quickly starts putting her clothes back on and leans out into the hallway to see if you're coming. Which you aren't.");
-			writeSpeech("player", "", "Fuck, oh well. I should get to work anyway. I'll work faster next time, I guess.<br>"+assistantF+"?");
+			writeText("Leaving you tragically unfinished, assistantF quickly starts putting her clothes back on and leans out into the hallway to see if you're coming. Which you aren't.");
+			writeSpeech("player", "", "Fuck, oh well. I should get to work anyway. I'll work faster next time, I guess.<br>assistantF?");
 			writeSpeech("assistant", "", "Aaaah! Oh my god, you scared me! How'd you get over there?");
 			break;
 		}
@@ -962,18 +1337,69 @@ function writeEvent(scene) {
 			writeBig("images/bracelet/research3-2.gif");
 			writeSpeech("assistant", "", "Mmmm~! Ah~!<br><i>It happened again, I definitely just came...</i>");
 			writeSpeech("player", "", "I'll let you soak in the afterglow, you won't notice if I just go ahead and leave will you? Didn't think so.");
-			writeText("She gave you a pretty neat idea, but "+assistantF+" is already on a pretty hair trigger. It'd be more fun to push someone else, but who?");
+			writeText("She gave you a pretty neat idea, but assistantF is already on a pretty hair trigger. It'd be more fun to push someone else, but who?");
 			writeSpeech("assistant", "", "Mmm~... B-boss? Where'd you go?");
 			break;
 		}
+		case "braceletResearch4": {
+			writeText("As you disrobed to enjoy bossL with the bracelet's power, she suprised you by calling assistantF into her office. She started chewing out assistantF over something about report formatting.");
+			writeText("You didn't pay too much attention to what she was saying.");
+			writeBig("images/bracelet/research4-1.gif");
+			writeSpeech("boss", "", "Do... Do I make myself clear, assistantL?");
+			writeSpeech("assistant", "", "Yes ma'am! <br><i>Fuck, I screwed up on this one. She's red in the face... I wanna go home... </i>");
+			writeText("You do feel a little bad for assistantF for a moment though, with the way you're pounding bossL's cunt, it looks like bossL is trying to get up in assistantF's face and intimidate her.");
+			writeSpeech("player", "", "Acting so tough while you're getting fucked, you really do have an iron spirit, huh? How about... This!");
+			writeBig("images/bracelet/research4-2.gif");
+			writeSpeech("boss", "", "Ggghh~!");
+			writeText("A hard spank causes bossL's cunt walls to suddenly clench around you.");
+			writeSpeech("assistant", "", "<i>Did... Did she just have an orgasm from yelling at me? </i><br>I'll be... Be sure not to let it happen again, Mrs. bossL.");
+			writeText("assistantF slowly eases her way out of the room as you push bossL's head down onto the desk, making sure she feels every inch of you.");
+			writeSpeech("player", "", "Gonna cum, bitch! Take it all!");
+			writeBig("images/bracelet/research4-3.gif");
+			writeText("bossL's eyes roll back at her body shudders, but she doesn't make a sound as she tries to maintain her dignity.");
+			break;
+		}
+		case "braceletResearch5": {
+			writeText("The top floor, where the head honcho of Anomaly Vault spends her time. She's not super involved with most of the daily events, she's less CEO and more Majority Shareholder.");
+			writeText("Rumors abound that she actually reports to a shadowy council, like the Illuminati but a cube, not a pyramid.");
+			writeText("In any case it's no big deal to use the bracelet to sneak in. You slide past someone leaving and walk into her... Office?");
+			writeBig("scripts/gamefiles/characters/chair.jpg");
+			writeText("She looks right at you as the door closes, but she's probably just looking at the door behind you.");
+			writeText("This place looks nothing like any office you've ever been in. There's no desk, and several walls give way to stunning balconies over large jungles. It's more like a botanical garden in here.");
+			writeText("chairF chairL, the head of Anomaly Vault, takes a seat on a nearby chair. It doesn't seem like she notices you.");
+			writeSpeech("player", "", "It's now or never.");
+			writeText("...");
+			writeBig("images/bracelet/research5-1.gif");
+			writeText("You stripped off her fancy robes and got to work enjoying yourself with your new fleshlight. Her plump lips make good padding for your pelvis as you slam your cock down her throat.");
+			writeText("Your hands are on her neck, enjoying the bulge your dick makes as you thrust in and out.");
+			writeBig("images/bracelet/research5-2.gif");
+			writeSpeech("player", "", "Gah! What the hell are you-");
+			writeText("You jump in place as chairF grabs you by the ass to pull you deeper, taking you down to the balls. She moans as you feel her tongue slide out to run along your balls as she moans, clearly enjoying her prize.");
+			writeSpeech("player", "", "F-fuck~<br>Can you see me?");
+			writeText("She pulls back for a moment then slams her face down onto your crotch again.");
+			writeSpeech("player", "", "God damn! Gonna cum!");
+			writeText("This finally breaks her rhythm. She pulls herself off your dick, not even so much as a gag or *glch* and starts stroking your length.");
+			writeSpeech("chair", "", "Do it. Give it to me.");
+			writeBig("images/bracelet/research5-3.gif");
+			writeText("She sighs appreciatively as your cock spurts its thick cream out onto her hand and arm.");
+			writeText("You stumble back as you finish, chairF lewdly licks her fingers clean of your jizz.");
+			writeSpeech("chair", "", "Well, I see you certainly enjoyed yourself. It was a lovely distraction for me as well.");
+			writeSpeech("player", "", "How-?");
+			writeSpeech("chair", "", "I am the chairwoman of the most powerful institution of the world. Even if I didn't have a bevy of reality-bending power sources in my possession, I still have ways to deal with perception alteration.");
+			writeSpeech("player", "", "Oh.");
+			writeSpeech("chair", "", "There's no need to worry. Neither your life or your job are in danger. If you were the type of person to use the bracelet for murder or something wasteful like that, we would have fried you the moment you touched it.");
+			writeSpeech("player", "", "Do you mean 'fired'?");
+			writeSpeech("chair", "", "No. <br>You should be getting back to work. The artifacts can get antsy when they feel ignored.");
+			break;
+		}
 		case "braceletHome1": {
-			writeSpeech("player", "", "Alright, I'm crossing a line here. No going back now.<br>"+roommateF+"? You finished?");
-			writeText("You don't hear an answer, but after a quick search you hear the shower to "+roommateF+"'s room shut off.");
-			writeSpeech("player", "", "Hey, "+roommateF+"?");
+			writeSpeech("player", "", "Alright, I'm crossing a line here. No going back now.<br>roommateF? You finished?");
+			writeText("You don't hear an answer, but after a quick search you hear the shower to roommateF's room shut off.");
+			writeSpeech("player", "", "Hey, roommateF?");
 			writeSpeech("roommate", "", "Just out of the shower, what's up?");
 			writeText("She calls back faintly through the multiple sets of doors.");
 			writeSpeech("player", "", "Just saying hey. You going somewhere today?");
-			writeSpeech("roommate", "", "Yeah, I'm meeting "+girlfriendF+" later today. I'll be out late.");
+			writeSpeech("roommate", "", "Yeah, I'm meeting girlfriendF later today. I'll be out late.");
 			writeSpeech("player", "", "No problem, have fun.");
 			writeText("You push open the door to her room, using the bracelet to hide your presence.");
 			writeBig("images/bracelet/home1-1.gif");
@@ -983,11 +1409,11 @@ function writeEvent(scene) {
 			writeText("She quickly turns off the screen. She's always been a bit of a prude, so her girlfriend is probably trying to get her to open up.");
 			writeText("She takes a deep breath as she sits on her bed, you're enjoying the bizarre, voyeuristic thrill. After making sure her window's closed, she lays back on the bed naked and opens her messages again.");
 			writeBig("images/bracelet/home1-2.gif");
-			writeSpeech("roommate", "", ""+girlfriendF+", you perv...");
+			writeSpeech("roommate", "", "girlfriendF, you perv...");
 			writeText("She must be really sensitive, she's already blushing hard and getting into it just from running her finger along her folds.");
 			writeText("You take a few careful steps forwards, but even when you look right into her eyes it's like you aren't even there.");
-			writeSpeech("roommate", "", "Mmm... "+girlfriendF+"...");
-			writeText("Deciding to push you luck, you slide your pants off and start jerking off right in front of "+roommateF+"'s face. She's jilling herself to a picture of her girlfriend in only lingerie, all while she's got a cock inches from her face.");
+			writeSpeech("roommate", "", "Mmm... girlfriendF...");
+			writeText("Deciding to push you luck, you slide your pants off and start jerking off right in front of roommateF's face. She's jilling herself to a picture of her girlfriend in only lingerie, all while she's got a cock inches from her face.");
 			writeText("But instead of being off guard, her eyes unfocus, her breathing gets deeper, and she starts rubbing her twat faster.");
 			writeSpeech("roommate", "", "<i>God.. I can almost smell...</i><br>No!");
 			writeText("She stops right on the verge of an orgasm and sits up.");
@@ -1000,14 +1426,14 @@ function writeEvent(scene) {
 			break;
 		}
 		case "braceletHome2": {
-			writeText("Just as you're about to start messing with "+data.story[0].fName+", her phone starts ringing. It's from her girlfriend, "+data.story[2].fName+".");
+			writeText("Just as you're about to start messing with roommateF, her phone starts ringing. It's from her girlfriend, "+data.story[2].fName+".");
 			writeText("...");
 			writeSpeech("girlfriend", "", "So? What did she say?");
 			writeSpeech("roommate", "", "She uh... Um... Nnn...");
 			writeSpeech("girlfriend", "", "Hey, are you alright? You sound kind of strange.");
 			writeBig("images/bracelet/home2-1.gif");
 			writeSpeech("roommate", "", "Y-yeah, I'm fine. I've just been a bit... B-bit...!");
-			writeText(""+data.story[0].fName+" clasps her hand over her mouth as she cums, her legs shaking.");
+			writeText("roommateF clasps her hand over her mouth as she cums, her legs shaking.");
 			writeSpeech("roommate", "", "<i>What the hell is going on? Did I just cum?</i><br>Sorry, I uh-");
 			writeSpeech("girlfriend", "", "Don't lie to me, I know what's going on you little slut.");
 			writeSpeech("roommate", "", "W-what?");
@@ -1021,18 +1447,18 @@ function writeEvent(scene) {
 			writeText("Her eyes roll back as she cums again on your dick.");
 			writeSpeech("girlfriend", "", "Well you have fun alright? Love you!");
 			writeSpeech("roommate", "", "Lov-");
-			writeText("You grab "+data.story[0].fName+"'s phone and throw it aside before grabbing "+data.story[0].fName+" by the hair so you can finish yourself off with her mouth.");
+			writeText("You grab roommateF's phone and throw it aside before grabbing roommateF by the hair so you can finish yourself off with her mouth.");
 			break;
 		}
 		case "braceletHome3": {
-			writeSpeech("girlfriend", "", "Oh hey! You must be "+data.player.fName+"!");
-			writeSpeech("player", "", girlfriendF+", I assume? "+roommateF+" talks about you all the time. Nice to meet you finally.");
+			writeSpeech("girlfriend", "", "Oh hey! You must be playerF!");
+			writeSpeech("player", "", girlfriendF+", I assume? roommateF talks about you all the time. Nice to meet you finally.");
 			writeSpeech("girlfriend", "", "All good I hope, nice to meet you too.");
 			writeText("She goes in for a handshake, and you take it. You also use the bracelet to lean in and rub your hand against her twat. Seeing her frazzled ought to be interesting.");
 			writeSpeech("girlfriend", "", "So what do you do?");
 			writeSpeech("player", "", "Huh? Oh, uh, I work as a warehouse manager of sorts.");
-			writeText("You get more into it. Maybe she just... Didn't notice? Maybe you were too gentle by accident. You start rubbing vigorously against her clit, ready to see her start to fumble her words as "+roommateF+" walks in.");
-			writeSpeech("roommate", "", "Welcome back. "+girlfriendF+", have you met "+data.player.fName+"?");
+			writeText("You get more into it. Maybe she just... Didn't notice? Maybe you were too gentle by accident. You start rubbing vigorously against her clit, ready to see her start to fumble her words as roommateF walks in.");
+			writeSpeech("roommate", "", "Welcome back. girlfriendF, have you met playerF?");
 			writeSpeech("girlfriend", "", "We were just introducing ourselves. He was telling me about his warehouse job.");
 			writeSpeech("roommate", "", "Good luck, he's never spilt any details to me.");
 			writeSpeech("girlfriend", "", "Really? It like a 'national defense classified' sort of thing?");
@@ -1050,15 +1476,44 @@ function writeEvent(scene) {
 			writeText("You've had enough games. You pull yourself out with a *POP*! and line yourself up for a single thrust into her twat.");
 			writeSpeech("player", "", "Let's see you keep a straight face when you're getting your womb filled!");
 			writeSpeech("girlfriend", "", "You worry too much. I... Um~... Come here.");
-			writeText(girlfriendF+" pulls "+roommateF+" close as you give a few thrusts, your balls clench as you feel yourself going over the edge.");
+			writeText(girlfriendF+" pulls roommateF close as you give a few thrusts, your balls clench as you feel yourself going over the edge.");
 			writeBig("images/bracelet/home3-2.gif");
-			writeText(girlfriendF+" leans as far forwards as she can beneath you and pulls "+roommateF+" into a deep kiss. You can feel "+girlfriendF+"'s pussy clench. She's french-kissing her girlfriend while a man pumps jizz into her womb.");
-			writeText("You pull out, spent, and watch as "+girlfriendF+"'s hole gapes a little open once you pull out. She must've cum at least twelve times by your count, but she's damn good at hiding it.");
+			writeText(girlfriendF+" leans as far forwards as she can beneath you and pulls roommateF into a deep kiss. You can feel girlfriendF's pussy clench. She's french-kissing her girlfriend while a man pumps jizz into her womb.");
+			writeText("You pull out, spent, and watch as girlfriendF's hole gapes a little open once you pull out. She must've cum at least twelve times by your count, but she's damn good at hiding it.");
 			break;
 		}
 		case "braceletHome4": {
-			writeBig("images/bracelet/home4-1.gif");
-			writeBig("images/bracelet/home4-2.gif");
+			writeSpeech("sister", "", "What the fuck, you left the door open!");
+			writeSpeech("Ashley", "none", "Huh...? I thought I closed it.");
+			writeSpeech("Molly", "none", "Get your head in the game Ash, otherwise you're going to get destroyed tonight.");
+			writeText(" You stand awkwardly in the corner as the girls filter into the living room and up the stairs. Slipping inside the room with the bracelet, you ware essentially invisible; Ashley didn't even notice as you followed right behind her. sisterF opens her bedroom door and the three teens pile onto the bed in front of the television.");
+			writeBig("images/bracelet/katya1-1.gif");
+			writeSpeech("Ashley", "none", "Aw, did you start playing already?");
+			writeSpeech("Molly", "none", "Yup, I forgot to bring my controller so you're playing the winner.");
+			writeText(" While the girls chit-chat, you salivate at the spread of teen pussy in front of you. For the past few years, you've watched your neighbor's daughter grow up to be a beautiful young woman... and it was time to reap the benefits!");
+			writeSpeech("player", "", " Hey girls, mind if I help you get comfortable?");
+			writeText(" It takes you no time at all to strip sisterF and her friends completely bottomless; the three of them are totally unaware of your presence even as their jeans slip off their shapely legs, revealing their shaved slits ripe for the taking.");
+			writeBig("images/bracelet/katya1-2.gif");
+			writeText(" You easily push your cock inside, enjoying the new sensation of sisterF's pussy...");
+			writeSpeech("sister", "", "O-oh! Fu-fuck...");
+			writeSpeech("Molly", "none", "What's up sisterF, you're really going to choke and let Ash play me next?");
+			writeSpeech("sister", "", "Hah... n-not on your life!");
+			writeBig("images/bracelet/katya1-3.gif");
+			writeText(" After a few minutes of Heaven, you pull out and fuck another blissfully unaware teen...");
+			writeSpeech("Molly", "none", "Ah! Uh, um, y-you scared me with that attack.");
+			writeSpeech("Ashley", "none", "Yeah, right! Excuses, excuses, excuses.");
+			writeBig("images/bracelet/katya1-4.gif");
+			writeText(" Prodding their mouth, with a little effort you even get them tasting each other with your dick...");
+			writeSpeech("Ashley", "none", "Mmmph... hmph!");
+			writeSpeech("Molly", "none", "I can't believe you said that in class!");
+			writeSpeech("sister", "", "Haha, yeah, that was pretty funny today.");
+			writeSpeech("player", "", " Huh, now I want to know what she said...");
+			writeBig("images/bracelet/katya1-5.gif");
+			writeText(" By the time you round back to your neighbor's barely legal daughter, you only manage a few thrusts...");
+			writeText(" ... before your throbbing cock slams inside her wet pussy and floods it with thick cum.");
+			writeText(" After you pull out, the girls are still completely unaware, albeit out of breath and blushing red. The room reeks of hardcore sex and their bodies glisten with sweat, but they don't seem to mind. Their eyes are still glued to the TV as they play their game, even as sisterF's used pussy steadily oozes out your semen.");
+			//writeText(" In the end, they have a sleepover... and so do you.");
+			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.patreon.com/swallows999`'>Swallows999</span>");
 			break;
 		}
 		case "braceletOutdoor1": {
@@ -1218,7 +1673,7 @@ function writeEvent(scene) {
 			writeSpeech("player", "", "They haven't changed?");
 			writeSpeech("assistant", "", "What? Aw man, that's lame. Hey, what're you doing?");
 			writeSpeech("player", "", "I mean, they're singles. Kinda feels like they were made for this.");
-			writeText("You toss bills into the air, 'making it rain' over "+assistantF+".");
+			writeText("You toss bills into the air, 'making it rain' over assistantF.");
 			writeSpeech("assistant", "", "That's degrading, I'm not going... to...");
 			writeText("...");
 			writeBig("images/erotibox/research5-1.gif");
@@ -1227,8 +1682,8 @@ function writeEvent(scene) {
 			writeSpeech("assistant", "", "You wanna go all the way? Just a little more for me, baby.");
 			writeBig("images/erotibox/research5-2.gif");
 			writeSpeech("player", "", "But... But I'm out of bills...");
-			writeText("With that, "+assistantF+"'s eyes light up in confusion and anger. She's baffled for a second as she looks around, before she slaps you in the face and covers herself with her arms.");
-			writeSpeech("notes", "", "Findings:<br>The bills were replaced with a visually identical set of bills, titled 'Stripper Money' by researcher "+data.player.lName+". When thrown in the air above someone's head, that person will begin to put on a strip show. The length of this show and the energy of the stripper is determined by how quickly the money is thrown, until the thrower runs out of bills.");
+			writeText("With that, assistantF's eyes light up in confusion and anger. She's baffled for a second as she looks around, before she slaps you in the face and covers herself with her arms.");
+			writeSpeech("notes", "", "Findings:<br>The bills were replaced with a visually identical set of bills, titled 'Stripper Money' by researcher playerL. When thrown in the air above someone's head, that person will begin to put on a strip show. The length of this show and the energy of the stripper is determined by how quickly the money is thrown, until the thrower runs out of bills.");
 			break;
 		}
 		case "erotiboxResearch6": {
@@ -1244,7 +1699,7 @@ function writeEvent(scene) {
 			writeBig("images/erotibox/research6-1.gif");
 			writeSpeech("assistant", "", "G-gawd, I can't... Ohmigawd! Fuck meeee~!");
 			writeBig("images/erotibox/research6-2.gif");
-			writeSpeech("notes", "", "Findings:<br>The water inside the bottle was replaced with a highly arousing fast-acting aphrodisiac. Upon drinking subjects nearly immediately experience a massive drop in intelligence and vocabulary, ending with the subject becoming a 'squirting mess' as researcher "+data.player.lName+" described it.");
+			writeSpeech("notes", "", "Findings:<br>The water inside the bottle was replaced with a highly arousing fast-acting aphrodisiac. Upon drinking subjects nearly immediately experience a massive drop in intelligence and vocabulary, ending with the subject becoming a 'squirting mess' as researcher playerL described it.");
 			break;
 		}
 		case "erotiboxResearch7": {
@@ -1253,12 +1708,12 @@ function writeEvent(scene) {
 		}
 		case "erotiboxResearch8": {
 			writeSpeech("player", "", "<span id='ero10'>Now beginning test EB-08, I've got a uh...</span>");
-			writeText("<span id='ero9'>You look over to "+assistantF+".</span>");
+			writeText("<span id='ero9'>You look over to assistantF.</span>");
 			writeSpeech("assistant", "", "<span id='ero8'>Are you gonna put in your clipboard? We could use that flowerpot too if you want.</span>");
-			writeText("<span id='ero7'>You use the bracelet to push "+assistantF+" into the box without her realizing what's happening.</span>");
+			writeText("<span id='ero7'>You use the bracelet to push assistantF into the box without her realizing what's happening.</span>");
 			writeSpeech("player", "", "<span id='ero6'>Here's hoping this goes well.</span>");
 			writeSpeech("assistant", "", "<span id='ero5'>Huh? Here's hoping what-<br>Wait, what? What're-</span>");
-			writeText("<span id='ero4'>The bright purple flash is blinding, it's way more bright than usual, and lasts for almost half a minute before the light dims and "+assistantF+" steps out.</span>");
+			writeText("<span id='ero4'>The bright purple flash is blinding, it's way more bright than usual, and lasts for almost half a minute before the light dims and assistantF steps out.</span>");
 			writeText("<span id='ero3'>You can hear an alarm go off and the door clicks behind you, but...</span>");
 			writeBig("images/erotibox/research8-0.jpg");
 			writeText("<span id='ero1'>There's a scent in the air... It's intoxicating. Rescue is coming, but...</span>");
@@ -1302,7 +1757,7 @@ function writeEvent(scene) {
 		case "gasResearch1": {
 			writeSpeech("player", "", "Now commencing research on the dark vault artifact A-05-99, aka Exchange Gas.");
 			writeSpeech("assistant", "", "Good luck!");
-			writeText("Her voice is a bit staticy through the speaker. These items are more dangerous than the usual artifacts you deal with, so you don't have the authority to force "+assistantF+" to work with you. Not to mention all the cameras in the testing bay, the trackers, and the security guards outside the giant metal door.");
+			writeText("Her voice is a bit staticy through the speaker. These items are more dangerous than the usual artifacts you deal with, so you don't have the authority to force assistantF to work with you. Not to mention all the cameras in the testing bay, the trackers, and the security guards outside the giant metal door.");
 			writeText("But if this works properly, all this hassle should be worth it, even if the gas's effects are temporary.");
 			writeText("You pull the pin on the gas grenade and toss it away from you. Soon the mixed pink and blue cloud of gas fills the room.");
 			writeText("It isn't hard to breath like you expected, but a different problem soon arises as you double over.");
@@ -1320,8 +1775,8 @@ function writeEvent(scene) {
 			writeText("You get up and walk naked out of the recovery room, the bracelet keeping you hidden from any unwanted eyes. The air on your new naked body has you tingling all over as you make your way towards your office.");
 			writeText("...");
 			writeBig("images/gas/research1-2.gif");
-			writeSpeech("gasF", "", "*Mwah*!<br>Mmm... It's still not enough. How does "+roommateF+" manage all day?");
-			writeText("The female orgasm isn't quite what you'd imagined. It's like a pleasant buzz flowing through your body, and it lasts a lot longer than your old ones did. You've been jilling off while making out with "+assistantF+" for a while now, it's probably time to finish up. The gas's effects won't last much longer since you got such a small dose.");
+			writeSpeech("gasF", "", "*Mwah*!<br>Mmm... It's still not enough. How does roommateF manage all day?");
+			writeText("The female orgasm isn't quite what you'd imagined. It's like a pleasant buzz flowing through your body, and it lasts a lot longer than your old ones did. You've been jilling off while making out with assistantF for a while now, it's probably time to finish up. The gas's effects won't last much longer since you got such a small dose.");
 			writeText("...");
 			writeBig("images/gas/research1-3.gif");
 			writeSpeech("gasF", "", "Mmm~! They feel so nice!");
@@ -1340,7 +1795,7 @@ function writeEvent(scene) {
 			writeSpeech("assistant", "", "Aaah! Aaagh!");
 			writeText(assistantF+"writhes on the ground as your vision blinks in and out, your body changing more and more between each short blackout.");
 			writeText("Your clothes have torn apart and dissolved, and within moments you're in your new body. The vents kick on and the gas clears up.");
-			writeText("But "+assistantF+" is still writhing on the ground. The process must be slower for women. Her clit has grown at least three inches, and her pussy is spasming open and closed.");
+			writeText("But assistantF is still writhing on the ground. The process must be slower for women. Her clit has grown at least three inches, and her pussy is spasming open and closed.");
 			writeText("Her back arches as she thrusts her hips in the air, trying to push something out.");
 			writeSpeech("assistant", "", "Ghh... Ghhhg!");
 			writeText("*POP*!");
@@ -1390,7 +1845,7 @@ function writeEvent(scene) {
 			writeSpeech("gasF", "", "Do it! I don't care anymore, cum in me!");
 			writeBig("images/gas/research3-3.gif");
 			writeText("Hours go by, the two of you lost in an endless sexual frenzy.");
-			writeText("As the evening arose, you notice that no one's come in to check up on you, but that doesn't matter. You and "+assistantF+" never turned back to normal, but that didn't matter either.");
+			writeText("As the evening arose, you notice that no one's come in to check up on you, but that doesn't matter. You and assistantF never turned back to normal, but that didn't matter either.");
 			writeText("This is the rest of your life, spending everything for the sake of a cock in your twat.");
 			writeText("BAD END");
 			writeText("...");
@@ -1403,37 +1858,37 @@ function writeEvent(scene) {
 			writeSpeech("assistant", "", "It seems pretty old, ma-");
 			writeText("*CLICK*");
 			writeSpeech("player", "", "Sorry, what was that?");
-			writeText("The room is silent. Dead silent. "+assistantF+" is motionless, the ventilation is off, every noise that filled the room stops except for a light ticking.");
+			writeText("The room is silent. Dead silent. assistantF is motionless, the ventilation is off, every noise that filled the room stops except for a light ticking.");
 			writeText("It seems like time has stopped. The second hand on the stopwatch is moving freely now, and the watch is functional.");
 			writeText("*CLICK*");
 			writeSpeech("assistant", "", "-ybe we should clean it first?");
 			writeSpeech("player", "", "That was awesome. Here, give it a shot.");
-			writeText("You hand the stopwatch to "+assistantF+" who meekly accepts it.");
+			writeText("You hand the stopwatch to assistantF who meekly accepts it.");
 			writeSpeech("assistant", "", "Huh? Oh, sure. Did it work?");
 			writeText("*CLICK*");
 			writeText("After she clicks the button she's standing in a completely different spot, looking quite excited. You suddenly feel a rush of sensation to your crotch, as if someone rubbed it once or twice very quickly.");
 			writeText("...");
 			writeSpeech("player", "", "Hmm~ Hmm~ Just one more~");
-			writeText("You set down the final piece to your house of cards, the whole of the ensemble atop "+assistantF+"'s head.");
+			writeText("You set down the final piece to your house of cards, the whole of the ensemble atop assistantF's head.");
 			writeText("*CLICK*");
 			writeSpeech("assistant", "", "Eeeeek!");
 			writeText("The cards come tumbling down. An hour of progress falling apart before you, but you got a good reaction out of it so whatever.");
 			writeText("...");
-			writeText("After about ten full minutes of rubbing a spot on "+bossL+"'s hand, you decide that that's enough testing.");
+			writeText("After about ten full minutes of rubbing a spot on bossL's hand, you decide that that's enough testing.");
 			writeSpeech("player", "", "It's so weird for her to be so quiet.");
 			writeSpeech("assistant", "", "And so still. She's still intimidating though, even though she can't move.");
 			writeText("*CLICK*");
-			writeText("As time resumes "+bossL+" suddenly pulls back her hand, clutching it.");
+			writeText("As time resumes bossL suddenly pulls back her hand, clutching it.");
 			writeSpeech("player", "", "How does it feel?");
-			writeSpeech("boss", "", "It... It felt like you spent an hour rubbing it. Why exactly couldn't you have tested this on "+assistantF+"?");
+			writeSpeech("boss", "", "It... It felt like you spent an hour rubbing it. Why exactly couldn't you have tested this on assistantF?");
 			writeSpeech("notes", "", "Findings:<br>When the button at the top of the Time Stopwatch is depressed time stops for everyone except for anyone in direct contact with the stopwatch. Machines cease to function, causing near complete silence.<br>After time resumes, any actions done to someone who has been 'time-stopped' will be felt all at once, creating a sensory overload sensation.");
 			break;
 		}
 		case "stopwatchResearch2": {
-			writeSpeech("player", "", "Excuse me, Mrs. "+bossL+"?");
-			writeText("It's nice that we have a gym here in the facility. What isn't great is how "+bossL+" tends to be the reason it isn't used very frequently.");
+			writeSpeech("player", "", "Excuse me, Mrs. bossL?");
+			writeText("It's nice that we have a gym here in the facility. What isn't great is how bossL tends to be the reason it isn't used very frequently.");
 			writeSpeech("boss", "", "What is it?");
-			writeText(""+bossL+" is working out. She's got a fantastic body and is a treat to see in her workout pants. The problem is that she's just got such an intimidating aura that most people just try to avoid her.");
+			writeText("bossL is working out. She's got a fantastic body and is a treat to see in her workout pants. The problem is that she's just got such an intimidating aura that most people just try to avoid her.");
 			writeText("As one of the top-level supervisors, a single word from her can have you switching departments by the end of the day. Nobody wants to be transferred to the soul-vampire department.");
 			writeSpeech("player", "", "Ah, I just had something I wanted to show you. It has to do with the stopwatch.");
 			writeSpeech("boss", "", "And it couldn't wait? You really need me to do your job for you while I'm on my brea-");
@@ -1449,12 +1904,12 @@ function writeEvent(scene) {
 			writeText("If your research is right, then after you finish she'll feel the entirety of the blowjob all at once when you click the stopwatch again. There's a decent chance she'll actually choke on your cum if you finish in her mouth though.");
 			writeText("You pull out. You're just a little too late though, and you end up painting her face.");
 			writeText("But you obviously aren't satisfied.");
-			writeSpeech("player", "", "Lucky for me you've got another hole~<br>Mr. "+bossL+" won't mind will he? Do you think we should stop?");
+			writeSpeech("player", "", "Lucky for me you've got another hole~<br>Mr. bossL won't mind will he? Do you think we should stop?");
 			writeSpeech("boss", "", "...");
 			writeText("The silence answers your question for you. You begin getting her out of her clothes.");
 			writeText("Her mouth still open and her eyes still mid-blink, you push her down to the ground and push her legs against her shoulders.");
 			writeText("It's strange seeing her muscles clench, but if they couldn't it'd be like trying to pose a statue. Really, the more interesting reflex is...");
-			writeSpeech("player", "", "Holy shit! You're wet! It's like a faucet down here. Mr. "+bossL+" not satisfying you anymore?");
+			writeSpeech("player", "", "Holy shit! You're wet! It's like a faucet down here. Mr. bossL not satisfying you anymore?");
 			writeSpeech("boss", "", "...");
 			writeSpeech("player", "", "Poor bitch. Well, I do owe you for everything you've done for me!");
 			writeBig("images/stopwatch/research2-2.gif");
@@ -1483,7 +1938,7 @@ function writeEvent(scene) {
 			writeBig("images/stopwatch/research3-3.gif");
 			writeSpeech("player", "", "This makes hour number fifteen, I went to sleep earlier so the time might be off. I'm on the... Uh... Fifty second round of sex. I'm starting to wonder if she'll break after I resume. I figure if she can take fifty, fifty one should be fine too, right?");
 			writeText("...");
-			writeSpeech("player", "", "Happy birthday to you~ Happy birthday to you~ Happy birthday dear "+assistantF+", happy birthday to you~.<br>I decided to give her a break for today. I think this is hour seventy-two? The clock only goes from one to twelve.");
+			writeSpeech("player", "", "Happy birthday to you~ Happy birthday to you~ Happy birthday dear assistantF, happy birthday to you~.<br>I decided to give her a break for today. I think this is hour seventy-two? The clock only goes from one to twelve.");
 			writeText("...");
 			writeBig("images/stopwatch/research3-4.gif");
 			writeSpeech("player", "", "Ghh... Ahh... Alright. That's an even three hundred. Got the restorer right here in case she actually breaks from this. Gotta get clothed... And...");
@@ -1538,13 +1993,13 @@ function writeEvent(scene) {
 			writeText("*CLICK*");
 			writeText("You are genuinely impressed. She's already back to work, you didn't even need to erase any memories to avoid creating a scene after last time.");
 			writeText("*RIIIIP*");
-			writeText("But you aren't here to be impressed by "+roommateF+"'s strength of character. You can handle any potential fallout, it's time to enjoy yourself.");
-			writeText("It takes a bit of finagling, but you strip "+roommateF+" and get her into a half-decent position.");
+			writeText("But you aren't here to be impressed by roommateF's strength of character. You can handle any potential fallout, it's time to enjoy yourself.");
+			writeText("It takes a bit of finagling, but you strip roommateF and get her into a half-decent position.");
 			writeBig("images/stopwatch/home2-1.gif");
 			writeText("The classroom is silent except for the sounds of you railing the teacher. Every student watches with blank expressions as their teacher is fucked mid-word.");
-			writeText("But it isn't enough. You drag "+roommateF+" to an even more visible spot. You put her down onto a couch where you're surrounded by her frozen colleagues and students.");
+			writeText("But it isn't enough. You drag roommateF to an even more visible spot. You put her down onto a couch where you're surrounded by her frozen colleagues and students.");
 			writeBig("images/stopwatch/home2-2.gif");
-			writeText("You can live a live free of responsibility with the bracelet and the stopwatch together. The springs of the couch squeak as you slam into "+roommateF+"'s cunt in a position called the 'Mating Press'.");
+			writeText("You can live a live free of responsibility with the bracelet and the stopwatch together. The springs of the couch squeak as you slam into roommateF's cunt in a position called the 'Mating Press'.");
 			writeBig("images/stopwatch/home2-3.gif");
 			writeText("You can feel yourself cumming inside her, she'll feel all this stimulation all at once when you're finished.");
 			writeText("But you aren't done yet. You have all the time in the world to enjoy yourself.");
@@ -1586,13 +2041,13 @@ function writeEvent(scene) {
 			writeSpeech("assistant", "", "Another reality, yeah. Listen honey, we need to set some ground rules first.");
 			writeText(assistantF+" is writing something on a clipboard as she approaches you. Her outfit is more reserved as she has a more confident stance.");
 			writeSpeech("player", "", "I think I can-");
-			writeSpeech("assistant", "", "First off, this is our thirty-second attempt into dimension exploration. There's no contamination risk, just be sure to keep your actions under wraps.<br>Second off, your bracelet won't work here. Our "+data.player.fName+" confessed to stealing it, and we've neutralized its power in this dimension.");
+			writeSpeech("assistant", "", "First off, this is our thirty-second attempt into dimension exploration. There's no contamination risk, just be sure to keep your actions under wraps.<br>Second off, your bracelet won't work here. Our playerF confessed to stealing it, and we've neutralized its power in this dimension.");
 			writeText("It's true. Her eyes follow your body even if you don't want to be seen.");
-			writeSpeech("assistant", "", "Our "+data.player.fName+" is getting briefed over there just like you are. You're authorized to explore at your leisure, just be sure to follow common standards and not reveal any Anomaly Vault secrets.");
-			writeText("It seems like in this dimension "+assistantF+" is a lot more confident, and more than a little disrespectful. Without the bracelet you don't have a lot of control over the situation.");
+			writeSpeech("assistant", "", "Our playerF is getting briefed over there just like you are. You're authorized to explore at your leisure, just be sure to follow common standards and not reveal any Anomaly Vault secrets.");
+			writeText("It seems like in this dimension assistantF is a lot more confident, and more than a little disrespectful. Without the bracelet you don't have a lot of control over the situation.");
 			writeText("You spend the next few hours being briefed on this dimension's details.");
 			writeSpeech("notes", "", "Findings:<br>In this dimension gender dynamics, as in the attitude that men and women have towards each other is reversed and heavily exaggerated. Women are considered the dominant gender, while men are viewed to be naturally more submissive. <br>Women are expected to be the breadwinners, to lose their virginity to be considered an adult, and to be able to take charge of the situation.<br>Men are to stay home and to be accepting of sexual harassment.<br>Most notably, the scales are tipped further in a woman's favor than even your world's 1920s. Rape isn't even considered an offense so long as no other crime, like violent assault or pedophilia, are committed.");
-			writeText("Without the bracelet in this dimension, you could be in trouble here. You'll be pulled out whenever the "+data.player.fName+" of this world touches the mirror though, so you'll never be trapped.");
+			writeText("Without the bracelet in this dimension, you could be in trouble here. You'll be pulled out whenever the playerF of this world touches the mirror though, so you'll never be trapped.");
 			break;
 		}
 		case "mirrorResearch1-2": {
@@ -1603,7 +2058,7 @@ function writeEvent(scene) {
 			writeText("The doors close and you find a seat pretty easily. The woman stalking you realizes she was too late, and actually throws her phone down onto the ground in frustration.");
 			writeSpeech("player", "", "Geez, dodged that crazy bullet.");
 			writeSpeech("girlfriend", "", "Oh yeah?");
-			writeText("The woman who held the door for you takes a seat next to you. It's "+girlfriendF+"! You must have been in a rush and didn't recognize her at first.");
+			writeText("The woman who held the door for you takes a seat next to you. It's girlfriendF! You must have been in a rush and didn't recognize her at first.");
 			writeText("But it seems like she doesn't recognize you in this dimension, so it's best to play dumb.");
 			writeSpeech("player", "", "Yeah. She was follo-.");
 			writeSpeech("girlfriend", "", "Shhh. I help you, you give me something in return that's fun for both of us.");
@@ -1703,7 +2158,7 @@ function writeEvent(scene) {
 			writeText("You're ready to start headed home, this place wasn't built for people like you to have fun. Most of the shops are advertising fit trappish-looking men in briefs.");
 			writeText("That is, until you see someone familiar.");
 			writeSpeech("player", "", "Holy shit...");
-			writeText("Standing in front of one of the seedier looking shops is "+roommateF+"! She might not know you in this dimension, so you'll need to keep it subtle.");
+			writeText("Standing in front of one of the seedier looking shops is roommateF! She might not know you in this dimension, so you'll need to keep it subtle.");
 			writeSpeech("player", "", "Enjoying the view?");
 			writeText("She jumps and turns around.");
 			writeSpeech("roommate", "", "I-I was, uh<br>I was just-");
@@ -1753,14 +2208,14 @@ function writeEvent(scene) {
 			writeText("As you're pulled through the mirror you suddenly feel very exposed. Looking down, you can see that your clothes have disappeared.");
 			writeText("On instinct, you move to cover yourself and feel more than a little panicked. That fades once a familiar face comes up to you.");
 			writeBig("images/mirror/research2-1-1.jpg");
-			writeSpeech("assistant", "", "Hi! Welcome to our dimension, my name is "+assistantF+".");
+			writeSpeech("assistant", "", "Hi! Welcome to our dimension, my name is assistantF.");
 			writeSpeech("player", "", data.player.fName+". Um...");
 			writeSpeech("assistant", "", "Ah, right, sorry. Here you go.");
 			writeText("She tosses you a thin-looking bathrobe and you put it on just to have something to wear. It barely covers anything, the hem only going down your thigh. Not only that, but despite it being so thin it feels warm and stuffy.");
 			writeText("Looking around you can see that a number of technicians, mostly those working with dangerous tools, are wearing labcoats. Everyone else is going stark naked if possible.");
 			writeText("One of the technicians notices you looking, and pulls aside the flap of her coat to show you she's wearing nothing underneath before winking at you.");
 			writeText("Everyone looks gorgeous, you recognize some familiar faces and some look vaguely like more attractive versions of people you know.");
-			writeSpeech("assistant", "", "Sorry we only had the robe. You're only our second foray into dimension-hopping. Oh! "+bossF+" will want to see you, she should be here any minute now.");
+			writeSpeech("assistant", "", "Sorry we only had the robe. You're only our second foray into dimension-hopping. Oh! bossF will want to see you, she should be here any minute now.");
 			writeSpeech("boss", "", "I'm already here.");
 			writeBig("images/mirror/research2-1-2.jpg");
 			writeSpeech("boss", "", "You look surprised to see me. Fuck, wait, am I a bitch in your dimension too?");
@@ -1804,7 +2259,7 @@ function writeEvent(scene) {
 			writeText("Even though public use is common here, it seems like they still have dedicated locations where you can relief yourself sexually. Or maybe this is for the more introverted people of society, who'd rather they didn't need to make face-to-face contact with the people they're fucking.");
 			writeBig("images/mirror/research2-3-1.gif");
 			writeText("You decide to have some fun yourself. Although it goes by too quickly, and too soon reality is blurring around you.");
-			writeText("These visits don't last long enough for your taste. You'll probably bring up to "+assistantF+" that she should distract your double next time.");
+			writeText("These visits don't last long enough for your taste. You'll probably bring up to assistantF that she should distract your double next time.");
 			if (tempScene == 'work') {
 				tempScene = 'mirrorResearch';
 			}
@@ -1825,7 +2280,7 @@ function writeEvent(scene) {
 			writeBig("images/mirror/research2-4-3.gif");
 			writeSpeech("roommate", "", "NNNNgh~!!!!");
 			writeText("Students are cycled through this room to be tired out once or twice per day depending on their needs, but some teachers need to spend almost half their shift here.");
-			writeText("As "+roommateF+" is broken down with repeated orgasms, you opt to wander more around the school.");
+			writeText("As roommateF is broken down with repeated orgasms, you opt to wander more around the school.");
 			writeText("Most classrooms seem pretty normal, with the students having been drained it's not like there are orgies in every room.");
 			writeText("A female student drags an instructor into a nearby locker room for some relief.");
 			writeBig("images/mirror/research2-4-4.gif");
@@ -1849,6 +2304,205 @@ function writeEvent(scene) {
 			if (tempScene == 'work') {
 				tempScene = 'mirrorResearch';
 			}
+			break;
+		}
+		case "coinResearch1": {
+			writeBig("scripts/gamefiles/items/coin.jpg");
+			writeSpeech("player", "", "Now beginning test Md-01.");
+			writeSpeech("assistant", "", "Right, so artifacts like this usually activate when held. Do you feel any different?");
+			writeSpeech("player", "", "Nope. I mean, it is the 'Midas Coin', so maybe...");
+			writeText("You start touching things around you, but nothing happens.");
+			writeSpeech("player", "", "Nothing. I thought maybe it'd turn stuff to gold. And it doesn't turn humans either, or else this thing would be kept in the dark vault.<br>Maybe it's a dud? A lot of resources go into obtaining artifacts, it'd be a shame if we wasted them on this.");
+			writeSpeech("assistant", "", "I don't know, it is still a historical relic. Probably worth at least three assfucks.");
+			writeSpeech("player", "", "... What?");
+			writeText("...");
+			writeSpeech("player", "", "And this soda?");
+			writeSpeech("assistant", "", "Probably worth like, a handjob or something?");
+			writeText("You place the coin down onto the desk, then start shaking the can at assistantF.");
+			writeSpeech("player", "", "How much, again?");
+			writeSpeech("assistant", "", "It's a two dollar soda, have you figured out what the artifact does, or are you messing with me?");
+			writeSpeech("notes", "", "Findings:<br>When held, the Midas Coin causes sexual activities performed by the holder to be 'normalized', and not perceived to be socially outrageous no matter how depraved the action. In addition, sexual acts will be seen to have 'value', meaning that the holder can exchange sexual acts as though they had a cash value.");
+			break;
+		}
+		case "coinResearch2": {
+			writeSpeech("player", "", "Hey, you gonna drink that?");
+			writeSpeech("assistant", "", "Huh? Oh the soda. Yeah, and it's the last from the machine too, sorry.");
+			writeSpeech("player", "", "Oh well. Hey, how about I buy it from you?");
+			writeText("...");
+			writeBig("images/coin/research2-1.gif");
+			writeSpeech("assistant", "", "Glllch<br>Fuck, he's huge!");
+			writeText("You grab assistantF by the hair and force her down farther. A shiver of pleasure travels up your back as you hear her let out a giggle while deepthroating you.");
+			writeSpeech("player", "", "Fuck, how much are you enjoying this?");
+			writeText("She doesn't answer with words, not that she can with her face skewered on your dick. Instead she just focuses on rubbing her pussy while trying to pleasure your dick as much as her mouth can.");
+			writeSpeech("player", "", "Fuck, cumming~!");
+			writeBig("images/coin/research2-2.gif");
+			writeText("The room is filled even further with the sounds of a gag-fueled mouthfuck. assistantF doesn't let up even as you start to cum, you actually need to grab her by the hair and pull her off of you to get her to stop sucking, and even then she tries her best to suck down every drop.");
+			writeSpeech("assistant", "", "He-*AHEM*<br>Mhmm... Sucker... The soda was only like two bucks...");
+			writeText("She rests against the side of her desk as you start drinking the soda you 'paid' for.");
+			break;
+		}
+		case "coinHome1": {
+			writeText("In hindsight, it might not have been the most tactful option to go outside and scream, <i>\"We live in a free market economy\"</i> while undoing your belt, but on the other hand...");
+			writeBig("images/coin/publicCoin.gif");
+			writeText("At this point, you're more worried about undervaluing your currency...");
+			writeSpeech("Tongue-Piercing Girl","none","Come on big guy! Shoot that hot, <i>thick</i> capitalism all over our proletariat faces~!");
+			writeText("Wait what?");
+			writeSpeech("Girl on the Right","none","Ignore her, she's just thirsty for your means of reproduction.");
+			writeSpeech("player","","...Okay, so using an artifact that rewrites localized cognition has some unexpected effects. Live and learn.");
+			writeText("Could be worse, though. First time you've had four tongues dancing across your cock...");
+			writeSpeech("Nose-Piercing Girl","none","Are you getting close? Warn us before the money shot, okay hun?");
+			writeText("Maybe it's a side-effect of working at the Vault, but you could swear the puns only turn you on more...");
+			writeText("...");
+			writeText("As fun as it is to be able to pay for snacks by going down on the cute cashier (and as much as you've learned to appreciate actual money when the cashier isn't your type), coming up with an interesting way of using the coin is... kinda hard.");
+			writeText("Well, without having to resort to the Bracelet to keep yourself from getting a life-long ban from the store, anyway.");
+			writeText("Standing in front of the door to your place, you eat some more of your sexually-attained snacks and think.");
+			writeSpeech("player","","Can't believe I'm saying this, but I think I need some spare work...");
+			writeSpeech("girlfriend","","What a coincidence.");
+			writeText("You flinch, but keep yourself from jumping.");
+			writeSpeech("player","","Hey girlfriendF. Pretty sure roommateF is working.");
+			writeSpeech("girlfriend","","I was counting on it - I would like to ask you for a favor.");
+			writeText("You slowly slide a chip into your maw.");
+			writeSpeech("player","","Go on.");
+			writeSpeech("girlfriend","","roommateF is... observant. Particularly when it comes to me, and <i>especially</i> regarding gifts.");
+			writeSpeech("player","","Ah. Yeah, I think I see where this is going. You want my help picking something out?");
+			writeSpeech("girlfriend","","Yes. I'd rather like my surprise to <i>surprise</i> her for once.");
+			writeSpeech("player","","Not too hard. You know her favorite movies?");
+			writeSpeech("girlfriend","","Casablanca?");
+			writeSpeech("player","","Hah. I'm guessing she told you that on the first date? Her favorites are a little bit different...");
+			writeText("...");
+			writeText("With a pair Lord of the Rings bookends in tow, the two of you walk quietly to girlfriendF's place. When you get to the door...");
+			writeSpeech("girlfriend","","I could've paid for that digitally, you know.");
+			writeSpeech("player","","I figured, but why complicate things? You seem like the type to pay a guy back.");
+			writeText("She pauses, then smiles.");
+			writeSpeech("girlfriend","","Actually, you know what?");
+			writeText("Her finger loops around your belt, pulling you with her into her house.");
+			writeSpeech("girlfriend","","I think I'll do that now.");
+			writeText("The door shuts as she deftly un-does your pants, pulling them down just enough to have your cock flop against her hand.");
+			writeSpeech("girlfriend","","My throat for those bookends?");
+			writeSpeech("player","","Sounds fair. Do you want to get warmed up, or-");
+			writeText("She drops down, her mouth immediately getting to work.");
+			writeSpeech("player","","Or not...!");
+			writeText("...");
+			writeBig("images/coin/asaCoin.gif");
+			writeSpeech("player","","Holy <i>crap,</i> your throat is tight...!");
+			writeText("She bobs down to the base for a moment before popping back up, one hand jerking your slick shaft.");
+			writeSpeech("girlfriend","","If it weren't, it would hardly be worth the gift.");
+			writeSpeech("player","","Fair point. You'd better be ready though...!");
+			writeText("She smirks, throwing herself back into the blowjob enthusiastically.");
+			writeText("Pretty soon, you buck your hips forward <i>hard</i>, bottoming out as you pump your cum down her throat.");
+			writeText("When you finish, she pulls away and wipes a bit of cum and spit from her chin, licking it up with a smile.");
+			writeSpeech("girlfriend","","Now we're even. Thanks for the help with the gift - I'm sure roommateF will love it.");
+			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.reddit.com/user/CaptainCryptogreek`'>Captain Cryptogreek</span>");
+			break;
+		}
+		case "coinOutdoor1": {
+			writeText("You fiddle with the coin, approaching Karlee at the counter.");
+			writeSpeech("gym","","Oh, hey. It's playerF, right? I remember signing you up, but haven't seen you around.");
+			writeSpeech("player","","That's me. I was actually planning on discussing those membership fees.");
+			writeText("She gives a bit of a tired smile.");
+			writeSpeech("gym","","Sorry, but company policy is that I can't give discounts after the fact, even if you haven't been around.");
+			writeSpeech("player","","Actually, I'm here to pay them in advance, and maybe even upgrade?");
+			writeText("She perks right up, smiling wide.");
+			writeSpeech("gym","","In that case, we can talk in the back!");
+			writeText("...");
+			writeBig("images/coin/karleeCoin.gif");
+			writeText("She tightens her ass every time you bottom out, trying not to moan.");
+			writeSpeech("gym","","Y-You're not too bad! A l-little more, and you might pay for... for... F-Fuck...! <br> <i>C'mon Karlee, keep it together! You're a closer, not a quitter!</i>");
+			writeSpeech("player","","For a personal trainer, aren't you a bit easily distracted?");
+			writeSpeech("gym","","Not at all! I'm just... <i>very</i> focused on my client! <br> <i>Focus...! I'm so close to the sale I can practically feel it in my guts!</i>");
+			writeText("You roll your hips while thrusting, feeling your head pressing into every fold.");
+			writeSpeech("player","","Y'know, I'm just not sure if this is the right gym for me.");
+			writeText("Panicking, she clamps down tight on your cock.");
+			writeSpeech("gym","","I know this place'll be a <i>perfect fit</i> for you...!");
+			writeText("You slap her ass harshly, Karlee moaning sharply as she keeps rythmically tensing up.");
+			writeSpeech("gym","","W-We've got the best trainers around, and great equipment! No matter what kind of exercise you're looking for, you'll have people like me r-ready to c-<i>come</i> and help!");
+			writeSpeech("player","","That's a pretty good offer, but... Don't you think you should give the price?");
+			writeSpeech("gym","","Normally, it's another ten dollars a month, b-but I can make a one-time-deal! All of that, and all you've got to do is cum inside!");
+			writeText("You can feel yourself approaching the edge, so might as well...");
+			writeSpeech("player","","You've got a deal.");
+			writeText("You ram your cock into her ass, the sound ringing out as she muffles a moan.");
+			writeText("A few seconds later, you pour your load inside, a wave of relief going through her body.");
+			writeBig("images/coin/karleeCoin2.gif");
+			writeSpeech("gym","","T-Thank you for cumming...! You won't regret this...");
+			writeSpeech("player","","I'm getting that feeling, yeah.");
+			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.reddit.com/user/CaptainCryptogreek`'>Captain Cryptogreek</span>");
+			break;
+		}
+		case "coinDream1": {
+			writeText("A cold wind blows over the land, and you take a powerful breath of the show before you.");
+			writeBig("images/coin/dream1-1.gif");
+			writeText("More, more! You cry out. For all that it matters, society is your plaything.");
+			writeText("You lean back to enjoy the ride, but a single slip causes something precious to roll from your fingers.");
+			writeText("The coin rolls along the ground, stopping only for a crow to snatch it.");
+			writeText("Around you, confused exclamations are followed by terrified screams.");
+			writeText("Your paradise is lost to the ages.");
+			break;
+		}
+		case "serumResearch1": {
+			writeSpeech("player", "", "Now beginning test Ts-09. No time like the present!");
+			writeText("You take a swig of the liquid, it's very minty. Nothing happens right away, but almost immediately... Nothing continues to happen.");
+			writeSpeech("player", "", "No effect?");
+			writeSpeech("assistant", "", "Alright, no effect then, a dud.");
+			writeText("Without hesitation, assistantF begins logging down 'no effect' onto her clipboard.");
+			writeSpeech("player", "", "Slow down, it's too soon to make that kind of call. And Mrs. bossL will get on our case again if we make snap judgements in ink.");
+			writeSpeech("assistant", "", "Y-yeah, way too soon, sorry. And she's super anal about it.");
+			writeText("assistantF looks a little dazed as she crosses out her notes.");
+			writeSpeech("player", "", "... Actually she's really chill about wasting office supplies.");
+			writeSpeech("assistant", "", "Right? We're pretty lucky this is the one thing she doesn't care about.");
+			writeSpeech("player", "", "But she's actually the nicest person you've ever met.");
+			writeSpeech("assistant", "", "Yeah! I feel bad for... for-");
+			writeText("assistantF looks wobbly before she almost collapses. You catch her and make sure she can get her footing.");
+			writeSpeech("assistant", "", "Sorry. Sorry. It's weird, I just remembered a bunch of times Mrs. bossL was really nice to me, and I lost my balance for some reason.");
+			writeText("...");
+			writeSpeech("player", "", "So, could you recap all that?");
+			writeSpeech("assistant", "", "Of course. Your name is Doctor Pepper, and you're from Alabama, which is in the United States of Russia. You were born without a face, and...<br>Is this really necessary? Does your life story have something to do with the artifact? And some of this stuff seems a little far-fetched, now that I think about it.");
+			writeSpeech("notes", "", "Findings:<br><strike>No Effect</strike><br>When drunk, this minty fluid causes everything you say to be perceived as an absolute truth by anyone who can hear and understand you. The effects are temporary and targets develop a resistance over time, but until then the subject has absolute control over anyone in earshot. The effects are even capable of inducing physiological change, such as causing someone to become hungry despite having just eaten.");
+			break;
+		}
+		case "serumResearch2": {
+			writeBig("images/serum/research2-1.gif");
+			writeSpeech("assistant", "", "N-nggh... What's... It feels like something is wrong...");
+			writeSpeech("player", "", "What could be wrong? This is pretty normal for us.");
+			writeSpeech("assistant", "", "It is...? I don't remember.<br><i>Something about this feels... Off...</i>");
+			writeSpeech("player", "", "Are you not enjoying yourself?");
+			writeBig("images/serum/research2-2.gif");
+			writeSpeech("assistant", "", "Mmm, no! This is great, but it just feels like something isn't quite right.<br>Like, mmm... Like my brain is saying something is wrong, and right at the same time, you know?");
+			writeSpeech("player", "", "Nngh, gonna come. Want me to pull out?");
+			writeSpeech("assistant", "", "No, inside me! Please!");
+			writeBig("images/serum/research2-3.gif");
+			writeSpeech("assistant", "", "Ah~ Feels good~<br><i>Whatever it is, it's probably not important.</i><br>Can we go again soon?");
+			break;
+		}
+		case "serumResearch3": {
+			writeSpeech("boss", "", "So, what was so important you needed to interrupt me?");
+			writeText("You take a deep breath to compose yourself. The minty aftertaste of the serum does help you feel a little more empowered under her glare.");
+			writeSpeech("player", "", "I know your secret. I know you're a complete buttslut who can't even make it through the day without fantasizing about my cock up your ass.<br>I know you can't hold back anymore, that you're at your breaking point.");
+			writeText("After a moment of silence, bossF stands up, walks over to the door, shuts, and locks it.");
+			writeText("And then immediately pulls you out of your chair by the tie.");
+			writeSpeech("boss", "", "How'd you find out!? Who the fuck told you!? Was it chairL!?");
+			writeSpeech("player", "", "Uh, n-");
+			writeSpeech("boss", "", "Shove it!");
+			writeText("She pushes you back onto your chair and opens a drawer on her desk..");
+			writeSpeech("boss", "", "Trying to make me look bad in front of management, huh? Right before inspection, I bet. But you're right, I can't hold back.");
+			writeText("She pulls something that looks pretty close to a gun out of her desk drawer.");
+			writeSpeech("boss", "", "I'll need to throw you in a ditch somewhere afterwards, can't have this getting back to bite my perfect ass. Any last words?");
+			writeSpeech("player", "", "Uh, I have a few actually! First, you aren't going to shoot! Next...");
+			writeText("...");
+			writeBig("images/serum/research2-1.gif");
+			writeSpeech("boss", "", "Ah~! Ah~! Harder! Ruin me!");
+			writeSpeech("player", "", "You fucking <b>BITCH</b>! Were you seriously about to kill me to get your rocks off!");
+			writeSpeech("boss", "", "I'm sorry master~! I don't know what came over me, I just needed to be fucked so bad~! Punish me, please!");
+			writeBig("images/serum/research2-2.gif");
+			writeSpeech("boss", "", "Ah, yes~! More~!");
+			writeSpeech("player", "", "Oh, you'll get more, slut.");
+			break;
+		}
+		case "serumDream": {
+			writeText("Test tubes bubble around you. This dream feels a lot more recent than most.");
+			writeBig("images/serum/dream1-1.gif");
+			writeText("Cold metal keeps you clasped down as Mrs. chairL works your dick.");
+			writeText("She mutters to herself, saying she almost has the 'final ingredient'.");
+			writeText("The last piece of the puzzle before she has a serum powerful enough to take over Anomaly Vault and instate herself as head chairwoman.");
 			break;
 		}
 		case "cageResearch1": {
@@ -1960,6 +2614,81 @@ function writeEvent(scene) {
 			writeText("But there's a ray of hope. You can go on, and awaken from this bad dream, if you like.");
 			break;
 		}
+		case "toolkitResearch1": {
+			writeText("You unclasp the locks on the toolkit. Inside are several different fliers, a large bottle of skin cream, a girl's sweater, and some yoga pants. The fliers get progressively more lewd, starting with women in fashionable outfits and ending with...");
+			writeText("Something about this feels wrong, like you're skipping a step. Everything feels hazy as it feels like your body is on autopilot.");
+			writeText("You disrobe yourself and squirt some of the cream onto your hand.");
+			writeText("A faint part of your mind says to hold on, to figure out what is going on. Another, much louder part of your mind, probably scientific curiosity, pushes you forwards.");
+			writeText("You rub the cream into your skin, it tingles. Everywhere it touches feels smooth. Once your finished your whole body is tingling and shivering and you fall over. How clumsy!");
+			writeText("As you stand up and look back over yourself, your skin is now completely smooth and hairless. The fliers lay on the floor in a clump, you don't need them anymore.");
+			writeText("<i>Still not finished.</i>");
+			writeText("You put on the yoga pants and the sweater, they fit perfectly and relax on a nice soft bed.");
+			writeBig("images/toolkit/research1-1.gif");
+			writeText("You start stroking yourself, nice and slowly. You feel on edge already.");
+			writeBig("images/toolkit/research1-2.gif");
+			writeText("Already you're cumming, it feels so much thicker than normal. You can barely keep your hands on yourself, it feels like you could cum without touching your cock.");
+			writeText("<i>Still not finished.</i>");
+			writeText("You keep stroking and rubbing yourself, and you just keep cumming. Some part of you, deep inside, feels like it's getting bigger and stronger, while the rest of your body feels like it's getting weaker and softer.");
+			writeBig("images/toolkit/research1-3.gif");
+			writeText("<i>Good job.</i>");
+			writeText("You snap to, coming out of your daze. You're you again.");
+			writeText("You clean yourself off and switch back to our normal clothes. They feel... More loose.");
+			break;
+		}
+		case "toolkitResearch2": {
+			writeText("You unclasp the locks on the toolkit. Inside are a bra, some panties, a few wigs, a soft-looking blouse, and a bottle of wine.");
+			writeText("You don't feel the same impulsive autopilot you did before. Instead, looking at the contents of the kit, you feel like you're staring off the edge of a cliff. A voice in your mind screams. 'Jump!' 'Jump!'");
+			writeText("So you do. You down the wine, it tastes fruity. Your skin tingles like it did before, and now everything around you is slightly blurry. The wine must be very fast acting.");
+			writeText("You take the underwear out of the kit. You already have girly skin, it might be fun to see how it feels.");
+			writeText("You slide on the bra and the panties, they feel really nice. Everything feels itchy for a moment, but you know better than to scratch! You take a seat on the bed and wait for it to pass, and it does.");
+			writeBig("images/toolkit/research2-1.gif");
+			writeText("Your cock looks so cute in the panties... And this bra makes your chest look big. Didn't you have a normal-looking chest before?");
+			writeText("You rub your little cock through your panties. They're really nice, but it just doesn't feel... Right.");
+			writeText("<i>Still not finished.</i>");
+			writeText("And then the itching comes back, much stronger. It's so bad, and it doesn't go away! It's right below your navel, and pressing down on your tummy only makes it itch more!");
+			writeText("Maybe something in the toolkit will help! You put on the blouse, nothing. You put on the wig, it makes you feel pretty, but now's not the time! You pull of the panties. The itching comes by in pulses, every time it crescendos it feels like you desperately need to masturbate.");
+			writeText("You start trying to jerk yourself off, but it doesn't work. You can't get an erection with all this itching!");
+			writeText("You try to drink more wine, but the bottle is empty! You press it to your lips, and you don't know why, but you start slobbering all over the bottle. How inappropriate! But, you're desperate, and with desperation comes ideas.");
+			writeText("You set the bottle on the floor, it's really tough and solid, and squat over it.");
+			writeText("You press your little butthole against the neck of the bottle, and it starts to slide into you. The itching is really bad, you can't hold back anymore!");
+			writeText("And then the bottle bumps into something. Your body shivers, your little pecker jumps, and you can't hold back a sigh of relief. The itching finally weakens and you feel so... <i>Nice</i>...");
+			writeText("<i>Still not finished.</i>");
+			writeBig("images/toolkit/research2-2.gif");
+			writeText("Whenever you start to lift yourself off the bottle, the itching comes back. But whenever you thrust yourself back down, the relief washes over you again.");
+			writeText("You start going faster. Shallow thrusts, but the thing you're bumping into feels like it keeps getting bigger. The itching gets worse whenever it comes back, but the relief feels so good...");
+			writeBig("images/toolkit/research2-3.gif");
+			writeText("Part of you is aware that your pecker is squirting, but that doesn't matter. The itching, and the relief. That's all that's on your mind. You keep going, and your pecker keeps squirting. It's squirting alot! And just when it stops, it starts squirting again!");
+			writeText("Your legs shake, you can't keep yourself up anymore. Eventually, you need to give up and fall backwards, and you push the bottle out of yourself.");
+			writeText("<i>Good job.</i>");
+			writeText("You snap to, coming out of your daze. You're you again.");
+			writeText("Quickly you grab your pecker, it feels good to touch again, although a bit lacking in size compared to before.");
+			writeText("You look undeniably feminine now, but you put your clothes back on and leave. It might be a bad idea to come back here.");
+			break;
+		}
+		case "toolkitResearch3": {
+			writeText("With shaking hands you unclasp the locks on the toolkit, telling yourself this will be the last time. Inside is...");
+			writeText("Nothing.");
+			writeText("But there can't be nothing! You aren't done yet! You almost want to cry, until you feel a hand on your shoulder.");
+			writeText("There's a man in the room with you, several in fact! They all look like they want to be your friend, and they all look... So...");
+			writeText("They're all naked from the waist down, and all have real dicks. Much larger than yours. You can't help yourself, it's rude to do this without introducing yourself, but they don't seem to mind as you get on your knees.");
+			writeBig("images/toolkit/research3-1.gif");
+			writeText("You stroke the big, manly dick in front of you. Everyone is smiling, you must be doing it right! They have gifts, pretty lingerie, that must be why the toolbox was empty!");
+			writeText("You put on some of the clothes, but the one in front of you seems sad that you stopped. The itching comes back again, and you let out a pretty giggle as you have an idea.");
+			writeText("...");
+			writeBig("images/toolkit/research3-2.gif");
+			writeText("You can't help but squeal as he fucks you, as he pumps his big dick inside of you. There's no more itching, just the nice feeling of relief whenever he squishes your big bitch button with his dick.");
+			writeText("You keep squirting onto the sheets! But you promise to lick it clean after, so they aren't mad.");
+			writeText("Once the one inside you cums you feel the itching again, spreading throughout your body. But you feel like you can ignore it since it'll be satisfied again soon. All the other helpers want you to try on clothes too!");
+			writeText("...");
+			writeBig("images/toolkit/research3-3.gif");
+			writeText("You're having a lot of fun with your new helpers. Some really mean lady keeps buzzing her voice in the room, but you have your helpers to protect you if she tries to punish you.");
+			writeText("<i>Still not finished.</i>");
+			writeText("Still not finished! It keeps repeating in your head. Will it ever say 'good job' again? You hope not.");
+			writeText("BAD END");
+			writeText("...");
+			writeText("But there's a ray of hope. You can go on, and awaken from this bad dream, if you like.");
+			break;
+		}
 		default: {
 			writeText("You've encountered an error! Please let me know about this, the errorcode is:");
 			writeText("writeScene "+scene);
@@ -1993,6 +2722,7 @@ function writeEvent(scene) {
 
 function checkDay() { //For checking for holidays, payday, and for new text messages, alt-2 to close
 	var specialEvent = false;
+	timeSince = 0;
 	console.log("Now checking for special events for on day " + data.player.day);
 	if (data.player.day == 3) {
 		//specialEvent = true;
@@ -2020,9 +2750,53 @@ function checkForEvents() {
 		case "work": {
 			writeArtifact("bracelet");
 			writeArtifact("erotibox");
-			writeArtifact("mirror");
-			writeArtifact("stopwatch");
-			writeTransition("darkVault", "Request a Dark Vault artifact");
+			if (data.player.color.includes('mirror') == true) {
+				writeArtifact("mirror");
+				if (data.player.color.includes('stopwatch') == true) {
+					writeArtifact("stopwatch");
+					if (data.player.color.includes('coin') == true) {
+						writeArtifact("coin");
+					}
+					else {
+						if (timeSince != 1) {
+							writeSpeech("assistant", "", "New artifact in, boss! Some old coin from Ancient Greece. Management says 'careful not to spend it in a vending machine'.");
+							writeArtifact("coin");
+							data.player.color += 'coin';
+							timeSince = 1;
+						}
+					}
+				}
+				else {
+					if (timeSince != 1) {
+						writeSpeech("assistant", "", "New artifact in, boss! We've got a stopwatch from Romania, safe to handle.");
+						writeArtifact("stopwatch");
+						data.player.color += 'stopwatch';
+						timeSince = 1;
+					}
+				}
+			}
+			else {
+				if (timeSince != 1) {
+					writeSpeech("assistant", "", "New artifact in, boss! This one's some kind of fancy mirror from England.");
+					writeArtifact("mirror");
+					data.player.color += 'mirror';
+					timeSince = 1;
+				}
+			}
+			if (data.player.color.includes('serum') == true) {
+				writeArtifact("serum");
+			}
+			else {
+				if (galleryCheck('braceletResearch5') == true) {
+					writeText("There's a note on your desk. It reads 'For the curious researcher. Thanks for a good time.'<br>Beside it is a case of vials of green fluid, with an artifact file next to them.");
+					data.player.color += 'serum';
+					writeArtifact("serum");
+				}
+			}
+			if (data.player.color.includes('katya') != true) {
+				writeTransition("katyaIntro", "It seems like assistantF wants to ask you something.");
+			}
+			writeTransition("vault", "Request a Dark Vault artifact");
 			break;
 		}
 		case "home": {
@@ -2048,6 +2822,11 @@ function checkForEvents() {
 				if (galleryCheck('braceletOutdoor1') == false) {
 					writeFunction("writeEvent('braceletOutdoor1')", "Take the bracelet to the gym");
 				}
+				if (data.player.color.includes('katyaIntro') == true) {
+					if (galleryCheck('braceletHome4') == false) {
+						writeFunction("writeEvent('braceletHome4')", "sisterF brought some friends over");
+					}
+				}
 				else {
 					if (galleryCheck('braceletOutdoor2') == false) {
 						writeFunction("writeEvent('braceletOutdoor2')", "Take the bracelet to the gym again");
@@ -2058,15 +2837,11 @@ function checkForEvents() {
 				}
 			}
 			switch (data.player.artifact2) {
-				case "coin": {
-					break;
-				}
 				case "stopwatch": {
 					if (galleryCheck('stopwatchHome1') == false) {
 						writeFunction("writeEvent('stopwatchHome1')", "Use the stopwatch on " + data.story[0].fName + " at the school");
 					}
 					else {
-						
 						if (galleryCheck('stopwatchHome2') == false) {
 							writeFunction("writeEvent('stopwatchHome2')", "Use the stopwatch on " + data.story[0].fName + " at the school again");
 						}
@@ -2075,6 +2850,35 @@ function checkForEvents() {
 						writeFunction("writeEvent('stopwatchOutdoor1')", "Start a strip-show on the street");
 					}
 					break;
+				}
+				case "coin": {
+					if (galleryCheck('coinHome1') == false) {
+						writeFunction("writeEvent('coinHome1')", "Flaunt your new 'wealth' in public");
+					}
+					if (galleryCheck('coinOutdoor1') == false) {
+						writeFunction("writeEvent('coinOutdoor1')", "Go buy something with the Midas Coin");
+					}
+					break;
+				}
+				case "serum": {
+					if (galleryCheck('serumHome1') == false) {
+						//writeFunction("writeEvent('serumHome1')", roommateF+" is getting dressed");
+					}
+					if (galleryCheck('serumOutdoor1') == false) {
+						//writeFunction("writeEvent('serumOutdoor1')", "Drink the serum and go for a walk");
+					}
+					if (galleryCheck('serumOutdoor2') == false) {
+						//writeFunction("writeEvent('serumOutdoor2')", "Find someone to test the serum on");
+					}
+					if (galleryCheck('serumOutdoor3') == false) {
+						//writeFunction("writeEvent('serumOutdoor3')", "Drink the serum and go to the beach");
+					}
+					break;
+				}
+			}
+			if (data.player.color.includes('katya') == true) {
+				if (data.player.color.includes('katyaIntro') != true) {
+					sceneTransition('katyaMeeting');
 				}
 			}
 		}

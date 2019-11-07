@@ -212,55 +212,160 @@ V0.0
 		Update index news (COMPLETE)
 		Update index AV section (COMPLETE)
 		Write changelog (COMPLETE)
-		Patreon post
-		Add patreon post link
-		TFgames game update
-		TFgames add download links
-		TFgames new post
-		TFgames first post update
-		F95zone post
-	v2.5
-		Unlock artifacts one-by-one
-		New bracelet images set
+		Patreon post (COMPLETE)
+		Add patreon post link (COMPLETE)
+		TFgames game update (COMPLETE)
+		TFgames add download links (COMPLETE)
+		TFgames new post (COMPLETE)
+		TFgames first post update (COMPLETE)
+		F95zone post (COMPLETE)
+	new v3
+		Stiggy's CSS (COMPLETE)
+		Name replacement function (COMPLETE)
+		Mobile css
+		Change background
+		Generate buttons
+		Buttons only light up when there's relevant content
+		House navigation
+		Your room
+		Buttons with character faces
+		Roommate's room
+		Day 3 framework 
+			bracelet warning
+			stopwatch unlock
+			Asa on the couch
+			Asa introduction scene
+		Day 4 framework
+			Vault layout
+			Peta's office
+			Peta's introduction scene
+			Test chamber
+			Elevator
+			Dark vault intro
+			Toolbox department images
+			Toolbox department intro
+			Toolbox department
+		Day 5 framework
+			Town framework
+			Library
+			Library introduction
+			Librarian's desk
+			Gym
+			Gym introduction
+			Instructor's office
+		Day 6 framework
+			Veronica asks about Katya
+			Katya implementation
+			Katya logbook
+			Katya's room
+			Katya introduction
+			Librarian is away
+			Library dungeon framework
+		Day 7
+			Mirror dimension button
+			Mirror dimension framework
+			Unlock antique mirror
+		Day 9
+			Head's office button
+			Head's introduction scene
+			Mission warning
+		Toolbox department
+			Friend Magazine - Girl-renaming artifact
+			Wind-up clock - Returns you to day 1 / jumps you to day 100
+			Mobium Loop - Freezes the time unless you nap or sleep
+			Lonely Auditorium - Increases text size / picture size
+			Researcher's Notes - Unlocks the gallery
+			Wardrobe Lamp - Unlocks the wardrobe
+		Mirror dimension dungeon
+		Library dungeon
+		Prison department dungeon
+			Dwayne's cell
+			Sumerian's cell
+			Melting love's cell
+			Mercenary's cell
+			Blue star's cell
+			Blue star's cell only unlocked via cheat
+			Elevator to nurse's room
+			SilentResearch scene
+		Prison department
+			Magical girl's cell
+			Plague doctor's cell
+			Scheherazade's cell
+		New scenes
+			Bracelet images
+			Silent images
+			Serum images
+			Coin images
+			Toolkit images
+			Assign images in placeholders
+			Bracelet research 4
+			Bracelet research 5
+			Bracelet research 6
+			Bracelet home 4
+			Coin research 1
+			Coin research 2
+			Coin outdoor 1
+			Coin outdoor 2
+			Coin outdoor 3
+			Coin dream 1
+			Coin dream 2
+			SerumResearch1
+			SerumResearch2
+			SerumHome1
+			SerumOutdoor1
+			SerumOutdoor2
+			SerumOutdoor3
+			SerumDream
+			Serum failed
+			Toolkit research 1
+			Toolkit research 2
+			Toolkit research 3
+			Toolkit research 4
+	old v3
+		Unlock artifacts one-by-one (COMPLETE)
+		New scenes framework (COMPLETE)
+		New artifacts framework (COMPLETE)
+		Research placeholders (COMPLETE)
+		Scene placeholders (COMPLETE)
+		Test unlocking (COMPLETE)
+		Master cheat to unlock all scenes
+		silentResearch
 		Bracelet research 4
 		Bracelet research 5
 		Bracelet research 6
-		Dark Vault Introduction Scene
-		Toolbox Department
-		Toolbox head image
-		Toolbox Introduction Scene
-		Friend Magazine - Girl-renaming artifact
-		Wind-up clock - Returns you to day 1 / jumps you to day 100
-		Mobium Loop - Freezes the time unless you nap or sleep
-		Lonely Auditorium - Increases text size / picture size
-		Researcher's Notes - Unlocks the gallery
-		Wardrobe Lamp - Unlocks the wardrobe
-		Skip intro at game start - Equips bracelet and sets you to day 100
-		Master cheat to unlock all scenes
+		Bracelet home 4
+		Coin research 1
+		Coin research 2
+		Coin outdoor 1
+		Coin outdoor 2
+		Coin outdoor 3
+		Coin dream 1
+		Coin dream 2
+		CoinFailed
+		SerumResearch1
+		SerumResearch2
+		SerumHome1
+		SerumOutdoor1
+		SerumOutdoor2
+		SerumOutdoor3
+		SerumDream
+		Serum failed
+		Toolkit research 1
+		Toolkit research 2
+		Toolkit research 3
+		Toolkit research 4
+	v3
+		umbrellaResearch images collected / converted / cropped
+		umbrellaResearch
 		Erotibox uses a slider
-		Box of games in toolbox department
 		Cryptogreek cheat
-		Noodlejacuzzi, HAA, Princess Quest, Rainy DayZ, Bitch MEdicenter, Hentai University cheats all point to the box of games
+		Noodlejacuzzi, HAA, Princess Quest, Rainy DayZ, Bitch MEdicenter, Hentai University cheats
 		Free-roam in mirror world - Uses HU navigation
 			Dogs-rule dimension snippet
 			Free-use dimension snippet
 			Gender dynamics dimension snippet
 			Male worship dimension snippet
 			2d dimension snippet
-	v3
-		silentResearch images collected / converted / cropped
-		silentResearch for real
-		umbrellaResearch images collected / converted / cropped
-		umbrellaResearch
-		Convert toolkit images
-		Toolkit picture
-		Toolkit writeArtifact in dark vault
-		Toolkit scenes placeholder
-		Toolkit images assigned (COMPLETE)
-		Toolkit research 1
-		Toolkit research 2
-		Toolkit research 3
-		Toolkit research 4
 		
 Time cycle:
 Morning:
