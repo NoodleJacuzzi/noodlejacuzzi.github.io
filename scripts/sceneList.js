@@ -2,11 +2,11 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 10/25/2019</p>
-				<p class = "centeredText">Hentai University v3</p>
-				<p class = "centeredText">The release of Hentai University v3, with some new scenes and the entire engine rebuilt for (hopefully) easy mod support!</p>
+				<p class = "centeredText">Lastest News 11/8/2019</p>
+				<p class = "centeredText">Anomaly Vault v3</p>
+				<p class = "centeredText">The release of Anomaly Vault v3, with more bracelet scenes, two new main game artifacts, and </p>
 				<p class = "centeredText"></p>
-				<p class = "centeredText">Thank you to: Swallows999, Ben Dover, MrManPerson, Lasse B, ChronosEdge, Judavarius, Lunarghost, Scal, Adonnak, Andy Amundy, Angel, Ariados, Blaise Fenn, brandon, Debarre Sonny, Drashin, Gwen Yurick, iNoH8+, Jane, Jesse Greene, joe, joe mulhall, Karan Raj Gupta, lm Carma, marvin diaz, Mirza Hasan, murgatroid99, Nha, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Slipokk, Snaked, stratum, Wild Bill, Will Osboldstone, and 凱 陳 for supporting my work!</p>
+				<p class = "centeredText">Thank you to: Swallows999, Ben Dover, CaptainMontana, MrManPerson, Lasse B, Badaxe, ChronosEdge, Judavarius, Lunarghost, Scal, Adonnak, andy, Andy, Andy Amundy, Angel, Ariados, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, David Lange, Debarre Sonny, Drashin, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jane, Jesse Greene, joe, joe mulhall, Joshua Melzark, Karan Raj Gupta, LaCrazy, lm Carma, Luke, marvin diaz, Mirza Hasan, murgatroid99, Nha, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, sage, Skyrim mod lvr, Slipokk, Snaked, stratum, valdis, Vincent Madaire-Cullen, Wild Bill, Will Osboldstone, 大基 渡邊, and 凱 陳 for supporting my work!</p>
 			`;
 			writeTransition("news", "View all news updates");
 			document.getElementById('output').innerHTML +=`
@@ -17,14 +17,14 @@ function writeScene(scene) {
 			//writeTransition("recommendations", "Recommendations");
 			writeText("<br><br>");
 			writeBig("images/AnomalyVault.png");
-			writeText("Anomaly Vault v2");
+			writeText("Anomaly Vault v3");
 			writeText("You play as a researcher performing experiments on various reality warping artifacts, currently including a presence-erasing bracelet and a crate that converts anything inside into a hypersexualized version of itself.");
 			writeText("The game uses real porn gifs, and is similar in tone to Human Alteration App's dom route.");
 			writeText("The themes and fetishes of the game are governed by what artifacts you interact with, hopefully as time passes you'll find and artifact you really connect with. Let me know if you have any artifact / scene ideas!");
 			writeText("Nonoptional Tags: Unpercieved Sex, Ignored Sex, Dubious Consent, Seduction of Women in Committed Relationships");
 			writeText("Optional Tags: Corruption, Mind Control, Deepfake, Genderbending (both M to F and F to M) among others. See the content list below.");
-			writeTransition("downloadAnomalyVault", "Download Anomaly Vault");
 			document.getElementById('output').innerHTML +=`
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/31409204'">Download Links / Cheat Codes</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault%20Mobile.html'">Play the mobile version</p>
 				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=75&t=12954'">TFgames Thread</p>
