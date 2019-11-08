@@ -7,6 +7,7 @@ var randNum;
 var tempScene;
 var kettleCounter = 0;
 var ethicsCounter = 0;
+var timeSince = 0;
 var data = {
 	player: {
 		fName: "You",
@@ -46,9 +47,12 @@ var galleryArray = [
 	{index: "braceletResearch1", dark: false, girl: "assistant", name: "First Research", hint: "Assistant event"},
 	{index: "braceletResearch2", dark: false, girl: "assistant", name: "Caught Jilling", hint: "Assistant event"},
 	{index: "braceletResearch3", dark: false, girl: "assistant", name: "New Ideas", hint: "Assistant event"},
+	{index: "braceletResearch4", dark: false, girl: "boss", name: "Research Payoff", hint: "Assistant event"},
+	{index: "braceletResearch5", dark: false, girl: "chair", name: "Head of the Vault", hint: "Assistant event"},
 	{index: "braceletHome1", dark: false, girl: "roommate", name: "Stay-at-Home Fun", hint: "Assistant event"},
 	{index: "braceletHome2", dark: false, girl: "roommate", name: "Sexting", hint: "Assistant event"},
 	{index: "braceletHome3", dark: false, girl: "girlfriend", name: "Fucking with the Girlfriend", hint: "Assistant event"},
+	{index: "braceletHome4", dark: false, girl: "sisterswallows", name: "Game Night", hint: "Assistant event"},
 	{index: "braceletOutdoor1", dark: false, girl: "gym", name: "Fitness Instructor's Exercise Plan", hint: "Assistant event"},
 	{index: "braceletOutdoor2", dark: false, girl: "gym", name: "Fitness Instructor's Home", hint: "Assistant event"},
 	{index: "braceletOutdoor4", dark: false, girl: "swallows", name: "Bar Room Fun", hint: "Assistant event"},
@@ -79,17 +83,38 @@ var galleryArray = [
 	{index: "stopwatchHome2", dark: false, girl: "roommate", name: "Time Stopwatch - In-Class Fun", hint: ""},
 	{index: "stopwatchOutdoor1", dark: false, girl: "", name: "Time Stopwatch - Strip Show", hint: ""},
 	{index: "stopwatchDream1", dark: false, girl: "", name: "Stopwatch's fate", hint: ""},
+	//Midas Coin Events
+	{index: "coinResearch1", dark: false, girl: "", name: "Midas Coin - First Research", hint: ""},
+	{index: "coinResearch2", dark: false, girl: "assistant", name: "Midas Coin - Trading for a Soda", hint: ""},
+	{index: "coinHome1", dark: false, girl: "girlfriend", name: "Midas Coin - Flaunting Wealth", hint: ""},
+	//index: "coinHome2", dark: false, girl: "assistantsister", name: "Midas Coin - Sisters", hint: ""},
+	{index: "coinOutdoor1", dark: false, girl: "gym", name: "Midas Coin - Gold Membership", hint: ""},
+	//index: "coinOutdoor2", dark: false, girl: "", name: "Midas Coin - Mugging", hint: ""},
+	{index: "coinDream1", dark: false, girl: "", name: "Coin's Fate", hint: ""},
+	//Truth Serum Events
+	{index: "serumResearch1", dark: false, girl: "", name: "Truth Serum - First Research", hint: ""},
+	{index: "serumResearch2", dark: false, girl: "assistant", name: "Truth Serum - Growing Immunity", hint: ""},
+	{index: "serumResearch3", dark: false, girl: "boss", name: "Truth Serum - Jensen's Secret", hint: ""},
+	//index: "serumHome1", dark: false, girl: "roommate", name: "Truth Serum - Emperess's New Clothes", hint: ""},
+	//index: "serumOutdoor1", dark: false, girl: "", name: "Truth Serum - Public Train", hint: ""},
+	//index: "serumOutdoor2", dark: false, girl: "", name: "Truth Serum - Dubious Consent", hint: ""},
+	//index: "serumOutdoor3", dark: false, girl: "", name: "Truth Serum - Beach Body", hint: ""},
+	//index: "serumDream1", dark: false, girl: "chair", name: "Serum's Fate", hint: ""},
 	//Exchange Gas Events
 	{index: "gasResearch1", dark: true, girl: "assistant", name: "Exchange Gas - Personal Test", hint: ""},
 	{index: "gasResearch2", dark: true, girl: "", name: "Exchange Gas - Assistant Test", hint: ""},
 	{index: "gasResearch3", dark: true, girl: "assistant", name: "Exchange Gas - Final Test", hint: ""},
-	//Gummy Dicks research
+	//Gummy Dicks Events
 	{index: "gummyResearch1", dark: true, girl: "", name: "Gummy Dicks - Personal Test", hint: ""},
 	{index: "gummyResearch2", dark: true, girl: "", name: "Gummy Dicks - Permanent Effects", hint: ""},
-	//Cage research
+	//Cage Events
 	{index: "cageResearch1", dark: true, girl: "", name: "Punification Cage - Personal Test", hint: ""},
-	//Onahole Research
+	//Onahole Events
 	{index: "onaholeResearch1", dark: true, girl: "", name: "Succubus Onahole - Personal Test", hint: ""},
+	//Toolkit Events
+	{index: "toolkitResearch1", dark: true, girl: "", name: "Sissy Toolkit - Personal Test", hint: ""},
+	{index: "toolkitResearch2", dark: true, girl: "", name: "Sissy Toolkit - Perfect Body", hint: ""},
+	{index: "toolkitResearch3", dark: true, girl: "", name: "Sissy Toolkit - The Squad Assembles", hint: ""},
 ]
 
 var logbookArray = [
@@ -145,10 +170,13 @@ var artifactArray = [
 	{index: "erotibox", dark: false, equipable: false, title: "Erotibox", desc: "A large wooden crate large enough to fit a person inside. <br>Anything put inside the box will become an erotic version of itself.", desc2: ""},
 	{index: "mirror", dark: false, equipable: false, title: "Antique Mirror", desc: "An antique mirror dating back to the Victorian era. If a person stares into the eyes of their own reflection long enough, they will 'switch places' with an alternate reality version of themselves.<br>In these alternate realities social norms and the physical body of the person switched with can all be completely different.", desc2: ""},
 	{index: "stopwatch", dark: false, equipable: true, title: "Time Stopwatch", desc: "A bronze stopwatch which appears at first glance to be broken, as the second hand jumps backwards every second.", desc2: "When the button at the top is pressed, the clock begins to record the time as normal but time stops for everyone except person holding the watch."},
+	{index: "coin", dark: false, equipable: true, title: "Midas Coin", desc: "A single gold coin with an inscription on the back written in Ancient Greek.", desc2: "When held, sexual activities performed by the holder will be 'normalized', and not perceived to be socially outrageous no matter how depraved the action. In addition, sexual acts will be seen to have 'value', meaning that the holder can exchange sexual acts as though they had a cash value."},
+	{index: "serum", dark: false, equipable: false, title: "Truth Serum", desc: "A set of vials of green, minty liquid.", desc2: "When drunk, everything you say becomes the 'truth'. Not in the reality warping way, but in that everyone around you will believe whatever you say."},
 	{index: "gas", dark: true, equipable: false, title: "Exchange Gas", desc: "Several aerosol gas containers. Subjects who inhale the gas experience a process called 'gender-swapping'. In most cases the process is temporary.", desc2: ""},
 	{index: "gummy", dark: true, equipable: false, title: "Gummy Dicks", desc: "A package of several erect dicks seemingly made from the same candy as gummy bears. A fluid inside feminizes men, preventing erections and increasing both prostate size & sensitivity. Effects not permanent unless used repeatedly.", desc2: ""},
 	{index: "onahole", dark: true, equipable: false, title: "Succubus Onahole", desc: "A fleshlight or 'onahole' made from an unknown material. Known to cause extreme euphoria when male genetalia is inserted, subjects state tendrils inside 'probed' them. Afterwards, subjects showed an extreme increase in semen production.", desc2: ""},
 	{index: "cage", dark: true, equipable: false, title: "Punification Cage", desc: "A plastic pink chastity cage. Wearing it almost immediately triggers a powerful orgasm, but in all cases resulted in an extreme decrease in genital size.", desc2: ""},
+	{index: "toolkit", dark: true, equipable: false, title: "Sissy's Toolkit", desc: "A plastic makeup kit. When opened, objects will appear inside and in the room which are designed to encourage the opener to 'explore themselves'. These range from makeup to unknown body-modifying drugs and a 3-man group of naked men. ", desc2: ""},
 ];
 
 var roommateF = data.story[0].fName;
@@ -347,8 +375,33 @@ function writeSpeech (name, img, text) {
 		<img class = "textThumb" src = "
 			`+ img +`
 		">
+		<div class="textBoxContent">
 		<p class = "textName">`+ name + `</p>
-		<p>` + text + `</p>
+		<p>` + replaceCodenames(text) + `</p>
+	</div>
+	<br>
+	`;
+}
+
+function writeTab(character, text) {
+	var img = "scripts/gamefiles/profiles/"+character+".jpg";
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].index == character) {
+			var name = data.story[i].fName;
+			var lName = data.story[i].lName;
+		}
+	}
+	if (name == "Peta") {
+		name = "Mrs. " + lName;
+	}
+	document.getElementById('output').innerHTML +=`
+	<div class = "textBox">
+		<img class = "textThumb" src = "
+			`+ img +`
+		">
+		<div class="textBoxContent">
+		<p class = "textName">`+ name + `</p>
+		<span class = "choiceText" onclick = "sceneTransition('`+character+`')">`+replaceCodenames(text)+`</span>   
 	</div>
 	<br>
 	`;
@@ -403,20 +456,39 @@ function writeArtifact (name) {
 	}
 	console.log('Scenes found, current progress is ' + researchStatus + ' of ' + researchTotal);
 	//console.log('now determining appropriate research level');
-	document.getElementById('output').innerHTML +=`
-	<div class = "textBox">
-		<img class = "textThumb" src = "scripts/gamefiles/items/`+ name +`.jpg">
-		<p class = "textName">`+ title + `</p>
-		<p class = "textName">Research Status: `+researchStatus+` of `+researchTotal+` scenes unlocked</p>
-		<p>
-			<span class = "choiceText" onclick = "sceneTransition('`+name+`Research')">Research</span>   
-			<span class = "choiceText" onclick = "equip('`+name+`')">`+equip+`</span>
-		</p>
-		<p class = "textName">`+ desc + `</p>
-		<p class = "textName">`+ desc2 + `</p>
-	</div>
-	<br>
-	`;
+	if (equip != "") {
+		document.getElementById('output').innerHTML +=`
+		<div class = "textBox">
+			<img class = "textThumb" src = "scripts/gamefiles/items/`+ name +`.jpg">
+			<div class="textBoxContent">
+			<p class = "textName">`+ title + `</p>
+			<p>Research Status: `+researchStatus+` of `+researchTotal+` scenes unlocked</p>
+			<p>
+				<span class = "choiceText" onclick = "sceneTransition('`+name+`Research')">Research</span>   
+				<span class = "choiceText" onclick = "equip('`+name+`')">`+equip+`</span>
+			</p>
+			<p>`+ desc + `</p>
+			<p>`+ desc2 + `</p>
+		</div>
+		<br>
+		`;
+	}
+	else {
+		document.getElementById('output').innerHTML +=`
+		<div class = "textBox">
+			<img class = "textThumb" src = "scripts/gamefiles/items/`+ name +`.jpg">
+			<div class="textBoxContent">
+			<p class = "textName">`+ title + `</p>
+			<p>Research Status: `+researchStatus+` of `+researchTotal+` scenes unlocked</p>
+			<p>
+				<span class = "choiceText" onclick = "sceneTransition('`+name+`Research')">Research</span>
+			</p>
+			<p>`+ desc + `</p>
+			<p>`+ desc2 + `</p>
+		</div>
+		<br>
+		`;
+	}
 }
 
 function writeBig (img, cap) {
@@ -440,7 +512,7 @@ function writeMed (img, cap) {
 function writeTransition (name, scene) {
 	document.getElementById('output').innerHTML += `
 		<p class="choiceText" onclick="sceneTransition('` + name + `')">
-			` + scene + `
+			` + replaceCodenames(scene) + `
 		</p>
 	`;
 }
@@ -448,20 +520,20 @@ function writeTransition (name, scene) {
 function writeFunction (name, func) {
 	document.getElementById('output').innerHTML += `
 		<p class="choiceText" onclick="` + name + `">
-			` + func + `
+			` + replaceCodenames(func) + `
 		</p>
 	`;
 }
 
 function writeSpecial (text) {
 	document.getElementById('output').innerHTML += `
-		<p class = "specialText">` + text + `</p>
+		<p class = "specialText">` + replaceCodenames(text) + `</p>
 	`;
 }
 
 function writeText (text) {
 	document.getElementById('output').innerHTML += `
-		<p class='rawText'>` + text + `</p>
+		<p class='rawText'>` + replaceCodenames(text) + `</p>
 	`;
 }
 	
@@ -555,6 +627,33 @@ function researchLevel(name) {
 	}
 }
 
+function replaceCodenames(text) {
+	var codenameCheck = "";
+	for (geminiLoop = 0; geminiLoop < 5; geminiLoop++) {
+	text = text.replace('playerF', data.player.fName);
+	text = text.replace('playerL', data.player.lName);
+	for (codenameIndex = 0; codenameIndex < data.story.length; codenameIndex++) {
+		codenameCheck = data.story[codenameIndex].index + "F";
+		text = text.replace(codenameCheck, data.story[codenameIndex].fName);
+		codenameCheck = data.story[codenameIndex].index + "L";
+		text = text.replace(codenameCheck, data.story[codenameIndex].lName);
+	}
+	}
+	return text;
+}
+
+function closeButton() {
+	document.getElementById("menu").style.width = "0px";	
+	document.getElementById("closeButton").style.visibility = "hidden";	
+	document.getElementById("openButton").style.visibility = "visible";	
+}
+
+function openButton() {
+	document.getElementById("menu").style.width = "400px";	
+	document.getElementById("closeButton").style.visibility = "visible";	
+	document.getElementById("openButton").style.visibility = "hidden";	
+}
+
 //Menu
 function updateMenu() {
 	var researchStatus = 0;
@@ -574,13 +673,12 @@ function updateMenu() {
 	researchStatus = 0;
 	researchTotal = 0;
 	if (data.player.artifact1 != "") {
-		document.getElementById("playerArtifact1").style.width = "95%";
-		document.getElementById("playerArtifact1").style.border = "3px solid white";
 		document.getElementById('playerArtifact1').src = "scripts/gamefiles/items/"+data.player.artifact1+".jpg";
 		document.getElementById('playerArtifact1Mobile').innerHTML = data.player.artifact1;
 		for (i = 0; i < artifactArray.length; i++) {
 			if (artifactArray[i].index == data.player.artifact1) {
 				name = artifactArray[i].index;
+				title = artifactArray[i].title;
 			}
 		}
 		for (i = 0; i < galleryArray.length; i++) {
@@ -591,22 +689,25 @@ function updateMenu() {
 				}
 			}
 		}
+		document.getElementById('artifact1Name').innerHTML = title;
 		document.getElementById('artifact1Total').innerHTML = researchStatus + ' of ' + researchTotal + ' scenes unlocked';
+		document.getElementById("playerArtifact1").style.border = "3px solid white";
+		document.getElementById("playerArtifact1").style.width = "42%";
 	}
 	else {
 		document.getElementById("playerArtifact1").style.width = "0%";
 		document.getElementById("playerArtifact1").style.border = "none";
+		document.getElementById('artifact1Name').innerHTML = "";
 	}
 	researchStatus = 0;
 	researchTotal = 0;
 	if (data.player.artifact2 != "") {
-		document.getElementById("playerArtifact2").style.width = "95%";
-		document.getElementById("playerArtifact2").style.border = "3px solid white";
 		document.getElementById('playerArtifact2').src = "scripts/gamefiles/items/"+data.player.artifact2+".jpg";
 		document.getElementById('playerArtifact2Mobile').innerHTML = data.player.artifact2;
 		for (i = 0; i < artifactArray.length; i++) {
 			if (artifactArray[i].index == data.player.artifact2) {
 				name = artifactArray[i].index;
+				title = artifactArray[i].title;
 			}
 		}
 		for (i = 0; i < galleryArray.length; i++) {
@@ -617,11 +718,15 @@ function updateMenu() {
 				}
 			}
 		}
+		document.getElementById('artifact2Name').innerHTML = title;
 		document.getElementById('artifact2Total').innerHTML = researchStatus + ' of ' + researchTotal + ' scenes unlocked';
+		document.getElementById("playerArtifact2").style.border = "3px solid white";
+		document.getElementById("playerArtifact2").style.width = "42%";
 	}
 	else {
 		document.getElementById("playerArtifact2").style.width = "0%";
 		document.getElementById("playerArtifact2").style.border = "none";
+		document.getElementById('artifact2Name').innerHTML = "";
 	}
 }
 
@@ -887,7 +992,7 @@ function generateNav() {
 	document.getElementById('logbookLeft').innerHTML += `<p class = "logbookSwitch" onclick = "switchDesc('player')">` + data.player.fName + `</p>`;
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].met == true) {
-			document.getElementById('logbookLeft').innerHTML += `<p class = "logbookSwitch" onclick = "switchDesc('`+i+`')">` + data.story[i].fName + `</p>`;
+			document.getElementById('logbookLeft').innerHTML += `<h3 class = "button" onclick = "switchDesc('`+i+`')">` + data.story[i].fName + `</h3>`;
 		}
 	}
 	switchDesc('player');
@@ -902,11 +1007,14 @@ function switchDesc(n) {
 			`;
 		}
 		document.getElementById('logbookRight').innerHTML += `
-			<p class = "selfDesc">Name: `+data.story[n].fName+` `+data.story[n].lName+`</p><br><br>
-			<p class = "selfDesc">`+logbookArray[n].desc+`</p><br><br>
-			<p class = "selfDesc">`+logbookArray[n].body+`</p><br><br>
-			<p class = "selfDesc">`+logbookArray[n].clothes+`</p><br><br>
-			<p class = "selfDesc">   </p>br><br>
+		<div class=" lb_primary">
+			<h2 class = "selfDesc">Name: `+data.story[n].fName+` `+data.story[n].lName+`</h2>
+		</div><div class=" lb_secondary">
+			<p class = "selfDesc">`+logbookArray[n].desc+`</p>
+			<p class = "selfDesc">`+logbookArray[n].body+`</p>
+			<p class = "selfDesc">`+logbookArray[n].clothes+`</p>
+			<p class = "selfDesc">   </p>
+		</div
 		`;
 	}
 	else {
@@ -926,10 +1034,13 @@ function switchDesc(n) {
 			}
 		}
 		document.getElementById('logbookRight').innerHTML += `
-			<p class = "selfDesc">Name: `+data.player.fName+` `+data.player.lName+`</p><br><br>
-			<p class = "selfDesc">Day: `+data.player.day+`</p><br><br>
-			<p class = "selfDesc">Time: `+data.player.time+`</p><br><br>
-			<p class = "selfDesc">Total scenes unlocked: `+researchStatus+` of `+researchTotal+`</p><br><br>
+		<div class=" lb_primary">
+			<h2 class = "selfDesc">Name: `+data.player.fName+` `+data.player.lName+`</h2>
+		</div><div class=" lb_secondary">
+			<p class = "selfDesc">Day: `+data.player.day+`</p>
+			<p class = "selfDesc">Time: `+data.player.time+`</p>
+			<p class = "selfDesc">Total scenes unlocked: `+researchStatus+` of `+researchTotal+`</p>
+		</div>
 		`;
 		if (data.player.artifact1 != "") {
 			for (i = 0; i < artifactArray.length; i++) {
@@ -949,7 +1060,7 @@ function switchDesc(n) {
 				}
 			}
 			document.getElementById('logbookRight').innerHTML += `
-			<p class = "selfDesc">First equipped artifact: `+title1+`<br>`+research1Status+` of `+research1Total+` scenes unlocked</p><br><br>
+			<p class = "selfDesc">First equipped artifact: `+title1+`<br>`+research1Status+` of `+research1Total+` scenes unlocked</p>
 			`;
 		}
 		if (data.player.artifact2 != "") {
@@ -970,7 +1081,7 @@ function switchDesc(n) {
 				}
 			}
 			document.getElementById('logbookRight').innerHTML += `
-			<p class = "selfDesc">Second equipped artifact: `+title2+`<br>`+research2Status+` of `+research2Total+` scenes unlocked</p><br><br>
+			<p class = "selfDesc">Second equipped artifact: `+title2+`<br>`+research2Status+` of `+research2Total+` scenes unlocked</p>
 			`;
 		}
 	}
@@ -980,10 +1091,10 @@ function generateLogbookGallery(n) {
 	for (i = 0; i < galleryArray.length; i++) {
 		if (galleryArray[i].index.includes(n)) {
 			if (galleryCheck(galleryArray[i].index) == true) {
-				document.getElementById('logbookRight').innerHTML += '<br><br><p class = "selfDesc">' + galleryArray[i].name + '<br>This scene has been unlocked. Use the laptop to see it again.</p>';
+				document.getElementById('logbookRight').innerHTML += '<p class = "selfDesc">' + galleryArray[i].name + '<br>This scene has been unlocked. Use the laptop to see it again.</p>';
 			}
 			else {
-				document.getElementById('logbookRight').innerHTML += '<br><br><p class = "selfDesc">' + galleryArray[i].name + '<br>' + galleryArray[i].hint + '</p>';
+				document.getElementById('logbookRight').innerHTML += '<p class = "selfDesc">' + galleryArray[i].name + '<br>' + galleryArray[i].hint + '</p>';
 				break;
 			}
 		}

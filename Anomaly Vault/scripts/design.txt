@@ -1,0 +1,93 @@
+v3
+	Location images (COMPLETE)
+	Navigation system (COMPLETE)
+	Uniform playerRoom div height (COMPLETE)
+	display time (COMPLETE)
+	button positioning
+		Your house (COMPLETE)
+		Your room (COMPLETE)
+		town (COMPLETE)
+		Gym (COMPLETE)
+		Your room - morning (COMPLETE)
+		work (COMPLETE)
+		Your office (COMPLETE)
+		Basement - storage, toolkit, basement (COMPLETE)
+	time limits movement (COMPLETE)
+	Auto-return at night (COMPLETE)
+	Room functionality (COMPLETE)
+	prologue limits movement
+	Work locations
+		Testing lab (COMPLETE)
+		Dark Vault (COMPLETE)
+		Storage department - mirror, box, retired artifacts (COMPLETE)
+		Toolkit department (COMPLETE)
+		Prison department (COMPLETE)
+	WriteTab (COMPLETE)
+	Character scenes
+		Sophia's Room (COMPLETE)
+		House couch (COMPLETE)
+		Katya's Room (COMPLETE)
+		Veronica's Desk (COMPLETE)
+		Jensen's Office (COMPLETE)
+		Top floor - priya rai (COMPLETE)
+		Gym receptionist (COMPLETE)
+	Toolkit department
+		Department head image
+		Department introduction scene
+		Friend Magazine - Girl-renaming artifact
+		Wind-up clock - Returns you to day 1
+		Mobium Loop - Freezes the time unless you nap or sleep
+		Lonely Auditorium - Increases text size / picture size
+		Researcher's Notes - Unlocks the gallery
+		Wardrobe Lamp - Unlocks the wardrobe
+	Storage department
+		Store artifacts
+		Return artifacts
+	Unlock toolkit functions
+	Dark Vault
+		Department introduction scene
+	Scene assignment
+		Remove research button after first research on equippables
+		Research on mirror or box remain, but send you to the storage department
+		galleryArray rework
+		Scene requirements - you need to have a certain artifact and have unlocked a certain scene
+		Scene locations
+		Sophia's scenes
+		Veronica's scenes
+		Peta's scenes
+		Asa's scenes
+		Priya's scenes
+		Katya's scenes
+		Misc scenes
+	Important scenes
+		Katya introduction
+		Asa introduction - she hangs out on your couch in the evenings
+	New scenes
+		bracelet images
+		bracelet research 4
+		bracelet research 5
+		bracelet home katya
+		coin images
+		coin research 2
+		coin home 1
+		coin outdoor 1
+		coin outdoor 2
+		coin dream
+		serum images
+		serum research 2
+		serum research 3
+		serum home 1
+		serum home 2
+		serum dream
+		Toolkit research 1
+		Toolkit research 2
+		Toolkit research 3
+		Silent research
+	Mobile css
+v4
+	Library dungeon
+	Prison department dungeon
+	Mirror dungeon
+	Perfume scenes
+	CEO pass scenes
+	Character tabs are different when no scenes are available

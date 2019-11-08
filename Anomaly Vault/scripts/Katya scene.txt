@@ -1,0 +1,43 @@
+writeSpeech("Hannah", "none", "What the fuck, you left the door open!");
+writeSpeech("Ashley", "none", "Huh...? I thought I closed it.");
+writeSpeech("Molly", "none", "Get your head in the game Ash, otherwise you're going to get destroyed tonight.");
+writeText(" You stand awkwardly in the corner of the kitchen as the girls filter into the living room and up the stairs. Slipping inside the house with the bracelet, you ware essentially invisible; Ashley didn't even notice as you followed right behind her into the house. Hannah opens her bedroom door and the three teens pile onto the bed in front of the television.");
+//Image: Vid Time 0:04-0:07, girls on the bed playing, no guy in camera shot
+writeSpeech("Ashley", "none", "Aw, did you start playing already?");
+writeSpeech("Molly", "none", "Yup, I forgot to bring my controller so you're playing the winner.");
+writeText(" While the girls chit-chat, you salivate at the spread of teen pussy in front of you. For the past few years, you've watched your neighbor's daughter grow up to be a beautiful young woman... and it was time to reap the benefits!");
+writeSpeech("player", "", " Hey girls, mind if I help you get comfortable?");
+writeText(" It takes you no time at all to strip Hannah and her friends completely bottomless; the three of them are totally unaware of your presence even as their jeans slip off their shapely legs, revealing their shaved slits ripe for the taking.");
+//Image: Vid Time 4:44-4:51, insertion into Hannah.
+writeText(" You easily push your cock inside, enjoying the new sensation of Hannah's pussy...");
+writeSpeech("Hannah", "none", "O-oh! Fu-fuck...");
+writeSpeech("Molly", "none", "What's up Hannah, you're really going to choke and let Ash play me next?");
+writeSpeech("Hannah", "none", "Hah... n-not on your life!");
+//Image: Vid Time 6:48-4:51, sex with Molly.
+writeText(" After a few minutes of Heaven, you pull out and fuck another blissfully unaware teen...");
+writeSpeech("Molly", "none", "Ah! Uh, um, y-you scared me with that attack.");
+writeSpeech("Ashley", "none", "Yeah, right! Excuses, excuses, excuses.");
+//Image: Vid Time 6:31-4:35, oral sex with Ashley.
+writeText(" Prodding their mouth, with a little effort you even get them tasting each other with your dick...");
+writeSpeech("Ashley", "none", "Mmmph... hmph!");
+writeSpeech("Molly", "none", "I can't believe you said that in class!");
+writeSpeech("Hannah", "none", "Haha, yeah, that was pretty funny today.");
+writeSpeech("player", "", " Huh, now I want to know what she said...");
+//Image: Vid Time 6:01-6:04, sex with Hannah.");
+writeText(" By the time you round back to your neighbor's barely legal daughter, you only manage a few thrusts...");
+//Image: Creampie, dealer's choice- the scene on ponrhub didn't have an end.
+writeText(" ... before your throbbing cock slams inside her wet pussy and floods it with thick cum.");
+writeText(" After you pull out, the girls are still completely unaware, albeit out of breath and blushing red. The room reeks of hardcore sex and their bodies glisten with sweat, but they don't seem to mind. Their eyes are still glued to the TV as they play their game, even as Hannah's used pussy steadily oozes out your semen.");
+writeText(" In the end, they have a sleepover... and so do you.");
+
+
+Almost finished. If I could make a suggestion I'd like to throw out that one of the actresses in the scenes you chose is Katya Rodriguez, who seems to be Veronica Rodriguez's sister (although my gut tells me their relationship is fake, it is at least a little believable). She has a decent amount of material out there, and has a few scenes she does with her sister. 
+https://www.pornhub.com/view_video.php?viewkey=ph595d396b29de6 - Creampie vid
+https://www.xvideos.com/video25872891/latina_stepsister_katya_rodriguez_seduces_her_stepbro - Vid where Katya seduces a dude, good for if you'd like her to be a nympho that comes on to you
+https://www.xvideos.com/video32960715/veronica_rodriguez_katya_rodriguez_-_real_sisters - Lesbian scene between Katya and Veronica
+I could add her to the game as a major character if you'd like, but I'd need to delay adding your scene since there are some systems hoops to jump through to implement new main characters. 
+
+I notice you avoid using any of the main girls (veronica, sophia, etc) and I actually appreciate that since I don't need to worry about contradicting something you write. If you'd like, I can implement Katya as a character solely for you to use, so that your scenes don't need to involve random girls without profile pictures (They still can, but you'd have a least one major character that you have complete control of).
+I figure she could be introduced as Veronica's sister who needs a place to stay. Since Veronica respects you she asks if Katya can stay at your place. There's a lot of design space, and I can help you brainstorm if you need any more ideas.
+
+If not and you'd just like this scene, then I do have one request. I'd like to use the actresses' real names for the scene, rather than Holly, Ashley, and Molly. They'd be Alexa, Darling, and Katya. We could also just use Redhead, Brunette, and Katya if you'd like.
