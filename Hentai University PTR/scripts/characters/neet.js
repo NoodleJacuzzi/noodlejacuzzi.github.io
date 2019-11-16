@@ -340,7 +340,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("...");
 			writeText("The two of you make it two laps before neetF begins to seriously flag. She needs to lean on your shoulder to finish, but she does make it. Afterwards you rest on a wall to take a breather.");
 			writeSpeech("player", "", "Feeling alright? Heart pumping?");
-			writeSpeech("neet", "", "To be frank... My chest is on fire, and my legs feel like metal bars. I was very interested... In what I heard was called a 'runner's high'... But all I feel is short of breath and sweaty...");
+			writeSpeech("neet", "gym.jpg", "To be frank... My chest is on fire, and my legs feel like metal bars. I was very interested... In what I heard was called a 'runner's high'... But all I feel is short of breath and sweaty...");
 			writeFunction("writeEncounter('neetDate3a')", "Let's get changed");
 			writeFunction("writeEncounter('neetDate3b')", "You look great");
 			break;
