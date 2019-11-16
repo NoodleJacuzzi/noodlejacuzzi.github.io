@@ -383,14 +383,15 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "placeholder", trust: 200,},
+	{index: "placeholder", trust: 83,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
-			//Write the event's text here using writePhoneSpeech, writePhoneImage, and writePhoneChoices
+		case "neetReward": {
+			writePhoneImage("images/starlet/reward.jpg", "Art by Oreteki18kin");
+			writePhoneSpeech("starlet", "", "You've finished all of starletF's content for this version, more is coming soon!");
 			break;
 		}
 		default: {

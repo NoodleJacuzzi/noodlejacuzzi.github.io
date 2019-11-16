@@ -318,20 +318,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "purple7B": {
-			writeText("The two of enter "+fName('purple')+"'s house together.");
-			writeSpeech("chubby", "", "Welcome home! Oh, hello "+data.player.name+"!");
-			writeSpeech("player", "", "Good to see you again "+fName('chubby')+". I'm here to help your daughter in a more relaxed environment. We'll be heading up to her room, if that's fine.");
-			writeSpeech("chubby", "", "Oh, well I don't-");
-			writeSpeech("purple", "", "It's fine, mom! I'll see you up there, alright "+data.player.honorific+"?");
-			writeText(""+fName('purple')+" runs upstairs. "+fName('chubby')+" is left shocked and turns to you.");
-			writeSpeech("chubby", "", "My goodness, she's just like her old self! I...");
-			writeText("Tears are starting to form in "+fName('purple')+"'s eyes.");
-			writeSpeech("chubby", "", "Thank you! Thank you so much! Whatever you need, go ahead. Can I make something for you for after?");
-			writeSpeech("player", "", "No thank you. I'll be out of your hair before too long.");
-			writeSpeech("chubby", "", "Take as long as you need!");
-			writeText("You can hear "+fName('purple')+" calling for you from upstairs, so you get moving.");
-			writeSpeech("chubby", "", "It's incredible... She's exactly like before...");
-			writeText("...");
 			writeEvent('purple1');
 			writeText("As you walk downstairs, a happy voice greets you.");
 			writeSpeech("chubby", "", "Oh! How did it go?");
@@ -395,6 +381,20 @@ function writeEvent(name) { //Plays the actual event.
 	wrapper.scrollTop = 0;
 	switch (name) {
 		case "purple1": {
+			writeText("The two of enter "+fName('purple')+"'s house together.");
+			writeSpeech("chubby", "", "Welcome home! Oh, hello "+data.player.name+"!");
+			writeSpeech("player", "", "Good to see you again "+fName('chubby')+". I'm here to help your daughter in a more relaxed environment. We'll be heading up to her room, if that's fine.");
+			writeSpeech("chubby", "", "Oh, well I don't-");
+			writeSpeech("purple", "", "It's fine, mom! I'll see you up there, alright "+data.player.honorific+"?");
+			writeText(""+fName('purple')+" runs upstairs. "+fName('chubby')+" is left shocked and turns to you.");
+			writeSpeech("chubby", "", "My goodness, she's just like her old self! I...");
+			writeText("Tears are starting to form in "+fName('purple')+"'s eyes.");
+			writeSpeech("chubby", "", "Thank you! Thank you so much! Whatever you need, go ahead. Can I make something for you for after?");
+			writeSpeech("player", "", "No thank you. I'll be out of your hair before too long.");
+			writeSpeech("chubby", "", "Take as long as you need!");
+			writeText("You can hear "+fName('purple')+" calling for you from upstairs, so you get moving.");
+			writeSpeech("chubby", "", "It's incredible... She's exactly like before...");
+			writeText("...");
 			writeSpeech("player", "", "You sure took my advice to heart.");
 			writeBig("images/purple/1-1.jpg", "Art by Oreteki18kin");
 			writeSpeech("purple", "", "Hmm? I'm just acting like I normally do.");

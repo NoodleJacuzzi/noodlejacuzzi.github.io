@@ -684,7 +684,7 @@ function writeSpeech (name, img, text) {
 	var cssName = name;
 	var fullName = name;
 	var cssColor = "#CCCCCC";
-	if (img == "") {
+	if (img == "" && img != 'none') {
 		if (data.player.pervert != true) {
 			var checkForError = "";
 			img = "images/"+name+"/"+name+".jpg";
@@ -695,7 +695,7 @@ function writeSpeech (name, img, text) {
 		}
 	}
 	else {
-		if (img.includes("images") != true) {
+		if (img.includes("images") != true && img != 'none') {
 			if (data.player.pervert != true) {
 				var checkForError = "";
 				img = "images/"+cssName+"/"+img;
@@ -706,9 +706,6 @@ function writeSpeech (name, img, text) {
 				img = "images/"+cssName+"/"+img+"P.jpg";
 			}
 		}
-	}
-	if (img == "none") {
-		img = "scripts/gamefiles/none.png";
 	}
 	if (name == "player") {
 		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
@@ -721,6 +718,10 @@ function writeSpeech (name, img, text) {
 			cssColor = data.story[i].color;
 			
 		}
+	}
+	if (img == "none") {
+		var checkForError = "";
+		img = "scripts/gamefiles/none.png";
 	}
 	document.getElementById('output').innerHTML +=`
 	<div class="textBox" style="border-color: `+cssColor+`">
@@ -1164,8 +1165,10 @@ function galleryCheck(n) {
 	for (i = 0; i < data.gallery.length; i++) {
 		if (data.gallery[i].index.includes(n)) {
 			return true;
+			break;
 		}
 	}
+	return false;
 }
 
 //Logbook

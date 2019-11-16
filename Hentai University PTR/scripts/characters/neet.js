@@ -22,6 +22,9 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "neet1", name: "Someone's fluffing a pillow here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "neet2", name: "It looks like neet is getting ready for bed again", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 1, trustMax: 1, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "neet3", name: "It looks like neet is here again", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 2, trustMax: 2, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neet4", name: "neet is sitting in the dark room", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 3, trustMax: 3, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetDateSelection", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 60, trustMax: 90, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetDateFinish", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 90, trustMax: 99, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -121,6 +124,200 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
+		case "neet4": {
+			writeText("You take a seat, Tia sitting across of you. There's a cold tension in the air. With how experienced she is with tech, she likely has some kind of master plan involving backups. You'll need to keep on your toes to stay out of prison.");
+			writeSpeech("player", "", "So. What did you want?");
+			writeSpeech("neet", "", "I would like you to hypnotize me.");
+			writeSpeech("player", "", "... I see. <br>Actually no, I don't see at all. What?");
+			writeSpeech("neet", "", "I want to be hypnotized. I've seen it work, you put people in trances and then they do what you tell them.");
+			writeText("You're silent for a moment. Could this be a trap? Probably not, if she's got cameras in your office then she's already got incriminating evidence. She's probably got her reasons, and this is your get out of jail free card.");
+			writeFunction("writeEncounter('neet5')", "Hypnotize her");
+			writeFunction("changeLocation(data.player.location)", "Make an excuse and buy some time");
+			break;
+		}
+		case "neet5": {
+			writeSpeech("player", "", "Sure.");
+			writeText("You get out your pendant. Part of you wants to see if she really understands what you'll be doing to her, but talking her out of this would probably be a bad idea for you.");
+			writeText("Willing hypnosis can be a bit tricky. Her expression is unreadable, but she seems like she's calm enough.");
+			writeSpeech("player", "", "Alright. Pay close attention, okay?");
+			writeText("...");
+			writeSpeech("player", "", "So, go ahead and make a noise. A dog, bark like a dog.");
+			writeSpeech("neet", "", "I'd rather not, playerSir. Is that a requirement?");
+			writeText("You sigh and lean back into your chair. This isn't working at all.");
+			writeSpeech("player", "", "This isn't working, something isn't right.");
+			writeText("She doesn't have a particularly strong will, and she seems pretty calm.");
+			writeSpeech("player", "", "Hold on. neetF? How are you feeling right now?");
+			writeSpeech("neet", "", "... I'm hungry? Tired. And nervous, I suppose, but that's to be expected. Should I have eaten?");
+			writeSpeech("player", "", "How nervous?");
+			writeText("She places her hand on her chest, the same general unfazed expression on her face as when you started.");
+			writeSpeech("neet", "", "Hmm. If I had to put it into words...");
+			writeText("She takes a moment to think, as if slowly piecing the appropriate words together bit by bit.");
+			writeSpeech("neet", "", "I'd say I'm terrified. My heart rate is high and I can barely remain seated. If it were not for the bad news, I'd most certainly describe myself as 'jumping for joy'.<br>I've barely gotten any sleep as well. I was rehearsing how I would phrase my request last night for several hours.");
+			writeText("Testing something, you place your hand on her forehead. Immediately she goes quiet, the faintest of blushes spreads across her cheeks, .");
+			writeText("You can't risk her snitching on you, but you have no idea what countermeasures she has in place. You need to regain control of the situation.");
+			writeSpeech("player", "", "That's the problem, you're nervous around me.<br>We'll need to do something about that.");
+			writeText("You withdraw your hand. The blush has spread farther across her face and she's begun to look dizzy.");
+			writeSpeech("player", "", "You alright?");
+			writeText("She nods. It's starting to get late.");
+			writeSpeech("player", "", "We'll pick this up later, alright? Keep a lock on those recordings, and I'll have you ready for hypnosis in no time. Got it?");
+			writeSpeech("neet", "", "Y-yes playerSir.");
+			setTrust('neet', 60);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "neetDateSelection": {
+			switch (checkTrust('neet')) {
+				case 60: {
+					writeSpeech("neet", "", "Ah, hello playerSir. I've had a chance to get ahold of myself, and I've taken some time to prepare for helping me overcome my nerves. I've bought scented candles and tea that were popular on the 'mystic yoga' forums.");
+					writeSpeech("player", "", "No need. I've already got the perfect method.");
+					writeSpeech("neet", "", "... Of course. You're the expert. Sorry for getting ahead of myself.");
+					writeSpeech("player", "", "Now, put that stuff away, we're going on a date.");
+					writeSpeech("neet", "", "... I'm sorry?");
+					writeSpeech("player", "", "Don't be, you're quite cute. Candles and tea are overrated, honestly. They don't work unless the target already uses them, otherwise the scents and taste just set you more on edge.");
+					writeSpeech("neet", "", "B-but, a date? I've never been-");
+					writeText("You place your finger on her lips to shush her.");
+					writeSpeech("player", "", "It'll be fun, trust me.");
+					writeSpeech("neet", "", "... Th-that was my first-");
+					writeSpeech("player", "", "In no world does that count as a kiss, neetF. Now come on...");
+					raiseTrust('neet', 1);
+					break;
+				}
+				default: {
+					writeSpeech("player", "", "Hello, neetF. Are you free?");
+					writeSpeech("neet", "", "Y-yes playerSir! Are we going to go on another, ah...");
+					writeSpeech("player", "", "Date? Well, I was thinking... ");
+				}
+			}
+			if (checkFlag('neet', 'date1') == false) {
+				writeFunction("writeEncounter('neetDate1')", "Let's go somewhere and chat");
+			}
+			if (checkFlag('neet', 'date2') == false) {
+				writeFunction("writeEncounter('neetDate1')", "Let me walk you home");
+			}
+			if (checkFlag('neet', 'date3') == false) {
+				writeFunction("writeEncounter('neetDate1')", "Let's go for a run");
+			}
+			writeFunction("changeLocation(data.player.location)", "Actually, maybe tomorrow");
+			break;
+		}
+		case "neetDate1": {
+			addFlag('neet', 'date1');
+			writeSpeech("player", "", "... and let's go hang out and chat. I've got a great cafe in mind.");
+			writeText("The two of you leave the room and you make your way out into town.");
+			writeText("...");
+			writeText("The cafe has a calm atmosphere, it's quite relaxing and pretty empty.");
+			writeSpeech("player", "", "So, anything on your mind? School? Life after your degree?");
+			writeSpeech("neet", "", "I would like to talk about hypnosis. About why you use it.");
+			writeSpeech("player", "", "Geez, a one-track mind, huh?");
+			writeSpeech("neet", "", "I am only asking if it's an acceptable question to ask.");
+			writeSpeech("player", "", "It's fine. Being able to speak your mind should help you. I use my power to get what I want, whenever I want. I feel like having sex, so that's what I use it for.");
+			writeSpeech("neet", "", "I see... Is it really so pleasurable that you'd risk being caught?");
+			writeSpeech("player", "", "Curious?");
+			writeSpeech("neet", "", "I am. I can't imagine it being that much better than self pleasure. However I am aware that my holdups would impair the experience.");
+			writeSpeech("player", "", "You really have thought this all out. You've basically broken down every piece of your thought process, haven't you? That takes qutie some self-awareness.");
+			writeSpeech("neet", "", "...");
+			writeSpeech("player", "", "Well, all the more reason to relax. To start, you can chill out on the tone. You don't need to keep yourself so guarded around me, you already know my secrets.");
+			writeSpeech("neet", "", "I am... I'm not good at being un-guarded. That's why I would like to change myself.");
+			writeFunction("writeEncounter('neetDate1a')", "We have plenty of time");
+			writeFunction("writeEncounter('neetDate1b')", "What's wrong with who you are?");
+			break;
+		}
+		case "neetDate1a": {
+			writeSpeech("player", "", "We'll have plenty of time, there's no rush. Relax and enjoy the scenery.");
+			writeSpeech("neet", "", "I don't like the scenery.<br>... I apologize. I spoke rashly.");
+			writeSpeech("player", "", "neetF, if that's your idea of rash, you haven nothing to apologize for.<br>It seems to be getting late. We'll pick this up again another day, alright?");
+			writeSpeech("neet", "", "Yes please. Thank you for today, I'll see you at school.");
+			writeSpecial("neetF's trust in you has increased!");
+			raiseTrust('neet', 7);
+			passTime();
+			writeFunction("changeLocation('street')", "Finish");
+			break;
+		}
+		case "neetDate1b": {
+			writeSpeech("player", "", "What's wrong with who you are?");
+			writeSpeech("neet", "", "I... I just want to be better.");
+			writeFunction("writeEncounter('neetDate1ba')", "You'll find someone eventually");
+			writeFunction("writeEncounter('neetDate1bb')", "What about me?");
+			break;
+		}
+		case "neetDate1ba": {
+			writeSpeech("player", "", "You'll find someone eventually.");
+			writeSpecial("neetF's trust in you has increased!");
+			raiseTrust('neet', 7);
+			passTime();
+			writeFunction("changeLocation('street')", "Finish");
+			break;
+		}
+		case "neetDate1bb": {
+			writeSpeech("player", "", "What about me?");
+			writeSpecial("neetF's trust in you has greatly increased!");
+			raiseTrust('neet', 10);
+			passTime();
+			writeFunction("changeLocation('street')", "Finish");
+			break;
+		}
+		case "neetDate2": {
+			addFlag('neet', 'date2');
+			writeSpeech("player", "", "... and let's go. I'll walk you home today.");
+			writeText("The two of you leave the room and you make your way out into town.");
+			writeText("...");
+			writeFunction("writeEncounter('neetDate2a')", "Don't hold yourself back");
+			writeFunction("writeEncounter('neetDate2b')", "What do you do for fun?");
+			break;
+		}
+		case "neetDate2a": {
+			writeSpeech("player", "", "Don't hold yourself back. You can tell me anything.");
+			writeSpecial("neetF's trust in you has increased!");
+			raiseTrust('neet', 7);
+			passTime();
+			writeFunction("changeLocation('street')", "Finish");
+			break;
+		}
+		case "neetDate2b": {
+			writeSpeech("player", "", "What do you do for fun?");
+			writeSpecial("neetF's trust in you has greatly increased!");
+			raiseTrust('neet', 10);
+			passTime();
+			writeFunction("changeLocation('street')", "Finish");
+			break;
+		}
+		case "neetDate3": {
+			addFlag('neet', 'date3');
+			writeSpeech("player", "", "... because we're going for a run!");
+			writeSpeech("neet", "", "A run? But I'm wearing my uniform.");
+			writeSpeech("player", "", "Not a problem. You've got a PE outfit here, right?");
+			writeSpeech("neet", "", "Yeah, but I've never even worn it. I've been avoiding PE courses.");
+			writeSpeech("player", "", "Now is as good of a time as any to break it in. Let's go.");
+			writeText("The two of you leave the room and you make your way to the school's running track.");
+			writeText("...");
+			writeFunction("writeEncounter('neetDate3a')", "Let's get changed");
+			writeFunction("writeEncounter('neetDate3b')", "You look great");
+			break;
+		}
+		case "neetDate3a": {
+			writeSpeech("player", "", "Let's get changed.");
+			writeBig("images/neet/date-a", "Art by Enoshima Iki");
+			writeSpecial("neetF's trust in you has increased!");
+			raiseTrust('neet', 7);
+			passTime();
+			writeFunction("changeLocation('street')", "Finish");
+			break;
+		}
+		case "neetDate3b": {
+			writeSpeech("player", "", "You look great as you are.");
+			writeBig("images/neet/date-b", "Art by Enoshima Iki");
+			writeSpecial("neetF's trust in you has greatly increased!");
+			raiseTrust('neet', 10);
+			passTime();
+			writeFunction("changeLocation('street')", "Finish");
+			break;
+		}
+		case "neetDateFinish": {
+			setTrust('neet', 100);
+			passTime();
+			writeFunction("changeLocation('street')", "Finish");
+		}
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -161,11 +358,18 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "neetReward", trust: 3,},
+	{index: "neetNotification", trust: 3,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
+		case "neetNotification": {
+			writePhoneSpeech("neet", "", "I have decided how to word what I would like you to do. Please come to the computer lab this evening if you have the time.");
+			writePhoneSpeech("neet", "", "Please come to the computer lab this evening even if you do not have the time.");
+			writePhoneSpeech("neet", "", "The computer lab is in the east hallway.");
+			writePhoneSpeech("neet", "", "Please ignore that previous text, as I remembered that you have been in the lab before. I do not wish to insinuate you will get lost. Please come to the lab when it is convenient. Thank you.");
+			break;
+		}
 		case "neetReward": {
 			writePhoneImage("images/neet/reward.jpg", "Art by Enoshima Iki");
 			writePhoneSpeech("neet", "", "You've finished all of neetF's content for this version, more is coming soon!");
