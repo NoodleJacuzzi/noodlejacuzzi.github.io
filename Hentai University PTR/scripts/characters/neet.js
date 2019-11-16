@@ -387,7 +387,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Hello, neetF. Are you free?");
 			writeSpeech("neet", "", "Actually, playerSir, I was wondering if you'd like to come to my house.");
 			writeSpeech("player", "", "Oh?");
-			writeSpeech("neet", "", "Ah, it's just because the weather report said it was going to be cold, and since most of our... Our dates have been outside... Ah! And I'm sure to be more comfortable for hypnosis in my own home!");
+			writeSpeech("neet", "", "Ah, it's just because the weather report said it was going to be cold, and since most of our... Our dates have been... Ah! And I'm sure to be more comfortable for hypnosis in my own home!");
 			writeSpeech("player", "", "That sounds like a wonderful idea, let's go.");
 			writeText("She hesitates for a moment.");
 			writeSpeech("neet", "", "... I'm sorry playerSir, that wasn't true. I'd actually like you to come over because... Because...");
@@ -404,6 +404,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("writeEncounter('neetDate4a')", "Let's go, let's give this another shot");
 			writeFunction("writeEncounter('neetDate4b')", "You don't need hypnosis");
 			passTime();
+			break;
 		}
 		case "neetDate4a": {
 			writeSpeech("player", "", "Alright, let's go. Let's give this another shot. You paying attention?");
@@ -427,7 +428,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("neet", "", "... What kind of 'natural'?");
 			writeSpeech("player", "", "Fuck it. Whatever.");
 			setTrust('neet', 101);
-			writeFunction("writeEvent('neetA-1)", "Snap your fingers");
+			writeFunction("writeEvent('neetA-1')", "Snap your fingers");
 			break;
 		}
 		case "neetDate4b": {
@@ -467,6 +468,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Alright, I'll see you later then, okay? We'll have at our first attempt tomorrow here, alright?");
 			writeText("She nods again.");
 			setTrust('neet', 100);
+			writeFunction("changeLocation('street')", "Make your way home");
 			break;
 		}
 		default: {
