@@ -130,7 +130,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","...Is that really how someone in your position should be making a request?");
 			writeText("He freezes.");
 			writeSpeech("player","","Hm. Seems like the principal was right about your attitude needing... <i>adjustment.</i>");
-			writeSpeech("meji","","images/meji/meji2.jpg","Y-You can't tell her-");
+			writeSpeech("meji","images/meji/meji2.jpg","Y-You can't tell her-");
 			writeSpeech("player","","I won't tell anyone anything.");
 			writeText("His eyes go wide for a moment, his grip relaxing-");
 			writeSpeech("player","","<i>Yet.</i>");
@@ -138,10 +138,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","If you don't want me to go sharing what I'm looking at with every student and faculty member around the university, then I have a simple little request...");
 			writeText("You lean forward, dropping your voice to whisper in his ear...");
 			writeSpeech("player","","You're going to ask me, <i>politely</i>, not to share your <i>crossdressing habit</i> with everyone.");
-			writeSpeech("meji","","images/meji/meji2.jpg","...T-That's all...?");
+			writeSpeech("meji","images/meji/meji2.jpg","...T-That's all...?");
 			writeSpeech("player","","Nobody likes a rude <i>bitch</i>, "+fName('meji')+".");
 			writeText("He flinches at the word, but bows his head down a bit.");
-			writeSpeech("meji","","images/meji/meji2.jpg","...I'm... sorry. Please, don't tell anyone about my... <i>c-crossdressing habit</i>...");
+			writeSpeech("meji","images/meji/meji2.jpg","...I'm... sorry. Please, don't tell anyone about my... <i>c-crossdressing habit</i>...");
 			writeSpeech("player","","...Good enough. Go home, "+fName('meji')+". We'll talk more at school.");
 			writeText("He swallows nervously, nodding once before running off quickly.");
 			writeText("...All in all, it didn't exactly build <i>trust</i> between you two, but you can already tell that things are going to get <i>interesting.</i>");
