@@ -193,10 +193,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeFunction("writeEncounter('neetDate1')", "Let's go somewhere and chat");
 			}
 			if (checkFlag('neet', 'date2') == false) {
-				writeFunction("writeEncounter('neetDate1')", "Let me walk you home");
+				writeFunction("writeEncounter('neetDate2')", "Let me walk you home");
 			}
 			if (checkFlag('neet', 'date3') == false) {
-				writeFunction("writeEncounter('neetDate1')", "Let's go for a run");
+				writeFunction("writeEncounter('neetDate3')", "Let's go for a run");
 			}
 			writeFunction("changeLocation(data.player.location)", "Actually, maybe tomorrow");
 			break;
@@ -393,7 +393,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("neet", "", "... I'm sorry playerSir, that wasn't true. I'd actually like you to come over because... Because...");
 			writeText("You pat her head and ruffle her hair.");
 			writeSpeech("player", "", "You can tell me all about it when we're there.");
-			setTrust('neet', 100);
 			writeText("She nods, blushing heavily.");
 			writeText("...");
 			writeText("The two of you make your way to her house, and she invites you in.");
@@ -423,6 +422,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She responds, only half-awake. Her way of thinking is much different than yours, so this may take awhile.");
 			writeText("...");
 			writeText("Two hours of excruciatingly slow explanation after explanation later, neetF's psyche has been rebuilt.");
+			writeText("The main slowdown is you basically need to rewire her general line of thinking.");
+			writeSpeech("player", "", "No, see, there's nothing to be embarrassed about. When you're around me, everything will just feel natural.");
+			writeSpeech("neet", "", "... What kind of 'natural'?");
+			writeSpeech("player", "", "Fuck it. Whatever.");
+			setTrust('neet', 101);
+			writeFunction("writeEvent('neetA-1)", "Snap your fingers");
 			break;
 		}
 		case "neetDate4b": {
@@ -461,6 +466,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She remains silent, but nods.");
 			writeSpeech("player", "", "Alright, I'll see you later then, okay? We'll have at our first attempt tomorrow here, alright?");
 			writeText("She nods again.");
+			setTrust('neet', 100);
 			break;
 		}
 		default: {
@@ -477,8 +483,24 @@ function writeEvent(name) { //Plays the actual event.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
-			writeFunction("changeLocation('playerHouse')", "Go back");
+		case "neetA-1": {
+			writeText("She gasps suddenly as you snap your fingers, like she'd been holding her breath. She starts unbuttoning her shirt and quickly starts taking her clothes off.");
+			writeSpeech("player", "", "neetF? You alright?");
+			writeText("You told her to drop her inhibitions, maybe this is what she's been wanting to do this whole time?");
+			writeText("The throws her clothes aside in heaps and lays back on her bed before starting to stroke herself.");
+			writeBig("images/neet/a1-1.jpg", "Art by Enoshima Iki");
+			writeSpeech("player", "", "No sense of self control, huh?");
+			writeSpeech("neet", "", "Khh... Hot... Please, don't leave...");
+			writeSpeech("player", "", "I'm not in a hurry.");
+			writeBig("images/neet/a1-2.jpg", "Art by Enoshima Iki");
+			writeSpeech("neet", "", "Hah... Hah... Watching...");
+			writeText("She frantically rubs at her pussy, stopping only to pinch her clit between her fingers. Soon enough...");
+			writeBig("images/neet/a1-3.jpg", "Art by Enoshima Iki");
+			writeSpeech("neet", "", "Ah~! Hah~!");
+			writeText("Breathing heavily, her body shakes in orgasm, and then she lays her head back like a doll with cut strings.");
+			writeText("She's exhausted, and so are you from so many hours of hypnosis and attempting to rework her mind.");
+			writeText("You'll need to continue this later.");
+			writeFunction("changeLocation('street')", "Go back");
 			break;
 		}
 		default: {
@@ -504,6 +526,8 @@ function writeEvent(name) { //Plays the actual event.
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
 	{index: "neetNotification", trust: 3,},
+	{index: "neetReward", trust: 100,},
+	{index: "neetReward", trust: 101,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
@@ -517,7 +541,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 		}
 		case "neetReward": {
 			writePhoneImage("images/neet/reward.jpg", "Art by Enoshima Iki");
-			writePhoneSpeech("neet", "", "You've finished all of neetF's content for this version, more is coming soon!");
+			writePhoneSpeech("neet", "", "You've finished all of neetF's content for this version, more is on the way!");
 			break;
 		}
 		default: {
