@@ -542,7 +542,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			break;
 		}
 		case "neetReward": {
-			writePhoneImage("images/neet/reward.jpg", "Art by Enoshima Iki");
+			writePhoneImage("images/neet/reward2.jpg", "Art by Enoshima Iki");
 			writePhoneSpeech("neet", "", "You've finished all of neetF's content for this version, more is on the way!");
 			break;
 		}
