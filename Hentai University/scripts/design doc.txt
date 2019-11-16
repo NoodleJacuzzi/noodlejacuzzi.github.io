@@ -318,13 +318,14 @@ V0.0
 		Fix broken image in tutorial (COMPLETE)
 		dialogue engine should use index checking in first argument to find character names, not rely on the second argument being empty (COMPLETE)
 		grab images from the character's folder in images if 'images' is not present in string (COMPLETE)
-		Fix logbook to show events from character js file
-		Add pink to pervert mode
 		Custom writeCharacterTab pictures / names (COMPLETE)
+		Fix mobile version footer buttons (COMPLETE)
+		Add space to top of the screen after a dream (COMPLETE)
+		Add pink to pervert mode (COMPLETE)
+		Disabling images does not change navigation
 		RaiseStat function
 		raiseStat messages - hypnosis: sensitivity increase, group hypnosis, etc
 		Stat-based skills in logbook
-		Disabling images does not change navigation
 		Add clearText function to clear a character's text event
 		Ancient shrine location
 		Ghost AR

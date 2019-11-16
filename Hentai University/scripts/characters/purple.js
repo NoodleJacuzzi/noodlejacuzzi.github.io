@@ -366,6 +366,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			removeItem('petunia');
 			setTrust('purple', 80);
 			passTime();
+			break;
 		}
 	}
 }
@@ -470,6 +471,7 @@ function writeEvent(name) { //Plays the actual event.
 			break;
 		}
 		case "purple3": {
+			document.getElementById('output').innerHTML = '';
 			writeText(""+fName('chubby')+" is breathing rapidly as she holds her phone.");
 			writeSpeech("chubby", "", "Oh god, oh god... Who do I even call? What is happening?");
 			writeText("The images of what she saw are burnt into her brain. Images of her own daughter having... Having SEX right in front of her!");

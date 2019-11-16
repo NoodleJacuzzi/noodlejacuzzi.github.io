@@ -2,11 +2,11 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 11/8/2019</p>
-				<p class = "centeredText">Anomaly Vault v3</p>
-				<p class = "centeredText">The release of Anomaly Vault v3, with more bracelet scenes, two new main game artifacts, and </p>
+				<p class = "centeredText">Lastest News 11/16/2019</p>
+				<p class = "centeredText">Hentai University v5</p>
+				<p class = "centeredText">The release of Hentai University v5, featuring Lana Cummings, Tia Sun, and Reese Kieran.</p>
 				<p class = "centeredText"></p>
-				<p class = "centeredText">Thank you to: Swallows999, Ben Dover, CaptainMontana, MrManPerson, Lasse B, Badaxe, ChronosEdge, Judavarius, Lunarghost, Scal, Adonnak, andy, Andy, Andy Amundy, Angel, Ariados, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, David Lange, Debarre Sonny, Drashin, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jane, Jesse Greene, joe, joe mulhall, Joshua Melzark, Karan Raj Gupta, LaCrazy, lm Carma, Luke, marvin diaz, Mirza Hasan, murgatroid99, Nha, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, sage, Skyrim mod lvr, Slipokk, Snaked, stratum, valdis, Vincent Madaire-Cullen, Wild Bill, Will Osboldstone, 大基 渡邊, and 凱 陳 for supporting my work!</p>
+				<p class = "centeredText">Thank you to:Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Lasse B, Badaxe, ChronosEdge, Colin E, Judavarius, Lunarghost, Scal, Adonnak, andy, Andy, Andy Amundy, Angel, Ariados, Austin yarbrougb, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, David Lange, Debarre Sonny, Dewr, Drashin, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jane, jdktjk205, Jesse Greene, joe, joe mulhall, Joshua Melzark, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, Ryan Linn, sage, Skyrim mod lvr, Slipokk, Snaked, stratum, valdis, Vincent Madaire-Cullen, Wild Bill, Will Osboldstone, Yongdian Guo, Профессор Преображенский, and 凱 陳 for supporting my work!</p>
 			`;
 			writeTransition("news", "View all news updates");
 			document.getElementById('output').innerHTML +=`
@@ -39,7 +39,7 @@ function writeScene(scene) {
 			writeText("The end goal here is a town packed with dozens of characters using a framework I can continually add more content to.");
 			writeText("Tags: Hypnosis, optionally features many other tags based on characters such as incest, dubcon, and gay content");
 			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://mega.nz/#!OjIghCxS!FdX889-4heqi95kfXxQ_gWOFwKawxTF0WUl96-LqD-I'">Download the game</p>
+				<p class="choiceText" onclick="window.location.href='https://mega.nz/#!6ioGRaCY!yYnDi6xQwTWKaGTwt1Fn3ZyJprzkMRKyaCHMU1MovWE'">Download the game</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">Play the mobile version</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'">Modding Tutorial</p>

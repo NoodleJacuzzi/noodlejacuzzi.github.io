@@ -684,7 +684,7 @@ function writeSpeech (name, img, text) {
 	var cssName = name;
 	var fullName = name;
 	var cssColor = "#CCCCCC";
-	if (img == "") {
+	if (img == "" && img != 'none') {
 		if (data.player.pervert != true) {
 			var checkForError = "";
 			img = "images/"+name+"/"+name+".jpg";
@@ -695,7 +695,7 @@ function writeSpeech (name, img, text) {
 		}
 	}
 	else {
-		if (img.includes("images") != true) {
+		if (img.includes("images") != true && img != 'none') {
 			if (data.player.pervert != true) {
 				var checkForError = "";
 				img = "images/"+cssName+"/"+img;
@@ -706,9 +706,6 @@ function writeSpeech (name, img, text) {
 				img = "images/"+cssName+"/"+img+"P.jpg";
 			}
 		}
-	}
-	if (img == "none") {
-		img = "scripts/gamefiles/none.png";
 	}
 	if (name == "player") {
 		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
@@ -721,6 +718,10 @@ function writeSpeech (name, img, text) {
 			cssColor = data.story[i].color;
 			
 		}
+	}
+	if (img == "none") {
+		var checkForError = "";
+		img = "scripts/gamefiles/none.png";
 	}
 	document.getElementById('output').innerHTML +=`
 	<div class="textBox" style="border-color: `+cssColor+`">
@@ -953,6 +954,12 @@ function openButton() {
 //Menu
 function updateMenu() {
 	document.getElementById('playerName').innerHTML = data.player.name;
+	if (data.player.pervert != true) {
+		document.getElementById('playerName').style.color = "#86b4dc";
+	}
+	else {
+		document.getElementById('playerName').style.color = "#fc53f1";
+	}
 	document.getElementById('playerMoney').innerHTML = "$" + data.player.money;
 	document.getElementById('day').innerHTML = "Day " + data.player.day + " - " + data.player.time;
 	document.getElementById('playerImage').src = "scripts/gamefiles/characters/"+data.player.character+".jpg";
@@ -1164,8 +1171,10 @@ function galleryCheck(n) {
 	for (i = 0; i < data.gallery.length; i++) {
 		if (data.gallery[i].index.includes(n)) {
 			return true;
+			break;
 		}
 	}
+	return false;
 }
 
 //Logbook
@@ -1266,7 +1275,6 @@ function switchDesc(n) {
 		<div class=" lb_primary">
 			<h2 class = "selfDesc" style = "color: `+data.story[characterCounter].color+`">`+data.story[characterCounter].fName+` `+data.story[characterCounter].lName+`</h2>
 			<p class = "selfDesc lb_trust ">Trust: <span class="`+tabTrust+`">`+tabTrust+`</p></span>
-			<p class = "selfDesc lb_scenes">Scenes Unlocked: `+scenesUnlocked+`/`+scenesTotal+`</p>
 		</div><div class=" lb_secondary">
 			<p class = "selfDesc lb_desc">`+logbookArray[logCounter].desc+`</p>
 			<p class = "selfDesc lb_body">`+logbookArray[logCounter].body+`</p>
@@ -1505,6 +1513,7 @@ function diagnostic() {
 		case "pervert": {
 			data.player.pervert = true;
 			writeSpecial("Pervert mode activated!");
+			updateMenu();
 			break;
 		}
 		case "prude": {
