@@ -285,7 +285,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "neetDate2a": {
 			writeSpeech("player", "", "Don't hold yourself back. There's no need to be reserved, we're just walking home.");
-			writeSpeech("neet", "", "I... Yes, you're right. Interacting with others naturally increases my heart rate, and anxiety. Becoming open will improve the chances of your hypnosis.<br>That is you plan, correct?");
+			writeSpeech("neet", "", "I... Yes, you're right. Interacting with others naturally increases my heart rate, and anxiety. Becoming open will improve the chances of your hypnosis.<br>That is your plan, correct?");
 			writeSpeech("player", "", "Yeah, pretty much.");
 			writeSpeech("neet", "", "Alright. I'll d-do as I see fit then.");
 			writeBig("images/neet/date-c.jpg", "Art by Enoshima Iki");
@@ -489,7 +489,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("She gasps suddenly as you snap your fingers, like she'd been holding her breath. She starts unbuttoning her shirt and quickly starts taking her clothes off.");
 			writeSpeech("player", "", "neetF? You alright?");
 			writeText("You told her to drop her inhibitions, maybe this is what she's been wanting to do this whole time?");
-			writeText("The throws her clothes aside in heaps and lays back on her bed before starting to stroke herself.");
+			writeText("She throws her clothes aside in heaps and lays back on her bed before starting to stroke herself.");
 			writeBig("images/neet/a1-1.jpg", "Art by Enoshima Iki");
 			writeSpeech("player", "", "No sense of self control, huh?");
 			writeSpeech("neet", "", "Khh... Hot... Please, don't leave...");
