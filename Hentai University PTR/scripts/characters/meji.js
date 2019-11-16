@@ -95,9 +95,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("He freezes in place when he spots you.");
 			writeSpeech("player","","You know, I think you wouldn't do too bad as a runner, " + fName('meji') + ".");
 			writeText("His hands go to his sides, clenching tightly into fists.");
-			writeSpeech("meji","scripts/gamefiles/profiles/meji2.jpg","...You can't tell anyone...");
+			writeSpeech("meji","images/meji/meji2.jpg","...You can't tell anyone...");
 			writeText("He quickly rushes over to you, grabbing you by the shirt and trying to pull you down to look him in the eyes.");
-			writeSpeech("meji","scripts/gamefiles/profiles/meji2.jpg","Not one single person hears about this, you got that!?");
+			writeSpeech("meji","images/meji/meji2.jpg","Not one single person hears about this, you got that!?");
 			writeFunction("writeEncounter('meji2b')", "Agree and walk him safely to his place");
 			writeFunction("writeEncounter('meji2c')", "Explain how you won't tolerate such rudeness");
 			break;
@@ -105,14 +105,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "meji2b" : {
 			writeSpeech("player","","...I mean, sure. I don't really think I have a reason to tell anyone, anyway.");
 			writeText("He pauses.");
-			writeSpeech("meji","scripts/gamefiles/profiles/meji2.jpg","...W-wait, really?");
+			writeSpeech("meji","images/meji/meji2.jpg","...W-wait, really?");
 			writeText("His grip on your shirt relaxes a bit, before he suddenly stands a bit straighter and he steps back.");
-			writeSpeech("meji","scripts/gamefiles/profiles/meji2.jpg","I, uh... I mean, of course you don't.");
+			writeSpeech("meji","images/meji/meji2.jpg","I, uh... I mean, of course you don't.");
 			writeSpeech("player","","Yup. What you do for fun in your spare time is none of my business.");
 			writeText("He tenses.");
-			writeSpeech("meji","scripts/gamefiles/profiles/meji2.jpg","W-Well, it's not like I do this a lot! It's just, sometimes, I... Uh...");
+			writeSpeech("meji","images/meji/meji2.jpg","W-Well, it's not like I do this a lot! It's just, sometimes, I... Uh...");
 			writeSpeech("player","","How about I just walk you home?");
-			writeSpeech("meji","scripts/gamefiles/profiles/meji2.jpg","...Thanks.");
+			writeSpeech("meji","images/meji/meji2.jpg","...Thanks.");
 			writeText("Getting him to his place is pretty quick; his house looks like some old, traditional-looking place. He really is a rich kid, then.");
 			writeText("All things considered, he's probably a <i>lot</i> more open to suggestion than you thought, but it might be a good idea to leave that for another day.");
 			writeText("When you do get to his place, he just mumbles a quick thanks and practically sprints through the door, his face bright red.");
@@ -130,7 +130,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","...Is that really how someone in your position should be making a request?");
 			writeText("He freezes.");
 			writeSpeech("player","","Hm. Seems like the principal was right about your attitude needing... <i>adjustment.</i>");
-			writeSpeech("meji","scripts/gamefiles/profiles/meji2.jpg","Y-You can't tell her-");
+			writeSpeech("meji","","images/meji/meji2.jpg","Y-You can't tell her-");
 			writeSpeech("player","","I won't tell anyone anything.");
 			writeText("His eyes go wide for a moment, his grip relaxing-");
 			writeSpeech("player","","<i>Yet.</i>");
@@ -138,10 +138,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","If you don't want me to go sharing what I'm looking at with every student and faculty member around the university, then I have a simple little request...");
 			writeText("You lean forward, dropping your voice to whisper in his ear...");
 			writeSpeech("player","","You're going to ask me, <i>politely</i>, not to share your <i>crossdressing habit</i> with everyone.");
-			writeSpeech("meji","scripts/gamefiles/profiles/meji2.jpg","...T-That's all...?");
+			writeSpeech("meji","","images/meji/meji2.jpg","...T-That's all...?");
 			writeSpeech("player","","Nobody likes a rude <i>bitch</i>, "+fName('meji')+".");
 			writeText("He flinches at the word, but bows his head down a bit.");
-			writeSpeech("meji","scripts/gamefiles/profiles/meji2.jpg","...I'm... sorry. Please, don't tell anyone about my... <i>c-crossdressing habit</i>...");
+			writeSpeech("meji","","images/meji/meji2.jpg","...I'm... sorry. Please, don't tell anyone about my... <i>c-crossdressing habit</i>...");
 			writeSpeech("player","","...Good enough. Go home, "+fName('meji')+". We'll talk more at school.");
 			writeText("He swallows nervously, nodding once before running off quickly.");
 			writeText("...All in all, it didn't exactly build <i>trust</i> between you two, but you can already tell that things are going to get <i>interesting.</i>");
