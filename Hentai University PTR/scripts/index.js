@@ -954,6 +954,12 @@ function openButton() {
 //Menu
 function updateMenu() {
 	document.getElementById('playerName').innerHTML = data.player.name;
+	if (data.player.pervert != true) {
+		document.getElementById('playerName').style.color = "#86b4dc";
+	}
+	else {
+		document.getElementById('playerName').style.color = "#fc53f1";
+	}
 	document.getElementById('playerMoney').innerHTML = "$" + data.player.money;
 	document.getElementById('day').innerHTML = "Day " + data.player.day + " - " + data.player.time;
 	document.getElementById('playerImage').src = "scripts/gamefiles/characters/"+data.player.character+".jpg";
@@ -1269,7 +1275,6 @@ function switchDesc(n) {
 		<div class=" lb_primary">
 			<h2 class = "selfDesc" style = "color: `+data.story[characterCounter].color+`">`+data.story[characterCounter].fName+` `+data.story[characterCounter].lName+`</h2>
 			<p class = "selfDesc lb_trust ">Trust: <span class="`+tabTrust+`">`+tabTrust+`</p></span>
-			<p class = "selfDesc lb_scenes">Scenes Unlocked: `+scenesUnlocked+`/`+scenesTotal+`</p>
 		</div><div class=" lb_secondary">
 			<p class = "selfDesc lb_desc">`+logbookArray[logCounter].desc+`</p>
 			<p class = "selfDesc lb_body">`+logbookArray[logCounter].body+`</p>
@@ -1508,6 +1513,7 @@ function diagnostic() {
 		case "pervert": {
 			data.player.pervert = true;
 			writeSpecial("Pervert mode activated!");
+			updateMenu();
 			break;
 		}
 		case "prude": {
