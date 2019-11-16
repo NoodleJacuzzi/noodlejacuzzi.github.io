@@ -23,8 +23,8 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "neet2", name: "It looks like neet is getting ready for bed again", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 1, trustMax: 1, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "neet3", name: "It looks like neet is here again", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 2, trustMax: 2, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "neet4", name: "neet is sitting in the dark room", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 3, trustMax: 3, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "neetDateSelection", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 60, trustMax: 90, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "neetDateFinish", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 90, trustMax: 99, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetDateSelection", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 60, trustMax: 80, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetDateFinish", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 80, trustMax: 99, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -153,7 +153,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("neet", "", "Hmm. If I had to put it into words...");
 			writeText("She takes a moment to think, as if slowly piecing the appropriate words together bit by bit.");
 			writeSpeech("neet", "", "I'd say I'm terrified. My heart rate is high and I can barely remain seated. If it were not for the bad news, I'd most certainly describe myself as 'jumping for joy'.<br>I've barely gotten any sleep as well. I was rehearsing how I would phrase my request last night for several hours.");
-			writeText("Testing something, you place your hand on her forehead. Immediately she goes quiet, the faintest of blushes spreads across her cheeks, .");
+			writeText("Testing something, you place your hand on her forehead. Immediately she goes quiet as the faintest of blushes spreads across her cheeks.");
 			writeText("You can't risk her snitching on you, but you have no idea what countermeasures she has in place. You need to regain control of the situation.");
 			writeSpeech("player", "", "That's the problem, you're nervous around me.<br>We'll need to do something about that.");
 			writeText("You withdraw your hand. The blush has spread farther across her face and she's begun to look dizzy.");
@@ -324,19 +324,19 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Now is as good of a time as any to break it in. Let's go.");
 			writeText("The two of you leave the room and you make your way to the school's running track.");
 			writeText("...");
-			writeBig("images/date-x.jpg", "Art by Enoshima Iki");
-			writeSpeech("neet", "gym", "Okay, I'm ready.");
+			writeBig("images/neet/date-x.jpg", "Art by Enoshima Iki");
+			writeSpeech("neet", "gym.jpg", "Okay, I'm ready.");
 			writeSpeech("player", "", "Looks good on you, neetF.");
-			writeSpeech("neet", "gym", "Thank you. This outfit might be new, but I've been exercising a lot lately. I'm confident in myself.");
+			writeSpeech("neet", "gym.jpg", "Thank you. This outfit might be new, but I've been exercising a lot lately. I'm confident in myself.");
 			writeSpeech("player", "", "That's the spirit! Alright, how about three laps?");
-			writeSpeech("neet", "gym", "Three...? Of laps around...");
+			writeSpeech("neet", "gym.jpg", "Three...? Of laps around...");
 			writeSpeech("player", "", "Around the track, neetF.");
 			writeText("She looks along the long track, her confidence visibly deflating.");
 			writeSpeech("player", "", "Feeling nervous?");
-			writeSpeech("neet", "gym", "N-no, I'm not out of shape, I promise. I can handle three.");
+			writeSpeech("neet", "gym.jpg", "N-no, I'm not out of shape, I promise. I can handle three.");
 			writeText("You start to stretch to loosen yourself up. She tries to match you, but her poor form means you need to coach her through a bit.");
 			writeSpeech("player", "", "Alright, ready?");
-			writeSpeech("neet", "gym", "Yes playerSir.");
+			writeSpeech("neet", "gym.jpg", "Yes playerSir.");
 			writeText("...");
 			writeText("The two of you make it two laps before neetF begins to seriously flag. She needs to lean on your shoulder to finish, but she does make it. Afterwards you rest on a wall to take a breather.");
 			writeSpeech("player", "", "Feeling alright? Heart pumping?");
@@ -347,7 +347,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "neetDate3a": {
 			writeSpeech("player", "", "Let's get changed then.");
-			writeSpeech("neet", "gym", "Yes, please. It's after hours, can we use the showers?");
+			writeSpeech("neet", "gym.jpg", "Yes, please. It's after hours, can we use the showers?");
 			writeSpeech("player", "", "I'm faculty, I'm sure principalF will give the okay.");
 			writeText("The two of you make your way into the gym's shower room. neetF's jacket is a bit stuffy, so she takes it off here.");
 			writeBig("images/neet/date-a.jpg", "Art by Enoshima Iki");
@@ -355,7 +355,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Still, you're on a mission. There will be time for all that later.");
 			writeText("...");
 			writeText("The two of you finish cleaning up and say your goodbyes.");
-			writeSpeech("neet", "gym", "This was pleasant, albeit a bit painful. Thank you for the time.");
+			writeSpeech("neet", "gym.jpg", "This was pleasant, albeit a bit painful. Thank you for the time.");
 			writeSpeech("player", "", "No problem, see you tomorrow.");
 			writeSpecial("neetF's trust in you has greatly increased!");
 			raiseTrust('neet', 10);
@@ -365,15 +365,15 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "neetDate3b": {
 			writeSpeech("player", "", "You look great already, you managed three laps!");
-			writeSpeech("neet", "gym", "Hah... Very funny... Look at this.");
+			writeSpeech("neet", "gym.jpg", "Hah... Very funny... Look at this.");
 			writeBig("images/neet/date-b.jpg", "Art by Enoshima Iki");
-			writeSpeech("neet", "gym", "See? I'm sweating through two layers. You feel quite silly now, don't you playerSir?<br>Ah, I've gotten carried away. My apologies.");
+			writeSpeech("neet", "gym.jpg", "See? I'm sweating through two layers. You feel quite silly now, don't you playerSir?<br>Ah, I've gotten carried away. My apologies.");
 			writeSpeech("player", "", "It's fine, it's a good sign that you're relaxed enough to play around like that, and that you were fine with resting on my shoulder for that last lap.");
-			writeSpeech("neet", "gym", "I was not resting! I just... Tripped on a rock without my glasses...");
+			writeSpeech("neet", "gym.jpg", "I was not resting! I just... Tripped on a rock without my glasses...");
 			writeSpeech("player", "", "Of course, sorry.");
-			writeSpeech("neet", "gym", "... Sorry. I really was resting, there was no rock. I just-");
+			writeSpeech("neet", "gym.jpg", "... Sorry. I really was resting, there was no rock. I just-");
 			writeSpeech("player", "", "It's completely fine, I promise. How about we get cleaned up and head home?");
-			writeSpeech("neet", "gym", "Yes please. It's after hours, can we use the showers?");
+			writeSpeech("neet", "gym.jpg", "Yes please. It's after hours, can we use the showers?");
 			writeSpeech("player", "", "I'm faculty, I'm sure principalF will give the okay.");
 			writeSpecial("neetF's trust in you has greatly increased!");
 			raiseTrust('neet', 10);
@@ -452,14 +452,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You wake back up and stretch out just as someone walks back into the room.");
 			writeSpeech("player", "", "Oh hey, you're-");
 			writeBig("images/neet/b1-1.jpg", "Art by Enoshima Iki");
-			writeSpeech("neet", "towel", "You're... You're still...<br>By 'later', you meant...");
+			writeSpeech("neet", "towel.jpg", "You're... You're still...<br>By 'later', you meant...");
 			writeSpeech("player", "", "Ah, sorry.");
 			writeText("You turn away to give her a little privacy. She looks good though, suprising she's the type to walk around naked, but she does live alone after all.");
-			writeSpeech("neet", "towel", "Y-you can look now.");
+			writeSpeech("neet", "towel.jpg", "Y-you can look now.");
 			writeBig("images/neet/b1-2.jpg", "Art by Enoshima Iki");
-			writeSpeech("neet", "towel", "S-sorry... I thought that by 'later'-");
+			writeSpeech("neet", "towel.jpg", "S-sorry... I thought that by 'later'-");
 			writeSpeech("player", "", "It's totally my fault, don't worry about it. I should have been more clear.");
-			writeSpeech("neet", "towel", "Y-you're so calm...<br>S-sorry... I should be able to keep my cool, since we're... We're...");
+			writeSpeech("neet", "towel.jpg", "Y-you're so calm...<br>S-sorry... I should be able to keep my cool, since we're... We're...");
 			writeSpeech("player", "", "In a relationship?");
 			writeBig("images/neet/b1-3.jpg", "Art by Enoshima Iki");
 			writeSpeech("player", "", "there's no need to worry, everyone has their own speed. You get nervous when touched, it's just something to work on, alright?");
