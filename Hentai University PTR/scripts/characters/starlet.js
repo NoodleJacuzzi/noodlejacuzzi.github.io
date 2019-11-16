@@ -71,7 +71,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Oh, and starletF?");
 			writeSpeech("starlet", "", "Yes playerSir?");
 			writeSpeech("player", "", "Keep this quiet. On my end, I mean. No advertising yourself at school, or sleeping around.");
-			writeSpeech("starlet", "", "Ew, have sex without getting paid? What am I, a slut? No worries playerMister producer, your double life is safe with me!");
+			writeSpeech("starlet", "", "Ew, have sex without getting paid? What am I, a slut? No worries playerMister Producer, your double life is safe with me!");
 			writeText("With that she bounds out of your office.");
 			writeSpeech("player", "", "... I'm completely boned. <br>Whelp, life isn't fun if you only think with your head.");
 			setTrust('starlet', 80);
@@ -80,13 +80,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "starlet3": {
-			writeSpeech("starlet", "", "Hello sir, I'm here for the papers?");
+			writeSpeech("starlet", "", "Hello playerSir, I'm here for the papers?");
 			writeSpeech("player", "", "Uh, sure. Come on in.");
 			writeText("starletF politely walks in as you step aside. She's got a clipboard and has an extremely professional air to her right now.");
 			writeText("But the moment you shut the door, she tosses the papers onto your bed and takes a seat.");
 			writeSpeech("starlet", "", "So professional! I'm very glad to be working with you playerMister producer. Are the walls soundproofed?");
 			writeSpeech("player", "", "This place is safe, no need to worry.");
-			writeSpeech("starlet", "", "Fantastic! So what's the schedule? I came here going commando, you want to go with the classic after-school slut intro. Introduce starletF starletL to the world, you know?");
+			writeSpeech("starlet", "", "Fantastic! So what's the schedule? I came here going commando, you want to go with the classic after-school slut intro? Introduce starletF starletL to the world?");
 			writeSpeech("player", "", "Let's take things a little more slowly, we should-<br>Wait, are you really using your real name?");
 			writeSpeech("starlet", "", "Yep! My mom started her weed binge pretty early after I was born, so no need for a fake porn name.");
 			writeSpeech("player", "", "That's not... You know what? I'm just going to roll with it. What should we start with? Masturbation solo, blowj-");
@@ -217,7 +217,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She looks downcast, but this really is for the best. For you, and for her.");
 			writeSpeech("starlet", "", "I'll do my best then. I'll get a bachelor's degree, at least, and then I'll convince my mom to star in porn with me!");
 			writeText("And her energy is back.");
-			writeSpeech("starlet", "", "Thank you playerMister producer! I'll do my best, I promise! Please, don't post those videos yet. I'll become famous and auction them off for millions, and split the payout with you of course. My loans will be toast, and I'll be on top of the world! Oh, and I can do a cuck shoot with daddy too! Man, I gotta write these ideas down!");
+			writeSpeech("starlet", "", "Thank you playerMister Producer! I'll do my best, I promise! Please, don't post those videos yet. I'll become famous and auction them off for millions, and split the payout with you of course. My loans will be toast, and I'll be on top of the world! Oh, and I can do a cuck shoot with daddy too! Man, I gotta write these ideas down!");
 			writeText("She grabs her stuff and runs out the door.");
 			writeSpeech("starlet", "", "Thank you again, I'll never forget how much you've done for me!");
 			writeText("She yells it loud enough for the whole building to hear, but is careful not to paint you in a negative light.");
@@ -280,7 +280,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("starlet", "", "Really? How so?");
 			writeSpeech("player", "", "... Nevermind. We'll shoot again another day, I'll see you later.");
 			writeBig("images/starlet/1-5.jpg", "Art by Oreteki18kin");
-			writeSpeech("starlet", "", "See you later playerMister producer! Thanks again!");
+			writeSpeech("starlet", "", "See you later playerMister Producer! Thanks again!");
 			writeFunction("changeLocation('playerHouse')", "Go back");
 			break;
 		}
@@ -325,15 +325,15 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("starlet", "", "Really? How so?");
 			writeSpeech("player", "", "... Nevermind. We'll shoot again another day, I'll see you later.");
 			writeBig("images/starlet/1-5.jpg", "Art by Oreteki18kin");
-			writeSpeech("starlet", "", "See you later playerMister producer! Thanks again!");
+			writeSpeech("starlet", "", "See you later playerMister Producer! Thanks again!");
 			writeFunction("changeLocation('playerHouse')", "Go back");
 			break;
 		}
 		case 'starlet2': {
-			writeSpeech("starlet", "", "Hello again sir, I'm here for the documents again?");
+			writeSpeech("starlet", "", "Hello again playerSir, I'm here for the documents again?");
 			writeSpeech("player", "", "Of course Ms. starletL, come on in.");
 			writeText("Once you've shut the door her polite act is dropped.");
-			writeSpeech("starlet", "", "playerMister producer, I've got a great idea for another shoot! Quick, can you set up a shoot?");
+			writeSpeech("starlet", "", "playerMister Producer, I've got a great idea for another shoot! Quick, can you set up a shoot?");
 			writeSpeech("player", "", "Yeah, what's up?");
 			writeSpeech("starlet", "", "Well, I was thinking we could start with...");
 			writeText("...");
