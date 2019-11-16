@@ -553,7 +553,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if(checkFlag('meji','willful'))
 				writeSpeech("meji","","playerF?");
 			else{
-				if(data.player.gender == "Man")
+				if(data.player.gender == "man")
 					writeSpeech("meji","","Sir?");
 				else
 					writeSpeech("meji","","Ma'am?");
@@ -595,7 +595,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("He smiles as he tosses his other clothes to the side.");
 				writeText("He steps in front of you before kneeling down, his hands rubbing against your crotch as he slides forward.");
 				writeSpeech("meji","","Mmm... I could tell from looking at you, but feeling it in my hand is way better.");
-				if(data.player.gender == "Man"){
+				if(data.player.gender == "man"){
 					writeText("He leans his head down, pulling your pants low enough to reveal your underwear.");
 					writeText("You feel his mouth press down against the thin fabric, his hot breath and spit soaking into it as his tongue dances across the fabric.");
 					writeSpeech("meji","","Don't worry, I won't make you wait for the real deal...");
@@ -1262,13 +1262,15 @@ function writeEvent(name) { //Plays the actual event.
 			break;
 		}
 		case "meji6" : {
+			if(data.player.location == "gallery")
+				document.getElementById('output').innerHTML = '';
 			writeBig("images/meji/8-1.jpg","Art by Nagi Ichi");
 			writeSpeech("meji","","Do you like it? I've been wearing it under my uniform lately... including in your office back then.");
 			writeSpeech("player","","I'd say it looks nice, but I feel like you're not looking for a <i>verbal</i> reply.");
 			writeText("He smiles as he tosses his other clothes to the side.");
 			writeText("He steps in front of you before kneeling down, his hands rubbing against your crotch as he slides forward.");
 			writeSpeech("meji","","Mmm... I could tell from looking at you, but feeling it in my hand is way better.");
-			if(data.player.gender == "Man"){
+			if(data.player.gender == "man"){
 				writeText("He leans his head down, pulling your pants low enough to reveal your underwear.");
 				writeText("You feel his mouth press down against the thin fabric, his hot breath and spit soaking into it as his tongue dances across the fabric.");
 				writeSpeech("meji","","Don't worry, I won't make you wait for the real deal...");
@@ -1366,13 +1368,14 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("meji","","Is... Is this how you use all your toys...?");
 			writeSpeech("player","","Yup.");
 			writeText("A dumb grin spreads across his face, his eyes shutting.");
-			if(data.player.gender == "Man")
+			if(data.player.gender == "man")
 				writeSpeech("meji","","I love it... <i>Master...</i>");
 			else
 				writeSpeech("meji","","I love it... <i>M-Mistress...</i>");
 			writeText("His breathing levels out quickly, meaning that he fell asleep. Not that you can blame him, given the hypnosis treatment.");
 			writeSpeech("player","","...Well, might as well clean up. Hope he doesn't mind me using one of his towels to wipe him off...");
-			data.player.location = "vintageStreet";
+			if(data.player.location != "gallery")
+				data.player.location = "vintageStreet";
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
