@@ -53,7 +53,7 @@ function writeEncounter(scene) {
 			writeText("We're always open to comments or criticism. If you feel like school management would add a lot to the game, you'd like us to consider adding another artist, or you'd like to suggest content of your own, you can shoot us a message anywhere this game is posted. You can find the Patreon here: <a href='https://www.patreon.com/noodlejacuzzi'>Patreon Link</a>");
 			writeText("You can also send us a message directly. Noodlejacuzzi is on discord (NoodleJacuzzi#4120) or you can send an email at noodlejacuzzi@gmail.com");
 			writeText("Captain Cryptogreek can be messaged on his reddit account where he regularly posts captions. You can also shoot him an email if you'd like him to proofread or you'd like to commission his skills at cryptogreekcaptions@gmail.com");
-			writeText("Thank you to: Swallows999, Ben Dover, MrManPerson, Lasse B, ChronosEdge, Judavarius, Lunarghost, Scal, Adonnak, Andy Amundy, Angel, Ariados, Blaise Fenn, brandon, Debarre Sonny, Drashin, Gwen Yurick, iNoH8+, Jane, Jesse Greene, joe, joe mulhall, Karan Raj Gupta, lm Carma, marvin diaz, Mirza Hasan, murgatroid99, Nha, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Slipokk, Snaked, stratum, Wild Bill, Will Osboldstone, and 凱 陳 for funding this game! The patreon funds are split as Captain Cryptogreek has taken over as lead writer for the game.");
+			writeText("Thank you to: Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Lasse B, Badaxe, ChronosEdge, Colin E, Judavarius, Lunarghost, Scal, Adonnak, andy, Andy, Andy Amundy, Angel, Ariados, Austin yarbrougb, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, David Lange, Debarre Sonny, Dewr, Drashin, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jane, jdktjk205, Jesse Greene, joe, joe mulhall, Joshua Melzark, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, Ryan Linn, sage, Skyrim mod lvr, Slipokk, Snaked, stratum, valdis, Vincent Madaire-Cullen, Wild Bill, Will Osboldstone, Yongdian Guo, Профессор Преображенский, 凱 陳 for funding this game! The patreon funds are split as Captain Cryptogreek has taken over as lead writer for the game.");
 			writeSpecial("And special thanks to Stiggy752 for the game's new CSS!");
 			writeText("I've added the option to start as a futanari. This only changes your character's image and the pronouns used (so that you're ma'am instead of sir). Please let Noodle Jacuzzi know if anyone is still referring to your as 'sir' when inappropriate, thank you.");
 			writeText("The game is more freeform and slower paced than my previous works. If you get stuck, please let us know. There isn't currently a guide, but we can easily feature an FAQ here.");
@@ -178,6 +178,7 @@ function writeEncounter(scene) {
 			}
 			if (specialEvent == false) {
 				console.log("No events found");
+				writeText("<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>");
 				writeFunction("changeLocation('playerHouse')", "Get out of bed");
 			}
 			if (checkTrust('principal') == 40) {raiseTrust('principal', 1);}
