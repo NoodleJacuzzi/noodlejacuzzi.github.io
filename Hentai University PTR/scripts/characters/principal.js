@@ -104,7 +104,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			}
 			if (data.story[8].met.includes('neetS') != true) {
 				writeSpeech("principal", "", "There've been reports of a... Um... 'Gremlin', in the computer lab. I know it's ridiculous, but...");
-				writeFunction("writeEncounter('neetCaseStart')", fName('neet')+" "+lName('neet')+"'s file");
+				writeFunction("writeEncounter('neetCaseStart')", "Gremlin's file");
 			}
 			else {
 				if (data.story[8].met.includes('neetF') != true) {
