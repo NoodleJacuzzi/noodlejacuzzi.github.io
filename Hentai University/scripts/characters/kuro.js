@@ -1,4 +1,4 @@
-var character = {index: "kuro", met: false, fName: "Steph", lName: "Black", trust: 0, encountered: false, textEvent: "", color: "#fde1a5",};
+var character = {index: "kuro", met: false, fName: "Steph", lName: "Black", trust: 0, encountered: false, textEvent: "", textColor: "#fde1a5",};
 
 var logbook = { //Logbook details for each character.
 	index: "kuro", 
@@ -7,7 +7,7 @@ var logbook = { //Logbook details for each character.
 	clothes: "Her preferred outfit is a riff on the school uniform, with a microskirt so short she's gotten chewed out at school more than once.",
 	home: "She mostly hangs out on the roof before and after classes.",
 	tags: "Prostitution, Phone Sex, Cum on Clothes",
-	artist: "Artist: Enoshima Iki",
+	artist: "Artist: Nagi Ichi",
 	author: "Captain Cryptogreek",
 };
 
@@ -157,6 +157,30 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "kuro4" : {//another roof-meeting
 			if(checkTrust('kuro') < 60){
+				if((checkTrust('kuro') == 24 || checkTrust('kuro') == 25) && (galleryCheck('kuroMoney2') == true)){
+					writeText("Seeing you approach, kuroF smiles up at you, but quickly returns to typing on her phone.");
+					writeSpeech("player","","You look... busy?");
+					writeSpeech("kuro","","A bit, yeah. I'm <i>totes</i> swamped today. I've got this to-do list, and I've been putting off most of it, so I gotta handle it today.");
+					writeText("She sighs a little. but then smiles up at you again.");
+					writeSpeech("kuro","","Of course, that <i>does</i> include picking up some more condoms, so once it's done?");
+					writeText("She steps forward, her breasts pressing against your chest as whispers into your ear,");
+					writeSpeech("kuro","","We can have even more <i>fun</i>.");
+					writeSpeech("player","","I'll look forward to-");
+					writeText("Her tongue gently runs along your ear-lobe.");
+					writeSpeech("kuro","","You better, hun~! Oh, and after you painted my back, you mentioned texting me a pic. Send it whenev's!");
+					writeText("With that, she darts off with a wink and a laugh, leaving you to return to your business.");
+					writeFunction("changeLocation(data.player.location)", "Leave");
+					break;
+				}
+				else if(checkTrust('kuro') < 24 && galleryCheck('kuro2') == true && galleryCheck('kuro3') == true && (data.story[1].textEvent.includes('kuroPhone3A') == true || data.story[1].textEvent.includes('kuroPhone3B') == true)){
+					writeText("kuroF smiles as you approach but jolts in place a little.");
+					writeSpeech("kuro","","Heya~! Sorry, but I- <i>hic!</i>... There's been a bit of hiccup. Can you come back tomorrow? I'm- <i>hic!</i> I'm headed home early today.");
+					writeText("She darts past you, her hand over her mouth as she continues to hiccup.");
+					writeText("Weird situation... It should resolve itself, though.");
+					setTrust('kuro',24);
+					writeFunction("changeLocation(data.player.location)", "Leave");
+					break;
+				}
 				writeText("As you approach her, "+fName('kuro')+" looks you over, rolling another of her lollipops in her mouth.");
 				writeSpeech("kuro","","Mm, you're a little pent-up, huh? I don't mind helping out, but there's this bag I <i>almost</i> have enough for, y'know?");
 				if(galleryCheck('kuro2') != true){
@@ -372,6 +396,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "kuro6c" : {
+			if(checkTrust('kuro') == 64){
+				setTrust('kuro',65);
+			}
 			writeText("You make eye-contact for a moment, before speaking clearly.");
 			writeSpeech("player","","This is an order.");
 			writeText("Her eyes half-unfocus, nodding along.");
@@ -573,17 +600,17 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "kuro3" : {//nonchalant back
 			if (data.player.location != 'gallery') {
-			if(data.player.money < 10){
-				writeSpeech("kuro","","Um... You <i>do</i> realize you don't have enough, right?");
-				writeFunction("loadEncounter('kuro', 'kuro4')", "Choose something else");
-				writeFunction("changeLocation(data.player.location)", "Leave her be");
-				scene = "kuro1";
-				break;
-			}
-			document.getElementById('output').innerHTML = '';
+				if(data.player.money < 10){
+					writeSpeech("kuro","","Um... You <i>do</i> realize you don't have enough, right?");
+					writeFunction("loadEncounter('kuro', 'kuro4')", "Choose something else");
+					writeFunction("changeLocation(data.player.location)", "Leave her be");
+					scene = "kuro1";
+					break;
+				}
+				document.getElementById('output').innerHTML = '';
 				data.player.money -=10;
 				updateMenu();
-			}
+				}
 			writeSpeech("kuro","","Jerking on me, huh? As long as you pay for any stains, <i>I'm all yours, hun.</i> Of course, can't exactly do this one here, so...");
 			writeText("She slips a piece of paper into your pocket with a wink.");
 			writeSpeech("kuro","","I'll leave the back-door unlocked.");
@@ -874,8 +901,10 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("There's the sharp intake of breath behind the door, ragged panting a second later, and the shifting sounds of her sheets as she writhes across them.");
 			writeSpeech("player","","...Would've taken her for a screamer, but this is fine.");
 			writeText("Just for fun, you also slam the front door loud enough to be heard on your way out, casually striding down the street and wondering how she'll be feeling tomorrow.");
-			data.player.location = "vintageStreet";
-			writeFunction("changeLocation(data.player.location)", "Finish");
+			if(data.player.location != "gallery"){
+				data.player.location = "vintageStreet";
+				writeFunction("changeLocation(data.player.location)", "Finish");
+			}
 			break;
 		}
 		case "kuro5" : {//hypno into mindbreak sex - NOT WRITTEN
@@ -916,6 +945,7 @@ var phoneArray = [//Lists the potential text events the player can receive at th
 	//PRIMARY ROUTE TEXTS:
 	{index: "kuroPhone7", trust: 63,},
 	{index: "kuroReward1", trust: 64,},
+	{index: "kuroReward1", trust: 65,},
 	//SECONDARY ROUTE TEXTS:
 	{index: "kuroPhone6", trust: 26,},
 	{index: "kuroReward2", trust: 40,},
