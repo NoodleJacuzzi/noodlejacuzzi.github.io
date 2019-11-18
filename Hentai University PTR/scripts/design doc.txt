@@ -322,6 +322,8 @@ V0.0
 		Fix mobile version footer buttons (COMPLETE)
 		Add space to top of the screen after a dream (COMPLETE)
 		Add pink to pervert mode (COMPLETE)
+		Add Lana text letting you know she'll be coming over
+		Fix purple event not having an end button
 		Disabling images does not change navigation
 		RaiseStat function
 		raiseStat messages - hypnosis: sensitivity increase, group hypnosis, etc
