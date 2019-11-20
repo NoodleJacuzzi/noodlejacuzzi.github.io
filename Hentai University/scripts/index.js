@@ -32,7 +32,7 @@ var data = {
 		counseling: 0,
 		lastText: 100,
 		dayID: 1,
-		version: 4,
+		version: 5,
 		location: "",
 		pervert: false,
 	},
@@ -50,6 +50,8 @@ var data = {
 		{index: "neet", met: false, fName: "Tia", lName: "Sun", trust: 0, encountered: false, textEvent: "", color: "#da924b"},
 		{index: "scarf", met: false, fName: "Casandra", lName: "Hamilton", trust: 0, encountered: false, textEvent: "", color: "#954655"},
 		{index: "green", met: false, fName: "Emma", lName: "Hamilton", trust: 0, encountered: false, textEvent: "", color: "#677b4c"},
+		{index: "succubus", fName: "Gou", lName: "", trust: 0, encountered: false, textEvent: "", met: false, color: "#BF76DF"},
+		{index: "nurse", fName: "Justine", lName: "Walton", trust: 0, encountered: false, textEvent: "", met: false, color: "#8D756B"},
 	],
 	gallery: [
 	],
@@ -457,7 +459,71 @@ function replaceCodenames(text) {
 			codenameCheck = data.story[codenameIndex].index + "L";
 			text = text.replace(codenameCheck, data.story[codenameIndex].lName);
 		}
-	} 
+	}
+	if (data.player.uwu == true) {
+		for (uwuLoop = 0; uwuLoop < 30; uwuLoop++) {
+			text = text.replace('<br>', "TESTTHING");
+			text = text.replace('th', "d");
+			text = text.replace('Th', "D");
+			text = text.replace('what', "wat");
+			text = text.replace('What', "Wat");
+			text = text.replace('l', "w");
+			text = text.replace('r', "w");
+			text = text.replace('L', "W");
+			text = text.replace('R', "W");
+			text = text.replace('TESTTHING', "<br>");
+		}
+		switch (getRandomInt(15)) {
+			case 0:
+				text = text + " ♥w♥";
+			break;
+			case 1:
+				text = text + " (˘ω˘)";
+			break;
+			case 2:
+				text = text + " (U ᵕ U❁)";
+			break;
+			case 3:
+				text = text + " ( ˊ.ᴗˋ )";
+			break;
+			case 4:
+				text = text + " ( ͡o ꒳ ͡o )";
+			break;
+			case 5:
+				text = text + " ( ´ω` )۶";
+			break;
+			case 6:
+				text = text + " OwO";
+			break;
+			case 7:
+				text = text + " (*ฅ́˘ฅ̀*)";
+			break;
+			case 8:
+				text = text + " ( ͡o ᵕ ͡o )";
+			break;
+			case 9:
+				text = text + " ✧･ﾟ: *✧･ﾟ♡*(ᵘʷᵘ)*♡･ﾟ✧*:･ﾟ✧";
+			break;
+			case 10:
+				text = text + " ★⌒ヽ(˘꒳˘ *)";
+			break;
+			case 11:
+				text = text + " (◕ ˬ ◕✿)";
+			break;
+			case 12:
+				text = text + " (◕∇◕✿)";
+			break;
+			case 13:
+				text = text + " (ꈍ ᴗ ꈍ✿)";
+			break;
+			case 14:
+				text = text + " (◕‸ ◕✿) *pout*";
+			break;
+			case 15:
+				text = text + " (≖ ︿ ≖ ✿)";
+			break;
+		}
+	}
 	return text;
 }
 
@@ -557,16 +623,10 @@ function checkForEncounters() {
 }
 
 function printEncounterButton(character, scene, text, top, left, altName, altImage) {
-	if (imagesDisabled == false) {
-		document.getElementsByClassName('playerRoom')[0].innerHTML += `
-			<div class="pictureButton" onclick='loadEncounter("`+character+`", "`+scene+`")'
-			style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+text+`</div>
-		`;
-	}
-	else {
-		console.log('loading button for encounter '+scene+' with character '+character);
-		writeFunction("loadEncounter("+character+", "+scene+")", text);
-	}
+	document.getElementsByClassName('playerRoom')[0].innerHTML += `
+		<div class="pictureButton" onclick='loadEncounter("`+character+`", "`+scene+`")'
+		style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+text+`</div>
+	`;
 }
 
 function printEncounterTab(name, scene, text, altImage, altName) {
@@ -660,7 +720,7 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 				<div class="textBoxContent">
 				<p class = "textName" style="color:`+cssColor+`">` + name + `</p>
 				<p class="status"> Status: ` + tabTrust + `</p>
-				<p class="switch" onclick="loadEncounter('`+data.story[tabIndex].index+`', '`+scene+`')">` + text + `</p>
+				<p class="switch" onclick="loadEncounter('`+data.story[tabIndex].index+`', '`+scene+`')">` + replaceCodenames(text) + `</p>
 			</div>	</div>
 			<br>
 			`;
@@ -1036,7 +1096,7 @@ function updateSave() {
 		data.player.honorific = "sir";
 	}
 	if (data.player.version == 3) {
-		console.log('version 2.5 detected, updating save');
+		console.log('version 3 detected, updating save');
 		data.player.version = 4;
 		alert('older save version detected! Moving you to back to your house. Feel free to restart if needed.');
 		data.player.location = 'playerHouse';
@@ -1053,6 +1113,15 @@ function updateSave() {
 		data.story[10].color = "#da924b";
 		data.story[11].color = "#954655";
 		data.story[12].color = "#677b4c";
+	}
+	if (data.player.version == 4) {
+		console.log('version 4 detected, updating save');
+		data.player.version = 5;
+		var goof = {index: "succubus", fName: "Gou", lName: "", trust: 0, encountered: false, textEvent: "", met: false, color: "#BF76DF", author: "NoodleJacuzzi", artist: "Gujira"};
+		data.story.push(goof);
+		goof = {index: "nurse", fName: "Justine", lName: "Walton", trust: 0, encountered: false, textEvent: "", met: false, color: "#8D756B", author: "NoodleJacuzzi", artist: "Oreteki18kin"};
+		data.story.push(goof);
+		console.log(data.story);
 	}
 	saveSlot(110);
 }
@@ -1511,9 +1580,16 @@ function diagnostic() {
 			break;
 		}
 		case "pervert": {
-			data.player.pervert = true;
-			writeSpecial("Pervert mode activated!");
-			updateMenu();
+			if (data.player.pervert != true) {
+				data.player.pervert = true;
+				writeSpecial("Pervert mode activated!");
+				updateMenu();
+			}
+			else {
+				data.player.pervert = false;
+				writeSpecial("Pervert mode deactivated!");
+				updateMenu();
+			}
 			break;
 		}
 		case "prude": {
@@ -1524,6 +1600,7 @@ function diagnostic() {
 		case "vegetarian": {
 			setTrust('tomgirl', -1);
 			setTrust('meji', -1);
+			setTrust('succubus', -1);
 			writeSpecial("Trap / male characters have been deactivated. You might need to use this code again in the future when more traps are added.");
 			break;
 		}
@@ -1543,6 +1620,17 @@ function diagnostic() {
 		}
 		case "new name": {
 			loadEncounter('system', 'renamingRoom');
+			break;
+		}
+		case "oowoo": {
+			if (data.player.uwu != true) {
+				data.player.uwu = true;
+				writeSpecial("What's this? UwU cheat activated.");
+			}
+			else {
+				data.player.uwu = false;
+				writeSpecial("Oowoo cheat has been deactivated.");
+			}
 			break;
 		}
 		case "spookwave": {
@@ -1771,6 +1859,15 @@ function checkPhoneImages(n) {
 function deleteImage(n) {
 	data.phoneImages.splice(n, 1);
 	phoneImages();
+}
+
+function clearText(n) {
+	for (textIndex = 0; textIndex < data.story.length; textIndex++) {
+		if (data.story[textIndex].index == n) {
+			console.log('deleting text log of '+n);
+			data.story[textIndex].textEvent = "";
+		}
+	}
 }
 
 // Ghost AR game
