@@ -20,9 +20,9 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "gameConsole", 	name: "Game Console", 			location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 62, left: 72, day: "both",},
 	{index: "wardrobe", 	name: "Wardrobe", 				location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 62, left: 1, day: "both",},
 	{index: "laptop", 		name: "Use the Computer", 		location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 5, day: "both",},
-	{index: "nap", 			name: "Take a Nap", 			location: 'playerHouse', 		time: "Morning", 			itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
+	{index: "nap", 			name: "Take a Nap", 			location: 'playerHouse', 		time: "MorningEvening", 			itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
 	{index: "nap", 			name: "Take a Nap", 			location: 'playerOffice', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
-	{index: "newDay", 		name: "Go to Bed", 				location: 'playerHouse', 		time: "EveningNight", 		itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
+	{index: "newDay", 		name: "Go to Bed", 				location: 'playerHouse', 		time: "Night", 		itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
 	{index: "shop", 		name: "General Store", 			location: 'shoppingDistrict', 	time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 60, day: "both",},
 ];
 
@@ -59,13 +59,15 @@ function writeEncounter(scene) {
 			writeText("I've added the option to start as a futanari. This only changes your character's image and the pronouns used (so that you're ma'am instead of sir). Please let Noodle Jacuzzi know if anyone is still referring to your as 'sir' when inappropriate, thank you.");
 			writeText("The game is more freeform and slower paced than my previous works. If you get stuck, please let us know. There isn't currently a guide, but we can easily feature an FAQ here.");
 			writeText("You can click on the title of a window to close it. For example, if you click 'LOGBOOK' on the left (or bottom on mobile), you can close the new window by clicking anywhere in the 'LOGBOOK' section at the top.");
-			writeText("This game uses art by three artists. Enoshima Iki, Nagi Ichi, and Oreteki18kin. Hover over an image for the artist who created it. Check it out:");
+			writeText("This game uses art by three artists. Enoshima Iki, Nagi Ichi, Oreteki18kin, and Gujira. Hover over an image for the artist who created it. Check it out:");
 			writeMed("images/mom/profile.jpg", "Art by Enoshima Iki");
 			writeMed("images/tomgirl/profile.jpg", "Art by Nagi Ichi");
 			writeMed("images/purple/profile.jpg", "Art by Oreteki18kin");
+			writeMed("images/succubus/profile.jpg", "Art by Gujira");
 			writeText("All three of the artists who's works we've used have different styles, and all work is censored due to Japan's censorship laws. We don't ever intend to mix and match within scenes, but it is worth noting that each have their own appeal / flaws. Oreteki is a divisive artist due to his style of drawing labia lips, and Nagi Ichi's work is 90% M/M. If these features are a dealbreaker for you, consider simply avoiding characters by these artists.");
 			writeFunction("loadEncounter('system', 'oretekiTest')", "See an Oreteki18kin example <br>(LONG LABIA LIPS/FLAPS)");
 			writeFunction("loadEncounter('system', 'nagiTest')", "See a Nagi Ichi example <br>(AT LEAST 90% GAY)");
+			writeFunction("loadEncounter('system', 'gujiraTest')", "See a Gujira example <br>(AT LEAST 80% GAY)");
 			break;
 		}
 		case "listTextbooks": {
@@ -119,6 +121,11 @@ function writeEncounter(scene) {
 		}
 		case "nagiTest": {
 			writeBig("images/tomgirl/7-5.jpg", "Art by Nagi Ichi");
+			writeFunction("loadEncounter('system', 'start')", "go back");
+			break;
+		}
+		case "gujiraTest": {
+			writeBig("images/succubus/1-5.jpg", "Art by Gujira");
 			writeFunction("loadEncounter('system', 'start')", "go back");
 			break;
 		}
@@ -179,8 +186,17 @@ function writeEncounter(scene) {
 			}
 			if (specialEvent == false) {
 				console.log("No events found");
-				writeText("<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>");
-				writeFunction("changeLocation('playerHouse')", "Get out of bed");
+				document.getElementById('output').innerHTML += `
+					<div class="playerRoom">
+						<img class="backgroundPicture" src="images/locations/newDayMorning.jpg" usemap="#roomMap">
+					</div>
+				`;
+				printLocationButton(
+					"Get out of bed", 
+					40, 
+					40, 
+					"playerHouse", 
+				);
 			}
 			if (checkTrust('principal') == 40) {raiseTrust('principal', 1);}
 			break;

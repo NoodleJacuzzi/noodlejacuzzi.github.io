@@ -18,7 +18,7 @@ var newItems = [
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "introOffer", name: "Someone is leaning on the wall, they look like they're waiting for someone.", location: 'street', time: "Evening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
-	{index: "windowProposal", name: "Someone in cosplay is sitting in your windowsill", location: 'playerHouse', time: "Night", itemReq: "", trustMin: 1, trustMax: 1, type: "tab", top: 0, left: 0, day: "both", altName: "???", altImage: "succubus.jpg",},
+	{index: "windowProposal", name: "Someone in cosplay is sitting in your windowsill", location: 'playerHouse', time: "Night", itemReq: "", trustMin: 1, trustMax: 1, type: "tab", top: 0, left: 0, day: "both", altName: "???", altImage: "demon.jpg",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -59,8 +59,15 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "introWhoring": {
 			setTrust('succubus', 1);
-			writeEvent('disguise1');
+			passTime();
+			writeEvent('succubusDisguise1');
 			writeFunction("changeLocation('street')", "Leave");
+			for (trustIndex = 0; trustIndex < data.story.length; trustIndex++) {
+				if (data.story[trustIndex].index == "succubus") {
+					data.story[trustIndex].encountered = false;
+					console.log(data.story[trustIndex]);
+				}
+			}
 			break;
 		}
 		case "introRejection": {
@@ -77,15 +84,67 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "windowProposal": {
+			writeBig("images/succubus/profileD.jpg", "Art by Gujira");
+			writeSpeech("succubus", "demon.jpg", "Hehe, too easy. You really should lock your windows.<br>Hey, remember me? From in town? It's good to see you're already back to walking around.");
+			writeText("It's that streetwalker from earlier, although his skin is darker and he's in a strange outfit.");
+			writeSpeech("player", "", "I don't have any drugs, and Halloween was awhile ago. Scram, before somebody calls the cops and I need to explain why a sassy boi in cosplay is sitting in my windowsill.");
+			writeSpeech("succubus", "demon.jpg", "Hah! Cosplay!");
+			writeText("He hops down off the windowsill into your room, before turning around and showing off his little spade tail waving about.");
+			writeSpeech("succubus", "demon.jpg", "Hehe. It's your lucky night too, human. I, the succubus (male), known as succubusF, have decided to make you an o-");
+			writeSpeech("player", "", "Wait what? You're an incubus?");
+			writeSpeech("succubus", "demon.jpg", "N-no, I'm a succubus (male). I'm here to-");
+			writeSpeech("player", "", "You can't have my soul. I get that I'm mega-super fucking damned by now, but it's still-<br>Shit. Is all that stuff real? Am I going to hell?");
+			writeSpeech("succubus", "demon.jpg", "Calm down. Listen. Don't worry about any of that.<br>This is going nowhere. I can see I'm going to need to be direct with you.");
+			writeText("succubusF sighs, before in one fluid motion gets down on his knees in a begging position.");
+			writeSpeech("succubus", "demon.jpg", "Please take me as your familiar, master!");
+			writeSpeech("player", "", "... Excuse me?");
+			writeSpeech("succubus", "demon.jpg", "Your heart is the darkest, most selfish I've ever seen! Like it's not tainted with lust, it's a big ball of lust with a little bit of humanity sprinkled inside. Just one fuck with you put me over the top and I had enough energy to meet my quotas and get promoted too. <br>Then I wasted it and dumped it onto the bedsheets, but I won't hold that against you. <br>My point is that not only are you some cream of the crop gourmet shit, but you're also a magnet for virgin energy, making you-");
+			writeSpeech("player", "", "Now hold on a moment there-");
+			writeSpeech("succubus", "demon.jpg", "Other virgins, you've got the potential to seduce virgins, I'm not saying you're one. Gimme a second dude. Lucy's sake, don't have a fucking crusade. <br>Anyways, I want it. You aren't using it all anyways, and I can help you out and... Give you some other incentives.");
+			writeSpeech("player", "", "I don't understand. I thought incu- I mean succubi stole souls while you slept? I mean, I'm not super fresh with Christian mythology...");
+			writeSpeech("succubus", "demon.jpg", "Well... It's a little complicated... But I'd never hurt anybody! I just siphon a little bit of corrupted soul off the top! You humans make more anyways, it isn't dangerous. ");
+			writeText("You lean in to inspect the begging demon on your floor. His hair smells like the abstract concept of sinning, which is surprisingly close to chocolate.");
+			writeSpeech("player", "", "So why would you need my help?");
+			writeText("He looks up, his amber eyes meeting yours.");
+			writeSpeech("succubus", "demon.jpg", "I'm just a succubus (male), one of the lowest ranks of demons. I'm barely making my dues to my superiors, I'm having a hard time staying afloat, let alone saving up to become a proper incubus!");
+			writeText("He sits up to clasp your hands in his. He's very soft.");
+			writeSpeech("succubus", "demon.jpg", "But with you, you're the most corruptive influence I've ever seen. Dark energy, the glorious essence that comes from corrupting humans... You're teeming with the stuff!");
+			writeText("You lean back, deep in thought. On the one hand, he's cute. On the other, potential for eternal damnation. Well, you're probably damned anyways.");
+			writeSpeech("player", "", "What's in it for me?");
+			writeSpeech("succubus", "demon.jpg", "I'll reward you with my body! Well, that's a given, really, but more too! I haven't really been looking, but I'm sure I can find even more targets for you to corrupt, and with my help you can take them even farther!");
 			writeFunction("writeEncounter('windowAcceptance')", "Accept");
-			writeFunction("writeEncounter('windowRejection')", "Refuse");
+			writeFunction("writeEncounter('windowRejection')", "Refuse, send this spawn of Satan packing");
 			break;
 		}
 		case "windowAcceptance": {
+			setTrust("succubus", 60);
+			writeSpeech("player", "", "That sounds pretty tempting. So, I don't even need to do anything different?");
+			writeSpeech("succubus", "demon.jpg", "Nope! Basically we demons feed off corrupted life force. We gather it ourselves or convert other people into demons and make them gather it for us.");
+			writeSpeech("player", "", "Like a multi-level marketing scheme? I always knew those were from hell.");
+			writeSpeech("succubus", "demon.jpg", "You don't know the half of it. Anyways, you're coated in the stuff already. I just gotta <i>extract</i> it.");
+			writeSpeech("player", "", "Does it hurt?");
+			writeSpeech("succubus", "demon.jpg", "Only if the demon sucks at giving a blowjob.");
+			writeFunction("writeEncounter('windowFollowup')", "Let's get to it then");
+			writeFunction("writeEncounter('windowRejection')", "Never mind, flock off hellspawn");
+			break;
+		}
+		case "windowFollowup": {
+			writeEvent('succubus1');
 			writeFunction("changeLocation('playerHouse')", "Finish");
 			break;
 		}
-		case "windowRefusal": {
+		case "windowRejection": {
+			writeSpeech("player", "", "No dice, spawn of Satan. This place is a home of purity, a bastion of chastity. No chocolate boi booty can tempt me.");
+			writeSpeech("succubus", "demon.jpg", "... Are you serious?");
+			writeSpeech("player", "", "About rejecting you, yes. Everything else was a cold lie.");
+			writeSpeech("succubus", "demon.jpg", "Oh... Well, uh... I don't suppose you might change your mind?");
+			writeSpeech("player", "", "Begone, demon. Out of this house!");
+			writeText("You start drawing crosses in the air like you've seen on TV.");
+			writeSpeech("succubus", "demon.jpg", "Gah! Stop, stop, I'm going!");
+			writeText("He quickly hops out your window and begins flying away.");
+			writeSpeech("succubus", "demon.jpg", "You 'deus vult' motherfuckers are all the same. Don't think I'll forgive you when you come crawling back, unless I <b>really</b> feel like accepting your apology!");
+			writeText("You close the window and lock it shut.");
+			setTrust('succubus', -1);
 			writeFunction("changeLocation('playerHouse')", "Finish");
 			break;
 		}
@@ -125,11 +184,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 }
 
 var eventArray = [
-	{index: "disguise1", name: "Streetwalking"},
-	{index: "disguise2", name: "Maid Whoring 1"},
-	{index: "disguise3", name: "Maid Whoring 2"},
-	{index: "succubus1", name: "Making Breakfast"},
-	{index: "succubus2", name: "Succubus Milk"},
+	{index: "succubusDisguise1", name: "Streetwalking"},
+	{index: "succubusDisguise2", name: "Maid Whoring 1"},
+	{index: "succubusDisguise3", name: "Maid Whoring 2"},
+	{index: "succubus1", name: "The Proposal"},
+	{index: "succubus2", name: "Making Breakfast"},
 	{index: "succubus3", name: "Succubus Game"},
 ];
 
@@ -137,7 +196,7 @@ function writeEvent(name) { //Plays the actual event.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "disguise1": {
+		case "succubusDisguise1": {
 			writeSpeech("player", "", "Not very good at setting the mood, are you?");
 			writeSpeech("succubus", "", "Ugh, a talker.");
 			writeText("He leans forwards and touches your hand. His skin is <i>soooof-</i>");
@@ -218,6 +277,42 @@ function writeEvent(name) { //Plays the actual event.
 			break;
 		}
 		case "succubus1": {
+			writeSpeech("player", "", "Let's get to it then.");
+			writeSpeech("succubus", "demon.jpg", "That's the spirit! C'mon, dick out!");
+			writeText("He cheers you on as you begin to disrobe.");
+			writeSpeech("player", "", "You're a lot more enthusiastic than last time.");
+			writeSpeech("succubus", "demon.jpg", "Well, let's just say most people take my street offer tend to be... Lowest common denominator types. Of course I'd be excited when I'm about to get some top-quality product waved in front of my face.<br>Ooh, speak of the devil...");
+			writeBig("images/succubus/2-1.jpg", "Art by Gujira");
+			writeSpeech("succubus", "demon.jpg", "Eheh... You sure you're all human?");
+			writeSpeech("player", "", "You sure you aren't stalling? Is it too big for you?");
+			writeSpeech("succubus", "demon.jpg", "Cocky bitch! <br>Alright, just try to stay conscious, alright?");
+			writeBig("images/succubus/2-2.jpg", "Art by Gujira");
+			writeSpeech("player", "", "Ggh~!");
+			writeSpeech("succubus", "demon.jpg", "Mmm... *Mwah*!<br>My saliva is pretty strong, so we'll need to start slow for you to get used to it.");
+			writeText("succubusF playfully kisses the tip before taking it into his mouth, soaking your cockhead in a potent aphrodisiac.");
+			writeSpeech("succubus", "demon.jpg", "Mmm... Hurr hoing hreat! (You're doing great!)<br><i>Mmm, this really was worth it... I wanna tease him but...<br>Mmm! I can't hold back any longer!</i>");
+			writeSpeech("player", "", "Cumming!");
+			writeBig("images/succubus/2-3.jpg", "Art by Gujira");
+			writeText("You sigh in relief as your needy cock finally pumps out it's pent up contents. You should be exhausted after your last marathon session, but your feeling of relief only feels more powerful.");
+			writeBig("images/succubus/2-4.jpg", "Art by Gujira");
+			writeSpeech("succubus", "demon.jpg", "Hah... Hah...");
+			writeText("succubusF looks almost drunk as he catches your cum on his tongue.");
+			writeSpeech("succubus", "demon.jpg", "How w... Was that?");
+			writeSpeech("player", "", "It felt amazing. How many more loads do you need?");
+			writeSpeech("succubus", "demon.jpg", "Y-you can go again?");
+			writeSpeech("player", "", "Hell yeah I can. Hey, let's try going deeper this time...");
+			writeText("...");
+			writeText("The two of you go another few rounds, but surprisingly it's succubusF who stops you.");
+			writeSpeech("succubus", "demon.jpg", "A-alright, we need to stop here!");
+			writeSpeech("player", "", "Why? Oh, you mean move on? Yeah, you sucking just the tip is getting kinda boring.");
+			writeSpeech("succubus", "demon.jpg", "Boring!? Why you...<br>No, this was to let you acclimate to my, uh, fluids. if we keep going your system might get overloaded. <br>So, does this mean you accept? Will you take me on as your familiar?");
+			writeSpeech("player", "", "Sure. We can-");
+			writeText("You try to stand, only for your legs to completely disobey you.");
+			writeSpeech("succubus", "demon.jpg", "H-hey!<br>Ghh, heavy bastard... We should've stopped after the first round.");
+			writeSpeech("player", "", "Uhuh... Why's the room spinning...?");
+			writeSpeech("succubus", "demon.jpg", "Ugh, get some sleep. I'll come by tomorrow night, alright?");
+			writeText("With some effort succubusF hauls you over to your bed and lays you down.");
+			writeSpeech("succubus", "demon.jpg", "You did good tonight...<br>Good night, my new master.");
 			break;
 		}
 		case "succubus2": {

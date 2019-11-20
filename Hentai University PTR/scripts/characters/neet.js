@@ -125,6 +125,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "neet4": {
+			clearText('neet');
 			writeText("You take a seat, Tia sitting across of you. There's a cold tension in the air. With how experienced she is with tech, she likely has some kind of master plan involving backups. You'll need to keep on your toes to stay out of prison.");
 			writeSpeech("player", "", "So. What did you want?");
 			writeSpeech("neet", "", "I would like you to hypnotize me.");
@@ -544,6 +545,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 		case "neetReward": {
 			writePhoneImage("images/neet/reward2.jpg", "Art by Enoshima Iki");
 			writePhoneSpeech("neet", "", "You've finished all of neetF's content for this version, more is on the way!");
+			clearText('neet');
 			break;
 		}
 		default: {

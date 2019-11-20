@@ -1,13 +1,13 @@
-var character = {index: "succubus", fName: "Gou", lName: "", trust: 0, encountered: false, textEvent: "", met: false, color: "#BF76DF", author: "NoodleJacuzzi", artist: "Gujira"};
+var character = {index: "nurse", fName: "Justine", lName: "Walton", trust: 0, encountered: false, textEvent: "", met: false, color: "#8D756B", author: "NoodleJacuzzi", artist: "Oreteki18kin"};
 
 var logbook = {
-	index: "succubus", 
-	desc: "A succubus (male), the lowest rank of demons aside from imps. He's been trying to seduce humans to increase his rank.",
-	body: "While disguised he looks entirely human, albeit incredibly feminine for a boy.",
-	clothes: "One of his hobbies is collecting girl's clothes. He claims it's purely for seduction purposes.",
-	home: "He comes over to your place every night, but you don't know if he actually needs to sleep.",
-	tags: "Corruption, anal, tomgirl, cosplay",
-	artist: "Gujira",
+	index: "nurse", 
+	desc: "",
+	body: "",
+	clothes: "",
+	home: "",
+	tags: "",
+	artist: "Oreteki18kin",
 	author: "NoodleJacuzzi",
 };
 
@@ -17,6 +17,7 @@ var newItems = [
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
+	{index: "placeholder", name: "", location: '', time: "", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 	{index: "placeholder", name: "", location: '', time: "", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 ];
 
@@ -41,6 +42,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 }
 
 var eventArray = [
+	{index: "placeholder", name: "Event Name"},
 	{index: "placeholder", name: "Event Name"},
 ];
 
