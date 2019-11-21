@@ -4,7 +4,7 @@ function writeScene(scene) {
 			document.getElementById('output').innerHTML +=`
 				<p class = "centeredText">Lastest News 11/16/2019</p>
 				<p class = "centeredText">Hentai University v4</p>
-				<p class = "centeredText">The release of Hentai University v5, featuring Lana Cummings, Tia Sun, and Reese Kieran.</p>
+				<p class = "centeredText">The release of Hentai University v4, featuring Lana Cummings, Tia Sun, and Reese Kieran.</p>
 				<p class = "centeredText"></p>
 				<p class = "centeredText">Thank you to:Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Lasse B, Badaxe, ChronosEdge, Colin E, Judavarius, Lunarghost, Scal, Adonnak, andy, Andy, Andy Amundy, Angel, Ariados, Austin yarbrougb, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, David Lange, Debarre Sonny, Dewr, Drashin, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jane, jdktjk205, Jesse Greene, joe, joe mulhall, Joshua Melzark, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, Ryan Linn, sage, Skyrim mod lvr, Slipokk, Snaked, stratum, valdis, Vincent Madaire-Cullen, Wild Bill, Will Osboldstone, Yongdian Guo, Профессор Преображенский, and 凱 陳 for supporting my work!</p>
 			`;
