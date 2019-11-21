@@ -44,6 +44,7 @@ function writeScene(scene) {
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">Play the mobile version</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'">Modding Tutorial</p>
 				<p class="choiceText" onclick="window.location.href='https://f95zone.to/threads/hentai-university-v2-5-noodlejacuzzi.37312/'">F95Zone Thread</p>
+				<p class="choiceText" onclick="window.location.href='https://hypnopics-collective.net/smf_forum/index.php?topic=23881.0'">Hypnopics Thread</p>
 				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/30871183'">List of cheat codes</p>
 			`;
 			writeBig("images/bitchMedicenter.png");
