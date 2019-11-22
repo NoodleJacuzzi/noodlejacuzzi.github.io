@@ -2,7 +2,6 @@ var locationArray = [
 	{index: "playerHouse", buttons: [
 		{name: "Leave the Apartment", top: 79, left: 20, type: "location", target: "apartmentOutside", time: "MorningEvening",},
 		{name: "Head Straight to Work", top: 79, left: 50, type: "location", target: "playerOffice", time: "MorningEvening",},
-		{name: "Go to Bed", top: 52, left: 35, type: "event", target: "newDay", time: "EveningNight",},
 	],},
 	{index: "street", buttons: [
 		{name: "Go Home", top: 80, left: 33, type: "location", target: "apartmentOutside", time: "MorningEvening",},

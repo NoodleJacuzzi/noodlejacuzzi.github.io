@@ -396,7 +396,6 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			break;
 		}
 		case "starletReward": {
-			clearText('starlet');
 			writePhoneImage("images/starlet/reward.jpg", "Art by Oreteki18kin");
 			writePhoneSpeech("starlet", "", "You've finished all of starletF's content for this version, more is coming soon!");
 			break;

@@ -19,6 +19,7 @@ var newItems = [
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "introOffer", name: "Someone is leaning on the wall, they look like they're waiting for someone.", location: 'street', time: "Evening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 	{index: "windowProposal", name: "Someone in cosplay is sitting in your windowsill", location: 'playerHouse', time: "Night", itemReq: "", trustMin: 1, trustMax: 1, type: "tab", top: 0, left: 0, day: "both", altName: "???", altImage: "demon.jpg",},
+	{index: "caseSelect", name: "succubus is here again", location: 'playerHouse', time: "Night", itemReq: "", trustMin: 60, trustMax: 200, type: "tab", top: 0, left: 0, day: "both", altName: "???", altImage: "demon.jpg",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -149,30 +150,199 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "caseSelect": {
+			if (checkTrust('succubus') == 60) {
+				writeSpeech("succubus", "demon.jpg", "Heeey~ How're you feeling? You were pretty out of it when I left last time, you rehydrate yourself? ");
+				writeSpeech("player", "", "I'm feeling fine, really good actually.");
+				writeSpeech("succubus", "demon.jpg", "Well, increased potency is a side effect. Not that you'd need it, you're pretty insatiable already.");
+				writeSpeech("player", "", "In any case, we should probably get started with this whole master and familiar dynamic. Do I need to sign something?");
+				writeSpeech("succubus", "demon.jpg", "Nope! All you need is for me to declare submission, master, and for the deal to be sealed with a kiss. My lips on your dick, to be precise. We're all set already!");
+				writeSpeech("player", "", "Alright then, I look forwards to working with you, succubusF. ");
+				writeSpeech("succubus", "demon.jpg", "Same here, master. So! I did a quick spyjob on the school you work at looking for targets, I even got their names! Here's what I found:");
+				raiseTrust('succubus', 1);
+			}
+			else {
+				writeSpeech("succubus", "demon.jpg", "Maaaster~ I'm hooome~<br>Hehe, miss me?");
+				writeSpeech("player", "", "Welcome back. What do you have for me tonight, succubusF?");
+			}
+			if (checkFlag('succubus', 'tomgirlS') != true) {
+				writeSpeech("succubus", "demon.jpg", "There's a boy named tomgirlF I think would make a good target, he even tried hitting on me.");
+				writeFunction("writeEncounter('tomgirlStart')", "tomgirlF tomgirlL");
+			}
+			else {
+				if (checkFlag('succubus', 'tomgirlF') != true) {
+					writeSpeech("succubus", "demon.jpg", "You have that tomgirl, tomgirlF, in the palm of your hands yet? You'll wanna go all the way before we have our fun.");
+					if (checkTrust('tomgirl') > 99) {
+						writeFunction("writeEncounter('tomgirlEnd')", "Talk about tomgirlF");
+					}
+				}
+			}
+			if (checkFlag('succubus', 'mejiS') != true) {
+				writeSpeech("succubus", "demon.jpg", "There's a boy named mejiF, I tailed him leaving school.");
+				writeFunction("writeEncounter('mejiStart')", "mejiF mejiL");
+			}
+			else {
+				if (checkFlag('succubus', 'mejiF') != true) {
+					writeSpeech("succubus", "demon.jpg", "You looked into that wannabe delinquent yet?");
+					if (checkTrust('meji') > 50) {
+						writeFunction("writeEncounter('mejiEnd')", "Talk about mejiF");
+					}
+				}
+			}
+			if (checkTrust('succubus') == 71) {
+				writeSpeech("succubus", "demon.jpg", "Nothing tonight, sorry. We've hit the obvious targets, I'll need to search the school more carefully from here on.");
+				writeSpeech("player", "", "Keep yourself out of trouble then.");
+				writeSpeech("succubus", "demon.jpg", "Of course! I am a demon after all, have a little faith in your familiar. <br>I'll keep searching, and let you know if I find any good targets.");
+			}
+			writeSpeech("succubus", "demon.jpg", "We could also just spend the night chatting, if you wanted. I get that I'm a pretty unique sort of houseguest, after all.");
+			writeFunction("writeEncounter('chatSelect')", "Chat");
 			writeFunction("changeLocation('playerHouse')", "Finish");
 			break;
 		}
 		case "tomgirlStart": {
-			writeFunction("changeLocation('caseSelect')", "Back");
+			addFlag('succubus', 'tomgirlS');
+			writeSpeech("succubus", "demon.jpg", "There's one boy who tried hitting on me till he realized I was a guy-");
+			writeSpeech("player", "", "That's debatable.");
+			writeSpeech("succubus", "demon.jpg", "Shut up. Anyways I let him know I had a dick, he got all stammery. He seems like a pretty good target. His name's tomgirlF tomgirlL. He should be a pretty quick corruption, just show him your dick and he should break on the spot!");
+			writeSpeech("player", "", "It probably won't quite be that easy, but I should be able to handle it.");
+			writeSpeech("succubus", "demon.jpg", "Meh, you humans are too wrapped up in your weird holdups. Honestly, I'd fuck anyone cute, so long as they didn't have a chastity fetish.");
+			writeText("succubusF shudders.");
+			writeSpeech("succubus", "demon.jpg", "Never again.");
+			writeFunction("writeEncounter('caseSelect')", "Back");
+			if (checkTrust('tomgirl') > 99) {
+				writeEncounter('tomgirlEarly');
+			}
 			break;
 		}
 		case "tomgirlEnd": {
-			writeFunction("changeLocation('playerHouse')", "Finish");
+			writeSpeech("succubus", "demon.jpg", "You have that tomgirl, tomgirlF, in the palm of your hands yet? You'll wanna go all the way before we have our fun.");
+			writeSpeech("player", "", "I have, actually. I've had more than a little fun with him already.");
+			writeSpeech("succubus", "demon.jpg", "Ooh! I knew you could do it! Really I would've thought you would've jumped him earlier. Well, better late than never, yeah? <br>Hehe, I guess that means it's time for my snack! ");
+			addFlag('succubus', 'tomgirlF');
+			writeFunction("writeEncounter('reward')", "Get started");
 			break;
 		}
 		case "tomgirlEarly": {
-			writeFunction("changeLocation('playerHouse')", "Finish");
+			writeSpeech("succubus", "demon.jpg", "There's one boy who tried hitting on me till he realized I was a guy-");
+			writeSpeech("player", "", "That's debatable.");
+			writeSpeech("succubus", "demon.jpg", "Shut up. Anyways I let him know I had a dick, he got all stammery. He seems like a pretty good target. His name's tomgirlF tomgirlL. He-");
+			writeSpeech("player", "", "tomgirlF, yeah. I already met him, he's already mine.");
+			writeSpeech("succubus", "demon.jpg", "... Oh. Well, he was a pretty obvious target. It makes sense you'd hook him pretty quickly. Alright then, playerMister Jumps-The-Gun, lemme get a taste of that sweet virgin essence...");
+			addFlag('succubus', 'tomgirlF');
+			writeFunction("writeEncounter('reward')", "Get started");
 			break;
 		}
 		case "mejiStart": {
-			writeFunction("changeLocation('caseSelect')", "Back");
+			writeSpeech("succubus", "demon.jpg", "There's a boy I tailed out of the school. I think his name was mejiF. At first he seemed like the pretty run of the mill delinquent type, but it turns out he's got another side.");
+			writeSpeech("player", "", "Oh? Do tell.");
+			writeSpeech("succubus", "demon.jpg", "Hehe, just follow him into town after your school thing ends and you'll see for yourself. He should be a pretty quick fuck when you hold his secret over his head.");
+			addFlag('succubus', 'mejiS');
+			writeFunction("writeEncounter('caseSelect')", "Back");
+			if (checkTrust('meji') > 50) {
+				writeEncounter('mejiEarly');
+			}
 			break;
 		}
 		case "mejiEnd": {
-			writeFunction("changeLocation('playerHouse')", "Finish");
+			writeSpeech("succubus", "demon.jpg", "You looked into that wannabe delinquent yet?");
+			writeSpeech("player", "", "Yeah, mejiF. Loyal as he is broken in.");
+			writeSpeech("succubus", "demon.jpg", "Hehe, I never had any doubts. Mmm, just remembering what he looked like has me feeling hungry. <br>C'mon, I wanna play with my food tonight.");
+			addFlag('succubus', 'mejiF');
+			writeFunction("writeEncounter('reward')", "Get started");
 			break;
 		}
 		case "mejiEarly": {
+			writeSpeech("succubus", "demon.jpg", "There's a boy I tailed out of the school. I think his name was mejiF.");
+			writeSpeech("player", "", "Yeah, I already know him.");
+			writeSpeech("succubus", "demon.jpg", "Ah, but did you know that after school he likes to-");
+			writeSpeech("player", "", "Crossdress, yep.");
+			writeSpeech("succubus", "demon.jpg", "Haaah... You're really not letting me take the easy way out, are you? Well, it looks like I'll actually have to search carefully for some new targets, not just pick the most in-denial buttsluts in town. ");
+			writeSpeech("player", "", "Useless demons don't get rewards. ");
+			writeSpeech("succubus", "demon.jpg", "Well, I guess I'll need to work for my living then. Speaking of which...");
+			addFlag('succubus', 'mejiF');
+			writeFunction("writeEncounter('reward')", "Get started");
+			break;
+		}
+		case "chatSelect": {
+			writeSpeech("succubus", "demon.jpg", "We could also just chat, if you wanted. I get that I'm a pretty unique sort of houseguest, after all.");
+			writeSpeech("player", "", "Sure, why not. Just keep it interesting, alright? I'm not interested in a long-winded explanation of demon foot massage techniques. ");
+			writeSpeech("succubus", "demon.jpg", "Hehe, no problem. I'm well versed in many types of <i>entertainment</i> if you stick my wicket. I'll keep whatever you want to talk about brief. ");
+			writeFunction("writeEncounter('chatStory')", "Your story");
+			writeFunction("writeEncounter('chatClothes')", "Your clothes");
+			writeFunction("writeEncounter('chatDemons')", "Other kinds of demons");
+			writeFunction("writeEncounter('chatTransformation')", "Demonization process");
+			writeFunction("writeEncounter('chatCorruption')", "How to corrupt souls");
+			writeFunction("changeLocation('playerHouse')", "Finish");
+			break;
+		}
+		case "chatStory": {
+			writeSpeech("succubus", "demon.jpg", "There's not much to say about me,just barely making quotas for... I don't know how long it's been. The days feel so long but the years seem to just fly by. <br>I don't have that interesting of an origin either. A demon thought I was cute enough to make a good harvester, and I was about to die, sooo yeah. ");
+			writeFunction("writeEncounter('chatSelect')", "Back");
+			break;
+		}
+		case "chatClothes": {
+			writeSpeech("succubus", "demon.jpg", "Hehe, you like em? I collect a lot of pretty clothes. Ah, it's just for seduction purposes of course. If I could I'd lounge in pajamas all day.<br>Hmm... Here, lemme see your phone.");
+			writeText("You hand succubusF your phone.");
+			writeText("After a moment he hands it back to you and busts out his own.");
+			writeText("Bzzt! You got a text from succubusF!");
+			for (succIndex = 0; succIndex < data.story.length; succIndex++) {
+				if (data.story[succIndex].index == "succubus") {
+					data.story[succIndex].textEvent = 'clothes';
+				}
+			}
+			document.getElementById('phoneButton').innerHTML = "PHONE(*)";
+			document.getElementById('phoneButtonMobile').innerHTML = "PHONE(*)";
+			writeSpeech("succubus", "demon.jpg", "I don't let a lot of pictures get taken of me, but I'll be sure to bring some pieces of my collection over some time~");
+			writeFunction("writeEncounter('chatSelect')", "Back");
+			break;
+		}
+		case "chatDemons": {
+			writeSpeech("succubus", "demon.jpg", "Hmm. There's my rank, succubus (male). We seduce humans, same as incubi except succubi are expected to be the catchers while the incubi get to pitch. There's plenty of regional demons too. I think in some countries the succubi have fox tails. <br>Once you get to the higher ranks you get demons that no longer need to draw energy from humans, they just bully other demons. Basically they don't need to look humanoid anymore, so they're monsters. Although some still hang on to a sense of style and want to look beautiful or handsome.");
+			writeFunction("writeEncounter('chatSelect')", "Back");
+			break;
+		}
+		case "chatTransformation": {
+			writeSpeech("succubus", "demon.jpg", "For all the benefits like eternal youth, inhuman beauty, wings, and so on, there are some downsides. You'll get attacked by humans who feel like you're 'not right', and you start at the lowest rank so you end up looking like a sassy boi, or a teenage girl unless you can climb the ranks.<br>Transformation does feel really good though, you cum out all that excess size and masculinity, and your body's new sensitivity is finely tuned over the next few days. Some of the better-off ones get multi-day spa treatments to help them acclimate, but I was just thrown in a tentacle pit for a week.");
+			writeSpeech("player", "", "Do you regret becoming a demon?");
+			writeSpeech("succubus", "demon.jpg", "... <br>I'm alive today because I'm a demon, and I'm immortal too. I'll find something that'll make all these years worth it, and I'll have an eternity to enjoy it.");
+			writeFunction("writeEncounter('chatSelect')", "Back");
+			break;
+		}
+		case "chatCorruption": {
+			if (checkFlag('succubus', 'corruption') != true) {
+				writeSpeech("succubus", "demon.jpg", "Oh ho? You wanna learn how to corrupt souls? Well, it's one of the first, non-sexual things I wad taught.<br>It'll take me awhile, but I can teach you. I need to warn you though...");
+				writeText("succubusF leans in close.");
+				writeSpeech("succubus", "demon.jpg", "You're turning people who trust you, people you have control over, into semen demons. You'll have fun transforming them for sure, but after that they'll go off to harvest energy from others. You really okay with that?");
+				writeFunction("writeEncounter('chatAgree')", "Yes");
+				writeFunction("writeEncounter('chatSelect')", "No");
+			}
+			else {
+				writeSpeech("succubus", "demon.jpg", "Uh, master, did you forget that I already gave you the ability?");
+				writeFunction("writeEncounter('chatSelect')", "Back");
+			}
+			break;
+		}
+		case "chatAgree": {
+			addFlag('succubus', 'corruption');
+			writeSpeech("succubus", "demon.jpg", "Well, the more the merrier! C'mere.");
+			writeText("succubusF pulls you close, his lips inches from yours.");
+			writeSpeech("player", "", "Ah, fuck!");
+			writeText("You pull back at a burning sensation on the back of your right hand, there's a dark mark there that quickly fades away.");
+			writeSpeech("succubus", "demon.jpg", "Sorry, probably should've warned you, but you look like you aren't super good at dealing with pain.<br>Anyways it's super easy. Just focus on where the mark was and it'll come back, allowing you to corrupt people.<br>They need to be deep, and I mean balls-deep in love with you though. Only the most broken bois may apply.");
+			writeSpeech("player", "", "Neat, thanks.");
+			writeSpeech("succubus", "demon.jpg", "... You really are an oddball, master.");
+			writeFunction("writeEncounter('chatSelect')", "Back");
+			break;
+		}
+		case "reward": {
+			switch (checkTrust('succubus')) {
+				case 61:
+					writeEvent('succubus2');
+				break;
+				case 66:
+					writeEvent('succubus3');
+				break;
+			}
+			raiseTrust('succubus', 5);
 			writeFunction("changeLocation('playerHouse')", "Finish");
 			break;
 		}
@@ -188,8 +358,9 @@ var eventArray = [
 	{index: "succubusDisguise2", name: "Maid Whoring 1"},
 	{index: "succubusDisguise3", name: "Maid Whoring 2"},
 	{index: "succubus1", name: "The Proposal"},
-	{index: "succubus2", name: "Making Breakfast"},
+	{index: "succubus2", name: "Succubus Milk"},
 	{index: "succubus3", name: "Succubus Game"},
+	{index: "succubus4", name: "Making Breakfast"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -270,10 +441,10 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("After a moment you feel back to normal, better than before in fact! It has gotten really late though.");
 			break;
 		}
-		case "disguise2": {
+		case "succubusDisguise2": {
 			break;
 		}
-		case "disguise3": {
+		case "succubusDisguise3": {
 			break;
 		}
 		case "succubus1": {
@@ -316,9 +487,112 @@ function writeEvent(name) { //Plays the actual event.
 			break;
 		}
 		case "succubus2": {
+			writeSpeech("player", "", "So, same kind of play as before?");
+			writeSpeech("succubus", "demon.jpg", "Hehe, not quite. Last time we went for as ling as your body could take, this time I wanna see how long your mind can last.<br>Here, drink this.");
+			writeText("He hands you a vial of a cloudy white fluid.");
+			writeSpeech("player", "", "This sounds kinda fishy.");
+			writeSpeech("succubus", "demon.jpg", "Relax, it's completely safe. You and I have a lot we can do for each other, I'm not wasting that on a quickie.");
+			writeText("As he speaks, he gets out some strips of cloth and starts tying your legs to your chair.");
+			writeSpeech("succubus", "demon.jpg", "This is just so you don't tackle me, I'm really pent up right now and I can't risk wasting it on your bedsheets.");
+			writeSpeech("player", "", "Wasting... Cum?");
+			writeSpeech("succubus", "demon.jpg", "Yep! That's where we keep stored essence. Wasting it... Wasting it is embarrassing... You gonna drink that or what?");
+			writeSpeech("player", "", "Ehhh...");
+			writeSpeech("succubus", "demon.jpg", "Relax. It's succubus milk. It'll make sure your body can take what I'm about to dish out. By the time we're done tonight, you're gonna be totally acclimated to me, and you'll be an even better fuck for it.");
+			writeSpeech("player", "", "Well... Alright, I guess.");
+			writeText("You down the fluid, its taste is hard to describe. It's close to the feeling of jerking off on your sleeping mother's hair, but also sweet and salty at the same time.");
+			writeText("After you drink it a warm fuzz permeates your body as succubusF ties your wrists to the arms of your chair.");
+			writeSpeech("player", "", "It feels... Weird... What exactly is it? ");
+			writeSpeech("succubus", "demon.jpg", "We give it to new breeding cows to prep them for milking. It'll help you generate enough sperm to, well, you'll see.");
+			writeText("succubusF kneels down with a catlike grin on his face, before he starts fishing your dick out. It looks a little bigger than before, actually. ");
+			writeSpeech("succubus", "demon.jpg", "Ah~ There's my big friend~! Sorry we had to cut things short last time, you deserve a better chance to show your spunk.");
+			writeText("Your vision is starting to blur, the milk must be kicking in. You feel... <i>hungry. </i>");
+			writeText("...");
+			writeBig("images/succubus/3-1.jpg", "Art by Gujira");
+			writeText("You don't know how long it's been now, hours? Honestly, you feel like days have gone by. At first succubusF was teasingly suckling on the head of your shaft but...");
+			writeBig("images/succubus/3-2.jpg", "Art by Gujira");
+			writeSpeech("succubus", "demon.jpg", "Mmph... Mmm~");
+			writeText("After the first three loads he lost all sense of self control. He became completely ravenous.");
+			writeText("Sometime after the seventh round you blacked out, and when you came back to succubusF was still sucking, but covered in a <b>lot</b> more cum than before.");
+			writeBig("images/succubus/3-3.jpg", "Art by Gujira");
+			writeSpeech("succubus", "demon.jpg", "Mmm~!");
+			writeText("succubusF moans appreciatively as you spurt again. His eyes are glazed over with a familiar fog, at this point he's absolutely cum-drunk. ");
+			writeText("You'd think that at some point you'd go numb to the pleasure, or that you'd start shooting dry shots at some point, but you'd be wrong on both counts. Electric energy courses through you as your cock spurts just as thick a load as its first. ");
+			writeText("But as he slurps down this last load, a look of panic flashes in his eyes and he backs off and clutches his crotch.");
+			writeSpeech("succubus", "demon.jpg", "Ah~... Ah~... That was close. <br>Aaah~ it's too much~! Don't leak, don't leak, don't leak....");
+			writeText("Desperately, he tries to hold himself back from spurting all his hard-earned essence, and after a moment he manages to calm himself down.");
+			writeText("Without the constant stimulation you're finally getting soft, and exhaustion hits you like a tidal wave.");
+			writeSpeech("succubus", "demon.jpg", "Gonna... Gonna need to fly back...");
+			writeText("There's a plump bulge near the base of his abdomen. Succubi must store their essence in their prostate, probably.");
+			writeSpeech("succubus", "demon.jpg", "Hey... Hey you still conscious? ");
+			writeText("You barely manage a halfhearted grunt, and he unties you.");
+			writeSpeech("succubus", "demon.jpg", "Ah~<br>You smell so... No! Gotta focus...");
+			writeText("Your scent nearly pushing him over the edge again, he's quick to unceremoniously flop you onto your bed then stumble his way to your window.");
+			writeText("You faintly hear him mumbling 'don't leak over and over again as he flies off, and you can't keep your eyes open any longer. ");
 			break;
 		}
 		case "succubus3": {
+			writeText("You move to take a seat again. This time you intend to stay conscious until the end, ready to outlast succubusF once more.");
+			writeSpeech("succubus", "demon.jpg", "Ah ah! We'll be doing something different tonight.");
+			writeText("He chides you and pulls you away.");
+			writeSpeech("succubus", "demon.jpg", "I'm not pent up today, stud, so I thought we'd some fun tonight. Even if I cum, I won't be wasting too much. <br>We're gonna play the splurt game!");
+			writeText("He starts peeling off his dark clothes, and you follow his lead.");
+			writeSpeech("succubus", "demon.jpg", "It's a game played among friends down below. The rules are simple! Hard, anal sex and the first to splurt loses!");
+			writeSpeech("player", "", "That just sounds like sex while keeping score.");
+			writeSpeech("succubus", "demon.jpg", "Hehe. Don't feel too bad if you lose. We succubi are trained to hold it together for months at a time even with constant stimulation.<br>And you, poor human, you're going up against me.");
+			writeText("He gets up close to rub his chest against your abs, he's pretty smug for someone barely more than half your height.");
+			writeSpeech("succubus", "demon.jpg", "Every bit of me is made for turning men / women like you into quickshot sluts. Every. Single. Bit.");
+			writeText("He gently pushes you down to the floor, and playfully slaps your hands away.");
+			writeSpeech("succubus", "demon.jpg", "Ah ah~<br>Bottom controls the speed, that's one of the rules~");
+			writeSpeech("player", "", "Cmon brat, quit with the cheekiness and put your money where your mouth is.");
+			writeSpeech("succubus", "demon.jpg", "Mmm~! I'll enjoy breaking you, let's see how long you can keep that serious face up.");
+			writeText("He straddles you cowgirl style, teasingly hotdogging your shaft between his asscheecks, slowing down whenever your cockhead bumps against his puckered rim. ");
+			writeText("His tail wraps around your shaft and aligns it with his boihole.");
+			writeBig("images/succubus/4-1.jpg", "Art by Gujira");
+			writeSpeech("succubus", "demon.jpg", "Wanna give up now? I'm not going to stop, but the sooner you give in, the better it'll feel, I promise.");
+			writeSpeech("player", "", "Fuck you.");
+			writeSpeech("succubus", "demon.jpg", "Gladly, master!");
+			writeBig("images/succubus/4-2.jpg", "Art by Gujira");
+			writeSpeech("succubus", "demon.jpg", "Ah~! You're so big~!");
+			writeSpeech("player", "", "Ghh...");
+			writeText("Despite how badly you'd love to take him down a peg, his boasts weren't empty. The texture and grip of his ass, and his incredibly skillful muscle control have already decided the match.");
+			writeText("Despite the fact you can feel your cockhead bump against his demon prostate with every drawn out thrust, he still looks like he's totally in control.");
+			writeSpeech("succubus", "demon.jpg", "Ah~! Ah~! I'll have to be ready to fly tomorrow, because I won't be walking!");
+			writeSpeech("player", "", "Gh... Shut up, tramp!");
+			writeSpeech("succubus", "demon.jpg", "Oh, I'm worse than that, master! I'm a slut, a little bitch boi, I'm <br>yours!</b>");
+			writeText("You can't hold back anymore as he goes balls deep and gyrates his hips in a circle to thoroughly milk your dick. ");
+			writeSpeech("player", "", "C... Cumming~!");
+			writeSpeech("succubus", "demon.jpg", "Yes~! Cmon, let's see that face of yours tw-");
+			writeBig("images/succubus/4-3.jpg", "Art by Gujira");
+			writeSpeech("succubus", "demon.jpg", "Gggh~");
+			writeText("You came first, but the moment you start cumming inside of him sparks of purple lightning flash around him.");
+			writeSpeech("succubus", "demon.jpg", "C-cum~");
+			writeText("His bratty smugness is gone. He's won the game but certainly lost the battle.");
+			writeSpeech("succubus", "demon.jpg", "C-cum~!");
+			writeText("Now he just looks like an animal, bouncing on your shaft trying to scratch that original primal itch.");
+			writeText("His body must be having an effect on you, because there's absolutely no cooldown period for you right now. This little bitch hasn't slowed down for a second but you don't care.");
+			writeSpeech("succubus", "demon.jpg", "Gah~! It feels hot~! Feels so good~!");
+			writeText("Dewdrops have begun to form on the tip of his cock.");
+			writeSpeech("succubus", "demon.jpg", "Ah~! No, I can't~<br>Leak~!");
+			writeText("His attitude-laden comments have been breathy, barely coherent gasps and moans. His very nature has taught him to feel shame at cumming, that he's wasting his hard work, but with you here none of that matters.");
+			writeText("Finally, he lets go, and lets the body-quaking anal orgasm overtake him.");
+			writeBig("images/succubus/4-4.jpg", "Art by Gujira");
+			writeSpeech("succubus", "demon.jpg", "Cumming~!");
+			writeText("His dicklette gives an excited jump before a solid white stream begins leaking out, the stream surging in strength with every bounce he does on your hips.");
+			writeSpeech("succubus", "demon.jpg", "Cumming, cumming, cumming cumming cumming~!");
+			writeText("As he pounds the essence right out of himself, you feel yourself pushed over the edge once again.");
+			writeSpeech("succubus", "demon.jpg", "Sho good~! I'm wasting all of it again, all because of master's cock~!");
+			writeText("Finally able to take no more, his legs give out and he's left sitting on you balls deep on your cock.");
+			writeSpeech("succubus", "demon.jpg", "Hehe... Hehehe...");
+			writeBig("images/succubus/4-5.jpg", "Art by Gujira");
+			writeSpeech("player", "", "How's it feel? You feel like a winner?");
+			writeSpeech("succubus", "demon.jpg", "Yesh... Win win win... I shplurted...~");
+			writeText("...");
+			writeText("After getting him off in more ways then one, you get cleaned up. Sheepishly, succubusF wipes the cum off his and your bodies.");
+			writeSpeech("player", "", "Don't worry, there's plenty more where that came from.");
+			writeSpeech("succubus", "demon.jpg", "Y-yeah, It's just that... I might get addicted to this. Succubi who get addicted to cumming... They'll usually give anything just to splurt it out and waste all their essence. It's a pretty common fetish to fail your quotas by pounding yourself on a dildo the day before the essence is due.");
+			writeText("After he's finished you start getting ready for bed. And he gets ready to fly off. ");
+			writeSpeech("succubus", "demon.jpg", "See you around master, and thanks. I don't have anyone to play with, so that was my first time with the game.");
+			writeSpeech("player", "", "Anytime, succubusF.");
 			break;
 		}
 		default: {
@@ -343,14 +617,21 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "placeholder", trust: 200,},
+	{index: "succubusReward", trust: 71,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
-			//Write the event's text here using writePhoneSpeech, writePhoneImage, and writePhoneChoices
+		case "succubusReward": {
+			writePhoneImage("images/succubus/reward.jpg", "Art by Gujira");
+			writePhoneSpeech("succubus", "", "You've finished all of succubusF's content for this version, more is on the way!");
+			break;
+		}
+		case "clothes": {
+			writePhoneImage('images/succubus/text.jpg', 'Art by Gujira');
+			writePhoneSpeech('succubus', '', 'Enjoy!');
+			clearText('succubus');
 			break;
 		}
 		default: {

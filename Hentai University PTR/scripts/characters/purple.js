@@ -532,7 +532,6 @@ var phoneArray = [//Lists the potential text events the player can receive at th
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "purpleReward": {
-			clearText('purple');
 			writePhoneImage("images/purple/4-2.jpg", "Art by Oreteki18kin");
 			writePhoneSpeech("purple", "", "You've finished all of "+fName('purple')+"'s & "+fName('chubby')+"'s content for this version, congratulations!");
 			break;
