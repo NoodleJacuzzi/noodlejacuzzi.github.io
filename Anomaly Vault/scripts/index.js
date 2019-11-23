@@ -1268,9 +1268,9 @@ function cheat() {
 			break;
 		}
 		case "noodlemaster": {
-			for (x = 0; x < galleryArray.length; x++) {
-				if (galleryCheck(galleryArray[x].index)== false) {
-					unlockScene(galleryArray[x].index);
+			for (noodle = 0; noodle < galleryArray.length; noodle++) {
+				if (galleryCheck(galleryArray[noodle].index)== false) {
+					unlockScene(galleryArray[noodle].index);
 				}
 			}
 			goofMessage = "Master code accepted. All scenes unlocked."

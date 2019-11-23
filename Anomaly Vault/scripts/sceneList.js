@@ -1760,14 +1760,7 @@ function writeEvent(scene) {
 			writeSpeech("assistant", "", "More! Harder! Break me!");
 			writeSpeech("player", "", "I can't... I can't cum any more... I don't have any-");
 			writeText("She grabs you by the chin and stares into your eyes.");
-			document.getElementById('output').innerHTML +=`
-			<div class = "textBox">
-				<img class = "textThumb" src = "scripts/gamefiles/profiles/assistant.jpg">
-				<p class = "textName">`+ data.story[0].fName + `</p>
-				<p style='color:red'>Cum. Now.</p>
-			</div>
-			<br>
-			`;
+			writeSpeech("assistant", "", "<span style='color:red'>Cum. Now.</span>");
 			writeBig("images/erotibox/research8-5.gif");
 			writeText("...");
 			writeText("You wake up in the hospital wing, you don't know how much time has passed.");
