@@ -81,11 +81,11 @@ html, body {
 }
 .medPicture {
 	display: block;
-    max-height: 30vh;
-    max-width: 90%;
     margin: auto;
-    border: 5px solid #85bbc3;
-    border-radius: 30px;
+    max-height: 500px;
+  	padding: 20px, 1px;
+  	border: 3px solid white;
+  	border-radius: 5px;
 }
 
 .centeredText {
@@ -418,16 +418,18 @@ div#wrapperBG::after {
 }
 
 .pictureButton, .choiceText{
-	font-size: 17px;
+	font-size:1.25rem;
 	font-weight: bold;
     display: block;
     width: fit-content;
-    margin: 2px;
+    margin: 15px auto;
 }
 
 .choiceText {
 	width: 80%;
 	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -466,7 +468,10 @@ img.bigPicture {
     border-radius: 30px;
 }
 
-p{margin: 15px 0;}
+p{
+	margin: 15px 0;
+    font-size: 1.3em;
+}
 
 .textBox {
 	position: relative;
