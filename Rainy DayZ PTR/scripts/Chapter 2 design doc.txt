@@ -1,0 +1,263 @@
+v1.1
+	New start screen
+		Hide menu & button at start (COMPLETE)
+		City image (COMPLETE)
+		Blur (COMPLETE)
+		Rain effect (COMPLETE)
+		Title text (COMPLETE)
+		Click to start (COMPLETE)
+	New Engine
+		Copy HU (COMPLETE)
+		writeTransition (COMPLETE)
+		Scenario gallery (COMPLETE)
+		change writeSpeech (COMPLETE)
+		Hide menu button (COMPLETE)
+		Count scenes obtained in each scenario (COMPLETE)
+		Change Menu Button Style (COMPLETE)
+		Reduce line spacing (COMPLETE)
+	Scenario select
+		Scenario 1 - Rainy DayZ (COMPLETE)
+		Hide menu & button in scenario select (COMPLETE)
+		System Information (COMPLETE)
+		System Settings (COMPLETE)
+	Cheats
+		Cheat scene (COMPLETE)
+		BG for the cheat scene (COMPLETE)
+		Hide menu in cheat scene (COMPLETE)
+	Rainy DayZ 
+		Starting scenario shows menu (COMPLETE)
+		Rainy DayZ start menu (COMPLETE)
+		Rainy DayZ background (COMPLETE)
+		Rainy DayZ player desc (COMPLETE)
+		Rainy DayZ scenario name (COMPLETE)
+		Rainy DayZ scenario desc (COMPLETE)
+		Import scenes (COMPLETE)
+		Rainy DayZ gallery (COMPLETE)
+		Scenario-specific gallery (COMPLETE)
+		Test unlocking all scenes (COMPLETE)
+		Flower in streets (COMPLETE)
+		Flower journal entry (COMPLETE)
+		Survivor in uninfected route (COMPLETE)
+		Survivor 2 (COMPLETE)
+		Exhibition 1 (COMPLETE)
+		Exhibition 2 (COMPLETE)
+		Rainy DayZ typo hunting
+		Display hints for not-unlocked scenes
+v1.5 - The Facility (Incomplete)
+	System
+		The Facility start menu
+		The Facility background
+		The Facility player desc
+		The Facility scenario name
+		The Facility scenario desc
+		The Facility gallery
+	Scenes
+		Introduction
+			Your Infection
+				Empty weapons lab
+					Chemical lab
+						Whizzer fluid
+						Seeking relief
+					Containment lab
+						Public display
+						Release the horde
+					Parasite lab
+						Mind worms
+v2.0 - The Facility
+	Scenes
+					Innoculation lab
+						Uninfection serum
+							Alpha Awakens
+								Elevator escape
+									Victory
+								Chemical lab
+									Captured
+								Containment lab
+									Stuck in the wall
+								Parasite lab
+									Spiders
+v2.5 - Sanctuary Hotel Part 1
+	System
+		Sanctuary Hotel start menu
+		Sanctuary Hotel background
+		Sanctuary Hotel player desc
+		Sanctuary Hotel scenario name
+		Sanctuary Hotel scenario desc
+		Sanctuary Hotel gallery
+		Name the husband
+		Name the wife
+	Scenes
+		Introduction
+			Transformation
+				Let her take Amelia
+					Let her take you
+				Fight off the woman
+					Break into the pink-smoke filled room
+					Keep moving
+						Help the girl
+						Push her away
+							Leave Amelia (cut to wife gangbang)
+							Go back for her
+								Escape the resort (checkpoint)
+v2.7 - Sanctuary Hotel Part 2
+	System
+		Start from checkpoint
+	Scenes
+		Breather
+			Help her yourself
+			Explore the facility
+				Queen's room
+					Take the chastity cage back
+						Leave the room (cage breaks)
+					Leave it be
+				Prince's room
+					Take the dildo back
+						Leave the room
+					Leave it be
+				King's Room
+					Take the onahole back
+						Leave the room
+					Leave it be
+				Scavenging girl
+					Take the lone girl survivor back
+						Shemale threesome (the new girl grew a bigger cock and turned the tables)
+					Leave her be
+				Pleasure drug
+					Take the drug back
+					Use it on yourself
+					Leave it be
+v2.7 - Sanctuary Hotel Part 3
+	Scenes
+		Entering the compound
+			Your temporary room
+				Accept her infection
+				Refuse (switch to wife's perspective)
+					Cafeteria
+						Food supply
+							The compound is poisoned
+						Go back
+					Back gate
+						Lure the dogs in
+							The compound falls to the dogs
+						Go back
+					Young man
+						Seduce him (he turns into a siren)
+							The compound falls from within
+						Go back
+
+
+
+
+
+
+OLD
+
+Chapter 2 Outline
+
+Central Hub
+			Escape Elevator (requires any keycard to open)
+			Motivational Posters
+			Weapons Testing Lab Doorway
+			Chemical Lab Doorway
+			Containment Center Doorway
+			Parasite Lab Doorway
+			Innoculation Lab Doorway
+	Weapons Testing Lab (start)
+			Keycard (starting item, unlocks Licker Log)
+			Sounds of a scuffle
+			Doorway out
+	Weapons Testing Lab (returning)
+			Dispersal Tanks
+			Pile of clothes
+			Weaponry (triggers scene Licker)
+			Doorway out
+	Chemical Lab
+			Keycard (unlocks Whizzer log)
+			Sleeping Gas
+			Chair (triggers private time)
+			Yellow Fluid (triggers scene Whizzer)
+			Doorway out
+	Containment Center
+			Keycard (triggers the horde scene if sleeping gas is not used, unlocks spider log and gives empty gas container otherwise)
+			Security Cameras
+			Metal Cage
+			Crawlspace
+			Chair (triggers public show)
+			Doorway out
+	Parasite Lab
+			Keycard (unlocks mind worm log)
+			Parasite Worm Containers
+			Broken Containers
+			Spider's Nest (triggers spiders if you come here while uninfected)
+			Chair (triggers mind worms)
+			Doorway out
+	Innoculation Lab
+			Working Console (research logs if you have the appropriate cards)
+			Sealed cure safe (requires 3 keycards to open)
+			Alpha's Containment Tank
+			Doorway out
+
+Scenes:
+	Infection Commences
+	Licker
+	Mind Worms
+	Spider
+	Whizzer
+	Alpha
+	Stuck in the wall
+	Private Time
+	Public Show
+	Uninfect Yourself
+	Research Log - Sounding (unlocked by default)
+	Research Log - Teasing (unlocked by default)
+	Research Log - 'Licker'
+	Research Log - 'Whizzer'
+	Research Log - 'Mind Worms'
+	Research Log - 'Spiders'
+	Research Log - 'Alpha' (unlocked by default)
+
+Design Document
+	v2
+		New start screen (COMPLETE)
+		Watersports disabling (COMPLETE)
+		Patreon link (COMPLETE)
+		Patrons list (COMPLETE)
+		Chapter select (COMPLETE)
+		chapter2Start scene (COMPLETE)
+		chapter2Gallery scene (COMPLETE)
+		Separate galleries (COMPLETE)
+		generateChapter2Gallery() (COMPLETE)
+		WriteChapter2Event (COMPLETE)
+		unlockChapter2Scene (COMPLETE)
+		Second zombie footer (COMPLETE)
+		Galleries in chapter select (COMPLETE)
+		Replace sounding disabling with parasite disabling (COMPLETE)
+		Update save file (COMPLETE)
+		Chapter 2 character image (COMPLETE)
+		Sleeping gas image (COMPLETE)
+		Keycard image (COMPLETE)
+		Cure vial image (COMPLETE)
+		Use default character if bodytype is default
+		Fix writeSpeech
+		Facility structure
+		Call for chapter2Footer in rooms
+		Facility population
+		Facility items
+		Track alpha in footer
+		Scene placeholders
+		Research placeholders
+		All scenes implemented
+		Disable Whizzer
+		Disable Mind Worms
+		Disable Spiders
+		Full game testing
+		Chapter 2 unlock cheat code
+		Image upgrade pack
+		Update patrons list
+		Upload to MEGA
+		Update index menu
+		Update index news
+		Update index download
+		Upload to github
+		Post to patreon
+		Post to TFgames

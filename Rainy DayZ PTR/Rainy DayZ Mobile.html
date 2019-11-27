@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rainy DayZ</title>
+		<script src="scripts/sceneList.js"></script>
+		<script src="scripts/index2.js"></script>
+		<link rel="stylesheet" type="text/css" href="scripts/mobile.css" />
+	</head>
+	<body onload ="startup()">
+		<div id = "menu" class = "menu">
+			<div id="titlePanel">
+				<p id = "title" class = "title">Rainy DayZ</p>
+				<div id="closeButton" class="closeButton" onclick="closeButton()"><</div>
+				<p id = "version" class = "version">V1.1</p>
+				<!--<p id = "version" class = "version">Updates are in progress, will post this version soon</p>-->
+				<p id = "author">
+					<a href="https://noodlejacuzzi.github.io/index.html">Noodle Jacuzzi</a><br>
+					<a href="https://www.patreon.com/noodlejacuzzi">Patreon</a>
+				</p>
+			</div>
+			<div id="buttonMenu">
+				<div id="buttonMenuSecondary" class="flexbox">
+					<h4 id="invButton" class="button" onclick="invButton()">INVENTORY</h4>
+					<h4 id="invButton" class="button" onclick="sceneTransition('scenarioSelect')">BACK TO MENU</h4>
+					<h4 id="logButton" class="button" onclick="disablePictures()">TOGGLE IMAGES</h4>
+					<h4 id="invButton" class="button"  onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">MOBILE VERSION</h4>
+				</div>
+			</div>
+			<div id="playerPanel" class="flexbox">
+				<img id="playerImage" class="playerImage" src="images/none.png">
+				<div id="playerStats">
+					<h3 id = "playerName" class = "char_player version">You</h3>
+					<br>
+					<h3 id = "playerDesc" class = "version">???</h3><br>
+				</div>
+			</div>
+			<h3 id = "scenarioDesc" class = "version" style = "margin: 15px;">???</h3>
+			<h3 id = "scenarioTotal" class = "version" style = "margin: 15px;"></h3>
+		</div>
+			<div id="openButton" class="openButton" onclick="openButton()">></div>
+		<div id = "wrapper" class = "wrapper">
+			<div id="wrapperBG"></div>
+			<div id = "output" class = "output" onclick = "hideStuff()">
+			 <div class="loader"></div> 
+			</div>
+			<div id="footer" class="footer">
+				<h4 id="invButton" class="button" onclick="invButton()">INVENTORY</h4>
+				<h4 id="invButton" class="button" onclick="sceneTransition('scenarioSelect')">BACK TO MENU</h4>
+				<h4 id="logButton" class="button" onclick="disablePictures()">TOGGLE IMAGES</h4>
+			</div>
+			<div id = "inventory" class = "popup  inventory">
+				<h1 class = "windowTitle" onclick="invButton()">INVENTORY</h1>
+				<div class = "logbookLeft" id = "windowLeft">
+				</div>
+				<div class = "logbookRight" id = "windowRight">
+				</div>
+			</div>
+			</div>
+		</div>
+	</body>
+</html>
