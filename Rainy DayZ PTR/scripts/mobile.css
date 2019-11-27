@@ -81,11 +81,11 @@ html, body {
 }
 .medPicture {
 	display: block;
+    max-height: 30vh;
+    max-width: 90%;
     margin: auto;
-    max-height: 500px;
-  	padding: 20px, 1px;
-  	border: 3px solid white;
-  	border-radius: 5px;
+    border: 5px solid #85bbc3;
+    border-radius: 30px;
 }
 
 .centeredText {
@@ -309,6 +309,7 @@ div#menu {
     height: 100%;
     flex:none;
     overflow: hidden;
+    border-right: 5px solid;
   	background-color: #111111;
 	text-align: center;
 	overflow-y: auto; /*only adds a scrollbar, when necessary*/
@@ -355,16 +356,16 @@ p#author {
 }
 
 div#output {
-    padding: 15px;
+    padding: 0px;
 }
 
 div#wrapperBG {
 	/*Box covering entire canvas, used to add background-image via JS*/
-    height: 104vh;
-    width: 104vw;
+    height: calc(100% + 0px);
+    width: calc(100% + 0px);
     position: absolute;
-    top: -2%;
-    left: -2%;
+    top: 0;
+    left: 0;
     z-index: 1;
     background-repeat: no-repeat;
     background-size: cover;
@@ -418,18 +419,16 @@ div#wrapperBG::after {
 }
 
 .pictureButton, .choiceText{
-	font-size:1.25rem;
+	font-size: 17px;
 	font-weight: bold;
     display: block;
     width: fit-content;
-    margin: 15px auto;
+    margin: 2px;
 }
 
 .choiceText {
 	width: 80%;
 	margin: auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -468,10 +467,7 @@ img.bigPicture {
     border-radius: 30px;
 }
 
-p{
-	margin: 15px 0;
-    font-size: 1.3em;
-}
+p{margin: 15px 0;}
 
 .textBox {
 	position: relative;
@@ -862,8 +858,9 @@ position: absolute;
 	top:15px;
 	left: 340px;
 	position: absolute;
-	font-size: 0px;
-  	border-radius: 0px;
+	font-size: 50px;
+  	border: 5px solid white;
+  	border-radius: 20px;
 	color:white;
 	
 }
@@ -872,9 +869,10 @@ position: absolute;
 	top:15px;
 	left: 20px;
 	position: absolute;
-	font-size: 0px;
+	font-size: 50px;
 	visibility: hidden;
-  	border-radius: 0px;
+  	border: 5px solid white;
+  	border-radius: 20px;
 	color:white;
 }
 
@@ -896,14 +894,4 @@ position: absolute;
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-
-.blueText {
-  color: #bf2c2c;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.blueText:hover{
-  color: #e62222;
 }
