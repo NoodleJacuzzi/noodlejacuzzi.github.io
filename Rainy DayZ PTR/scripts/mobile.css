@@ -357,6 +357,7 @@ p#author {
 
 div#output {
     padding: 0px;
+	padding-top: 15px;
 }
 
 div#wrapperBG {
@@ -431,6 +432,8 @@ div#wrapperBG::after {
 	margin: auto;
 	padding-top: 20px;
 	padding-bottom: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 #restartButton {
@@ -894,4 +897,14 @@ position: absolute;
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.blueText {
+  color: #bf2c2c;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.blueText:hover{
+  color: #e62222;
 }
