@@ -729,6 +729,9 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 }
 
 function writeText (text) {
+	if (text == "...") {
+		text = "<hr>";
+	}
 	document.getElementById('output').innerHTML += `
 		<p class='rawText'>` + replaceCodenames(text) + `</p>
 	`;
