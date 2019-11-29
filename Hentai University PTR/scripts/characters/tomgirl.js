@@ -199,6 +199,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("He wraps his arms around yours like he's some kind of trophy wife as the two of you make your way to your office.");
 				writeText("...");
 				writeText("Once you've arrived tomgirlF takes a seat on your sofa.");
+				raiseTrust('tomgirl', 1);
 			}
 			else {
 				writeText("tomgirlF is chatting with classmates again, but follows you to your office quickly enough.");
@@ -218,6 +219,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			data.player.location = "gym";
 			passTime();
 			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
 		}
 		case "tomgirlnew3a": {
 			writeSpeech("tomgirl", "new.jpg", "Well, the truth is... I wanna get married!");
@@ -228,6 +230,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You aren't really the type to tie yourself down, but tomgirlF's confession puts you in a strange position. He's certainly your type, and his sex drive absolutely matches yours...");
 			writeFunction("writeEncounter('tomgirlnew3b')", "I love you too, let's do it");
 			writeFunction("writeEncounter('tomgirlnew3c')", "I don't do exclusivity");
+			break;
 		}
 		case "tomgirlnew3b": { //incomplete
 			writeEvent('tomgirlnew3');
