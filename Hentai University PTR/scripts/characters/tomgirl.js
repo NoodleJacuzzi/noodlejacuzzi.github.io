@@ -213,6 +213,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeFunction("writeEncounter('tomgirlnew4a')", "Talk about corruption");
 			}
 			writeFunction("changeLocation('playerOffice')", "Rain check. Let's meet tomorrow");
+			break;
 		}
 		case "tomgirlnew2": { //incomplete
 			writeEvent('tomgirlnew2');
@@ -238,7 +239,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("loadEncounter('system', 'credits')", "The End");
 			break;
 		}
-		case "tombirlnew3c": {
+		case "tomgirlnew3c": {
 			writeSpeech("player", "", "I don't do exclusivity, I'm sorry. You're wonderful, and certainly my type, but I won't do marriage.");
 			writeSpeech("tomgirl", "new.jpg", "Oh... I, uh...");
 			writeText("He seems down, shellshocked and unsure of himself. ");
@@ -265,12 +266,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("It seems like he doesn't quite grasp what you mean, but that's fine. It seems like he's willing to accept the change if you are.");
 			writeFunction("writeEncounter('tomgirlnew4b')", "Corrupt tomgirlF");
 			writeFunction("changeLocation(data.player.location)", "Change your mind");
+			break;
 		}
 		case "tomgirlnew4b": {
 			writeEvent('tomgirlnew4');
 			setTrust('tomgirl', 666);
 			passTime();
 			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
 		}
 	}
 }
@@ -542,7 +545,6 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("tomgirl", "new.jpg", "Gghh... <br>What's going on with me? With my body? ");
 			writeBig("images/tomgirl/new4-2.jpg", "Art by Nagi Ichi");
 			writeBig("images/tomgirl/new4-3.jpg", "Art by Nagi Ichi");
-			writeBig("images/tomgirl/new4-4.jpg", "Art by Nagi Ichi");
 			break;
 		}
 	}
