@@ -619,7 +619,7 @@ function writeEvent(name) { //Plays the actual event.
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
 	{index: "maidPhone1", trust: 22,},
-	{index: "madiPhone1", trust: 23,},
+	{index: "maidPhone1", trust: 23,},
 	// {index: "maidPhone2", trust: 25,},
 	{index: "maidReward", trust: 25,},
 	{index: "maidRewardDuo", trust: 30,},
