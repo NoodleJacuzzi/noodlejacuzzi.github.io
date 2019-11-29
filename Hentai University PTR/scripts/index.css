@@ -917,7 +917,7 @@ position: absolute;
 
 hr {
 	border: 2px dashed white;
-	padding-bottom: 45px; 
+	margin-bottom: 45px; 
 }
 
 @keyframes spin {
