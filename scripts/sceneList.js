@@ -3,10 +3,10 @@ function writeScene(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
 				<p class = "centeredText">Lastest News 11/16/2019</p>
-				<p class = "centeredText">Hentai University v4</p>
-				<p class = "centeredText">The release of Hentai University v4, featuring Lana Cummings, Tia Sun, and Reese Kieran.</p>
+				<p class = "centeredText">Hentai University v5</p>
+				<p class = "centeredText">The release of Hentai University v5, featuring Gou, Sam White, and Lena Rogers & Anna Fletcher.</p>
 				<p class = "centeredText"></p>
-				<p class = "centeredText">Thank you to:Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Lasse B, Badaxe, ChronosEdge, Colin E, Judavarius, Lunarghost, Scal, Adonnak, andy, Andy, Andy Amundy, Angel, Ariados, Austin yarbrougb, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, David Lange, Debarre Sonny, Dewr, Drashin, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jane, jdktjk205, Jesse Greene, joe, joe mulhall, Joshua Melzark, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, Ryan Linn, sage, Skyrim mod lvr, Slipokk, Snaked, stratum, valdis, Vincent Madaire-Cullen, Wild Bill, Will Osboldstone, Yongdian Guo, Профессор Преображенский, and 凱 陳 for supporting my work!</p>
+				<p class = "centeredText">Thank you to: Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Lasse B, Arthorias28, Badaxe, ChronosEdge, Colin E, Judavarius, Lunarghost, Q Q, Scal, Adonnak, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Auckard, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, David Lange, Debarre Sonny, Devin, Dewr, Drashin, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jane, jdktjk205, Jesse Greene, joe, joe mulhall, john smith, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, Max Mcfarland, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, Ryan Linn, sage, Sebastian Eckel, Shawn, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, valdis, Vincent Madaire-Cullen, Wayne culbert, Wild Bill, Will Osboldstone, Yongdian Guo, Your Husbando, Профессор Преображенский, and 凱 陳 for supporting my work!</p>
 			`;
 			writeTransition("news", "View all news updates");
 			document.getElementById('output').innerHTML +=`
@@ -32,14 +32,14 @@ function writeScene(scene) {
 			`;
 			writeTransition("artifactList", "See a roadmap of current / planned content");
 			writeBig("images/HentaiUniversity.png");
-			writeText("Hentai University v4");
+			writeText("Hentai University v5");
 			writeText("A game made in cooperation with author Captain Cryptogreek, who works as the game's lead writer.");
 			writeText("You play as a young man with a strong grasp on hypnotic magic, and have embedded yourself as a counselor in a school with a fantastically attractive student body. The faculty and your neighbors in town look pretty good too.");
 			writeText("This game uses art by Enoshima Iki, Nagi Ichi, and Oreteki18kin, and is meant to be similar in feel to Hentai High School, but without the focus on school management, more emphasis on wandering / corruption, and a much higher quality body of images.");
 			writeText("The end goal here is a town packed with dozens of characters using a framework I can continually add more content to.");
 			writeText("Tags: Hypnosis, optionally features many other tags based on characters such as incest, dubcon, and gay content");
 			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://mega.nz/#!6ioGRaCY!yYnDi6xQwTWKaGTwt1Fn3ZyJprzkMRKyaCHMU1MovWE'">Download the game</p>
+				<p class="choiceText" onclick="window.location.href='https://mega.nz/#!O2giVQYY!YRD89uIASN-nWou754igVkRCP0Vu2RAR0GJPcoFV6vU'">Download the game</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">Play the mobile version</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'">Modding Tutorial</p>

@@ -2,7 +2,6 @@ var locationArray = [
 	{index: "playerHouse", buttons: [
 		{name: "Leave the Apartment", top: 79, left: 20, type: "location", target: "apartmentOutside", time: "MorningEvening",},
 		{name: "Head Straight to Work", top: 79, left: 50, type: "location", target: "playerOffice", time: "MorningEvening",},
-		{name: "Go to Bed", top: 52, left: 35, type: "event", target: "newDay", time: "EveningNight",},
 	],},
 	{index: "street", buttons: [
 		{name: "Go Home", top: 80, left: 33, type: "location", target: "apartmentOutside", time: "MorningEvening",},
@@ -131,13 +130,11 @@ function changeLocation(n) {
 			writeFunction("changeLocation('playerHouse')", "Go Back Home");
 		}
 		else {
-			if (imagesDisabled != true) {
-				document.getElementById('output').innerHTML += `
-					<div class="playerRoom">
-						<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
-					</div>
-				`;
-			}
+			document.getElementById('output').innerHTML += `
+				<div class="playerRoom">
+					<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
+				</div>
+			`;
 			for (i = 0; i < locationArray[locationTarget].buttons.length; i++) {
 				if (locationArray[locationTarget].buttons[i].time.includes(data.player.time)) {
 					printLocationButton(
@@ -178,15 +175,10 @@ function changeLocation(n) {
 }
 
 function printLocationButton(name, top, left, target) {
-	if (imagesDisabled == true) {
-		writeFunction('changeLocation("'+target+'")', name);
-	}
-	else {
-		document.getElementsByClassName('playerRoom')[0].innerHTML += `
-			<div class="pictureButton" onclick='changeLocation("`+target+`")'
-			style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+name+`</div>
-		`;
-	}
+	document.getElementsByClassName('playerRoom')[0].innerHTML += `
+		<div class="pictureButton" onclick='changeLocation("`+target+`")'
+		style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+name+`</div>
+	`;
 }
 
 function changeBG(n) {

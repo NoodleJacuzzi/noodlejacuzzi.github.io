@@ -331,6 +331,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "purple8": {
 			writeEvent('purple2');
+			setTrust('purple', 99);
+			passTime();
+			data.player.location = 'vintageStreet';
+			writeFunction("writeEncounter('purple8a')", "Head Downstairs");
+			break;
+		}
+		case "purple8a": {
+			writeEvent('purple3');
 			writeText("...");
 			writeSpeech("player", "", "Well, I'll be going now.");
 			writeSpeech("chubby", "", "Come back anytime!");
@@ -338,13 +346,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You leave with a chuckle "+fName('chubby')+" scolds her daughter for her vulgar language.");
 			writeSpeech("chubby", "", "Language like that is for in private young lady, or you'll get master in trouble!");
 			writeText("She'll need some time and some direction from her daughter, but "+fName('chubby')+" is well under your control now. You'll come back later to enjoy her, and her daughter too.");
-			data.player.location = 'vintageStreet';
 			writeFunction("changeLocation(data.player.location)", "Finish");
-			setTrust('purple', 99);
-			passTime();
 			break;
 		}
 		case "purple9": {
+			data.player.location = "vintageStreet";
 			loadEvent('chubby', 'chubby1');
 			setTrust('purple', 100);
 			setTrust('chubby', 100);
@@ -467,7 +473,6 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Her cunt thoroughly filled with cum, you pull out only to hear a sound from behind you.");
 			writeSpeech("player", "", "We've got a voyeur. Come with me, "+fName('purple')+".");
 			writeSpeech("purple", "", "Mhm...");
-			writeFunction("writeEvent('purple3')", "Head downstairs");
 			break;
 		}
 		case "purple3": {

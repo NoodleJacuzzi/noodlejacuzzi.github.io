@@ -20,9 +20,9 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "gameConsole", 	name: "Game Console", 			location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 62, left: 72, day: "both",},
 	{index: "wardrobe", 	name: "Wardrobe", 				location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 62, left: 1, day: "both",},
 	{index: "laptop", 		name: "Use the Computer", 		location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 5, day: "both",},
-	{index: "nap", 			name: "Take a Nap", 			location: 'playerHouse', 		time: "Morning", 			itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
+	{index: "nap", 			name: "Take a Nap", 			location: 'playerHouse', 		time: "MorningEvening", 			itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
 	{index: "nap", 			name: "Take a Nap", 			location: 'playerOffice', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
-	{index: "newDay", 		name: "Go to Bed", 				location: 'playerHouse', 		time: "EveningNight", 		itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
+	{index: "newDay", 		name: "Go to Bed", 				location: 'playerHouse', 		time: "Night", 		itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
 	{index: "shop", 		name: "General Store", 			location: 'shoppingDistrict', 	time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 60, day: "both",},
 ];
 
@@ -53,18 +53,21 @@ function writeEncounter(scene) {
 			writeText("We're always open to comments or criticism. If you feel like school management would add a lot to the game, you'd like us to consider adding another artist, or you'd like to suggest content of your own, you can shoot us a message anywhere this game is posted. You can find the Patreon here: <a href='https://www.patreon.com/noodlejacuzzi'>Patreon Link</a>");
 			writeText("You can also send us a message directly. Noodlejacuzzi is on discord (NoodleJacuzzi#4120) or you can send an email at noodlejacuzzi@gmail.com");
 			writeText("Captain Cryptogreek can be messaged on his reddit account where he regularly posts captions. You can also shoot him an email if you'd like him to proofread or you'd like to commission his skills at cryptogreekcaptions@gmail.com");
-			writeText("Thank you to: Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Lasse B, Badaxe, ChronosEdge, Colin E, Judavarius, Lunarghost, Scal, Adonnak, andy, Andy, Andy Amundy, Angel, Ariados, Austin yarbrougb, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, David Lange, Debarre Sonny, Dewr, Drashin, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jane, jdktjk205, Jesse Greene, joe, joe mulhall, Joshua Melzark, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, Ryan Linn, sage, Skyrim mod lvr, Slipokk, Snaked, stratum, valdis, Vincent Madaire-Cullen, Wild Bill, Will Osboldstone, Yongdian Guo, Профессор Преображенский, 凱 陳 for funding this game! The patreon funds are split as Captain Cryptogreek has taken over as lead writer for the game.");
+			// replace [\r\n]+ with ,
+			writeText("Thank you to: Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Lasse B, Arthorias28, Badaxe, ChronosEdge, Colin E, Judavarius, Lunarghost, Q Q, Scal, Adonnak, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Auckard, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, David Lange, Debarre Sonny, Devin, Dewr, Drashin, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jane, jdktjk205, Jesse Greene, joe, joe mulhall, john smith, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, Max Mcfarland, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, Ryan Linn, sage, Sebastian Eckel, Shawn, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, valdis, Vincent Madaire-Cullen, Wayne culbert, Wild Bill, Will Osboldstone, Yongdian Guo, Your Husbando, Профессор Преображенский, and 凱 陳 for funding this game! The patreon funds are split as Captain Cryptogreek has taken over as lead writer for the game.");
 			writeSpecial("And special thanks to Stiggy752 for the game's new CSS!");
 			writeText("I've added the option to start as a futanari. This only changes your character's image and the pronouns used (so that you're ma'am instead of sir). Please let Noodle Jacuzzi know if anyone is still referring to your as 'sir' when inappropriate, thank you.");
 			writeText("The game is more freeform and slower paced than my previous works. If you get stuck, please let us know. There isn't currently a guide, but we can easily feature an FAQ here.");
 			writeText("You can click on the title of a window to close it. For example, if you click 'LOGBOOK' on the left (or bottom on mobile), you can close the new window by clicking anywhere in the 'LOGBOOK' section at the top.");
-			writeText("This game uses art by three artists. Enoshima Iki, Nagi Ichi, and Oreteki18kin. Hover over an image for the artist who created it. Check it out:");
+			writeText("This game uses art by three artists. Enoshima Iki, Nagi Ichi, Oreteki18kin, and Gujira. Hover over an image for the artist who created it. Check it out:");
 			writeMed("images/mom/profile.jpg", "Art by Enoshima Iki");
 			writeMed("images/tomgirl/profile.jpg", "Art by Nagi Ichi");
 			writeMed("images/purple/profile.jpg", "Art by Oreteki18kin");
+			writeMed("images/succubus/profile.jpg", "Art by Gujira");
 			writeText("All three of the artists who's works we've used have different styles, and all work is censored due to Japan's censorship laws. We don't ever intend to mix and match within scenes, but it is worth noting that each have their own appeal / flaws. Oreteki is a divisive artist due to his style of drawing labia lips, and Nagi Ichi's work is 90% M/M. If these features are a dealbreaker for you, consider simply avoiding characters by these artists.");
 			writeFunction("loadEncounter('system', 'oretekiTest')", "See an Oreteki18kin example <br>(LONG LABIA LIPS/FLAPS)");
 			writeFunction("loadEncounter('system', 'nagiTest')", "See a Nagi Ichi example <br>(AT LEAST 90% GAY)");
+			writeFunction("loadEncounter('system', 'gujiraTest')", "See a Gujira example <br>(AT LEAST 80% GAY)");
 			break;
 		}
 		case "listTextbooks": {
@@ -118,6 +121,11 @@ function writeEncounter(scene) {
 		}
 		case "nagiTest": {
 			writeBig("images/tomgirl/7-5.jpg", "Art by Nagi Ichi");
+			writeFunction("loadEncounter('system', 'start')", "go back");
+			break;
+		}
+		case "gujiraTest": {
+			writeBig("images/succubus/1-5.jpg", "Art by Gujira");
 			writeFunction("loadEncounter('system', 'start')", "go back");
 			break;
 		}
@@ -178,8 +186,17 @@ function writeEncounter(scene) {
 			}
 			if (specialEvent == false) {
 				console.log("No events found");
-				writeText("<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>");
-				writeFunction("changeLocation('playerHouse')", "Get out of bed");
+				document.getElementById('output').innerHTML += `
+					<div class="playerRoom">
+						<img class="backgroundPicture" src="images/locations/newDayMorning.jpg" usemap="#roomMap">
+					</div>
+				`;
+				printLocationButton(
+					"Get out of bed", 
+					40, 
+					40, 
+					"playerHouse", 
+				);
 			}
 			if (checkTrust('principal') == 40) {raiseTrust('principal', 1);}
 			break;
@@ -261,6 +278,14 @@ function writeEncounter(scene) {
 		case "nap": {
 			passTime();
 			changeLocation(data.player.location);
+			break;
+		}
+		case "credits": {
+			writeText("Incredible! Outstanding! You've reached one of Hentai University's endings!");
+			writeText("This game was made by <a href='https://noodlejacuzzi.github.io/index.html'>Noodle Jacuzzi</a> and <a href='https://www.reddit.com/user/CaptainCryptogreek'>Captain Cryptogreek</a>. Hop on in to our <a href='https://discord.gg/pDht5BZ'>Discord</a> and let us know what you thought, we'd love to hear from you. You can also find a section dedicated to modding in there, maybe check that out? Be sure to show show your support for the members of the modding community of course if you do.");
+			writeText("And of course this game was funded by <a href='https://www.patreon.com/noodlejacuzzi'>Patreon</a>, this game wouldn't exist without monetary support and encouragement we get from the community. Thank you to: Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Lasse B, Arthorias28, Badaxe, ChronosEdge, Colin E, Judavarius, Lunarghost, Q Q, Scal, Adonnak, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Auckard, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, David Lange, Debarre Sonny, Devin, Dewr, Drashin, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jane, jdktjk205, Jesse Greene, joe, joe mulhall, john smith, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, Max Mcfarland, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, Ryan Linn, sage, Sebastian Eckel, Shawn, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, valdis, Vincent Madaire-Cullen, Wayne culbert, Wild Bill, Will Osboldstone, Yongdian Guo, Your Husbando, Профессор Преображенский, and 凱 陳 for supporting the work!");
+			writeSpecial("Thanks for playing! We hope you'll be seeing more endings in the future!");
+			writeFunction("changeLocation('playerHouse')", "Keep playing");
 			break;
 		}
 		case "porn0A": {

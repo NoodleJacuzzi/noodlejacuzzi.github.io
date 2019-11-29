@@ -108,6 +108,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("starlet", "", "It's legit! Alright, so real quick before we start. You wanna go with 'newly awoken buttslut' or 'masochistic painal virgin'? I couldn't decide last night so I practiced both, I can slide into either super easily.");
 			setTrust('starlet', 81);
 			passTime();
+			clearText('starlet');
 			writeFunction("writeEvent('starlet1a')", "Buttslut");
 			writeFunction("writeEvent('starlet1b')", "Painal");
 			break;
@@ -383,12 +384,17 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
+	{index: "starletReminder", trust: 80,},
 	{index: "starletReward", trust: 83,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
+		case "starletReminder": {
+			writePhoneSpeech("starlet", "", "Hey! I'll be at the shoot location later this evening, alright? If nobody's home I'll just head back and try again tomorrow.");
+			break;
+		}
 		case "starletReward": {
 			writePhoneImage("images/starlet/reward.jpg", "Art by Oreteki18kin");
 			writePhoneSpeech("starlet", "", "You've finished all of starletF's content for this version, more is coming soon!");

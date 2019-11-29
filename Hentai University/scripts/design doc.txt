@@ -322,11 +322,42 @@ V0.0
 		Fix mobile version footer buttons (COMPLETE)
 		Add space to top of the screen after a dream (COMPLETE)
 		Add pink to pervert mode (COMPLETE)
-		Disabling images does not change navigation
+	v5
+		Add succubus & nurse to save data (COMPLETE)
+		Add Lana text letting you know she'll be coming over (COMPLETE)
+		clear reward texts (COMPLETE)
+		Better day start screen (COMPLETE)
+		Fix purple event not having an end button (COMPLETE)
+		Disabling images does not change navigation (COMPLETE)
+		Add clearText function to clear a character's text event (COMPLETE)
+		oowoo cheat (COMPLETE)
+		vegetarian update (COMPLETE)
+		Re-entering pervert mode disables it (COMPLETE)
+		Succubus1 (COMPLETE)
+		Succubus proposal
+		Succubus case select
+		Succubus tomgirl
+		Succubus meji
+		Succubus breakfast
+		Succubus milk
+		Succubus game
+	v6
+		Nurse intro
+	v7
+		genderswap potion
+		
+	Future
+		Pepsiman cheat
 		RaiseStat function
 		raiseStat messages - hypnosis: sensitivity increase, group hypnosis, etc
 		Stat-based skills in logbook
-		Add clearText function to clear a character's text event
+		Phone app selection
+		Remove spookwave cheat
+		Re-enable Ghost AR in the shop
+		Microtransaction - Higher visibility
+		Microtransaction - No day requirements
+		Hacking reduces microtransaction cost
+		Ghost gyaru - Ward
 		Ancient shrine location
 		Ghost AR
 			Ghost log picture
@@ -335,15 +366,6 @@ V0.0
 			Full ghost array
 			Ghost girl
 			Ghost milf
-	v4
-		Pepsiman cheat
-		Phone app selection
-		Remove spookwave cheat
-		Re-enable Ghost AR in the shop
-		Microtransaction - Higher visibility
-		Microtransaction - No day requirements
-		Hacking reduces microtransaction cost
-		Ghost gyaru - Ward
 		
 		
 		
