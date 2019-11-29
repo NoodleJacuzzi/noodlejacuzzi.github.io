@@ -214,8 +214,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("tomgirl", "new.jpg", "I also had something Important I wanted to ask you. It's a little embarrassing.");
 			writeFunction("writeEncounter('tomgirlnew3a')", "Ask about what's up");
 			if (checkFlag('succubus', 'corruption')==true) {
-				writeSpeech("player", "", "<i>At this point there's no question, I could use the corruption ability I learned from succubusF on him. </i>");
-				writeFunction("writeEncounter('tomgirlnew4a')", "Talk about corruption");
+				//writeSpeech("player", "", "<i>At this point there's no question, I could use the corruption ability I learned from succubusF on him. </i>");
+				//writeFunction("writeEncounter('tomgirlnew4a')", "Talk about corruption");
 			}
 			writeFunction("changeLocation('playerOffice')", "Rain check. Let's meet tomorrow");
 			break;
