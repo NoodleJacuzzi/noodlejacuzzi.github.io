@@ -282,8 +282,8 @@ function writeEncounter(scene) {
 		}
 		case "credits": {
 			writeText("Incredible! Outstanding! You've reached one of Hentai University's endings!");
-			writeText("This game was made by <a href='https://noodlejacuzzi.github.io/index.html'>Noodle Jacuzzi</a> and <a href='https://www.reddit.com/user/CaptainCryptogreek'>Captain Cryptogreek</a>. Hop on in to our <a href='https://discord.gg/pDht5BZ'>Discord</a> and let us know what you thought, we'd love to hear from you. You can also find a section dedicated to modding in there, maybe check that out? Be sure to show show support for the members of the modding community of course.");
-			writeText("And of course this game was funded by <a href='https://www.patreon.com/noodlejacuzzi'>Patreon Link</a>, this game wouldn't exist without monetary support and encouragement we get from the community.");
+			writeText("This game was made by <a href='https://noodlejacuzzi.github.io/index.html'>Noodle Jacuzzi</a> and <a href='https://www.reddit.com/user/CaptainCryptogreek'>Captain Cryptogreek</a>. Hop on in to our <a href='https://discord.gg/pDht5BZ'>Discord</a> and let us know what you thought, we'd love to hear from you. You can also find a section dedicated to modding in there, maybe check that out? Be sure to show show your support for the members of the modding community of course if you do.");
+			writeText("And of course this game was funded by <a href='https://www.patreon.com/noodlejacuzzi'>Patreon</a>, this game wouldn't exist without monetary support and encouragement we get from the community.");
 			writeSpecial("Thanks for playing! We hope you'll be seeing more endings in the future!");
 			writeFunction("changeLocation('playerHouse')", "Keep playing");
 			break;

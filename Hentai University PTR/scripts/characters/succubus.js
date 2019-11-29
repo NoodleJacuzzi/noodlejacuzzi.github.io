@@ -545,9 +545,14 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "That just sounds like sex while keeping score.");
 			writeSpeech("succubus", "demon.jpg", "Hehe. Don't feel too bad if you lose. We succubi are trained to hold it together for months at a time even with constant stimulation.<br>And you, poor human, you're going up against me.");
 			writeText("He gets up close to rub his chest against your abs, he's pretty smug for someone barely more than half your height.");
-			writeSpeech("succubus", "demon.jpg", "Every bit of me is made for turning men / women like you into quickshot sluts. Every. Single. Bit.");
+			if (data.player.gender == "Man") {
+				writeSpeech("succubus", "demon.jpg", "Every bit of me is made for turning men like you into quickshot sluts. Every. Single. Bit.");
+			}
+			else {
+				writeSpeech("succubus", "demon.jpg", "Every bit of me is made for turning women like you into quickshot sluts. Every. Single. Bit.");
+			}
 			writeText("He gently pushes you down to the floor, and playfully slaps your hands away.");
-			writeSpeech("succubus", "demon.jpg", "Ah ah~<br>Bottom controls the speed, that's one of the rules~");
+			writeSpeech("succubus", "demon.jpg", "Ah ah~<br>Catcher controls the speed, that's one of the rules~");
 			writeSpeech("player", "", "Cmon brat, quit with the cheekiness and put your money where your mouth is.");
 			writeSpeech("succubus", "demon.jpg", "Mmm~! I'll enjoy breaking you, let's see how long you can keep that serious face up.");
 			writeText("He straddles you cowgirl style, teasingly hotdogging your shaft between his asscheecks, slowing down whenever your cockhead bumps against his puckered rim. ");
@@ -563,7 +568,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Despite the fact you can feel your cockhead bump against his demon prostate with every drawn out thrust, he still looks like he's totally in control.");
 			writeSpeech("succubus", "demon.jpg", "Ah~! Ah~! I'll have to be ready to fly tomorrow, because I won't be walking!");
 			writeSpeech("player", "", "Gh... Shut up, tramp!");
-			writeSpeech("succubus", "demon.jpg", "Oh, I'm worse than that, master! I'm a slut, a little bitch boi, I'm <br>yours!</b>");
+			writeSpeech("succubus", "demon.jpg", "Oh, I'm worse than that, master! I'm a slut, a little bitch boi, I'm <b>yours!</b>");
 			writeText("You can't hold back anymore as he goes balls deep and gyrates his hips in a circle to thoroughly milk your dick. ");
 			writeSpeech("player", "", "C... Cumming~!");
 			writeSpeech("succubus", "demon.jpg", "Yes~! Cmon, let's see that face of yours tw-");
