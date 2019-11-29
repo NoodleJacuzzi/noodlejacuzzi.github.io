@@ -170,7 +170,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She keeps breathing deeply, but is still clearly uncomfortable.");
 			writeText("This seems like a delicate situation...");
 			writeFunction("writeEncounter('maid3aa')", "Tell her you never assumed it <i>was</i> normal");
-			writeFunction("writeEncounter('maid3ab')", "Try hypnotizing her again");
+			//writeFunction("writeEncounter('maid3ab')", "Try hypnotizing her again");
 			break;
 		}
 		case "maid3aa" : {
