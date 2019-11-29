@@ -152,7 +152,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("Boy", "none", "Honestly, I just love how it shows how comfortable you are with your sexuality, you know? Boys can pull off pink too!");
 			writeSpeech("tomgirl", "new.jpg", "Eheh, yeah I suppose.");
 			writeText("His posture suggests that he's lost the tension he was holding in before, he's relaxed. That changes once he notices you're checking out the classroom though.");
-			writeSpeech("tomgirl", "new.jpg", "Ah, excuse me. <br> Sir? / Ma'am? Are we headed to your office again?");
+			if (data.player.gender == "Man") {
+				writeSpeech("tomgirl", "new.jpg", "Ah, excuse me. <br> Sir? Are we headed to your office again?");
+			}
+			else {
+				writeSpeech("tomgirl", "new.jpg", "Ah, excuse me. <br> Ma'am? Are we headed to your office again?");
+			}
 			writeText("The two of you head off to your office together. Once the two of you are out the door tomgirlF takes your arm in his as you walk.");
 			writeSpeech("Girl", "none", "Hey, have you noticed how friendly he's getting with that counselor?");
 			writeSpeech("Boy", "none", "And how nice he is lately? Not to mention the hairclip... You don't think he's...<br>Naaah.");
@@ -486,7 +491,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "Now you listen closely. I don't want a half-hearted bitch, I want you completely broken. You are going to hold yourself back, balance on the edge of cumming, until your body physically cannot take anymore. And when you finally do cum, you won't just be reaching release. Every but of resistance you still have left is getting pumped out too.");
 			writeText("He lets out a pained whimper, already wanting to cum. He still has some suggestion still in him from his first session though, so he can't disobey you.");
 			writeSpeech("player", "", "Fuck, you're tight. You must've been excited for this, huh?");
-			writeSpeech("tomgirl", "new.jpg", "Y-yes! I was fucking myself with my dildo last night, but I couldn't... I wanted to... I want to cum! Please~! 8'm so close~! ");
+			writeSpeech("tomgirl", "new.jpg", "Y-yes! I was fucking myself with my dildo last night, but I couldn't... I wanted to... I want to cum! Please~! I'm so close~! ");
 			writeSpeech("player", "", "Too! Fucking! Bad! ");
 			writeBig("images/tomgirl/new1-3.jpg", "Art by Nagi Ichi");
 			writeSpeech("tomgirl", "new.jpg", "Ggghh~!");

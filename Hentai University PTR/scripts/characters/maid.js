@@ -23,7 +23,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "maid2", name: "You can see maid nearby. It looks like she just finished shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 20, trustMax: 20, type: "tab", top: 0, left: 0, day: "odd",},
 	{index: "maid3", name: "maid is standing near the store entrance, but isn't holding a basket or anything.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 21, trustMax: 21, type: "tab", top: 0, left: 0, day: "odd",},
 	{index: "maid4", name: "maid seems to have finished shopping and is standing near the cafe.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 24, trustMax: 24, type: "tab", top: 0, left: 0, day: "odd",},
-	{index: "maid5", name: "maid is standing near the cafe, softly humming to herself as she looks around.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 25, trustMax: 25, type: "tab", top: 0, left: 0, day: "odd",},
+	//{index: "maid5", name: "maid is standing near the cafe, softly humming to herself as she looks around.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 25, trustMax: 25, type: "tab", top: 0, left: 0, day: "odd",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -32,7 +32,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 	switch (name) {
 		case "maid1" : {//Introduce Maid while she's shopping
 			writeText("The maid stands out quite a bit as she moves around the shop, her eyes quickly combing the shelves.");
-			writeBig("images/maid/profile.jpg");
+			writeBig("images/maid/profile.jpg","Art by Oreteki18kin");
 			writeText("After a few more seconds, she notices you staring.");
 			writeSpeech("maid","","May I help you?");
 			writeFunction("writeEncounter('maid1a')", "Apologize for staring");
@@ -297,7 +297,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeText("You lean forward and give her a reassuring smile.");
 					writeSpeech("player","","I don't judge. If anything, <i>I'm</i> the one who should be embarrassed, since I was in <i>both</i> the videos.");
 					writeText("Her face reddens as she obviouslly recalls her own little show.");
-					writeSpeech("maid","","That's true. Ít's just...");
+					writeSpeech("maid","","That's true. It's just...");
 					writeText("She takes a slow, deep breath.");
 				}
 				writeSpeech("maid","","I... enjoyed the video.");
@@ -381,7 +381,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("maid","","Quite. A bit energetic, and I think she's a jogger in her free time. I've run into her on more than one occasion.");
 				writeSpeech("maid","","...Though, to be frank, there's actually someone else I wanted to talk to you about. Specifically, my best friend and employer.");
 				writeText("She takes a moment to fish out her wallet, pulling out a picture and handing it to you.");
-				writeBig("images/mistress/profile.jpg");
+				writeBig("images/mistress/profile.jpg", "Art by Oreteki18kin");
 				if(checkTrust('mistress') == 40){
 					addFlag('maid','first');
 					addFlag('maid','mistress40');
@@ -490,7 +490,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "maid4a" : {
 			addFlag('maid','cafeDark');
 			writeText("After she sets down your coffee, you take a moment to look over her.");
-			writeBig("images/cafedark/profile.jpg");
+			writeBig("images/cafedark/profile.jpg","Art by Oreteki18kin");
 			writeText("Nice.");
 			writeText("In the future, you might be able to come back here. For now, though...");
 			if(checkFlag('maid','first')){
@@ -505,19 +505,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maid5" : {
+			//IN PROGRESS, IGNORE ME
 			writeSpeech("player","","Hiya. Did I keep you waiting?");
 			writeText("She smiles as she shakes her head.");
 			writeSpeech("maid","","Not at all. ");
 			break;
-
-
-
-
-
-
-
-
-
 		}
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
@@ -628,8 +620,8 @@ function writeEvent(name) { //Plays the actual event.
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
 	{index: "maidPhone1", trust: 22,},
 	{index: "madiPhone1", trust: 23,},
-	{index: "madiPhone2", trust: 25,},
-	{index: "maidReward", trust: 21,},
+	// {index: "maidPhone2", trust: 25,},
+	{index: "maidReward", trust: 25,},
 	{index: "maidRewardDuo", trust: 30,},
 ]
 
@@ -708,12 +700,12 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			writePhoneSpeech("maid","","If you'd like to come and see me, that's my schedule. I hope I'll see you there.");
 			break;
 		}
-		case "maidPhone2" : {
-			if(checkFlag('maid','mistress40')){
-				writePhoneSpeech("maid","","Hello again. I'm getting ready for work now, but I wanted to say good morning.");
-			}
-			break;
-		}
+		// case "maidPhone2" : {
+		// 	if(checkFlag('maid','mistress40')){
+		// 		writePhoneSpeech("maid","","Hello again. I'm getting ready for work now, but I wanted to say good morning.");
+		// 	}
+		// 	break;
+		// }
 		case "maidReward" : {
 			writePhoneImage("images/maid/fin.jpg", "Art by Oreteki18kin");
 			writePhoneSpeech("maid", "", "You've finished all of maidF's content for this version, congratulations!");

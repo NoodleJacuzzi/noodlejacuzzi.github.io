@@ -32,7 +32,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Hi. Are you waiting for someone?");
 			writeBig("images/succubus/profile.jpg", "Art by Gujira");
 			writeText("Without looking you in the eye, he glances up from his phone to size up your body.");
-			writeSpeech("succubus", "", "You'll do. Name's Gou, don't need yours<br>Fifty bucks for an hour, you won't need any longer.");
+			writeSpeech("succubus", "", "You'll do. Name's Gou, don't need yours.<br>Fifty bucks for an hour, you won't need any longer.");
 			writeText("He's pretty direct, and it doesn't seem like anyone's watching.");
 			writeFunction("writeEncounter('introAcceptance')", "Accept");
 			writeFunction("writeEncounter('introRejection')", "Refuse");
@@ -275,7 +275,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "chatStory": {
-			writeSpeech("succubus", "demon.jpg", "There's not much to say about me,just barely making quotas for... I don't know how long it's been. The days feel so long but the years seem to just fly by. <br>I don't have that interesting of an origin either. A demon thought I was cute enough to make a good harvester, and I was about to die, sooo yeah. ");
+			writeSpeech("succubus", "demon.jpg", "There's not much to say about me, just barely making quotas for... I don't know how long it's been. The days feel so long but the years seem to just fly by. <br>I don't have that interesting of an origin either. A demon thought I was cute enough to make a good harvester, and I was about to die, sooo yeah. ");
 			writeFunction("writeEncounter('chatSelect')", "Back");
 			break;
 		}
@@ -309,7 +309,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "chatCorruption": {
 			if (checkFlag('succubus', 'corruption') != true) {
-				writeSpeech("succubus", "demon.jpg", "Oh ho? You wanna learn how to corrupt souls? Well, it's one of the first, non-sexual things I wad taught.<br>It'll take me awhile, but I can teach you. I need to warn you though...");
+				writeSpeech("succubus", "demon.jpg", "Oh ho? You wanna learn how to corrupt souls? Well, it's one of the first, non-sexual things I was taught.<br>It'll take me awhile, but I can teach you. I need to warn you though...");
 				writeText("succubusF leans in close.");
 				writeSpeech("succubus", "demon.jpg", "You're turning people who trust you, people you have control over, into semen demons. You'll have fun transforming them for sure, but after that they'll go off to harvest energy from others. You really okay with that?");
 				writeFunction("writeEncounter('chatAgree')", "Yes");
@@ -461,7 +461,12 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "Ggh~!");
 			writeSpeech("succubus", "demon.jpg", "Mmm... *Mwah*!<br>My saliva is pretty strong, so we'll need to start slow for you to get used to it.");
 			writeText("succubusF playfully kisses the tip before taking it into his mouth, soaking your cockhead in a potent aphrodisiac.");
-			writeSpeech("succubus", "demon.jpg", "Mmm... Hurr hoing hreat! (You're doing great!)<br><i>Mmm, this really was worth it... I wanna tease him but...<br>Mmm! I can't hold back any longer!</i>");
+			if (data.player.gender == "Male") {
+				writeSpeech("succubus", "demon.jpg", "Mmm... Hurr hoing hreat! (You're doing great!)<br><i>Mmm, this really was worth it... I wanna tease him but...<br>Mmm! I can't hold back any longer!</i>");
+			}
+			else {
+			writeSpeech("succubus", "demon.jpg", "Mmm... Hurr hoing hreat! (You're doing great!)<br><i>Mmm, this really was worth it... I wanna tease her but...<br>Mmm! I can't hold back any longer!</i>");
+			}
 			writeSpeech("player", "", "Cumming!");
 			writeBig("images/succubus/2-3.jpg", "Art by Gujira");
 			writeText("You sigh in relief as your needy cock finally pumps out it's pent up contents. You should be exhausted after your last marathon session, but your feeling of relief only feels more powerful.");
@@ -527,7 +532,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("You barely manage a halfhearted grunt, and he unties you.");
 			writeSpeech("succubus", "demon.jpg", "Ah~<br>You smell so... No! Gotta focus...");
 			writeText("Your scent nearly pushing him over the edge again, he's quick to unceremoniously flop you onto your bed then stumble his way to your window.");
-			writeText("You faintly hear him mumbling 'don't leak over and over again as he flies off, and you can't keep your eyes open any longer. ");
+			writeText("You faintly hear him mumbling 'don't leak' over and over again as he flies off, and you can't keep your eyes open any longer. ");
 			break;
 		}
 		case "succubus3": {
