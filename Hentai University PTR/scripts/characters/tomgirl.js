@@ -19,6 +19,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "tomgirl3", name: "tomgirl is here", location: 'classroomA', time: "MorningEvening", itemReq: "", trustMin: 2, trustMax: 5, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "tomgirl4", name: "tomgirl is here", location: 'classroomA', time: "MorningEvening", itemReq: "", trustMin: 6, trustMax: 6, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "tomgirlReturn", name: "tomgirl is here", location: 'classroomA', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "newQuo", name: "tomgirl is here", location: 'classroomA', time: "MorningEvening", itemReq: "", trustMin: 101, trustMax: 102, type: "tab", top: 0, left: 0, day: "both",},
 ]
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -143,7 +144,129 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "tomgirlReturn": {
+			//New 1
+			writeBig("images/tomgirl/profileN.jpg", "Art by Nagi Ichi");
+			writeText("It looks like tomgirlF is back, he's in class talking with a few of his classmates. Notably, he's got a pink hairclip on. ");
+			writeSpeech("Girl", "none", "Wow, it really stands out. Is that like a breast cancer awareness thing? Or is it your sister's? ");
+			writeSpeech("tomgirl", "new.jpg", "No, actually it's mine. I-");
+			writeSpeech("Boy", "none", "Honestly, I just love how it shows how comfortable you are with your sexuality, you know? Boys can pull off pink too!");
+			writeSpeech("tomgirl", "new.jpg", "Eheh, yeah I suppose.");
+			writeText("His posture suggests that he's lost the tension he was holding in before, he's relaxed. That changes once he notices you're checking out the classroom though.");
+			writeSpeech("tomgirl", "new.jpg", "Ah, excuse me. <br> Sir? / Ma'am? Are we headed to your office again?");
+			writeText("The two of you head off to your office together. Once the two of you are out the door tomgirlF takes your arm in his as you walk.");
+			writeSpeech("Girl", "none", "Hey, have you noticed how friendly he's getting with that counselor?");
+			writeSpeech("Boy", "none", "And how nice he is lately? Not to mention the hairclip... You don't think he's...<br>Naaah.");
+			writeText("The two of them shake their heads and laugh it off. ");
+			writeText("...");
+			writeSpeech("player", "", "You know, I just can't put my finger on it, but something's different about you.");
+			writeText("tomgirlF is seated on your couch, blushing and nervously fiddling with the hem of his shirt.");
+			writeSpeech("tomgirl", "new.jpg", "You're... You're really going to make me say it? That's really messed up...");
+			writeText("He's got an excited smile on his face but he can't hold eye contact with you.");
+			writeSpeech("player", "", "Hmm... I feel like it's on the tip of my tongue.");
+			writeSpeech("tomgirl", "new.jpg", "F-fine you jerk! I'm broken! I'm totally addicted to your c-cock now, and I'm not ashamed of it anymore, okay? You happy!?");
+			writeSpeech("player", "", "Ah, you've got a new hairclip! That's what it is!");
+			writeSpeech("tomgirl", "new.jpg", "...Eh? Oh, yeah. I just... I thought you'd like it... Since you got off on me in... In girl's clothes before.");
+			writeSpeech("player", "", "It suits you. Good girl. ");
+			writeText("He goes rigid, putting his hands in his lap and can't lift his gaze from the floor as his smile gets wider. Despite claiming he's not ashamed anymore, it's still pretty fun to mess with him.");
+			writeSpeech("tomgirl", "new.jpg", "S-so what are we doing today? I brought a couple of... Things. I'm sure you'd bring something like them anyways so it isn't a big deal... ");
+			writeText("...");
+			writeEvent('tomgirlnew1');
+			writeText("...");
+			writeText("You didn't have enough left in the tank for another round, so the two of you stopped. tomgirlF had to rest for awhile on your couch so that he could walk and talk again, but after that he left with an even brighter pep in his step than before.");
+			raiseTrust('tomgirl', 1);
+			passTime();
 			break;
+		}
+		case "newQuo": {
+			if (checkTrust('tomgirl') == 101) {
+				writeSpeech("Girl", "none", "So... You're super sure? It isn't just like a phase?");
+				writeSpeech("tomgirl", "new.jpg", "One-hundred percent~!");
+				writeText("tomgirlF is talking to his classmates again. This time he's the bundle of energy and the other students look like they're juggling conflicting emotions.");
+				writeSpeech("Boy", "none", "So... Does it actually like, feel good? Down there?");
+				writeSpeech("tomgirl", "new.jpg", "When my boyfriend fucks me? Hell. Yes. It feels so much better than normal, and being manhandled by those strong hands...");
+				writeSpeech("Girl", "none", "That's... That's so...");
+				writeSpeech("Boy", "none", "Fucking hot! God, I knew those fanfics had some merit!");
+				writeSpeech("Girl", "none", "Yeah, good on you for accepting yourself! Hey, you wanna go shopping later? I'd love to get a chance to meet your boyfriend.");
+				writeSpeech("tomgirl", "new.jpg", "Maybe some other time. I'm hoping to... Ah, playerSir!");
+				writeText("tomgirlF quickly bows out of the conversation to head over to you. It doesn't take a mind reader to guess that the two female students he was talking with are now fantasizing about you and tomgirlF together.");
+				writeText("The two of you walk out of the office, and once you're out of sight he pulls your hand drawing it to his ass. You give it a grope. ");
+				writeSpeech("tomgirl", "new.jpg", "Mmm, can you feel it? My suprise for later?");
+				writeSpeech("player", "", "Feel what?");
+				writeSpeech("tomgirl", "new.jpg", "<b>Exactly. </b>");
+				writeSpeech("player", "", "It seems like rumors are going to start spreading. About us. ");
+				writeSpeech("tomgirl", "new.jpg", "Ah, don't worry. They all think you're a super devoted counselor who helped me come out of the closet. <br>I mean, you actually did, but they won't know how you actually did it.");
+				writeText("He wraps his arms around yours like he's some kind of trophy wife as the two of you make your way to your office.");
+				writeText("...");
+				writeText("Once you've arrived tomgirlF takes a seat on your sofa.");
+			}
+			else {
+				writeText("tomgirlF is chatting with classmates again, but follows you to your office quickly enough.");
+			}
+			writeSpeech("tomgirl", "new.jpg", "So, for today. Maybe a quickie? Last time in the gym was so hot~!");
+			writeFunction("writeEncounter('tomgirlnew2')", "Go to the gym");
+			writeSpeech("tomgirl", "new.jpg", "I also had something Important I wanted to ask you. It's a little embarrassing.");
+			writeFunction("writeEncounter('tomgirlnew3a')", "Ask about what's up");
+			if (checkflag('succubus', 'corruption')==true) {
+				writeSpeech("player", "", "<i>At this point there's no question, I could use the corruption ability I learned from succubusF on him. </i>");
+				writeFunction("writeEncounter('tomgirlnew4a')", "Talk about corruption");
+			}
+			writeFunction("changeLocation('playerOffice')", "Rain check. Let's meet tomorrow");
+		}
+		case "tomgirlnew2": { //incomplete
+			writeEvent('tomgirlnew2');
+			data.player.location = "gym";
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+		}
+		case "tomgirlnew3a": {
+			writeSpeech("tomgirl", "new.jpg", "Well, the truth is... I wanna get married!");
+			writeSpeech("player", "", "... Excuse you?");
+			writeSpeech("tomgirl", "new.jpg", "I mean, not officially, we'd get in trouble of course. But feeling like I did yesterday... There's not an ounce of resistance left in my heart! I wanna wake up every day in your arms, I wanna kiss you on your way to work! I want you to come home, every day, and pound my cute ass into the carpeting and make me clean you up after!");
+			writeSpeech("player", "", "I, uh...");
+			writeSpeech("tomgirl", "new.jpg", "Please, I've never been as happy, I've never felt as fulfilled as I do when I'm with you! Even when you aren't balls deep in me, I can't help but feel butterflies whenever I think about you! <br>I love you!</b>");
+			writeText("You aren't really the type to tie yourself down, but tomgirlF's confession puts you in a strange position. He's certainly your type, and his sex drive absolutely matches yours...");
+			writeFunction("writeEncounter('tomgirlnew3b')", "I love you too, let's do it");
+			writeFunction("writeEncounter('tomgirlnew3c')", "I don't do exclusivity");
+		}
+		case "tomgirlnew3b": { //incomplete
+			writeEvent('tomgirlnew3');
+			addFlag('tomgirl', 'endingA');
+			writeFunction("loadEncounter('system', 'credits')", "The End");
+			break;
+		}
+		case "tombirlnew3c": {
+			writeSpeech("player", "", "I don't do exclusivity, I'm sorry. You're wonderful, and certainly my type, but I won't do marriage.");
+			writeSpeech("tomgirl", "new.jpg", "Oh... I, uh...");
+			writeText("He seems down, shellshocked and unsure of himself. ");
+			writeSpeech("player", "", "tomgirlF, if you really are serious, then listen to me. What we have is special, but it isn't unique. You've only just dipped a toe into the world of cheek-bruising anal sex. Think about all the men you've met in your life you've just sidestepped past.");
+			writeSpeech("tomgirl", "new.jpg", "I... I'm sorry, I didn't-");
+			writeSpeech("player", "", "Don't be sorry, you haven't done anything wrong. You're open to a whole new world now, alright? Go sightseeing with a new set of eyes, if you know what I'm saying.");
+			writeText("He takes a moment to pause, finally catching on to what you're suggesting. ");
+			writeSpeech("tomgirl", "new.jpg", "I think I understand. But please, don't say no. Think about it, please? Maybe we can talk about it tomorrow?");
+			writeSpeech("player", "", "I'll consider it, and I'll let you know if I change my mind.");
+			writeSpeech("tomgirl", "new.jpg", "Thank you. I should go, sorry. I'll see you tomorrow, alright? I'd like to go home a bit earlier today.");
+			writeSpeech("player", "", "You've got a new life ahead of you, tomgirlF. I'll be there to enjoy it with you.");
+			writeSpeech("tomgirl", "new.jpg", "Thank you...");
+			writeText("With that, he leaves. He probably won't give up on proposing, but he should be okay even if you don't ever accept.");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "tomgirlnew4a": {
+			writeSpeech("player", "", "I actually have something a little more serious than usual to talk about.");
+			writeSpeech("tomgirl", "new.jpg", "Oh? Please, fire away!");
+			writeSpeech("player", "", "Well, I wanted to know if... Things won't always be like they are now. People get older and the world just changes. What if I told you I had a way to change that?");
+			writeSpeech("tomgirl", "new.jpg", "I'm not sure I follow.");
+			writeSpeech("player", "", "I'm saying the you as you are right now, cute and absolutely fuckable, would be your real self forever.");
+			writeSpeech("tomgirl", "new.jpg", "Oh, you mean like therapy or hormones. I don't really-<br>No, maybe you're right. If you think it's what's best than I'll go through with it.");
+			writeText("It seems like he doesn't quite grasp what you mean, but that's fine. It seems like he's willing to accept the change if you are.");
+			writeFunction("writeEncounter('tomgirlnew4b')", "Corrupt tomgirlF");
+			writeFunction("changeLocation(data.player.location)", "Change your mind");
+		}
+		case "tomgirlnew4b": {
+			writeEvent('tomgirlnew4');
+			setTrust('tomgirl', 666);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
 		}
 	}
 }
@@ -154,6 +277,9 @@ var eventArray = [ //Lists the events of the character for unlocking and replayi
 	{index: "tomgirl3", name: "Gym Excursion"},
 	{index: "tomgirl4", name: "Relief"},
 	{index: "tomgirl5", name: "Full Blown Gay Anal Sex"},
+	{index: "tomgirlnew1", name: "Fully Broken"},
+	{index: "tomgirlnew2", name: "Gym Quickie"},
+	{index: "tomgirlnew4", name: "Corruption"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -327,6 +453,94 @@ function writeEvent(name) { //Plays the actual event.
 			changeLocation(data.player.location);
 			break;
 		}
+		case "tomgirlnew1": {
+			writeBig("images/tomgirl/new1-1.jpg", "Art by Nagi Ichi");
+			writeSpeech("tomgirl", "new.jpg", "Ah~! Hah~!");
+			writeSpeech("player", "", "I can't believe you brought a fitted girl's uniform. How did you feel getting measured?");
+			writeSpeech("tomgirl", "new.jpg", "Mmm~! <br>The... Ah~! The woman was really nice, she said I'd look really c-cuuute~!");
+			writeSpeech("player", "", "God damn, you really are broken, aren't you? All that brattiness has just melted away and you're nothing but a buttslut, aren't you?");
+			writeSpeech("tomgirl", "new.jpg", "I... I'm a...");
+			writeSpeech("player", "", "Too slow! For hesitating, I want you to hold back from cumming.");
+			writeBig("images/tomgirl/new1-2.jpg", "Art by Nagi Ichi");
+			writeSpeech("tomgirl", "new.jpg", "W-what? No! I'm sorry, I'm your slut, playerSir!");
+			writeText("You lean in close to his face, he's still having trouble with eye contact.");
+			writeSpeech("player", "", "Now you listen closely. I don't want a half-hearted bitch, I want you completely broken. You are going to hold yourself back, balance on the edge of cumming, until your body physically cannot take anymore. And when you finally do cum, you won't just be reaching release. Every but of resistance you still have left is getting pumped out too.");
+			writeText("He lets out a pained whimper, already wanting to cum. He still has some suggestion still in him from his first session though, so he can't disobey you.");
+			writeSpeech("player", "", "Fuck, you're tight. You must've been excited for this, huh?");
+			writeSpeech("tomgirl", "new.jpg", "Y-yes! I was fucking myself with my dildo last night, but I couldn't... I wanted to... I want to cum! Please~! 8'm so close~! ");
+			writeSpeech("player", "", "Too! Fucking! Bad! ");
+			writeBig("images/tomgirl/new1-3.jpg", "Art by Nagi Ichi");
+			writeSpeech("tomgirl", "new.jpg", "Ggghh~!");
+			writeText("His body twitches and his dicklette does a little shake as you pump inside him, but he still can't find release. ");
+			writeSpeech("tomgirl", "new.jpg", "Wanna... Can't... Please...");
+			writeText("Every time you slowly push past his prostate his penis throbs again.");
+			writeSpeech("player", "", "You really have done your best today, haven't you? Good girl.");
+			writeText("Suddenly he goes rigid, the words setting him off, not just pushing him over the edge but throwing him over. ");
+			writeBig("images/tomgirl/new1-4.jpg", "Art by Nagi Ichi");
+			writeSpeech("tomgirl", "new.jpg", "AAAH~!");
+			writeText("His cum arcs through the air way more powerfully than you've ever seen from him before, splattering against his face.");
+			writeBig("images/tomgirl/new1-5.jpg", "Art by Nagi Ichi");
+			writeSpeech("player", "", "Oh, what a shame. Your outfit is ruined now.");
+			writeSpeech("tomgirl", "new.jpg", "...");
+			writeText("He's unresponsive, and his eyes have rolled back into his head.");
+			writeSpeech("player", "", "... I should get you out of that outfit, the top actually does look good on you. <br>Fuck, already fully hard again.");
+			writeText("...");
+			writeBig("images/tomgirl/new1-6.jpg", "Art by Nagi Ichi");
+			writeSpeech("player", "", "Fuck, cumming again! ");
+			writeSpeech("tomgirl", "new.jpg", "Ihm not mizter... Hazabmm...");
+			writeText("He mumbles out another bit of word salad, at this point you decide to stop. He's on his seventh squirt since you took his top off, and the both of you are dehydrated. More to the point, you're starting to worry he's got brain damage.");
+			writeText("You take a seat on your chair, take a drink of water, close your eyes and relax in the afterglow.");
+			writeSpeech("player", "", "Alright, I guess I'll need to take you home myself then? I'll probably need to-<br>Gah!");
+			writeBig("images/tomgirl/new1-7.jpg", "Art by Nagi Ichi");
+			writeSpeech("tomgirl", "new.jpg", "Mpphh... Mmm~...");
+			writeSpeech("player", "", "Fuck, you are completely insatiable, aren't you? Are you cleaning me up to trying to coax another marathon out of me?");
+			writeSpeech("tomgirl", "new.jpg", "Mmm... Mhhmm~!");
+			writeSpeech("player", "", "What am I even going to do with you?");
+			break;
+		}
+		case "tomgirlnew2": {
+			writeBig("images/tomgirl/new2-1.jpg", "Art by Nagi Ichi");
+			writeBig("images/tomgirl/new2-2.jpg", "Art by Nagi Ichi");
+			writeBig("images/tomgirl/new2-3.jpg", "Art by Nagi Ichi");
+			writeBig("images/tomgirl/new2-4.jpg", "Art by Nagi Ichi");
+			break;
+		}
+		case "tomgirlnew3": {
+			writeBig("images/tomgirl/new3-1.jpg", "Art by Nagi Ichi");
+			writeBig("images/tomgirl/new3-2.jpg", "Art by Nagi Ichi");
+			writeBig("images/tomgirl/new3-3.jpg", "Art by Nagi Ichi");
+			writeBig("images/tomgirl/new3-4.jpg", "Art by Nagi Ichi");
+			writeBig("images/tomgirl/new3-5.jpg", "Art by Nagi Ichi");
+			writeBig("images/tomgirl/new3-6.jpg", "Art by Nagi Ichi");
+			writeBig("images/tomgirl/new3-7.jpg", "Art by Nagi Ichi");
+			writeBig("images/tomgirl/new3-8.jpg", "Art by Nagi Ichi");
+			break;
+		}
+		case "tomgirlnew4": {
+			writeText("You pat tomgirlF on the head and focus on the back of your hand.");
+			writeSpeech("tomgirl", "new.jpg", "What's going on with you? You're acting even weirder than-");
+			writeText("He goes quiet as the mark on the back of your hand becomes visible, glowing dimly with a red light.");
+			writeText("And then just as soon as it started, the light fades away.");
+			writeSpeech("tomgirl", "new.jpg", "I... I feel weird.");
+			writeText("tomgirl rubs at his chest through his clothes, before he quickly stands up.");
+			writeSpeech("tomgirl", "new.jpg", "I need-<br>Oh~! I feel... Hot!");
+			writeText("Frantically he starts trying to undo his shirt buttons before he gives up and just tears his cardigan open.");
+			writeSpeech("tomgirl", "new.jpg", "What's going on? What did you do, I'm sc-");
+			writeText("His panic stops as you embrace him in a hug.");
+			writeSpeech("player", "", "Nothing will happen if you don't want it to happen. Let go, and you'll be okay.");
+			writeText("He's breathing heavily but does relax in your arms.");
+			writeSpeech("tomgirl", "new.jpg", "I... I feel really hot, playerSir.");
+			writeSpeech("player", "", "How about I help with that?");
+			writeText("...");
+			writeText("You help tomgirlF get undressed without ruining his outfit. Without hesitation he lays on his back and spreads his legs for you.");
+			writeSpeech("tomgirl", "new.jpg", "Please, I need it...");
+			writeBig("images/tomgirl/new4-1.jpg", "Art by Nagi Ichi");
+			writeSpeech("tomgirl", "new.jpg", "Gghh... <br>What's going on with me? With my body? ");
+			writeBig("images/tomgirl/new4-2.jpg", "Art by Nagi Ichi");
+			writeBig("images/tomgirl/new4-3.jpg", "Art by Nagi Ichi");
+			writeBig("images/tomgirl/new4-4.jpg", "Art by Nagi Ichi");
+			break;
+		}
 	}
 	var unlockedScene = "";
 	for (i = 0; i < eventArray.length; i++) {
@@ -344,7 +558,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "tomgirlReward", trust: 100,},
+	//{index: "tomgirlReward", trust: 100,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
