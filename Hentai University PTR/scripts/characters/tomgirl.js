@@ -205,7 +205,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("tomgirlF is chatting with classmates again, but follows you to your office quickly enough.");
 			}
 			writeSpeech("tomgirl", "new.jpg", "So, for today. Maybe a quickie? Last time in the gym was so hot~!");
-			writeFunction("writeEncounter('tomgirlnew2')", "Go to the gym");
+			if (galleryCheck('tomgirlnew2') != true) {
+				writeFunction("writeEncounter('tomgirlnew2')", "Go to the gym");
+			}
+			else {
+				writeFunction("writeEncounter('tomgirlnew2Quickie')", "Go to the gym");
+			}
 			writeSpeech("tomgirl", "new.jpg", "I also had something Important I wanted to ask you. It's a little embarrassing.");
 			writeFunction("writeEncounter('tomgirlnew3a')", "Ask about what's up");
 			if (checkFlag('succubus', 'corruption')==true) {
@@ -215,8 +220,15 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation('playerOffice')", "Rain check. Let's meet tomorrow");
 			break;
 		}
-		case "tomgirlnew2": { //incomplete
+		case "tomgirlnew2": {
 			writeEvent('tomgirlnew2');
+			data.player.location = "gym";
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "tomgirlnew2Quickie": {
+			writeEvent('tomgirlnew2Quickie');
 			data.player.location = "gym";
 			passTime();
 			writeFunction("changeLocation(data.player.location)", "Finish");
@@ -233,7 +245,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("writeEncounter('tomgirlnew3c')", "I don't do exclusivity");
 			break;
 		}
-		case "tomgirlnew3b": { //incomplete
+		case "tomgirlnew3b": {
 			writeEvent('tomgirlnew3');
 			addFlag('tomgirl', 'endingA');
 			writeFunction("loadEncounter('system', 'credits')", "The End");
@@ -512,6 +524,13 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/tomgirl/new2-4.jpg", "Art by Nagi Ichi");
 			break;
 		}
+		case "tomgirlnew2Quickie": {
+			writeBig("images/tomgirl/new2-1.jpg", "Art by Nagi Ichi");
+			writeBig("images/tomgirl/new2-2.jpg", "Art by Nagi Ichi");
+			writeBig("images/tomgirl/new2-3.jpg", "Art by Nagi Ichi");
+			writeBig("images/tomgirl/new2-4.jpg", "Art by Nagi Ichi");
+			break;
+		}
 		case "tomgirlnew3": {
 			writeBig("images/tomgirl/new3-1.jpg", "Art by Nagi Ichi");
 			writeBig("images/tomgirl/new3-2.jpg", "Art by Nagi Ichi");
@@ -564,7 +583,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	//{index: "tomgirlReward", trust: 100,},
+	{index: "tomgirlReward", trust: 666,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
@@ -572,7 +591,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 		case "tomgirlReward": {
 			clearText('tomgirl');
 			writePhoneImage("images/tomgirl/9-5.jpg", "Art by Nagi Ichi");
-			writePhoneSpeech("tomgirl", "", "You've finished all of "+data.story[2].fName+"'s content for this version, congratulations!");
+			writePhoneSpeech("tomgirl", "", "You've transformed tomgirlF into a succubus (male)! More content will come along soon!");
 			break;
 		}
 		default: {
