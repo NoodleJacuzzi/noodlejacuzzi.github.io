@@ -175,6 +175,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You didn't have enough left in the tank for another round, so the two of you stopped. tomgirlF had to rest for awhile on your couch so that he could walk and talk again, but after that he left with an even brighter pep in his step than before.");
 			raiseTrust('tomgirl', 1);
 			passTime();
+			writeFunction("changeLocation('playerOffice')", "Finish");
 			break;
 		}
 		case "newQuo": {
@@ -184,9 +185,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("tomgirlF is talking to his classmates again. This time he's the bundle of energy and the other students look like they're juggling conflicting emotions.");
 				writeSpeech("Boy", "none", "So... Does it actually like, feel good? Down there?");
 				writeSpeech("tomgirl", "new.jpg", "When my boyfriend fucks me? Hell. Yes. It feels so much better than normal, and being manhandled by those strong hands...");
-				writeSpeech("Girl", "none", "That's... That's so...");
-				writeSpeech("Boy", "none", "Fucking hot! God, I knew those fanfics had some merit!");
-				writeSpeech("Girl", "none", "Yeah, good on you for accepting yourself! Hey, you wanna go shopping later? I'd love to get a chance to meet your boyfriend.");
+				writeSpeech("Boy", "none", "That's... That's so...");
+				writeSpeech("Girl", "none", "Fucking hot! God, I knew those fanfics had some merit!");
+				writeSpeech("Boy", "none", "Yeah, good on you for accepting yourself! Hey, you wanna go shopping later? I'd love to get a chance to meet your boyfriend.");
 				writeSpeech("tomgirl", "new.jpg", "Maybe some other time. I'm hoping to... Ah, playerSir!");
 				writeText("tomgirlF quickly bows out of the conversation to head over to you. It doesn't take a mind reader to guess that the two female students he was talking with are now fantasizing about you and tomgirlF together.");
 				writeText("The two of you walk out of the office, and once you're out of sight he pulls your hand drawing it to his ass. You give it a grope. ");
@@ -206,7 +207,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("writeEncounter('tomgirlnew2')", "Go to the gym");
 			writeSpeech("tomgirl", "new.jpg", "I also had something Important I wanted to ask you. It's a little embarrassing.");
 			writeFunction("writeEncounter('tomgirlnew3a')", "Ask about what's up");
-			if (checkflag('succubus', 'corruption')==true) {
+			if (checkFlag('succubus', 'corruption')==true) {
 				writeSpeech("player", "", "<i>At this point there's no question, I could use the corruption ability I learned from succubusF on him. </i>");
 				writeFunction("writeEncounter('tomgirlnew4a')", "Talk about corruption");
 			}
