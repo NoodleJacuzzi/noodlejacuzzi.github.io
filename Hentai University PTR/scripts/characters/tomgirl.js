@@ -18,6 +18,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "tomgirl1", name: "An effeminate boy is chatting with another student.", location: 'schoolEntrance', time: "Evening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "tomgirl3", name: "tomgirl is here", location: 'classroomA', time: "MorningEvening", itemReq: "", trustMin: 2, trustMax: 5, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "tomgirl4", name: "tomgirl is here", location: 'classroomA', time: "MorningEvening", itemReq: "", trustMin: 6, trustMax: 6, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "tomgirlReturn", name: "tomgirl is here", location: 'classroomA', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
 ]
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -126,20 +127,24 @@ function writeEncounter(name) { //Plays the actual encounter.
 			passTime();
 			break;
 		}
-	case "tomgirl4": {
-		writeText("As you walk into the classroom you don't even need to call "+fName('tomgirl')+"'s name, it almost seems like he was waiting for you.");
-		writeText("The two of you walk out, "+fName('tomgirl')+" pulling on your sleeve to get you to hurry up out the doorway.");
-		writeSpeech("player", "", "Jeez. Needy little bitch aren't you?");
-		writeSpeech("tomgirl", "", "J-just hurry up! I wanna get this over with so I can go home. What do you want this time, another blowjob?");
-		writeSpeech("player", "", "You're right on the edge, aren't you? I think it's time to push you over the edge. Take me to your place again.");
-		writeSpeech("tomgirl", "", "Fine, come on.");
-		writeText("...");
-		writeEvent('tomgirl5');
-		data.player.location = "vintageStreet";
-		passTime();
-		writeFunction("changeLocation(data.player.location)", "Finish");
-		break;
-	}
+		case "tomgirl4": {
+			writeText("As you walk into the classroom you don't even need to call "+fName('tomgirl')+"'s name, it almost seems like he was waiting for you.");
+			writeText("The two of you walk out, "+fName('tomgirl')+" pulling on your sleeve to get you to hurry up out the doorway.");
+			writeSpeech("player", "", "Jeez. Needy little bitch aren't you?");
+			writeSpeech("tomgirl", "", "J-just hurry up! I wanna get this over with so I can go home. What do you want this time, another blowjob?");
+			writeSpeech("player", "", "You're right on the edge, aren't you? I think it's time to push you over the edge. Take me to your place again.");
+			writeSpeech("tomgirl", "", "Fine, come on.");
+			writeText("...");
+			writeEvent('tomgirl5');
+			setTrust('tomgirl', 100);
+			data.player.location = "vintageStreet";
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "tomgirlReturn": {
+			break;
+		}
 	}
 }
 
@@ -152,7 +157,7 @@ var eventArray = [ //Lists the events of the character for unlocking and replayi
 ];
 
 function writeEvent(name) { //Plays the actual event.
-	document.getElementById('output').innerHTML = '';
+	//document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
 		case "tomgirl1": {
@@ -279,7 +284,7 @@ function writeEvent(name) { //Plays the actual event.
 			break;
 		}
 		case "tomgirl5": {
-			document.getElementById('output').innerHTML = '';
+			//document.getElementById('output').innerHTML = '';
 			writeText("It's finally time for you to take this all the way. You get "+fName('tomgirl')+" out of class and take him to his place.");
 			writeBig("images/tomgirl/5-5.jpg", "Art by Nagi Ichi");
 			writeSpeech("tomgirl", "", "Ghhg... God, you're way too fucking big...");
@@ -315,10 +320,6 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("tomgirl", "", "Y-yes "+data.player.honorific+"~!");
 			writeText("The two of you go for a few more rounds before you cum inside his ass. You let him fall onto the bed, twitching and broken.");
 			writeText("With him completely broken, he'll probably take a break from school for now. Once he comes back, he'll be a completely different 'man'.");
-			setTrust('tomgirl', 100);
-			if (data.player.location != 'gallery') {
-				data.player.location = 'vintageStreet';
-			}
 			break;
 		}
 		case "tomgirlFinish": {

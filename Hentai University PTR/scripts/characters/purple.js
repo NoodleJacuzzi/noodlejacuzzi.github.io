@@ -350,6 +350,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "purple9": {
+			data.player.location = "vintageStreet";
 			loadEvent('chubby', 'chubby1');
 			setTrust('purple', 100);
 			setTrust('chubby', 100);
