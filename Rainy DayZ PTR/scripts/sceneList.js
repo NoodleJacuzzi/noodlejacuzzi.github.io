@@ -5,7 +5,7 @@ function writeScene(scene) {
 				<img src="scripts/gamefiles/locations/rain.gif" style="position:absolute; height:100vh; width:100vw; top: 0; left: 0; opacity: 0.3; pointer-events: none;">
 				<img src="scripts/gamefiles/logo.png" class = "bigPicture" style="border: none;">
 				<p class="choiceText" onclick="sceneTransition('scenarioSelect')" style="width: 30vw; border:none;">
-					Start - v1.1
+					Start
 				</p>
 				`;
 			console.log('preparing to rain');

@@ -2,6 +2,9 @@
 var saveName;
 var invHidden = true;
 var imagesDisabled = false;
+var footerVisibility = "";
+var footerHeight = "";	
+var footerOverflow = "";	
 
 var data = {
 	player: {
@@ -59,6 +62,9 @@ var galleryArray = [
 //Startup & Systems config
 function startup() {
 	saveSlot('rainyDayZRestart');
+	footerVisibility = document.getElementById("footer").style.visibility;
+	footerHeight = document.getElementById("footer").style.height;	
+	footerOverflow = document.getElementById("footer").style.overflow;	
 	wrapper.scrollTop = 0;
 	updateMenu();
 	hideStuff();
@@ -436,9 +442,9 @@ function checkMenu() {
 	else {
 		if (document.getElementById("closeButton").style.visibility == "hidden") {
 			document.getElementById("openButton").style.visibility = "visible";	
-			document.getElementById("footer").style.visibility = "visible";	
-			document.getElementById("footer").style.height = "auto";	
-			document.getElementById("footer").style.overflow = "auto";	
+			document.getElementById("footer").style.visibility = footerVisibility;	
+			document.getElementById("footer").style.height = footerHeight;	
+			document.getElementById("footer").style.overflow = footerOverflow;
 		}
 	}
 }
