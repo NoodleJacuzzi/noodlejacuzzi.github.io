@@ -310,6 +310,7 @@ function writeScene(scene) {
 			}
 			else {
 				writeText("The rain is getting harder and harder, and your bag isn't getting any lighter. You need to may your way back to the safehouse as soon as you can. The clearest way back you can think of would be to take the highway again, but with the storm going on you'll need to take the road directly instead of walking on the outskirts.");
+				writeText("If you feel like you need to get something in the <span class='blueText' onclick='sceneTransition(`convenienceStore`)'>convenience store</span> you won't have another chance to get it.");
 				if (data.player.stamina > 1) {
 					writeText("You're well fed and prepared for a journey, you feel like you could head through the <span class='blueText' onclick='sceneTransition(`highway`)'>highway</span> even considering the danger.");
 				}
