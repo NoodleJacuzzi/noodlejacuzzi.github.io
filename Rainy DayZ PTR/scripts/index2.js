@@ -204,13 +204,13 @@ function toggle(fetish) {
 function zombieFooter() {
 	switch (data.player.stamina) {
 		case 0:
-			writeText("You have a no energy left to fight. If you encountered a zombie right now, you'd definitely lose.");
+			writeText("You have no energy left to fight. If you encountered a zombie right now, you'd definitely lose.");
 			if (checkItem("Snack") == true) {
 				writeText("There isn't anyone around. You could take a break to eat a <span class='blueText' onclick='eatSnack()'>snack</span> to regain some stamina.");
 			}
 		break;
 		case 1:
-			writeText("You have a some stamina left. You could fight off a zombie right now if you had to.");
+			writeText("You have some stamina left. You could fight off a zombie right now if you had to.");
 			if (checkItem("Snack") == true) {
 				writeText("There isn't anyone around. You could take a break to eat a <span class='blueText' onclick='eatSnack()'>snack</span> to regain some stamina.");
 			}

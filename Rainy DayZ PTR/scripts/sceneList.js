@@ -560,7 +560,8 @@ function writeScene(scene) {
 			data.player.scenario = "The Facility";
 			updateMenu();
 			countScenes();
-			writeSpecial("This scenario isn't done yet. Please come back in version 1.5.");
+			writeSpecial("This scenario isn't done yet. Please come back in version 1.5. You can check out the intro though:");
+			writeFunction("writeEvent('start')", "View the intro");
 			//writeTransition("facilityStart", "Start The Facility");
 			writeTransition("scenarioSelect", "Go back");
 			break;
@@ -1062,6 +1063,42 @@ function writeEvent(n) {
 			writeText("She had a real look of terror on her face as she stripped, and she saw me just before the infected noticed her. She mouthed 'Help Me'.");
 			writeText("It keeps playing in my head, so I just needed to get it out onto paper. I'm trying to keep these logs realistic and practical, but I just can't explain this one. Between this and the worms, I got no idea what's going on. If you're reading this, God help you, I don't have any answers.");
 			writeText("<span class='blueText' onclick='sceneTransition(`journal`)'>Finish reading</span>.");
+			break;
+		}
+		case "start": {
+			writeBig("player.jpg");
+			writeText("It all happened so fast.");
+			writeText("There was no blaring alarm, no warning broadcast, nothing official to warn everyone. All you had were an alert on your phone from a close friend telling you to be ready to fight for your life, a squadron of armed soldiers bursting into your office for a 'surprise inspection', then the lights went out.");
+			writeText("Blind panic hit your assistants, they didn't last long. They ran out of the room and were taken immediately. The soldiers followed soon after, and now you are alone.");
+			writeText("But you're not like them. You're brilliant, and willing to do whatever it takes. From all the evidence you have, it's clear exactly what's going on, what pathogen is breaching containment.");
+			writeText("So you get a vial from cryo-storage, a green fluid inside and a biohazard earning on the front.");
+			writeSpeech("player", "", "I'm not ending up like the rest of them... I didn't sacrifice everything to lose my mind.");
+			writeText("Taking the final plunge you down the vial and double over just moments later.");
+			writeSpeech("player", "", "Hagck... Fuck, it's awful.");
+			writeText("The viral agent you swallowed works its way through your body, infecting you with a weaker version of the virus running rampant outside.");
+			writeSpeech("player", "", "Kggh~!");
+			writeText("From the awful taste you were expecting this to be a lot more painful.");
+			writeText("Instead it's a strong, but not unpleasant pressure on your womb.");
+			writeSpeech("player", "", "Focus... focus...");
+			writeText("There's a stretching sound, then a tearing sound as your clit strains against your now too-tight stockings. You feel your pussy dilate as something is trying to push it's way out.");
+			writeSpeech("player", "", "Gotta stay... In... Cont-");
+			writeText("And finally it happens with a muffled *POP*, what remain of your womb descends and a pair of brand new testicles burst free as your stockings are torn to shreds.");
+			writeText("Your skin burns and itches, every but of your body trying to fight back against the infection, and your mind is fighting too.");
+			writeSpeech("player", "", "Guuuddd~! Fuhhhck~!");
+			writeText("You tear off your clothes, throwing every piece as far as you can to escape the feeling of confinement.");
+			writeText("Naked and writhing on the floor, you feel on the edge of defeat, of succumbing, as you feel your new balls pulse with life.");
+			writeBig("start.gif");
+			writeText("A heavenly feeling overtakes you as you feel your humanity drain from your cockhead. First a trickle, then globs from your pisshole landing in the ground with a wet *splat*.");
+			writeText("With your body ravaged, even if you manage to obtain the cure and revert the changes, any hope you had of bearing children is pumped out of your new dangling nuts.");
+			writeText("Your vision wavers and fades. All your energy devoted to fighting the virus, you let the darkness overtake you.");
+			writeText("...");
+			writeText("Slowly, you come too. The first thing to take your attention is not the sight of the dark room or the musky scent filling the lab, but the tingling of the cold air on your morning wood. Your plan was a success. Infected have already been through here, but they chose to ignore you. Not only that but you have full control of your mind as well!");
+			writeText("Well, maybe not full control. It feels like a massive chunk of your brain, one previously devoted to pushing the boundaries of bioscience, has been smushed and relabeled as 'pump cock and splurt cum'.");
+			writeText("The facility's lockdown has failed. Top priority is to find a cure for the virus before your body loses the battle and it completely consumes your mind. After that, escape. The infected won't ignore you for long now, if you've been out for very long they're likely starved enough to not care that you're already one of them.");
+			writeText("It's time to get moving.");
+			if (data.player.currentScene != "gallery") {
+				writeTransition('theFacility', 'GO BACK', '#FF0000');
+			}
 			break;
 		}
 	}
