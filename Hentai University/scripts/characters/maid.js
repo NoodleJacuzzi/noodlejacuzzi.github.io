@@ -560,7 +560,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("maid","","Thinking of you, babe~!");
 			writeText("Her spit-slick tits shift around your length, her shoulders wiggling as she shakes her whole body.");
 			writeText("After a few seconds, she presses herself entirely against you, rubbing her breasts up and down your crotch as your head pokes out of and into her cleavage.");
-			if(data.player.gender == "Man")
+			if(data.player.gender == "man")
 				writeSpeech("maid","","Don't forget to moan for the audience, sir.");
 			else
 				writeSpeech("maid","","Don't forget to moan for the audience, miss.");

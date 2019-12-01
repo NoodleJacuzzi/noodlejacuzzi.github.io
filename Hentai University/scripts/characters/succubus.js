@@ -376,7 +376,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "Alright, I'm getting some mixed signals here, this is getting fishy. What's-");
 			writeText("Suddenly, he stands up and pulls you into a kiss, and the pink fuzz fills your brain again much more intensely this time.");
 			writeText("Once he backs off you take a moment to focus and the fuzz fades. While you're fighting off whatever's going on, he pulls off his top and skirt, and relaxes on the bed.");
-			if (data.player.gender == "Man") {
+			if (data.player.gender == "man") {
 				writeSpeech("succubus", "", "I'm seriously off my game today. Can't believe this old man is resisting.");
 			}
 			else {
@@ -545,7 +545,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "That just sounds like sex while keeping score.");
 			writeSpeech("succubus", "demon.jpg", "Hehe. Don't feel too bad if you lose. We succubi are trained to hold it together for months at a time even with constant stimulation.<br>And you, poor human, you're going up against me.");
 			writeText("He gets up close to rub his chest against your abs, he's pretty smug for someone barely more than half your height.");
-			if (data.player.gender == "Man") {
+			if (data.player.gender == "man") {
 				writeSpeech("succubus", "demon.jpg", "Every bit of me is made for turning men like you into quickshot sluts. Every. Single. Bit.");
 			}
 			else {

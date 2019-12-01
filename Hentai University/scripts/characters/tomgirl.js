@@ -152,7 +152,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("Boy", "none", "Honestly, I just love how it shows how comfortable you are with your sexuality, you know? Boys can pull off pink too!");
 			writeSpeech("tomgirl", "new.jpg", "Eheh, yeah I suppose.");
 			writeText("His posture suggests that he's lost the tension he was holding in before, he's relaxed. That changes once he notices you're checking out the classroom though.");
-			if (data.player.gender == "Man") {
+			if (data.player.gender == "man") {
 				writeSpeech("tomgirl", "new.jpg", "Ah, excuse me. <br> Sir? Are we headed to your office again?");
 			}
 			else {
