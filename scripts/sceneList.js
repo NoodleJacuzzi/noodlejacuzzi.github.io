@@ -2,7 +2,7 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 11/16/2019</p>
+				<p class = "centeredText">Lastest News 11/29/2019</p>
 				<p class = "centeredText">Hentai University v5</p>
 				<p class = "centeredText">The release of Hentai University v5, featuring Gou, Sam White, and Lena Rogers & Anna Fletcher.</p>
 				<p class = "centeredText"></p>
