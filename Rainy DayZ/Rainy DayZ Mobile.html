@@ -1,32 +1,75 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Rainy DayZ</title>
-		<script src="scripts/index.js"></script>
+		<title>Rainy DayZ v1.2</title>
 		<script src="scripts/sceneList.js"></script>
+		<script src="scripts/index2.js"></script>
 		<link rel="stylesheet" type="text/css" href="scripts/mobile.css" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="application-name" content="HU">
+		<meta name="apple-mobile-web-app-title" content="HU">
+		<meta name="theme-color" content="#dedede">
+		<meta name="msapplication-navbutton-color" content="#dedede">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="msapplication-starturl" content="index.html">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script src="scripts/upup.min.js"></script>
+
+		<link rel="icon" href="scripts/gamefiles/logo.png">
+		<link rel="apple-touch-icon" href="scripts/gamefiles/logo.png">
 	</head>
 	<body onload ="startup()">
 		<div id = "menu" class = "menu">
-			<p id = "title" class = "title">Rainy DayZ</p>
-			<p id = "version" class = "version">Beta</p>
-			<p id="restartButton" class="switch" onclick="restartButton()">RESTART</p>
-			<p id="logButton" class="switch" onclick="disablePictures()">DISABLE IMAGES</p>
-			<p id = "playerName" class = "version">???</p>
-			<img id="playerImage" class="playerImage" src="images/none.png">
-				<br>
-			<div id="inv"></div>
+			<div id="titlePanel">
+				<p id = "title" class = "title">Rainy DayZ</p>
+				<div id="closeButton" class="closeButton" onclick="closeButton()"><</div>
+				<p id = "version" class = "version">V1.1</p>
+				<!--<p id = "version" class = "version">Updates are in progress, will post this version soon</p>-->
+				<p id = "author">
+					<a href="https://noodlejacuzzi.github.io/index.html">Noodle Jacuzzi</a><br>
+					<a href="https://www.patreon.com/noodlejacuzzi">Patreon</a>
+				</p>
+			</div>
+			<div id="buttonMenu">
+				<div id="buttonMenuSecondary" class="flexbox">
+					<h4 id="invButton" class="button" onclick="invButton()">INVENTORY</h4>
+					<h4 id="invButton" class="button" onclick="sceneTransition('scenarioSelect')">BACK TO MENU</h4>
+					<h4 id="logButton" class="button" onclick="disablePictures()">TOGGLE IMAGES</h4>
+					<h4 id="invButton" class="button"  onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">MOBILE VERSION</h4>
+				</div>
+			</div>
+			<div id="playerPanel" class="flexbox">
+				<img id="playerImage" class="playerImage" src="images/none.png">
+				<div id="playerStats">
+					<h3 id = "playerName" class = "char_player version">You</h3>
+					<br>
+					<h3 id = "playerDesc" class = "version">???</h3><br>
+				</div>
+			</div>
+			<h3 id = "scenarioDesc" class = "version" style = "margin: 15px;">???</h3>
+			<h3 id = "scenarioTotal" class = "version" style = "margin: 15px;"></h3>
 		</div>
+			<div id="openButton" class="openButton" onclick="openButton()">></div>
 		<div id = "wrapper" class = "wrapper">
-			<div id = "output" class = "output">
-			<p class="choiceText" onclick="sceneTransition('start')">
-				Start the game
-			</p>
+			<div id="wrapperBG"></div>
+			<div id = "output" class = "output" onclick = "hideStuff()">
+			 <div class="loader"></div> 
 			</div>
 			<div id="footer" class="footer">
-				<p id="invButton" class="switch" onclick="generateZombieInv()">INVENTORY</p>
-				<p id="restartButton" class="switch" onclick='exitGame()'>BACK TO MENU</p>
-				<p id="logButton" class="switch" onclick="disablePictures()">DISABLE IMAGES</p>
+				<h4 id="invButton" class="button" onclick="invButton()">INVENTORY</h4>
+				<h4 id="invButton" class="button" onclick="sceneTransition('scenarioSelect')">BACK TO MENU</h4>
+				<h4 id="logButton" class="button" onclick="disablePictures()">TOGGLE IMAGES</h4>
+			</div>
+			<div id = "inventory" class = "popup  inventory">
+				<h1 class = "windowTitle" onclick="invButton()">INVENTORY</h1>
+				<div class = "logbookLeft" id = "windowLeft">
+				</div>
+				<div class = "logbookRight" id = "windowRight">
+				</div>
+			</div>
 			</div>
 		</div>
 	</body>

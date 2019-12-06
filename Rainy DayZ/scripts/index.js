@@ -1,466 +1,1143 @@
-//Index.js
-//Create variables
-//When adding a new scene, update generateSelf for unlocking the scene
-var picturesDisabled = false;
+//Establish variables
 var saveName;
 var invHidden = true;
 var saveHidden = true;
-var warHidden = true;
 var selfHidden = true;
-var zombieInvShowing = false;
+var phoneHidden = true;
 var imagesDisabled = false;
-var incest = true;
-var tokyo = false;
-var scenesCollected;
-var endingChoices = {
-	family: 1,
-	friend: 1,
-	teacher: 1,
-	chef: 1,
-	office: 1,
-	sub: 0,
-}
-var endingsLocked = {
-	family2: false,
-	family3: false,
-	friend2: false,
-	friend3: false,
-	teacher2: false,
-	teacher3: false,
-	chef2: false,
-	chef3: false,
-	office2: false,
-	office3: false,
-}
+var ghostBoost = 0;
+var requestType = "";
+var eventName = "";
+var eventCharacter = "";
+var tabIndex;
+var randNum;
+var textStage = 0;
+var galleryArray = [];
+var itemArray = [];
+var logbookArray = [];
 var data = {
-	bodytypes: {
-		basic: true,
-		sub: false, //sub body
-		dom1: false, //dom body 1
-		dom2: false, //dom body 2
-		dom3: false, //dom body 3
-		jean: false, //jean
-		lisa: false, //lisa
-		riley: false, //riley
-		liz: false, //elizabeth
+	player: {
+		name: "You",
+		character: "basic",
+		gender: "man",
+		title: "Mister",
+		honorific: "sir",
+		characterArtist: "Art by Ishimura",
+		currentScene: "start",
+		time: "Morning",
+		day: 1,
+		money: 30,
+		hypnosis: 1,
+		hacking: 0,
+		counseling: 0,
+		lastText: 100,
+		dayID: 1,
+		version: 5,
+		location: "",
+		pervert: false,
 	},
-	story: {
-		name: "Emily", 
-		currentScene: "start", money: 20, route: "dom", skill: 0, playingGame: false,
-		popRocks: 0, caramelMelts: 0, plugPops: 0, stretchyTaffy: 0, fruitGushers: 0, 
-		vrMachine: false, princessGame: false, zombieGame: false, laptop: false, creamer: false, doll: false, toy: false, horse: false, onahole: false,
-		beautyTicket: false, candyTicket: false, clothingTicket: false, 
-		bodytype: 0, chestSize: 0, buttSize: 0, lipSize: 0, clothing: 1, underwear: 1,
-		motherName: "???", motherScore: 0, motherReady: false, 
-		sisterName: "???", sisterScore: 0, sisterReady: false, 
-		friendName: "???", friendScore: 0, friendReady: false, 
-		teacherName: "???", teacherScore: 0, teacherReady: false, 
-		officeName: "???", officeScore: 0, officeReady: false, 
-		chefName: "???", chefScore: 0, chefReady: false, 
-		dollName: "???", dollScore: 0, dollReady: false, 
-		vrName: "???", vrScore: 0, vrReady: false, vr1: false, vr2: false, vr3: false, vr4: false,
-		exoticVisited: false, candyVisited: false, clothingVisited: false, salonVisited: false, laptopSetup: false, time: "day",
-	},
-	clothingArray: [
-		{name: "Nothing", image: "scripts/gamefiles/none.png", lewd: true, category: "none", owned: true, description: "nothing."}, 
-		{name: "Button-up", image: "images/real/clothes/menShorts.jpg", lewd: false, category: "men", owned: false, description: "a casual button-up shirt and a pair of shorts."}, 
-		{name: "Black", image: "images/real/clothes/menBlack.jpg", lewd: false, category: "men", owned: false, description: "an all-black outfit."}, 
-		{name: "Drawstring", image: "images/real/clothes/menDrawstring.jpg", lewd: false, category: "men", owned: false, description: "a casual white outfit with drawstring pants."}, 
-		{name: "Jacket", image: "images/real/clothes/menJacket.jpg", lewd: false, category: "men", owned: false, description: "an outdoorsy looking outfit."}, 
-		{name: "Bikini", image: "images/real/clothes/bikini.jpg", lewd: false, category: "women", owned: false, description: "a yellow bikini, perfect for a trip to the beach."}, 
-		{name: "Blue Sweater", image: "images/real/clothes/blue.jpg", lewd: false, category: "women", owned: false, description: "a blue sweater and jeans."}, 
-		{name: "Bodypaint", image: "images/real/clothes/bodypaint.jpg", lewd: true, category: "lewd", owned: false, description: "a fake set of clothes made out of paint."}, 
-		{name: "Bottomless", image: "images/real/clothes/bottomless.jpg", lewd: true, category: "lewd", owned: false, description: "a black sweater, but nothing to cover your ass or privates."}, 
-		{name: "Red Coat", image: "images/real/clothes/coatCasual.jpg", lewd: false, category: "women", owned: false, description: "a comfy red coat, a black v-neck shirt and jeans."}, 
-		{name: "Skimpy Dress", image: "images/real/clothes/dressSkimpy.jpg", lewd: true, category: "lewd", owned: false, description: "a blue dress which barely covers your nipples."}, 
-		{name: "Exercise", image: "images/real/clothes/exercise.jpg", lewd: false, category: "women", owned: false, description: "a workout outfit."}, 
-		{name: "Fishnet", image: "images/real/clothes/fishnet.jpg", lewd: true, category: "lewd", owned: false, description: "a fishnet shirt clearly displaying your breasts."}, 
-		{name: "Latex", image: "images/real/clothes/latex.jpg", lewd: true, category: "lewd", owned: false, description: "a latex outfit."}, 
-		{name: "Maid Uniform", image: "images/real/clothes/maid.jpg", lewd: false, category: "women", owned: false, description: "a maid uniform."}, 
-		{name: "Microbikini", image: "images/real/clothes/microbikini.jpg", lewd: true, category: "lewd", owned: false, description: "a microbikini that hardly covers any skin."}, 
-		{name: "College Student", image: "images/real/clothes/schoolCollege.jpg", lewd: false, category: "women", owned: false, description: "a sweater, leggings, and a large scarf."},
-		{name: "Sissy", image: "images/real/clothes/sissy.jpg", lewd: false, category: "women", owned: false, description: "a pink skirt."},  
-		{name: "Superheroine", image: "images/real/clothes/superhero.jpg", lewd: true, category: "lewd", owned: false, description: "a superheroine outfit."}, 
-		{name: "Sweater", image: "images/real/clothes/sweater.jpg", lewd: false, category: "women", owned: false, description: "a grey sweater."},  
-		{name: "Trailer-Park Whore", image: "images/real/clothes/trailer.jpg", lewd: true, category: "lewd", owned: false, description: "a top and shorts cut so short you could flash someone by shifting your weight."},  
-		{name: "Transparent Shirt", image: "images/real/clothes/transparent.jpg", lewd: true, category: "lewd", owned: false, description: "a transparent shirt."},  
-		{name: "Transparent Bikini", image: "images/real/clothes/transparentbikini.jpg", lewd: true, category: "lewd", owned: false, description: "a transparent bikini."},  
-		{name: "Transparent Dress", image: "images/real/clothes/transparentShort.jpg", lewd: true, category: "lewd", owned: false, description: "a transparent dress."}, 
+	story: [
+		{index: "mom", met: false, fName: "Emily", lName: "Smith", trust: 0, encountered: false, textEvent: "", color: "#CCCCCC",},
+		{index: "kuro", met: false, fName: "Steph", lName: "Black", trust: 0, encountered: false, textEvent: "", color: "#fde1a5"},
+		{index: "tomgirl", met: false, fName: "Sam", lName: "White", trust: 0, encountered: false, textEvent: "", color: "#a79e9a"},
+		{index: "purple", met: false, fName: "Mary", lName: "Williams", trust: 0, encountered: false, textEvent: "", color: "#cb86ef"},
+		{index: "chubby", met: false, fName: "Margaret", lName: "Williams", trust: 0, encountered: false, textEvent: "", color: "#da924b"},
+		{index: "maid", met: false, fName: "Lena", lName: "Rogers", trust: 0, encountered: false, textEvent: "", color: "#CCCCCC"},
+		{index: "mistress", met: false, fName: "Anna", lName: "Fletcher", trust: 0, encountered: false, textEvent: "", color: "#ed9082"},
+		{index: "meji", met: false, fName: "Reese", lName: "Kieran", trust: 0, encountered: false, textEvent: "", color: "#7e52a3"},
+		{index: "principal", met: false, fName: "Victoria", lName: "Devons", trust: 0, encountered: false, textEvent: "", color: "#e47311"},
+		{index: "secretary", met: false, fName: "Lisa", lName: "Jones", trust: 0, encountered: false, textEvent: "", color: "#888888"},
+		{index: "neet", met: false, fName: "Tia", lName: "Sun", trust: 0, encountered: false, textEvent: "", color: "#da924b"},
+		{index: "scarf", met: false, fName: "Casandra", lName: "Hamilton", trust: 0, encountered: false, textEvent: "", color: "#954655"},
+		{index: "green", met: false, fName: "Emma", lName: "Hamilton", trust: 0, encountered: false, textEvent: "", color: "#677b4c"},
+		{index: "succubus", fName: "Gou", lName: "", trust: 0, encountered: false, textEvent: "", met: false, color: "#BF76DF"},
+		{index: "nurse", fName: "Justine", lName: "Walton", trust: 0, encountered: false, textEvent: "", met: false, color: "#8D756B"},
 	],
-	underwearArray: [
-		{name: "Nothing", image: "scripts/gamefiles/none.png", category: "none", owned: true, description: "nothing underneath your clothes. One wrong move and you could attract quite a bit of attention."}, 
-		{name: "Boxers", image: "images/real/underwear/boxers.jpg", category: "men", owned: false, description: "a slightly-worn pair of boxers"}, 
-		{name: "Black Panties", image: "images/real/underwear/erotic5.jpg", category: "women", owned: false, description: "a pair of black panties."}, 
-		{name: "Dong Hammock", image: "images/real/underwear/regular7.jpg", category: "women", owned: false, description: "a pair of panties that tries its best to smuggle your fruit."}, 
-		{name: "Pink Panties", image: "images/real/underwear/regular5.gif", category: "women", owned: false, description: "a pair of pink panties."}, 
-		{name: "Skimpy Thong", image: "images/real/underwear/regular6.jpg", category: "lewd", owned: false, description: "a small thong."}, 
+	gallery: [
 	],
-	galleryArray: [
-		{index: 'mom1', name: "Experimentation", unlocked: false, hint: 'Complete the prologue.'},
-		{index: 'mom2', name: "Maid from Heaven", unlocked: false, hint: 'Mom corruption level 1. This automatically triggers in the morning.'},
-		{index: 'mom3', name: "Bedhead", unlocked: false, hint: 'Mom corruption level 2. Talk to her during the day.'},
-		{index: 'mom4', name: "Impregnation", unlocked: false, hint: 'Mom corruption level 3 (requires skill level of advanced). Talk to her during the day.'},
-		{index: 'mom5', name: "Deep Cleaning", unlocked: false, hint: 'Mom corruption level 4. Requires Plug Pop. Talk to her during the day.'},
-		{index: 'mom6', name: "Bathroom Break", unlocked: false, hint: 'Watersports Content! Mom corruption level 4. Requires Fruit Gushers. Talk to her during the day.'},
-		{index: 'mom7', name: "Morning Pee", unlocked: false, hint: 'Watersports Content! Mom corruption level 4. Automatically triggers in the mornning. Choose "stay inside".'},
-		{index: 'sister1', name: "Unwashed", unlocked: false, hint: 'Sister corruption level 1. Talk to her during the day.'},
-		{index: 'sister2', name: "Anal Solo", unlocked: false, hint: 'Sister corruption level 2. Requires Adult Toy. Talk to her during the day.'},
-		{index: 'sister3', name: "Anal Full", unlocked: false, hint: 'Sister corruption level 3 (requires skill level of advanced). Talk to her during the day.'},
-		{index: 'sister4', name: "Plugged", unlocked: false, hint: 'Sister corruption level 4. Requires plug pop. Talk to her during the day.'},
-		{index: 'sister5', name: "Anal Horse", unlocked: false, hint: 'Sister corruption level 4. Requires horse toy and stretchy taffy. Talk to her during the day after triggering the event "Plugged".'},
-		{index: 'sister6', name: "Family Dinner", unlocked: false, hint: 'Sister corruption level 5 and Mom corruption level 4. Talk to her during the day.'},
-		{index: 'sister7', name: "Family Fun Time", unlocked: false, hint: 'Sister corruption level 5 and Mom corruption level 4. Requires Pop Rocks. Talk to her during the day.'},
-		{index: 'friend1', name: "Your Confession", unlocked: false, hint: 'Classmate corruption level 2 (requires skill level of advanced). Talk to her during the day.'},
-		{index: 'friend2', name: "Her Confession", unlocked: false, hint: 'Classmate corruption level 2. Talk to her again after the event Confession.'},
-		{index: 'friend3', name: "Gateway Candy", unlocked: false, hint: 'Classmate corruption level 3. Requires Caramel Melt. Talk to her during the day.'},
-		{index: 'friend4', name: "Popping Cherries", unlocked: false, hint: 'Classmate corruption level 4. Talk to her during the day.'},
-		{index: 'friend5', name: "Tables Turned", unlocked: false, hint: 'Classmate corruption level 5 (requires skill level of master). Requires Stretchy Taffy. Talk to her during the day.'},
-		{index: 'teacher1', name: "Breaststroke", unlocked: false, hint: 'Teacher corruption level 1. Talk to her during the day.'},
-		{index: 'teacher2', name: "Swllowing Improves Health", unlocked: false, hint: 'Teacher corruption level 2 (requires skill level of advanced). Talk to her during the day.'},
-		{index: 'teacher3', name: "Curricular Fun", unlocked: false, hint: 'Teacher corruption level 3. Talk to her during the day.'},
-		{index: 'teacher4', name: "Extracurricular Fun", unlocked: false, hint: 'Teacher corruption level 4 (requires skill level of master). Talk to her during the day.'},
-		{index: 'teacher5', name: "Bathroom Duty", unlocked: false, hint: 'Watersports content! Teacher corruption level 5. Talk to her during the day.'},
-		{index: 'office1', name: "Hidden Fantasy", unlocked: false, hint: 'Office woman corruption level 1 (requires skill level of advanced). Talk to her during the day.'},
-		{index: 'office2', name: "Left Overnight", unlocked: false, hint: 'Office woman corruption level 2. Talk to her during the day.'},
-		{index: 'office3', name: "Checkup", unlocked: false, hint: 'Office woman corruption level 2. Talk to her again after the Left Overnight event.'},
-		{index: 'office4', name: "Permanent Fixture", unlocked: false, hint: 'Office woman corruption level 3 (requires skill level of master). Talk to her during the day.'},
-		{index: 'chef1', name: "Creamer", unlocked: false, hint: 'Coffee shop owner corruption level 1. Requires Creamer. Talk to her during the day.'},
-		{index: 'chef2', name: "From the Tap", unlocked: false, hint: 'Coffee shop owner corruption level 2. Talk to her during the day.'},
-		{index: 'chef3', name: "Restaurant's Closed", unlocked: false, hint: 'Coffee shop owner corruption level 3. Talk to her during the day.'},
-		{index: 'chef4', name: "Overflow", unlocked: false, hint: 'Coffee shop owner corruption level 4. Requires Pop Rocks. Talk to her during the day.'},
-		{index: 'vr1', name: "Chapter 1", unlocked: false, hint: 'Complete chapter 1 of princess quest.'},
-		{index: 'vr2', name: "Chapter 2", unlocked: false, hint: 'Complete chapter 2 of princess quest.'},
-		{index: 'vr3', name: "Chapter 3", unlocked: false, hint: 'Complete chapter 3 of princess quest.'},
-		{index: 'vr4', name: "Chapter 4", unlocked: false, hint: 'Complete chapter 4 of princess quest.'},
-		{index: 'vr5', name: "Epilogue", unlocked: false, hint: 'Collect all of the secret items in princess quest.'},
-		{index: 'misc1', name: "Adriana Special", unlocked: false, hint: 'After purchasing all three tickets, purchase the special deal in the exotic shop. Increases skill level to advanced.'},
-		{index: 'misc2', name: "Adriana Special 2", unlocked: false, hint: 'After purchasing all other items in the exotic shop, purchase the second special deal in the exotic shop.'},
-		{index: 'misc3', name: "Gina Special", unlocked: false, hint: 'After purchasing the clothing ticket, go to the clothing shop.'},
-		{index: 'misc4', name: "Gina Special 2", unlocked: false, hint: 'After purchasing the clothing ticket, purchase the special deal in the clothing shop.'},
-		{index: 'misc5', name: "Human Onahole", unlocked: false, hint: 'Go to the streets with skill level of advanced. Requires Onahole. Increases skill level to master.'},
-		{index: 'dream1', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-		{index: 'dream2', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-		{index: 'dream3', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-		{index: 'dream4', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-		{index: 'dream5', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
+	items: [
 	],
-		zombieData: {
-		scene: "",
-		stamina: 3,
-		wounded: false,
-		infected: false,
-		townZombie: true,
-		cityZombie: true,
-		factoryZombie: true,
-		beastDisabled: false,
-		rimDisabled: false,
-		wormDisabled: false,
-	},
-		zombieInventory: [
+	bodytypes: [
+		{index: "basic", artist: "Art by Ishimura",}
 	],
-		zombieGallery: [
-		{index: 'basic1', name: "Zombie Assault 1", unlocked: false, hint: 'Fight the zombie in the town with no stamina while not infected.'},
-		{index: 'basic2', name: "Zombie Assault 2", unlocked: false, hint: 'Fight the zombie in the apartment basement with no stamina.'},
-		{index: 'basic3', name: "Zombie Assault 3", unlocked: false, hint: 'Fight the zombie in the factory with no weapon while infected.'},
-		{index: 'siren1', name: "Siren's Voice 1", unlocked: false, hint: 'While infected, use the flashlight in the factory.'},
-		{index: 'siren2', name: "Siren's Voice 2", unlocked: false, hint: 'While infected, use the rope in the factory.'},
-		{index: 'hunter1', name: "Hunter's Chase 1", unlocked: false, hint: 'While wounded and at no stamina, try to travel through the forest with a weapon.'},
-		{index: 'hunter2', name: "Hunter's Chase 2", unlocked: false, hint: 'While wounded and without a weapon, try to travel through the forest.'},
-		{index: 'horde1', name: "Horde Gangbang 1", unlocked: false, hint: 'Use the bag of marbles at the highway.'},
-		{index: 'horde2', name: "Horde Gangbang 2", unlocked: false, hint: 'While infected and at full stamina, return to the highway after obtaining the food and water supplies.'},
-		{index: 'worms1', name: "Infestation 1", unlocked: false, hint: 'Rest at the blue house with the air freshener in your inventory.'},
-		{index: 'worms2', name: "Infestation 2", unlocked: false, hint: 'While infected, rest at the blue house with the air freshener in your inventory.'},
-		{index: 'survivor', name: "Vaccination", unlocked: false, hint: 'While infected, talk to the fellow survivor in the red house.'},
-		{index: 'tainted', name: "Tainted", unlocked: false, hint: 'Eat the infected food in the convenience store.'},
-		{index: 'infected', name: "Infected Ending", unlocked: false, hint: 'Eat the infected food in the convenience store, then beat the game.'},
+	phoneImages: [
 	],
 }
-var clothingSubArray = [
-	{name: "Nothing", image: "images/drawn/clothes/naked.jpg", lewd: true, category: "none", owned: true, description: "nothing."}, 
-	{name: "Black Dress", image: "images/drawn/clothes/dress.jpg", lewd: false, category: "none", owned: true, description: "a thin black dress that barely goes down your thighs."}, 
-	{name: "Skirt", image: "images/drawn/clothes/skirt.jpg", lewd: false, category: "drawn", owned: false, description: "a thin black dress that barely goes down your thighs."}, 
-	{name: "Schoolgirl", image: "images/drawn/clothes/schoolgirl.jpg", lewd: false, category: "drawn", owned: false, description: "a thin black dress that barely goes down your thighs."}, 
-	//To check if the player is wearing lewd clothing, if (data.clothingArray[data.story.clothing].lewd == true)
-];
-var underwearSubArray = [
-	{name: "Nothing", image: "images/drawn/clothes/commando.jpg", lewd: true, category: "none", owned: true, description: "nothing."}, 
-	{name: "Panties", image: "images/drawn/clothes/panties.jpg", category: "none", owned: true, description: "a tight pair of white panties that have been altered to cradle your balls."}, 
-	{name: "Frilly", image: "images/drawn/clothes/frilly.jpg", category: "drawn", owned: false, description: "a tight pair of white panties that have been altered to cradle your balls."}, 
-	{name: "Thong", image: "images/drawn/clothes/thong.jpg", category: "drawn", owned: false, description: "a tight pair of white panties that have been altered to cradle your balls."}, 
-];
-var gallerySubArray = [
-	{index: 'mom1S', name: "Sister's Experiment", unlocked: false, hint: 'Corruption level 1. Talk to her during the day.'},
-	{index: 'mom2S', name: "Desperate Maid", unlocked: false, hint: 'Corruption level 2. Talk to her during the day.'},
-	{index: 'mom3S', name: "Finally Snapping", unlocked: false, hint: 'Corruption level 3. Talk to her during the day.'},
-	{index: 'mom4S', name: "Loving Milk-Tank", unlocked: false, hint: 'Corruption level 4. Talk to her during the day. Requires friend corruption of at least 5'},
-	{index: 'sister1S', name: "Taste of Revenge", unlocked: false, hint: 'After reaching corruption level 2 with all other characters, talk to her with a Pop Rock.'},
-	{index: 'sister2S', name: "Hole in the Wall", unlocked: false, hint: 'Talk to her with a Pop Rock after completing the event "Taste of Revenge".'},
-	{index: 'sister3S', name: "Hole in the Wall 2", unlocked: false, hint: 'Talk to her with a Stretchy Taffy after completing the event "Hole in the Wall".'},
-	{index: 'friend1S', name: "Confession Interrupted", unlocked: false, hint: 'Corruption level 1. Talk to her during the day.'},
-	{index: 'friend2S', name: "Bathroom Stall", unlocked: false, hint: 'Corruption level 2. Talk to her during the day.'},
-	{index: 'friend3S', name: "Love Letter", unlocked: false, hint: 'Corruption level 3. Talk to her during the day.'},
-	{index: 'friend4S', name: "Meeting Mom", unlocked: false, hint: 'Corruption level 4. Talk to her during the day.'},
-	{index: 'friend5S', name: "Romance", unlocked: false, hint: 'Corruption level 4. Talk to her after completing the event "Finally Snapping".'},
-	{index: 'teacher1S', name: "Hungry Eyes", unlocked: false, hint: 'Corruption level 1. Talk to her during the day.'},
-	{index: 'teacher2S', name: "Disfunction", unlocked: false, hint: 'Corruption level 2. Talk to her during the day.'},
-	{index: 'teacher3S', name: "Exploration", unlocked: false, hint: 'Corruption level 3. Talk to her during the day.'},
-	{index: 'teacher4S', name: "Strap-On", unlocked: false, hint: 'Corruption level 4. Talk to her during the day.'},
-	{index: 'teacher5S', name: "Smothering", unlocked: false, hint: 'Corruption level 5. Talk to her during the day with a Plug Pop.'},
-	{index: 'teacher6S', name: "Sounding", unlocked: false, hint: 'Corruption level 5. Talk to her during the day with a Stretchy Taffy.'},
-	{index: 'office1S', name: "Public Indecency", unlocked: false, hint: 'Corruption level 1. Talk to her during the day.'},
-	{index: 'office2S', name: "Public Flasher", unlocked: false, hint: 'Corruption level 2. Talk to her during the day.'},
-	{index: 'office3S', name: "Superhero", unlocked: false, hint: 'Corruption level 3. Talk to her during the day.'},
-	{index: 'office4S', name: "Sidekick", unlocked: false, hint: 'Corruption level 4. Talk to her during the day.'},
-	{index: 'chef1S', name: "Rewarding Meal", unlocked: false, hint: 'Corruption level 1. Talk to her during the day.'},
-	{index: 'chef2S', name: "Direct Feeding", unlocked: false, hint: 'Corruption level 2. Talk to her during the day.'},
-	{index: 'chef3S', name: "Food Preparation", unlocked: false, hint: 'Corruption level 3. Talk to her during the day.'},
-	{index: 'chef4S', name: "Enjoying the Work", unlocked: false, hint: 'Corruption level 4. Talk to her during the day with a Caramel Melts.'},
-	{index: 'chef5S', name: "Chef's Special", unlocked: false, hint: 'Watersports Content! Corruption level 4. Talk to her during the day with a Fruit Gushers.'},
-	{index: 'doll1', name: "Awakening", unlocked: false, hint: 'Purchase the doll, then talk to her in your room.'},
-	{index: 'doll2', name: "Frustrations", unlocked: false, hint: 'Talk to the her at least a day after completing the event "Awakening".'},
-	{index: 'doll3', name: "Borrowed", unlocked: false, hint: 'Talk to the her at least a day after completing the event "Frustrations".'},
-	{index: 'misc1S', name: "Take a Break", unlocked: false, hint: 'Complete the prologue'},
-	{index: 'misc2S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-	{index: 'misc3S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-	{index: 'misc4S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-	{index: 'misc5S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-	{index: 'vr1', name: "Chapter 1", unlocked: false, hint: 'Complete chapter 1 of princess quest.'},
-	{index: 'vr2', name: "Chapter 2", unlocked: false, hint: 'Complete chapter 2 of princess quest.'},
-	{index: 'vr3', name: "Chapter 3", unlocked: false, hint: 'Complete chapter 3 of princess quest.'},
-	{index: 'vr4', name: "Chapter 4", unlocked: false, hint: 'Complete chapter 4 of princess quest.'},
-	{index: 'vr5', name: "Epilogue", unlocked: false, hint: 'Collect all of the secret items in princess quest.'},
-	{index: 'dream1S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-	{index: 'dream2S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-	{index: 'dream3S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-	{index: 'dream4S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
-	{index: 'dream5S', name: "Unfinished Scene", unlocked: false, hint: 'This scene is not yet implemented'},
+
+var ghostArray = [
+	{name: "Ancient Chaplain", 		difficulty: 3, rarity: "01", time:"MorningEvening", top: 35, left: 20, requirement: 0, location: "computerRoom", 
+	description: ""},
+	{name: "Ancient Titan Saturn", 	difficulty: 1, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "beach", 
+	description: ""},
+	{name: "Antique Vision", 		difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "map", 
+	description: ""},
+	{name: "Anubis", 				difficulty: 1, rarity: "012", time:"MorningEvening", top: 10, left: 70, requirement: 0, location: "classroomA", 
+	description: ""},
+	{name: "Arbiter",			 	difficulty: 2, rarity: "012", time:"MorningEvening", top: 30, left: 90, requirement: 0, location: "apartmentOutside", 
+	description: ""},
+	{name: "Awoken Deus",		 	difficulty: 1, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 5, location: "library", 
+	description: ""},
+	{name: "Awoken Cultist", 		difficulty: 4, rarity: "0", time:"MorningEvening", top: 40, left: 50, requirement: 0, location: "schoolEntrance", 
+	description: ""},
+	{name: "Bearington", 			difficulty: 10, rarity: "01234567", time:"MorningEvening", top: 40, left: 40, requirement: 0, location: "gym", 
+	description: ""},
+	{name: "Beetle", 				difficulty: 5, rarity: "0123", time:"MorningEvening", top: 60, left: 60, requirement: 0, location: "eastHallway", 
+	description: ""},
+	{name: "Bloom", 				difficulty: 4, rarity: "45", time:"MorningEvening", top: 20, left: 0, requirement: 0, location: "parkDistrict", 
+	description: ""},
+	{name: "Blue Dahlia", 			difficulty: 4, rarity: "0123", time:"MorningEvening", top: 0, left: 10, requirement: 0, location: "schoolEntrance", 
+	description: ""},
+	{name: "Bronze Hound", 			difficulty: 3, rarity: "012", time:"MorningEvening", top: 30, left: 30, requirement: 0, location: "library", 
+	description: ""},
+	{name: "Cosmic Guide",		 	difficulty: 3, rarity: "345", time:"MorningEvening", top: 50, left: 50, requirement: 0, location: "library", 
+	description: ""},
+	{name: "Cupid", 				difficulty: 4, rarity: "67", time:"MorningEvening", top: 20, left: 50, requirement: 0, location: "playerHouse", 
+	description: ""},
+	{name: "Deus Ex Machina", 		difficulty: 2, rarity: "23", time:"MorningEvening", top: 20, left: 40, requirement: 0, location: "computerRoom", 
+	description: ""},
+	{name: "Director",			 	difficulty: 1, rarity: "345", time:"MorningEvening", top: 6, left: 20, requirement: 0, location: "classroomA", 
+	description: ""},
+	{name: "Echo", 					difficulty: 5, rarity: "67", time:"MorningEvening", top: 20, left: 20, requirement: 0, location: "playerOffice", 
+	description: ""},
+	{name: "Father", 				difficulty: 2, rarity: "0123", time:"MorningEvening", top: 45, left: 30, requirement: 0, location: "northHallway", 
+	description: ""},
+	{name: "Flarecatcher", 			difficulty: 3, rarity: "012", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "westHallway", 
+	description: ""},
+	{name: "Flower Man", 			difficulty: 4, rarity: "4567", time:"MorningEvening", top: 52, left: 10, requirement: 0, location: "parkDistrict", 
+	description: ""},
+	{name: "Flying Spaghetti Monster", 	difficulty: 1, rarity: "01234567", time:"MorningEvening", top: 0, left: 55, requirement: 5, location: "playerOffice", 
+	description: ""},
+	{name: "Frontier Vision",	 	difficulty: 2, rarity: "01234567", time:"MorningEvening", top: 73, left: 20, requirement: 5, location: "schoolMap", 
+	description: ""},
+	{name: "Gehennas", 				difficulty: 1, rarity: "67", time:"MorningEvening", top: 25, left: 35, requirement: 0, location: "westHallway", 
+	description: ""},
+	{name: "Grey", 					difficulty: 5, rarity: "4567", time:"MorningEvening", top: 50, left: 70, requirement: 0, location: "roof", 
+	description: ""},
+	{name: "Hare", 					difficulty: 3, rarity: "67", time:"MorningEvening", top: 0, left: 40, requirement: 0, location: "classroomA", 
+	description: ""},
+	{name: "Hauntings", 			difficulty: 4, rarity: "345", time:"MorningEvening", top: 10, left: 90, requirement: 0, location: "playerHouse", 
+	description: ""},
+	{name: "IFO", 					difficulty: 2, rarity: "345", time:"MorningEvening", top: 25, left: 0, requirement: 0, location: "apartmentOutside", 
+	description: "An Identified Flying Object. It's a saucer, from another world."},
+	{name: "Investigator", 			difficulty: 4, rarity: "4567", time:"MorningEvening", top:10, left: 65, requirement: 0, location: "schoolEntrance", 
+	description: ""},
+	{name: "Iron Fey", 				difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 30, left: 85, requirement: 0, location: "eastHallway", 
+	description: ""},
+	{name: "Ivory Fey", 			difficulty: 4, rarity: "01", time:"MorningEvening", top: 20, left: 50, requirement: 0, location: "parkDistrict", 
+	description: ""},
+	{name: "Jester", 				difficulty: 2, rarity: "012", time:"MorningEvening", top: 100, left: 0, requirement: 0, location: "playerHouse", 
+	description: ""},
+	{name: "Kappa", 				difficulty: 4, rarity: "67", time:"MorningEvening", top: 30, left: 40, requirement: 0, location: "classroomB", 
+	description: ""},
+	{name: "Karma's Head", 			difficulty: 2, rarity: "67", time:"MorningEvening", top: 0, left: 30, requirement: 0, location: "street", 
+	description: ""},
+	{name: "Karma's Left Hand", 	difficulty: 2, rarity: "67", time:"MorningEvening", top: 0, left: 40, requirement: 0, location: "street", 
+	description: ""},
+	{name: "Karma's Right Hand", 	difficulty: 2, rarity: "67", time:"MorningEvening", top: 0, left: 20, requirement: 0, location: "street", 
+	description: ""},
+	{name: "Laid Foundation", 		difficulty: 4, rarity: "012345", time:"MorningEvening", top: 60, left: 60, requirement: 0, location: "street", 
+	description: ""},
+	{name: "Lime Man", 				difficulty: 4, rarity: "345", time:"MorningEvening", top: 33, left: 10, requirement: 0, location: "westHallway", 
+	description: ""},
+	{name: "Loyalty", 				difficulty: 2, rarity: "45", time:"MorningEvening", top: 60, left: 0, requirement: 0, location: "playerOffice", 
+	description: ""},
+	{name: "Macabula", 				difficulty: 3, rarity: "4567", time:"MorningEvening", top: 20, left: 20, requirement: 0, location: "eastHallway", 
+	description: ""},
+	{name: "Mad Clown", 			difficulty: 4, rarity: "012345", time:"MorningEvening", top: 10, left: 40, requirement: 0, location: "shoppingDistrict", 
+	description: ""},
+	{name: "Maiden in Black", 		difficulty: 1, rarity: "67", time:"MorningEvening", top: 40, left: 35, requirement: 0, location: "apartmentOutside", 
+	description: ""},
+	{name: "Maudlin", 				difficulty: 4, rarity: "01234567", time:"MorningEvening", top: 40, left: 20, requirement: 0, location: "shoppingDistrict", 
+	description: "The archetypal ghost."},
+	{name: "Maudlos", 				difficulty: 4, rarity: "01234567", time:"MorningEvening", top: 30, left: 40, requirement: 5, location: "", 
+	description: "The archetypal ghost 2."},
+	{name: "Megalodon", 			difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "pool", 
+	description: ""},
+	{name: "Moriarty", 				difficulty: 2, rarity: "23", time:"MorningEvening", top: 60, left: 60, requirement: 0, location: "playerOffice", 
+	description: ""},
+	{name: "Myconid", 				difficulty: 4, rarity: "45", time:"MorningEvening", top: 43, left: 0, requirement: 0, location: "classroomB", 
+	description: ""},
+	{name: "Neptune Guardian", 	difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 100, left: 0, requirement: 0, location: "classroomA", 
+	description: ""},
+	{name: "Nyarlethotep", 			difficulty: 1, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "ward", 
+	description: ""},
+	{name: "Offering of Valentine", difficulty: 5, rarity: "67", time:"MorningEvening", top: 50, left: 80, requirement: 0, location: "shoppingDistrict", 
+	description: ""},
+	{name: "Parasyte Apostle", 		difficulty: 2, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "ward", 
+	description: ""},
+	{name: "Parasyte Core", 		difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "ward", 
+	description: ""},
+	{name: "Phoenix", 				difficulty: 3, rarity: "0123", time:"MorningEvening", top: 10, left: 80, requirement: 0, location: "gym", 
+	description: ""},
+	{name: "Preacher", 				difficulty: 3, rarity: "45", time:"MorningEvening", top: 40, left: 80, requirement: 0, location: "computerRoom", 
+	description: ""},
+	{name: "Priest of His Name", 	difficulty: 1, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "", 
+	description: "Give thanks to Him, uncaring, above! Don thy sacred headgear, strain thy heart to fight hypocrisy! Blessed thy be, touched by his noodly appendage!"},
+	{name: "Psychic Grey", 			difficulty: 4, rarity: "67", time:"MorningEvening", top: 35, left: 0, requirement: 0, location: "computerRoom", 
+	description: ""},
+	{name: "Radiance", 				difficulty: 0, rarity: "0123", time:"MorningEvening", top: 5, left: 40, requirement: 0, location: "vintageStreet", 
+	description: ""},
+	{name: "Ramen Man", 			difficulty: 4, rarity: "4567", time:"MorningEvening", top: 50, left: 20, requirement: 0, location: "vintageStreet", 
+	description: "One of four men, guardians of virtues. Kindness is as valuable to him as accomplishment."},
+	{name: "Reaper Cloth", 			difficulty: 2, rarity: "0123", time:"MorningEvening", top: 23, left: 80, requirement: 0, location: "vintageStreet", 
+	description: ""},
+	{name: "Ruby Fey", 				difficulty: 4, rarity: "67", time:"MorningEvening", top: 40, left: 30, requirement: 0, location: "parkDistrict", 
+	description: ""},
+	{name: "Salvation", 			difficulty: 3, rarity: "0123", time:"MorningEvening", top: 20, left: 10, requirement: 0, location: "roof", 
+	description: "When the core was taken from my body, a wonderful light embraced me. Empty as I was, I was finally free."},
+	{name: "Saturn Guardian", 	difficulty: 2, rarity: "23", time:"MorningEvening", top: 15, left: 50, requirement: 0, location: "classroomB", 
+	description: ""},
+	{name: "Silverteeth", 			difficulty: 3, rarity: "67", time:"MorningEvening", top: 40, left: 66, requirement: 0, location: "library", 
+	description: ""},
+	{name: "Sonata", 				difficulty: 3, rarity: "4567", time:"MorningEvening", top: 20, left: 70, requirement: 0, location: "northHallway", 
+	description: ""},
+	{name: "Sphinx", 				difficulty: 4, rarity: "01234567", time:"MorningEvening", top: 30, left: 60, requirement: 0, location: "store", 
+	description: ""},
+	{name: "Stalker", 				difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "restaurant", 
+	description: ""},
+	{name: "Still Water", 			difficulty: 4, rarity: "4567", time:"MorningEvening", top: 50, left: 0, requirement: 0, location: "gym", 
+	description: ""},
+	{name: "Suika", 				difficulty: 4, rarity: "01234567", time:"MorningEvening", top: 40, left: 80, requirement: 0, location: "teacherLounge", 
+	description: "A being from another world, a place of shrines and fairies."},
+	{name: "Sushi Man", 			difficulty: 4, rarity: "0123", time:"MorningEvening", top: 9, left: 50, requirement: 0, location: "teacherLounge", 
+	description: "One of four men, guardians of virtue. It is his burden to smell strongly, he offers praise to the clean."},
+	{name: "The Man in Yellow", 	difficulty: 2, rarity: "4567", time:"MorningEvening", top: 10, left: 30, requirement: 0, location: "teacherLounge", 
+	description: ""},
+	{name: "Titania", 				difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "shrine", 
+	description: ""},
+	{name: "Tortured Soul", 		difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "gym", 
+	description: ""},
+	{name: "Tsukomo", 				difficulty: 1, rarity: "23", time:"MorningEvening", top: 35, left:60, requirement: 0, location: "parkDistrict", 
+	description: ""},
+	{name: "UFO", 					difficulty: 2, rarity: "4567", time:"MorningEvening", top: 0, left: 70, requirement: 0, location: "roof", 
+	description: ""},
+	{name: "Unawoken Cultist", 		difficulty: 4, rarity: "01", time:"MorningEvening", top: 40, left: 80, requirement: 0, location: "classroomB", 
+	description: ""},
+	{name: "Virtue", 				difficulty: 3, rarity: "0123", time:"MorningEvening", top: 70, left: 80, requirement: 0, location: "vintageStreet", 
+	description: ""},
+	{name: "White Night", 			difficulty: 1, rarity: "01", time:"MorningEvening", top: 30, left: 30, requirement: 0, location: "playerOffice", 
+	description: ""},
+	{name: "Woman in Black", 		difficulty: 1, rarity: "4567", time:"MorningEvening", top: 60, left: 55, requirement: 0, location: "vintageStreet", 
+	description: ""},
+	{name: "Yatagarasu", 			difficulty: 3, rarity: "01234567", time:"MorningEvening", top: 0, left: 0, requirement: 0, location: "pool", 
+	description: ""},
+	{name: "Yorihime", 				difficulty: 1, rarity: "01", time:"MorningEvening", top: 70, left: 85, requirement: 0, location: "playerOffice", 
+	description: "A being from another world, a place of shrines and fairies."},
 ];
 
-var zombie = {
-}
-
-var items = [
-	{name: "Baseball Bat", image: "images/items/baseballBat.jpg", description: "A tough wooden bat. Without this, you'd be helpless in a fight.",},
-	{name: "Medical Kit", image: "images/items/medicalKit.jpg", description: "A medical kit that will patch you up if you're hurt.",},
-	{name: "Factory Key", image: "images/items/key.jpg", description: "A key labeled 'Woodridge Factory Gate'.",},
-	{name: "House Key", image: "images/items/key.jpg", description: "A key labeled with an address in town. It's probably for that blue house you saw earlier.",},
-	{name: "Bag of Marbles", image: "images/items/bagOfMarbles.jpg", description: "A bag of marbles. They make a loud noise when thrown.",},
-	{name: "Rope", image: "images/items/rope.jpg", description: "A small coil of rope. Too small to use for climbing, but you could make a trap from it.",},
-	{name: "Flashlight", image: "images/items/flashlight.jpg", description: "A blindingly bright flashlight.",},
-	{name: "Air Freshener", image: "images/items/airFreshener.jpg", description: "Smells like lemons.",},
-	{name: "Snack", image: "images/items/snack.jpg", description: "Some unexpired food, eating it will restore stamina.",},
-	{name: "Food Supply", image: "images/items/foodSupply.jpg", description: "A month's worth of food. You'll need to take this back to the safehouse.",},
-	{name: "Water Supply", image: "images/items/waterSupply.jpg", description: "A month's worth of water. You'll need to take this back to the safehouse.",},
-];
-
-//Start & System Config Stuff
+//Startup & Systems config
 function startup() {
-	saveSlot(14);
-	if(localStorage.getItem('data13')) {
-		loadSlot(13);
+	saveSlot(111);
+	wrapper.scrollTop = 0;
+	updateMenu();
+	hideStuff();
+	preloadImages();
+	if(localStorage.getItem('data110')) {
+		loadSlot(110);
 	}
 	else{
-		sceneTransition('start');
+		loadEvent('system', 'start');
 	}
 }
 
-function disablePictures() {
-	document.getElementById("playerImage").style.visibility = "hidden";		
-	document.getElementById("playerImage").style.width = "0%";
-	document.getElementById("playerImage").style.border = "none";
-	imagesDisabled = true;
-	sceneTransition(data.story.currentScene);
-	document.getElementById('picturesDisabled').innerHTML = `Pictures have been disabled. No large image should appear after this screen. Refresh the game to restore them. Dialog images will still appear, and shop / inventory items will appear to be broken.`;
+function preloadImages(){
+	console.log("preloading start");
+    var preloaded = new Image();
+	for (i = 0; i < locationArray.length; i++) {
+		var bg = "images/locations/"+locationArray[i].index+"Morning.jpg";
+		document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
+		var bg = "images/locations/"+locationArray[i].index+"Evening.jpg";
+		document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
+	}
+	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
+		var bg = "images/"+data.story[characterIndex].index+"/"+data.story[characterIndex].index+".jpg";
+		document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
+	}
+	console.log("preloading finished");
 }
 
 function restartButton() {
 	var restart = confirm ("restart the game?");
 	if (restart == true) {
-		endingChoices = {family: 1, friend: 1, teacher: 1, chef: 1, office: 1, sub: 0,}
-		tokyo = false;
-		loadSlot(14);
+		loadSlot(111);
 	}
+}
+
+function disablePictures() {
+	if (imagesDisabled == false) {
+		document.getElementById("playerImage").style.visibility = "hidden";		
+		document.getElementById("playerImage").style.width = "0%";
+		document.getElementById("playerImage").style.border = "none";
+		imagesDisabled = true;
+		changeLocation(data.player.location);
+	}
+	else {
+		location.reload();
+	}
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+function passTime() {
+	switch (data.player.time) {
+		case "Morning":
+			data.player.time = "Evening";
+		break;
+		case "Evening":
+			data.player.time = "Night";
+		break;
+		case "Night":
+			if (data.player.currentScene == "newDay") {
+				//data.player.time = "Morning";
+			}
+		break;
+	}
+}
+
+//Character functions
+function loadCharacter(name) {
+	for (loadIndex = 0; loadIndex < data.story.length; loadIndex++) {
+		if (data.story[loadIndex].index == name) {
+			alert(name+' found already in the data variable, aborting function');
+			name = 'failed';
+		}
+	}
+	if (name != 'failed') {
+		requestType = "load";
+		var filename = "scripts/characters/"+name+".js";
+		var fileref=document.createElement('script');
+		fileref.setAttribute("src", filename);
+		
+		//Append new script file
+		document.getElementsByTagName("head")[0].appendChild(fileref);
+		
+		//Delete script file afterwards
+		var select = document.getElementsByTagName("head")[0];
+		select.removeChild(select.lastChild);
+	}
+}
+
+function modCharacter() {
+	var goof = document.getElementById('indexSubmission').value;
+	goof = goof.toLowerCase();
+	console.log("Loading character " + goof);
+	loadCharacter(goof);
+	document.getElementById('output').innerHTML = '';
+	writeBig("images/"+goof+"/profile.jpg", "New character");
+	writeText("Loaded the index file, has been added to the game! If the above image is broken, one of the following has happened:");
+	writeText("The character you added does not have a profile.jpg image in their images folder.");
+	writeText("The images folder isn't named appropriately, or is in the wrong place. It should be in Hentai University/images");
+	writeText("You mistyped the index. If this is the case, load an older save immediately and try again.");
+	if (data.player.location == "") {
+		writeFunction("writeEncounter('system', 'start')", "Back to the start menu");
+	}
+	else {
+		writeFunction("loadEncounter('system', 'gameConsole')", "Back to the console");
+	}
+}
+
+function raiseTrust(name, n) {
+	for (trustIndex = 0; trustIndex < data.story.length; trustIndex++) {
+		if (data.story[trustIndex].index == name) {
+			console.log('raising the trust of '+name+' by '+n);
+			data.story[trustIndex].trust += n;
+		}
+	}
+}
+
+function setTrust(name, n) {
+	for (trustIndex = 0; trustIndex < data.story.length; trustIndex++) {
+		if (data.story[trustIndex].index == name) {
+			console.log('setting the trust of '+name+' to '+n);
+			data.story[trustIndex].trust = n;
+		}
+	}
+}
+
+function checkTrust(name) {
+	for (y = 0; y < data.story.length; y++) {
+		if (data.story[y].index == name) {
+			return data.story[y].trust;
+		}
+	}
+}
+
+function addFlag(character, flag) {
+	console.log(character+flag);
+	for (flagIndex = 0; flagIndex < data.story.length; flagIndex++) {
+		if (data.story[flagIndex].index == character) {
+			if (data.story[flagIndex].met == false) {
+				data.story[flagIndex].met = "";
+			}
+			console.log('adding the flag named '+flag+' to '+character);
+			data.story[flagIndex].met += flag;
+		}
+	}
+}
+
+function removeFlag(character, flag) {
+	for (flagIndex = 0; flagIndex < data.story.length; flagIndex++) {
+		if (data.story[flagIndex].index == character) {
+			if (data.story[flagIndex].met == false) {
+				data.story[flagIndex].met = "";
+			}
+			if (data.story[flagIndex].met.includes(flag) == true) {
+				console.log('Removing flag '+flag+' from '+character);
+				data.story[flagIndex].met = data.story[flagIndex].met.replace(flag, "");
+			}
+			else {
+				console.log('error! flag '+flag+' not found!');
+			}
+		}
+	}
+}
+
+function checkFlag(character, flag) {
+	for (flagIndex = 0; flagIndex < data.story.length; flagIndex++) {
+		if (data.story[flagIndex].index == character) {
+			if (data.story[flagIndex].met == false) {
+				data.story[flagIndex].met = "";
+			}
+			if (data.story[flagIndex].met.includes(flag) == true) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+	}
+}
+
+function encounteredCheck(name) {
+	for (e = 0; e < data.story.length; e++) {
+		if (data.story[e].index == name) {
+			if (data.story[e].encountered == true) {
+				return true;
+				break;
+			}
+			else {
+				return false;
+			}
+		}
+	}
+}
+
+function fName(name) {
+	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
+		if (data.story[characterIndex].index == name) {
+			return data.story[characterIndex].fName;
+		}
+	}
+}
+
+function lName(name) {
+	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
+		if (data.story[characterIndex].index == name) {
+			return data.story[characterIndex].lName;
+		}
+	}
+}
+
+function replaceCodenames(text) {
+	var codenameCheck = "";
+	for (geminiLoop = 0; geminiLoop < 5; geminiLoop++) {
+		text = text.replace('playerF', data.player.name);
+		text = text.replace('playerGender', data.player.gender);
+		text = text.replace('playerG', data.player.gender);
+		text = text.replace('playerMan', data.player.gender);
+		text = text.replace('playerTitle', data.player.title);
+		text = text.replace('playerT', data.player.title);
+		text = text.replace('playerMister', data.player.title);
+		text = text.replace('playerHonorific', data.player.honorific);
+		text = text.replace('playerH', data.player.honorific);
+		text = text.replace('playerSir', data.player.honorific);
+		for (codenameIndex = 0; codenameIndex < data.story.length; codenameIndex++) {
+			codenameCheck = data.story[codenameIndex].index + "F";
+			text = text.replace(codenameCheck, data.story[codenameIndex].fName);
+			codenameCheck = data.story[codenameIndex].index + "L";
+			text = text.replace(codenameCheck, data.story[codenameIndex].lName);
+		}
+	}
+	if (data.player.uwu == true) {
+		for (uwuLoop = 0; uwuLoop < 30; uwuLoop++) {
+			text = text.replace('<br>', "TESTTHING");
+			text = text.replace('th', "d");
+			text = text.replace('Th', "D");
+			text = text.replace('what', "wat");
+			text = text.replace('What', "Wat");
+			text = text.replace('l', "w");
+			text = text.replace('r', "w");
+			text = text.replace('L', "W");
+			text = text.replace('R', "W");
+			text = text.replace('TESTTHING', "<br>");
+		}
+		switch (getRandomInt(15)) {
+			case 0:
+				text = text + " ♥w♥";
+			break;
+			case 1:
+				text = text + " (˘ω˘)";
+			break;
+			case 2:
+				text = text + " (U ᵕ U❁)";
+			break;
+			case 3:
+				text = text + " ( ˊ.ᴗˋ )";
+			break;
+			case 4:
+				text = text + " ( ͡o ꒳ ͡o )";
+			break;
+			case 5:
+				text = text + " ( ´ω` )۶";
+			break;
+			case 6:
+				text = text + " OwO";
+			break;
+			case 7:
+				text = text + " (*ฅ́˘ฅ̀*)";
+			break;
+			case 8:
+				text = text + " ( ͡o ᵕ ͡o )";
+			break;
+			case 9:
+				text = text + " ✧･ﾟ: *✧･ﾟ♡*(ᵘʷᵘ)*♡･ﾟ✧*:･ﾟ✧";
+			break;
+			case 10:
+				text = text + " ★⌒ヽ(˘꒳˘ *)";
+			break;
+			case 11:
+				text = text + " (◕ ˬ ◕✿)";
+			break;
+			case 12:
+				text = text + " (◕∇◕✿)";
+			break;
+			case 13:
+				text = text + " (ꈍ ᴗ ꈍ✿)";
+			break;
+			case 14:
+				text = text + " (◕‸ ◕✿) *pout*";
+			break;
+			case 15:
+				text = text + " (≖ ︿ ≖ ✿)";
+			break;
+		}
+	}
+	return text;
+}
+
+function renamePlayer() {
+	data.player.name = document.getElementById('nameSubmission').value;
+	loadEncounter("system", "prologue2");
+}
+
+function renameEveryone() {
+	for (i = 0; i < data.story.length; i++) {
+		var sheet = 'nameSubmission' + i + '1';
+		data.story[i].fName = document.getElementById(sheet).value;
+		var sheet = 'nameSubmission' + i + '2';
+		data.story[i].lName = document.getElementById(sheet).value;
+	}
+	changeLocation("playerHouse");
 }
 
 //Scene creation
-function writeSpeech (name, img, text) {
-	switch (data.story.bodytype) {
-		case 0:
-			img = "scripts/gamefiles/real/zombie.jpg";
-		break;
-		case 1:
-			img = "scripts/gamefiles/drawn/player.jpg";
-		break;
-		case 2:
-			img = "scripts/gamefiles/real/profile1.jpg";
-		break;
-		case 3:
-			img = "scripts/gamefiles/real/profile2.jpg";
-		break;
-		case 4:
-			img = "scripts/gamefiles/real/profile3.jpg";
-		break;
-		case 5:
-			img = "scripts/gamefiles/drawn/jean.jpg";
-		break;
-		case 6:
-			img = "scripts/gamefiles/drawn/lisa.jpg";
-		break;
-		case 7:
-			img = "scripts/gamefiles/drawn/riley.jpg";
-		break;
-		case 8:
-			img = "scripts/gamefiles/drawn/elizabeth.jpg";
-		break;
+function loadEncounter(js, name) {
+	var targetFile = 'system';
+	requestType = 'encounter';
+	eventName = name;
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].index == js) {
+			data.story[i].encountered = true;
+			targetFile = data.story[i].index;
+		}
 	}
-	document.getElementById('output').innerHTML +=`
-	<div class = "textBox">
-		<img class = "textThumb" src = "`
-			+ img +
-		`">
-		<p class = "textName">`+ name + `</p>
-		<p>` + text + `</p>
-	</div>
-	<br>
-	`
+	var filename = "scripts/characters/"+targetFile+".js";
+	console.log('Attempting to load '+targetFile+'.js for scene ID '+name);
+	//Create slot for new scripts file
+	var fileref=document.createElement('script');
+	fileref.setAttribute("src", filename);
+	//console.log(fileref);
+	//Append new script file
+	document.getElementsByTagName("head")[0].appendChild(fileref);
+	//console.log(document.getElementsByTagName("head")[0].children);
+	//Delete script file afterwards
+	var select = document.getElementsByTagName("head")[0];
+	select.removeChild(select.lastChild);
+	
 }
 
-function writeBig (img) {
-	if (imagesDisabled != true) {
-		document.getElementById('output').innerHTML += `
-			<img class="bigPicture" src="` + img + `">
+function loadEvent(js, name) {
+	var targetFile = 'system';
+	requestType = 'event';
+	eventName = name;
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].index == js) {
+			targetFile = data.story[i].index;
+		}
+	}
+	var filename = "scripts/characters/"+targetFile+".js";
+	console.log('Attempting to load '+targetFile+'.js for scene ID '+name);
+	//Create slot for new scripts file
+	var fileref=document.createElement('script');
+	fileref.setAttribute("src", filename);
+	//console.log(fileref);
+	//Append new script file
+	document.getElementsByTagName("head")[0].appendChild(fileref);
+	//console.log(document.getElementsByTagName("head")[0].children);
+	//Delete script file afterwards
+	var select = document.getElementsByTagName("head")[0];
+	select.removeChild(select.lastChild);
+}
+
+function checkForEncounters() {
+	var targetFile = 'system';
+	requestType = 'check';
+	var filename = "scripts/characters/"+targetFile+".js";
+	//console.log('Attempting to load '+targetFile+'.js to check for encounters');
+	var fileref=document.createElement('script');
+	fileref.setAttribute("src", filename);
+	
+	//Append new script file
+	document.getElementsByTagName("head")[0].appendChild(fileref);
+	
+	//Delete script file afterwards
+	var select = document.getElementsByTagName("head")[0];
+	select.removeChild(select.lastChild);
+	
+	for (x = 0; x < data.story.length; x++) {
+		targetFile = data.story[x].index;
+		var filename = "scripts/characters/"+targetFile+".js";
+		//console.log('Attempting to load '+targetFile+'.js to check for encounters');
+		var fileref=document.createElement('script');
+		fileref.setAttribute("src", filename);
+		
+		//Append new script file
+		document.getElementsByTagName("head")[0].appendChild(fileref);
+		
+		//Delete script file afterwards
+		var select = document.getElementsByTagName("head")[0];
+		select.removeChild(select.lastChild);
+	}
+}
+
+function printEncounterButton(character, scene, text, top, left, altName, altImage) {
+	document.getElementsByClassName('playerRoom')[0].innerHTML += `
+		<div class="pictureButton" onclick='loadEncounter("`+character+`", "`+scene+`")'
+		style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+text+`</div>
+	`;
+}
+
+function printEncounterTab(name, scene, text, altImage, altName) {
+	if (character != "system") {
+		var tabTrust;
+		var cancelTab = false;
+		var cssName = name;
+		var img = "images/"+name+"/"+name+".jpg";
+		for (z = 0; z < data.story.length; z++) {
+			if (data.story[z].index == name) {
+				tabIndex = z;
+				if (text.includes(name)) {
+					text = text.replace(name, data.story[z].fName);
+				}
+				name = data.story[z].fName + ' ' + data.story[z].lName;
+				var cssColor = data.story[z].color;
+				if (data.story[z].encounter == true) {
+					cancelTab = true;
+				}
+			}
+		}
+		if (data.story[tabIndex].trust == 0) {
+			name = "???";
+		}
+		switch (true) {
+			case (data.story[tabIndex].trust > 99): {
+				tabTrust = "<span class='love'>Love</span>";
+				break;
+			}
+			case (data.story[tabIndex].trust > 79): {
+				tabTrust = "<span class='trusting'>Trusting</span>";
+				break;
+			}
+			case (data.story[tabIndex].trust > 59): {
+				tabTrust = "<span class='friendly'>Friendly</span>";
+				break;
+			}
+			case (data.story[tabIndex].trust > 39): {
+				tabTrust = "<span class='relaxed'>Relaxed</span></span>";
+				break;
+			}
+			case (data.story[tabIndex].trust > 19): {
+				tabTrust = "<span class='wary'>Wary</span>";
+				break;
+			}
+			default: {
+				tabTrust = "<span class='unkown'>Unknown";
+				break;
+			}
+		}
+		if (data.player.pervert != true) {
+			var checkForError = "";
+			img = "images/"+cssName+"/"+cssName+".jpg";
+		}
+		else {
+			var checkForError = `onerror ="javascript:this.src='images/`+cssName+`/`+cssName+`.jpg'"`;
+			img = "images/"+cssName+"/"+cssName+"P.jpg";
+		}
+		if (altImage == undefined) {
+			altImage = "";
+		}
+		if (altName == undefined) {
+			altName = "";
+		}
+		if (altImage != "") {
+			if (altImage.includes("images") == true) {
+				img = altImage;
+			}
+			else {
+				if (data.player.pervert != true) {
+					var checkForError = "";
+					img = "images/"+cssName+"/"+altImage;
+				}
+				else {
+					var checkForError = `onerror ="javascript:this.src='images/`+cssName+`/`+altImage+`'"`;
+					img = img.replace(".jpg", "");
+					img = "images/"+cssName+"/"+altImage+"P.jpg";
+				}
+			}
+		}
+		if (altName != "") {
+			name = altName;
+		}
+		//console.log(tabIndex);
+		console.log(cssColor);
+		if (cancelTab != true) {
+			console.log("Now generating tab for " + name + ", linking to scene " + scene + " with the text " + text);
+			document.getElementById('output').innerHTML +=`
+			<div class = "textBox" style="border-color: `+cssColor+`">
+				<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "`+ img +`" `+checkForError+`>
+				<div class="textBoxContent">
+				<p class = "textName" style="color:`+cssColor+`">` + name + `</p>
+				<p class="status"> Status: ` + tabTrust + `</p>
+				<p class="switch" onclick="loadEncounter('`+data.story[tabIndex].index+`', '`+scene+`')">` + replaceCodenames(text) + `</p>
+			</div>	</div>
 			<br>
-		`;
+			`;
+		}
 	}
 }
 
-function writeTransition (name, scene) {
+function writeText (text) {
 	document.getElementById('output').innerHTML += `
-		<p class="choiceText" onclick="sceneTransition('` + name + `')">
-			` + scene + `
-		</p>
+		<p class='rawText'>` + replaceCodenames(text) + `</p>
 	`;
 }
 
 function writeSpecial (text) {
 	document.getElementById('output').innerHTML += `
-		<p class = "specialText">` + text + `</p>
+		<p class = "specialText">` + replaceCodenames(text) + `</p>
 	`;
 }
 
-function writeText (text) {
+function writeSpeech (name, img, text) {
+	var cssName = name;
+	var fullName = name;
+	var cssColor = "#CCCCCC";
+	if (img == "" && img != 'none') {
+		if (data.player.pervert != true) {
+			var checkForError = "";
+			img = "images/"+name+"/"+name+".jpg";
+		}
+		else {
+			var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+name+`.jpg'"`;
+			img = "images/"+name+"/"+name+"P.jpg";
+		}
+	}
+	else {
+		if (img.includes("images") != true && img != 'none') {
+			if (data.player.pervert != true) {
+				var checkForError = "";
+				img = "images/"+cssName+"/"+img;
+			}
+			else {
+				var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+img+`'"`;
+				img = img.replace(".jpg", "");
+				img = "images/"+cssName+"/"+img+"P.jpg";
+			}
+		}
+	}
+	if (name == "player") {
+		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
+		fullName = data.player.name;
+		cssColor = "#86b4dc";
+	}
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].index == name) {
+			fullName = data.story[i].fName + ' ' + data.story[i].lName;
+			cssColor = data.story[i].color;
+			
+		}
+	}
+	if (img == "none") {
+		var checkForError = "";
+		img = "scripts/gamefiles/none.png";
+	}
+	document.getElementById('output').innerHTML +=`
+	<div class="textBox" style="border-color: `+cssColor+`">
+		<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "
+			`+ img +`
+		"`+checkForError+`>
+		<div class="textBoxContent">
+		<p class = "textName" style="color:`+cssColor+`">`+ fullName + `</p>
+		<p>` + replaceCodenames(text) + `</p>
+	</div>
+	<br>
+	`;
+}
+
+function writeBig (img, cap) {
+	if (img.includes('profile') == true) {
+		if (data.player.pervert != true) {
+			var checkForError = "";
+			var pervertImage = img;
+		}
+		else {
+			var backupImage = img;
+			var checkForError = `onerror ="javascript:this.src='`+backupImage+`'"`;
+			img = img.replace('profile', 'profileP');
+			console.log(img);
+		}
+	}
+	if (imagesDisabled != true) {
 	document.getElementById('output').innerHTML += `
-		<p class='rawText'>` + text + `</p>
+		<img class="bigPicture" src="` + img + `"`+checkForError+` title="` + cap + `">
+		<br>
+	`;
+	}
+}
+
+function writeMed (img, cap) {
+	if (imagesDisabled != true) {
+	document.getElementById('output').innerHTML += `
+		<img class="medPicture" src="` + img + `" title="` + cap + `">
+		<br>
+	`;
+	}
+}
+
+function writeFunction (name, func) {
+	document.getElementById('output').innerHTML += `
+		<p class="choiceText" onclick="` + name + `">
+			` + replaceCodenames(func) + `
+		</p>
 	`;
 }
 
-function sceneTransition(scene) {
-	document.getElementById('playerName').innerHTML = data.story.name;
-	console.log("scene transition started");
-	wrapper.scrollTop = 0;
-	console.log("menu updated");
-	if (data.story.playingGame == true) {
-		data.zombieData.scene = scene;
+function listTextbooks() {
+		document.getElementById('output').innerHTML = '';
+	if (checkItem("Hypnosis Textbook") == false && checkItem("Hacking Textbook") == false && checkItem("Counseling Textbook") == false) {
+		writeText("<p class='centeredText'>You don't have any textbooks to read.<span>");
 	}
-	data.story.currentScene = scene;
-	console.log(data.story.currentScene);
-	//alert(data.story.currentScene);
-	//beforeCheck();
-	//afterCheck();
+	if (checkItem("Hypnosis Textbook") == true) {
+		writeFunction("textbook('hypnosis')", "Read your hypnosis textbook");
+	}
+	if (checkItem("Hacking Textbook") == true) {
+		writeFunction("textbook('hacking')", "Read your hacking textbook");
+	}
+	if (checkItem("Counseling Textbook") == true) {
+		writeFunction("textbook('counseling')", "Read your counseling textbook");
+	}
+	writeFunction("changeLocation(data.player.location)", "Go back");
+}
+
+function textbook(n) {
+		document.getElementById('output').innerHTML = '';
+	switch (n) {
+		case "hypnosis":
+			data.player.hypnosis += 1;
+			removeItem("Hypnosis Textbook");
+			passTime();
+			writeText("You read through the textbook. It's a bit mind-numbing, which is probably appropriate. The tricks in here help you see things in a new light, it's a different sort of feeling from being trained.");
+			writeSpecial("Your skill in hypnosis has improved!");
+		break;
+		case "hacking":
+			data.player.hacking += 1;
+			removeItem("Hacking Textbook");
+			passTime();
+			writeText("You read through the textbook. It's a bit mind-numbing, but still interesting. The tricks in here help you see things in a new light, it's a different sort of feeling from being trained.");
+			writeSpecial("Your skill in hacking has improved!");
+		break;
+		case "counseling":
+			data.player.counseling += 1;
+			removeItem("Counseling Textbook");
+			passTime();
+			writeText("You read through the textbook. It's a bit mind-numbing, but the pictures are interesting. The tricks in here help you see things in a new light, it's a different sort of feeling from being trained.");
+			writeSpecial("Your skill in counseling has improved!");
+		break;
+	}
+	writeFunction("changeLocation(data.player.location)", "Finish");
+}
+
+function writePorn() {
+	console.log("Now generating porn for day ID" + data.player.dayID);
+	var pornID = data.player.dayID - 1;
 	document.getElementById('output').innerHTML = '';
-	writeScene(scene);
-	console.log("scene written");
-	saveSlot(13);
-	console.log("autosaved");
-	zombieInvShowing = false;
-}
-
-//Menu updating
-function changeName(target) {
-	switch (target) {
-		case 'player':
-			data.story.name = document.getElementById('nameSubmission').value;
-			sceneTransition('mainMenu');
-		break;
+	if (imagesDisabled != true) {
+		document.getElementById('output').innerHTML += `
+			<img class="medPicture" onclick="writeEncounter('porn`+pornID+`A')" src="images/porn/` + pornID + `A.jpg">
+			<br>
+		`;
+		document.getElementById('output').innerHTML += `
+			<img class="medPicture" onclick="writeEncounter('porn`+pornID+`B')" src="images/porn/` + pornID + `B.jpg">
+			<br>
+		`;
+		document.getElementById('output').innerHTML += `
+			<img class="medPicture" onclick="writeEncounter('porn`+pornID+`C')" src="images/porn/` + pornID + `C.jpg">
+			<br>
+		`;
+	}
+	else {
+		writeText("The porn system is disabled without images.");
 	}
 }
 
-function updateBody(n) {
-	n = parseInt(n);
-	data.story.bodytype = n;
-	var papaya = document.getElementById("playerImg");
-	switch(n) {
-		case 0:
-			document.getElementById('playerImage').src = "images/zombie/player.jpg";
-			if(papaya) {
-				document.getElementById('playerImg').src = "images/zombie/player.jpg";
-			}
-		break;
-		case 1:
-			document.getElementById('playerImage').src = "images/zombie/sub.jpg";
-			if(papaya) {
-			document.getElementById('playerImg').src = "images/zombie/sub.jpg";
-			}
-		break;
-		case 2:
-			document.getElementById('playerImage').src = "images/zombie/body1.jpg";
-			if(papaya) {
-			document.getElementById('playerImg').src = "images/zombie/body1.jpg";
-			}
-		break;
-		case 3:
-			document.getElementById('playerImage').src = "images/zombie/body2.jpg";
-			if(papaya) {
-			document.getElementById('playerImg').src = "images/zombie/body2.jpg";
-			}
-		break;
-		case 4:
-			document.getElementById('playerImage').src = "images/zombie/body3.jpg";
-			if(papaya) {
-			document.getElementById('playerImg').src = "images/zombie/body3.jpg";
-			}
-		break;
-		case 5:
-			document.getElementById('playerImage').src = "images/zombie/jean.jpg";
-			if(papaya) {
-			document.getElementById('playerImg').src = "images/zombie/jean.jpg";
-			}
-		break;
-		case 6:
-			document.getElementById('playerImage').src = "images/zombie/lisa.jpg";
-			if(papaya) {
-			document.getElementById('playerImg').src = "images/zombie/lisa.jpg";
-			}
-		break;
-		case 7:
-			document.getElementById('playerImage').src = "images/zombie/riley.jpg";
-			if(papaya) {
-			document.getElementById('playerImg').src = "images/zombie/riley.jpg";
-			}
-		break;
-		case 8:
-			document.getElementById('playerImage').src = "images/zombie/profile1.jpg";
-			if(papaya) {
-			document.getElementById('playerImg').src = "images/zombie/profile1.jpg";
-			}
-		break;
+//Showing & hiding windows
+function hideStuff() {
+	//console.log("hideStuff start");
+	hideInv();
+	hideSave();
+	hideSelf();
+	hidePhone();
+	//console.log("hideStuff end");
+}
+
+function invButton() {
+	if (invHidden == true) {
+		showInv();
+	}
+	else {
+		hideInv();
 	}
 }
 
-//Saving & Loading
+function hideInv() {
+	invHidden = true;
+	document.getElementById("inventory").style.visibility = "hidden";	
+}
+
+function showInv() {
+	hideStuff();
+	generateInv();
+	invHidden = false;
+	document.getElementById("inventory").style.visibility = "visible"; 
+}
+
+function saveButton() {
+	if (saveHidden == true) {
+		showSave();
+	}
+	else {
+		hideSave();
+	}
+}
+
+function hideSave() {
+	saveHidden = true;
+	document.getElementById("save").style.visibility = "hidden"; 
+}
+
+function showSave() {
+	hideStuff();
+	generateSave();
+	saveHidden = false;
+	document.getElementById("save").style.visibility = "visible"; 
+}
+
+function selfButton() {
+	if (selfHidden == true) {
+		showSelf();
+	}
+	else {
+		hideSelf();
+	}
+}
+
+function hideSelf() {
+	selfHidden = true;
+	document.getElementById("self").style.visibility = "hidden";	
+}
+
+function showSelf() {
+	hideStuff();
+	selfHidden = false;
+	document.getElementById("self").style.visibility = "visible"; 
+	generateNav();
+}
+
+function phoneButton() {
+	document.getElementById('phoneButton').innerHTML = "PHONE";
+	document.getElementById('phoneButtonMobile').innerHTML = "PHONE";
+	if (phoneHidden == true) {
+		showPhone();
+	}
+	else {
+		hidePhone();
+	}
+}
+
+function hidePhone() {
+	phoneHidden = true;
+	document.getElementById("phone").style.visibility = "hidden";	
+	document.getElementById('phoneRight').innerHTML = '';
+}
+
+function showPhone() {
+	hideStuff();
+	phoneHidden = false;
+	document.getElementById("phone").style.visibility = "visible"; 
+	generateContacts();
+}
+
+function closeButton() {
+	document.getElementById("menu").style.width = "0px";	
+	document.getElementById("closeButton").style.visibility = "hidden";	
+	document.getElementById("openButton").style.visibility = "visible";	
+}
+
+function openButton() {
+	document.getElementById("menu").style.width = "400px";	
+	document.getElementById("closeButton").style.visibility = "visible";	
+	document.getElementById("openButton").style.visibility = "hidden";	
+}
+
+//Menu
+function updateMenu() {
+	document.getElementById('playerName').innerHTML = data.player.name;
+	if (data.player.pervert != true) {
+		document.getElementById('playerName').style.color = "#86b4dc";
+	}
+	else {
+		document.getElementById('playerName').style.color = "#fc53f1";
+	}
+	document.getElementById('playerMoney').innerHTML = "$" + data.player.money;
+	document.getElementById('day').innerHTML = "Day " + data.player.day + " - " + data.player.time;
+	document.getElementById('playerImage').src = "scripts/gamefiles/characters/"+data.player.character+".jpg";
+	document.getElementById('playerImage').title = data.player.characterArtist;
+	if (data.player.hypnosis == 0) {
+		document.getElementById('playerHypnosis').innerHTML = "";
+	}
+	else {
+		document.getElementById('playerHypnosis').innerHTML = "Hypnosis: " + data.player.hypnosis;
+	}
+	if (data.player.counseling == 0) {
+		document.getElementById('playerCounseling').innerHTML = "";
+	}
+	else {
+		document.getElementById('playerCounseling').innerHTML = "Counseling: " + data.player.counseling;
+	}
+	if (data.player.hacking == 0) {
+		document.getElementById('playerHacking').innerHTML = "";
+	}
+	else {
+		document.getElementById('playerHacking').innerHTML = "Hacking: " + data.player.hacking;
+	}
+}
+
+function writeWardrobe() {
+	if (checkItem("Lady") == true) {
+		if (checkBody("lady") == false) {
+			var goof = {index: "lady", artist: "Art by Nusumenaihxseki",};
+			data.bodytypes.push(goof);
+		}
+	}
+	for (i = 0; i < data.bodytypes.length; i++) {
+		writeMed("scripts/gamefiles/characters/"+data.bodytypes[i].index+".jpg", data.bodytypes[i].artist);
+		writeFunction("changeBody('"+i+"')", data.bodytypes[i].index);
+	}
+}
+
+function checkBody(n) {
+	console.log("Now checking for bodytype " + n);
+	for (i = 0; i < data.bodytypes.length; i++) {
+		if (data.bodytypes[i].index.includes(n)) {
+			return true;
+			break;
+		}
+	}
+	return false;
+}
+
+function changeBody(n) {
+	data.player.character = data.bodytypes[n].index;
+	data.player.characterArtist = data.bodytypes[n].artist;
+	updateMenu();
+}
+
+//Saving
+function updateSave() {
+	if (data.player.version == undefined) {
+		console.log('version 1 detected, updating save');
+		data.player.version = 2;
+		data.story[5] = {index: "maid", met: false, fName: "Lena", lName: "Rogers", trust: 0, encountered: false, textEvent: "",};
+		data.story[6] = {index: "mistress", met: false, fName: "Anna", lName: "Fletcher", trust: 0, encountered: false, textEvent: "",};
+		data.story[7] = {index: "meji", met: false, fName: "Reese", lName: "Kieran", trust: 0, encountered: false, textEvent: "",};
+		data.story[8] = {index: "principal", met: false, fName: "Victoria", lName: "Devons", trust: 0, encountered: false, textEvent: "",};
+		data.story[9] = {index: "secretary", met: false, fName: "Lisa", lName: "Jones", trust: 0, encountered: false, textEvent: "",};
+		data.story[10] = {index: "neet", met: false, fName: "Tia", lName: "Sun", trust: 0, encountered: false, textEvent: "",};
+		data.story[11] = {index: "scarf", met: false, fName: "Casandra", lName: "Hamilton", trust: 0, encountered: false, textEvent: "",};
+		data.story[12] = {index: "green", met: false, fName: "Emma", lName: "Hamilton", trust: 0, encountered: false, textEvent: "",};
+	}
+	if (data.player.version == 2) {
+		console.log('version 2 detected, updating save');
+		data.player.version = 3;
+		data.player.title = "man";
+		data.player.title = "Mister";
+		data.player.honorific = "sir";
+	}
+	if (data.player.version == 3) {
+		console.log('version 3 detected, updating save');
+		data.player.version = 4;
+		alert('older save version detected! Moving you to back to your house. Feel free to restart if needed.');
+		data.player.location = 'playerHouse';
+		data.story[0].color = "#CCCCCC";
+		data.story[1].color = "#fde1a5";
+		data.story[2].color = "#a79e9a";
+		data.story[3].color = "#cb86ef";
+		data.story[4].color = "#da924b";
+		data.story[5].color = "#CCCCCC";
+		data.story[6].color = "#ed9082";
+		data.story[7].color = "#7e52a3";
+		data.story[8].color = "#e47311";
+		data.story[9].color = "#888888";
+		data.story[10].color = "#da924b";
+		data.story[11].color = "#954655";
+		data.story[12].color = "#677b4c";
+	}
+	if (data.player.version == 4) {
+		console.log('version 4 detected, updating save');
+		data.player.version = 5;
+		var goof = {index: "succubus", fName: "Gou", lName: "", trust: 0, encountered: false, textEvent: "", met: false, color: "#BF76DF", author: "NoodleJacuzzi", artist: "Gujira"};
+		data.story.push(goof);
+		goof = {index: "nurse", fName: "Justine", lName: "Walton", trust: 0, encountered: false, textEvent: "", met: false, color: "#8D756B", author: "NoodleJacuzzi", artist: "Oreteki18kin"};
+		data.story.push(goof);
+		console.log(data.story);
+	}
+	saveSlot(110);
+}
+
 function saveSlot(slot) {
-	console.log(slot);
 	saveName = "data" + slot;
 	localStorage.setItem(saveName,JSON.stringify(data));
 	var date = new Date();
 	date = date.toDateString() + " " + date.toLocaleTimeString();
 	saveName = "date" + slot;
 	localStorage.setItem(saveName,date);
+	generateSave();
 }
 
 function deleteSlot(slot) {
-	saveName = "data" + slot;
-	localStorage.removeItem(saveName);
+	localStorage.removeItem(slot);
 	console.log("Saved data");
 	saveName = "date" + slot;
 	localStorage.removeItem(saveName);
@@ -468,43 +1145,46 @@ function deleteSlot(slot) {
 }
 
 function loadSlot(slot) {
-	endingChoices = {family: 1, friend: 1, teacher: 1, chef: 1, office: 1, sub: 0,}
-	tokyo = false;
 	saveName = "data" + slot;
 	data = localStorage.getItem(saveName);
 	data = JSON.parse(data);
 	console.log("loaded data");
-	updateBody(data.story.bodytype);
-	sceneTransition(data.story.currentScene);
+	if (data.player.location != "") {
+		changeLocation(data.player.location);
+	}
+	else {
+		loadEncounter('system', 'start');
+	}
+	//sceneTransition(data.player.currentScene);
+	updateSave();
 }
 
 function saveFile(){
+	hideStuff();
 	document.getElementById('output').innerHTML = '';
 	writeText("Copy the full length below and paste it into the input box when you want to load the data. I recommend copying to a txt file.");
 	writeText("" + JSON.stringify(data) + "");
-	writeTransition(data.story.currentScene, "Finished copying");
+	writeFunction("changeLocation(data.player.location)", "Finished copying");
 }
 
 function loadFile(){
-	var dataTemp = prompt("Please paste the data", "");
-	dataTemp = JSON.parse(dataTemp);
-	if (dataTemp.bodytypes) {
-		data = dataTemp;
-		saveSlot(13);
-		loadSlot(13);
+	data = prompt("Please paste the data", "");
+	data = JSON.parse(data);
+	saveSlot(110);
+	loadSlot(110);
+	if (data.player.name == null) {
+		alert("Invalid pasted data! If we tried to use this, the game would completely break!");
+		loadSlot(111);
 	}
 	else {
-		for (i = 0; i < data.zombieGallery.length; i++) {
-			if (dataTemp.zombieGallery[i].unlocked == true) {
-				data.zombieGallery[i].unlocked = true;
-			}
-		}
-		alert("Data from HAA detected, your gallery progress has been transferred.")
+		saveSlot(110);
+		loadSlot(110);
 	}
+	updateSave();
 }
 
 function generateSave() {
-	for (i = 1; i < 9; i++) {
+	for (i = 101; i < 109; i++) {
 		var searchName = 'data' + i;
 		if(localStorage.getItem(searchName)) {
 			var buttonName = 'load' + i + 'Button';
@@ -527,289 +1207,843 @@ function generateSave() {
 }
 
 //Gallery
-function unlockScene(n) {
-	for (i = 0; i < data.galleryArray.length; i++) {
-		if (data.galleryArray[i].index.includes(n)) {
-			if (data.galleryArray[i].unlocked == false) {
-				 document.getElementById('output').innerHTML += `<p class = "specialText">You've unlocked a new scene in the gallery!</p>`;
-			}
-			data.galleryArray[i].unlocked = true
+function generateGalleryNav() {
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].trust > 0) {
+			document.getElementById('output').innerHTML += `
+			<div class = "textBox" onclick="generateGalleryPage('` + data.story[i].index + `')" >
+				<img class = "textThumb" src = "images/`+ data.story[i].index +`/`+ data.story[i].index +`.jpg">
+				<div class="textBoxContent">
+				<span class = "choiceText" onclick="generateGalleryPage('` + data.story[i].index + `')">`+data.story[i].fName + ` ` + data.story[i].lName +`</span>
+			</div></div>
+			<br>
+			`;
 		}
 	}
 }
 
-function generateGallery(n) {
-	for (i = 0; i < data.galleryArray.length; i++) {
-		if (data.galleryArray[i].index.includes(n)) {
-			if (data.galleryArray[i].unlocked == true) {
-				document.getElementById('output').innerHTML += `
-				<p class = "choiceText" onclick="galleryView('` + data.galleryArray[i].index + `')">` + data.galleryArray[i].name + `</p>
-				`;
+function generateGalleryPage(n) {
+	document.getElementById('output').innerHTML = '';
+	writeBig("images/"+n+"/profile.jpg");
+	for (i = 0; i < data.gallery.length; i++) {
+		if (data.gallery[i].index.includes(n)) {
+			if (galleryCheck(data.gallery[i].index) == true) {
+				writeFunction("loadEvent('"+n+"','"+data.gallery[i].index+"')", data.gallery[i].name)
 			}
 		}
 	}
+	writeFunction("changeLocation('playerHouse')", "Go back");
 }
 
 function galleryCheck(n) {
-	for (i = 0; i < data.galleryArray.length; i++) {
-		if (data.galleryArray[i].index.includes(n)) {
-			if (data.galleryArray[i].unlocked == true) {
-				return true;
-			}
-			else {
-				return false;
-			}
-		}
-	}
-}
-
-function galleryView(scene) {
-	wrapper.scrollTop = 0;
-	document.getElementById('output').innerHTML = '';
-	writeEvent(scene);
-	if (data.story.currentScene == "gallery") {
-		writeTransition("gallery", "Go back");
-	}
-	else {
-		writeTransition("princessGallery", "Go back");
-	}
-}
-
-function purchase() {
-	var goof = document.getElementById('cheatSubmission').value;
-	switch (goof) {
-		case "cold mile": {
-			for (i = 0; i < data.zombieGallery.length; i++) {
-				data.zombieGallery[i].unlocked = true;
-			}
-			alert("You've unlocked all scenes in the gallery!");
-			break;
-		}
-		case "sub route": {
-			updateBody(1);
-			data.bodytypes.sub = true;
-			break;
-		}
-		case "dom man": {
-			updateBody(2);
-			data.bodytypes.dom1 = true;
-			break;
-		}
-		case "dom trap": {
-			updateBody(3);
-			data.bodytypes.dom2 = true;
-			break;
-		}
-		case "dom shemale": {
-			updateBody(4);
-			data.bodytypes.dom3 = true;
-			break;
-		}
-		case "horror story": {
-			updateBody(5);
-			data.bodytypes.jean = true;
-			break;
-		}
-		case "sex the hex": {
-			updateBody(6);
-			data.bodytypes.lisa = true;
-			break;
-		}
-		case "paradise": {
-			updateBody(7);
-			data.bodytypes.riley = true;
-			break;
-		}
-		case "princess quest": {
-			updateBody(8);
-			data.bodytypes.liz = true;
-			break;
-		}
-	}
-	sceneTransition(data.story.currentScene);
-}
-//Logbook
-//Inventory
-//Zombie Game functions
-function generateZombieInv() {
-	if (zombieInvShowing == false) {
-		zombieInvShowing = true;
-		for (i = 0; i < data.zombieInventory.length; i++) {
-			document.getElementById('output').innerHTML += `
-				<br>
-				<div class = "shopItem">
-					<p class = "shopName">`+data.zombieInventory[i].name+`</p>
-					<p class = "shopDesc">`+data.zombieInventory[i].description+`</p>
-					<img class="shopImage" src="`+data.zombieInventory[i].image+`">
-				</div>
-			`;
-		}
-	}
-}
-function addItem(n) {
-	if (data.zombieInventory.length < 6) {
-		for (i = 0; i < items.length; i++) {
-			if (n == items[i].name) {
-				data.zombieInventory.push(items[i]);
-			}
-		}
-		sceneTransition(data.zombieData.scene);
-	}
-	else {
-		writeText("You don't have enough space to pick that up.");
-	}
-}
-function removeItem(n) {
-	for (i = 0; i < data.zombieInventory.length; i++) {
-		if (data.zombieInventory[i].name.includes(n)) {
-			data.zombieInventory.splice(i, 1);
-			break;
-		}
-	}
-	if (data.story.currentScene == "convenienceStore" || data.story.currentScene == "factoryGate") {
-		sceneTransition(data.story.currentScene);
-	}
-}
-function eatSnack() {
-	data.zombieData.stamina += 1;
-	removeItem("Snack");
-	sceneTransition(data.story.currentScene);
-}
-function generateZombieGallery() {
-	for (i = 0; i < data.zombieGallery.length; i++) {
-		if (data.zombieGallery[i].unlocked == true) {
-			document.getElementById('output').innerHTML += `
-			<p class = "choiceText" onclick="writeZombieEvent('` + data.zombieGallery[i].index + `')">` + data.zombieGallery[i].name + `</span>
-			`;
-		}
-	}
-}
-function unlockZombieScene(n) {
-	for (i = 0; i < data.zombieGallery.length; i++) {
-		if (n == data.zombieGallery[i].index) {
-			if (data.zombieGallery[i].unlocked == false) {
-				data.zombieGallery[i].unlocked = true;
-				writeSpecial("You've unlocked a new scene in the gallery!");
-			}
-		}
-	}
-}
-function itemCheck(n) {
-	for (i = 0; i < data.zombieInventory.length; i++) {
-		if (data.zombieInventory[i].name.includes(n)) {
+	for (i = 0; i < data.gallery.length; i++) {
+		if (data.gallery[i].index.includes(n)) {
 			return true;
 			break;
 		}
 	}
 	return false;
 }
-function exitGame() {
-	data.story.playingGame = false;
-	sceneTransition("mainMenu", "Stop playing");
-}
-function gameOver() {
-	clearData();
-	exitGame();
-}
-function clearData() {
-	data.zombieData.scene = "safehouse";
-	data.zombieData.stamina = 2;
-	data.zombieData.wounded = false;
-	data.zombieData.infected = false;
-	data.zombieData.lockbox = "";
-	data.zombieData.townZombie = true;
-	data.zombieData.cityZombie = true;
-	data.zombieData.factoryZombie = true;
-	data.zombieInventory = [];
-	addItem("Baseball Bat");
-}
-function zombieFooter() {
-	switch (data.zombieData.stamina) {
-		case 0:
-			writeText("You have a no energy left to fight. If you encountered a zombie right now, you'd definitely lose.");
-			if (itemCheck("Snack") == true) {
-				writeText("There isn't anyone around. You could take a break to eat a <span class='choiceText' onclick='eatSnack()'>snack</span> to regain some stamina.");
-			}
-		break;
-		case 1:
-			writeText("You have a some stamina left. You could fight off a zombie right now if you had to.");
-			if (itemCheck("Snack") == true) {
-				writeText("There isn't anyone around. You could take a break to eat a <span class='choiceText' onclick='eatSnack()'>snack</span> to regain some stamina.");
-			}
-		break;
-		case 2:
-			writeText("You have a lot of energy left.");
-		break;
+
+
+
+//Logbook
+function generateNav() {
+	document.getElementById('logbookLeft').innerHTML = '';
+	requestType = "logbook";
+	logbookArray = [];
+	for (i = 0; i < data.story.length; i++) {
+		targetFile = data.story[i].index;
+		var filename = "scripts/characters/"+targetFile+".js";
+		var fileref=document.createElement('script');
+		fileref.setAttribute("src", filename);
+		
+		//Append new script file
+		document.getElementsByTagName("head")[0].appendChild(fileref);
+		console.log(targetFile+ ' import successful');
+		
+		//Delete script file afterwards
+		var select = document.getElementsByTagName("head")[0];
+		select.removeChild(select.lastChild);
 	}
-	if (data.zombieData.wounded == true) {
-		writeText("You are bleeding a little, you should avoid dangerous situations.");
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].trust > 0) {
+			document.getElementById('logbookLeft').innerHTML += `<h3 class = "button" onclick = "switchDesc('`+data.story[i].index+`')">` + data.story[i].fName + `</h3>`;
+		}
 	}
-	if (data.zombieInventory.length > 5) {
-		writeText("You're carrying a lot of weight, you don't think you can carry anything more.");
-	}
-	writeText("<p class='choiceText' onclick='exitGame()'>Stop playing</p>");
+	switchDesc('player');
 }
-function toggle(fetish) {
-	switch (fetish) {
-		case "beast":
-			if (data.zombieData.beastDisabled == false) {
-				data.zombieData.beastDisabled = true;
-				document.getElementById('beastButton').innerHTML = `Enable 'bestiality' content.`;
-				document.getElementById('beastContent').innerHTML = `Scene 'Hunter 1' disabled. <br>Scene 'Hunter 2' disabled.`;
+
+function switchDesc(n) {
+	if (n != "player") {
+		var scenesUnlocked = 0;
+		var scenesTotal = 0;
+		for (logbookIndex = 0; logbookIndex < logbookArray.length; logbookIndex++) {
+			if (logbookArray[logbookIndex].index == n) {
+				var logCounter = logbookIndex
 			}
-			else {
-				data.zombieData.beastDisabled = false;
-				document.getElementById('beastButton').innerHTML = `Disable 'bestiality' content.`;
-				document.getElementById('beastContent').innerHTML = ``;
+		}
+		for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
+			if (data.story[characterIndex].index == n) {
+				var characterCounter = characterIndex
 			}
-		break;
-		case "rim":
-			if (data.zombieData.rimDisabled == false) {
-				data.zombieData.rimDisabled = true;
-				document.getElementById('rimButton').innerHTML = `Enable rimjob content.`;
-				document.getElementById('rimContent').innerHTML = `Scene 'Siren 2' disabled. <br>Scene 'Hunter 2' disabled.`;
+		}
+		console.log("searching for " + n + " in gallery");
+		for (x = 0; x < galleryArray.length; x++) {
+			console.log(galleryArray[x].index);
+			if (galleryArray[x].index.includes(n)) {
+				console.log("Index does include " + n);
+				scenesTotal += 1;
+				if (galleryCheck(galleryArray[x].index) == true) {
+					scenesUnlocked += 1;
+				}
 			}
-			else {
-				data.zombieData.rimDisabled = false;
-				document.getElementById('rimButton').innerHTML = `Disable rimjob content.`;
-				document.getElementById('rimContent').innerHTML = ``;
+		}
+		console.log("Displaying logbook page for character "+data.story[characterCounter].fName+".");
+		var tabTrust;
+		switch (true) {
+			case (data.story[characterCounter].trust > 99): {
+				tabTrust = "Devoted";
+				break;
 			}
-		break;
-		case "worm":
-			if (data.zombieData.wormDisabled == false) {
-				data.zombieData.wormDisabled = true;
-				document.getElementById('wormButton').innerHTML = `Enable sounding (urethral insertion) content.`;
-				document.getElementById('wormContent').innerHTML = `Scene 'Worms 2' disabled.`;
+			case (data.story[characterCounter].trust > 79): {
+				tabTrust = "Trusting";
+				break;
 			}
-			else {
-				data.zombieData.wormDisabled = false;
-				document.getElementById('wormButton').innerHTML = `Disable sounding content.`;
-				document.getElementById('wormContent').innerHTML = ``;
+			case (data.story[characterCounter].trust > 59): {
+				tabTrust = "Friendly";
+				break;
 			}
-		break;
+			case (data.story[characterCounter].trust > 39): {
+				tabTrust = "Relaxed";
+				break;
+			}
+			case (data.story[characterCounter].trust > 19): {
+				tabTrust = "Wary";
+				break;
+			}
+			default: {
+				tabTrust = "Unknown";
+				break;
+			}
+		}
+		if (data.player.pervert != true) {
+			if (imagesDisabled != true) {
+				document.getElementById('logbookRight').innerHTML = `
+					<img id="selfImage" class="selfImage" src="images/`+data.story[characterCounter].index+`/profile.jpg">
+				`;
+			}
+		}
+		else {
+			if (imagesDisabled != true) {
+				document.getElementById('logbookRight').innerHTML = `
+					<img id="selfImage" class="selfImage" src="images/`+data.story[characterCounter].index+`/profileP.jpg" onerror ="javascript:this.src='images/`+data.story[characterCounter].index+`/profile.jpg'">
+				`;
+			}
+		}
+		document.getElementById('logbookRight').innerHTML += `
+		<div class=" lb_primary">
+			<h2 class = "selfDesc" style = "color: `+data.story[characterCounter].color+`">`+data.story[characterCounter].fName+` `+data.story[characterCounter].lName+`</h2>
+			<p class = "selfDesc lb_trust ">Trust: <span class="`+tabTrust+`">`+tabTrust+`</p></span>
+		</div><div class=" lb_secondary">
+			<p class = "selfDesc lb_desc">`+logbookArray[logCounter].desc+`</p>
+			<p class = "selfDesc lb_body">`+logbookArray[logCounter].body+`</p>
+			<p class = "selfDesc lb_clothes">`+logbookArray[logCounter].clothes+`</p>
+			<p class = "selfDesc lb_home">`+logbookArray[logCounter].home+`</p>
+			<p class = "selfDesc lb_tags">`+logbookArray[logCounter].tags+`</p>
+			<p class = "selfDesc lb_tags">Artist: `+logbookArray[logCounter].artist+`</p>
+			<p class = "selfDesc lb_tags">Author: `+logbookArray[logCounter].author+`</p>
+		</div>
+		`;
 	}
-}
-function countScenes() {
-	scenesCollected = 0;
-	for (i = 0; i < data.zombieGallery.length; i++) {
-		if (data.zombieGallery[i].unlocked == true) {
-			scenesCollected += 1;
+	else {
+		if (imagesDisabled != true) {
+			document.getElementById('logbookRight').innerHTML = `
+				<img id="selfImage" class="selfImage" src="scripts/gamefiles/characters/`+data.player.character+`.jpg">
+			`;
+		}
+		document.getElementById('logbookRight').innerHTML += `
+		<h2 class = "selfDesc lb_Name char_player">`+data.player.name+`</h2>
+			<p class = "selfDesc">Day: `+data.player.day+`</p>
+			<p class = "selfDesc">Time: `+data.player.time+`</p>
+			<p class = "selfDesc">Money: $`+data.player.money+`</p>
+			<p class = "selfDesc">Skills: </p>
+		`;
+		if (data.player.hypnosis > 0) {
+			document.getElementById('logbookRight').innerHTML += `
+				<p class = "selfDesc">Hypnosis: `+data.player.hypnosis+`</p>
+			`;
+		}
+		if (data.player.hacking > 0) {
+			document.getElementById('logbookRight').innerHTML += `
+				<p class = "selfDesc">Hacking: `+data.player.hacking+`</p>
+			`;
+		}
+		if (data.player.counseling > 0) {
+			document.getElementById('logbookRight').innerHTML += `
+				<p class = "selfDesc">Conseling: `+data.player.counseling+`</p>
+			`;
 		}
 	}
 }
 
-//function updateGallery() {
-	//if(localStorage.getItem('gallery')) {
-		//var galleryTemp = localStorage.getItem('gallery');
-		//galleryTemp = JSON.parse(galleryTemp);
-		//for (i = 0; i < galleryTemp.length; i++) {
-			//if (galleryTemp[i].unlocked == true) {
-				//data.galleryArray[i].unlocked = true;
-			//}
-		//}
-		//localStorage.setItem('gallery',JSON.stringify(galleryArray));
-	//}
-	//else {
-		//localStorage.setItem('gallery',JSON.stringify(galleryArray));
-	//}
-//}
+//Inventory & shopping
+function loadShop() {
+	console.log('now importing shop data from character js files');
+	itemArray = [];
+	var targetFile = 'system';
+	requestType = "shop";
+	var filename = "scripts/characters/"+targetFile+".js";
+	var fileref=document.createElement('script');
+	fileref.setAttribute("src", filename);
+	
+	//Append new script file
+	document.getElementsByTagName("head")[0].appendChild(fileref);
+	
+	//Delete script file afterwards
+	var select = document.getElementsByTagName("head")[0];
+	select.removeChild(select.lastChild);
+	
+	for (i = 0; i < data.story.length; i++) {
+		//console.log('test');
+		targetFile = data.story[i].index;
+		var filename = "scripts/characters/"+targetFile+".js";
+		var fileref=document.createElement('script');
+		fileref.setAttribute("src", filename);
+		
+		//Append new script file
+		document.getElementsByTagName("head")[0].appendChild(fileref);
+		
+		//Delete script file afterwards
+		var select = document.getElementsByTagName("head")[0];
+		select.removeChild(select.lastChild);
+	}
+}
+
+function purchase(name, image, price, key) {
+	console.log("purchasing " + name);
+	if (data.player.money >= price) {
+		data.player.money -= price;
+		flashMoney();
+		updateMenu();
+		var purchasedItem = {name: name, key: key, price: price, image: image};
+		console.log(purchasedItem);
+		data.items.push(purchasedItem);
+	}
+	loadEncounter("system", "shop");
+}
+
+function flashMoney() {
+	flashy();
+	setTimeout(flashy, 1000);
+}
+
+function flashy() {
+	document.getElementById('playerMoney').style.color = (document.getElementById('playerMoney').style.color == 'green' ? 'white' : 'green');
+}
+
+function checkItem(n) {
+	console.log("Checking for item ID " + n);
+	for (x = 0; x < data.items.length; x++) {
+		if (data.items[x].name.includes(n)) {
+			console.log("Item id " + data.items[0].name + " is owned");
+			return true;
+			break;
+		}
+	}
+	return false;
+}
+
+function addItem(name, key, image) {
+	var purchasedItem = {name: name, key: key, image: image};
+	console.log(purchasedItem);
+	data.items.push(purchasedItem);
+}
+
+function removeItem(n) {
+	for (i = 0; i < data.items.length; i++) {
+		if (data.items[i].name.includes(n)) {
+			data.items.splice(i, 1);
+			break;
+		}
+	}
+}
+
+function generateInv() {
+	clearInv();
+	for (i = 0; i < data.items.length; i++) {
+		if (data.items[i].key == false) {
+			document.getElementById('windowLeft').innerHTML += `
+			<div class = "item">
+				<p class = "itemName">`+data.items[i].name+`</p>
+				<img class ="itemImage" src="`+data.items[i].image+`">
+			<div>
+			`;
+		}
+		else {
+			document.getElementById('windowRight').innerHTML += `
+			<div class = "item">
+				<p class = "itemName">`+data.items[i].name+`</p>
+				<img class ="itemImage" src="`+data.items[i].image+`">
+			</div>
+			`;
+		}
+	}
+}
+
+function clearInv() {
+	document.getElementById('windowLeft').innerHTML = ""
+	document.getElementById('windowRight').innerHTML = ""
+}
+
+function diagnostic() {
+	var goof = document.getElementById('cheatSubmission').value;
+	goof = goof.toLowerCase();
+	console.log("Testing code " + goof);
+	writeEncounter('cheat');
+	switch (goof) {
+		case "human alteration app": {
+			if (checkBody("sub") != true) {
+				var goof = {index: "sub", artist: "Art by Aya",};
+				data.bodytypes.push(goof);
+				writeSpecial("Unlocked a new bodytype! Change via the wardrobe.");
+			}
+			else {
+				goof = "null";
+			}
+			break;
+		}
+		case "haa": {
+			if (checkBody("sub") != true) {
+				var goof = {index: "sub", artist: "Art by Aya",};
+				data.bodytypes.push(goof);
+				writeSpecial("Unlocked a new bodytype! Change via the wardrobe.");
+			}
+			else {
+				goof = "null";
+			}
+			break;
+		}
+		case "princess quest": {
+			if (checkBody("elizabeth") != true) {
+				var goof = {index: "elizabeth", artist: "Art by Neromashin",};
+				data.bodytypes.push(goof);
+				writeSpecial("Unlocked a new bodytype! Change via the wardrobe.");
+			}
+			else {
+				goof = "null";
+			}
+			break;
+		}
+		case "rainy dayz": {
+			if (checkBody("jill") != true) {
+				var goof = {index: "jill", artist: "Unknown artist",};
+				data.bodytypes.push(goof);
+				writeSpecial("Unlocked a new bodytype! Change via the wardrobe.");
+			}
+			else {
+				goof = "null";
+			}
+			break;
+		}
+		case "thomas": {
+			data.player.gender = "man";
+			data.player.title = "Mister";
+			data.player.honorific = "sir";
+			if (checkBody("basic") != true) {
+				var goof = {index: "basic", artist: "Art by Ishimura",};
+				data.bodytypes.push(goof);
+			}
+			for (i = 0; i < data.bodytypes.length; i++) {
+				if (data.bodytypes[i].index.includes('basic')) {
+					changeBody(i);
+					break;
+				}
+			}
+			loadEncounter('system', 'prologue');
+			break;
+		}
+		case "tomara": {
+			data.player.gender = "woman";
+			data.player.title = "Miss";
+			data.player.honorific = "ma'am";
+			if (checkBody("basil") != true) {
+				var goof = {index: "basil", artist: "Art by Ishimura",};
+				data.bodytypes.push(goof);
+			}
+			for (i = 0; i < data.bodytypes.length; i++) {
+				if (data.bodytypes[i].index.includes('basil')) {
+					changeBody(i);
+					break;
+				}
+			}
+			loadEncounter('system', 'prologue');
+			break;
+		}
+		case "pervert": {
+			if (data.player.pervert != true) {
+				data.player.pervert = true;
+				writeSpecial("Pervert mode activated!");
+				updateMenu();
+			}
+			else {
+				data.player.pervert = false;
+				writeSpecial("Pervert mode deactivated!");
+				updateMenu();
+			}
+			break;
+		}
+		case "prude": {
+			data.player.pervert = false;
+			writeSpecial("Pervert mode deactivated!");
+			break;
+		}
+		case "vegetarian": {
+			setTrust('tomgirl', -1);
+			setTrust('meji', -1);
+			setTrust('succubus', -1);
+			writeSpecial("Trap / male characters have been deactivated. You might need to use this code again in the future when more traps are added.");
+			break;
+		}
+		case "cash money": {
+			data.player.money += 100;
+			updateMenu();
+			writeSpecial("You got $100! This should be all you need, but you could always make more.");
+			break;
+		}
+		case "nuclear option": {
+			data.player.hypnosis = 3;
+			data.player.hacking = 3;
+			data.player.counseling = 3;
+			updateMenu();
+			writeSpecial("All of your stats have been set to 3. You can keep improving them past this point, but you shouldn't see any skill-related roadblocks from here on!");
+			break;
+		}
+		case "new name": {
+			loadEncounter('system', 'renamingRoom');
+			break;
+		}
+		case "oowoo": {
+			if (data.player.uwu != true) {
+				data.player.uwu = true;
+				writeSpecial("What's this? UwU cheat activated.");
+			}
+			else {
+				data.player.uwu = false;
+				writeSpecial("Oowoo cheat has been deactivated.");
+			}
+			break;
+		}
+		case "spookwave": {
+			if (checkItem('Ghost AR') != true) {
+				addItem('Ghost AR', true, 'scripts/gamefiles/items/ghostAR.jpg');
+				writeSpecial("Happy Halloween! This is an in-progress version of a minigame, hopefully the first of many. Open your phone, click on 'Ghost AR', and ghosts will appear around town.");
+			}
+			else {
+				writeText("You've already used this cheat, playerSir.");
+			}
+			break;
+		}
+		case "eyestrain": {
+			if (checkItem('Ghost AR') != true) {
+				writeSpecial("You need to use the 'spookwave' cheat before you can use this one.");
+			}
+			else {
+				ghostBoost += .2;
+				writeSpecial("Increased the visibility of ghosts! You can repeat this code if you need to. Refreshing the game will undo this code.");
+			}
+			break;
+		}
+	}
+	if (goof == "null") {
+		writeText("You've already used this code before.");
+	}
+}
+
+//Phone
+function checkForPhone() { 
+	requestType = "phoneCheck";
+	for (i = 0; i < data.story.length; i++) {
+		targetFile = data.story[i].index;
+		var filename = "scripts/characters/"+targetFile+".js";
+		var fileref=document.createElement('script');
+		fileref.setAttribute("src", filename);
+		
+		//Append new script file
+		document.getElementsByTagName("head")[0].appendChild(fileref);
+		console.log(targetFile+ ' import successful');
+		
+		//Delete script file afterwards
+		var select = document.getElementsByTagName("head")[0];
+		select.removeChild(select.lastChild);
+	}
+}
+
+function loadPhoneEvent(js, name) {
+	var targetFile = 'system';
+	requestType = 'phoneEvent';
+	eventName = name;
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].index == js) {
+			targetFile = data.story[i].index;
+		}
+	}
+	var filename = "scripts/characters/"+targetFile+".js";
+	console.log('Attempting to load '+targetFile+'.js for scene ID '+name);
+	//Create slot for new scripts file
+	var fileref=document.createElement('script');
+	fileref.setAttribute("src", filename);
+	//console.log(fileref);
+	//Append new script file
+	document.getElementsByTagName("head")[0].appendChild(fileref);
+	//console.log(document.getElementsByTagName("head")[0].children);
+	//Delete script file afterwards
+	var select = document.getElementsByTagName("head")[0];
+	select.removeChild(select.lastChild);
+}
+
+function notification(name) {
+	writeText("Bzzt! You got a text from "+fName(name)+"!");
+	document.getElementById('phoneButton').innerHTML = "PHONE(*)";
+	document.getElementById('phoneButtonMobile').innerHTML = "PHONE(*)";
+}
+
+function writePhoneSpeech (name, img, text) {
+	var cssName;
+	if (img == "") {
+		if (data.player.pervert != true) {
+			var checkForError = "";
+			img = "images/"+name+"/"+name;
+			console.log(img);
+		}
+		else {
+			var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+name+`.jpg'"`;
+			img = "images/"+name+"/"+name+"P";
+			console.log(img);
+		}
+	}
+	if (name == "player") {
+		img = "scripts/gamefiles/profiles/"+data.player.character;
+		name = data.player.name;
+	}
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].index == name) {
+			name = data.story[i].fName + ' ' + data.story[i].lName
+			cssName = data.story[i].index;
+		}
+	}
+	document.getElementById('phoneRight').innerHTML +=`
+	<div class = "phoneTextBox">
+		<img class = "phoneTextThumb" src = "
+			`+ img +`.jpg
+		"`+checkForError+`>
+		<div class="phoneTextBoxContent">
+		<p class = "phoneTextName">`+ name + `</p>
+		<p class = "selfDesc">` + replaceCodenames(text) + `</p>
+	</div></div>
+	<br>
+	`
+}
+
+function writePhoneImage (img, cap) {
+	console.log("writing phone image "+cap);
+	if (imagesDisabled != true) {
+		document.getElementById('phoneRight').innerHTML += `
+			<img class="phonePicture" src="` + img + `" title="` + cap + `">
+			<br>
+		`;
+	}
+	var savedImage = {name: cap, src: img,};
+	if (checkPhoneImages(cap) == false) {
+		data.phoneImages.push(savedImage);
+		console.log("Unlocked image "+savedImage.name);
+	}
+}
+
+function writePhoneChoices (text1, text2, text3) {
+	if (textStage == 0) {
+		var choiceList = `
+				<div id = "phoneChoice">
+				<p class="choiceText" onclick="phoneChoice('A')">
+					` + text1 + `
+				</p>
+		`;
+		if (typeof text2 != 'undefined') {
+			choiceList += `
+				<p class="choiceText" onclick="phoneChoice('B')">
+					` + text2 + `
+				</p>
+		`;
+		}
+		if (typeof text3 != 'undefined') {
+			choiceList += `
+				<p class="choiceText" onclick="phoneChoice('C')">
+					` + text3 + `
+				</p>
+		`;
+		}
+		choiceList += `
+			</div>
+		`;
+		document.getElementById('phoneRight').innerHTML += choiceList;
+	}
+}
+
+function phoneChoice(n) {
+	document.getElementById('phoneRight').innerHTML = '';
+	data.story[data.player.lastText].textEvent += n;
+	writePhoneEvent(data.story[data.player.lastText].textEvent);
+}
+
+function generateContacts() {
+	console.log("contacts generated");
+	data.player.lastText = 100;
+	document.getElementById('phoneLeft').innerHTML = ``;
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].textEvent!= "") {
+			document.getElementById('phoneLeft').innerHTML += `<h3 class = "button char_` + data.story[i].index + `" style = "color: `+data.story[i].color+`" onclick = "switchContact('`+i+`')">` + data.story[i].fName + `</h3 >`;
+			data.player.lastText = i;
+		}
+	}
+	if (data.player.lastText != 100) {
+		switchContact(data.player.lastText);
+	}
+	else {
+		document.getElementById('phoneWindow').innerHTML = "PHONE";
+	}
+	if (checkItem('Ghost AR') == true) {
+		document.getElementById('phoneLeft').innerHTML += `<p class = "logbookSwitch" onclick = "ghostAR()">Ghost AR</p>`;
+	}
+	if (imagesDisabled != true) {
+		document.getElementById('phoneLeft').innerHTML += `<p class = "logbookSwitch" onclick = "phoneImages()">Saved Images</p>`;
+	}
+}
+
+function switchContact(n) {
+	phoneRight.scrollTop = 0;
+	console.log("contact switched");
+	document.getElementById('phoneRight').innerHTML = '';
+	document.getElementById('phoneWindow').innerHTML = data.story[n].fName;
+	data.player.lastText = n;
+	loadPhoneEvent(data.story[data.player.lastText].index, data.story[data.player.lastText].textEvent);
+}
+
+function phoneImages() {
+	phoneRight.scrollTop = 0;
+	data.phoneImages.sort(function(a, b){
+    var x = a.name.toLowerCase();
+    var y = b.name.toLowerCase();
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+    return 0;
+  });
+	console.log("viewing phone images");
+	document.getElementById('phoneWindow').innerHTML = "SAVED IMAGES";
+	document.getElementById('phoneRight').innerHTML = '';
+	for (i = 0; i < data.phoneImages.length; i++) {
+		writePhoneImage(data.phoneImages[i].src, data.phoneImages[i].name);
+		document.getElementById('phoneRight').innerHTML += '<p class="choiceText" onclick="deleteImage('+i+')">DELETE</p>';
+	}
+}
+
+function checkPhoneImages(n) {
+	console.log("checking phone images for "+n);
+	for (i = 0; i < data.phoneImages.length; i++) {
+		if (data.phoneImages[i].name.includes(n)) {
+			return true;
+			break;
+		}
+	}
+	return false;
+}
+
+function deleteImage(n) {
+	data.phoneImages.splice(n, 1);
+	phoneImages();
+}
+
+function clearText(n) {
+	for (textIndex = 0; textIndex < data.story.length; textIndex++) {
+		if (data.story[textIndex].index == n) {
+			console.log('deleting text log of '+n);
+			data.story[textIndex].textEvent = "";
+		}
+	}
+}
+
+// Ghost AR game
+function ghostAR() {
+	if (data.player.ghost == undefined) {
+		console.log('Installing Ghost AR');
+		data.player.ghost = "";
+		document.getElementById('phoneRight').innerHTML = ``;
+		document.getElementById('phoneRight').innerHTML +=`
+		<div class = "phoneTextBox">
+			<img class = "phoneTextThumb" src = "scripts/gamefiles/items/ghostIcon.png">
+			<div class="phoneTextBoxContent">
+			<p class = "phoneTextName">System</p>
+			<p class = "selfDesc">Ghost hunting is enabled! Good luck hunting!</p>
+		</div></div>
+		<br>
+		`;
+	}
+	else {
+		if (data.player.ghost.includes('REWARD')) {
+			document.getElementById('phoneRight').innerHTML = ``;
+			if (data.player.ghost.includes('REWARD1')) {
+				data.player.ghost = data.player.ghost.replace('REWARD1', 'claimed');
+				data.player.hypnosis += 1;
+				updateMenu();
+				document.getElementById('phoneRight').innerHTML +=`
+				<div class = "phoneTextBox">
+					<img class = "phoneTextThumb" src = "scripts/gamefiles/items/ghostIcon.png">
+					<div class="phoneTextBoxContent">
+					<p class = "phoneTextName">System</p>
+					<p class = "selfDesc">Congratulations! For your discipline, you've earned a reward!</p>
+				</div></div>
+				<br>
+				<p class="rawText">The reward is a link to some occult documents. Most are nonsense, but there's one on hypnosis that is actually pretty thorough.</p>
+				<p class="specialText">Your hypnosis skill has improved!</p>
+				`;
+			}
+			if (data.player.ghost.includes('REWARD2')) {
+				data.player.ghost = data.player.ghost.replace('REWARD2', 'claimed');
+				data.player.money += 10;
+				updateMenu();
+				document.getElementById('phoneRight').innerHTML +=`
+				<div class = "phoneTextBox">
+					<img class = "phoneTextThumb" src = "scripts/gamefiles/items/ghostIcon.png">
+					<div class="phoneTextBoxContent">
+					<p class = "phoneTextName">System</p>
+					<p class = "selfDesc">Congratulations! For your discipline, you've earned a reward!</p>
+				</div></div>
+				<br>
+				<p class="rawText">The reward is a link to a short survey. You're rewarded for your participation.</p>
+				<p class="specialText">You earned $10!</p>
+				`;
+			}
+			if (data.player.ghost.includes('REWARD3')) {
+				data.player.ghost = data.player.ghost.replace('REWARD3', 'claimed');
+				if (checkItem('Secret Shrine Location') != true) {
+					addItem('Secret Shrine Location', true, 'scripts/gamefiles/items/shrine.jpg');
+				}
+				updateMenu();
+				document.getElementById('phoneRight').innerHTML +=`
+				<div class = "phoneTextBox">
+					<img class = "phoneTextThumb" src = "scripts/gamefiles/items/ghostIcon.png">
+					<div class="phoneTextBoxContent">
+					<p class = "phoneTextName">System</p>
+					<p class = "selfDesc">Congratulations! For your discipline, you've earned a reward!</p>
+				</div></div>
+				<br>
+				<p class="rawText">The reward is a link to a to a historical page on the town, there's a neat shrine that isn't on most maps in the park district.</p>
+				<p class="specialText">You gained the location of the secret shrine!</p>
+				`;
+			}
+			if (data.player.ghost.includes('REWARD4')) {
+				data.player.ghost = data.player.ghost.replace('REWARD4', 'claimed');
+				var goof = {index: "hex", artist: "Art by Unknown Artist",};
+				data.bodytypes.push(goof);
+				document.getElementById('phoneRight').innerHTML +=`
+				<div class = "phoneTextBox">
+					<img class = "phoneTextThumb" src = "scripts/gamefiles/items/ghostIcon.png">
+					<div class="phoneTextBoxContent">
+					<p class = "phoneTextName">System</p>
+					<p class = "selfDesc">Congratulations! For your discipline, you've earned a reward!</p>
+				</div></div>
+				<br>
+				<p class="rawText">The reward is a link to a very, very detailed cosplay guide. You have most of these materials at home!</p>
+				<p class="specialText">You gained a new profile image, head back home and use the wardrobe to change!</p>
+				`;
+			}
+		}
+		else {
+			generateGhostCollection();
+		}
+	}
+}
+
+function generateGhostCollection() {
+	document.getElementById('phoneRight').innerHTML +=`
+	<div class = "phoneTextBox">
+		<img class = "phoneTextThumb" src = "scripts/gamefiles/items/ghostIcon.png">
+		<div class="phoneTextBoxContent">
+		<p class = "phoneTextName">System</p>
+		<p class = "selfDesc">You've caught `+countGhosts()+` ghosts!</p>
+	</div></div>
+	<br>
+	`;
+}
+
+function checkForGhosts(location) {
+	for (i = 0; i < ghostArray.length; i++) {
+		if (ghostArray[i].rarity.includes(data.player.dayID) == true) {
+			if (ghostArray[i].requirement <= countGhosts() && ghostArray[i].location.includes(location) == true) {
+				if (!data.player.ghost.includes(ghostArray[i].name)) {
+					var ghostOpacity = ghostArray[i].difficulty*7;
+					ghostOpacity = ghostOpacity/100;
+					ghostOpacity += ghostBoost;
+					console.log(ghostOpacity);
+					console.log('Ghost detected! ' +ghostArray[i].name);
+					document.getElementsByClassName('playerRoom')[0].innerHTML += `
+						<img class = "ghost" src = "images/ghosts/`+ghostArray[i].name+`.png" style="width: 15%; top: `+ghostArray[i].top+`%; left: `+ghostArray[i].left+`%; opacity: `+ghostOpacity+`;" onclick='captureGhost("`+ghostArray[i].name+`")'>
+					`;
+				}
+			}
+		}
+	}
+}
+
+function checkGhost(n) {
+	if (data.player.ghost.includes(n)) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+function countGhosts() {
+	var ghostNumber = 0;
+	for (ghostIndex = 0; ghostIndex < ghostArray.length; ghostIndex++) {
+		if (data.player.ghost.includes(ghostArray[ghostIndex].name)) {
+			console.log('test');
+			ghostNumber += 1;
+		}
+	}
+	console.log(ghostNumber);
+	return ghostNumber;
+}
+
+function captureGhost(n) {
+	data.player.ghost += n;
+	changeLocation(data.player.location);
+	switch (n) {
+		case "Maudlos": {
+			writeSpecial("Special ghost caught! Open the app to claim your reward.");
+			data.player.ghost += 'REWARD3';
+			break;
+		}
+		case "UFO": {
+			writeSpecial("Special ghost caught! Open the app to claim your reward.");
+			data.player.ghost += 'REWARD2';
+			break;
+		}
+		default: {
+			if (countGhosts() == 30) {
+				writeSpecial("You caught 30 ghosts! Open the app to claim your reward.");
+				data.player.ghost += 'REWARD4';
+			}
+			else {
+				if (countGhosts() == 10) {
+					writeSpecial("You caught 10 ghosts! Open the app to claim your reward.");
+					data.player.ghost += 'REWARD1';
+				}
+				else {
+					writeText("You caught a ghost!");
+				}
+			}
+			break;
+		}
+	}
+}
