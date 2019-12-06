@@ -2,13 +2,12 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 11/29/2019</p>
-				<p class = "centeredText">Hentai University v5</p>
-				<p class = "centeredText">The release of Hentai University v5, featuring Gou, Sam White, and Lena Rogers & Anna Fletcher.</p>
+				<p class = "centeredText">Lastest News 12/6/2019</p>
+				<p class = "centeredText">Rainy DayZ v1.2</p>
+				<p class = "centeredText">The release of Rainy DayZ v1.2, featuring an engine overhaul, a few new scenes, and the intro to the next chapter!</p>
 				<p class = "centeredText"></p>
 				<p class = "centeredText">Thank you to: Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Lasse B, Arthorias28, Badaxe, ChronosEdge, Colin E, Judavarius, Lunarghost, Q Q, Scal, Adonnak, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Auckard, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, David Lange, Debarre Sonny, Devin, Dewr, Drashin, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jane, jdktjk205, Jesse Greene, joe, joe mulhall, john smith, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, Max Mcfarland, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Oliver Jones, qwerty, Roy, Ryan Linn, sage, Sebastian Eckel, Shawn, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, valdis, Vincent Madaire-Cullen, Wayne culbert, Wild Bill, Will Osboldstone, Yongdian Guo, Your Husbando, Профессор Преображенский, and 凱 陳 for supporting my work!</p>
 			`;
-			writeTransition("news", "View all news updates");
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://discord.gg/B3AszYM'">Visit my discord server</p>
 			`;
@@ -47,6 +46,18 @@ function writeScene(scene) {
 				<p class="choiceText" onclick="window.location.href='https://hypnopics-collective.net/smf_forum/index.php?topic=23881.0'">Hypnopics Thread</p>
 				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/30871183'">List of cheat codes</p>
 			`;
+			writeBig("images/RainyDayZ.jpg");
+			writeText("Rainy DayZ v1.2");
+			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.");
+			writeText("Navigate a town and city deliberately working to sabotage yourself and throw yourself into the clutches of the zombie hordes, the goal of the game here is to be defeated and attacked to collect and unlock all of the game's scenes.");
+			writeText("Tags: Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Bestiality (optional), Parasites (optional)");
+			writeTransition("RainyDayZ", "Preview");
+			document.getElementById('output').innerHTML +=`
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/32154928'">Download the game</p>
+				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12575'">Discussion thread</p>
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html'">Play the game online</p>
+				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ%20Mobile.html'">Play the mobile version</p>
+			`;
 			writeBig("images/bitchMedicenter.png");
 			writeText("Bitch Medicenter Demo");
 			writeText("You're a doctor / sexual therapist who prescribes special body and mind-altering products to help with failed marriages, self worth issue, and etc. Basically, you're modifying people's minds and bodies. Currently in a demo state with only one of the two minigames finished.");
@@ -80,18 +91,6 @@ function writeScene(scene) {
 				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=60&t=12578'">Discussion thread</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Princess%20Quest/Princess%20Quest.html'">Try the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Princess%20Quest/Princess%20Quest%20Mobile.html'">Try the mobile version (NON-FUNCTIONAL)</p>
-			`;
-			writeBig("images/RainyDayZ.jpg");
-			writeText("Rainy DayZ v1.0");
-			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.");
-			writeText("Navigate a town and city deliberately working to sabotage yourself and throw yourself into the clutches of the zombie hordes, the goal of the game here is to be defeated and attacked to collect and unlock all of the game's scenes.");
-			writeText("Tags: Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Bestiality (optional), Parasites (optional)");
-			writeTransition("RainyDayZ", "Preview");
-			writeTransition("downloadRainyDayZ", "Download Rainy DayZ");
-			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12575'">Discussion thread</p>
-				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html'">Play the game online</p>
-				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ%20Mobile.html'">Play the mobile version</p>
 			`;
 			break;
 		}
