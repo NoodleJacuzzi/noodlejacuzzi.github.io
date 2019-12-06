@@ -560,7 +560,7 @@ function writeScene(scene) {
 			writeText("You, a scientist in the thick of a chaotic containment breach, must escape the facility with your life and mind intact.");
 			data.player.scenario = "The Facility";
 			updateMenu();
-			countScenes();
+			//countScenes();
 			writeSpecial("This scenario isn't done yet. Please come back in version 1.5. You can check out the intro though:");
 			writeFunction("writeEvent('start')", "View the intro");
 			//writeTransition("facilityStart", "Start The Facility");
@@ -582,6 +582,7 @@ function writeScene(scene) {
 }
 
 function writeEvent(n) {
+	wrapper.scrollTop = 0;
 	document.getElementById('output').innerHTML = '';
 	switch (n) {
 		case "basic1": {
@@ -919,7 +920,7 @@ function writeEvent(n) {
 			writeText("She struggled, sure, but she's probably been running on maybe an hour of sleep in the last three days. She gives up and just goes limp soon enough.");
 			writeSpeech("player", "", "Hey, relax, I'm human.");
 			writeText("That gets her attention. She stops struggling long enough for you maneuver yourself to sit down on her hips, pinning her to the ground.");
-			writeText("Now listen, you're got two choices. We do this the easy way, or the hard way.");
+			writeSpeech("player", "", "Now listen, you're got two choices. We do this the easy way, or the hard way.");
 			writeText("She tells you to let her go, that she doesn't have any supplies left, and that you should just leave her out here to die.");
 			writeText("Her voice dies in her throat once you've started taking your pants off. The moment she sees your cock, she starts to struggle again.");
 			writeSpeech("player", "", "Calm down, calm down. You know better than to scream out here, right? Good. <br>Look, I'm special alright? I'm infected, but I can still think and talk like normal. I can make you special too.");

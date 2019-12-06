@@ -348,7 +348,7 @@ p#author {
 
 /**** Canvas ****/
 .wrapper{
-    padding: 25px;
+    margin-left: 25px;
     background: none; /*To ensure WrapperBG shows, in case browser-native forces white background as default*/
     width: 100%;
 	height: 100%;
