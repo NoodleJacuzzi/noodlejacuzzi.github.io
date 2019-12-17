@@ -102,9 +102,18 @@ function replaceCodenames(text) {
 	for (geminiLoop = 0; geminiLoop < 5; geminiLoop++) {
 		text = text.replace('playerF', data.player.name);
 	}
-	if (data.player.uwu == true) {
+	if (data.player.oowoo == true) {
 		for (uwuLoop = 0; uwuLoop < 30; uwuLoop++) {
-			text = text.replace('<br>', "TESTTHING");
+			text = text.replace('<br>', "**");
+			var locationStorage1 = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+			console.log(locationStorage1);
+			text = text.replace("["+locationStorage1+"]", "*1");
+			var locationStorage2 = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+			text = text.replace("["+locationStorage2+"]", "*2");
+			var locationStorage3 = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+			text = text.replace("["+locationStorage3+"]", "*3");
+			var locationStorage4 = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+			text = text.replace("["+locationStorage4+"]", "*4");
 			text = text.replace('th', "d");
 			text = text.replace('Th', "D");
 			text = text.replace('what', "wat");
@@ -113,7 +122,11 @@ function replaceCodenames(text) {
 			text = text.replace('r', "w");
 			text = text.replace('L', "W");
 			text = text.replace('R', "W");
-			text = text.replace('TESTTHING', "<br>");
+			text = text.replace('**', "<br>");
+			text = text.replace('*1', "["+locationStorage1+"]");
+			text = text.replace('*2', "["+locationStorage2+"]");
+			text = text.replace('*3', "["+locationStorage3+"]");
+			text = text.replace('*4', "["+locationStorage4+"]");
 		}
 		switch (getRandomInt(15)) {
 			case 0:
@@ -164,6 +177,72 @@ function replaceCodenames(text) {
 			case 15:
 				text = text + " (≖ ︿ ≖ ✿)";
 			break;
+		}
+		for (geminiLoop = 0; geminiLoop < 5; geminiLoop++) {
+			if (data.player.scenario == "Rainy DayZ" ) {
+				if (text.includes('item[') == true) {
+					var locationTarget = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
+					var locationName = text.substring(text.lastIndexOf("|") + 1, text.lastIndexOf("]"));
+					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+					text = text.replace("item["+locationFull+"]", "<span class='blueText' onclick='grabItem(`"+locationTarget+"`)'>"+locationName+"</span>")
+				}
+				if (text.includes('event[') == true) {
+					var locationTarget = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
+					var locationName = text.substring(text.lastIndexOf("|") + 1, text.lastIndexOf("]"));
+					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+					text = text.replace("event["+locationFull+"]", "<span class='blueText' onclick='writeEvent(`"+locationTarget+"`)'>"+locationName+"</span>")
+				}
+				if (text.includes('drop[') == true) {
+					var locationTarget = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
+					var locationName = text.substring(text.lastIndexOf("|") + 1, text.lastIndexOf("]"));
+					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+					text = text.replace("drop["+locationFull+"]", "<span class='blueText' onclick='dropItem(`"+locationTarget+"`)'>"+locationName+"</span>")
+				}
+				if (text.includes('[') == true) {
+					var locationTarget = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
+					var locationName = text.substring(text.lastIndexOf("|") + 1, text.lastIndexOf("]"));
+					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+					text = text.replace("["+locationFull+"]", "<span class='blueText' onclick='sceneTransition(`"+locationTarget+"`)'>"+locationName+"</span>")
+				}
+			}
+			else {
+				if (text.includes('item[') == true) {
+					var locationName = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
+					console.log(locationName);
+					var locationTarget = text.substring(text.lastIndexOf("|") + 1, text.lastIndexOf("]"));
+					console.log(locationTarget);
+					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+					console.log(locationFull);
+					text = text.replace("item["+locationFull+"]", "<span class='blueText' onclick='grabItem(`"+locationTarget+"`)'>"+locationName+"</span>")
+				}
+				if (text.includes('event[') == true) {
+					var locationName = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
+					console.log(locationName);
+					var locationTarget = text.substring(text.lastIndexOf("|") + 1, text.lastIndexOf("]"));
+					console.log(locationTarget);
+					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+					console.log(locationFull);
+					text = text.replace("event["+locationFull+"]", "<span class='blueText' onclick='writeEvent(`"+locationTarget+"`)'>"+locationName+"</span>")
+				}
+				if (text.includes('drop[') == true) {
+					var locationName = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
+					console.log(locationName);
+					var locationTarget = text.substring(text.lastIndexOf("|") + 1, text.lastIndexOf("]"));
+					console.log(locationTarget);
+					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+					console.log(locationFull);
+					text = text.replace("drop["+locationFull+"]", "<span class='blueText' onclick='dropItem(`"+locationTarget+"`)'>"+locationName+"</span>")
+				}
+				if (text.includes('[') == true) {
+					var locationName = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
+					console.log(locationName);
+					var locationTarget = text.substring(text.lastIndexOf("|") + 1, text.lastIndexOf("]"));
+					console.log(locationTarget);
+					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+					console.log(locationFull);
+					text = text.replace("["+locationFull+"]", "<span class='blueText' onclick='sceneTransition(`"+locationTarget+"`)'>"+locationName+"</span>")
+				}
+			}
 		}
 	}
 	return text;
@@ -240,6 +319,9 @@ function eatSnack() {
 
 //Scene creation
 function writeText (text) {
+	if (text == "...") {
+		text = "<hr>";
+	}
 	document.getElementById('output').innerHTML += `
 		<p class='rawText'>` + replaceCodenames(text) + `</p>
 	`;
@@ -411,6 +493,27 @@ function updateMenu() {
 			document.getElementById('scenarioTotal').innerHTML = scenesCollected+" of "+totalScenes+" scenes unlocked.";
 			break;
 		}
+		case "Scarlet Mansion": {
+			document.getElementById('playerDesc').innerHTML = "A man defying military blockades to search for his MIA sister.";
+			document.getElementById('scenarioDesc').innerHTML = "You'll need to explore the mansion to find out where your sister is, or what happened to her.";
+			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/scarletMansion.jpg)";
+			document.getElementById('scenarioTotal').innerHTML = scenesCollected+" of "+totalScenes+" scenes unlocked.";
+			break;
+		}
+		case "Spread Island": {
+			document.getElementById('playerDesc').innerHTML = "A husband trying to escape an island resort with his infected wife in tow.";
+			document.getElementById('scenarioDesc').innerHTML = "Find a way off the island, make sure your wife stays in control of her infection, and make sure you aren't infected yourself.";
+			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/spreadIsland.jpg)";
+			document.getElementById('scenarioTotal').innerHTML = scenesCollected+" of "+totalScenes+" scenes unlocked.";
+			break;
+		}
+		case "On the Record": {
+			document.getElementById('playerDesc').innerHTML = "A reporter in the fray during one of the first major outbreaks of the infection.";
+			document.getElementById('scenarioDesc').innerHTML = "Your role is to collect evidence of what's going on, so gather intel. Helping folks is optional, just make sure you get good pictures!";
+			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/forTheRecord.jpg)";
+			document.getElementById('scenarioTotal').innerHTML = scenesCollected+" of "+totalScenes+" scenes unlocked.";
+			break;
+		}
 		default: {
 			document.getElementById('playerDesc').innerHTML = "";
 			document.getElementById('scenarioDesc').innerHTML = "";
@@ -427,9 +530,7 @@ function checkMenu() {
 		data.player.currentScene == "author" || 
 		data.player.currentScene == "gallery" || 
 		data.player.currentScene == "cheat" || 
-		data.player.currentScene == "unusedIdeas" || 
-		data.player.currentScene == "rainyDayZ" || 
-		data.player.currentScene == "theFacility"
+		data.player.currentScene == "unusedIdeas"
 	) {
 		document.getElementById("menu").style.width = "0px";	
 		document.getElementById("closeButton").style.visibility = "hidden";	
@@ -677,9 +778,14 @@ function diagnostic() {
 			}
 			break;
 		}
-		case "prude": {
-			data.player.pervert = false;
-			writeSpecial("Pervert mode deactivated!");
+		case "oowoo": {
+			if (data.player.oowoo != true) {
+				data.player.oowoo = true;
+				writeSpecial("OWO What's this?");
+			}
+			else {
+				writeText("Degenerate mode disabled.");
+			}
 			break;
 		}
 		case "hard rain": {
