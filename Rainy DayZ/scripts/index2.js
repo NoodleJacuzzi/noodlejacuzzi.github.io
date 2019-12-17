@@ -178,6 +178,7 @@ function replaceCodenames(text) {
 				text = text + " (≖ ︿ ≖ ✿)";
 			break;
 		}
+	}
 		for (geminiLoop = 0; geminiLoop < 5; geminiLoop++) {
 			if (data.player.scenario == "Rainy DayZ" ) {
 				if (text.includes('item[') == true) {
@@ -242,7 +243,6 @@ function replaceCodenames(text) {
 					console.log(locationFull);
 					text = text.replace("["+locationFull+"]", "<span class='blueText' onclick='sceneTransition(`"+locationTarget+"`)'>"+locationName+"</span>")
 				}
-			}
 		}
 	}
 	return text;
