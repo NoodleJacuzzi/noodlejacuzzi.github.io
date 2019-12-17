@@ -784,6 +784,7 @@ function diagnostic() {
 				writeSpecial("OWO What's this?");
 			}
 			else {
+				data.player.oowoo = false;
 				writeText("Degenerate mode disabled.");
 			}
 			break;
