@@ -1,33 +1,72 @@
 function writeScene(scene) {
-	console.log("Now writing scene ID " + scene + ", the time is " + data.player.time);
-	blockGame = false;
-	tileImages = tileImagesEmpty;
 	switch(scene) {
-		//System Locations
-		case "start" : {
-			writeMed("scripts/gamefiles/logo.png");
-			writeText("Bitch Medicenter is an adult game created by NoodleJacuuzi. You can find and keep up with all of my work, including Human Alteration App, Princess Quest, Rainy DayZ, Hentai University, and Anomaly Vault at my master index here:");
-			writeText("https://noodlejacuzzi.github.io/index.html");
+		case "start": {
+			document.getElementById('output').innerHTML += `
+				<img src="scripts/gamefiles/logo.png" class = "bigPicture" style="border: none; width: 30vw;"><br>
+				<p style ="margin: auto; text-align:center;">Username: <span style="background-color:white; color:black;"> ******** </span></p><br>
+				<p style ="margin: auto; text-align:center;">Password:  <span style="background-color:white; color:black;"> ******** </span></p>
+				<p class="choiceText" onclick="sceneTransition('mainMenu')" style="width: 30vw; border:none;">
+					Login
+				</p>
+				`;
+			break;
+		}
+		case "mainMenu": {
+			writeText("<p class='centeredText'>Terminal open, access granted. Please submit your request.</p>");
+			writeText("<p class='centeredText'>You have <b>4</b> saved documents in your <b>Introduction</b> folder.</p>");
+			writeTransition("caseSelect", "View case files");
+			writeTransition("prologue", "Open introduction folder");
+			writeText("...");
+			writeTransition("author", "Author Information", "#91eba9");
+			writeTransition("settings", "Game Settings", "#91eba9");
+			writeTransition("cheat", "Enter Cheat Codes", "#91eba9");
+			writeText("...");
+			writeTransition("start", "Log out", "#FF0000");
+			break;
+		}
+		case "settings": {
+			writeFunction("saveFile()", "Export save data to string");
+			writeFunction("loadFile()", "Import save data");
+			writeFunction("restartButton()", "Delete all save data", "#FF0000");
+			writeTransition("mainMenu", "Go back");
+			break;
+		}
+		case "author": {
+			writeText("Bitch Medicenter is an adult game created by NoodleJacuuzi. You can find and keep up with all of my work, including Human Alteration App, Princess Quest, Rainy DayZ, Hentai University, and Anomaly Vault at my <a href='https://noodlejacuzzi.github.io/index.html'>Master Index</a>.");
 			writeText("I especially recommend Human Alteration App's Dom Route and Anomaly Vault in particular, as they have a very similar tone and style to this game.");
 			writeText("This game features heavy use of themes of hypnosis and body modification. While all content in this game can be considered optional due to its structure, these two themes make up a large amount of the game's content.");
 			writeText("If there's a specific topic you'd like to avoid, you can read a potential treatment plan for each character detailing what will happen in the resulting scene. This game contains no underage or scatological content.");
-			writeText("The hypnosis and modification treatment plans each use a different type of minigame. Until I finish the hypnosis game, this game is exclusively focused on body modification content.");
-			writeTransition("homeScreen", "Begin the game");
-			//writeTransition("blocks", "Test modification game");
-			//writeFunction("triad('1', 'test2')", "Test Hypnosis Game");
-			writeText("Other notes:");
-			writeText("This game was made possible via Patreon, thank you to Swallows999, MrManPerson, Lasse B, ChronosEdge, Andy Amundy, brandon, Debarre Sonny, Drashin, iNoH8+, Mirza Hasan, murgatroid99, Oliver Jones, qwerty, Roy, Skyrim mod lvr, Snaked, Wild Bill, Will Osboldstone, and 凱 陳 for supporting my work.");
-			writeText("I'm always open to comments or criticism. If you have an idea for an artist or scene or you'd like to suggest content of your own, you can shoot me a message at anytime on TFgames, F95zone, or my Patreon page at https://www.patreon.com/noodlejacuzzi");
-			writeText("You can also send me a message on discord (I'm NoodleJacuzzi#4120) or an email at noodlejacuzzi@gmail.com");
+			writeText("I'm funded by <a href='https://www.patreon.com/noodlejacuzzi'>Patreon</a>, thank you to Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Robbie, Lasse B, andres mejia, Arthorias28, Badaxe, ChronosEdge, Colin E, Judavarius, Lunarghost, Marco Wassmer, Q Q, Scal, Taylor Trout, Adonnak, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Arthur radcliffe, Auckard, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, Chaaaanon, Charles Morris, David Lange, Debarre Sonny, Devin, Dewr, Drashin, Ed, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jacob Cannon, Jane, jdktjk205, Jesse Greene, joe, joe, joe mulhall, john smith, Joseph Gibbs, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Noah, Nutburger, Oliver Jones, Philipp, Prodigal211, qwerty, Roy, Ryan Linn, sage, Sebastian Eckel, Shawn, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, Ungy Bungy, valdis, Vincent Madaire-Cullen, Wayne culbert, Wild Bill, Will Osboldstone, William Richardson, Yongdian Guo, Your Husbando, Профессор Преображенский, and 凱 陳 for supporting my work!");
+			writeText("If you have any comments, criticisms, or suggestions for content for this or future chapters, please let me know about them on my patreon, or in the Noodle Jacuzzi <a href='https://discord.gg/pDht5BZ'>Discord</a> where I'd love to hear what you think!.");
+			writeText("As an extra note, no cheat codes, sorry. There's one you get for unlocking all the game's scenes, but you get that for unlocking all the scenes. If you have any cheat code ideas, please let me know!");
+			writeText("Thanks for reading this section. I really do recommend checking out my other works, I think they're pretty good too and I try to focus on not wasting a player's time.");
+			writeTransition("mainMenu", "Go back");
 			break;
 		}
-		case "homeScreen": {
-			writeMed("scripts/gamefiles/logo.png");
-			writeText("<p class='centeredText'>Terminal open, access granted. Please submit your request. You have <b>4</b> saved documents in your <b>Introduction</b> folder.</p>");
-			writeTransition("caseSelect", "View case files");
-			writeTransition("prologue", "Review introduction documents");
-			writeFunction("systemSettings()", "Change system settings");
-			writeTransition("start", "Exit terminal");
+		case "unusedIdeas": {
+			writeText("First and foremost, Rainy DayZ was originally a minigame for Human Alteration App, for that reason a lot of the code was kinda spaghetti, and the game was meant to be very short. Please let me know if any traces of that are still present (IE a scene is too short).");
+			writeText("The Rainy DayZ scenario was based on the left 4 dead 2 map Hard Rain, I thought the rainy aesthetic and the element of backtracking was really cool, although it didn't add too much from a gameplay standpoint with this being a text-based game. Other left 4 dead maps would be cool to riff off as well, but I wouldn't want to tread the exact same ground with the zombies.");
+			writeText("L4d also had really cool special infected, most of which I tried to make some kind of spin on. However ultimately hunters and witches felt too much like regular zombies, spitters boomers and jockies were just not appealing, and the rest were hard to find images that wouldn't completely break immersion. Resident evil was the biggest inspiration for special zombies.");
+			writeText("Zombie ideas are hard to come by since they need to be represented by regular people in the images, so nothing like Nemesis from RE3. I tried asking fans of the game for ideas, but no dice. Thus, I'll need to focus on situations in the future. The game already has the 'survivor scavenging for supplies' and 'scientist during a containment breach' stories, but there are a lot more I think could work:");
+			writeText("A husband and wife trying to escape a resort island during an outbreak. The wife is infected with a mild strain, so you need to help her while escaping the island. Based on Dead Island, this is the most likely pick for a scenario 3.");
+			writeText("A reporter enters a mall during an outbreak to get footage of what's going on. Based on Dead Rising, the biggest draw here is a system where you either help survivors or let them get turned while you record them, super evil!");
+			writeText("A man is stranded and seeks help in a seemingly abandoned town in Alaska, during a heavy snowstorm. This was actually the original idea for this game, which is why the 'unlock everything' cheat in v1 was cold mile. One cool idea is that halfway through enemy agents come into the town and try to hunt your down.");
+			writeText("Something based on silent hill, probably a pretty straightforwards 'man goes to spoopy town' storyline, but it'll be tough to capture SH's unnerving aesthetic.");
+			writeText("A hard-boiled agent investigates a spooky mansion. This one would be straight from Resident Evil 1, and would actually use drawn CGs from Eroquis's work instead of real porn gifs. I ended up scrapping it since it would deviate too far from the shemale zombie concept to straight up use resident evil's monsters, but it could probably end up being its own game.");
+			writeText("Similar to the above, a game set in space based on the CG from Eroquis's <i>Dirty Prison Ship</i> game. This one would probably also need to be its own game, as aliens are even farther from the original concept.");
+			writeText("Lemme know if you have any ideas to expand on the above, or just suggestions in general! Over the next few updates I hope to add more demos, check out these ones for a preview of what's to come:");
+			writeTransition("scarletMansion", "Preview - Scarlet Mansion");
+			writeTransition("onTheRecord", "Preview - On the Record");
+			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/streets.jpg)";
+			writeTransition("mainMenu", "Go back");
+			break;
+		}
+		case "cheat": {
+			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/streets.jpg)";document.getElementById('output').innerHTML += `
+				<p class='centeredText'>Enter cheat code: <input type="text" id="cheatSubmission" value=""></p>
+				<p class='choiceText' onclick='diagnostic()'>Submit</p>
+			`;
+			writeTransition("mainMenu", "Go back");
 			break;
 		}
 		case "caseSelect": {
@@ -35,7 +74,7 @@ function writeScene(scene) {
 			writeCase("wife");
 			writeCase("girlfriend");
 			writeTransition("potentialCases", "Request additional case files");
-			writeTransition("homeScreen", "Go back to the home screen");
+			writeTransition("mainMenu", "Go back");
 			break;
 		}
 		case "potentialCases": {
@@ -143,37 +182,24 @@ function writeScene(scene) {
 			writeTransition("start", "Go back");
 			break;
 		}
-		case "cheat": {
-			document.getElementById('output').innerHTML += `
-				<p class='centeredText'>You can enter cheat codes here.</p>
-				<p class='centeredText'>Enter cheat code: <input type="text" id="cheatSubmission" value=""></p>
-				<p class='choiceText' onclick='cheat()'>Submit</p>
-			`;
-			writeTransition("start", "Go back");
-			break;
-		}
-		case "gallery" : {
-			generateGalleryNav();
-			writeTransition("room", "Finish up");
-			break;
-		}
 		default: {
 			writeText("Something went wrong, and you've encountered a bug. Keep in mind where you just where and what you did, and let me know so I can fix it.");
 			writeText("Here's a list of important details. If you message me directly with these jams, I should have a better idea of what caused the problem:");
-			writeText("Tried to access:" + tempScene + "");
-			writeText("" + JSON.stringify(data) + "");
+			document.getElementById('output').innerHTML += `
+			` + JSON.stringify(data) + `
+			`;
 			writeText("Browser:" + navigator.appCodeName  + "");
 			writeText("OS:" + navigator.platform  + "");
+			writeText(scene);
 			writeBig("images/butts.jpg");
-			writeTransition("start", "Go back");
+			writeTransition("start", "Go back to the title.");
 		}
 	}
 }
 
 function writeEvent(scene) {
-	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
-	console.log('now writing event '+scene);
+	document.getElementById('output').innerHTML = '';
 	switch (scene) {
 		case "prologue1": {
 			break;
@@ -263,8 +289,8 @@ function writeEvent(scene) {
 		case "girlfriendAA": {
 			writeText("It's been only two days since the alteration, but already the pair's relationship had begun to change.");
 			writeText(characterArray[4].fName+" had been encouraging "+characterArray[6].fName+" to take a moment to enjoy the changes, promising that they'd get transformed back to normal at a more reputable clinic.");
-			writeText("And to his credit, "+characterArray[6].fName+" had certainly tried. He'd really gone at it and tried fapping, but to no avail. Even the most hardcore of porn could get him off with how his new pecker was acting.");
-			writeText("Just touching it was enough to kill any hope of a boner, almost like his brain was programmed not to recieve pleasure from his dick. No matter how much he tried to jerk off, nothing happened.");
+			writeText("And to his credit, "+characterArray[6].fName+" had certainly tried. He'd really gone at it and tried fapping, but to no avail. Even the most hardcore of porn couldn't get him off with how his pecker was acting.");
+			writeText("Just touching it was enough to kill any hope of a boner, almost like his brain was programmed not to receive pleasure from his dick. No matter how much he tried to jerk off, nothing happened.");
 			writeText(characterArray[4].fName+" offered to help, giving an enthusiastic blowjob to his pathetic little member, but it wasn't even close to enough.");
 			writeBig("images/girlfriend/girlfriendA-3.gif");
 			writeText("But when her tongue strayed lower to get a taste of that perfect puffy donut of an asshole, his attitude changed.");

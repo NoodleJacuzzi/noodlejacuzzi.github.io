@@ -2,7 +2,19 @@
 	left:0;
 	margin: auto;
 	padding: 0px;
-	height: 750px;
+	height: 75vh;
+}
+
+.blocksControlsTop{
+	width: 60vh;
+	margin:auto;
+	display:block;
+	text-align: center;
+}
+
+.blocksControlsTop p {
+	line-height: 1;
+	margin: 5px;
 }
 
 .title-tile-number{
@@ -21,10 +33,12 @@
 }
 
 .game-table{
-	width:90vw;
-	height:600px;
+	width:60vh;
+	height:60vh;
+	margin:auto;
 	background: #bbada0;
 	border-radius:5px;
+	touch-action: none;
 }
 
 .cell{
@@ -131,22 +145,4 @@
 	background:#edc501;
 	background-repeat: no-repeat;
 	background-size: cover;
-}
-
-@media all and (min-width:414px){
-	.game-area{
-		height: 550px;
-		width: 700px;
-	}
-	.game-table{
-		left:0;
-		width:414px;
-		height:414px;
-		background: #bbada0;
-		border-radius:5px;
-		margin: auto;
-	}
-	.scoreBox{
-		margin-left: 25%;
-	}
 }

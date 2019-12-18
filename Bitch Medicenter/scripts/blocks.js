@@ -30,7 +30,7 @@ function blocks() {
 	caseStage = 0;
 	document.getElementById('output').innerHTML = `
 	<div class = "game-area">
-		<table cellspacing = "10" class = "game-table">
+		<table cellspacing = "10" id = "game-table" class = "game-table">
 			<tr>
 				<td class="cell 1 a"></td>
 				<td class="cell 2 a"></td>
@@ -57,7 +57,7 @@ function blocks() {
 			</tr>
 		</table>
 		<div class = "score">
-			<span id = 'blocksControlsTop'>
+			<span class='blocksControlsTop' id = 'blocksControlsTop'>
 				<span class= "scoreBox">
 					<span class = "score-title">SCORE</span>
 					<span class = "score-value">0</span>
@@ -65,25 +65,1173 @@ function blocks() {
 					<span class = "score-value" id='score-target'>0</span>
 					<button type="button" onclick="generateBlocksBoard()">Restart Stage</button> 
 				</span>
-				<p class = 'centeredText'>Progress: Stage 
+				<p>Progress: Stage 
 					<span id='caseStage'>0</span> of 
 					<span id='caseTotal'>0</span>
 				</p>
 			</span>
-			<br>
-			<div class = "textBox">
+			<div class="textBox">
 				<img class = "textThumb" src = "scripts/gamefiles/logo.png">
-				<p class = "textName">Modification Status</p>
-				<p id="modificationStatus">Now commencing body modification treatment</p>
+				<div class="textBoxContent">
+					<p class = "textName">Modification Status</p>
+					<p id="modificationStatus">Now commencing body modification treatment</p>
+				</div>
 			</div>
-			<p class="choiceText" id="finishButton" onclick="writeEvent(tempScene)">Finish Treatment</p>
-			<span id = 'blocksControlsBottom'>
+			<div id="finishButton">
+				<p class="choiceText" onclick="writeEvent(tempScene)">Finish Treatment</p>
+			</div>
+			<div id="abortButton">
 				<p class="choiceText" onclick="sceneTransition('caseSelect')">Abort Treatment</p>
-				<p class="choiceText" id="skipButton" onclick="writeEvent(tempScene)">Skip Treatment</p>
-			</span>
+			</div>
+			<div id="skipButton">
+				<p class="choiceText" onclick="writeEvent(tempScene)">Skip Treatment</p>
+			</div>
 		</div>
 	</div>	
 	`;
+	document.getElementById("game-table").addEventListener("touchend", function(e){
+		deltaX = e.changedTouches[0].pageX - x1;
+		deltaY = e.changedTouches[0].pageY - y1;
+		console.log(deltaX);
+		console.log(deltaY);
+		if(deltaX > data.player.swipeStrength && Math.abs(deltaX) >= Math.abs(deltaY)){//right swipe
+			if (blockGame == true) {
+			e.preventDefault();
+
+				if(isMoveOver == 1){
+				for(i=0;i<4;i++){
+				if(c3[i].childNodes.length != 0){//checks whether the third column is filled of empty
+					if(c4[i].childNodes.length == 0){//if fourth column empty
+						moveX(c3[i],c4[i]);
+
+						if(c2[i].childNodes.length != 0){//if second column filled
+							if(c2[i].childNodes[0].classList[1] == c3[i].childNodes[0].classList[1]){//if second and third same
+								combineX(c2[i].childNodes[0],c3[i].childNodes[0]);
+
+								if(c1[i].childNodes.length != 0){//if first column filled
+									moveX(c1[i],c3[i]);
+								}
+							}
+							else{//if second third not same
+								moveX(c2[i],c3[i]);
+
+								if(c1[i].childNodes.length != 0){//if first column filled
+									
+									if(c1[i].childNodes[0].classList[1] == c2[i].childNodes[0].classList[1]){
+										combineX(c1[i].childNodes[0], c2[i].childNodes[0]);
+									}
+									
+									else{
+										moveX(c1[i],c2[i]);
+									}
+								}
+							}
+						}
+
+						else if(c1[i].childNodes.length != 0){
+							if(c1[i].childNodes[0].classList[1] == c3[i].childNodes[0].classList[1]){
+								combineX(c1[i].childNodes[0], c3[i].childNodes[0]);
+							}
+							else{
+								moveX(c1[i],c3[i]);
+							}
+						}
+					}
+
+					else if(c3[i].childNodes[0].classList[1] == c4[i].childNodes[0].classList[1]){//if fourth column filled and same
+						combineX(c3[i].childNodes[0],c4[i].childNodes[0]);
+
+						if(c2[i].childNodes.length != 0){//if second column filled
+							moveX(c2[i],c3[i]);
+
+							if(c1[i].childNodes.length != 0){
+								if(c1[i].childNodes[0].classList[1] == c2[i].childNodes[0].classList[1]){
+									combineX(c1[i].childNodes[0], c2[i].childNodes[0]);
+								}
+								else{
+									moveX(c1[i], c2[i]);
+								}
+							}
+						}
+
+						else if(c1[i].childNodes.length != 0){//if first column filled
+							moveX(c1[i],c3[i]);
+						}
+					}
+
+					else{
+						if(c2[i].childNodes.length != 0){
+							if(c2[i].childNodes[0].classList[1] == c3[i].childNodes[0].classList[1]){
+								combineX(c2[i].childNodes[0], c3[i].childNodes[0]);
+
+								if(c1[i].childNodes.length != 0){
+									moveX(c1[i],c2[i])
+								}
+							}
+
+							else if(c1[i].childNodes.length != 0){
+								if(c1[i].childNodes[0].classList[1] == c2[i].childNodes[0].classList[1]){
+									combineX(c1[i].childNodes[0], c2[i].childNodes[0]);		
+								}
+							}
+						}
+
+						else if(c1[i].childNodes.length != 0){
+							if(c1[i].childNodes[0].classList[1] == c3[i].childNodes[0].classList[1]){
+								combineX(c1[i].childNodes[0], c3[i].childNodes[0]);
+							}
+							else{
+								moveX(c1[i],c2[i]);
+							}
+						}
+					}
+				}
+
+				else if(c2[i].childNodes.length != 0){
+					if(c4[i].childNodes.length != 0){
+						if(c2[i].childNodes[0].classList[1] == c4[i].childNodes[0].classList[1]){
+							combineX(c2[i].childNodes[0],c4[i].childNodes[0]);
+
+							if(c1[i].childNodes.length != 0){
+								moveX(c1[i],c3[i]);
+							}
+						}
+
+						else{
+							moveX(c2[i],c3[i]);
+
+							if(c1[i].childNodes.length != 0){
+								if(c1[i].childNodes[0].classList[1] == c2[i].childNodes[0].classList[1]){
+									combineX(c1[i].childNodes[0],c2[i].childNodes[0]);
+								}
+								else{
+									moveX(c1[i],c2[i]);
+								}
+							}
+						}
+					}
+
+					else if(c1[i].childNodes.length != 0){
+						moveX(c2[i],c4[i]);
+
+						if(c1[i].childNodes[0].classList[1] == c2[i].childNodes[0].classList[1]){
+									combineX(c1[i].childNodes[0],c2[i].childNodes[0]);
+						}
+						else{
+							moveX(c1[i],c3[i]);
+						}
+					}
+
+					else{
+						moveX(c2[i],c4[i]);
+					}
+				}
+
+				else if(c1[i].childNodes.length != 0){
+					if(c4[i].childNodes.length != 0){
+						if(c1[i].childNodes[0].classList[1] == c4[i].childNodes[0].classList[1]){
+							combineX(c1[i].childNodes[0],c4[i].childNodes[0]);
+						}
+						else{
+							moveX(c1[i],c3[i]);
+						}
+					}
+					else{
+						moveX(c1[i],c4[i]);
+					}
+				}
+				}
+				}
+
+				isMoveOver = 0;
+
+				setTimeout(function(){isMoveOver=1}, 100);
+
+				setTimeout(function(){if(moveCount > 0 || combineCount > 0){
+					//randomElement();
+					moveCount = 0;
+					combineCount = 0;
+				}},transitionTime);
+
+				var check = 0;
+				setTimeout(function(){
+					emptyCount = 0;
+					for(i=0;i<16;i++){
+						if(document.getElementsByClassName("cell")[i].childNodes.length == 0){
+							emptyCount++;
+						}
+					}
+					if(emptyCount == 0){
+						for(i=0;i<4;i++){
+							if(i==0){
+								if(document.getElementsByClassName("1")[0].childNodes[0].classList[1] == document.getElementsByClassName("1")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("2")[0].childNodes[0].classList[1] == document.getElementsByClassName("2")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("3")[0].childNodes[0].classList[1] == document.getElementsByClassName("3")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("4")[0].childNodes[0].classList[1] == document.getElementsByClassName("4")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("a")[0].childNodes[0].classList[1] == document.getElementsByClassName("a")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("b")[0].childNodes[0].classList[1] == document.getElementsByClassName("b")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("c")[0].childNodes[0].classList[1] == document.getElementsByClassName("c")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("d")[0].childNodes[0].classList[1] == document.getElementsByClassName("d")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+							}
+							else if(i==3){
+								if(document.getElementsByClassName("1")[3].childNodes[0].classList[1] == document.getElementsByClassName("1")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("2")[3].childNodes[0].classList[1] == document.getElementsByClassName("2")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("3")[3].childNodes[0].classList[1] == document.getElementsByClassName("3")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("4")[3].childNodes[0].classList[1] == document.getElementsByClassName("4")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("a")[3].childNodes[0].classList[1] == document.getElementsByClassName("a")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("b")[3].childNodes[0].classList[1] == document.getElementsByClassName("b")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("c")[3].childNodes[0].classList[1] == document.getElementsByClassName("c")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("d")[3].childNodes[0].classList[1] == document.getElementsByClassName("d")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+							}	
+							else{
+								if(document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+							}
+						}
+						if(check==0){
+							var x = confirm("Sorry, you lose");
+							if(x == true){
+								restart();
+							}
+						}
+					}
+					
+				}, (transitionTime+20));
+			}
+		}
+
+		else if(deltaX < -data.player.swipeStrength && Math.abs(deltaX) >= Math.abs(deltaY)){//left swipe
+			if (blockGame == true) {
+			e.preventDefault();
+
+			if(isMoveOver == 1){
+			for(i=0;i<4;i++){
+				if(d2[i].childNodes.length != 0){//checks whether the third column is filled of empty
+					if(d1[i].childNodes.length == 0){//if fourth column empty
+						moveX(d2[i],d1[i]);
+
+						if(d3[i].childNodes.length != 0){//if second column filled
+							if(d3[i].childNodes[0].classList[1] == d2[i].childNodes[0].classList[1]){//if second and third same
+								combineX(d3[i].childNodes[0],d2[i].childNodes[0]);
+
+								if(d4[i].childNodes.length != 0){//if first column filled
+									moveX(d4[i],d2[i]);
+								}
+							}
+							else{//if second third not same
+								moveX(d3[i],d2[i]);
+
+								if(d4[i].childNodes.length != 0){//if first column filled
+									
+									if(d4[i].childNodes[0].classList[1] == d3[i].childNodes[0].classList[1]){
+										combineX(d4[i].childNodes[0], d3[i].childNodes[0]);
+									}
+									
+									else{
+										moveX(d4[i],d3[i]);
+									}
+								}
+							}
+						}
+
+						else if(d4[i].childNodes.length != 0){
+							if(d4[i].childNodes[0].classList[1] == d2[i].childNodes[0].classList[1]){
+								combineX(d4[i].childNodes[0], d2[i].childNodes[0]);
+							}
+							else{
+								moveX(d4[i],d2[i]);
+							}
+						}
+					}
+
+					else if(d2[i].childNodes[0].classList[1] == d1[i].childNodes[0].classList[1]){//if fourth column filled and same
+						combineX(d2[i].childNodes[0],d1[i].childNodes[0]);
+
+						if(d3[i].childNodes.length != 0){//if second column filled
+							moveX(d3[i],d2[i]);
+
+							if(d4[i].childNodes.length != 0){
+								if(d4[i].childNodes[0].classList[1] == d3[i].childNodes[0].classList[1]){
+									combineX(d4[i].childNodes[0], d3[i].childNodes[0]);
+								}
+								else{
+									moveX(d4[i], d3[i]);
+								}
+							}
+						}
+
+						else if(d4[i].childNodes.length != 0){//if first column filled
+							moveX(d4[i],d2[i]);
+						}
+					}
+
+					else{
+						if(d3[i].childNodes.length != 0){
+							if(d3[i].childNodes[0].classList[1] == d2[i].childNodes[0].classList[1]){
+								combineX(d3[i].childNodes[0], d2[i].childNodes[0]);
+
+								if(d4[i].childNodes.length != 0){
+									moveX(d4[i],d3[i])
+								}
+							}
+
+							else if(d4[i].childNodes.length != 0){
+								if(d4[i].childNodes[0].classList[1] == d3[i].childNodes[0].classList[1]){
+									combineX(d4[i].childNodes[0], d3[i].childNodes[0]);		
+								}
+							}
+						}
+
+						else if(d4[i].childNodes.length != 0){
+							if(d4[i].childNodes[0].classList[1] == d2[i].childNodes[0].classList[1]){
+								combineX(d4[i].childNodes[0], d2[i].childNodes[0]);
+
+							}
+							else{
+								moveX(d4[i],d3[i]);
+							}
+						}
+					}
+				}
+
+				else if(d3[i].childNodes.length != 0){
+					if(d1[i].childNodes.length != 0){
+						if(d3[i].childNodes[0].classList[1] == d1[i].childNodes[0].classList[1]){
+							combineX(d3[i].childNodes[0],d1[i].childNodes[0]);
+
+							if(d4[i].childNodes.length != 0){
+								moveX(d4[i],d2[i]);
+							}
+						}
+
+						else{
+							moveX(d3[i],d2[i]);
+
+							if(d4[i].childNodes.length != 0){
+								if(d4[i].childNodes[0].classList[1] == d3[i].childNodes[0].classList[1]){
+									combineX(d4[i].childNodes[0],d3[i].childNodes[0]);
+								}
+								else{
+									moveX(d4[i],d3[i]);
+								}
+							}
+						}
+					}
+
+					else if(d4[i].childNodes.length != 0){
+						moveX(d3[i],d1[i]);
+
+						if(d4[i].childNodes[0].classList[1] == d3[i].childNodes[0].classList[1]){
+									combineX(d4[i].childNodes[0],d3[i].childNodes[0]);
+						}
+						else{
+							moveX(d4[i],d2[i]);
+						}
+					}
+
+					else{
+						moveX(d3[i],d1[i]);
+					}
+				}
+
+				else if(d4[i].childNodes.length != 0){
+					if(d1[i].childNodes.length != 0){
+						if(d4[i].childNodes[0].classList[1] == d1[i].childNodes[0].classList[1]){
+							combineX(d4[i].childNodes[0],d1[i].childNodes[0]);
+						}
+						else{
+							moveX(d4[i],d2[i]);
+						}
+					}
+					else{
+						moveX(d4[i],d1[i]);
+					}
+				}
+				}
+				}
+
+				isMoveOver = 0;
+
+				setTimeout(function(){isMoveOver=1}, 100);
+
+				setTimeout(function(){if(moveCount > 0 || combineCount > 0){
+					//randomElement();
+					moveCount = 0;
+					combineCount = 0;
+				}},transitionTime);
+				
+				var check = 0;
+				setTimeout(function(){
+					emptyCount = 0;
+					for(i=0;i<16;i++){
+						if(document.getElementsByClassName("cell")[i].childNodes.length == 0){
+							emptyCount++;
+						}
+					}
+					if(emptyCount == 0){
+						for(i=0;i<4;i++){
+							if(i==0){
+								if(document.getElementsByClassName("1")[0].childNodes[0].classList[1] == document.getElementsByClassName("1")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("2")[0].childNodes[0].classList[1] == document.getElementsByClassName("2")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("3")[0].childNodes[0].classList[1] == document.getElementsByClassName("3")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("4")[0].childNodes[0].classList[1] == document.getElementsByClassName("4")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("a")[0].childNodes[0].classList[1] == document.getElementsByClassName("a")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("b")[0].childNodes[0].classList[1] == document.getElementsByClassName("b")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("c")[0].childNodes[0].classList[1] == document.getElementsByClassName("c")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("d")[0].childNodes[0].classList[1] == document.getElementsByClassName("d")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+							}
+							else if(i==3){
+								if(document.getElementsByClassName("1")[3].childNodes[0].classList[1] == document.getElementsByClassName("1")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("2")[3].childNodes[0].classList[1] == document.getElementsByClassName("2")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("3")[3].childNodes[0].classList[1] == document.getElementsByClassName("3")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("4")[3].childNodes[0].classList[1] == document.getElementsByClassName("4")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("a")[3].childNodes[0].classList[1] == document.getElementsByClassName("a")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("b")[3].childNodes[0].classList[1] == document.getElementsByClassName("b")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("c")[3].childNodes[0].classList[1] == document.getElementsByClassName("c")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("d")[3].childNodes[0].classList[1] == document.getElementsByClassName("d")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+							}	
+							else{
+								if(document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+							}
+						}
+						if(check==0){
+							var x = confirm("Sorry, you lose");
+							if(x == true){
+								restart();
+							}
+						}
+					}
+					
+				}, (transitionTime+20));
+				
+		}
+		}
+
+		else if(deltaY < -data.player.swipeStrength && Math.abs(deltaX) <= Math.abs(deltaY)){//upper swipe
+			if (blockGame == true) {
+			e.preventDefault();
+
+			if(isMoveOver == 1){
+			for(i=0;i<4;i++){
+				if(s2[i].childNodes.length != 0){//checks whether the third column is filled of empty
+					if(s1[i].childNodes.length == 0){//if fourth column empty
+						moveY(s2[i],s1[i]);
+
+						if(s3[i].childNodes.length != 0){//if second column filled
+							if(s3[i].childNodes[0].classList[1] == s2[i].childNodes[0].classList[1]){//if second and third same
+								combineY(s3[i].childNodes[0],s2[i].childNodes[0]);
+
+								if(s4[i].childNodes.length != 0){//if first column filled
+									moveY(s4[i],s2[i]);
+								}
+							}
+							else{//if second third not same
+								moveY(s3[i],s2[i]);
+
+								if(s4[i].childNodes.length != 0){//if first column filled
+									
+									if(s4[i].childNodes[0].classList[1] == s3[i].childNodes[0].classList[1]){
+										combineY(s4[i].childNodes[0], s3[i].childNodes[0]);
+									}
+									
+									else{
+										moveY(s4[i],s3[i]);
+									}
+								}
+							}
+						}
+
+						else if(s4[i].childNodes.length != 0){
+							if(s4[i].childNodes[0].classList[1] == s2[i].childNodes[0].classList[1]){
+								combineY(s4[i].childNodes[0], s2[i].childNodes[0]);
+							}
+							else{
+								moveY(s4[i],s2[i]);
+							}
+						}
+					}
+
+					else if(s2[i].childNodes[0].classList[1] == s1[i].childNodes[0].classList[1]){//if fourth column filled and same
+						combineY(s2[i].childNodes[0],s1[i].childNodes[0]);
+
+						if(s3[i].childNodes.length != 0){//if second column filled
+							moveY(s3[i],s2[i]);
+
+							if(s4[i].childNodes.length != 0){
+								if(s4[i].childNodes[0].classList[1] == s3[i].childNodes[0].classList[1]){
+									combineY(s4[i].childNodes[0], s3[i].childNodes[0]);
+								}
+								else{
+									moveY(s4[i], s3[i]);
+								}
+							}
+						}
+
+						else if(s4[i].childNodes.length != 0){//if first column filled
+							moveY(s4[i],s2[i]);
+						}
+					}
+
+					else{
+						if(s3[i].childNodes.length != 0){
+							if(s3[i].childNodes[0].classList[1] == s2[i].childNodes[0].classList[1]){
+								combineY(s3[i].childNodes[0], s2[i].childNodes[0]);
+
+								if(s4[i].childNodes.length != 0){
+									moveY(s4[i],s3[i])
+								}
+							}
+
+							else if(s4[i].childNodes.length != 0){
+								if(s4[i].childNodes[0].classList[1] == s3[i].childNodes[0].classList[1]){
+									combineY(s4[i].childNodes[0], s3[i].childNodes[0]);		
+								}
+							}
+						}
+
+						else if(s4[i].childNodes.length != 0){
+							if(s4[i].childNodes[0].classList[1] == s2[i].childNodes[0].classList[1]){
+								combineY(s4[i].childNodes[0], s2[i].childNodes[0]);
+							}
+							else{
+								moveY(s4[i],s3[i]);
+							}
+						}
+					}
+				}
+
+				else if(s3[i].childNodes.length != 0){
+					if(s1[i].childNodes.length != 0){
+						if(s3[i].childNodes[0].classList[1] == s1[i].childNodes[0].classList[1]){
+							combineY(s3[i].childNodes[0],s1[i].childNodes[0]);
+
+							if(s4[i].childNodes.length != 0){
+								moveY(s4[i],s2[i]);
+							}
+						}
+
+						else{
+							moveY(s3[i],s2[i]);
+
+							if(s4[i].childNodes.length != 0){
+								if(s4[i].childNodes[0].classList[1] == s3[i].childNodes[0].classList[1]){
+									combineY(s4[i].childNodes[0],s3[i].childNodes[0]);
+								}
+								else{
+									moveY(s4[i],s3[i]);
+								}
+							}
+						}
+					}
+
+					else if(s4[i].childNodes.length != 0){
+						moveY(s3[i],s1[i]);
+
+						if(s4[i].childNodes[0].classList[1] == s3[i].childNodes[0].classList[1]){
+									combineY(s4[i].childNodes[0],s3[i].childNodes[0]);
+						}
+						else{
+							moveY(s4[i],s2[i]);
+						}
+					}
+
+					else{
+						moveY(s3[i],s1[i]);
+					}
+				}
+
+				else if(s4[i].childNodes.length != 0){
+					if(s1[i].childNodes.length != 0){
+						if(s4[i].childNodes[0].classList[1] == s1[i].childNodes[0].classList[1]){
+							combineY(s4[i].childNodes[0],s1[i].childNodes[0]);
+						}
+						else{
+							moveY(s4[i],s2[i]);
+						}
+					}
+					else{
+						moveY(s4[i],s1[i]);
+					}
+				}
+				}
+				}
+
+				isMoveOver = 0;
+
+				setTimeout(function(){isMoveOver=1}, 100);
+
+				setTimeout(function(){if(moveCount > 0 || combineCount > 0){
+					//randomElement();
+					moveCount = 0;
+					combineCount = 0;
+				}},transitionTime);
+
+				var check = 0;
+				setTimeout(function(){
+					emptyCount = 0;
+					for(i=0;i<16;i++){
+						if(document.getElementsByClassName("cell")[i].childNodes.length == 0){
+							emptyCount++;
+						}
+					}
+					if(emptyCount == 0){
+						for(i=0;i<4;i++){
+							if(i==0){
+								if(document.getElementsByClassName("1")[0].childNodes[0].classList[1] == document.getElementsByClassName("1")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("2")[0].childNodes[0].classList[1] == document.getElementsByClassName("2")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("3")[0].childNodes[0].classList[1] == document.getElementsByClassName("3")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("4")[0].childNodes[0].classList[1] == document.getElementsByClassName("4")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("a")[0].childNodes[0].classList[1] == document.getElementsByClassName("a")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("b")[0].childNodes[0].classList[1] == document.getElementsByClassName("b")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("c")[0].childNodes[0].classList[1] == document.getElementsByClassName("c")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("d")[0].childNodes[0].classList[1] == document.getElementsByClassName("d")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+							}
+							else if(i==3){
+								if(document.getElementsByClassName("1")[3].childNodes[0].classList[1] == document.getElementsByClassName("1")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("2")[3].childNodes[0].classList[1] == document.getElementsByClassName("2")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("3")[3].childNodes[0].classList[1] == document.getElementsByClassName("3")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("4")[3].childNodes[0].classList[1] == document.getElementsByClassName("4")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("a")[3].childNodes[0].classList[1] == document.getElementsByClassName("a")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("b")[3].childNodes[0].classList[1] == document.getElementsByClassName("b")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("c")[3].childNodes[0].classList[1] == document.getElementsByClassName("c")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("d")[3].childNodes[0].classList[1] == document.getElementsByClassName("d")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+							}	
+							else{
+								if(document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+							}
+						}
+						if(check==0){
+							var x = confirm("Sorry, you lose");
+							if(x == true){
+								restart();
+							}
+						}
+					}
+					
+				}, (transitionTime+20));
+		}
+		}
+
+		else if(deltaY > data.player.swipeStrength && Math.abs(deltaX) <= Math.abs(deltaY)){//lower swipe
+			if (blockGame == true) {
+			e.preventDefault();
+
+			if(isMoveOver == 1){
+			for(i=0;i<4;i++){
+				if(r3[i].childNodes.length != 0){//checks whether the third column is filled of empty
+					if(r4[i].childNodes.length == 0){//if fourth column empty
+						moveY(r3[i],r4[i]);
+
+						if(r2[i].childNodes.length != 0){//if second column filled
+							if(r2[i].childNodes[0].classList[1] == r3[i].childNodes[0].classList[1]){//if second and third same
+								combineY(r2[i].childNodes[0],r3[i].childNodes[0]);
+
+								if(r1[i].childNodes.length != 0){//if first column filled
+									moveY(r1[i],r3[i]);
+								}
+							}
+							else{//if second third not same
+								moveY(r2[i],r3[i]);
+
+								if(r1[i].childNodes.length != 0){//if first column filled
+									
+									if(r1[i].childNodes[0].classList[1] == r2[i].childNodes[0].classList[1]){
+										combineY(r1[i].childNodes[0], r2[i].childNodes[0]);
+									}
+									
+									else{
+										moveY(r1[i],r2[i]);
+									}
+								}
+							}
+						}
+
+						else if(r1[i].childNodes.length != 0){
+							if(r1[i].childNodes[0].classList[1] == r3[i].childNodes[0].classList[1]){
+								combineY(r1[i].childNodes[0], r3[i].childNodes[0]);
+							}
+							else{
+								moveY(r1[i],r3[i]);
+							}
+						}
+					}
+
+					else if(r3[i].childNodes[0].classList[1] == r4[i].childNodes[0].classList[1]){//if fourth column filled and same
+						combineY(r3[i].childNodes[0],r4[i].childNodes[0]);
+
+						if(r2[i].childNodes.length != 0){//if second column filled
+							moveY(r2[i],r3[i]);
+
+							if(r1[i].childNodes.length != 0){
+								if(r1[i].childNodes[0].classList[1] == r2[i].childNodes[0].classList[1]){
+									combineY(r1[i].childNodes[0], r2[i].childNodes[0]);
+								}
+								else{
+									moveY(r1[i], r2[i]);
+								}
+							}
+						}
+
+						else if(r1[i].childNodes.length != 0){//if first column filled
+							moveY(r1[i],r3[i]);
+						}
+					}
+
+					else{
+						if(r2[i].childNodes.length != 0){
+							if(r2[i].childNodes[0].classList[1] == r3[i].childNodes[0].classList[1]){
+								combineY(r2[i].childNodes[0], r3[i].childNodes[0]);
+
+								if(r1[i].childNodes.length != 0){
+									moveY(r1[i],r2[i])
+								}
+							}
+
+							else if(r1[i].childNodes.length != 0){
+								if(r1[i].childNodes[0].classList[1] == r2[i].childNodes[0].classList[1]){
+									combineY(r1[i].childNodes[0], r2[i].childNodes[0]);		
+								}
+							}
+						}
+
+						else if(r1[i].childNodes.length != 0){
+							if(r1[i].childNodes[0].classList[1] == r3[i].childNodes[0].classList[1]){
+								combineY(r1[i].childNodes[0], r3[i].childNodes[0]);
+							}
+							else{
+								moveY(r1[i],r2[i]);
+							}
+						}
+					}
+				}
+
+				else if(r2[i].childNodes.length != 0){
+					if(r4[i].childNodes.length != 0){
+						if(r2[i].childNodes[0].classList[1] == r4[i].childNodes[0].classList[1]){
+							combineY(r2[i].childNodes[0],r4[i].childNodes[0]);
+
+							if(r1[i].childNodes.length != 0){
+								moveY(r1[i],r3[i]);
+							}
+						}
+
+						else{
+							moveY(r2[i],r3[i]);
+
+							if(r1[i].childNodes.length != 0){
+								if(r1[i].childNodes[0].classList[1] == r2[i].childNodes[0].classList[1]){
+									combineY(r1[i].childNodes[0],r2[i].childNodes[0]);
+								}
+								else{
+									moveY(r1[i],r2[i]);
+								}
+							}
+						}
+					}
+
+					else if(r1[i].childNodes.length != 0){
+						moveY(r2[i],r4[i]);
+
+						if(r1[i].childNodes[0].classList[1] == r2[i].childNodes[0].classList[1]){
+									combineY(r1[i].childNodes[0],r2[i].childNodes[0]);
+						}
+						else{
+							moveY(r1[i],r3[i]);
+						}
+					}
+
+					else{
+						moveY(r2[i],r4[i]);
+					}
+				}
+
+				else if(r1[i].childNodes.length != 0){
+					if(r4[i].childNodes.length != 0){
+						if(r1[i].childNodes[0].classList[1] == r4[i].childNodes[0].classList[1]){
+							combineY(r1[i].childNodes[0],r4[i].childNodes[0]);
+						}
+						else{
+							moveY(r1[i],r3[i]);
+						}
+					}
+					else{
+						moveY(r1[i],r4[i]);
+					}
+				}
+				}
+				}
+
+				isMoveOver = 0;
+
+				setTimeout(function(){isMoveOver=1}, 100);
+				
+				setTimeout(function(){if(moveCount > 0 || combineCount > 0){
+					//randomElement();
+					moveCount = 0;
+					combineCount = 0;
+				}},transitionTime);
+				
+				var check = 0;
+				setTimeout(function(){
+					emptyCount = 0;
+					for(i=0;i<16;i++){
+						if(document.getElementsByClassName("cell")[i].childNodes.length == 0){
+							emptyCount++;
+						}
+					}
+					if(emptyCount == 0){
+						for(i=0;i<4;i++){
+							if(i==0){
+								if(document.getElementsByClassName("1")[0].childNodes[0].classList[1] == document.getElementsByClassName("1")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("2")[0].childNodes[0].classList[1] == document.getElementsByClassName("2")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("3")[0].childNodes[0].classList[1] == document.getElementsByClassName("3")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("4")[0].childNodes[0].classList[1] == document.getElementsByClassName("4")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("a")[0].childNodes[0].classList[1] == document.getElementsByClassName("a")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("b")[0].childNodes[0].classList[1] == document.getElementsByClassName("b")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("c")[0].childNodes[0].classList[1] == document.getElementsByClassName("c")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("d")[0].childNodes[0].classList[1] == document.getElementsByClassName("d")[1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+							}
+							else if(i==3){
+								if(document.getElementsByClassName("1")[3].childNodes[0].classList[1] == document.getElementsByClassName("1")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("2")[3].childNodes[0].classList[1] == document.getElementsByClassName("2")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("3")[3].childNodes[0].classList[1] == document.getElementsByClassName("3")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("4")[3].childNodes[0].classList[1] == document.getElementsByClassName("4")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("a")[3].childNodes[0].classList[1] == document.getElementsByClassName("a")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("b")[3].childNodes[0].classList[1] == document.getElementsByClassName("b")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("c")[3].childNodes[0].classList[1] == document.getElementsByClassName("c")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("d")[3].childNodes[0].classList[1] == document.getElementsByClassName("d")[2].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+							}	
+							else{
+								if(document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+								else if(document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i+1].childNodes[0].classList[1]){
+									check++;
+									break;
+								}
+							}
+						}
+						if(check==0){
+							var x = confirm("Sorry, you lose");
+							if(x == true){
+								restart();
+							}
+						}
+					}
+					
+				}, (transitionTime+20));
+		}
+		}
+	});
 	game();
 	updateImages();
 }
@@ -182,6 +1330,11 @@ var maps = [
 function generateBlocksBoard() {
 	var gameDone = false;
 	restart();
+	setTimeout(setBoard, 100);
+}
+
+function setBoard() {
+	var gameDone = false;
 	switch (tempScene) {
 		case "wifeA": {
 			tileImages = wifeImages;
@@ -252,15 +1405,15 @@ function generateBlocksBoard() {
 	document.getElementById("score-target").innerHTML = target;
 	document.getElementById("caseStage").innerHTML = caseStage + 1;
 	if (galleryCheck(tempScene) == true) {
-		document.getElementById("skipButton").innerHTML = "Skip Treatment";
+		document.getElementById("skipButton").innerHTML = `<p class="choiceText" onclick="writeEvent(tempScene)">Skip Treatment</p>`;
 	}
 	else {
 		document.getElementById("skipButton").innerHTML = "";
 	}
 	if (gameDone == true) {
-		document.getElementById('blocksControlsTop').innerHTML = '';
-		document.getElementById('blocksControlsBottom').innerHTML = '';
-		document.getElementById("finishButton").innerHTML = "Finish Treatment";
+		document.getElementById("blocksControlsTop").style.visibility = "hidden";
+		document.getElementById("finishButton").innerHTML = `<p class="choiceText" onclick="writeEvent(tempScene)">Finish Treatment</p>`;
+		document.getElementById("skipButton").innerHTML = "";
 	}
 	else {
 		document.getElementById("finishButton").innerHTML = "";
@@ -483,7 +1636,7 @@ function moveY(a,b){//called to move a tile from one cell to another, format -> 
 function restart(){
 	for(i=0;i<16;i++){
 		if (document.getElementsByClassName("cell")[i].childNodes[0]) {
-		document.getElementsByClassName("cell")[i].childNodes[0].remove();
+			document.getElementsByClassName("cell")[i].childNodes[0].remove();
 		}
 	}
 	//randomElement();
@@ -1659,1149 +2812,5 @@ document.addEventListener("touchstart", function(e){
 	//e.preventDefault();
 	x1 = e.changedTouches[0].pageX;
 	y1 = e.changedTouches[0].pageY;
-});
-
-document.addEventListener("touchend", function(e){
-	deltaX = e.changedTouches[0].pageX - x1;
-	deltaY = e.changedTouches[0].pageY - y1;
-	console.log(deltaX);
-	console.log(deltaY);
-
-	if(deltaX > data.player.swipeStrength && Math.abs(deltaX) >= Math.abs(deltaY)){//right swipe
-		if (blockGame == true) {
-		e.preventDefault();
-
-			if(isMoveOver == 1){
-			for(i=0;i<4;i++){
-			if(c3[i].childNodes.length != 0){//checks whether the third column is filled of empty
-				if(c4[i].childNodes.length == 0){//if fourth column empty
-					moveX(c3[i],c4[i]);
-
-					if(c2[i].childNodes.length != 0){//if second column filled
-						if(c2[i].childNodes[0].classList[1] == c3[i].childNodes[0].classList[1]){//if second and third same
-							combineX(c2[i].childNodes[0],c3[i].childNodes[0]);
-
-							if(c1[i].childNodes.length != 0){//if first column filled
-								moveX(c1[i],c3[i]);
-							}
-						}
-						else{//if second third not same
-							moveX(c2[i],c3[i]);
-
-							if(c1[i].childNodes.length != 0){//if first column filled
-								
-								if(c1[i].childNodes[0].classList[1] == c2[i].childNodes[0].classList[1]){
-									combineX(c1[i].childNodes[0], c2[i].childNodes[0]);
-								}
-								
-								else{
-									moveX(c1[i],c2[i]);
-								}
-							}
-						}
-					}
-
-					else if(c1[i].childNodes.length != 0){
-						if(c1[i].childNodes[0].classList[1] == c3[i].childNodes[0].classList[1]){
-							combineX(c1[i].childNodes[0], c3[i].childNodes[0]);
-						}
-						else{
-							moveX(c1[i],c3[i]);
-						}
-					}
-				}
-
-				else if(c3[i].childNodes[0].classList[1] == c4[i].childNodes[0].classList[1]){//if fourth column filled and same
-					combineX(c3[i].childNodes[0],c4[i].childNodes[0]);
-
-					if(c2[i].childNodes.length != 0){//if second column filled
-						moveX(c2[i],c3[i]);
-
-						if(c1[i].childNodes.length != 0){
-							if(c1[i].childNodes[0].classList[1] == c2[i].childNodes[0].classList[1]){
-								combineX(c1[i].childNodes[0], c2[i].childNodes[0]);
-							}
-							else{
-								moveX(c1[i], c2[i]);
-							}
-						}
-					}
-
-					else if(c1[i].childNodes.length != 0){//if first column filled
-						moveX(c1[i],c3[i]);
-					}
-				}
-
-				else{
-					if(c2[i].childNodes.length != 0){
-						if(c2[i].childNodes[0].classList[1] == c3[i].childNodes[0].classList[1]){
-							combineX(c2[i].childNodes[0], c3[i].childNodes[0]);
-
-							if(c1[i].childNodes.length != 0){
-								moveX(c1[i],c2[i])
-							}
-						}
-
-						else if(c1[i].childNodes.length != 0){
-							if(c1[i].childNodes[0].classList[1] == c2[i].childNodes[0].classList[1]){
-								combineX(c1[i].childNodes[0], c2[i].childNodes[0]);		
-							}
-						}
-					}
-
-					else if(c1[i].childNodes.length != 0){
-						if(c1[i].childNodes[0].classList[1] == c3[i].childNodes[0].classList[1]){
-							combineX(c1[i].childNodes[0], c3[i].childNodes[0]);
-						}
-						else{
-							moveX(c1[i],c2[i]);
-						}
-					}
-				}
-			}
-
-			else if(c2[i].childNodes.length != 0){
-				if(c4[i].childNodes.length != 0){
-					if(c2[i].childNodes[0].classList[1] == c4[i].childNodes[0].classList[1]){
-						combineX(c2[i].childNodes[0],c4[i].childNodes[0]);
-
-						if(c1[i].childNodes.length != 0){
-							moveX(c1[i],c3[i]);
-						}
-					}
-
-					else{
-						moveX(c2[i],c3[i]);
-
-						if(c1[i].childNodes.length != 0){
-							if(c1[i].childNodes[0].classList[1] == c2[i].childNodes[0].classList[1]){
-								combineX(c1[i].childNodes[0],c2[i].childNodes[0]);
-							}
-							else{
-								moveX(c1[i],c2[i]);
-							}
-						}
-					}
-				}
-
-				else if(c1[i].childNodes.length != 0){
-					moveX(c2[i],c4[i]);
-
-					if(c1[i].childNodes[0].classList[1] == c2[i].childNodes[0].classList[1]){
-								combineX(c1[i].childNodes[0],c2[i].childNodes[0]);
-					}
-					else{
-						moveX(c1[i],c3[i]);
-					}
-				}
-
-				else{
-					moveX(c2[i],c4[i]);
-				}
-			}
-
-			else if(c1[i].childNodes.length != 0){
-				if(c4[i].childNodes.length != 0){
-					if(c1[i].childNodes[0].classList[1] == c4[i].childNodes[0].classList[1]){
-						combineX(c1[i].childNodes[0],c4[i].childNodes[0]);
-					}
-					else{
-						moveX(c1[i],c3[i]);
-					}
-				}
-				else{
-					moveX(c1[i],c4[i]);
-				}
-			}
-			}
-			}
-
-			isMoveOver = 0;
-
-			setTimeout(function(){isMoveOver=1}, 100);
-
-			setTimeout(function(){if(moveCount > 0 || combineCount > 0){
-				//randomElement();
-				moveCount = 0;
-				combineCount = 0;
-			}},transitionTime);
-
-			var check = 0;
-			setTimeout(function(){
-				emptyCount = 0;
-				for(i=0;i<16;i++){
-					if(document.getElementsByClassName("cell")[i].childNodes.length == 0){
-						emptyCount++;
-					}
-				}
-				if(emptyCount == 0){
-					for(i=0;i<4;i++){
-						if(i==0){
-							if(document.getElementsByClassName("1")[0].childNodes[0].classList[1] == document.getElementsByClassName("1")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("2")[0].childNodes[0].classList[1] == document.getElementsByClassName("2")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("3")[0].childNodes[0].classList[1] == document.getElementsByClassName("3")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("4")[0].childNodes[0].classList[1] == document.getElementsByClassName("4")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("a")[0].childNodes[0].classList[1] == document.getElementsByClassName("a")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("b")[0].childNodes[0].classList[1] == document.getElementsByClassName("b")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("c")[0].childNodes[0].classList[1] == document.getElementsByClassName("c")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("d")[0].childNodes[0].classList[1] == document.getElementsByClassName("d")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-						}
-						else if(i==3){
-							if(document.getElementsByClassName("1")[3].childNodes[0].classList[1] == document.getElementsByClassName("1")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("2")[3].childNodes[0].classList[1] == document.getElementsByClassName("2")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("3")[3].childNodes[0].classList[1] == document.getElementsByClassName("3")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("4")[3].childNodes[0].classList[1] == document.getElementsByClassName("4")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("a")[3].childNodes[0].classList[1] == document.getElementsByClassName("a")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("b")[3].childNodes[0].classList[1] == document.getElementsByClassName("b")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("c")[3].childNodes[0].classList[1] == document.getElementsByClassName("c")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("d")[3].childNodes[0].classList[1] == document.getElementsByClassName("d")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-						}	
-						else{
-							if(document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-						}
-					}
-					if(check==0){
-						var x = confirm("Sorry, you lose");
-						if(x == true){
-							restart();
-						}
-					}
-				}
-				
-			}, (transitionTime+20));
-		}
-	}
-
-	else if(deltaX < -data.player.swipeStrength && Math.abs(deltaX) >= Math.abs(deltaY)){//left swipe
-		if (blockGame == true) {
-		e.preventDefault();
-
-		if(isMoveOver == 1){
-		for(i=0;i<4;i++){
-			if(d2[i].childNodes.length != 0){//checks whether the third column is filled of empty
-				if(d1[i].childNodes.length == 0){//if fourth column empty
-					moveX(d2[i],d1[i]);
-
-					if(d3[i].childNodes.length != 0){//if second column filled
-						if(d3[i].childNodes[0].classList[1] == d2[i].childNodes[0].classList[1]){//if second and third same
-							combineX(d3[i].childNodes[0],d2[i].childNodes[0]);
-
-							if(d4[i].childNodes.length != 0){//if first column filled
-								moveX(d4[i],d2[i]);
-							}
-						}
-						else{//if second third not same
-							moveX(d3[i],d2[i]);
-
-							if(d4[i].childNodes.length != 0){//if first column filled
-								
-								if(d4[i].childNodes[0].classList[1] == d3[i].childNodes[0].classList[1]){
-									combineX(d4[i].childNodes[0], d3[i].childNodes[0]);
-								}
-								
-								else{
-									moveX(d4[i],d3[i]);
-								}
-							}
-						}
-					}
-
-					else if(d4[i].childNodes.length != 0){
-						if(d4[i].childNodes[0].classList[1] == d2[i].childNodes[0].classList[1]){
-							combineX(d4[i].childNodes[0], d2[i].childNodes[0]);
-						}
-						else{
-							moveX(d4[i],d2[i]);
-						}
-					}
-				}
-
-				else if(d2[i].childNodes[0].classList[1] == d1[i].childNodes[0].classList[1]){//if fourth column filled and same
-					combineX(d2[i].childNodes[0],d1[i].childNodes[0]);
-
-					if(d3[i].childNodes.length != 0){//if second column filled
-						moveX(d3[i],d2[i]);
-
-						if(d4[i].childNodes.length != 0){
-							if(d4[i].childNodes[0].classList[1] == d3[i].childNodes[0].classList[1]){
-								combineX(d4[i].childNodes[0], d3[i].childNodes[0]);
-							}
-							else{
-								moveX(d4[i], d3[i]);
-							}
-						}
-					}
-
-					else if(d4[i].childNodes.length != 0){//if first column filled
-						moveX(d4[i],d2[i]);
-					}
-				}
-
-				else{
-					if(d3[i].childNodes.length != 0){
-						if(d3[i].childNodes[0].classList[1] == d2[i].childNodes[0].classList[1]){
-							combineX(d3[i].childNodes[0], d2[i].childNodes[0]);
-
-							if(d4[i].childNodes.length != 0){
-								moveX(d4[i],d3[i])
-							}
-						}
-
-						else if(d4[i].childNodes.length != 0){
-							if(d4[i].childNodes[0].classList[1] == d3[i].childNodes[0].classList[1]){
-								combineX(d4[i].childNodes[0], d3[i].childNodes[0]);		
-							}
-						}
-					}
-
-					else if(d4[i].childNodes.length != 0){
-						if(d4[i].childNodes[0].classList[1] == d2[i].childNodes[0].classList[1]){
-							combineX(d4[i].childNodes[0], d2[i].childNodes[0]);
-
-						}
-						else{
-							moveX(d4[i],d3[i]);
-						}
-					}
-				}
-			}
-
-			else if(d3[i].childNodes.length != 0){
-				if(d1[i].childNodes.length != 0){
-					if(d3[i].childNodes[0].classList[1] == d1[i].childNodes[0].classList[1]){
-						combineX(d3[i].childNodes[0],d1[i].childNodes[0]);
-
-						if(d4[i].childNodes.length != 0){
-							moveX(d4[i],d2[i]);
-						}
-					}
-
-					else{
-						moveX(d3[i],d2[i]);
-
-						if(d4[i].childNodes.length != 0){
-							if(d4[i].childNodes[0].classList[1] == d3[i].childNodes[0].classList[1]){
-								combineX(d4[i].childNodes[0],d3[i].childNodes[0]);
-							}
-							else{
-								moveX(d4[i],d3[i]);
-							}
-						}
-					}
-				}
-
-				else if(d4[i].childNodes.length != 0){
-					moveX(d3[i],d1[i]);
-
-					if(d4[i].childNodes[0].classList[1] == d3[i].childNodes[0].classList[1]){
-								combineX(d4[i].childNodes[0],d3[i].childNodes[0]);
-					}
-					else{
-						moveX(d4[i],d2[i]);
-					}
-				}
-
-				else{
-					moveX(d3[i],d1[i]);
-				}
-			}
-
-			else if(d4[i].childNodes.length != 0){
-				if(d1[i].childNodes.length != 0){
-					if(d4[i].childNodes[0].classList[1] == d1[i].childNodes[0].classList[1]){
-						combineX(d4[i].childNodes[0],d1[i].childNodes[0]);
-					}
-					else{
-						moveX(d4[i],d2[i]);
-					}
-				}
-				else{
-					moveX(d4[i],d1[i]);
-				}
-			}
-			}
-			}
-
-			isMoveOver = 0;
-
-			setTimeout(function(){isMoveOver=1}, 100);
-
-			setTimeout(function(){if(moveCount > 0 || combineCount > 0){
-				//randomElement();
-				moveCount = 0;
-				combineCount = 0;
-			}},transitionTime);
-			
-			var check = 0;
-			setTimeout(function(){
-				emptyCount = 0;
-				for(i=0;i<16;i++){
-					if(document.getElementsByClassName("cell")[i].childNodes.length == 0){
-						emptyCount++;
-					}
-				}
-				if(emptyCount == 0){
-					for(i=0;i<4;i++){
-						if(i==0){
-							if(document.getElementsByClassName("1")[0].childNodes[0].classList[1] == document.getElementsByClassName("1")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("2")[0].childNodes[0].classList[1] == document.getElementsByClassName("2")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("3")[0].childNodes[0].classList[1] == document.getElementsByClassName("3")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("4")[0].childNodes[0].classList[1] == document.getElementsByClassName("4")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("a")[0].childNodes[0].classList[1] == document.getElementsByClassName("a")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("b")[0].childNodes[0].classList[1] == document.getElementsByClassName("b")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("c")[0].childNodes[0].classList[1] == document.getElementsByClassName("c")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("d")[0].childNodes[0].classList[1] == document.getElementsByClassName("d")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-						}
-						else if(i==3){
-							if(document.getElementsByClassName("1")[3].childNodes[0].classList[1] == document.getElementsByClassName("1")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("2")[3].childNodes[0].classList[1] == document.getElementsByClassName("2")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("3")[3].childNodes[0].classList[1] == document.getElementsByClassName("3")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("4")[3].childNodes[0].classList[1] == document.getElementsByClassName("4")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("a")[3].childNodes[0].classList[1] == document.getElementsByClassName("a")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("b")[3].childNodes[0].classList[1] == document.getElementsByClassName("b")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("c")[3].childNodes[0].classList[1] == document.getElementsByClassName("c")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("d")[3].childNodes[0].classList[1] == document.getElementsByClassName("d")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-						}	
-						else{
-							if(document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-						}
-					}
-					if(check==0){
-						var x = confirm("Sorry, you lose");
-						if(x == true){
-							restart();
-						}
-					}
-				}
-				
-			}, (transitionTime+20));
-			
-	}
-	}
-
-	else if(deltaY < -data.player.swipeStrength && Math.abs(deltaX) <= Math.abs(deltaY)){//upper swipe
-		if (blockGame == true) {
-		e.preventDefault();
-
-		if(isMoveOver == 1){
-		for(i=0;i<4;i++){
-			if(s2[i].childNodes.length != 0){//checks whether the third column is filled of empty
-				if(s1[i].childNodes.length == 0){//if fourth column empty
-					moveY(s2[i],s1[i]);
-
-					if(s3[i].childNodes.length != 0){//if second column filled
-						if(s3[i].childNodes[0].classList[1] == s2[i].childNodes[0].classList[1]){//if second and third same
-							combineY(s3[i].childNodes[0],s2[i].childNodes[0]);
-
-							if(s4[i].childNodes.length != 0){//if first column filled
-								moveY(s4[i],s2[i]);
-							}
-						}
-						else{//if second third not same
-							moveY(s3[i],s2[i]);
-
-							if(s4[i].childNodes.length != 0){//if first column filled
-								
-								if(s4[i].childNodes[0].classList[1] == s3[i].childNodes[0].classList[1]){
-									combineY(s4[i].childNodes[0], s3[i].childNodes[0]);
-								}
-								
-								else{
-									moveY(s4[i],s3[i]);
-								}
-							}
-						}
-					}
-
-					else if(s4[i].childNodes.length != 0){
-						if(s4[i].childNodes[0].classList[1] == s2[i].childNodes[0].classList[1]){
-							combineY(s4[i].childNodes[0], s2[i].childNodes[0]);
-						}
-						else{
-							moveY(s4[i],s2[i]);
-						}
-					}
-				}
-
-				else if(s2[i].childNodes[0].classList[1] == s1[i].childNodes[0].classList[1]){//if fourth column filled and same
-					combineY(s2[i].childNodes[0],s1[i].childNodes[0]);
-
-					if(s3[i].childNodes.length != 0){//if second column filled
-						moveY(s3[i],s2[i]);
-
-						if(s4[i].childNodes.length != 0){
-							if(s4[i].childNodes[0].classList[1] == s3[i].childNodes[0].classList[1]){
-								combineY(s4[i].childNodes[0], s3[i].childNodes[0]);
-							}
-							else{
-								moveY(s4[i], s3[i]);
-							}
-						}
-					}
-
-					else if(s4[i].childNodes.length != 0){//if first column filled
-						moveY(s4[i],s2[i]);
-					}
-				}
-
-				else{
-					if(s3[i].childNodes.length != 0){
-						if(s3[i].childNodes[0].classList[1] == s2[i].childNodes[0].classList[1]){
-							combineY(s3[i].childNodes[0], s2[i].childNodes[0]);
-
-							if(s4[i].childNodes.length != 0){
-								moveY(s4[i],s3[i])
-							}
-						}
-
-						else if(s4[i].childNodes.length != 0){
-							if(s4[i].childNodes[0].classList[1] == s3[i].childNodes[0].classList[1]){
-								combineY(s4[i].childNodes[0], s3[i].childNodes[0]);		
-							}
-						}
-					}
-
-					else if(s4[i].childNodes.length != 0){
-						if(s4[i].childNodes[0].classList[1] == s2[i].childNodes[0].classList[1]){
-							combineY(s4[i].childNodes[0], s2[i].childNodes[0]);
-						}
-						else{
-							moveY(s4[i],s3[i]);
-						}
-					}
-				}
-			}
-
-			else if(s3[i].childNodes.length != 0){
-				if(s1[i].childNodes.length != 0){
-					if(s3[i].childNodes[0].classList[1] == s1[i].childNodes[0].classList[1]){
-						combineY(s3[i].childNodes[0],s1[i].childNodes[0]);
-
-						if(s4[i].childNodes.length != 0){
-							moveY(s4[i],s2[i]);
-						}
-					}
-
-					else{
-						moveY(s3[i],s2[i]);
-
-						if(s4[i].childNodes.length != 0){
-							if(s4[i].childNodes[0].classList[1] == s3[i].childNodes[0].classList[1]){
-								combineY(s4[i].childNodes[0],s3[i].childNodes[0]);
-							}
-							else{
-								moveY(s4[i],s3[i]);
-							}
-						}
-					}
-				}
-
-				else if(s4[i].childNodes.length != 0){
-					moveY(s3[i],s1[i]);
-
-					if(s4[i].childNodes[0].classList[1] == s3[i].childNodes[0].classList[1]){
-								combineY(s4[i].childNodes[0],s3[i].childNodes[0]);
-					}
-					else{
-						moveY(s4[i],s2[i]);
-					}
-				}
-
-				else{
-					moveY(s3[i],s1[i]);
-				}
-			}
-
-			else if(s4[i].childNodes.length != 0){
-				if(s1[i].childNodes.length != 0){
-					if(s4[i].childNodes[0].classList[1] == s1[i].childNodes[0].classList[1]){
-						combineY(s4[i].childNodes[0],s1[i].childNodes[0]);
-					}
-					else{
-						moveY(s4[i],s2[i]);
-					}
-				}
-				else{
-					moveY(s4[i],s1[i]);
-				}
-			}
-			}
-			}
-
-			isMoveOver = 0;
-
-			setTimeout(function(){isMoveOver=1}, 100);
-
-			setTimeout(function(){if(moveCount > 0 || combineCount > 0){
-				//randomElement();
-				moveCount = 0;
-				combineCount = 0;
-			}},transitionTime);
-
-			var check = 0;
-			setTimeout(function(){
-				emptyCount = 0;
-				for(i=0;i<16;i++){
-					if(document.getElementsByClassName("cell")[i].childNodes.length == 0){
-						emptyCount++;
-					}
-				}
-				if(emptyCount == 0){
-					for(i=0;i<4;i++){
-						if(i==0){
-							if(document.getElementsByClassName("1")[0].childNodes[0].classList[1] == document.getElementsByClassName("1")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("2")[0].childNodes[0].classList[1] == document.getElementsByClassName("2")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("3")[0].childNodes[0].classList[1] == document.getElementsByClassName("3")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("4")[0].childNodes[0].classList[1] == document.getElementsByClassName("4")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("a")[0].childNodes[0].classList[1] == document.getElementsByClassName("a")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("b")[0].childNodes[0].classList[1] == document.getElementsByClassName("b")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("c")[0].childNodes[0].classList[1] == document.getElementsByClassName("c")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("d")[0].childNodes[0].classList[1] == document.getElementsByClassName("d")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-						}
-						else if(i==3){
-							if(document.getElementsByClassName("1")[3].childNodes[0].classList[1] == document.getElementsByClassName("1")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("2")[3].childNodes[0].classList[1] == document.getElementsByClassName("2")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("3")[3].childNodes[0].classList[1] == document.getElementsByClassName("3")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("4")[3].childNodes[0].classList[1] == document.getElementsByClassName("4")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("a")[3].childNodes[0].classList[1] == document.getElementsByClassName("a")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("b")[3].childNodes[0].classList[1] == document.getElementsByClassName("b")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("c")[3].childNodes[0].classList[1] == document.getElementsByClassName("c")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("d")[3].childNodes[0].classList[1] == document.getElementsByClassName("d")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-						}	
-						else{
-							if(document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-						}
-					}
-					if(check==0){
-						var x = confirm("Sorry, you lose");
-						if(x == true){
-							restart();
-						}
-					}
-				}
-				
-			}, (transitionTime+20));
-	}
-	}
-
-	else if(deltaY > data.player.swipeStrength && Math.abs(deltaX) <= Math.abs(deltaY)){//lower swipe
-		if (blockGame == true) {
-		e.preventDefault();
-
-		if(isMoveOver == 1){
-		for(i=0;i<4;i++){
-			if(r3[i].childNodes.length != 0){//checks whether the third column is filled of empty
-				if(r4[i].childNodes.length == 0){//if fourth column empty
-					moveY(r3[i],r4[i]);
-
-					if(r2[i].childNodes.length != 0){//if second column filled
-						if(r2[i].childNodes[0].classList[1] == r3[i].childNodes[0].classList[1]){//if second and third same
-							combineY(r2[i].childNodes[0],r3[i].childNodes[0]);
-
-							if(r1[i].childNodes.length != 0){//if first column filled
-								moveY(r1[i],r3[i]);
-							}
-						}
-						else{//if second third not same
-							moveY(r2[i],r3[i]);
-
-							if(r1[i].childNodes.length != 0){//if first column filled
-								
-								if(r1[i].childNodes[0].classList[1] == r2[i].childNodes[0].classList[1]){
-									combineY(r1[i].childNodes[0], r2[i].childNodes[0]);
-								}
-								
-								else{
-									moveY(r1[i],r2[i]);
-								}
-							}
-						}
-					}
-
-					else if(r1[i].childNodes.length != 0){
-						if(r1[i].childNodes[0].classList[1] == r3[i].childNodes[0].classList[1]){
-							combineY(r1[i].childNodes[0], r3[i].childNodes[0]);
-						}
-						else{
-							moveY(r1[i],r3[i]);
-						}
-					}
-				}
-
-				else if(r3[i].childNodes[0].classList[1] == r4[i].childNodes[0].classList[1]){//if fourth column filled and same
-					combineY(r3[i].childNodes[0],r4[i].childNodes[0]);
-
-					if(r2[i].childNodes.length != 0){//if second column filled
-						moveY(r2[i],r3[i]);
-
-						if(r1[i].childNodes.length != 0){
-							if(r1[i].childNodes[0].classList[1] == r2[i].childNodes[0].classList[1]){
-								combineY(r1[i].childNodes[0], r2[i].childNodes[0]);
-							}
-							else{
-								moveY(r1[i], r2[i]);
-							}
-						}
-					}
-
-					else if(r1[i].childNodes.length != 0){//if first column filled
-						moveY(r1[i],r3[i]);
-					}
-				}
-
-				else{
-					if(r2[i].childNodes.length != 0){
-						if(r2[i].childNodes[0].classList[1] == r3[i].childNodes[0].classList[1]){
-							combineY(r2[i].childNodes[0], r3[i].childNodes[0]);
-
-							if(r1[i].childNodes.length != 0){
-								moveY(r1[i],r2[i])
-							}
-						}
-
-						else if(r1[i].childNodes.length != 0){
-							if(r1[i].childNodes[0].classList[1] == r2[i].childNodes[0].classList[1]){
-								combineY(r1[i].childNodes[0], r2[i].childNodes[0]);		
-							}
-						}
-					}
-
-					else if(r1[i].childNodes.length != 0){
-						if(r1[i].childNodes[0].classList[1] == r3[i].childNodes[0].classList[1]){
-							combineY(r1[i].childNodes[0], r3[i].childNodes[0]);
-						}
-						else{
-							moveY(r1[i],r2[i]);
-						}
-					}
-				}
-			}
-
-			else if(r2[i].childNodes.length != 0){
-				if(r4[i].childNodes.length != 0){
-					if(r2[i].childNodes[0].classList[1] == r4[i].childNodes[0].classList[1]){
-						combineY(r2[i].childNodes[0],r4[i].childNodes[0]);
-
-						if(r1[i].childNodes.length != 0){
-							moveY(r1[i],r3[i]);
-						}
-					}
-
-					else{
-						moveY(r2[i],r3[i]);
-
-						if(r1[i].childNodes.length != 0){
-							if(r1[i].childNodes[0].classList[1] == r2[i].childNodes[0].classList[1]){
-								combineY(r1[i].childNodes[0],r2[i].childNodes[0]);
-							}
-							else{
-								moveY(r1[i],r2[i]);
-							}
-						}
-					}
-				}
-
-				else if(r1[i].childNodes.length != 0){
-					moveY(r2[i],r4[i]);
-
-					if(r1[i].childNodes[0].classList[1] == r2[i].childNodes[0].classList[1]){
-								combineY(r1[i].childNodes[0],r2[i].childNodes[0]);
-					}
-					else{
-						moveY(r1[i],r3[i]);
-					}
-				}
-
-				else{
-					moveY(r2[i],r4[i]);
-				}
-			}
-
-			else if(r1[i].childNodes.length != 0){
-				if(r4[i].childNodes.length != 0){
-					if(r1[i].childNodes[0].classList[1] == r4[i].childNodes[0].classList[1]){
-						combineY(r1[i].childNodes[0],r4[i].childNodes[0]);
-					}
-					else{
-						moveY(r1[i],r3[i]);
-					}
-				}
-				else{
-					moveY(r1[i],r4[i]);
-				}
-			}
-			}
-			}
-
-			isMoveOver = 0;
-
-			setTimeout(function(){isMoveOver=1}, 100);
-			
-			setTimeout(function(){if(moveCount > 0 || combineCount > 0){
-				//randomElement();
-				moveCount = 0;
-				combineCount = 0;
-			}},transitionTime);
-			
-			var check = 0;
-			setTimeout(function(){
-				emptyCount = 0;
-				for(i=0;i<16;i++){
-					if(document.getElementsByClassName("cell")[i].childNodes.length == 0){
-						emptyCount++;
-					}
-				}
-				if(emptyCount == 0){
-					for(i=0;i<4;i++){
-						if(i==0){
-							if(document.getElementsByClassName("1")[0].childNodes[0].classList[1] == document.getElementsByClassName("1")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("2")[0].childNodes[0].classList[1] == document.getElementsByClassName("2")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("3")[0].childNodes[0].classList[1] == document.getElementsByClassName("3")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("4")[0].childNodes[0].classList[1] == document.getElementsByClassName("4")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("a")[0].childNodes[0].classList[1] == document.getElementsByClassName("a")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("b")[0].childNodes[0].classList[1] == document.getElementsByClassName("b")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("c")[0].childNodes[0].classList[1] == document.getElementsByClassName("c")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("d")[0].childNodes[0].classList[1] == document.getElementsByClassName("d")[1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-						}
-						else if(i==3){
-							if(document.getElementsByClassName("1")[3].childNodes[0].classList[1] == document.getElementsByClassName("1")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("2")[3].childNodes[0].classList[1] == document.getElementsByClassName("2")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("3")[3].childNodes[0].classList[1] == document.getElementsByClassName("3")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("4")[3].childNodes[0].classList[1] == document.getElementsByClassName("4")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("a")[3].childNodes[0].classList[1] == document.getElementsByClassName("a")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("b")[3].childNodes[0].classList[1] == document.getElementsByClassName("b")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("c")[3].childNodes[0].classList[1] == document.getElementsByClassName("c")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("d")[3].childNodes[0].classList[1] == document.getElementsByClassName("d")[2].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-						}	
-						else{
-							if(document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("1")[i].childNodes[0].classList[1] == document.getElementsByClassName("1")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("2")[i].childNodes[0].classList[1] == document.getElementsByClassName("2")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("3")[i].childNodes[0].classList[1] == document.getElementsByClassName("3")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("4")[i].childNodes[0].classList[1] == document.getElementsByClassName("4")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("a")[i].childNodes[0].classList[1] == document.getElementsByClassName("a")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("b")[i].childNodes[0].classList[1] == document.getElementsByClassName("b")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("c")[i].childNodes[0].classList[1] == document.getElementsByClassName("c")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-							else if(document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i-1].childNodes[0].classList[1] || document.getElementsByClassName("d")[i].childNodes[0].classList[1] == document.getElementsByClassName("d")[i+1].childNodes[0].classList[1]){
-								check++;
-								break;
-							}
-						}
-					}
-					if(check==0){
-						var x = confirm("Sorry, you lose");
-						if(x == true){
-							restart();
-						}
-					}
-				}
-				
-			}, (transitionTime+20));
-	}
-	}
+	//document.getElementById("modificationStatus").innerHTML = event.touches[0].clientX+" "+event.touches[0].clientY;
 });
