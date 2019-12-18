@@ -130,7 +130,7 @@ function writeScene(scene) {
 			writeTransition("prologue3", "Technician Responsibility Outline");
 			writeTransition("prologue4", "Modification Process Instructions");
 			writeTransition("prologue5", "Hypnosis Device Malfunction");
-			writeTransition("homeScreen", "Go back to the home screen");
+			writeTransition("mainMenu", "Go back to the home screen");
 			break;
 		}
 		case "prologue1": {
