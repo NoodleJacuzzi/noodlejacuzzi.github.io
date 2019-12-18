@@ -1368,7 +1368,7 @@ function writeEvent(n) {
 			writeText("Well, maybe not full control. It feels like a massive chunk of your brain, one previously devoted to pushing the boundaries of bioscience, has been smushed and relabeled as 'pump cock and splurt cum'.");
 			writeText("The facility's lockdown has failed. Top priority is to find a cure for the virus before your body loses the battle and it completely consumes your mind. After that, escape. The infected won't ignore you for long now, if you've been out for very long they're likely starved enough to not care that you're already one of them.");
 			if (data.player.currentScene != "gallery") {
-				writeText("[weaponLab|It's time to get moving.]");
+				writeText("[It's time to get moving.|weaponLab]");
 			}
 			break;
 		}
