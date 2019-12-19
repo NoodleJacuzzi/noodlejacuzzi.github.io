@@ -275,7 +275,7 @@ body{
 
 html {
     font-family: arial, sans-serif;
-    font-sze:16px;
+    font-size:16px;
     font-size: 1rem; /* defined Root font-size */    
     color: #cccccc; /* defined Root font-color: Off-white */
     line-height: 1.5em;
@@ -358,13 +358,13 @@ p#author {
 
 div#output {
     padding: 0px;
-	padding-top: 15px;
+	margin-top: 0px;
 }
 
 div#wrapperBG {
 	/*Box covering entire canvas, used to add background-image via JS*/
-    height: calc(100% + 0px);
-    width: calc(100% + 0px);
+    height: 100vh;
+    width: 100vw;
     position: absolute;
     top: 0;
     left: 0;
@@ -379,14 +379,14 @@ div#wrapperBG::after {
     background: rgba(0,0,0,0.75);
     content: "";
     position: absolute;
-    height: calc(100% + 0px);
-    width: calc(100% + 0px);
+    height: 100vh;
+    width: 100vw;
     z-index: -1;
 }
 
 .backgroundPicture{
 	height: 70vh; 
-        border-radius: 15px;
+    border-radius: 15px;
 }
 
 
