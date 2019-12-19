@@ -67,7 +67,7 @@ function writeScene(scene) {
 		}
 		case "author": {
 			writeText("Rainy DayZ is a game created by Noodle Jacuzzi. You can find and check out my other works at my <a href='https://noodlejacuzzi.github.io/index.html'>Master Index</a>.");
-			writeText("I'm funded by <a href='https://www.patreon.com/noodlejacuzzi'>Patreon</a>, but Rainy DayZ as a whole doesn't perform too well in monthly polls against Anomaly Vault and Hentai University. If you'd like to support this game's development consider supporting me and letting me know you'd like more. Still, I wouldn't be making this game, or any of my others past Human Alteration App, if not for the people who support me. Thank you to: Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Robbie, Lasse B, andres mejia, Arthorias28, Badaxe, ChronosEdge, Colin E, Judavarius, Lunarghost, Marco Wassmer, Q Q, Scal, Taylor Trout, Adonnak, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Arthur radcliffe, Auckard, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, Chaaaanon, Charles Morris, David Lange, Debarre Sonny, Devin, Dewr, Drashin, Ed, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jacob Cannon, Jane, jdktjk205, Jesse Greene, joe, joe, joe mulhall, john smith, Joseph Gibbs, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Noah, Nutburger, Oliver Jones, Philipp, Prodigal211, qwerty, Roy, Ryan Linn, sage, Sebastian Eckel, Shawn, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, Ungy Bungy, valdis, Vincent Madaire-Cullen, Wayne culbert, Wild Bill, Will Osboldstone, William Richardson, Yongdian Guo, Your Husbando, Профессор Преображенский, and 凱 陳 for supporting my work!");
+			writeText("I'm funded by <a href='https://www.patreon.com/noodlejacuzzi'>Patreon</a>, but Rainy DayZ as a whole doesn't perform too well in monthly polls against Anomaly Vault and Hentai University. If you'd like to support this game's development consider supporting me and letting me know you'd like more. Still, I wouldn't be making this game, or any of my others past Human Alteration App, if not for the people who support me! <br>Thank you to: Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Robbie, Lasse B, andres mejia, Arthorias28, Badaxe, ChronosEdge, Jinouga, Colin E, Judavarius, Lunarghost, Marco Wassmer, Q Q, Scal, Taylor Trout, Adonnak, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Arthur radcliffe, Auckard, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, Chaaaanon, Charles Morris, David Lange, Debarre Sonny, Devin, Dewr, Drashin, Ed, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jacob Cannon, Jane, jdktjk205, Jesse Greene, joe, joe, joe mulhall, john smith, Joseph Gibbs, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Noah, Nutburger, Oliver Jones, Philipp, Prodigal211, qwerty, Roy, Ryan Linn, sage, Sebastian Eckel, Shawn, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, Ungy Bungy, valdis, Vincent Madaire-Cullen, Wayne culbert, Wild Bill, Will Osboldstone, William Richardson, Yongdian Guo, Your Husbando, Профессор Преображенский, and 凱 陳 for supporting my work!");
 			writeText("As a note, this game also features a dog zombie. To view his scenes you must deliberately wound yourself, go to the forest, and either leave your weapon behind or have 0 stamina when you encounter him. If you dislike this sort of content, you can avoid it easily by doing anything other than what I've just described. To avoid any potential legal troubles, this dog is actually a woman in a very, very convincing dog suit. If you want absolutely no part in this at all, disable some of the more out-there fetishes in the settings menu.");
 			writeText("If you have any comments, criticisms, or suggestions for content for this or future chapters, please let me know about them in the <a href='https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12575'>TFgames thread</a>, on my patreon, or in the Noodle Jacuzzi <a href='https://discord.gg/pDht5BZ'>Discord</a>.");
 			writeText("As an extra note, no cheat codes aside from <b>oowoo</b>, sorry. There's one you get for unlocking all the game's scenes, but you get that for unlocking all the scenes. If you have any cheat code ideas, please let me know!");
@@ -309,7 +309,7 @@ function writeScene(scene) {
 		}
 		case "cityStreets": {
 			writeText("You've reached the outskirts of the city, cars line the road even out here. The rain is getting pretty heavy, so it might be fore the best and hurry on your way.");
-			writeText("As you walk down the street, you see an open window on the second story of an apartment building. The place looks closed off, so there aren't any other entrances. If you wanted to, you could scale the wall and [studioApartment|enter the building].");
+			writeText("As you walk down the street, you see an open window on the second story of an apartment building. The place looks closed off, so there aren't any other entrances. If you wanted to, you could scale the wall and [studioApartment|enter the apartment complex].");
 			if (data.player.flower != true) {
 				writeText("Blooming through a crack in the pavement is a beautiful bright-red flower. You aren't much of a nature gal yourself, but it couldn't hurt to [flower|give it a whiff].");
 			}
@@ -392,6 +392,7 @@ function writeScene(scene) {
 			writeText("Read the entry on event[journalHunter|hunter zombies].");
 			writeText("Read the entry on event[journalSiren|siren zombies].");
 			writeText("Read the entry on event[journalWorms|zombie worms].");
+			writeText("There's also an event[journalFlower|extra note] laying on the table.");
 			writeText("If you're finished reading, you can [apartmentBasement|close the book].");
 			break;
 		}
@@ -573,7 +574,7 @@ function writeScene(scene) {
 			updateMenu();
 			countScenes();
 			writeText("Note: Only 6 of the scenes are currently unlockable.");
-			writeSpecial("This scenario unfinished. It should be finished in version 1.5 if you'd like to play the full thing. You can explore the facility, but you can't use the keycards to unlock the inoculation lab:");
+			writeSpecial("This scenario unfinished. It should be finished in version 2.0 if you'd like to play the full thing. You can explore the facility, but you can't use the keycards to unlock the inoculation lab:");
 			//writeFunction("writeEvent('start')", "View the intro");
 			writeTransition("facilityStart", "Start The Facility");
 			writeTransition("scenarioSelect", "Go back");
@@ -727,11 +728,11 @@ function writeScene(scene) {
 			writeText("[CLOSE FILE|parasiteLab]");
 			break;
 		}
-		case "parasiteJerk": { //empty
+		case "parasiteJerk": {
 			writeEvent('mindWorms');
 			break;
 		}
-		case "innoculationLab": { //empty
+		case "innoculationLab": {
 			break;
 		}
 		case "alphaFile": { //empty
@@ -765,7 +766,11 @@ function writeScene(scene) {
 			data.player.scenario = "Spread Island";
 			updateMenu();
 			writeSpecial("This scenario is only a demo, so all that's available are a few short scenes that are made to convey the idea of what this route will contain. If you like it, please voice your opinion! Rainy DayZ has a smaller fanbase than my other two current works, so please (respectfully) voice your desires and ideas for what you'd like this game to contain. Leave comments or a review on TFGames, voice what you like on Discord, or support me on Patreon.");
-			writeTransition("spreadStart", "Play the Preview");
+			writeSpecial("Also, for this campaign you'll need to name your wife:");
+			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/streets.jpg)";document.getElementById('output').innerHTML += `
+				<p class='centeredText'>Your wife's name: <input type="text" id="nameSubmission" value="Kate"></p>
+				<p class='choiceText' onclick='renameWife()'>Play the preview</p>
+			`;
 			writeTransition("scenarioSelect", "Go back");
 			break;
 		}
@@ -893,6 +898,12 @@ function writeScene(scene) {
 			writeTransition("start", "Go back to the title.");
 		}
 	}
+}
+
+function renameWife() {
+	var goof = document.getElementById('nameSubmission').value;
+	data.player.wife = goof;
+	sceneTransition('spreadStart');
 }
 
 function writeEvent(n) {
@@ -1358,6 +1369,7 @@ function writeEvent(n) {
 			writeText("See, their bodies are way softer, and their dicks are so small I don't think they even can get erections. What they do is emit pheromones that turn men into sex fiends, and try to seduce the men into fucking their asses. They infect the men like an STD while still pumping spunk all over everything.");
 			writeText("Not only that, but they can make this weird screech sound. I hurt like a glass shard in the head, but for some reason whenever a man heard it they started running out of cover towards her.");
 			writeText("They got Tommy, so the building is compromised. I was able to stay safe and eventually everyone else left the building. Sirens still get horny like normal zombies but they can't cum from their dicks, so they need to keep an entourage with them when they aren't hunting. When they find prey they'll ditch their fuckbudies, who are still covered in pheromones.");
+			writeText("Now, Tommy wasn't exactly what I'd call a 'tough guy'. Honestly he was a do-no-harm sort of pacifist, pretty rare these days. I guess that's why he turned into a girly-looking one unlike the rest.");
 			writeText("The one that got Tommy was headed to the south last time I saw her, maybe she's heading to that unfinished place at Ridgewood?");
 			writeText("[journal|Finish reading the section].");
 			break;
@@ -1490,7 +1502,9 @@ function writeEvent(n) {
 			writeText("...");
 			writeSpeech("player", "", "Alright, I need to go. No matter how good it felt...");
 			writeText("At some point you managed to stop and clean the cum off yourself. You're satisfied now, even if it did take a few more anal sessions after the first. ");
+			if (data.player.currentScene != "gallery") {
 			writeText("[Get moving|chemLab]");
+			}
 			data.player.horny = false;
 			break;
 		}
@@ -1505,8 +1519,10 @@ function writeEvent(n) {
 			writeBig("solo2-2.gif");
 			writeSpeech("player", "", "Nnnhg!");
 			writeText("Your legs shake as you paint the floor with your infectious spunk, filling the room with the heady scent of jizz. The infected are even more riled up now. You move to press the button to close the outer shield, but the large red button next to it...");
+			if (data.player.currentScene != "gallery") {
 			writeText("A simple slip up, [pushing the wrong button and letting them all out|hordeRelease]. Nobody would judge you for an honest mistake like that, right?");
 			writeText("But you've got to remain in control and close the outer shield, then you need to [get back to finding the cure|containmentLab]. ");
+			}
 			data.player.horny = false;
 			break;
 		}
