@@ -53,9 +53,10 @@ var galleryArray = [
 	{index: 'spider', 	name: "Spiders", 			scenario: "The Facility",	hint: 'Interact with the spider webs in the Parasite Lab after curing your infection.'},
 	{index: 'whizzer', 	name: "Whizzer's Fluid", 	scenario: "The Facility",	hint: 'Drink the yellow fluid in the Chemical Lab.'},
 	{index: 'alpha1', 	name: "Alpha's Bitch", 		scenario: "The Facility",	hint: 'Fail to escape from the alpha after curing your infection.'},
-	{index: 'alpha2', 	name: "Failed Escape", 		scenario: "The Facility",	hint: 'Try to fit through the crawlspace in the Containment Center after curing your infection.'},
+	{index: 'alpha2', 	name: "Failed Escape", 		scenario: "The Facility",	hint: 'Try to fit through the crawlspace in the Containment Lab after curing your infection.'},
 	{index: 'solo1', 	name: "Private Time", 		scenario: "The Facility",	hint: 'Masturbate in the Chemical Lab.'},
-	{index: 'solo2',	name: "Exposed Time", 		scenario: "The Facility",	hint: 'Masturbate in the Containment Center.'},
+	{index: 'solo2',	name: "Exposed Time", 		scenario: "The Facility",	hint: 'Masturbate in the Containment Lab.'},
+	{index: 'releaseTheHorde',	name: "Release the Horde", 		scenario: "The Facility",	hint: 'Masturbate in the Containment Lab and release the horde.'},
 	{index: 'cure', 	name: "Cured", 				scenario: "The Facility",	hint: 'Cure your infection by bringing 3 keycards to the Innoculation Lab.'},
 ];
 
@@ -343,6 +344,10 @@ function writeSpeech (name, img, text) {
 	if (name == "player") {
 		img = "scripts/gamefiles/profiles/"+data.player.scenario+".jpg";
 		fullName = "You";
+		cssColor = "#8c2e2e";
+	}
+	if (name == "wife") {
+		fullName = data.player.wife;
 		cssColor = "#8c2e2e";
 	}
 	if (img == "none") {

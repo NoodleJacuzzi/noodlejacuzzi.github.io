@@ -13,6 +13,7 @@ function writeScene(scene) {
 			break;
 		}
 		case "scenarioSelect": {
+			data.items = [];
 			data.player.scenario = "";
 			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/streets.jpg)";
 			writeTransition("rainyDayZ", "Scenario 1 - RainyDayZ");
@@ -45,10 +46,10 @@ function writeScene(scene) {
 				writeFunction("toggle('rim')", "Enable rim content", "#91eba9");
 			}
 			if (data.player.wormDisabled == false) {
-				writeFunction("toggle('worm')", "Disable worm content", "#FF0000");
+				writeFunction("toggle('worm')", "Disable parasite content", "#FF0000");
 			}
 			else {
-				writeFunction("toggle('worm')", "Enable worm content", "#91eba9");
+				writeFunction("toggle('worm')", "Enable parasite content", "#91eba9");
 			}
 			if (data.player.wsDisabled == false) {
 				writeFunction("toggle('ws')", "Disable watersports content", "#FF0000");
@@ -66,10 +67,10 @@ function writeScene(scene) {
 		}
 		case "author": {
 			writeText("Rainy DayZ is a game created by Noodle Jacuzzi. You can find and check out my other works at my <a href='https://noodlejacuzzi.github.io/index.html'>Master Index</a>.");
-			writeText("I'm funded by <a href='https://www.patreon.com/noodlejacuzzi'>Patreon</a>, but Rainy DayZ as a whole doesn't perform too well in monthly polls against Anomaly Vault and Hentai University. If you'd like to support this game's development consider supporting me and letting me know you'd like more.");
+			writeText("I'm funded by <a href='https://www.patreon.com/noodlejacuzzi'>Patreon</a>, but Rainy DayZ as a whole doesn't perform too well in monthly polls against Anomaly Vault and Hentai University. If you'd like to support this game's development consider supporting me and letting me know you'd like more. Still, I wouldn't be making this game, or any of my others past Human Alteration App, if not for the people who support me! <br>Thank you to: Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Robbie, Lasse B, andres mejia, Arthorias28, Badaxe, ChronosEdge, Jinouga, Colin E, Judavarius, Lunarghost, Marco Wassmer, Q Q, Scal, Taylor Trout, Adonnak, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Arthur radcliffe, Auckard, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, Chaaaanon, Charles Morris, David Lange, Debarre Sonny, Devin, Dewr, Drashin, Ed, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jacob Cannon, Jane, jdktjk205, Jesse Greene, joe, joe, joe mulhall, john smith, Joseph Gibbs, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Noah, Nutburger, Oliver Jones, Philipp, Prodigal211, qwerty, Roy, Ryan Linn, sage, Sebastian Eckel, Shawn, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, Ungy Bungy, valdis, Vincent Madaire-Cullen, Wayne culbert, Wild Bill, Will Osboldstone, William Richardson, Yongdian Guo, Your Husbando, Профессор Преображенский, and 凱 陳 for supporting my work!");
 			writeText("As a note, this game also features a dog zombie. To view his scenes you must deliberately wound yourself, go to the forest, and either leave your weapon behind or have 0 stamina when you encounter him. If you dislike this sort of content, you can avoid it easily by doing anything other than what I've just described. To avoid any potential legal troubles, this dog is actually a woman in a very, very convincing dog suit. If you want absolutely no part in this at all, disable some of the more out-there fetishes in the settings menu.");
 			writeText("If you have any comments, criticisms, or suggestions for content for this or future chapters, please let me know about them in the <a href='https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12575'>TFgames thread</a>, on my patreon, or in the Noodle Jacuzzi <a href='https://discord.gg/pDht5BZ'>Discord</a>.");
-			writeText("As an extra note, no cheat codes, sorry. There's one you get for unlocking all the game's scenes, but you get that for unlocking all the scenes. If you have any cheat code ideas, please let me know!");
+			writeText("As an extra note, no cheat codes aside from <b>oowoo</b>, sorry. There's one you get for unlocking all the game's scenes, but you get that for unlocking all the scenes. If you have any cheat code ideas, please let me know!");
 			writeText("Thanks for reading this section. You can check below for some unused scenario ideas / concepts if you'd like. It's just text about the game's design and development though.");
 			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/streets.jpg)";
 			writeTransition("unusedIdeas", "Unused Concepts");
@@ -81,7 +82,7 @@ function writeScene(scene) {
 			writeText("The Rainy DayZ scenario was based on the left 4 dead 2 map Hard Rain, I thought the rainy aesthetic and the element of backtracking was really cool, although it didn't add too much from a gameplay standpoint with this being a text-based game. Other left 4 dead maps would be cool to riff off as well, but I wouldn't want to tread the exact same ground with the zombies.");
 			writeText("L4d also had really cool special infected, most of which I tried to make some kind of spin on. However ultimately hunters and witches felt too much like regular zombies, spitters boomers and jockies were just not appealing, and the rest were hard to find images that wouldn't completely break immersion. Resident evil was the biggest inspiration for special zombies.");
 			writeText("Zombie ideas are hard to come by since they need to be represented by regular people in the images, so nothing like Nemesis from RE3. I tried asking fans of the game for ideas, but no dice. Thus, I'll need to focus on situations in the future. The game already has the 'survivor scavenging for supplies' and 'scientist during a containment breach' stories, but there are a lot more I think could work:");
-			writeText("A husband and wife trying to escape a resort island during an outbreak. The wife is infected with a mild strain, so you need to help her while escaping the island. Based on Dead Island, this is the most likely pick for a scenario 3.");
+			writeText("<del>A husband and wife trying to escape a resort island during an outbreak. The wife is infected with a mild strain, so you need to help her while escaping the island. Based on Dead Island, this is the most likely pick for a scenario 3.</del> Used for Spread Island.");
 			writeText("A reporter enters a mall during an outbreak to get footage of what's going on. Based on Dead Rising, the biggest draw here is a system where you either help survivors or let them get turned while you record them, super evil!");
 			writeText("A man is stranded and seeks help in a seemingly abandoned town in Alaska, during a heavy snowstorm. This was actually the original idea for this game, which is why the 'unlock everything' cheat in v1 was cold mile. One cool idea is that halfway through enemy agents come into the town and try to hunt your down.");
 			writeText("Something based on silent hill, probably a pretty straightforwards 'man goes to spoopy town' storyline, but it'll be tough to capture SH's unnerving aesthetic.");
@@ -308,7 +309,7 @@ function writeScene(scene) {
 		}
 		case "cityStreets": {
 			writeText("You've reached the outskirts of the city, cars line the road even out here. The rain is getting pretty heavy, so it might be fore the best and hurry on your way.");
-			writeText("As you walk down the street, you see an open window on the second story of an apartment building. The place looks closed off, so there aren't any other entrances. If you wanted to, you could scale the wall and [studioApartment|enter the building].");
+			writeText("As you walk down the street, you see an open window on the second story of an apartment building. The place looks closed off, so there aren't any other entrances. If you wanted to, you could scale the wall and [studioApartment|enter the apartment complex].");
 			if (data.player.flower != true) {
 				writeText("Blooming through a crack in the pavement is a beautiful bright-red flower. You aren't much of a nature gal yourself, but it couldn't hurt to [flower|give it a whiff].");
 			}
@@ -391,6 +392,7 @@ function writeScene(scene) {
 			writeText("Read the entry on event[journalHunter|hunter zombies].");
 			writeText("Read the entry on event[journalSiren|siren zombies].");
 			writeText("Read the entry on event[journalWorms|zombie worms].");
+			writeText("There's also an event[journalFlower|extra note] laying on the table.");
 			writeText("If you're finished reading, you can [apartmentBasement|close the book].");
 			break;
 		}
@@ -570,8 +572,9 @@ function writeScene(scene) {
 			writeText("You, a scientist in the thick of a chaotic containment breach, must escape the facility with your life and mind intact.");
 			data.player.scenario = "The Facility";
 			updateMenu();
-			//countScenes();
-			writeSpecial("This scenario highly unfinished. Please come back in version 1.5 if you'd like to play the full thing. You can check out the intro though, and wander the facility to get an idea of what the scenario will contain:");
+			countScenes();
+			writeText("Note: Only 6 of the scenes are currently unlockable.");
+			writeSpecial("This scenario unfinished. It should be finished in version 2.0 if you'd like to play the full thing. You can explore the facility, but you can't use the keycards to unlock the inoculation lab:");
 			//writeFunction("writeEvent('start')", "View the intro");
 			writeTransition("facilityStart", "Start The Facility");
 			writeTransition("scenarioSelect", "Go back");
@@ -580,6 +583,7 @@ function writeScene(scene) {
 		case "facilityStart": {
 			data.player.horny = true;
 			data.player.keycards = 0;
+			data.items = [];
 			writeEvent('start');
 			break;
 		}
@@ -601,23 +605,25 @@ function writeScene(scene) {
 		case "chemLab": {
 			writeText("The chemical lab smells very powerfully of alcohol, the kind used for cleaning. There aren't any traces of infected in the area, so you should be fine to relax.");
 			if (data.player.horny == true) {
-				writeText("Insatiable despite how recently you just came, your cock is still standing strong. The chairs here are comfortable, you could take a moment to pleasure yourself if you wanted.");
+				writeText("Insatiable despite how recently you just came, your cock is still standing strong. The chairs here are comfortable, you could [take a moment to pleasure yourself|chemJerk] if you wanted.");
 			}
-			writeText("There are several [research terminals|whizzerFile] in the room, with your authentication you can access a synopsis of whatever the researchers here were working on.");
+			writeText("There are several research terminals in the room, with your authentication you can access a synopsis of whatever the researchers here were working on. One is on a project labeled '[whizzer|whizzerFile]' and the other is some kind of [email on the infection process|infectionFile].");
 			if (checkItem('Blue Keycard') != true) {
 				writeText("Several researchers must've left in a hurry, one of them very high ranked. Researchers of that level keep an item[access keycard|Blue Keycard] on their person, which you could use to get into the Inoculation Lab.");
 			}
 			else {
 				writeText("You've already grabbed the keycard from the abandoned coat.");
 			}
-			writeText("Your throat is starting to feel a little dry, you might've been out for a long time, and spurting from your cock probably isn't helping the matter. Normally you wouldn't chance it, but an open beaker of an off-yellow fluid is here. It seems inviting somehow, and you are really thirsty, so maybe you should drink it?");
+			writeText("Your throat is starting to feel a little dry, you might've been out for a long time, and spurting from your cock probably isn't helping the matter. Normally you wouldn't chance it, but an open beaker of an off-yellow fluid is here. It seems inviting somehow, and you are really thirsty, so maybe you should [drink it?|whizzerDrink]");
 			writeText("If there's nothing else to do here you should probably leave and go back to the [laboratory hub|labHub].");
 			break;
 		}
-		case "chemJerk": { //empty
+		case "chemJerk": {
+			writeEvent('solo1');
 			break;
 		}
-		case "whizzerDrink": { //empty
+		case "whizzerDrink": {
+			writeEvent('whizzer');
 			break;
 		}
 		case "whizzerFile":{
@@ -637,15 +643,29 @@ function writeScene(scene) {
 			}
 			break;
 		}
+		case "infectionFile":{
+			writeSpecial("AUTHENTICATION GRANTED");
+			writeText("Dear Madeline");
+			writeText("As per my last email, you'll find an outline of the infection process below.");
+			writeText("We've completely removed the airborne infection ability from the virus after the lackluster performance at the Sanctuary Resort, so only direct fluid transmission is the only method now.");
+			writeText("Once someone drinks an infected subject's cum, the changes begin immediately. DNA is overwritten, causing their physical appearances to become more attractive and feminine, but the primary changes occur in the reproductive organs.");
+			writeText("For women the womb begins to mutate, eggs and fallopian tubes becoming testicles. 'Fat nuts' as you've called them. They'll begin to be pushed out as a new prostate gland begins to develop, eventually the woman's vagina will expel these new nuts. I understand the process is pleasurable, I don't need to hear your collection of wet popping noises.");
+			writeText("At the same time the woman's clit begins to lengthen and change shape until it becomes a fully functioning penis. The woman's eggs, having been thoroughly ravaged by the virus, are expelled in a paste similar to a man's spunk. No, we do not keep any for 'tasting'. New highly infectious sperm cells are then generated and the woman's intelligence & sense of self are overpowered with a desire to spread the infection through rape.");
+			writeText("For male subjects the process is mostly similar, the changes to appearance are more pronounced as they become much more feminine. They'll grow highly sensitive breasts and anal sensitivity will improve. Old sperm is pumped out and infectious, highly addictive sperm is built up. Highly submissive males have a higher tendency to mutate into the smaller-dicked strains like Sirens. This improves anal sensitivity even higher and actually decreases cock size. Studies have found that they still remain just as enticing as their large-dicked sisters.");
+			writeText("Here's an example we took from an earlier virus test showing the results in action. Hopefully this will satisfy you, and you'll keep your fantasies in your room where they belong instead of endangering everyone here with your self-infection fetish.");
+			writeBig("infection.gif");
+			writeText("[CLOSE FILE|chemLab]");
+			break;
+		}
 		case "containmentLab": {
-			writeText("You're in the containment lab, and you aren't alone. There's at least five other infected in here, but luckily they're locked up. They're stuck behind a full three inches of tempered glass and a strong yet clear plastic.");
+			writeText("You're in the containment lab, and you aren't alone. There's at least five other infected in here, but luckily they're locked up. They're stuck behind a full three inches of strong plastic shielding and a set of thick iron bars.");
 			writeText("One is agitated by your presence, and is humping the wall with her sizable cock. Others are attempting to get through the wall and attack you, and the rest don't seem to care.");
-			writeText("There's a central research station here, where a stakeholder synopsis of research on infected hordes was being written.");
+			writeText("There's a [central research station here|hordeFile], where a stakeholder synopsis of research on infected hordes was being written.");
 			if (data.player.horny == true) {
-				writeText("Your cock is already acting up again, it seems like the humping infected woman's show is getting to you more than you expected. If you wanted you could take a seat and jerk off.");
+				writeText("Your cock is already acting up again, it seems like the humping infected woman's show is getting to you more than you expected. If you wanted you could take a seat and [jerk off|containmentJerk].");
 			}
 			if (checkItem('White Keycard') != true) {
-				writeText("Inserted into a catch slot is a white keycard, used for accessing secure data and locations.");
+				writeText("Inserted into a catch slot is a item[white access keycard|White Keycard], used for accessing secure data and locations.");
 			}
 			else {
 				writeText("The catch slot is empty, as you've already taken the keycard.");
@@ -654,40 +674,65 @@ function writeScene(scene) {
 			writeText("If there's nothing else to do here you should probably leave and go back to the [laboratory hub|labHub].");
 			break;
 		}
-		case "hordeFile": { //empty
+		case "hordeFile": {
+			writeSpecial("AUTHENTICATION GRANTED");
+			writeBig("horde.jpg");
+			writeText("We've been noticing a trend lately in certain infection methods, so experimentation has started on groups of infected, dubbed 'hordes'. Usually infected tend not to care about grouping up, they scatter throughout a city looking for prey. However, when a large amount of subjects become infected at the same time a sort of bond is formed between them.");
+			writeText("These bonded infected will then stick together and even use rudimentary teamwork to spread the infection, and in turn increase the size of their horde. They'll gang-rape survivors, causing the infection to spread extremely rapidly. ");
+			writeText("Some members of the horde, usually those with the smallest dick size, are relegated to bottom positions. Rather than becoming pent up, the horde will frequently engage in orgies, taking whatever frustrations they have out on the 'bottom bitches' as we've come to know them. Bottoms will become more submissive overtime, increasing anal sensitivity and decreasing penis length to near Siren levels. ");
+			writeText("[CLOSE FILE|containmentLab]");
 			break;
 		}
-		case "containmentJerk": { //empty
+		case "containmentJerk": {
+			writeEvent('solo2');
 			break;
 		}
-		case "hordeRelease": { //empty
+		case "hordeRelease": {
+			writeEvent('releaseTheHorde');
 			break;
 		}
 		case "parasiteLab": {
 			writeText("You're in the parasite lab. Here, research is conducted into alternate infection vectors, typically animal or insect methods. The place is splattered over the walls and some desks with an off-white goo, a lot stickier and viscous than cum. Worse, some of the research tanks look like they've been smashed from the inside out, and the tanks beneath are leaking fog which covers the floor of the room. Still, nothing attacks, so hopefully you're safe for now.");
-			if (checkItem('Blue Keycard') != true) {
-				writeText("On the table covered in a slimy gunk is a blue keycard.");
+			if (checkItem('Red Keycard') != true) {
+				writeText("On the table covered in a slimy gunk is a item[access keycard|Red Keycard].");
 			}
 			else {
 				writeText("You already took the keycard, making sure to clean it off thoroughly.");
 			}
-			writeText("There are a pair of still-functional research terminals in the room. A terminal partially covered in the sticky white substance is on a project codenamed 'spider', and another is on a project codenamed 'ridge worm'. With your high level of security clearance, you could read up on these to get an idea of what might be on the loose.");
+			writeText("There are a pair of still-functional research terminals in the room. A terminal partially covered in the sticky white substance is on a project codenamed '[spider|spiderFile]', and another caked in cum is a log on a project codenamed '[mind worm|wormFile]'. With your high level of security clearance, you could read up on these to get an idea of what might be on the loose.");
 			if (data.player.horny == true) {
-				writeText("Something about the unnerving environment is making your skin tingle. You know it'd probably be risky, but a dark part of you wants to take a seat and jerk off.");
+				writeText("Something about the unnerving environment is making your skin tingle. You know it'd probably be risky, but a dark part of you wants to take a seat and [jerk off|parasiteJerk].");
 			}
 			writeText("If there's nothing else to do here you should probably leave and go back to the [laboratory hub|labHub].");
 			break;
 		}
-		case "spiderFile": { //empty
+		case "spiderFile": {
+			writeSpecial("AUTHENTICATION GRANTED");
+			writeBig("spider.jpg");
+			writeText("We're on day 43 of our research into the arachnid infection vector project, progress is good in most areas. We've managed to breed out their desire for male and infected subjects, the spiders only prey on entirely biologically female subjects and ignore everyone else. Results are inconclusive on trans women, but looking good. ");
+			writeText("One of the subjects attacked an intern, Roxanne, on day 23. Rather than save her we've been letting her serve as a proof of concept for the oviposition methods. They wrapped her up in a cocoon and implanted eggs vigorously and repeatedly. It seems like with only a single human womb they could reproduce quickly enough to fill a town in a week.");
+			writeText("Subjects are kept well-cared for and are provided nutrients, the lubrication fluid is extremely addictive and arousing. Roxanne stopped struggling after only a few minutes, and even though she isn't capable of communication anymore it's very clear she does not want to leave.");
+			writeText("Luckily the arachnid's natural tendencies not to wander are highly useful. Unless seeking prey they'll stay put, making containment extremely easy. Some security staff members have been lax though, I've submitted a report to let the spiders free to attack a security squad so that they'll be back on guard. ");
+			writeText("[CLOSE FILE|parasiteLab]");
 			break;
 		}
-		case "wormFile": { //empty
+		case "wormFile": {
+			writeSpecial("AUTHENTICATION GRANTED");
+			writeBig("worm.jpg");
+			writeText("Alright, I don't have long. Security will be in soon to transport me, so I need to get this writing done quickly.");
+			writeText("These worms are an emergency measure. In less than 1% of the population mental resistance is strong enough for infected to retain their rationality for a time. These worms seek out those resistant infected, inject them with a powerful paralytic, then enter the infected's body through their ears or nose to access the brain.");
+			writeText("I understand it sounds gross but it feels so goooooo");
+			writeText("I need to focus, losing control already. I'm hosting one now, I can feel it growing acclimated to my brain chemistry. They find the parts of your brain responsible for rational though and hijack them. If they think you can lead them to other resistant individuals they'll turn you into a sort of sleeper agent to infect others.");
+			writeText("But if they think you have nothing to offer they'll just crush those parts of your grey matter, removing what individuality you might have left. After that they start injecting pleasure chemicals directly into your brain. The guards are almost here to escort me to the inoculation chamber so that the worm can be removed before it finds the sections dedicated to rational tho");
+			writeText("<i>The log ends here. You probably shouldn't touch the console, as it's coated in an inhuman amount of cum.</i>");
+			writeText("[CLOSE FILE|parasiteLab]");
 			break;
 		}
-		case "parasiteJerk": { //empty
+		case "parasiteJerk": {
+			writeEvent('mindWorms');
 			break;
 		}
-		case "innoculationLab": { //empty
+		case "innoculationLab": {
 			break;
 		}
 		case "alphaFile": { //empty
@@ -721,7 +766,11 @@ function writeScene(scene) {
 			data.player.scenario = "Spread Island";
 			updateMenu();
 			writeSpecial("This scenario is only a demo, so all that's available are a few short scenes that are made to convey the idea of what this route will contain. If you like it, please voice your opinion! Rainy DayZ has a smaller fanbase than my other two current works, so please (respectfully) voice your desires and ideas for what you'd like this game to contain. Leave comments or a review on TFGames, voice what you like on Discord, or support me on Patreon.");
-			writeTransition("spreadStart", "Play the Preview");
+			writeSpecial("Also, for this campaign you'll need to name your wife:");
+			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/streets.jpg)";document.getElementById('output').innerHTML += `
+				<p class='centeredText'>Your wife's name: <input type="text" id="nameSubmission" value="Kate"></p>
+				<p class='choiceText' onclick='renameWife()'>Play the preview</p>
+			`;
 			writeTransition("scenarioSelect", "Go back");
 			break;
 		}
@@ -849,6 +898,12 @@ function writeScene(scene) {
 			writeTransition("start", "Go back to the title.");
 		}
 	}
+}
+
+function renameWife() {
+	var goof = document.getElementById('nameSubmission').value;
+	data.player.wife = goof;
+	sceneTransition('spreadStart');
 }
 
 function writeEvent(n) {
@@ -1063,6 +1118,7 @@ function writeEvent(n) {
 			break;
 		}
 		case "worms1": {
+			if (data.player.wormDisabled == false) {
 			writeText("The feeling of a soft pillow and softer blanket offer a comfort you haven't felt in weeks. The dingy mattress you have at the safehouse is simply no comparison. Soon enough, what was intended to be just a nap is drawn out into a deep sleep");
 			writeText("...");
 			writeText("Vision flutters across your eyes. Tingling sensations pass through your limbs and you feel a presence spread across your body.");
@@ -1088,6 +1144,10 @@ function writeEvent(n) {
 			writeText("Barely conscious, you can feel yourself roll over and prop your ass into the air. Instinctively you know you're signaling for the escaped worms to return.");
 			writeBig("worms1.gif");
 			writeText("To return to a willing host.");
+			}
+			else {
+				writeText("This scene has been disabled by your fetish settings. If for some reason want to watch it, you can still view it in the gallery after changing your settings.");
+			}
 			if (data.player.currentScene != "gallery") {
 				writeTransition('rainyDayZ', 'GAME OVER', '#FF0000');
 			}
@@ -1158,7 +1218,7 @@ function writeEvent(n) {
 			}
 			break;
 		}
-		case "flower2": { //unwritten
+		case "flower2": {
 			writeText("You walk up to the infected woman and get ready to either fight or run, but suddenly you can smell that powerfully sweet scent from the flower earlier.");
 			writeText("You look around, but there aren't any flowers around.");
 			writeText("Just then a chill runs up your spine. Your needy cock has been trying to get your attention on the run here, but for the sake of surviving your trip home you opted to ignore it. Yet, for some reason you feel your hands moving on their own grabbing your pants and pulling them down.");
@@ -1309,6 +1369,7 @@ function writeEvent(n) {
 			writeText("See, their bodies are way softer, and their dicks are so small I don't think they even can get erections. What they do is emit pheromones that turn men into sex fiends, and try to seduce the men into fucking their asses. They infect the men like an STD while still pumping spunk all over everything.");
 			writeText("Not only that, but they can make this weird screech sound. I hurt like a glass shard in the head, but for some reason whenever a man heard it they started running out of cover towards her.");
 			writeText("They got Tommy, so the building is compromised. I was able to stay safe and eventually everyone else left the building. Sirens still get horny like normal zombies but they can't cum from their dicks, so they need to keep an entourage with them when they aren't hunting. When they find prey they'll ditch their fuckbudies, who are still covered in pheromones.");
+			writeText("Now, Tommy wasn't exactly what I'd call a 'tough guy'. Honestly he was a do-no-harm sort of pacifist, pretty rare these days. I guess that's why he turned into a girly-looking one unlike the rest.");
 			writeText("The one that got Tommy was headed to the south last time I saw her, maybe she's heading to that unfinished place at Ridgewood?");
 			writeText("[journal|Finish reading the section].");
 			break;
@@ -1372,70 +1433,126 @@ function writeEvent(n) {
 			}
 			break;
 		}
+		case "mindWorms": {
+			if (data.player.wormDisabled == false) {
+				writeText("You know this is the wrong place and absolutely the wrong time, but you can't hold yourself back anymore. You NEED to cum, and you need to cum now.");
+				writeText("You take a seat on the stained chair and start jerking off. The danger of it all is intoxicating, arousing, until you feel something touch your hand. You lift it to get a closer look.");
+				writeBig("worm-1.gif");
+				writeText("a small worm extends it's tentacles over your skin, and your body goes slack as a paralytic chemical spreads through your bloodstream.");
+				writeSpeech("player", "", "<i>Fuck! Fuck fuck fuck, no!</i>");
+				writeText("The worm slithers up your arm, your shoulder, your neck, and then the side of your face. All you can do is look around the room in a blind panic.");
+				writeText("The worm slithers up to the entrance of your ear and extends its tentacles out again.");
+				writeSpeech("player", "", "<i>Shit, I need to-... I need to... </i>");
+				writeText("Your panic begins to fade as a new chemical races through you. The worm retracts its tentacles and begins crawling into your ear. It doesn't hurt, it all feels cold, goopy, but mostly it feels pleasant.");
+				writeText("The worm slithers into your head, bumping into your brain and extends its tentacles again inside you. It feels around trying to figure you out. Your vision blacks out for a moment, a brief flicker of pain shoots up your leg and then vanishes, your arm jerks up before coming back down onto the arm of the chair.");
+				writeText("Finally the worm finds the part of your brain it's looking for and squeezes.");
+				writeBig("worm-2.gif");
+				writeText("Reflexively you cum as your vision and mind go a bright white of pleasure. It's recognized you as resistant to the virus, so now it's taking away your rationality by force.");
+				writeText("Desperately in the back your your mind, the part not bathing in pleasure chemicals, you try to think of a last way out. Of a way you could be useful to the worm. Anything at all to save your mind.");
+				writeText("But the worm squeezes again on what's left of your rationality and starts injecting chemicals directly into your grey matter. No longer capable of rational thought, or of any thought at all, you'll sit here spurting and leaking until the worm is finished with you. ");
+			}
+			else {
+				writeText("This scene has been disabled by your fetish settings. If for some reason want to watch it, you can still view it in the gallery after changing your settings.");
+			}
+			if (data.player.currentScene != "gallery") {
+				writeTransition('theFacility', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "whizzer": {
+			if (data.player.wsDisabled == false) {
+			writeText("Your lips and throat feel dryer than ever before. You weren't thirsty a moment ago, but now you feel like you could pass out from thirst at any second. With shaking hands you lift the beaker full of yellow fluid.");
+			writeSpeech("player", "", "I-it's lemonade. Or tea! That's gotta be... Gotta be...");
+			writeText("You lift the beaker to your lips, the smell feels like it's burning your nose and frying your brain. The moment the liquid touches your lips... ");
+			writeText("You can't hold back, you start chugging it as fast as you can. It's piss. Warm, infected piss and you can't hold back from drinking a pint of it.");
+			writeText("The taste defies words. You brain tells you this should be disgusting, but you don't want to ever drink anything else again. It dribbles down your chin, you feel a pang of sorrow knowing you're spilling but you can't slow down.");
+			writeText("It's warm and bitter, you can only imaging how much better it would taste directly from a shemale's cock. Your own dick is fully erect and leaking, and soon you can feel the changes occurring inside you.");
+			writeText("A moan is forced from your throat as you can feel an orgasm coming on, causing you to choke and sputter on the flow of piss going down your throat. It gets into your lungs speeding up the infection process, and you keep drinking.");
+			writeText("Your cock jerks without you even touching it, soon enough you're leaking a solid stream of jizz from your cockhead. With every gulp the stream gets more powerful, the sperm becoming more watery and less thick.");
+			writeText("Eventually you reach the end of the pitcher. You lick the inside as best you can as your cock sprays one last gout of piss and sperm onto the floor, and then you collapse.");
+			writeText("You can barely move as the second infection of the night spreads through you, changing you even further. Your balls feel empty for once, but you feel a sudden strong pressure on your bladder.");
+			writeBig("whizzer.gif");
+			writeText("Wordlessly you shake as your cock starts spraying infectious piss onto yourself and the floor.");
+			writeSpeech("player", "", "Gguuuuhhhd~!");
+			writeText("It feels like an orgasm but just won't stop. Every time you try to stem the stream it builds up unbearably and feels even better when you relax and blast with full force.");
+			writeText("Thoughts of survival and the cure are far behind you. As the stream weakens you feel your bladder working overdrive as more piss is ready to be released already. You do your best to hold yourself back, only a small stream leaking out as you stand up.");
+			writeText("Piss dribbling down your leg with every step, you begin making your way to the containment lab. The infected in there are going to have a very good drink tonight. ");
+			}
+			else {
+				writeText("This scene has been disabled by your fetish settings. If for some reason want to watch it, you can still view it in the gallery after changing your settings.");
+			}
+			if (data.player.currentScene != "gallery") {
+				writeTransition('theFacility', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "solo1": {
+			writeText("You take a seat to finally relax, the throbbing of your cock has been a constant distraction so far. You lift up the nameplate on the desk. ");
+			writeSpeech("player", "", "Sorry... Amanda. I'll be using your desk. I suppose you won't ever be using it again anyways. ");
+			writeText("You're about to start when something pink catches your eye in a partially-open drawer.");
+			writeSpeech("player", "", "Oh my...");
+			writeText("It's a dildo, a pretty decently sized one too. Work here can involve subjects that are a little... Arousing, for some to work on. Since being distracted can be dangerous, workers are encouraged to satisfy themselves regularly.");
+			writeText("Still, a dildo in your drawer? Hmm... <br>I've never done anal before, but with this new body it might be fun. I'll give it a quick shot and go back to jerking off if it hurts.");
+			writeText("...");
+			writeBig("solo1.gif");
+			writeSpeech("player", "", "Ah~! Ah~! Fuck, this is so much better than my pussy was~!");
+			writeText("You'd always wondered why some men were so into anal. Some would get downright religious about it. But every time the toy hits your bitch button of a prostate, you get a little closer to understanding.");
+			writeSpeech("player", "", "Fuck yessss~!");
+			writeText("You start cumming hard, splurting a glob of your infected jizz onto the floor every time you pump your toy into your asshole. Towards the end you can't even muster the force to keep jerking your cock, focusing all your attention on slamming your prostate even after you stop cumming.");
+			writeText("...");
+			writeSpeech("player", "", "Alright, I need to go. No matter how good it felt...");
+			writeText("At some point you managed to stop and clean the cum off yourself. You're satisfied now, even if it did take a few more anal sessions after the first. ");
+			if (data.player.currentScene != "gallery") {
+			writeText("[Get moving|chemLab]");
+			}
+			data.player.horny = false;
+			break;
+		}
+		case "solo2": {
+			writeText("Study the layout of the room carefully to make sure there are no surprises, you take a seat on a chair. Only a single slow stroke of your new cock and you're rock hard, you can't hold back any longer. ");
+			writeText("The infected are becoming more aggressive in their containment cell, pent up and hungry, even for someone who's already infected. ");
+			writeText("Electric sensation runs up your spine as you jerk yourself off in front of all of them. Yet it isn't enough. ");
+			writeText("You feel your heartbeat in your ears as you decide to play things a little risky and push a button on the console. The clear plastic shield lifts, meaning that the only thing between you and the infected is a set of iron bars.");
+			writeBig("solo2-1.gif");
+			writeText("One puts on a show for you, eagerly waving her cock side to side to entice you.");
+			writeSpeech("player", "", "Ghh... This is so wrong... I'm jerking off in front of a bunch off... <br>Fuck, I don't have much longer...!");
+			writeBig("solo2-2.gif");
+			writeSpeech("player", "", "Nnnhg!");
+			writeText("Your legs shake as you paint the floor with your infectious spunk, filling the room with the heady scent of jizz. The infected are even more riled up now. You move to press the button to close the outer shield, but the large red button next to it...");
+			if (data.player.currentScene != "gallery") {
+			writeText("A simple slip up, [pushing the wrong button and letting them all out|hordeRelease]. Nobody would judge you for an honest mistake like that, right?");
+			writeText("But you've got to remain in control and close the outer shield, then you need to [get back to finding the cure|containmentLab]. ");
+			}
+			data.player.horny = false;
+			break;
+		}
+		case "releaseTheHorde": {
+			writeText("Your finger slipped. That's what you'll tell yourself. It doesn't matter any more anyways, the iron bars are raising and the horde is set loose. Pent up and teased, each of them want nothing more than to turn you into their cum-sock, and they aren't interested taking turns.");
+			writeText("They grab you and throw you to the ground, your cock already hardening again at the rough treatment. ");
+			writeSpeech("player", "", "Ah~! Yes~! I wanna be your bitch, I don't wanna think anymore~! Cock~! Co-Mmph~! ");
+			writeBig("horde.gif");
+			writeText("They pile on to you. As many as your holes can take all at once, then more. The horde is angry, the ones who can't fuck you yet begin smashing the console in frustration, you quiver at what it'll feel like when they do that to you.");
+			writeText("Alarms go off as more cages and doors around the facility are unlocked. After a moment of hard, bareback sex with the infected shemales, more infected begin to pile into the room. They're all hungry, and you're on the menu.");
+			writeText("Your chances at reaching the cure are long gone now. You threw away your humanity into a jizz puddle, there's no turning back. ");
+			if (data.player.currentScene != "gallery") {
+				writeTransition('theFacility', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		default: {
+			writeText("Something went wrong, and you've encountered a bug. Keep in mind where you just where and what you did, and let me know so I can fix it.");
+			writeText("Here's a list of important details. If you message me directly with these jams, I should have a better idea of what caused the problem:");
+			writeText("" + JSON.stringify(data) + "");
+			writeText("Inventory window:" + invHidden + "");
+			writeText("Browser:" + navigator.appCodeName  + "");
+			writeText("OS:" + navigator.platform  + "");
+			writeText(n);
+			writeBig("images/butts.jpg");
+			writeTransition("start", "Go back to the title.");
+		}
 	}
 	unlockScene(n);
 	if (data.player.currentScene == "gallery") {
 		writeTransition("gallery", "Back to the gallery");
-	}
-}
-
-function writeChapter2Event(n) {
-	document.getElementById('output').innerHTML = '';
-	switch (n) {
-		case "start": {
-			break;
-		}
-		case "licker": {
-			break;
-		}
-		case "mindWorms": {
-			break;
-		}
-		case "spider": {
-			break;
-		}
-		case "whizzer": {
-			break;
-		}
-		case "alpha1": {
-			break;
-		}
-		case "alpha2": {
-			break;
-		}
-		case "solo1": {
-			break;
-		}
-		case "solo2": {
-			break;
-		}
-		case "cure": {
-			break;
-		}
-		case "researchSounding": {
-			break;
-		}
-		case "researchTeasing": {
-			break;
-		}
-		case "researchLicker": {
-			break;
-		}
-		case "researchWhizzer": {
-			break;
-		}
-		case "researchMindWorms": {
-			break;
-		}
-		case "researchSpiders": {
-			break;
-		}
-		case "researchAlpha": {
-			break;
-		}
-	}
-	unlockChapter2Scene(n);
-	if (data.player.currentScene == "chapter2Gallery") {
-		writeTransition("chapter2Gallery", "Back to the gallery");
 	}
 }

@@ -1,20 +1,189 @@
-First Post
-This is Rainy DayZ, an HTML game created by me, Noodle Jacuzzi. Play it, and my other titles via the master index at https://noodlejacuzzi.github.io/index.html
-Please note that this may only be a temporary hosting method.
+///***UPDATE INDEX DOWNLOAD LINK for RAINY DAYZ
+///***UPDATE INDEX DOWNLOAD LINK FOR MEDICENTER
 
-In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.
-This all might be familiar to you if you've checked out my other work, Human Alteration App, because Rainy DayZ was originally a minigame. For various reasons I've needed to trim off the minigames from HAA into their own titles, so here we are! I can assure you though that there both is and will be enough content to justify this game being its own title.
+Hello once more everyone! Here we are, the third week of December. I have more of the same and something new:
+This weeks progress was:
+Rainy DayZ v1.4
+Another chapter of my short story
+And an engine update to Bitch Medicenter
 
-This game focuses heavily on themes of rape and shemale-zombification, and includes optional content depicting bestiality, rimming, and sounding. It's made to be similar in tone to Futa Apocalypse.
+First let's start with Rainy DayZ:
 
-If you're here from HAA, there's no new content here yet. My plan is to release a content patch after working more on HAA which will finish all of the game's 6 unfinished scenes.
+Version v1.4
 
-Current Version: Beta v1
-Most recent game files: https://mega.nz/#!axsERCDL!gjFuAX6Z9uARnnxxh0sHT7kwm6r21ssw2PRf402Jd2g
-All you need to do is download this. Extract the game files to create the Rainy DayZ folder, then run the Rainy DayZ.html file. If errors begin popping up, I might need to separate the game files from the images.
+Direct download: 
+https://mega.nz/#!D3gS2KgT!ofdPVHdMM-bXJJSW1CntCXSAIYaOF8tzK3vYF9jTj9o
 
-Known issues:
-[list]
-[*] None at the moment.
-[/list]
-If you find any bugs or typos, please let me know.
+Here's an upgrade pack containing only the new stuff:
+https://mega.nz/#!azo2AITZ!tMF_fMFCdchH0VERZ8gWDkxQ4JTZzMWNccL6jYmw-hQ
+
+My router went out just after uploading these so my up/download speed is around 15kb/s. IF these are broken please lemme know ASAP and you'll need to play the online version instead.
+
+Play online:
+https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html 
+
+Mobile ver:
+https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ%20Mobile.html 
+
+Version v1.4
+
+New Content
+- Added four files in The Facility that detail infection types / infection process details
+- Added five new scenes in The Facility, you still can't use the keycards or enter the inoculation lab
+Bugfixes & Typos
+- Fully fixed the bug preventing progress in scenarios 1 and 2
+- Fixed a bug where the note explaining the flower wouldn't appear in scenario 1
+Other changes
+- You can now rename your wife in Spread Island
+
+Being in better health I tested this release much more thoroughly. If you'd liek to help me out in this regard for future releases, I post test releases on my discord. Just popping in to let me know if everything works would be a huge help, plus if everything works as intended you get to see the new content a day or two early.
+For scenario 2 I've focused on less obtuse gameplay. How do you prefer it? Rainy DayZ could be frustrating with how you needed to restart over and again to get all the scenes, I might do some kind of quicksave / quickload system in the next update.
+Speaking of the next update, it'll probably be next Friday and won't be finishing Scenario 2. I've got another demo in the works since finishing up the Facility will be a bit of work.
+
+Next is another chapter of my short story (shemale stuff, masochism(?) in this one):
+http://www.hentai-foundry.com/stories/user/NoodleJacuzzi/39001/Bitch-Medicenter---Jerk-off-Junkies-File
+Even if you aren't usually into CBT it could still be up your alley. I super hate pain, so there's none of that here.
+I'm gonna do an engagement thing here and on that site: tell me the chapter of the story you like the most, every comment on this post or on hentai foundry counts as a vote, and I'll do a 'where is she now' chapter following up on that treatment. I'd do it on discord but I don't have a good way to tally that figured out.
+
+Finally I've update the engine of Bitch Medicenter, it's a lot more optimized for mobile use now. No download links since my internet is shot, although you could download it directly from github if you wanted.
+
+Bitch Medicenter Demo v2
+Play online:
+https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter.html
+
+Mobile ver:
+https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter%20Mobile.html
+
+No new content, although commercials have been added for my other games. They're pretty neat in my opinion.
+Other changes:
+- Reworked the game's css using stiggy's code as a base. The whole game should look a little bit more professional now. 
+- The mobile version has been rebuilt. You can now properly view buttons and text that were being cut off before. 
+- Swiping on the game board doesn't scroll the screen, and scrolling below the board doesn't move the blocks! This was the main reason behind the update since the mobile ver was pretty broken before. 
+- Fixed a bug where between levels the blocks would be completely skewed and awful, this was pretty game-breaking and tough to fix, but I think I got it.
+
+And that's all the major stuff. As a note the format of this game means that it's good for commissions for you guys in the fan and supporter categories. December isn't over yet, which means I'm still technically on break, but I'm a very work ahead sort of person so I'm already starting scenes for the next version of Anomaly Vault. Maybe you have a specific treatment idea for the medicenter to tackle? Maybe you have a dark vault artifact idea? If you're flexible I can grab the images myself. Lemme know!
+
+Reddit post:
+Hi there! I just released another version of my game Rainy DayZ! It's inspired directly by Futa Apocalypse, but also has a little resident evil and left 4 dead sprinkled in. This is an adult game created by myself, u/NoodleJacuuzi (Patreon). It's an HTML game that you can play the desktop version in-browser at this link, along with a version that works on mobile found here, but the game can also be downloaded and played locally using the links here. Additionally, I have a Discord Server called 'Noodle's Jacuzzi' where I'd love to hear from you!
+
+The main area of content is in the first scenario, which is finished, and the second scenario with a good handful of scenes. You play as a young woman on the eve of a hurricane hoping to gather supplies, all the while the town is infested with voracious, mindless dickgirls. Lemme know if you have any ideas or suggestions.
+
+The game contains shemales and female-to-shemale transformation, and also contains fetishes such as beast, sounding, parasites, rimming, and watersports, but all of those can be disabled in the settings menu.
+
+Version 1.4 Content
+- Added four files in The Facility that detail infection types / infection process details
+- Added five new scenes in The Facility, you still can't use the keycards or enter the inoculation lab
+- Fixed some critical bugs
+- You can now rename your wife in Spread Island
+
+Upcoming Content
+- The next update will be of another demo for a potential future scenario since I'll need more time to prep for what's waiting for you in the inoculation lab.
+
+Lemme know what you all think, I hope to have more coming next Friday!
+
+
+writeSpeech("Lansley", "lansley.jpg", "This is Sergeant Lansley of Charlie Team, two days into the search and no sign of the missing civilians. We had an ATV searching the forest near the border of Mongoose City, but have since lost contact with them.<br>We found signs of Franklin, member of Bravo Team, in a barricaded section of the forest three hours ago. Scraps of cloth, ID tags, and several samples of a unknown white substance with narcotic effects. We hope to see the results soon, but communication with the police station we sent the samples to has suddenly stopped.<br>The team and I have stopped at a mansion in the forest, not present on any maps. Local wildlife is highly agitated, so we'll be taking shelter here until backup arrives.");
+writeText("That was the last anyone heard of Charlie Team, it was more than a week ago. Backup never came, orders were sent to all local divisions to abandon the city and set up security checkpoints as roads leading in. Defying their blockade, you set out through the barricade lines with an unregistered vehicle. Your sister, Kelsey Lansing would hate to hear you've come to rescue her, but what kind of big brother would you be if you just left her out here?");
+writeText("You come to a stop just off the road. According to what you could gather, the mansion should close. All you need to do now is make your way through the forest.");
+--- Forest");
+writeText("The air is cold and dry, it's late autumn so the forest's floor is covered in leaves. The trees are too dense for your car, so you decide to hoof it. Unable to sneak in any powerful weaponry, all you've got is a stun-gun, your wilderness exploration gear, and a radio.");
+writeText("Along the path is a broken-down shed. It looks like at one point it was heavily barricaded, meant to keep something out.");
+writeText("In the distance, you can make out the sounds of dogs howling and barking. It doesn't seem to be getting louder, so they aren't getting any closer. Aside from that, the forest is pretty calm. You should be fine to continue on.");
+--- Shed");
+writeText("You decide to check out the shed. The door and windows are boarded up, but the west-facing wall has been smashed through.");
+writeText("You can see scraps of clothes and some kind of fluid stains the walls and floor. You stick your head in through the broken wall for a better look.");
+writeText("A smell hits you right away, kind of like fish and sweat. It's pretty awful, something about it is making you feel woozy. It'd be best to keep moving.");
+--- Mansion entrance");
+writeText("Not having anything in particular to go on, you follow the sound of the dogs. Soon enough the trees give way to a massive clearing with a looming mansion in the center.");
+writeText("It's got red walls and all of the windows are covered by curtains. One of the lights is on, but the window is blocked off by iron bars.");
+writeText("A pair of sturdy wooden doors on the front, the mansion is pretty intimidating. This is something straight out a horror flick. Still, if Kelsey is alive, she's probably inside. You should try the door.");
+writeText("Near the entrance is a massive kennel, several dogs wildly barking and throwing themselves against the cage walls to get at you.");
+--- Kennel");
+writeText("The walls are study enough, so you should be fine to check it out. You get closer to the cage.");
+writeText("The dogs are absolutely rabid. They're all dobermen, but something is off about them. They gnaw and claw at their containment, probably eager to tear you apart. There's the some fluid splattered on the inside of the cage. They're all wearing studded leather collars with big... Batteries? They're some kind of shock collars probably, way stronger than anything you could get over the counter.");
+writeText("After a minute, it hits you as to what's different about them. They're bigger than their breed should be, more muscular, and they're all erect. They've each got a second collar on, fastened around their dicks each also with a smaller battery on them. They don't seem happy about it, you should get moving.");
+--- Entering");
+writeText("You approach the door, it has multiple scratch marks on the front but otherwise it's pristine. You give a knock, but there's no response. Testing your luck you turn the knob, and the door opens. It wasn't locked.");
+writeText("As you walk in you hear something metal snap behind you, and the barking from the kennel gets louder and closer. Thinking quickly you shut the door and feel somthing slam against it. Looks like you'll need to find someone, preferably their owner, to deal with the hounds if you want to leave.");
+writeText("The windows are all guarded from the inside by thick metal, so there's no need to worry about the dogs getting in from that end. You should be able to safely explore the mansion foyer.");
+--- Mansion Foyer");
+writeText("You're in the mansion foyer.");
+writeText("It's very dark in here, and flipping the lightswitch doesn't seem to do anything.");
+writeText("You can hear the sounds of scratching and barking from outside. The big wooden door stands sturdy though.");
+writeText("There's a large staircase leading up to the second floor, with two doors. One leads to the West Wing, and is unlocked. One leads to the East Wing, and has a small passcode lock on it.");
+writeText("Below the staircase is a large oaken door, the two knobs chained together with a massive, rusty iron lock keeping the door closed.");
+writeText("There's a rather flimsy wooden door off to the side with a window on it. It's really dark, but it seems to lead to some kind of garage.");
+--- Garage");
+writeText("You open the door to the garage and flip the lightswitch, but no results. Luckily some moonlight is shining into the room, so you at least aren't blind.");
+writeText("The room is strange. You're in some kind of glass box in the corner of the garage with no way to actually explore the rest of the room. It isn't fragile stuff either, it's tempered glass, bulletproof.");
+writeText("There's a figure in the darkness of the room, not moving. It looks vaguely human, like someone chained to the ground. It could also be some kind of a statue or something.");
+writeText("There's a button in the box with you, it looks like the kind used to open garage doors. You could press it.");
+writeText("If you're done in here, you can go back to the mansion foyer.");
+--- After");
+writeText("You're in the garage, or at least some blocked off section of it.");
+writeText("The room is strange. You're in some kind of glass box in the corner of the garage with no way to actually explore the rest of the room. It isn't fragile stuff either, it's tempered glass, bulletproof.");
+writeText("In the center of the room is an unconcious woman, coated in sexual fluids.");
+writeText("If you're done in here, you can go back to the mansion foyer.");
+--- Button");
+writeText("You press the button. It must run off a different battery, because the garage door begins to open. Fat lot of good it does you since you're stuck in a box, the only door in here leading you back to the foyer.");
+writeText("As the garage door opens, moonlight shines into the room, revealing the figure in the center. There're no cars, no equipment, just a disorientated looking woman chained to the ground.");
+writeText("As she notices you, she lunges towards your box, only to stop when the chain on her leg is pulled taut.");
+writeText("There's a feral hunger in her eyes, but more noticably there's a pretty large dick between her legs.");
+writeText("You don't have the time to figure that out though, because it looks like the garage door is partially blocked off by a cage. There's a tunnel connecting the garage door to something outside, and soon enough you see why.");
+writeText("A pair of hounds make their way inside, the whole contraption designed to allow access to the kennel when the button is pushed.");
+writeText("The chained woman doesn't seem to care, and keeps trying to lunge at you as the dogs approach her.");
+writeText("The tempered glass is way too strong for you to break, there's no way to save the woman. It's pretty clear what's about to happen, so you can either get out of here as soon as possible or stay and indulge your morbid curiosity.");
+--- Hounds");
+writeText("The woman is abnormally fixated on you even as one of the massive hounds comes up her and plants his paws on her back, mounting her.");
+writeText("You can see his erect cock dangling, fully erect, with the shock collar wrapped around his base.");
+writeText("He bucks up against the woman, his cock poking her dangling balls a few times before he lines himself up with her ass and slowly pushes in.");
+writeText("Finally the woman's attention is pulled away from you just as the dog roughly shoves his hips forward. The other dog lazily lies down in front of the woman, lifting his leg to expose his cock to her.");
+writeText("She doesn't seem to care that thw cock in front of her is red, or that it has a pointed tip. Completely enamoured at first sigh, she moves foward to start licking at the red length while the dog behind her starts to get into the flow of thrusting.");
+[image]");
+writeText("Quickly enough the one behind her is already ready to cum. His thrusts stop in the middle like he's blocked by something, and a squint shows that it's a growing bulge near the base of his dick. He's having trouble thrusting his knot inside until the woman bucks backwards in time with his thrusts. Soon after she lurches forwards to deepthroat the cock in her mouth.");
+writeText("Both creatures cumming, they stop their thrusting to dump their loads into the woman's holes. But just as things begin to slow down, a red light blinks on the cock-shock collars. The woman lets out a high-pitched muffled yelp, but the hounds seem more aggravated than pained. Despite still cumming, they both start to pick up the pace and begin thrusting faster.");
+writeText("The collars flash red again, causing the infected woman to spasm and let out a spurt of cum from her untouched dick. The shocks must be for her, and it seems like she's getting off on being zapped while being used as a bitch.");
+writeText("After having had enough, the hound behind the woman begins to tug and pull to try and free his knot from the woman's greey asshole. He tugs and tugs, before finally the cock is freed with a big *POP* and a line of dog cum spurts from the woman's abused hole through the air.");
+writeText("Still leaking, drops of dog cum slide down her balls and down her erect, dangling shaft to mix with her cum before dripping down into the growing pool on the floor.");
+writeText("The hound using her mouth stands up, but before it decides it's done it lifts its leg. The dangling dog cock habds inches away from the woman's cum-coated face, before it sprays her with a blast of piss. The woman, barely concious at this point, graps the cock in her hand and moves the still-spraying tip to her mouth. Greedily, she opens up and begins sucking off the still-pissing dog until the stream weakens.");
+writeText("As though trained, once the dogs are finished they leave the garage and head back to their kennels.");
+writeText("With the show over, you should head back to the mansion foyer.");
+--- West Wing");
+writeText("You're in the west wing.");
+writeText("The door creaks as you walk into the long hallway. It's pretty dark, but you can see the wallpaper is decorated with soft blue and white stripes.");
+writeText("There's a pair of brown doors, probably leading to bedrooms. The door closest to you is locked and has a picture of a clover, and the other door has a dented knob and a picture of a spade.");
+writeText("There's a white door with a sign on the front labeled 'Bathroom'.");
+--- Spade Bedroom");
+writeText("You're in the spade bedroom");
+writeText("The wallpaper is white, decorated sparsely by black spade icons. The room is pretty musty, and has a familiar scent.");
+writeText("Across from you is a large bed with white sheets, and chained onto the bed is a woman. She's completely naked excepted for a black blindfold and a chastity cage containing a flaccid dick.");
+writeText("When you enter she shudders for a moment and thrusts her hips into the air as if begging for release.");
+writeText("She groans, but there's no trace of intelligence in her voice. Talking to her is pointless, like she doesn't even register you are speaking.");
+writeText("There's a device on a dresser near the bed, it's the same color as the woman's chastity cage. It looks mismashed together, like it was scrapped together by an amateur. There's a dial on the device, you could toy around with it.");
+writeText("Otherwise, the room is empty. If you're done here, you can head back out to the west wing.");
+--- Remote");
+writeText("You pick up the device, it's like some kind of remote. The woman is still struggling against her bonds.");
+writeText("You turn the dial and the woman lets out a sudden breathy moan. A dim light is glowing red on her chastity cage, and she's grttting her teeth now.");
+writeText("You turn the dial up further and she stops struggling, now tightly clenching the bedsheet with her fingers as she thrusts her caged cock up and down helplessly.");
+writeText("You turn it up again and the light glows brighter. Her cock is desperately trying to grow erect but is prevented by the metal cage.");
+writeText("You can clearly hear a buzzing clearly, it's muffled and barely audible from her abdomen. There must be some kind of toy inside her ass, maybe a vibrator or a shocker stimulating her prostate.");
+writeText("You turn the dial again and she desperately gasps, her arms and legs twitching. Her caged cockhead starts leaking thick, heady cum. The smell of it is powerful and more than a little intoxicating.");
+writeText("She's already cumming, but you can't help yourself but turn the dial father. Her moans turn into screams rising in pitch with the dial as you turn it all the way up. The chastity cage actually seems to grow smaller and tighter as the light glows brighter, and her small, piddly stream of cum turns into an arcing jet that sprays from the hole in the cage.");
+writeText("The buzzing is very audible now, whatever it's doing must be incredibly intense. The orgasm just keeps going on until you turn the dial back down.");
+writeText("Panting and exhausted, she goes slack on the bed. But you, being the morbidly curious sort you are, suddenly turn the dial right back up.");
+writeText("No buildup, she lets out a scream as another several spurts of cum are forced out of her body. The shots get smaller and weaker, but the stream isn't stopping. The device must have more control over her than it seems, if you turn it to a certain level it seems like she's just on the edge of cumming.");
+writeText("No matter how many times you push her, she never seems to be satisfied. The smell is getting too powerful for you now. You have no choice but to set down the device and leave the room as soon as you can.");
+--- Bathroom");
+writeText("You're in the west wing bathroom.");
+writeText("The room is dark, but at least a window lets in some moonlight. There's the usual fixtures, a sink, a tub, and so on. The unusual part is the rather petite woman chained to the wall. She's got on iron clasps but they're nothing compared to the complex looking gag on her mouth. It seems to be designed to allow her tongue to stick out, but completely shut down her ability to make sounds aside from a muffled and... Modulated? Grunt.");
+writeText("The whole deal is way too complex for you to free her from, but it doesn't seem like she wants to be freed.");
+writeText("The door was hooked up to some kind of wire. When you opened it, it led to some kind of mechanical dildo machine being activated, and after a few *whirrs* the device starts to power up.");
+--- Chained siren");
+writeText("The girl jerks in place as the dildo begins, slowly at first, pumping up and down.");
+--- Bathroom after");
+writeText("You're in the west wing bathroom.");
+writeText("The room is dark, but at least a window lets in some moonlight. There's the usual fixtures, a sink, a tub, and so on.");
+writeText("The woman chained to the wall is laying against the tiles behind her, the machine she's hooked up to is probably out of juice.");
+writeText("Dangling from her neck is a metal tag, listing an identification number and a name, 'Kennedy'. It belongs to a member of Charlie Team, one of Kelsey's squadmates!");
+writeText("She often told you about him being reprimanded for getting too handsy with women. How on earth did this girl get his tag?");
+writeText("It doesn't seem like there are any answers left in gere, probably best to head back out into the west wing hallway. ");
