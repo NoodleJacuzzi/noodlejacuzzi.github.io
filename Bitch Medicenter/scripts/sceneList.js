@@ -45,29 +45,29 @@ function writeScene(scene) {
 		}
 		case "haa": {
 			writeText("Has this ever happened to you?");
-			writeBig("scripts/gameFiles/commercials/app1.gif");
+			writeBig("scripts/gamefiles/commercials/app1.gif");
 			writeText("Are you struggling with expensive, ineffective machines to realize your full potential?");
-			writeBig("scripts/gameFiles/commercials/app2.gif");
+			writeBig("scripts/gamefiles/commercials/app2.gif");
 			writeText("Well the answer to all of your problems is here. The <b>Human Alteration App</b>!");
-			writeBig("scripts/gameFiles/commercials/app3.gif");
+			writeBig("scripts/gamefiles/commercials/app3.gif");
 			writeText("This woman is now living out the dream she's had for <b>two weeks</b>, all without expensive modifications! And, the absolute best part is, you can't have it!");
 			writeText("That's right you unwashed peasants, there's only one app; it's mine! I'm headed back to my paradise now, send nudes and maybe I'll spend a couple seconds making you into a human sex doll!");
 			writeText("<i>This commercial was paid for by Jean. A president and queen you can count on.</i>");
-			writeBig("scripts/gameFiles/commercials/humanAlterationApp.png");
+			writeBig("scripts/gamefiles/commercials/humanAlterationApp.png");
 			writeTransition("affiliates", "Close file");
 			break;
 		}
 		case "princess": {
-			writeBig("scripts/gameFiles/commercials/princess1.jpg");
+			writeBig("scripts/gamefiles/commercials/princess1.jpg");
 			writeText("Now, own the classic you've been waiting for.");
-			writeBig("scripts/gameFiles/commercials/princess2.jpg");
+			writeBig("scripts/gamefiles/commercials/princess2.jpg");
 			writeText("It's time to follow your heart, to discover the enchantment, to touch the magic again. An age-old story of a gullible princess and a sadistic demon is about to unfold.");
 			writeText("Experience this age-old tale like never before; in the exact same format it was released in.");
-			writeBig("scripts/gameFiles/commercials/princess3.jpg");
+			writeBig("scripts/gamefiles/commercials/princess3.jpg");
 			writeText("'9/10, A little something for everyone.' - IGNorant");
 			writeText("'5-stars, fun for the whole family!' - Kotatsu");
 			writeText("'It was free, but worth every penny!' - Jerry");
-			writeBig("scripts/gameFiles/commercials/princessQuest.jpg");
+			writeBig("scripts/gamefiles/commercials/princessQuest.jpg");
 			writeTransition("affiliates", "Close file");
 			break;
 		}
@@ -83,7 +83,7 @@ function writeScene(scene) {
 			writeText("It cuts back to the young survivor crumpling up the notice.");
 			writeSpeech("You", "scripts/gamefiles/commercials/rainy.jpg", "Wait my ass. This used to be a nice nei-Aaah!?");
 			writeText("She's tackled from behind by a woman she hadn't noticed. Within moments she's pinned to the ground and the sounds of vigorous mouthfucking fill the room. The camera zooms out, out of the cafe and over the city blanketed by the rain.");
-			writeBig("scripts/gameFiles/commercials/rainyDayZ.jpg");
+			writeBig("scripts/gamefiles/commercials/rainyDayZ.jpg");
 			writeTransition("affiliates", "Close file");
 			break;
 		}
@@ -94,32 +94,32 @@ function writeScene(scene) {
 			writeText("PERPETRATORS WILL BE TRACKED, LOCATED, AND DETAINED");
 			writeText("CHECKING BIORHYTHMICS");
 			writeText("AV-5 CLEARANCE ACCEPTED, ACCESS GRANTED. LOADING EXPERIMENT LOG RB-01");
-			writeBig("scripts/gameFiles/commercials/bracelet.jpg");
+			writeBig("scripts/gamefiles/commercials/bracelet.jpg");
 			writeText("A partially tarnished silver bracelet.");
 			writeSpeech("Research Logs", "scripts/gamefiles/commercials/notes.png", "Findings:<br>The bracelet allows the wearer to be unperceived by others but only when the wearer desires to go unnoticed.<br>If the wearer wishes, any action they take will go unnoticed, including physical actions such as pinching and molesting. People affected by these actions will still feel the repercussions, but they will ignore the actions as if they were run of the mill occurrences.<br>The wearer can erase memories from other people's minds. This effect is limited to memories of the wearer or the wearer's indirect actions.");
 			writeText("10 other artifact files available for perusal.");
 			writeText("END OF SESSION");
-			writeBig("scripts/gameFiles/commercials/anomalyVault.png");
+			writeBig("scripts/gamefiles/commercials/anomalyVault.png");
 			writeTransition("affiliates", "Close file");
 			break;
 		}
 		case "university": {
 			writeText("<i>The file is heavily damaged, playback starts twenty seconds into the file.</i>");
-			writeBig("scripts/gameFiles/commercials/principal.jpg");
+			writeBig("scripts/gamefiles/commercials/principal.jpg");
 			writeSpeech("Victoria", "scripts/gamefiles/commercials/victoria.jpg", "-University, we're a family. We'll teach you the skills and knowledge you need to be the very best you can be.");
-			writeBig("scripts/gameFiles/commercials/kuro.jpg");
+			writeBig("scripts/gamefiles/commercials/kuro.jpg");
 			writeSpeech("Victoria", "scripts/gamefiles/commercials/victoria.jpg", "Whether you're getting to know an exclusive crowd of your fellow students...");
-			writeBig("scripts/gameFiles/commercials/player.jpg");
+			writeBig("scripts/gamefiles/commercials/player.jpg");
 			writeSpeech("Victoria", "scripts/gamefiles/commercials/victoria.jpg", "Or improving with the help of our faculty, we-");
 			writeSpeech("You", "scripts/gamefiles/commercials/thomas.jpg", "Get this camera out of my face. <b>NOW.</b>");
 			writeSpeech("Victoria", "scripts/gamefiles/commercials/victoria.jpg", "Y-yes master!");
 			writeText("<i>The playback ends here.</i>");
-			writeBig("scripts/gameFiles/commercials/hentaiUniversity.png");
+			writeBig("scripts/gamefiles/commercials/hentaiUniversity.png");
 			writeTransition("affiliates", "Close file");
 			break;
 		}
 		case "medicenter": {
-			writeBig("scripts/gameFiles/commercials/medicenter.jpg");
+			writeBig("scripts/gamefiles/commercials/medicenter.jpg");
 			writeTransition("affiliates", "Close file");
 			break;
 		}
