@@ -2,11 +2,12 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 12/16/2019</p>
-				<p class = "centeredText">Rainy DayZ v1.3 & Short Story</p>
-				<p class = "centeredText">The release of Rainy DayZ v1.3, featuring some navigation, and a preview of future stuff including a new scene (or 2, depending on how you define it)</p>
+				<p class = "centeredText">Lastest News 12/20/2019</p>
+				<p class = "centeredText">Rainy DayZ v1.4, Short Story, & Bitch Medicenter Engine Update</p>
+				<p class = "centeredText">The release of Rainy DayZ v1.4, featuring scenes for The Facility</p>
 				<p class="choiceText" onclick="window.location.href='http://www.hentai-foundry.com/stories/user/NoodleJacuzzi/39001/Bitch-Medicenter---Jerk-off-Junkies-File'">Also, a chapter of my shemale-heavy short story on Hentai Foundry</p>
-				<p class = "centeredText">Thank you to: Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Robbie, Lasse B, andres mejia, Arthorias28, Badaxe, ChronosEdge, Colin E, Judavarius, Lunarghost, Marco Wassmer, Q Q, Scal, Taylor Trout, Adonnak, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Arthur radcliffe, Auckard, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, Chaaaanon, Charles Morris, David Lange, Debarre Sonny, Devin, Dewr, Drashin, Ed, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jacob Cannon, Jane, jdktjk205, Jesse Greene, joe, joe, joe mulhall, john smith, Joseph Gibbs, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Noah, Nutburger, Oliver Jones, Philipp, Prodigal211, qwerty, Roy, Ryan Linn, sage, Sebastian Eckel, Shawn, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, Ungy Bungy, valdis, Vincent Madaire-Cullen, Wayne culbert, Wild Bill, Will Osboldstone, William Richardson, Yongdian Guo, Your Husbando, Профессор Преображенский, and 凱 陳 for supporting my work!</p>
+				<p class = "centeredText">Also Also, an engine update to Bitch Medicenter, mostly focusing on the game's css and mobile performance.</p>
+				<p class = "centeredText">Thank you to: Swallows999, Ben, Dover, CaptainMontana, Joshua, Ingram, MrManPerson, Robbie, Lasse, B, andres, mejia, Arthorias28, Badaxe, ChronosEdge, Colin, E, Jinouga, Judavarius, Lunarghost, Marco, Wassmer, Q, Q, Scal, Taylor, Trout, Adonnak, andy, Andy, Andy, Amundy, Angel, Anthony, Munso, Ariados, Arkhalis, Arthur, radcliffe, Auckard, Blaise, Fenn, Bobby, Hamilton, bono, brandon, Carlos, Chaaaanon, Charles, Morris, David, Lange, Debarre, Sonny, Devin, Dewr, dhccpmc, Drashin, Ed, Guy68691, Gwen, Yurick, iNoH8, , ItsAllOgreNow, Jacob, Cannon, Jane, jdktjk205, Jesse, Greene, joe, joe, joe, mulhall, john, smith, Joseph, Gibbs, Joshua, Melzark, Julia, Ferro, Karan, Raj, Gupta, LaCrazy, lm, Carma, Lucas, Molski, Luke, marvin, diaz, mazterlith, Mirza, Hasan, Monkey, murgatroid99, Nha, Nils, Maier, Nisi, Noah, Nutburger, Oliver, Jones, Philipp, Prodigal211, qwerty, Roy, Ryan, Linn, sage, Sebastian, Eckel, Shawn, sky, Skyrim, mod, lvr, Slipokk, Snaked, Steam, Screw, stratum, surgE, Taurus, Travon, Rashad, Lemar, Brackin, Theodrian, Ungy, Bungy, valdis, Vincent, Madaire-Cullen, Wayne, culbert, Wild, Bill, Will, Osboldstone, William, Richardson, Yongdian, Guo, Your, Husbando, zoobot5, Профессор Преображенский, and 凱 陳 for supporting my work!</p>
 			`;
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://discord.gg/B3AszYM'">Visit my discord server</p>
@@ -47,19 +48,19 @@ function writeScene(scene) {
 				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/30871183'">List of cheat codes</p>
 			`;
 			writeBig("images/RainyDayZ.jpg");
-			writeText("Rainy DayZ v1.3");
+			writeText("Rainy DayZ v1.4");
 			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.");
 			writeText("Navigate a town and city deliberately working to sabotage yourself and throw yourself into the clutches of the zombie hordes, the goal of the game here is to be defeated and attacked to collect and unlock all of the game's scenes.");
-			writeText("Tags: Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Bestiality (optional), Parasites (optional)");
+			writeText("Tags: Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Bestiality (can be disabled), Parasites (can be disabled), Watersports (can be disabled)");
 			writeTransition("RainyDayZ", "Preview");
 			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/32409951'">Download the game</p>
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/32506352'">Download the game</p>
 				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12575'">Discussion thread</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ%20Mobile.html'">Play the mobile version</p>
 			`;
 			writeBig("images/bitchMedicenter.png");
-			writeText("Bitch Medicenter Demo");
+			writeText("Bitch Medicenter Demo v2");
 			writeText("You're a doctor / sexual therapist who prescribes special body and mind-altering products to help with failed marriages, self worth issue, and etc. Basically, you're modifying people's minds and bodies. Currently in a demo state with only one of the two minigames finished.");
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter.html'">Play the demo online</p>
