@@ -17,11 +17,110 @@ function writeScene(scene) {
 			writeTransition("caseSelect", "View case files");
 			writeTransition("prologue", "Open introduction folder");
 			writeText("...");
-			writeTransition("author", "Author Information", "#91eba9");
-			writeTransition("settings", "Game Settings", "#91eba9");
-			writeTransition("cheat", "Enter Cheat Codes", "#91eba9");
+			writeTransition("funding", "Medicenter Funding", "#91eba9");
+			writeTransition("affiliates", "Affiliate & Medicenter Advertisement Log", "#91eba9");
+			writeTransition("settings", "Console Settings", "#91eba9");
+			//writeTransition("cheat", "Enter Cheat Codes", "#91eba9");
 			writeText("...");
 			writeTransition("start", "Log out", "#FF0000");
+			break;
+		}
+		case "funding": {
+			writeText("Bitch Medicenter funding is provided by private donors. Thanks to this support from good samaritans the medicenter can remain open to the general public, instead of blocking off much-needed medical care from the financially challenged.");
+			writeText("From the bottoms of the hearts of every staffmember here at Bitch Medicenter, Thank you to Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Robbie, Lasse B, andres mejia, Arthorias28, Badaxe, ChronosEdge, Colin E, Judavarius, Lunarghost, Marco Wassmer, Q Q, Scal, Taylor Trout, Adonnak, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Arthur radcliffe, Auckard, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, Chaaaanon, Charles Morris, David Lange, Debarre Sonny, Devin, Dewr, Drashin, Ed, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jacob Cannon, Jane, jdktjk205, Jesse Greene, joe, joe, joe mulhall, john smith, Joseph Gibbs, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Noah, Nutburger, Oliver Jones, Philipp, Prodigal211, qwerty, Roy, Ryan Linn, sage, Sebastian Eckel, Shawn, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, Ungy Bungy, valdis, Vincent Madaire-Cullen, Wayne culbert, Wild Bill, Will Osboldstone, William Richardson, Yongdian Guo, Your Husbando, Профессор Преображенский, and 凱 陳 for supporting my work!");
+			writeText("If you're interested in funding this clinic, head over to the medicenter's <a href='https://www.patreon.com/noodlejacuzzi'>Funding Page</a>. If you have any comments, criticisms, or suggestions for new medical procedures, direct them to the site manager's personal <a href='https://discord.gg/pDht5BZ'>Forum</a> where he'd love to hear what you think!");
+			writeTransition("mainMenu", "Go back");
+			break;
+		}
+		case "affiliates": {
+			writeText("The following are a collection of other work collated by site manager NoodleJacuzzi. After extensive peer review and focus testing they will air on medicenter television as entertainment during waiting lounge period.");
+			writeTransition("haa", "Human Alteration App Commercial");
+			writeTransition("princess", "Princess Quest Commercial");
+			writeTransition("rainyDayZ", "Rainy DayZ Commercial");
+			writeTransition("anomaly", "Anomaly Vault Commercial");
+			writeTransition("university", "Hentai University Commercial");
+			writeTransition("medicenter", "Bitch Medicenter Marketing Campaign");
+			writeTransition("mainMenu", "Go back");
+			break;
+		}
+		case "haa": {
+			writeText("Has this ever happened to you?");
+			writeBig("scripts/gameFiles/commercials/app1.gif");
+			writeText("Are you struggling with expensive, ineffective machines to realize your full potential?");
+			writeBig("scripts/gameFiles/commercials/app2.gif");
+			writeText("Well the answer to all of your problems is here. The <b>Human Alteration App</b>!");
+			writeBig("scripts/gameFiles/commercials/app3.gif");
+			writeText("This woman is now living out the dream she's had for <b>two weeks</b>, all without expensive modifications! And, the absolute best part is, you can't have it!");
+			writeText("That's right you unwashed peasants, there's only one app; it's mine! I'm headed back to my paradise now, send nudes and maybe I'll spend a couple seconds making you into a human sex doll!");
+			writeText("<i>This commercial was paid for by Jean. A president and queen you can count on.</i>");
+			writeBig("scripts/gameFiles/commercials/humanAlterationApp.png");
+			writeTransition("affiliates", "Close file");
+			break;
+		}
+		case "princess": {
+			writeBig("scripts/gameFiles/commercials/princess1.jpg");
+			writeText("Now, own the classic you've been waiting for.");
+			writeBig("scripts/gameFiles/commercials/princess2.jpg");
+			writeText("It's time to follow your heart, to discover the enchantment, to touch the magic again. An age-old story of a gullible princess and a sadistic demon is about to unfold.");
+			writeText("Experience this age-old tale like never before; in the exact same format it was released in.");
+			writeBig("scripts/gameFiles/commercials/princess3.jpg");
+			writeText("'9/10, A little something for everyone.' - IGNorant");
+			writeText("'5-stars, fun for the whole family!' - Kotatsu");
+			writeText("'It was free, but worth every penny!' - Jerry");
+			writeBig("scripts/gameFiles/commercials/princessQuest.jpg");
+			writeTransition("affiliates", "Close file");
+			break;
+		}
+		case "rainyDayZ": {
+			writeText("A young woman walks into an abandoned cafe, the windows all boarded up. She sets her worn baseball bat aside and begins reading the evacuation notice she found.");
+			writeSpeech("You", "scripts/gamefiles/commercials/rainy.jpg", "Report unusual behavior.");
+			writeText("The screen flashes to a pack of hounds running through the forest.");
+			writeSpeech("You", "scripts/gamefiles/commercials/rainy.jpg", "Barricade your homes.");
+			writeText("The screen cuts to a small-dicked woman singing naked in the rain, hypnotized-looking men stumbling after her.");
+			writeSpeech("You", "scripts/gamefiles/commercials/rainy.jpg", "Avoid all contact with infected individuals.");
+			writeText("The screen flashes to a dozen naked woman, all sporting dicks, chasing a red-hooded woman.");
+			writeSpeech("You", "scripts/gamefiles/commercials/rainy.jpg", "Wait for official instructions. Ha!");
+			writeText("It cuts back to the young survivor crumpling up the notice.");
+			writeSpeech("You", "scripts/gamefiles/commercials/rainy.jpg", "Wait my ass. This used to be a nice nei-Aaah!?");
+			writeText("She's tackled from behind by a woman she hadn't noticed. Within moments she's pinned to the ground and the sounds of vigorous mouthfucking fill the room. The camera zooms out, out of the cafe and over the city blanketed by the rain.");
+			writeBig("scripts/gameFiles/commercials/rainyDayZ.jpg");
+			writeTransition("affiliates", "Close file");
+			break;
+		}
+		case "anomaly": {
+			writeText("WARNING: THIS DATABASE OF TRUE STORIES IS ABSOLUTELY 100%");
+			writeText("<b>CLASSIFIED</b>");
+			writeText("ACCESS BY UNAUTHORIZED PERSONNEL IS STRICTLY PROHIBITED");
+			writeText("PERPETRATORS WILL BE TRACKED, LOCATED, AND DETAINED");
+			writeText("CHECKING BIORHYTHMICS");
+			writeText("AV-5 CLEARANCE ACCEPTED, ACCESS GRANTED. LOADING EXPERIMENT LOG RB-01");
+			writeBig("scripts/gameFiles/commercials/bracelet.jpg");
+			writeText("A partially tarnished silver bracelet.");
+			writeSpeech("Research Logs", "scripts/gamefiles/commercials/notes.png", "Findings:<br>The bracelet allows the wearer to be unperceived by others but only when the wearer desires to go unnoticed.<br>If the wearer wishes, any action they take will go unnoticed, including physical actions such as pinching and molesting. People affected by these actions will still feel the repercussions, but they will ignore the actions as if they were run of the mill occurrences.<br>The wearer can erase memories from other people's minds. This effect is limited to memories of the wearer or the wearer's indirect actions.");
+			writeText("10 other artifact files available for perusal.");
+			writeText("END OF SESSION");
+			writeBig("scripts/gameFiles/commercials/anomalyVault.png");
+			writeTransition("affiliates", "Close file");
+			break;
+		}
+		case "university": {
+			writeText("<i>The file is heavily damaged, playback starts twenty seconds into the file.</i>");
+			writeBig("scripts/gameFiles/commercials/principal.jpg");
+			writeSpeech("Victoria", "scripts/gamefiles/commercials/victoria.jpg", "-University, we're a family. We'll teach you the skills and knowledge you need to be the very best you can be.");
+			writeBig("scripts/gameFiles/commercials/kuro.jpg");
+			writeSpeech("Victoria", "scripts/gamefiles/commercials/victoria.jpg", "Whether you're getting to know an exclusive crowd of your fellow students...");
+			writeBig("scripts/gameFiles/commercials/player.jpg");
+			writeSpeech("Victoria", "scripts/gamefiles/commercials/victoria.jpg", "Or improving with the help of our faculty, we-");
+			writeSpeech("You", "scripts/gamefiles/commercials/thomas.jpg", "Get this camera out of my face. <b>NOW.</b>");
+			writeSpeech("Victoria", "scripts/gamefiles/commercials/victoria.jpg", "Y-yes master!");
+			writeText("<i>The playback ends here.</i>");
+			writeBig("scripts/gameFiles/commercials/hentaiUniversity.png");
+			writeTransition("affiliates", "Close file");
+			break;
+		}
+		case "medicenter": {
+			writeBig("scripts/gameFiles/commercials/medicenter.jpg");
+			writeTransition("affiliates", "Close file");
 			break;
 		}
 		case "settings": {
