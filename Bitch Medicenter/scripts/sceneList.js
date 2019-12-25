@@ -2,10 +2,10 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start": {
 			document.getElementById('output').innerHTML += `
-				<img src="scripts/gamefiles/logo.png" class = "bigPicture" style="border: none; width: 30vw;"><br>
+				<img src="scripts/gamefiles/logo.png" class = "bigPicture" style="border: none; width: 40vw;"><br>
 				<p style ="margin: auto; text-align:center;">Username: <span style="background-color:white; color:black;"> ******** </span></p><br>
 				<p style ="margin: auto; text-align:center;">Password:  <span style="background-color:white; color:black;"> ******** </span></p>
-				<p class="choiceText" onclick="sceneTransition('mainMenu')" style="width: 30vw; border:none;">
+				<p class="choiceText" onclick="sceneTransition('mainMenu')" style="width: 40vw; border:none;">
 					Login
 				</p>
 				`;
