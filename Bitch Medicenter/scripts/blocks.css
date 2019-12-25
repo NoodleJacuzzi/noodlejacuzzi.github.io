@@ -39,6 +39,8 @@
 	background: #bbada0;
 	border-radius:5px;
 	touch-action: none;
+	max-width: 90vw;
+	max-height: 90vw;
 }
 
 .cell{
