@@ -745,14 +745,14 @@ function writeScene(scene) {
 					data.player.toolboxCounter += 1;
 					writeArtifactMini('switch');
 				}
-				writeArtifactMini('magazine');
 				writeArtifactMini('loop');
-				writeArtifactMini('clock');
-				//writeArtifactMini('preacher');
 				writeArtifactMini('notebook');
-				writeArtifactMini('lamp');
-				writeArtifactMini('commercials');
 				writeArtifactMini('engine');
+				writeArtifactMini('commercials');
+				writeArtifactMini('magazine');
+				writeArtifactMini('clock');
+				writeArtifactMini('lamp');
+				//writeArtifactMini('preacher');
 				if (data.player.entryPoint == "room") {
 					writeTransition("room", "Go back");
 				}

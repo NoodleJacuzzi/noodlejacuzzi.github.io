@@ -25,15 +25,15 @@ To-do
 	commercials (COMPLETE)
 	promise engine (COMPLETE)
 	artifact retrieval logs placeholder (COMPLETE)
-	demo
+	demo (COMPLETE)
 		demo cheat (COMPLETE)
 		demo character images (COMPLETE)
 		demo location images (COMPLETE)
-		demo imageButton css
-		demo navigation
-		demo scene images
-		demo scenes
-		demo remove mention of sequel
+		demo imageButton css (COMPLETE)
+		demo navigation (COMPLETE)
+		demo scenes (COMPLETE)
+		demo remove mention of sequel (COMPLETE)
+		demo scene images (COMPLETE)
 	bugs
 		menu border visibility on mobile ver
 		mobile footer button spacing
