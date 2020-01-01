@@ -9,6 +9,7 @@ function writeScene(scene) {
 			writeText("As a content warning this game features numerous bizarre fetishes which may be too extreme for some. At the bottom of this page you can find a fetish list, detailing the tags associated with each of this game's artifacts. If there's a specific topic you'd like to avoid, stay away from the related artifacts. This game contains no underage or scatological content.");
 			writeText("In addition, there is a section called the Dark Vault. In here are several more divisive fetishes, currently including (temporary) male-to-female transformation. These scenes are optional for progression, and are not counted in the total scene count on the menu or in the logbook.");
 			writeTransition("prologue", "Start the game");
+			writeTransition("prologueSkip", "Skip the prologue");
 			writeTransition("startWardrobe", "Change your profile image");
 			//writeTransition("prologueSkip", "Skip the prologue");
 			writeText("Other notes:");
@@ -194,6 +195,16 @@ function writeScene(scene) {
 			writeSpeech("player", "", "Yeah got splashed with some chemicals, I'll be alright, just need some rest.");
 			writeSpeech("roommate", "", "Alright... I picked up some Chinese if you're hungry.");
 			writeTransition("home", "'Thanks'");
+			break;
+		}
+		case "prologueSkip": {
+			data.player.day = 2;
+			data.player.artifact1 = "bracelet";
+			updateMenu();
+			unlockScene('braceletDream1');
+			unlockScene('braceletHome1');
+			unlockScene('braceletResearch1');
+			sceneTransition('newDay');
 			break;
 		}
 		case "cheat": {
