@@ -20,6 +20,8 @@ var data = {
 		currentScene: "start",
 		time: "Morning",
 		day: 0,
+		storage: "",
+		entryPoint: "work",
 	},
 	story: [
 		{index: "roommate", image: "", met: false, fName: "Sophia", lName: "Leone", desc:"Your roommate, a lesbian schoolteacher.",},
@@ -167,7 +169,7 @@ var logbookArray = [
 
 var artifactArray = [
 	{index: "bracelet", dark: false, equipable: false, title: "Reprehensive Bracelet", desc: "A partially tarnished silver bracelet.", desc2: "When worn, the wearer can become imperceivable and erase memories of themselves & their actions."},
-	{index: "erotibox", dark: false, equipable: false, title: "Erotibox", desc: "A large wooden crate large enough to fit a person inside. <br>Anything put inside the box will become an erotic version of itself.", desc2: ""},
+	{index: "erotibox", dark: false, equipable: false, title: "Erotibox", desc: "A shabby wooden crate large enough to fit a person inside. <br>Anything put inside the box will become an erotic version of itself.", desc2: ""},
 	{index: "mirror", dark: false, equipable: false, title: "Antique Mirror", desc: "An antique mirror dating back to the Victorian era. If a person stares into the eyes of their own reflection long enough, they will 'switch places' with an alternate reality version of themselves.<br>In these alternate realities social norms and the physical body of the person switched with can all be completely different.", desc2: ""},
 	{index: "stopwatch", dark: false, equipable: true, title: "Time Stopwatch", desc: "A bronze stopwatch which appears at first glance to be broken, as the second hand jumps backwards every second.", desc2: "When the button at the top is pressed, the clock begins to record the time as normal but time stops for everyone except person holding the watch."},
 	{index: "coin", dark: false, equipable: true, title: "Midas Coin", desc: "A single gold coin with an inscription on the back written in Ancient Greek.", desc2: "When held, sexual activities performed by the holder will be 'normalized', and not perceived to be socially outrageous no matter how depraved the action. In addition, sexual acts will be seen to have 'value', meaning that the holder can exchange sexual acts as though they had a cash value."},
@@ -177,6 +179,28 @@ var artifactArray = [
 	{index: "onahole", dark: true, equipable: false, title: "Succubus Onahole", desc: "A fleshlight or 'onahole' made from an unknown material. Known to cause extreme euphoria when male genetalia is inserted, subjects state tendrils inside 'probed' them. Afterwards, subjects showed an extreme increase in semen production.", desc2: ""},
 	{index: "cage", dark: true, equipable: false, title: "Punification Cage", desc: "A plastic pink chastity cage. Wearing it almost immediately triggers a powerful orgasm, but in all cases resulted in an extreme decrease in genital size.", desc2: ""},
 	{index: "toolkit", dark: true, equipable: false, title: "Sissy's Toolkit", desc: "A plastic makeup kit. When opened, objects will appear inside and in the room which are designed to encourage the opener to 'explore themselves'. These range from makeup to unknown body-modifying drugs and a 3-man group of naked men. ", desc2: ""},
+];
+
+var artifactMiniArray = [ //Used for smaller artifacts such as prison and toolbox department
+	{index: "switch", type: "artifact", title: "Martin's Switch", desc: "A switch similar to an old fashion lightswitch.", desc2: "Flipping it will turn off the room's conciousness."},
+	{index: "magazine", type: "artifact", title: "'Girls Gone Mild' Magazine", desc: "A magazine featuring conservatively dressed women from an unknown publisher.", desc2: "When read, each page fills itself with a person the reader is both close to and interacts with on a regular basis. By writing in on the empty spaces, the reader can retroactively change the names of the people they know."},
+	{index: "loop", type: "artifact", title: "Mobium Loop", desc: "An impossibly constructed 3d shape of an unknown metal. When spun it rotate in an endless circle.", desc2: "While it's spinning, time begins to dilate heavily in a subtle way. Time will still pass second by second, but time periods like 'early morning' or 'evening' will continue to occur forever."},
+	{index: "clock", type: "artifact", title: "Wind-Up Clock", desc: "A small brass clock activated by inserting and winding a key into the side.", desc2: "When would up it causes the users consciousness to be flung backwards in time, usually to some turning point or 'prologue' of their lives."},
+	{index: "preacher", type: "artifact", title: "Lonely Preacher", desc: "A small wooden doll fashioned to look like a wise monk.", desc2: "When a subject speaks to the preacher the subject will perceive every word they hear to be louder or softer, depending on what the user desires at the time. In addition, visual spectacles will become more or less attention-grabbing compared to sound, also depending on the user's wishes."},
+	{index: "notebook", type: "artifact", title: "Thorough Notebook", desc: "An empty notebook, when opened it will immediately fill itself with diary-esque entries of the opener's life.", desc2: "Written in latin, the text has the curious effect of causing the user to re-live whatever memories are covered by the page, even if the user cannot read latin. Also curiously, entries for potential deaths are also present in the notebook if the user frequently tempts fate."},
+	{index: "lamp", type: "artifact", title: "Fashionista's Lamp", desc: "An exotic-looking lamp originating from an unknown European region.", desc2: "When a subject closes their eyes with in the lamp's glow, images of clothes and bodies specific to the user's psyche begin to fill their mind. If the user finds one pleasing, then when they open their eyes next their appearance will change to match whatever they were thinking of. "},
+	{index: "commercials", type: "artifact", title: "Alternate-Universe Commercials", desc: "A box of VHS tapes that materialized from another universe.", desc2: "Multiple security checks have been performed on them since one appears to be an advertisement for the Anomaly Vault, but research has found them to be harmless. Included is a note referencing a 'Master Index'."},
+	{index: "engine", type: "artifact", title: "Cheat(?) Engine", desc: "A bootleg version of a popular computer program for editing values.", desc2: "It's capable of rewriting reality, but it only responds to extremely specific phrases and ignores any other request. Unless you already know what to say, the program is useless. "},
+	{index: "logbook", type: "artifact", title: "Artifact Retrieval Logs", desc: "A massive set of cabinets full of mission log files. Only artifact hunters are authorized to use it.", desc2: "Alongside the cabinets are specialized tools used for simulating alternate mission outcomes."},
+	{index: "doctor", code:"scp", type: "prisoner", title: "'Plague' Doctor", desc: "A mysterious woman dressed in a skimpy version of a medieval plague doctor's uniform. Very dangerous.", desc2: ""},
+	{index: "talisman", code:"scp", type: "prisoner", title: "Talisman", desc: "A possessed talisman. There's a sticky note on it saying 'DO NOT TOUCH'", desc2: ""},
+	{index: "magical", code:"lobotomy", type: "prisoner", title: "Magical Girl", desc: "A woman proclaiming herself to be a champion of justice. You're pretty sure she was fished up from a river from some forest.", desc2: ""},
+	{index: "blue", code:"lobotomy", type: "prisoner", title: "Blue Star", desc: "Blue Star", desc2: ""},
+	{index: "kettle", code:"warehouse", type: "prisoner", title: "Wish-Granting Kettle", desc: "A rusty old kettle. It showed some promise at one point, but it's creators clearly had the wrong focus and it just isn't as shiny as everything else.", desc2: ""},
+	{index: "fringe", code:"fringe", type: "prisoner", title: "Ultra Top Secret Room", desc: "A super locked room, you aren't allowed to go in here. The end of the door's paint job is much, much more lazily done than the rest.", desc2: ""},
+	{index: "umbrella", code:"umbrella", type: "prisoner", title: "Zombie Virus", desc: "A vial containing a zombification virus. Hopefully it makes hot zombies, not gross ones.", desc2: ""},
+	{index: "silent", code:"silent", type: "prisoner", title: "Nurse's Room", desc: "A room full of strange creatures, which probably symbolize a really deep message about sexuality or something.", desc2: ""},
+	{index: "ethics", code:"ethics", type: "prisoner", title: "Ethics Rock", desc: "A rock that dispenses lines of  ethical ramblings. It's a rock though, so it probably doesn't know what its talking about.", desc2: ""},
 ];
 
 var roommateF = data.story[0].fName;
@@ -239,23 +263,28 @@ function getRandomInt(max) {
 }
 
 function passTime() {
-	switch (data.player.time) {
-		case "Morning":
-			data.player.time = "Noon";
-		break;
-		case "Noon":
-			data.player.time = "Evening";
-		break;
-		case "Evening":
-			data.player.time = "Night";
-		break;
-		case "Night":
-			if (data.player.currentScene == "newDay") {
-				data.player.time = "Morning";
-			}
-		break;
+	if (data.player.loop != true) {
+		switch (data.player.time) {
+			case "Morning":
+				data.player.time = "Noon";
+			break;
+			case "Noon":
+				data.player.time = "Evening";
+			break;
+			case "Evening":
+				data.player.time = "Night";
+			break;
+			case "Night":
+				if (data.player.currentScene == "newDay") {
+					data.player.time = "Morning";
+				}
+			break;
+		}
+		console.log('time is now ' + data.player.time);
 	}
-	console.log('time is now ' + data.player.time);
+	else {
+		console.log('flow of time prevented by the mobium loop');
+	}
 }
 
 function nap() {
@@ -408,6 +437,19 @@ function writeTab(character, text) {
 }
 
 function writeArtifact (name) {
+	if (data.player.storage == null) {
+		data.player.storage = "";
+		alert(data.player.storage);
+	}
+	if (tempScene != 'storage' && data.player.storage.includes(name) != true) {
+		listArtifact(name);
+	}
+	if (tempScene == 'storage' && data.player.storage.includes(name) == true) {
+		listArtifact(name);
+	}
+}
+
+function listArtifact(name) {
 	console.log("Now writing artifact tab id " + name);
 	var researchStatus = 0;
 	var researchTotal = 0;
@@ -424,11 +466,18 @@ function writeArtifact (name) {
 					console.log("artifact has been researched");
 					var equip = "Equip";
 					desc2 = artifactArray[jam].desc2;
+					if (tempScene != 'storage') {
+						var store = "Store";
+					}
+					else {
+						var store = "Retrieve From Storage";
+					}
 				}
 				else {
 					console.log("artifact has not been researched");
 					var equip = "";
 					desc2 = "";
+					var store = "";
 				}
 			}
 			else {
@@ -436,10 +485,17 @@ function writeArtifact (name) {
 				if (galleryCheck(artifactResearchCheck) == true) {
 					console.log("artifact has been researched");
 					desc2 = artifactArray[jam].desc2;
+					if (tempScene != 'storage') {
+						var store = "Store";
+					}
+					else {
+						var store = "Retrieve From Storage";
+					}
 				}
 				else {
 					console.log("artifact has not been researched");
 					desc2 = "";
+					var store = "";
 				}
 				var equip = "";
 			}
@@ -464,8 +520,9 @@ function writeArtifact (name) {
 			<p class = "textName">`+ title + `</p>
 			<p>Research Status: `+researchStatus+` of `+researchTotal+` scenes unlocked</p>
 			<p>
-				<span class = "choiceText" onclick = "sceneTransition('`+name+`Research')">Research</span>   
-				<span class = "choiceText" onclick = "equip('`+name+`')">`+equip+`</span>
+				<span class = "blueText" onclick = "sceneTransition('`+name+`Research')">Research</span>   
+				<span class = "blueText" onclick = "equip('`+name+`')">`+equip+`</span>
+				<span class = "blueText" onclick = "store('`+name+`')">`+store+`</span>
 			</p>
 			<p>`+ desc + `</p>
 			<p>`+ desc2 + `</p>
@@ -481,7 +538,8 @@ function writeArtifact (name) {
 			<p class = "textName">`+ title + `</p>
 			<p>Research Status: `+researchStatus+` of `+researchTotal+` scenes unlocked</p>
 			<p>
-				<span class = "choiceText" onclick = "sceneTransition('`+name+`Research')">Research</span>
+				<span class = "blueText" onclick = "sceneTransition('`+name+`Research')">Research</span>
+				<span class = "blueText" onclick = "store('`+name+`')">`+store+`</span>
 			</p>
 			<p>`+ desc + `</p>
 			<p>`+ desc2 + `</p>
@@ -491,12 +549,54 @@ function writeArtifact (name) {
 	}
 }
 
+function writeArtifactMini(name) {
+	var buttonPhrase = "Research";
+	for (i = 0; i < artifactMiniArray.length; i++) {
+		if (artifactMiniArray[i].index == name) {
+			var title = artifactMiniArray[i].title;
+			var desc = artifactMiniArray[i].desc;
+			var desc2 = artifactMiniArray[i].desc2;
+		}
+	}
+	switch (tempScene) {
+		case "prison": {
+			buttonPhrase = "Study";
+			break;
+		}
+		case "toolbox": {
+			buttonPhrase = "Use";
+			break;
+		}
+	}
+	document.getElementById('output').innerHTML +=`
+	<div class = "textBox">
+		<img class = "textThumb" src = "scripts/gamefiles/items/`+ name +`.jpg">
+		<div class="textBoxContent">
+		<p class = "textName">`+ title + `</p>
+		<p>
+			<span class = "choiceText" onclick = "sceneTransition('`+name+`Research')">`+buttonPhrase+`</span>
+		</p>
+		<p>`+ desc + `</p>
+		<p>`+ desc2 + `</p>
+	</div>
+	<br>
+	`;
+}
+
 function writeBig (img, cap) {
 	if (imagesDisabled != true) {
 	document.getElementById('output').innerHTML += `
 		<img class="bigPicture" src="` + img + `">
 		<br>
 	`;
+	}
+}
+
+function writeBackground (img, cap) {
+	if (imagesDisabled != true) {
+		document.getElementById('output').innerHTML += `
+			<img class="backgroundPicture" src="` + img + `">
+		`;
 	}
 }
 
@@ -654,12 +754,38 @@ function openButton() {
 	document.getElementById("openButton").style.visibility = "hidden";	
 }
 
+function writeBG(target) {
+	document.getElementById('output').innerHTML += `
+		<div class="playerRoom">
+			<img class="backgroundPicture" src="scripts/gamefiles/hunter/`+target+`.jpg" usemap="#roomMap">
+		</div>
+	`;
+}
+
+function writeImageButton(name, target, img, top, left) {
+	if (img == "") {
+		img = target + ".jpg";
+	}
+	document.getElementsByClassName('playerRoom')[0].innerHTML += `
+		<img class="imageButton"
+		onclick="sceneTransition('`+target+`')" 
+		src="scripts/gamefiles/hunter/`+img+`" 
+		style="top: `+top+`%; left: `+left+`%;"
+		title="`+name+`">
+	`;
+}
+
 //Menu
 function updateMenu() {
 	var researchStatus = 0;
 	var researchTotal = 0;
 	document.getElementById('playerName').innerHTML = data.player.fName + ' ' + data.player.lName;
-	document.getElementById('day').innerHTML = "Day " + data.player.day + " - " + data.player.time;
+	if (data.player.loop != true) {
+		document.getElementById('day').innerHTML = "Day " + data.player.day + " - " + data.player.time;
+	}
+	else {
+		document.getElementById('day').innerHTML = "Day " + data.player.day + " - " + data.player.time + " (Frozen)";
+	}
 	document.getElementById('playerImage').src = "scripts/gamefiles/characters/"+data.player.character+".jpg";
 	for (i = 0; i < galleryArray.length; i++) {
 		if (galleryArray[i].dark != true) {
@@ -751,7 +877,7 @@ function renameEveryone() {
 		var sheet = 'nameSubmission' + i + '2';
 		data.story[i].lName = document.getElementById(sheet).value;
 	}
-	sceneTransition("room");
+	sceneTransition('toolbox');
 }
 
 function renamePlayer() {
@@ -773,6 +899,28 @@ function equip(n) {
 	}
 	writeText("You've equipped the " + title);
 	writeTransition(data.player.currentScene, "Go back");
+}
+
+function store(n) {
+	if (tempScene != 'storage') {
+		if (data.player.storage == null) {
+			data.player.storage = "";
+		}
+		for (i = 0; i < artifactArray.length; i++) {
+			if (artifactArray[i].index == n) {
+				data.player.storage += artifactArray[i].index;
+			}
+		}
+	}
+	else {
+		for (i = 0; i < artifactArray.length; i++) {
+			if (artifactArray[i].index == n) {
+				console.log('now removing '+n+' from storage');
+				data.player.storage = data.player.storage.replace(n,'');
+			}
+		}
+	}
+	sceneTransition(tempScene);
 }
 
 function checkArtifact(n) {
@@ -933,7 +1081,7 @@ function generateDarkGalleryNav() {
 			`;
 		}
 	}
-	writeTransition("gallery", "Go back");
+	writeTransition("notebookResearch", "Go back");
 }
 
 function generateArtifactPage(n) {
@@ -1122,14 +1270,35 @@ function cheat() {
 			}
 			break;
 		}
-		case "new name": {
-			data.player.currentScene = "renamingRoom";
+		case "noodlemaster": {
+			for (noodle = 0; noodle < galleryArray.length; noodle++) {
+				if (galleryCheck(galleryArray[noodle].index)== false) {
+					unlockScene(galleryArray[noodle].index);
+				}
+			}
+			goofMessage = "Master code accepted. All scenes unlocked."
+			break;
+		}
+		case "anomaly hunter": {
+			data.player.currentScene = "hunterDemo";
 			goofMessage = ""
 			break;
 		}
+	}
+	sceneTransition(data.player.currentScene);
+	writeText(goofMessage);
+}
+
+function prison() {
+	//If you're reading this, then please link to my patreon post instead of posting these. The cheat code post already has a list of cheat codes, and is visible to non-patrons
+	var goof = document.getElementById('prisonerSubmission').value;
+	goof = goof.toLowerCase();
+	var goofMessage = "Code does not exist";
+	console.log("Testing cheat code " + goof);
+	switch (goof) {
 		case "scp": {
 			if (data.player.color.includes('scp') == false) {
-				goofMessage = "Code accepted. Forbidden artifact unlocked in the dark vault."
+				goofMessage = "Passcode accepted. Prisoner ID 10996-1 and 10996-2 now available on request."
 				data.player.color += 'scp';
 			}
 			else {
@@ -1139,7 +1308,7 @@ function cheat() {
 		}
 		case "securecontainprotect": {
 			if (data.player.color.includes('scp') == false) {
-				goofMessage = "Code accepted. Forbidden artifact unlocked in the dark vault."
+				goofMessage = "Passcode accepted. Prisoner ID 10996-1 and 10996-2 now available on request."
 				data.player.color += 'scp';
 			}
 			else {
@@ -1149,7 +1318,7 @@ function cheat() {
 		}
 		case "secure contain protect": {
 			if (data.player.color.includes('scp') == false) {
-				goofMessage = "Code accepted. Forbidden artifact unlocked in the dark vault."
+				goofMessage = "Passcode accepted. Prisoner ID 10996-1 and 10996-2 now available on request."
 				data.player.color += 'scp';
 			}
 			else {
@@ -1159,7 +1328,7 @@ function cheat() {
 		}
 		case "lobotomy": {
 			if (data.player.color.includes('lobotomy') == false) {
-				goofMessage = "Code accepted. Forbidden artifact unlocked in the dark vault."
+				goofMessage = "Passcode accepted. Prisoner ID 10996-3 and 10996-4 now available on request."
 				data.player.color += 'lobotomy';
 			}
 			else {
@@ -1169,7 +1338,7 @@ function cheat() {
 		}
 		case "lobotomycorp": {
 			if (data.player.color.includes('lobotomy') == false) {
-				goofMessage = "Code accepted. Forbidden artifact unlocked in the dark vault."
+				goofMessage = "Passcode accepted. Prisoner ID 10996-3 and 10996-4 now available on request."
 				data.player.color += 'lobotomy';
 			}
 			else {
@@ -1179,7 +1348,7 @@ function cheat() {
 		}
 		case "lobotomy corporation": {
 			if (data.player.color.includes('lobotomy') == false) {
-				goofMessage = "Code accepted. Forbidden artifact unlocked in the dark vault."
+				goofMessage = "Passcode accepted. Prisoner ID 10996-3 and 10996-4 now available on request."
 				data.player.color += 'lobotomy';
 			}
 			else {
@@ -1189,7 +1358,7 @@ function cheat() {
 		}
 		case "umbrella": {
 			if (data.player.color.includes('umbrella') == false) {
-				goofMessage = "Code accepted. Forbidden artifact unlocked in the dark vault."
+				goofMessage = "Passcode accepted. Secure Artifact ID 10996-5 now available on request."
 				data.player.color += 'umbrella';
 			}
 			else {
@@ -1199,7 +1368,7 @@ function cheat() {
 		}
 		case "resident evil": {
 			if (data.player.color.includes('umbrella') == false) {
-				goofMessage = "Code accepted. Forbidden artifact unlocked in the dark vault."
+				goofMessage = "Passcode accepted. Secure Artifact ID 10996-5 now available on request."
 				data.player.color += 'umbrella';
 			}
 			else {
@@ -1209,7 +1378,7 @@ function cheat() {
 		}
 		case "silent hill": {
 			if (data.player.color.includes('silent') == false) {
-				goofMessage = "Code accepted. Forbidden artifact unlocked in the dark vault."
+				goofMessage = "Passcode accepted. Prisoner ID 10996-6-12 now available on request."
 				data.player.color += 'silent';
 			}
 			else {
@@ -1219,7 +1388,7 @@ function cheat() {
 		}
 		case "warehouse13": {
 			if (data.player.color.includes('warehouse') == false) {
-				goofMessage = "Code accepted. Forbidden artifact unlocked in the dark vault."
+				goofMessage = "Passcode accepted. Secure Artifact ID 10996-13 now available on request."
 				data.player.color += 'warehouse';
 			}
 			else {
@@ -1229,7 +1398,7 @@ function cheat() {
 		}
 		case "warehouse 13": {
 			if (data.player.color.includes('warehouse') == false) {
-				goofMessage = "Code accepted. Forbidden artifact unlocked in the dark vault."
+				goofMessage = "Passcode accepted. Secure Artifact ID 10996-13 now available on request."
 				data.player.color += 'warehouse';
 			}
 			else {
@@ -1239,7 +1408,7 @@ function cheat() {
 		}
 		case "fringe": {
 			if (data.player.color.includes('fringe') == false) {
-				goofMessage = "Code accepted. Forbidden artifact unlocked in the dark vault."
+				goofMessage = "Passcode accepted. Prisoner ID 10996-14 now available on request."
 				data.player.color += 'fringe';
 			}
 			else {
@@ -1249,7 +1418,7 @@ function cheat() {
 		}
 		case "ethics": {
 			if (data.player.color.includes('ethics') == false) {
-				goofMessage = "Code accepted. Forbidden artifact unlocked in the dark vault."
+				goofMessage = "Passcode accepted. Secure Artifact ID 10996-15 now available on request."
 				data.player.color += 'ethics';
 			}
 			else {
@@ -1259,45 +1428,12 @@ function cheat() {
 		}
 		case "welcome to ethics": {
 			if (data.player.color.includes('ethics') == false) {
-				goofMessage = "Code accepted. Forbidden artifact unlocked in the dark vault."
+				goofMessage = "Passcode accepted. Secure Artifact ID 10996-15 now available on request."
 				data.player.color += 'ethics';
 			}
 			else {
 				goofMessage = "You've already used this code."
 			}
-			break;
-		}
-		case "noodlemaster": {
-			for (x = 0; x < galleryArray.length; x++) {
-				if (galleryCheck(galleryArray[x].index)== false) {
-					unlockScene(galleryArray[x].index);
-				}
-			}
-			goofMessage = "Master code accepted. All scenes unlocked."
-			break;
-		}
-		case "haa": {
-			goofMessage = "Sorry. Nothing's here right now. Please keep this code in mind for later though."
-			break;
-		}
-		case "human alteration app": {
-			goofMessage = "Sorry. Nothing's here right now. Please keep this code in mind for later though."
-			break;
-		}
-		case "rainy dayz": {
-			goofMessage = "Sorry. Nothing's here right now. Please keep this code in mind for later though."
-			break;
-		}
-		case "princess quest": {
-			goofMessage = "Sorry. Nothing's here right now. Please keep this code in mind for later though."
-			break;
-		}
-		case "bitch medicenter": {
-			goofMessage = "Sorry. Nothing's here right now. Please keep this code in mind for later though."
-			break;
-		}
-		case "hentai university": {
-			goofMessage = "Sorry. Nothing's here right now. Please keep this code in mind for later though."
 			break;
 		}
 	}
