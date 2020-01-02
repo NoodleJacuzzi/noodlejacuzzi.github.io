@@ -97,11 +97,18 @@ var galleryArray = [
 	{index: "serumResearch1", dark: false, girl: "", name: "Truth Serum - First Research", hint: ""},
 	{index: "serumResearch2", dark: false, girl: "assistant", name: "Truth Serum - Growing Immunity", hint: ""},
 	{index: "serumResearch3", dark: false, girl: "boss", name: "Truth Serum - Jensen's Secret", hint: ""},
-	//index: "serumHome1", dark: false, girl: "roommate", name: "Truth Serum - Emperess's New Clothes", hint: ""},
+	{index: "serumHome1", dark: false, girl: "roommategirlfriend", name: "Truth Serum - Dating Advice", hint: ""},
+	{index: "serumHome2", dark: false, girl: "sister", name: "Truth Serum - Social Media Strategy", hint: ""},
+	{index: "serumDream1", dark: false, girl: "chair", name: "Serum's Fate", hint: ""},
 	//index: "serumOutdoor1", dark: false, girl: "", name: "Truth Serum - Public Train", hint: ""},
 	//index: "serumOutdoor2", dark: false, girl: "", name: "Truth Serum - Dubious Consent", hint: ""},
 	//index: "serumOutdoor3", dark: false, girl: "", name: "Truth Serum - Beach Body", hint: ""},
-	//index: "serumDream1", dark: false, girl: "chair", name: "Serum's Fate", hint: ""},
+	//Chadicus Shades Events
+	{index: "shadesResearch1", dark: false, girl: "", name: "Chaddicus Shades - First Research", hint: ""},
+	{index: "shadesResearch2", dark: false, girl: "assistant", name: "Chaddicus Shades - First Conquest", hint: ""},
+	{index: "shadesResearch3", dark: false, girl: "boss", name: "Chaddicus Shades - Second Conquest", hint: ""},
+	{index: "shadesHome1", dark: false, girl: "roommategirlfriend", name: "Chaddicus Shades - Two For One", hint: ""},
+	{index: "shadesDream1", dark: false, girl: "", name: "Chaddicus Shades - Shades' Fate", hint: ""},
 	//Exchange Gas Events
 	{index: "gasResearch1", dark: true, girl: "assistant", name: "Exchange Gas - Personal Test", hint: ""},
 	{index: "gasResearch2", dark: true, girl: "", name: "Exchange Gas - Assistant Test", hint: ""},
@@ -117,6 +124,10 @@ var galleryArray = [
 	{index: "toolkitResearch1", dark: true, girl: "", name: "Sissy Toolkit - Personal Test", hint: ""},
 	{index: "toolkitResearch2", dark: true, girl: "", name: "Sissy Toolkit - Perfect Body", hint: ""},
 	{index: "toolkitResearch3", dark: true, girl: "", name: "Sissy Toolkit - The Squad Assembles", hint: ""},
+	//Bimbo Dust Events
+	{index: "dustResearch1", dark: true, girl: "assistant", name: "Bimbo Dust - Practice Makes Perfect", hint: ""},
+	{index: "dustResearch2", dark: true, girl: "boss", name: "Bimbo Dust - Perfect Payoff", hint: ""},
+	{index: "dustResearch3", dark: true, girl: "chair", name: "Bimbo Dust - Whoopsie!", hint: ""},
 ]
 
 var logbookArray = [
@@ -173,12 +184,14 @@ var artifactArray = [
 	{index: "mirror", dark: false, equipable: false, title: "Antique Mirror", desc: "An antique mirror dating back to the Victorian era. If a person stares into the eyes of their own reflection long enough, they will 'switch places' with an alternate reality version of themselves.<br>In these alternate realities social norms and the physical body of the person switched with can all be completely different.", desc2: ""},
 	{index: "stopwatch", dark: false, equipable: true, title: "Time Stopwatch", desc: "A bronze stopwatch which appears at first glance to be broken, as the second hand jumps backwards every second.", desc2: "When the button at the top is pressed, the clock begins to record the time as normal but time stops for everyone except person holding the watch."},
 	{index: "coin", dark: false, equipable: true, title: "Midas Coin", desc: "A single gold coin with an inscription on the back written in Ancient Greek.", desc2: "When held, sexual activities performed by the holder will be 'normalized', and not perceived to be socially outrageous no matter how depraved the action. In addition, sexual acts will be seen to have 'value', meaning that the holder can exchange sexual acts as though they had a cash value."},
-	{index: "serum", dark: false, equipable: false, title: "Truth Serum", desc: "A set of vials of green, minty liquid.", desc2: "When drunk, everything you say becomes the 'truth'. Not in the reality warping way, but in that everyone around you will believe whatever you say."},
+	{index: "serum", dark: false, equipable: true, title: "Truth Serum", desc: "A set of vials of green, minty liquid.", desc2: "When drunk, everything you say becomes the 'truth'. Not in the reality warping way, but in that everyone around you will believe whatever you say."},
+	{index: "shades", dark: false, equipable: true, title: "Chaddicus Shades", desc: "A pair of aviator sunglasses which, when worn, increase the wearer's confidence by several dozen degrees.", desc2: "Nearby women tend to become irritable and argue with the wearer, at which point some mysterious process causes the argument to almost immediately devolve into sex, with the wearer as the dominant partner."},
 	{index: "gas", dark: true, equipable: false, title: "Exchange Gas", desc: "Several aerosol gas containers. Subjects who inhale the gas experience a process called 'gender-swapping'. In most cases the process is temporary.", desc2: ""},
 	{index: "gummy", dark: true, equipable: false, title: "Gummy Dicks", desc: "A package of several erect dicks seemingly made from the same candy as gummy bears. A fluid inside feminizes men, preventing erections and increasing both prostate size & sensitivity. Effects not permanent unless used repeatedly.", desc2: ""},
 	{index: "onahole", dark: true, equipable: false, title: "Succubus Onahole", desc: "A fleshlight or 'onahole' made from an unknown material. Known to cause extreme euphoria when male genetalia is inserted, subjects state tendrils inside 'probed' them. Afterwards, subjects showed an extreme increase in semen production.", desc2: ""},
 	{index: "cage", dark: true, equipable: false, title: "Punification Cage", desc: "A plastic pink chastity cage. Wearing it almost immediately triggers a powerful orgasm, but in all cases resulted in an extreme decrease in genital size.", desc2: ""},
 	{index: "toolkit", dark: true, equipable: false, title: "Sissy's Toolkit", desc: "A plastic makeup kit. When opened, objects will appear inside and in the room which are designed to encourage the opener to 'explore themselves'. These range from makeup to unknown body-modifying drugs and a 3-man group of naked men. ", desc2: ""},
+	{index: "dust", dark: true, equipable: false, title: "Bimbo Dust", desc: "A bag full of an off-white powder. It has been tested, and is not cocaine. It has a powerful intelligence-draining and mild body-altering affect on anyone who inhales it. affecting women much faster than men.", desc2: ""},
 ];
 
 var artifactMiniArray = [ //Used for smaller artifacts such as prison and toolbox department
@@ -509,6 +522,9 @@ function listArtifact(name) {
 				researchStatus += 1;
 			}
 		}
+	}
+	if (tempScene == "vault") {
+		store = "";
 	}
 	console.log('Scenes found, current progress is ' + researchStatus + ' of ' + researchTotal);
 	//console.log('now determining appropriate research level');

@@ -597,7 +597,6 @@ function writeScene(scene) {
 				writeBackground("scripts/gamefiles/locations/vault.jpg");
 				writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
 				if (data.player.time == "Night") {
-					writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
 					writeTransition("room", "Go Home");
 				}
 				else {
@@ -620,13 +619,14 @@ function writeScene(scene) {
 					writeArtifact("cage");
 					writeArtifact("onahole");
 					writeArtifact("toolkit");
+					writeArtifact("dust");
 					writeTransition("office", "Go back");
 				}
 			}
 			break;
 		}
 		case "storage": {
-				document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/storage.jpg)";
+			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/storage.jpg)";
 			writeBackground("scripts/gamefiles/locations/storage.jpg");
 			writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
 			console.log(data.player.storage);
@@ -644,8 +644,8 @@ function writeScene(scene) {
 						writeArtifact(artifactArray[storageIndex].index);
 					}
 				}
-				writeTransition("office", "Go back");
 			}
+			writeTransition("office", "Go back");
 			break;
 		}
 		case "prison": {
@@ -678,8 +678,8 @@ function writeScene(scene) {
 						}
 					}
 				}
-				writeTransition("office", "Go back");
 			}
+			writeTransition("office", "Go back");
 			break;
 		}
 		case "toolbox": {
@@ -1122,6 +1122,9 @@ function writeScene(scene) {
 				writeTransition("mirrorResearch2", "Enter the 'Public Fun Is Not Unusual' dimension");
 			}
 			writeTransition("work", "Go back");
+			if (data.player.time == "Night") {
+				sceneTransition("work");
+			}
 			break;
 		}
 		case "mirrorResearch1": {
@@ -1242,6 +1245,18 @@ function writeScene(scene) {
 			writeTransition("work", "Go back");
 			break;
 		}
+		case "shadesResearch": {
+			tempScene = 'work';
+			researchLevel('shades');
+			break;
+		}
+		case "shadesFailed": {
+			writeText("These sunglasses are just too dangerous to be using freely. Rationally, you know they belong in the dark vault, but...");
+			writeText("You've already finished researching this artifact. There's no need to blow it out of proportion. It should be just fine as is.");
+			writeText("Maybe you'll be hit with inspiration soon.");
+			writeTransition("work", "Go back");
+			break;
+		}
 		case "coinResearch": {
 			tempScene = 'work';
 			researchLevel('coin');
@@ -1260,8 +1275,8 @@ function writeScene(scene) {
 			break;
 		}
 		case "serumFailed": {
-			writeText("");
-			writeText("You've already finished researching this artifact, but there might be more to do with it in the future.");
+			writeText("Wracking your brain, you just don't have any more ideas for how to research the serum in a clinical setting.");
+			writeText("You've already finished researching this artifact, but there might be more to do with it if you bring it home, if you haven't already.");
 			writeText("Maybe you'll be hit with inspiration soon.");
 			writeTransition("work", "Go back");
 			break;
@@ -1336,6 +1351,16 @@ function writeScene(scene) {
 		case "toolkitFailed": {
 			tempScene = "work";
 			writeEvent('toolkitResearch3');
+			break;
+		}
+		case "dustResearch": {
+			tempScene = 'work';
+			researchLevel('dust');
+			break;
+		}
+		case "dustFailed": {
+			tempScene = "work";
+			writeEvent('dustResearch3');
 			break;
 		}
 		case "gummyResearch": {
@@ -3414,12 +3439,226 @@ function writeEvent(scene) {
 			writeSpeech("player", "", "Oh, you'll get more, slut.");
 			break;
 		}
-		case "serumDream": {
-			writeText("Test tubes bubble around you. This dream feels a lot more recent than most.");
+		case "serumDream1": {
+			writeText("You're somewhere else, somehow you can tell you're watching something from not too long ago.");
+			writeText("Mrs. chairL pushes you down to the ground. There's a hunger in her eyes.");
 			writeBig("images/serum/dream1-1.gif");
-			writeText("Cold metal keeps you clasped down as Mrs. chairL works your dick.");
-			writeText("She mutters to herself, saying she almost has the 'final ingredient'.");
-			writeText("The last piece of the puzzle before she has a serum powerful enough to take over Anomaly Vault and instate herself as head chairwoman.");
+			writeText("The dream passes all to quickly, everything goes dark. ");
+			writeSpeech("chair", "", "I'm sorry, Martin. But I can't leave any loose ends. You were a lovely toy, but I'm done playing with you now.");
+			writeText("You hear a snap, and you don't feel human anymore. ");
+			break;
+		}
+		case "serumHome1": {
+			writeText("You take a seat on the couch lazily inspecting the vial of 'truth serum' you brought home.");
+			writeSpeech("player", "", "<i>Temporary, one-time, huh. I've got one shot to have fun with this with roommateF. I gotta make it good.</i><br>... Man, this is too much thinking. I just need to go with the flow. I wonder if I could use it on myself. 'I'm a genius and will come up with a brilliant idea right away!'");
+			writeSpeech("roommate", "", "You say something?");
+			writeText("roommateF pokes her head into the living room.");
+			writeSpeech("player", "", "Nah just thinking out loud. Hey, girlfriendF coming over today?");
+			writeSpeech("roommate", "", "Yep! I promised to take her out on a date this time. We're headed to watch whatever's showing in the theater today.");
+			writeSpeech("player", "", "Huh. I dunno if watching a random movie will be all that great of a time. <br>Hey, I got an idea! Listen, let's wait for grilfriendF to arrive. I read about this cool new trend in the dating world and you both should hear it.");
+			writeSpeech("roommate", "", "You've got dating advice? I dunno...");
+			writeSpeech("player", "", "Listen, I swear it'll be awesome. I'm telling the truth!");
+			writeText("...");
+			writeSpeech("girlfriend", "", "So, like this?");
+			writeBig("images/serum/serumHome1-1.gif");
+			writeSpeech("player", "", "Y-yeah, just like... Like that...");
+			writeSpeech("girlfriend", "", "Mmm, I gotta say this is really great! Sorry for not believing you at the start...");
+			writeBig("images/serum/serumHome1-2.gif");
+			writeSpeech("roommate", "", "Mmph... *mwah*!");
+			writeSpeech("girlfriend", "", "But putting on a strip show while my girlfriend sucks you off was exactly what I needed!");
+			writeSpeech("player", "", "Uhuh... Nnn... Another thing is that if you, fuck... If you're naked, you'll cum totally hands free at the same time as me...");
+			writeSpeech("girlfriend", "", "Whoa, that sounds awesome! Here...");
+			writeBig("images/serum/serumHome1-3.gif");
+			writeSpeech("girlfriend", "", "I came this morning, but I'm already super horny again somehow! C'mon, will my pussy be enough to make you cum while my girlfriend sucks you off? Please?");
+			writeSpeech("player", "", "Ggh... <span style='color:green'>Cumming! </span>");
+			writeText("The moment the word is out of your mouth girlfriendF shivers with delight, the serum's effect is enough to immediately trigger a hands-free orgasm.");
+			writeSpeech("girlfriend", "", "Cumming!");
+			writeText("Meanwhile roommateF, eager for your attention, takes your shaft balls deep as you cum down her throat.");
+			writeBig("images/serum/serumHome1-4.gif");
+			writeSpeech("roommate", "", "Mmm... Ah. So, what's next? What's next? Can I twerk while girlfriendF sucks you off? I wanna cum like that too!");
+			writeText("Despite having just cum, you can't possibly say no to that face. The three of you have a lot of fun with your 'date' idea until the serum begins to wear off.");
+			break;
+		}
+		case "serumHome2": {
+			writeText("sisterF hasn't been too much of a pain lately, if it weren't for her condescending attitude she's be a pretty fine roommate. Still, you aren't keeping her around for her houseguest etiquette.");
+			writeText("You down some of the truth serum, very minty, and open the door to her room.");
+			writeSpeech("sister", "", "What the fuck? Get out of my room, asshole!");
+			writeSpeech("player", "", "It's completely fine, <span style='color:green'>you gave me permission to be in here, remember? </span>");
+			writeSpeech("sister", "", "Oh, I did? Huh... <br>Well, you should've knocked first! Geez, no respect for privacy.");
+			writeSpeech("player", "", "Sorry, what were you doing?");
+			writeSpeech("sister", "", "I was putting up some pics, not that it's any of your business.");
+			writeSpeech("player", "", "Oh, selfies?");
+			writeSpeech("sister", "", "Dude, get out of here with your old geezer brain. There's more to posting on snap than selfies. I'm not some-");
+			writeSpeech("player", "", "Because I heard <span style='color:green'>selfies are all the rage these days.</span>");
+			writeSpeech("sister", "", "I... Yeah, I knew that, idiot! I was gonna say that, obviously.");
+			writeSpeech("player", "", "So then you know about the latest trend? The one <span style='color:green'>super popular among people gathering followers/g</span>");
+			writeSpeech("player", "", "Close, but not quite. It's fine though, you asked me in to help you help you out with them, you do need a man for this trend after all.");
+			writeText("...");
+			writeBig("images/serum/serumHome2-1.gif");
+			writeSpeech("sister", "", "Mmm~! Mmm~!");
+			writeSpeech("player", "", "Damn, you're pretty wet. Well, <span style='color:green'>it is normal to get off on getting your throat fucked by my cock.</span>");
+			writeSpeech("sister", "", "MMM~!");
+			writeText("She cums on the spot, your words rewriting reality. It doesn't take too long before you cum yourself. Now it's time for the real fun part of your plan.");
+			writeText("You get dressed and leave, making sure to check up on her social media posts to enjoy the results.");
+			writeText("Soon enough, she's made some posts of your fun together.");
+			writeBig("images/serum/serumHome2-2.jpg");
+			writeSpeech("sister", "", "Hopping in on the bandwagon, hope I'm not too late!<br>#bratsgetfacefucked");
+			writeBig("images/serum/serumHome2-3.jpg");
+			writeSpeech("sister", "", "Came 3 times on his cock, squirted so hard!<br>#bratsgetfacefucked, #hemakesmesquirt");
+			writeBig("images/serum/serumHome2-4.jpg");
+			writeSpeech("sister", "", "Follow me for more! Maybe I'll show off my slutty cunt next too!<br>#bratsgetfacefucked, #slapaslutday");
+			writeSpeech("assistant", "", "sisterF, what the fuck?! Delete these immediately!");
+			writeText("You laugh all the way to your room as dozens, then hundreds of comments flood in.");
+			break;
+		}
+		case "shadesResearch1": {
+			writeSpeech("player", "", "This is experiment log CS-01, now commencing. ");
+			writeSpeech("assistant", "", "Can I just say for the record I don't like these things? ");
+			writeSpeech("player", "", "Noted, and ignored. Are you wearing them, or am I? ");
+			writeText("assistantF reaches out for the glasses, only to stop and pull her hand back with a look of disgust on her face. ");
+			writeSpeech("assistant", "", "They're awful... They'd look really bad on me. I wouldn't wear those things if Mrs. bossL ordered me. ");
+			writeSpeech("player", "", "Interesting. ");
+			writeText("You take the shades. Holding them in your hands they feel... Heavy. In a metaphorical sense. You put then on. ");
+			writeSpeech("player", "", "I don't feel too dif... Whoa. <br> I feel... Powerful. Strong. ");
+			writeSpeech("assistant", "", "Hey stop fucking around. There's no effect right? Take them off. ");
+			writeSpeech("player", "", "Why should I? They look go-<br>Shit! ");
+			writeText("You yank off the glasses and toss them away. They bounce off the hard floor but are completely undamaged. ");
+			writeSpeech("player", "", "They've got a memetic quality. They make you want to keep wearing them. They're pretty mild, naybe rank C, but we should still put them in the Dark Vault once research is complete. ");
+			writeSpeech("assistant", "", "Which is now, right? Lock 'em in a box and throw away the key? ");
+			writeSpeech("player", "", "Don't get so ahead of yourself. There's plenty we have to learn from these. ");
+			writeSpeech("assistant", "", "Fine... ");
+			writeText("...");
+			writeSpeech("notes", "", "Findings:<br>The shades grant an incredible confidence boost to whoever wears them, and have a low-level hypnotic / addictive effect on the wearer to make them less likely to be removed. <br>Women refuse to wear them, and regard the glasses with disdain and hostility. This effect carries over to the wearer, causing women to experience a bizarre state of irritability. <br>Recovery documents show the shades have an additional effect dubbed by the agents as 'instant loss', where the wearer and whoever they're arguing with will black out and regain consciousness mid-fuck. Further research will be conducted on this phenomenon.");
+			break;
+		}
+		case "shadesResearch2": {
+			writeSpeech("assistant", "", "Are you serious? You're researching those things again after what you said last time?");
+			writeText("You put on the pair of sunglasses, feeling a familiar rush flow through you.");
+			writeSpeech("player", "", "I decide what we study, not you.");
+			writeSpeech("assistant", "", "Alright, I get it, I'm not the most 'top brass' of people, I'm basically your secretary. But just this once I'm putting my foot down, okay? Take. Off. The. Shades.");
+			writeText("...");
+			writeBig("images/shades/shadesResearch2-1.gif");
+			writeSpeech("assistant", "", "Nnngh~! You're tearing me in half, fuck! I'm sorry, I'll never talk back to you again! Please!");
+			writeSpeech("player", "", "Oh, you want me to ease up? The little bitch whi put her foot down wants me to be gentle?");
+			writeSpeech("assistant", "", "No! HARDER~!!!");
+			writeText("You give her a hard slap on the ass and throw her aside before laying on the couch.");
+			writeSpeech("player", "", "Earn it.");
+			writeSpeech("assistant", "", "Nngh, yes~! I love it when you treat me like trash!");
+			writeBig("images/shades/shadesResearch2-2.gif");
+			writeSpeech("assistant", "", "Cumming again~! I can't stop~!");
+			writeSpeech("player", "", "Keep working bitch, I'm not satisfied.");
+			writeText("...");
+			writeBig("images/shades/shadesResearch2-3.gif");
+			writeSpeech("player", "", "So, have you learned your lesson?");
+			writeSpeech("assistant", "", "Mmm... Yes master... But if I misbehave, will you punish me again?");
+			writeSpeech("player", "", "Maybe I... I...");
+			writeText("You push her away. She whines, but obeys. With some amount of mental effort you take off the sunglasses, finally feeling like yourself again.");
+			writeSpeech("player", "", "Fuck... What happened?");
+			writeSpeech("assistant", "", "Is something wrong?");
+			writeText("It takes more than a little while to clean up the mess you made of assistantF's mind with the bracelet.");
+			writeText("The glasses feel addictive, powerful. Still, if you can stay on top of things, they should be fine to keep using.");
+			break;
+		}
+		case "shadesResearch3": {
+			writeText("You slide on the sunglasses again. assistantF shivers, but doesn't object. It seems like her body still remembers what happened last time, even if the bracelet removed her memory of it.");
+			writeText("But you have a different target in mind this time. You walk out of your office, assistantF not to subtly starting to rub her cunt through her panties as you walk past.");
+			writeText("You push open the door to bossL's office and take a seat. She's in a call, but you hit a button on the receiver to end it.");
+			writeSpeech("boss", "", "... Those glasses had better be controlling your mind, or you're a dead man. <br>No, actually, if you're stupid enough to get mindfucked by another god damn memetic control artifact, you're getting thrown in the prison department anyway for reckless endangerment.");
+			writeSpeech("player", "", "Not likely. I think you're a lot more likely to bend over for me. Maybe you'll make some actual friends if I fuck the bitchiness out of you.");
+			writeSpeech("boss", "", "Now you listen to me, shit-for-brains. I've had enough of you, your attitude, and those dogshit fucking glasses! Sit down and shut up, and I'll tell you exactly what sort of future you have with this company.");
+			writeText("...");
+			writeBig("images/shades/shadesResearch3-2.gif");
+			writeSpeech("boss", "", "My ass~! Fuck, your huge cock is destroying my ass~!");
+			writeSpeech("player", "", "This is all you are. You're a jizz rag only fit to have your ass ruined by my dick. Get that hand off your twat and gimme an orgasm to say goodbye to cumming like a normal woman.");
+			writeSpeech("boss", "", "Yes~! Fuck, hurt me~! I wanna be reminded of my place whenever I sit down~!");
+			writeBig("images/shades/shadesResearch3-1.gif");
+			writeSpeech("boss", "", "CUMMING~!");
+			writeSpeech("player", "", "I'm getting close too, trash.");
+			writeSpeech("boss", "", "Yes~! Please, fill my asshole with your cum~!");
+			writeSpeech("player", "", "Bitch, you're done telling me what to do!");
+			writeText("You slap her across the face, causing her pussy to squirt as her ass is railed. Then, you pull out and aim your cock.");
+			writeBig("images/shades/shadesResearch3-3.gif");
+			writeSpeech("player", "", "There. Rub my cum into where I slapped you. That's what you get for disrespecting me.");
+			writeSpeech("boss", "", "Nngh... Yes master~!");
+			writeText("You leave her to decorate herself with her new makeup before you stumble and pull the shades off.");
+			writeSpeech("player", "", "God damn... I'm like a different person with these things on...");
+			writeText("You use the bracelet to make sure nothing you did will come back to bite you. You've needed to rely on it a lot lately.");
+			break;
+		}
+		case "shadesHome1": {
+			writeSpeech("roommate", "", "Hey, girlfriendF's going to be here in a bit. Could you-<br>Where'd you get those? And why are you wearing them inside?");
+			writeSpeech("player", "", "What, you don't like them? I think they make me look cool.");
+			writeSpeech("roommate", "", "Then you need to look in a mirror, they make you look like a douchebag. Listen, could you just clean up a bit? I don't want girlfriendF thinking-");
+			writeText("She goes quiet as you walk up to her, pinning her against the wall with your body.");
+			writeSpeech("roommate", "", "Back off. What the fuck do you think you're doing?");
+			writeSpeech("player", "", "Whatever I want.");
+			writeSpeech("roommate", "", "I'm in a relationship. I'm a lesbian.");
+			writeSpeech("player", "", "Yep. You've said so.");
+			writeSpeech("roommate", "", "Listen to me. I'm giving you this one last chance. You're sick in the head or something, walk away and we can forget this ever happened. You don't, and you'll regret this day for the rest of your life.");
+			writeText("...");
+			writeBig("images/shades/shadesHome1-1.gif");
+			writeSpeech("roommate", "", "Mmmph... Mmmph...");
+			writeSpeech("player", "", "You dumb bitch. You really thought you could resist being a slut for dicks? You thought that Asian whore could satisfy you?");
+			writeText("There's a pang of guilt that echoes through your mind for a moment. You've never been this cruel before. But just as soon as it arrived it's gone.");
+			writeSpeech("player", "", "Well? You gonna nurse on it all day?");
+			writeText("There's a moment of hesitation, there's still some trace of resistance left, but the moment roommateF thinks about what this cock would do to her twat, she's climbing up onto the couch.");
+			writeSpeech("player", "", "Greedy bitch. What would girlfriendF say?");
+			writeSpeech("roommate", "", "I don't care.");
+			writeBig("images/shades/shadesHome1-2.gif");
+			writeSpeech("roommate", "", "Fuuuuck, yes~! God, I wish you'd taken me sooner~!");
+			writeSpeech("player", "", "Faster, whore!");
+			writeSpeech("roommate", "", "Guuh, I'm cumming already-Aaah~!");
+			writeText("You push her down to take the pace of the fuck into your own hands.");
+			writeBig("images/shades/shadesHome1-3.gif");
+			writeSpeech("roommate", "", "Yes~! Yes~! Yes~!");
+			writeBig("images/shades/shadesHome1-4.gif");
+			writeSpeech("player", "", "I'm cumming inside you!");
+			writeSpeech("roommate", "", "Yes! Fill me, pump your jizz into my womb, this is what I live for~! <b>CUMMING~!</b>");
+			writeText("You pull out of roommateF's creampied snatch as she convulses and her eyes lid.");
+			writeSpeech("player", "", "God damn you look like a whore. I think I'll leave you here for-");
+			writeText("Suddenly you can hear the door being unlocked and opened.");
+			writeSpeech("player", "", "Speak of the devil.");
+			writeSpeech("girlfriend", "", "Heeey, I'm-");
+			writeText("Then there's a silence. A lot flashes across girlfriendF's face. Confusion, disbelief, sadness, rage.");
+			writeText("There really isn't anything to say, so you let your actions do the talking and start walking towards her.");
+			writeSpeech("girlfriend", "", "... No... No!");
+			writeText("Adrenaline shakes her out of her stupor. She must've gotten the idea that roommateF is unwilling, as she runs to the kitchen and grabs a knife. Her hands are shaking and there's a burning fury in her eyes.");
+			writeSpeech("girlfriend", "", "Now listen to me. Get the fuck away from my girlfriend, or I swear to god I'll kill you!");
+			writeText("...");
+			writeBig("images/shades/shadesHome1-5.gif");
+			writeSpeech("girlfriend", "", "God, yes! Fuck, I've never felt this good before~!");
+			writeSpeech("player", "", "You sounded so ready to fight for your life earlier, so sad. Now you're cumming like a bitch on the cock that stole your girlfriend?");
+			writeSpeech("girlfriend", "", "Gghh yessss~! Fuck her, I don't give a shit about her anymore~! I understand now, I'd betray her too if it meant I could have a cock like this to myself!");
+			writeSpeech("player", "", "And what do you think, roommateF?");
+			writeSpeech("roommate", "", "Cumming...!");
+			writeText("Half conscious, she rubs herself to another orgasm as she watches you sodomize her ex girlfriend. Every so often the creampie you gave her starts to leak out, but she just fingerfucks it back in so that she doesn't waste any.");
+			writeSpeech("player", "", "Nngh. Fuck, on your knees whore.");
+			writeText("You pull girlFriendF off your cock, and without hesitation she's on her knees to try and suck you off the rest of the way to completion.");
+			writeBig("images/shades/shadesHome1-6.gif");
+			writeSpeech("player", "", "Don't you swallow a drop. roommateF, get over here.");
+			writeText("Obediently roommateF, despite being on the verge of cumming, rushes over to you.");
+			writeSpeech("player", "", "Now, you two are gonna make up. You'll be better jizz-mops together. Now, girlfriendF, share.");
+			writeBig("images/shades/shadesHome1-7.gif");
+			writeText("The two of them start kissing. girlfriendF is reluctant to share the load, but eager to put on a show for you. Meanwhile, roommateF just wants a taste of your jizz. There isn't an ounce of love to their kiss, just a hunger for cum.");
+			writeText("...  A few hours later they're unconscious, and you pull the glasses off.");
+			writeSpeech("player", "", "Fuck...");
+			writeText("The mirrored lenses are showing someone you barely recognize. How far are these glasses going to take you?");
+			writeText("With the power of the bracelet you can undo your mistakes and hope that's enough.");
+			break;
+		}
+		case "shadesDream1": {
+			writeText("As you lay down in bed you realize you're still wearing the shades. You take them off and set them on your nightstand. Artifact dreams are fun, but the shades seem a bit too dangerous to wear overnight. Not to mention uncomfortable.");
+			writeText("...");
+			writeText("You can hear the sound of food cooking in another room. Life is good.");
+			writeBig("images/shades/shadesDream.gif");
+			writeText("The bitches on your cock are satisfied with just a taste for now. Not that they get a say on when you're in a fucking mood. Right now, all you care about is getting some grub.");
+			writeText("The front door burst open, several men in tactical gear burst in. It's an all-male squad of course, not many women left in the police force at this point.");
+			writeText("They're yelling to get down, but you don't pay them any mind, and neither does your group of cocksleeves. You kinda recognize one of the troopers, probably soneone you've cucked. In fact, his ex-fiance might be on your balls now.");
+			writeText("But you realize that you might've gone too far when one of them starts crying. A grown man in tears and an assault rifle are a bad mix for you, no matter how alpha you are.");
+			writeText("...");
+			writeSpeech("player", "", "Fuck!");
+			writeText("You jolt awake, instinctively checking your body for bullet holes. That was a surprisingly realistic dream almost like...");
+			writeText("You reach up to your face. You're wearing the shades. Did you put them on in your sleep? Doubts are starting to run through your mind. Once you've had your fun you should distance yourself from these shades ASAP.");
 			break;
 		}
 		case "cageResearch1": {
@@ -3613,6 +3852,135 @@ function writeEvent(scene) {
 			writeText("But there's a ray of hope. You can go on, and awaken from this bad dream, if you like.");
 			break;
 		}
+		case "dustResearch1": {
+			tempScene = "vault";
+			writeText("Bimbo dust, not exactly too subtle of a codename. You unscrew the container's top to get some for 'testing' purposes. Really you just put on a show of examining it under a microscope for awhile to avoid suspicion. Once you're satisfied you sneak a small amount into an empty container in your pocket, put the rest back, and you're on your merry way.");
+			writeText("With a substance like this you can't mess around too much. The powder affects women immediately, but with men it has a much more delayed effect. You'd need to be breathing it in for a few minutes to start seriously be dropping IQ points, but it'll still hamper your wit in subtle ways before then.");
+			writeText("You head back to your office and start hatching a plan. First up, practice makes perfect, so you need a guinea pig.");
+			writeSpeech("assistant", "", "You alright? You keep staring over at me. Plus, it's pretty weird for you to suggest we do paperwork together. Usually you just dump it on me.");
+			writeSpeech("player", "", "Whaaat? No. I just wanted to lighten your load a little.");
+			writeSpeech("assistant", "", "... Are you fucked in the head? Am I fucked in the head? What was the protocol... Bodysnatchers, I think it was?");
+			writeSpeech("player", "", "Alright fine. bossL's on my ass about how many research logs I'm doing, asking questions about where I'm finding the free time.");
+			writeSpeech("assistant", "", "Ah, yeah she's a real... Real meanie... Heehee... Whoa, that was weird. Hey, you smell something?");
+			writeSpeech("player", "", "Nope. How do you feel?");
+			writeSpeech("assistant", "", "You're really weird today boss. Maybe... Whoa, maybe you like, like me!<br>Haha! My boss has a crush on me!");
+			writeText("The small amount of dust in the air has already filtered out, you should be fine. assistantF however is starting to show signs of a lower intelligence.");
+			writeSpeech("assistant", "", "Ah, sorry, I guess I'm being the meanie now. It's okay to like whoever you want boss!");
+			writeText("You stand up and walk to her desk, she blushes and titters to herself.");
+			writeSpeech("player", "", "You should make it up to me, don't you think?");
+			writeSpeech("assistant", "", "Gosh, boss. You're really tall today... Mmm, it's really warm in here too. I wanna cum!");
+			writeText("She starts peeling her clothes off in the middle of the office.");
+			writeSpeech("player", "", "Huh. Stronger than I thought. Or maybe you've just got a really weak will.");
+			writeSpeech("assistant", "", "Hey, be nice or I won't let you watch me!");
+			writeSpeech("player", "", "Sorry. Please, go ahead. You don't mind if I get comfortable, do you?");
+			writeSpeech("assistant", "", "Go ahead! Hey, maybe we can both-<br>Oh wow! Is that your dick?");
+			writeSpeech("player", "", "Go ahead, enjoy yourself.");
+			writeSpeech("assistant", "", "Yay~!");
+			writeBig("images/dust/dustResearch1.gif");
+			writeText("While she takes a moment to enjoy herself with your dick, you take a moment to try and focus.");
+			writeText("The dust is almost certainly affecting you, but the effects seem manageable. You could probably just get head with any other artifact, the main advantage of the dust is what it does, the disempowerment. Once it's worn off you'll have the opportunity to use it again on another target.");
+			break;
+		}
+		case "dustResearch2": {
+			tempScene = "vault";
+			writeText("You jump through the hoops of smuggling more of the dust out. Sneaking any thing out of the dark vault is tough, even with the reprehensive bracelet. Luckily your tests are a good excuse for why the bag is slightly lighter when you return it to containment.");
+			writeText("...");
+			writeSpeech("boss", "", "And so, if I'm understanding you right, there's been a containment breach?");
+			writeSpeech("player", "", "Maybe. It's an artifact that removes chunks of memory, specifically basic, obvious facts. I'm trying to be thorough-");
+			writeSpeech("boss", "", "For once.");
+			writeSpeech("player", "", "-and figure out if you're being affected.");
+			writeText("You spread the dust through bossL's office a bit ago, it should be taking effect soon.");
+			writeSpeech("boss", "", "So what, you wanna test if I remember how to brush my teeth? Why are we not just using the status quo-yo to undo the effects? Wait, what even is this artifact named? I don't remember seeing the file of anything like that.");
+			writeSpeech("player", "", "Uh, it's uh... The Gemini Loop?");
+			writeSpeech("boss", "", "Why would we codename a memory erasing artifact that? That's, like, super fucking stupid. God, why is it so hot in here?");
+			writeSpeech("player", "", "<i>Thank god, it's finally getting to her. </i>Hey, overheating is a side effect of the artifact. Maybe we should just do some tests-");
+			writeSpeech("boss", "", "No way. Tests sound hard. Wait, I think I remember something. There's a button somewhere on my desk that calls in a fireteam, where-");
+			writeSpeech("player", "", "Nonono, no need for that. Listen, it's really easy. Just take your top off real quick.");
+			writeSpeech("boss", "", "Why would I... Fuck, my head hurts really bad. Where're my asp... Where're my head hurty pills?");
+			writeSpeech("player", "", "Just don't think to hard, you'll be totally fine. I bet your shirt feels really tight.");
+			writeSpeech("boss", "", "I guess... Hold on, I see what you're doing here. You're just trying to see my tits! Well, joke's on you, I wanted to take my shirt off. Bet you thought you'd outsmarted me, but you're just a dummy!");
+			writeText("It seems like she's still focused on belittling you, even with her IQ in the double digits and her vocabulary being shredded in the garbage disposal.");
+			writeSpeech("player", "", "Aw man, you got me! You won't punish me, will you?");
+			writeSpeech("boss", "", "Hehe, I'm gonna! Now, where did I keep my gun...");
+			writeSpeech("player", "", "Wait, what? You aren't going to punish me with your tits like all the other bosses?");
+			writeSpeech("boss", "", "Wh- Of course I am! I'm the best boss, so I'll... I'm... You think I'm a good boss, right?");
+			writeText("Her mood is swinging, the dust might be affecting that too. Or maybe she's naturally like this.");
+			writeSpeech("player", "", "Well, I dunno...");
+			writeSpeech("boss", "", "Hey, I try way harder than everybody else! I keep everyone alive, except the bad ones I mean. I'll prove it!");
+			writeText("...");
+			writeBig("images/dust/dustResearch2-1.gif");
+			writeSpeech("boss", "", "See! My boobs are way better than anyone else's, everyone says so!");
+			writeSpeech("player", "", "Nnn... Yeah, you're right... They really are the best.");
+			writeSpeech("boss", "", "Yep!! They're really sensitive though, I even came once just from rubbing my boobs. It was really fun, I was in my room watching, uh...");
+			writeSpeech("player", "", "Faster, gonna cum soon.");
+			writeSpeech("boss", "", "Oh! Ooh, I haven't had anyone cum on me in a while. It was a bit dissapointing last time, so-");
+			writeBig("images/dust/dustResearch2-2.gif");
+			writeSpeech("boss", "", "Ah! You're spurting it all over me! What a mess...");
+			writeSpeech("player", "", "Nnngh... Well, you know how to clean it up, right?");
+			writeText("Her brow furrows as she thinks about it really, really hard.");
+			writeSpeech("boss", "", "...With my gun?");
+			writeSpeech("player", "", "No, dummy, you scoop it up on your fingers and lick it up. You're like, such a-");
+			writeText("You stop yourself mid-word as bossF starts eating up your 'very salty, but kinda yummy' cum. The dust is affecting you pretty significantly now. You try some mental math, long division is much slower than normal.");
+			writeSpeech("player", "", "I've, uh, gotta go. I think I'm getting sleepy.");
+			writeSpeech("boss", "", "'Kay! If wanna play again I'll let you know.");
+			writeText("You leave the office and get some fresh air. Your mind starts to clear up, but the effects are subtle and slower to fade than last time. Another bit of fun with the dust could turn out dangerously if this keeps up.");
+			break;
+		}
+		case "dustResearch3": {
+			tempScene = "vault";
+			writeSpeech("player", "", "Alright. Now, how to use this...");
+			writeText("You set down the container of dust on your desk. Your brain feels a bit foggy.");
+			writeSpeech("player", "", "Maybe I'm being affected more than I thought... I'd better go get some air.");
+			writeText("...");
+			writeText("You walk stride back into your office after a lovely head-clearing walk around the indoor track.");
+			writeSpeech("player", "", "Hey, assistantF, I could really go for a-");
+			writeBig("images/dust/dustResearch3-1.jpg");
+			writeSpeech("assistant", "", "Welcome back! Mmm... I really missed you...");
+			writeSpeech("player", "", "Why are you... Wait, shit. Oh no...");
+			writeText("You walk up to your desk and find the small makeshift container of dust fell over... Right next to an air vent.");
+			writeBig("images/dust/dustResearch3-2.jpg");
+			writeSpeech("assistant", "", "Mmm... I really hate this outfit, how's a good girl like me supposed to get off when I can't even rub my pussy during work?");
+			writeSpeech("player", "", "Shit... assistantF! Quit masturbating and focus for a second. Listen, don't panic, but I think there's been a containment breach of a dark vault artifact.");
+			writeSpeech("assistant", "", "Heehee! You're so funny! Whenever I'm around you I always feel so warm and fuzzy, boss!");
+			writeText("She's useless. Panic overtakes you as you rush out of your office. How far has the dust spread? How long do you have before it starts to turn you stupid too?");
+			writeSpeech("boss", "", "playerL!");
+			writeSpeech("player", "", "Oh thank god...");
+			writeText("You sigh in relief, perhaps the first time you've reacted that way to bossL's shouting, as you turn around to face her.");
+			writeSpeech("player", "", "Listen, there's been a contain-Fuck.");
+			writeBig("images/dust/dustResearch3-3.jpg");
+			writeSpeech("boss", "", "Whoa, that's just, like, what I was gonna ask you to do! That's so crazy, we're totally on the same wavel... Wave... Thingy!");
+			writeBig("images/dust/dustResearch3-4.jpg");
+			writeSpeech("boss", "", "I feel really funny again, you'll help me out right? I'll, like, be totally helpless unless you put your fat cock inside me!");
+			writeSpeech("player", "", "Uh, sorry! Life or death situation here!");
+			writeText("You sprint away as bossL starts jilling off.");
+			writeText("...");
+			writeSpeech("player", "", "Fuck. Fuck fuck fuck. The exits are sealed, nowhere for the dust to go...");
+			writeText("Time is running out. If the dust can't be purged from the building then everyone inside, you included, will have every IQ point drained out of them.");
+			writeText("With only one option left you head for the main elevator and hit the button for the top floor.");
+			writeText("...");
+			writeText("You enter the office of chairF chairL, the overseer and head chairwoman of Animaly Vault. She's had a plan for every containment breach and disaster that has befallen this company. You push open the door to her office, grateful to see her focused on something other than sex as she stares at a portrait hanging from the wall. The rings on each of her finger are glowing bright lights in a rainbow of colors. With a snap of her fingers, reality is rewritten.");
+			writeText("Changing the painting to one of a nude, busty woman. Mrs. chairL giggles to herself at her work, before she snaps again and she's suddenly naked.");
+			writeSpeech("chair", "", "Hehe... Oh, hiya! You're, umm... I forget. Hey, do you like it? Can you believe I wanted all these dumb boring pictures when I could have been using these rings to decorate?");
+			writeSpeech("player", "", "No... Please, you need to snap out of it Mrs. chairL, the vault needs you!");
+			writeSpeech("chair", "", "Jeez, you're so mean! I worked really hard on these, and you don't like them? I'm gonna have to punish you!");
+			writeText("She snaps again, using the phenomenal power of rewriting space and time to disintegrate your clothes.");
+			writeSpeech("player", "", "I... I don't like... Like, please...");
+			writeText("Your brain has begun to seriously fog over, the dust beginning to completely hamper your intel... Your thinky smarts. You titter at nothing in particular over how naked you are as Mrs... Mrs... As your new best friend chairF pushes you down to the ground.");
+			writeSpeech("player", "", "Ooh! It's really cold!");
+			writeSpeech("chair", "", "Omigosh! Don't worry, I can fix that!");
+			writeText("She snaps her fingers again and the floor is warm and cozy. You give her a contented sigh, and then giggle as she starts jerking you off.");
+			writeBig("images/dust/dustResearch3-5.gif");
+			writeSpeech("chair", "", "Mmm, I forgot what I was gonna do, but I really wanna fuck now!");
+			writeSpeech("player", "", "Haha! I forgot too!");
+			writeText("...");
+			writeBig("images/dust/dustResearch3-6.gif");
+			writeText("The dust has spread through the vault. Once the air started clearing chairF felt sad the air felt less funny, so she made more! She's so nice, she made enough for everyone in the entire city too! Now every day is really happy, and everyone gets along!");
+			writeText("...");
+			writeText("BAD END");
+			writeText("Wait, no, this is definitely a good ending! The best, heehee!");
+			writeText("But, like, what if this was all a dream? What if you just woke up in the dark vault right now? Whoaaaa! That'd be crazy, right?");
+			break;
+		}
 		default: {
 			writeText("You've encountered an error! Please let me know about this, the errorcode is:");
 			writeText("writeScene "+scene);
@@ -3680,6 +4048,17 @@ function checkForEvents() {
 					writeArtifact("stopwatch");
 					if (data.player.color.includes('coin') == true) {
 						writeArtifact("coin");
+						if (data.player.color.includes('shades') == true) {
+							writeArtifact("shades");
+						}
+						else {
+							if (timeSince != 1) {
+								writeSpeech("assistant", "", "Hey, we got in a new... Thing. It's a pair of aviators, they're ready for testing.");
+								writeArtifact("shades");
+								data.player.color += 'shades';
+								timeSince = 1;
+							}
+						}
 					}
 					else {
 						if (timeSince != 1) {
@@ -3782,18 +4161,19 @@ function checkForEvents() {
 				}
 				case "serum": {
 					if (galleryCheck('serumHome1') == false) {
-						//writeFunction("writeEvent('serumHome1')", roommateF+" is getting dressed");
+						writeFunction("writeEvent('serumHome1')", roommateF+" is getting getting ready for a date");
 					}
-					if (galleryCheck('serumOutdoor1') == false) {
-						//writeFunction("writeEvent('serumOutdoor1')", "Drink the serum and go for a walk");
-					}
-					if (galleryCheck('serumOutdoor2') == false) {
-						//writeFunction("writeEvent('serumOutdoor2')", "Find someone to test the serum on");
-					}
-					if (galleryCheck('serumOutdoor3') == false) {
-						//writeFunction("writeEvent('serumOutdoor3')", "Drink the serum and go to the beach");
+					if (data.player.color.includes('katyaIntro') == true) {
+						if (galleryCheck('serumHome2') == false) {
+							writeFunction("writeEvent('serumHome2')", "Use the serum to have some fun with sisterF");
+						}
 					}
 					break;
+				}
+				case "shades": {
+					if (galleryCheck('shadesHome1') == false) {
+						writeFunction("writeEvent('shadesHome1')", "Show off the shades to "+roommateF);
+					}
 				}
 			}
 			if (data.player.color.includes('katya') == true) {

@@ -25,22 +25,42 @@ To-do
 	commercials (COMPLETE)
 	promise engine (COMPLETE)
 	artifact retrieval logs placeholder (COMPLETE)
+	Add prologue skip (COMPLETE)
 	demo (COMPLETE)
 		demo cheat (COMPLETE)
-		demo character images (COMPLETE)
-		demo location images (COMPLETE)
-		demo imageButton css (COMPLETE)
 		demo navigation (COMPLETE)
 		demo scenes (COMPLETE)
-		demo remove mention of sequel (COMPLETE)
-		demo scene images (COMPLETE)
 	bugs
-		menu border visibility on mobile ver
-		mobile footer button spacing
+		menu border visibility on mobile ver (COMPLETE)
+		mobile footer button spacing (COMPLETE)
 		erotibox has 2 end buttons (COMPLETE)
 		cheat artifacts use different css (COMPLETE)
 		cheat artifacts send you to the wrong darkvault (COMPLETE)
-	lonely preacher
+	Crypto's scene
+	Shades
+		shadesResearch1
+		shadesResearch2
+		shadesResearch3
+		move shades to dark vault
+		shadesResearch4
+		shadesHome1
+		shadesHome2
+		shadesDream
+		shades images
+		add scenes to galleryArray
+	Serum
+		serumHome1
+		serumHome2
+		serumOutdoor1
+		serumDream
+		serum images
+		add scenes to galleryArray
+	Dust
+		dustResearch1
+		dustResearch2
+		dustResearch3
+		dust images
+		add scenes to galleryArray
 	
 	
 	
