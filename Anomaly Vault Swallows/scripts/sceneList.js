@@ -542,7 +542,7 @@ function writeScene(scene) {
 							break;
 						}
 						case "Night": {
-							writeTransition("office", "Go back to your office");
+							writeTransition("room", "Go home");
 							break;
 						}
 					}
@@ -1850,14 +1850,14 @@ function writeScene(scene) {
 			writeText("There are a couple of things you could distract yourself with during the ride. There's the documentation on the artifact you're supposed to retrieve, a little pamphlet detailing Jeeve's artifact status for new hires, and you could always just take a nap.");
 			writeTransition("artifactBriefing", "Review the briefing dossier");
 			writeTransition("jeevesPamphlet", "Read the pamphlet on Jeeves");
-			writeTransition("jeevesProposition", "Ask Jeeves is she's down to fuck");
+			writeTransition("jeevesProposition", "Chat with Jeeves");
 			writeTransition("townArrival", "Nap until you arrive at Daytona");
 			break;
 		}
 		case "inTheCar": {
 			writeTransition("artifactBriefing", "Review the briefing dossier");
 			writeTransition("jeevesPamphlet", "Read the pamphlet on Jeeves");
-			writeTransition("jeevesProposition", "Ask Jeeves is she's down to fuck");
+			writeTransition("jeevesProposition", "Chat with Jeeves");
 			writeTransition("townArrival", "Nap until you arrive at Daytona");
 			break;
 		}
@@ -1888,10 +1888,16 @@ function writeScene(scene) {
 			break;
 		}
 		case "jeevesProposition": {
-			writeSpeech("player", "", "Hey, Jeeves, wanna fuck? We could pull over somewhere before we arrive for a quickie.");
-			writeSpeech("Jeeves", "scripts/gamefiles/profiles/jeeves.jpg", " Flattered, sir. But you aren't the only one with my number. What if somebody needed a ride, or wanted somebody murdered, and I wasn't available? 'Sorry sir, having a shag! Get back to you soon as he splurts, yeah?' Maybe ask the men on top if I could have a break?");
+			writeSpeech("player", "", "So, uh... See any good movies lately?");
+			writeSpeech("Jeeves", "scripts/gamefiles/profiles/jeeves.jpg", "Afraid not sir, not too many drive-in theaters these days.");
+			writeSpeech("player", "", "You could always just park the thing and... Actually, I don't know if you actually can. Are you able to step out of the car?");
+			writeSpeech("Jeeves", "scripts/gamefiles/profiles/jeeves.jpg", "I think I could, I'd rather not though.");
+			writeSpeech("player", "", "But what about living your own life? Finding your own passions?");
+			writeSpeech("Jeeves", "scripts/gamefiles/profiles/jeeves.jpg", "No offense, sir, but I'm very certain I wouldn't find a life or anything to be passionate about out there. In the car I'm more than myself, I think. I'm a driver.");
+			writeSpeech("player", "", "Well, you do you, I guess. Hey, wanna fuck? We could park it and have a quickie in the back seat. ");
+			writeSpeech("Jeeves", "scripts/gamefiles/profiles/jeeves.jpg", "Flattered, sir. But you aren't the only one with my number. What if somebody needed a ride, or wanted somebody murdered, and I wasn't available? 'Sorry sir, having a shag! Get back to you soon as he splurts, yeah?' Maybe ask the men on top if I could have a break?");
 			writeSpeech("player", "", "I suppose, should probably focus on the mission instead. Next time then.");
-			writeSpeech("Jeeves", "scripts/gamefiles/profiles/jeeves.jpg", " I'll keep the schedule open for you sir.");
+			writeSpeech("Jeeves", "scripts/gamefiles/profiles/jeeves.jpg", "I'll keep the schedule open for you sir.");
 			writeTransition("inTheCar", "Finish");
 			break;
 		}
