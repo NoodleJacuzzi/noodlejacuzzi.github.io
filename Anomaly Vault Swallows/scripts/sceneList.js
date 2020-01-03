@@ -1831,10 +1831,10 @@ function writeScene(scene) {
 			break;
 		}
 		case "summoningJeeves": {
-			if (data.player.artifact1 == "stopwatch") {
+			if (data.player.artifact1 == "coin") {
 				writeText("You take the Midas Coin and slip it into your pocket. Nothing obvious happens, but the effect is already active.");
 			}
-			if (data.player.artifact1 == "coin") {
+			if (data.player.artifact1 == "stopwatch") {
 				writeText("You take the Time Stopwatch and slip it into your pocket. You can now stop time at will.");
 			}
 			writeText("You dial a number on your phone more than twenty digits long. It picks up immediately and there's a soft breathing from the other side.");
@@ -2028,17 +2028,17 @@ function writeScene(scene) {
 			else {
 				if (data.player.artifact1 == "coin") {
 					writeText("You walk up to the doorway again and give a few solid knocks, and the door is answered by a tired looking woman in an old-fashioned maid outfit.");
-					writeSpeech("Maid", "scripts/gamefiles/hunter/MaidProfile.jpg", "You're the guest then?");
+					writeSpeech("Maid", "scripts/gamefiles/hunter/maidProfile.jpg", "You're the guest then?");
 					writeSpeech("player", "", "I am, can't you tell?");
-					writeSpeech("Maid", "scripts/gamefiles/hunter/MaidProfile.jpg", "I can't, the lady only gave description of part of you. I'm fine without proof.");
+					writeSpeech("Maid", "scripts/gamefiles/hunter/maidProfile.jpg", "I can't, the lady only gave description of part of you. I'm fine without proof.");
 					writeSpeech("player", "", "You sure? I could go for a quickie.");
-					writeSpeech("Maid", "scripts/gamefiles/hunter/MaidProfile.jpg", "No thanks, feel free to come in. Guest room's first door in the left wing, stay out of the master nd the mistress's rooms.");
+					writeSpeech("Maid", "scripts/gamefiles/hunter/maidProfile.jpg", "No thanks, feel free to come in. Guest room's first door in the left wing, stay out of the master and the mistress's rooms.");
 					writeText("You walk in to get a feel for the place. Large, pretty empty.");
-					writeSpeech("Maid", "scripts/gamefiles/hunter/MaidProfile.jpg", "Will that be all?");
+					writeSpeech("Maid", "scripts/gamefiles/hunter/maidProfile.jpg", "Will that be all?");
 					writeSpeech("player", "", "Sure. You sure you don't want to fuck? I could even go for anal.");
-					writeSpeech("Maid", "scripts/gamefiles/hunter/MaidProfile.jpg", "I... Maybe some other time, sir. I'm on the clock.");
+					writeSpeech("Maid", "scripts/gamefiles/hunter/maidProfile.jpg", "I... Maybe some other time, sir. I'm on the clock.");
 					writeSpeech("player", "", "<i>Something's weird. She's basically turning down free money. </i>");
-					writeSpeech("Maid", "scripts/gamefiles/hunter/MaidProfile.jpg", "Right then, keep out of trouble. I need to go, shout for me if you can't find something.");
+					writeSpeech("Maid", "scripts/gamefiles/hunter/maidProfile.jpg", "Right then, keep out of trouble. I need to go, shout for me if you can't find something.");
 					writeText("She hurries off, leaving the room.");
 				}
 				if (data.player.artifact1 == "stopwatch") {
@@ -2054,22 +2054,22 @@ function writeScene(scene) {
 				writeText("You make your way to the master bedroom, notably finding the door already open a crack.");
 				writeText("Inside, rummaging through the safe hidden away in a closet is the maid. She's got a pillowcase full of cash and jewelry.");
 				writeSpeech("player", "", "Ahem?");
-				writeSpeech("Maid", "scripts/gamefiles/hunter/MaidProfile.jpg", "FUCK!");
+				writeSpeech("Maid", "scripts/gamefiles/hunter/maidProfile.jpg", "FUCK!");
 				writeText("She spins around, a knife in her hand and a wild panic in her eyes, only to calm down when she notices you aren't her employer.");
 				writeSpeech("player", "", "Went right for it, huh? Probably should have made sure I actually was going to the guest room.");
-				writeSpeech("Maid", "scripts/gamefiles/hunter/MaidProfile.jpg", "Listen, I know how this looks. I can cut you in, I sw-");
+				writeSpeech("Maid", "scripts/gamefiles/hunter/maidProfile.jpg", "Listen, I know how this looks. I can cut you in, I sw-");
 				writeSpeech("player", "", "Absolutely.");
-				writeSpeech("Maid", "scripts/gamefiles/hunter/MaidProfile.jpg", "What, really?");
+				writeSpeech("Maid", "scripts/gamefiles/hunter/maidProfile.jpg", "What, really?");
 				writeSpeech("player", "", "Yep. There's only one thing in this house I want.");
 				writeText("She looks confused for a moment, blushes for a moment, then suddenly the blush fades and she's back to panic.");
-				writeSpeech("Maid", "scripts/gamefiles/hunter/MaidProfile.jpg", "You don't mean the key, do you?");
+				writeSpeech("Maid", "scripts/gamefiles/hunter/maidProfile.jpg", "You don't mean the key, do you?");
 				writeSpeech("player", "", "Afraid so.");
-				writeSpeech("Maid", "scripts/gamefiles/hunter/MaidProfile.jpg", "No, please... Anything else...");
+				writeSpeech("Maid", "scripts/gamefiles/hunter/maidProfile.jpg", "No, please... Anything else...");
 				writeSpeech("player", "", "Actually, how about a deal? Not only do I not rat you out and have you carted off to jail, I'll take the key and even make it worth your while.");
-				writeSpeech("Maid", "scripts/gamefiles/hunter/MaidProfile.jpg", "I...");
+				writeSpeech("Maid", "scripts/gamefiles/hunter/maidProfile.jpg", "I...");
 				writeSpeech("player", "", "Anything you like. Anal, creampie, you can even give me a rimjob if you like.");
 				writeText("You rub the coin in your pocket. It doesn't improve the effect or anything, it just feels nice.");
-				writeSpeech("Maid", "scripts/gamefiles/hunter/MaidProfile.jpg", "Anything?");
+				writeSpeech("Maid", "scripts/gamefiles/hunter/maidProfile.jpg", "Anything?");
 				writeSpeech("player", "", "Sure! Just hand over that key and I'll give you what you really need.");
 				writeText("...");
 				writeSpeech("player", "", "You're pretty messed up in the head, aren't you? Trading the key for a thorough deepthroating. You gonna take a breath?");
@@ -2077,7 +2077,7 @@ function writeScene(scene) {
 				writeText("She doesn't answer, instead focusing all her attention to the cock she's choking herself on while she fingers herself to another orgasm.");
 				writeText("Each time you cum she holds you dick down your throat until her eyes roll back in her head, her grip on your hips goes slack, and you need to shove her off your cock.");
 				writeText("After a moment she coughs and sputters.");
-				writeSpeech("Maid", "scripts/gamefiles/hunter/MaidProfile.jpg", "A-another...");
+				writeSpeech("Maid", "scripts/gamefiles/hunter/maidProfile.jpg", "A-another...");
 				writeSpeech("player", "", "If we go another round we're gonna get caught. How about I give you a ride out of town and you can choke yourself on my dick as much as you like along the way?");
 				writeText("Coughing out the cum stuck kn her throat, she relents. You pocket the skeleton key and, like a gentleman, carry her bag of stolen goods for her to your car. She walks out in a nervous hurry, makeup running and desperate for another taste of your dick.");
 			}
