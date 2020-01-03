@@ -1189,6 +1189,9 @@ function writeScene(scene) {
 				if (galleryCheck('mirrorResearch2-4') == false) {
 					writeFunction("writeEvent('mirrorResearch2-4')", "Check out public education");
 				}
+				if (galleryCheck('mirrorResearch2-6') == false) {
+					writeFunction("writeEvent('mirrorResearch2-6')", "Check out 'Community Service Hall'");
+				}
 				writeTransition("work", "Head back to your dimension");
 				var mirrorTotal = 0;
 				var mirrorUnlocks = 0;
@@ -3248,6 +3251,34 @@ function writeEvent(scene) {
 			}
 			break;
 		}
+		case "mirrorResearch2-6": {
+			writeBig("images/mirror/research2-6-1.gif");
+			writeText("With a name like that, it's not a surprise that, when you arrive, it's to the sight of a more than a dozen people in bondage gear, chained down, or locked into stocks. Nearly all of them are women, but there are a few guys being teased by some ladies.");
+			writeText("There is a little sign-in station keeping track of who's being punished, what they did, and how rough you're supposed to be...");
+			writeText("It seems to just be opt-in community service for small crimes, with shoplifting and 'excessive public decency' as the most common reasons for punishment.");
+			writeText("From the looks of things, only certified Officers of Correctional Services are supposed to handle punishments, but with your bracelet, that's not really an issue.");
+			writeText("And it looks like they're bringing someone new in now...");
+			writeText("...");
+			writeBig("images/mirror/research2-6-2.gif");
+			writeText("The wet, sloppy sounds of your hips bucking into hers ring out as you use her pigtails as fuck-handles.");
+			writeSpeech("player","","<i>Damn, she's tight...</i>");
+			writeText("She got caught trying to take someone's wallet, and she decided that being a cumdump for a few days was better than paying the fine.");
+			writeText("As you bottom-out inside her again and again, you're definitely enjoying the results of that choice.");
+			writeText("...");
+			writeBig("images/mirror/research2-6-3.gif");
+			writeText("According to her entry, this girl is a <b>special</b> case compared to the rest. Apparently, she came in and bound herself in one of the pillories to be punished... which counts as misuse of government property and, apparently, a punishable offense.");
+			writeText("If she wanted to get fucked, she'd just need to bend over outside, so if she's here...");
+			writeText("Pulling sharply on her hair, you feel her clamp down on your cock as she moans throatily.");
+			writeSpeech("Painslut","none","Oh <i>fuck yes...!</i> Hurt me <i><b>more~!</b></i>");
+			writeText("It's probably not the most effective system, but at least it's fun to participate in.");
+			writeText("...");
+			writeText("You end up having a fair bit of fun with the locked-up girls and, having done your civic duty, you feel pretty satisfied by the time the world starts to blur around you.");
+			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.reddit.com/user/CaptainCryptogreek`'>Captain Cryptogreek</span>");
+			if (tempScene == 'work') {
+				tempScene = 'mirrorResearch';
+			}
+			break;
+		}
 		case "coinResearch1": {
 			writeBig("scripts/gamefiles/items/coin.jpg");
 			writeSpeech("player", "", "Now beginning test Md-01.");
@@ -3383,15 +3414,15 @@ function writeEvent(scene) {
 		case "serumResearch1": {
 			writeSpeech("player", "", "Now beginning test Ts-09. No time like the present!");
 			writeText("You take a swig of the liquid, it's very minty. Nothing happens right away, but almost immediately... Nothing continues to happen.");
-			writeSpeech("player", "", "No effect?");
+			writeSpeech("player", "", "<span style='color:green'>No effect</span>?");
 			writeSpeech("assistant", "", "Alright, no effect then, a dud.");
 			writeText("Without hesitation, assistantF begins logging down 'no effect' onto her clipboard.");
-			writeSpeech("player", "", "Slow down, it's too soon to make that kind of call. And Mrs. bossL will get on our case again if we make snap judgements in ink.");
+			writeSpeech("player", "", "Slow down, <span style='color:green'>it's too soon to make that kind of call</span>. And <span style='color:green'>Mrs. bossL will get on our case again if we make snap judgements in ink.</span>");
 			writeSpeech("assistant", "", "Y-yeah, way too soon, sorry. And she's super anal about it.");
 			writeText("assistantF looks a little dazed as she crosses out her notes.");
-			writeSpeech("player", "", "... Actually she's really chill about wasting office supplies.");
+			writeSpeech("player", "", "... Actually <span style='color:green'>she's really chill about wasting office supplies.</span>");
 			writeSpeech("assistant", "", "Right? We're pretty lucky this is the one thing she doesn't care about.");
-			writeSpeech("player", "", "But she's actually the nicest person you've ever met.");
+			writeSpeech("player", "", "But <span style='color:green'>she's actually the nicest person you've ever met</span.");
 			writeSpeech("assistant", "", "Yeah! I feel bad for... for-");
 			writeText("assistantF looks wobbly before she almost collapses. You catch her and make sure she can get her footing.");
 			writeSpeech("assistant", "", "Sorry. Sorry. It's weird, I just remembered a bunch of times Mrs. bossL was really nice to me, and I lost my balance for some reason.");
@@ -3404,7 +3435,7 @@ function writeEvent(scene) {
 		case "serumResearch2": {
 			writeBig("images/serum/research2-1.gif");
 			writeSpeech("assistant", "", "N-nggh... What's... It feels like something is wrong...");
-			writeSpeech("player", "", "What could be wrong? This is pretty normal for us.");
+			writeSpeech("player", "", "What could be wrong? <span style='color:green'>This is pretty normal for us</span>.");
 			writeSpeech("assistant", "", "It is...? I don't remember.<br><i>Something about this feels... Off...</i>");
 			writeSpeech("player", "", "Are you not enjoying yourself?");
 			writeBig("images/serum/research2-2.gif");
@@ -3418,7 +3449,7 @@ function writeEvent(scene) {
 		case "serumResearch3": {
 			writeSpeech("boss", "", "So, what was so important you needed to interrupt me?");
 			writeText("You take a deep breath to compose yourself. The minty aftertaste of the serum does help you feel a little more empowered under her glare.");
-			writeSpeech("player", "", "I know your secret. I know you're a complete buttslut who can't even make it through the day without fantasizing about my cock up your ass.<br>I know you can't hold back anymore, that you're at your breaking point.");
+			writeSpeech("player", "", "I know your secret. <span style='color:green'>I know you're a complete buttslut who can't even make it through the day without fantasizing about my cock up your ass</span>.<br>I know <span style='color:green'>you can't hold back anymore</span>, that <span style='color:green'>you're at your breaking point</span>.");
 			writeText("After a moment of silence, bossF stands up, walks over to the door, shuts, and locks it.");
 			writeText("And then immediately pulls you out of your chair by the tie.");
 			writeSpeech("boss", "", "How'd you find out!? Who the fuck told you!? Was it chairL!?");
@@ -3428,7 +3459,7 @@ function writeEvent(scene) {
 			writeSpeech("boss", "", "Trying to make me look bad in front of management, huh? Right before inspection, I bet. But you're right, I can't hold back.");
 			writeText("She pulls something that looks pretty close to a gun out of her desk drawer.");
 			writeSpeech("boss", "", "I'll need to throw you in a ditch somewhere afterwards, can't have this getting back to bite my perfect ass. Any last words?");
-			writeSpeech("player", "", "Uh, I have a few actually! First, you aren't going to shoot! Next...");
+			writeSpeech("player", "", "Uh, I have a few actually! First, <span style='color:green'>you aren't going to shoot</span>! Next...");
 			writeText("...");
 			writeBig("images/serum/research3-1.gif");
 			writeSpeech("boss", "", "Ah~! Ah~! Harder! Ruin me!");
@@ -3436,7 +3467,7 @@ function writeEvent(scene) {
 			writeSpeech("boss", "", "I'm sorry master~! I don't know what came over me, I just needed to be fucked so bad~! Punish me, please!");
 			writeBig("images/serum/research3-2.gif");
 			writeSpeech("boss", "", "Ah, yes~! More~!");
-			writeSpeech("player", "", "Oh, you'll get more, slut.");
+			writeSpeech("player", "", "Oh, <span style='color:green'>you'll get more</span>, slut.");
 			break;
 		}
 		case "serumDream1": {

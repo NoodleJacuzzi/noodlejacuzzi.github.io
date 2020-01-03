@@ -77,6 +77,7 @@ var galleryArray = [
 	{index: "mirrorResearch2-3", dark: false, girl: "", name: "Public Sex - Free Use Office", hint: ""},
 	{index: "mirrorResearch2-5", dark: false, girl: "", name: "Public Sex - Free Use Gym", hint: ""},
 	{index: "mirrorResearch2-4", dark: false, girl: "roommate", name: "Public Sex - Free Use School", hint: ""},
+	{index: "mirrorResearch2-6", dark: false, girl: "crypto", name: "Public Sex - Community Service Hall", hint: ""},
 	//Time Stopwatch Events
 	{index: "stopwatchResearch1", dark: false, girl: "", name: "Time Stopwatch - First Research", hint: ""},
 	{index: "stopwatchResearch2", dark: false, girl: "boss", name: "Time Stopwatch - All at Once", hint: ""},
@@ -452,7 +453,6 @@ function writeTab(character, text) {
 function writeArtifact (name) {
 	if (data.player.storage == null) {
 		data.player.storage = "";
-		alert(data.player.storage);
 	}
 	if (tempScene != 'storage' && data.player.storage.includes(name) != true) {
 		listArtifact(name);
