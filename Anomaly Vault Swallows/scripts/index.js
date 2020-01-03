@@ -88,9 +88,9 @@ var galleryArray = [
 	//Midas Coin Events
 	{index: "coinResearch1", dark: false, girl: "", name: "Midas Coin - First Research", hint: ""},
 	{index: "coinResearch2", dark: false, girl: "assistant", name: "Midas Coin - Trading for a Soda", hint: ""},
-	{index: "coinHome1", dark: false, girl: "girlfriend", name: "Midas Coin - Flaunting Wealth", hint: ""},
+	{index: "coinHome1", dark: false, girl: "girlfriendcrypto", name: "Midas Coin - Flaunting Wealth", hint: ""},
 	//index: "coinHome2", dark: false, girl: "assistantsister", name: "Midas Coin - Sisters", hint: ""},
-	{index: "coinOutdoor1", dark: false, girl: "gym", name: "Midas Coin - Gold Membership", hint: ""},
+	{index: "coinOutdoor1", dark: false, girl: "gymcrypto", name: "Midas Coin - Gold Membership", hint: ""},
 	//index: "coinOutdoor2", dark: false, girl: "", name: "Midas Coin - Mugging", hint: ""},
 	{index: "coinDream1", dark: false, girl: "", name: "Coin's Fate", hint: ""},
 	//Truth Serum Events
@@ -1080,6 +1080,14 @@ function generateGalleryNav() {
 		</div>
 		<br>
 	`;
+	document.getElementById('output').innerHTML += `
+		<div class = "textBox" onclick="generateCryptoPage()" >
+			<img class = "textThumb" src = "scripts/gamefiles/profiles/crypto.png">
+			<br>
+			<span class = "choiceText" onclick="generateCryptoPage()">Scenes written by Captain CryptoGreek</span>
+		</div>
+		<br>
+	`;
 	writeFunction("generateDarkGalleryNav()", "View the dark vault gallery");
 }
 
@@ -1123,6 +1131,19 @@ function generateSwallowsPage() {
 	for (i = 0; i < data.gallery.length; i++) {
 		if (data.gallery[i].girl.includes('swallows')) {
 			writeFunction ("writeEvent('"+data.gallery[i].index+"')", data.gallery[i].name)
+		}
+	}
+	writeTransition(data.player.currentScene, "Go back");
+}
+
+function generateCryptoPage() {
+	document.getElementById('output').innerHTML = '';
+	writeBig("scripts/gamefiles/profiles/crypto.png");
+	for (cryptoIndex = 0; cryptoIndex < galleryArray.length; cryptoIndex++) {
+		if (galleryArray[cryptoIndex].girl.includes('crypto')) {
+			if (galleryCheck(galleryArray[cryptoIndex].index) == true){
+				writeFunction ("writeEvent('"+galleryArray[cryptoIndex].index+"')", galleryArray[cryptoIndex].name)
+			}
 		}
 	}
 	writeTransition(data.player.currentScene, "Go back");
