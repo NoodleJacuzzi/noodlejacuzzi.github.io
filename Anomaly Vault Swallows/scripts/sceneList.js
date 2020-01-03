@@ -2079,7 +2079,7 @@ function writeScene(scene) {
 				writeText("After a moment she coughs and sputters.");
 				writeSpeech("Maid", "scripts/gamefiles/hunter/maidProfile.jpg", "A-another...");
 				writeSpeech("player", "", "If we go another round we're gonna get caught. How about I give you a ride out of town and you can choke yourself on my dick as much as you like along the way?");
-				writeText("Coughing out the cum stuck kn her throat, she relents. You pocket the skeleton key and, like a gentleman, carry her bag of stolen goods for her to your car. She walks out in a nervous hurry, makeup running and desperate for another taste of your dick.");
+				writeText("Coughing out the cum stuck in her throat, she relents. You pocket the skeleton key and, like a gentleman, carry her bag of stolen goods for her to your car. She walks out in a nervous hurry, makeup running and desperate for another taste of your dick.");
 			}
 			if (data.player.artifact1 == "stopwatch") {
 				writeText("Quickly enough you've found the master bedroom, and an obvious looking safe is probably where your prize is.");
@@ -3455,7 +3455,7 @@ function writeEvent(scene) {
 			writeText("roommateF pokes her head into the living room.");
 			writeSpeech("player", "", "Nah just thinking out loud. Hey, girlfriendF coming over today?");
 			writeSpeech("roommate", "", "Yep! I promised to take her out on a date this time. We're headed to watch whatever's showing in the theater today.");
-			writeSpeech("player", "", "Huh. I dunno if watching a random movie will be all that great of a time. <br>Hey, I got an idea! Listen, let's wait for grilfriendF to arrive. I read about this cool new trend in the dating world and you both should hear it.");
+			writeSpeech("player", "", "Huh. I dunno if watching a random movie will be all that great of a time. <br>Hey, I got an idea! Listen, let's wait for girlfriendF to arrive. I read about this cool new trend in the dating world and you both should hear it.");
 			writeSpeech("roommate", "", "You've got dating advice? I dunno...");
 			writeSpeech("player", "", "Listen, I swear it'll be awesome. I'm telling the truth!");
 			writeText("...");
@@ -3491,7 +3491,7 @@ function writeEvent(scene) {
 			writeSpeech("sister", "", "Dude, get out of here with your old geezer brain. There's more to posting on snap than selfies. I'm not some-");
 			writeSpeech("player", "", "Because I heard <span style='color:green'>selfies are all the rage these days.</span>");
 			writeSpeech("sister", "", "I... Yeah, I knew that, idiot! I was gonna say that, obviously.");
-			writeSpeech("player", "", "So then you know about the latest trend? The one <span style='color:green'>super popular among people gathering followers/g</span>");
+			writeSpeech("player", "", "So then you know about the latest trend? The one <span style='color:green'>super popular among people gathering followers</span>.");
 			writeSpeech("player", "", "Close, but not quite. It's fine though, you asked me in to help you help you out with them, you do need a man for this trend after all.");
 			writeText("...");
 			writeBig("images/serum/serumHome2-1.gif");
@@ -3539,7 +3539,7 @@ function writeEvent(scene) {
 			writeText("...");
 			writeBig("images/shades/shadesResearch2-1.gif");
 			writeSpeech("assistant", "", "Nnngh~! You're tearing me in half, fuck! I'm sorry, I'll never talk back to you again! Please!");
-			writeSpeech("player", "", "Oh, you want me to ease up? The little bitch whi put her foot down wants me to be gentle?");
+			writeSpeech("player", "", "Oh, you want me to ease up? The little bitch who put her foot down wants me to be gentle?");
 			writeSpeech("assistant", "", "No! HARDER~!!!");
 			writeText("You give her a hard slap on the ass and throw her aside before laying on the couch.");
 			writeSpeech("player", "", "Earn it.");
