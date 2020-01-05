@@ -583,7 +583,7 @@ function writeScene(scene) {
 				writeSpeech("player", "", "Hey, Mrs. bossL?");
 				writeSpeech("boss", "", "I'm busy. What do you want?");
 				writeSpeech("player", "", "I was about to enter the dark vault, I was wondering if-");
-				writeSpeech("boss", "", "You don't need permission anymore. The request system is automated now that you're authorized. Go ahead and kill yourself with them for all I care, you'd probably have more fun with the artifacts than a bullet to thebtemple.");
+				writeSpeech("boss", "", "You don't need permission anymore. The request system is automated now that you're authorized. Go ahead and kill yourself with them for all I care, you'd probably have more fun with the artifacts than a bullet to the temple.");
 				writeSpeech("player", "", "<i>Alright, thanks ma'am! </i><br>Bitch.");
 				writeText("There's a cold silence in the air as you realize which part of that you just said out loud. One panicked activation of the bracelet later, and she's gone from a cold yet murderous fury to a confused daze.");
 				writeSpeech("boss", "", "What the hell are you doing in my office?");
@@ -761,9 +761,9 @@ function writeScene(scene) {
 				writeArtifactMini('engine');
 				writeArtifactMini('commercials');
 				writeArtifactMini('magazine');
-				writeArtifactMini('clock');
 				writeArtifactMini('lamp');
 				//writeArtifactMini('preacher');
+				//writeArtifactMini('clock');
 				if (data.player.entryPoint == "room") {
 					writeTransition("room", "Go back");
 				}
@@ -1896,7 +1896,7 @@ function writeScene(scene) {
 			writeSpeech("Jeeves", "scripts/gamefiles/profiles/jeeves.jpg", "No offense, sir, but I'm very certain I wouldn't find a life or anything to be passionate about out there. In the car I'm more than myself, I think. I'm a driver.");
 			writeSpeech("player", "", "Well, you do you, I guess. Hey, wanna fuck? We could park it and have a quickie in the back seat. ");
 			writeSpeech("Jeeves", "scripts/gamefiles/profiles/jeeves.jpg", "Flattered, sir. But you aren't the only one with my number. What if somebody needed a ride, or wanted somebody murdered, and I wasn't available? 'Sorry sir, having a shag! Get back to you soon as he splurts, yeah?' Maybe ask the men on top if I could have a break?");
-			writeSpeech("player", "", "I suppose, should probably focus on the mission instead. Next time then.");
+			writeSpeech("player", "", "I suppose, I should probably focus on the mission instead. Next time then.");
 			writeSpeech("Jeeves", "scripts/gamefiles/profiles/jeeves.jpg", "I'll keep the schedule open for you sir.");
 			writeTransition("inTheCar", "Finish");
 			break;
@@ -1940,9 +1940,9 @@ function writeScene(scene) {
 			writeText("*CLICK*");
 			writeText("The bustle of the room comes to a sudden jarring stop, not that it was very loud before. Still, with time stopped it's effortless to take his housekey from his pocket. You leave the wallet though, best if he takes as long as possible to realize he's been robbed.");
 			writeText("*CLICK*");
-			writeSpeech("Grumpy Man", "scripts/gamefiles/hunter/grumpyManProfile.jpg", "-and so then fuckin'... Wait, you even listenin'? Why the hell do you wanna know anyways?");
+			writeSpeech("Grumpy Man", "scripts/gamefiles/hunter/grumpyManProfile.jpg", "-and so then fuckin'... Wait, you even listenin'? Why the hell do you wanna know anyway?");
 			writeSpeech("player", "", "Ah, sorry, thought you were someone else.");
-			writeText("you stand up and leave, the man is left to confusedly and bitterly keep mumbling to himself.");
+			writeText("You stand up and leave, the man is left to confusedly and bitterly keep mumbling to himself.");
 			writeText("You got the mansion key!");
 			writeTransition("shoddyBar", "Finish");
 			data.player.hunter += "key";
@@ -3529,6 +3529,7 @@ function writeEvent(scene) {
 			writeSpeech("player", "", "Because I heard <span style='color:green'>selfies are all the rage these days.</span>");
 			writeSpeech("sister", "", "I... Yeah, I knew that, idiot! I was gonna say that, obviously.");
 			writeSpeech("player", "", "So then you know about the latest trend? The one <span style='color:green'>super popular among people gathering followers</span>.");
+			writeSpeech("sister", "", "... Food pics?");
 			writeSpeech("player", "", "Close, but not quite. It's fine though, you asked me in to help you help you out with them, you do need a man for this trend after all.");
 			writeText("...");
 			writeBig("images/serum/serumHome2-1.gif");
@@ -3670,7 +3671,7 @@ function writeEvent(scene) {
 			writeSpeech("roommate", "", "Cumming...!");
 			writeText("Half conscious, she rubs herself to another orgasm as she watches you sodomize her ex girlfriend. Every so often the creampie you gave her starts to leak out, but she just fingerfucks it back in so that she doesn't waste any.");
 			writeSpeech("player", "", "Nngh. Fuck, on your knees whore.");
-			writeText("You pull girlFriendF off your cock, and without hesitation she's on her knees to try and suck you off the rest of the way to completion.");
+			writeText("You pull girlfriendF off your cock, and without hesitation she's on her knees to try and suck you off the rest of the way to completion.");
 			writeBig("images/shades/shadesHome1-6.gif");
 			writeSpeech("player", "", "Don't you swallow a drop. roommateF, get over here.");
 			writeText("Obediently roommateF, despite being on the verge of cumming, rushes over to you.");
@@ -3997,7 +3998,7 @@ function writeEvent(scene) {
 			writeText("...");
 			writeText("You enter the office of chairF chairL, the overseer and head chairwoman of Animaly Vault. She's had a plan for every containment breach and disaster that has befallen this company. You push open the door to her office, grateful to see her focused on something other than sex as she stares at a portrait hanging from the wall. The rings on each of her finger are glowing bright lights in a rainbow of colors. With a snap of her fingers, reality is rewritten.");
 			writeText("Changing the painting to one of a nude, busty woman. Mrs. chairL giggles to herself at her work, before she snaps again and she's suddenly naked.");
-			writeSpeech("chair", "", "Hehe... Oh, hiya! You're, umm... I forget. Hey, do you like it? Can you believe I wanted all these dumb boring pictures when I could have been using these rings to decorate?");
+			writeSpeech("chair", "", "Hehe... Oh, hiya! You're, umm... I forgot. Hey, do you like it? Can you believe I wanted all these dumb boring pictures when I could have been using these rings to decorate?");
 			writeSpeech("player", "", "No... Please, you need to snap out of it Mrs. chairL, the vault needs you!");
 			writeSpeech("chair", "", "Jeez, you're so mean! I worked really hard on these, and you don't like them? I'm gonna have to punish you!");
 			writeText("She snaps again, using the phenomenal power of rewriting space and time to disintegrate your clothes.");
