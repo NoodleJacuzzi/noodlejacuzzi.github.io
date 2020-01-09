@@ -1,4 +1,4 @@
-var character = {index: "maid", met: false, fName: "Lena", lName: "Rogers", trust: 0, encountered: false, textEvent: "", textColor: "#CCCCCC"};
+var character = {index: "maid", met: false, fName: "Lena", lName: "Rogers", trust: 0, encountered: false, textEvent: "", textColor: "#CCCCCC", author: "CryptoGreek", artist: "Oreteki18kin"};
 
 //General tutorial stuff:
 //writeText("text"); - Writes some plain old text.
@@ -452,7 +452,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeFunction("writeEncounter('maid4a')", "Admire her a little bit");
 				}
 				else{
-					setTrust('mistress',45);
+					setTrust('mistress',55);
 					writeSpeech("maid","","This is mistressF mistressL. We've been friends since college, and... to be frank, we're not exactly <i>unfamiliar</i> with each other.");
 					writeSpeech("player","","...I feel like you're implying something, but I also feel like it would be rude to assume.");
 					writeSpeech("maid","","We've been friends with benefits for years. However, we've been talking recently about certain... <i>things.</i>");
@@ -619,8 +619,8 @@ function writeEvent(name) { //Plays the actual event.
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
 	{index: "maidPhone1", trust: 22,},
-	{index: "madiPhone1", trust: 23,},
-	// {index: "maidPhone2", trust: 25,},
+	{index: "maidPhone1", trust: 23,},
+	//{index: "maidPhone2", trust: 25,},
 	{index: "maidReward", trust: 25,},
 	{index: "maidRewardDuo", trust: 30,},
 ]
@@ -682,7 +682,8 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneSpeech("maid","","I'll see you there.");
 			}
 			else{
-				addFlag('maid','schoolDays');
+				if(checkFlag('maid','schoolDays') != true)
+					addFlag('maid','schoolDays');
 				writePhoneSpeech("player","","Like you, I'll be spending the day working. There's more than a few students who could do with a counselor, after all.");
 				writePhoneSpeech("maid","","I'm sure you'll do an excellent job, then. Good luck, though - I recall my own days at the University as being rather wild ones.");
 				writePhoneSpeech("player","","Oh? Saying things like that will only make me curious about how wild you got.");
@@ -713,7 +714,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 		}
 		case "maidRewardDuo" : {
 			writePhoneImage("images/maid/rewardDuo.jpg", "Art by Oreteki18kin");
-			writePhoneSpeech("maid", "", "You've finished all content for this path for this version, congratulations! This is an alternate way of advancing maidF's story - if you spend time at the shopping district, you might see another route with more content.");
+			writePhoneSpeech("maid", "", "You've finished all content for this path for this version, congratulations! This is an alternate way of advancing maidF's story - if you restart her story and spend time at the shopping district, you might see another route with more content.");
 			break;
 		}
 		default: {

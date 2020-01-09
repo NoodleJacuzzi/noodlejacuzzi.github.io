@@ -343,6 +343,8 @@ V0.0
 		Succubus game
 	v6
 		Nurse intro
+		Better pronoun swapping shortcuts - *he, *He, and *HE
+		Fix image saving
 	v7
 		genderswap potion
 		
