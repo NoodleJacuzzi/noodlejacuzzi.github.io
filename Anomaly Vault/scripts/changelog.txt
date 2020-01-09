@@ -14,9 +14,9 @@ Please don't hesitate to:
 [*]Give suggestions on the game overall, like its structure or code.
 [/list]
 
-Currently on Version 3
-Most recent game files: https://mega.nz/#!vrA3kAaD!9mU3Q__stB0RqlsYPxbOFnbQ51NlI1-7_FswMHHyLb4
-Most recent image pack: https://mega.nz/#!nqYlQKCD!Qmot0Bm--ORwwWZjuGHSn8UlQHMMuvIVcVZjV1B6MQo
+Currently on Version 2
+Most recent game files: https://mega.nz/#!Sr5ikIjK!mtDhSl0qL1ZuAaaXOr8xAgEQGwnugctW3rajdLO3Uus
+Most recent image pack: https://mega.nz/#!LjpmACjJ!yANM5Mf-gElrSvSxFn_omIQu1Pjy8xI64kJZ14Iun9Q
 If you're new to the game, all you need to do is download these two. Extract the game files to create the Anomaly Vault folder, then extract the images to create the images folder. Make sure the images folder is in the Anomaly Vault folder and you're good to go. The final layout should look like this:
 images
 scripts
@@ -31,12 +31,13 @@ Online play link: https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vaul
 Online mobile play link: https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault%20Mobile.html
 
 Known issues:
-None at the moment, let me know if you find anything!
+The cheat to unlock all scenes isn't unlocking the research scenes with the Reprehensive Bracelet.
 
 FAQ:
 Q. What are the cheats?
 A. Head over to my patreon. The most recent release post will include a list of the game's cheats. The post isn't locked behind a paywall either, non-patrons will be able to see it. Please link to the post instead of pasting the cheats directly.
-In addition, please let me know if you have any other cheat ideas. The ones I have are for one-shot artifacts with a humerus tone.
+The (most recent) post is here: https://www.patreon.com/posts/29752391
+In addition, please let me know if you have any other cheat ideas. The ones I have are for one-shot artifacts with a humerous tone.
 
 Q. The game is corrupted when I try to extract it!
 A. Try updating your extraction program (ie make sure 7zip is up to date)
@@ -50,20 +51,23 @@ A. Probably, feel free to let me know what you have in mind. Also check the road
 Q. Will you add more narrative elements?
 A. Probably. Please give suggestions for exactly what you think would work, that'd be most helpful.
 
-Version 3.0 - Midas Coin & Super Truth Serum
+Version 2.0 - Time Stopwatch & Antique Mirror
 New Scenes:
-- 3 new scenes for the reprehension bracelet
-- 5 Midas Coin scenes
-- 3 Super Truth Serum scenes
+- 10 Antique Mirror scenes (split between a free-use and femdom dimension)
+- 7 Time stopwatch scenes
+- 4 Dark Vault scenes (gummy dicks, punification cage, and succubus onahole)
 
 Bugfixes / other changes:
-- The game's CSS has be redone, thanks to Stiggy / Baddy on discord for the help!
+- The disable images button is now a toggle. It'll refresh the page for you, which is what actually re-enables the images.
+- There's now a warning for the final scene in the Erotibox letting you know it might be a bad idea to stick Veronica in there.
+- There are now more cheat codes. See the note in my FAQ or below for more info.
+- Unrecognized cheats will no longer give a 'code accepted' message.
+- The roadmap on my index has been updated with new artifacts. Feel free to check them out and let me know which ones you'd like to see soon.
 
 On cheat codes (copied from my FAQ):
 Head over to my patreon. The most recent AV release post will include a list of the game's cheats. The post isn't locked behind a paywall either, non-patrons will be able to see it. Please link to the post instead of pasting the cheats directly.
+The post is here: https://www.patreon.com/posts/29752391
 In addition, please let me know if you have any other cheat ideas. The ones I have are for one-shot artifacts with a humerous tone.
-
-This update was held back by an engine overhaul I'm working on. I'm hoping for more movement between areas so that the game feels less like a bunch of menus. I'd like another section of the vault dedicated to useful 'toolbox' artifacts for making gameplay smoother.
 
 The primary fetishes that this patch focuses on are:
 Femdom
@@ -81,3 +85,48 @@ Cock Shrinking
 
 Also included in many scenes are the game's usual themes and sprinklings of unpercieved sex.
 Due to the nature of the game, all of the above content is completely optional.
+
+This update more than doubles the size of the game, AV is actually almost as large as HAA's dom route now if you discount the endings. I'm hoping to add more narrative elements in the future, feel free to give suggestions.
+The winner of the September content poll was for me to focus on more Anomaly Vault for the month, but I'll also be spending some time on the close runner-up, Bitch Medicenter. Please check out its demo if you have the time, I'll be posting it here once v1 is finished. 
+I'll be working on that and on Anomaly Vault's V3 for this month, I hope you all enjoy.
+
+[QUOTE="StarrLord, post: 2250948, member: 46593"]
+
+You god damn hit my weakspot; SCPs. Hope you do some good parodies of the cool ones. Like a rule 34 zombie virus or the room of flesh or maybe even female Doctor Bright.
+
+I think seperating the work place into different labelled sections or wings (Which you kinda did with the dark artifacts) would make it feel more memorable and also would give accomplishment when someone finishes an entire wing.
+
+Good luck keep it up.
+
+[/QUOTE]
+
+The zombie virus is something I'd like to do. I don't know about the room of flesh though. The plague doctor seems like the one with the most design space.
+
+I like SCPs enough that using them for small references feel like a waste. I reserve the right to turn the joke artifacts into fully fledged ones eventually.
+
+The difficulty with doing wings is that a lot of the content comes from outside the base and from how different each artifact is, but I think I will include more wings in the future. Maybe a wing full of useful tool artifacts, or a prison.
+
+I'll do my best, thank you.
+
+[QUOTE="zonix20, post: 2323738, member: 1474599"]
+
+Can someone give a quickrundown on the game ?
+
+[/QUOTE]
+
+I'm not sure I can explain it differently from the synopsis, so I was hoping someone else would.
+Basically you pick artifacts from a list with effects "this stops time" and then you watch/read a scene where you use the artifact for adult purposes.
+
+[QUOTE="BellCranel, post: 2364560, member: 118248"]
+
+Some Cheat codes are:
+
+new name
+
+swallows999
+
+[/QUOTE]
+
+I really did think at one point that adding cheats would be a waste, since nobody would bother with them. I have been proven wrong.
+There are more now. Please go to the patreon post here: https://www.patreon.com/posts/29752391
+It's visible to non patrons. 

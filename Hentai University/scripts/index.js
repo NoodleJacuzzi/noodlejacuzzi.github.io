@@ -786,6 +786,10 @@ function writeSpeech (name, img, text) {
 		var checkForError = "";
 		img = "scripts/gamefiles/none.png";
 	}
+	if (text.includes("HIDDEN") == true) {
+		fullName = "???";
+		text = text.replace("HIDDEN", "");
+	}
 	document.getElementById('output').innerHTML +=`
 	<div class="textBox" style="border-color: `+cssColor+`">
 		<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "

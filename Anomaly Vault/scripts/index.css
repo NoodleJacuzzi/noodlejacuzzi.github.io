@@ -569,7 +569,7 @@ div#wrapperBG {
     z-index: 1;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: blur(20px);
+    filter: blur(10px);
     z-index: -2;
 }
 div#wrapperBG::after {
@@ -969,4 +969,57 @@ position: absolute;
   	border: 5px solid white;
   	border-radius: 20px;
 	color:white;
+}
+
+.blueText {
+	font-weight: bold;
+    color: rgba(30, 139, 195, 1);
+    border: none;
+    border-bottom: 3px solid;
+    border-radius: 5px;
+	cursor: pointer;
+}
+
+.blueText:hover{
+	font-weight: bold;
+	color: rgba(137, 196, 244, 1);
+    border: none;
+    border-bottom: 3px solid;
+    border-radius: 5px;
+	cursor: pointer;
+    border-bottom: 3px solid rgba(137, 196, 244, 1);
+}
+
+.martinText{
+	color: #FF1919;
+	text-decoration: none;
+	font-size: 110%;
+}
+
+.imageButton{
+	height: 30%;
+	width: 20%;
+	position: absolute;
+  	border-radius: 5px;
+    background: rgba(0,0,0,0.75);
+    border-radius: 5px;
+    transition: 0.25s;
+	cursor: pointer;
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
+	opacity: .9;
+    border: 5px solid #AAAAAA;
+}
+
+.imageButton:hover{
+	display: block;
+	position: absolute;
+	cursor: pointer;
+  	border-radius: 5px;
+    background: rgba(50,50,50,0.75);
+    color: #ffffff;
+    border: none;
+    opacity: 1;
+    border: 5px solid #FFFFFF;
 }

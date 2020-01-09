@@ -124,8 +124,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (galleryCheck('tomgirl4') != true) {
 				writeFunction("loadEvent('tomgirl', 'tomgirl4')", "'I want a video of you'");
 			}
-			writeFunction("changeLocation(data.player.location)", "Nevermind");
-			passTime();
+			if (galleryCheck('tomgirl1') == true && galleryCheck('tomgirl2') == true && galleryCheck('tomgirl3') == true && galleryCheck('tomgirl4') == true) {
+				writeEncounter('tomgirl4');
+			}
+			else {
+				writeFunction("changeLocation(data.player.location)", "Nevermind");
+				passTime();
+			}
 			break;
 		}
 		case "tomgirl4": {
