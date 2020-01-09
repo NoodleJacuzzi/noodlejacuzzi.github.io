@@ -2,11 +2,9 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 12/20/2019</p>
-				<p class = "centeredText">Rainy DayZ v1.4, Short Story, & Bitch Medicenter Engine Update</p>
-				<p class = "centeredText">The release of Rainy DayZ v1.4, featuring scenes for The Facility</p>
-				<p class="choiceText" onclick="window.location.href='http://www.hentai-foundry.com/stories/user/NoodleJacuzzi/39001/Bitch-Medicenter---Jerk-off-Junkies-File'">Also, a chapter of my shemale-heavy short story on Hentai Foundry</p>
-				<p class = "centeredText">Also Also, an engine update to Bitch Medicenter, mostly focusing on the game's css and mobile performance.</p>
+				<p class = "centeredText">Lastest News 1/9/2020</p>
+				<p class = "centeredText">Anomaly Vault v4 and Hentai University v5.5</p>
+				<p class = "centeredText">A new release of Anomaly Vault and Hentai University! A gift for you all on my birthday!</p>
 				<p class = "centeredText">Thank you to: Swallows999, Ben Dover, Joshua Ingram, MrManPerson, Robbie, CaptainMontana, Lasse B, andres mejia, Arthorias28, Badaxe, ChronosEdge, Colin E, Dkells, Dr. Awesome, Jinouga, Judavarius, Lunarghost, Marco Wassmer, Q Q, Scal, Taylor Trout, XxrobothacksxX, Adonnak, Aegil, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Arthur radcliffe, Auckard, AxiosMIles, Blaise Fenn, Bobby Hamilton, Bonelessunknown, bono, brandon, Burin, Carlos, Chaaaanon, Charles Morris, Colin, Damion Moore, David Lange, Debarre Sonny, Devin, Dewr, dhccpmc, Drashin, Dugelle, Ed, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jacob Cannon, Jane, jdktjk205, Jesse Greene, joe, joe, joe mulhall, john smith, Joseph Gibbs, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Noah, Nutburger, Oliver Jones, Philipp, Prodigal211, qwerty, Roy, Ryan Linn, sage, Scumstango, Sebastian Eckel, Shawn, Simon Rencher, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, Ungy Bungy, valdis, Vincent Madaire-Cullen, Wayne culbert, Wei, Wild Bill, Will Osboldstone, William Richardson, Yongdian Guo, Your Husbando, zoobot5, 大基 渡邊, and 凱 陳 for supporting my work!</p>
 			`;
 			document.getElementById('output').innerHTML +=`
@@ -17,14 +15,15 @@ function writeScene(scene) {
 			//writeTransition("recommendations", "Recommendations");
 			writeText("<br><br>");
 			writeBig("images/AnomalyVault.png");
-			writeText("Anomaly Vault v3");
+			writeText("Anomaly Vault v4");
 			writeText("You play as a researcher performing experiments on various reality warping artifacts, currently including a presence-erasing bracelet and a crate that converts anything inside into a hypersexualized version of itself.");
 			writeText("The game uses real porn gifs, and is similar in tone to Human Alteration App's dom route.");
 			writeText("The themes and fetishes of the game are governed by what artifacts you interact with, hopefully as time passes you'll find and artifact you really connect with. Let me know if you have any artifact / scene ideas!");
 			writeText("Nonoptional Tags: Unpercieved Sex, Ignored Sex, Dubious Consent, Seduction of Women in Committed Relationships");
 			writeText("Optional Tags: Corruption, Mind Control, Deepfake, Genderbending (both M to F and F to M) among others. See the content list below.");
 			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/31409204'">Download Links / Cheat Codes</p>
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/33013517'">Download Links</p>
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/33013457'">Cheat Codes</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault%20Mobile.html'">Play the mobile version</p>
 				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=75&t=12954'">TFgames Thread</p>
@@ -32,14 +31,14 @@ function writeScene(scene) {
 			`;
 			writeTransition("artifactList", "See a roadmap of current / planned content");
 			writeBig("images/HentaiUniversity.png");
-			writeText("Hentai University v5");
+			writeText("Hentai University v5.5");
 			writeText("A game made in cooperation with author Captain Cryptogreek, who works as the game's lead writer.");
 			writeText("You play as a young man with a strong grasp on hypnotic magic, and have embedded yourself as a counselor in a school with a fantastically attractive student body. The faculty and your neighbors in town look pretty good too.");
 			writeText("This game uses art by Enoshima Iki, Nagi Ichi, and Oreteki18kin, and is meant to be similar in feel to Hentai High School, but without the focus on school management, more emphasis on wandering / corruption, and a much higher quality body of images.");
 			writeText("The end goal here is a town packed with dozens of characters using a framework I can continually add more content to.");
 			writeText("Tags: Hypnosis, optionally features many other tags based on characters such as incest, dubcon, and gay content");
 			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/31952926'">Download the game</p>
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/33013623'">Download the game</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">Play the mobile version</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'">Modding Tutorial</p>
@@ -66,6 +65,7 @@ function writeScene(scene) {
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter.html'">Play the demo online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter%20Mobile.html'">Play the mobile version</p>
+				<p class="choiceText" onclick="window.location.href='http://www.hentai-foundry.com/stories/user/NoodleJacuzzi/39001/Bitch-Medicenter---Jerk-off-Junkies-File'">Some related short stories</p>
 			`;
 			writeBig("images/logo.png");
 			writeTransition("HAAD", "Dom Route Preview");
@@ -174,14 +174,19 @@ function writeScene(scene) {
 				<br>Tags: Time Stop, Rape
 			`);
 			writeText(`
-				<b>Midas Coin (COMING IN V3)</b>
+				<b>Midas Coin (IMPLEMENTED)</b>
 				<br>An old golden Greek coin. When held, the holder can bargain sexual acts as though they were bartering with money, the more depraved actions they commit, the larger the monetary value of those actions.
 				<br>Tags: Public Sex, Sluttification, Reverse Rape
 			`);
 			writeText(`
-				<b>Super Truth Serum (COMING IN V3)</b>
+				<b>Super Truth Serum (IMPLEMENTED)</b>
 				<br>A mint-flavored drink contained in several small vials. Whatever the drinker says becomes seen as absolute truth by the people around them.
 				<br>Tags: Mind Control, Dubious Consent
+			`);
+			writeText(`
+				<b>Chaddicus Shades (IMPLEMENTED)</b>
+				<br>A pair of aviator sunglasses which, when worn, increase the wearer's confidence by several dozen degrees. Women will feel compelled to argue with the wearer, at which point some mysterious process causes the argument to almost immediately devolve into sex, with the wearer as the dominant partner.
+				<br>Tags: Instant-Loss, Sexual Assault, Dubious Consent
 			`);
 			writeText(`
 				<b>Appreciation Perfume</b>
@@ -192,11 +197,6 @@ function writeScene(scene) {
 				<b>CEO Pass</b>
 				<br>An ID card from a fictitious company, whoever holds it will be able to molest / assault women as they please, and the recipient's minds will rationalize it, or even cause them to enjoy the treatment.
 				<br>Tags: Domination, Molestation, Sexual Assault, Dubious Consent
-			`);
-			writeText(`
-				<b>Chaddicus Shades</b>
-				<br>A pair of aviator sunglasses which, when worn, increase the wearer's confidence by several dozen degrees. Women will feel compelled to argue with the wearer, at which point some mysterious process causes the argument to almost immediately devolve into sex, with the wearer as the dominant partner.
-				<br>Tags: Instant-Loss, Sexual Assault, Dubious Consent
 			`);
 			writeText(`
 				<b>'Free _____!' Sign</b>
@@ -238,12 +238,12 @@ function writeScene(scene) {
 				<br>Tags: Prostate Stimulation, Sissification, Flaccid Orgasm
 			`);
 			writeText(`
-				<b>Bimbo Dust</b>
+				<b>Bimbo Dust (IMPLEMENTED)</b>
 				<br>A bag full of an off-white powder. It has been tested, and is not cocaine. When baked into confectionary and mixed with sugar, it has a powerful inteligence-draining, body-altering affect on anyone who consumes it.
 				<br>Tags: Bimbofication
 			`);
 			writeText(`
-				<b>Sissy's Tool Kit</b>
+				<b>Sissy's Tool Kit (IMPLEMENTED)</b>
 				<br>A plastic makeup kit. When opened, objects will appear inside and in the room which are designed to encourage the opener to 'explore themselves'. These range from makeup to unknown body-modifying drugs and a 3-man group of naked men.
 				<br>Tags: Sissification, Feminization, Gay(?) Sex
 			`);
