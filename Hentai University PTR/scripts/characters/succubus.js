@@ -209,7 +209,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 			}
 			writeSpeech("succubus", "demon.jpg", "We could also just spend the night chatting, if you wanted. I get that I'm a pretty unique sort of houseguest, after all.");
 			writeFunction("writeEncounter('chatSelect')", "Chat");
-			writeFunction("writeEncounter('reward')", "Test next reward level");
 			writeFunction("changeLocation('playerHouse')", "Finish");
 			if (checkFlag('succubus', 'mission') == true) {
 				if (checkFlag('succubus', 'missionF') != true) {
