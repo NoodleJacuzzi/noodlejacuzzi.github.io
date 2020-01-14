@@ -60,11 +60,8 @@ function writeEncounter(scene) {
 			writeText("The game is more freeform and slower paced than my previous works. If you get stuck, please let us know. There isn't currently a guide, but we can easily feature an FAQ here.");
 			writeText("You can click on the title of a window to close it. For example, if you click 'LOGBOOK' on the left (or bottom on mobile), you can close the new window by clicking anywhere in the 'LOGBOOK' section at the top.");
 			writeText("This game uses art by three artists. Enoshima Iki, Nagi Ichi, Oreteki18kin, and Gujira. Hover over an image for the artist who created it. Check it out:");
-			writeMed("images/mom/profile.jpg", "Art by Enoshima Iki");
-			writeMed("images/tomgirl/profile.jpg", "Art by Nagi Ichi");
-			writeMed("images/purple/profile.jpg", "Art by Oreteki18kin");
-			writeMed("images/succubus/profile.jpg", "Art by Gujira");
-			writeText("All three of the artists who's works we've used have different styles, and all work is censored due to Japan's censorship laws. We don't ever intend to mix and match within scenes, but it is worth noting that each have their own appeal / flaws. Oreteki is a divisive artist due to his style of drawing labia lips, and Nagi Ichi's work is 90% M/M. If these features are a dealbreaker for you, consider simply avoiding characters by these artists.");
+			listArtists();
+			writeText("All five of the artists who's works we've used have different styles, and all work is censored due to Japan's censorship laws. We don't ever intend to mix and match within scenes, but it is worth noting that each have their own appeal / flaws. Oreteki is a divisive artist due to his style of drawing labia lips, and Nagi Ichi's work is 90% M/M. If these features are a dealbreaker for you, consider simply avoiding characters by these artists.");
 			writeFunction("loadEncounter('system', 'oretekiTest')", "See an Oreteki18kin example <br>(LONG LABIA LIPS/FLAPS)");
 			writeFunction("loadEncounter('system', 'nagiTest')", "See a Nagi Ichi example <br>(AT LEAST 90% GAY)");
 			writeFunction("loadEncounter('system', 'gujiraTest')", "See a Gujira example <br>(AT LEAST 80% GAY)");
@@ -167,16 +164,7 @@ function writeEncounter(scene) {
 			data.player.time = "Morning";
 			updateMenu();
 			//checkDay();
-			checkForPhone();
 			var specialEvent = false;
-			if (data.player.day % 5 === 0) {
-				var paybaby = 10 + data.player.counseling;
-				writeSpecial("It's payday! $10 has been wired to your account.");
-				if (data.player.counseling > 0) {
-					writeSpecial("You've received an extra $" + data.player.counseling + " for being so skilled, you sly dog!");
-				}
-				data.player.money += paybaby;
-			}
 			//Checking for special events
 			console.log("Now checking for special events for on day " + data.player.day);
 			if (data.player.day == 3) {
@@ -184,19 +172,46 @@ function writeEncounter(scene) {
 				//writeFunction("writeEvent('specialDay')", "Go to the special event");
 				//writeTransition("playerHouse", "Skip the event");
 			}
-			if (specialEvent == false) {
-				console.log("No events found");
-				document.getElementById('output').innerHTML += `
-					<div class="playerRoom">
-						<img class="backgroundPicture" src="images/locations/newDayMorning.jpg" usemap="#roomMap">
-					</div>
-				`;
-				printLocationButton(
-					"Get out of bed", 
-					40, 
-					40, 
-					"playerHouse", 
-				);
+			if (checkTrust('succubus') > 70) {
+				if (checkFlag('succubus', 'breakfast') == false) {
+					specialEvent = "breakfast"; 
+				}
+			}
+			if (checkTrust('succubus') > 77) {
+				if (checkFlag('succubus', 'mission') == false) {
+					specialEvent = "mission"; 
+				}
+			}
+			switch (specialEvent) {
+				case "breakfast": 
+					loadEncounter('succubus', 'breakfast');
+				break;
+				case "mission": 
+					loadEncounter('succubus', 'missionStart');
+				break;
+				default: {
+					console.log("No events found");
+					checkForPhone();
+					document.getElementById('output').innerHTML += `
+						<div class="playerRoom">
+							<img class="backgroundPicture" src="images/locations/newDayMorning.jpg" usemap="#roomMap">
+						</div>
+					`;
+					printLocationButton(
+						"Get out of bed", 
+						40, 
+						40, 
+						"playerHouse", 
+					);
+				}
+			}
+			if (data.player.day % 5 === 0) {
+				var paybaby = 10 + data.player.counseling;
+				writeSpecial("It's payday! $10 has been wired to your account.");
+				if (data.player.counseling > 0) {
+					writeSpecial("You've received an extra $" + data.player.counseling + " for being so skilled, you sly dog!");
+				}
+				data.player.money += paybaby;
 			}
 			if (checkTrust('principal') == 40) {raiseTrust('principal', 1);}
 			break;
@@ -286,6 +301,8 @@ function writeEncounter(scene) {
 			writeText("Thank you to: Swallows999, Ben Dover, Joshua Ingram, MrManPerson, Robbie, CaptainMontana, Lasse B, andres mejia, Arthorias28, Badaxe, ChronosEdge, Colin E, Dkells, Dr. Awesome, Jinouga, Judavarius, Lunarghost, Marco Wassmer, Q Q, Scal, Taylor Trout, XxrobothacksxX, Adonnak, Aegil, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Arthur radcliffe, Auckard, AxiosMIles, Blaise Fenn, Bobby Hamilton, Bonelessunknown, bono, brandon, Burin, Carlos, Chaaaanon, Charles Morris, Colin, Damion Moore, David Lange, Debarre Sonny, Devin, Dewr, dhccpmc, Drashin, Dugelle, Ed, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jacob Cannon, Jane, jdktjk205, Jesse Greene, joe, joe, joe mulhall, john smith, Joseph Gibbs, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Noah, Nutburger, Oliver Jones, Philipp, Prodigal211, qwerty, Roy, Ryan Linn, sage, Scumstango, Sebastian Eckel, Shawn, Simon Rencher, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, Ungy Bungy, valdis, Vincent Madaire-Cullen, Wayne culbert, Wei, Wild Bill, Will Osboldstone, William Richardson, Yongdian Guo, Your Husbando, zoobot5, Профессор Преображенский, and 凱 陳 for funding this game!");
 			writeSpecial("Thanks for playing! We hope you'll be seeing more endings in the future!");
 			writeFunction("changeLocation('playerHouse')", "Keep playing");
+			writeSpecial("Here's a list of artists who's works are currently in the game:");
+			listArtists();
 			break;
 		}
 		case "porn0A": {

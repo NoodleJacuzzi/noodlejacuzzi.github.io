@@ -152,7 +152,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("starlet", "", "Alright, just let me do all the talking. I need to be direct, and smooth.");
 			writeSpeech("player", "", "But not too direct. How about I do-");
 			writeText("The elevator doors open, and starletF pulls you out.");
-			writeSpeech("starlet", "", "MOOOOOOM~!<br>Hey Frank, you seen mom?");
+			writeSpeech("starlet", "", "MOOOOOOM~!<br>Hey Bubbles, you seen mom?");
 			writeText("A well-muscled man at least seven feet tall bends down a little to answer. He ruffles starletF's hair a little and points her to what looks like the head office.");
 			writeText("Dozens of other men who could easily be bodybuilders are walking around here too. Any one of them could kill you with a clench of their triceps. But you aren't given a lot of time to think, and are pulled into the office.");
 			writeBig("images/pornstar/profile.jpg", "Art by Oreteki18kin");
@@ -192,7 +192,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("pornstar", "", "Good, you're hired. I'll need to see those credentials though.");
 			writeText("You reach back into your pocket and pull out your pendant.");
 			writeText("...");
-			writeSpeech("pornstar", "", "Hmm. I've never seen so many certifications... Well, this is more than enough. You said you used a Blackmagic Pro? Our cameras are a little bit below, but we'll have actual cameramen working with you.<br>Alright, strip.");
+			writeSpeech("pornstar", "", "Hmm. I've never seen so many certifications... Well, this is more than enough. You said you used a Blackmagic Pro? Our cameras are a little bit below, but ours are a little more manageable.<br>Alright, strip.");
 			writeSpeech("player", "", "<i>I didn't hypnotize her to say that... All I did was make her believe my punchcard was a business card.<br>Fuck it. Fuck this whole family! FUCK EVERYTHING!</i>");
 			setTrust('starlet', 83);
 			setTrust('pornstar', 83);
@@ -246,7 +246,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("The sound of a loud, drawn out whorish moan coming from her pocket cuts her off.");
 			writeSpeech("starlet", "", "Whoops! Didn't turn it off properly... There.");
 			writeSpeech("player", "", "You're watching-<br>Nevermind, it's pretty normal for you I guess.");
-			writeSpeech("starlet", "", "Yep! It's mom's debut, still on of her most popular vids. Hard to believe she popped all four of her cherries on screen in one scene.");
+			writeSpeech("starlet", "", "Yep! It's mom's debut, still one of her most popular vids. Hard to believe she popped all four of her cherries on screen in one scene.");
 			writeSpeech("player", "", "All fou-<br>No. Don't tell me, I don't want to know. Should we head inside?");
 			writeSpeech("starlet", "", "Sure!");
 			writeText("...");
@@ -269,7 +269,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Lana is clearly invested, she's got a notebook and is attentively jotting notes as her mother delivers a passionate speech about the wonders of immersive method acting and how it impacts filming porn.");
 			writeSpeech("player", "", "... Okay. When can I start?");
 			writeSpeech("pornstar", "", "Tomorrow. Show up bright and early, it's a good habit. Filming usually takes all day.");
-			writeSpeech("player", "", "Sure. Any my identity?");
+			writeSpeech("player", "", "Sure. And my identity?");
 			writeSpeech("pornstar", "", "Will be kept secret. You aren't working in the division that focuses on facial closeups. Be sure to come relaxed.");
 			writeSpeech("starlet", "", "Bright-eyed, bushy tailed!");
 			writeSpeech("pornstar", "", "Now young lady, let's review that debut of yours. Keep that notebook ready.");
@@ -492,7 +492,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "You don't get out much, do you?");
 			writeSpeech("starlet", "", "Look who's talking, mister 'I've never seen Snow White'!");
 			writeSpeech("player", "", "That was not Snow White. It may have been done by D!sney animators, but that was not what was released by D!sney.");
-			writeSpeech("starlet", "", "Hehe. Anyways, today was fun. I got a text from mom earlier saying the nosedived after she got there, and that she'd be taking her frustrations out on dad. She's probably at home breaking out the ball paddle.");
+			writeSpeech("starlet", "", "Hehe. Anyways, today was fun. I got a text from mom earlier saying the situation nosedived after she got there, and that she'd be taking her frustrations out on dad. She's probably at home breaking out the ball paddle.");
 			writeSpeech("player", "", "I... Do you need a place to stay?");
 			writeSpeech("starlet", "", "What? No, I'm headed home, why?");
 			writeSpeech("player", "", "Nevermind. Stay safe on-<br>How did the situation nosedive after she arrived? What could a bunch of porn actors have done to escalate the situation after the cops arrived?");
@@ -834,7 +834,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("pornstar", "", "We're supposed to have lived here all our lives. It wouldn't do to get lost on our way to the bathroom. Alright, I'll get started on dinner, the two of you go entertain yourself. playerF, take this candy and no jerking off.");
 			writeText("The next half an hour is spent toiling away while starletF checks angles and devices to make sure all the cameras have a clear line of sight. She has you stand in different positions and move around while singing to test the microphones.");
 			writeSpeech("player", "", "Geez. There's a lot of work on your end.");
-			writeSpeech("starlet", "", "I do this prep so you can do what cones naturally. This isn't a chain; there are no weak links. We're a painting, you and I, and our audience will feel the passion we put into our art.");
+			writeSpeech("starlet", "", "I do this prep so you can do what comes naturally. This isn't a chain; there are no weak links. We're a painting, you and I, and our audience will feel the passion we put into our art.");
 			writeSpeech("player", "", "That's pretty deep.");
 			writeSpeech("starlet", "", "Thanks! My mom would say that to cheer me up when I failed a subject. Now, out. Dinner is soon and I've got a new app that'll let me stream three porn videos at once.");
 			writeText("You leave to go take a nap. Overall the household seems pretty normal. If starletF and pornstarF weren't taking this so seriously, you could absolutely believe you're in the house of a regular mother and daughter pair.");
@@ -844,7 +844,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("pornstar", "", "... And... Action.");
 			writeText("Their body languages immediately shift as they slide deep into character.");
 			writeSpeech("starlet", "", "Thanks for inviting us over for Christmas mom, we really appreciate it.");
-			writeSpeech("pornstar", "", "It's no problem at all dear, it's gotten... Quiet, lately over here. It's lovely to have a man in the house a again.");
+			writeSpeech("pornstar", "", "It's no problem at all dear, it's gotten... Quiet, lately over here. It's lovely to have a man in the house again.");
 			writeText("pornstarF flashes you a kind smile with just a tinge of darker intentions. You go with the flow and start eating.");
 			writeSpeech("pornstar", "", "Oh my! Such a voracious appetite~");
 			writeSpeech("player", "", "Ah, sorry.");
@@ -1337,7 +1337,7 @@ function writeEvent(name) { //Plays the actual event.
 				writeSpeech("pornstar", "", "Mmm, I've never been satisfied like that before, I think I'll keep you around. How about I show you what I can do with <i>my</i> mouth?");
 				writeBig("images/starlet/B-1-9.jpg", "Art by Oreteki18kin");
 				writeText("starletF tries awkwardly to take your dick, but can't get it down her throat. She jerks what she can't fit while glancing up with rapt attention as you lock lips with your mother");
-				writeText("On the opposite end of the spectrum pornstarF's tongue dances around yours, wrapping around the tip and stroking it up and down. It only takes a second of imagining what it could do to your cok before-");
+				writeText("On the opposite end of the spectrum pornstarF's tongue dances around yours, wrapping around the tip and stroking it up and down. It only takes a second of imagining what it could do to your cock before-");
 				writeBig("images/starlet/B-1-10.jpg", "Art by Oreteki18kin");
 				writeSpeech("starlet", "", "*GLCK*");
 				writeText("starletF gags and sputters on your dick. Her eyes start to water as she struggles to breathe");
@@ -1419,6 +1419,9 @@ function writeEvent(name) { //Plays the actual event.
 	if (unlockedScene != "" && galleryCheck(name) != true) {
 		data.gallery.push(unlockedScene);
 		writeSpecial("You unlocked a new scene in the gallery!");
+	}
+	if (data.player.location == "gallery") {
+		writeFunction("changeLocation(data.player.location)", "Finish");
 	}
 	else {
 		console.log("Error, no scene named "+name+" found to unlock.");

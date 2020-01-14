@@ -35,7 +35,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		default: {
-			writePhoneSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
+			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
 		}
 	}
@@ -51,11 +51,10 @@ function writeEvent(name) { //Plays the actual event.
 	wrapper.scrollTop = 0;
 	switch (name) {
 		case "placeholder": {
-			writeFunction("changeLocation('playerHouse')", "Go back");
 			break;
 		}
 		default: {
-			writePhoneSpeech("player", "", "Error! You must've called the wrong event. Error code: Failed to write event ("+name+") in "+character.index+".js");
+			writeSpeech("player", "", "Error! You must've called the wrong event. Error code: Failed to write event ("+name+") in "+character.index+".js");
 			break;
 		}
 	}

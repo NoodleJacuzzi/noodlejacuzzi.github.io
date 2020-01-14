@@ -825,9 +825,21 @@ function writeBig (img, cap) {
 }
 
 function writeMed (img, cap) {
+	if (img.includes('profile') == true) {
+		if (data.player.pervert != true) {
+			var checkForError = "";
+			var pervertImage = img;
+		}
+		else {
+			var backupImage = img;
+			var checkForError = `onerror ="javascript:this.src='`+backupImage+`'"`;
+			img = img.replace('profile', 'profileP');
+			console.log(img);
+		}
+	}
 	if (imagesDisabled != true) {
 	document.getElementById('output').innerHTML += `
-		<img class="medPicture" src="` + img + `" title="` + cap + `">
+		<img class="medPicture" src="` + img + `"`+checkForError+` title="` + cap + `">
 		<br>
 	`;
 	}
@@ -907,6 +919,20 @@ function writePorn() {
 	else {
 		writeText("The porn system is disabled without images.");
 	}
+}
+
+function listArtists() {
+	writeMed("images/mom/profile.jpg", "Art by Enoshima Iki");
+	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/26267">Enoshima Iki's Pixiv</a>`;
+	writeMed("images/tomgirl/profile.jpg", "Art by Nagi Ichi");
+	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/4229818">Nagi Ichi's Pixiv</a>`;
+	writeMed("images/purple/profile.jpg", "Art by Oreteki18kin");
+	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/5893974">Oreteki18kin's Pixiv</a>`;
+	writeMed("images/succubus/profile.jpg", "Art by Gujira");
+	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/215082">Gujira 4 Gou's Pixiv</a>`;
+	writeMed("images/housekeep/profile.jpg", "Art by Kinta no Mousou");
+	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/13253890">Kinta no Mousou's Pixiv</a>`;
+	
 }
 
 //Showing & hiding windows
