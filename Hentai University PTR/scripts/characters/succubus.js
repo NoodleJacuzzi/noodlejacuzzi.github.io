@@ -978,6 +978,9 @@ function writeEvent(name) { //Plays the actual event.
 		data.gallery.push(unlockedScene);
 		writeSpecial("You unlocked a new scene in the gallery!");
 	}
+	if (data.player.location == "gallery") {
+		writeFunction("changeLocation(data.player.location)", "Finish");
+	}
 	else {
 		console.log("Error, no scene named "+name+" found to unlock.");
 	}
