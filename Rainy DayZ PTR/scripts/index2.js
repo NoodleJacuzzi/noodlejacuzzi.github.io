@@ -48,7 +48,7 @@ var galleryArray = [
 	{index: 'tainted', 	name: "Tainted", 			scenario: "Rainy DayZ",		hint: 'Eat the infected food in the convenience store.'},
 	{index: 'infected', name: "Infected Ending", 	scenario: "Rainy DayZ",		hint: 'Eat the infected food in the convenience store, then beat the game.'},
 	{index: 'start', 	name: "Overwhelmed", 		scenario: "The Facility",	hint: 'Begin chapter 2.'},
-	{index: 'licker', 	name: "Tongue Tied", 		scenario: "The Facility",	hint: 'Go back into the Weapons Testing Lab and interact with the pile of guns.'},
+	//index: 'licker', 	name: "Tongue Tied", 		scenario: "The Facility",	hint: 'Go back into the Weapons Testing Lab and interact with the pile of guns.'},
 	{index: 'mindWorms',name: "Mind Worms", 		scenario: "The Facility",	hint: 'Masturbate in the Parasite Lab.'},
 	{index: 'spider', 	name: "Spiders", 			scenario: "The Facility",	hint: 'Interact with the spider webs in the Parasite Lab after curing your infection.'},
 	{index: 'whizzer', 	name: "Whizzer's Fluid", 	scenario: "The Facility",	hint: 'Drink the yellow fluid in the Chemical Lab.'},
@@ -350,6 +350,10 @@ function writeSpeech (name, img, text) {
 		fullName = data.player.wife;
 		cssColor = "#8c2e2e";
 	}
+	if (name == "Monica") {
+		cssColor = "#8c4e4e";
+		img = "scripts/gamefiles/profiles/monica.jpg";
+	}
 	if (img == "none") {
 		img = "scripts/gamefiles/none.png";
 	}
@@ -411,6 +415,15 @@ function writeTransition (name, scene, special) {
 			` + scene + `
 		</p>
 	`;
+	if (scene == "GAME OVER") {
+		if (data.quicksave != null) {
+			document.getElementById('output').innerHTML += `
+			<p class="choiceText" onclick="quickLoad()" style="color:#91eba9; border-color:#91eba9;">
+				QUICKLOAD
+			</p>
+			`;
+		}
+	}
 }
 
 function sceneTransition(scene) {
@@ -512,6 +525,13 @@ function updateMenu() {
 			document.getElementById('scenarioTotal').innerHTML = scenesCollected+" of "+totalScenes+" scenes unlocked.";
 			break;
 		}
+		case "Typhoid Mary": {
+			document.getElementById('playerDesc').innerHTML = "A survivor of an infected world who's fallen prey to infection herself.";
+			document.getElementById('scenarioDesc').innerHTML = "Find a means to hide your infection from others while using your command over the infected to topple the compound.";
+			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/typhoidMary.jpg)";
+			document.getElementById('scenarioTotal').innerHTML = "";
+			break;
+		}
 		case "On the Record": {
 			document.getElementById('playerDesc').innerHTML = "A reporter in the fray during one of the first major outbreaks of the infection.";
 			document.getElementById('scenarioDesc').innerHTML = "Your role is to collect evidence of what's going on, so gather intel. Helping folks is optional, just make sure you get good pictures!";
@@ -588,7 +608,7 @@ function saveFile(){
 	hideStuff();
 	document.getElementById('output').innerHTML = '';
 	writeText("Copy the full length below and paste it into the input box when you want to load the data. I recommend copying to a txt file.");
-	writeText("" + JSON.stringify(data) + "");
+	document.getElementById('output').innerHTML += JSON.stringify(data);
 	writeFunction("sceneTransition(data.player.currentScene)", "Finished copying");
 }
 
@@ -606,6 +626,22 @@ function loadFile(){
 		loadSlot('rainyDayZ10');
 	}
 	updateSave();
+}
+
+function quickSave() {
+	data.quicksave = Object.assign({}, data.player)
+	writeText("Quicksaved. Starting a new campaign will erase quicksave data.");
+}
+
+function quickLoad() {
+	if (data.quicksave == null) {
+		alert('Error. No quicksave data detected!')
+	}
+	else {
+		data.player = Object.assign({}, data.quicksave)
+		console.log(data.quicksave);
+		sceneTransition(data.player.currentScene);
+	}
 }
 
 //Gallery

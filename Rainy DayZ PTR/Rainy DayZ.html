@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Rainy DayZ v1.4</title>
+		<title>Rainy DayZ v2.0</title>
 		<script src="scripts/sceneList.js"></script>
 		<script src="scripts/index2.js"></script>
 		<link rel="stylesheet" type="text/css" href="scripts/index.css" />
@@ -13,8 +13,8 @@
 			<div id="titlePanel">
 				<p id = "title" class = "title">Rainy DayZ</p>
 				<div id="closeButton" class="closeButton" onclick="closeButton()"><</div>
-				<p id = "version" class = "version">V1.4</p>
-				<p id = "version" class = "version">Private Test Release</p>
+				<p id = "version" class = "version">V2.0</p>
+				<!--<p id = "version" class = "version">Updates are in progress, will post this version soon</p>-->
 				<p id = "author">
 					<a href="https://noodlejacuzzi.github.io/index.html">Noodle Jacuzzi</a><br>
 					<a href="https://www.patreon.com/noodlejacuzzi">Patreon</a>
@@ -22,6 +22,8 @@
 			</div>
 			<div id="buttonMenu">
 				<div id="buttonMenuSecondary" class="flexbox">
+						<h4 id="saveButton" class="button" onclick="quickSave()">QUICKSAVE</h4>
+						<h4 id="saveButton" class="button" onclick="quickLoad()">QUICKLOAD</h4>
 					<h4 id="invButton" class="button" onclick="invButton()">INVENTORY</h4>
 					<h4 id="invButton" class="button" onclick="sceneTransition('scenarioSelect')">BACK TO MENU</h4>
 					<h4 id="logButton" class="button" onclick="disablePictures()">TOGGLE IMAGES</h4>

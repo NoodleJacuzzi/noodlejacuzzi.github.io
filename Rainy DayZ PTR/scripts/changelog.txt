@@ -1,61 +1,91 @@
-Hello everyone! Normally I post on Fridays, but I was seriously under the weather and couldn't even post what I already had finished.
-I didn't manage to get too much done this week, but at least I can post this:
+Hello once more everyone! Here we are, the third week of December. I have more of the same and something new:
+This weeks progress was:
+Rainy DayZ v1.4
+Another chapter of my short story
+And an engine update to Bitch Medicenter
 
-Version v1.2
+First let's start with Rainy DayZ:
+
+Version v1.4
 
 Direct download: 
-https://mega.nz/#!v7IynYZA!y5D-EqxPiplw9P6wTTywuS3W4Ko11x704KvxH_MsTbY
+https://mega.nz/#!D3gS2KgT!ofdPVHdMM-bXJJSW1CntCXSAIYaOF8tzK3vYF9jTj9o
 
 Here's an upgrade pack containing only the new stuff:
-https://mega.nz/#!e7RS1YIY!pG_kRISHZ_qZnOdffW4MzR5oAZI2nGfkHMjNdggJyf4
+https://mega.nz/#!azo2AITZ!tMF_fMFCdchH0VERZ8gWDkxQ4JTZzMWNccL6jYmw-hQ
+
+My router went out just after uploading these so my up/download speed is around 15kb/s. If these are broken please lemme know ASAP and you'll need to play the online version instead.
 
 Play online:
-https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html 
+https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html
 
 Mobile ver:
-https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ%20Mobile.html 
+https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ%20Mobile.html
 
-Version v1.3
-I keep extra links like upgrade packs here (not hidden behind a paywall): https://www.patreon.com/posts/32409951
+Version v1.4
 
 New Content
-- You can wander around the facility in scenario 2. There's not much to do though.
-- A preview for a potential future scenario following a man and his wife who are having an awful (or really good?) honeymoon.
+- Added four files in The Facility that detail infection types / infection process details
+- Added five new scenes in The Facility, you still can't use the keycards or enter the inoculation lab
 Bugfixes & Typos
-- I fixed the bug Wild Bill found that caused the infected in the apartment basement to attack you while you're already infected.
+- Fully fixed the bug preventing progress in scenarios 1 and 2
+- Fixed a bug where the note explaining the flower wouldn't appear in scenario 1
 Other changes
-- I reworked the navigation engine, it'll make writing new content a smoother process, plus I can more easily do games in the future that use in-text buttons.
-- New cheat: oowoo (completely shatters immersion)
+- You can now rename your wife in Spread Island
 
-I got sick this week, but I'm doing better now. 
-You can wander around in The Facility, but there's nothing there yet. I did want some lewds though, so there's a demo of a future scenario for you all. I'll do more of these since it's pretty quick to write them compared to working out all the mechanics of a full scenario. Lemme know what you think!
-I have more to post on Friday, check out the unused concepts section in the author information for more on that.
+Being in better health I tested this release much more thoroughly. If you'd like to help me out in this regard for future releases, I post test releases on my discord. Just popping in to let me know if everything works would be a huge help, plus if everything works as intended you get to see the new content a day or two early.
+For scenario 2 I've focused on less obtuse gameplay. How do you prefer it? Rainy DayZ could be frustrating with how you needed to restart over and again to get all the scenes, I might do some kind of quicksave / quickload system in the next update.
+Speaking of the next update, it'll probably be next Friday and won't be finishing Scenario 2. I've got another demo in the works since finishing up the Facility will be a bit of work.
 
-Hi there! I just released the most recent version of my game Rainy DayZ! It's inspired directly by Futa Apocalypse, but also has a little resident evil and left 4 dead sprinkled in. This is an adult game created by myself, u/NoodleJacuuzi (Patreon). It's an HTML game that you can play the desktop version in-browser at this link, along with a version that works on mobile found here, but the game can also be downloaded and played locally using the links here. Additionally, I have a Discord Server called 'Noodle's Jacuzzi' where I'd love to hear from you!
+Next is another chapter of my short story (shemale stuff, masochism(?) in this one):
+http://www.hentai-foundry.com/stories/user/NoodleJacuzzi/39001/Bitch-Medicenter---Jerk-off-Junkies-File
+Even if you aren't usually into CBT it could still be up your alley. I super hate pain, so there's none of that here.
+I'm gonna do an engagement thing here and on that site: tell me the chapter of the story you like the most, every comment on this post or on hentai foundry counts as a vote, and I'll do a 'where is she now' chapter following up on that treatment. I'd do it on discord but I don't have a good way to tally that figured out.
 
-The main area of content is in the first scenario, which is finished. You play as a young woman on the eve of a hurricane hoping to gather supplies, all the while the town is infested with voracious, mindless dickgirls. I hope to have a few independent storylines finished in the future, scenario 2 is underway and there will be previews of future content too.
+Finally I've update the engine of Bitch Medicenter, it's a lot more optimized for mobile use now. No download links since my internet is shot, although you could download it directly from github if you wanted.
+
+Bitch Medicenter Demo v2
+Play online:
+https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter.html
+
+Mobile ver:
+https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter%20Mobile.html
+
+No new content, although commercials have been added for my other games. They're pretty neat in my opinion.
+Other changes:
+- Reworked the game's css using stiggy's code as a base. The whole game should look a little bit more professional now. 
+- The mobile version has been rebuilt. You can now properly view buttons and text that were being cut off before. 
+- Swiping on the game board doesn't scroll the screen, and scrolling below the board doesn't move the blocks! This was the main reason behind the update since the mobile ver was pretty broken before. 
+- Fixed a bug where between levels the blocks would be completely skewed and awful, this was pretty game-breaking and tough to fix, but I think I got it.
+
+And that's all the major stuff. As a note the format of this game means that it's good for commissions for you guys in the fan and supporter categories. December isn't over yet, which means I'm still technically on break, but I'm a very work ahead sort of person so I'm already starting scenes for the next version of Anomaly Vault. Maybe you have a specific treatment idea for the medicenter to tackle? Maybe you have a dark vault artifact idea? If you're flexible I can grab the images myself. Lemme know!
+
+
+Reddit post:
+Hi again! I just released another version of my game Rainy DayZ! It's inspired directly by Futa Apocalypse, but also has a little resident evil and left 4 dead sprinkled in. This is an adult game created by myself, u/NoodleJacuuzi (Patreon). It's an HTML game that you can play the desktop version in-browser at this link, along with a version that works on mobile found here, but the game can also be downloaded and played locally using the links here. Additionally, I have a Discord Server called 'Noodle's Jacuzzi' where I'd love to hear from you!
+
+The main area of content is in the first scenario, which is finished, and the second scenario with a good handful of scenes. You play as a young woman on the eve of a hurricane hoping to gather supplies, all the while the town is infested with voracious, mindless dickgirls. Lemme know if you have any ideas or suggestions.
 
 The game contains shemales and female-to-shemale transformation, and also contains fetishes such as beast, sounding, parasites, rimming, and watersports, but all of those can be disabled in the settings menu.
 
-Version 1.3 Content
-- Scenario 1 has been finished for a while now, but if you'd like a guide for some of the trickier scenes you can find one on the game's tfgames page in the 'walkthrough' tab.
-- The framework for the facility in scenario 2 has been laid, you can wander around in there, but as it's unfinished there's not much to do.
-- A preview for a potential future scenario, Spread Island, which includes a full (and decently long) scene.
+Version 1.4 Content
+- Added four files in The Facility that detail infection types / infection process details
+- Added five new scenes in The Facility, you still can't use the keycards or enter the inoculation lab
+- Fixed some critical bugs
+- You can now rename your wife in Spread Island
 
 Upcoming Content
-- Filling scenario 2 with all the content it needs. I have several masturbation scenes planned, a scene in the chemical lab with the fluid pitcher, one with the horde in the containment lab, and one with the ridge worms in the parasite lab.
-- Another preview for a future scenario. They're shorter to write but I do want to always include at least some lewd content.
-- Probably not this month, but adding in mod support for Hentai University was very rewarding. I'd like to do a system like that for Rainy DayZ too.
+- The next update will be of another demo for a potential future scenario since I'll need more time to prep for what's waiting for you in the inoculation lab.
 
-Lemme know what you all think, I have more coming this Friday!
+Lemme know what you all think, I hope to have more coming next Friday!
 
 
 writeSpeech("Lansley", "lansley.jpg", "This is Sergeant Lansley of Charlie Team, two days into the search and no sign of the missing civilians. We had an ATV searching the forest near the border of Mongoose City, but have since lost contact with them.<br>We found signs of Franklin, member of Bravo Team, in a barricaded section of the forest three hours ago. Scraps of cloth, ID tags, and several samples of a unknown white substance with narcotic effects. We hope to see the results soon, but communication with the police station we sent the samples to has suddenly stopped.<br>The team and I have stopped at a mansion in the forest, not present on any maps. Local wildlife is highly agitated, so we'll be taking shelter here until backup arrives.");
 writeText("That was the last anyone heard of Charlie Team, it was more than a week ago. Backup never came, orders were sent to all local divisions to abandon the city and set up security checkpoints as roads leading in. Defying their blockade, you set out through the barricade lines with an unregistered vehicle. Your sister, Kelsey Lansing would hate to hear you've come to rescue her, but what kind of big brother would you be if you just left her out here?");
 writeText("You come to a stop just off the road. According to what you could gather, the mansion should close. All you need to do now is make your way through the forest.");
 --- Forest");
-writeText("The air is cold and dry, it's laye autumn so the forest's floor is covered in leaves. The trees are too dense for your car, so you decide to hoof it. Unable to sneak in any powerful weaponry, all you've got is a stun-gun, your wilderness exploration gear, and a radio.");
-writeText("Along the path is a broken-down shed. It looks like at one point it was heavily barricaded, meant to keep somthing out.");
+writeText("The air is cold and dry, it's late autumn so the forest's floor is covered in leaves. The trees are too dense for your car, so you decide to hoof it. Unable to sneak in any powerful weaponry, all you've got is a stun-gun, your wilderness exploration gear, and a radio.");
+writeText("Along the path is a broken-down shed. It looks like at one point it was heavily barricaded, meant to keep something out.");
 writeText("In the distance, you can make out the sounds of dogs howling and barking. It doesn't seem to be getting louder, so they aren't getting any closer. Aside from that, the forest is pretty calm. You should be fine to continue on.");
 --- Shed");
 writeText("You decide to check out the shed. The door and windows are boarded up, but the west-facing wall has been smashed through.");
