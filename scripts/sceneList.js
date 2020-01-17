@@ -2,10 +2,10 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 1/9/2020</p>
-				<p class = "centeredText">Anomaly Vault v4 and Hentai University v5.5</p>
-				<p class = "centeredText">A new release of Anomaly Vault and Hentai University! A gift for you all on my birthday!</p>
-				<p class = "centeredText">Thank you to: Swallows999, Ben Dover, Joshua Ingram, MrManPerson, Robbie, CaptainMontana, Lasse B, andres mejia, Arthorias28, Badaxe, ChronosEdge, Colin E, Dkells, Dr. Awesome, Jinouga, Judavarius, Lunarghost, Marco Wassmer, Q Q, Scal, Taylor Trout, XxrobothacksxX, Adonnak, Aegil, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Arthur radcliffe, Auckard, AxiosMIles, Blaise Fenn, Bobby Hamilton, Bonelessunknown, bono, brandon, Burin, Carlos, Chaaaanon, Charles Morris, Colin, Damion Moore, David Lange, Debarre Sonny, Devin, Dewr, dhccpmc, Drashin, Dugelle, Ed, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jacob Cannon, Jane, jdktjk205, Jesse Greene, joe, joe, joe mulhall, john smith, Joseph Gibbs, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Noah, Nutburger, Oliver Jones, Philipp, Prodigal211, qwerty, Roy, Ryan Linn, sage, Scumstango, Sebastian Eckel, Shawn, Simon Rencher, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, Ungy Bungy, valdis, Vincent Madaire-Cullen, Wayne culbert, Wei, Wild Bill, Will Osboldstone, William Richardson, Yongdian Guo, Your Husbando, zoobot5, 大基 渡邊, and 凱 陳 for supporting my work!</p>
+				<p class = "centeredText">Lastest News 1/17/2020</p>
+				<p class = "centeredText">Rainy DayZ v2.0</p>
+				<p class = "centeredText">A new release of Rainy DayZ, finishing up scenario 2!</p>
+				<p class = "centeredText">Thank you to: Swallows999, Joshua Ingram, MrManPerson, Robbie, CaptainMontana, Lasse B, andres mejia, Arthorias28, Badaxe, ChronosEdge, Colin E, Dkells, Filament, J_C_L, Jinouga, Marco Wassmer, maxime, Ramiel Palomino, Scal, Taylor Trout, XxrobothacksxX, Aegil, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arthur radcliffe, AxiosMIles, Bawornnan samart, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Colin, Darrell Goodman, David Lange, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Ed, Guy68691, Gwen Yurick, ItsAllOgreNow, Jane, jdktjk205, Jesse Greene, joe, John Lewis, john smith, Joseph Gibbs, Joshua Melzark, lm Carma, mazterlith, Monkey, murgatroid99, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, ptw1985, qwerty, Roy, sage, Scumstango, Sebastian Eckel, Simon Rencher, sky, Smiley Green, Snaked, stratum, Taurus Travon Rashad Lemar Brackin, valdis, Vincent Madaire-Cullen, Wayne culbert, Wei, Wild Bill, William Richardson, Your Husbando, Z, zoobot5, 凱 陳 for supporting my work!</p>
 			`;
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://discord.gg/B3AszYM'">Visit my discord server</p>
@@ -47,13 +47,13 @@ function writeScene(scene) {
 				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/30871183'">List of cheat codes</p>
 			`;
 			writeBig("images/RainyDayZ.jpg");
-			writeText("Rainy DayZ v1.4");
+			writeText("Rainy DayZ v2.0");
 			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.");
 			writeText("Navigate a town and city deliberately working to sabotage yourself and throw yourself into the clutches of the zombie hordes, the goal of the game here is to be defeated and attacked to collect and unlock all of the game's scenes.");
 			writeText("Tags: Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Bestiality (can be disabled), Parasites (can be disabled), Watersports (can be disabled)");
 			writeTransition("RainyDayZ", "Preview");
 			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/32506352'">Download the game</p>
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/33222521'">Download the game</p>
 				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12575'">TFGamesDiscussion thread</p>
 				<p class="choiceText" onclick="window.location.href='https://f95zone.to/threads/rainy-dayz-v1-4-noodlejacuzzi.42457/'">F95Zone Discussion thread</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html'">Play the game online</p>
