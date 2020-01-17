@@ -957,9 +957,16 @@ function writeScene(scene) {
 			break;
 		}
 		case "scarletKennel": {
-			writeText("The walls are study enough, so you should be fine to check it out. You get closer to the cage.");
-			writeText("The dogs are absolutely rabid. They're all Dobermen, but something is off about them. They gnaw and claw at their containment, probably eager to tear you apart. There's the some fluid splattered on the inside of the cage. They're all wearing studded leather collars with big... Batteries? They're some kind of shock collars probably, way stronger than anything you could get over the counter.");
-			writeText("After a minute, it hits you as to what's different about them. They're bigger than their breed should be, more muscular, and they're all erect. They've each got a second collar on, fastened around their dicks each also with a smaller battery on them. They don't seem happy about it, you should [get moving|scarletMansionEntrance].");
+			if (data.player.beastDisabled == false) {
+				writeText("The walls are study enough, so you should be fine to check it out. You get closer to the cage.");
+				writeText("The dogs are absolutely rabid. They're all Dobermen, but something is off about them. They gnaw and claw at their containment, probably eager to tear you apart. There's the some fluid splattered on the inside of the cage. They're all wearing studded leather collars with big... Batteries? They're some kind of shock collars probably, way stronger than anything you could get over the counter.");
+				writeText("After a minute, it hits you as to what's different about them. They're bigger than their breed should be, more muscular, and they're all erect. They've each got a second collar on, fastened around their dicks each also with a smaller battery on them. They don't seem happy about it, you should [get moving|scarletMansionEntrance].");
+			}
+			else {
+				writeText("The walls are study enough, so you should be fine to check it out. You get closer to the cage.");
+				writeText("The dogs are absolutely rabid. They're all Dobermen, but they're all partially decomposed, like they're straight out of a zombie movie. They gnaw and claw at their containment, probably eager to tear you apart. There's the some fluid splattered on the inside of the cage. They're all wearing studded leather collars with big... Batteries? They're some kind of shock collars probably, way stronger than anything you could get over the counter.");
+				writeText("They don't seem happy about their containment, you should [get moving|scarletMansionEntrance].");
+			}
 			break;
 		}
 		case "scarletEntry": {
@@ -1811,7 +1818,7 @@ function writeEvent(n) {
 			writeText("You're about to start when something pink catches your eye in a partially-open drawer.");
 			writeSpeech("player", "", "Oh my...");
 			writeText("It's a dildo, a pretty decently sized one too. Work here can involve subjects that are a little... Arousing, for some to work on. Since being distracted can be dangerous, workers are encouraged to satisfy themselves regularly.");
-			writeText("Still, a dildo in your drawer? Hmm... <br>I've never done anal before, but with this new body it might be fun. I'll give it a quick shot and go back to jerking off if it hurts.");
+			writeSpeech("player", "", "Still, a dildo in your drawer? Hmm... <br>I've never done anal before, but with this new body it might be fun. I'll give it a quick shot and go back to jerking off if it hurts.");
 			writeText("...");
 			writeBig("solo1.gif");
 			writeSpeech("player", "", "Ah~! Ah~! Fuck, this is so much better than my pussy was~!");
@@ -1858,7 +1865,7 @@ function writeEvent(n) {
 			}
 			break;
 		}
-		case "cure": { //needs image
+		case "cure": {
 			writeText("You take the cure vial and an injector. Carefully, you align the needle and pump the vial's contents into yourself.");
 			writeSpeech("player", "", "Khh...");
 			writeText("You nearly topple over. A second round of body shifting is taking its toll on you. The cure systematically eradicates traces of the infection in your body, then reconstructs you to your older self.");
@@ -1873,7 +1880,7 @@ function writeEvent(n) {
 			writeText("You grab a wire and snap it clean out of place. The lights shudder before snapping off and the room is bathed in white light. The lab's doors shudder and unseal, and there's a loud BANG containment cell from the containment cell behind you");
 			break;
 		}
-		case "alpha1": { //needs image
+		case "alpha1": {
 			writeText("The door slides open and you race into the chemical lab searching for a place to hide, the only realistic hiding place is underneath a desk. You get beneath one away from the door, now all you can do is wait.");
 			writeText("The door starts to slide closed, but you don't actually hear it seal. Rather, the sliding is interrupted by a metallic whir and the crunch of a broken motor, before it's ripped off its track and tossed aside.");
 			writeText("<b style = 'font-size: 200%;'>\"HUNGRY.\"</b>");
@@ -1905,7 +1912,7 @@ function writeEvent(n) {
 			}
 			break;
 		}
-		case "alpha2": { //needs image
+		case "alpha2": {
 			writeText("The door slides open and you race into the containment lab searching for a place to hide, and you immediately move for the crawlspace. Nothing big enough to break through a containment wall like that would fit through a space like this.");
 			writeText("The only problem is you can't fit through it either.");
 			writeSpeech("player", "", "Fuck, fuck, fuck! Nonono!");
@@ -1932,7 +1939,8 @@ function writeEvent(n) {
 			}
 			break;
 		}
-		case "spider": { //needs image
+		case "spider": {
+			if (data.player.beastDisabled == false) {
 			writeText("The door slides open and you race into the parasite lab searching for a place to hide, the desks are all covered with strange substances. You run around the room searching for any form of escape, even running into a containment cell.");
 			writeText("With lots of suspended rock formations, this must have been made for some kind of animal. For now you put that aside, hoping the alpha chasing your can't climb.");
 			writeText("You make your way up and into some kind of small cave, or crawlspace. The floor and walls are lined with extremely sticky white ropes.");
@@ -1959,6 +1967,10 @@ function writeEvent(n) {
 			writeText("The drugs race through your system preventing you from even the slightest movement. More eggs are stuffed into you until no more could possibly fit, and the spider begins to pull out. All the eggs still inside the ovipositor are squeezed out into your cunt, and once the spider has fully withdrawn some of them fall out with a *plop*");
 			writeBig("egg.gif");
 			writeText("Barely awake, your consciousness fades as you feel another ovipositor press against your asshole. ");
+			}
+			else {
+				writeText("This scene has been disabled by your fetish settings. If for some reason want to watch it, you can still view it in the gallery after changing your settings.");
+			}
 			if (data.player.currentScene != "gallery") {
 				writeTransition('theFacility', 'GAME OVER', '#FF0000');
 			}
@@ -1982,6 +1994,7 @@ function writeEvent(n) {
 			break;
 		}
 		case "scarletHoundsTorture": {
+			if (data.player.beastDisabled == false) {
 			writeText("The woman is abnormally fixated on you even as one of the massive hounds comes up her and plants his paws on her back, mounting her.");
 			writeText("You can see his erect cock dangling, fully erect, with the shock collar wrapped around his base.");
 			writeText("He bucks up against the woman, his cock poking her dangling balls a few times before he lines himself up with her ass and slowly pushes in.");
@@ -1993,8 +2006,14 @@ function writeEvent(n) {
 			writeText("The collars flash red again, causing the infected woman to spasm and let out a spurt of cum from her untouched dick. The shocks must be for her, and it seems like she's getting off on being zapped while being used as a bitch.");
 			writeText("After having had enough, the hound behind the woman begins to tug and pull to try and free his knot from the woman's greedy asshole. He tugs and tugs, before finally the cock is freed with a big *POP* and a line of dog cum spurts from the woman's abused hole through the air.");
 			writeText("Still leaking, drops of dog cum slide down her balls and down her erect, dangling shaft to mix with her cum before dripping down into the growing pool on the floor.");
-			writeText("The hound using her mouth stands up, but before it decides it's done it lifts its leg. The dangling dog cock hands inches away from the woman's cum-coated face, before it sprays her with a blast of piss. The woman, barely conscious at this point, grasps the cock in her hand and moves the still-spraying tip to her mouth. Greedily, she opens up and begins sucking off the still-pissing dog until the stream weakens.");
+			if (data.player.wsDisabled == false) {
+				writeText("The hound using her mouth stands up, but before it decides it's done it lifts its leg. The dangling dog cock hands inches away from the woman's cum-coated face, before it sprays her with a blast of piss. The woman, barely conscious at this point, grasps the cock in her hand and moves the still-spraying tip to her mouth. Greedily, she opens up and begins sucking off the still-pissing dog until the stream weakens.");
+			}
 			writeText("As though trained, once the dogs are finished they leave the garage and head back to their kennels.");
+			}
+			else {
+				writeText("This scene has been disabled by your fetish settings. If for some reason want to watch it, you can still view it in the gallery after changing your settings.");
+			}
 			if (data.player.currentScene != "gallery") {
 				writeText("With the show over, you should head back to the [mansion foyer|scarletFoyer].");
 			}

@@ -1,6 +1,3 @@
-///***UPDATE INDEX DOWNLOAD LINK for RAINY DAYZ
-///***UPDATE INDEX DOWNLOAD LINK FOR MEDICENTER
-
 Hello once more everyone! Here we are, the third week of December. I have more of the same and something new:
 This weeks progress was:
 Rainy DayZ v1.4
@@ -17,13 +14,13 @@ https://mega.nz/#!D3gS2KgT!ofdPVHdMM-bXJJSW1CntCXSAIYaOF8tzK3vYF9jTj9o
 Here's an upgrade pack containing only the new stuff:
 https://mega.nz/#!azo2AITZ!tMF_fMFCdchH0VERZ8gWDkxQ4JTZzMWNccL6jYmw-hQ
 
-My router went out just after uploading these so my up/download speed is around 15kb/s. IF these are broken please lemme know ASAP and you'll need to play the online version instead.
+My router went out just after uploading these so my up/download speed is around 15kb/s. If these are broken please lemme know ASAP and you'll need to play the online version instead.
 
 Play online:
-https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html 
+https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html
 
 Mobile ver:
-https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ%20Mobile.html 
+https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ%20Mobile.html
 
 Version v1.4
 
@@ -36,7 +33,7 @@ Bugfixes & Typos
 Other changes
 - You can now rename your wife in Spread Island
 
-Being in better health I tested this release much more thoroughly. If you'd liek to help me out in this regard for future releases, I post test releases on my discord. Just popping in to let me know if everything works would be a huge help, plus if everything works as intended you get to see the new content a day or two early.
+Being in better health I tested this release much more thoroughly. If you'd like to help me out in this regard for future releases, I post test releases on my discord. Just popping in to let me know if everything works would be a huge help, plus if everything works as intended you get to see the new content a day or two early.
 For scenario 2 I've focused on less obtuse gameplay. How do you prefer it? Rainy DayZ could be frustrating with how you needed to restart over and again to get all the scenes, I might do some kind of quicksave / quickload system in the next update.
 Speaking of the next update, it'll probably be next Friday and won't be finishing Scenario 2. I've got another demo in the works since finishing up the Facility will be a bit of work.
 
@@ -63,8 +60,9 @@ Other changes:
 
 And that's all the major stuff. As a note the format of this game means that it's good for commissions for you guys in the fan and supporter categories. December isn't over yet, which means I'm still technically on break, but I'm a very work ahead sort of person so I'm already starting scenes for the next version of Anomaly Vault. Maybe you have a specific treatment idea for the medicenter to tackle? Maybe you have a dark vault artifact idea? If you're flexible I can grab the images myself. Lemme know!
 
+
 Reddit post:
-Hi there! I just released another version of my game Rainy DayZ! It's inspired directly by Futa Apocalypse, but also has a little resident evil and left 4 dead sprinkled in. This is an adult game created by myself, u/NoodleJacuuzi (Patreon). It's an HTML game that you can play the desktop version in-browser at this link, along with a version that works on mobile found here, but the game can also be downloaded and played locally using the links here. Additionally, I have a Discord Server called 'Noodle's Jacuzzi' where I'd love to hear from you!
+Hi again! I just released another version of my game Rainy DayZ! It's inspired directly by Futa Apocalypse, but also has a little resident evil and left 4 dead sprinkled in. This is an adult game created by myself, u/NoodleJacuuzi (Patreon). It's an HTML game that you can play the desktop version in-browser at this link, along with a version that works on mobile found here, but the game can also be downloaded and played locally using the links here. Additionally, I have a Discord Server called 'Noodle's Jacuzzi' where I'd love to hear from you!
 
 The main area of content is in the first scenario, which is finished, and the second scenario with a good handful of scenes. You play as a young woman on the eve of a hurricane hoping to gather supplies, all the while the town is infested with voracious, mindless dickgirls. Lemme know if you have any ideas or suggestions.
 

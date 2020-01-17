@@ -630,6 +630,7 @@ function loadFile(){
 
 function quickSave() {
 	data.quicksave = Object.assign({}, data.player)
+	data.quickInv = [...data.items];
 	writeText("Quicksaved. Starting a new campaign will erase quicksave data.");
 }
 
@@ -639,6 +640,7 @@ function quickLoad() {
 	}
 	else {
 		data.player = Object.assign({}, data.quicksave)
+		data.items = [...data.quickInv];
 		console.log(data.quicksave);
 		sceneTransition(data.player.currentScene);
 	}
