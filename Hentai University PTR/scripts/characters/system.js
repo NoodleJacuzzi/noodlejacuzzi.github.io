@@ -127,12 +127,10 @@ function writeEncounter(scene) {
 			break;
 		}
 		case "cheat": {
-			document.getElementById('output').innerHTML += `
-				<p class='centeredText'>You can enter cheat codes here. For example, use the code 'new name' to rename all of the game's other characters.</p>
-				<p class='centeredText'>I keep a list of all of these on my patreon, go there, even if you aren't a patron, to find them.</p>
-				<p class='centeredText'>Enter cheat code: <input type="text" id="cheatSubmission" value=""></p>
-				<p class='choiceText' onclick='diagnostic()'>Submit</p>
-			`;
+			writeCenteredText("You can enter cheat codes here. For example, use the code 'new name' to rename all of the game's other characters.");
+			writeCenteredText("I keep a list of all of these on my patreon, go there, even if you aren't a patron, to find them.");
+			writeCenteredText("Enter cheat code: <input type='text' id='cheatSubmission' value=''>");
+			writeFunction("diagnostic()", "Submit");
 			writeFunction("loadEncounter('system', 'gameConsole')", "Go back");
 			break;
 		}

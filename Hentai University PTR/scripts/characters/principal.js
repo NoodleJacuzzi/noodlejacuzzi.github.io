@@ -138,6 +138,18 @@ function writeEncounter(name) { //Plays the actual encounter.
 					}
 				}
 			}
+			if (data.story[8].met.includes('nurseS') != true) {
+				writeSpeech("principal", "", "I've gotten some... Troubling news from some students lately about something untoward going on in the nurse's office. Could you check it out?");
+				writeFunction("writeEncounter('nurseCaseStart')", "nurseF's file");
+			}
+			else {
+				if (data.story[8].met.includes('nurseF') != true) {
+					writeSpeech("principal", "", "Have you found anything that might suggest what our nurse might be up to?");
+					if(checkTrust('nurse') > 79) {
+						writeFunction("writeEncounter('nurseCaseEnd')", "Report on nurseF's case.");
+					}
+				}
+			}
 			writeFunction("changeLocation(data.player.location)", "Go back");
 			break;
 		}
@@ -148,7 +160,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			data.story[8].met += "kuroS";
 			addItem("File A-1", true, "images/kuro/kuro.jpg")
-			if(checkTrust('kuro')) {
+			if(checkTrust('kuro') > 0) {
 				writeEncounter('kuroCaseEarly');
 			}
 			break;
@@ -323,6 +335,66 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
+		case "nurseCaseStart": {
+			writeText("You take "+fName('nurse')+"'s file.");
+			writeSpeech("player", "", "What do you mean 'untoward'? ");
+			writeSpeech("principal", "", "Well, nothing too bad. Misplaced bottles, incorrect prescriptions. ");
+			writeSpeech("player", "", "Ah, so you think she might be stealing pills?");
+			writeSpeech("principal", "", "The opposite, actually. I keep close track of what the office is allocated, but a student came to me the other day confident that there was a collection of bottles with names that don't make any sense for a school nurse to have access to. I had security look into her office, but nothing came of it.");
+			writeSpeech("player", "", "And you think I can... Help?");
+			writeSpeech("principal", "", "I'd imagine she'd feel a lot more comfortable speaking with you than with security. She might open up and let something slip.");
+			writeSpeech("player", "", "You're quite confident she's in the wrong for someone without any proof.");
+			writeSpeech("principal", "", "I don't trust anyone, playerF. I'll maintain proper decorum, but I have no intention of giving anyone enough leeway to destroy this university's reputation.");
+			writeSpeech("player", "", "Noted. I'll chat her up and let you know if anything's up.");
+			writeSpeech("principal", "", "I appreciate it.");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			data.story[8].met += "nurseS";
+			addItem("File T-2", true, "images/nurse/nurse.jpg")
+			if(checkTrust('nurse') > 79) {
+				writeEncounter('nurseCaseEarly');
+			}
+			break;
+		}
+		case "nurseCaseEnd": {
+			writeSpeech("player", "", "I had a chance to look into nurseF, she seems pretty harmless and I didn't see any 'untoward' chemicals in there.");
+			writeSpeech("principal", "", "Really? No strange substances, no... <i>Hard drugs</i>?");
+			writeSpeech("player", "", "Nope. How trustworthy was this source of yours?");
+			writeSpeech("principal", "", "Well... Perhaps not as trustworthy as I thought. I'll followup myself, but I think perhaps I can relax the scrutiny on Ms. nurseL.");
+			writeSpeech("player", "", "Whatever you think is best. I'll-");
+			writeText("You notice a flower on principalF's desk, it looks familiar, like the one you saw in the book in nurseF's office.");
+			writeSpeech("player", "", "Could I have a petal from this? I'm, uh, trying to find a flower that matches the color scheme of my office.");
+			writeSpeech("principal", "", "Of course! Finally coordinating your office, how wonderful. I'll forward some of my daily minimalist magazine articles to your work email as well.<br>Now, I need to get back to work.");
+			writeSpecial("Obtained the Regent's Flower petal!");
+			addItem("Regent Flower Petal", true, "images/nurse/flower.jpg");
+			data.story[8].met += "nurseF";
+			data.player.counseling += 1;
+			removeItem("File T-2");
+			updateMenu();
+			writeSpecial("Your 'counseling' ability has improved! This means a pay bump, and "+fName('principal')+" trusts you more!");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "nurseCaseEarly": {
+			writeSpeech("player", "", "What do you mean 'untoward'? ");
+			writeSpeech("principal", "", "Well, nothing too bad. Misplaced bottles, incorrect prescriptions. ");
+			writeSpeech("player", "", "You think nurseF might be stealing pills?");
+			writeSpeech("principal", "", "The opposite, actually. A student came to me the other day confident that there was a collection of bottles with names that don't make any sense for a school nurse to have access to. You're already acquainted with her?");
+			writeSpeech("player", "", "Yeah, and I can confirm there's nothing unusual going on in the office. How trustworthy was this source?");
+			writeSpeech("principal", "", "Well... Perhaps not as trustworthy as I thought. I'll followup myself, but I think perhaps I can relax the scrutiny on Ms. nurseL.");
+			writeSpeech("player", "", "Whatever you think is best. I'll-");
+			writeText("You notice a flower on principalF's desk, it looks familiar, like the one you saw in the book in nurseF's office.");
+			writeSpeech("player", "", "Could I have a petal from this? I'm, uh, trying to find a flower that matches the color scheme of my office.");
+			writeSpeech("principal", "", "Of course! Finally coordinating your office, how wonderful. I'll forward some of my daily minimalist magazine articles to your work email as well.<br>Now, I need to get back to work.");
+			writeSpecial("Obtained the Regent's Flower petal!");
+			addItem("Regent Flower Petal", true, "images/nurse/flower.jpg");
+			data.story[8].met += "nurseF";
+			data.player.counseling += 1;
+			removeItem("File A-1");
+			updateMenu();
+			writeSpecial("Your 'counseling' ability has improved! This means a pay bump, and "+fName('principal')+" trusts you more!");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
 	}
 }
 
@@ -343,6 +415,9 @@ function writeEvent(name) { //Plays the actual event.
 		if (eventArray[i].index == name) {
 			unlockedScene = eventArray[i];
 		}
+	}
+	if (data.player.location == "gallery") {
+		writeFunction("changeLocation(data.player.location)", "Finish");
 	}
 	if (unlockedScene != "" && galleryCheck(name) != true) {
 		data.gallery.push(unlockedScene);

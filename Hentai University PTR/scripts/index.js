@@ -424,6 +424,17 @@ function encounteredCheck(name) {
 	}
 }
 
+function unencounter(name) {
+	for (e = 0; e < data.story.length; e++) {
+		if (data.story[e].index == name) {
+			if (data.story[e].encountered == true) {
+				data.story[e].encountered = false
+				break;
+			}
+		}
+	}
+}
+
 function fName(name) {
 	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
 		if (data.story[characterIndex].index == name) {
@@ -623,10 +634,21 @@ function checkForEncounters() {
 }
 
 function printEncounterButton(character, scene, text, top, left, altName, altImage) {
-	document.getElementsByClassName('playerRoom')[0].innerHTML += `
-		<div class="pictureButton" onclick='loadEncounter("`+character+`", "`+scene+`")'
-		style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+text+`</div>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementsByClassName('playerRoom')[0].innerHTML += `
+				<div class="pictureButton" onclick='loadEncounter("`+character+`", "`+scene+`")'
+				style="top: `+top+`%; left: `+left+`%; max-width: 30%; border: 3px solid; border-radius: 0px;">`+text+`</div>
+			`;
+			break;
+		}
+		default: {
+			document.getElementsByClassName('playerRoom')[0].innerHTML += `
+				<div class="pictureButton" onclick='loadEncounter("`+character+`", "`+scene+`")'
+				style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+text+`</div>
+			`;
+		}
+	}
 }
 
 function printEncounterTab(name, scene, text, altImage, altName) {
@@ -641,7 +663,6 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 				if (text.includes(name)) {
 					text = text.replace(name, data.story[z].fName);
 				}
-				name = data.story[z].fName + ' ' + data.story[z].lName;
 				var cssColor = data.story[z].color;
 				if (data.story[z].encounter == true) {
 					cancelTab = true;
@@ -649,7 +670,7 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 			}
 		}
 		if (data.story[tabIndex].trust == 0) {
-			name = "???";
+			//text += "HIDDEN";
 		}
 		switch (true) {
 			case (data.story[tabIndex].trust > 99): {
@@ -714,16 +735,10 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 		console.log(cssColor);
 		if (cancelTab != true) {
 			console.log("Now generating tab for " + name + ", linking to scene " + scene + " with the text " + text);
-			document.getElementById('output').innerHTML +=`
-			<div class = "textBox" style="border-color: `+cssColor+`">
-				<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "`+ img +`" `+checkForError+`>
-				<div class="textBoxContent">
-				<p class = "textName" style="color:`+cssColor+`">` + name + `</p>
-				<p class="status"> Status: ` + tabTrust + `</p>
+			writeSpeech(name, img, `
+				<p class="status"> Status: ` + tabTrust + `</p>	
 				<p class="switch" onclick="loadEncounter('`+data.story[tabIndex].index+`', '`+scene+`')">` + replaceCodenames(text) + `</p>
-			</div>	</div>
-			<br>
-			`;
+			`);
 		}
 	}
 }
@@ -732,15 +747,68 @@ function writeText (text) {
 	if (text == "...") {
 		text = "<hr>";
 	}
-	document.getElementById('output').innerHTML += `
-		<p class='rawText'>` + replaceCodenames(text) + `</p>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText' style='
+				margin: 30px 0;
+				font-size: 1.3em;
+				font-family: railway, times new roman, sans-serif;
+				font-style: normal;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText'>` + replaceCodenames(text) + `</p>
+			`;
+		}
+	}
+}
+
+function writeCenteredText (text) {
+	if (text == "...") {
+		text = "<hr>";
+	}
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementById('output').innerHTML += `
+				<p class='centeredText' style='
+				margin: 30px 0;
+				font-size: 1.3em;
+				font-family: railway, times new roman, sans-serif;
+				font-style: normal;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML += `
+				<p class='centeredText'>` + replaceCodenames(text) + `</p>
+			`;
+		}
+	}
 }
 
 function writeSpecial (text) {
-	document.getElementById('output').innerHTML += `
-		<p class = "specialText">` + replaceCodenames(text) + `</p>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementById('output').innerHTML += `
+				<p class='specialText' style='
+				font-size: 1.3em;
+				font-family: railway, times new roman, sans-serif;
+				font-style: normal;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML += `
+				<p class = "specialText">` + replaceCodenames(text) + `</p>
+			`;
+		}
+	}
 }
 
 function writeSpeech (name, img, text) {
@@ -790,17 +858,44 @@ function writeSpeech (name, img, text) {
 		fullName = "???";
 		text = text.replace("HIDDEN", "");
 	}
-	document.getElementById('output').innerHTML +=`
-	<div class="textBox" style="border-color: `+cssColor+`">
-		<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "
-			`+ img +`
-		"`+checkForError+`>
-		<div class="textBoxContent">
-		<p class = "textName" style="color:`+cssColor+`">`+ fullName + `</p>
-		<p>` + replaceCodenames(text) + `</p>
-	</div>
-	<br>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementById('output').innerHTML += `
+			<div class="textBoxLobotomy" style="border-color: `+cssColor+`;
+			background: linear-gradient(90deg, 
+			#000000 10px, 
+			`+cssColor+` 10px, 
+			`+cssColor+` 210px, 
+			#000000 210px);">
+				<div class = "lobotomyThumb" style="background-color: `+cssColor+`">
+				<div class = "lobotomyThumbBorder">
+				<img class = "textThumbLobotomy" src = "
+					`+ img +`
+				"`+checkForError+`>
+				</div>
+				<p class = "textNameLobotomy">`+ fullName + `</p>
+				</div>
+				<div class="textBoxContentLobotomy">
+				<p>` + replaceCodenames(text) + `</p>
+			</div>
+			<br>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML +=`
+			<div class="textBox" style="border-color: `+cssColor+`">
+				<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "
+					`+ img +`
+				"`+checkForError+`>
+				<div class="textBoxContent">
+				<p class = "textName" style="color:`+cssColor+`">`+ fullName + `</p>
+				<p>` + replaceCodenames(text) + `</p>
+			</div>
+			<br>
+			`;
+		}
+	}
 }
 
 function writeBig (img, cap) {
@@ -817,10 +912,28 @@ function writeBig (img, cap) {
 		}
 	}
 	if (imagesDisabled != true) {
-	document.getElementById('output').innerHTML += `
-		<img class="bigPicture" src="` + img + `"`+checkForError+` title="` + cap + `">
-		<br>
-	`;
+		switch (data.player.style) {
+			case "lobotomy": {
+				var cssColor = "#CCCCCC";
+				for (i = 0; i < data.story.length; i++) {
+					if (img.includes(data.story[i].index) == true) {
+						cssColor = data.story[i].color;
+						break;
+					}
+				}
+				document.getElementById('output').innerHTML += `
+						<img class="bigPicture" style="border-color:`+cssColor+`; border-radius: 5px;" src="` + img + `"`+checkForError+` title="` + cap + `">
+					<br>
+				`;
+				break;
+			}
+			default: {
+				document.getElementById('output').innerHTML += `
+					<img class="bigPicture" src="` + img + `"`+checkForError+` title="` + cap + `">
+					<br>
+				`;
+			}
+		}
 	}
 }
 
@@ -846,11 +959,54 @@ function writeMed (img, cap) {
 }
 
 function writeFunction (name, func) {
-	document.getElementById('output').innerHTML += `
-		<p class="choiceText" onclick="` + name + `">
-			` + replaceCodenames(func) + `
-		</p>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			var skewNumber = getRandomInt(8);
+			skewNumber -= 4;
+			var borderNumber = getRandomInt(2) + 3;
+			var rotationNumber = getRandomInt(2) -1;
+			if (skewNumber >= 0) {
+				skewNumber += getRandomInt(3);
+			}
+			if (skewNumber <= 0) {
+				skewNumber -= getRandomInt(3);
+			}
+			var reverseSkew = skewNumber - skewNumber - skewNumber;
+			var rotationReverse = rotationNumber - rotationNumber - rotationNumber;
+			console.log('skewnumber is ' +skewNumber + ' rotationnumber is '+ rotationNumber);
+			document.getElementById('output').innerHTML += `
+			<div class="choiceFrameLobotomy" 
+			style ="
+				-moz-transform: skew(`+skewNumber+`deg, 0deg);
+				-webkit-transform: skew(`+skewNumber+`deg, 0deg);
+				-o-transform: skew(`+skewNumber+`deg, 0deg);
+				-ms-transform: skew(`+skewNumber+`deg, 0deg);
+				transform: skew(`+skewNumber+`deg, 0deg);
+				border: solid `+borderNumber+`px;
+			">
+			<p class="choiceTextLobotomy" 
+			style ="
+				-moz-transform: skew(`+reverseSkew+`deg, 0deg);
+				-webkit-transform: skew(`+reverseSkew+`deg, 0deg);
+				-o-transform: skew(`+reverseSkew+`deg, 0deg);
+				-ms-transform: skew(`+reverseSkew+`deg, 0deg);
+				transform: skew(`+reverseSkew+`deg, 0deg);
+			" 
+			onclick="` + name + `">
+				` + replaceCodenames(func) + `
+			</p>
+			</div>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML += `
+				<p class="choiceText" onclick="` + name + `">
+					` + replaceCodenames(func) + `
+				</p>
+			`;
+		}
+	}
 }
 
 function listTextbooks() {
@@ -1074,6 +1230,25 @@ function updateMenu() {
 	}
 	else {
 		document.getElementById('playerHacking').innerHTML = "Hacking: " + data.player.hacking;
+	}
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementById('title').style.fontFamily = "norwester, times new roman, sans-serif";
+			document.getElementById('menu').style.fontFamily = "railway, times new roman, sans-serif";
+			console.log(data.player.style);
+			break;
+		}
+		case "basic": {
+			document.getElementById('title').style.fontFamily = "arial, sans-serif";
+			document.getElementById('menu').style.fontFamily = "arial, sans-serif";
+			console.log(document.getElementById('title').style.fontFamily);
+			break;
+		}
+		default: {
+			document.getElementById('title').style.fontFamily = "arial, sans-serif";
+			document.getElementById('menu').style.fontFamily = "arial, sans-serif";
+			console.log(data.player.style);
+		}
 	}
 }
 
@@ -1634,7 +1809,29 @@ function diagnostic() {
 			setTrust('tomgirl', -1);
 			setTrust('meji', -1);
 			setTrust('succubus', -1);
+			setTrust('housekeep', -1);
 			writeSpecial("Trap / male characters have been deactivated. You might need to use this code again in the future when more traps are added.");
+			break;
+		}
+		case "lobotomy": {
+			data.player.style = "lobotomy";
+			updateMenu();
+			writeEncounter('cheat');
+			writeSpecial("Lobotomy visual style active!");
+			break;
+		}
+		case "stiggy752": {
+			data.player.style = "basic";
+			updateMenu();
+			writeEncounter('cheat');
+			writeSpecial("Basic visual style active!");
+			break;
+		}
+		case "baddy": {
+			data.player.style = "basic";
+			updateMenu();
+			writeEncounter('cheat');
+			writeSpecial("Basic visual style active!");
 			break;
 		}
 		case "cash money": {

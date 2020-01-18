@@ -987,12 +987,17 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
+	{index: "succubusReminder", trust: 77,},
 	{index: "succubusNewReward", trust: 83,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
+		case "succubusReminder": {
+			writePhoneSpeech("succubus", "", "Waiting for you at the restaurant. Don't take to long or I'll go shopping and make you wait instead.");
+			break
+		}
 		case "succubusReward": {
 			writePhoneImage("images/succubus/reward.jpg", "Art by Gujira");
 			writePhoneSpeech("succubus", "", "You've finished all of succubusF's content for this version, more is on the way!");

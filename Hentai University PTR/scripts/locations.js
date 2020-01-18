@@ -175,10 +175,21 @@ function changeLocation(n) {
 }
 
 function printLocationButton(name, top, left, target) {
-	document.getElementsByClassName('playerRoom')[0].innerHTML += `
-		<div class="pictureButton" onclick='changeLocation("`+target+`")'
-		style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+name+`</div>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementsByClassName('playerRoom')[0].innerHTML += `
+				<div class="pictureButton" onclick='changeLocation("`+target+`")'
+				style="top: `+top+`%; left: `+left+`%; max-width: 30%; border: 3px solid; border-radius: 0px;">`+name+`</div>
+			`;
+			break;
+		}
+		default: {
+			document.getElementsByClassName('playerRoom')[0].innerHTML += `
+				<div class="pictureButton" onclick='changeLocation("`+target+`")'
+				style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+name+`</div>
+			`;
+		}
+	}
 }
 
 function changeBG(n) {
