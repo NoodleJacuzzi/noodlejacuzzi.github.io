@@ -800,8 +800,8 @@ div#output {
 	color: black;
 }
 img.textThumbLobotomy {
-    height: 125px;
-    width: 125px;
+    height: 135px;
+    width: 135px;
     /*box-shadow: -5px 5px var( --character-color);*/
     flex: none;
 	-moz-transform: scale(0.9) skew(5deg, 0deg);
@@ -809,6 +809,7 @@ img.textThumbLobotomy {
 	-o-transform: scale(0.9) skew(5deg, 0deg);
 	-ms-transform: scale(0.9) skew(5deg, 0deg);
 	transform: scale(0.9) skew(5deg, 0deg);
+	margin-top: -1px;
 }
 .textBoxContentLobotomy {
 	font-size: 1.4em;
@@ -827,12 +828,11 @@ img.textThumbLobotomy {
 	margin-left: 30px;
 }
 .lobotomyThumbBorder {
-    height: 135px;
+    height: 127px;
     width: 135px;
-	padding-top: 5px;
-	padding-left: 5px;
 	background-color: #000000;
     margin-right: 30px;
+    margin-left: 10px;
 	-moz-transform: scale(1.1);
 	-webkit-transform: scale(1.1);
 	-o-transform: scale(1.1);

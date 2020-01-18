@@ -35,6 +35,7 @@ var data = {
 		version: 5,
 		location: "",
 		pervert: false,
+		color: "#86b4dc",
 	},
 	story: [
 		{index: "mom", met: false, fName: "Emily", lName: "Smith", trust: 0, encountered: false, textEvent: "", color: "#CCCCCC",},
@@ -841,7 +842,12 @@ function writeSpeech (name, img, text) {
 	if (name == "player") {
 		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
 		fullName = data.player.name;
-		cssColor = "#86b4dc";
+		if (data.player.pervert != true) {
+			cssColor = "#86b4dc";
+		}
+		else {
+			cssColor = "#fc53f1";
+		}
 	}
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].index == name) {
@@ -1235,6 +1241,29 @@ function updateMenu() {
 		case "lobotomy": {
 			document.getElementById('title').style.fontFamily = "norwester, times new roman, sans-serif";
 			document.getElementById('menu').style.fontFamily = "railway, times new roman, sans-serif";
+			document.getElementById('invButton').style.borderRadius = "0px";
+			document.getElementById('invButton').style.border = "3px solid";
+			document.getElementById('phoneButton').style.borderRadius = "0px";
+			document.getElementById('phoneButton').style.border = "3px solid";
+			document.getElementById('logButton').style.borderRadius = "0px";
+			document.getElementById('logButton').style.border = "3px solid";
+			document.getElementById('saveButton').style.borderRadius = "0px";
+			document.getElementById('saveButton').style.border = "3px solid";
+			document.getElementById('restartButton').style.borderRadius = "0px";
+			document.getElementById('restartButton').style.border = "3px solid";
+			document.getElementById('imgButton').style.borderRadius = "0px";
+			document.getElementById('imgButton').style.border = "3px solid";
+			document.getElementById('mobButton').style.borderRadius = "0px";
+			document.getElementById('mobButton').style.border = "3px solid";
+			document.getElementById('phoneButtonMobile').style.borderRadius = "0px";
+			document.getElementById('phoneButtonMobile').style.border = "3px solid";
+			document.getElementById('playerImage').style.borderRadius = "0px";
+			if (data.player.pervert != true) {
+				document.getElementById('playerImage').style.borderColor = "#86b4dc";
+			}
+			else {
+				document.getElementById('playerImage').style.borderColor = "#fc53f1";
+			}
 			console.log(data.player.style);
 			break;
 		}
@@ -1242,6 +1271,32 @@ function updateMenu() {
 			document.getElementById('title').style.fontFamily = "arial, sans-serif";
 			document.getElementById('menu').style.fontFamily = "arial, sans-serif";
 			console.log(document.getElementById('title').style.fontFamily);
+			document.getElementById('invButton').style.borderRadius = "5px";
+			document.getElementById('invButton').style.border = "none";
+			document.getElementById('invButton').style.borderBottom = "3px solid";
+			document.getElementById('phoneButton').style.borderRadius = "5px";
+			document.getElementById('phoneButton').style.border = "none";
+			document.getElementById('phoneButton').style.borderBottom = "3px solid";
+			document.getElementById('logButton').style.borderRadius = "5px";
+			document.getElementById('logButton').style.border = "none";
+			document.getElementById('logButton').style.borderBottom = "3px solid";
+			document.getElementById('saveButton').style.borderRadius = "5px";
+			document.getElementById('saveButton').style.border = "none";
+			document.getElementById('saveButton').style.borderBottom = "3px solid";
+			document.getElementById('restartButton').style.borderRadius = "5px";
+			document.getElementById('restartButton').style.border = "none";
+			document.getElementById('restartButton').style.borderBottom = "3px solid";
+			document.getElementById('imgButton').style.borderRadius = "5px";
+			document.getElementById('imgButton').style.border = "none";
+			document.getElementById('imgButton').style.borderBottom = "3px solid";
+			document.getElementById('mobButton').style.borderRadius = "5px";
+			document.getElementById('mobButton').style.border = "none";
+			document.getElementById('mobButton').style.borderBottom = "3px solid";
+			document.getElementById('phoneButtonMobile').style.borderRadius = "5px";
+			document.getElementById('phoneButtonMobile').style.border = "none";
+			document.getElementById('phoneButtonMobile').style.borderBottom = "3px solid";
+			document.getElementById('playerImage').style.borderRadius = "3px";
+			document.getElementById('playerImage').style.borderColor = "#FFFFFF";
 			break;
 		}
 		default: {
