@@ -290,7 +290,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			else {
 				writeSpeech("nurse", "", "I don't have the recipes laid out yet for my next batch, I do appreciate your patience though. I'm sure your heart is beating fervently as you await my next request for ingredients, I know I'm excited to reward you though. Perhaps what I've already crafted can entertain you for now?");
 				if (checkFlag('nurse', 'blue2Pink') == false) {
-					writeFunction("writeEncounter('blue2PinkPotion')", "Ask about the genderswap potion");
+					//writeFunction("writeEncounter('blue2PinkPotion')", "Ask about the genderswap potion");
 				}
 				if (checkFlag('nurse', 'charisma') == false) {
 					writeFunction("writeEncounter('charismaPotion')", "Ask about the charisma potion");
@@ -300,6 +300,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 				}
 				if (checkFlag('nurse', 'anal') == false) {
 					writeFunction("writeEncounter('analPotion1')", "Ask about the anal sensitivity potion");
+				}
+				if (checkFlag('nurse', 'anal') == true && checkFlag('nurse', 'imperfectYouth') == true && checkFlag('nurse', 'charisma') == true) {
+					writeSpecial("You've completed all available content for nurseF!");
+					for (succIndex = 0; succIndex < data.story.length; succIndex++) {
+						if (data.story[succIndex].index == "nurse") {
+							data.story[succIndex].textEvent = 'reward';
+						}
+					}
 				}
 			}
 			writeFunction("writeEncounter('chatHub')", "Chat");
@@ -488,7 +496,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 }
 
 var eventArray = [
-	{index: "placeholder", name: "Event Name"},
+	{index: "nurseBath", name: "Bathtime"},
+	{index: "nurseReward1", name: "First Level Reward"},
+	{index: "nurseAnal", name: "Anal Potion"},
+	{index: "nurseheartHeatA1", name: "Heart Heat Potion (First Draft)"},
+	{index: "nurseImperfectYouth", name: "Youth Potion (First Draft)"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -518,7 +530,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/nurse/heart4.jpg", "Art by Oreteki18kin");
 			writeText("She pulls your dick out of her mouth and coughs out the globs of jizz as best she can.");
 			writeSpeech("nurse", "", "Ckk... *Ahem*<br>I-*ahem*");
-			writeText("NurseF pushes herself off of you.");
+			writeText("nurseF pushes herself off of you.");
 			writeBig("images/nurse/heart5.jpg", "Art by Oreteki18kin");
 			writeSpeech("nurse", "", "We... We made quite a mess, didn't we?");
 			writeSpeech("player", "", "Yeah, I guess we did. ");
@@ -548,6 +560,8 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("nurse", "", "Ghhg~! It's hitting all the right spots~<br>Mmm~, you k-know this doesn't count, right? I'm not a s-slut who'd break her word because getting sprayed put her on the edge of a climax, you know~<br>R-really, you're the one to blame. Waving something like that in front of someone so <i>hungry</i>...<br>Gghh~! Cumming~!");
 			writeBig("images/nurse/bathing5.jpg", "Art by Oreteki18kin");
 			writeSpeech("nurse", "", "Hah~... I can feel it inside me, filling me up...<br>Hey, since this doesn't count... Maybe we can go another round? You'll still work hard for that extra special reward, right?<br>I'm not sure I can wait very long, won't you give me something to tide me over?");
+			writeText("...");
+			writeText("You ended up needing to take another shower afterwards.");
 			break;
 		}
 		case "nurseReward1": {
@@ -668,14 +682,14 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "placeholder", trust: 200,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
-			//Write the event's text here using writePhoneSpeech, writePhoneImage, and writePhoneChoices
+		case "reward": {
+			writePhoneImage("images/nurse/reward.jpg", "Art by Oreteki18kin");
+			writePhoneSpeech("nurse", "", "You've finished all of nurseF's content for this version, more is on the way!");
 			break;
 		}
 		default: {

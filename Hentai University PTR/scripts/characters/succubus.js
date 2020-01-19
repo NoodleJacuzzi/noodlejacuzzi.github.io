@@ -405,7 +405,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("succubus", "demon.jpg", "So, you ready for your reward?");
 			writeSpeech("player", "", "Absolutely. What's on the agenda?");
 			writeSpeech("succubus", "demon.jpg", "Hehe, close your eyes.");
-			writeSpeech("player", "", "Okay. I'm ready anytime.<br>... SuccubusF?");
+			writeSpeech("player", "", "Okay. I'm ready anytime.<br>... succubusF?");
 			writeText("After a few moments of silence you open your eyes back up. succubusF is nowhere to be seen.");
 			writeSpeech("player", "", "Where... What's this?");
 			writeText("You pick up a scrap of paper with some pencil scrawlings on it. It's an address and a message from succubusF. It's some restaurant in the shopping district.");

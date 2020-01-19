@@ -657,7 +657,7 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 		var tabTrust;
 		var cancelTab = false;
 		var cssName = name;
-		var img = "images/"+name+"/"+name+".jpg";
+		var img = name;
 		for (z = 0; z < data.story.length; z++) {
 			if (data.story[z].index == name) {
 				tabIndex = z;
@@ -699,14 +699,7 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 				break;
 			}
 		}
-		if (data.player.pervert != true) {
-			var checkForError = "";
-			img = "images/"+cssName+"/"+cssName+".jpg";
-		}
-		else {
-			var checkForError = `onerror ="javascript:this.src='images/`+cssName+`/`+cssName+`.jpg'"`;
-			img = "images/"+cssName+"/"+cssName+"P.jpg";
-		}
+		var checkForError = "";
 		if (altImage == undefined) {
 			altImage = "";
 		}
@@ -714,20 +707,7 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 			altName = "";
 		}
 		if (altImage != "") {
-			if (altImage.includes("images") == true) {
-				img = altImage;
-			}
-			else {
-				if (data.player.pervert != true) {
-					var checkForError = "";
-					img = "images/"+cssName+"/"+altImage;
-				}
-				else {
-					var checkForError = `onerror ="javascript:this.src='images/`+cssName+`/`+altImage+`'"`;
-					img = img.replace(".jpg", "");
-					img = "images/"+cssName+"/"+altImage+"P.jpg";
-				}
-			}
+			img = altImage;
 		}
 		if (altName != "") {
 			name = altName;
@@ -735,7 +715,7 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 		//console.log(tabIndex);
 		console.log(cssColor);
 		if (cancelTab != true) {
-			console.log("Now generating tab for " + name + ", linking to scene " + scene + " with the text " + text);
+			console.log("Now generating tab for " + name + ", linking to scene " + scene + " with the text " + text + " " +altImage);
 			writeSpeech(name, img, `
 				<p class="status"> Status: ` + tabTrust + `</p>	
 				<p class="switch" onclick="loadEncounter('`+data.story[tabIndex].index+`', '`+scene+`')">` + replaceCodenames(text) + `</p>
@@ -815,6 +795,7 @@ function writeSpecial (text) {
 function writeSpeech (name, img, text) {
 	var cssName = name;
 	var fullName = name;
+	console.log(img);
 	var cssColor = "#CCCCCC";
 	if (img == "" && img != 'none') {
 		if (data.player.pervert != true) {
@@ -834,11 +815,14 @@ function writeSpeech (name, img, text) {
 			}
 			else {
 				var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+img+`'"`;
-				img = img.replace(".jpg", "");
 				img = "images/"+cssName+"/"+img+"P.jpg";
 			}
 		}
 	}
+	if (img.includes('.jpgP') == true) {
+		img = img.replace('.jpgP', 'P');
+	}
+	console.log(img);
 	if (name == "player") {
 		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
 		fullName = data.player.name;
@@ -882,7 +866,7 @@ function writeSpeech (name, img, text) {
 				<p class = "textNameLobotomy">`+ fullName + `</p>
 				</div>
 				<div class="textBoxContentLobotomy">
-				<p>` + replaceCodenames(text) + `</p>
+				<p>aaaaaa` + replaceCodenames(text) + `</p>
 			</div>
 			<br>
 			`;

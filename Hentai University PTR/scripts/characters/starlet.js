@@ -912,6 +912,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "starletReshoot": {
+			writeMed("images/starlet/profile.jpg", "Art by Oreteki18kin");
+			writeFunction("writeEncounter('starletIntroReshoot1')", "Reshoot starletF's debut");
 			if (checkFlag('starlet', 'porno1') == true) {
 				writeMed("images/starlet/A-1-1.jpg", "Art by Oreteki18kin");
 				writeFunction("writeEncounter('starletAlleyReshoot1')", "Reshoot "+data.player.studio.film1Name);
@@ -920,6 +922,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeMed("images/starlet/B-1-2.jpg", "Art by Oreteki18kin");
 				writeFunction("writeEncounter('starletBoyfriendReshoot1')", "Reshoot "+data.player.studio.film2Name);
 			}
+			writeFunction("changeLocation(data.player.location)", "Change your mind and leave early");
+			break;
+		}
+		case "starletIntroReshoot1": {
+			writeText("Have starletF play the role of newly awoken buttslut or masochistic painal addict?");
+			writeFunction("writeEvent('starlet1a)", "Newly Awoken Buttslut");
+			writeFunction("writeEvent('starlet1b)", "Masochistic Painal Addict");
 			writeFunction("changeLocation(data.player.location)", "Change your mind and leave early");
 			break;
 		}
