@@ -657,7 +657,7 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 		var tabTrust;
 		var cancelTab = false;
 		var cssName = name;
-		var img = name;
+		var img = name+".jpg";
 		for (z = 0; z < data.story.length; z++) {
 			if (data.story[z].index == name) {
 				tabIndex = z;
