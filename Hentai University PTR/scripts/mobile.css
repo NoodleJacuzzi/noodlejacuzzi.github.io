@@ -888,3 +888,92 @@ img.textThumbLobotomy {
 	margin-left: 2.5%;
     width: 95%
 }
+
+.choiceTextPersona {
+	padding: 0px;
+	margin: 0px;
+	font-family: railway, times new roman, sans-serif;
+	font-size: 1.3em;
+	font-weight: normal;
+}
+.choiceTextPersona:hover{
+}
+.choiceFramePersona{
+    background: #000000;
+    color: #ffffff;
+    padding: 15px;
+    margin: 15px;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+	font-size:1.25rem;
+	font-weight: bold;
+    display: block;
+    width: fit-content;
+    max-width: 30vw;
+    margin: 15px auto;
+	border: solid 5px;
+}
+
+.choiceFramePersona:hover{
+    background: #ffffff;
+    color: #000000;
+	border-color: #000000;
+}
+
+.textBoxPersona p.switch {
+    color: #5fe6ec;
+	cursor: pointer;
+}
+.textBoxPersona p.switch::before {
+    content: '\027A4';
+    padding-right: 5px;
+	cursor: pointer;
+}
+
+.personaMenuButton {
+    background: #000000;
+    color: #ffffff;
+	border: solid 3px #ffffff;
+    padding: 15px;
+    margin: 15px;
+	border: solid 3px #ffffff;
+	border-radius: 0px;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+}
+.personaMenuButton:hover{
+    background: #ffffff;
+    color: #000000;
+	border: solid 3px #000000;
+}
+.pictureButtonPersona{
+	display: block;
+	position: absolute;
+    background: #000000;
+    color: #ffffff;
+	border: solid 3px #ffffff;
+	font-size:1.25rem;
+	font-weight: bold;
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
+    padding: 15px;
+    margin: 15px;
+    border: 3px solid;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+	-moz-transform: skew(3deg, 0deg);
+	-webkit-transform: skew(3deg, 0deg);
+	-o-transform: skew(3deg, 0deg);
+	-ms-transform: skew(3deg, 0deg);
+	transform: skew(3deg, 0deg);
+}
+.pictureButtonPersona:hover {
+    padding: 15px;
+    background: #ffffff;
+    color: #000000;
+	border: solid 3px #000000;
+}

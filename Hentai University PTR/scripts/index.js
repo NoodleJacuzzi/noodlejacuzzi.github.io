@@ -643,6 +643,13 @@ function printEncounterButton(character, scene, text, top, left, altName, altIma
 			`;
 			break;
 		}
+		case "persona": {
+			document.getElementsByClassName('playerRoom')[0].innerHTML += `
+				<div class="pictureButtonPersona" onclick='loadEncounter("`+character+`", "`+scene+`")'
+				style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+text+`</div>
+			`;
+			break;
+		}
 		default: {
 			document.getElementsByClassName('playerRoom')[0].innerHTML += `
 				<div class="pictureButton" onclick='loadEncounter("`+character+`", "`+scene+`")'
@@ -740,6 +747,16 @@ function writeText (text) {
 			`;
 			break;
 		}
+		case "persona": {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText' style='
+				margin: 30px 0;
+				font-size: 1.3em;
+				font-family: arial, times new roman, sans-serif;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
 		default: {
 			document.getElementById('output').innerHTML += `
 				<p class='rawText'>` + replaceCodenames(text) + `</p>
@@ -822,7 +839,6 @@ function writeSpeech (name, img, text) {
 	if (img.includes('.jpgP') == true) {
 		img = img.replace('.jpgP', 'P');
 	}
-	console.log(img);
 	if (name == "player") {
 		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
 		fullName = data.player.name;
@@ -831,6 +847,21 @@ function writeSpeech (name, img, text) {
 		}
 		else {
 			cssColor = "#fc53f1";
+		}
+	}
+	console.log(img);
+	if (data.player.style == "persona") {
+		var checkForError = `onerror ="javascript:this.src='`+img+`'"`;
+		if (data.player.pervert == true) {
+			if (name == "player") {
+				img = img.replace('.jpg', 'T.png');
+			}
+			else {
+				img = img.replace('P.jpg', 'T.png');
+			}
+		}
+		else {
+			img = img.replace('.jpg', 'T.png');
 		}
 	}
 	for (i = 0; i < data.story.length; i++) {
@@ -866,8 +897,30 @@ function writeSpeech (name, img, text) {
 				<p class = "textNameLobotomy">`+ fullName + `</p>
 				</div>
 				<div class="textBoxContentLobotomy">
-				<p>aaaaaa` + replaceCodenames(text) + `</p>
+				<p>` + replaceCodenames(text) + `</p>
 			</div>
+			<br>
+			`;
+			break;
+		}
+		case "persona": {
+			document.getElementById('output').innerHTML += `
+			<div class="textBoxPersona">
+				<div class = "personaThumb">
+					<img class = "textThumbPersona" src = "`+img+`"`+checkForError+`>
+				</div>
+				<div class="textBoxContentPersona">
+					<div class="nameBoxPersona">
+						<p class = "textNamePersona">`+ fullName + `</p>
+						<div class="textNamePersonaWhite"></div>
+						<div class="textNamePersonaBlack"></div>
+						<div class="personaNameArrow"></div>
+						<div class="personaNameArrowShadow"></div>
+					</div>
+					<div class="dialogueBoxPersona">
+						<p>` + replaceCodenames(text) + `</p>
+					</div>
+				</div>
 			<br>
 			`;
 			break;
@@ -904,6 +957,20 @@ function writeBig (img, cap) {
 	if (imagesDisabled != true) {
 		switch (data.player.style) {
 			case "lobotomy": {
+				var cssColor = "#CCCCCC";
+				for (i = 0; i < data.story.length; i++) {
+					if (img.includes(data.story[i].index) == true) {
+						cssColor = data.story[i].color;
+						break;
+					}
+				}
+				document.getElementById('output').innerHTML += `
+						<img class="bigPicture" style="border-color:`+cssColor+`; border-radius: 5px;" src="` + img + `"`+checkForError+` title="` + cap + `">
+					<br>
+				`;
+				break;
+			}
+			case "persona": {
 				var cssColor = "#CCCCCC";
 				for (i = 0; i < data.story.length; i++) {
 					if (img.includes(data.story[i].index) == true) {
@@ -983,6 +1050,34 @@ function writeFunction (name, func) {
 				transform: skew(`+reverseSkew+`deg, 0deg);
 			" 
 			onclick="` + name + `">
+				` + replaceCodenames(func) + `
+			</p>
+			</div>
+			`;
+			break;
+		}
+		case "persona": {
+			var skewNumber = 5;
+			var reverseSkew = skewNumber - skewNumber - skewNumber;
+			console.log('skewnumber is ' +skewNumber + ' rotationnumber is '+ rotationNumber);
+			document.getElementById('output').innerHTML += `
+			<div class="choiceFramePersona" onclick="` + name + `"
+			style ="
+				-moz-transform: skew(`+skewNumber+`deg, 0deg);
+				-webkit-transform: skew(`+skewNumber+`deg, 0deg);
+				-o-transform: skew(`+skewNumber+`deg, 0deg);
+				-ms-transform: skew(`+skewNumber+`deg, 0deg);
+				transform: skew(`+skewNumber+`deg, 0deg);
+			">
+			<p class="choiceTextPersona" 
+			style ="
+				-moz-transform: skew(`+reverseSkew+`deg, 0deg);
+				-webkit-transform: skew(`+reverseSkew+`deg, 0deg);
+				-o-transform: skew(`+reverseSkew+`deg, 0deg);
+				-ms-transform: skew(`+reverseSkew+`deg, 0deg);
+				transform: skew(`+reverseSkew+`deg, 0deg);
+			" 
+			>
 				` + replaceCodenames(func) + `
 			</p>
 			</div>
@@ -1251,6 +1346,58 @@ function updateMenu() {
 			console.log(data.player.style);
 			break;
 		}
+		case "persona": {
+			if (data.player.gender == "man") {
+				document.getElementById('playerImage').src = "scripts/gamefiles/characters/basicT.png";
+			}
+			else {
+				document.getElementById('playerImage').src = "scripts/gamefiles/characters/basilT.png";
+			}
+			document.getElementById('title').style.fontFamily = "norwester, times new roman, sans-serif";
+			document.getElementById('menu').style.fontFamily = "railway, times new roman, sans-serif";
+			document.getElementById('invButton').style.borderRadius = "0px";
+			document.getElementById('invButton').style.border = "3px solid";
+			document.getElementById('invButton').style.transform = "skew(3deg, 0deg)";
+			document.getElementById('invButton').classList.add('personaMenuButton');
+			document.getElementById('phoneButton').style.borderRadius = "0px";
+			document.getElementById('phoneButton').style.border = "3px solid";
+			document.getElementById('phoneButton').style.transform = "skew(3deg, 0deg)";
+			document.getElementById('phoneButton').classList.add('personaMenuButton');
+			document.getElementById('logButton').style.borderRadius = "0px";
+			document.getElementById('logButton').style.border = "3px solid";
+			document.getElementById('logButton').style.transform = "skew(3deg, 0deg)";
+			document.getElementById('logButton').classList.add('personaMenuButton');
+			document.getElementById('saveButton').style.borderRadius = "0px";
+			document.getElementById('saveButton').style.border = "3px solid";
+			document.getElementById('saveButton').style.transform = "skew(3deg, 0deg)"
+			document.getElementById('saveButton').classList.add('personaMenuButton');;
+			document.getElementById('restartButton').style.borderRadius = "0px";
+			document.getElementById('restartButton').style.border = "3px solid";
+			document.getElementById('restartButton').style.transform = "skew(3deg, 0deg)";
+			document.getElementById('restartButton').classList.add('personaMenuButton');
+			document.getElementById('imgButton').style.borderRadius = "0px";
+			document.getElementById('imgButton').style.border = "3px solid";
+			document.getElementById('imgButton').style.transform = "skew(3deg, 0deg)";
+			document.getElementById('imgButton').classList.add('personaMenuButton');
+			document.getElementById('mobButton').style.borderRadius = "0px";
+			document.getElementById('mobButton').style.border = "3px solid";
+			document.getElementById('mobButton').style.transform = "skew(3deg, 0deg)";
+			document.getElementById('mobButton').classList.add('personaMenuButton');
+			document.getElementById('phoneButtonMobile').style.borderRadius = "0px";
+			document.getElementById('phoneButtonMobile').style.border = "3px solid";
+			document.getElementById('phoneButtonMobile').style.transform = "skew(3deg, 0deg)";
+			document.getElementById('phoneButtonMobile').classList.add('personaMenuButton');
+			document.getElementById('playerImage').style.borderRadius = "0px";
+			document.getElementById('playerImage').style.border = "0px";
+			if (data.player.pervert != true) {
+				document.getElementById('playerImage').style.borderColor = "#86b4dc";
+			}
+			else {
+				document.getElementById('playerImage').style.borderColor = "#fc53f1";
+			}
+			console.log(data.player.style);
+			break;
+		}
 		case "basic": {
 			document.getElementById('title').style.fontFamily = "arial, sans-serif";
 			document.getElementById('menu').style.fontFamily = "arial, sans-serif";
@@ -1258,27 +1405,35 @@ function updateMenu() {
 			document.getElementById('invButton').style.borderRadius = "5px";
 			document.getElementById('invButton').style.border = "none";
 			document.getElementById('invButton').style.borderBottom = "3px solid";
+			document.getElementById('invButton').classList.remove('personaMenuButton');
 			document.getElementById('phoneButton').style.borderRadius = "5px";
 			document.getElementById('phoneButton').style.border = "none";
 			document.getElementById('phoneButton').style.borderBottom = "3px solid";
+			document.getElementById('phoneButton').classList.remove('personaMenuButton');
 			document.getElementById('logButton').style.borderRadius = "5px";
 			document.getElementById('logButton').style.border = "none";
 			document.getElementById('logButton').style.borderBottom = "3px solid";
+			document.getElementById('logButton').classList.remove('personaMenuButton');
 			document.getElementById('saveButton').style.borderRadius = "5px";
 			document.getElementById('saveButton').style.border = "none";
 			document.getElementById('saveButton').style.borderBottom = "3px solid";
+			document.getElementById('saveButton').classList.remove('personaMenuButton');
 			document.getElementById('restartButton').style.borderRadius = "5px";
 			document.getElementById('restartButton').style.border = "none";
 			document.getElementById('restartButton').style.borderBottom = "3px solid";
+			document.getElementById('restartButton').classList.remove('personaMenuButton');
 			document.getElementById('imgButton').style.borderRadius = "5px";
 			document.getElementById('imgButton').style.border = "none";
 			document.getElementById('imgButton').style.borderBottom = "3px solid";
+			document.getElementById('imgButton').classList.remove('personaMenuButton');
 			document.getElementById('mobButton').style.borderRadius = "5px";
 			document.getElementById('mobButton').style.border = "none";
 			document.getElementById('mobButton').style.borderBottom = "3px solid";
+			document.getElementById('mobButton').classList.remove('personaMenuButton');
 			document.getElementById('phoneButtonMobile').style.borderRadius = "5px";
 			document.getElementById('phoneButtonMobile').style.border = "none";
 			document.getElementById('phoneButtonMobile').style.borderBottom = "3px solid";
+			document.getElementById('phoneButtonMobile').classList.remove('personaMenuButton');
 			document.getElementById('playerImage').style.borderRadius = "3px";
 			document.getElementById('playerImage').style.borderColor = "#FFFFFF";
 			break;
@@ -1857,6 +2012,13 @@ function diagnostic() {
 			updateMenu();
 			writeEncounter('cheat');
 			writeSpecial("Lobotomy visual style active!");
+			break;
+		}
+		case "persona": {
+			data.player.style = "persona";
+			updateMenu();
+			writeEncounter('cheat');
+			writeSpecial("Persona visual style active!");
 			break;
 		}
 		case "stiggy752": {

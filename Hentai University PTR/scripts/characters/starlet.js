@@ -160,7 +160,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Hi, I'm-");
 			writeSpeech("starlet", "", "Mom, this guy's a producer, and I've already shot two scenes with him!");
 			writeSpeech("player", "", "I... If you could just look at th-");
-			writeSpeech("starlet", "", "We've done a hard anal scene and a ass-to-pussy creampie! I want you to see the real me, this is who I am!");
+			writeSpeech("starlet", "", "We've done a hard anal scene and an ass-to-pussy creampie! I want you to see the real me, this is who I am!");
 			writeText("The room is starting to spin.");
 			writeSpeech("pornstar", "", "On camera? Have they been published?");
 			writeSpeech("starlet", "", "Yep and nope! Me and playerMister are the only ones with access to the videos.");
@@ -209,8 +209,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("starlet", "", "Then I'm retiring. If she really thinks I can't handle it, then maybe she's right. Maybe I should be a mathematician, or a fry cook.");
 			writeText("Well, that also solves your problem. Her giving up on her dreams of porn would make you look good with Victoria.");
 			writeText("She really does look conflicted though. She can't do this without you. Will she really toss aside her dreams?");
-			writeFunction("writeEncounter('starlet4a')", "Okay, let's go");
-			writeFunction("writeEncounter('starlet4c')", "You should give up");
+			writeFunction("writeEncounter('starlet5a')", "Okay, let's go");
+			writeFunction("writeEncounter('starlet5c')", "You should give up");
 			break;
 		}
 		case "starlet5c": {

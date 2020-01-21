@@ -183,6 +183,13 @@ function printLocationButton(name, top, left, target) {
 			`;
 			break;
 		}
+		case "persona": {
+			document.getElementsByClassName('playerRoom')[0].innerHTML += `
+				<div class="pictureButtonPersona" onclick='changeLocation("`+target+`")'
+				style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+name+`</div>
+			`;
+			break;
+		}
 		default: {
 			document.getElementsByClassName('playerRoom')[0].innerHTML += `
 				<div class="pictureButton" onclick='changeLocation("`+target+`")'
