@@ -1525,6 +1525,13 @@ function updateSave() {
 		data.story.push(goof);
 		console.log(data.story);
 	}
+	if (data.player.version == 5) {
+		console.log('version 5 detected, updating save');
+		data.player.version = 6;
+		var goof = {index: "housekeep", fName: "Anri", lName: "Ramona", trust: 0, encountered: false, textEvent: "", met: false, color: "#df5877", author: "CryptoGreek", artist: "Kinta no Mousou"};
+		data.story.push(goof);
+		console.log(data.story);
+	}
 	saveSlot(110);
 }
 
