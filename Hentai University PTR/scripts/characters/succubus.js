@@ -190,9 +190,17 @@ function writeEncounter(name) { //Plays the actual encounter.
 					}
 				}
 			}
-			if (checkTrust('succubus') == 71) {
-				writeSpeech("succubus", "demon.jpg", "Hey, uh, the boi I found isn't ready yet. You maybe just wanna skip that process and I go straight to rewarding you?");
-				writeFunction("writeEncounter('reward')", "Test next reward level");
+			if (checkFlag('succubus', 'housekeepS') != true) {
+				writeSpeech("succubus", "demon.jpg", "I saw this flier in town while in disguise advertising for a maid service. You wanna check it out?");
+				writeFunction("writeEncounter('housekeepStart')", "housekeepF housekeepL");
+			}
+			else {
+				if (checkFlag('succubus', 'housekeepF') != true) {
+					writeSpeech("succubus", "demon.jpg", "You hired a maid yet? Honestly, something seems fishy about them.");
+					if (checkTrust('housekeep') > 20) {
+						writeFunction("writeEncounter('housekeepEnd')", "Talk about housekeepF");
+					}
+				}
 			}
 			if (checkFlag('succubus', 'mephF') != true) {
 				if (checkFlag('succubus', 'mission') == true) {
@@ -279,6 +287,49 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Useless demons don't get rewards. ");
 			writeSpeech("succubus", "demon.jpg", "Well, I guess I'll need to work for my living then. Speaking of which...");
 			addFlag('succubus', 'mejiF');
+			writeFunction("writeEncounter('reward')", "Get started");
+			break;
+		}
+		case "housekeepStart": {
+			writeSpeech("succubus", "demon.jpg", "I saw a flier advertising a maid service in town, looks like more of a fetish thing than an actual cleaner though. Call 'em in, get them alone, work your magic. Seems like an easy catch.");
+			writeSpeech("player", "", "Can I see the flier?");
+			writeSpeech("succubus", "demon.jpg", "I would, but...<br>Listen, I'd be at least a little cautious with this one.");
+			writeSpeech("player", "", "Why? Is it a front for another succubus or something?");
+			writeSpeech("succubus", "demon.jpg", "No.<br>Because I got a papercut on the flier.");
+			writeSpeech("player", "", "... I'm sorry?");
+			writeSpeech("succubus", "demon.jpg", "Listen dude, I'm a demon. I don't experience most of the inconveniences of modern life. I get a bad omen, I stay away.");
+			writeSpeech("player", "", "I'll be sure to be careful around the dangerous edges of the paper then, and keep and eye out.");
+			writeSpeech("succubus", "demon.jpg", "Hah hah, very funny. Lemme know if the maid stuff pans out, I can help you dirty up whatever they clean.");
+			writeText("succubusF gives you a sly wink.");
+			addFlag('succubus', 'housekeepS');
+			writeFunction("writeEncounter('caseSelect')", "Back");
+			if (checkTrust('housekeep') > 20) {
+				writeEncounter('housekeepEarly');
+			}
+			break;
+		}
+		case "housekeepEnd": {
+			writeSpeech("succubus", "demon.jpg", "You hired a maid yet? Honestly, something seems fishy about them.");
+			writeSpeech("player", "", "Yeah, not sure what you mean. Honestly they seem pretty chill.");
+			writeSpeech("succubus", "demon.jpg", "Well, I've been off about these things before. So, I guess-<br>God damn, what's that smell?");
+			writeSpeech("player", "", "My place has never been more clean, what's the matter?");
+			writeSpeech("succubus", "demon.jpg", "That's just it, it's really fuckin' clean. As in I feel like the Buddha scrubbed the place down. A human did this?<br>Props, honestly.");
+			writeText("You lean back onto the bed, succubusF comes over and sniffs your collar.");
+			writeSpeech("succubus", "demon.jpg", "Honestly, you stink of purity yourself. How about I clean that maid's touch right off of you, and we get seriously dirty?");
+			addFlag('succubus', 'housekeepF');
+			writeFunction("writeEncounter('reward')", "Get started");
+			break;
+		}
+		case "housekeepEarly": {
+			writeSpeech("player", "", "One step ahead of you. They've already been here, actually.");
+			writeSpeech("succubus", "demon.jpg", "Thought as much, the place is really clean, like on a spiritual level. As in I feel like the Buddha scrubbed the place down. A human did this?<br>Props, honestly. Anything seem off about them?");
+			writeSpeech("player", "", "No, why? Is he a succubus in disguise?");
+			writeSpeech("succubus", "demon.jpg", "No.<br>Because I got a papercut on the flier.");
+			writeSpeech("player", "", "... I'm sorry?");
+			writeSpeech("succubus", "demon.jpg", "Listen dude, I'm a demon. I don't experience most of the inconveniences of modern life. I get a bad omen, I stay away.");
+			writeSpeech("player", "", "I'll be sure to be careful around the dangerous edges of the paper then, and keep and eye out.");
+			writeSpeech("succubus", "demon.jpg", "Hah hah, very funny. Honestly, you stink of purity yourself. How about I clean that maid's touch right off of you, and we get seriously dirty?");
+			addFlag('succubus', 'housekeepF');
 			writeFunction("writeEncounter('reward')", "Get started");
 			break;
 		}
