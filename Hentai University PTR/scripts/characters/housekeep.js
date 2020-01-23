@@ -12,12 +12,12 @@ var logbook = {
 };
 
 var newItems = [
-	{name: "Skimpy Bikini", 				key: true, 		price: 20, 	image: "scripts/gamefiles/items/leotard.jpg", description: "An outrageously skimpy bikini that covers almost nothing. USING TEMP IMAGE: LEOTARD"},
+	//{name: "Skimpy Bikini", 				key: true, 		price: 20, 	image: "scripts/gamefiles/items/leotard.jpg", description: "An outrageously skimpy bikini that covers almost nothing. USING TEMP IMAGE: LEOTARD"},
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "housekeep0", name: "There's a flier hanging up near you.", location: 'street', time: "MorningEvening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both", altName: "Loose Flier", altImage: "images/housekeep/0-1.jpg",},
-	{index: "housekeep1", name: "Order some servicing", location: 'playerHouse', time: "Evening", itemReq: "Flier", trustMin: -5, trustMax: -5, type: "tab", top: 0, left: 0, day: "both", altName: "Maid in Heaven Cleaning Services", altImage: "images/housekeep/0-1.jpg",},
+	{index: "housekeep1", name: "Order some servicing", location: 'playerHouse', time: "Evening", itemReq: "Flier", trustMin: -5, trustMax: -5, type: "tab", top: 0, left: 0, day: "both", altName: "Maid Services", altImage: "images/housekeep/0-1.jpg",},
 	{index: "housekeep2", name: "Call on Anri for some service ($15)", location: 'playerHouse', time: "Evening", itemReq: "", trustMin: 40, trustMax: 50, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 ];
 
@@ -71,7 +71,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("<i><b>KNOCK KNOCK</b></i>");
 			writeText("Standing up, you open the door to check...");
 			writeText("Based on the outfit, it's pretty obvious that it's your maid, so you gesture for them to come in quickly before your neighbors see anything.");
-			writeSpeech("housekeep","","HIDDENYou're Tomara, then?");
+			writeSpeech("housekeep","","HIDDENYou're playerF, then?");
 			writeSpeech("player","","Yeah, that's me. And your name is...?");
 			writeText("He smiles gently, kneeling down in front of you.");
 			writeBig("images/housekeep/1-1.jpg","Art by Kinta no Mousou");
@@ -413,7 +413,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","I just came, so...");
 			writeSpeech("housekeep","","Ah, sorry.");
 			writeText("He does look a bit apologetic as he glances up to you.");
-			writeSpeech("housekeep","","You're just so fun to tease, I have trouble holding back...");
+			writeSpeech("housekeep","","You're just so fun to tease, I had trouble holding back...");
 			writeText("At that, he leans forward and gently presses his lips to your shaft.");
 			writeBig("images/housekeep/1-4.jpg","Art by Kinta no Mousou");
 			writeSpeech("housekeep","","There - all clean~!");
@@ -638,8 +638,11 @@ function writeEvent(name) { //Plays the actual event.
 				writeText("Almost like housekeepF can sense that, his breathing gets heavier as focuses his kisses on your sensitive head.");
 				writeText("A moment later, you feel yourself pass his lips as he takes your head into his mouth, his tongue still swirling against you as his fingers make a ring as he jerks you off.");
 				writeText("He quickly starts to bob up and down, his hand trailing behind his mouth as he breathes in sharply...!");
-				writeSpeech("player","","<i><b>NNGH~!</b></i>");
-				writeText("Your hips buck forward as he pushes into you, but with his nose already pressed agaisnt you, you can't get any deeper.");
+				if(data.player.gender == "man")
+					writeSpeech("player","","<i><b>Nngh...!</b></i>");
+				else
+					writeSpeech("player","","<i><b>NNGH~!</b></i>");
+				writeText("Your hips buck forward as he pushes into you, but with his nose already pressed against your abdomen, you can't get any deeper.");
 				writeText("He starts swallowing around your length, massaging you with his throat as you feel his tongue keep shifting around.");
 				writeText("When he pulls himself off of your cock, it's with a resoundingly pleasant <i>pop</i> as he smirks at you.");
 				writeSpeech("housekeep","","Nnn~... You know, a cock like this could make a <i>complete <b>mess</b></i> out of me, you know that?");
@@ -664,7 +667,7 @@ function writeEvent(name) { //Plays the actual event.
 				writeText("He giggles, a finger delicately tracing your jaw.");
 				writeSpeech("housekeep","","I get <i>very</i> enthusiastic when it comes to practicing my <i>services</i>. Call for me again, and I'll show you <i>exactly</i> how I mean.");
 				writeText("With that, he takes a step back to appraise the room, the floor, and your body, before nodding.");
-				writeSpeech("housekeep","","That one was free, by the way... As long as you promise to call me back sometime~");
+				writeSpeech("housekeep","","Just a reminder, that one was free, by the way... As long as you promise to call me back sometime~ You seem like you'll be fun to serve~!");
 				writeSpeech("player","","I'll take that deal...");
 				writeText("Nodding happily, housekeepF gives you a small little curtsy.");
 				if(data.player.gender == "man")
