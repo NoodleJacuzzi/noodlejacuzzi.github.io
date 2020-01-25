@@ -388,7 +388,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				}
 				else {
 					if (checkFlag('starlet', 'brainstorming3') != true) {
-						//writeFunction("writeEncounter('starletMaskSetup')", "Brainstorm ideas");
+						writeFunction("writeEncounter('starletMaskSetup')", "Brainstorm ideas");
 						if (checkFlag('starlet', 'chat3') == true) {
 							writeFunction("writeEncounter('starletProposal')", "starletF and pornstarF seem oddly excited about something today");
 						}
