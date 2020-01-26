@@ -83,8 +83,8 @@ var locationArray = [
 		{name: "Streets", top: 55, left: 40, type: "location", target: "street", time: "MorningEvening",},
 		{name: "Your Home", top: 45, left: 70, type: "location", target: "playerHouse", time: "MorningEvening",},
 		{name: "Shopping District", top: 20, left: 60, type: "location", target: "shoppingDistrict", time: "MorningEvening",},
-		{name: "Vintage Street", top: 10, left: 30, type: "location", target: "shoppingDistrict", time: "MorningEvening",},
-		{name: "Park District", top: 65, left: 10, type: "location", target: "shoppingDistrict", time: "MorningEvening",},
+		{name: "Vintage Street", top: 10, left: 30, type: "location", target: "vintageStreet", time: "MorningEvening",},
+		{name: "Park District", top: 65, left: 10, type: "location", target: "parkDistrict", time: "MorningEvening",},
 	],},
 	{index: "schoolMap", buttons: [
 		{name: "Back to Town", 			top: 82, 	left: 40, 	type: "location", target: "map", time: "MorningEvening",},
@@ -146,9 +146,7 @@ function changeLocation(n) {
 				}
 			}
 			if (data.player.time != "Night" && data.player.location != "map"  && data.player.location != "schoolMap" && checkItem("Town Map") == true) {
-				document.getElementsByClassName('playerRoom')[0].innerHTML += `
-					<div class="pictureButton" onclick="changeLocation('map')" style="top: 0%; left: 0%; max-width: 30%;">Use Map</div>
-				`;
+				printEncounterButton('system', 'map', 'Use Map', 0, 0);
 			}
 			if (n == "store") {
 				loadShop();
