@@ -747,6 +747,16 @@ function writeText (text) {
 			`;
 			break;
 		}
+		case "royalty": {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText' style='
+				margin: 20px 200px;
+				font-size: 1.3em;
+				font-family: arial, times new roman, sans-serif;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
 		case "persona": {
 			document.getElementById('output').innerHTML += `
 				<p class='rawText' style='
@@ -850,7 +860,7 @@ function writeSpeech (name, img, text) {
 		}
 	}
 	console.log(img);
-	if (data.player.style == "persona") {
+	if (data.player.style == "persona" || data.player.style == "royalty") {
 		var checkForError = `onerror ="javascript:this.src='`+img+`'"`;
 		if (data.player.pervert == true) {
 			if (name == "player") {
@@ -889,16 +899,34 @@ function writeSpeech (name, img, text) {
 			`+cssColor+` 210px, 
 			#000000 210px);">
 				<div class = "lobotomyThumb" style="background-color: `+cssColor+`">
-				<div class = "lobotomyThumbBorder">
-				<img class = "textThumbLobotomy" src = "
-					`+ img +`
-				"`+checkForError+`>
-				</div>
-				<p class = "textNameLobotomy">`+ fullName + `</p>
+					<div class = "lobotomyThumbBorder">
+						<img class = "textThumbLobotomy" src = "
+							`+ img +`
+						"`+checkForError+`>
+					</div>
+					<p class = "textNameLobotomy">`+ fullName + `</p>
 				</div>
 				<div class="textBoxContentLobotomy">
 				<p>` + replaceCodenames(text) + `</p>
 			</div>
+			<br>
+			`;
+			break;
+		}
+		case "royalty": {
+			document.getElementById('output').innerHTML += `
+			<div class="textBoxRoyalty">
+				<div class = "royaltyThumb">
+					<img class = "textThumbRoyalty" src = "`+img+`"`+checkForError+`>
+					<div class="nameBoxRoyalty" style = "border-color:`+cssColor+`;">
+						<p class = "textNameRoyalty" style = "color:`+cssColor+`;">`+fullName+`</p>
+					</div>
+				</div>
+				<div class="textBoxContentRoyalty">
+					<div class="dialogueBoxRoyalty" style = "border-color:`+cssColor+`">
+						<p>` + replaceCodenames(text) + `</p>
+					</div>
+				</div>
 			<br>
 			`;
 			break;
@@ -911,13 +939,13 @@ function writeSpeech (name, img, text) {
 				</div>
 				<div class="textBoxContentPersona">
 					<div class="nameBoxPersona">
-						<p class = "textNamePersona">`+ fullName + `</p>
-						<div class="textNamePersonaWhite"></div>
+						<p class = "textNamePersona" style = "color:`+cssColor+`">`+ fullName + `</p>
+						<div class="textNamePersonaWhite" style = "border-color:`+cssColor+`"></div>
 						<div class="textNamePersonaBlack"></div>
 						<div class="personaNameArrow"></div>
-						<div class="personaNameArrowShadow"></div>
+						<div class="personaNameArrowShadow" style = "border-right-color:`+cssColor+`"></div>
 					</div>
-					<div class="dialogueBoxPersona">
+					<div class="dialogueBoxPersona" style = "border-color:`+cssColor+`">
 						<p>` + replaceCodenames(text) + `</p>
 					</div>
 				</div>
@@ -1347,6 +1375,58 @@ function updateMenu() {
 			break;
 		}
 		case "persona": {
+			if (data.player.gender == "man") {
+				document.getElementById('playerImage').src = "scripts/gamefiles/characters/basicT.png";
+			}
+			else {
+				document.getElementById('playerImage').src = "scripts/gamefiles/characters/basilT.png";
+			}
+			document.getElementById('title').style.fontFamily = "norwester, times new roman, sans-serif";
+			document.getElementById('menu').style.fontFamily = "railway, times new roman, sans-serif";
+			document.getElementById('invButton').style.borderRadius = "0px";
+			document.getElementById('invButton').style.border = "3px solid";
+			document.getElementById('invButton').style.transform = "skew(3deg, 0deg)";
+			document.getElementById('invButton').classList.add('personaMenuButton');
+			document.getElementById('phoneButton').style.borderRadius = "0px";
+			document.getElementById('phoneButton').style.border = "3px solid";
+			document.getElementById('phoneButton').style.transform = "skew(3deg, 0deg)";
+			document.getElementById('phoneButton').classList.add('personaMenuButton');
+			document.getElementById('logButton').style.borderRadius = "0px";
+			document.getElementById('logButton').style.border = "3px solid";
+			document.getElementById('logButton').style.transform = "skew(3deg, 0deg)";
+			document.getElementById('logButton').classList.add('personaMenuButton');
+			document.getElementById('saveButton').style.borderRadius = "0px";
+			document.getElementById('saveButton').style.border = "3px solid";
+			document.getElementById('saveButton').style.transform = "skew(3deg, 0deg)"
+			document.getElementById('saveButton').classList.add('personaMenuButton');;
+			document.getElementById('restartButton').style.borderRadius = "0px";
+			document.getElementById('restartButton').style.border = "3px solid";
+			document.getElementById('restartButton').style.transform = "skew(3deg, 0deg)";
+			document.getElementById('restartButton').classList.add('personaMenuButton');
+			document.getElementById('imgButton').style.borderRadius = "0px";
+			document.getElementById('imgButton').style.border = "3px solid";
+			document.getElementById('imgButton').style.transform = "skew(3deg, 0deg)";
+			document.getElementById('imgButton').classList.add('personaMenuButton');
+			document.getElementById('mobButton').style.borderRadius = "0px";
+			document.getElementById('mobButton').style.border = "3px solid";
+			document.getElementById('mobButton').style.transform = "skew(3deg, 0deg)";
+			document.getElementById('mobButton').classList.add('personaMenuButton');
+			document.getElementById('phoneButtonMobile').style.borderRadius = "0px";
+			document.getElementById('phoneButtonMobile').style.border = "3px solid";
+			document.getElementById('phoneButtonMobile').style.transform = "skew(3deg, 0deg)";
+			document.getElementById('phoneButtonMobile').classList.add('personaMenuButton');
+			document.getElementById('playerImage').style.borderRadius = "0px";
+			document.getElementById('playerImage').style.border = "0px";
+			if (data.player.pervert != true) {
+				document.getElementById('playerImage').style.borderColor = "#86b4dc";
+			}
+			else {
+				document.getElementById('playerImage').style.borderColor = "#fc53f1";
+			}
+			console.log(data.player.style);
+			break;
+		}
+		case "royalty": {
 			if (data.player.gender == "man") {
 				document.getElementById('playerImage').src = "scripts/gamefiles/characters/basicT.png";
 			}
@@ -2026,6 +2106,13 @@ function diagnostic() {
 			updateMenu();
 			writeEncounter('cheat');
 			writeSpecial("Persona visual style active!");
+			break;
+		}
+		case "royalty": {
+			data.player.style = "royalty";
+			updateMenu();
+			writeEncounter('cheat');
+			writeSpecial("Royalty visual style active!");
 			break;
 		}
 		case "stiggy752": {

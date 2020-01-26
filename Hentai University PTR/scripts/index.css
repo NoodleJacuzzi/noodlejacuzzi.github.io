@@ -797,6 +797,7 @@ div#output {
 	-o-transform: skew(5deg, 0deg);
 	-ms-transform: skew(5deg, 0deg);
 	transform: skew(5deg, 0deg);
+	margin-bottom: 0px;
 	color: black;
 }
 img.textThumbLobotomy {
@@ -1047,6 +1048,150 @@ img.textThumbPersona {
 	transform: skew(3deg, 0deg);
 }
 .pictureButtonPersona:hover {
+    padding: 15px;
+    background: #ffffff;
+    color: #000000;
+	border: solid 3px #000000;
+}
+
+/*Royalty Schema*/
+.textBoxRoyalty {
+	position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 5px 0;
+    padding: 0px;
+    width: 100%;
+	overflow: hidden;
+}
+img.textThumbRoyalty {
+    height: 180px;
+    width: 180px;
+    /*box-shadow: -5px 5px var( --character-color);*/
+    flex: none;
+}
+.textBoxContentRoyalty {
+	font-size: 1.4em;
+	font-family: railway, times new roman, sans-serif;
+	font-style: normal;
+	margin-left: 40px;
+	margin-top: 5px;
+	width: 90%;
+}
+.royaltyThumb {
+    display: inline-block;
+    width: 160px;
+}
+.nameBoxRoyalty {
+	width:180px;
+	background-color: #000;
+	margin-top: -29px;
+	border: 3px solid;
+	border-radius: 5px;
+	z-index:1;
+	position: absolute;
+}
+.textNameRoyalty {
+    font-size: 1.5em;
+	font-weight: bold;
+	font-family: norwester, times new roman, sans-serif;
+	z-index: 1;
+	margin: auto;
+	text-align: center;
+}
+.dialogueBoxRoyalty {
+    width: 100%;
+	border: 3px solid white;
+	border-radius: 5px;
+	background-color: #000;
+	padding: 0px 15px;
+	height: 180px;
+}
+
+.choiceTextRoyalty {
+	padding: 0px;
+	margin: 0px;
+	font-family: railway, times new roman, sans-serif;
+	font-size: 1.3em;
+	font-weight: normal;
+}
+.choiceTextRoyalty:hover{
+}
+.choiceFrameRoyalty{
+    background: #000000;
+    color: #ffffff;
+    padding: 15px;
+    margin: 15px;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+	font-size:1.25rem;
+	font-weight: bold;
+    display: block;
+    width: fit-content;
+    max-width: 30vw;
+    margin: 15px auto;
+	border: solid 5px;
+}
+
+.choiceFrameRoyalty:hover{
+    background: #ffffff;
+    color: #000000;
+	border-color: #000000;
+}
+
+.textBoxRoyalty p.switch {
+    color: #5fe6ec;
+	cursor: pointer;
+}
+.textBoxRoyalty p.switch::before {
+    content: '\027A4';
+    padding-right: 5px;
+	cursor: pointer;
+}
+
+.royaltyMenuButton {
+    background: #000000;
+    color: #ffffff;
+	border: solid 3px #ffffff;
+    padding: 15px;
+    margin: 15px;
+	border: solid 3px #ffffff;
+	border-radius: 0px;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+}
+.royaltyMenuButton:hover{
+    background: #ffffff;
+    color: #000000;
+	border: solid 3px #000000;
+}
+.pictureButtonRoyalty{
+	display: block;
+	position: absolute;
+    background: #000000;
+    color: #ffffff;
+	border: solid 3px #ffffff;
+	font-size:1.25rem;
+	font-weight: bold;
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
+    padding: 15px;
+    margin: 15px;
+    border: 3px solid;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+	-moz-transform: skew(3deg, 0deg);
+	-webkit-transform: skew(3deg, 0deg);
+	-o-transform: skew(3deg, 0deg);
+	-ms-transform: skew(3deg, 0deg);
+	transform: skew(3deg, 0deg);
+}
+.pictureButtonRoyalty:hover {
     padding: 15px;
     background: #ffffff;
     color: #000000;
