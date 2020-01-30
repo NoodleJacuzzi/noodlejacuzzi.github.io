@@ -1008,6 +1008,8 @@ img.textThumbPersona {
 }
 
 .personaMenuButton {
+	font-size: 1.2em;
+	letter-spacing: .2em;
     background: #000000;
     color: #ffffff;
 	border: solid 3px #ffffff;
@@ -1018,13 +1020,18 @@ img.textThumbPersona {
     transition: 0.25s;
     text-align: center;
 	cursor: pointer;
+	-moz-transform: skew(5deg, 0deg);
+	-webkit-transform: skew(5deg, 0deg);
+	-o-transform: skew(5deg, 0deg);
+	-ms-transform: skew(5deg, 0deg);
+	transform: skew(5deg, 0deg);
 }
 .personaMenuButton:hover{
-    background: #ffffff;
-    color: #000000;
-	border: solid 3px #000000;
+    background: rgba(0,0,0);
+    filter:invert(1);
 }
 .pictureButtonPersona{
+	letter-spacing: .2em;
 	display: block;
 	position: absolute;
     background: #000000;
@@ -1054,6 +1061,10 @@ img.textThumbPersona {
 	border: solid 3px #000000;
 }
 
+
+#buttonMenu {
+	display:inline-block;
+}
 /*Royalty Schema*/
 .textBoxRoyalty {
 	position: relative;

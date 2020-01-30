@@ -65,6 +65,17 @@ var data = {
 	],
 }
 
+var menuButtons = [
+{ID: "invButton", name:"INVENTORY",},
+{ID: "imgButton", name:"TOGGLE IMAGES",},
+{ID: "phoneButton", name:"PHONE",},
+{ID: "logButton", name:"LOGBOOK",},
+{ID: "saveButton", name:"SAVE/LOAD",},
+{ID: "restartButton", name:"RESTART",},
+{ID: "mobButton", name:"MOBILE VERSION",},
+{ID: "phoneButtonMobile", name:"PHONE",},
+]
+
 var ghostArray = [
 	{name: "Ancient Chaplain", 		difficulty: 3, rarity: "01", time:"MorningEvening", top: 35, left: 20, requirement: 0, location: "computerRoom", 
 	description: ""},
@@ -644,9 +655,170 @@ function printEncounterButton(character, scene, text, top, left, altName, altIma
 			break;
 		}
 		case "persona": {
+			var ransomStringStart = text;
+			ransomStringStart = ransomStringStart.toLowerCase();
+			ransomStringStart = ransomStringStart.charAt(0).toUpperCase() + ransomStringStart.slice(1);
+			console.log(ransomStringStart);
+			var ransomStringEnd = "";
+			if (ransomStringStart.charAt(2) == "g" || ransomStringStart.charAt(2) == "v") {
+				for (var ransomCounter = 0; ransomCounter < ransomStringStart.length; ransomCounter++) {
+					switch (ransomCounter) {
+						case 0:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+						break;
+						case 1:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "";
+						break;
+						case 2:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+						case 3:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						case 4:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: scale(1.4);";
+						break;
+						case 5:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(15deg);";
+						break;
+						case 6:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: scale(1.4);";
+						break;
+						case 7:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(5deg);";
+						break;
+						case 10:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "";
+							if (ransomStringStart.length > 15) {
+								//ransomStringEnd += "<br>"
+							}
+						break;
+						case 11:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						default:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+					}
+					console.log('replacing menu character' + ransomCounter + ' with the style of ' + ransomFont+ransomBG+ransomColor);
+					console.log(ransomStringEnd);
+					ransomStringEnd += "<span style='display:inline-block;white-space:pre;"+ransomFont+ransomBG+ransomColor+ransomRotate+"'>"+ransomStringStart.charAt(ransomCounter)+"</span>";
+				}
+			}
+			else {
+				for (var ransomCounter = 0; ransomCounter < ransomStringStart.length; ransomCounter++) {
+					switch (ransomCounter) {
+						case 0:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+						case 1:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+						break;
+						case 2:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: scale(1.4);";
+						break;
+						case 3:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						case 4:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(15deg);";
+						break;
+						case 5:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+						case 6:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+						break;
+						case 7:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(-15deg);";
+						break;
+						case 10:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "";
+							if (ransomStringStart.length > 15) {
+								//ransomStringEnd += "<br>"
+							}
+						break;
+						case 11:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						default:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+					}
+					//console.log('replacing menu character' + ransomCounter + ' with the style of ' + ransomFont+ransomBG+ransomColor);
+					//console.log(ransomStringEnd);
+						ransomStringEnd += "<span style='display:inline-block;white-space:pre;"+ransomFont+ransomBG+ransomColor+ransomRotate+"'>"+ransomStringStart.charAt(ransomCounter)+"</span>";
+				}
+			}
 			document.getElementsByClassName('playerRoom')[0].innerHTML += `
 				<div class="pictureButtonPersona" onclick='loadEncounter("`+character+`", "`+scene+`")'
-				style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+text+`</div>
+				style="top: `+top+`%; left: `+left+`%; max-width: 40%;">`+ransomStringEnd+`</div>
 			`;
 			break;
 		}
@@ -1348,22 +1520,10 @@ function updateMenu() {
 		case "lobotomy": {
 			document.getElementById('title').style.fontFamily = "norwester, times new roman, sans-serif";
 			document.getElementById('menu').style.fontFamily = "railway, times new roman, sans-serif";
-			document.getElementById('invButton').style.borderRadius = "0px";
-			document.getElementById('invButton').style.border = "3px solid";
-			document.getElementById('phoneButton').style.borderRadius = "0px";
-			document.getElementById('phoneButton').style.border = "3px solid";
-			document.getElementById('logButton').style.borderRadius = "0px";
-			document.getElementById('logButton').style.border = "3px solid";
-			document.getElementById('saveButton').style.borderRadius = "0px";
-			document.getElementById('saveButton').style.border = "3px solid";
-			document.getElementById('restartButton').style.borderRadius = "0px";
-			document.getElementById('restartButton').style.border = "3px solid";
-			document.getElementById('imgButton').style.borderRadius = "0px";
-			document.getElementById('imgButton').style.border = "3px solid";
-			document.getElementById('mobButton').style.borderRadius = "0px";
-			document.getElementById('mobButton').style.border = "3px solid";
-			document.getElementById('phoneButtonMobile').style.borderRadius = "0px";
-			document.getElementById('phoneButtonMobile').style.border = "3px solid";
+			for (i = 0; i < menuButtons.length; i++) {
+				document.getElementById(menuButtons[i]).style.borderRadius = "0px";
+				document.getElementById(menuButtons[i]).style.border = "3px solid";
+			}
 			document.getElementById('playerImage').style.borderRadius = "0px";
 			if (data.player.pervert != true) {
 				document.getElementById('playerImage').style.borderColor = "#86b4dc";
@@ -1381,40 +1541,182 @@ function updateMenu() {
 			else {
 				document.getElementById('playerImage').src = "scripts/gamefiles/characters/basilT.png";
 			}
+			for (menuCounter = 0; menuCounter < menuButtons.length; menuCounter++) {
+				document.getElementById(menuButtons[menuCounter].ID).style.borderRadius = "0px";
+				document.getElementById(menuButtons[menuCounter].ID).style.border = "3px solid";
+				document.getElementById(menuButtons[menuCounter].ID).classList.add('personaMenuButton');
+				var ransomStringStart = menuButtons[menuCounter].name;
+				ransomStringStart = ransomStringStart.toLowerCase();
+				ransomStringStart = ransomStringStart.charAt(0).toUpperCase() + ransomStringStart.slice(1);
+				ransomStringStart = ransomStringStart.replace(" ", "Q");
+				//console.log(ransomStringStart);
+				var ransomStringEnd = "";
+				if (ransomStringStart.charAt(2) == "g" || ransomStringStart.charAt(2) == "v") {
+					for (var ransomCounter = 0; ransomCounter < ransomStringStart.length; ransomCounter++) {
+						switch (ransomCounter) {
+							case 0:
+								var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+								var ransomBG = "background-color: #000;";
+								var ransomColor = "color: #fff;";
+								var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+							break;
+							case 1:
+								var ransomFont = "font-family: railway, times new roman, sans-serif;";
+								var ransomBG = "background-color: #fff;";
+								var ransomColor = "color: #000;";
+								var ransomRotate = "";
+							break;
+							case 2:
+								var ransomFont = "font-family: times new roman, sans-serif;";
+								var ransomBG = "background-color: #000;";
+								var ransomColor = "color: #fff;";
+								var ransomRotate = "";
+							break;
+							case 3:
+								var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+								var ransomBG = "background-color: #fff;";
+								var ransomColor = "color: #000;";
+								var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+							break;
+							case 4:
+								var ransomFont = "font-family: railway, times new roman, sans-serif;";
+								var ransomBG = "background-color: #000;";
+								var ransomColor = "color: #fff;";
+								var ransomRotate = "-webkit-transform: scale(1.4);";
+							break;
+							case 5:
+								var ransomFont = "font-family: railway, times new roman, sans-serif;";
+								var ransomBG = "background-color: #000;";
+								var ransomColor = "color: #fff;";
+								var ransomRotate = "-webkit-transform: rotate(15deg);";
+							break;
+							case 6:
+								var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+								var ransomBG = "background-color: #000;";
+								var ransomColor = "color: #fff;";
+								var ransomRotate = "-webkit-transform: scale(1.4);";
+							break;
+							case 7:
+								var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+								var ransomBG = "background-color: #000;";
+								var ransomColor = "color: #fff;";
+								var ransomRotate = "-webkit-transform: rotate(5deg);";
+							break;
+							case 10:
+								var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+								var ransomBG = "background-color: #fff;";
+								var ransomColor = "color: #000;";
+								var ransomRotate = "";
+							break;
+							case 11:
+								var ransomFont = "font-family: railway, times new roman, sans-serif;";
+								var ransomBG = "background-color: #fff;";
+								var ransomColor = "color: #000;";
+								var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+							break;
+							default:
+								var ransomFont = "font-family: times new roman, sans-serif;";
+								var ransomBG = "background-color: #000;";
+								var ransomColor = "color: #fff;";
+								var ransomRotate = "";
+							break;
+						}
+						//console.log('replacing menu character' + ransomCounter + ' with the style of ' + ransomFont+ransomBG+ransomColor);
+						//console.log(ransomStringEnd);
+						if (ransomStringStart.charAt(ransomCounter) != "Q") {
+							ransomStringEnd += "<span style='display:inline-block;white-space:pre;"+ransomFont+ransomBG+ransomColor+ransomRotate+"'>"+ransomStringStart.charAt(ransomCounter)+"</span>";
+						}
+						else {
+							ransomStringEnd += "<br>";
+						}
+					}
+					document.getElementById(menuButtons[menuCounter].ID).innerHTML = ransomStringEnd;
+				}
+				else {
+					for (var ransomCounter = 0; ransomCounter < ransomStringStart.length; ransomCounter++) {
+							switch (ransomCounter) {
+								case 0:
+									var ransomFont = "font-family: railway, times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "";
+								break;
+								case 1:
+									var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+									var ransomBG = "background-color: #fff;";
+									var ransomColor = "color: #000;";
+									var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+								break;
+								case 2:
+									var ransomFont = "font-family: times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "-webkit-transform: scale(1.4);";
+								break;
+								case 3:
+									var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+								break;
+								case 4:
+									var ransomFont = "font-family: railway, times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "-webkit-transform: rotate(15deg);";
+								break;
+								case 5:
+									var ransomFont = "font-family: railway, times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "";
+								break;
+								case 6:
+									var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+								break;
+								case 7:
+									var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "-webkit-transform: rotate(-15deg);";
+								break;
+								case 10:
+									var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+									var ransomBG = "background-color: #fff;";
+									var ransomColor = "color: #000;";
+									var ransomRotate = "";
+								break;
+								case 11:
+									var ransomFont = "font-family: railway, times new roman, sans-serif;";
+									var ransomBG = "background-color: #fff;";
+									var ransomColor = "color: #000;";
+									var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+								break;
+								default:
+									var ransomFont = "font-family: times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "";
+								break;
+							}
+							//console.log('replacing menu character' + ransomCounter + ' with the style of ' + ransomFont+ransomBG+ransomColor);
+							//console.log(ransomStringEnd);
+							if (ransomStringStart.charAt(ransomCounter) != "Q") {
+								ransomStringEnd += "<span style='display:inline-block;white-space:pre;"+ransomFont+ransomBG+ransomColor+ransomRotate+"'>"+ransomStringStart.charAt(ransomCounter)+"</span>";
+							}
+							else {
+								ransomStringEnd += "<br>";
+							}
+						}
+						document.getElementById(menuButtons[menuCounter].ID).innerHTML = ransomStringEnd;
+					}
+				}
+			document.getElementById('restartButton').style.color = "#ffffff";
 			document.getElementById('title').style.fontFamily = "norwester, times new roman, sans-serif";
 			document.getElementById('menu').style.fontFamily = "railway, times new roman, sans-serif";
-			document.getElementById('invButton').style.borderRadius = "0px";
-			document.getElementById('invButton').style.border = "3px solid";
-			document.getElementById('invButton').style.transform = "skew(3deg, 0deg)";
-			document.getElementById('invButton').classList.add('personaMenuButton');
-			document.getElementById('phoneButton').style.borderRadius = "0px";
-			document.getElementById('phoneButton').style.border = "3px solid";
-			document.getElementById('phoneButton').style.transform = "skew(3deg, 0deg)";
-			document.getElementById('phoneButton').classList.add('personaMenuButton');
-			document.getElementById('logButton').style.borderRadius = "0px";
-			document.getElementById('logButton').style.border = "3px solid";
-			document.getElementById('logButton').style.transform = "skew(3deg, 0deg)";
-			document.getElementById('logButton').classList.add('personaMenuButton');
-			document.getElementById('saveButton').style.borderRadius = "0px";
-			document.getElementById('saveButton').style.border = "3px solid";
-			document.getElementById('saveButton').style.transform = "skew(3deg, 0deg)"
-			document.getElementById('saveButton').classList.add('personaMenuButton');;
-			document.getElementById('restartButton').style.borderRadius = "0px";
-			document.getElementById('restartButton').style.border = "3px solid";
-			document.getElementById('restartButton').style.transform = "skew(3deg, 0deg)";
-			document.getElementById('restartButton').classList.add('personaMenuButton');
-			document.getElementById('imgButton').style.borderRadius = "0px";
-			document.getElementById('imgButton').style.border = "3px solid";
-			document.getElementById('imgButton').style.transform = "skew(3deg, 0deg)";
-			document.getElementById('imgButton').classList.add('personaMenuButton');
-			document.getElementById('mobButton').style.borderRadius = "0px";
-			document.getElementById('mobButton').style.border = "3px solid";
-			document.getElementById('mobButton').style.transform = "skew(3deg, 0deg)";
-			document.getElementById('mobButton').classList.add('personaMenuButton');
-			document.getElementById('phoneButtonMobile').style.borderRadius = "0px";
-			document.getElementById('phoneButtonMobile').style.border = "3px solid";
-			document.getElementById('phoneButtonMobile').style.transform = "skew(3deg, 0deg)";
-			document.getElementById('phoneButtonMobile').classList.add('personaMenuButton');
 			document.getElementById('playerImage').style.borderRadius = "0px";
 			document.getElementById('playerImage').style.border = "0px";
 			if (data.player.pervert != true) {
@@ -1433,40 +1735,13 @@ function updateMenu() {
 			else {
 				document.getElementById('playerImage').src = "scripts/gamefiles/characters/basilT.png";
 			}
+			for (i = 0; i < menuButtons.length; i++) {
+				document.getElementById(menuButtons[i]).style.borderRadius = "0px";
+				document.getElementById(menuButtons[i]).style.border = "3px solid";
+				document.getElementById(menuButtons[i]).classList.add('personaMenuButton');
+			}
 			document.getElementById('title').style.fontFamily = "norwester, times new roman, sans-serif";
 			document.getElementById('menu').style.fontFamily = "railway, times new roman, sans-serif";
-			document.getElementById('invButton').style.borderRadius = "0px";
-			document.getElementById('invButton').style.border = "3px solid";
-			document.getElementById('invButton').style.transform = "skew(3deg, 0deg)";
-			document.getElementById('invButton').classList.add('personaMenuButton');
-			document.getElementById('phoneButton').style.borderRadius = "0px";
-			document.getElementById('phoneButton').style.border = "3px solid";
-			document.getElementById('phoneButton').style.transform = "skew(3deg, 0deg)";
-			document.getElementById('phoneButton').classList.add('personaMenuButton');
-			document.getElementById('logButton').style.borderRadius = "0px";
-			document.getElementById('logButton').style.border = "3px solid";
-			document.getElementById('logButton').style.transform = "skew(3deg, 0deg)";
-			document.getElementById('logButton').classList.add('personaMenuButton');
-			document.getElementById('saveButton').style.borderRadius = "0px";
-			document.getElementById('saveButton').style.border = "3px solid";
-			document.getElementById('saveButton').style.transform = "skew(3deg, 0deg)"
-			document.getElementById('saveButton').classList.add('personaMenuButton');;
-			document.getElementById('restartButton').style.borderRadius = "0px";
-			document.getElementById('restartButton').style.border = "3px solid";
-			document.getElementById('restartButton').style.transform = "skew(3deg, 0deg)";
-			document.getElementById('restartButton').classList.add('personaMenuButton');
-			document.getElementById('imgButton').style.borderRadius = "0px";
-			document.getElementById('imgButton').style.border = "3px solid";
-			document.getElementById('imgButton').style.transform = "skew(3deg, 0deg)";
-			document.getElementById('imgButton').classList.add('personaMenuButton');
-			document.getElementById('mobButton').style.borderRadius = "0px";
-			document.getElementById('mobButton').style.border = "3px solid";
-			document.getElementById('mobButton').style.transform = "skew(3deg, 0deg)";
-			document.getElementById('mobButton').classList.add('personaMenuButton');
-			document.getElementById('phoneButtonMobile').style.borderRadius = "0px";
-			document.getElementById('phoneButtonMobile').style.border = "3px solid";
-			document.getElementById('phoneButtonMobile').style.transform = "skew(3deg, 0deg)";
-			document.getElementById('phoneButtonMobile').classList.add('personaMenuButton');
 			document.getElementById('playerImage').style.borderRadius = "0px";
 			document.getElementById('playerImage').style.border = "0px";
 			if (data.player.pervert != true) {
@@ -1482,38 +1757,13 @@ function updateMenu() {
 			document.getElementById('title').style.fontFamily = "arial, sans-serif";
 			document.getElementById('menu').style.fontFamily = "arial, sans-serif";
 			console.log(document.getElementById('title').style.fontFamily);
-			document.getElementById('invButton').style.borderRadius = "5px";
-			document.getElementById('invButton').style.border = "none";
-			document.getElementById('invButton').style.borderBottom = "3px solid";
-			document.getElementById('invButton').classList.remove('personaMenuButton');
-			document.getElementById('phoneButton').style.borderRadius = "5px";
-			document.getElementById('phoneButton').style.border = "none";
-			document.getElementById('phoneButton').style.borderBottom = "3px solid";
-			document.getElementById('phoneButton').classList.remove('personaMenuButton');
-			document.getElementById('logButton').style.borderRadius = "5px";
-			document.getElementById('logButton').style.border = "none";
-			document.getElementById('logButton').style.borderBottom = "3px solid";
-			document.getElementById('logButton').classList.remove('personaMenuButton');
-			document.getElementById('saveButton').style.borderRadius = "5px";
-			document.getElementById('saveButton').style.border = "none";
-			document.getElementById('saveButton').style.borderBottom = "3px solid";
-			document.getElementById('saveButton').classList.remove('personaMenuButton');
-			document.getElementById('restartButton').style.borderRadius = "5px";
-			document.getElementById('restartButton').style.border = "none";
-			document.getElementById('restartButton').style.borderBottom = "3px solid";
-			document.getElementById('restartButton').classList.remove('personaMenuButton');
-			document.getElementById('imgButton').style.borderRadius = "5px";
-			document.getElementById('imgButton').style.border = "none";
-			document.getElementById('imgButton').style.borderBottom = "3px solid";
-			document.getElementById('imgButton').classList.remove('personaMenuButton');
-			document.getElementById('mobButton').style.borderRadius = "5px";
-			document.getElementById('mobButton').style.border = "none";
-			document.getElementById('mobButton').style.borderBottom = "3px solid";
-			document.getElementById('mobButton').classList.remove('personaMenuButton');
-			document.getElementById('phoneButtonMobile').style.borderRadius = "5px";
-			document.getElementById('phoneButtonMobile').style.border = "none";
-			document.getElementById('phoneButtonMobile').style.borderBottom = "3px solid";
-			document.getElementById('phoneButtonMobile').classList.remove('personaMenuButton');
+			for (i = 0; i < menuButtons.length; i++) {
+				document.getElementById(menuButtons[i]).style.borderRadius = "5px";
+				document.getElementById(menuButtons[i]).style.border = "none";
+				document.getElementById(menuButtons[i]).style.borderBottom = "3px solid";
+				document.getElementById(menuButtons[i]).classList.remove('personaMenuButton');
+			}
+			document.getElementById('restartButton').style.color = "#FF0000";
 			document.getElementById('playerImage').style.borderRadius = "3px";
 			document.getElementById('playerImage').style.borderColor = "#FFFFFF";
 			break;

@@ -187,9 +187,164 @@ function printLocationButton(name, top, left, target) {
 			break;
 		}
 		case "persona": {
+			var ransomStringStart = name;
+			ransomStringStart = ransomStringStart.toLowerCase();
+			ransomStringStart = ransomStringStart.charAt(0).toUpperCase() + ransomStringStart.slice(1);
+			console.log(ransomStringStart);
+			var ransomStringEnd = "";
+			if (ransomStringStart.charAt(2) == "g" || ransomStringStart.charAt(2) == "v") {
+				for (var ransomCounter = 0; ransomCounter < ransomStringStart.length; ransomCounter++) {
+					switch (ransomCounter) {
+						case 0:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+						break;
+						case 1:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "";
+						break;
+						case 2:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+						case 3:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						case 4:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: scale(1.4);";
+						break;
+						case 5:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(15deg);";
+						break;
+						case 6:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: scale(1.4);";
+						break;
+						case 7:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(5deg);";
+						break;
+						case 10:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "";
+						break;
+						case 11:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						default:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+					}
+					console.log('replacing menu character' + ransomCounter + ' with the style of ' + ransomFont+ransomBG+ransomColor);
+					console.log(ransomStringEnd);
+					ransomStringEnd += "<span style='display:inline-block;white-space:pre;"+ransomFont+ransomBG+ransomColor+ransomRotate+"'>"+ransomStringStart.charAt(ransomCounter)+"</span>";
+				}
+			}
+			else {
+				for (var ransomCounter = 0; ransomCounter < ransomStringStart.length; ransomCounter++) {
+					switch (ransomCounter) {
+						case 0:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+						case 1:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+						break;
+						case 2:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: scale(1.4);";
+						break;
+						case 3:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						case 4:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(15deg);";
+						break;
+						case 5:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+						case 6:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+						break;
+						case 7:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(-15deg);";
+						break;
+						case 10:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "";
+						break;
+						case 11:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						default:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+					}
+					//console.log('replacing menu character' + ransomCounter + ' with the style of ' + ransomFont+ransomBG+ransomColor);
+					//console.log(ransomStringEnd);
+						ransomStringEnd += "<span style='display:inline-block;white-space:pre;"+ransomFont+ransomBG+ransomColor+ransomRotate+"'>"+ransomStringStart.charAt(ransomCounter)+"</span>";
+				}
+			}
 			document.getElementsByClassName('playerRoom')[0].innerHTML += `
 				<div class="pictureButtonPersona" onclick='changeLocation("`+target+`")'
-				style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+name+`</div>
+				style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+ransomStringEnd+`</div>
 			`;
 			break;
 		}
