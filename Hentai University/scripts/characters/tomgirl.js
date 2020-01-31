@@ -286,7 +286,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "I'm saying the you as you are right now, cute and absolutely fuckable, would be your real self forever.");
 			writeSpeech("tomgirl", "new.jpg", "Oh, you mean like therapy or hormones. I don't really-<br>No, maybe you're right. If you think it's what's best than I'll go through with it.");
 			writeText("It seems like he doesn't quite grasp what you mean, but that's fine. It seems like he's willing to accept the change if you are.");
-			writeFunction("writeEncounter('tomgirlnew4b')", "Corrupt tomgirlF");
+			//writeFunction("writeEncounter('tomgirlnew4b')", "Corrupt tomgirlF");
 			writeFunction("changeLocation(data.player.location)", "Change your mind");
 			break;
 		}

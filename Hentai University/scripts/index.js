@@ -32,7 +32,7 @@ var data = {
 		counseling: 0,
 		lastText: 100,
 		dayID: 1,
-		version: 5,
+		version: 6,
 		location: "",
 		pervert: false,
 		color: "#86b4dc",
@@ -53,6 +53,7 @@ var data = {
 		{index: "green", met: false, fName: "Emma", lName: "Hamilton", trust: 0, encountered: false, textEvent: "", color: "#677b4c"},
 		{index: "succubus", fName: "Gou", lName: "", trust: 0, encountered: false, textEvent: "", met: false, color: "#BF76DF"},
 		{index: "nurse", fName: "Justine", lName: "Walton", trust: 0, encountered: false, textEvent: "", met: false, color: "#8D756B"},
+		{index: "housekeep", fName: "Anri", lName: "Ramona", trust: 0, encountered: false, textEvent: "", met: false, color: "#df5877", author: "CryptoGreek", artist: "Kinta no Mousou"},
 	],
 	gallery: [
 	],

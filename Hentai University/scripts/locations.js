@@ -135,6 +135,8 @@ function changeLocation(n) {
 					<img class="backgroundPicture" src="`+bg+`" usemap="#roomMap">
 				</div>
 			`;
+			data.player.location = n;
+			console.log(data.player.location);
 			for (i = 0; i < locationArray[locationTarget].buttons.length; i++) {
 				if (locationArray[locationTarget].buttons[i].time.includes(data.player.time)) {
 					printLocationButton(
@@ -159,7 +161,6 @@ function changeLocation(n) {
 			else {
 				checkForEncounters();
 			}
-			data.player.location = n;
 		}
 	}
 	if (n == 'gallery') {
