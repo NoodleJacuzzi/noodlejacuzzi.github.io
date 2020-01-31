@@ -2,9 +2,9 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 1/17/2020</p>
-				<p class = "centeredText">Rainy DayZ v2.0</p>
-				<p class = "centeredText">A new release of Rainy DayZ, finishing up scenario 2!</p>
+				<p class = "centeredText">Lastest News 1/31/2020</p>
+				<p class = "centeredText">Hentai University v6</p>
+				<p class = "centeredText">A new release of Hentai University, adding 3 new characters and content for Gou and Lana!</p>
 				<p class = "centeredText">Thank you to: Swallows999, Joshua Ingram, MrManPerson, Robbie, CaptainMontana, Lasse B, andres mejia, Arthorias28, Badaxe, ChronosEdge, Colin E, Dkells, Filament, J_C_L, Jinouga, Marco Wassmer, maxime, Ramiel Palomino, Scal, Taylor Trout, XxrobothacksxX, Aegil, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arthur radcliffe, AxiosMIles, Bawornnan samart, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Colin, Darrell Goodman, David Lange, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Ed, Guy68691, Gwen Yurick, ItsAllOgreNow, Jane, jdktjk205, Jesse Greene, joe, John Lewis, john smith, Joseph Gibbs, Joshua Melzark, lm Carma, mazterlith, Monkey, murgatroid99, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, ptw1985, qwerty, Roy, sage, Scumstango, Sebastian Eckel, Simon Rencher, sky, Smiley Green, Snaked, stratum, Taurus Travon Rashad Lemar Brackin, valdis, Vincent Madaire-Cullen, Wayne culbert, Wei, Wild Bill, William Richardson, Your Husbando, Z, zoobot5, 凱 陳 for supporting my work!</p>
 			`;
 			document.getElementById('output').innerHTML +=`
@@ -31,14 +31,14 @@ function writeScene(scene) {
 			`;
 			writeTransition("artifactList", "See a roadmap of current / planned content");
 			writeBig("images/HentaiUniversity.png");
-			writeText("Hentai University v5.5");
+			writeText("Hentai University v6");
 			writeText("A game made in cooperation with author Captain Cryptogreek, who works as the game's lead writer.");
 			writeText("You play as a young man with a strong grasp on hypnotic magic, and have embedded yourself as a counselor in a school with a fantastically attractive student body. The faculty and your neighbors in town look pretty good too.");
-			writeText("This game uses art by Enoshima Iki, Nagi Ichi, and Oreteki18kin, and is meant to be similar in feel to Hentai High School, but without the focus on school management, more emphasis on wandering / corruption, and a much higher quality body of images.");
+			writeText("This game uses art by Enoshima Iki, Nagi Ichi, Oreteki18kin, Gujira 4 Gou, and Kinta no Mousou and is meant to be similar in feel to Hentai High School, but without the focus on school management, more emphasis on wandering / corruption, and a much higher quality body of images.");
 			writeText("The end goal here is a town packed with dozens of characters using a framework I can continually add more content to.");
-			writeText("Tags: Hypnosis, optionally features many other tags based on characters such as incest, dubcon, and gay content");
+			writeText("Tags: Hypnosis, features many other tags entirely avoidable tags based on characters such as incest, dubcon, and gay content");
 			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/33013623'">Download the game</p>
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/33598646'">Download the game</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">Play the mobile version</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'">Modding Tutorial</p>

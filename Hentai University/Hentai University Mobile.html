@@ -4,6 +4,16 @@
 		<title>Hentai University</title>
 		<script src="scripts/locations.js"></script>
 		<script src="scripts/index.js"></script>
+		<style>
+			@font-face{
+				font-family: railway;
+				src: url('scripts/railway.otf');
+			}
+			@font-face{
+				font-family: norwester;
+				src: url('scripts/norwester.otf');
+			}
+		</style>
 		<link rel="stylesheet" type="text/css" href="scripts/mobile.css" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		
@@ -25,7 +35,7 @@
 		<div id = "menu" class = "menu">
 			<div id="titlePanel">
 				<p id = "title" class = "title">Hentai University</p>
-				<p id = "version" class = "version">V2.9</p>
+				<p id = "version" class = "version">V6</p>
 				<p id = "version" class = "version">Testing server, report any bugs</p>
 				<!--<p id = "version" class = "version">Updates are in progress, will post this version soon</p>-->
 				<p id = "author">
@@ -36,15 +46,15 @@
 			</div>
 			<div id="buttonMenu">
 				<div id="buttonMenuPrimary" class="flexbox">
-					<h4 id="invButton" class="button" onclick="invButton()">INVENTORY</h4>
+					<h4 id="deskinvButton" class="button" onclick="invButton()">INVENTORY</h4>
 					<h4 id="phoneButton" class="button" onclick="phoneButton()">PHONE</h4>
-					<h4 id="logButton" class="button" onclick="selfButton()">LOGBOOK</h4>
-					<h4 id="saveButton" class="button" onclick="saveButton()">SAVE/LOAD</h4>
+					<h4 id="desklogButton" class="button" onclick="selfButton()">LOGBOOK</h4>
+					<h4 id="desksaveButton" class="button" onclick="saveButton()">SAVE/LOAD</h4>
 				</div>
-				<h4 id="restartButton" class="button" onclick="restartButton()">RESTART</h4>
+				<h4 id="deskrestartButton" class="button" onclick="restartButton()">RESTART</h4>
 				<div id="buttonMenuSecondary" class="flexbox">
-					<h4 id="logButton" class="button" onclick="disablePictures()">DISABLE IMAGES</p>
-					<h4 id="invButton" class="button"  onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">MOBILE VERSION</p>
+					<h4 id="deskimgButton" class="button" onclick="disablePictures()">TOGGLE IMAGES</h4>
+					<h4 id="mobButton" class="button"  onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">MOBILE VERSION</h4>
 				</div>
 			</div>
 			<div id="playerPanel" class="flexbox">
@@ -72,7 +82,7 @@
 				<h4 id="saveButton" class="button" onclick="saveButton()">SAVE/LOAD</h4>
 				<h4 id="invButton" class="button" onclick="invButton()">INVENTORY</h4>
 				<h4 id="logButton" class="button" onclick="selfButton()">LOGBOOK</h4>
-				<h4 id="logButton" class="button" onclick="disablePictures()">TOGGLE IMAGES</h4>
+				<h4 id="imgButton" class="button" onclick="disablePictures()">TOGGLE IMAGES</h4>
 				<h4 id="restartButton" class="button" onclick="restartButton()">RESTART</h4>
 				<h4 id="phoneButtonMobile" class="button" onclick="phoneButton()">PHONE</h4>
 				</div>

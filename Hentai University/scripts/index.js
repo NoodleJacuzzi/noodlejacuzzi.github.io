@@ -35,6 +35,7 @@ var data = {
 		version: 5,
 		location: "",
 		pervert: false,
+		color: "#86b4dc",
 	},
 	story: [
 		{index: "mom", met: false, fName: "Emily", lName: "Smith", trust: 0, encountered: false, textEvent: "", color: "#CCCCCC",},
@@ -63,6 +64,17 @@ var data = {
 	phoneImages: [
 	],
 }
+
+var menuButtons = [
+{ID: "invButton", name:"INVENTORY",},
+{ID: "imgButton", name:"TOGGLE IMAGES",},
+{ID: "phoneButton", name:"PHONE",},
+{ID: "logButton", name:"LOGBOOK",},
+{ID: "saveButton", name:"SAVE/LOAD",},
+{ID: "restartButton", name:"RESTART",},
+{ID: "mobButton", name:"MOBILE VERSION",},
+{ID: "phoneButtonMobile", name:"PHONE",},
+]
 
 var ghostArray = [
 	{name: "Ancient Chaplain", 		difficulty: 3, rarity: "01", time:"MorningEvening", top: 35, left: 20, requirement: 0, location: "computerRoom", 
@@ -424,6 +436,17 @@ function encounteredCheck(name) {
 	}
 }
 
+function unencounter(name) {
+	for (e = 0; e < data.story.length; e++) {
+		if (data.story[e].index == name) {
+			if (data.story[e].encountered == true) {
+				data.story[e].encountered = false
+				break;
+			}
+		}
+	}
+}
+
 function fName(name) {
 	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
 		if (data.story[characterIndex].index == name) {
@@ -623,10 +646,189 @@ function checkForEncounters() {
 }
 
 function printEncounterButton(character, scene, text, top, left, altName, altImage) {
-	document.getElementsByClassName('playerRoom')[0].innerHTML += `
-		<div class="pictureButton" onclick='loadEncounter("`+character+`", "`+scene+`")'
-		style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+text+`</div>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementsByClassName('playerRoom')[0].innerHTML += `
+				<div class="pictureButton" onclick='loadEncounter("`+character+`", "`+scene+`")'
+				style="top: `+top+`%; left: `+left+`%; max-width: 30%; border: 3px solid; border-radius: 0px;">`+text+`</div>
+			`;
+			break;
+		}
+		case "persona": {
+			var ransomStringStart = text;
+			ransomStringStart = ransomStringStart.toLowerCase();
+			ransomStringStart = ransomStringStart.charAt(0).toUpperCase() + ransomStringStart.slice(1);
+			console.log(ransomStringStart);
+			var ransomStringEnd = "";
+			if (ransomStringStart.charAt(2) == "g" || ransomStringStart.charAt(2) == "v") {
+				for (var ransomCounter = 0; ransomCounter < ransomStringStart.length; ransomCounter++) {
+					switch (ransomCounter) {
+						case 0:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+						break;
+						case 1:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "";
+						break;
+						case 2:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+						case 3:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						case 4:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: scale(1.4);";
+						break;
+						case 5:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(15deg);";
+						break;
+						case 6:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: scale(1.4);";
+						break;
+						case 7:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(5deg);";
+						break;
+						case 10:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "";
+							if (ransomStringStart.length > 15) {
+								//ransomStringEnd += "<br>"
+							}
+						break;
+						case 11:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						default:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+					}
+					console.log('replacing menu character' + ransomCounter + ' with the style of ' + ransomFont+ransomBG+ransomColor);
+					console.log(ransomStringEnd);
+					ransomStringEnd += "<span style='display:inline-block;white-space:pre;"+ransomFont+ransomBG+ransomColor+ransomRotate+"'>"+ransomStringStart.charAt(ransomCounter)+"</span>";
+				}
+			}
+			else {
+				for (var ransomCounter = 0; ransomCounter < ransomStringStart.length; ransomCounter++) {
+					switch (ransomCounter) {
+						case 0:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+						case 1:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+						break;
+						case 2:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: scale(1.4);";
+						break;
+						case 3:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						case 4:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(15deg);";
+						break;
+						case 5:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+						case 6:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+						break;
+						case 7:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(-15deg);";
+						break;
+						case 10:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "";
+							if (ransomStringStart.length > 15) {
+								//ransomStringEnd += "<br>"
+							}
+						break;
+						case 11:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						default:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+					}
+					//console.log('replacing menu character' + ransomCounter + ' with the style of ' + ransomFont+ransomBG+ransomColor);
+					//console.log(ransomStringEnd);
+						ransomStringEnd += "<span style='display:inline-block;white-space:pre;"+ransomFont+ransomBG+ransomColor+ransomRotate+"'>"+ransomStringStart.charAt(ransomCounter)+"</span>";
+				}
+			}
+			document.getElementsByClassName('playerRoom')[0].innerHTML += `
+				<div class="pictureButtonPersona" onclick='loadEncounter("`+character+`", "`+scene+`")'
+				style="top: `+top+`%; left: `+left+`%; max-width: 40%;">`+ransomStringEnd+`</div>
+			`;
+			break;
+		}
+		default: {
+			document.getElementsByClassName('playerRoom')[0].innerHTML += `
+				<div class="pictureButton" onclick='loadEncounter("`+character+`", "`+scene+`")'
+				style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+text+`</div>
+			`;
+		}
+	}
 }
 
 function printEncounterTab(name, scene, text, altImage, altName) {
@@ -634,14 +836,13 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 		var tabTrust;
 		var cancelTab = false;
 		var cssName = name;
-		var img = "images/"+name+"/"+name+".jpg";
+		var img = name+".jpg";
 		for (z = 0; z < data.story.length; z++) {
 			if (data.story[z].index == name) {
 				tabIndex = z;
 				if (text.includes(name)) {
 					text = text.replace(name, data.story[z].fName);
 				}
-				name = data.story[z].fName + ' ' + data.story[z].lName;
 				var cssColor = data.story[z].color;
 				if (data.story[z].encounter == true) {
 					cancelTab = true;
@@ -649,7 +850,7 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 			}
 		}
 		if (data.story[tabIndex].trust == 0) {
-			name = "???";
+			//text += "HIDDEN";
 		}
 		switch (true) {
 			case (data.story[tabIndex].trust > 99): {
@@ -677,14 +878,7 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 				break;
 			}
 		}
-		if (data.player.pervert != true) {
-			var checkForError = "";
-			img = "images/"+cssName+"/"+cssName+".jpg";
-		}
-		else {
-			var checkForError = `onerror ="javascript:this.src='images/`+cssName+`/`+cssName+`.jpg'"`;
-			img = "images/"+cssName+"/"+cssName+"P.jpg";
-		}
+		var checkForError = "";
 		if (altImage == undefined) {
 			altImage = "";
 		}
@@ -692,20 +886,7 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 			altName = "";
 		}
 		if (altImage != "") {
-			if (altImage.includes("images") == true) {
-				img = altImage;
-			}
-			else {
-				if (data.player.pervert != true) {
-					var checkForError = "";
-					img = "images/"+cssName+"/"+altImage;
-				}
-				else {
-					var checkForError = `onerror ="javascript:this.src='images/`+cssName+`/`+altImage+`'"`;
-					img = img.replace(".jpg", "");
-					img = "images/"+cssName+"/"+altImage+"P.jpg";
-				}
-			}
+			img = altImage;
 		}
 		if (altName != "") {
 			name = altName;
@@ -713,17 +894,11 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 		//console.log(tabIndex);
 		console.log(cssColor);
 		if (cancelTab != true) {
-			console.log("Now generating tab for " + name + ", linking to scene " + scene + " with the text " + text);
-			document.getElementById('output').innerHTML +=`
-			<div class = "textBox" style="border-color: `+cssColor+`">
-				<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "`+ img +`" `+checkForError+`>
-				<div class="textBoxContent">
-				<p class = "textName" style="color:`+cssColor+`">` + name + `</p>
-				<p class="status"> Status: ` + tabTrust + `</p>
+			console.log("Now generating tab for " + name + ", linking to scene " + scene + " with the text " + text + " " +altImage);
+			writeSpeech(name, img, `
+				<p class="status"> Status: ` + tabTrust + `</p>	
 				<p class="switch" onclick="loadEncounter('`+data.story[tabIndex].index+`', '`+scene+`')">` + replaceCodenames(text) + `</p>
-			</div>	</div>
-			<br>
-			`;
+			`);
 		}
 	}
 }
@@ -732,20 +907,94 @@ function writeText (text) {
 	if (text == "...") {
 		text = "<hr>";
 	}
-	document.getElementById('output').innerHTML += `
-		<p class='rawText'>` + replaceCodenames(text) + `</p>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText' style='
+				margin: 30px 0;
+				font-size: 1.3em;
+				font-family: railway, times new roman, sans-serif;
+				font-style: normal;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
+		case "royalty": {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText' style='
+				margin: 20px 200px;
+				font-size: 1.3em;
+				font-family: arial, times new roman, sans-serif;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
+		case "persona": {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText' style='
+				margin: 30px 0;
+				font-size: 1.3em;
+				font-family: arial, times new roman, sans-serif;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText'>` + replaceCodenames(text) + `</p>
+			`;
+		}
+	}
+}
+
+function writeCenteredText (text) {
+	if (text == "...") {
+		text = "<hr>";
+	}
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementById('output').innerHTML += `
+				<p class='centeredText' style='
+				margin: 30px 0;
+				font-size: 1.3em;
+				font-family: railway, times new roman, sans-serif;
+				font-style: normal;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML += `
+				<p class='centeredText'>` + replaceCodenames(text) + `</p>
+			`;
+		}
+	}
 }
 
 function writeSpecial (text) {
-	document.getElementById('output').innerHTML += `
-		<p class = "specialText">` + replaceCodenames(text) + `</p>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementById('output').innerHTML += `
+				<p class='specialText' style='
+				font-size: 1.3em;
+				font-family: railway, times new roman, sans-serif;
+				font-style: normal;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML += `
+				<p class = "specialText">` + replaceCodenames(text) + `</p>
+			`;
+		}
+	}
 }
 
 function writeSpeech (name, img, text) {
 	var cssName = name;
 	var fullName = name;
+	console.log(img);
 	var cssColor = "#CCCCCC";
 	if (img == "" && img != 'none') {
 		if (data.player.pervert != true) {
@@ -765,15 +1014,37 @@ function writeSpeech (name, img, text) {
 			}
 			else {
 				var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+img+`'"`;
-				img = img.replace(".jpg", "");
 				img = "images/"+cssName+"/"+img+"P.jpg";
 			}
 		}
 	}
+	if (img.includes('.jpgP') == true) {
+		img = img.replace('.jpgP', 'P');
+	}
 	if (name == "player") {
 		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
 		fullName = data.player.name;
-		cssColor = "#86b4dc";
+		if (data.player.pervert != true) {
+			cssColor = "#86b4dc";
+		}
+		else {
+			cssColor = "#fc53f1";
+		}
+	}
+	console.log(img);
+	if (data.player.style == "persona" || data.player.style == "royalty") {
+		var checkForError = `onerror ="javascript:this.src='`+img+`'"`;
+		if (data.player.pervert == true) {
+			if (name == "player") {
+				img = img.replace('.jpg', 'T.png');
+			}
+			else {
+				img = img.replace('P.jpg', 'T.png');
+			}
+		}
+		else {
+			img = img.replace('.jpg', 'T.png');
+		}
 	}
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].index == name) {
@@ -790,17 +1061,93 @@ function writeSpeech (name, img, text) {
 		fullName = "???";
 		text = text.replace("HIDDEN", "");
 	}
-	document.getElementById('output').innerHTML +=`
-	<div class="textBox" style="border-color: `+cssColor+`">
-		<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "
-			`+ img +`
-		"`+checkForError+`>
-		<div class="textBoxContent">
-		<p class = "textName" style="color:`+cssColor+`">`+ fullName + `</p>
-		<p>` + replaceCodenames(text) + `</p>
-	</div>
-	<br>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementById('output').innerHTML += `
+			<div class="textBoxLobotomy" style="border-color: `+cssColor+`;
+			background: linear-gradient(90deg, 
+			#000000 10px, 
+			`+cssColor+` 10px, 
+			`+cssColor+` 210px, 
+			#000000 210px);">
+				<div class = "lobotomyThumb" style="background-color: `+cssColor+`">
+					<div class = "lobotomyThumbBorder">
+						<img class = "textThumbLobotomy" src = "
+							`+ img +`
+						"`+checkForError+`>
+					</div>
+					<p class = "textNameLobotomy">`+ fullName + `</p>
+				</div>
+				<div class="textBoxContentLobotomy">
+				<p>` + replaceCodenames(text) + `</p>
+			</div>
+			<br>
+			`;
+			break;
+		}
+		case "royalty": {
+			document.getElementById('output').innerHTML += `
+			<div class="textBoxRoyalty">
+				<div class = "royaltyThumb">
+					<div class = "royaltyImageHolder">
+						<img class = "textThumbRoyalty" style="
+							position:absolute;
+							-webkit-filter: drop-shadow(2px 2px 0 `+cssColor+`)
+							drop-shadow(-2px -2px 0 `+cssColor+`);
+							filter: drop-shadow(2px 2px 0 `+cssColor+`)
+							drop-shadow(-2px -2px 0 `+cssColor+`);"
+						src = "`+img+`"`+checkForError+`>
+						<img class = "textThumbRoyalty" src = "`+img+`"`+checkForError+`>
+					</div>
+					<div class="nameBoxRoyalty" style = "border-color:`+cssColor+`;">
+						<p class = "textNameRoyalty" style = "color:`+cssColor+`;">`+fullName+`</p>
+					</div>
+				</div>
+				<div class="textBoxContentRoyalty">
+					<div class="dialogueBoxRoyalty" style = "border-color:`+cssColor+`">
+						<p>` + replaceCodenames(text) + `</p>
+					</div>
+				</div>
+			<br>
+			`;
+			break;
+		}
+		case "persona": {
+			document.getElementById('output').innerHTML += `
+			<div class="textBoxPersona">
+				<div class = "personaThumb">
+					<img class = "textThumbPersona" src = "`+img+`"`+checkForError+`>
+				</div>
+				<div class="textBoxContentPersona">
+					<div class="nameBoxPersona">
+						<p class = "textNamePersona" style = "color:`+cssColor+`">`+ fullName + `</p>
+						<div class="textNamePersonaWhite" style = "border-color:`+cssColor+`"></div>
+						<div class="textNamePersonaBlack"></div>
+						<div class="personaNameArrow"></div>
+						<div class="personaNameArrowShadow" style = "border-right-color:`+cssColor+`"></div>
+					</div>
+					<div class="dialogueBoxPersona" style = "border-color:`+cssColor+`">
+						<p>` + replaceCodenames(text) + `</p>
+					</div>
+				</div>
+			<br>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML +=`
+			<div class="textBox" style="border-color: `+cssColor+`">
+				<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "
+					`+ img +`
+				"`+checkForError+`>
+				<div class="textBoxContent">
+				<p class = "textName" style="color:`+cssColor+`">`+ fullName + `</p>
+				<p>` + replaceCodenames(text) + `</p>
+			</div>
+			<br>
+			`;
+		}
+	}
 }
 
 function writeBig (img, cap) {
@@ -817,28 +1164,143 @@ function writeBig (img, cap) {
 		}
 	}
 	if (imagesDisabled != true) {
-	document.getElementById('output').innerHTML += `
-		<img class="bigPicture" src="` + img + `"`+checkForError+` title="` + cap + `">
-		<br>
-	`;
+		switch (data.player.style) {
+			case "lobotomy": {
+				var cssColor = "#CCCCCC";
+				for (i = 0; i < data.story.length; i++) {
+					if (img.includes(data.story[i].index) == true) {
+						cssColor = data.story[i].color;
+						break;
+					}
+				}
+				document.getElementById('output').innerHTML += `
+						<img class="bigPicture" style="border-color:`+cssColor+`; border-radius: 5px;" src="` + img + `"`+checkForError+` title="` + cap + `">
+					<br>
+				`;
+				break;
+			}
+			case "persona": {
+				var cssColor = "#CCCCCC";
+				for (i = 0; i < data.story.length; i++) {
+					if (img.includes(data.story[i].index) == true) {
+						cssColor = data.story[i].color;
+						break;
+					}
+				}
+				document.getElementById('output').innerHTML += `
+						<img class="bigPicture" style="border-color:`+cssColor+`; border-radius: 5px;" src="` + img + `"`+checkForError+` title="` + cap + `">
+					<br>
+				`;
+				break;
+			}
+			default: {
+				document.getElementById('output').innerHTML += `
+					<img class="bigPicture" src="` + img + `"`+checkForError+` title="` + cap + `">
+					<br>
+				`;
+			}
+		}
 	}
 }
 
 function writeMed (img, cap) {
+	if (img.includes('profile') == true) {
+		if (data.player.pervert != true) {
+			var checkForError = "";
+			var pervertImage = img;
+		}
+		else {
+			var backupImage = img;
+			var checkForError = `onerror ="javascript:this.src='`+backupImage+`'"`;
+			img = img.replace('profile', 'profileP');
+			console.log(img);
+		}
+	}
 	if (imagesDisabled != true) {
 	document.getElementById('output').innerHTML += `
-		<img class="medPicture" src="` + img + `" title="` + cap + `">
+		<img class="medPicture" src="` + img + `"`+checkForError+` title="` + cap + `">
 		<br>
 	`;
 	}
 }
 
 function writeFunction (name, func) {
-	document.getElementById('output').innerHTML += `
-		<p class="choiceText" onclick="` + name + `">
-			` + replaceCodenames(func) + `
-		</p>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			var skewNumber = getRandomInt(8);
+			skewNumber -= 4;
+			var borderNumber = getRandomInt(2) + 3;
+			var rotationNumber = getRandomInt(2) -1;
+			if (skewNumber >= 0) {
+				skewNumber += getRandomInt(3);
+			}
+			if (skewNumber <= 0) {
+				skewNumber -= getRandomInt(3);
+			}
+			var reverseSkew = skewNumber - skewNumber - skewNumber;
+			var rotationReverse = rotationNumber - rotationNumber - rotationNumber;
+			console.log('skewnumber is ' +skewNumber + ' rotationnumber is '+ rotationNumber);
+			document.getElementById('output').innerHTML += `
+			<div class="choiceFrameLobotomy" 
+			style ="
+				-moz-transform: skew(`+skewNumber+`deg, 0deg);
+				-webkit-transform: skew(`+skewNumber+`deg, 0deg);
+				-o-transform: skew(`+skewNumber+`deg, 0deg);
+				-ms-transform: skew(`+skewNumber+`deg, 0deg);
+				transform: skew(`+skewNumber+`deg, 0deg);
+				border: solid `+borderNumber+`px;
+			">
+			<p class="choiceTextLobotomy" 
+			style ="
+				-moz-transform: skew(`+reverseSkew+`deg, 0deg);
+				-webkit-transform: skew(`+reverseSkew+`deg, 0deg);
+				-o-transform: skew(`+reverseSkew+`deg, 0deg);
+				-ms-transform: skew(`+reverseSkew+`deg, 0deg);
+				transform: skew(`+reverseSkew+`deg, 0deg);
+			" 
+			onclick="` + name + `">
+				` + replaceCodenames(func) + `
+			</p>
+			</div>
+			`;
+			break;
+		}
+		case "persona": {
+			var skewNumber = 5;
+			var reverseSkew = skewNumber - skewNumber - skewNumber;
+			console.log('skewnumber is ' +skewNumber + ' rotationnumber is '+ rotationNumber);
+			document.getElementById('output').innerHTML += `
+			<div class="choiceFramePersona" onclick="` + name + `"
+			style ="
+				-moz-transform: skew(`+skewNumber+`deg, 0deg);
+				-webkit-transform: skew(`+skewNumber+`deg, 0deg);
+				-o-transform: skew(`+skewNumber+`deg, 0deg);
+				-ms-transform: skew(`+skewNumber+`deg, 0deg);
+				transform: skew(`+skewNumber+`deg, 0deg);
+			">
+			<p class="choiceTextPersona" 
+			style ="
+				-moz-transform: skew(`+reverseSkew+`deg, 0deg);
+				-webkit-transform: skew(`+reverseSkew+`deg, 0deg);
+				-o-transform: skew(`+reverseSkew+`deg, 0deg);
+				-ms-transform: skew(`+reverseSkew+`deg, 0deg);
+				transform: skew(`+reverseSkew+`deg, 0deg);
+			" 
+			>
+				` + replaceCodenames(func) + `
+			</p>
+			</div>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML += `
+				<p class="choiceText" onclick="` + name + `">
+					` + replaceCodenames(func) + `
+				</p>
+			`;
+		}
+	}
 }
 
 function listTextbooks() {
@@ -907,6 +1369,20 @@ function writePorn() {
 	else {
 		writeText("The porn system is disabled without images.");
 	}
+}
+
+function listArtists() {
+	writeMed("images/mom/profile.jpg", "Art by Enoshima Iki");
+	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/26267">Enoshima Iki's Pixiv</a>`;
+	writeMed("images/tomgirl/profile.jpg", "Art by Nagi Ichi");
+	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/4229818">Nagi Ichi's Pixiv</a>`;
+	writeMed("images/purple/profile.jpg", "Art by Oreteki18kin");
+	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/5893974">Oreteki18kin's Pixiv</a>`;
+	writeMed("images/succubus/profile.jpg", "Art by Gujira");
+	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/215082">Gujira 4 Gou's Pixiv</a>`;
+	writeMed("images/housekeep/profile.jpg", "Art by Kinta no Mousou");
+	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/13253890">Kinta no Mousou's Pixiv</a>`;
+	
 }
 
 //Showing & hiding windows
@@ -1049,6 +1525,261 @@ function updateMenu() {
 	else {
 		document.getElementById('playerHacking').innerHTML = "Hacking: " + data.player.hacking;
 	}
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementById('title').style.fontFamily = "norwester, times new roman, sans-serif";
+			document.getElementById('menu').style.fontFamily = "railway, times new roman, sans-serif";
+			for (i = 0; i < menuButtons.length; i++) {
+				document.getElementById(menuButtons[i].ID).innerHTML = menuButtons[i].name;
+				document.getElementById(menuButtons[i].ID).style.borderRadius = "0px";
+				document.getElementById(menuButtons[i].ID).style.border = "3px solid";
+			}
+			document.getElementById('playerImage').style.borderRadius = "0px";
+			if (data.player.pervert != true) {
+				document.getElementById('playerImage').style.borderColor = "#86b4dc";
+			}
+			else {
+				document.getElementById('playerImage').style.borderColor = "#fc53f1";
+			}
+			console.log(data.player.style);
+			break;
+		}
+		case "persona": {
+			if (data.player.gender == "man") {
+				document.getElementById('playerImage').src = "scripts/gamefiles/characters/basicT.png";
+			}
+			else {
+				document.getElementById('playerImage').src = "scripts/gamefiles/characters/basilT.png";
+			}
+			for (menuCounter = 0; menuCounter < menuButtons.length; menuCounter++) {
+				document.getElementById(menuButtons[menuCounter].ID).style.borderRadius = "0px";
+				document.getElementById(menuButtons[menuCounter].ID).style.border = "3px solid";
+				document.getElementById(menuButtons[menuCounter].ID).classList.add('personaMenuButton');
+				var ransomStringStart = menuButtons[menuCounter].name;
+				ransomStringStart = ransomStringStart.toLowerCase();
+				ransomStringStart = ransomStringStart.charAt(0).toUpperCase() + ransomStringStart.slice(1);
+				ransomStringStart = ransomStringStart.replace(" ", "Q");
+				//console.log(ransomStringStart);
+				var ransomStringEnd = "";
+				if (ransomStringStart.charAt(2) == "g" || ransomStringStart.charAt(2) == "v") {
+					for (var ransomCounter = 0; ransomCounter < ransomStringStart.length; ransomCounter++) {
+						switch (ransomCounter) {
+							case 0:
+								var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+								var ransomBG = "background-color: #000;";
+								var ransomColor = "color: #fff;";
+								var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+							break;
+							case 1:
+								var ransomFont = "font-family: railway, times new roman, sans-serif;";
+								var ransomBG = "background-color: #fff;";
+								var ransomColor = "color: #000;";
+								var ransomRotate = "";
+							break;
+							case 2:
+								var ransomFont = "font-family: times new roman, sans-serif;";
+								var ransomBG = "background-color: #000;";
+								var ransomColor = "color: #fff;";
+								var ransomRotate = "";
+							break;
+							case 3:
+								var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+								var ransomBG = "background-color: #fff;";
+								var ransomColor = "color: #000;";
+								var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+							break;
+							case 4:
+								var ransomFont = "font-family: railway, times new roman, sans-serif;";
+								var ransomBG = "background-color: #000;";
+								var ransomColor = "color: #fff;";
+								var ransomRotate = "-webkit-transform: scale(1.4);";
+							break;
+							case 5:
+								var ransomFont = "font-family: railway, times new roman, sans-serif;";
+								var ransomBG = "background-color: #000;";
+								var ransomColor = "color: #fff;";
+								var ransomRotate = "-webkit-transform: rotate(15deg);";
+							break;
+							case 6:
+								var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+								var ransomBG = "background-color: #000;";
+								var ransomColor = "color: #fff;";
+								var ransomRotate = "-webkit-transform: scale(1.4);";
+							break;
+							case 7:
+								var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+								var ransomBG = "background-color: #000;";
+								var ransomColor = "color: #fff;";
+								var ransomRotate = "-webkit-transform: rotate(5deg);";
+							break;
+							case 10:
+								var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+								var ransomBG = "background-color: #fff;";
+								var ransomColor = "color: #000;";
+								var ransomRotate = "";
+							break;
+							case 11:
+								var ransomFont = "font-family: railway, times new roman, sans-serif;";
+								var ransomBG = "background-color: #fff;";
+								var ransomColor = "color: #000;";
+								var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+							break;
+							default:
+								var ransomFont = "font-family: times new roman, sans-serif;";
+								var ransomBG = "background-color: #000;";
+								var ransomColor = "color: #fff;";
+								var ransomRotate = "";
+							break;
+						}
+						//console.log('replacing menu character' + ransomCounter + ' with the style of ' + ransomFont+ransomBG+ransomColor);
+						//console.log(ransomStringEnd);
+						if (ransomStringStart.charAt(ransomCounter) != "Q") {
+							ransomStringEnd += "<span style='display:inline-block;white-space:pre;"+ransomFont+ransomBG+ransomColor+ransomRotate+"'>"+ransomStringStart.charAt(ransomCounter)+"</span>";
+						}
+						else {
+							ransomStringEnd += "<br>";
+						}
+					}
+					document.getElementById(menuButtons[menuCounter].ID).innerHTML = ransomStringEnd;
+				}
+				else {
+					for (var ransomCounter = 0; ransomCounter < ransomStringStart.length; ransomCounter++) {
+							switch (ransomCounter) {
+								case 0:
+									var ransomFont = "font-family: railway, times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "";
+								break;
+								case 1:
+									var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+									var ransomBG = "background-color: #fff;";
+									var ransomColor = "color: #000;";
+									var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+								break;
+								case 2:
+									var ransomFont = "font-family: times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "-webkit-transform: scale(1.4);";
+								break;
+								case 3:
+									var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+								break;
+								case 4:
+									var ransomFont = "font-family: railway, times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "-webkit-transform: rotate(15deg);";
+								break;
+								case 5:
+									var ransomFont = "font-family: railway, times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "";
+								break;
+								case 6:
+									var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+								break;
+								case 7:
+									var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "-webkit-transform: rotate(-15deg);";
+								break;
+								case 10:
+									var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+									var ransomBG = "background-color: #fff;";
+									var ransomColor = "color: #000;";
+									var ransomRotate = "";
+								break;
+								case 11:
+									var ransomFont = "font-family: railway, times new roman, sans-serif;";
+									var ransomBG = "background-color: #fff;";
+									var ransomColor = "color: #000;";
+									var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+								break;
+								default:
+									var ransomFont = "font-family: times new roman, sans-serif;";
+									var ransomBG = "background-color: #000;";
+									var ransomColor = "color: #fff;";
+									var ransomRotate = "";
+								break;
+							}
+							//console.log('replacing menu character' + ransomCounter + ' with the style of ' + ransomFont+ransomBG+ransomColor);
+							//console.log(ransomStringEnd);
+							if (ransomStringStart.charAt(ransomCounter) != "Q") {
+								ransomStringEnd += "<span style='display:inline-block;white-space:pre;"+ransomFont+ransomBG+ransomColor+ransomRotate+"'>"+ransomStringStart.charAt(ransomCounter)+"</span>";
+							}
+							else {
+								ransomStringEnd += "<br>";
+							}
+						}
+						document.getElementById(menuButtons[menuCounter].ID).innerHTML = ransomStringEnd;
+					}
+				}
+			document.getElementById('restartButton').style.color = "#ffffff";
+			document.getElementById('title').style.fontFamily = "norwester, times new roman, sans-serif";
+			document.getElementById('menu').style.fontFamily = "railway, times new roman, sans-serif";
+			document.getElementById('playerImage').style.borderRadius = "0px";
+			document.getElementById('playerImage').style.border = "0px";
+			if (data.player.pervert != true) {
+				document.getElementById('playerImage').style.borderColor = "#86b4dc";
+			}
+			else {
+				document.getElementById('playerImage').style.borderColor = "#fc53f1";
+			}
+			console.log(data.player.style);
+			break;
+		}
+		case "royalty": {
+			if (data.player.gender == "man") {
+				document.getElementById('playerImage').src = "scripts/gamefiles/characters/basicT.png";
+			}
+			else {
+				document.getElementById('playerImage').src = "scripts/gamefiles/characters/basilT.png";
+			}
+			for (i = 0; i < menuButtons.length; i++) {
+				document.getElementById(menuButtons[i].ID).innerHTML = menuButtons[i].name;
+				document.getElementById(menuButtons[i].ID).style.borderRadius = "0px";
+				document.getElementById(menuButtons[i].ID).style.border = "3px solid";
+				document.getElementById(menuButtons[i].ID).classList.add('personaMenuButton');
+			}
+			document.getElementById('title').style.fontFamily = "norwester, times new roman, sans-serif";
+			document.getElementById('menu').style.fontFamily = "railway, times new roman, sans-serif";
+			document.getElementById('playerImage').style.borderRadius = "0px";
+			document.getElementById('playerImage').style.border = "0px";
+			if (data.player.pervert != true) {
+				document.getElementById('playerImage').style.borderColor = "#86b4dc";
+			}
+			else {
+				document.getElementById('playerImage').style.borderColor = "#fc53f1";
+			}
+			console.log(data.player.style);
+			break;
+		}
+		default: {
+			document.getElementById('title').style.fontFamily = "arial, sans-serif";
+			document.getElementById('menu').style.fontFamily = "arial, sans-serif";
+			console.log(document.getElementById('title').style.fontFamily);
+			for (i = 0; i < menuButtons.length; i++) {
+				document.getElementById(menuButtons[i].ID).innerHTML = menuButtons[i].name;
+				document.getElementById(menuButtons[i].ID).style.borderRadius = "5px";
+				document.getElementById(menuButtons[i].ID).style.border = "none";
+				document.getElementById(menuButtons[i].ID).style.borderBottom = "3px solid";
+				document.getElementById(menuButtons[i].ID).classList.remove('personaMenuButton');
+			}
+			document.getElementById('restartButton').style.color = "#FF0000";
+			document.getElementById('playerImage').style.borderRadius = "3px";
+			document.getElementById('playerImage').style.borderColor = "#FFFFFF";
+		}
+	}
 }
 
 function writeWardrobe() {
@@ -1127,6 +1858,13 @@ function updateSave() {
 		var goof = {index: "succubus", fName: "Gou", lName: "", trust: 0, encountered: false, textEvent: "", met: false, color: "#BF76DF", author: "NoodleJacuzzi", artist: "Gujira"};
 		data.story.push(goof);
 		goof = {index: "nurse", fName: "Justine", lName: "Walton", trust: 0, encountered: false, textEvent: "", met: false, color: "#8D756B", author: "NoodleJacuzzi", artist: "Oreteki18kin"};
+		data.story.push(goof);
+		console.log(data.story);
+	}
+	if (data.player.version == 5) {
+		console.log('version 5 detected, updating save');
+		data.player.version = 6;
+		var goof = {index: "housekeep", fName: "Anri", lName: "Ramona", trust: 0, encountered: false, textEvent: "", met: false, color: "#df5877", author: "CryptoGreek", artist: "Kinta no Mousou"};
 		data.story.push(goof);
 		console.log(data.story);
 	}
@@ -1608,7 +2346,43 @@ function diagnostic() {
 			setTrust('tomgirl', -1);
 			setTrust('meji', -1);
 			setTrust('succubus', -1);
+			setTrust('housekeep', -1);
 			writeSpecial("Trap / male characters have been deactivated. You might need to use this code again in the future when more traps are added.");
+			break;
+		}
+		case "lobotomy": {
+			data.player.style = "lobotomy";
+			updateMenu();
+			writeEncounter('cheat');
+			writeSpecial("Lobotomy visual style active!");
+			break;
+		}
+		case "persona": {
+			data.player.style = "persona";
+			updateMenu();
+			writeEncounter('cheat');
+			writeSpecial("Persona visual style active!");
+			break;
+		}
+		case "royalty": {
+			data.player.style = "royalty";
+			updateMenu();
+			writeEncounter('cheat');
+			writeSpecial("Royalty visual style active!");
+			break;
+		}
+		case "stiggy752": {
+			data.player.style = "basic";
+			updateMenu();
+			writeEncounter('cheat');
+			writeSpecial("Basic visual style active!");
+			break;
+		}
+		case "baddy": {
+			data.player.style = "basic";
+			updateMenu();
+			writeEncounter('cheat');
+			writeSpecial("Basic visual style active!");
 			break;
 		}
 		case "cash money": {
@@ -1759,8 +2533,8 @@ function writePhoneImage (img, cap) {
 			<br>
 		`;
 	}
-	var savedImage = {name: cap, src: img,};
-	if (checkPhoneImages(cap) == false) {
+	var savedImage = {name: img, src: img,};
+	if (checkPhoneImages(img) == false) {
 		data.phoneImages.push(savedImage);
 		console.log("Unlocked image "+savedImage.name);
 	}

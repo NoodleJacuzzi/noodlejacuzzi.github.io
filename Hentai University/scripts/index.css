@@ -5,7 +5,168 @@ html, body {
 	padding: 0px;
 	margin: 0px;	
 }
+html {
+    border-color: #cccccc; /* defined Root border-color: Off-white */
+    overflow: hidden;
+    /* preventing overflows like dimmed background-layer to generate scrollbars
+		Scrollbars are getting used on the individual containers like #output instead anyways
+     */
+    font-family: arial, sans-serif;
+    font-size: 1rem; /* defined Root font-size */    
+    color: #cccccc; /* defined Root font-color: Off-white */
+    line-height: 1.5em;
+}
+body{
+    display: flex;
+    /* Makes sure #output always fills the rest of the available space */
+}
+*{
+	box-sizing: border-box;
+	/*when specifying dimensions, it takes padding and borders into account*/
+}
+a, a:visited {
+	text-decoration: none;
+	color:#509cea;
+}
+.closeButton {
+	top:15px;
+	left: 340px;
+	position: absolute;
+	font-size: 50px;
+  	border: 5px solid white;
+  	border-radius: 20px;
+	color:white;
+	
+}
+.openButton {
+	top:15px;
+	left: 20px;
+	position: absolute;
+	font-size: 50px;
+	visibility: hidden;
+  	border: 5px solid white;
+  	border-radius: 20px;
+	color:white;
+}
+.ghost {
+	position: absolute;
+	cursor: pointer;
+}
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+hr {
+	border: 2px dashed white;
+	margin-bottom: 45px; 
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
+/****Scroll bar****/
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333333; 
+}
+ /* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FFFFFF; 
+  border-radius:3px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #DDDDDD; 
+}
+
+/**** Menu ****/
+div#menu {
+    width: 400px;
+    height: 100%;
+    flex:none;
+    border-right: 2px solid;
+  	background-color: #111111;
+	text-align: center;
+	overflow-y: auto; /*only adds a scrollbar, when necessary*/
+	overflow-x: hidden;
+	/*resize: horizontal;  probably better to code the resizing of this container via JS. Something for later. */
+}
+p#title {
+    font-size: 1.875em;
+    margin-bottom: 15px;
+}
+p#author {
+    font-size: 0.75em;
+}
+
+.flexbox{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flexbox>*{
+	/*Only really used for the menu to ensure 2 items per row*/
+    width: 42%;
+    box-sizing: border-box;
+    margin: 15px;
+}
+.playerImage {
+	display: block;
+    margin: auto;
+  	border: 3px solid white;
+  	border-radius: 5px;
+	   object-fit: cover;
+}
+
+/**** Canvas ****/
+.wrapper{
+    background: none; /*To ensure WrapperBG shows, in case browser-native forces white background as default*/
+    width: 100%;
+	height: 100%;
+	overflow-y: auto; /*only shows a scroll-bar, if necessary*/
+	overflow-x: hidden;
+}
+div#output {
+    padding: 60px;
+}
+div#wrapperBG {
+	/*Box covering entire canvas, used to add background-image via JS*/
+    height: calc(100% + 20px);
+    width: calc(100% + 20px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(20px);
+    z-index: -2;
+}
+div#wrapperBG::after {
+	/*dims the background */
+    background: rgba(0,0,0,0.75);
+    content: "";
+    position: absolute;
+    height: calc(100% + 20px);
+    width: calc(100% + 20px);
+    z-index: -1;
+}
+.backgroundPicture{
+		display: block;
+		margin: auto;
+		width: 100%;
+		max-height: 70vh;
+		padding: 20px, 1px;
+		border: 3px solid white;
+        border-radius: 15px;
+}
 .playerRoom {
 	position: relative;
 	width: 90%;
@@ -35,49 +196,13 @@ html, body {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
-
-
-.corruptionList {
-	width: 48%;
-	float:left;
-	text-align:right;
-}
-.corruptionScore {
-	width: 48%;
-	float:right;
-	text-align:left;
-}
-.playerImage {
+img.bigPicture {
 	display: block;
-    margin: auto;
-    width: 95%;
-  	border: 3px solid white;
-  	border-radius: 5px;
-}
-
-/*Output Zone*/
-
-#phone .button {
-    /*color: var(--character-color);*/
-
-}
-
-.phonePicture {
-    display: block;
-    margin: auto;
-    max-height: 100%;
+    max-height: 90vh;
     max-width: 100%;
-      border: 3px solid;
-      border-radius: 5px;
-}
-.backgroundPicture {
-	display: block;
     margin: auto;
-	width: 100%;
-	max-height: 70vh;
-  	padding: 20px, 1px;
-  	border: 3px solid white;
-  	border-radius: 5px;
+    border: 5px solid #85bbc3;
+    border-radius: 30px;
 }
 .medPicture {
 	display: block;
@@ -88,6 +213,24 @@ html, body {
   	border-radius: 5px;
 }
 
+/**** Text ****/
+h1,h2,h3,h4,h5,h6,p{
+	/*clear any user style agent defintions*/
+	margin:0;
+	padding:0;
+}
+h1 {
+    font-size: 2.5rem;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
+h3 {
+    font-size: 1.25rem;
+}
 .centeredText {
 	text-align:center;
 	margin-left: auto;
@@ -101,10 +244,133 @@ html, body {
 	width: 400px;
 	font-size: 70%;
 }
+p{margin: 15px 0;}
+
+/**** Dialogue ****/
+.textBox {
+	position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: rgba(0,0,0,0.5);
+    border-bottom: 5px solid;
+	/*border-color: var(--character-color);*/
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 15px;
+    width: 100%;
+	overflow: hidden;
+}
+.textBoxContent {
+	/*added so in the case of ever having so much dialog that it would extend over the picture, it aligns neatly at the right to the picture as demosntrated in example1.jpg.*/
+}
+img.textThumb {
+    height: 150px;
+    width: 150px;
+    border-radius: 15px;
+    margin-right: 30px;
+    /*box-shadow: -5px 5px var( --character-color);*/
+    flex: none;
+}
+/* Textbox interactions */
+.textBox p.switch {
+    color: #5fe6ec;
+	cursor: pointer;
+}
+.textBox p.switch::before {
+    content: '\027A4';
+    padding-right: 5px;
+	cursor: pointer;
+}
+/* text emphasis */
+.textBox b {
+    color: hsla(48, 69%, 75%, 1);
+}
+.textName {
+    font-size: 1.25em;
+	margin: 0px;
+	padding: 0px;
+	font-weight: bold;
+}
+p.rawText {
+    margin-bottom: 45px;
+    font-style: italic;
+}
+.specialText {
+    color: #1ce01c;
+    font-weight: bold;
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+/****Status colors****/
+p.status{
+	font-size: 0.875em;
+    margin-bottom: 15px;
+}
+.Love{
+	color: #ff0000;
+    font-weight: 600;
+}
+.Trusting{
+    color: #ffeb00;
+}
+.Friendly{
+    color: #59ce10;
+}
+.Relaxed{
+    color: #6b91bf;
+}
+.Wary{
+	color: #e46b31;
+}
+.unkown{
+    color: #a7a7a7;
+}
+
+/*regular button*/
+.button, .pictureButton, .choiceText, .shopItem, .logbookSwitch{
+    background: rgba(0,0,0,0.75);
+    padding: 15px;
+    margin: 15px;
+    border: none;
+    border-bottom: 3px solid;
+    border-radius: 5px;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+}
+.button:hover, .pictureButton:hover, .choiceText:hover, .logbookSwitch:hover{
+    background: rgba(50,50,50,0.75);
+    color: #ffffff;
+        border: none;
+    border-bottom: 3px solid #FFFFFF;
+}
+.pictureButton, .choiceText{
+	font-size:1.25rem;
+	font-weight: bold;
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
+}
+#restartButton {
+    color: #FF0000;
+    border-color:#FF0000;
+    margin: 0 15px;
+}
+.pictureButton,.pictureButton:hover {
+    padding: 15px;
+    opacity: 1;
+    border: 0;
+    border-bottom: 3px solid #FFFFFF;
+}
+.playerRoom {
+    width: 100%;
+    margin-bottom:60px;
+}
+
 
 /*Windows*/
-
-
 .windowLeft {
 	position:absolute;
 	box-sizing: border-box;
@@ -120,8 +386,38 @@ html, body {
 	height: 80%;
 	width: 50%;
 }
-
-
+.popup{
+	position: absolute;
+	top: 50%;
+    left: 50%;
+	width: 80vw;
+	height: 80vh;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    overflow: visible;
+}
+.popup::after {
+    content: "";
+    position: fixed;
+	width: 80vw;
+	height: 80vh;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.windowTitle {
+    width: 100%;
+    text-align: center;
+    border-bottom: 3px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.5);
+    display: block;
+    line-height: 2.5;
+}
 
 /*Inventory Menu*/
 .item {
@@ -144,15 +440,16 @@ html, body {
 .itemQuantity {
 }
 
-
 /*Shop*/
 .shopItem {
 	cursor: pointer;
 	position: block;
 	width: 100%;
-	height: 80px;
 	background-color: #333333;
 	overflow: auto;
+    height: unset;
+	display: flex;	
+    align-items: center;
 }
 .shopName {
 	pointer-events: none;
@@ -162,6 +459,7 @@ html, body {
 	color: white;
 	left: 30%;
 	font-size: 22px;
+    flex: 3 1 auto;
 }
 .shopDesc {
 	pointer-events: none;
@@ -172,6 +470,7 @@ html, body {
 	width: 40%;
 	left: 40%;
 	font-size: 16px;
+	flex: 5 1 auto;
 }
 .shopPrice {
 	pointer-events: none;
@@ -181,6 +480,7 @@ html, body {
 	left: 90%;
 	width: 5%;
 	font-size: 22px;
+    flex: 2 1 auto;
 }
 .shopImage {
 	pointer-events: none;
@@ -189,441 +489,14 @@ html, body {
 	width: 69px;
   	border: 3px solid white;
   	border-radius: 5px;
+    float: right;
+    margin-right: 15px;
 }
-
-/*Wardrobe*/
-.wardrobeItem {
-	cursor: pointer;
-	position: block;
-	height: 75px;
-	width: 90%;
-	background-color: #333333;
-	margin-bottom: 10px;
-	z-index: 2;
-}
-.wardrobeLeft {
-	position:absolute;
-	box-sizing: border-box;
-	position: block;
-	height: 80%;
-	width: 50%;
-}
-.wardrobeRight {
-	position:absolute;
-	box-sizing: border-box;
-	left:50%;
-	position: block;
-	height: 80%;
-	width: 50%;
-}
-
-/*Footer*/
-.footer {
-	height: 0%;
-	overflow: hidden;
-}
-
-.footer .switch {
-	font-size: 300%;
-	height: 100px;
-	width: 33%;
-	margin: auto;
-	margin-top: 50px;
-	text-align: center;
-	box-sizing: border-box;
-	float: left;
-  	border: 3px solid white;
-  	border-radius: 5px;
-}
-
-/**** Baddy's additions ****/
-
-
-*{
-	box-sizing: border-box;
-	/*when specifying dimensions, it takes padding and borders into account*/
-}
-
-a, a:visited {
-	text-decoration: none;
-	color:#509cea;
-}
-
-html {
-    border-color: #cccccc; /* defined Root border-color: Off-white */
-    overflow: hidden;
-    /* preventing overflows like dimmed background-layer to generate scrollbars
-		Scrollbars are getting used on the individual containers like #output instead anyways
-     */
-}
-
-body{
-    display: flex;
-    /* Makes sure #output always fills the rest of the available space */
-}
-
-
-
-/**** Font Definitions ****/
-
-html {
-    font-family: arial, sans-serif;
-    font-sze:16px;
-    font-size: 1rem; /* defined Root font-size */    
-    color: #cccccc; /* defined Root font-color: Off-white */
-    line-height: 1.5em;
-}
-
-h1,h2,h3,h4,h5,h6,p{
-	/*clear any user style agent defintions*/
-	margin:0;
-	padding:0;
-}
-
-h1 {
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-size: 2rem;
-}
-
-h3 {
-    font-size: 1.5rem;
-}
-
-h3 {
-    font-size: 1.25rem;
-}
-
-/**** Menu ****/
-div#menu {
-    width: 400px;
-    height: 100%;
-    flex:none;
-    overflow: hidden;
-    border-right: 5px solid;
-  	background-color: #111111;
-	text-align: center;
-	overflow-y: auto; /*only adds a scrollbar, when necessary*/
-	overflow-x: hidden;
-	/*resize: horizontal;  probably better to code the resizing of this container via JS. Something for later. */
-}
-
-p#title {
-    font-size: 1.875em;
-    margin-bottom: 15px;
-}
-
-p#author {
-    font-size: 0.75em;
-}
-
-.flexbox{
-    display: flex;
-    flex-wrap: wrap;
-}
-.flexbox>*{
-	/*Only really used for the menu to ensure 2 items per row*/
-    width: 42%;
-    box-sizing: border-box;
-    margin: 15px;
-}
-#playerName {
-    color: var(--character-color);
-}
-.playerImage{
-	    object-fit: cover;
-}
-
-
-
-/**** Canvas ****/
-.wrapper{
-    background: none; /*To ensure WrapperBG shows, in case browser-native forces white background as default*/
-    width: 100%;
-	height: 100%;
-	overflow-y: auto; /*only shows a scroll-bar, if necessary*/
-	overflow-x: hidden;
-}
-
-div#output {
-    padding: 60px;
-}
-
-div#wrapperBG {
-	/*Box covering entire canvas, used to add background-image via JS*/
-    height: calc(100% + 20px);
-    width: calc(100% + 20px);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: blur(20px);
-    z-index: -2;
-}
-div#wrapperBG::after {
-	/*dims the background */
-    background: rgba(0,0,0,0.75);
-    content: "";
-    position: absolute;
-    height: calc(100% + 20px);
-    width: calc(100% + 20px);
-    z-index: -1;
-}
-
-.backgroundPicture{
-        border-radius: 15px;
-}
-
-
-
-/****Buttons****/
-
-
-/*regular button*/
-
-.button, .pictureButton, .choiceText, .shopItem, .logbookSwitch{
-    background: rgba(0,0,0,0.75);
-    padding: 15px;
-    margin: 15px;
-    border: none;
-    border-bottom: 3px solid;
-    border-radius: 5px;
-    transition: 0.25s;
-    text-align: center;
-	cursor: pointer;
-}
-
-.button:hover, .pictureButton:hover, .choiceText:hover, .logbookSwitch:hover{
-    background: rgba(50,50,50,0.75);
-    color: #ffffff;
-        border: none;
-    border-bottom: 3px solid #FFFFFF;
-}
-
-.pictureButton, .choiceText{
-	font-size:1.25rem;
-	font-weight: bold;
-    display: block;
-    width: fit-content;
-    margin: 15px auto;
-}
-
-#restartButton {
-    color: #FF0000;
-    border-color:#FF0000;
+.shopItem>* {
     margin: 0 15px;
 }
 
-
-.pictureButton,.pictureButton:hover {
-    padding: 15px;
-    opacity: 1;
-    border: 0;
-    border-bottom: 3px solid #FFFFFF;
-}
-
-.playerRoom {
-    width: 100%;
-    margin-bottom:60px;
-}
-
-
-
-/**** Dialogue ****/
-
-img.bigPicture {
-	display: block;
-    max-height: 90vh;
-    max-width: 100%;
-    margin: auto;
-    border: 5px solid #85bbc3;
-    border-radius: 30px;
-}
-
-p{margin: 15px 0;}
-
-.textBox {
-	position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    background-color: rgba(0,0,0,0.5);
-    border-bottom: 5px solid;
-	/*border-color: var(--character-color);*/
-    margin: 15px 0;
-    padding: 15px;
-    border-radius: 15px;
-    width: 100%;
-	overflow: hidden;
-}
-
-.textBoxContent {
-	/*added so in the case of ever having so much dialog that it would extend over the picture, it aligns neatly at the right to the picture as demosntrated in example1.jpg.*/
-}
-
-/* Textbox interactions */
-.textBox p.switch {
-    color: #5fe6ec;
-	cursor: pointer;
-}
-
-.textBox p.switch::before {
-    content: '\027A4';
-    padding-right: 5px;
-	cursor: pointer;
-}
-
-/* text emphysis */
-/* 
-I'd recommend using <span class="emphysis_title"> instead of <b>.
-Gives more freedom to customize how to emphysize a word/segment and you can create as many emphysises as you please.
-For example 
-<span class="emp_danger">
-<span class="emp_happy">
-<span class="emp_normal">
-<span class="emp_player">
-*/
-.textBox b {
-    color: hsla(48, 69%, 75%, 1);
-}
-
-.textName {
-    font-size: 1.25em;
-	margin: 0px;
-	padding: 0px;
-	font-weight: bold;
-}
-
-p.rawText {
-    margin-bottom: 45px;
-    font-style: italic;
-}
-
-.specialText {
-    color: #1ce01c;
-    font-weight: bold;
-    margin-bottom: 45px;
-    text-align: center;
-}
-
-img.textThumb {
-    height: 150px;
-    width: 150px;
-    border-radius: 15px;
-    margin-right: 30px;
-    /*box-shadow: -5px 5px var( --character-color);*/
-    flex: none;
-}
-
-.textName {
-    /*color: var( --character-color);*/
-}
-
-
-
-
-/****Character Colors****/
-/*I've "rewritten" the JS code in index.js so it adds the textbox owner as a class. */
-
-/* Fallback, if no owner is available*/
-.char_???{
-    --character-color:#CCCCCC;
-}
-
-/* Player */
-.char_player {
-    --character-color: #86b4dc;
-}
-
-/*Mary Williams*/
-.char_purple {
-   --character-color: #cb86ef;
-}
-
-/*Margaret Williams*/
-.char_chubby {
-    --character-color: #da924b;
-}
-
-/* Steph Black */
-.char_kuro {
-   --character-color: #fde1a5;
-}
-
-/* Reese */
-.char_meji{
-   --character-color: #7e52a3;
-}
-
-/* Emma Hamilton*/
-.char_green {
-    --character-color: #677b4c;
-}
-
-/* Cassandra Hamilton*/
-.char_scarf {
-    --character-color: #954655;
-}
-
-/* Sam White */
-.char_tomgirl{
-    --character-color: #a79e9a;
-}
-
-/* Victoria Devons*/
-.char_principal {
-    --character-color: #e47311;
-}
-
-/* Anna Fletcher */
-.char_mistress {
-    --character-color: #ed9082;
-}
-
-/* Lisa Jones */
-.char_secretary {
-    --character-color: #888888;
-}
-
-/****Status colors****/
-p.status{
-	font-size: 0.875em;
-    margin-bottom: 15px;
-}
-
-.Love{
-	color: #ff0000;
-    font-weight: 600;
-}
-
-.Trusting{
-    color: #ffeb00;
-}
-
-.Friendly{
-    color: #59ce10;
-}
-
-.Relaxed{
-    color: #6b91bf;
-}
-
-.Wary{
-	color: #e46b31;
-}
-
-.unkown{
-    color: #a7a7a7;
-}
-
-
-
 /**** Logbook ****/
-
 div.self, .inventory,.save {
     display: flex;
     flex-wrap: wrap;
@@ -633,11 +506,9 @@ div.self, .inventory,.save {
 	padding: 0px;
 	visibility: hidden;
 }
-
 .lb_Name{
 color:var(--character-color);
 }
-
 .logbookRight {
 	left:20%;
 	height: 80%;
@@ -647,7 +518,6 @@ color:var(--character-color);
     overflow-y: auto;
     overflow-x: hidden;
 }
-
 .logbookLeft {
 	height: 80%;
 	width: 20%;
@@ -656,7 +526,6 @@ color:var(--character-color);
    overflow-y: scroll;
     overflow-x: hidden;
 }
-
 img#selfImage {
   	border: 2px solid;
   	border-radius: 5px;
@@ -665,117 +534,19 @@ img#selfImage {
 	margin: 0 30px;
     max-height: 100%;
 }
-
 .selfSwitch {
 	display: inline;
 	cursor: pointer;
 }
-
 .selfSwitch:hover {
 	display: inline;
 	cursor: pointer;
 }
 
-
-
-/****Scroll bar****/
-/* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #333333; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #FFFFFF; 
-  border-radius:3px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #DDDDDD; 
-}
-
-
-
-/**** Popup ****/
-
-.popup{
-	position: absolute;
-	top: 50%;
-    left: 50%;
-	width: 80vw;
-	height: 80vh;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    overflow: visible;
-}
-
-.popup::after {
-    content: "";
-    position: fixed;
-	width: 80vw;
-	height: 80vh;
-    background: rgba(0,0,0,0.5);
-    z-index: -1;
-	top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-}
-
-.windowTitle {
-    width: 100%;
-    text-align: center;
-    border-bottom: 3px solid white;
-    cursor: pointer;
-    border-radius: 5px;
-    background: rgba(0,0,0,0.5);
-    display: block;
-    line-height: 2.5;
-}
-
-/****Shop****/
-
-.shopItem{
-    height: unset;
-	display: flex;	
-    align-items: center;
-}
-
-.shopImage {
-    float: right;
-    margin-right: 15px;
-}
-
-p.shopName {
-    flex: 3 1 auto;
-}
-
-p.shopDesc{
-	flex: 5 1 auto;
-}
-
-p.shopPrice {
-    flex: 2 1 auto;
-}
-
-.shopItem>* {
-    margin: 0 15px;
-}
-
-
-
 /****Save menu****/
-
 div#save {
     flex-flow: column;
 }
-
 .saveButton, .deleteButton, .loadButton, .saveFileButton, .loadFileButton {
     color: #ffffff; 
     padding: 15px; 
@@ -789,7 +560,6 @@ div#save {
    	cursor: pointer; 
 
 }
- 
 .saveSlot {
 padding: 5px 0;
     height: unset;
@@ -802,7 +572,6 @@ padding: 5px 0;
     padding-left: 105px;
     border-radius: 5px;
 }
-
 .saveDate {
 	position: absolute;
     flex: 5 1 auto;
@@ -810,19 +579,16 @@ padding: 5px 0;
 	margin:1%;
 	font-size: 22px;
 }
-
 .saveList {
 display: flex;
     flex-direction: column;
     overflow-y: scroll;
     width: 100%;
 }
-
 .deleteButton{
 	color:#FF0000;
 	border-color:#FF0000;
 }
-
 .saveName, .loadButton, .saveButton, .deleteButton, .loadFileButton, .saveFileButton {
     position: unset;
     flex: 1 1 auto;
@@ -831,8 +597,6 @@ display: flex;
     margin: 15px;
 
 }
-
-
 .saveName {
 position: absolute;
     left: 30px;
@@ -844,6 +608,7 @@ position: absolute;
     font-size: 1.25rem;
 }
 
+/***Phone***/
 .phoneTextBox {
 	position: relative;
 	display: block;
@@ -878,49 +643,570 @@ position: absolute;
 	padding: 0px;
 	font-weight: bold;
 }
-
-.closeButton {
-	top:15px;
-	left: 340px;
-	position: absolute;
-	font-size: 50px;
-  	border: 5px solid white;
-  	border-radius: 20px;
-	color:white;
-	
+.phonePicture {
+    display: block;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+      border: 3px solid;
+      border-radius: 5px;
 }
 
-.openButton {
-	top:15px;
-	left: 20px;
-	position: absolute;
-	font-size: 50px;
-	visibility: hidden;
-  	border: 5px solid white;
-  	border-radius: 20px;
-	color:white;
+/*** Mobile Ver Stuff ***/
+/*Footer Hiding*/ /*Comment this out in mobile ver*/
+.footer { 
+	height: 0%;
+	overflow: hidden;
+}
+.footer .switch {
+	font-size: 300%;
+	height: 100px;
+	width: 33%;
+	margin: auto;
+	margin-top: 50px;
+	text-align: center;
+	box-sizing: border-box;
+	float: left;
+  	border: 3px solid white;
+  	border-radius: 5px;
+}
+/*Other*/ /*Comment this out in dekstop ver*/
+/*
+.footerButton {
+	height: 10vh;
+	text-align: center;
+	box-sizing: border-box;
+	float: left;
+  	border: 3px solid white;
+  	border-radius: 5px;
+    background: rgba(0,0,0,0.75);
+    margin: 15px;
+    border: none;
+    border-bottom: 3px solid grey;
+    border-radius: 5px;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+}
+.footerButton:hover{
+    background: rgba(50,50,50,0.75);
+    color: #ffffff;
+      border: none;
+    border-bottom: 3px solid #FFFFFF;
+}
+img.bigPicture {
+    max-height: 60vh;
+    max-width: 90%;
+}
+div#menu {
+    width: 0px;
+    overflow: hidden;
+    border-right: 0px;
+}
+div#wrapperBG {
+    height: calc(100% + 0px);
+    width: calc(100% + 0px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(10px);
+    z-index: -2;
+}
+div#wrapperBG::after {
+    background: rgba(0,0,0,0.75);
+    content: "";
+    position: absolute;
+    height: calc(100% + 0px);
+    width: calc(100% + 0px);
+    z-index: -1;
+}
+.pictureButton, .choiceText{
+	font-size: 17px;
+	font-weight: bold;
+    display: block;
+    width: fit-content;
+    margin: 2px;
+}
+.choiceText {
+	width: 80%;
+	margin: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.pictureButton,.pictureButton:hover {
+    padding: 2px;
+	min-height: 10vh;
+    opacity: 1;
+    border: 0;
+    border-bottom: 3px solid #FFFFFF;
+}
+.playerRoom {
+	height: 70vh; 
+    width: 90%;
+	margin: auto;
+    margin-bottom:30px;
+}
+.button, .choiceText, .shopItem, .logbookSwitch{
+	margin-bottom: 15px;
+}
+.flexbox>*{
+    width: 30%;
+    margin: auto;
+	margin-top: 30px;
+}
+#restartButton {
+    color: #FF0000;
+    border-color:#FF0000;
+    margin: auto;
+    margin-top: 30px;
+}
+div#output {
+	padding: 5px;
+}
+*/
+
+/*Lobotomy Schema*/
+.textBoxLobotomy {
+	position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: rgba(0,0,0,0.5);
+	border: solid 5px;
+    margin: 15px 0;
+    padding: 0px;
+    width: 100%;
+	overflow: hidden;
+	-moz-transform: skew(-5deg, 0deg);
+	-webkit-transform: skew(-5deg, 0deg);
+	-o-transform: skew(-5deg, 0deg);
+	-ms-transform: skew(-5deg, 0deg);
+	transform: skew(-5deg, 0deg);
+}
+.textNameLobotomy {
+    font-size: 1.5em;
+	width: 150px;
+	font-weight: bold;
+    text-align: center;
+	font-family: norwester, times new roman, sans-serif;
+	-moz-transform: skew(5deg, 0deg);
+	-webkit-transform: skew(5deg, 0deg);
+	-o-transform: skew(5deg, 0deg);
+	-ms-transform: skew(5deg, 0deg);
+	transform: skew(5deg, 0deg);
+	margin-bottom: 0px;
+	color: black;
+}
+img.textThumbLobotomy {
+    height: 135px;
+    width: 135px;
+    /*box-shadow: -5px 5px var( --character-color);*/
+    flex: none;
+	-moz-transform: scale(0.9) skew(5deg, 0deg);
+	-webkit-transform: scale(0.9) skew(5deg, 0deg);
+	-o-transform: scale(0.9) skew(5deg, 0deg);
+	-ms-transform: scale(0.9) skew(5deg, 0deg);
+	transform: scale(0.9) skew(5deg, 0deg);
+	margin-top: -1px;
+}
+.textBoxContentLobotomy {
+	font-size: 1.4em;
+	font-family: railway, times new roman, sans-serif;
+	font-style: normal;
+	-moz-transform: skew(5deg, 0deg);
+	-webkit-transform: skew(5deg, 0deg);
+	-o-transform: skew(5deg, 0deg);
+	-ms-transform: skew(5deg, 0deg);
+	transform: skew(5deg, 0deg);
+}
+.lobotomyThumb {
+    display: inline-block;
+    width: 160px;
+	margin-right: 40px;
+	margin-left: 30px;
+}
+.lobotomyThumbBorder {
+    height: 127px;
+    width: 135px;
+	background-color: #000000;
+    margin-right: 30px;
+    margin-left: 10px;
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+}
+.choiceTextLobotomy {
+	padding: 0px;
+	margin: 0px;
+	font-family: railway, times new roman, sans-serif;
+	font-size: 1.3em;
+	font-weight: normal;
+}
+.choiceTextLobotomy:hover{
+}
+.choiceFrameLobotomy{
+    background: rgba(0,0,0,0.75);
+    padding: 15px;
+    margin: 15px;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+	font-size:1.25rem;
+	font-weight: bold;
+    display: block;
+    width: fit-content;
+    max-width: 30vw;
+    margin: 15px auto;
+	border: solid 5px;
 }
 
-.ghost {
-	position: absolute;
+.choiceFrameLobotomy:hover{
+    background: rgba(50,50,50,0.75);
+    color: #ffffff;
+	border-color: rgba(50,50,50,0.75);
+}
+
+.textBoxLobotomy p.switch {
+    color: #5fe6ec;
+	cursor: pointer;
+}
+.textBoxLobotomy p.switch::before {
+    content: '\027A4';
+    padding-right: 5px;
 	cursor: pointer;
 }
 
-.loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
+/*Persona Schema*/
+.textBoxPersona {
+	position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 15px 0;
+    padding: 0px;
+    width: 100%;
+	overflow: hidden;
+}
+img.textThumbPersona {
+    height: 180px;
+    width: 180px;
+    /*box-shadow: -5px 5px var( --character-color);*/
+    flex: none;
+}
+.textBoxContentPersona {
+	font-size: 1.4em;
+	font-family: railway, times new roman, sans-serif;
+	font-style: normal;
+	margin-left: 60px;
+}
+.personaThumb {
+    display: inline-block;
+    width: 160px;
+}
+.nameBoxPersona {
+	-moz-transform: skew(3deg, 0deg);
+	-webkit-transform: skew(3deg, 0deg);
+	-o-transform: skew(3deg, 0deg);
+	-ms-transform: skew(3deg, 0deg);
+	transform: skew(3deg, 0deg);
+	padding-bottom: 3px;
+}
+.textNamePersona {
+	-moz-transform: skew(-3deg, 0deg);
+	-webkit-transform: skew(-3deg, 0deg);
+	-o-transform: skew(-3deg, 0deg);
+	-ms-transform: skew(-3deg, 0deg);
+	transform: skew(-3deg, 0deg);
+    font-size: 1.5em;
+	font-weight: bold;
+	font-family: norwester, times new roman, sans-serif;
+	z-index: 1;
+}
+.textNamePersonaBlack{
+	border:solid 44px #000;
+	position:absolute;
+	margin:-68px 0 0 90px;
+	transform: scaleX(3.3) scaleY(.5);
+	z-index: -1;
+}
+.textNamePersonaWhite{
+	border:solid 44px #fff;
+	position:absolute;
+	margin:-68px 0 0 90px;
+	transform: scaleX(3.4) scaleY(.6);
+	z-index: -2;
+}
+.personaNameArrow{
+	border:solid 32px transparent;
+	border-right-color:#000;
+	position:absolute;
+	margin:-26px 0 0 -88px;
+	transform: scaleX(2) scaleY(.5);
+}
+.personaNameArrowShadow{
+	border:solid 32px transparent;
+	border-right-color:#fff;
+	position:absolute;
+	margin:-26px 0 0 -90px;
+	transform: scaleX(2.2) scaleY(.7);
+	z-index:-2;
+}
+.dialogueBoxPersona {
+	border: 3px solid white;
+	background-color: #000;
+	padding-left: 19px;
+	padding-right: 19px;
+	margin-left: 3px;
+	margin-top: -9px;
 }
 
-hr {
-	border: 2px dashed white;
-	margin-bottom: 45px; 
+.choiceTextPersona {
+	padding: 0px;
+	margin: 0px;
+	font-family: railway, times new roman, sans-serif;
+	font-size: 1.3em;
+	font-weight: normal;
+}
+.choiceTextPersona:hover{
+}
+.choiceFramePersona{
+    background: #000000;
+    color: #ffffff;
+    padding: 15px;
+    margin: 15px;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+	font-size:1.25rem;
+	font-weight: bold;
+    display: block;
+    width: fit-content;
+    max-width: 30vw;
+    margin: 15px auto;
+	border: solid 5px;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.choiceFramePersona:hover{
+    background: #ffffff;
+    color: #000000;
+	border-color: #000000;
+}
+
+.textBoxPersona p.switch {
+    color: #5fe6ec;
+	cursor: pointer;
+}
+.textBoxPersona p.switch::before {
+    content: '\027A4';
+    padding-right: 5px;
+	cursor: pointer;
+}
+
+.personaMenuButton {
+	font-size: 1.2em;
+	letter-spacing: .2em;
+    background: #000000;
+    color: #ffffff;
+	border: solid 3px #ffffff;
+    padding: 15px;
+    margin: 15px;
+	border: solid 3px #ffffff;
+	border-radius: 0px;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+	-moz-transform: skew(5deg, 0deg);
+	-webkit-transform: skew(5deg, 0deg);
+	-o-transform: skew(5deg, 0deg);
+	-ms-transform: skew(5deg, 0deg);
+	transform: skew(5deg, 0deg);
+}
+.personaMenuButton:hover{
+    background: rgba(0,0,0);
+    filter:invert(1);
+}
+.pictureButtonPersona{
+	letter-spacing: .2em;
+	display: block;
+	position: absolute;
+    background: #000000;
+    color: #ffffff;
+	border: solid 3px #ffffff;
+	font-size:1.25rem;
+	font-weight: bold;
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
+    padding: 15px;
+    margin: 15px;
+    border: 3px solid;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+	-moz-transform: skew(3deg, 0deg);
+	-webkit-transform: skew(3deg, 0deg);
+	-o-transform: skew(3deg, 0deg);
+	-ms-transform: skew(3deg, 0deg);
+	transform: skew(3deg, 0deg);
+}
+.pictureButtonPersona:hover {
+    padding: 15px;
+    background: #ffffff;
+    color: #000000;
+	border: solid 3px #000000;
+}
+
+
+#buttonMenu {
+	display:inline-block;
+}
+/*Royalty Schema*/
+.textBoxRoyalty {
+	position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 5px 0;
+    padding: 0px;
+    width: 100%;
+	overflow: hidden;
+}
+img.textThumbRoyalty {
+    height: 180px;
+    width: 180px;
+    /*box-shadow: -5px 5px var( --character-color);*/
+    flex: none;  
+	-webkit-filter:grayscale(0.9);
+	filter: grayscale(0.9);
+}
+.textBoxContentRoyalty {
+	font-size: 1.4em;
+	font-family: railway, times new roman, sans-serif;
+	font-style: normal;
+	margin-left: 40px;
+	margin-top: 5px;
+	width: 90%;
+}
+.royaltyThumb {
+    display: inline-block;
+    width: 160px;
+}
+.nameBoxRoyalty {
+	width:180px;
+	background-color: #000;
+	margin-top: -29px;
+	border: 3px solid;
+	border-radius: 5px;
+	z-index:1;
+	position: absolute;
+}
+.textNameRoyalty {
+    font-size: 1.5em;
+	font-weight: bold;
+	font-family: norwester, times new roman, sans-serif;
+	z-index: 1;
+	margin: auto;
+	text-align: center;
+}
+.dialogueBoxRoyalty {
+    width: 100%;
+	border: 3px solid white;
+	border-radius: 5px;
+	background-color: #000;
+	padding: 0px 15px;
+	height: 180px;
+}
+
+.choiceTextRoyalty {
+	padding: 0px;
+	margin: 0px;
+	font-family: railway, times new roman, sans-serif;
+	font-size: 1.3em;
+	font-weight: normal;
+}
+.choiceTextRoyalty:hover{
+}
+.choiceFrameRoyalty{
+    background: #000000;
+    color: #ffffff;
+    padding: 15px;
+    margin: 15px;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+	font-size:1.25rem;
+	font-weight: bold;
+    display: block;
+    width: fit-content;
+    max-width: 30vw;
+    margin: 15px auto;
+	border: solid 5px;
+}
+
+.choiceFrameRoyalty:hover{
+    background: #ffffff;
+    color: #000000;
+	border-color: #000000;
+}
+
+.textBoxRoyalty p.switch {
+    color: #5fe6ec;
+	cursor: pointer;
+}
+.textBoxRoyalty p.switch::before {
+    content: '\027A4';
+    padding-right: 5px;
+	cursor: pointer;
+}
+
+.royaltyMenuButton {
+    background: #000000;
+    color: #ffffff;
+	border: solid 3px #ffffff;
+    padding: 15px;
+    margin: 15px;
+	border: solid 3px #ffffff;
+	border-radius: 0px;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+}
+.royaltyMenuButton:hover{
+    background: #ffffff;
+    color: #000000;
+	border: solid 3px #000000;
+}
+.pictureButtonRoyalty{
+	display: block;
+	position: absolute;
+    background: #000000;
+    color: #ffffff;
+	border: solid 3px #ffffff;
+	font-size:1.25rem;
+	font-weight: bold;
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
+    padding: 15px;
+    margin: 15px;
+    border: 3px solid;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+	-moz-transform: skew(3deg, 0deg);
+	-webkit-transform: skew(3deg, 0deg);
+	-o-transform: skew(3deg, 0deg);
+	-ms-transform: skew(3deg, 0deg);
+	transform: skew(3deg, 0deg);
+}
+.pictureButtonRoyalty:hover {
+    padding: 15px;
+    background: #ffffff;
+    color: #000000;
+	border: solid 3px #000000;
 }

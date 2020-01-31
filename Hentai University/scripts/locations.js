@@ -83,8 +83,8 @@ var locationArray = [
 		{name: "Streets", top: 55, left: 40, type: "location", target: "street", time: "MorningEvening",},
 		{name: "Your Home", top: 45, left: 70, type: "location", target: "playerHouse", time: "MorningEvening",},
 		{name: "Shopping District", top: 20, left: 60, type: "location", target: "shoppingDistrict", time: "MorningEvening",},
-		{name: "Vintage Street", top: 10, left: 30, type: "location", target: "shoppingDistrict", time: "MorningEvening",},
-		{name: "Park District", top: 65, left: 10, type: "location", target: "shoppingDistrict", time: "MorningEvening",},
+		{name: "Vintage Street", top: 10, left: 30, type: "location", target: "vintageStreet", time: "MorningEvening",},
+		{name: "Park District", top: 65, left: 10, type: "location", target: "parkDistrict", time: "MorningEvening",},
 	],},
 	{index: "schoolMap", buttons: [
 		{name: "Back to Town", 			top: 82, 	left: 40, 	type: "location", target: "map", time: "MorningEvening",},
@@ -146,9 +146,12 @@ function changeLocation(n) {
 				}
 			}
 			if (data.player.time != "Night" && data.player.location != "map"  && data.player.location != "schoolMap" && checkItem("Town Map") == true) {
-				document.getElementsByClassName('playerRoom')[0].innerHTML += `
-					<div class="pictureButton" onclick="changeLocation('map')" style="top: 0%; left: 0%; max-width: 30%;">Use Map</div>
-				`;
+				printLocationButton(
+					'Use Map', 
+					0, 
+					0, 
+					'map', 
+				);
 			}
 			if (n == "store") {
 				loadShop();
@@ -175,10 +178,183 @@ function changeLocation(n) {
 }
 
 function printLocationButton(name, top, left, target) {
-	document.getElementsByClassName('playerRoom')[0].innerHTML += `
-		<div class="pictureButton" onclick='changeLocation("`+target+`")'
-		style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+name+`</div>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementsByClassName('playerRoom')[0].innerHTML += `
+				<div class="pictureButton" onclick='changeLocation("`+target+`")'
+				style="top: `+top+`%; left: `+left+`%; max-width: 30%; border: 3px solid; border-radius: 0px;">`+name+`</div>
+			`;
+			break;
+		}
+		case "persona": {
+			var ransomStringStart = name;
+			ransomStringStart = ransomStringStart.toLowerCase();
+			ransomStringStart = ransomStringStart.charAt(0).toUpperCase() + ransomStringStart.slice(1);
+			console.log(ransomStringStart);
+			var ransomStringEnd = "";
+			if (ransomStringStart.charAt(2) == "g" || ransomStringStart.charAt(2) == "v") {
+				for (var ransomCounter = 0; ransomCounter < ransomStringStart.length; ransomCounter++) {
+					switch (ransomCounter) {
+						case 0:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+						break;
+						case 1:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "";
+						break;
+						case 2:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+						case 3:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						case 4:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: scale(1.4);";
+						break;
+						case 5:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(15deg);";
+						break;
+						case 6:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: scale(1.4);";
+						break;
+						case 7:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(5deg);";
+						break;
+						case 10:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "";
+						break;
+						case 11:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						default:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+					}
+					console.log('replacing menu character' + ransomCounter + ' with the style of ' + ransomFont+ransomBG+ransomColor);
+					console.log(ransomStringEnd);
+					ransomStringEnd += "<span style='display:inline-block;white-space:pre;"+ransomFont+ransomBG+ransomColor+ransomRotate+"'>"+ransomStringStart.charAt(ransomCounter)+"</span>";
+				}
+			}
+			else {
+				for (var ransomCounter = 0; ransomCounter < ransomStringStart.length; ransomCounter++) {
+					switch (ransomCounter) {
+						case 0:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+						case 1:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+						break;
+						case 2:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: scale(1.4);";
+						break;
+						case 3:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						case 4:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(15deg);";
+						break;
+						case 5:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+						case 6:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: skew(5deg, 0deg);";
+						break;
+						case 7:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "-webkit-transform: rotate(-15deg);";
+						break;
+						case 10:
+							var ransomFont = "font-family: norwester, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "";
+						break;
+						case 11:
+							var ransomFont = "font-family: railway, times new roman, sans-serif;";
+							var ransomBG = "background-color: #fff;";
+							var ransomColor = "color: #000;";
+							var ransomRotate = "-webkit-transform: skew(-5deg, 0deg);";
+						break;
+						default:
+							var ransomFont = "font-family: times new roman, sans-serif;";
+							var ransomBG = "background-color: #000;";
+							var ransomColor = "color: #fff;";
+							var ransomRotate = "";
+						break;
+					}
+					//console.log('replacing menu character' + ransomCounter + ' with the style of ' + ransomFont+ransomBG+ransomColor);
+					//console.log(ransomStringEnd);
+						ransomStringEnd += "<span style='display:inline-block;white-space:pre;"+ransomFont+ransomBG+ransomColor+ransomRotate+"'>"+ransomStringStart.charAt(ransomCounter)+"</span>";
+				}
+			}
+			document.getElementsByClassName('playerRoom')[0].innerHTML += `
+				<div class="pictureButtonPersona" onclick='changeLocation("`+target+`")'
+				style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+ransomStringEnd+`</div>
+			`;
+			break;
+		}
+		default: {
+			document.getElementsByClassName('playerRoom')[0].innerHTML += `
+				<div class="pictureButton" onclick='changeLocation("`+target+`")'
+				style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+name+`</div>
+			`;
+		}
+	}
 }
 
 function changeBG(n) {
