@@ -68,7 +68,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("purple", "", "Master?!");
 			writeText("purpleF runs into the room as your cock flops out of her mother.");
 			writeBig("images/chubby/1-2.jpg", "Art by Oreteki18kin");
-			if (data.player.gender = "man") {
+			if (data.player.gender == "man") {
 				writeSpeech("chubby", "", "Don't worry honey, I saved you some. I'm sure he'll be ready for another round after he watches you suck his cum out of my pussy.");
 			}
 			else {
