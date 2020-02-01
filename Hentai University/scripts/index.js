@@ -2247,6 +2247,20 @@ function diagnostic() {
 	console.log("Testing code " + goof);
 	writeEncounter('cheat');
 	switch (goof) {
+		case "big chungus": {
+			for (loadIndex = 0; loadIndex < data.story.length; loadIndex++) {
+				if (data.story[loadIndex].index == "demon") {
+					name = 'failed';
+				}
+			}
+			if (name != "failed") {
+				var goof = {index: "demon", fName: "Meph", lName: "", trust: 0, encountered: false, textEvent: "", met: false, color: "#9D5C3E", author: "NoodleJacuzzi", artist: "Gujira"};
+				data.story.push(goof);
+			}
+			setTrust('succubus', 78);
+			loadEncounter('demon', 'intro1');
+			break;
+		}
 		case "human alteration app": {
 			if (checkBody("sub") != true) {
 				var goof = {index: "sub", artist: "Art by Aya",};
