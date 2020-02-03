@@ -477,6 +477,80 @@ function replaceCodenames(text) {
 		text = text.replace('playerHonorific', data.player.honorific);
 		text = text.replace('playerH', data.player.honorific);
 		text = text.replace('playerSir', data.player.honorific);
+		switch (data.player.gender) {
+			case "man": {
+				text = text.replace("*he", "he");
+				text = text.replace("*He", "He");
+				text = text.replace("*HE", "HE");
+				text = text.replace("*his", "his");
+				text = text.replace("*His", "His");
+				text = text.replace("*HIS", "HIS");
+				text = text.replace("*man", "man");
+				text = text.replace("*Man", "Man");
+				text = text.replace("*MAN", "MAN");
+				text = text.replace("*him", "him");
+				text = text.replace("*Him", "Him");
+				text = text.replace("*HIM", "HIM");
+				text = text.replace("*boy", "boy");
+				text = text.replace("*Boy", "Boy");
+				text = text.replace("*BOY", "BOY");
+				text = text.replace("*guy", "guy");
+				text = text.replace("*Guy", "Guy");
+				text = text.replace("*GUY", "GUY");
+				text = text.replace("*mister", "mister");
+				text = text.replace("*Mister", "Mister");
+				text = text.replace("*MISTER", "MISTER");
+				text = text.replace("*sir", "sir");
+				text = text.replace("*Sir", "Sir");
+				text = text.replace("*SIR", "SIR");
+				text = text.replace("*male", "male");
+				text = text.replace("*Male", "Male");
+				text = text.replace("*MALE", "MALE");
+				text = text.replace("*geezer", "geezer");
+				text = text.replace("*Geezer", "Geezer");
+				text = text.replace("*GEEZER", "GEEZER");
+				text = text.replace("*master", "master");
+				text = text.replace("*Master", "Master");
+				text = text.replace("*MASTER", "MASTER");
+				break;
+			}
+			case "woman": {
+				text = text.replace("*he", "she");
+				text = text.replace("*He", "She");
+				text = text.replace("*HE", "SHE");
+				text = text.replace("*his", "her");
+				text = text.replace("*His", "Her");
+				text = text.replace("*HIS", "HER");
+				text = text.replace("*man", "woman");
+				text = text.replace("*Man", "Woman");
+				text = text.replace("*MAN", "WOMAN");
+				text = text.replace("*him", "her");
+				text = text.replace("*Him", "Her");
+				text = text.replace("*HIM", "HER");
+				text = text.replace("*boy", "girl");
+				text = text.replace("*Boy", "Girl");
+				text = text.replace("*BOY", "GIRL");
+				text = text.replace("*guy", "girl");
+				text = text.replace("*Guy", "Girl");
+				text = text.replace("*GUY", "GIRL");
+				text = text.replace("*mister", "miss");
+				text = text.replace("*Mister", "Miss");
+				text = text.replace("*MISTER", "MISS");
+				text = text.replace("*sir", "ma'am");
+				text = text.replace("*Sir", "Ma'am");
+				text = text.replace("*SIR", "MA'AM");
+				text = text.replace("*male", "female");
+				text = text.replace("*Male", "Female");
+				text = text.replace("*MALE", "FEMALE");
+				text = text.replace("*geezer", "hag");
+				text = text.replace("*Geezer", "Hag");
+				text = text.replace("*GEEZER", "HAG");
+				text = text.replace("*master", "mistress");
+				text = text.replace("*Master", "Mistress");
+				text = text.replace("*MASTER", "Mistress");
+				break;
+			}
+		}
 		for (codenameIndex = 0; codenameIndex < data.story.length; codenameIndex++) {
 			codenameCheck = data.story[codenameIndex].index + "F";
 			text = text.replace(codenameCheck, data.story[codenameIndex].fName);
@@ -2247,20 +2321,6 @@ function diagnostic() {
 	console.log("Testing code " + goof);
 	writeEncounter('cheat');
 	switch (goof) {
-		case "big chungus": {
-			for (loadIndex = 0; loadIndex < data.story.length; loadIndex++) {
-				if (data.story[loadIndex].index == "demon") {
-					name = 'failed';
-				}
-			}
-			if (name != "failed") {
-				var goof = {index: "demon", fName: "Meph", lName: "", trust: 0, encountered: false, textEvent: "", met: false, color: "#9D5C3E", author: "NoodleJacuzzi", artist: "Gujira"};
-				data.story.push(goof);
-			}
-			setTrust('succubus', 78);
-			loadEncounter('demon', 'intro1');
-			break;
-		}
 		case "human alteration app": {
 			if (checkBody("sub") != true) {
 				var goof = {index: "sub", artist: "Art by Aya",};

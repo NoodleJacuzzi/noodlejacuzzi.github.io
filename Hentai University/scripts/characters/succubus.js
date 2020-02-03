@@ -99,7 +99,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "You can't have my soul. I get that I'm mega-super fucking damned by now, but it's still-<br>Shit. Is all that stuff real? Am I going to hell?");
 			writeSpeech("succubus", "demon.jpg", "Calm down. Listen. Don't worry about any of that.<br>This is going nowhere. I can see I'm going to need to be direct with you.");
 			writeText("succubusF sighs, before in one fluid motion gets down on his knees in a begging position.");
-			writeSpeech("succubus", "demon.jpg", "Please take me as your familiar, master!");
+			writeSpeech("succubus", "demon.jpg", "Please take me as your familiar, *Master!");
 			writeSpeech("player", "", "... Excuse me?");
 			writeSpeech("succubus", "demon.jpg", "Your heart is the darkest, most selfish I've ever seen! Like it's not tainted with lust, it's a big ball of lust with a little bit of humanity sprinkled inside. Just one fuck with you put me over the top and I had enough energy to meet my quotas and get promoted too. <br>Then I wasted it and dumped it onto the bedsheets, but I won't hold that against you. <br>My point is that not only are you some cream of the crop gourmet shit, but you're also a magnet for virgin energy, making you-");
 			writeSpeech("player", "", "Now hold on a moment there-");
@@ -156,10 +156,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("succubus", "demon.jpg", "Heeey~ How're you feeling? You were pretty out of it when I left last time, you rehydrate yourself? ");
 				writeSpeech("player", "", "I'm feeling fine, really good actually.");
 				writeSpeech("succubus", "demon.jpg", "Well, increased potency is a side effect. Not that you'd need it, you're pretty insatiable already.");
-				writeSpeech("player", "", "In any case, we should probably get started with this whole master and familiar dynamic. Do I need to sign something?");
-				writeSpeech("succubus", "demon.jpg", "Nope! All you need is for me to declare submission, master, and for the deal to be sealed with a kiss. My lips on your dick, to be precise. We're all set already!");
+				writeSpeech("player", "", "In any case, we should probably get started with this whole *Master and familiar dynamic. Do I need to sign something?");
+				writeSpeech("succubus", "demon.jpg", "Nope! All you need is for me to declare submission, *Master, and for the deal to be sealed with a kiss. My lips on your dick, to be precise. We're all set already!");
 				writeSpeech("player", "", "Alright then, I look forwards to working with you, succubusF. ");
-				writeSpeech("succubus", "demon.jpg", "Same here, master. So! I did a quick spyjob on the school you work at looking for targets, I even got their names! Here's what I found:");
+				writeSpeech("succubus", "demon.jpg", "Same here, *Master. So! I did a quick spyjob on the school you work at looking for targets, I even got their names! Here's what I found:");
 				raiseTrust('succubus', 1);
 			}
 			else {
@@ -403,7 +403,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeFunction("writeEncounter('chatSelect')", "No");
 			}
 			else {
-				writeSpeech("succubus", "demon.jpg", "Uh, master, did you forget that I already gave you the ability?");
+				writeSpeech("succubus", "demon.jpg", "Uh, *Master, did you forget that I already gave you the ability?");
 				writeFunction("writeEncounter('chatSelect')", "Back");
 			}
 			break;
@@ -416,7 +416,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You pull back at a burning sensation on the back of your right hand, there's a dark mark there that quickly fades away.");
 			writeSpeech("succubus", "demon.jpg", "Sorry, probably should've warned you, but you look like you aren't super good at dealing with pain.<br>Anyways it's super easy. Just focus on where the mark was and it'll come back, allowing you to corrupt people.<br>They need to be deep, and I mean balls-deep in love with you though. Only the most broken bois may apply.");
 			writeSpeech("player", "", "Neat, thanks.");
-			writeSpeech("succubus", "demon.jpg", "... You really are an oddball, master.");
+			writeSpeech("succubus", "demon.jpg", "... You really are an oddball, *Master.");
 			writeFunction("writeEncounter('chatSelect')", "Back");
 			break;
 		}
@@ -751,7 +751,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "Uhuh... Why's the room spinning...?");
 			writeSpeech("succubus", "demon.jpg", "Ugh, get some sleep. I'll come by tomorrow night, alright?");
 			writeText("With some effort succubusF hauls you over to your bed and lays you down.");
-			writeSpeech("succubus", "demon.jpg", "You did good tonight...<br>Good night, my new master.");
+			writeSpeech("succubus", "demon.jpg", "You did good tonight...<br>Good night, my new *Master.");
 			break;
 		}
 		case "succubus2": {
@@ -823,7 +823,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/succubus/4-1.jpg", "Art by Gujira");
 			writeSpeech("succubus", "demon.jpg", "Wanna give up now? I'm not going to stop, but the sooner you give in, the better it'll feel, I promise.");
 			writeSpeech("player", "", "Fuck you.");
-			writeSpeech("succubus", "demon.jpg", "Gladly, master!");
+			writeSpeech("succubus", "demon.jpg", "Gladly, *Master!");
 			writeBig("images/succubus/4-2.jpg", "Art by Gujira");
 			writeSpeech("succubus", "demon.jpg", "Ah~! You're so big~!");
 			writeSpeech("player", "", "Ghh...");
@@ -831,7 +831,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Despite the fact you can feel your cockhead bump against his demon prostate with every drawn out thrust, he still looks like he's totally in control.");
 			writeSpeech("succubus", "demon.jpg", "Ah~! Ah~! I'll have to be ready to fly tomorrow, because I won't be walking!");
 			writeSpeech("player", "", "Gh... Shut up, tramp!");
-			writeSpeech("succubus", "demon.jpg", "Oh, I'm worse than that, master! I'm a slut, a little bitch boi, I'm <b>yours!</b>");
+			writeSpeech("succubus", "demon.jpg", "Oh, I'm worse than that, *Master! I'm a slut, a little bitch boi, I'm <b>yours!</b>");
 			writeText("You can't hold back anymore as he goes balls deep and gyrates his hips in a circle to thoroughly milk your dick. ");
 			writeSpeech("player", "", "C... Cumming~!");
 			writeSpeech("succubus", "demon.jpg", "Yes~! Cmon, let's see that face of yours tw-");
@@ -853,7 +853,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("His dicklette gives an excited jump before a solid white stream begins leaking out, the stream surging in strength with every bounce he does on your hips.");
 			writeSpeech("succubus", "demon.jpg", "Cumming, cumming, cumming cumming cumming~!");
 			writeText("As he pounds the essence right out of himself, you feel yourself pushed over the edge once again.");
-			writeSpeech("succubus", "demon.jpg", "Sho good~! I'm wasting all of it again, all because of master's cock~!");
+			writeSpeech("succubus", "demon.jpg", "Sho good~! I'm wasting all of it again, all because of *Master's cock~!");
 			writeText("Finally able to take no more, his legs give out and he's left sitting on you balls deep on your cock.");
 			writeSpeech("succubus", "demon.jpg", "Hehe... Hehehe...");
 			writeBig("images/succubus/4-5.jpg", "Art by Gujira");
@@ -864,7 +864,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "Don't worry, there's plenty more where that came from.");
 			writeSpeech("succubus", "demon.jpg", "Y-yeah, It's just that... I might get addicted to this. Succubi who get addicted to cumming... They'll usually give anything just to splurt it out and waste all their essence. It's a pretty common fetish to fail your quotas by pounding yourself on a dildo the day before the essence is due.");
 			writeText("After he's finished you start getting ready for bed. And he gets ready to fly off. ");
-			writeSpeech("succubus", "demon.jpg", "See you around master, and thanks. I don't have anyone to play with, so that was my first time with the game.");
+			writeSpeech("succubus", "demon.jpg", "See you around *Master, and thanks. I don't have anyone to play with, so that was my first time with the game.");
 			writeSpeech("player", "", "Anytime, succubusF.");
 			break;
 		}
@@ -914,7 +914,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("succubus", "demon.jpg", "How the hell am I supposed to be an incubus even if I can get a bunch of souls, if all I'm good at is being your butt-buddy?");
 			writeText("You try to picture succubusF as a more masculine incubus.");
 			writeSpeech("player", "", "... Nope, hard pass. Anyways you need to scram, don't need neighbors asking why a small sassy boi is hanging around my house. ");
-			writeSpeech("succubus", "demon.jpg", "Alright. I'll see you later, master.");
+			writeSpeech("succubus", "demon.jpg", "Alright. I'll see you later, *Master.");
 			writeSpeech("player", "", "By the way, those eggs. You didn't fuck with it or anything, did you? Like putting some succubus milk in there?");
 			writeSpeech("succubus", "demon.jpg", "No way! You don't fuck with somebody's breakfast. Isn't it super important for you humans?");
 			writeSpeech("player", "", "Most important meal of the day? No, that's a myth, I think cereal companies spread it around.");
@@ -949,7 +949,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "Ghh, lost control already huh? How desperate have you been since you left that stupid note? If you wanted to reward me we could have skipped all this and gotten to the gift you really wanted to give me.");
 			writeSpeech("succubus", "demon.jpg", "Just, nngh, just fuck me harder! I've been on edge for too long, I just wanna let go!");
 			writeSpeech("player", "", "Then cum! And shut up before we get caught for real!");
-			writeSpeech("succubus", "demon.jpg", "Ah, what're you gonna do to make me, huh master?");
+			writeSpeech("succubus", "demon.jpg", "Ah, what're you gonna do to make me, huh *Master?");
 			writeBig("images/succubus/date9.jpg");
 			writeText("*SPANK*");
 			writeSpeech("succubus", "demon.jpg", "...!");
@@ -990,7 +990,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "You said you were in the clear for months, right? It doesn't matter how much you cum tonight. Let loose!");
 			writeSpeech("succubus", "demon.jpg", "Nooo~ That's a really... Nnngh... A really dangerous way to go...");
 			writeSpeech("player", "", "Well then, I guess I know how we're spending the rest of the night. I'm not stopping until I force every last bit of milk from those balls of yours.");
-			writeSpeech("succubus", "demon.jpg", "Aaah~! If you think... If you think you can make me cuuuUUUM~!<br> Then give it your b-best shot! I'll d-drain you <b>dry</b>, master!");
+			writeSpeech("succubus", "demon.jpg", "Aaah~! If you think... If you think you can make me cuuuUUUM~!<br> Then give it your b-best shot! I'll d-drain you <b>dry</b>, *Master!");
 			writeText("...");
 			writeBig("images/succubus/5-3.jpg");
 			writeSpeech("succubus", "demon.jpg", "YES~! MORE~!<br>You said you'd make me cum, are you getting tired yet~!?");
@@ -1010,7 +1010,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "Damn, I'm exhausted... But I can see words aren't going to get through to you. I guess I'd better train some self-esteem into you the only way I can.");
 			writeBig("images/succubus/5-6.jpg");
 			writeText("The rest of the night is spent giving succubusF some positive reinforcement in the form of anal pounding. At some point you passed what you thought was your limit, relying on succubusF's performance enhancing saliva to keep you going after your own stamina gave out. It was all worth it by the time succubusF's broken psyche shattered again into even smaller bits of giggling joy at every orgasm.");
-			writeText("It's not really clear if fucking the self-loathing out of a demon counts as a good deed, but by the time you collapse, naked and spent, you're pretty sure you've fucked a new fetish into the heart of your trappy chocolate demon boi.");
+			writeText("It's not really clear if fucking the self-loathing out of a demon counts as a good deed, but by the time you collapse, naked and spent, you're pretty sure you've fucked a new fetish into the heart of your chocolate demon femboi.");
 			break;
 		}
 		default: {

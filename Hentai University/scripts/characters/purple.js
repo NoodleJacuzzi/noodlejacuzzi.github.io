@@ -90,7 +90,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "purple2C": {
-			writeSpeech("purple", "", "Mom? We've got a guest. He's a counselor from school.");
+			writeSpeech("purple", "", "Mom? We've got a guest. *He's a counselor from school.");
 			writeSpeech("chubby", "", "I'll be right there!");
 			writeSpeech("purple", "", "Alright, uh, make yourself at home I guess. I've gotta go.");
 			writeText("She heads off, leaving you in the hall. You look around for a moment, admiring the photos on the wall.");
@@ -222,7 +222,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Could you tell me about that flower on your backpack?");
 			writeSpeech("purple", "", "Oh, uh...");
 			writeText("She unclips the flower from her bag.");
-			writeSpeech("purple", "", "This is a petunia, it was a gift from dad. He'd give me fresh ones I'd clip onto my bag. This one's getting a bit old, but...");
+			writeSpeech("purple", "", "This is a petunia, it was a gift from dad. *He'd give me fresh ones I'd clip onto my bag. This one's getting a bit old, but...");
 			writeText("...");
 			writeText("She seems lost in thought. Trying to talk her out of this funk isn't working, this might be all you can do for today.");
 			writeSpeech("player", "", "Thank you for your time. Now, you need to get home, right? It's getting late. I'll see you later, alright?");
@@ -251,10 +251,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("purple", "", "Gah! Uh... Oh, sorry. I got distracted. I don't think your method works, "+data.player.honorific+".");
 			writeSpeech("player", "", "You might want to check your clock.");
 			writeSpeech("purple", "", "Hmm? Oh my god! It's been hours? Whoa!");
-			writeSpeech("player", "", "And you can call me master from now on. It's just what's <b>normal</b>.");
-			writeSpeech("purple", "", "Yeah sure, master. Listen I gotta get home. I told my mom I'd be home already, she's probably already caling the police.");
+			writeSpeech("player", "", "And you can call me *Master from now on. It's just what's <b>normal</b>.");
+			writeSpeech("purple", "", "Yeah sure, *Master. Listen I gotta get home. I told my mom I'd be home already, she's probably already caling the police.");
 			writeSpeech("player", "", "That'd be a problem. I'll see you later then. And for our next session, it'll be at your house? Just like <b>normal</b>?");
-			writeSpeech("purple", "", "Of course master! I'll catch you later!");
+			writeSpeech("purple", "", "Of course *Master! I'll catch you later!");
 			data.player.location = 'playerOffice';
 			setTrust('purple', 90);
 			writeFunction("changeLocation(data.player.location)", "Finish");
@@ -308,8 +308,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "purple7A": {
-			writeSpeech("purple", "", "Ah! Master! I've been waiting for-");
-			writeSpeech("player", "", "Shh! Calling me master in public isn't <b>normal</b>.");
+			writeSpeech("purple", "", "Ah! *Master! I've been waiting for-");
+			writeSpeech("player", "", "Shh! Calling me *Master in public isn't <b>normal</b>.");
 			writeText("She enthusiasm is instantly halted as she looks around.");
 			writeSpeech("purple", "", "Sorry "+data.player.honorific+". Would you like to head home with me now?");
 			writeFunction("writeEncounter('purple7B')", "Of course. Let's go");
@@ -342,9 +342,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("...");
 			writeSpeech("player", "", "Well, I'll be going now.");
 			writeSpeech("chubby", "", "Come back anytime!");
-			writeSpeech("purple", "", "Come back and fuck me whenever you want some of this schoolgirl pussy, master!");
+			writeSpeech("purple", "", "Come back and fuck me whenever you want some of this schoolgirl pussy, *Master!");
 			writeText("You leave with a chuckle "+fName('chubby')+" scolds her daughter for her vulgar language.");
-			writeSpeech("chubby", "", "Language like that is for in private young lady, or you'll get master in trouble!");
+			writeSpeech("chubby", "", "Language like that is for in private young lady, or you'll get *Master in trouble!");
 			writeText("She'll need some time and some direction from her daughter, but "+fName('chubby')+" is well under your control now. You'll come back later to enjoy her, and her daughter too.");
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
@@ -431,16 +431,16 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Finally you pull her by the hair off of you. She's barely able, but she gives out a whine as your cock slides out of her mouth.");
 			writeText("After some time coughing the massive amount of jizz out of her lungs, she looks up at you.");
 			writeBig("images/purple/1-4.jpg", "Art by Oreteki18kin");
-			writeSpeech("purple", "", "Th-thank-*COUGH*<br>Thank you... *ahem*... Very much master. Can we do it again?");
+			writeSpeech("purple", "", "Th-thank-*COUGH*<br>Thank you... *ahem*... Very much *Master. Can we do it again?");
 			writeSpeech("player", "", "Next time. We don't want your mother getting too suspicious. Clean yourself up, I'll see you later.");
-			writeSpeech("purple", "", "I will master!");
+			writeSpeech("purple", "", "I will *Master!");
 			break;
 		}
 		case "purple2": {
 			writeSpeech("player", "", "Hello "+fName('purple')+", here for another-");
 			writeText("She pulls you into your office and closes the door behind you before pulling you into a deep kiss.");
 			writeText("It's desperate and hungry, she's forcing her tongue into your mouth but starts shuddering when you push back.");
-			writeSpeech("purple", "", "*mwah*! Master... I need more. I haven't been able to stop playing with myself. Even in class, I...");
+			writeSpeech("purple", "", "*mwah*! *Master... I need more. I haven't been able to stop playing with myself. Even in class, I...");
 			writeSpeech("player", "", "Say no more. It's not safe here, let's head to your place.");
 			writeText("...");
 			writeSpeech("purple", "", "Mom, I'm home! And I brought the counselor with me! We're gonna go in my room, okay?");
@@ -463,7 +463,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "Shut up. Your mother isn't ready to find us yet.");
 			writeSpeech("purple", "", "Mmmm~!<br><i>More! More!</i>");
 			writeText("You push your dick inside her, stirring up her insides as she squeezes your length.");
-			writeText("Tears have started to form in he eyes as her brain tries to process the sensations.");
+			writeText("Tears have started to form in her eyes as her brain tries to process the sensations.");
 			writeSpeech("player", "", "Breaking down already, huh? I-");
 			writeText("You're interrupted while you pull out when she wraps her legs around you.");
 			writeSpeech("player", "", "Fine. I see what you want. One more scream out of you though and we stop here.");
@@ -491,7 +491,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("chubby", "", "W... What's...");
 			writeSpeech("player", "", "Sorry about this ma'am. I really wish you hadn't been so nosey. If I had more time, this could've been a simple and clean process. But I obviously can't get you relaxed, so I need to get you mentally broken.");
 			writeSpeech("chubby", "", "I don't understand...");
-			writeSpeech("purple", "", "Nggh... Cmon mom! Stop distracting him! Fuck, I'm cumming again!");
+			writeSpeech("purple", "", "Nggh... Cmon mom! Stop distracting *him! Fuck, I'm cumming again!");
 			writeText("You lift "+fName('purple')+" up so that when she squirts on your cock a little of it gets onto "+fName('chubby')+"'s face.");
 			writeSpeech("chubby", "", "W-why? Why? Why!?");
 			writeSpeech("player", "", "I need to break you. What better way to do that...");

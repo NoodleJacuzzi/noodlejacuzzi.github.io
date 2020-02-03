@@ -158,7 +158,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeBig("images/pornstar/profile.jpg", "Art by Oreteki18kin");
 			writeSpeech("pornstar", "", "starletF? What is it honey?");
 			writeSpeech("player", "", "Hi, I'm-");
-			writeSpeech("starlet", "", "Mom, this guy's a producer, and I've already shot two scenes with him!");
+			writeSpeech("starlet", "", "Mom, this *guy's a producer, and I've already shot two scenes with *him!");
 			writeSpeech("player", "", "I... If you could just look at th-");
 			writeSpeech("starlet", "", "We've done a hard anal scene and an ass-to-pussy creampie! I want you to see the real me, this is who I am!");
 			writeText("The room is starting to spin.");
@@ -166,13 +166,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("starlet", "", "Yep and nope! Me and playerMister are the only ones with access to the videos.");
 			writeSpeech("pornstar", "", "I see.");
 			writeText("She walks up to you and looks you dead in the eye. Is it hot in here? Because you're melting. Everything you've built up to reach this point, everyone you've hypn-");
-			writeSpeech("pornstar", "", "Fine. So long as he's licensed, and you're willing to accept responsibility for your actions, I'll support you no matter what.");
+			writeSpeech("pornstar", "", "Fine. So long as *he's licensed, and you're willing to accept responsibility for your actions, I'll support you no matter what.");
 			writeSpeech("starlet", "", "Yes! Thank you so much, I was so scared you'd say no.");
 			writeText("You wipe the foam from your mouth and make sure you aren't dreaming before catching your balance. Are things actually working?");
-			writeSpeech("pornstar", "", "So, he's got a valid license? Who are his actors? Why didn't you come to me for your first shoot? Honey, I'm proud you took things forwards, but what if he's just some scum with a camcorder?");
+			writeSpeech("pornstar", "", "So, *he's got a valid license? Who are *his actors? Why didn't you come to me for your first shoot? Honey, I'm proud you took things forwards, but what if *he's just some scum with a camcorder?");
 			writeText("Aaaaand you're on the verge of death again. Man, today has been a rollercoaster.");
-			writeSpeech("starlet", "", "He's the actor and the cameraman too. I know, sketchy, but I checked his credentials with all the tricks you taught me.");
-			writeSpeech("pornstar", "", "I see. starletF, honey? Could I speak with him alone?");
+			writeSpeech("starlet", "", "*He's the actor and the cameraman too. I know, sketchy, but I checked *his credentials with all the tricks you taught me.");
+			writeSpeech("pornstar", "", "I see. starletF, honey? Could I speak with *him alone?");
 			writeSpeech("starlet", "", "Of course mom! Thank you, really. I promise not to just give up on college too. I really have been doing my best, it just felt like it was never enough.<br>I'll let you two talk.");
 			writeText("She saunters off out of the room, leaving you alone with her mother.");
 			writeSpeech("player", "", "<i>Thank goodness, she bought it.</i><br>Don't worry Ma-");
@@ -439,13 +439,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("As the two of them go on about how their day went and how how their nights will go, you sit back on a sofa and relax. It's strange, you feel clear headed. At peace.");
 			writeSpeech("starlet", "", "Hey, you alright?");
 			writeSpeech("player", "", "Yeah, just zoning out.");
-			writeSpeech("starlet", "", "Whoooa, you look different. Hey, mom, doesn't it kinda look like he has <i><b>the rut</b></i>?");
+			writeSpeech("starlet", "", "Whoooa, you look different. Hey, mom, doesn't it kinda look like *he has <i><b>the rut</b></i>?");
 			writeSpeech("pornstar", "", "That's just a story, starletF.");
 			writeSpeech("player", "", "The what? <br>Fuck, is it an ST-");
 			writeSpeech("pornstar", "", "Stop. Don't incite a panic by finishing that sentence.");
 			writeSpeech("starlet", "", "Yeah, and don't worry, I took a blood sample when we first met in your office. You're clean.");
 			writeSpeech("player", "", "What!? When?");
-			writeSpeech("starlet", "", "... <br>Anyways, I know it isn't real, but just look at him!");
+			writeSpeech("starlet", "", "... <br>Anyways, I know it isn't real, but just look at *him!");
 			writeSpeech("pornstar", "", "Maybe.");
 			writeSpeech("player", "", "Don't change the subject! Wait, what is the rut anyways?");
 			writeSpeech("pornstar", "", "Back... I don't know, seven ye-");
@@ -506,7 +506,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "starletProposal": {
 			writeSpeech("player", "", "Okay, we should start brainstorming on what kind of shoot to do next.");
-			writeSpeech("pornstar", "", "He's right. Go ahead starletF, you have my blessing.");
+			writeSpeech("pornstar", "", "*He's right. Go ahead starletF, you have my blessing.");
 			writeText("pornstarF shoots starletF a look of motherly pride before she leaves to give the two of you some privacy.");
 			writeSpeech("player", "", "What's going on?");
 			writeSpeech("starlet", "", "playerF, I wanna thank you for... Well, for believing in me. I'm still struggling with school, I really think I'd be in a bad place if you hadn't helped me out.");
@@ -533,12 +533,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("...");
 			writeText("Not really knowing what to do, you pace around a bit and try to think of a plan until you can hear starletF and pornstarF in another room.");
 			writeSpeech("pornstar", "", "And so what, you're going to just give up?");
-			writeSpeech("starlet", "", "I just... I didn't... He didn't say...");
+			writeSpeech("starlet", "", "I just... I didn't... *He didn't say...");
 			writeSpeech("pornstar", "", "Did I give up when your father turned me down?");
 			writeSpeech("starlet", "", "He... What?");
-			writeSpeech("pornstar", "", "'It was just a job!' 'I'm flattered, really, but I'm sorry.' It took a year to hook him, and I couldn't just use my body for obvious reasons. Eventually I convinced him that I loved him for who he was, not just for his femboy body.<br>Listen to me, if you like this boy, you know what you need to do? You need to sink your teeth into him, drag him under, and do a death spiral.");
+			writeSpeech("pornstar", "", "'It was just a job!' 'I'm flattered, really, but I'm sorry.' It took a year to hook him, and I couldn't just use my body for obvious reasons. Eventually I convinced him that I loved him for who he was, not just for his femmy body.<br>Listen to me, if you like this *boy, you know what you need to do? You need to sink your teeth into *him, drag *him under, and do a death spiral.");
 			writeSpeech("starlet", "", "I don't... I don't know if I can put myself out there again.");
-			writeSpeech("pornstar", "", "You can, and you will. You'll find the strength the very next time you look into his eyes, that's what happened with me. Think, what would your father say?");
+			writeSpeech("pornstar", "", "You can, and you will. You'll find the strength the very next time you look into *his eyes, that's what happened with me. Think, what would your father say?");
 			writeSpeech("starlet", "", "'I love you darling, believe in yourself'?");
 			writeSpeech("pornstar", "", "Exactly. Let's go have a half day, get some ice cream, and... Mmm, I'm feeling in a dom mood. Would you like to watch me torment your father?");
 			writeSpeech("starlet", "", "*sniff*... Yes please.");
@@ -574,7 +574,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("starlet", "", "Honey~! Stop fiddling with the camera, I can feel her kicking~!");
 			writeSpeech("pornstar", "", "Mmm, oh dear, I think your sister is kicking too...");
 			writeSpeech("starlet", "", "Hehe, I still can't believe you 'forgot' to take your pill for three months straight. Dad was so happy when he found out...");
-			writeSpeech("pornstar", "", "That's because he knew how I'd make it up to him that I was impregnated by another man. It was the same way I made it up to him when you were-<br>Oooh, he's finished~! Dick, dick, dick~!");
+			writeSpeech("pornstar", "", "That's because he knew how I'd make it up to him that I was impregnated by another man. It was the same way I made it up to him when you were-<br>Oooh, *he's finished~! Dick, dick, dick~!");
 			writeSpeech("starlet", "", "Mom, you're insatiable. Normal women just get hunger cravings... Well, I guess I'm not one to talk. You'd better give her what she wants, honey, or she might start sucking your balls to rush you and me.");
 			writeText("...");
 			writeBig("images/starlet/D-2-4.jpg", "Art by Oreteki18kin");
@@ -901,8 +901,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("pornstar", "", "Indeed, you performed wonderfully. I was immersed in the role from second one but even I was having trouble keeping myself in character towards the end.");
 				writeSpeech("starlet", "", "Yeah, her passing out wasn't scripted.");
 				writeSpeech("pornstar", "", "*AHEM* Well, I lasted longer than you did. At least we all got a lovely nap out of it.");
-				writeSpeech("starlet", "", "Mmm~ Mom, you didn't get all of it. I can still feel his cum inside me.");
-				writeSpeech("pornstar", "", "Take this time to practice your kegels dear, with practice you can hold his entire load in all day.");
+				writeSpeech("starlet", "", "Mmm~ Mom, you didn't get all of it. I can still feel *his cum inside me.");
+				writeSpeech("pornstar", "", "Take this time to practice your kegels dear, with practice you can hold *his entire load in all day.");
 				writeSpeech("starlet", "", "Aaah~ I wanna masturbate~! Hurry hoooome~! playerF, will you jerk off thinking of me?");
 				writeSpeech("player", "", "Don't... Don't ask me shit like that after eight rounds of sex.");
 				writeSpeech("pornstar", "", "Don't worry dear, we'll be home soon and I'll help clean you out more thoroughly. For now just relax and enjoy the buzz. Ah, here we are. This is your stop, yes?");
@@ -933,7 +933,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "The principal already knows you aim to be a pornstar. A blonde teenager shooting professional, high resolution porn on school grounds? Even if we aren't caught during the shoot you'll be expelled by the morning.");
 			writeSpeech("starlet", "", "Okay, okay, jeez.<br>... Oh, I know! We can play the youth card and do a nighttime shoot outside the local highschool!");
 			writeSpeech("pornstar", "", "Now that's critical thinking, dear. Highschool sex is always trending. We...<br>Ah, there's not much of a way to work me into the scene, is there?");
-			writeSpeech("starlet", "", "Aww, don't worry mom, you can have him to yourself next time. Okay! Mask, street sex, we've got it made already! I'm thinking we do a full set of six loads, and-");
+			writeSpeech("starlet", "", "Aww, don't worry mom, you can have *him to yourself next time. Okay! Mask, street sex, we've got it made already! I'm thinking we do a full set of six loads, and-");
 			writeSpeech("player", "", "In public, while we're at risk of getting caught?");
 			writeSpeech("starlet", "", "... Ah, yeah. Okay, only time for one of my deepest fantasies then. We either go full-on ball-draining creampie sex on the street or we go for the kinkier option and go for the ol' sperm mask.");
 			passTime();
@@ -1142,7 +1142,7 @@ function reshootFilm1() {
 }
 
 function reshootFilm2() {
-	data.player.studio.film1Name = document.getElementById('nameSubmission').value;
+	data.player.studio.film2Name = document.getElementById('nameSubmission').value;
 	writeEncounter("starletBoyfriend1");
 }
 
@@ -1293,8 +1293,8 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("The pair of them are wearing casual exercise wear, and not much else. The way their clothes move on their bodies, it's pretty clear they aren't wearing bras at least. You eat the confection, it's pretty bland. Maybe it's a breathmint?");
 			writeSpeech("starlet", "", "Okay before we start, mom's a pretty serious method actor. She doesn't break character because she <b>is</b> the character. Don't freak out when we start rolling, just do what comes naturally, okay? And don't say 'what was in that candy', it'll ruin the shot.");
 			writeSpeech("pornstar", "", "You're overselling me dear, all I do is fit into whatever roll I enjoy the most. The goal of this whole shooting environment is as little acting as possible. No cameramen, and no script for you playerF. And remember, this is the scene we're airing first.");
-			writeSpeech("starlet", "", "He seems a little nervous.");
-			writeSpeech("pornstar", "", "There's no need to worry. Let's go vlog style until he wants to weigh in.");
+			writeSpeech("starlet", "", "*He seems a little nervous.");
+			writeSpeech("pornstar", "", "There's no need to worry. Let's go vlog style until *he wants to weigh in.");
 			writeSpeech("starlet", "", "Got it! Just say when, okay playerF?");
 			writeText("The pair of them crouch down in front of you and look up at you expectantly.");
 			writeSpeech("player", "", "Uh, action?");
@@ -1388,8 +1388,8 @@ function writeEvent(name) { //Plays the actual event.
 				writeSpeech("starlet", "", "Yes~! God, I'm gonna fuck up my brain by cumming so much~!");
 				writeSpeech("pornstar", "", "Yes, yes! Cum with mommy, cumming~!");
 				writeBig("images/starlet/A-3-10.jpg", "Art by Oreteki18kin");
-				writeSpeech("starlet", "", "Fuuuck, my pussy is completely stuffed... He came so much...");
-				writeText("You stuble back, and fall over onto the ground, spent. Your vision swimming, you see starletF and pornstarF standing over you.");
+				writeSpeech("starlet", "", "Fuuuck, my pussy is completely stuffed... *He came so much...");
+				writeText("You stumble back, and fall over onto the ground, spent. Your vision swimming, you see starletF and pornstarF standing over you.");
 				writeSpeech("starlet", "", "Hope you'll join us again so that you can see my mom-");
 				writeSpeech("pornstar", "", "And my daughter!");
 				writeSpeech("starlet", "", "Get fucked on camera again! Bye~!");
