@@ -241,7 +241,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 						writeFunction("writeEvent('meji4')", "Ask him about last time");
 					}
 					else{
-						writeFunction("writeEncounter('meji3b')", "Tell him you want to see something new");
+						if(checkItem("Leotard") == false)
+							writeFunction("writeEncounter('meji3b')", "Tell him you want to see something new");
 					}
 				}
 				writeFunction("changeLocation(data.player.location)", "Leave him be for now");

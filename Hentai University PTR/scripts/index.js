@@ -282,7 +282,9 @@ function disablePictures() {
 		document.getElementById("playerImage").style.width = "0%";
 		document.getElementById("playerImage").style.border = "none";
 		imagesDisabled = true;
-		changeLocation(data.player.location);
+		if (data.player.location != "") {
+			changeLocation(data.player.location);
+		}
 	}
 	else {
 		location.reload();
