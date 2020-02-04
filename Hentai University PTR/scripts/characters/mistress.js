@@ -645,7 +645,6 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				document.getElementById('output').innerHTML = '';
 				writeSpecial("A new scene has been added to mistressF mistressL's Gallery.");
 				writeSpecial("These are available from the computer at your home.");
-				data.player.location = "currentScene";
 				writeFunction("changeLocation(data.player.location)", "Return home");
 			}
 			break;

@@ -198,7 +198,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			else{
 				//if she's been hypno'd, basically
 				writeText("As you approach her, "+fName('kuro')+"'s flushes as she stands a bit straighter, her thighs rubbing against each other.");
-				writeSpeech("kuro","","Heya Master~! Ooh, don't tell me, you're here for another night of fun with your favorite cocksock, right?");
+				writeSpeech("kuro","","Heya *Master~! Ooh, don't tell me, you're here for another night of fun with your favorite cocksock, right?");
 				writeFunction("loadEncounter('kuro', 'kuro4a')", "Have sex");
 				writeFunction("writeEvent('kuro6')", "69 each other");
 				//more scenes may be implemented later
@@ -232,7 +232,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			else{
 				//EDIT ME TO ACCOUNT FOR THE EXISTENCE OF MULTIPLE POST-HYPNO SEX SCENES BASED ON PREVIOUS SELECTIONS
 				writeText("She laughs, her finger toying a strand of hair.");
-				writeSpeech("kuro","","Only if you promise to do it raw, Master~!");
+				writeSpeech("kuro","","Only if you promise to do it raw, *Master~!");
 				writeText("She bounces onto the balls of her feet, giving you a quick peck on the cheek before leaving the roof.");
 				writeFunction("loadEncounter('kuro', 'kuro5a')", "Finish your business for the day and head to her place");
 				break;

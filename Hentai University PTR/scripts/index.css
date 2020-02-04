@@ -1080,7 +1080,9 @@ img.textThumbRoyalty {
     height: 180px;
     width: 180px;
     /*box-shadow: -5px 5px var( --character-color);*/
-    flex: none;
+    flex: none;  
+	-webkit-filter:grayscale(0.9);
+	filter: grayscale(0.9);
 }
 .textBoxContentRoyalty {
 	font-size: 1.4em;

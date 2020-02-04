@@ -51,25 +51,25 @@ function writeEvent(name) { //Plays the actual event.
 		case "chubby1": {
 			writeSpeech("chubby", "", "Ah, hello!");
 			writeText("chubbyF ushers you in quickly and closes the door.");
-			writeSpeech("chubby", "", "Welcome back, master. I'm afraid purpleF is out right now. She's meeting with some friends. She's been doing so well lately, thank you again for all you've done.");
+			writeSpeech("chubby", "", "Welcome back, *Master. I'm afraid purpleF is out right now. She's meeting with some friends. She's been doing so well lately, thank you again for all you've done.");
 			writeSpeech("player", "", "No problem. I'm actually here for you.");
 			writeSpeech("chubby", "", "Oh? Ah, I see.");
 			writeText("One look at the bulge in your pants is all she needs to see.");
 			writeText("...");
 			writeBig("images/chubby/1-3.jpg", "Art by Oreteki18kin");
-			writeSpeech("chubby", "", "Hmmhmm~ It's so warm and wet inside me, isn't it? Is it to your liking? I haven't had a "+data.player.gender+" in years, never someone like you, master.");
+			writeSpeech("chubby", "", "Hmmhmm~ It's so warm and wet inside me, isn't it? Is it to your liking? I haven't had a "+data.player.gender+" in years, never someone like you, *Master.");
 			writeSpeech("player", "", "You feel amazing, almost as tight as your daughter's pussy.");
 			writeSpeech("chubby", "", "So polite! But, you know how a "+data.player.gender+" like you shows their honesty, right? <br>Not~<br>With~<br>Words~");
 			writeText("Each word is punctuated with a gyration of her hips and a rhythmic clench of her pussy.");
-			writeSpeech("chubby", "", "You're so cute master, you've got such a dreamy look on your face. Will you cum inside me? Will you pump enough sperm inside me to make me cumdrunk?");
+			writeSpeech("chubby", "", "You're so cute *Master, you've got such a dreamy look on your face. Will you cum inside me? Will you pump enough sperm inside me to make me cumdrunk?");
 			writeText("You can feel your balls clenching as you hear the front door opening and shutting after.");
 			writeBig("images/chubby/1-4.jpg", "Art by Oreteki18kin");
-			writeSpeech("chubby", "", "Cumming~<br>Welcome home honey! Master is here!");
-			writeSpeech("purple", "", "Master?!");
+			writeSpeech("chubby", "", "Cumming~<br>Welcome home honey! *Master is here!");
+			writeSpeech("purple", "", "*Master?!");
 			writeText("purpleF runs into the room as your cock flops out of her mother.");
 			writeBig("images/chubby/1-2.jpg", "Art by Oreteki18kin");
-			if (data.player.gender = "man") {
-				writeSpeech("chubby", "", "Don't worry honey, I saved you some. I'm sure he'll be ready for another round after he watches you suck his cum out of my pussy.");
+			if (data.player.gender == "man") {
+				writeSpeech("chubby", "", "Don't worry honey, I saved you some. I'm sure *he'll be ready for another round after *he watches you suck his cum out of my pussy.");
 			}
 			else {
 				writeSpeech("chubby", "", "Don't worry honey, I saved you some. I'm sure she'll be ready for another round after she watches you suck her cum out of my pussy.");
@@ -79,8 +79,8 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("You collapse backwards onto the bedspread, totally spent.");
 			writeSpeech("chubby", "", "Now now purpleF, no need to be greedy.");
 			writeText("The daughter doesn't have the stamina of the mother. After only two rounds purpleF couldn't take any more, and now she grimaces as she sucks the results of your fourth and fifth round off her mother's tits.");
-			writeSpeech("chubby", "", "Now, what do we say for master?");
-			writeSpeech("purple", "", "*Mwah*!<br>Thank you for filling us up master!");
+			writeSpeech("chubby", "", "Now, what do we say for *Master?");
+			writeSpeech("purple", "", "*Mwah*!<br>Thank you for filling us up *Master!");
 			writeText("After a short break, you opt to get a move on as they fall asleep coated in your pungent cum.");
 			if (data.player.location == "vintageStreet") {
 				writeFunction("changeLocation(data.player.location)", "Finish");

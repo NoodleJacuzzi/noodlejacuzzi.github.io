@@ -182,7 +182,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("succubus", "demon.jpg", "Head down, don't draw attention. They're whorehouse piranhas, kept in demonF's debt forever. Now it's a feeding frenzy, everyone wants to make the next rank, even if they need to suck it out of the bedsheets. And best-");
 			writeText("You stumble and nearly fall over, the chemical effect of demonF's fluids wearing off.");
 			writeSpeech("player", "", "Fuck, I can't...");
-			writeSpeech("succubus", "demon.jpg", "Hey, hey, it's cool. I'll get you home and tuck you in, collection's still a ways away. You did good, master. You did really really good today.");
+			writeSpeech("succubus", "demon.jpg", "Hey, hey, it's cool. I'll get you home and tuck you in, collection's still a ways away. You did good, *Master. You did really really good today.");
 			writeSpeech("player", "", "He... Said...");
 			writeSpeech("succubus", "demon.jpg", "Ignore whatever demonF said, he's a psycho. More importantly he's not a problem anymore. Twenty succubi (male) on his tiny dick? He'll regret making himself trappy and frail to lord himself over all the rest of us here at the bottom of the ladder. You sleep, okay? Sleeeep.");
 			writeText("...");
@@ -207,7 +207,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "I didn't come here just to get some jerk off fuel.");
 			writeSpeech("demon", "", "Yes~! Of course, please, would you like to use my mouth? I'd sure I could have a hands-free bitchgasm from sucking your cock. Oh, or maybe I could rub my pathetic member against yours, and-");
 			writeSpeech("player", "", "Hands on the machine and present yourself.");
-			writeSpeech("demon", "", "Yes sir~! C-can I call you master like your little bitch does?");
+			writeSpeech("demon", "", "Yes sir~! C-can I call you *Master like your little bitch does?");
 			writeSpeech("player", "", "You don't get to talk about someone better than you that way!");
 			writeBig("images/demon/1-3.jpg");
 			writeSpeech("demon", "", "Ooough~! It's here~! The cock I need is here~! I'm sorry, please punish me~!");

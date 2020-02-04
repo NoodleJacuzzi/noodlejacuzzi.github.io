@@ -46,7 +46,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech('mom', '', "No problem, it's that way!");
 			writeText("She points off in a vaguely westward direction before laughing at her joke.");
 			writeText("She quickly takes the reigns of the conversation, bouncing between subjects like the weather, the state of the building, and at some point she glides right past the fact that she's a widow.");
-			writeText("Her incredibly strong personality makes itself clear right away. Even a master hypnotist would have trouble getting through her will with months of preparation.");
+			writeText("Her incredibly strong personality makes itself clear right away. Even a *Master hypnotist would have trouble getting through her will with months of preparation.");
 			writeText("Still, she seems eager enough for some company that you could quickly make friends with her. Spending some time listening to her go on about nothing in particular and not completely sperging out will probably be enough.");
 			writeText("Eventually the conversation slows back down.");
 			writeSpeech('mom', '', "Aw damnit, is it that late already? I gotta get back in and quit wasting your time.");
@@ -76,7 +76,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech('mom', '', "No problem, it's that way!");
 			writeText("She points off in a vaguely westward direction before laughing at her joke.");
 			writeText("She quickly takes the reigns of the conversation, bouncing between subjects like the weather, the state of the building, and at some point she glides right past the fact that she's a widow.");
-			writeText("Her incredibly strong personality makes itself clear right away. Even a master hypnotist would have trouble getting through her will with months of preparation.");
+			writeText("Her incredibly strong personality makes itself clear right away. Even a *Master hypnotist would have trouble getting through her will with months of preparation.");
 			writeText("Still, she seems eager enough for some company that you could quickly make friends with her. Spending some time listening to her go on about nothing in particular and not completely sperging out will probably be enough.");
 			writeText("Eventually the conversation slows back down.");
 			writeSpeech('mom', '', "Aw damnit, is it that late already? I gotta get back in and quit wasting your time.");

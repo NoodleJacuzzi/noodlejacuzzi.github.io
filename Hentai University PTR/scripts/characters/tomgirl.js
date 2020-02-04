@@ -286,7 +286,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "I'm saying the you as you are right now, cute and absolutely fuckable, would be your real self forever.");
 			writeSpeech("tomgirl", "new.jpg", "Oh, you mean like therapy or hormones. I don't really-<br>No, maybe you're right. If you think it's what's best than I'll go through with it.");
 			writeText("It seems like he doesn't quite grasp what you mean, but that's fine. It seems like he's willing to accept the change if you are.");
-			writeFunction("writeEncounter('tomgirlnew4b')", "Corrupt tomgirlF");
+			//writeFunction("writeEncounter('tomgirlnew4b')", "Corrupt tomgirlF");
 			writeFunction("changeLocation(data.player.location)", "Change your mind");
 			break;
 		}
@@ -331,7 +331,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/tomgirl/2-2.jpg", "Art by Nagi Ichi");
 			writeText("Grumbling, he grasps your shaft as his eyes glaze over, but only for a moment.");
 			writeBig("images/tomgirl/2-3.jpg", "Art by Nagi Ichi");
-			writeSpeech("tomgirl", "", "Waitwaitwait what the fuck am I doing?<i><br>Why did I just grab it? Is he controlling me?</i>");
+			writeSpeech("tomgirl", "", "Waitwaitwait what the fuck am I doing?<i><br>Why did I just grab it? Is *he controlling me?</i>");
 			writeSpeech("player", "", "Damn, your hands are pretty soft.");
 			writeSpeech("tomgirl", "", "<i>Fuck, stop talking. This is weird. I feel weird, right? My hand feels...</i>");
 			writeText("As his face grows even redder, he starts increasing his pace. His technique is fantastic.");
@@ -460,7 +460,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "You had your chance, now I'm in control.");
 			writeSpeech("tomgirl", "", "No! Stop! You're too rough!");
 			writeBig("images/tomgirl/5-9.jpg", "Art by Nagi Ichi");
-			writeSpeech("tomgirl", "", "Nhhhg!<br><i>Fuck! He's fucking huge! He's destroying my ass!</i>");
+			writeSpeech("tomgirl", "", "Nhhhg!<br><i>Fuck! *He's fucking huge! *He's destroying my ass!</i>");
 			writeSpeech("player", "", "You. Are. Mine.");
 			writeText("You punctuate each word with a powerful thrust, slapping your hips against his ass.");
 			writeSpeech("tomgirl", "", "<i>Fuck! It feels so good~! Gonna...!</i>");
@@ -670,12 +670,18 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "tomgirlReward", trust: 666,},
+	{index: "tomgirlCorrupted", trust: 666,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "tomgirlReward": {
+			clearText('tomgirl');
+			writePhoneImage("images/tomgirl/9-5.jpg", "Art by Nagi Ichi");
+			writePhoneSpeech("tomgirl", "", "You've finished all the content for tomgirlF for this version!");
+			break;
+		}
+		case "tomgirlCorrupted": {
 			clearText('tomgirl');
 			writePhoneImage("images/tomgirl/9-5.jpg", "Art by Nagi Ichi");
 			writePhoneSpeech("tomgirl", "", "You've transformed tomgirlF into a succubus (male)! More content will come along soon!");

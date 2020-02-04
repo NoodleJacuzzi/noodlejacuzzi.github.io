@@ -149,7 +149,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("Just like last time, he does arrive quickly, a relaxed smile across his face as he gives a small, polite curtsy again.");
 			}
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","Was there anything specific you wanted me to do, Master?");
+				writeSpeech("housekeep","","Was there anything specific you wanted me to do, *Master?");
 			else
 				writeSpeech("housekeep","","Was there anything specific you wanted for me to do, Mistress?");
 			if(checkFlag("housekeep","Asked")){
@@ -179,7 +179,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","I was thinking that I wanted to have a bit of <i>fun,</i> if you get my meaning.");
 			writeText("housekeepF smiles, nodding once.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","It would be my pleasure. How would you like to have me, Master?");
+				writeSpeech("housekeep","","It would be my pleasure. How would you like to have me, *Master?");
 			else
 				writeSpeech("housekeep","","It would be my pleasure. How would you like to have me, Mistress?");
 			writeFunction("writeEncounter('housekeepSecondBlowjob')", "Have him blow you again")
@@ -214,7 +214,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","Just do it at your pace. This already feels <i>damn</i> good...");
 			writeText("His face gets a bit redder.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","I'm glad to hear it, Master~ In that case, I'll get started on a <i>proper</i> blowjob~!");
+				writeSpeech("housekeep","","I'm glad to hear it, *Master~ In that case, I'll get started on a <i>proper</i> blowjob~!");
 			else
 				writeSpeech("housekeep","","I'm glad to hear it, Mistress~ In that case, I'll get started on a <i>proper</i> blowjob~!");
 			writeText("Saying that, he uses his fingers to make a circle right below your head, pressing his lips against it...");
@@ -243,7 +243,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("He holds your head in his mouth for a few more seconds before sliding his lips completely away.");
 			writeText("His hand keeps jerking you off, the wet spit covering the whole shaft as it makes lewd noises.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","Come on, Master~! I want to feel your cum as you <i>paint</i> your maid~!");
+				writeSpeech("housekeep","","Come on, *Master~! I want to feel your cum as you <i>paint</i> your maid~!");
 			else
 				writeSpeech("housekeep","","Come on, Mistress~! I want to feel your cum as you <i>paint</i> your maid~!");
 			writeText("You only last a few more seconds in his hand, his fingers teasing against your head being the last straw.");
@@ -272,7 +272,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("housekeep","","I'll see you some other night, then?");
 			writeSpeech("player","","Yup. Good night, housekeepF.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","Good night to you too, Master!");
+				writeSpeech("housekeep","","Good night to you too, *Master!");
 			else
 				writeSpeech("housekeep","","Good night to you too, Mistress!");
 			writeText("He finishes up with a quick survey of the room and his face, checking for any cum he missed, before giving a short curtsy and making his way out the door.");
@@ -302,7 +302,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","Well, you've always got a willing study-partner here.");
 			writeText("He lets out a gentle laugh, nodding.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","I do indeed. I hope you'll keep calling for my services, Master, so I can become a truly perfect maid.");
+				writeSpeech("housekeep","","I do indeed. I hope you'll keep calling for my services, *Master, so I can become a truly perfect maid.");
 			else
 				writeSpeech("housekeep","","I do indeed. I hope you'll keep calling for my services, Mistress, so I can become a truly perfect maid.");
 			writeSpeech("player","","Look forward to it.");
@@ -314,7 +314,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("housekeep","","I'll see you some other night, then?");
 			writeSpeech("player","","Yup. Good night, housekeepF.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","Good night to you too, Master!");
+				writeSpeech("housekeep","","Good night to you too, *Master!");
 			else
 				writeSpeech("housekeep","","Good night to you too, Mistress!");
 			writeText("He finishes up with a quick survey of the room and his face, checking for any cum he missed, before giving a short curtsy and making his way out the door.");
@@ -352,7 +352,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("His face flushes red as he stops, the hand holding down his skirt pushing down a bit more. Not that it hides the dark splotches from the precum he was leaking the whole time.");
 			writeText("His other hand, though, reaches into the small apron-pocket to pull out a cloth as he dabs at the spit that covered his entire mouth and chin.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","T-Thank you, Master.");
+				writeSpeech("housekeep","","T-Thank you, *Master.");
 			else
 				writeSpeech("housekeep","","T-Thank you, Mistress.");
 			writeText("His body shivers slightly, a small smile going across his face.");
@@ -360,7 +360,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","Er, sure. You sure you're okay, though? You look a little... out of sorts.");
 			writeText("He nods vigorously, smiling wide.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","I'll be fine momentarily, Master. And, I think that this feeling might be the best part...~!");
+				writeSpeech("housekeep","","I'll be fine momentarily, *Master. And, I think that this feeling might be the best part...~!");
 			else
 				writeSpeech("housekeep","","I'll be fine momentarily, Mistress. And, I think that this feeling might be the best part...~!");
 			writeText("Huh. Looks like he might have had a breathplay fetish without realizing it.");
@@ -368,7 +368,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("housekeep","","Of course!");
 			writeText("He finishes wiping at his lips and chin, storing the cloth with a beaming grin.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","It is getting late, but I'm absolutely looking forward to the next time you call me, Master!");
+				writeSpeech("housekeep","","It is getting late, but I'm absolutely looking forward to the next time you call me, *Master!");
 			else
 				writeSpeech("housekeep","","It is getting late, but I'm absolutely looking forward to the next time you call me, Mistress!");
 			writeText("You take a look at the clock and, sure enough, it actually is getting dark.");
@@ -380,7 +380,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("housekeep","","Oh, good! In that case, I should head out.");
 			writeText("He finishes up with a quick survey of the room and his face, checking for any cum he missed, before giving a short curtsy and making his way to the door.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","Good night to you too, Master!");
+				writeSpeech("housekeep","","Good night to you too, *Master!");
 			else
 				writeSpeech("housekeep","","Good night to you too, Mistress!");
 			writeSpeech("player","","Ah, good night, housekeepF.");
@@ -401,7 +401,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "housekeepSink1A" : {
 			writeSpeech("player","","Then you'd better get to work, shouldn't you?");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","Of course, Master~!");
+				writeSpeech("housekeep","","Of course, *Master~!");
 			else
 				writeSpeech("housekeep","","Of course, Mistress~!");
 			writeText("Sliding down to his knees, he smiles widely as he grabs the base of your cock.");
@@ -432,7 +432,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You pause as he steps up to you, standing up on his toes to reach your cheek.");
 			writeText("He gives you a gentle kiss before stepping back with a smile.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","That's a gift for a wonderful Master. Good night, and I'll see you next time you call~!");
+				writeSpeech("housekeep","","That's a gift for a wonderful *Master. Good night, and I'll see you next time you call~!");
 			else
 				writeSpeech("housekeep","","That's a gift for a wonderful Mistress. Good night, and I'll see you next time you call~!");
 			writeText("He gives you a little curtsy as usual, before getting to cleaning.");
@@ -453,7 +453,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You pause as he steps up to you, standing up on his toes to reach your cheek.");
 			writeText("He gives you a gentle kiss before stepping back with a smile.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","That's a gift for a wonderful Master~! I'll head out when I'm finished, so good night!");
+				writeSpeech("housekeep","","That's a gift for a wonderful *Master~! I'll head out when I'm finished, so good night!");
 			else
 				writeSpeech("housekeep","","That's a gift for a wonderful Mistress~! I'll head out when I'm finished, so good night!");
 			writeSpeech("player","","Good night to you too, housekeepF.");
@@ -555,7 +555,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("player","","I'm pretty content.");
 				writeText("housekeepF eyes you oddly for a moment, before shrugging.");
 				if(data.player.gender == "man")
-					writeSpeech("housekeep","","Well, okay. Have a good evening, Master.");
+					writeSpeech("housekeep","","Well, okay. Have a good evening, *Master.");
 				else
 					writeSpeech("housekeep","","Well, okay. Have a good evening, Mistress.");
 				writeSpeech("player","","Yup, you too.");
@@ -582,7 +582,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("housekeep","","...You could say that. Our business model is a bit odd, probably.");
 			writeText("Well, seeing as you only heard about the business from a loose flier, the issue might actually be getting the name out...");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","Was there anything else you would like to request, Master?");
+				writeSpeech("housekeep","","Was there anything else you would like to request, *Master?");
 			else
 				writeSpeech("housekeep","","Was there anything else you would like to request, Mistress?");
 			if(checkFlag("housekeep","Blowjob") != true)
@@ -628,7 +628,7 @@ function writeEvent(name) { //Plays the actual event.
 				writeSpeech("housekeep","","Goodness, you have such a <i>beautiful</i> cock~...");
 				writeText("His fingers keep moving up and down, his palm gliding against the underside of your cock as takes a deep breath in.");
 				if(data.player.gender == "man")
-					writeSpeech("housekeep","","Thank you for letting me worship it, <i>Master~</i>");
+					writeSpeech("housekeep","","Thank you for letting me worship it, <i>*Master~</i>");
 				else
 					writeSpeech("housekeep","","Thank you for letting me worship it, <i>Mistress~</i>");
 				writeBig("images/housekeep/1-4.jpg","Art by Kinta no Mousou");
@@ -660,7 +660,7 @@ function writeEvent(name) { //Plays the actual event.
 				writeSpeech("housekeep","","Geez... A beautiful cock, <i>and</i> you taste good~ If I'm not careful, <i>I'll</i> end up hooked on <i>you~!</i>");
 				writeText("Scraping up the last of the cum and licking his hand clean, he bends forward a bit to give a firm kiss on your cockhead while looking you in the eye.");
 				if(data.player.gender == "man")
-					writeSpeech("housekeep","","I'm looking forward to playing with you more next time, <i>Master~</i>");
+					writeSpeech("housekeep","","I'm looking forward to playing with you more next time, <i>*Master~</i>");
 				else
 					writeSpeech("housekeep","","I'm looking forward to playing with you more next time, <i>Mistress~</i>");
 				writeSpeech("player","","Holy crap... Where in the world did you learn to do that with your throat...?");
@@ -671,7 +671,7 @@ function writeEvent(name) { //Plays the actual event.
 				writeSpeech("player","","I'll take that deal...");
 				writeText("Nodding happily, housekeepF gives you a small little curtsy.");
 				if(data.player.gender == "man")
-					writeSpeech("housekeep","","Then I'll be off, Master~ Make sure to have some money when you call next time, okay? I want to make sure you can choose what would <i>satisfy you most~!</i>");
+					writeSpeech("housekeep","","Then I'll be off, *Master~ Make sure to have some money when you call next time, okay? I want to make sure you can choose what would <i>satisfy you most~!</i>");
 				else
 					writeSpeech("housekeep","","Then I'll be off, Mistress~ Make sure to have some money when you call next time, okay? I want to make sure you can choose what would <i>satisfy you most~!</i>");
 				writeText("Winking, he makes his way out of the house, leaving you feeling surprisingly satisfied for only having gotten a blowjob.");
@@ -685,14 +685,14 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player","","You said to be explicit, so how about you blow me again? You did a pretty good job last time.");
 			writeText("housekeepF gives a short curtsy, his tongue wetting his lips a bit.");
 			if(data.player.gender == "man"){
-				writeSpeech("housekeep","","It would be my pleasure, Master~ Just give me one moment to make sure I'm ready for you~!.");
+				writeSpeech("housekeep","","It would be my pleasure, *Master~ Just give me one moment to make sure I'm ready for you~!.");
 				writeText("Reaching into the apron's waistband, he pulls out a small stick of chapstick.");
 				writeText("He runs it along his lips, restoring the faintly glossy look as he smiles.");
-				writeSpeech("housekeep","","There we go! Now, let's get to your <i>service, </i> Master!");
+				writeSpeech("housekeep","","There we go! Now, let's get to your <i>service, </i> *Master!");
 				writeText("Like last time, he reaches forward and undoes your zipper gently, his other hand caressing your inner thigh.");
 				writeText("A moment later, and your cock bounces out gently from your underwear as he pulls it down, the shaft resting gently across his face as he smiles up at you.");
 				writeText("He takes a slow, deep breath, his face flushing slightly.");
-				writeSpeech("housekeep","","Even the smell is wonderful... Thank you for letting me service your cock, Master~!");
+				writeSpeech("housekeep","","Even the smell is wonderful... Thank you for letting me service your cock, *Master~!");
 			}
 			else{
 				writeSpeech("housekeep","","It would be my pleasure, Mistress~ Just give me one moment to make sure I'm ready for you~!.");
@@ -710,7 +710,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("His fingers keep slowly moving up and down your cock, perfectly controlled to make you want to buck your hips against his palm.");
 			writeText("He gives another slow, sensual lick up your shaft, before gently kissing your sensitive head.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","Are you enjoying yourself, Master? Remember, if you want something, feel free to <i>take it~</i>");
+				writeSpeech("housekeep","","Are you enjoying yourself, *Master? Remember, if you want something, feel free to <i>take it~</i>");
 			else
 				writeSpeech("housekeep","","Are you enjoying yourself, Mistress? Remember, if you want something, feel free to <i>take it~</i>");
 			writeFunction("writeEncounter('housekeepSecondBlowjobA')", "Let him control the pace");
@@ -731,7 +731,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player","","God, you look even better from this angle...");
 			writeText("He stands up on his toes to help you line up, his head turning to face you with a smile.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","I'm ready whenever you are, Master!");
+				writeSpeech("housekeep","","I'm ready whenever you are, *Master!");
 			else
 				writeSpeech("housekeep","","I'm ready whenever you are, Mistress!");
 			writeText("Your hands run over his soft, smooth ass for a moment...");
@@ -741,7 +741,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("His eyes flutter shut for a few moments, your cock sinking deep into him as he moans.");
 			writeText("After a second, though, he refocuses as looks into your eyes.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","I could hardly call myself a maid if I made my Master do all the work~!");
+				writeSpeech("housekeep","","I could hardly call myself a maid if I made my *Master do all the work~!");
 			else
 				writeSpeech("housekeep","","I could hardly call myself a maid if I made my Mistress do all the work~!");
 			writeText("Saying that, you feel his ass start to squeeze down around you, your hands feeling the muscles of his bubble-butt as they tighten.");
@@ -749,7 +749,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/housekeep/sink-2.jpg","Art by Kinta no Mousou");
 			writeSpeech("player","","You've got some good control...!");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","I'm glad to hear you think so, Master~! But I can hardly accept that kind of praise...");
+				writeSpeech("housekeep","","I'm glad to hear you think so, *Master~! But I can hardly accept that kind of praise...");
 			else
 				writeSpeech("housekeep","","I'm glad to hear you think so, Mistress~! But I can hardly accept that kind of praise...");
 			writeText("housekeepF begins to smirk.");
@@ -757,7 +757,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Straightening out his arms, he pushes his ass back, wiggling his hips around as your head rubs around inside of him.");
 			writeText("His breathing gets a bit heavier as he rolls his hips around, smiling back at you.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","Don't be afraid to get <i>rough,</i> Master~!");
+				writeSpeech("housekeep","","Don't be afraid to get <i>rough,</i> *Master~!");
 			else
 				writeSpeech("housekeep","","Don't be afraid to get <i>rough,</i> Mistress~!");
 			writeSpeech("player","","Be careful what you wish for...!");
@@ -767,7 +767,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/housekeep/sink-3.jpg","Art by Kinta no Mousou");
 			writeSpeech("player","","Feels good enough that you're losing control already, huh?");
 			writeText("He tries to collect himself, but his voice shudders as you thrust into him. Despite that, you can still hear the playfulness in his tone.");
-			writeSpeech("housekeep","","S-Sorry, Master, but your cock feels so much better than my toys...! I can't help it~!");
+			writeSpeech("housekeep","","S-Sorry, *Master, but your cock feels so much better than my toys...! I can't help it~!");
 			writeText("As you pull out, you can feel him clamp down even tighter, his focus returning a bit.");
 			writeText("When you thrust in, he loosens just enough for you to <i><b>slam</b></i> into him, making you both groan before he squeezes around you again.");
 			writeText("He keeps wiggling against you, squirming under your hands to make sure your cock rubs against every inch of his insides, matching your thrusts as his body bobs back and forth against you.");
@@ -781,7 +781,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/housekeep/sink-cum1.jpg","Art by Kinta no Mousou");
 			writeText("You can feel his body shuddering beneath you, the rhythmic tensing from his own pleasure milking you as he struggles to stay up on his toes.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","H-Haah...! Looks like me made a bit of a mess, didn't we Master~?");
+				writeSpeech("housekeep","","H-Haah...! Looks like me made a bit of a mess, didn't we *Master~?");
 			else
 				writeSpeech("housekeep","","H-Haah...! Looks like me made a bit of a mess, didn't we Mistress~?");
 			writeText("You slowly pull out, your half-hard cock popping out as housekeepF moans gently. You can see his hole unconsciously try to tense up around your cock for a moment before housekeepF starts to stand.");
@@ -801,7 +801,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player","","Bend over.");
 			writeText("An excited look flies across his face, but it's quickly replaced with an 'innocent' one.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","If that's your request, Master~!");
+				writeSpeech("housekeep","","If that's your request, *Master~!");
 			else
 				writeSpeech("housekeep","","If that's your request, Mistress~!");
 			writeText("He goes to the same counter as before, moving with a more significant sway in his hips as he leans against the counter.");
@@ -811,7 +811,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player","","Cute, but I'm feeling pretty pent-up... And just why do you think that is?");
 			writeText("You pull out your cock, housekeepF trying (and failing) to keep the excitement out of his eyes.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","I'm sorry, Master~!");
+				writeSpeech("housekeep","","I'm sorry, *Master~!");
 			else
 				writeSpeech("housekeep","","I'm sorry, Mistress~!");
 			writeText("Another slap rings out, housekeepF barely holding back a gasping moan.");
@@ -843,7 +843,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Grasping his hips as tightly as you can, you grin down at him.");
 			writeSpeech("player","","Don't collapse, <i>slut</i>.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","Y-Yes, Master~!");
+				writeSpeech("housekeep","","Y-Yes, *Master~!");
 			else
 				writeSpeech("housekeep","","Y-Yes, Mistress~!");
 			writeText("With that, you start savagely fucking him as quickly, roughly, and violently as you can.");
@@ -856,7 +856,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("When you finally pull out, he falls down softly to his knees, his forearms supporting him against the cupboard.");
 			writeText("Despite looking exhausted, a dopey look of pleasure across his face, he still turns to look up at you with a smile.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","T-Thank you, Master...~!");
+				writeSpeech("housekeep","","T-Thank you, *Master...~!");
 			else
 				writeSpeech("housekeep","","T-Thank you, Mistress...~!");
 			writeText("He relaxes in place for a moment, breathing deeply.");
@@ -886,12 +886,12 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player","","You're adorable.");
 			writeText("He looks away to hide his face again, though he's standing up a bit straighter now.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","...Thank you, Master. Now go take that shower already - I could get in trouble if I end up giving you an extension without permission.");
+				writeSpeech("housekeep","","...Thank you, *Master. Now go take that shower already - I could get in trouble if I end up giving you an extension without permission.");
 			else
 				writeSpeech("housekeep","","...Thank you, Mistress. Now go take that shower already - I could get in trouble if I end up giving you an extension without permission.");
 			writeSpeech("player","","Hah, sure, sure. Good night, housekeepF.");
 			if(data.player.gender == "man")
-				writeSpeech("housekeep","","Good night, Master. I look forward to your next call.");
+				writeSpeech("housekeep","","Good night, *Master. I look forward to your next call.");
 			else
 				writeSpeech("housekeep","","Good night, Mistress. I look forward to your next call.");
 			writeText("With that, you head to the bathroom... but not before noting his smile as he starts cleaning.");

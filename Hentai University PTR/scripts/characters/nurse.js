@@ -105,7 +105,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "What'cha doing?");
 			writeSpeech("nurse", "", "Quiet! God, I was months away from finding a suitable means of human cloning... Do you realize what you've done? Years of combining the leading research in chemistry with ancient alchemical knowledge, gone! I've got to save what I can!");
 			writeSpeech("player", "", "Probably shouldn't have tried to make me some bimbo then. You're getting what's coming to you.");
-			writeSpeech("nurse", "", "It doesn't... Damnit, it's already affecting me.<br>The potion attacks your memory, not your intelligence. It was meant to make you open, suggestible, I'd have myself a boytoy and principalF would be none the...");
+			writeSpeech("nurse", "", "It doesn't... Damnit, it's already affecting me.<br>The potion attacks your memory, not your intelligence. It was meant to make you open, suggestible, I'd have myself a toy and principalF would be none the...");
 			writeSpeech("player", "", "Oh, like hypnotism, but permanent. Gotcha.");
 			writeSpeech("nurse", "", "Just... Like what? I can't...");
 			writeText("She's gone from writing alchemical symbols to swirly doodles, so you take the pencil away from her.");
@@ -576,7 +576,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/nurse/reward1-1.jpg", "Art by Oreteki18kin");
 			writeSpeech("nurse", "", "You can't forget your reward~<br>I know you're just as excited as I am to get to mixing, but...");
 			writeSpeech("player", "", "I turn around for one second... Who exactly is being rewarded here?");
-			writeSpeech("nurse", "", "You, of course master~! I know my behavior seems a bit... Whorish... But really, I just want to encourage you for all the help you've given me. That's all, really, I certainly haven't been counting the seconds~!");
+			writeSpeech("nurse", "", "You, of course *Master~! I know my behavior seems a bit... Whorish... But really, I just want to encourage you for all the help you've given me. That's all, really, I certainly haven't been counting the seconds~!");
 			writeBig("images/nurse/reward1-2.jpg", "Art by Oreteki18kin");
 			writeSpeech("nurse", "", "N-now, hurry~<br>I'm sure you can't hold back even a moment longer~!");
 			writeText("She's positively giddy with anticipation, urging you to hurry until she goes quiet you finally fish out what she's been waiting for.");
@@ -586,7 +586,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/nurse/reward1-3.jpg", "Art by Oreteki18kin");
 			writeSpeech("nurse", "", "Aaaah~!<br>So eager, have you been feeling pent up~?<br>It's so... So large...<br>It's not healthy to abstain from pleasure, you know... Make sure to let loose regularly, aaannnnDDD~ OOOH~!<br>... *huff* T-that wasn't me cumming, you know... <br>I'm not so... So perverted I'd cum from you filling my insides.");
 			writeBig("images/nurse/reward1-4.jpg", "Art by Oreteki18kin");
-			writeSpeech("nurse", "", "I'm loyal to you, master~ Do your best from now on so I can reward you again, okay? ");
+			writeSpeech("nurse", "", "I'm loyal to you, *Master~ Do your best from now on so I can reward you again, okay? ");
 			break;
 		}
 		case "nurseAnal": {
@@ -620,7 +620,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/nurse/anal3.jpg", "Art by Oreteki18kin");
 			writeSpeech("nurse", "", "That... That was certainly a complete success, I'd say...");
 			writeSpeech("player", "", "Needs work. Make the next draft last longer, and increase skin sensitivity too so you can enjoy a good spanking.");
-			writeSpeech("nurse", "", "Of course, master~");
+			writeSpeech("nurse", "", "Of course, *Master~");
 			break;
 		}
 		case "nurseImperfectYouth": {

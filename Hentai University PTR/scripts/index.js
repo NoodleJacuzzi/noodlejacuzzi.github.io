@@ -32,7 +32,7 @@ var data = {
 		counseling: 0,
 		lastText: 100,
 		dayID: 1,
-		version: 5,
+		version: 6,
 		location: "",
 		pervert: false,
 		color: "#86b4dc",
@@ -53,6 +53,7 @@ var data = {
 		{index: "green", met: false, fName: "Emma", lName: "Hamilton", trust: 0, encountered: false, textEvent: "", color: "#677b4c"},
 		{index: "succubus", fName: "Gou", lName: "", trust: 0, encountered: false, textEvent: "", met: false, color: "#BF76DF"},
 		{index: "nurse", fName: "Justine", lName: "Walton", trust: 0, encountered: false, textEvent: "", met: false, color: "#8D756B"},
+		{index: "housekeep", fName: "Anri", lName: "Ramona", trust: 0, encountered: false, textEvent: "", met: false, color: "#df5877", author: "CryptoGreek", artist: "Kinta no Mousou"},
 	],
 	gallery: [
 	],
@@ -476,6 +477,80 @@ function replaceCodenames(text) {
 		text = text.replace('playerHonorific', data.player.honorific);
 		text = text.replace('playerH', data.player.honorific);
 		text = text.replace('playerSir', data.player.honorific);
+		switch (data.player.gender) {
+			case "man": {
+				text = text.replace("*he", "he");
+				text = text.replace("*He", "He");
+				text = text.replace("*HE", "HE");
+				text = text.replace("*his", "his");
+				text = text.replace("*His", "His");
+				text = text.replace("*HIS", "HIS");
+				text = text.replace("*man", "man");
+				text = text.replace("*Man", "Man");
+				text = text.replace("*MAN", "MAN");
+				text = text.replace("*him", "him");
+				text = text.replace("*Him", "Him");
+				text = text.replace("*HIM", "HIM");
+				text = text.replace("*boy", "boy");
+				text = text.replace("*Boy", "Boy");
+				text = text.replace("*BOY", "BOY");
+				text = text.replace("*guy", "guy");
+				text = text.replace("*Guy", "Guy");
+				text = text.replace("*GUY", "GUY");
+				text = text.replace("*mister", "mister");
+				text = text.replace("*Mister", "Mister");
+				text = text.replace("*MISTER", "MISTER");
+				text = text.replace("*sir", "sir");
+				text = text.replace("*Sir", "Sir");
+				text = text.replace("*SIR", "SIR");
+				text = text.replace("*male", "male");
+				text = text.replace("*Male", "Male");
+				text = text.replace("*MALE", "MALE");
+				text = text.replace("*geezer", "geezer");
+				text = text.replace("*Geezer", "Geezer");
+				text = text.replace("*GEEZER", "GEEZER");
+				text = text.replace("*master", "master");
+				text = text.replace("*Master", "Master");
+				text = text.replace("*MASTER", "MASTER");
+				break;
+			}
+			case "woman": {
+				text = text.replace("*he", "she");
+				text = text.replace("*He", "She");
+				text = text.replace("*HE", "SHE");
+				text = text.replace("*his", "her");
+				text = text.replace("*His", "Her");
+				text = text.replace("*HIS", "HER");
+				text = text.replace("*man", "woman");
+				text = text.replace("*Man", "Woman");
+				text = text.replace("*MAN", "WOMAN");
+				text = text.replace("*him", "her");
+				text = text.replace("*Him", "Her");
+				text = text.replace("*HIM", "HER");
+				text = text.replace("*boy", "girl");
+				text = text.replace("*Boy", "Girl");
+				text = text.replace("*BOY", "GIRL");
+				text = text.replace("*guy", "girl");
+				text = text.replace("*Guy", "Girl");
+				text = text.replace("*GUY", "GIRL");
+				text = text.replace("*mister", "miss");
+				text = text.replace("*Mister", "Miss");
+				text = text.replace("*MISTER", "MISS");
+				text = text.replace("*sir", "ma'am");
+				text = text.replace("*Sir", "Ma'am");
+				text = text.replace("*SIR", "MA'AM");
+				text = text.replace("*male", "female");
+				text = text.replace("*Male", "Female");
+				text = text.replace("*MALE", "FEMALE");
+				text = text.replace("*geezer", "hag");
+				text = text.replace("*Geezer", "Hag");
+				text = text.replace("*GEEZER", "HAG");
+				text = text.replace("*master", "mistress");
+				text = text.replace("*Master", "Mistress");
+				text = text.replace("*MASTER", "Mistress");
+				break;
+			}
+		}
 		for (codenameIndex = 0; codenameIndex < data.story.length; codenameIndex++) {
 			codenameCheck = data.story[codenameIndex].index + "F";
 			text = text.replace(codenameCheck, data.story[codenameIndex].fName);
@@ -1089,7 +1164,16 @@ function writeSpeech (name, img, text) {
 			document.getElementById('output').innerHTML += `
 			<div class="textBoxRoyalty">
 				<div class = "royaltyThumb">
-					<img class = "textThumbRoyalty" src = "`+img+`"`+checkForError+`>
+					<div class = "royaltyImageHolder">
+						<img class = "textThumbRoyalty" style="
+							position:absolute;
+							-webkit-filter: drop-shadow(2px 2px 0 `+cssColor+`)
+							drop-shadow(-2px -2px 0 `+cssColor+`);
+							filter: drop-shadow(2px 2px 0 `+cssColor+`)
+							drop-shadow(-2px -2px 0 `+cssColor+`);"
+						src = "`+img+`"`+checkForError+`>
+						<img class = "textThumbRoyalty" src = "`+img+`"`+checkForError+`>
+					</div>
 					<div class="nameBoxRoyalty" style = "border-color:`+cssColor+`;">
 						<p class = "textNameRoyalty" style = "color:`+cssColor+`;">`+fullName+`</p>
 					</div>
@@ -1521,8 +1605,9 @@ function updateMenu() {
 			document.getElementById('title').style.fontFamily = "norwester, times new roman, sans-serif";
 			document.getElementById('menu').style.fontFamily = "railway, times new roman, sans-serif";
 			for (i = 0; i < menuButtons.length; i++) {
-				document.getElementById(menuButtons[i]).style.borderRadius = "0px";
-				document.getElementById(menuButtons[i]).style.border = "3px solid";
+				document.getElementById(menuButtons[i].ID).innerHTML = menuButtons[i].name;
+				document.getElementById(menuButtons[i].ID).style.borderRadius = "0px";
+				document.getElementById(menuButtons[i].ID).style.border = "3px solid";
 			}
 			document.getElementById('playerImage').style.borderRadius = "0px";
 			if (data.player.pervert != true) {
@@ -1736,9 +1821,10 @@ function updateMenu() {
 				document.getElementById('playerImage').src = "scripts/gamefiles/characters/basilT.png";
 			}
 			for (i = 0; i < menuButtons.length; i++) {
-				document.getElementById(menuButtons[i]).style.borderRadius = "0px";
-				document.getElementById(menuButtons[i]).style.border = "3px solid";
-				document.getElementById(menuButtons[i]).classList.add('personaMenuButton');
+				document.getElementById(menuButtons[i].ID).innerHTML = menuButtons[i].name;
+				document.getElementById(menuButtons[i].ID).style.borderRadius = "0px";
+				document.getElementById(menuButtons[i].ID).style.border = "3px solid";
+				document.getElementById(menuButtons[i].ID).classList.add('personaMenuButton');
 			}
 			document.getElementById('title').style.fontFamily = "norwester, times new roman, sans-serif";
 			document.getElementById('menu').style.fontFamily = "railway, times new roman, sans-serif";
@@ -1753,25 +1839,20 @@ function updateMenu() {
 			console.log(data.player.style);
 			break;
 		}
-		case "basic": {
+		default: {
 			document.getElementById('title').style.fontFamily = "arial, sans-serif";
 			document.getElementById('menu').style.fontFamily = "arial, sans-serif";
 			console.log(document.getElementById('title').style.fontFamily);
 			for (i = 0; i < menuButtons.length; i++) {
-				document.getElementById(menuButtons[i]).style.borderRadius = "5px";
-				document.getElementById(menuButtons[i]).style.border = "none";
-				document.getElementById(menuButtons[i]).style.borderBottom = "3px solid";
-				document.getElementById(menuButtons[i]).classList.remove('personaMenuButton');
+				document.getElementById(menuButtons[i].ID).innerHTML = menuButtons[i].name;
+				document.getElementById(menuButtons[i].ID).style.borderRadius = "5px";
+				document.getElementById(menuButtons[i].ID).style.border = "none";
+				document.getElementById(menuButtons[i].ID).style.borderBottom = "3px solid";
+				document.getElementById(menuButtons[i].ID).classList.remove('personaMenuButton');
 			}
 			document.getElementById('restartButton').style.color = "#FF0000";
 			document.getElementById('playerImage').style.borderRadius = "3px";
 			document.getElementById('playerImage').style.borderColor = "#FFFFFF";
-			break;
-		}
-		default: {
-			document.getElementById('title').style.fontFamily = "arial, sans-serif";
-			document.getElementById('menu').style.fontFamily = "arial, sans-serif";
-			console.log(data.player.style);
 		}
 	}
 }
@@ -2527,8 +2608,8 @@ function writePhoneImage (img, cap) {
 			<br>
 		`;
 	}
-	var savedImage = {name: cap, src: img,};
-	if (checkPhoneImages(cap) == false) {
+	var savedImage = {name: img, src: img,};
+	if (checkPhoneImages(img) == false) {
 		data.phoneImages.push(savedImage);
 		console.log("Unlocked image "+savedImage.name);
 	}

@@ -1,4 +1,4 @@
-var character = {index: "meji", met: false, fName: "Reese", lName: "Kieran", trust: 0, encountered: false, textEvent: "", textColor: "#7e52a3"};
+var character = {index: "meji", met: false, fName: "Reese", lName: "Kieran", trust: 0, encountered: false, textEvent: "", color: "#7e52a3", author: "CryptoGreek", artist: "Nagi Ichi"};
 
 //General tutorial stuff:
 //writeText("text"); - Writes some plain old text.
@@ -236,9 +236,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 						if(galleryCheck('meji3') != true){
 							writeFunction("writeEncounter('meji3c')", "Give him the leotard");
 						}
-						else if(galleryCheck('meji4') != true){
-							writeFunction("writeEvent('meji4')", "Ask him about last time");
-						}
+					}
+					if(galleryCheck('meji3') == true && galleryCheck('meji4') != true){
+						writeFunction("writeEvent('meji4')", "Ask him about last time");
 					}
 					else{
 						writeFunction("writeEncounter('meji3b')", "Tell him you want to see something new");
@@ -359,6 +359,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "meji3c" : {
+			removeItem("Leotard");
 			writeText("His eyes go wide as you try to discretely hand it to him.");
 			if(checkTrust('meji') >= 40){
 				writeSpeech("meji","","Th-This is... Wow.");
@@ -545,7 +546,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				if(galleryCheck("meji5"))
 					writeText("Before you can respond, he darts off. Seems like he's really looking forward to finishing what you two started...");
 				else
-					writeText("Before you can respond, he dars off. Seems like he's really excited to show you whatever it is he got...");
+					writeText("Before you can respond, he darts off. Seems like he's really excited to show you whatever it is he got...");
 			}
 			writeText("...");
 				writeText("Shutting the door as you step into his house, you can hear what sounds like mejiF humming from the main room.");
@@ -1466,6 +1467,8 @@ var phoneArray = [//Lists the potential text events the player can receive at th
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "mejiReward": {
+			if(checkItem("Leotard"))
+				removeItem("Leotard");
 			writePhoneImage("images/meji/fin.jpg", "Art by Nagi Ichi");
 			writePhoneSpeech("meji", "", "You've finished all of mejiF's content for this version, congratulations!");
 			break;
