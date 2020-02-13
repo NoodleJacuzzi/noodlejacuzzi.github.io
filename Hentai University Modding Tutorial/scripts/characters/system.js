@@ -16,7 +16,6 @@ function writeEncounter(scene) {
 			writeText("Hentai University and this tutorial would not exist without support from my patrons! You can find the Patreon here: <a href='https://www.patreon.com/noodlejacuzzi'>Patreon Link</a><br>");
 			writeText("You can also send me a message directly. Come on over to my <a href='https://discord.gg/B3AszYM'>discord</a> or you can send an email at noodlejacuzzi@gmail.com");
 			writeText("Captain Cryptogreek can be messaged on his reddit account where he regularly posts captions. You can also shoot him an email if you'd like him to proofread or you'd like to commission his skills at cryptogreekcaptions@gmail.com");
-			writeText("Thank you to: ");
 			writeSpecial("And special thanks to Stiggy752 for the CSS!");
 			writeFunction("writeEncounter('gettingStarted')", "Get started");
 			writeFunction("writeEncounter('installation')", "I'm just here to install a mod");
