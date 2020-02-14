@@ -19,11 +19,17 @@ var newItems = [//Lists the shop items unique to this character
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
+	//Standard Route
 	{index: "maid1", name: "You see a woman in an unusual outfit looking through some items, looking for something.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "odd",},
 	{index: "maid2", name: "You can see maid nearby. It looks like she just finished shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 20, trustMax: 20, type: "tab", top: 0, left: 0, day: "odd",},
 	{index: "maid3", name: "maid is standing near the store entrance, but isn't holding a basket or anything.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 21, trustMax: 21, type: "tab", top: 0, left: 0, day: "odd",},
 	{index: "maid4", name: "maid seems to have finished shopping and is standing near the cafe.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 24, trustMax: 24, type: "tab", top: 0, left: 0, day: "odd",},
+
+	//Maid-First Route
 	{index: "maid5", name: "maid is standing near the cafe, softly humming to herself as she looks around.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 25, trustMax: 28, type: "tab", top: 0, left: 0, day: "odd",},
+
+	//Mistress-First Route
+	//{index: "maidA1", name: "You can see maid standing near a cafe. Based on the bag she's carrying, she must've just finished shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 30, trustMax: 30, type: "tab", top: 0, left: 0, day: "odd",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -790,7 +796,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("maid","","Have a wonderful day, alright?");
 				writeSpeech("player","","Same to you, maidF.");
 				writeText("With that, she steps into the bathroom to wash up, while you head out.");
-				break;
 			}
 			else{
 				writeSpeech("player","","It's not over yet, maidF.");
@@ -891,6 +896,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","Same to you, maidF.");
 			writeText("With that, she steps into the bathroom to wash up, while you head out.");
 			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
 		}
 		case "maidEvent2B" : {
 			writeSpeech("player","","Well, looks like there's quite a mess to clean up.");

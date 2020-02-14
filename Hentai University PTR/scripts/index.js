@@ -1071,7 +1071,7 @@ function writeSpecial (text) {
 function writeSpeech (name, img, text) {
 	var cssName = name;
 	var fullName = name;
-	console.log(img);
+	//console.log(img);
 	var cssColor = "#CCCCCC";
 	if (img == "" && img != 'none') {
 		if (data.player.pervert != true) {
@@ -1108,7 +1108,7 @@ function writeSpeech (name, img, text) {
 			cssColor = "#fc53f1";
 		}
 	}
-	console.log(img);
+	//console.log(img);
 	if (data.player.style == "persona" || data.player.style == "royalty") {
 		var checkForError = `onerror ="javascript:this.src='`+img+`'"`;
 		if (data.player.pervert == true) {
