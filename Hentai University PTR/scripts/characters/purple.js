@@ -475,7 +475,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("purple", "", "Ah~<br>Ooh, so you'd always be around? I know mom would gush at the thought.");
 			writeSpeech("player", "", "Well...");
 			writeFunction("writeEncounter('routeAEnding2')", "Sure, I'll go for it");
-			writeFunction("writeEncounter('routeARejection')", "Actually, maybe some other time");
+			writeFunction("writeEncounter('routeAEndingRejection')", "Actually, maybe some other time");
 			break;
 		}
 		case "routeAEnding2": {

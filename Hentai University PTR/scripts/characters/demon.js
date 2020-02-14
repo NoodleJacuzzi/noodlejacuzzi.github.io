@@ -84,6 +84,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "demonShopping": {
 			writeEvent("demonShopping");
 			setTrust('demon', 101);
+			passTime();
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			
 			break;
@@ -91,6 +92,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "demonPaint": {
 			writeEvent("demonPaint");
 			setTrust('demon', 102);
+			passTime();
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
