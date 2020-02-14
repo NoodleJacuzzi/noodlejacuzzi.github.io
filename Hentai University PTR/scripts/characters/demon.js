@@ -16,6 +16,8 @@ var newItems = [
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "demon1", name: "demon is waiting for you tonight", location: 'playerHouse', time: "Night", itemReq: "", trustMin: 2, trustMax: 2, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	{index: "demonShopping", name: "A familiar face is here", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	{index: "demonPaint", name: "A familiar face is here again", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 101, trustMax: 101, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -79,6 +81,19 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation('playerHouse')", "Finish");
 			break;
 		}
+		case "demonShopping": {
+			writeEvent("demonShopping");
+			setTrust('demon', 101);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			
+			break;
+		}
+		case "demonPaint": {
+			writeEvent("demonPaint");
+			setTrust('demon', 102);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -90,6 +105,8 @@ var eventArray = [
 	{index: "demonIntro1", name: "Inferno Part 1"},
 	{index: "demonIntro2", name: "Inferno Part 2"},
 	{index: "demon1", name: "First Circle - Limbo"},
+	{index: "demonShopping", name: "Second Circle - Lust"},
+	{index: "demonPaint", name: "Third Circle - Gluttony"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -234,6 +251,51 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("With how far gone he is, he'll probably be at your beck and call from now on.");
 			break;
 		}
+		case "demonShopping": {
+			writeText("Across an isle you spot a familiar face. Demons don't need food, so you're confused for a second as to why he's here...");
+			writeBig("images/demon/demonShopping1.jpg", "Art by Gujira 4 Gou");
+			writeSpeech("player", "", "<i>There's no way... I'll approach him, he shouldn't be doing anything too crazy. </i><br>Well, fancy seeing you around town.");
+			writeSpeech("demon", "", "Oh! Nnn, hey~!");
+			writeText("His face is flush and his breathing is labored.");
+			writeSpeech("player", "", "Developed an exhibitionism fetish, huh? Careful it doesn't get you into trouble. Got anything on at all under there?");
+			writeBig("images/demon/demonShopping2.jpg", "Art by Gujira 4 Gou");
+			writeSpeech("demon", "", "Nnnothing at all~!");
+			writeText("You do your best not to stumble back in surprise, trying not to draw attention to yourself or to demonF.");
+			writeSpeech("player", "", "What the hell are you thinking?");
+			writeSpeech("demon", "", "Hehe, what's the matter? Too... Too much of a show for you? How about if I... Ghhff, I can't take it anymore~!");
+			writeText("You hear a click and purple electricity sparks in the air. After a moment you can see a purple bead vibrator begin to shake between his legs.");
+			writeBig("images/demon/demonShopping3.jpg", "Art by Gujira 4 Gou");
+			writeSpeech("demon", "", "Ghhhhg~!");
+			writeText("He grits his teeth as his eyes roll back in his head. You take a few steps back, not wanting to been seen in public with-");
+			writeBig("images/demon/demonShopping4.jpg", "Art by Gujira 4 Gou");
+			writeSpeech("demon", "", "Aaaah fuck~! Cumming~! My little wimp-stick is leaking onto the floor~!");
+			writeText("You don't stick around for the fallout. You'll have to catch up with demonF another time.");
+			writeText("...");
+			writeText("You didn't see him leave the store, although more than a few people saw him. One of them even called the police.");
+			writeText("He'd need to be pretty fucked up in the head to show his face in public again, especially around here.");
+			break;
+		}
+		case "demonPaint": {
+			writeBig("images/demon/demonPaint1.jpg", "Art by Gujira 4 Gou");
+			writeSpeech("player", "", "No way... No fucking way...");
+			writeText("You aren't stupid enough to approach him again, especially given what he's wearing. Or what he isn't wearing. You pick a spot to watch him through the store's window.");
+			writeBig("images/demon/demonPaint2.jpg", "Art by Gujira 4 Gou");
+			writeText("He's here again, and he's taken his fetish even farther. His clothes are painted on this time, and are badly streaking.");
+			writeSpeech("player", "", "How the hell is nobody notici-");
+			writeBig("images/demon/demonPaint3.jpg", "Art by Gujira 4 Gou");
+			writeSpeech("player", "", "Ah. That makes sense.");
+			writeText("The cashier continues like nothing's unusual, even as demonF is noticed by other people in the store. With so many eyes watching him, he starts to shake.");
+			writeBig("images/demon/demonPaint4.jpg", "Art by Gujira 4 Gou");
+			writeText("Unfortuately if he cums he'll be out of luck. No demonic powers to hide his nudity.");
+			writeBig("images/demon/demonPaint5.jpg", "Art by Gujira 4 Gou");
+			writeText("Not that it matters. A thin line of cum drips down his painted thigh. You can't hear what the cashier is saying, but it's clear that she confused. demonF just starts drunkenly laughing before he turns around and starts walking away from the counter, still spurting onto the floor all the while.");
+			writeBig("images/demon/demonPaint6.jpg", "Art by Gujira 4 Gou");
+			writeText("Nearly everyone in the store has noticed at this point. He looks around as his cum haze ends, probably reveling in the depravity.");
+			writeBig("images/demon/demonPaint7.jpg", "Art by Gujira 4 Gou");
+			writeText("Then he spots you.");
+			writeText("He looks about ready to call you out by name, you need to get out of here. He's a powerful demon, he should be able to get himself out of this mess.");
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong event. Error code: Failed to write event ("+name+") in "+character.index+".js");
 			break;
@@ -259,13 +321,18 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "demonReward", trust: 100,},
+	{index: "demonNewReward", trust: 102,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
 		case "demonReward": {
+			writePhoneImage("images/demon/reward.jpg", "Art by Gujira");
+			writePhoneSpeech("demon", "", "You've finished all of demonF's content for this version, more is on the way!");
+			break;
+		}
+		case "demonNewReward": {
 			writePhoneImage("images/demon/reward.jpg", "Art by Gujira");
 			writePhoneSpeech("demon", "", "You've finished all of demonF's content for this version, more is on the way!");
 			break;
