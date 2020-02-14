@@ -651,7 +651,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 		}
 		case "mistressRewardDuo" : {
 			writePhoneImage("images/maid/rewardDuo.jpg", "Art by Oreteki18kin");
-			writePhoneSpeech("maid", "", "You've finished all content for this path for this version, congratulations! This is an alternate way of advancing mistressF's story - if you restart her story and spend time at the park, you might see another route with more content.");
+			writePhoneSpeech("mistress", "", "You've finished all content for this path for this version, congratulations! This is an alternate way of advancing mistressF's story - if you restart her story and spend time at the park, you might see another route with more content.");
 			break;
 		}
 		default: {

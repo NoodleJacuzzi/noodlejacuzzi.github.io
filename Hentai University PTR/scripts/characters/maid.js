@@ -790,6 +790,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("maid","","Have a wonderful day, alright?");
 				writeSpeech("player","","Same to you, maidF.");
 				writeText("With that, she steps into the bathroom to wash up, while you head out.");
+				break;
 			}
 			else{
 				writeSpeech("player","","It's not over yet, maidF.");
@@ -815,7 +816,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("With that, she flops her head back gently against the pillow, her body relaxing as she just lays there, panting with her eyes shut.");
 				writeText("She takes a bit of time to recover while you clean yourself off in the shower, just like last time.");
 				writeText("When you get out, maidF does approach you with a gentle smile and the slow gait of a well-fucked woman.");
-				writeSpeech("maid","","Thank you for the fun, *Master.");
+				writeSpeech("maid","","Thank you, *Master...");
 				writeText("She gives you a gentle kiss on the cheek, though she lingers for a moment near your ear.");
 				writeSpeech("maid","","...for using me like a <i>sex-toy~</i>");
 				writeText("She takes a step back, smiling as you notice that some of your cum is still running down her legs.");
@@ -1084,7 +1085,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("But since that's <b>exactly</b> the reaction you were going for, it's time for a bit of reinforcement...");
 			writeSpeech("player","","That was a very honest reaction, wasn't it?");
 			writeText("maidF nods, her cunt grasping tightly around your cock.");
-			writeSpeech("player","","That's good, then. After all, and honest girl...");
+			writeSpeech("player","","That's good, then. After all, an honest girl...");
 			writeText("You lean forward completely, your face near hers as you smile.");
 			writeSpeech("player","","...is a <i><b>good girl.</b></i>");
 			writeText("You slowly start sawing in and out of her cunt, her moans stifled as she bites her lip.");
@@ -1107,7 +1108,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("maid","","F-Fuck, right there, please...! Just like that...!");
 			writeText("You calmly oblige, fucking her rough and hard as she starts shaking.");
 			writeText("Her orgasm has her pussy squeezing down hard, her body quivering as you just keep fucking her.");
-			writeText("But when she starts to finish cumming, you decided to <b>intervene.</b>");
+			writeText("But when she starts to finish cumming, you decided to... <b>intervene.</b>");
 			writeText("Your hand moves to her chin, forcing her to look right at you as you ask her a nice leading question.");
 			writeSpeech("player","","You can't stop cumming, can you?");
 			writeText("Her eyes widen slightly, before she tries to nod beneath you... and fails, when you bottom-out again.");
