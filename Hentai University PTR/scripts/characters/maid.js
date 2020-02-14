@@ -512,7 +512,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("She smiles as she shakes her head.");
 				writeSpeech("maid","","Not at all. You have quite the remarkable tendency to arrive just as I'm finishing up, playerF.");
 				writeSpeech("player","","The side-effect of a well-coordinated schedule, I guess.");
-				if(checkTrust('mistress') == 55 || checkTrust('mistress') == 45 || checkTrust('mistress') == 40){
+				if(checkTrust('mistress') == 55 || checkTrust('mistress') == 45 || checkTrust('mistress') == 40 || checkTrust('mistress') == 50){
 					writeSpeech("maid","","It seems so. I, um...");
 					writeText("Her tone lowers a bit, taking a step closer to you.");
 					writeSpeech("maid","","I don't suppose you've talked to mistressF about... what we discussed?");
