@@ -2,7 +2,7 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 1/31/2020</p>
+				<p class = "centeredText">Lastest News 2/14/2020</p>
 				<p class = "centeredText">Hentai University v7</p>
 				<p class = "centeredText">A new release of Hentai University, adding content for Mary & Margaret, Meph, and Lena!</p>
 				<p class = "centeredText">Thank you to: Swallows999, Joshua Ingram, Madgunner, Robbie, Lasse B, andres mejia, Badaxe, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, FearlessViper26, Filament, G, J_C_L, jack spencer, Jinouga, Marco Wassmer, maxime, Ramsey Bisher, Scal, Taylor Trout, XxrobothacksxX, Aegil, Andy, Angel, Anthony Munso, Ariados, Arthur radcliffe, AxiosMIles, Bawornnan samart, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Colin, Danny Nguyen, Darrell Goodman, Debarre Sonny, dhccpmc, Drashin, Dugelle, Grim2011, Guy68691, Gwen Yurick, ItsAllOgreNow, Jane, Jesse Greene, joe, John Lewis, john smith, Joseph Gibbs, Joshua Melzark, KH dg, lm Carma, mazterlith, Monkey, murgatroid99, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, ptw1985, qwerty, Roy, Scumstango, Sebastian Eckel, Simon Rencher, sky, Snaked, stratum, Taurus Travon Rashad Lemar Brackin, Trevor, Vincent Madaire-Cullen, Wayne culbert, Wei, Wild Bill, William Richardson, Your Husbando, Z, สิรวิชณ์ อาสว่าง, 凱 陳, and 魏 for supporting my work!</p>
