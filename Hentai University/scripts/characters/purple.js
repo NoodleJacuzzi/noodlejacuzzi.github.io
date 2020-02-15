@@ -29,6 +29,8 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "purple7A", name: "purple is standing outside your office.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 90, trustMax: 90, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "purple8", name: "purple is standing outside your office.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 95, trustMax: 95, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "purple9", name: "purple's house is here.", location: 'vintageStreet', time: "MorningEvening", itemReq: "", trustMin: 99, trustMax: 99, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "branchingPoint", name: "purple's house is here.", location: 'vintageStreet', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "routeAQuo", name: "purple's house is here.", location: 'vintageStreet', time: "MorningEvening", itemReq: "", trustMin: 101, trustMax: 101, type: "tab", top: 0, left: 0, day: "both",},
 ]
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -374,6 +376,131 @@ function writeEncounter(name) { //Plays the actual encounter.
 			passTime();
 			break;
 		}
+		case "branchingPoint": {
+			writeEvent("purpleBranching");
+			writeText("Still, she asks a good question. Having her turned into more of a free use whore could be neat to watch, and you've got plenty of prey in town go focus on yourself. Of course, having the pair devote themselves entirely to you could be plenty fun too. For now there's just one thing to do.");
+			//writeFunction("writeEncounter('branchingB')", "Go ahead and post it");
+			writeFunction("writeEncounter('branchingA')", "No, you're mine");
+			break;
+		}
+		case "branchingA": {
+			writeSpeech("player", "", "Keep it private, you and your mother are mine.");
+			writeSpeech("purple", "", "'Kay. Oh, she responded quick. She's wondering why I'm so flushed, shame I couldn't get anything good in the frame.<br>Oh, could you give a couple more thrusts? I wanna keep as much of you in my cunt until dinner.");
+			writeSpeech("chubby", "", "playerF~! purpleF~! Food's ready~!");
+			writeSpeech("purple", "", "Cumming, mom~!");
+			writeText("...");
+			writeText("You've decided to keep purpleF and chubbyF to yourself. After a lovely meal and a bit more fun,it's best to get going for now.");
+			writeSpeech("purple", "", "Come back soon, okay~?");
+			raiseTrust('purple', 1);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "branchingB": {
+			break;
+		}
+		case "routeAQuo": {
+			writeSpeech("purple", "", "Welcome back, *master! Mom's in the kitchen. Could I ask her to make you something, or are you here to relief yourself?");
+			writeSpeech("player", "", "You don't need to hold yourself back today, I came here to...");
+			writeFunction("writeEncounter('routeAQuickieSetup1')", "Get off");
+			writeSpeech("player", "", "<i>The normalization has progressed pretty far. I'm not likely to stumble onto a pair that fall this deep again. Maybe I should take a few months and explore this?</i>");
+			writeFunction("writeEncounter('routeAEnding1')", "Consider the possibilities");
+			writeFunction("changeLocation(data.player.location)", "Go back");
+			break;
+		}
+		case "routeAQuickieSetup1": {
+			passTime();
+			writeSpeech("player", "", "Fuck, plain and simple.");
+			writeSpeech("purple", "", "Ooh, okay. How do you want us today? I know mom's been really horny lately, I think she's got an even needier sex drive than me. I think she still has some reservations left though, wanna fuck those out of her?");
+			writeFunction("writeEncounter('routeAQuickieSetup2')", "Let's give your mother some love today");
+			writeFunction("writeEncounter('routeAQuickieSetup3')", "I intend to fuck the both of you today");
+			break;
+		}
+		case "routeAQuickieSetup2": {
+			passTime();
+			writeSpeech("player", "", "Sounds like a plan.");
+			writeSpeech("purple", "", "What about me? I could hold her down for you and maybe you could enjoy her tits today...<br>Ooh, maybe you wanna give her a good pounding? Honestly I feel a little down whenever I come by to see you're already finished with her.");
+			writeFunction("writeEncounter('routeAQuickieAA')", "You'll be holding her down. ");
+			writeFunction("writeEncounter('routeAQuickieAB')", "You'll be getting a good view of the action. ");
+			break;
+		}
+		case "routeAQuickieAA": {
+			writeEvent("purplerouteAQuickieAA");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "routeAQuickieAB": {
+			writeEvent("purplerouteAQuickieAB");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "routeAQuickieSetup3": {
+			writeSpeech("player", "", "I intend to fuck the both of you, don't worry. Go get your mother and get ready.");
+			writeSpeech("purple", "", "Ooooh~<br>Okay *master, be ready in just a second.<br>Mom~! Mommy~! Fucking time~!");
+			writeText("You stretch out a little, get undressed and make sure you're suitably hard as you hear the sounds of the two women excitedly getting ready in the other room.");
+			writeSpeech("purple", "", "*Master~! We's ready~!");
+			writeText("You walk into the room, ready to enjoy yourself.");
+			writeBig("images/purple/B.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "Mmm~<br>I'm ready, it feels like it's been forever...");
+			writeText("purpleF is rubbing the folds of her pussy to get ready for you, while chubbyF seems a bit more distracted watching her daughter rub her teen snatch.");
+			writeSpeech("purple", "", "You're gonna fuck me first, right?");
+			writeSpeech("chubby", "", "Ah, no~! I'll go crazy if I need to watch my daughter get fucked first~!");
+			writeFunction("writeEncounter('routeAQuickieBA')", "Fuck purpleF first");
+			writeFunction("writeEncounter('routeAQuickieBB')", "Fuck chubbyF first");
+			break;
+		}
+		case "routeAQuickieBA": {
+			writeEvent("purplerouteAQuickieBA");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "routeAQuickieBB": {
+			writeEvent("purplerouteAQuickieBB");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "routeAEnding1": {
+			writeSpeech("player", "", "<i>There's a lot to consider, I wonder how far I can really push this...</i>");
+			writeSpeech("purple", "", "What's up? You seem distracted, want me to suck you off?");
+			writeSpeech("player", "", "Hey, purpleF. Focus, I wanna check something out.<br>When I snap my fingers, all of the hypnosis will fade away, you'll be right back to your normal self aware of everything that's happened thus far.");
+			writeSpeech("purple", "", "Hypnosis? I'm not under anything, but oka-");
+			writeText("As you raise your arms pretending you're about to snap your fingers, purpleF looks manic for a moment as she lunges forwards to try and keep your fist closed to prevent your from breaking her trance.");
+			writeText("Quickly though, a look of realization flashes on her face and she backs off.");
+			writeSpeech("purple", "", "Ah, I'm sorry! I don't know why I did that...");
+			writeSpeech("player", "", "It's no problem, don't worry.");
+			writeText("It seems like some part of her is still aware under her conditioning, proving that she really does want to stay like this on some instinctive level.");
+			writeSpeech("player", "", "Anyways, that's pretty interesting. Honestly, as fun as it is to fuck with people for my own gain, you really are something special.");
+			writeSpeech("purple", "", "Really? I don't get it, but cool! Hey, if you don't wanna fuck, is it cool if I start stroking myself? Being around you already gets me pretty wet, and getting praised is pretty nice too.");
+			writeSpeech("player", "", "Go ahead. So I was thinking, maybe I should live here for a while, see how far I can push you and your mother.");
+			writeSpeech("purple", "", "Ah~<br>Ooh, so you'd always be around? I know mom would gush at the thought.");
+			writeSpeech("player", "", "Well...");
+			writeFunction("writeEncounter('routeAEnding2')", "Sure, I'll go for it");
+			writeFunction("writeEncounter('routeAEndingRejection')", "Actually, maybe some other time");
+			break;
+		}
+		case "routeAEnding2": {
+			writeText("And thus begins a long journey of exploration with a broken daughter and her fucked up mother.");
+			writeText("You start living with the two, quickly fitting into a dominant role while they focus on pleasing your dick. You spend a while exploring exactly what's keeping them so entranced, what triggers can cause the hypnosis to crack, everything you can.");
+			writeText("At first it was an almost non-stop romp. You'd bow out of the sex every so often to go back to fucking around as the university's counselor, but slowly things started to change.");
+			writeText("It started small at first. Making sure purpleF was keeping up with her schoolwork, to avoid suspicion around you counseling her so often of course. chubbyF started reconnecting with old friends, with you playing the role of her new boyfriend to avoid anyone prying into why you moved in.");
+			writeText("But then something strange started to happen. The hypnosis cracked less frequently, purpleF wouldn't go into hysterics when it did either, she'd just close up and you'd console her. chubbyF started seeing you as more than just a man using her for sexual relief.");
+			writeText("And you could swear they started acting in ways that went against their hypnosis. Even ignoring direct commands to plan you a surprise party one day. Something would always come up whenever you tried to recondition them back into a trance too.");
+			writeFunction("writeEncounter('routeAEnding3')", "Now, a few months later...");
+			break;
+		}
+		case "routeAEnding3": {
+			writeEvent("purpleEndingA");
+			writeFunction("loadEncounter('system', 'credits')", "The End");
+			break;
+		}
+		case "routeAEndingRejection": {
+			writeSpeech("player", "", "Actually, maybe some other time.");
+			writeSpeech("purple", "", "Aww. Well, soon then, okay? Mom's really lonely sometimes when you aren't around, and I...");
+			writeSpeech("player", "", "What's up?");
+			writeSpeech("purple", "", "It's nothing. Nothing! ");
+			writeFunction("writeEncounter('routeAQuo')", "Go back");
+			break;
+		}
 	}
 }
 
@@ -381,6 +508,7 @@ var eventArray = [ //Lists the events of the character for unlocking and replayi
 	{index: "purple1", name: "Daughter's Payment 1"},
 	{index: "purple2", name: "Daughter's Payment 2"},
 	{index: "purple3", name: "Family Bonding"},
+	{index: "purpleBranching", name: "Text Chat"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -509,6 +637,236 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("chubby", "", "Everything... Normal...");
 			break;
 		}
+		case "purpleBranching": {
+			writeText("A key has been left for you at the front door hidden underneath a rock. As you unlock the door with the small piece of brass, questions start to float around your mind about exactly where you'll take purpleF and chubbyF from here.");
+			writeSpeech("chubby", "", "Ah, welcome back *master!");
+			writeText("chubbyF calls out to you from the kitchen. ");
+			writeSpeech("chubby", "", "I'm a bit tied up with cooking at the moment. purpleF is upstairs if you'd like to relieve yourself, and I can do it myself later if you'd like.");
+			writeText("At this point you're at a crossroads. purpleF and chubbyF are happier than before, hypnosis is funny like that. Of course you could go the classic route and keep then loyal fuckpuppets, but if you have your way with the whole town you could get stretched pretty thin.");
+			writeText("You could always keep pushing them deeper into depravity for something interesting to watch, that's a given. But should they be yours exclusively? ");
+			writeSpeech("player", "", "<i>These sorts of decisions are best made while having fun. </i>");
+			writeText("...");
+			writeBig("images/purple/branching1.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "And so I was thinking I might get back into soccer. I know I'm not going to make one of the private teams, but still.");
+			writeText("One extremely neat facet of hypnosis comes when someone actually builds a dependence on the hypnotic state. If they want to stay in the happy mindset the hypnosis allows and they can't get into a positive headspace any other way, they fall so deep into suggestibility that it's almost like you can rewire their brains. At this point purpleF probably wouldn't reject the hypnosis even if she could. ");
+			writeSpeech("purple", "", "So tryouts are in a few days, and-<br>Oh, could you keep hittingnthat spot? I'll cum super fast if you keep this pace.");
+			writeSpeech("player", "", "No problem.");
+			writeSpeech("purple", "", "Thanks. Cumming.");
+			writeText("Her sense of normality is so warped at this point that the only sign on her face of her latest orgasm is a very slight curl at the edge of her lips, even as her cunt squeezes and squirts.");
+			writeBig("images/purple/branching2.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "Hey, this one is lasting longer than the last. I think rougher sex is probably the key to the squirting, if that's what you're going for. <br>Oh, she responded. Man, she won't stop worrying about me.");
+			writeSpeech("player", "", "How about you send her a selfie? I'm about to cum anyways. ");
+			writeSpeech("purple", "", "Ooh, great idea. I'll keep you out of the frame of course. <br>Alright, your balls are tighening, don't feel them slapping against my clit as much. One, two, three.");
+			writeBig("images/purple/branching3.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "Nice, caught the shot. Okay, caption... <br>I'll go with 'cumming around to the feeling'. Want me to post it online too for everyone to see?");
+			writeText("You lean back a little to think. Despite how her body clearly wants to go another round, she doesn't push her ass back to fill herself up again, that wouldn't be <i>normal</i>. Instead she keeps checking out filters while her pussy rhythmically squeezes and relaxes to try and push her to yet another orgasm. Her face would probably look pretty different if she weren't suppressing her reactions.");
+			break;
+		}
+		case "purplerouteAQuickieAA": {
+			writeSpeech("purple", "", "Gotcha. Lemme get her ready for you, okay?");
+			writeSpeech("player", "", "Sure. We need to get her to sink deeper anyway, so feel free to be a little looser with your language.");
+			writeText("You stretch out a little, get undressed and make sure you're suitably hard as you hear the sounds of the two women talking and grunting from the other room, peppered with a few soft gasps.");
+			writeSpeech("purple", "", "*Master~! She's ready~!");
+			writeText("You walk into the room, ready to enjoy yourself.");
+			writeBig("images/purple/AA1.jpg", "Art by Oreteki18kin");
+			writeSpeech("chubby", "", "H-honey, there's no need to-");
+			writeSpeech("purple", "", "God, mom, your tits are fucking huge. You're like a cow!");
+			writeSpeech("chubby", "", "Th-that's not right, honey, please...  Having s-sex with my daughter watching...");
+			writeSpeech("player", "", "Having second thoughts?");
+			writeText("She bites her lips apprehensively. She isn't in nearly as deep as purpleF is.");
+			writeSpeech("purple", "", "Too bad, cowtits~<br>*Master isn't going to be fucking your snatch today, *he'll be having *his way with these fat fuckbags~");
+			writeSpeech("chubby", "", "My... Breasts?");
+			writeSpeech("purple", "", "Yep! All this moaning about how sensitive they've gotten lately, should be perfect for a titfuck, right?");
+			writeSpeech("chubby", "", "I...");
+			writeBig("images/purple/AA2.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "Whoa~<br>You were so nervous a second ago! You really want *his dick between your tits that badly?");
+			writeSpeech("chubby", "", "I w-want it~<br>Please~");
+			writeText("You rub your dick against her sopping cunt to get yourself all lubed up.");
+			writeSpeech("chubby", "", "Hurry~!");
+			writeBig("images/purple/AA3.jpg", "Art by Oreteki18kin");
+			writeText("Both women remain silent for just a moment as your cock slides between chubbyF's fat breasts, sandwiched by soft titflesh.");
+			writeText("purpleF grins harder at her mother's abuse when you slide balls deep between the pair, getting off on the perversion of the situation of seeing her mother debased like this.");
+			writeText("chubbyF is cracking underneath the degeneracy, letting out a shuddering sigh as she watches each inch of cock disappear between her tits. If her leaking pussy is any indication, she's getting off on this too.");
+			writeText("Every few thrusts the head of your cock becomes visible for a moment, causing purpleF to giggle as chubbyF licks her lips.");
+			writeSpeech("purple", "", "You want it, right? You're gonna get off from him using your funbags for what they were made for, right?");
+			writeSpeech("chubby", "", "Yes~! Please, I'll be your good little slut~! My daughter might be tighter, but I promise I'll let you use my breasts however you like~!");
+			writeBig("images/purple/AA4.jpg", "Art by Oreteki18kin");
+			writeSpeech("chubby", "", "Aaah~!");
+			writeSpeech("purple", "", "Fuck, she's cumming~! You'd better swallow fast, bitch, or I'll suck that load right out of your mouth!");
+			writeText("chubbyF does her best to swallow your load, whatever strands of jizz actually land in her open mouth that is. All of the cum that goes astray, landing in her hair or on her face, is quickly lapped up by her daughter's agile tongue.");
+			writeText("As you step back purpleF is true to her word, leaning into a deep kiss with her mother to try and fish out any unswallowed ropes of jizz. Thoroughly cock-drunk, chubbyF dazedly lets her daughter eat the jizz from her mouth before she begins fighting back. The two of them wrestle tongues for a moment, until they realize the only free drops of cum left are dripping from your cock onto the carpet.");
+			writeSpeech("chubby", "", "Ah, more~! Mo-");
+			writeSpeech("purple", "", "Mine~! Fuck off bitch, you already came~!");
+			writeText("...");
+			writeText("The two playfully fight over you until they realize what's really important; enjoying a fat dick together, as a family.");
+			break;
+		}
+		case "purplerouteAQuickieAB": {
+			writeSpeech("purple", "", "Gotcha. Lemme get her ready for you, okay?");
+			writeSpeech("player", "", "Sure. Oh, feel free to let loose, alright? No need to hold yourself back, enjoy the show today.");
+			writeText("You stretch out a little, get undressed and make sure you're suitably hard as you hear the sounds of the two women talking and grunting from the other room, peppered with a few soft gasps.");
+			writeSpeech("purple", "", "*Master~! She's ready~!");
+			writeText("You walk into the room, ready to enjoy yourself.");
+			writeBig("images/purple/AB1.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "Hey, hey *master! You want her ass, or her cunt?");
+			writeSpeech("chubby", "", "T-they're yours... Yours for the taking...");
+			writeSpeech("player", "", "I think I'll take... Both.");
+			writeBig("images/purple/AB2.jpg", "Art by Oreteki18kin");
+			writeSpeech("chubby", "", "Ah~!");
+			writeSpeech("purple", "", "Whoa...");
+			writeText("chubbyF is at a loss for words as her cunt is penetrated, shuddering with pleasure at the feeling of being spread apart, but also with shame at the feeling of her daughter's gaze just inches away from her pussy getting stuffed.");
+			writeText("purpleF on the other hand is starstruck, completely enraptured with the up-close view.");
+			writeSpeech("purple", "", "... She's quivering, I can feel her pussylips move whenever you thrust...<br>Hey, hey, does my pussy do this too?");
+			writeSpeech("chubby", "", "Suh... Stop... She's watching... Watching me...");
+			writeSpeech("purple", "", "And your swinging balls... So hypnotizing...");
+			writeText("purpleF lifts her head a little so that she can give a soft kiss to your balls at the end of each thrust, before you feel them start to tighten.");
+			writeSpeech("purple", "", "Uooh~! So cool~! Hey, *master, are you gonna cum? I'm gonna get messy anyways when she starts squirting, so don't hold back~!");
+			writeSpeech("chubby", "", "Guh... No~! Stu... Nnngh~!");
+			writeText("chubbyF's breathing grows erratic, for a second you think she might be breaking free from the hypnosis, until...");
+			writeSpeech("chubby", "", "Cumming~!");
+			writeText("In one swift motion, you pull out and thrust into her ass as she's mid-climax.");
+			writeBig("images/purple/AB3.jpg", "Art by Oreteki18kin");
+			writeSpeech("chubby", "", "Ggguuhd~!");
+			writeSpeech("purple", "", "Whoooa! It's everywhere~!");
+			writeSpeech("chubby", "", "Nnngh... purpleF...");
+			writeSpeech("purple", "", "Mmm, it's really warm...");
+			writeSpeech("chubby", "", "My daughter... My daughter is...");
+			writeText("You slam your hips against her asscheeks an orgasm sweeps through her body just from the realization of how fucked-up the situation she's in is.");
+			writeSpeech("purple", "", "Aah~! Mom, you pervert~<br>Oh, oh, you're cumming, right? Right?");
+			writeSpeech("chubby", "", "Noo~! I'm still... Ghhhg~");
+			writeSpeech("purple", "", "Can you feel it? Hey, hey, pull out! She needs a creampie too, you know?");
+			writeText("The room spins as you keep cumming, chubbyF letting out giggles as it's clear she's gone over the edge and then some already.");
+			writeText("Finally, you take a step back.");
+			writeBig("images/purple/AB4.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "Gah~! She keeps squirting out your cum, you're fucking it all out of her!");
+			writeSpeech("chubby", "", "Guh... You'll fill me up again, right~?");
+			writeSpeech("purple", "", "Fuck that! I'm next, you whore!");
+			writeSpeech("chubby", "", "Can't... Can't last much longer... C-... Cumming~!");
+			writeSpeech("purple", "", "Whoa... You always cum so much, *master.<br>Mmm, I think I'll have some more!");
+			writeSpeech("chubby", "", "Ehe... Ehehe... purpleF... My little baby is... Ehehe... Ahaha~!<br>Drink it! Suck *his creampie out of my ass~!");
+			writeText("...");
+			writeText("chubbyF continues to crack farther and farther. Where purpleF seems to be sinking in as a defense mechanism, chubbyF is starting to awaken to some seriously fucked up fetishes.");
+			writeText("You watch chubbyF take the lead for once, and once you're finished having your fun you bid them farewell.");
+			writeSpeech("purple", "", "Come back soon, okay ma-phhh~");
+			writeSpeech("chubby", "", "Shhh! Lick~! Lick more~! Cumming~!");
+			break;
+		}
+		case "purplerouteAQuickieBA": {
+			writeBig("images/purple/BP1.jpg", "Art by Oreteki18kin");
+			writeSpeech("player", "", "Get ready purpleF, I'm having you first.");
+			writeSpeech("purple", "", "Please~! I can't hold back any longer~! I need it so bad it hurts~!");
+			writeSpeech("chubby", "", "Nnngh... You're gonna fuck my little girl right in front of me again, just like when you broke me...");
+			writeBig("images/purple/BP2.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "Cock~! Dick~! ");
+			writeSpeech("chubby", "", "Now honey... Is that any way to ask for-");
+			writeSpeech("purple", "", "Sh-shut up, bitch~! I can't hold on any longer, please! Give me <b>what I need</b>!");
+			writeBig("images/purple/BP3.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "AAAAH~!");
+			writeSpeech("chubby", "", "She's cumming so quickly...<br>Darling? Can you even hear me?");
+			writeSpeech("purple", "", "CUMMING~! HARDER~!");
+			writeSpeech("chubby", "", "You were such a sweet girl, once... I'm glad you can be happy again. I love you, dear.");
+			writeSpeech("purple", "", "FUUUCK~! God, I'm gonna fucking <b>SQUIRT</b> all over this HUGE~! FUCKING~! DICK~!");
+			writeBig("images/purple/BP4.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "Cu... Cumm...");
+			writeText("Her voice starts to crack as her legs shake, her cunt gushing as you begin to fill her womb.");
+			writeBig("images/purple/BP5.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "Ah~... So full~<br>... Mommy... I'm really sleepy...");
+			writeSpeech("chubby", "", "It's okay, dear, just let go. Don't worry, mommy's here...");
+			writeText("Her womb stuffed, purpleF's eyes flutter and close.");
+			writeSpeech("chubby", "", "... She really is happy like this... No nightmares, no worries...<br>Thank you...");
+			writeSpeech("player", "", "Did the hypnosis break?");
+			writeSpeech("chubby", "", "It doesn't matter anymore, does it?");
+			writeBig("images/purple/BC2.jpg", "Art by Oreteki18kin");
+			writeSpeech("player", "", "I suppose it doesn't, really. You ready?");
+			writeSpeech("chubby", "", "Yes... Fuck me up, just like my daughter... I want to be broken too...");
+			writeBig("images/purple/BC3.jpg", "Art by Oreteki18kin");
+			writeSpeech("chubby", "", "Aaah~! This is it~! This is the pleasure that makes me stop thinking, stop worrying~!");
+			writeSpeech("player", "", "You'll wake her if you scream too loud.");
+			writeSpeech("chubby", "", "I don't care~! She's broken, shattered, I'm sure she'd suck your balls between each thrust so you'd fuck her back asleep faster~!");
+			writeBig("images/purple/BC4.jpg", "Art by Oreteki18kin");
+			writeSpeech("chubby", "", "Ghhhg~! Cumming~!");
+			writeSpeech("player", "", "Think your next daughter will be like purpleF?");
+			writeSpeech("chubby", "", "Guh... I...");
+			writeBig("images/purple/BC5.jpg", "Art by Oreteki18kin");
+			writeSpeech("chubby", "", "I hope so... ");
+			break;
+		}
+		case "purplerouteAQuickieBB": {
+			writeBig("images/purple/BC1.jpg", "Art by Oreteki18kin");
+			writeSpeech("player", "", "Get ready chubbyF, I'm having you first.");
+			writeSpeech("chubby", "", "Ghh... Okay... Please, don't tease me...");
+			writeBig("images/purple/BC2.jpg", "Art by Oreteki18kin");
+			writeSpeech("chubby", "", "So big...");
+			writeSpeech("purple", "", "Nooo~! It's not fair, you stole him from me! If you hadn't seen us that day, he'd be all mine! How come you wanna fuck <i>her</i>, instead of this teen ass? I'm way ti-");
+			writeSpeech("chubby", "", "QUIET!");
+			writeSpeech("purple", "", "...");
+			writeSpeech("chubby", "", "I'm tired of your attitude! Mommy needs breaking too, so shut up and wait for your your turn to get your womb ballooned!");
+			writeSpeech("purple", "", "Okay...");
+			writeSpeech("chubby", "", "And you! Take some responsibility for ruining my sweet little girl, for breaking my psyche by making me watch as you stuffed her, and <b>fuck</b>! <b>My</b>! <b>CUNT</b>!");
+			writeBig("images/purple/BC3.jpg", "Art by Oreteki18kin");
+			writeSpeech("chubby", "", "Aaah~! YES~!");
+			writeSpeech("player", "", "So, you think you're giving the orders now, huh?");
+			writeSpeech("purple", "", "Oooh, mom's in <i>trouble</i>~");
+			writeSpeech("chubby", "", "HARDER~! PUMP MY WOMB, GIVE ME A SECOND CHANCE~!");
+			writeSpeech("purple", "", "M-mom?");
+			writeSpeech("chubby", "", "I-I'm s-sorry dear~! I screwed up~! You were supposed to have a bright future~!");
+			writeSpeech("player", "", "So held back at first, the quiet ones really do end up the most fucked up when you see what's inside. Don't feel too bad, purpleF, she's cracked.");
+			writeSpeech("chubby", "", "GHHHGH~! CUMMING~!");
+			writeBig("images/purple/BC4.jpg", "Art by Oreteki18kin");
+			writeSpeech("chubby", "", "Ghh... I can feel it... I wanna get pregnant... Gimme... back... my little... girl...");
+			writeBig("images/purple/BC5.jpg", "Art by Oreteki18kin");
+			writeSpeech("chubby", "", "Good...");
+			writeText("After getting a good look at her jizz-leaking cunt, chubbyF lets her head rest against the floor. Her eyes flutter, then shut as she falls asleep, content.");
+			writeSpeech("purple", "", "Mom? Mom, are you okay?");
+			writeSpeech("player", "", "She's fine, just fucked her lights out. You're next. Spread.");
+			writeBig("images/purple/BP1.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "O-okay...<br>Did I... Am I messed up? Am I-");
+			writeSpeech("player", "", "You're a good girl, purpleF. Don't worry about any of that, okay? Just relax, let the heat inside you take over, just like <i>normal</i>.");
+			writeBig("images/purple/BP2.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "Normal... Normal...");
+			writeSpeech("player", "", "Relax, let yourself sink deeper. Everything will be okay, chubbyF and I are here.");
+			writeSpeech("purple", "", "Normal... Wanting cock is normal... Watching my mom cum is normal...");
+			writeBig("images/purple/BP3.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "Ah~! Getting f-fucked~! Is normal~! Cumming~! Is normal~!");
+			writeSpeech("player", "", "No fears, no anxiety, nothing but here and now, and how long until you get fucked again...<br>Ghh... Cumming...");
+			writeBig("images/purple/BP4.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "Ggghh~! Getting... Getting creampied... With my fucked-out mom next to me... Cumming... Is normal~...");
+			writeBig("images/purple/BP5.jpg", "Art by Oreteki18kin");
+			writeSpeech("player", "", "You get some rest, alright? When you open your eyes again, you'll be with your loving mother, waiting for your *master to arrive again. You'll carry on, enjoying the little things, and not let yourself get pulled under thinking negative thoughts. Everything will go on, just like...?");
+			writeSpeech("purple", "", "Normal... Thank you... *Master...");
+			break;
+		}
+		case "purpleEndingA": {
+			writeBig("images/purple/ending1.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "Cheese~!");
+			writeText("*CLICK*");
+			writeSpeech("purple", "", "Mom, you didn't say it!");
+			writeSpeech("chubby", "", "I was still smiling though, right playerF?");
+			writeText("purpleF gently elbows her in the side.");
+			writeSpeech("chubby", "", "Ah, *master, sorry.");
+			writeSpeech("player", "", "The picture came out good. You two look great. You two sure are sending a lot of cards out this year, what's the occasion?");
+			writeSpeech("chubby", "", "The marriage, silly~!");
+			writeSpeech("player", "", "Ah, right. Gotta keep up appearances. You two are really into this, almost like it isn't a front. Maybe I should re-hypnotize you tw-");
+			writeBig("images/purple/ending2.jpg", "Art by Oreteki18kin");
+			writeSpeech("player", "", "Ah... Are you two trying to distract me again?");
+			writeSpeech("chubby", "", "My, I'm not sure what you're talking about.");
+			writeSpeech("purple", "", "Yeah. You're the one acting weird today da-*ahem*. *Master.");
+			writeSpeech("player", "", "It feels like you two just happen to get into the mood whenever hypnosis comes up.");
+			writeSpeech("purple", "", "You're so weird! Everyone knows hypnosis isn't real, silly~!<br>And you should know by now we're <i>always</i> in the mood. Speaking of which...");
+			writeBig("images/purple/ending3.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "Which one of us do you wanna fuck first?");
+			writeText("You sigh as the two of them present their bare asses to you. Sometimes you wonder if they're actually still in a trance. They must be, right? Even if they wanted to keep your around they'd never be begging for public fucks like this if they weren't, they'd need to be total sluts to the core.");
+			writeSpeech("player", "", "<i>Not to mention how excited they are for the wedding.<br>I guess the tone was pretty romantic when I proposed, but it's just to keep up appearances, right?</i>");
+			writeBig("images/purple/ending4.jpg", "Art by Oreteki18kin");
+			writeText("The pair found a bench to get comfortable on, and spread their legs.");
+			writeSpeech("chubby", "", "Fuck purpleF first, seeing her squirt really gets me ready for a fuck.");
+			writeSpeech("purple", "", "Aww, thanks mom...<br>But we kept you up really late last night when my voice gave out, from the anal marathon? I think you deserve first dibs today.");
+			writeSpeech("player", "", "Seriously... What am I gonna do with you two?");
+			writeSpeech("purple", "", "Fuck us, duh!");
+			writeText("The pair of them finally learned how to share you, inside and outside the bedroom. They really seem to enjoy daily life nowadays, even the days where you aren't spending all your time dicking them. You still do 'counseling' at the university, but these two are getting to be a serious handful.");
+			writeBig("images/purple/ending5.jpg", "Art by Oreteki18kin");
+			break;
+		}
 	}
 	//Don't touch the rest of this stuff, it has to do with unlocking scenes.
 	var unlockedScene = "";
@@ -527,14 +885,12 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "purpleReward", trust: 100,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "purpleReward": {
-			writePhoneImage("images/purple/4-2.jpg", "Art by Oreteki18kin");
-			writePhoneSpeech("purple", "", "You've finished all of "+fName('purple')+"'s & "+fName('chubby')+"'s content for this version, congratulations!");
+			writeSpeech("purple", "", "Hey *master! Me and mom agreed you should be able to get into our place whenever you want, so we left a key under a rock near the front door. Feel free to drop in anytime <3");
 			break;
 		}
 		default: {

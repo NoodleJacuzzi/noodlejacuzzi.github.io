@@ -22,7 +22,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "mistress1", name: "A woman a bit off of the main path seems to be looking around carefully.", location: 'parkDistrict', time: "MorningEvening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "even",},
 	{index: "mistress2", name: "mistress is sitting on a nearby bench, humming to herself.", location: 'parkDistrict', time: "MorningEvening", itemReq: "", trustMin: 40, trustMax: 40, type: "tab", top: 0, left: 0, day: "even",},
 	{index: "mistress3", name: "mistress is sitting at the same bench, smiling and humming.", location: 'parkDistrict', time: "MorningEvening", itemReq: "", trustMin: 41, trustMax: 41, type: "tab", top: 0, left: 0, day: "even",},
-	{index: "mistress4", name: "mistress is at the same bench, but she seems to be stretching her legs.", location: 'parkDistrict', time: "MorningEvening", itemReq: "", trustMin: 42, trustMax: 45, type: "tab", top: 0, left: 0, day: "even",},
+	{index: "mistress4", name: "mistress is at the same bench, but she seems to be stretching her legs.", location: 'parkDistrict', time: "MorningEvening", itemReq: "", trustMin: 42, trustMax: 44, type: "tab", top: 0, left: 0, day: "even",},
 ]
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -651,7 +651,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 		}
 		case "mistressRewardDuo" : {
 			writePhoneImage("images/maid/rewardDuo.jpg", "Art by Oreteki18kin");
-			writePhoneSpeech("maid", "", "You've finished all content for this path for this version, congratulations! This is an alternate way of advancing mistressF's story - if you restart her story and spend time at the park, you might see another route with more content.");
+			writePhoneSpeech("mistress", "", "You've finished all content for this path for this version, congratulations! This is an alternate way of advancing mistressF's story - if you restart her story and spend time at the park, you might see another route with more content.");
 			break;
 		}
 		default: {
