@@ -1,0 +1,263 @@
+WoW stuff
+
+Player details
+	Name
+	Race selection
+	Class selection
+	Classes limited by race
+	Image selection
+	Specific race/class images
+	Inventory
+	Inventory size limit
+	Equipment
+	Skills
+	Buffs
+	Debuffs
+	Flags
+	Gold
+	ObjectFlags (reputations, currencies, things that need multiple factors)
+	Current zone (starting zone determined by race and class)
+	inCombat (true / false)
+Classes
+	Skills
+	Resources
+	Loading external classes
+	Special starting zones
+Zones
+	Background images
+	WriteBackground
+	Dynamically load navigation buttons
+	Item and state requirements
+	Travel time
+	Passage of time affects buffs / debuffs
+	On-travel events
+	Requirements for on-travel events (item, state, class, equipment)
+	Random encounters
+	Zone details - indoors/outdoors, alliance town, horde town, underwater
+	Underwater zones slow you down without water mount
+	Zones that apply buffs / debuffs
+	Loading external zones
+	NPC lists
+NPCS
+	Name
+	Image
+	Appearance requirements
+	Faction (won't appear for the opposite faction)
+	Subfaction (won't appear if at war)
+Items / inventory
+	Adding items
+	Checking items
+	Removing items
+	Limited inventory space
+	Generating inventory
+	Add combat-usable items to skills list
+	On-use effects
+	On-use events (teleport, combining items, summoning demons)
+	Loading external items
+Enemies
+	Name
+	Faction (horde, alliance, neutral)
+	Subfaction (used for cenarian circle and etc for 'at-war' checking)
+	Image (if none it uses the mob's name)
+	Category (humanoid, etc)
+	Class
+	Health
+	Mana
+	Resistances (use a fire:3; system instead of having 7 variables here)
+	Debuff immunities
+	Starting buffs
+	Enemy death
+	Loading external enemies
+Combat
+	Switch to real-time calculation for buffs / debuffs
+	Enemy images
+	Skills list
+	Skill usage
+	End of combat
+	Fleeing (returns you to your previous location
+Skills
+	Cooldown
+	Cost
+	Legal targets (self, guardians, enemies)
+	Illegal targets (elites, enemy types)
+	Formula (extracts text like damage:3; into doing 3 damage and userState:poison; to apply the poison condition, similar to RPGmaker)
+	Dealing damage to user / target
+	AOE damage
+	Damage type
+	Healing user / target
+	Applying states to user / target
+	Prevent state application based on states / gear
+	Removing random/specific states from user / target
+	AOE adding / removing states
+	Triggering events
+	Out of combat skills
+	In and out of combat skills
+	Teleportation
+	Passive skills
+	Skills that cost items / ammunition
+Enemies fighting back
+	Enemy AI (prioritize skills with requirements, then specific turn numbers, then rotation numbers, then pick at random from the highest priority)
+	Enemies using skills
+	Enemy attack speed (how many ticks do they take to attack)
+	Player death
+Companions / Guardians
+	Add to party / summon guardian
+	Summon length
+	Party size limit
+	Stop and rest option at bottom of screen
+	Chatting with party / mount
+	Guardians priority (if they're attacked first before you / others)
+	Guardian skills (behave identically to enemy AI)
+Shapeshifting (druid forms, polymorphs, vehicles)
+	Immunity to other shapeshift effects
+	Additional effects (levitation / flying)
+	Special skills
+	New image
+	Unshapeshift / leave vehicle
+Equipment
+	Equipping equipment
+	Different slots - weapon/armor/trinket/ring/mount/bag
+	Passive effects
+	Equipment applying buffs / debuffs
+	Increasing / decreasing stats
+	Equipment adding in / out of combat skills
+	Weapons with on-hit effects
+Resistances
+	Types of resistances (physical, arcane, fire, frost, nature, shadow, holy)
+	Racial resistances
+	Buffing / debuffing resistance
+	Equipment resistances
+	Resistance formula final damage = (Damage*(1-(.75*resistance/100))
+	Maximum resistance is 75% of original damage
+	Multitype damages (average resistances across types)
+Animations
+	Damage dealt
+	Damage healed
+	State applied
+	State removed
+	Item obtained
+	Skill learned
+Crafting
+	Collecting materials - herbs & ore
+	Material drops - cloth & leather
+	Crafting menu
+	Learning professions
+	Profession skills
+	Location-based crafting requirements
+
+Enemy AI function prioritizing skills
+	Skills with certain requirements (health under a certain margin) and have specific turn numbers
+	Skills with certain requirements (health under a certain margin) and have specific rotation numbers
+	Skills with certain requirements (health under a certain margin) and have no other requirements
+	Skills with specific turn numbers
+	Skills with specific rotation numbers (Every 3rd turn)
+	Randomly pick any of the rest
+
+Power tiers
+Tier 0 - Starting, no gear
+	Starting areas
+Tier 1 - White gear
+	Linen / copper / light leather
+	Secondary zones like westfall and silverpine
+Tier 1.5 - White gear +
+	Wool / Tin / Medium leather
+	Slightly harder zones like stranglethorn and tanaris
+Tier 2 - Green gear
+	Silk / Iron / Heavy leather
+	Easy dungeons like deadmines, harder leveling zones like silithus / plaguelands
+Tier 3 - Blue gear
+	Mageweave / Mythril / Thick leather
+	Harder dungeons like BRD, Easy zones in Outlands/Northrend like hellfire & zangarmarsh / howling fjord & grizzly hills
+Tier 4 - Purple gear
+	Runecloth / Truesilver / Rugged Leather
+	Vanilla raids, harder zones in outlands / northrend
+Tier 5 - Legendary gear
+	Netherweave & frostweave / Fel Iron & Cobalt / Arctic Fur & Felhide
+	Outlands / Northrend raids
+
+Important mechanics
+Race selection
+	Adds an ability and small passive effects
+Class selection
+	Adds many abilities and passive effects
+Armor / weapons
+	Various slots such as armor set, weapon, trinket that can increase stats or let you learn additional abilities
+Armor / weapon restrictions
+	Certain armor is restricted by your class's armor type, or is exclusive to a certain class / race
+Bags
+	Equipped items that increase carrying capacity, also may have additional effects
+Skill learning
+	Some skills require gold to learn from a trainer or learning them from a special tome
+Cast time
+	Spells take a certain amount of time to cast
+Cooldown
+	Abilities have a recharge time preventing them from being used again
+Counter / silence
+	Cancels a certain type of action that's charging
+Dispel
+	Removes a certain type of debuff (curse, magic, disease)
+Buffs
+	Passive applied states that affect your damage or have some effect that occurs each second such as healing, fade after a certain amount of time
+Debuffs
+	Negative versions of buffs, have categories like magic, curse, and disease
+Environmental damage
+	Damage dealt every tick as a result of your current location. Lava and underwater, certain buffs/items can prevent this
+On-death
+	Effects that trigger when the player or a certain enemy dies
+
+States
+Undead
+	Causes you to be immune to fear and charm, greatly increases your weakness to holy damage
+Swiftness
+	Decreases the time it takes to travel between zones and decreases encounter rates
+Slow
+	The opposite of swiftness
+Levitation
+	Makes you immune to earth spells and falling damage, unlocks certain secret passages
+Flying
+	Levitation + prevents random encounters and causes specific enemy encounters in certain zones
+Poison
+	Deals nature damage to you each tick
+Mana burn
+	Deals damage based on your current mana / other stat each tick
+Small
+	Allows you to access secret passages
+Stealth
+	Stops enemies from attacking you, is removed if you attack or enter certain rooms
+Stun
+	Prevents you from acting for a certain amount of time
+Shield
+	Absorbs incoming damage, breaking after a certain amount is absorbed
+Polymorph
+	Prevents you from using magic and affects stats until damage is taken.
+Form change
+	
+
+Items
+Bag of six demons
+	Casts a random spell from fireball, frostbolt, chain lightning, polymorph, whirlwind, felhunter
+Noggenfogger elixir
+	Applies undead / levitation / small at random
+	
+Potions
+Potion of Swiftness
+	Applies swiftness
+Potion of invisibility
+	Applies stealth
+	
+Trinkets
+Orb of deception
+	Changes your race to that of the opposite faction
+Crystal of Zin-Malor
+	Drains your mana and breaks stun
+Barov Peasant Caller
+	Summons several barov peasant guardians
+Nifty Stopwatch
+	Applies swiftness
+	
+	
+Off-hand
+Book of the dead / Ancient cornerstone Grimoire
+	Summons a skeleton guardian
+Skull of impending doom
+	Drains your health over time / applies swiftness

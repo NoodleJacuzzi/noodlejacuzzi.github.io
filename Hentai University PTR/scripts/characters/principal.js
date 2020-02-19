@@ -46,7 +46,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Hello?");
 			writeSpeech("???", "none", "Just a moment!");
 			writeBig("images/principal/profile.jpg", "Art by Oreteki18Kin");
-			if (data.story.day == 1) {
+			if (data.player.day == 1) {
 				writeSpeech("principal", "", "Ah, you must be "+data.player.name+". Quite punctual to meet with me so soon, a good habit.");
 				writeSpeech("player", "", "I'm very forward thinking. Forward in general, really.");
 				writeSpeech("principal", "", "So, your supervisor should have filled you in on your responsibilities already. Correct? We've never had a dedicated counselor here, so I'm afraid there's not much framework for you.");
@@ -97,7 +97,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			else {
 				if (data.story[8].met.includes('purpleF') != true) {
 					writeSpeech("principal", "", "Have you had a chance to speak with Ms. "+lName('purple')+" yet?");
-					if(checkTrust('purple') > 0) {
+					if(checkTrust('purple') > 80) {
 						writeFunction("writeEncounter('purpleCaseEnd')", "Report on "+fName('purple')+"'s case.");
 					}
 				}
@@ -121,7 +121,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			else {
 				if (data.story[8].met.includes('starletF') != true) {
 					writeSpeech("principal", "", "Have you spoken with Miss starletL yet? Gotten her to change her mind?");
-					if(checkTrust('starlet') > 81) {
+					if(checkTrust('starlet') > 83) {
 						writeFunction("writeEncounter('starletCaseEnd')", "Report on starletL's case.");
 					}
 				}

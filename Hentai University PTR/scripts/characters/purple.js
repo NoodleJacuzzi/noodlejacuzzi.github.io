@@ -692,7 +692,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("chubby", "", "Yes~! Please, I'll be your good little slut~! My daughter might be tighter, but I promise I'll let you use my breasts however you like~!");
 			writeBig("images/purple/AA4.jpg", "Art by Oreteki18kin");
 			writeSpeech("chubby", "", "Aaah~!");
-			writeSpeech("purple", "", "Fuck, she's cumming~! You'd better swallow fast, bitch, or I'll suck that load right out of your mouth!");
+			writeSpeech("purple", "", "Fuck, *he's cumming~! You'd better swallow fast, bitch, or I'll suck that load right out of your mouth!");
 			writeText("chubbyF does her best to swallow your load, whatever strands of jizz actually land in her open mouth that is. All of the cum that goes astray, landing in her hair or on her face, is quickly lapped up by her daughter's agile tongue.");
 			writeText("As you step back purpleF is true to her word, leaning into a deep kiss with her mother to try and fish out any unswallowed ropes of jizz. Thoroughly cock-drunk, chubbyF dazedly lets her daughter eat the jizz from her mouth before she begins fighting back. The two of them wrestle tongues for a moment, until they realize the only free drops of cum left are dripping from your cock onto the carpet.");
 			writeSpeech("chubby", "", "Ah, more~! Mo-");

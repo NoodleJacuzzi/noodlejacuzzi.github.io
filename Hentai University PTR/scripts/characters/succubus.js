@@ -724,12 +724,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "Ggh~!");
 			writeSpeech("succubus", "demon.jpg", "Mmm... *Mwah*!<br>My saliva is pretty strong, so we'll need to start slow for you to get used to it.");
 			writeText("succubusF playfully kisses the tip before taking it into his mouth, soaking your cockhead in a potent aphrodisiac.");
-			if (data.player.gender == "Male") {
-				writeSpeech("succubus", "demon.jpg", "Mmm... Hurr hoing hreat! (You're doing great!)<br><i>Mmm, this really was worth it... I wanna tease him but...<br>Mmm! I can't hold back any longer!</i>");
-			}
-			else {
-			writeSpeech("succubus", "demon.jpg", "Mmm... Hurr hoing hreat! (You're doing great!)<br><i>Mmm, this really was worth it... I wanna tease her but...<br>Mmm! I can't hold back any longer!</i>");
-			}
+			writeSpeech("succubus", "demon.jpg", "Mmm... Hurr hoing hreat! (You're doing great!)<br><i>Mmm, this really was worth it... I wanna tease *him but...<br>Mmm! I can't hold back any longer!</i>");
 			writeSpeech("player", "", "Cumming!");
 			writeBig("images/succubus/2-3.jpg", "Art by Gujira");
 			writeText("You sigh in relief as your needy cock finally pumps out it's pent up contents. You should be exhausted after your last marathon session, but your feeling of relief only feels more powerful.");
