@@ -18,6 +18,7 @@ var data = {
 		artifact2: "",
 		character: "red",
 		currentScene: "start",
+		currentScenario: "",
 		time: "Morning",
 		day: 0,
 		storage: "",
@@ -129,6 +130,9 @@ var galleryArray = [
 	{index: "dustResearch1", dark: true, girl: "assistant", name: "Bimbo Dust - Practice Makes Perfect", hint: ""},
 	{index: "dustResearch2", dark: true, girl: "boss", name: "Bimbo Dust - Perfect Payoff", hint: ""},
 	{index: "dustResearch3", dark: true, girl: "chair", name: "Bimbo Dust - Whoopsie!", hint: ""},
+	//Nymph Mirror Events
+	{index: "nymphResearch1", dark: true, girl: "", name: "Nymph Mirror - Nymphomania", hint: ""},
+	{index: "nymphResearch2", dark: true, girl: "", name: "Nymph Mirror - Lost to Lust", hint: ""},
 ]
 
 var logbookArray = [
@@ -193,6 +197,7 @@ var artifactArray = [
 	{index: "cage", dark: true, equipable: false, title: "Punification Cage", desc: "A plastic pink chastity cage. Wearing it almost immediately triggers a powerful orgasm, but in all cases resulted in an extreme decrease in genital size.", desc2: ""},
 	{index: "toolkit", dark: true, equipable: false, title: "Sissy's Toolkit", desc: "A plastic makeup kit. When opened, objects will appear inside and in the room which are designed to encourage the opener to 'explore themselves'. These range from makeup to unknown body-modifying drugs and a 3-man group of naked men. ", desc2: ""},
 	{index: "dust", dark: true, equipable: false, title: "Bimbo Dust", desc: "A bag full of an off-white powder. It has been tested, and is not cocaine. It has a powerful intelligence-draining and mild body-altering affect on anyone who inhales it. affecting women much faster than men.", desc2: ""},
+	{index: "nymph", dark: true, equipable: false, title: "Nymph Mirror", desc: "A mirror with a sculpture of a young woman on the side. The reflection shows a beautiful naked woman in the glass rather than the user, though the appearance of the woman changes between uses. Staring deeply into it for prolonged periods of time causes the viewer's body to change to match the reflection.", desc2: ""},
 ];
 
 var artifactMiniArray = [ //Used for smaller artifacts such as prison and toolbox department
@@ -243,8 +248,8 @@ function startup() {
 	//console.log(data);
 	tempScene = data.player.currentScene;
 	if(localStorage.getItem('data160')) {
+		console.log('startup autosave load successful. Now loading autosave at position ' + data.player.currentScene);
 		loadSlot(160);
-		console.log('startup load successful. Now loading autosave at position ' + data.player.currentScene);
 	}
 	else{
 		sceneTransition('start');
@@ -784,7 +789,7 @@ function writeImageButton(name, target, img, top, left) {
 	}
 	document.getElementsByClassName('playerRoom')[0].innerHTML += `
 		<img class="imageButton"
-		onclick="sceneTransition('`+target+`')" 
+		onclick="writeScenarioScene('`+target+`')" 
 		src="scripts/gamefiles/hunter/`+img+`" 
 		style="top: `+top+`%; left: `+left+`%;"
 		title="`+name+`">
@@ -973,7 +978,24 @@ function loadSlot(slot) {
 	data = localStorage.getItem(saveName);
 	data = JSON.parse(data);
 	console.log("loaded data");
-	sceneTransition(data.player.currentScene);
+	if (data.player.currentScene.includes("scenario") != true) {
+		sceneTransition(data.player.currentScene);
+	}
+	else {
+		console.log("scenario save data detected for scenario " +data.player.currentScenario +", now loading");
+		console.log(data);
+		requestType = "refreshed";
+		var filename = "scenarios/"+data.player.currentScenario+"/sceneList.js";
+		var fileref=document.createElement('script');
+		fileref.setAttribute("src", filename);
+		
+		//Append new script file
+		document.getElementsByTagName("head")[0].appendChild(fileref);
+		
+		//Delete script file afterwards
+		var select = document.getElementsByTagName("head")[0];
+		select.removeChild(select.lastChild);
+	}
 	updateSave();
 	nameUpdate();
 }
@@ -1654,4 +1676,19 @@ function changeBody(n) {
 	data.player.character = data.bodytypes[n].index;
 	data.player.characterArtist = data.bodytypes[n].artist;
 	updateMenu();
+}
+
+//Anomaly Hunter
+function loadScenario(name) {
+	requestType = "load";
+	var filename = "scenarios/"+name+"/sceneList.js";
+	var fileref=document.createElement('script');
+	fileref.setAttribute("src", filename);
+	
+	//Append new script file
+	document.getElementsByTagName("head")[0].appendChild(fileref);
+	
+	//Delete script file afterwards
+	var select = document.getElementsByTagName("head")[0];
+	select.removeChild(select.lastChild);
 }

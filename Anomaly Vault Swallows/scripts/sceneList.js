@@ -11,7 +11,6 @@ function writeScene(scene) {
 			writeTransition("prologue", "Start the game");
 			writeTransition("prologueSkip", "Skip the prologue");
 			writeTransition("startWardrobe", "Change your profile image");
-			//writeTransition("prologueSkip", "Skip the prologue");
 			writeText("Other notes:");
 			writeText("This game was commissioned via Patreon by <span class = 'switch' onclick='window.location.href=`https://www.patreon.com/swallows999`'>Swallows999</p>");
 			writeText("And I'm supported by my other patrons as well. Thank you to Swallows999, Ben Dover, Joshua Ingram, MrManPerson, Robbie, CaptainMontana, Lasse B, andres mejia, Arthorias28, Badaxe, ChronosEdge, Colin E, Dkells, Dr. Awesome, Jinouga, Judavarius, Lunarghost, Marco Wassmer, Q Q, Scal, Taylor Trout, XxrobothacksxX, Adonnak, Aegil, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Arthur radcliffe, Auckard, AxiosMIles, Blaise Fenn, Bobby Hamilton, Bonelessunknown, bono, brandon, Burin, Carlos, Chaaaanon, Charles Morris, Colin, Damion Moore, David Lange, Debarre Sonny, Devin, Dewr, dhccpmc, Drashin, Dugelle, Ed, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jacob Cannon, Jane, jdktjk205, Jesse Greene, joe, joe, joe mulhall, john smith, Joseph Gibbs, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Noah, Nutburger, Oliver Jones, Philipp, Prodigal211, qwerty, Roy, Ryan Linn, sage, Scumstango, Sebastian Eckel, Shawn, Simon Rencher, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, Ungy Bungy, valdis, Vincent Madaire-Cullen, Wayne culbert, Wei, Wild Bill, Will Osboldstone, William Richardson, Yongdian Guo, Your Husbando, zoobot5, 大基 渡邊, and 凱 陳.");
@@ -133,6 +132,14 @@ function writeScene(scene) {
 				}
 			}
 			writeSpeech("Sissy's Toolkit", "scripts/gamefiles/items/toolkit.jpg", researchTotal+" total scenes implemented (DARK VAULT)<br>Tag List:<br>Sissification, Feminization, Interracial");
+			//Calculate nymph stuff
+			researchTotal = 0;
+			for (i = 0; i < galleryArray.length; i++) {
+				if (galleryArray[i].index.includes('nymph')) {
+					researchTotal += 1;
+				}
+			}
+			writeSpeech("Nymph Mirror", "scripts/gamefiles/items/nymph.jpg", researchTotal+" total scenes implemented (DARK VAULT)<br>Tag List:<br>Genderbender, Body-Swap, Nymphomania");
 			writeTransition("start", "Back to the start screen");
 			break;
 		}
@@ -157,8 +164,6 @@ function writeScene(scene) {
 			writeText("Last Name: <input type='text' id='lastSubmission' value='Deeznuts'>");
 			writeText("Age: <input type='text' id='ageSubmission' value='25'>");
 			writeText("Favorite Color: <input type='text' id='colorSubmission' value='Blue'>");
-			writeText("Here would be where you enter details about yourself and pick your character's image, including an option to disable the image from appearing on the left side menu. I'll put that selection in the actual release, so enjoy being a red blob for now.");
-			//writeTransition("prologue3", "Finish");
 			writeFunction("renamePlayer()", "Finish");
 			break;
 		}
@@ -1366,6 +1371,16 @@ function writeScene(scene) {
 			writeEvent('dustResearch3');
 			break;
 		}
+		case "nymphResearch": {
+			tempScene = 'work';
+			researchLevel('nymph');
+			break;
+		}
+		case "nymphFailed": {
+			tempScene = "work";
+			writeEvent('nymphResearch2');
+			break;
+		}
 		case "gummyResearch": {
 			tempScene = 'work';
 			researchLevel('gummy');
@@ -1765,10 +1780,7 @@ function writeScene(scene) {
 		//Anomaly Hunter Demo
 		case "hunterDemo": {
 			data.player.hunter = "";
-			writeText("Here you'd get a list of possible missions to undertake, each with their own themes and artifacts you can take with you. For plot and design reasons you're limited in the number of artifacts you can bring to just one at a time.");
-			writeText("For now you only have the one mission.");
-			writeSpeech("Mission: Daytona Demo", "scripts/gamefiles/logo.png", "In a small town named Daytona to the south there have been a string of robberies. Amateur work with damage and evidence left behind, except every lock was bypassed flawlessly.<br> Available artifacts: Time Stopwatch & Midas coin.<br><span class = 'blueText' onclick = 'sceneTransition(`artifactSelection`)'>Begin</span>");
-			writeTransition("toolbox", "Cancel and go back");
+			loadScenario('intro');
 			break;
 		}
 		case "townSquare": {
@@ -4017,6 +4029,95 @@ function writeEvent(scene) {
 			writeText("BAD END");
 			writeText("Wait, no, this is definitely a good ending! The best, heehee!");
 			writeText("But, like, what if this was all a dream? What if you just woke up in the dark vault right now? Whoaaaa! That'd be crazy, right?");
+			break;
+		}
+		case "nymphResearch1" : {
+			tempScene = "vault";
+			writeText("You step into the room, the door automatically shutting behind you as you carefully keep your gaze low.");
+			writeSpeech("player","","Alright... Begin recording research on Dark Vault Artifact A-09-36, AKA the Nymph Mirror.");
+			writeText("The staticky hiss of the speaker rings out. Honestly, you'd think the Vault could afford to buy better ones...");
+			writeSpeech("assistant","","Acknowledged, and... now recording.");
+			writeText("You step up to the mirror, clipboard in hand as you raise your head and examine the decorations around the mirror itself.");
+			writeSpeech("player","","What do we know thus far?");
+			writeSpeech("assistant","","That the first artifact retrieval specialist was found masturbating over the mirror, transformed into a sexually-voracious woman.");
+			writeSpeech("player","","So, like the Exchange Gas?");
+			writeSpeech("assistant","","Not quite. It doesn't seem to affect women, and when I say voracious, I mean that the specialist in question was willing to use violence to get him-  Sorry, <i>her</i>self off.");
+			writeText("You continue marking down information regarding the mirror and your mental state, nodding along.");
+			writeSpeech("player","","There's no noticeable effect when staring at the decorations, so I'll now look into the mirror itself.");
+			writeSpeech("assistant","","Understood.");
+			writeText("Focusing your attention on the reflective surface, the first thing you note is that it seems to be reflecting the image of a woman standing in a bathroom.");
+			writeText("Moving your arms, she clearly mirrors your own movements. On the other hand, though, there don't seem to be any mental effects. You certainly don't <i><b>feel</b></i> any more turned on than usual...");
+			writeText("...");
+			writeBig("images/nymph/research1-1.gif")
+			writeSpeech("player","","<i>F-Fuck...</i>");
+			writeText("Your fingers slide gently against your hot, slick pussy as you bite your lip.");
+			writeText("It feels <b>incredible</b>, every motion sending ripples of pleasure across your skin as you gasp.");
+			writeText("And each time you touch your clit, it's like your entire body is going to lock up in ecstasy...");
+			writeText("Gentle, teasing prods quickly change into desperate pawing, your fingers pressing into your cunt as you the warmth in your chest and head leave you dizzy.");
+			writeText("The only thing you can think of right now is how you <b>need</b> to finish, how you'll be able to think just fine if you could just hurry up and <i><b>fucking cum...!</b></i>");
+			writeBig("images/nymph/research1-2.gif");
+			writeText("You keep driving your fingers in deep, rubbing against your insides as you buck your hips against your hand.");
+			writeText("Moments later, you feel the climax ripping through your body, your mouth twisted into an O as you moan uncontrollably.");
+			writeText("But the orgasm doesn't make you feel any less sensitive - it just makes every single touch <b>so much better</b> as you keep finger-fucking yourself, but it's clear that your hands aren't enough to really finish you off.");
+			writeText("Hazily, you see the dildo right beside your leg, and start to reach for it...");
+			writeText("...");
+			writeText("A sharp, stinging sensation sears across your face as you jolt in place.");
+			writeText("You quickly realize that you're standing in front of the mirror now, assistantF standing across from you with her hand moving back to her side.");
+			writeSpeech("player","","Did... Did you just slap me?");
+			writeSpeech("assistant","","You weren't responding, and...");
+			writeText("She looks down, as do you. Sure enough, there's just the barest hint of your chest pushing against your shirt...");
+			writeSpeech("player","","Right, the transformative effect...");
+			writeSpeech("assistant","","Exactly. According to the retrieval logs, interrupting it causes the effect to be temporary. It should wear off within the hour.");
+			writeText("Taking a deep breath, you refocus and start writing on the clipboard.");
+			writeSpeech("player","","For the most part, the object is probably safe as long as it's covered and stored.");
+			writeSpeech("assistant","","Should we require researchers to work in pairs?");
+			writeText("You open your mouth to say yes, but hesitate.");
+			writeSpeech("player","","It's fine. Make it a recommendation, but not a requirement.");
+			writeSpeech("assistant","","...Alright.");
+			writeText("With that, she walks back out of the room, you slowly following behind her.");
+			writeText("If you came back here alone, you're not sure you'd be able to look away. You're not even sure you'd want to...");
+			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.reddit.com/user/CaptainCryptogreek`'>Captain Cryptogreek</span>");
+			break;
+		}
+		case "nymphResearch2" : {
+			tempScene = "vault";
+			writeText("The closer you get to the mirror, the more the phantom sensations turn you on. The weight resting on top of the clipboard, the 'research implement' you brought, has your chest feeling tight.");
+			writeText("Wasting no time, you set everything down and step forward.");
+			writeText("Looking into the mirror reflects back another image of a woman, this time in a bedroom.");
+			writeText("She's smiling, and you don't feel that haze overtaking you this time... Not that you'd want it to.");
+			writeText("You slowly turn around, feeling a slick sensation between your legs as she- as <i><b>you</b></i> kneel on the bed and feel a weight in your hand.");
+			writeText("The tip of the dildo drags along your dripping cunt, but you can feel a pull leading it a little further than that as it prods against your ass.");
+			writeText("You hesitate for a moment, but only a moment.");
+			writeBig("images/nymph/research2-1.gif");
+			writeText("You slowly slide it in and out of your tight hole, the drag of the plastic veins across your insides almost orgasmic all on their own.");
+			writeText("You keep driving it in deeper and deeper, faster and faster, your body shuddering with each stroke.");
+			writeSpeech("player","","<i>N-Not... enough...</i>");
+			writeText("Fucking your ass like this is good, but it's not fast enough, not <i><b>hard</b></i> enough. But given that it's a dildo with a suction cup...");
+			writeText("...");
+			writeBig("images/nymph/research2-2.gif")
+			writeSpeech("player","","Yes, yes, <i>yes...!</i> It's spreading me open...!");
+			writeText("You keep bobbing yourself up and down, moans spilling out of your mouth with every motion as you lean your hands onto the bed.");
+			writeText("Within seconds, you're taking it balls deep with every bounce down, the sensation of it splitting open your deepest parts keeping you right on the edge of orgasm.");
+			writeText("But even while edging, the pleasure seems to keep rising - it keeps getting better with every thrust, but never lets you <i><b>finish.</b></i>");
+			writeSpeech("player","","Come on, I'm almost there...!");
+			writeText("You pick up even more speed, unable to go any faster as you bounce up and down.");
+			writeBig("images/nymph/research2-3.gif");
+			writeSpeech("player","","Fuck, <i><b>please...!</b></i> Please, just let me cum, let me cum, <i><b>LET ME CUM!</b></i>");
+			writeText("Slamming your hips down, you finally feel it.");
+			writeText("Like a bolt of lightning through your entire body, all of the pleasure peaks at once as you arch your back, unable to even scream as the ecstasy sears through your entire body.");
+			writeText("The orgasm makes your mind go utterly blank, dropping to your knees in front of the mirror. You don't even have to look down to know your body's fully changed, that same heat searing through you.");
+			writeText("Sliding down your ill-fitting pants, your underwear completely soaked through, you quickly grab your 'research implement' and sheathe the fat, plastic cock into your slit with reckless abandon.");
+			writeText("Desperate for any kind of release, you moan like a whore as you drive the dildo into your cunt as quickly and roughly as your hands will let you, losing track of time in the ecstasy. You don't know how long it is before assistantF finds you, your fingers not <i>nearly</i> enough to get you off anymore...");
+			writeText("...");
+			writeBig("images/nymph/research2-4.gif");
+			writeSpeech("player","","Oh <b>God YES!</b> Just fucking <i><b>RUIN</b></i> my cunt, stud~!");
+			writeText("It's been a few weeks since you were determined to be 'safe' for contact, even if you're still stuck in the Prison Department. They keep sending people in to make sure to keep you distracted after last time.");
+			writeText("You're still as smart as ever, so they make sure that you're well-fucked enough that you won't cause a bit of chaos just to break out and get some release.");
+			writeText("Every so often, assistantF comes in to test new artifacts on you, but for the most part, the rest of your days are spent fucking yourself stupid with any toys or men the Vault supplies you with.");
+			writeText("BAD END");
+			writeText("...");
+			writeText("But there's a ray of hope. You can go on, and awaken from this bad dream, if you like.");
+			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.reddit.com/user/CaptainCryptogreek`'>Captain Cryptogreek</span>");
 			break;
 		}
 		default: {
