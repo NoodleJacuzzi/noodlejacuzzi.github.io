@@ -625,6 +625,7 @@ function writeScene(scene) {
 					writeArtifact("onahole");
 					writeArtifact("toolkit");
 					writeArtifact("dust");
+					writeArtifact("nymph");
 					writeTransition("office", "Go back");
 				}
 			}
