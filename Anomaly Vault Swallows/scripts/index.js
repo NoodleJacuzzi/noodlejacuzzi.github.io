@@ -56,6 +56,7 @@ var galleryArray = [
 	{index: "braceletHome2", dark: false, girl: "roommate", name: "Sexting", hint: "Assistant event"},
 	{index: "braceletHome3", dark: false, girl: "girlfriend", name: "Fucking with the Girlfriend", hint: "Assistant event"},
 	{index: "braceletHome4", dark: false, girl: "sisterswallows", name: "Game Night", hint: "Assistant event"},
+	{index: "braceletHome5", dark: false, girl: "sisterswallows", name: "Terrible Reception", hint: "Assistant event"},
 	{index: "braceletOutdoor1", dark: false, girl: "gym", name: "Fitness Instructor's Exercise Plan", hint: "Assistant event"},
 	{index: "braceletOutdoor2", dark: false, girl: "gym", name: "Fitness Instructor's Home", hint: "Assistant event"},
 	{index: "braceletOutdoor4", dark: false, girl: "swallows", name: "Bar Room Fun", hint: "Assistant event"},
@@ -131,8 +132,8 @@ var galleryArray = [
 	{index: "dustResearch2", dark: true, girl: "boss", name: "Bimbo Dust - Perfect Payoff", hint: ""},
 	{index: "dustResearch3", dark: true, girl: "chair", name: "Bimbo Dust - Whoopsie!", hint: ""},
 	//Nymph Mirror Events
-	{index: "nymphResearch1", dark: true, girl: "", name: "Nymph Mirror - Nymphomania", hint: ""},
-	{index: "nymphResearch2", dark: true, girl: "", name: "Nymph Mirror - Lost to Lust", hint: ""},
+	{index: "nymphResearch1", dark: true, girl: "crypto", name: "Nymph Mirror - Nymphomania", hint: ""},
+	{index: "nymphResearch2", dark: true, girl: "crypto", name: "Nymph Mirror - Lost to Lust", hint: ""},
 ]
 
 var logbookArray = [
@@ -140,46 +141,61 @@ var logbookArray = [
 		desc: "Your lesbian roommate. She works at some fancy university as a teacher.",
 		body: "She's got a really nice figure and gives off a very 'girl next door' vibe'. She often talks about how she gets hit on at her job by students and her coworkers.",
 		clothes: "She prefers to wear demure, casual clothing like sweaters and long skirts.",
+		color: "#3dd4d5",
 	},
 	{index: "assistant", 
 		desc: "Your assistant at Anomaly Vault.",
 		body: "She's got a gorgeous, very petite figure. Although she tries to hide it she secretly enjoys her work here.",
 		clothes: "Her work outfit isn't too professional, but standards are lax here. She wears a short skirt and a blazer opened enough you can clearly her pink undershirt which doubles as a bra.",
+		color: "#d8329e",
 	},
 	{index: "girlfriend", 
 		desc: "Your roommate's Asian girlfriend. She also works as a teacher.",
 		body: "She's rather petite but her confidence takes her far. It seems like she exposes as much skin as she can while still being able to claim she's dressed professionally.",
-		clothes: "Unlike your roommate she's a lot more liberal when it comes to flauting herself, usually wearing a thin tanktop and tight jeans.",
+		clothes: "Unlike your roommate she's a lot more liberal when it comes to flaunting herself, usually wearing a thin tanktop and tight jeans.",
+		color: "#36be55",
 	},
 	{index: "boss", 
 		desc: "Your supervisor at Anomaly Vault, she's extremely experienced in dealing with artifacts.",
 		body: "She has a very professional air, almost to the 'stick in her ass' degree. There have been more than a few rumors that she takes artifacts home to improve her sex life.",
 		clothes: "Working with the artifacts have given her a very liberal attitude towards showing off her body. She wears the company uniform but isn't shy about opening up to show cleavage.",
+		color: "#9298b3",
 	},
 	{index: "librarian", 
 		desc: "A very superstitious librarian hoping to document the weird occurrences at her library (you) for her dissertation.",
 		body: "She's very reserved in general, but you've heard more than a few rumors online that she used to be a model.",
 		clothes: "In her small library the work uniform policy is more than a little sexist, and her outfit almost looks like it could be used in a porno. She looks good in it though.",
+		color: "#ebf288",
 	},
 	{index: "madame", 
 		desc: "The spirit who appears before those who inhale the Appreciation Perfume.",
 		body: "As a mystical being she has a great deal of control over her own body, but appears before those who can see her as a flawless, beautiful woman.",
 		clothes: "The only outfit you've ever seen her in is a sheer robe, you can clearly see through it and it exposes her body.",
+		color: "#b62424",
 	},
 	{index: "gym", 
 		desc: "A young fitness instructor who works at the local gym.",
 		body: "She works out frequently, but still retains a pretty thicc body.",
 		clothes: "Despite the fact that it goes transparent when she sweats, her favored outfit is a white top and some small red shorts. She believes the ensemble 'encourages patrons' to exercise harder.",
+		color: "#800505",
 	},
 	{index: "lifeguard", 
 		desc: "The dedicated lifeguard at the local private beach.",
 		body: "More than a few people talk in quiet tones about how she used to do porn.",
 		clothes: "She seems to prefer small bikinis while on the job, and isn't afraid of exposing herself.",
+		color: "#b631ad",
 	},
 	{index: "chair", 
 		desc: "The chairwoman of your branch of Anomaly Vault, she's one of the highest authorities in the company.",
 		body: "Nobody knows too many personal details about her, but she has an almost inhuman resistant to most artifacts.",
 		clothes: "You've only ever seen her in expensive looking robes. Getting her out of them could prove to be a challenge.",
+		color: "#4defee",
+	},
+	{index: "sister", 
+		desc: "A young college student rooming with you to avoid crippling debts. She's your assistant's sister.",
+		body: "She's the embodiment of the 'barely legal' archetype, with everything that entails. That includes the bratty personality.",
+		clothes: "She prefers casual comfy clothes, it's almost off putting how quickly she got casual around you.",
+		color: "#ff9af2",
 	},
 ];
 
@@ -191,6 +207,7 @@ var artifactArray = [
 	{index: "coin", dark: false, equipable: true, title: "Midas Coin", desc: "A single gold coin with an inscription on the back written in Ancient Greek.", desc2: "When held, sexual activities performed by the holder will be 'normalized', and not perceived to be socially outrageous no matter how depraved the action. In addition, sexual acts will be seen to have 'value', meaning that the holder can exchange sexual acts as though they had a cash value."},
 	{index: "serum", dark: false, equipable: true, title: "Truth Serum", desc: "A set of vials of green, minty liquid.", desc2: "When drunk, everything you say becomes the 'truth'. Not in the reality warping way, but in that everyone around you will believe whatever you say."},
 	{index: "shades", dark: false, equipable: true, title: "Chaddicus Shades", desc: "A pair of aviator sunglasses which, when worn, increase the wearer's confidence by several dozen degrees.", desc2: "Nearby women tend to become irritable and argue with the wearer, at which point some mysterious process causes the argument to almost immediately devolve into sex, with the wearer as the dominant partner."},
+	{index: "sign", dark: false, equipable: true, title: "Free ___ Sign", desc: "A piece of torn cardboard with the words 'FREE ___'.", desc2: "When an action is written in the blank space, the sign will vanish and appear in the hands of someone the user finds attractive and compels them to freely offer the written action."},
 	{index: "gas", dark: true, equipable: false, title: "Exchange Gas", desc: "Several aerosol gas containers. Subjects who inhale the gas experience a process called 'gender-swapping'. In most cases the process is temporary.", desc2: ""},
 	{index: "gummy", dark: true, equipable: false, title: "Gummy Dicks", desc: "A package of several erect dicks seemingly made from the same candy as gummy bears. A fluid inside feminizes men, preventing erections and increasing both prostate size & sensitivity. Effects not permanent unless used repeatedly.", desc2: ""},
 	{index: "onahole", dark: true, equipable: false, title: "Succubus Onahole", desc: "A fleshlight or 'onahole' made from an unknown material. Known to cause extreme euphoria when male genetalia is inserted, subjects state tendrils inside 'probed' them. Afterwards, subjects showed an extreme increase in semen production.", desc2: ""},
@@ -387,7 +404,13 @@ function showSelf() {
 
 //Scene creation
 function writeSpeech (name, img, text) {
+	var color = "#858585"
 	if (img == "") {
+		for (logbookIndex = 0; logbookIndex < logbookArray.length; logbookIndex++) {
+			if (logbookArray[logbookIndex].index == name) {
+				color = logbookArray[logbookIndex].color;
+			}
+		}
 		img = "scripts/gamefiles/profiles/"+name+".jpg";
 	}
 	if (img == "none") {
@@ -396,14 +419,17 @@ function writeSpeech (name, img, text) {
 	if (name == "player") {
 		name = data.player.fName;
 		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
+		var color = "#c40909"
 	}
 	if (name == "notes") {
 		name = "Research Notes";
 		img = "scripts/gamefiles/profiles/notes.png";
+		var color = "#6dfffb"
 	}
 	if (name == "gasF") {
 		name = data.player.fName;
 		img = "scripts/gamefiles/profiles/gasF.jpg";
+		var color = "#ff6dd4"
 	}
 	if (name == "gasM") {
 		name = assistantF;
@@ -419,12 +445,12 @@ function writeSpeech (name, img, text) {
 		name = "Mrs. " + lName;
 	}
 	document.getElementById('output').innerHTML +=`
-	<div class = "textBox">
-		<img class = "textThumb" src = "
+	<div class = "textBox" style="border-color: `+color+`">
+		<img class = "textThumb" style="box-shadow: -5px 5px `+color+`" src = "
 			`+ img +`
 		">
 		<div class="textBoxContent">
-		<p class = "textName">`+ name + `</p>
+		<p class = "textName" style="color:`+color+`">`+ name + `</p>
 		<p>` + replaceCodenames(text) + `</p>
 	</div>
 	<br>
@@ -909,6 +935,12 @@ function renamePlayer() {
 	sceneTransition("prologue3");
 }
 
+function renamePlayerSkip() {
+	data.player.fName = document.getElementById('nameSubmission').value;
+	data.player.lName = document.getElementById('lastSubmission').value;
+	sceneTransition("newDay");
+}
+
 function equip(n) {
 	data.player.artifact2 = n;
 	updateMenu();
@@ -1318,15 +1350,22 @@ function cheat() {
 	switch (goof) {
 		case "swallows999": {
 			goofMessage = "Welcome, Swallows."
-			if (checkBody("swallows") != true) {
-				var goof = {index: "swallows", name: "Anomaly Vault's Sponsor",};
-				data.bodytypes.push(goof);
-				var target = data.bodytypes.length - 1;
-				changeBody(target);
-			}
-			else {
-				goofMessage = "You've already used this code."
-			}
+			changeBody("swallows");
+			break;
+		}
+		case "cryptogreek": {
+			goofMessage = "Welcome, Cryptogreek."
+			changeBody("crypto");
+			break;
+		}
+		case "cute boi": {
+			goofMessage = "Bodytype changed. Stay cute!"
+			changeBody("basic");
+			break;
+		}
+		case "cute girl": {
+			goofMessage = "Bodytype changed. Stay cute!"
+			changeBody("shemale");
 			break;
 		}
 		case "noodlemaster": {
@@ -1655,10 +1694,14 @@ function kettleWish() {
 }
 
 function writeWardrobe() {
-	for (i = 0; i < data.bodytypes.length; i++) {
-		writeMed("scripts/gamefiles/characters/"+data.bodytypes[i].index+".jpg", data.bodytypes[i].artist);
-		writeFunction("changeBody('"+i+"')", data.bodytypes[i].name);
-	}
+	writeMed("scripts/gamefiles/characters/red.jpg");
+	writeFunction("changeBody('red')", "Red");
+	writeMed("scripts/gamefiles/characters/alternate1.jpg");
+	writeFunction("changeBody('alternate1')", "Alternate 1");
+	writeMed("scripts/gamefiles/characters/alternate2.jpg");
+	writeFunction("changeBody('alternate2')", "Alternate 2");
+	writeMed("scripts/gamefiles/characters/alternate3.jpg");
+	writeFunction("changeBody('alternate3')", "Alternate 3");
 }
 
 function checkBody(n) {
@@ -1673,8 +1716,7 @@ function checkBody(n) {
 }
 
 function changeBody(n) {
-	data.player.character = data.bodytypes[n].index;
-	data.player.characterArtist = data.bodytypes[n].artist;
+	data.player.character = n;
 	updateMenu();
 }
 

@@ -931,7 +931,6 @@ position: absolute;
     transition: 0.25s;
 	cursor: pointer;
     display: block;
-    width: fit-content;
     margin: 15px auto;
 	opacity: .9;
     border: 5px solid #AAAAAA;

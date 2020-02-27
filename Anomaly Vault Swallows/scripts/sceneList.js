@@ -209,7 +209,10 @@ function writeScene(scene) {
 			unlockScene('braceletDream1');
 			unlockScene('braceletHome1');
 			unlockScene('braceletResearch1');
-			sceneTransition('newDay');
+			document.getElementById('output').innerHTML = '';
+			writeText("First Name: <input type='text' id='nameSubmission' value='Swallows'>");
+			writeText("Last Name: <input type='text' id='lastSubmission' value='Deeznuts'>");
+			writeFunction("renamePlayerSkip()", "Finish");
 			break;
 		}
 		case "cheat": {
@@ -635,6 +638,7 @@ function writeScene(scene) {
 			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/storage.jpg)";
 			writeBackground("scripts/gamefiles/locations/storage.jpg");
 			writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
+			writeTransition("office", "Go back");
 			console.log(data.player.storage);
 			if (data.player.color.includes('storage') != true) {
 				data.player.color += 'storage';
@@ -651,7 +655,6 @@ function writeScene(scene) {
 					}
 				}
 			}
-			writeTransition("office", "Go back");
 			break;
 		}
 		case "prison": {
@@ -1099,7 +1102,7 @@ function writeScene(scene) {
 			writeSpeech("player", "", "I'll need to run it by roommateF first, but there shouldn't be a problem.");
 			writeSpeech("assistant", "", "Yes! Thank you so much!");
 			writeText("She gives you a big hug before pulling out her phone and calling her sister.");
-			writeSpeech("assistant", "", "Katya! Great news!");
+			writeSpeech("assistant", "", "sisterF! Great news!");
 			writeText("Likewise, you call up roommateF. She gives the okay for assistantF's sister to use the spare room.");
 			writeTransition("work", "Finish");
 			break;
@@ -1263,6 +1266,17 @@ function writeScene(scene) {
 			writeText("These sunglasses are just too dangerous to be using freely. Rationally, you know they belong in the dark vault, but...");
 			writeText("You've already finished researching this artifact. There's no need to blow it out of proportion. It should be just fine as is.");
 			writeText("Maybe you'll be hit with inspiration soon.");
+			writeTransition("work", "Go back");
+			break;
+		}
+		case "signResearch": {
+			tempScene = 'work';
+			researchLevel('sign');
+			break;
+		}
+		case "signFailed": {
+			writeText("This sign is absolutely not fit for research here at the facility, you only need to cause a containment breach once before you learn your lesson.");
+			writeText("Still, with creativity you could have a lot of fun with this thing. Maybe you should bring it home?");
 			writeTransition("work", "Go back");
 			break;
 		}
@@ -2482,6 +2496,30 @@ function writeEvent(scene) {
 			writeText(" After you pull out, the girls are still completely unaware, albeit out of breath and blushing red. The room reeks of hardcore sex and their bodies glisten with sweat, but they don't seem to mind. Their eyes are still glued to the TV as they play their game, even as sisterF's used pussy steadily oozes out your semen.");
 			//writeText(" In the end, they have a sleepover... and so do you.");
 			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.patreon.com/swallows999`'>Swallows999</span>");
+			break;
+		}
+		case "braceletHome5": {
+			writeText("As you pass by sisterF's room, your ears perk up when your name is said. Furrowing your brow, you use the power of the bracelet to enter her room undetected, eavesdropping in plain sight.");
+			writeBig("images/bracelet/katyaGame1.gif");
+			writeText("You find sisterF in bed, laying on her stomach with her slender brown legs kicking behind her. It becomes quickly apparent that she is speaking to her sister on the phone.");
+			writeSpeech("sister", "", "Jeez, just ask him! It's not weird, it's 2020! A girl can ask a guy out on a date.");
+			writeText("Try as you might, you're unable to decipher what assistantF is saying on the other end in response to this. Your gaze trails down her back and onto her tight ass and her sexy legs swinging back and forth. Your cock begins to strain against your pants and you have no choice but to free it in front of sisterF's oblivious face. ");
+			writeBig("images/bracelet/katyaGame2.gif");
+			writeSpeech("sister", "", "Hmm, well, he has a nice house and he doesn't seem like a total creep- Nngf…!");
+			writeBig("images/bracelet/katyaGame3.gif");
+			writeText("You almost feel bad as you stuff sisterF's hot, wet mouth full of dick, her slippery tongue flexing against the underside of your shaft and licking it all over as she continues to try to speak. You stare down at assistantF's sister as she absentmindedly sucks you off, her eyes looking past you as if you were invisible.");
+			writeSpeech("sister", "", "Glugh- mmmph!");
+			writeText("sisterF's mouth feels exquisite, especially as she attempts to talk to her sister over the phone. You can hear bits and pieces of assistantF responding, as if she somehow understood her sister's muffled voice. With your cock now at full mast and lubricated, you pull out of her suckling mouth.");
+			writeBig("images/bracelet/katyaGame4.gif");
+			writeText("Circling around her, you grab sisterF's ass and lift her up. Next, you pull down her jean shorts and panties, exposing her tight pussy and give it an experimental lick, causing her to shiver and yelp. It seems that her conversation goes uninterrupted and without a second thought, you shove your hard cock balls deep into assistantF's sister.");
+			writeSpeech("sister", "", "Oh! Fu-fuck… yeah, I'm still here... we gotta get you paid sis, how come you don't have a huge house like this?'");
+			writeBig("images/bracelet/katyaGame5.gif");
+			writeText("You're fucking sisterF at a steady, fast pace with long deep strokes. Your mind was already made up before taking her pussy- you have no intention of pulling out. The unaware teen still had no idea she was even having sex.");
+			writeSpeech("sister", "", "Ah! Ah- J-just pretend you need to get something from me- fu-fuck- and you can come see his house.");
+			writeSpeech("player", "", "Gonna cum, take it all slut!");
+			writeBig("images/bracelet/katyaGame6.gif");
+			writeText("Slamming inside as far as you can, you give sisterF a deep creampie, her pussy clenches down, milking you for every drop. She takes a sharp breath, interrupting her labored breathing and her legs quake as she cums. As you pull out, the thick seed oozes out of her, dripping onto the bed. You get up to leave-");
+			writeText("Wait a minute, did she say date?");
 			break;
 		}
 		case "braceletOutdoor1": {
@@ -3712,6 +3750,15 @@ function writeEvent(scene) {
 			writeText("You reach up to your face. You're wearing the shades. Did you put them on in your sleep? Doubts are starting to run through your mind. Once you've had your fun you should distance yourself from these shades ASAP.");
 			break;
 		}
+		case "signResearch1": {
+			break;
+		}
+		case "signHome1": {
+			break;
+		}
+		case "signDream1": {
+			break;
+		}
 		case "cageResearch1": {
 			tempScene = "vault";
 			writeSpeech("player", "", "Alright, no problems.");
@@ -4149,7 +4196,12 @@ function writeEvent(scene) {
 	if (galleryCheck(scene) != true) {
 		unlockScene(scene);
 	}
-	writeTransition(tempScene, "Finish");
+	if (data.player.currentScene == "gallery") {
+		writeTransition("gallery", "Finish");
+	}
+	else {
+		writeTransition(tempScene, "Finish");
+	}
 }
 
 function checkDay() { //For checking for holidays, payday, and for new text messages, alt-2 to close
@@ -4190,6 +4242,17 @@ function checkForEvents() {
 						writeArtifact("coin");
 						if (data.player.color.includes('shades') == true) {
 							writeArtifact("shades");
+							if (data.player.color.includes('sign') == true) {
+								writeArtifact("sign");
+							}
+							else {
+								if (timeSince != 1) {
+									writeSpeech("assistant", "", "Hey, the latest artifact is in. I think.<br>I think they're fucking with us, or there's been a mistake. It's a piece of cardboard and a marker.");
+									writeArtifact("sign");
+									data.player.color += 'sign';
+									timeSince = 1;
+								}
+							}
 						}
 						else {
 							if (timeSince != 1) {
@@ -4267,8 +4330,18 @@ function checkForEvents() {
 					}
 				}
 				if (data.player.color.includes('katyaIntro') == true) {
+					for (katyaIndex = 0; katyaIndex < data.story.length; katyaIndex++) {
+						if (data.story[katyaIndex].index.includes("sister") == true) {
+							data.story[katyaIndex].met = true;
+						}
+					}
 					if (galleryCheck('braceletHome4') == false) {
 						writeFunction("writeEvent('braceletHome4')", "sisterF brought some friends over");
+					}
+					else {
+						if (galleryCheck('braceletHome5') == false) {
+							writeFunction("writeEvent('braceletHome5')", "sisterF is calling someone, a perfect time to have some fun");
+						}
 					}
 				}
 				if (galleryCheck('braceletOutdoor4') == false) {
