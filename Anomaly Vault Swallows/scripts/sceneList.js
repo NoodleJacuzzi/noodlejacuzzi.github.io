@@ -4540,10 +4540,10 @@ function checkForEvents() {
 				}
 				case "sign": {
 					if (galleryCheck('signHome1') == false) {
-						writeFunction("writeEvent('signHome1')", "Write RIMJOBS on the sign.");
+						writeFunction("writeEvent('signHome1')", "Write 'RIMJOBS' on the sign.");
 					}
 					if (galleryCheck('signOutdoor1') == false) {
-						writeFunction("writeEvent('signOutdoor1')", "Write TITFUCK on the sign.");
+						writeFunction("writeEvent('signOutdoor1')", "Write 'TITFUCK' on the sign.");
 					}
 				}
 			}
