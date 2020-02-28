@@ -1120,6 +1120,57 @@ function writeScene(scene) {
 			data.player.color += "katyaIntro";
 			break;
 		}
+		case "promotion": {
+			var goof = {index: "agent", image: "", met: false, fName: "Gina", lName: "Valentina", desc:"An 'experienced' agent, something about her seems off.",};
+			data.story.push(goof);
+			data.player.color+="promotion";
+			writeSpeech("player","","You wanted to see me?");
+			writeText("You walk into Mrs. bossL's office and take a seat as she files away some paperwork.");
+			writeSpeech("boss","","Management is considering you for an agent position on account of your mental resistance. Here, I'll write down the location.");
+			writeSpeech("player","","Nice! So this is basically a promotion, right?");
+			writeSpeech("boss","","Why? Why is that everyone's first response to being made an agent? Do you know exactly how far your life expectancy has just dropped?");
+			writeSpeech("player","","... A lot?");
+			writeSpeech("boss","","The dark vault, now this. This is why it's stupid to get attached to grunts like you.");
+			writeText("She rubs the bridge of her nose, frustrated.");
+			writeSpeech("boss","","Just... Just leave. I'll let an agent know you're coming in for a field test. I'll start training your replacement for when you don't come back.");
+			writeSpeech("player","","From the mission?");
+			writeSpeech("boss","","From the interview, now get lost.");
+			writeTransition("work", "Finish");
+			break;
+		}
+		case "interview": {
+			for (katyaIndex = 0; katyaIndex < data.story.length; katyaIndex++) {
+				if (data.story[katyaIndex].index.includes("agent") == true) {
+					data.story[katyaIndex].met = true;
+				}
+			}
+			passTime();
+			data.player.color+="interview";
+			writeSpeech("player","","Alrighty! Time to find this room...");
+			writeText("...");
+			writeText("The walk down the winding hallways is surprisingly tedious, your mind keeps wandering as you walk down what feels like identical corridors. Still, it's only a few minutes of walking, maybe a bit more.");
+			writeText("You find the door, give it a knock, and hear a faint 'come in' followed by a soft yawn.");
+			writeBig("scripts/gamefiles/characters/agent.jpg");
+			writeSpeech("agent","","Hey, morning. Name's agentF. Thirsty?");
+			writeSpeech("player","","Sure.");
+			writeText("She's pretty cute, there's a brief moment where you consider having some fun with the bracelet, but for some reason you feel completely exhausted as you take a seat. She offers a glass of water and you can't hold back from drinking it right away.");
+			writeSpeech("agent","","So... You took about two hours, not too shabby. The average is four, but a couple of people have died of exhaustion on the way here.<br>Good job, you passed!");
+			writeSpeech("player","","I... What?");
+			writeSpeech("assistant","","Yep. We use artifacts for testing here. You've got the stamina and the fortitude to survive Class-2s at least. Real quick though...");
+			writeText("There's a soft clicking noise before electricity surges up your arm.");
+			writeSpeech("player","","GHHHK!");
+			writeSpeech("agent","","Yeah, sorry about that. Had to disable any artifact effects on you. Temporary, but they'll get shut off whenever we send you out. If you're gonna be an agent you gotta learn the most important rule; Some artifacts do not play nicely with others. Sweet bracelet by the way.<br>Anyways great job, good luck making it back to your office.");
+			writeSpeech("player","","Just like that? I don't need a briefing?");
+			writeSpeech("agent","","Those are on a case-by-case basis, you've already got the gist of how to deal with artifacts, right? We'll be sending you out on missions to go collect stuff, you'll even get to take an artifact we're pretty sure won't cause an apocalypse. We'll start you out small at first. If it's a big deal you'll be sent out with a partner.");
+			writeSpeech("player","","Like you?");
+			writeSpeech("agent","","Sure! I'm probably pretty experienced, that's what they tell me. <br>So, you know that file cabinet in the storage department? Basically you just head in there and ask it for the 'intro' file. Charlie-<br>I call it Charlie.<br>will give you everything you need. Hey, I got a fridge in here if you need something, the walk back will be just as long as it took to got here. Dehydration is the number one thing that gets new applicants.");
+			writeText("...");
+			writeText("You clutch the small piece of paper with a single word written on it. 'intro'.");
+			writeSpeech("assistant","","Welcome ba-<br>Whoa, what happened to you?");
+			writeText("You're caked in sweat as you make your way back into your office despite what felt like only a few minutes of walking. A quick shower and maybe a nap, and you should be ready to begin your first mission as an artifact retrieval agent, aka an Anomaly Hunter.");
+			writeTransition("work", "Finish");
+			break;
+		}
 		//Artifacts
 		case "mirrorResearch": {
 			writeBig("scripts/gamefiles/items/mirror.jpg");
@@ -3751,12 +3802,111 @@ function writeEvent(scene) {
 			break;
 		}
 		case "signResearch1": {
+			writeBig("scripts/gamefiles/items/sign.jpg");
+			writeSpeech("player","","Now beginning research log A-74-01, the Free Blank Sign.");
+			writeSpeech("assistant","","Are we sure this isn't some regular piece of cardboard with marker on it?");
+			writeSpeech("player","","Only one way to find out. Let's play things safe and write 'HUGS'.");
+			writeText("You pop the cap off a marker and fill in the blank on the sign. After you're finished, nothing happens. But after a moment, suddenly, nothing happens!");
+			writeSpeech("assistant","","Dud?");
+			writeSpeech("player","","Maybe. I-");
+			writeText("You blink, and the sign is gone.");
+			writeSpeech("player","","...");
+			writeSpeech("assistant","","Aw fuck. Containment breach?");
+			writeSpeech("player","","We don't need to call in the armed squad just yet. Artifacts that only affect people while touching them can sometimes move around. Let's go find it.");
+			writeSpeech("assistant","","Hope it isn't on a vending machine or something, I'd hate to get a free hug from that.");
+			writeText("...");
+			writeSpeech("player","","Mrs. bossL? Is everything alright?");
+			writeText("The cardboard sign bends a little in bossL's clenched fists.");
+			writeSpeech("boss","","Of course, everything is... FFFffine. Would you like... a h-");
+			writeText("Her inner self is struggling against the sign's influence.");
+			writeSpeech("assistant","","I'm good, thanks. Have you seen a, uh... Um...<br>playerF, what were we looking for again?");
+			writeSpeech("player","","This isn't unusual to you?");
+			writeSpeech("assistant","","What is?");
+			writeText("You shrug, and walk to bossL with your arms outstretched. On the surface she's calm as she leans in to give you a lovely hug, but there's the faintest shiver of rage beneath her kind exterior.");
+			writeSpeech("player","","Well, that was nice. I'll need to take that sign-");
+			writeText("As you step back from the hug the sign has vanished from her hand.");
+			writeText("There's an awkward moment of silence before bossL's calm facade vanishes.");
+			writeSpeech("boss","","You two, quit fucking around and get back to work!");
+			writeSpeech("assistant","","Sorry ma'am!");
+			writeText("The whole situation is bizzare, almost nonsensical, but you still have a job to do, so you thank bossL for the hug and get back to the search.");
+			writeText("...");
+			writeText("The sign reappeared back in the testing lab where you first wrote on it, the word 'HUGS' erased.");
+			writeSpeech("assistant","","Oh shit, we were supposed to be researching this!");
+			writeText("...");
+			writeSpeech("notes", "", "Findings: When an action is written on the sign, it will vanish and reappear in the hands of a random person in the vicinity the user desires the action from.<br>Whatever the service is, it will be seen as normal, albeit suspicious as with any shoddy sign advertising something free. After the service is provided to the recipient's satisfaction, the sign will vanish and reappear again where it was written on.<br>Because of this, testing in a controlled environment is mostly futile. Outdoor testing should be safe, especially given the artifact's memetic qualities. For future tests the researcher should take the sign off-base, write a word in the blank space, and be given free-reign to explore the local area for the sign's host.");
 			break;
 		}
 		case "signHome1": {
+			writeText("You write the word 'RIMJOBS' onto the sign and in the blink of an eye the sign isn't where it just was. With the sign out in the world somewhere, you set off to find it.");
+			writeText("... And it doesn't take you very long.");
+			writeBig("images/sign/signHome1-1.gif");
+			writeSpeech("roommate", "","Ah~! S-stop!");
+			writeSpeech("girlfriend","","*Mwah*<br>What's wrong?");
+			writeSpeech("roommate", "","J... I don't know, this just seems strange.<br>Ah, playerF. You're still home? Does anything seem weeeEEi-");
+			writeText("Her legs quiver as girlfriendF goes back to her make-out session with her girlfriend's ass.");
+			writeSpeech("roommate", "","Stuh-Stop~!");
+			writeText("roommateF, barely able to walk, gets off her girlfriend's face and stumbles away.");
+			writeSpeech("girlfriend","","Jeez, what's up with you today?<br>Hey, playerF, want one?");
+			writeText("...");
+			writeSpeech("player","","Nggh, so, what was the matter?");
+			writeBig("images/sign/signHome1-2.gif");
+			writeSpeech("roommate", "","I don't know, it just felt a little weird with you watching.");
+			writeSpeech("player","","You feel the same, girlfriendF?");
+			writeSpeech("girlfriend","","*Mwah* Nope! Maybe you've just got a sensitive ass, roommateF?<br>Anyways, playerF, sit back down, I'm not done yet.");
+			writeText("...");
+			writeSpeech("player","","That was pretty nice. Ah, the sign's gone. Alright you two, I need to go and-");
+			writeBig("images/sign/signHome1-3.gif");
+			writeSpeech("roommate", "","Mmm~<br>You say something, playerF?");
+			writeSpeech("player","","Nah, you two have fun.");
+			break;
+		}
+		case "signOutdoor1": {
+			writeText("You write the word 'TITFUCK' onto the sign and in the blink of an eye the sign isn't where it just was. With the sign out in the world somewhere, you set off to find it.");
+			writeText("...");
+			writeText("You've been wandering the city for about an hour now with no sign of the... Well, sign. They should be advertising openly, so the search is mostly just walking about from block to block listening for anyone trying to sell their body.");
+			writeText("Still, an hour is a bit much. You're already starting to get pretty tired, and are ready to head home as you turn the corner around a small-time gym to see someone.");
+			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","Oh! Oh thank god. Sir! Sir, please, I need your help! This sign appeared, and-");
+			writeText("She's squated down on the sidewalk, her legs spread way too lewdly for her skirt to keep her decent. In her hands is the familiar cardboard sign advertising 'FREE TITFUCK'.");
+			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","I cant move, I've been stuck here in this embarassing pose with this sign, and nobody will help!");
+			writeSpeech("player", "", "Sure, I'll give you a hand. I'm a little pent up anyways.");
+			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","Of course sir, feel free to use my tits however you like! <br>No, wait, stop! I don't know why I keep saying that, stop! This is rape!");
+			writeSpeech("player", "", "You're aware of what's happening? Fully aware? That's weird.");
+			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","Do you know what's going on? Is this some kinda freaky sex magic? I won't tell anybody! Please, I wanna go home!");
+			writeSpeech("player", "", "Come on, think about it. You probably know what you need to do.");
+			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","... No. Nonono! In public? Are you insane!?");
+			writeSpeech("player", "", "You haven't been arrested for public indecency yet, and you can't move a muscle out of that slutty pose. You think it matters that you're in public?");
+			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","But...");
+			writeSpeech("player", "", "Just relax and I'll fuck your tits.");
+			writeBig("images/sign/signOutdoor1-1.gif");
+			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","Ooh, thank you so much, sir! I won't let you down, cum as much as you like! <br>No! That's not what I... Fuck, I can't deal with this!");
+			writeSpeech("player", "", "You want me to stop? You'll be stuck like this.");
+			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","Faster, faster sir! I want yo feel your c- <br>Ghh, just hurry up already!");
+			writeText("...");
+			writeBig("images/sign/signOutdoor1-2.gif");
+			writeText("Her face is conflicted, like her mind is under siege to conform to something.");
+			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","Ghh... F-fuck you...<br> What? Why?! I did it, but I still can't move! Make it stop!");
+			writeSpeech("player", "", "Jeez, you are a noisy bitch. Weird though, the sign usually vanishes after the deed is done. <br>Maybe it thinks you didn't do a good enough job? Maybe just roll with what it wants you to do next time.");
+			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","What the fuck do you mean I didn't do a good job?! I have tits and you fucked them!");
+			writeSpeech("player", "", "God damn, I can't stand you. Good luck with the sign, bye.");
+			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","Wait! Please, I've been here for an hour and you're the only one who's taken my offer! <br>Please, I'll do a good job this time, fuck my tits again and I'll be a good girl!");
+			writeSpeech("player", "", "Tempting, but I'm spent. Maybe nobody's taken you up because of all your bitching. Make a sale of yourself, and hope somebody good-looking comes along you can convince to let you rub his dick.");
+			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","Please, please stop!");
+			writeText("She still has the potential to cause you some problems down the line, so you wave your hand and let the bracelet work it's magic. She won't remember your face, just what she needs to do to get out of this mess. Relaxed and spent, you start walking your way back home.");
+			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","Please, come back! <br>Oh, kid, come here! I can make you a man if you help me out! <br>Nonono I'm not scary, please come back! <br>FUCK!");
 			break;
 		}
 		case "signDream1": {
+			writeBig("images/sign/signDream1-1.gif");
+			writeSpeech("???","scripts/gamefiles/profiles/agent.jpg","Yes ma'am, you were spot on with the evacuation. I was the only woman for three miles, so it ended up with me.");
+			writeText("It's strange, it's not clear what she's talking about. She's all business, even while getting her ass railed. With one hand she's holding her phone to her ear, and with the other she holds the cardboard sign with 'free anal' scrawled onto it.");
+			writeSpeech("???","scripts/gamefiles/profiles/agent.jpg","Am I being affected? Not sure. Coffee for breakfast, interrogated the witnesses, offered anal sex to a stranger, nothing unusual so far. <br> Oh, that's not normal? It must have a mind-altering property then. It's class-1 at most. Ah, cumming by the way, think he is too.");
+			writeBig("images/sign/signDream1-2.gif");
+			writeText("You sigh in relief and look over to where the sign has reappeared. Maybe you'll have her offer her mouth next.");
+			writeText("But suddenly she presses something small and metallic against your neck, and your legs give out almost immediately.");
+			writeSpeech("???","scripts/gamefiles/profiles/agent.jpg","Yes ma'am, I was still able to incapacitate him. The effects are still active, I'll probably keep offering anal sex until he's unconscious.<br>... Yeah it seems like the sign has a mind of it's own, it's trying to please whoever wrote on it. I'll bring him back to the vault for interrogation then.");
+			writeText("With a click she hangs up her phone.");
+			writeSpeech("???","scripts/gamefiles/profiles/agent.jpg","Sorry, looks like this is it for you. Probably shouldn't have fucked around with this bit of cardboard so openly. <br>Hey, don't worry. Honestly, I was a bit of a buttslut already, so we can have a little more fun. Give you a good last memory before we pick your brain, yeah?");
+			writeText("The rest is a pleasant blur until a sharp pain in the side of your head causes you to shoot awake.");
 			break;
 		}
 		case "cageResearch1": {
@@ -4386,6 +4536,14 @@ function checkForEvents() {
 				case "shades": {
 					if (galleryCheck('shadesHome1') == false) {
 						writeFunction("writeEvent('shadesHome1')", "Show off the shades to "+roommateF);
+					}
+				}
+				case "sign": {
+					if (galleryCheck('signHome1') == false) {
+						writeFunction("writeEvent('signHome1')", "Write RIMJOBS on the sign.");
+					}
+					if (galleryCheck('signOutdoor1') == false) {
+						writeFunction("writeEvent('signOutdoor1')", "Write TITFUCK on the sign.");
 					}
 				}
 			}

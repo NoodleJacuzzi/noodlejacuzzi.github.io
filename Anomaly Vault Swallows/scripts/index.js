@@ -112,6 +112,11 @@ var galleryArray = [
 	{index: "shadesResearch3", dark: false, girl: "boss", name: "Chaddicus Shades - Second Conquest", hint: ""},
 	{index: "shadesHome1", dark: false, girl: "roommategirlfriend", name: "Chaddicus Shades - Two For One", hint: ""},
 	{index: "shadesDream1", dark: false, girl: "", name: "Chaddicus Shades - Shades' Fate", hint: ""},
+	//Free ___ Sign Events
+	{index: "signResearch1", dark: false, girl: "", name: "FREE HUGS", hint: ""},
+	{index: "signHome1", dark: false, girl: "roommategirlfriend", name: "FREE RIMJOBS", hint: ""},
+	{index: "signOutdoor1", dark: false, girl: "", name: "FREE TITFUCK", hint: ""},
+	{index: "signDream1", dark: false, girl: "agent", name: "FREE DREAMS", hint: ""},
 	//Exchange Gas Events
 	{index: "gasResearch1", dark: true, girl: "assistant", name: "Exchange Gas - Personal Test", hint: ""},
 	{index: "gasResearch2", dark: true, girl: "", name: "Exchange Gas - Assistant Test", hint: ""},
@@ -196,6 +201,12 @@ var logbookArray = [
 		body: "She's the embodiment of the 'barely legal' archetype, with everything that entails. That includes the bratty personality.",
 		clothes: "She prefers casual comfy clothes, it's almost off putting how quickly she got casual around you.",
 		color: "#ff9af2",
+	},
+	{index: "agent", 
+		desc: "A fellow anomaly hunter. Supposedly she's more experienced than you, but something about that seems off.",
+		body: "She's surprisingly petite for someone who's worked at the vault for longer than you. Probably some kind of age-related artifact.",
+		clothes: "She prefers casual comfy clothes, it's almost off putting how quickly she got casual around you.",
+		color: "#de6d1a",
 	},
 ];
 
