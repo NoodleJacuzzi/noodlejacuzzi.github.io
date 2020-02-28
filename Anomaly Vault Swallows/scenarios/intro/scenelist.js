@@ -9,8 +9,7 @@ function writeScenarioScene(scene) {
 	tempScene = scene;
 	switch(scene) {
 		case "start": {
-			writeText("Here you'd get a list of possible missions to undertake, each with their own themes and artifacts you can take with you. For plot and design reasons you're limited in the number of artifacts you can bring to just one at a time.");
-			writeText("For now you only have the one mission.");
+			writeText("Whether this is your first or seventh time, the experience will be indistinguishable. If you've made it this far, congratulations on your promotion. We hope to see good things from you. Best of luck.");
 			writeSpeech("Mission: Daytona Demo", "scripts/gamefiles/logo.png", "In a small town named Daytona to the south there have been a string of robberies. Amateur work with damage and evidence left behind, except every lock was bypassed flawlessly.<br> Available artifacts: Time Stopwatch & Midas coin.<br><span class = 'blueText' onclick = 'writeScenarioScene(`artifactSelection`)'>Begin</span>");
 			writeTransition("toolbox", "Cancel and go back");
 			break;
@@ -84,9 +83,9 @@ function writeScenarioScene(scene) {
 			if (data.player.artifact1 == "stopwatch") {
 				writeText("You take the Time Stopwatch and slip it into your pocket. You can now stop time at will.");
 			}
-			writeText("You dial a number on your phone more than twenty digits long. It picks up immediately and there's a soft breathing from the other side.");
+			writeText("The mission's file contains instructions and various probably unimportant details. You head outside the vault and dial a number on your phone more than twenty digits long. It picks up immediately and there's a soft breathing from the other side.");
 			writeSpeech("player", "", "I need a ride.");
-			writeText("You hang up and before your phone is even in your pocket an old-looking European car comes around the corner. It stops for you and the back door swings open.");
+			writeText("You hang up and before your phone is even in your pocket an old-looking car comes around the corner. It stops for you and the back door swings open.");
 			writeText("You climb inside. Despite the thing looking like it's at least a hundred years old, the inside still smells fresh air. Almost like a foggy morning, despite how strange it sounds.");
 			writeSpeech("Jeeves", "scripts/gamefiles/profiles/jeeves.jpg", " Daytona then?");
 			writeSpeech("player", "", "Yep. No rush.");
@@ -158,7 +157,7 @@ function writeScenarioScene(scene) {
 			break;
 		}
 		case "grumpyMan": {
-			if (data.player.hunter.includes("key") != true) {
+			if (checkFlag("key") != true) {
 				writeText("The man at the bar is pretty clearly wealthy. His clothes are neater and newer than anyone else's, but he seems like he isn't trying to show off.");
 				writeText("You take a seat next to him, best to be direct in situations like this. It smells like he's had a few beers already.");
 				writeSpeech("player", "", "Hey. You own the mansion up north?");
@@ -189,11 +188,11 @@ function writeScenarioScene(scene) {
 			writeText("You stand up and leave, the man is left to confusedly and bitterly keep mumbling to himself.");
 			writeText("You got the mansion key!");
 			writeScenarioTransition("shoddyBar", "Finish");
-			data.player.hunter += "key";
+			addFlag("key");
 			break;
 		}
 		case "grumpyWife": {
-			if (data.player.hunter.includes("woman") != true) {
+			if (checkFlag("woman") != true) {
 				writeText("The flower shop owner isn't much help, they seem almost half asleep as you run questions by them. After a bit of wandering around you find a woman, probably in her late twenties, taking pictures of the plants on her phone.");
 				writeSpeech("player", "", "Excuse me, miss?");
 				writeSpeech("Rich Woman", "scenarios/intro/images/grumpyWifeProfile.jpg", "I don't need any help, I'm fine.");
@@ -233,7 +232,7 @@ function writeScenarioScene(scene) {
 			writeText("Her eyes cross and her knees buckle, her skirt quickly being stained by her squirting cunt.");
 			writeText("She collapses and the owner runs to her side as you back off. You stick around so as not to seem suspicious but eventually you're free to resume trying to find a way into the mansion as the woman is helped away to rest.");
 			writeScenarioTransition("flowerShop", "Finish");
-			data.player.hunter += "woman";
+			addFlag("woman");
 			break;
 		}
 		case "wifeCoin": {
@@ -241,12 +240,17 @@ function writeScenarioScene(scene) {
 			writeSpeech("Rich Woman", "scenarios/intro/images/grumpyWifeProfile.jpg", "No. Go away.");
 			writeSpeech("player", "", "But I could pay pretty handsomely.");
 			writeSpeech("Rich Woman", "scenarios/intro/images/grumpyWifeProfile.jpg", "There's no amount of money that would-");
+			writeText("You squeeze the coin in your pocket a little harder than you intended. Curiously, in real time you can see the woman's face become more awash in greed in lust as you do.");
 			writeSpeech("player", "", "I could fuck you in the ass.");
 			writeText("She looks shocked for a moment as if you'd just put a stack of hundreds in front of her, then she looks you up and down like a piece of meat.");
 			writeSpeech("Rich Woman", "scenarios/intro/images/grumpyWifeProfile.jpg", "You're bluffing.");
 			writeSpeech("player", "", "I'll pay up front. Right here, right now.");
 			writeText("You unzip your pants and she watches with obvious interest as you fish out your cock.");
 			writeSpeech("Rich Woman", "scenarios/intro/images/grumpyWifeProfile.jpg", "Well... I wouldn't normally let a stranger into my home, but...");
+			writeText("You squeeze the coin again. It's old and brittle, but for some reason this just feels... <b>right</b>. This is worth investigating further later.");
+			if (data.player.color.includes("coinSqueeze") != true) {
+				data.player.color += "coinSqueeze";
+			}
 			writeSpeech("player", "", "I promise to make it very worth your while.");
 			writeText("She swallows dryly, her face awash with greedy cocklust.");
 			writeSpeech("Rich Woman", "scenarios/intro/images/grumpyWifeProfile.jpg", "A-and if I want it in my ass, and for you to give me a creampie after?");
@@ -267,12 +271,12 @@ function writeScenarioScene(scene) {
 			writeSpeech("player", "", "Good.");
 			writeText("You head off as the owner moves to check on the exhausted creampied woman, gently rubbing the gold coin in your pocket for luck.");
 			writeScenarioTransition("flowerShop", "Finish");
-			data.player.hunter += "woman";
-			data.player.hunter += "key";
+			addFlag("woman");
+			addFlag("key");
 			break;
 		}
 		case "mansionEntry": {
-			if (data.player.hunter.includes("key") != true) {
+			if (checkFlag("key") != true) {
 				writeText("The old mansion looms over you as you step onto the doorway. You give the old oaken door a few firm knocks, but there's no answer.");
 				writeSpeech("player", "", "Oh no, no answer. I'll need to head into town.");
 				writeText("You remark sarcastically to no one in particular as the door remains shut. Oh well, now you're free to 'interrogate' the townsfolk searching for whoever owns the mansion.");
@@ -370,11 +374,11 @@ function writeScenarioScene(scene) {
 			break;
 		}
 		case "hunterFinish": {
-			writeText("You've obtained the artifact and finished this short demo. What'd you think? Let me know if this is the angle you'd like in Anomaly Vault. Overall this was pretty slow-goings, and putting out a full update's worth of regular content alongside another one of these is not realistic.");
-			writeText("Potential plans include returning back with the artifact, allowing you to wander about with all the minor artifacts you've collected on your journey to use them for more scenes. With each bit of new content I'm reminded more that I really should rebuild the engine from the ground up, hopefully improving normal game flow and adding a sense of progression as well.");
-			writeText("Another big plan would be mod support, allowing people to create their own missions for content generation even after the main game is finished.");
-			writeText("I hope to hear your thoughts on the matter soon!");
-			writeScenarioTransition("toolbox", "Finish");
+			data.player.artifact1 = "bracelet";
+			writeText("A quick call and Jeeves is ready again to pick you up.");
+			writeText("A job well done! And the cabinet will allow you to get in another bit of training anytime you want. For now it's back to research, but who knows what the future could hold?");
+			writeText("Good work, agent!");
+			writeTransition("office", "Finish");
 			break;
 		}
 		default: {
@@ -392,10 +396,21 @@ switch (requestType) {
 		if (data.player.scenarios == null) {
 			data.player.scenarios = [];
 		}
-		data.player.scenarios += {index: "intro", flags: "", objectFlags: ""};
+		var scenarioCheck = false;
+		for (i = 0; i < data.player.scenarios.length; i++) {
+			if (data.player.scenarios[i].index == scenarioInformation.index) {
+				scenarioCheck = true;
+				data.player.scenarios[i].flags = "";
+				data.player.scenarios[i].objectFlags = "";
+			}
+		}
+		if (scenarioCheck = false) {
+			goof = {index: scenarioInformation.index, flags: "", objectFlags: ""};
+			data.player.scenarios.push(goof);
+		}
 		data.player.currentScenario = scenarioInformation.index;
 		writeText("Loaded correctly, all is well!");
-		writeFunction("writeScenarioScene('start')", "Test");
+		writeScenarioScene("start");
 		break;
 	}
 	case "refreshed": {

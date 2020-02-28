@@ -238,7 +238,7 @@ var artifactMiniArray = [ //Used for smaller artifacts such as prison and toolbo
 	{index: "lamp", type: "artifact", title: "Fashionista's Lamp", desc: "An exotic-looking lamp originating from an unknown European region.", desc2: "When a subject closes their eyes with in the lamp's glow, images of clothes and bodies specific to the user's psyche begin to fill their mind. If the user finds one pleasing, then when they open their eyes next their appearance will change to match whatever they were thinking of. "},
 	{index: "commercials", type: "artifact", title: "Alternate-Universe Commercials", desc: "A box of VHS tapes that materialized from another universe.", desc2: "Multiple security checks have been performed on them since one appears to be an advertisement for the Anomaly Vault, but research has found them to be harmless. Included is a note referencing a 'Master Index'."},
 	{index: "engine", type: "artifact", title: "Cheat(?) Engine", desc: "A bootleg version of a popular computer program for editing values.", desc2: "It's capable of rewriting reality, but it only responds to extremely specific phrases and ignores any other request. Unless you already know what to say, the program is useless. "},
-	{index: "logbook", type: "artifact", title: "Artifact Retrieval Logs", desc: "A massive set of cabinets full of mission log files. Only artifact hunters are authorized to use it.", desc2: "Alongside the cabinets are specialized tools used for simulating alternate mission outcomes."},
+	{index: "logbook", type: "artifact", title: "Artifact Retrieval Logs", desc: "A massive set of cabinets full of mission log files. Only artifact hunters are authorized to use it.", desc2: "Opening the cabinet with intent will allow for retrieval and re-living of specific file contents."},
 	{index: "doctor", code:"scp", type: "prisoner", title: "'Plague' Doctor", desc: "A mysterious woman dressed in a skimpy version of a medieval plague doctor's uniform. Very dangerous.", desc2: ""},
 	{index: "talisman", code:"scp", type: "prisoner", title: "Talisman", desc: "A possessed talisman. There's a sticky note on it saying 'DO NOT TOUCH'", desc2: ""},
 	{index: "magical", code:"lobotomy", type: "prisoner", title: "Magical Girl", desc: "A woman proclaiming herself to be a champion of justice. You're pretty sure she was fished up from a river from some forest.", desc2: ""},
@@ -815,7 +815,7 @@ function openButton() {
 function writeBG(target) {
 	document.getElementById('output').innerHTML += `
 		<div class="playerRoom">
-			<img class="backgroundPicture" src="scripts/gamefiles/hunter/`+target+`.jpg" usemap="#roomMap">
+			<img class="backgroundPicture" src="scenarios/`+data.player.currentScenario+`/images/`+target+`.jpg" usemap="#roomMap">
 		</div>
 	`;
 }
@@ -827,10 +827,37 @@ function writeImageButton(name, target, img, top, left) {
 	document.getElementsByClassName('playerRoom')[0].innerHTML += `
 		<img class="imageButton"
 		onclick="writeScenarioScene('`+target+`')" 
-		src="scripts/gamefiles/hunter/`+img+`" 
+		src="scenarios/`+data.player.currentScenario+`/images/`+img+`" 
 		style="top: `+top+`%; left: `+left+`%;"
 		title="`+name+`">
 	`;
+}
+
+function addFlag(name) {
+	for (i = 0; i < data.player.scenarios.length; i++) {
+		if (data.player.scenarios[i].index == data.player.currentScenario) {
+			data.player.scenarios[i].flags += name;
+		}
+	}
+}
+
+function removeFlag(name) {
+	for (i = 0; i < data.player.scenarios.length; i++) {
+		if (data.player.scenarios[i].index == data.player.currentScenario) {
+			data.player.scenarios[i].flags = data.player.scenarios[i].flags.replace(name, "");
+		}
+	}
+}
+
+function checkFlag(name) {
+	for (i = 0; i < data.player.scenarios.length; i++) {
+		if (data.player.scenarios[i].index == data.player.currentScenario) {
+			if (data.player.scenarios[i].flags.includes(name) == true) {
+				return true;
+			}
+		}
+	}
+	return false;
 }
 
 //Menu
@@ -1732,6 +1759,14 @@ function changeBody(n) {
 }
 
 //Anomaly Hunter
+function missionSelect() {
+	//If you're reading this, then please link to my patreon post instead of posting the cheats. The release post of v2 already has a list of cheat codes, and is visible to non-patrons
+	var goof = document.getElementById('cheatSubmission').value;
+	goof = goof.toLowerCase();
+	loadScenario(goof);
+	writeText("If you're reading this, reality has crumbled and this agent has been deemed to be unrecoverable. A fireteam is inbound.");
+}
+
 function loadScenario(name) {
 	requestType = "load";
 	var filename = "scenarios/"+name+"/sceneList.js";

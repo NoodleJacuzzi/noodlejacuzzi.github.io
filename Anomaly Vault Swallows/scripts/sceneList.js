@@ -502,6 +502,13 @@ function writeScene(scene) {
 						if (data.player.color.includes('katya') != true && data.player.day > 3) {
 							writeTransition("katyaIntro", "It seems like assistantF wants to ask you something.");
 						}
+						if (data.player.color.includes('promotion') != true && data.player.day > 4) {
+							writeSpeech("assistant", "", "Hey, Mrs. bossL wanted to see you about something. She said it wasn't urgent, but you know how she can get sometimes.");
+							writeTransition("promotion", "Head to bossL's office");
+						}
+						if (data.player.color.includes('interview') != true && data.player.color.includes('promotion') == true) {
+							writeTransition("interview", "Head to your interview");
+						}
 					}
 					switch (data.player.time) {
 						case "Morning": {
@@ -638,7 +645,6 @@ function writeScene(scene) {
 			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/storage.jpg)";
 			writeBackground("scripts/gamefiles/locations/storage.jpg");
 			writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
-			writeTransition("office", "Go back");
 			console.log(data.player.storage);
 			if (data.player.color.includes('storage') != true) {
 				data.player.color += 'storage';
@@ -648,6 +654,7 @@ function writeScene(scene) {
 				writeTransition("storage", "Continue");
 			}
 			else {
+				writeTransition("office", "Go back");
 				writeArtifactMini('logbook');
 				for (storageIndex = 0; storageIndex < artifactArray.length; storageIndex++) {
 					if (data.player.storage.includes(artifactArray[storageIndex].index) == true) {
@@ -695,7 +702,7 @@ function writeScene(scene) {
 			writeBackground("scripts/gamefiles/locations/toolbox.jpg");
 			writeText("<p class='centeredText'>It's currently <b>"+data.player.time+"</b></p>");
 			data.player.artifact1 = "bracelet";
-				document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/toolbox.jpg)";
+			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/toolbox.jpg)";
 			if (data.player.color.includes('toolbox') != true) {
 				data.player.color += 'toolbox';
 				data.player.toolboxCounter = 1;
@@ -1092,7 +1099,7 @@ function writeScene(scene) {
 			writeSpeech("assistant", "", "I was wondering if my sister could stay at your place, just for a little while until she gets her footing.");
 			writeSpeech("player", "", "<i>Another woman living with me could be a pretty good target for some fun...</i>");
 			writeTransition("katyaYes", "No problem");
-			writeTransition("work", "I'll get back to you on that");
+			writeTransition("office", "I'll get back to you on that");
 			break;
 		}
 		case "katyaYes": {
@@ -1104,7 +1111,7 @@ function writeScene(scene) {
 			writeText("She gives you a big hug before pulling out her phone and calling her sister.");
 			writeSpeech("assistant", "", "sisterF! Great news!");
 			writeText("Likewise, you call up roommateF. She gives the okay for assistantF's sister to use the spare room.");
-			writeTransition("work", "Finish");
+			writeTransition("office", "Finish");
 			break;
 		}
 		case "katyaMeeting": {
@@ -1135,7 +1142,7 @@ function writeScene(scene) {
 			writeSpeech("boss","","Just... Just leave. I'll let an agent know you're coming in for a field test. I'll start training your replacement for when you don't come back.");
 			writeSpeech("player","","From the mission?");
 			writeSpeech("boss","","From the interview, now get lost.");
-			writeTransition("work", "Finish");
+			writeTransition("office", "Finish");
 			break;
 		}
 		case "interview": {
@@ -1156,7 +1163,7 @@ function writeScene(scene) {
 			writeText("She's pretty cute, there's a brief moment where you consider having some fun with the bracelet, but for some reason you feel completely exhausted as you take a seat. She offers a glass of water and you can't hold back from drinking it right away.");
 			writeSpeech("agent","","So... You took about two hours, not too shabby. The average is four, but a couple of people have died of exhaustion on the way here.<br>Good job, you passed!");
 			writeSpeech("player","","I... What?");
-			writeSpeech("assistant","","Yep. We use artifacts for testing here. You've got the stamina and the fortitude to survive Class-2s at least. Real quick though...");
+			writeSpeech("agent","","Yep. We use artifacts for testing here. You've got the stamina and the fortitude to survive Class-2s at least. Real quick though...");
 			writeText("There's a soft clicking noise before electricity surges up your arm.");
 			writeSpeech("player","","GHHHK!");
 			writeSpeech("agent","","Yeah, sorry about that. Had to disable any artifact effects on you. Temporary, but they'll get shut off whenever we send you out. If you're gonna be an agent you gotta learn the most important rule; Some artifacts do not play nicely with others. Sweet bracelet by the way.<br>Anyways great job, good luck making it back to your office.");
@@ -1168,7 +1175,7 @@ function writeScene(scene) {
 			writeText("You clutch the small piece of paper with a single word written on it. 'intro'.");
 			writeSpeech("assistant","","Welcome ba-<br>Whoa, what happened to you?");
 			writeText("You're caked in sweat as you make your way back into your office despite what felt like only a few minutes of walking. A quick shower and maybe a nap, and you should be ready to begin your first mission as an artifact retrieval agent, aka an Anomaly Hunter.");
-			writeTransition("work", "Finish");
+			writeTransition("office", "Finish");
 			break;
 		}
 		//Artifacts
@@ -1737,8 +1744,40 @@ function writeScene(scene) {
 			break;
 		}
 		case "logbookResearch": {
-			writeText("You don't have the authority to go through these.");
-			writeText("Still, you're a pretty competent researcher. Maybe management will decide you could be a competent retrieval agent too. who knows?");
+			if (data.player.color.includes('interview') == true) {
+				writeText("The filing cabinet begins to unfurl in every direction before you.");
+				writeTransition("missionSelect", "Request a mission file");
+				writeTransition("logbookPamphlet", "Read the mission log cabinet's file");
+			}
+			else {
+				writeText("You don't have the authority to go through these.");
+				writeText("Still, you're a pretty competent researcher. Maybe management will decide you could be a competent retrieval agent too. who knows?");
+			}
+			writeTransition("storage", "Go back");
+			break;
+		}
+		case "logbookPamphlet": {
+			writeBig("scripts/gamefiles/items/logbook.jpg");
+			writeText("Code Name: Escher Cabinet");
+			writeText("Containment Status: <s>Safe For Use</s> Safe For Use by Authorized Personnel");
+			writeText("An artifact retrieved from a now-defunct business in Manhattan. Current known bodycount: <s>32</s> 33");
+			writeText("When one of the cabinets are opened with the intent to find a specific file, the cabinet will relay all information pertinent to that file including experiences and alternate outcomes of mission logs. Relived experiences are indistinguishable from real life, so the cabinet has been authorized for agent training missions. When opened without specific intent a drawer to a seemingly random set of files is opened. These 'random' contents are to be logged here.");
+			writeText("12/26/XXXX - 7361 issues of Playbook Magazine, the vast majority of which were printed in nonstandard languages. These range from a Hawaiian issue featuring various pacific islanders, to an issue written in binary featuring several models of printers functioning properly or printing without requiring expensive ink cartridges. Status unknown as to whether many of these are meant to be erotic in nature.");
+			writeText("12/27/XXXX - 623 duplicates of artifact files, many of which are highly classified. Censorship and redaction all documents was removed. Security level raised. Artifact research using the cabinet has been halted.");
+			writeText("12/28/XXXX - Several documents believed to be recovered from the Library of Alexandria, still burning. After extinguishing the cabinet was unharmed but the documents were damaged beyond recovery. Age of the artifact was re-tested and the materials have been found to have not aged since the artifact's recovery.");
+			writeText("12/29/XXXX - CLASSIFIED - Agent agentL-32 has been moved to the prison department awaiting a new classification as an artifact. agentL-33 has been promoted to full agent status in her place.");
+			writeText("4/2/XXXX - The body of Matthew Smith, Manhattan lawyer, body perfectly preserved. Believed to have stuffed himself inside the artifact of his own volition prior to the artifact's retrieval, as the cabinet has not been shown to have memetic qualities. Cause of death is starvation, several chewed documents were found alongside the body. Bodycount updated.");
+			writeText("6/12/XXXX - A 600 page manuscript written in first person, heavily suggested to be written by the cabinet itself. In the manuscript it refers to itself as 'Charlie' and is very happy about 'all the new documents' it is fed each day. Many chapters are dedicated to how it hates legal documentation and lawyers. Code-name change pending.");
+			writeTransition("storage", "Go back");
+			break;
+		}
+		case "missionSelect": {
+			document.getElementById('output').innerHTML += `
+				<p class='centeredText'>Warning: Unauthorized use will cause reality to crumble. Agent backups should be created before authorized use.</p>
+				<p class='centeredText'>The piece of paper is labeled 'intro'.</p>
+				<p class='centeredText'>Requested file: <input type="text" id="cheatSubmission" value=""></p>
+				<p class='choiceText' onclick='missionSelect()'>Open the cabinet</p>
+			`;
 			writeTransition("storage", "Go back");
 			break;
 		}
