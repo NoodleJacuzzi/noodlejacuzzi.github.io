@@ -1,5 +1,5 @@
 var scenarioInformation = {index: "intro", author: "Noodle Jacuzzi"};
-
+ 
 function writeScenarioScene(scene) {
 	console.log("Now writing scenario scene ID " + scene);
 	wrapper.scrollTop = 0;
