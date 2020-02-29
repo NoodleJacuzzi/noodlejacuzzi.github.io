@@ -273,6 +273,7 @@ function writeScenarioScene(scene) {
 			writeScenarioTransition("flowerShop", "Finish");
 			addFlag("woman");
 			addFlag("key");
+			console.log(checkFlag("key"));
 			break;
 		}
 		case "mansionEntry": {
@@ -404,8 +405,9 @@ switch (requestType) {
 				data.player.scenarios[i].objectFlags = "";
 			}
 		}
-		if (scenarioCheck = false) {
-			goof = {index: scenarioInformation.index, flags: "", objectFlags: ""};
+		if (scenarioCheck == false) {
+			console.log(scenarioCheck);
+			var goof = {index: scenarioInformation.index, flags: "", objectFlags: ""};
 			data.player.scenarios.push(goof);
 		}
 		data.player.currentScenario = scenarioInformation.index;

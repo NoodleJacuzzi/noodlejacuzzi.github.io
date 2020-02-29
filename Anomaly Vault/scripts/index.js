@@ -834,16 +834,20 @@ function writeImageButton(name, target, img, top, left) {
 }
 
 function addFlag(name) {
+	console.log(data.player.scenarios);
 	for (i = 0; i < data.player.scenarios.length; i++) {
 		if (data.player.scenarios[i].index == data.player.currentScenario) {
+			console.log(data.player.scenarios[i].flags);
 			data.player.scenarios[i].flags += name;
 		}
 	}
 }
 
 function removeFlag(name) {
+	console.log(data.player.scenarios);
 	for (i = 0; i < data.player.scenarios.length; i++) {
 		if (data.player.scenarios[i].index == data.player.currentScenario) {
+			console.log(data.player.scenarios[i].flags);
 			data.player.scenarios[i].flags = data.player.scenarios[i].flags.replace(name, "");
 		}
 	}
