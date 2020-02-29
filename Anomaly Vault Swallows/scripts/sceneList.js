@@ -13,7 +13,7 @@ function writeScene(scene) {
 			writeTransition("startWardrobe", "Change your profile image");
 			writeText("Other notes:");
 			writeText("This game was commissioned via Patreon by <span class = 'switch' onclick='window.location.href=`https://www.patreon.com/swallows999`'>Swallows999</p>");
-			writeText("And I'm supported by my other patrons as well. Thank you to Swallows999, Ben Dover, Joshua Ingram, MrManPerson, Robbie, CaptainMontana, Lasse B, andres mejia, Arthorias28, Badaxe, ChronosEdge, Colin E, Dkells, Dr. Awesome, Jinouga, Judavarius, Lunarghost, Marco Wassmer, Q Q, Scal, Taylor Trout, XxrobothacksxX, Adonnak, Aegil, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Arthur radcliffe, Auckard, AxiosMIles, Blaise Fenn, Bobby Hamilton, Bonelessunknown, bono, brandon, Burin, Carlos, Chaaaanon, Charles Morris, Colin, Damion Moore, David Lange, Debarre Sonny, Devin, Dewr, dhccpmc, Drashin, Dugelle, Ed, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jacob Cannon, Jane, jdktjk205, Jesse Greene, joe, joe, joe mulhall, john smith, Joseph Gibbs, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Noah, Nutburger, Oliver Jones, Philipp, Prodigal211, qwerty, Roy, Ryan Linn, sage, Scumstango, Sebastian Eckel, Shawn, Simon Rencher, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, Ungy Bungy, valdis, Vincent Madaire-Cullen, Wayne culbert, Wei, Wild Bill, Will Osboldstone, William Richardson, Yongdian Guo, Your Husbando, zoobot5, 大基 渡邊, and 凱 陳.");
+			writeText("And I'm supported by my other patrons as well. Thank you to Swallows999, Joshua Ingram, Madgunner, Robbie, CaptainMontana, Lasse B, andres mejia, Ark555, Badaxe, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, FearlessViper26, Filament, G, J_C_L, jack spencer, Jesse Greene, Jinouga, Marc Maldon, Marco Wassmer, maxime, Negativatron, Ramsey Bisher, Scal, Taylor Trout, XxrobothacksxX, Aegil, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arthur radcliffe, AxiosMIles, Bawornnan samart, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Colin, Danny Nguyen, Darrell Goodman, DarthMalak, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Erin Trippet, Grim2011, Guy68691, Gwen Yurick, ItsAllOgreNow, Jane, joe, John Lewis, john smith, Joseph Gibbs, Joshua Melzark, KH dg, lm Carma, Martin Touralack, mazterlith, Monkey, murgatroid99, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, qwerty, Ragoth, Roy, Scumstango, Sebastian Eckel, Shirofang, Simon Rencher, sky, Snaked, stratum, Taurus Travon Rashad Lemar Brackin, Trevor, valdis, Vincent Madaire-Cullen, waazzzup14, Wayne culbert, Wei, Wild Bill, William Richardson, Your Husbando, Z, สิรวิชณ์ อาสว่าง, 凱 陳, and 魏.");
 			writeText("Swallows actually wrote some content for the game, you can unlock his scenes like normal, and he has a special section in the gallery. If you'd like to put your scene in the game, feel free to send it to me.");
 			writeText("You can change your profile image in game by using the wardrobe in your room. You can also cheat in your room if you know a code.");
 			writeText("You can click on the title of a window to close it. For example, if you click 'LOGBOOK' on the left (or bottom on mobile), you can close the new window by clicking anywhere in the 'LOGBOOK' section at the top.");
@@ -2557,7 +2557,7 @@ function writeEvent(scene) {
 			writeSpeech("sister", "", "What the fuck, you left the door open!");
 			writeSpeech("Ashley", "none", "Huh...? I thought I closed it.");
 			writeSpeech("Molly", "none", "Get your head in the game Ash, otherwise you're going to get destroyed tonight.");
-			writeText(" You stand awkwardly in the corner as the girls filter into the living room and up the stairs. Slipping inside the room with the bracelet, you ware essentially invisible; Ashley didn't even notice as you followed right behind her. sisterF opens her bedroom door and the three teens pile onto the bed in front of the television.");
+			writeText(" You stand awkwardly in the corner as the girls filter into the living room and up the stairs. Slipping inside the room with the bracelet, you are essentially invisible; Ashley didn't even notice as you followed right behind her. sisterF opens her bedroom door and the three teens pile onto the bed in front of the television.");
 			writeBig("images/bracelet/katya1-1.gif");
 			writeSpeech("Ashley", "none", "Aw, did you start playing already?");
 			writeSpeech("Molly", "none", "Yup, I forgot to bring my controller so you're playing the winner.");
@@ -2610,6 +2610,7 @@ function writeEvent(scene) {
 			writeBig("images/bracelet/katyaGame6.gif");
 			writeText("Slamming inside as far as you can, you give sisterF a deep creampie, her pussy clenches down, milking you for every drop. She takes a sharp breath, interrupting her labored breathing and her legs quake as she cums. As you pull out, the thick seed oozes out of her, dripping onto the bed. You get up to leave-");
 			writeText("Wait a minute, did she say date?");
+			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.patreon.com/swallows999`'>Swallows999</span>");
 			break;
 		}
 		case "braceletOutdoor1": {
@@ -2681,8 +2682,8 @@ function writeEvent(scene) {
 			writeSpeech("Blonde Woman", "scripts/gamefiles/none.png", "Thank you! That's what I said, but does Michael ever listen to me? Of course not.");
 			writeSpeech("Black Woman", "scripts/gamefiles/none.png", "Ungh! Uh-huh… y-yeah.");
 			writeBig("images/bracelet/outdoor4-2.gif");
-			writeText("It's almost impressive watching the ebony beauty struggle to speak, her wild eyes shifting around her as she searches for the cause of her discomfort. You give it to her hard and fast, railing her tight ass with your throbbing cock, all the while patrons drink and chat around you, as if the erotic scene so completely and utterly normal, it wasn't even worth their attention.");
-			writeSpeech("Blonde Woman", "scripts/gamefiles/none.png", "What about you? How's has the promotion been?");
+			writeText("It's almost impressive watching the ebony beauty struggle to speak, her wild eyes shifting around her as she searches for the cause of her discomfort. You give it to her hard and fast, railing her tight ass with your throbbing cock, all the while patrons drink and chat around you, as if the erotic scene were so completely and utterly normal, it wasn't even worth their attention.");
+			writeSpeech("Blonde Woman", "scripts/gamefiles/none.png", "What about you? How has the promotion been?");
 			writeSpeech("Black Woman", "scripts/gamefiles/none.png", "Ah! Uh, w-well, you know. It's been alright. Hnngh…! J-just a lot of stress, I guess.");
 			writeText("Your hands leave her smooth hips and travel around to her heavy chest, groping her bouncing tits through her skimpy red dress. The blonde bimbo in front of her continues blabbering as if nothing was happening, her friend was getting her tits massaged in front of her while having anal sex and no one in the bar is any the wiser.");
 			writeBig("images/bracelet/outdoor4-3.gif");
@@ -3919,7 +3920,7 @@ function writeEvent(scene) {
 			writeBig("images/sign/signOutdoor1-1.gif");
 			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","Ooh, thank you so much, sir! I won't let you down, cum as much as you like! <br>No! That's not what I... Fuck, I can't deal with this!");
 			writeSpeech("player", "", "You want me to stop? You'll be stuck like this.");
-			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","Faster, faster sir! I want yo feel your c- <br>Ghh, just hurry up already!");
+			writeSpeech("Blonde","scripts/gamefiles/profiles/blonde.jpg","Faster, faster sir! I want to feel your c- <br>Ghh, just hurry up already!");
 			writeText("...");
 			writeBig("images/sign/signOutdoor1-2.gif");
 			writeText("Her face is conflicted, like her mind is under siege to conform to something.");
@@ -4576,6 +4577,7 @@ function checkForEvents() {
 					if (galleryCheck('shadesHome1') == false) {
 						writeFunction("writeEvent('shadesHome1')", "Show off the shades to "+roommateF);
 					}
+					break;
 				}
 				case "sign": {
 					if (galleryCheck('signHome1') == false) {
@@ -4584,6 +4586,7 @@ function checkForEvents() {
 					if (galleryCheck('signOutdoor1') == false) {
 						writeFunction("writeEvent('signOutdoor1')", "Write 'TITFUCK' on the sign.");
 					}
+					break;
 				}
 			}
 			if (data.player.color.includes('katya') == true) {
