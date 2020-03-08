@@ -189,6 +189,11 @@ function writeScene(scene) {
 				<br>Tags: Instant-Loss, Sexual Assault, Dubious Consent
 			`);
 			writeText(`
+				<b>'Free _____!' Sign (IMPLEMENTED)</b>
+				<br>A cardboard rectangle with the text "Free _____" written on it. When a sexual act is written on it, it teleports out of the writer's possession and into the possession of someone the writer finds attractive. That person will then feel compelled to offer their services and provide sexual acts to the viewer in public.
+				<br>Tags: Sluttification, Whoring, Public Sex, Rimjob, Group Sex,
+			`);
+			writeText(`
 				<b>Appreciation Perfume</b>
 				<br>A bottle of scentless purple perfume. When sprayed, whoever inhales the perfume will be 'appreciated' (ie groping, fondling, molestation, etc) by a phantom known as the Lovely Madame. The more often the perfume is inhaled, the more tangible the phantom is.
 				<br>Tags: Molestation, Ghosts, Public Groping
@@ -197,11 +202,6 @@ function writeScene(scene) {
 				<b>CEO Pass</b>
 				<br>An ID card from a fictitious company, whoever holds it will be able to molest / assault women as they please, and the recipient's minds will rationalize it, or even cause them to enjoy the treatment.
 				<br>Tags: Domination, Molestation, Sexual Assault, Dubious Consent
-			`);
-			writeText(`
-				<b>'Free _____!' Sign</b>
-				<br>A cardboard rectangle with the text "Free _____" written on it. When a sexual act is written on it, it teleports out of the writer's possession and into the possession of someone the writer finds attractive. That person will then feel compelled to offer their services and provide sexual acts to the viewer in public.
-				<br>Tags: Sluttification, Whoring, Public Sex, Rimjob, Group Sex,
 			`);
 			writeText(`
 				<b>Vintage Cloth</b>
@@ -248,6 +248,11 @@ function writeScene(scene) {
 				<br>Tags: Sissification, Feminization, Gay(?) Sex
 			`);
 			writeText(`
+				<b>Stiff Voodoo Doll</b>
+				<br>A doll made from straw and twine. When a target's hair is wrapped around the doll, the hair will disintegrate and the target will become unable to move. People around the target will feel compelled to treat the target as a highly-realistic sex toy. The target remains conscious through the entire process, lasting exactly 24 hours before movement is once again possible.
+				<br>Tags: Public Use, Dubious Consent, Mind Break
+			`);
+			writeText(`
 				<b>Pineapple Juice!</b>
 				<br>A container of pineapple juice, the logo on the front is of a woman drinking from an anthropomorphic pineapple who appears to be very happy to be drunk from. Drinking this permanently alters the bodily fluids (except for blood and other essential fluids) to become delicious and highly addictive. 
 				<br>Tags: Semen Drinking, Watersports
@@ -261,11 +266,6 @@ function writeScene(scene) {
 				<b>Ovorbs</b>
 				<br>A pair of small bumpy metal orbs. When swallowed by female subjects the subjects experience a variety of bodily changes and feel compelled to become pregnant, and many of the body changes are to facilitate this.
 				<br>Tags: Body Modification, Sluttification, Creampie
-			`);
-			writeText(`
-				<b>Stiff Voodoo Doll</b>
-				<br>A doll made from straw and twine. When a target's hair is wrapped around the doll, the hair will disintegrate and the target will become unable to move. People around the target will feel compelled to treat the target as a highly-realistic sex toy. The target remains conscious through the entire process, lasting exactly 24 hours before movement is once again possible.
-				<br>Tags: Public Use, Dubious Consent, Mind Break
 			`);
 			writeText(`
 				<b>Denial Pills</b>

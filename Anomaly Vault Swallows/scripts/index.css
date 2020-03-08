@@ -3,7 +3,7 @@ html, body {
 	width: 100%;
 	height: 100%;
 	padding: 0px;
-	margin: 0px;	
+	margin: 0px;
 }
 p {
 	line-height: 1.6;
@@ -183,7 +183,7 @@ p {
 .save {
 	position: absolute;
 	top: 10%;
-	left:30%; 
+	left:30%;
 	width: 60%;
 	height: 80%;
 	background-color: #000000;
@@ -273,7 +273,7 @@ p {
 .inventory {
 	position: absolute;
 	top: 10%;
-	left:30%; 
+	left:30%;
 	width: 60%;
 	height: 80%;
 	background-color: #000000;
@@ -348,7 +348,7 @@ p {
 .self {
 	position: absolute;
 	top: 10%;
-	left:30%; 
+	left:30%;
 	width: 60%;
 	height: 80%;
 	background-color: #000000;
@@ -479,7 +479,7 @@ body{
 html {
     font-family: arial, sans-serif;
     font-sze:16px;
-    font-size: 1rem; /* defined Root font-size */    
+    font-size: 1rem; /* defined Root font-size */
     color: #cccccc; /* defined Root font-color: Off-white */
     line-height: 1.5em;
 }
@@ -694,10 +694,10 @@ p{margin: 15px 0;}
 }
 
 /* text emphysis */
-/* 
+/*
 I'd recommend using <span class="emphysis_title"> instead of <b>.
 Gives more freedom to customize how to emphysize a word/segment and you can create as many emphysises as you please.
-For example 
+For example
 <span class="emp_danger">
 <span class="emp_happy">
 <span class="emp_normal">
@@ -748,7 +748,6 @@ div.self, .inventory,.save {
   	border: 3px solid;
   	border-radius: 5px;
 	padding: 0px;
-	visibility: hidden;
 }
 
 .lb_Name{
@@ -803,18 +802,18 @@ img#selfImage {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #333333; 
+  background: #333333;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #FFFFFF; 
+  background: #FFFFFF;
   border-radius:3px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #DDDDDD; 
+  background: #DDDDDD;
 }
 
 
@@ -863,19 +862,19 @@ div#save {
 }
 
 .saveButton, .deleteButton, .loadButton, .saveFileButton, .loadFileButton {
-    color: #ffffff; 
-    padding: 15px; 
-    margin-left: 15px; 
-    font-size: 1rem; 
+    color: #ffffff;
+    padding: 15px;
+    margin-left: 15px;
+    font-size: 1rem;
     text-align: center;
     width: 120px;
-    border: none; 
+    border: none;
     border-bottom: 3px solid #ffffff;
-    border-radius: 5px; 
-   	cursor: pointer; 
+    border-radius: 5px;
+   	cursor: pointer;
 
 }
- 
+
 .saveSlot {
 padding: 5px 0;
     height: unset;
@@ -957,7 +956,7 @@ position: absolute;
   	border: 5px solid white;
   	border-radius: 20px;
 	color:white;
-	
+
 }
 
 .openButton {
@@ -1021,4 +1020,14 @@ position: absolute;
     border: none;
     opacity: 1;
     border: 5px solid #FFFFFF;
+}
+
+.backdrop{
+	background: rgba(25,25,25,0.85);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	visibility: hidden;
 }

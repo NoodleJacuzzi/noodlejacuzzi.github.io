@@ -399,7 +399,37 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeSpeech("maid","","Ah. Yes, that... sounds like her. If that's the case, I'd suggest seeing her again. I'm not sure that I should be the one to explain that.");
 					writeText("...Explain what...?");
 					writeSpeech("maid","","Never mind. I was going to introduce you two, but if you have met, then that's probably unnecessary. Just ask her how she got lost - it'll make sense after.");
-					writeSpeech("player","","Well... Alright.");
+					writeSpeech("player","","Well... Alright. And that was what you wanted to talk about?");
+					writeText("She pauses.");
+					writeSpeech("maid","","Sort of. We were talking with each other and, to be rather frank about it...");
+					writeText("She leans forward, lowering her voice a bit.");
+					writeSpeech("maid","","We've been friends with benefits for years. However, we've been talking recently about certain... <i>things.</i>");
+					writeSpeech("player","","You have my attention.");
+					writeText("She takes a moment to collect herself, visibly relaxing as she leans forward.");
+					writeSpeech("maid","","Namely that she'd like to spice things up with a cock that <i>isn't</i> made of plastic.");
+					writeSpeech("player","","...and now, you have my erection. But just to be clear - you wanted to talk with me today... about inviting me to a threesome.");
+					writeSpeech("maid","","Yes.");
+					writeSpeech("player","","...Huh. I mean, not what I was expecting, but I'd have to be an idiot to turn that down.");
+					writeText("Her expression brightens.");
+					writeSpeech("maid","","Wonderful! I'll talk to her about it tomorrow. Believe me, you will absolutely <i>adore</i> what she can do with her-");
+					writeSpeech("???","images/cafedark/cafedark.jpg","Two coffees-!");
+					writeText("There's a loud bang as maidF jumps enough for her hips to hit the table, her eyes going wide as the waitress steps towards you both.");
+					writeText("A thick silence reigns for a moment as maidF bites her lip gently.");
+					writeSpeech("???","images/cafedark/cafedark.jpg","...Are you okay?");
+					writeSpeech("maid","","<i><b>Fine, thank you.</b></i>");
+					writeText("Taking a slow, deep breath, maidF collects herself and smiles gently.");
+					writeSpeech("maid","","It's fine, just a bit of bad timing. Not your fault at all.");
+					writeSpeech("???","images/cafedark/cafedark.jpg","...Okay. I'll just leave you to it.");
+					writeText("She moves to help some of the customers closer to the entrance as maidF slowly sighs.");
+					writeSpeech("maid","","I just don't know what she sees in this...");
+					writeText("Shaking her head, she refocuses on you.");
+					writeSpeech("maid",""," I probably could've chosen a better place for this. Either way, we can continue after you talk to mistressF. She's been quite busy lately, though, so I'm not sure when she'll be available.");
+					writeSpeech("player","","Alright, I'll keept that in mind..");
+					writeText("You grab your coffee, sipping at it while you engage maidF in some small talk...");
+					writeText("When you finish talking and drinking, with maidF brooking exactly no argument on who was paying, you lean back a bit.");
+					writeText("Everything seems fine, though your eyes do drift a bit to the waitress...");
+					writeFunction("changeLocation(data.player.location)", "Finish up and leave");
+					writeFunction("writeEncounter('maid4a')", "Admire her a little bit");
 				}
 				else if(checkTrust('mistress') == 41 || checkTrust('mistress') == 43){
 					setTrust('mistress',45);
@@ -995,7 +1025,10 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("maid","","Shit. You're big enough to do porn.");
 			writeText("She pauses.");
 			writeSpeech("maid","","Actually, <i>do</i> you do porn? Because I'm imagining eating out my boss under the desk while she watches a video of you fucking someone. It's... pretty hot.");
-			writeSpeech("player","","I can't say that I've ever done it. But we could record this, I guess? I have my phone.");
+			if(checkFlag('starlet','porn'))
+				writeSpeech("player","","I've actually done a couple amateur scenes before. If you want, we <i>could</i> record this with my phone.");
+			else
+				writeSpeech("player","","I can't say that I've ever done it. But we could record this, I guess? I have my phone.");
 			writeText("She flinches back, now scowling.");
 			writeSpeech("maid","","Whoa, hold up. Do I seriously look like the kind of girl who'd let you record her?");
 			writeSpeech("player","","...It's only natural?");
@@ -1023,7 +1056,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("maid","","Thinking of you, babe~!");
 			writeText("Her spit-slick tits shift around your length, her shoulders wiggling as she shakes her whole body.");
 			writeText("After a few seconds, she presses herself entirely against you, rubbing her breasts up and down your crotch as your head pokes out of and into her cleavage.");
-			if(data.player.gender == "Man")
+			if(data.player.gender == "man")
 				writeSpeech("maid","","Don't forget to moan for the audience, sir.");
 			else
 				writeSpeech("maid","","Don't forget to moan for the audience, miss.");
@@ -1189,7 +1222,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("It's not perfect, but it's a valiant effort, so...");
 			writeSpeech("player","","You are just the <i>perfect little <b>sex-toy,</b></i> aren't you maidF?");
 			writeText("That pushes her over, completely making her lose control as she raises her hips and her legs press sharply against the bed.");
-			writeSpeech("player","","God, you're such a whore for a bit of praise. I bet you get whenever someone compliments you, don't you?");
+			writeSpeech("player","","God, you're such a whore for a bit of praise. I bet you get wet whenever someone compliments you, don't you?");
 			writeText("You dig your fingers into her thighs, squeezing tightly as you fuck her savagely.");
 			writeSpeech("player","","I'd bet that all I'd have to do to make you cum <i>anywhere</i> is just say something nice about you.");
 			writeText("You can feel yourself getting closer, getting ready to cum, so you decide to really drive it home.");

@@ -66,79 +66,83 @@
 				<p id="logButton" class="switch" onclick="selfButton()" style="color:white">Artifact 1:<br><span id ="playerArtifact1Mobile"></span></p>
 				<p id="logButton" class="switch" onclick="selfButton()" style="color:white">Artifact 2:<br><span id ="playerArtifact2Mobile"></span></p>
 			</div>
-			<div id = "save" class = "popup save">
-				<h1 class = "windowTitle" onclick="saveButton()">SAVE/LOAD</h1>
-				<div class="saveList">
-					<div class = "saveSlot">
-						<p id = "save151Name" class = "saveName">Slot 1</p>
-						<p id = "save151Date" class = "saveDate">Jan 9th, 8:31</p>
-						<p id = "load151Button" class = "loadButton button" onclick = "loadSlot(151)"></p>
-						<p id = "delete151Button" class = "deleteButton button" onclick = "deleteSlot(151)"></p>
-						<p id = "save151Button" class = "saveButton button" onclick = "saveSlot(151)">SAVE</p>
-					</div>
-					<div class = "saveSlot">
-						<p id = "save152Name" class = "saveName">Slot 2</p>
-						<p id = "save152Date" class = "saveDate"></p>
-						<p id = "load152Button" class = "loadButton button" onclick = "loadSlot(152)"></p>
-						<p id = "delete152Button" class = "deleteButton button" onclick = "deleteSlot(152)"></p>
-						<p id = "save152Button" class = "saveButton button" onclick = "saveSlot(152)">SAVE</p>
-					</div>
-					<div class = "saveSlot">
-						<p id = "save153Name" class = "saveName">Slot 3</p>
-						<p id = "save153Date" class = "saveDate"></p>
-						<p id = "load153Button" class = "loadButton button" onclick = "loadSlot(153)"></p>
-						<p id = "delete153Button" class = "deleteButton button" onclick = "deleteSlot(153)"></p>
-						<p id = "save153Button" class = "saveButton button" onclick = "saveSlot(153)">SAVE</p>
-					</div>
-					<div class = "saveSlot">
-						<p id = "save154Name" class = "saveName">Slot 4</p>
-						<p id = "save154Date" class = "saveDate"></p>
-						<p id = "load154Button" class = "loadButton button" onclick = "loadSlot(154)"></p>
-						<p id = "delete154Button" class = "deleteButton button" onclick = "deleteSlot(154)"></p>
-						<p id = "save154Button" class = "saveButton button" onclick = "saveSlot(154)">SAVE</p>
-					</div>
-					<div class = "saveSlot">
-						<p id = "save155Name" class = "saveName">Slot 5</p>
-						<p id = "save155Date" class = "saveDate"></p>
-						<p id = "load155Button" class = "loadButton button" onclick = "loadSlot(155)"></p>
-						<p id = "delete155Button" class = "deleteButton button" onclick = "deleteSlot(155)"></p>
-						<p id = "save155Button" class = "saveButton button" onclick = "saveSlot(155)">SAVE</p>
-					</div>
-					<div class = "saveSlot">
-						<p id = "save156Name" class = "saveName">Slot 6</p>
-						<p id = "save156Date" class = "saveDate"></p>
-						<p id = "load156Button" class = "loadButton button" onclick = "loadSlot(156)"></p>
-						<p id = "delete156Button" class = "deleteButton button" onclick = "deleteSlot(156)"></p>
-						<p id = "save156Button" class = "saveButton button" onclick = "saveSlot(156)">SAVE</p>
-					</div>
-					<div class = "saveSlot">
-						<p id = "save157Name" class = "saveName">Slot 7</p>
-						<p id = "save157Date" class = "saveDate"></p>
-						<p id = "load157Button" class = "loadButton button" onclick = "loadSlot(157)"></p>
-						<p id = "delete157Button" class = "deleteButton button" onclick = "deleteSlot(157)"></p>
-						<p id = "save157Button" class = "saveButton button" onclick = "saveSlot(157)">SAVE</p>
-					</div>
-					<div class = "saveSlot">
-						<p id = "save158Name" class = "saveName">Slot 8</p>
-						<p id = "save158Date" class = "saveDate"></p>
-						<p id = "load158Button" class = "loadButton button" onclick = "loadSlot(158)"></p>
-						<p id = "delete158Button" class = "deleteButton button" onclick = "deleteSlot(158)"></p>
-						<p id = "save158Button" class = "saveButton button" onclick = "saveSlot(158)">SAVE</p>
-					</div>
-					<div class = "saveSlot">
-						<p id = "save159Name" class = "saveName"></p>
-						<p id = "save159Date" class = "saveDate"></p>
-						<p id = "load159Button" class = "loadFileButton" onclick = "loadFile()">Load from text string</p>
-						<p id = "delete159Button" class = "deleteButton button" onclick = "deleteSlot(9)"></p>
-						<p id = "save159Button" class = "saveFileButton" onclick = "saveFile()">Save to text string</p>
+			<div id = "save" class = "backdrop" onclick="saveButton()">
+				<div class = "popup save" onclick="event.stopPropagation()">
+					<h1 class = "windowTitle" onclick="saveButton()">SAVE/LOAD</h1>
+					<div class="saveList">
+						<div class = "saveSlot">
+							<p id = "save151Name" class = "saveName">Slot 1</p>
+							<p id = "save151Date" class = "saveDate">Jan 9th, 8:31</p>
+							<p id = "load151Button" class = "loadButton button" onclick = "loadSlot(151)"></p>
+							<p id = "delete151Button" class = "deleteButton button" onclick = "deleteSlot(151)"></p>
+							<p id = "save151Button" class = "saveButton button" onclick = "saveSlot(151)">SAVE</p>
+						</div>
+						<div class = "saveSlot">
+							<p id = "save152Name" class = "saveName">Slot 2</p>
+							<p id = "save152Date" class = "saveDate"></p>
+							<p id = "load152Button" class = "loadButton button" onclick = "loadSlot(152)"></p>
+							<p id = "delete152Button" class = "deleteButton button" onclick = "deleteSlot(152)"></p>
+							<p id = "save152Button" class = "saveButton button" onclick = "saveSlot(152)">SAVE</p>
+						</div>
+						<div class = "saveSlot">
+							<p id = "save153Name" class = "saveName">Slot 3</p>
+							<p id = "save153Date" class = "saveDate"></p>
+							<p id = "load153Button" class = "loadButton button" onclick = "loadSlot(153)"></p>
+							<p id = "delete153Button" class = "deleteButton button" onclick = "deleteSlot(153)"></p>
+							<p id = "save153Button" class = "saveButton button" onclick = "saveSlot(153)">SAVE</p>
+						</div>
+						<div class = "saveSlot">
+							<p id = "save154Name" class = "saveName">Slot 4</p>
+							<p id = "save154Date" class = "saveDate"></p>
+							<p id = "load154Button" class = "loadButton button" onclick = "loadSlot(154)"></p>
+							<p id = "delete154Button" class = "deleteButton button" onclick = "deleteSlot(154)"></p>
+							<p id = "save154Button" class = "saveButton button" onclick = "saveSlot(154)">SAVE</p>
+						</div>
+						<div class = "saveSlot">
+							<p id = "save155Name" class = "saveName">Slot 5</p>
+							<p id = "save155Date" class = "saveDate"></p>
+							<p id = "load155Button" class = "loadButton button" onclick = "loadSlot(155)"></p>
+							<p id = "delete155Button" class = "deleteButton button" onclick = "deleteSlot(155)"></p>
+							<p id = "save155Button" class = "saveButton button" onclick = "saveSlot(155)">SAVE</p>
+						</div>
+						<div class = "saveSlot">
+							<p id = "save156Name" class = "saveName">Slot 6</p>
+							<p id = "save156Date" class = "saveDate"></p>
+							<p id = "load156Button" class = "loadButton button" onclick = "loadSlot(156)"></p>
+							<p id = "delete156Button" class = "deleteButton button" onclick = "deleteSlot(156)"></p>
+							<p id = "save156Button" class = "saveButton button" onclick = "saveSlot(156)">SAVE</p>
+						</div>
+						<div class = "saveSlot">
+							<p id = "save157Name" class = "saveName">Slot 7</p>
+							<p id = "save157Date" class = "saveDate"></p>
+							<p id = "load157Button" class = "loadButton button" onclick = "loadSlot(157)"></p>
+							<p id = "delete157Button" class = "deleteButton button" onclick = "deleteSlot(157)"></p>
+							<p id = "save157Button" class = "saveButton button" onclick = "saveSlot(157)">SAVE</p>
+						</div>
+						<div class = "saveSlot">
+							<p id = "save158Name" class = "saveName">Slot 8</p>
+							<p id = "save158Date" class = "saveDate"></p>
+							<p id = "load158Button" class = "loadButton button" onclick = "loadSlot(158)"></p>
+							<p id = "delete158Button" class = "deleteButton button" onclick = "deleteSlot(158)"></p>
+							<p id = "save158Button" class = "saveButton button" onclick = "saveSlot(158)">SAVE</p>
+						</div>
+						<div class = "saveSlot">
+							<p id = "save159Name" class = "saveName"></p>
+							<p id = "save159Date" class = "saveDate"></p>
+							<p id = "load159Button" class = "loadFileButton" onclick = "loadFile()">Load from text string</p>
+							<p id = "delete159Button" class = "deleteButton button" onclick = "deleteSlot(9)"></p>
+							<p id = "save159Button" class = "saveFileButton" onclick = "saveFile()">Save to text string</p>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div id = "self" class = "self popup">
-				<h1 class = "windowTitle" onclick="selfButton()">LOGBOOK</h1>
-				<div class = "logbookLeft" id = "logbookLeft">
-				</div>
-				<div class = "logbookRight" id = "logbookRight">
+			<div id = "self" class = "backdrop" onclick="selfButton()">
+				<div class = "self popup" onclick="event.stopPropagation()">
+					<h1 class = "windowTitle" onclick="selfButton()">LOGBOOK</h1>
+					<div class = "logbookLeft" id = "logbookLeft">
+					</div>
+					<div class = "logbookRight" id = "logbookRight">
+					</div>
 				</div>
 			</div>
 		</div>
