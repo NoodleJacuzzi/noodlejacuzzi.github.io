@@ -148,6 +148,8 @@ var galleryArray = [
 	{index: "nymphResearch2", dark: true, girl: "crypto", name: "Nymph Mirror - Lost to Lust", hint: ""},
 	//Domino Playlist Events
 	{index: "playlistResearch1", dark: true, girl: "", name: "Domino PMV - SISSY JOI HYPNO 1 - WEEB TRASH", hint: ""},
+	//ErotiVHS Player events
+	{index: "vhsResearch1", dark: true, girl: "", name: "ErotiVHS - Enjo Kouhai Crossbreeding Assistance, Elven Princess Episode 2", hint: ""},
 ]
 
 var logbookArray = [
@@ -235,7 +237,8 @@ var artifactArray = [
 	{index: "toolkit", dark: true, equipable: false, title: "Sissy's Toolkit", desc: "A plastic makeup kit. When opened, objects will appear inside and in the room which are designed to encourage the opener to 'explore themselves'. These range from makeup to unknown body-modifying drugs and a 3-man group of naked men. ", desc2: "", glasses: "An image comes to mind of a group of beauticians, happily enjoying their work making people look beautiful. Though they clearly have passion and excitement for what they do, they wish more customers would arrive soon."},
 	{index: "dust", dark: true, equipable: false, title: "Bimbo Dust", desc: "A bag full of an off-white powder. It has been tested, and is not cocaine. It has a powerful intelligence-draining and mild body-altering affect on anyone who inhales it. affecting women much faster than men.", desc2: "", glasses: "Through the glasses an image comes to mind of cocaine. But, it's like, totally sure that it isn't cocaine!"},
 	{index: "nymph", dark: true, equipable: false, title: "Nymph Mirror", desc: "A mirror with a sculpture of a young woman on the side. The reflection shows a beautiful naked woman in the glass rather than the user, though the appearance of the woman changes between uses. Staring deeply into it for prolonged periods of time causes the viewer's body to change to match the reflection.", desc2: "", glasses: "An image comes to mind of a pushy friend who wants you to be as drunk as they are, uncaring if you actually want to drink or not."},
-	{index: "playlist", dark: true, equipable: false, title: "Domino PMV", desc: "A 'porn music video', a compilation of erotic scenes accompanied by sound and captions. Somehow, the material has a great deal more effect on a person's psyche than is normal. Videos from the series are to be reported immediately, as they are not safe for viewing by the general public.", desc2: "", glasses: "An image comes to mind as you look at the thumb-drive containing the files of a musician with a demonic muse on his shoulder. The musician is desperate to improve his craft, no matter what unnatural methods he uses.."},
+	{index: "playlist", dark: true, equipable: false, title: "Domino PMV", desc: "A 'porn music video', a compilation of erotic scenes accompanied by sound and captions. Somehow, the material has a great deal more effect on a person's psyche than is normal. Videos from the series are to be reported immediately, as they are not safe for viewing by the general public.", desc2: "", glasses: "An image comes to mind as you look at the thumb-drive containing the files of a musician with a demonic muse on his shoulder. The musician is desperate to improve his craft, no matter what unnatural methods he uses."},
+	{index: "vhs", dark: true, equipable: false, title: "ErotiVHS Player", desc: "A VHS player retrieved alongside the Erotibox, only plays tapes with 2-dimensional pornographic material on them. Has the uncanny ability to pull the viewer into the world depicted in the tape, but not as the dominant party.", desc2: "", glasses: "An image comes to mind of a voyeur watching through a window as you help yourself to forbidden fruit."},
 ];
 
 var artifactMiniArray = [ //Used for smaller artifacts such as prison and toolbox department
@@ -439,8 +442,10 @@ function writeSpeech (name, img, text) {
 		img = "scripts/gamefiles/none.png";
 	}
 	if (name == "player") {
+		if (img == "scripts/gamefiles/profiles/"+name+".jpg") {
+			img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
+		}
 		name = data.player.fName;
-		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
 		var color = "#c40909"
 		switch (data.player.character) {
 			case "serum":
@@ -909,6 +914,54 @@ function signTrigger() {
 	if (wordlist.includes(goof) == true) {
 		desiredScene = "signFailureUnfinished";
 	}
+	wordlist = "nudes";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureUnfinished";
+	}
+	wordlist = "footjobs / feet";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureUnfinished";
+	}
+	wordlist = "assjobs / hotdogging";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureUnfinished";
+	}
+	wordlist = "toilet / pisswhore";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureUnfinished";
+	}
+	wordlist = "to a good home";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureUnfinished";
+	}
+	wordlist = "orgy / group";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureUnfinished";
+	}
+	wordlist = "girlfriend / slaves / wife / wives / servant";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureSlave";
+	}
+	wordlist = "knife / blood / murder / gunshots / guns / stabbing / death";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureGore";
+	}
+	wordlist = "catgirl / neko / kitten / doggy / puppy / doggirl / bitch / cowgirl / horsegirl / expansion / growth / shrinking / giant / small / transformation / alteration / bodymod / sissyfication / feminization";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureTF";
+	}
+	wordlist = "food / sandwiches / milk / drink";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureFood";
+	}
+	wordlist = "hong kong / hongkong / tibet";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureProtest";
+	}
+	wordlist = "hug";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureHug";
+	}
 	wordlist = "rimjobs asslicks asslicking analingus";
 	if (wordlist.includes(goof) == true) {
 		desiredScene = "signHome1";
@@ -936,54 +989,6 @@ function signTrigger() {
 	wordlist = "titfucks / titjobs / titfuckings / boobjobs / boobfucks / boobfuckings";
 	if (wordlist.includes(goof) == true) {
 		desiredScene = "signOutdoor1";
-	}
-	wordlist = "nudes";
-	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
-	}
-	wordlist = "footjobs / feet";
-	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
-	}
-	wordlist = "assjobs / hotdogging";
-	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
-	}
-	wordlist = "toilet / pisswhore";
-	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
-	}
-	wordlist = "to a good home";
-	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
-	}
-	wordlist = "orgy / group";
-	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
-	}
-	wordlist = "girlfriend / slave / wife / servant";
-	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureSlave";
-	}
-	wordlist = "knife / blood / murder / gunshots / guns / stabbing / death";
-	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureGore";
-	}
-	wordlist = "catgirl / neko / kitten / doggy / puppy / doggirl / bitch / cowgirl / horsegirl / expansion / growth / shrinking / giant / small / transformation / alteration / bodymod / sissyfication / feminization";
-	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureTF";
-	}
-	wordlist = "food / sandwiches / milk / drink";
-	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureFood";
-	}
-	wordlist = "hong kong / hongkong / tibet";
-	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureProtest";
-	}
-	wordlist = "hug";
-	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureHug";
 	}
 	writeEvent(desiredScene);
 }
