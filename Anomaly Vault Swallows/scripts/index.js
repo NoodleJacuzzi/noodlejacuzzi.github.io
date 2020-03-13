@@ -63,10 +63,13 @@ var galleryArray = [
 	{index: "braceletDream1", dark: false, girl: "", name: "Bracelet's Fate", hint: "Assistant event"},
 	//Erotibox Events
 	{index: "erotiboxResearch1", dark: false, girl: "", name: "Demo Reel - Sex Tape", hint: ""},
+	{index: "erotiboxResearch2", dark: false, girl: "assistant", name: "Taser - Slut Shocker", hint: ""},
 	{index: "erotiboxResearch3", dark: false, girl: "", name: "Mona Lisa - Work of Art", hint: ""},
 	{index: "erotiboxResearch4", dark: false, girl: "", name: "Chessboard - Curseboard", hint: ""},
 	{index: "erotiboxResearch5", dark: false, girl: "", name: "$20 - Stripper Money", hint: ""},
 	{index: "erotiboxResearch6", dark: false, girl: "", name: "Water Bottle - Aphrodisiac Drink", hint: ""},
+	{index: "erotiboxResearch7", dark: false, girl: "assistant", name: "Flower - Squirt Inducer", hint: ""},
+	{index: "erotiboxResearch9", dark: false, girl: "assistant", name: "Alcoholic Drink - 'Sex on the Bar'", hint: ""},
 	{index: "erotiboxResearch8", dark: false, girl: "assistant", name: "Assistant - Sex Fiend", hint: ""},
 	//Antique Mirror Events
 	{index: "mirrorResearch1-1", dark: false, girl: "", name: "Gender Dynamics - First Research", hint: ""},
@@ -115,6 +118,10 @@ var galleryArray = [
 	//Free ___ Sign Events
 	{index: "signResearch1", dark: false, girl: "", name: "FREE HUGS", hint: ""},
 	{index: "signHome1", dark: false, girl: "roommategirlfriend", name: "FREE RIMJOBS", hint: ""},
+	{index: "signHome2", dark: false, girl: "", name: "", hint: "FREE CREAMPIES"},
+	{index: "signHome3", dark: false, girl: "", name: "", hint: "FREE BLOWJOBS"},
+	{index: "signHome4", dark: false, girl: "", name: "", hint: "FREE SEX"},
+	{index: "signHome6", dark: false, girl: "", name: "", hint: "FREE ANAL"},
 	{index: "signOutdoor1", dark: false, girl: "", name: "FREE TITFUCK", hint: ""},
 	{index: "signDream1", dark: false, girl: "agent", name: "FREE DREAMS", hint: ""},
 	//Exchange Gas Events
@@ -139,6 +146,8 @@ var galleryArray = [
 	//Nymph Mirror Events
 	{index: "nymphResearch1", dark: true, girl: "crypto", name: "Nymph Mirror - Nymphomania", hint: ""},
 	{index: "nymphResearch2", dark: true, girl: "crypto", name: "Nymph Mirror - Lost to Lust", hint: ""},
+	//Domino Playlist Events
+	{index: "playlistResearch1", dark: true, girl: "", name: "Domino PMV - SISSY JOI HYPNO 1 - WEEB TRASH", hint: ""},
 ]
 
 var logbookArray = [
@@ -211,21 +220,22 @@ var logbookArray = [
 ];
 
 var artifactArray = [
-	{index: "bracelet", dark: false, equipable: false, title: "Reprehensive Bracelet", desc: "A partially tarnished silver bracelet.", desc2: "When worn, the wearer can become imperceivable and erase memories of themselves & their actions."},
-	{index: "erotibox", dark: false, equipable: false, title: "Erotibox", desc: "A shabby wooden crate large enough to fit a person inside. <br>Anything put inside the box will become an erotic version of itself.", desc2: ""},
-	{index: "mirror", dark: false, equipable: false, title: "Antique Mirror", desc: "An antique mirror dating back to the Victorian era. If a person stares into the eyes of their own reflection long enough, they will 'switch places' with an alternate reality version of themselves.<br>In these alternate realities social norms and the physical body of the person switched with can all be completely different.", desc2: ""},
-	{index: "stopwatch", dark: false, equipable: true, title: "Time Stopwatch", desc: "A bronze stopwatch which appears at first glance to be broken, as the second hand jumps backwards every second.", desc2: "When the button at the top is pressed, the clock begins to record the time as normal but time stops for everyone except person holding the watch."},
-	{index: "coin", dark: false, equipable: true, title: "Midas Coin", desc: "A single gold coin with an inscription on the back written in Ancient Greek.", desc2: "When held, sexual activities performed by the holder will be 'normalized', and not perceived to be socially outrageous no matter how depraved the action. In addition, sexual acts will be seen to have 'value', meaning that the holder can exchange sexual acts as though they had a cash value."},
-	{index: "serum", dark: false, equipable: true, title: "Truth Serum", desc: "A set of vials of green, minty liquid.", desc2: "When drunk, everything you say becomes the 'truth'. Not in the reality warping way, but in that everyone around you will believe whatever you say."},
-	{index: "shades", dark: false, equipable: true, title: "Chaddicus Shades", desc: "A pair of aviator sunglasses which, when worn, increase the wearer's confidence by several dozen degrees.", desc2: "Nearby women tend to become irritable and argue with the wearer, at which point some mysterious process causes the argument to almost immediately devolve into sex, with the wearer as the dominant partner."},
-	{index: "sign", dark: false, equipable: true, title: "Free ___ Sign", desc: "A piece of torn cardboard with the words 'FREE ___'.", desc2: "When an action is written in the blank space, the sign will vanish and appear in the hands of someone the user finds attractive and compels them to freely offer the written action."},
-	{index: "gas", dark: true, equipable: false, title: "Exchange Gas", desc: "Several aerosol gas containers. Subjects who inhale the gas experience a process called 'gender-swapping'. In most cases the process is temporary.", desc2: ""},
-	{index: "gummy", dark: true, equipable: false, title: "Gummy Dicks", desc: "A package of several erect dicks seemingly made from the same candy as gummy bears. A fluid inside feminizes men, preventing erections and increasing both prostate size & sensitivity. Effects not permanent unless used repeatedly.", desc2: ""},
-	{index: "onahole", dark: true, equipable: false, title: "Succubus Onahole", desc: "A fleshlight or 'onahole' made from an unknown material. Known to cause extreme euphoria when male genetalia is inserted, subjects state tendrils inside 'probed' them. Afterwards, subjects showed an extreme increase in semen production.", desc2: ""},
-	{index: "cage", dark: true, equipable: false, title: "Punification Cage", desc: "A plastic pink chastity cage. Wearing it almost immediately triggers a powerful orgasm, but in all cases resulted in an extreme decrease in genital size.", desc2: ""},
-	{index: "toolkit", dark: true, equipable: false, title: "Sissy's Toolkit", desc: "A plastic makeup kit. When opened, objects will appear inside and in the room which are designed to encourage the opener to 'explore themselves'. These range from makeup to unknown body-modifying drugs and a 3-man group of naked men. ", desc2: ""},
-	{index: "dust", dark: true, equipable: false, title: "Bimbo Dust", desc: "A bag full of an off-white powder. It has been tested, and is not cocaine. It has a powerful intelligence-draining and mild body-altering affect on anyone who inhales it. affecting women much faster than men.", desc2: ""},
-	{index: "nymph", dark: true, equipable: false, title: "Nymph Mirror", desc: "A mirror with a sculpture of a young woman on the side. The reflection shows a beautiful naked woman in the glass rather than the user, though the appearance of the woman changes between uses. Staring deeply into it for prolonged periods of time causes the viewer's body to change to match the reflection.", desc2: ""},
+	{index: "bracelet", dark: false, equipable: false, title: "Reprehensive Bracelet", desc: "A partially tarnished silver bracelet.", desc2: "When worn, the wearer can become imperceivable and erase memories of themselves & their actions.", glasses: "As you look at the bracelet on your arm, visions of an old, weary knight appear. He cares not for who or why he fights, only that he defends his charge until the end of days."},
+	{index: "erotibox", dark: false, equipable: false, title: "Erotibox", desc: "A shabby wooden crate large enough to fit a person inside. <br>Anything put inside the box will become an erotic version of itself.", desc2: "", glasses: "The box calls to mind a virus, small and microscopic. It spreads through bodies and minds to unaware passersby. Now, even under careful watch, all it hopes to do is spread endlessly."},
+	{index: "mirror", dark: false, equipable: false, title: "Antique Mirror", desc: "An antique mirror dating back to the Victorian era. If a person stares into the eyes of their own reflection long enough, they will 'switch places' with an alternate reality version of themselves.<br>In these alternate realities social norms and the physical body of the person switched with can all be completely different.", desc2: "", glasses: "As you look at the mirror through the glasses, you see a long hallway filled with doors. Each doorway is decorated differently, but many are smashed apart or vandalized. "},
+	{index: "stopwatch", dark: false, equipable: true, title: "Time Stopwatch", desc: "A bronze stopwatch which appears at first glance to be broken, as the second hand jumps backwards every second.", desc2: "When the button at the top is pressed, the clock begins to record the time as normal but time stops for everyone except person holding the watch.", glasses: "As you look at the watch an image of a shady businessman comes to mind. Though his customers think they're getting a great deal, the salesman is the one who truly comes out better in the long run."},
+	{index: "coin", dark: false, equipable: true, title: "Midas Coin", desc: "A single gold coin with an inscription on the back written in Ancient Greek.", desc2: "When held, sexual activities performed by the holder will be 'normalized', and not perceived to be socially outrageous no matter how depraved the action. In addition, sexual acts will be seen to have 'value', meaning that the holder can exchange sexual acts as though they had a cash value.", glasses: "As you look at the coin the image comes to mind of a genie, trapped in a lamp. He grants wishes, but his desire is for a human to appear, greedy and foolish enough to free him from his cage."},
+	{index: "serum", dark: false, equipable: true, title: "Truth Serum", desc: "A set of vials of green, minty liquid.", desc2: "When drunk, everything you say becomes the 'truth'. Not in the reality warping way, but in that everyone around you will believe whatever you say.", glasses: "As you look at the bottles a set of potted plastic plants come to mind. Totally inanimate, they have no will or drive of their own, but they were obviously crafted with great care."},
+	{index: "shades", dark: false, equipable: true, title: "Chaddicus Shades", desc: "A pair of aviator sunglasses which, when worn, increase the wearer's confidence by several dozen degrees.", desc2: "Nearby women tend to become irritable and argue with the wearer, at which point some mysterious process causes the argument to almost immediately devolve into sex, with the wearer as the dominant partner.", glasses: "The shades call to mind a very fit man on a beach. Though attractive, it's clear from his demeanor that he's cocky and arrogant."},
+	{index: "sign", dark: false, equipable: true, title: "Free ___ Sign", desc: "A piece of torn cardboard with the words 'FREE ___'.", desc2: "When an action is written in the blank space, the sign will vanish and appear in the hands of someone the user finds attractive and compels them to freely offer the written action.", glasses: "As you look at the sign a small abused puppy comes to mind. He's hurt and easily frightened, but he's overjoyed at finally having a good home."},
+	{index: "gas", dark: true, equipable: false, title: "Exchange Gas", desc: "Several aerosol gas containers. Subjects who inhale the gas experience a process called 'gender-swapping'. In most cases the process is temporary.", desc2: "", glasses: "An image comes to mind of a weaponsmith, carefully crafting and tuning his blades, but for what purpose?"},
+	{index: "gummy", dark: true, equipable: false, title: "Gummy Dicks", desc: "A package of several erect dicks seemingly made from the same candy as gummy bears. A fluid inside feminizes men, preventing erections and increasing both prostate size & sensitivity. Effects not permanent unless used repeatedly.", desc2: "", glasses: "An image comes to mind of a woman in punk attire, gleefully smashing things with a bat. It isn't out of anger or malice, she just likes smashing stuff."},
+	{index: "onahole", dark: true, equipable: false, title: "Succubus Onahole", desc: "A fleshlight or 'onahole' made from an unknown material. Known to cause extreme euphoria when male genetalia is inserted, subjects state tendrils inside 'probed' them. Afterwards, subjects showed an extreme increase in semen production.", desc2: "", glasses: "As you look at the onahole, you see a woman laying seductively before you. She seems almost aware of your presence and beckons you forward, tempting you to ignore the spiked handcuffs and collar in her hands."},
+	{index: "cage", dark: true, equipable: false, title: "Punification Cage", desc: "A plastic pink chastity cage. Wearing it almost immediately triggers a powerful orgasm, but in all cases resulted in an extreme decrease in genital size.", desc2: "", glasses: "An image comes to mind of a older looking woman with a pair of sharp heels. You get the impression she enjoys inflicting pleasure with them, no matter what happens to whoever she's tormenting."},
+	{index: "toolkit", dark: true, equipable: false, title: "Sissy's Toolkit", desc: "A plastic makeup kit. When opened, objects will appear inside and in the room which are designed to encourage the opener to 'explore themselves'. These range from makeup to unknown body-modifying drugs and a 3-man group of naked men. ", desc2: "", glasses: "An image comes to mind of a group of beauticians, happily enjoying their work making people look beautiful. Though they clearly have passion and excitement for what they do, they wish more customers would arrive soon."},
+	{index: "dust", dark: true, equipable: false, title: "Bimbo Dust", desc: "A bag full of an off-white powder. It has been tested, and is not cocaine. It has a powerful intelligence-draining and mild body-altering affect on anyone who inhales it. affecting women much faster than men.", desc2: "", glasses: "Through the glasses an image comes to mind of cocaine. But, it's like, totally sure that it isn't cocaine!"},
+	{index: "nymph", dark: true, equipable: false, title: "Nymph Mirror", desc: "A mirror with a sculpture of a young woman on the side. The reflection shows a beautiful naked woman in the glass rather than the user, though the appearance of the woman changes between uses. Staring deeply into it for prolonged periods of time causes the viewer's body to change to match the reflection.", desc2: "", glasses: "An image comes to mind of a pushy friend who wants you to be as drunk as they are, uncaring if you actually want to drink or not."},
+	{index: "playlist", dark: true, equipable: false, title: "Domino PMV", desc: "A 'porn music video', a compilation of erotic scenes accompanied by sound and captions. Somehow, the material has a great deal more effect on a person's psyche than is normal. Videos from the series are to be reported immediately, as they are not safe for viewing by the general public.", desc2: "", glasses: "An image comes to mind as you look at the thumb-drive containing the files of a musician with a demonic muse on his shoulder. The musician is desperate to improve his craft, no matter what unnatural methods he uses.."},
 ];
 
 var artifactMiniArray = [ //Used for smaller artifacts such as prison and toolbox department
@@ -238,6 +248,7 @@ var artifactMiniArray = [ //Used for smaller artifacts such as prison and toolbo
 	{index: "lamp", type: "artifact", title: "Fashionista's Lamp", desc: "An exotic-looking lamp originating from an unknown European region.", desc2: "When a subject closes their eyes with in the lamp's glow, images of clothes and bodies specific to the user's psyche begin to fill their mind. If the user finds one pleasing, then when they open their eyes next their appearance will change to match whatever they were thinking of. "},
 	{index: "commercials", type: "artifact", title: "Alternate-Universe Commercials", desc: "A box of VHS tapes that materialized from another universe.", desc2: "Multiple security checks have been performed on them since one appears to be an advertisement for the Anomaly Vault, but research has found them to be harmless. Included is a note referencing a 'Master Index'."},
 	{index: "engine", type: "artifact", title: "Cheat(?) Engine", desc: "A bootleg version of a popular computer program for editing values.", desc2: "It's capable of rewriting reality, but it only responds to extremely specific phrases and ignores any other request. Unless you already know what to say, the program is useless. "},
+	{index: "glasses", type: "artifact", title: "Helsing's Glasses", desc: "A set of glasses obtained from an... <i>Eccentric</i> hobbyist created by unknown means. Formerly a researcher, she was retired due to an unhealthy fixation with imagining personalities for artifacts.", desc2: "When worn they anthropomorphize items with anomalous properties. They used to be taken on artifact retrieval missions until testing revealed they were not always accurate. In fact sometimes it would entirely fabricate details about otherwise mundane objects."},
 	{index: "logbook", type: "artifact", title: "Artifact Retrieval Logs", desc: "A massive set of cabinets full of mission log files. Only artifact hunters are authorized to use it.", desc2: "Opening the cabinet with intent will allow for retrieval and re-living of specific file contents."},
 	{index: "doctor", code:"scp", type: "prisoner", title: "'Plague' Doctor", desc: "A mysterious woman dressed in a skimpy version of a medieval plague doctor's uniform. Very dangerous.", desc2: ""},
 	{index: "talisman", code:"scp", type: "prisoner", title: "Talisman", desc: "A possessed talisman. There's a sticky note on it saying 'DO NOT TOUCH'", desc2: ""},
@@ -431,6 +442,17 @@ function writeSpeech (name, img, text) {
 		name = data.player.fName;
 		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
 		var color = "#c40909"
+		switch (data.player.character) {
+			case "serum":
+				color = "#06c41f"
+			break;
+			case "coin":
+				color = "#ebd300"
+			break;
+			case "box":
+				color = "#ff29d4"
+			break;
+		}
 	}
 	if (name == "notes") {
 		name = "Research Notes";
@@ -509,6 +531,7 @@ function listArtifact(name) {
 	var researchStatus = 0;
 	var researchTotal = 0;
 	var desc2 = "";
+	var descGlasses = "";
 	for (i = 0; i < artifactArray.length; i++) {
 		if (artifactArray[i].index == name) {
 			var jam = i;
@@ -554,6 +577,13 @@ function listArtifact(name) {
 				}
 				var equip = "";
 			}
+			if (data.player.glasses == true) {
+				descGlasses = artifactArray[jam].glasses;
+				console.log("Glasses status is "+data.player.glasses+", now printing "+descGlasses);
+			}
+			else {
+				descGlasses = "";
+			}
 		}
 	}
 	//console.log('now checking number of scenes');
@@ -584,6 +614,7 @@ function listArtifact(name) {
 			</p>
 			<p>`+ desc + `</p>
 			<p>`+ desc2 + `</p>
+			<p>`+ descGlasses + `</p>
 		</div>
 		<br>
 		`;
@@ -601,6 +632,7 @@ function listArtifact(name) {
 			</p>
 			<p>`+ desc + `</p>
 			<p>`+ desc2 + `</p>
+			<p>`+ descGlasses + `</p>
 		</div>
 		<br>
 		`;
@@ -862,6 +894,98 @@ function checkFlag(name) {
 		}
 	}
 	return false;
+}
+
+function signTrigger() {
+	var desiredScene = "signFailureUnknown";
+	var goof = document.getElementById('kettleSubmission').value;
+	goof = goof.toLowerCase();
+	sceneTransition(data.player.currentScene);
+	var wordlist = "endings";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signEnding";
+	}
+	wordlist = "spankings / painsluts / abuses ";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureUnfinished";
+	}
+	wordlist = "rimjobs asslicks asslicking analingus";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signHome1";
+	}
+	wordlist = "creampies / dickings / dicks / penis / cocks / bareback";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signHome2";
+	}
+	wordlist = "blowjobs / deepthroats / suckjobs / knobgobbles / knobgobbling / succs / sucks / sucking / mouths / faces";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signHome3";
+	}
+	wordlist = "uses / sex / pussy / cunts / twats / vaginals / vaginas / fucking / penetration";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signHome4";
+	}
+	wordlist = "body / woman / gropings / samples / play / tits / boobs / breasts";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signHome5";
+	}
+	wordlist = "anal / buttsex / buttsluts / buttfucks / booty / booty / ass / assholes / sodomy / sodomizations";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signHome6";
+	}
+	wordlist = "titfucks / titjobs / titfuckings / boobjobs / boobfucks / boobfuckings";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signOutdoor1";
+	}
+	wordlist = "nudes";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureUnfinished";
+	}
+	wordlist = "footjobs / feet";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureUnfinished";
+	}
+	wordlist = "assjobs / hotdogging";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureUnfinished";
+	}
+	wordlist = "toilet / pisswhore";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureUnfinished";
+	}
+	wordlist = "to a good home";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureUnfinished";
+	}
+	wordlist = "orgy / group";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureUnfinished";
+	}
+	wordlist = "girlfriend / slave / wife / servant";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureSlave";
+	}
+	wordlist = "knife / blood / murder / gunshots / guns / stabbing / death";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureGore";
+	}
+	wordlist = "catgirl / neko / kitten / doggy / puppy / doggirl / bitch / cowgirl / horsegirl / expansion / growth / shrinking / giant / small / transformation / alteration / bodymod / sissyfication / feminization";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureTF";
+	}
+	wordlist = "food / sandwiches / milk / drink";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureFood";
+	}
+	wordlist = "hong kong / hongkong / tibet";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureProtest";
+	}
+	wordlist = "hug";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signFailureHug";
+	}
+	writeEvent(desiredScene);
 }
 
 //Menu
