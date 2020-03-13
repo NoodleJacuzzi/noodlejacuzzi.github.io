@@ -4,8 +4,8 @@ function writeScene(scene) {
 			document.getElementById('output').innerHTML +=`
 				<p class = "centeredText">Lastest News 2/28/2020</p>
 				<p class = "centeredText">Anomaly Vault v5</p>
-				<p class = "centeredText">A new release of Anomaly Vault, featuring the Free ___ Sign and scenes written by Cryptogreek and Swallows999!</p>
-				<p class = "centeredText">Thank you to: Swallows999, Joshua Ingram, Madgunner, Robbie, CaptainMontana, Lasse B, andres mejia, Ark555, Badaxe, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, FearlessViper26, Filament, G, J_C_L, jack spencer, Jesse Greene, Jinouga, Marc Maldon, Marco Wassmer, maxime, Negativatron, Ramsey Bisher, Scal, Taylor Trout, XxrobothacksxX, Aegil, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arthur radcliffe, AxiosMIles, Bawornnan samart, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Colin, Danny Nguyen, Darrell Goodman, DarthMalak, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Erin Trippet, Grim2011, Guy68691, Gwen Yurick, ItsAllOgreNow, Jane, joe, John Lewis, john smith, Joseph Gibbs, Joshua Melzark, KH dg, lm Carma, Martin Touralack, mazterlith, Monkey, murgatroid99, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, qwerty, Ragoth, Roy, Scumstango, Sebastian Eckel, Shirofang, Simon Rencher, sky, Snaked, stratum, Taurus Travon Rashad Lemar Brackin, Trevor, valdis, Vincent Madaire-Cullen, waazzzup14, Wayne culbert, Wei, Wild Bill, William Richardson, Your Husbando, Z, สิรวิชณ์ อาสว่าง, 凱 陳, and 魏 for supporting my work!</p>
+				<p class = "centeredText">A new release of Anomaly Vault, featuring scenes for the Free ___ Sign and others!</p>
+				<p class = "centeredText">Thank you to: Swallows999, Joshua Ingram, Madgunner, Robbie, CaptainMontana, Lasse B, andres mejia, Ark555, Badaxe, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, FearlessViper26, Filament, G, J_C_L, jack spencer, Jesse Greene, Jinouga, Marc Maldon, Marco Wassmer, Negativatron, Ramsey Bisher, Scal, Terry Leininger, Tyberius Kirk, XxrobothacksxX, Aegil, Alec8686, Andy Amundy, Angel, Anthony Munso, Ariados, Arthur radcliffe, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Colin, Danny Nguyen, Darrell Goodman, DarthMalak, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Erin Trippet, Grim2011, Gwen Yurick, ItsAllOgreNow, Jane, joe, John Lewis, john smith, Joshua Melzark, KH dg, lm Carma, Louis Hayes, mazterlith, Monkey, murgatroid99, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, qwerty, Roy, Scumstango, Sebastian Eckel, Shirofang, Simon Rencher, sky, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, valdis, Vincent Madaire-Cullen, waazzzup14, Wayne culbert, Wei, Wild Bill, William Richardson, Your Husbando, Z, สิรวิชณ์ อาสว่าง, 凱 陳, and 魏 for supporting my work!</p>
 			`;
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://discord.gg/B3AszYM'">Visit my discord server</p>
@@ -15,14 +15,14 @@ function writeScene(scene) {
 			//writeTransition("recommendations", "Recommendations");
 			writeText("<br><br>");
 			writeBig("images/AnomalyVault.png");
-			writeText("Anomaly Vault v5");
+			writeText("Anomaly Vault v6");
 			writeText("You play as a researcher performing experiments on various reality warping artifacts, currently including a presence-erasing bracelet and a crate that converts anything inside into a hypersexualized version of itself.");
 			writeText("The game uses real porn gifs, and is similar in tone to Human Alteration App's dom route.");
 			writeText("The themes and fetishes of the game are governed by what artifacts you interact with, hopefully as time passes you'll find and artifact you really connect with. Let me know if you have any artifact / scene ideas!");
 			writeText("Nonoptional Tags: Unpercieved Sex, Ignored Sex, Dubious Consent, Seduction of Women in Committed Relationships");
 			writeText("Optional Tags: Corruption, Mind Control, Deepfake, Genderbending (both M to F and F to M) among others. See the content list below.");
 			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/34432031'">Download Links</p>
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/34857048'">Download Links</p>
 				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/33013457'">Cheat Codes</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault%20Mobile.html'">Play the mobile version</p>

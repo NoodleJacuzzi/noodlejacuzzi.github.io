@@ -25,12 +25,35 @@ function writeScenarioScene(scene) {
 			writeBG('shoddyBar');
 			writeImageButton("Back Outside", "townSquare", "", 45, 75);
 			writeImageButton("Grumpy Man", "grumpyMan", "grumpyManProfile.jpg", 40, 32);
+			if (data.player.color.includes("beer") != true) {
+				writeImageButton("Bottle of Booze", "booze", "beer.jpg", 40, 7);
+			}
 			break;
 		}
 		case "flowerShop": {
 			writeBG('flowerShop');
 			writeImageButton("Back Outside", "townSquare", "", 65, 10);
-			writeImageButton("Rich-Looking Woman", "grumpyWife", "grumpyWifeProfile.jpg", 30, 35);
+			writeImageButton("Rich-Looking Woman", "grumpyWife", "grumpyWifeProfile.jpg", 30, 32);
+			if (data.player.color.includes("rose") != true) {
+				writeImageButton("Rose", "rose", "rose.jpg", 40, 62);
+			}
+			break;
+		}
+		case "booze": {
+			data.player.color += "beer";
+			writeText("You decide to order a bottle of beer to fit in, and get the barkeep's inquisitive gaze off of you while you work.");
+			writeText("While surveying the bar, you decide to just pocket the bottle. You don't really like the taste anyways. It might be neat to see what happens if you put this in the erotibox.");
+			writeSpecial("You obtained a bottle of beer!");
+			writeScenarioTransition("shoddyBar", "Finish");
+			break;
+		}
+		case "rose": {
+			data.player.color += "rose";
+			writeSpeech("player", "", "A single rose please, thank you.");
+			writeText("The owner brings you a flower, it's pretty. You make a bit of small talk with her, but it doesn't seem like she can help you.");
+			writeText("On the plus side the flower might be a pretty neat thing to put into the erotibox.");
+			writeSpecial("You obtained a single rose!");
+			writeScenarioTransition("flowerShop", "Finish");
 			break;
 		}
 		case "northRoad": {
@@ -273,7 +296,6 @@ function writeScenarioScene(scene) {
 			writeScenarioTransition("flowerShop", "Finish");
 			addFlag("woman");
 			addFlag("key");
-			console.log(checkFlag("key"));
 			break;
 		}
 		case "mansionEntry": {
@@ -405,9 +427,8 @@ switch (requestType) {
 				data.player.scenarios[i].objectFlags = "";
 			}
 		}
-		if (scenarioCheck == false) {
-			console.log(scenarioCheck);
-			var goof = {index: scenarioInformation.index, flags: "", objectFlags: ""};
+		if (scenarioCheck = false) {
+			goof = {index: scenarioInformation.index, flags: "", objectFlags: ""};
 			data.player.scenarios.push(goof);
 		}
 		data.player.currentScenario = scenarioInformation.index;
