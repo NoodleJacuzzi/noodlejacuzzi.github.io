@@ -299,7 +299,7 @@ function writeScene(scene) {
 			}
 			break;
 		}
-		case "nap": {
+		case "napHome": {
 			switch (data.player.time) {
 				case "Morning":
 					data.player.time = "Noon";
@@ -316,7 +316,27 @@ function writeScene(scene) {
 					}
 				break;
 			}
-			writeScene(data.player.currentScene);
+			writeScene("home");
+			break;
+		}
+		case "napWork": {
+			switch (data.player.time) {
+				case "Morning":
+					data.player.time = "Noon";
+				break;
+				case "Noon":
+					data.player.time = "Evening";
+				break;
+				case "Evening":
+					data.player.time = "Night";
+				break;
+				case "Night":
+					if (data.player.currentScene == "newDay") {
+						data.player.time = "Morning";
+					}
+				break;
+			}
+			writeScene("work");
 			break;
 		}
 		//Locations
@@ -374,7 +394,7 @@ function writeScene(scene) {
 							writeText("The alarm is going off.");
 						}
 						writeTransition("drive", "Get up and head to work.");
-						writeTransition("nap", "Sleep in till noon, skip work");
+						writeTransition("napHome", "Sleep in till noon, skip work");
 					}
 					else {
 						writeTransition("newDay", "Go to sleep");
@@ -427,7 +447,7 @@ function writeScene(scene) {
 							writeSpeech("roommate", "", "I was just about to take a shower and head out. I think we've got some leftovers in the fridge.");
 							writeText("An opportunity presents itself, test the artifact even further and live life with no consequences.");
 							writeFunction("writeEvent('braceletHome1')", "Use the bracelet on " + data.story[0].fName);
-							writeFunction("nap()", "Let her go and take a nap");
+							writeFunction("napHome", "Let her go and take a nap");
 							break;
 						}
 						case "Night": {
@@ -548,7 +568,7 @@ function writeScene(scene) {
 					}
 					switch (data.player.time) {
 						case "Morning": {
-							writeTransition("nap", "Waste some time");
+							writeTransition("napWork", "Waste some time");
 							break;
 						}
 						case "Noon": {
