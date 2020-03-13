@@ -13,7 +13,7 @@ function writeScene(scene) {
 			writeTransition("startWardrobe", "Change your profile image");
 			writeText("Other notes:");
 			writeText("This game was commissioned via Patreon by <span class = 'switch' onclick='window.location.href=`https://www.patreon.com/swallows999`'>Swallows999</p>");
-			writeText("And I'm supported by my other patrons as well. Thank you to Swallows999, Joshua Ingram, Madgunner, Robbie, CaptainMontana, Lasse B, andres mejia, Ark555, Badaxe, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, FearlessViper26, Filament, G, J_C_L, jack spencer, Jesse Greene, Jinouga, Marc Maldon, Marco Wassmer, maxime, Negativatron, Ramsey Bisher, Scal, Taylor Trout, XxrobothacksxX, Aegil, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arthur radcliffe, AxiosMIles, Bawornnan samart, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Colin, Danny Nguyen, Darrell Goodman, DarthMalak, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Erin Trippet, Grim2011, Guy68691, Gwen Yurick, ItsAllOgreNow, Jane, joe, John Lewis, john smith, Joseph Gibbs, Joshua Melzark, KH dg, lm Carma, Martin Touralack, mazterlith, Monkey, murgatroid99, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, qwerty, Ragoth, Roy, Scumstango, Sebastian Eckel, Shirofang, Simon Rencher, sky, Snaked, stratum, Taurus Travon Rashad Lemar Brackin, Trevor, valdis, Vincent Madaire-Cullen, waazzzup14, Wayne culbert, Wei, Wild Bill, William Richardson, Your Husbando, Z, สิรวิชณ์ อาสว่าง, 凱 陳, and 魏.");
+			writeText("And I'm supported by my other patrons as well. Thank you to Swallows999, Joshua Ingram, Madgunner, Robbie, CaptainMontana, Lasse B, andres mejia, Ark555, Badaxe, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, FearlessViper26, Filament, G, J_C_L, jack spencer, Jesse Greene, Jinouga, Marc Maldon, Marco Wassmer, Negativatron, Ramsey Bisher, Scal, Terry Leininger, Tyberius Kirk, XxrobothacksxX, Aegil, Alec8686, Andy Amundy, Angel, Anthony Munso, Ariados, Arthur radcliffe, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Colin, Danny Nguyen, Darrell Goodman, DarthMalak, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Erin Trippet, Grim2011, Gwen Yurick, ItsAllOgreNow, Jane, joe, John Lewis, john smith, Joshua Melzark, KH dg, lm Carma, Louis Hayes, mazterlith, Monkey, murgatroid99, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, qwerty, Roy, Scumstango, Sebastian Eckel, Shirofang, Simon Rencher, sky, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, valdis, Vincent Madaire-Cullen, waazzzup14, Wayne culbert, Wei, Wild Bill, William Richardson, Your Husbando, Z, สิรวิชณ์ อาสว่าง, 凱 陳, and 魏.");
 			writeText("Swallows actually wrote some content for the game, you can unlock his scenes like normal, and he has a special section in the gallery. If you'd like to put your scene in the game, feel free to send it to me.");
 			writeText("You can change your profile image in game by using the wardrobe in your room. You can also cheat in your room if you know a code.");
 			writeText("You can click on the title of a window to close it. For example, if you click 'LOGBOOK' on the left (or bottom on mobile), you can close the new window by clicking anywhere in the 'LOGBOOK' section at the top.");
@@ -132,6 +132,14 @@ function writeScene(scene) {
 				}
 			}
 			writeSpeech("Sissy's Toolkit", "scripts/gamefiles/items/toolkit.jpg", researchTotal+" total scenes implemented (DARK VAULT)<br>Tag List:<br>Sissification, Feminization, Interracial");
+			//Calculate playlist stuff
+			researchTotal = 0;
+			for (i = 0; i < galleryArray.length; i++) {
+				if (galleryArray[i].index.includes('playlist')) {
+					researchTotal += 1;
+				}
+			}
+			writeSpeech("Domino Playlist", "scripts/gamefiles/items/playlist.jpg", researchTotal+" total scenes implemented (DARK VAULT)<br>Tag List:<br>Sissification, Humiliation, Ahegao-brand clothes");
 			//Calculate nymph stuff
 			researchTotal = 0;
 			for (i = 0; i < galleryArray.length; i++) {
@@ -140,6 +148,14 @@ function writeScene(scene) {
 				}
 			}
 			writeSpeech("Nymph Mirror", "scripts/gamefiles/items/nymph.jpg", researchTotal+" total scenes implemented (DARK VAULT)<br>Tag List:<br>Genderbender, Body-Swap, Nymphomania");
+			//Calculate vhs stuff
+			researchTotal = 0;
+			for (i = 0; i < galleryArray.length; i++) {
+				if (galleryArray[i].index.includes('vhs')) {
+					researchTotal += 1;
+				}
+			}
+			writeSpeech("ErotiVHS Player", "scripts/gamefiles/items/vhs.jpg", researchTotal+" total scenes implemented (DARK VAULT)<br>Tag List:<br>Genderbender, Body-Swap, 2d Hentai");
 			writeTransition("start", "Back to the start screen");
 			break;
 		}
@@ -5151,7 +5167,7 @@ function writeEvent(scene) {
 		case "credits": {
 			writeBig("scripts/gamefiles/logo.png");
 			writeText("The Anomaly Vault was built by the architect NoodleJacuzzi, also responsible for other works. Further foundation was laid by Swallows999 and Captain Cryptogreek, who pioneered the research of artifacts before you. However the funding  of the vault comes from a council veiled in shadow, ever aware of your efforts.");
-			writeText("Above chairwoman chairF, they decide the vault's purpose and fate. Bear these names close to your heart, for they are the ones who are truly in control here. Swallows999, Joshua Ingram, Madgunner, Robbie, CaptainMontana, Lasse B, andres mejia, Ark555, Badaxe, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, FearlessViper26, Filament, G, J_C_L, jack spencer, Jesse Greene, Jinouga, Marc Maldon, Marco Wassmer, maxime, Negativatron, Ramsey Bisher, Scal, Taylor Trout, XxrobothacksxX, Aegil, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arthur radcliffe, AxiosMIles, Bawornnan samart, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Colin, Danny Nguyen, Darrell Goodman, DarthMalak, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Erin Trippet, Grim2011, Guy68691, Gwen Yurick, ItsAllOgreNow, Jane, joe, John Lewis, john smith, Joseph Gibbs, Joshua Melzark, KH dg, lm Carma, Martin Touralack, mazterlith, Monkey, murgatroid99, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, qwerty, Ragoth, Roy, Scumstango, Sebastian Eckel, Shirofang, Simon Rencher, sky, Snaked, stratum, Taurus Travon Rashad Lemar Brackin, Trevor, valdis, Vincent Madaire-Cullen, waazzzup14, Wayne culbert, Wei, Wild Bill, William Richardson, Your Husbando, Z, สิรวิชณ์ อาสว่าง, 凱 陳, and 魏.");
+			writeText("Above chairwoman chairF, they decide the vault's purpose and fate. Bear these names close to your heart, for they are the ones who are truly in control here. Swallows999, Joshua Ingram, Madgunner, Robbie, CaptainMontana, Lasse B, andres mejia, Ark555, Badaxe, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, FearlessViper26, Filament, G, J_C_L, jack spencer, Jesse Greene, Jinouga, Marc Maldon, Marco Wassmer, Negativatron, Ramsey Bisher, Scal, Terry Leininger, Tyberius Kirk, XxrobothacksxX, Aegil, Alec8686, Andy Amundy, Angel, Anthony Munso, Ariados, Arthur radcliffe, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Colin, Danny Nguyen, Darrell Goodman, DarthMalak, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Erin Trippet, Grim2011, Gwen Yurick, ItsAllOgreNow, Jane, joe, John Lewis, john smith, Joshua Melzark, KH dg, lm Carma, Louis Hayes, mazterlith, Monkey, murgatroid99, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, qwerty, Roy, Scumstango, Sebastian Eckel, Shirofang, Simon Rencher, sky, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, valdis, Vincent Madaire-Cullen, waazzzup14, Wayne culbert, Wei, Wild Bill, William Richardson, Your Husbando, Z, สิรวิชณ์ อาสว่าง, 凱 陳, and 魏.");
 			writeText("Their continued support gives aid to the vault. Should they lend their voices, you will hear them here. Their assistance is why you, playerF, are here. Why you found the bracelet. Count your blessings, and...");
 			writeTransition("room", "Awaken, saved from repercussion");
 			writeSpecial("Stepping out from behind the fourth wall for a moment, this is one of the game's endings! Thank you so much for player, I hope you enjoyed! For the next version I'd really like to replace the names above with a set of messages, so if you're a member of the shadow council above, please contact me if you'd like to write a message to the player here! Otherwise, I hope you enjoy the rest of the game as well. Have you checked the cheat post for prison codes? You can find them on my patreon page (it isn't behind a paywall), with a link to it on the game's IGDB entry, the first page fo the F95zone thread, and in the master index.");
