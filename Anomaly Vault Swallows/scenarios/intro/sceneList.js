@@ -67,8 +67,6 @@ function writeScenarioScene(scene) {
 		for (i = 0; i < data.player.scenarios.length; i++) {
 			if (data.player.scenarios[i].index == scenarioInformation.index) {
 				scenarioCheck = true;
-				data.player.scenarios[i].flags = "";
-				data.player.scenarios[i].objectFlags = "";
 			}
 		}
 		if (scenarioCheck == false) {
