@@ -2,8 +2,8 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 2/28/2020</p>
-				<p class = "centeredText">Anomaly Vault v5</p>
+				<p class = "centeredText">Lastest News 3/13/2020</p>
+				<p class = "centeredText">Anomaly Vault v6</p>
 				<p class = "centeredText">A new release of Anomaly Vault, featuring scenes for the Free ___ Sign and others!</p>
 				<p class = "centeredText">Thank you to: Swallows999, Joshua Ingram, Madgunner, Robbie, CaptainMontana, Lasse B, andres mejia, Ark555, Badaxe, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, FearlessViper26, Filament, G, J_C_L, jack spencer, Jesse Greene, Jinouga, Marc Maldon, Marco Wassmer, Negativatron, Ramsey Bisher, Scal, Terry Leininger, Tyberius Kirk, XxrobothacksxX, Aegil, Alec8686, Andy Amundy, Angel, Anthony Munso, Ariados, Arthur radcliffe, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Colin, Danny Nguyen, Darrell Goodman, DarthMalak, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Erin Trippet, Grim2011, Gwen Yurick, ItsAllOgreNow, Jane, joe, John Lewis, john smith, Joshua Melzark, KH dg, lm Carma, Louis Hayes, mazterlith, Monkey, murgatroid99, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, qwerty, Roy, Scumstango, Sebastian Eckel, Shirofang, Simon Rencher, sky, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, valdis, Vincent Madaire-Cullen, waazzzup14, Wayne culbert, Wei, Wild Bill, William Richardson, Your Husbando, Z, สิรวิชณ์ อาสว่าง, 凱 陳, and 魏 for supporting my work!</p>
 			`;
