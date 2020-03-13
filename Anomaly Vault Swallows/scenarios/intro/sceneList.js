@@ -63,6 +63,18 @@ function writeScenarioScene(scene) {
 			break;
 		}
 		case "mansionFront": {
+		var scenarioCheck = false;
+		for (i = 0; i < data.player.scenarios.length; i++) {
+			if (data.player.scenarios[i].index == scenarioInformation.index) {
+				scenarioCheck = true;
+				data.player.scenarios[i].flags = "";
+				data.player.scenarios[i].objectFlags = "";
+			}
+		}
+		if (scenarioCheck == false) {
+			console.log(scenarioCheck);
+			var goof = {index: scenarioInformation.index, flags: "", objectFlags: ""};
+		}
 			writeBG('mansionFront');
 			writeImageButton("Enter the Mansion", "mansionEntry", "mansionFoyer.jpg", 40, 50);
 			writeImageButton("Explore the Town", "northRoad", "", 65, 10);
@@ -427,8 +439,9 @@ switch (requestType) {
 				data.player.scenarios[i].objectFlags = "";
 			}
 		}
-		if (scenarioCheck = false) {
-			goof = {index: scenarioInformation.index, flags: "", objectFlags: ""};
+		if (scenarioCheck == false) {
+			console.log(scenarioCheck);
+			var goof = {index: scenarioInformation.index, flags: "", objectFlags: ""};
 			data.player.scenarios.push(goof);
 		}
 		data.player.currentScenario = scenarioInformation.index;
