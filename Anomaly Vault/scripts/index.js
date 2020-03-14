@@ -974,6 +974,10 @@ function signTrigger() {
 	if (wordlist.includes(goof) == true) {
 		desiredScene = "signHome3";
 	}
+	wordlist = "anal / buttsex / buttstuff / buttsluts / buttfucks / booty / booty / ass / assholes / sodomy / sodomizations";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signHome6";
+	}
 	wordlist = "uses / sex / pussy / cunts / twats / vaginals / vaginas / fucking / penetration";
 	if (wordlist.includes(goof) == true) {
 		desiredScene = "signHome4";
@@ -981,10 +985,6 @@ function signTrigger() {
 	wordlist = "body / woman / gropings / samples / play / tits / boobs / breasts";
 	if (wordlist.includes(goof) == true) {
 		desiredScene = "signHome5";
-	}
-	wordlist = "anal / buttsex / buttsluts / buttfucks / booty / booty / ass / assholes / sodomy / sodomizations";
-	if (wordlist.includes(goof) == true) {
-		desiredScene = "signHome6";
 	}
 	wordlist = "titfucks / titjobs / titfuckings / boobjobs / boobfucks / boobfuckings";
 	if (wordlist.includes(goof) == true) {

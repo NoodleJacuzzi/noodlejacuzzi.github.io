@@ -3037,7 +3037,7 @@ function writeEvent(scene) {
 			writeText("You stand up and crack your knuckles. Single-minded determination flows through your veins.");
 			writeText("...");
 			writeSpeech("assistant", "", "Cumming~... Ghuuu...");
-			writeText("asssistantF softly spasms beneath your  fingerwork, marking her third consecutive orgasm.");
+			writeText("assistantF softly spasms beneath your  fingerwork, marking her third consecutive orgasm.");
 			writeBig("images/erotibox/drink.gif");
 			writeSpeech("assistant", "", "Ghhuubb... Shhhkt~....");
 			writeText("She teeters on the edge of consciousness, each orgasm pushing her farther and farther from rationality. You're finding it hard to focus yourself, feeling like your brain has been drenched in booze. Perhaps it'd be best to wrap this up.");
@@ -4341,7 +4341,7 @@ function writeEvent(scene) {
 			writeSpeech("player", "", "Nah, I'm having a good time with these, actually. Can I touch your cunt?");
 			writeSpeech("Woman Advertising Tits", "scripts/gamefiles/profiles/freetits.jpg", "Sure! Fingers only, though. We're in public after all.");
 			writeText("...");
-			writeText("Fooling around passes the time alright, but ends up feeling a little anticlimactic by the end of it. Eventually you're satisfied and head home, the cardvoard sign waiting for you where you wrote on it.");
+			writeText("Fooling around passes the time alright, but ends up feeling a little anticlimactic by the end of it. Eventually you're satisfied and head home, the cardboard sign waiting for you where you wrote on it.");
 			break;
 		}
 		case "signHome6": {
@@ -4789,8 +4789,8 @@ function writeEvent(scene) {
 		}
 		case "playlistResearch1": {
 			tempScene = "vault";
-			writeText("The video begins, the usual porn-site logo playing before impossibly complex sigils begin rapidly flashing black against a whjte background. They fill the screen, then your peripheral vision, then everything is black.");
-			writeText("Thumping base music fills the... Room? You can't even feel the floor beneath you anymore. You try to move, only to feel soft blankets onderneath you. The music grows louder. A woman is singing, but the words are out of focus. Trying to focus on anything fails, the voice will do that for you. ");
+			writeText("The video begins, the usual porn-site logo playing before impossibly complex sigils begin rapidly flashing black against a white background. They fill the screen, then your peripheral vision, then everything is black.");
+			writeText("Thumping base music fills the... Room? You can't even feel the floor beneath you anymore. You try to move, only to feel soft blankets underneath you. The music grows louder. A woman is singing, but the words are out of focus. Trying to focus on anything fails, the voice will do that for you. ");
 			writeText("THE 'SELF' YOU HAD IS GOING AWAY NOW");
 			writeText("TO BE REPLACED WITH");
 			writeText("SOMETHING BETTER");
