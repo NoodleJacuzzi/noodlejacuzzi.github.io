@@ -25,6 +25,9 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "neet4", name: "neet is sitting in the dark room", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 3, trustMax: 3, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "neetDateSelection", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 60, trustMax: 80, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "neetDateFinish", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 80, trustMax: 99, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetA-1-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 101, trustMax: 101, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetA-2-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 102, trustMax: 102, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetA-3-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 103, trustMax: 110, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -472,6 +475,177 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation('street')", "Make your way home");
 			break;
 		}
+		case "neetA-1-1": {
+			writeSpeech("player", "", "Morning Tia, how're you feeling?");
+			writeSpeech("neet", "", "I'm very well, *sir.");
+			writeText("She seems pretty relaxed, a good sign that she's still hypnotized.");
+			writeSpeech("neet", "", "Do you think you and I could walk home together again today? I'd like you to watch me-<br>... Wait... Something feels off...");
+			writeText("She hesitates, her inhibitions are suppressed but not gone entirely. There's a chance she could break free, sending you back to square one.");
+			writeFunction("writeEncounter('neetA-1-2')", "Walk her home");
+			writeFunction("changeLocation(data.player.location)", "Maybe tomorrow");
+			break;
+		}
+		case "neetA-1-2": {
+			writeEvent("neetA-1-2");
+			passTime();
+			raiseTrust('neet', 1);
+			break;
+		}
+		case "neetA-2-1": {
+			writeSpeech("player", "", "Morning neetF. How're you feeling?");
+			writeSpeech("neet", "", "Hello *sir. Quite relaxed, thank you. Would you care to walk me home again today?");
+			writeText("It seems like she isn't hung up on the hypnosis anymore, maybe it stuck?");
+			writeFunction("writeEncounter('neetA-2-2')", "Walk her home");
+			writeFunction("changeLocation(data.player.location)", "Maybe tomorrow");
+			break;
+		}
+		case "neetA-2-2": {
+			writeEvent("neetA-2-2");
+			passTime();
+			raiseTrust('neet', 1);
+			break;
+		}
+		case "neetA-3-1": {
+			writeSpeech("neet", "", "Good morning, *sir. Would you care to walk home with me today?");
+			writeFunction("writeEncounter('neetA-3-2')", "Walk her home");
+			writeFunction("changeLocation(data.player.location)", "Maybe tomorrow");
+			break;
+		}
+		case "neetA-3-2": {
+			writeText("The two of you walk to neetF's place together.");
+			switch (checkTrust('neet')) {
+				case 103:
+					writeSpeech("neet", "", "I do make the effort to make myself appear presentable.");
+					writeSpeech("player", "", "I can tell. As cute as you are, I wouldn't be walking home if you smelled like fish.");
+					writeSpeech("neet", "", "Do you not like fish?");
+					raiseTrust('neet', 1);
+				break;
+				case 104:
+					writeSpeech("neet", "", "$500 is the very least you should budget yourself for a modern computer, it's the minimum of all the essential parts put together. Any further savings means hamstringing yourself on some important element, dooming your system to be obsolete or difficult to upgrade in a year, maybe three if you're careful.<br>Unless of course you temporarily used an integrated graphics card... Hmm...");
+					raiseTrust('neet', 1);
+				break;
+				case 105:
+					writeSpeech("neet", "", "It's important that hygiene is viewed as a priority, otherwise you won't feel clean after you bathe, and you won't appreciate the value of it. I make it a point to reward myself for the good behavior.");
+					raiseTrust('neet', 1);
+				break;
+				case 106:
+					writeSpeech("neet", "", "What do you think people pass the time talking about in tropical regions? The weather doesn't change there often, how do you break the ice in a country where ice is difficult to naturally form?");
+					raiseTrust('neet', 1);
+				break;
+				case 108:
+					writeSpeech("neet", "", "I'm not religious myself. I think it'd be nice if there were a god, but if I started believing because I wanted a reward, it wouldn't be genuine.");
+					raiseTrust('neet', 1);
+				break;
+				case 109:
+					writeSpeech("neet", "", "Have you noticed how many good-looking people attend our school? Where are all the disfigured or unattractive people? It isn't just chance, I've been in the system and I saw that students are manually approved by the principal, and sometimes the only part of their file viewed was the picture.");
+					raiseTrust('neet', 1);
+				break;
+				default:
+					writeSpeech("neet", "", "Ah, sorry, I'm rambling again. What about you? We always talk about me... Oh, actually I just remembered-");
+			}
+			writeText("The conversation continues on, neetF talking about whatever comes to mind.");
+			writeText("...");
+			writeSpeech("neet", "", "So, what shall we do today?");
+			writeFunction("writeEncounter('neetProposal')", "Commit to a hypnotic relationship together");
+			writeFunction("writeEncounter('neetSexRepeat')", "Bust out a condom");
+			writeFunction("writeEncounter('neetTitjobRepeat')", "Ask for a titjob");
+			writeFunction("changeLocation(data.player.location)", "Just head home for the day");
+			break;
+		}
+		case "neetTitjobRepeat": {
+			writeEvent("neetTitjobRepeat");
+			passTime();
+			break;
+		}
+		case "neetSexRepeat": {
+			writeEvent("neetSexRepeat");
+			passTime();
+			break;
+		}
+		case "neetProposal": {
+			writeSpeech("neet", "", "I was hoping to get more practice with my breasts today. I looked up some of the trending sexual acts of today, but I'm not sure Id like to try anal. With so much work, I'm not sure what the payoff-");
+			writeSpeech("player", "", "neetF.");
+			writeSpeech("neet", "", "Yes?");
+			writeText("The air is a little serious as you consider what she told you before. Committing to her training through hypnosis is a pretty demanding task, it'd be tough to keep at being a counselor at the same time.");
+			writeText("Still, she's eager to learn and pretty cute. Will you follow this path? Having her as a fuckbuddy isn't too bad of a deal, so you could choose to just head home for the day instead.");
+			writeFunction("writeEncounter('neetEnding1')", "Commit to neetF");
+			writeFunction("changeLocation(data.player.location)", "Head home and sleep on it");
+			break;
+		}
+		case "neetEnding1": {
+			writeSpeech("player", "", "Were you serious about what you said before? You're willing to let me hypnotize you, and we'll begin your training for real?");
+			writeText("She puffs up her chest, doing her best to look serious.");
+			writeSpeech("neet", "", "Absolutely.");
+			writeSpeech("player", "", "Alright. This isn't a one-day process. Training your mind will be the easy part, training your body will be a lot more work. By the time I'm done with you-");
+			writeSpeech("neet", "", "I'll be able to keep up with anything you desire. I'm ready.");
+			writeText("You pull out your pendant.");
+			writeSpeech("player", "", "Watch carefully, alright? Relax and just focus on counting down from twenty...");
+			writeText("...");
+			writeText("The daily routine is demanding for the both of you. It certainly isn't unpleasant though.");
+			writeBig("imagebox/neet/cumEating1.jpg");
+			writeBig("imagebox/neet/cumEating2.jpg");
+			writeText("Transforming her from a quick-to-blow firecracker into a proper nymph is tough. Her body doesn't visually change to much, it's mostly a matter of her attitude, stamina, and perversion.");
+			writeBig("imagebox/neet/pOutfitBlowjob.jpg");
+			writeText("You've got her consent every step of the way, although some parts of the training leave her pent up and wanting more, but letting her stew sometimes is part of the process.");
+			writeBig("imagebox/neet/clothedTitfuck.jpg");
+			writeText("But in the end progress is progress.");
+			writeFunction("writeEncounter('neetEnding2')", "Much later...");
+			break;
+		}
+		case "neetEnding2": {
+			writeSpeech("neet", "", "Okay, come in.");
+			writeBig("imagebox/neet/a4-1.jpg");
+			writeSpeech("neet", "", "Do you like it? I was worried the saleswoman would...<br>Well, she was really nice and supportive. When she found out I was buying it for my special someone, she said you'd start drooling right away. I told her you didn't drool, but-");
+			writeSpeech("player", "", "You look incredible, neetF.");
+			writeSpeech("neet", "", "You know, you could use your hypnosis to help me out, remove the anxieties...");
+			writeSpeech("player", "", "No way, your nervousness is part of your charm.");
+			writeSpeech("neet", "", "... You can be quite illogical at times, playerF. I must be quite charming right now, then.");
+			writeSpeech("player", "", "Absolutely beautiful.");
+			writeBig("imagebox/neet/a4-2.jpg");
+			writeSpeech("neet", "", "Flattery will... Well, it's nice to hear, playerF. It took a while to make myself presentable, I'm glad the effort paid off.");
+			writeSpeech("player", "", "So, you ready to get started?");
+			writeSpeech("neet", "", "Ah, lemme get comfortable.");
+			writeBig("imagebox/neet/a4-3.jpg");
+			writeText("You start undressing, making sure to enjoy neetF's hungry gaze on your body.");
+			writeSpeech("player", "", "Oh, I think I know that look. Is it time for a test already?");
+			writeSpeech("neet", "", "Yes~! I know I can do it this time!");
+			writeText("The 'girlfriend' test is something she came up with as a little extra motivation. If she can fuck you unconscious while staying conscious herself, she's allowed to do 'lovey-dovey' stuff with you in public.");
+			writeSpeech("player", "", "Honestly, it seems like sometimes you're hungrier for hand-holding then you are for fucking.");
+			writeSpeech("neet", "", "I'm very sure I can be hungry for both at once~");
+			writeSpeech("player", "", "Fine, hope you're ready. I didn't reshape you so I could be gentle, you know.");
+			writeBig("imagebox/neet/a4-4.jpg");
+			writeSpeech("neet", "", "Ooouh~ Hurry~ I want it fast tonight~");
+			writeSpeech("player", "", "Greedy girl.");
+			writeSpeech("neet", "", "Ah~<br>Halfway, I feel my pussy spreading, and the walls are clenching around you~");
+			writeText("Lately she's gotten in the habit of describing what's going on. It helps her brain focus, keeping her from burning out too quickly.");
+			writeSpeech("neet", "", "It feels like my clit is buzzing, gonna cum soon...<br> F-faster, I can feel how fast you're breathing, you're close too.");
+			writeBig("imagebox/neet/a4-5.jpg");
+			writeSpeech("neet", "", "Ghh~<br>It's so warm... Inside me... The *man I love is cumming inside me...");
+			writeSpeech("player", "", "It feels better every day, you really do have a shot at overtaking me someday. Now, how about you get some rest, and-<br>Whoa!");
+			writeSpeech("neet", "", "My turn...");
+			writeBig("imagebox/neet/a4-6.jpg");
+			writeSpeech("neet", "", "I'm in control of the pace now, I'll milk every bit of sperm out of you. You'll be knocked out and I'll be fully pregnant by the time I'm done with you.");
+			writeText("She starts bouncing while grinding her hips against you, a technique she took quite a while to master. Still, she gets a <i>lot</i> of use out of it, so it was all worth it in the end.");
+			writeSpeech("neet", "", "Fifteen... Sixteen...");
+			writeText("She never quit the habit of timing how long you last, how long your refractory period takes, how long you cum on your first shot versus your second, all to ensure there's not a single moment of wasted effort.");
+			writeSpeech("neet", "", "Seventy-eight, hah~");
+			writeText("She still has trouble keeping herself from cumming too quickly, but she's gotten better at riding through it and continuing on right away.");
+			writeBig("imagebox/neet/a4-7.jpg");
+			writeSpeech("neet", "", "Ooh~<br>Cumming again already? Sixteen seconds early, Is the lingerie working?");
+			writeSpeech("player", "", "It... It does look really good on you.");
+			writeSpeech("neet", "", "At this rate you've got no chance. Now, less than two minutes for you to rest, then round three-");
+			writeSpeech("player", "", "Nope, I'm flipping the schedule now.");
+			writeSpeech("neet", "", "Ah~<br>How are you still hard? Quit making this difficult for me, I'm gonna win this time!");
+			writeText("...");
+			writeBig("imagebox/neet/a4-8.jpg");
+			writeSpeech("neet", "", "Hah... Is it... Are you... Huff...");
+			writeSpeech("player", "", "Throwing in the towel already? I can still keep going.");
+			writeSpeech("neet", "", "If... If you can keep going... Then I'm not done either...");
+			writeText("She's still got a lot of work to go, but she's making progress. You've got plenty of time to keep going.");
+			writeSpeech("player", "", "We've got all the time in the world, neetF.");
+			writeFunction("loadEncounter('system', 'credits')", "The End");
+			break;
+		}
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -503,7 +677,142 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Breathing heavily, her body shakes in orgasm, and then she lays her head back like a doll with cut strings.");
 			writeText("She's exhausted, and so are you from so many hours of hypnosis and attempting to rework her mind.");
 			writeText("You'll need to continue this later.");
-			writeFunction("changeLocation('street')", "Go back");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "neetA-1-2": {
+			writeText("The two of you leave the school together.");
+			writeBig("imagebox/neet/a2-1.jpg");
+			writeSpeech("neet", "", "Maybe it's something in the air?");
+			writeText("She pouts, frustrated at being confused by something, as she holds your arm tightly against her breasts.");
+			writeSpeech("player", "", "Maybe your perfume smells different?");
+			writeText("Telling her it's nothing would probably just make her more convinced something's off. Just one detail her brain latches onto could cascade out and break her trance.");
+			writeSpeech("neet", "", "I don't wear any. Maybe it's you...");
+			writeText("She leans in to smell your shirt, and her eyes unfocus.");
+			writeSpeech("player", "", "You alright?");
+			writeSpeech("neet", "", "You smell nice...");
+			writeText("She leans in to breath deeply from your shirt, then starts walking on tiptoes so she can rub her nose on the bare skin of your neck. One hand begins to go lower, underneath her skirt, and you look around to make sure nobody's watching. The thought of somebody seeing you in this situation in public...");
+			writeSpeech("player", "", "Maybe we should wait until we're at your place.");
+			writeSpeech("neet", "", "Nff... R-right! <br>Right, I always wait until I get home, no matter how much I wanna do it... <br>Something's different about today.");
+			writeText("...");
+			writeBig("imagebox/neet/a2-2.jpg");
+			writeSpeech("neet", "", "I just can't place it, it's driving me crazy...");
+			writeSpeech("player", "", "Is there something different about your routine today?");
+			writeSpeech("neet", "", "No, I don't think so. I pleasure myself in the morning, go to school, meet you, come home, pleasure myself again...");
+			writeSpeech("player", "", "I suppose I'll help you out this time while you try to think it through.");
+			writeBig("imagebox/neet/a2-3.jpg");
+			writeSpeech("player", "", "Maybe it's how much you're leaking today? How does this normally go?");
+			writeSpeech("neet", "", "I usually just rub between my labia, I'm always wet this late in the day, although not this much. I keep going until I feel bored... And then just go bottomless and rub myself throughout the rest of the... The day...");
+			writeSpeech("player", "", "How many times do you usually cum?");
+			writeSpeech("neet", "", "I think I might be more sensitive... Normally it... It takes me an hour... To...");
+			writeBig("imagebox/neet/a2-4.jpg");
+			writeSpeech("neet", "", "...!");
+			writeText("She goes quiet and bucks a little as she cums, her inquisitive train of thought completely derailed.");
+			writeSpeech("player", "", "You alright?");
+			writeSpeech("neet", "", "Mhmm...<br>M-more... I wanna go farther.");
+			writeSpeech("player", "", "You realize what you're asking for, right? I think I've got some condoms in my wallet.");
+			writeText("Eyes closed and chest heaving, she nods.");
+			writeText("...");
+			writeBig("imagebox/neet/a2-5.jpg");
+			writeSpeech("player", "", "You ready?");
+			writeSpeech("neet", "", "You're quite... Quaint.");
+			writeSpeech("player", "", "Quaint?");
+			writeSpeech("neet", "", "Ah, apologies. I have trouble expressing myself when nervous... <br>My heart is beating quite loudly, let's start before I start rambling again.");
+			writeBig("imagebox/neet/a2-6.jpg");
+			writeSpeech("neet", "", "...!");
+			writeText("Slowly but surely you penetrate her. Her usual unreadable expression has shifted, showing her mind at a loss for words.");
+			writeSpeech("player", "", "You okay?");
+			writeSpeech("neet", "", "Y-yes...");
+			writeText("Carefully you pull you, the only sound between you is the wet squish of flesh on flesh.");
+			writeText("Her eyelids flutter and her cheeks grow redder. It's tough to hold back and not go full force, but at this point you're worried you'll break her.");
+			writeSpeech("neet", "", "I-it's tingling!");
+			writeBig("imagebox/neet/a2-7.jpg");
+			writeSpeech("neet", "", "...!");
+			writeText("You can see it slowly creeping up her body, a tense shiver. You keep at your pace exactly to make sure she rides it out for as long as possible.");
+			writeSpeech("neet", "", "*Sir, I love you-");
+			writeText("Her hands shoot up to cover her mouth as she shocks herself out of her stupor. But you pull her hand away to relax her with a soft kiss, and her body untenses.");
+			writeText("Her eyelids flutter again and she lowers her head onto her pillow, her breathing grows softer and she closes her eyes.");
+			writeSpeech("player", "", "neetF?");
+			writeSpeech("neet", "", "Mmm?");
+			writeText("She looks barely conscious, the day must've been a lot for her already. You pull out, neetF letting out a soft sigh as you do.");
+			writeSpeech("player", "", "You need some rest. Sleep tight, alright?");
+			writeSpeech("neet", "", "Mhmm...");
+			writeText("You draw a blanket over her and stretch out as you prepare to get dressed. You're a bit pent-up now, but you've pushed her limits as far as you can today.");
+			writeText("By the time you're ready to leave, it's already really dark.");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "neetA-2-2": {
+			writeText("The two of you walk to neetF's place together.");
+			writeSpeech("neet", "", "It can feel a lot colder when walking alone. Not cold, cold, but the chill that creeps up your face when you think about nothing. Perhaps it's a psychological effect of loneliness?");
+			writeText("The conversation continues on, neetF talking about whatever comes to mind.");
+			writeText("...");
+			writeBig("imagebox/neet/a3-1.jpg");
+			writeSpeech("neet", "", "How is this? I'm afraid I'm not quite experienced, but with practice I'm sure to improve.");
+			writeSpeech("player", "", "It... It feels great, but-");
+			writeSpeech("neet", "", "This is your own fault, really. I wouldn't have minded being woken back up, and I certainly wouldn't have minded you stay the night. I understand this isn't quite the usual circumstances for new couples, but please accept your 'punishment boobs'.");
+			writeText("She continues her practice, it's hard to hold on for much longer. She's shifted around at least five different positions and titjob styles before settling on one where she uses the weight of her breasts to massage your cock, while putting pressure from the sides with her arms.");
+			writeSpeech("neet", "", "Ah, apologies, I've slipped into phrasing that might be a bit too casual for this setting. Despite our feelings for each other, we aren't yet a new couple. I'd like to ensure mutual satisfaction for-");
+			writeSpeech("player", "", "I'm getting close!");
+			writeSpeech("neet", "", "Close? Ah, you mean that this style is to your liking.<br>Oh, I've just remembered, I've been meaning to tell you I figured out what was distracting me last time. Once I realized what had happened and started down a proverbial rabbit hole-");
+			writeBig("imagebox/neet/a3-2.jpg");
+			writeSpeech("neet", "", "-The hypnotic state you implanted upon me wore off.");
+			writeText("She says it so nonchalantly as you start spurting from between her breasts.");
+			writeSpeech("neet", "", "A mess. Luckily I've kept towels warmed since our last meeting. Please remain still and soak in the afterglow, I'll handle the mess. We'll continue to experiment, many of the forums I peruse suggest that making a mess of me would be more fun.<br>You know, right after I cum, I always try to-");
+			writeSpeech("player", "", "H-hold on, back up. You aren't hypnotized anymore? Yet you're still fine with this?");
+			writeText("She reaches down off the side of the bed to open a little plastic device made for towel warming.");
+			writeSpeech("neet", "", "Indeed. My discomfort for skinship has been severely decreased, the effect is likely permanent, but I assume it's a result of the improvised shock therapy I underwent. I'm fully in control of my faculties again, and feel as though I'm better for the effort.");
+			writeText("You've never had someone break through a trance and have a positive reaction to it, the situation is pretty flooring. You sit up as neetF wipes your abdomen clean.");
+			writeSpeech("player", "", "So... What do we do now?");
+			writeSpeech("neet", "", "I think it should be quite obvious.");
+			writeBig("imagebox/neet/a3-3.jpg");
+			writeSpeech("neet", "", "I'd like to continue to enjoy your company, of course.");
+			writeText("She takes hold of your arm and gives you a heart-melting smile.");
+			writeSpeech("neet", "", "I understand I'm not quite the typical lover someone of your stature might take. Given your rate of sexual resistance and the files I kept on you, I understand you're quite voracious.<br>I cannot keep pace with you as a girlfriend, but I'm confident in my ability to improve.");
+			writeSpeech("player", "", "Girlfriend? Like a serious one?");
+			writeSpeech("neet", "", "For now this, what we have now, will be more than enough for me.<br>If you'll have me, of course. <br>I'm sure such will be a difficult challenge for me, although I do have a suggestion.");
+			writeSpeech("player", "", "What's that?");
+			writeSpeech("neet", "", "Regardless of whether my inability to remain conscious long enough to fully satisfy your insatiability is physical or mental, the clearest answer to me is another round of hypnosis. Now that I've already been under, and that we can remain together even if it fails, I'm sure I can remain calm enough for you to transform me into someone who can meet your appetite.<br>I know it'll be a great commitment, but-");
+			writeSpeech("player", "", "You're asking me to turn you into my personal nymph?");
+			writeSpeech("neet", "", "A rigorous, hypnosis-based training regimen over the course of months, yes. I understand it's a lot to decide on, even more to plan for. I won't ask you to answer now, I find a good night's rest is the best solution for a difficult problem.");
+			writeSpeech("player", "", "I'll think about it. Good night, neetF.");
+			writeText("You get dressed and neetF waves you off. The sky has grown dark already, a lot of time has passed since neetF decided to experiment with how to satisfy you.");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "neetTitjobRepeat": {
+			writeBig("imagebox/neet/a3-1.jpg");
+			writeSpeech("neet", "", "I certainly believe I'm improving, judging by how you sound. Of all the positions, is this one your favorite?<br>Ah, you don't need to focus on answering. Trying to gleam your arousal nonverbally is an important part of my training.");
+			writeSpeech("player", "", "Mmmgh~");
+			writeSpeech("neet", "", "Perhaps I should try coming up with some arousing dialogue? Perhaps an innuendo on the use of the word 'coming', or offering to lick up the mess from your abdomen afterwards?");
+			writeBig("imagebox/neet/a3-2.jpg");
+			writeSpeech("neet", "", "Oh, good, you're cumming. Now, was that the result of my suggestion of sexually charged dialogue, or the natural result of my breastwork? Oh, what if I were to make a pun off the word 'breaststroke'? <br>We'll need to go another round, I'll be sure to log your times to climax in a spreadsheet. How long is your refractory period?<br>Actually, don't answer. The results will be more conclusive if I figure it out myself.");
+			writeText("...");
+			writeText("As focused as she's ever been, neetF waves you off as you get dressed, getting started filling out tables and generating charts based on her performance today.");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "neetSexRepeat": {
+			writeSpeech("player", "", "You're sure you can handle this? this?");
+			writeSpeech("neet", "", "Indeed. Positioning is important. Not only to arouse you with other parts of my body, such as my butt, but also to ensure I thoroughly work out each muscle group individually.");
+			writeSpeech("player", "", "Alright...");
+			writeSpeech("neet", "", "Ah, I'd like to grow accustomed to your usual pace. It's important to grow used to what you fully desire, so that you are fully satisfied by the end of our sessions.<br>Yet... If you could perhaps err on the gentler side...");
+			writeSpeech("player", "", "We have plenty of time to enjoy ourselves. Just relax.");
+			writeSpeech("neet", "", "Relax... Like I'm sudsing in a lovely bubble bath...");
+			writeBig("imagebox/neet/sex2.jpg");
+			writeSpeech("neet", "", "O-oh my. I'd planned to r-record data afterwards, but...");
+			writeSpeech("player", "", "Don't worry about any of that. It's your body that needs training today, just focus on remembering as much of this feeling as you can.");
+			writeSpeech("neet", "", "I don't think this will be difficult to remember...<br> We should try different angles too. I know you're the sort of person who enjoys inflicting pleasure, so experiment yourself to your heart's content...");
+			writeText("...");
+			writeBig("imagebox/neet/sex3.jpg");
+			writeSpeech("neet", "", "Hah... M-my goodness... I still need more practice, don't I?");
+			writeSpeech("player", "", "You're still up and I already came, you're doing quite well.");
+			writeSpeech("neet", "", "Y-you're sure?<br>The c-cum is quite sticky...");
+			writeSpeech("player", "", "Want a towel?");
+			writeSpeech("neet", "", "No... This afterglow is much better than my usual self-pleasure sessions...<br>Will I see you again tomorrow?");
+			writeSpeech("player", "", "I'll be around. You make sure to get some rest, alright neetF?");
+			writeSpeech("neet", "", "Goodnight, playerF.");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		default: {
@@ -530,7 +839,7 @@ function writeEvent(name) { //Plays the actual event.
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
 	{index: "neetNotification", trust: 3,},
 	{index: "neetReward", trust: 100,},
-	{index: "neetReward", trust: 101,},
+	{index: "neetReward", trust: 301,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
