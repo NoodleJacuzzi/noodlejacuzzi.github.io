@@ -20,7 +20,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "kuro4", name: "kuro is leaning against the fence", location: 'roof', time: "Morning", itemReq: "", trustMin: 21, trustMax: 25, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "kuro5", name: "kuro is fiddling with her phone, rubbing her thighs together as she waits", location: 'roof', time: "Morning", itemReq: "", trustMin: 60, trustMax: 62, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "kuro6", name: "kuro is sitting near the fence, her panties in clear view", location: 'roof', time: "Morning", itemReq: "", trustMin: 63, trustMax: 63, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "kuroCasino1", name: "kuro is here in a bikini", location: 'casino', time: "MorningEvening", itemReq: "", trustMin: 60, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "kuroCasino1", name: "kuro is here", location: 'casino', time: "MorningEvening", itemReq: "", trustMin: 60, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
 ]
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -461,7 +461,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Given the nature of the casino, it's no surprise she's here to tempt you. You should probably keep going, but...");
 			writeSpeech("kuro", "", "I'm gonna head in there. If you're interested in getting a good feel for the beds, I'd love the company of something more fun than my fingers!");
 			writeText("She sways her hips smoothly, her shorts hiding nothing as she starts through the door.");
-			writeSpeech("scarf", "", "Come, it's fine to relax~ Just enjoy yourself, playerF...");
+			writeSpeech("scarf", "bunny.jpg", "Come, it's fine to relax~ Just enjoy yourself, playerF...");
 			if(checkTrust('kuro') == 64 || checkFlag('kuro','Triggered')){
 				writeText("kuroF pauses for a moment though, running her her hand along the doorframe and smirking over her shoulder at you.");
 				writeSpeech("kuro", "", "But don't go slamming the door <i>too</i> hard, hun. <i>I want you <b>inside</b> when I start to cum~!</i>");
@@ -476,10 +476,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("kuroF smirks, her arms raised as you feel a pleasant haze starting to fill your head.");
 			writeText("Time feels vague and loose, moments blurring between one another as pleasure starts to stuff your mind, like cotton in your brain.");
 			writeText("You lose track of sensation and the moment-to-moment details, your thoughts quickly focusing solely on her body.");
-			writeSpeech("scarf", "", "That's very good~ Just relax and enjoy this, and leave your body to me.");
+			writeSpeech("scarf", "bunny.jpg", "That's very good~ Just relax and enjoy this, and leave your body to me.");
 			writeBig("imagebox/scarf/casinoKuro1.jpg", "Art by Enoshima Iki");
 			writeText("Your mind and skin feel more sensitive than ever before, wave after wave of ecstasy flooding your head.");
-			writeSpeech("scarf", "", "You don't have to worry about anything anymore. Just keep having fun with that slutty little body and leave everything to me.");
+			writeSpeech("scarf", "bunny.jpg", "You don't have to worry about anything anymore. Just keep having fun with that slutty little body and leave everything to me.");
 			writeBig("imagebox/scarf/casinoKuro2.jpg", "Art by Enoshima Iki");
 			writeText("You're sure she kept talking. A part of you is still able to recognize that, though what she's actually <i>saying</i>, you can't be sure.");
 			writeText("Eventually, she even stops that much, leaving you to the endless cacophany of sexual sensation that you chose.");

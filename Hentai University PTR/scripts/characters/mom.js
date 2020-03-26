@@ -23,7 +23,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "mom3", name: "mom is drunkenly stumbling home", location: 'apartmentOutside', time: "Evening", itemReq: "", trustMin: 60, trustMax: 60, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "mom4", name: "mom is walking down the street", location: 'vintageStreet', time: "Evening", itemReq: "Beer", trustMin: 79, trustMax: 89, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "mom5", name: "Knock on mom's door", location: 'apartmentOutside', time: "MorningEvening", itemReq: "", trustMin: 90, trustMax: 90, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "momCasino1", name: "mom is here in a strange outfit", location: 'casino', time: "MorningEvening", itemReq: "", trustMin: 90, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "momCasino1", name: "mom is here", location: 'casino', time: "MorningEvening", itemReq: "", trustMin: 90, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
 ]
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -220,7 +220,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeBig("imagebox/scarf/casinoMom2.jpg", "Art by Enoshima Iki");
 			writeSpeech("mom", "", "I'm headed in now. If you wanna follow, well...");
 			writeText("Too self concious to finish her statement, she walks through a small door you didn't see before.");
-			writeSpeech("scarf", "", "Relax... Let yourself sink in and enjoy~");
+			writeSpeech("scarf", "bunny.jpg", "Relax... Let yourself sink in and enjoy~");
 			writeFunction("writeEncounter('momCasino2')", "Follow momF");
 			writeFunction("changeLocation(data.player.location)", "Resist, keep on track");
 			break;
@@ -230,11 +230,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("mom", "", "So, what kinda fun were you hoping to have with me? I was hoping we could...");
 			writeText("Her voice fades out as a pleasant haze fills your mind.");
 			writeBig("imagebox/scarf/casinoMom4.jpg", "Art by Enoshima Iki");
-			writeSpeech("scarf", "", "Just relax, enjoy. There's nothing left to worry about, I'll do all the thinking for you.");
+			writeSpeech("scarf", "bunny.jpg", "Just relax, enjoy. There's nothing left to worry about, I'll do all the thinking for you.");
 			writeBig("imagebox/scarf/casinoMom5.jpg", "Art by Enoshima Iki");
-			writeSpeech("scarf", "", "Your body will follow my instructions, while your mind enjoys a little slice of heaven on repeat.");
+			writeSpeech("scarf", "bunny.jpg", "Your body will follow my instructions, while your mind enjoys a little slice of heaven on repeat.");
 			writeBig("imagebox/scarf/casinoMom6.jpg", "Art by Enoshima Iki");
-			writeSpeech("scarf", "", "Forever and ever. Goodnight, child.");
+			writeSpeech("scarf", "bunny.jpg", "Forever and ever. Goodnight, child.");
 			writeText("Her voice is like waves against brittle rocks. Each splash takes a little more of you away, until you're broken apart and spread throughout the ocean.");
 			writeText("Some small, last part of you recognizes her soft hand on your cheek before it fades away, leaving you with nothing but the pleasure of an endless night in the casino with momF.");
 			writeFunction("loadEncounter('scarf', 'failure')", "The End");
