@@ -125,16 +125,30 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "greenBar2": {
 			writeEvent("greenBar");
-			writeSpeech("scarf", "casual.jpg", "Not a bad plan-");
-			writeBig("imagebox/scarf/scarfCasual.jpg", "Art by Enoshima Iki");
-			writeSpeech("player", "", "Jesus!");
-			writeSpeech("scarf", "casual.jpg", "Oh, is that what I look like to you? Well, she's out. There's pretty much no chance that she'll remember any of this in the morning you know.");
-			writeSpeech("player", "", "Well, failures could go worse, I suppose.");
-			writeSpeech("scarf", "casual.jpg", "Care for a nightcap?");
-			writeSpeech("player", "", "I'm not enough of an idiot to get drunk around you. I'm headed home, I'll give greenF another shot in the morning.");
-			writeSpeech("scarf", "casual.jpg", "Take your time~");
+			if (checkTrust('scarf') > 99) {
+				writeSpeech("scarf", "casual.jpg", "Not a bad plan-");
+				writeBig("imagebox/scarf/scarfCasual.jpg", "Art by Enoshima Iki");
+				writeSpeech("player", "", "Oh, hey scarfF.");
+				writeSpeech("scarf", "casual.jpg", "Hello. As I was saying, not a terrible idea. The problem is that greenF isn't receptive at all while she's sleepy. We share the trait.");
+				writeSpeech("player", "", "Well, failures could go worse, I suppose.");
+				writeSpeech("scarf", "casual.jpg", "Care for a nightcap?");
+				writeSpeech("player", "", "I don't drink, sorry. I'll let you know when I've got the plan figured out.");
+				writeSpeech("scarf", "casual.jpg", "Take your time~");
+			}
+			else {
+				writeSpeech("scarf", "casual.jpg", "Not a bad plan-");
+				writeBig("imagebox/scarf/scarfCasual.jpg", "Art by Enoshima Iki");
+				writeSpeech("player", "", "Jesus!");
+				writeSpeech("scarf", "casual.jpg", "Oh, is that what I look like to you? Well, she's out. There's pretty much no chance that she'll remember any of this in the morning you know.");
+				writeSpeech("player", "", "Well, failures could go worse, I suppose.");
+				writeSpeech("scarf", "casual.jpg", "Care for a nightcap?");
+				writeSpeech("player", "", "I'm not enough of an idiot to get drunk around you. I'm headed home, I'll give greenF another shot in the morning.");
+				writeSpeech("scarf", "casual.jpg", "Take your time~");
+			}
 			data.player.time = "Night";
-			addFlag('green', 'bar');
+			if (checkFlag('green', 'bar') != true) {
+				addFlag('green', 'bar');
+			}
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -175,14 +189,26 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("green", "casual.jpg", "Ah, she's back.<br>Fuck off sis, I'm havin' some me time! Go back with your little boytoy!<br> How the hell is he convinced you're a teenager too, anyw-");
 			writeText("*SNAP*");
 			writeText("greenF's eyes unfocus and her attitude vanishes. Even from the other room the snap took effect, scarfF confidently walks into the room.");
-			writeSpeech("scarf", "", "Any luck, playerF? Sorry about interrupting your fun, but I'm hungry. greenF, food please.");
-			writeText("Like a puppet with strings pulled taut, greenF obeys. Cum still leaking she walks towards the kitchen.");
-			writeSpeech("player", "", "No luck yet, I've got a plan in the works though. Next time, for sure. How was your night?");
-			writeSpeech("scarf", "", "I got bored and left early, as usual. I need a challenge these days to make waking up in the morning worth it. I suppose I shouldn't get my hopes up too much though.");
-			writeSpeech("player", "", "You're in for one. I'll see you and greenF soon, good night.");
-			writeSpeech("scarf", "", "Of course, child. Good night~");
+			if (checkTrust('scarf') > 99) {
+				writeSpeech("scarf", "alt.jpg", "Enjoying yourself, playerF? Sorry about interrupting your fun, but I'm hungry. greenF, food please.");
+				writeText("Like a puppet with strings pulled taut, greenF obeys. Cum still leaking she walks towards the kitchen.");
+				writeSpeech("player", "", "As much as I please. You have any fun yourself?");
+				writeSpeech("scarf", "alt.jpg", "I got bored and left early, as usual. Any progress on your plan to dominate the school?");
+				writeSpeech("player", "", "Eh, not yet. I figure it'll shake up the status quo a lot, might as well have fun while I can. See you around, scarfF.");
+				writeSpeech("scarf", "alt.jpg", "Of course, child. Good night~");
+			}
+			else {
+				writeSpeech("scarf", "", "Any luck, playerF? Sorry about interrupting your fun, but I'm hungry. greenF, food please.");
+				writeText("Like a puppet with strings pulled taut, greenF obeys. Cum still leaking she walks towards the kitchen.");
+				writeSpeech("player", "", "No luck yet, I've got a plan in the works though. Next time, for sure. How was your night?");
+				writeSpeech("scarf", "", "I got bored and left early, as usual. I need a challenge these days to make waking up in the morning worth it. I suppose I shouldn't get my hopes up too much though.");
+				writeSpeech("player", "", "You're in for one. I'll see you and greenF soon, good night.");
+				writeSpeech("scarf", "", "Of course, child. Good night~");
+			}
 			data.player.time = "Night";
-			addFlag('green', 'home');
+			if (checkFlag('green', 'home') != true) {
+				addFlag('green', 'home');
+			}
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -226,6 +252,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeEvent("greenWork");
 			data.player.time = "Night";
 			addFlag('green', 'work');
+			if (checkFlag('green', 'work') != true) {
+				addFlag('green', 'work');
+			}
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -271,6 +300,36 @@ function writeEncounter(name) { //Plays the actual encounter.
 			setTrust('green', 43);
 			passTime();
 			writeFunction("loadEncounter('scarf', 'scarfVictory')", "Yes, you do");
+			break;
+		}
+		case "greenBeach": {
+			writeText("You grab greenF by the hand, more on instinct than anything else.");
+			writeSpeech("player", "", "Fuck off, she's mi-");
+			writeText("You stop, they're gone. The beach is still active and lively around you as greenF leads you by the hand.");
+			writeSpeech("player", "", "Wait... I should... What was I doing again?");
+			writeBig("imagebox/scarf/greenBeachSex1.jpg");
+			writeSpeech("green", "bikini.jpg", "Enjoying the sun? How about you and I get some privacy in the changing room?");
+			writeText("Events are happening and passing by, disconnected from any kind of rational order or logic.");
+			writeText("...");
+			writeBig("imagebox/scarf/greenBeachSex2.jpg");
+			writeSpeech("green", "bikini.jpg", "Y'know, you really seemed like you had somewhere to be. Do you really wanna leave now?");
+			writeSpeech("player", "", "I had... Somewhere to be?");
+			writeSpeech("green", "bikini.jpg", "It must not have been that important if you can't remember it. Just relax!");
+			writeSpeech("player", "", "I... Yeah...");
+			writeBig("imagebox/scarf/greenBeachSex3.jpg");
+			writeText("Before you fall into an endless loop of pleasure, you can hear a voice whispering into your ear.");
+			writeSpeech("scarf", "bikini.jpg", "You put up a good resistance, child. Just relax, enjoy.");
+			writeFunction("loadEncounter('scarf', 'failure')", "The End");
+			break;
+		}
+		case "greenNewQuo": {
+			writeSpeech("green", "", "Hi, what's up?");
+			writeSpeech("player", "", "Hey, I was wondering...");
+			writeText("With scarfF under your control you can enjoy greenF's company at your leisure. One interesting way to pass the time would be to retry your initial challenge, and find ways to make her repeat the phrase for your victory again. Plus, with hypnosis, memory is more of a guideline than a rule.");
+			writeFunction("writeEncounter('greenBar1')", "'Wanna go out after work?'");
+			writeFunction("writeEncounter('greenHome1')", "'Can I walk you home after work?'");
+			writeFunction("writeEncounter('greenWork1')", "'Need any help?'");
+			writeFunction("writeEncounter('greenCancel')", "Go back");
 			break;
 		}
 		default: {
@@ -388,13 +447,14 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "placeholder", trust: 200,},
+	{index: "greenReward", trust: 100,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
-		case "placeholder": {
-			//Write the event's text here using writePhoneSpeech, writePhoneImage, and writePhoneChoices
+		case "greenReward": {
+			writePhoneImage("images/green/reward.jpg", "Art by Enoshima Iki");
+			writePhoneSpeech("green", "", "You've finished all of greenF's content for this version, great work!");
 			break;
 		}
 		default: {

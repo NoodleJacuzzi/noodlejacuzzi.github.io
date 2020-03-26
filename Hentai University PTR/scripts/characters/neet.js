@@ -28,6 +28,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "neetA-1-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 101, trustMax: 101, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "neetA-2-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 102, trustMax: 102, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "neetA-3-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 103, trustMax: 110, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetBeach1", name: "neet is here", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 60, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -644,6 +645,39 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She's still got a lot of work to go, but she's making progress. You've got plenty of time to keep going.");
 			writeSpeech("player", "", "We've got all the time in the world, neetF.");
 			writeFunction("loadEncounter('system', 'credits')", "The End");
+			break;
+		}
+		case "neetBeach1": {
+			writeBig("imagebox/scarf/beachNeet1.jpg");
+			writeSpeech("Playboy", "images/none.png", "Cmon girl, we just wanna be friends! You're so pale, you'll burn, so how about me and my friend get you into some shade.");
+			writeBig("imagebox/scarf/beachNeet2.jpg");
+			writeSpeech("neet", "bikini.jpg", "Ah, *sir! Please, help!");
+			writeSpeech("Playboy", "images/none.png", "Cmon glasses, don't be like that. He's got places to be, so why don't we have some fun?");
+			writeFunction("writeEncounter('neetBeach2')", "Save her");
+			writeFunction("changeLocation(data.player.location)", "Ignore her, focus");
+			break;
+		}
+		case "neetBeach2": {
+			writeText("You grab greenF by the hand, more on instinct than anything else.");
+			writeSpeech("player", "", "Fuck off, she's my cinnamon roll.");
+			writeText("You pull neetF away from the crowd, not quite sure where you're heading. Eventually the crowds around you are gone, and you have no idea where you are.");
+			writeSpeech("player", "", "Okay, gotta focus... neetF, you're holding me a bit tight.");
+			writeSpeech("neet", "bikini.jpg", "Ah, sorry... Thank you again for helping me.");
+			writeBig("imagebox/scarf/beachNeetSex1.jpg");
+			writeSpeech("player", "", "Wait... I should... What was I doing again?");
+			writeSpeech("neet", "bikini.jpg", "We're enjoying the beach, sir.<br>I... I never know what to do in those sorts of situations.");
+			writeSpeech("player", "", "It's fine, you gotta stand up for yourself...");
+			writeText("The words are flowing out of your mouth like you're reading from a script as you rub the bridge of your nose.");
+			writeSpeech("neet", "bikini.jpg", "Stand up for myself...");
+			writeBig("imagebox/scarf/beachNeetSex2.jpg");
+			writeSpeech("neet", "bikini.jpg", "Like this?<br>I've been getting looks all day, but I like yours the most.");
+			writeText("More confident than you've ever seen her, she gently pushes you down.");
+			writeSpeech("player", "", "I should go, I need to find-");
+			writeSpeech("neet", "bikini.jpg", "It's alright, sir, you don't need to be anywhere but here. Just relax...");
+			writeBig("imagebox/scarf/beachNeetSex3.jpg");
+			writeText("Before you fall into an endless loop of pleasure, you can hear a voice whispering into your ear.");
+			writeSpeech("scarf", "bikini.jpg", "You put up a good resistance, child. Just relax, enjoy.");
+			writeFunction("loadEncounter('scarf', 'failure')", "The End");
 			break;
 		}
 		default: {

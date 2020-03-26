@@ -27,6 +27,11 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "casino1", name: "Chase the bunny.", location: 'casino', time: "MorningEvening", itemReq: "", trustMin: 60, trustMax: 60, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "casino2", name: "Chase the bunny.", location: 'casino', time: "MorningEvening", itemReq: "", trustMin: 61, trustMax: 61, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "beachPrompt", name: "scarf is here in her office, if you're ready to start.", location: 'teacherLounge', time: "MorningEvening", itemReq: "", trustMin: 62, trustMax: 62, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "beach1", name: "Explore the beach.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 62, trustMax: 62, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "beach2", name: "Explore the beach.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 63, trustMax: 63, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "statusQuo", name: "scarf is here in her office.", location: 'teacherLounge', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "escape", name: "scarf is here.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "escape", name: "scarf is here.", location: 'casino', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -283,6 +288,123 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation('teacherLounge')", "Finish");
 			break;
 		}
+		case "beachPrompt": {
+			writeSpeech("player", "", "You ready?");
+			writeSpeech("scarf", "", "Oh, already? I was expecting you'd grow a sense of self preservation at some point.<br>Well, I suppose that your fate either way will end up quite pleasant. Is it lust that drives you?");
+			writeSpeech("player", "", "And a burning passion to rub my victory in your face.<br>Maybe something else too.");
+			writeSpeech("scarf", "", "Well, without further ado then.");
+			writeText("She begins to slide up her sweater.");
+			writeSpeech("player", "", "Do you really use your tits for hypnotism?");
+			writeSpeech("scarf", "", "Not usually, my eyes are often enough. But when I need to get serious...");
+			writeBig("imagebox/scarf/scarfBeach2.jpg");
+			writeSpeech("scarf", "", "I find the results speak for themselves.");
+			writeSpeech("player", "", "Ooh, a beach. I haven't been to one... Well, it actually hasn't been that long. You gonna run about?");
+			writeBig("imagebox/scarf/scarfBeach1.jpg");
+			writeSpeech("scarf", "bikini.jpg", "Mm-mm.<br>No you'll have to entertain yourself for a while. Go have fun, try not to get too distracted. greenF Often finds building a sandcastle in a mental world to be quite the engaging task. Just wander around the beach for a bit, child.");
+			writeBig("imagebox/scarf/scarfBeach3.jpg");
+			writeSpeech("scarf", "bikini.jpg", "Good luck~");
+			writeText("The strategy is sound, without chasing her to occupy your mind, you're a lot more vulnerable to getting distracted and getting stuck in a trance. Still, you aren't a child, you should be able to stay focused long enough.");
+			writeFunction("changeLocation('beach')", "The challenge begins");
+			unencounter('scarf');
+			break;
+		}
+		case "beach1": {
+			writeSpeech("player", "", "Alright, wandering around. Gotta be careful not to get lost...");
+			writeText("In a world where physics are based in your own mind, things could get a little fucky with reality if you don't keep a strong mental map.");
+			writeSpeech("player", "", "Sand beneath my toes, the scent of saltwater...<br>Oh, hey, I've got a swimsuit. Pretty nice br-<br>Ah, shit, stay focused. This should be long enough, I should get back to-");
+			writeSpeech("green", "bikini.jpg", "Yo!");
+			writeBig("imagebox/scarf/greenBeach1.jpg");
+			writeSpeech("green", "bikini.jpg", "Fancy seeing you in my dream like this.");
+			writeSpeech("player", "", "No time, got a competition to win. Talk to you-");
+			writeText("Letting yourself engage with the fake reality is a bad idea, you could get distracted for longer than you realize.");
+			writeSpeech("Playboy", "images/none.png", "Hey hot stuff, you're lookin pretty good!");
+			writeBig("imagebox/scarf/greenBeach2.jpg");
+			writeText("A pair of tanned beachgoes have come up to start hitting on greenF");
+			writeSpeech("green", "bikini.jpg", "Oh, stop. I'm old enough to be your-");
+			writeSpeech("Playboy", "images/none.png", "One second. Hey, bro. She yours?");
+			raiseTrust("scarf", 1);
+			writeFunction("loadEncounter('green', 'greenBeach')", "Yeah, she's with me");
+			writeFunction("changeLocation(data.player.location)", "Ignore them, focus");
+			unencounter('scarf');
+			break;
+		}
+		case "beach2": {
+			writeBig("imagebox/scarf/scarfBeach4.jpg");
+			writeSpeech("scarf", "bikini.jpg", "You're back. <br>I suppose I shouldn't be too surprised.");
+			writeSpeech("player", "", "Yeah. You ready to submit and cut the hypnosis?<br><i>All</i> of it?");
+			writeSpeech("scarf", "bikini.jpg", "My, you really are something. I still have one last trick up my sleeve, of course, but at this point it all seems a bit moot. Why don't we at least have some fun before this all ends?");
+			writeSpeech("player", "", "... What did you have in mind?");
+			writeBig("imagebox/scarf/scarfBeachSex1.jpg");
+			writeSpeech("scarf", "bikini.jpg", "If you've made it this far, some quick fun ought not to be a problem, right?");
+			writeBig("imagebox/scarf/scarfBeachSex2.jpg");
+			writeSpeech("player", "", "One last ditch effort, huh?<br>... Fuck it. I didn't get here by <i>not</i> listening to my dick.");
+			writeBig("imagebox/scarf/scarfBeachSex3.jpg");
+			writeText("As you thrust into her waiting cunt, you hear a moan from somewhere. Distant, yet all around you.");
+			writeSpeech("scarf", "bikini.jpg", "I'd expected you to hesitate a little longer.<br>And honestly, where does that confidence of yours come from? I certainly hope you have some technique, or at least that your stamina is impressive, because-");
+			writeBig("imagebox/scarf/scarfBeachSex4.jpg");
+			writeText("You ignore scarfF's taunting and start thrusting faster, trying to figure out what direction the moans are coming from as they grow louder.");
+			writeSpeech("scarf", "bikini.jpg", "Such fervor! Are you trying to compensate for something? Or do --u thin- that a br--e like-");
+			writeText("The scent of saltwater is starting to fade, the moans are growing louder, and scarfF's taunts are starting to fade out mid-word.");
+			writeText("You close your eyes and put everything you have into a rough, hard fuck, and when you open your eyes back up again...");
+			writeBig("imagebox/scarf/scarfBeachSex5.jpg");
+			writeSpeech("scarf", "alt.jpg", "AAaah~! S-slo-Ghhh~!");
+			writeText("The office is filled with a high-pitch scream as the hypnosis she's kept you under is finally completely shattered, leaving only a woman getting railed while her sense of control breaks down.");
+			writeSpeech("player", "", "Ghh... I've got big plans for you, for this school, but right now all I care about is making you... SUBMIT!");
+			writeSpeech("scarf", "alt.jpg", "Y-yes~! I will! I'll~!");
+			writeBig("imagebox/scarf/scarfBeachSex6.jpg");
+			writeSpeech("scarf", "alt.jpg", "CUMMING~!");
+			writeText("Her voice reaches new heights, the hypnotist's will is broken with a final creampie to seal the deal. For all her planning, one thing has been settled for good.");
+			writeText("<b>scarfF is yours now</b>.");
+			writeText("You take a step back to admire your handiwork, only to realize something as you look around.");
+			writeSpeech("player", "", "... When did I get to scarfF's house?");
+			writeText("She must've taken you hear while you were in a trance, not like you can ask the twitching, leaking mess for the full story though.");
+			writeText("...");
+			writeBig("imagebox/scarf/scarfNormal.jpg");
+			writeSpeech("scarf", "alt.jpg", "So you don't actually have a plan for taking the school?");
+			writeSpeech("player", "", "I figured I'd wing it. Not like I'm gonna plan domination <i>before</i> I have fun with the school.");
+			writeText("Once she's awake scarfF gets dressed properly. The battle lost, it's clear there's no question about which of you is on top anymore.");
+			writeSpeech("scarf", "alt.jpg", "I guess that suits you then. Well, whatever you decide to do while you 'wing it', you have my support.");
+			writeSpeech("player", "", "Thanks. So you've been hypnotizing me since I first saw you? You don't look all that different without the whole passive hypnosis thing. I figured you'd be like some eighty-year-old hag underneath all that, or something.");
+			writeSpeech("scarf", "alt.jpg", "Oh? Well, I guess <i>you</i> wouldn't be too fooled. Still, it's embarrassing to have you staring at the real me...<br>If you've got a few years to practice, I could teach you the technique.");
+			writeSpeech("player", "", "Eeeeh no thanks. I just care about what I need to keep me hidden from the law, and what I need to fuck whoever I want.");
+			writeText("She chuckles.");
+			writeSpeech("scarf", "alt.jpg", "You really are quite amusing. I'll see you around, then? Just give me a call when you get started taking your university conquest seriously.");
+			writeText("You wave off scarfF as you leave.");
+			setTrust('scarf', 100);
+			setTrust('green', 100);
+			passTime();
+			writeFunction("changeLocation('vintageStreet')", "Finish");
+			break;
+		}
+		case "statusQuo": {
+			writeSpeech("scarf", "", "Oh, come to pay me a visit, playerF? Was there something you needed?<br>I'm not exactly sure what you have planned for the school, but when that plan comes into play I'll support you.");
+			writeFunction("writeEncounter('casinoRepeat')", "Return to the dream casino");
+			writeFunction("writeEncounter('beachRepeat')", "Return to the dream beach");
+			writeFunction("changeLocation(data.player.location)", "Go back");
+			unencounter('scarf');
+			break;
+		}
+		case "casinoRepeat": {
+			writeSpeech("scarf", "", "You want to return into that fantasy world? Well, I won't judge, just be careful not to become distracted. Best of luck, let me know when you'd like to leave.");
+			writeFunction("changeLocation('casino')", "Enter the dream casino");
+			writeFunction("changeLocation('teacherLounge')", "Change your mind");
+			unencounter('scarf');
+			break;
+		}
+		case "beachRepeat": {
+			writeSpeech("scarf", "", "You want to return into that fantasy world? Well, I won't judge, just be careful not to become distracted. Best of luck, let me know when you'd like to leave.");
+			writeFunction("changeLocation('beach')", "Enter the dream beach");
+			writeFunction("changeLocation('teacherLounge')", "Change your mind");
+			unencounter('scarf');
+			break;
+		}
+		case "escape": {
+			writeSpeech("scarf", "", "Bored already? Well, it's to be expected. The more interesting your own life, the more interesting these hypnotic palaces are. Oho~<br>Care to head back now?");
+			writeFunction("changeLocation('teacherLounge')", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Change your mind");
+			unencounter('scarf');
+			break;
+		}
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -323,13 +445,14 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
+	{index: "scarfReward", trust: 100,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "scarfReward": {
 			writePhoneImage("images/scarf/reward.jpg", "Art by Enoshima Iki");
-			writePhoneSpeech("scarf", "", "You've finished all of scarfF's content for this version, more is coming soon!");
+			writePhoneSpeech("scarf", "", "You've finished all of scarfF's content for this version, great work!");
 			break;
 		}
 		case "scarfChallenge": {
