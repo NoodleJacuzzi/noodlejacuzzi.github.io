@@ -122,13 +122,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "housekeep2" : {
-			if(data.player.money < 15 && checkFlag('housekeep','Hypno' != true)){
+			if(data.player.money < 15 && checkFlag('housekeep','Hypno') != true){
 				writeText("You reach for the phone to call, but a phantom sensation stops you.");
 				writeText("Unbidden, your mind goes to your wallet, and you remember that you don't actually have the $15 to pay for an hour...");
 				writeText("Maybe next time.");
 				writeFunction("changeLocation(data.player.location)", "Finish");
 				break;
 			}
+			else if()
 			if(checkFlag('housekeep','Hypno') != true)
 				data.player.money -= 15;
 			passTime();
@@ -1087,6 +1088,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("housekeep","","It is a maid's pleasure to clean up these kinds of messes, *Master~ Don't you worry about me.");
 				writeSpeech("player","","If you say so. I'll leave you to it, then...");
 				writeText("...");
+				writeText("By the time you're finished with the shower, it seems housekeepF just finished the cleaning, stowing his small cloth and spray bottle as he stands near the door.");
+				writeSpeech("player","","You heading out?");
+				writeText("He nods.");
+				writeSpeech("housekeep","","Excellent timing - I wanted to wish you a wonderful night before going, *Master.");
+				writeSpeech("player","","You too, housekeepF. Stay safe out there.");
+				writeText("housekeepF flashes that same knowing grin as he nods.");
+				writeSpeech("housekeep","","You shouldn't worry about that, but I promise I will, *Master.");
+				writeText("With that, he slides on his shoes and heads out the door.");
 			}
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
@@ -1097,7 +1106,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("He barely contains his moaning as you move a finger to press against his hole, the other hand teasing his balls while you drag your tongue along his shaft.");
 			writeText("Then, wordlessly and without warning, you take his entire shaft into your mouth.");
 			writeText("housekeepF sharply inhales through his teeth as you slip your finger in, pressing against his prostate with your fingertip while you drag your lips up and down his cock.");
-			writeText("Turning your head slightly as you go up and down, you take pleasure in every squeak and moan as Anri squirms beneath you, your tongue lapping against his sensitive head every time you get to the tip, before you push back down, pressing your tongue against him as you drag down.");
+			writeText("Turning your head slightly as you go up and down, you take pleasure in every squeak and moan as housekeepF squirms beneath you, your tongue lapping against his sensitive head every time you get to the tip, before you push back down, pressing your tongue against him as you drag down.");
 			writeSpeech("housekeep","","F-From both sides, i-it's...!");
 			writeText("You don't let him finish, a second finger sliding into his ass as you keep massaging his p-spot, the words falling apart into moans.");
 			writeText("As you pick up speed little by little, the ragged moans turn into the only words he can still form:");
@@ -1569,7 +1578,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "housekeepReward", trust: 45,},
+	{index: "housekeepReward", trust: 43,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
