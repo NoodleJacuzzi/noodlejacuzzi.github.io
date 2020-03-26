@@ -315,7 +315,7 @@ function passTime() {
 function loadCharacter(name) {
 	for (loadIndex = 0; loadIndex < data.story.length; loadIndex++) {
 		if (data.story[loadIndex].index == name) {
-			alert(name+' found already in the data variable, aborting function');
+			console.log(name+' found already in the data variable, aborting function');
 			name = 'failed';
 		}
 	}

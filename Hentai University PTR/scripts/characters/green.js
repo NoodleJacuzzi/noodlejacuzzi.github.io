@@ -127,7 +127,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeEvent("greenBar");
 			if (checkTrust('scarf') > 99) {
 				writeSpeech("scarf", "casual.jpg", "Not a bad plan-");
-				writeBig("imagebox/scarf/scarfCasual.jpg", "Art by Enoshima Iki");
+				writeBig("images/scarf/scarfCasual.jpg", "Art by Enoshima Iki");
 				writeSpeech("player", "", "Oh, hey scarfF.");
 				writeSpeech("scarf", "casual.jpg", "Hello. As I was saying, not a terrible idea. The problem is that greenF isn't receptive at all while she's sleepy. We share the trait.");
 				writeSpeech("player", "", "Well, failures could go worse, I suppose.");
@@ -137,7 +137,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			}
 			else {
 				writeSpeech("scarf", "casual.jpg", "Not a bad plan-");
-				writeBig("imagebox/scarf/scarfCasual.jpg", "Art by Enoshima Iki");
+				writeBig("images/scarf/scarfCasual.jpg", "Art by Enoshima Iki");
 				writeSpeech("player", "", "Jesus!");
 				writeSpeech("scarf", "casual.jpg", "Oh, is that what I look like to you? Well, she's out. There's pretty much no chance that she'll remember any of this in the morning you know.");
 				writeSpeech("player", "", "Well, failures could go worse, I suppose.");
@@ -161,7 +161,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Hopefully a more casual environment will let you bypass scarfF's protection.");
 			writeSpeech("green", "", "Ah, don't mind any of her stuff. She's into those Chinese cartoons.");
 			writeText("The place is pretty tidy on first pass, but a lot of the stuff all around is pretty weirdly organized. Like somebody told robot 'clean this place up' without explaining any of the nuance.");
-			writeBig("imagebox/scarf/scarfApron.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/scarfApron.jpg", "Art by Enoshima Iki");
 			writeSpeech("green", "", "So, what're ya hungry for?");
 			writeSpeech("player", "", "Oh, uh, anything's fine. You don't really need to make anything.");
 			writeSpeech("green", "", "Cmon ya scaredy cat! I'm a pretty good cook. Besides, this is my usual routine. I always start cooking when me and scarfF get home anyways.");
@@ -172,7 +172,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("'Perfecting Finger Technique: Snapping for Masters'");
 			writeText("Aside from that, the only really notable things were a ton of anime stuff and surprisingly no scarves. You kinda thought she'd be more fashionable.");
 			writeSpeech("green", "casual.jpg", "Yo! Food's ready. Hope you don't mind I got a little more comfortable.");
-			writeBig("imagebox/scarf/greenCasual.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/greenCasual.jpg", "Art by Enoshima Iki");
 			writeSpeech("player", "", "Thanks. This yours?");
 			writeSpeech("green", "casual.jpg", "Nope! scarfF's.");
 			writeSpeech("player", "", "Why would she need a book on snapping? She sounded fine before.");
@@ -218,7 +218,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She's not super vulnerable to hypnosis, so getting her comfortable around you, or at least seriously tired, could be the answer here.");
 			writeText("...");
 			writeText("Of course, it backfires a little. You hadn't realized exactly how tedious this all is.");
-			writeBig("imagebox/scarf/greenWork1.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/greenWork1.jpg", "Art by Enoshima Iki");
 			writeSpeech("green", "", "Hah, yeah. The school really ought to get some new testing machines. But those don't do too well on short answer quizzes.");
 			writeSpeech("player", "", "And why are there a bunch of psychology exams in here? Isn't that scarfF's field?");
 			writeSpeech("green", "", "Eh, it's no big deal. If you don't wanna, I'll deal with 'em.");
@@ -233,12 +233,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Sorry, got distracted for a sec. Anyways, let's just focus. If we figure this all out we should be done before it gets dark.");
 			writeText("...");
 			writeSpeech("player", "", "Aaand... Done. How about-");
-			writeBig("imagebox/scarf/greenWork2.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/greenWork2.jpg", "Art by Enoshima Iki");
 			writeSpeech("player", "", "Ah. Well, tired works too. greenF? greenF, wake up.");
 			writeSpeech("green", "", "Mmm...");
 			writeSpeech("player", "", "It's fine, you can go right back to sleep. Just stare at this for a second...");
 			writeText("You take out your pendant and get into a quick rhythm. Not your best work, but...");
-			writeBig("imagebox/scarf/greenWork3.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/greenWork3.jpg", "Art by Enoshima Iki");
 			writeSpeech("player", "", "Now, when I say 'glorious victory', you'll say...?");
 			writeSpeech("green", "", "... No.");
 			writeText("You sigh, it was worth a shot. She's pretty sleepy, but the mental protections on greenF are too thorough and ingrained in her psyche.");
@@ -307,16 +307,16 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Fuck off, she's mi-");
 			writeText("You stop, they're gone. The beach is still active and lively around you as greenF leads you by the hand.");
 			writeSpeech("player", "", "Wait... I should... What was I doing again?");
-			writeBig("imagebox/scarf/greenBeachSex1.jpg");
+			writeBig("images/scarf/greenBeachSex1.jpg");
 			writeSpeech("green", "bikini.jpg", "Enjoying the sun? How about you and I get some privacy in the changing room?");
 			writeText("Events are happening and passing by, disconnected from any kind of rational order or logic.");
 			writeText("...");
-			writeBig("imagebox/scarf/greenBeachSex2.jpg");
+			writeBig("images/scarf/greenBeachSex2.jpg");
 			writeSpeech("green", "bikini.jpg", "Y'know, you really seemed like you had somewhere to be. Do you really wanna leave now?");
 			writeSpeech("player", "", "I had... Somewhere to be?");
 			writeSpeech("green", "bikini.jpg", "It must not have been that important if you can't remember it. Just relax!");
 			writeSpeech("player", "", "I... Yeah...");
-			writeBig("imagebox/scarf/greenBeachSex3.jpg");
+			writeBig("images/scarf/greenBeachSex3.jpg");
 			writeText("Before you fall into an endless loop of pleasure, you can hear a voice whispering into your ear.");
 			writeSpeech("scarf", "bikini.jpg", "You put up a good resistance, child. Just relax, enjoy.");
 			writeFunction("loadEncounter('scarf', 'failure')", "The End");
@@ -340,6 +340,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 }
 
 var eventArray = [ //Lists the events of the character for unlocking and replaying in the gallery.
+	{index: "greenBar", name: "Drunken Hypnotism",},
+	{index: "greenHome", name: "Relaxed Hypnotism",},
+	{index: "greenWork", name: "Tired Hypnotism",},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -368,17 +371,17 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "... Well, I did read somewhere that physical contact makes things easier to re-");
 			writeSpeech("green", "", "Neeeeerd~!");
 			writeSpeech("player", "", "Fine. You asked for it.");
-			writeBig("imagebox/scarf/scarfBar1.jpg", "Art by Enoshima Iki");
-			writeSpeech("green", "", "Nnn~!Hell yeah I did~ <br>That hitsh the...");
+			writeBig("images/scarf/scarfBar1.jpg", "Art by Enoshima Iki");
+			writeSpeech("green", "", "Nnn~! Hell yeah I did~ <br>That hitsh the...");
 			writeSpeech("player", "", "Quiet, you'll wake the neighbors.");
 			writeSpeech("green", "", "Ooh~<br>Kinky fucker, aren't you? Bet you want scarfF to watch too~");
 			writeSpeech("player", "", "Shut... Up!");
-			writeBig("imagebox/scarf/scarfBar2.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/scarfBar2.jpg", "Art by Enoshima Iki");
 			writeSpeech("green", "", "Fffuck~<br>Shit dude, you got anger problems...");
 			writeSpeech("player", "", "You're pretty impossible to deal with yourself. I guess-");
 			writeSpeech("green", "", "Hey, I washn't complainin'<br>Cmon! Again!");
 			writeText("...");
-			writeBig("imagebox/scarf/scarfBar3.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/scarfBar3.jpg", "Art by Enoshima Iki");
 			writeText("You don't know if you did really well or really poorly, either way after you're finished greenF is loudly snoring the night away. You start getting dressed and ready to head home, but you decide to check something first.");
 			writeSpeech("player", "", "So, real quick, 'glorious victory'.");
 			writeSpeech("green", "", "Zzz...");
@@ -390,36 +393,36 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "So, I was hoping I could find some time to-");
 			writeSpeech("green", "casual.jpg", "Fuck? That's the plan, lemme finish first though.");
 			writeSpeech("player", "", "... To talk. But, uh, that works too I guess. Won't scarfF be h-");
-			writeBig("imagebox/scarf/scarfBackside.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/scarfBackside.jpg", "Art by Enoshima Iki");
 			writeSpeech("green", "casual.jpg", "Sorry, couldn't hear you over the massive erection you're popping right now.<br>And if she does come home, who cares? She's pretty freaky anyways, honestly. We've lived together for years, we've seen it all at this point.");
 			writeText("You just shrug your shoulders and decide to roll with it all.");
 			writeSpeech("green", "casual.jpg", "Now, you gonna stand there, or-");
-			writeBig("imagebox/scarf/scarfHome1.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/scarfHome1.jpg", "Art by Enoshima Iki");
 			writeSpeech("green", "casual.jpg", "Ohoh, you take what you like, don't you?");
 			writeSpeech("player", "", "I take what I want.");
 			writeSpeech("green", "casual.jpg", "You got the swagger of a much bigger *man, playerF. Hope you got the technique to back that up.");
-			writeBig("imagebox/scarf/scarfHome2.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/scarfHome2.jpg", "Art by Enoshima Iki");
 			writeSpeech("green", "casual.jpg", "Nnngh-!");
 			writeSpeech("player", "", "Not so cocky now, are you?");
 			writeSpeech("green", "casual.jpg", "Any... Any bozo off the street can thrust, jackass. Gimme a good time or I'll wipe that smirk off that pretty face.");
 			writeSpeech("player", "", "You can't even see my face, how do you know I'm grinning?");
 			writeSpeech("green", "casual.jpg", "I can hear it, now HARDER~!");
 			writeText("...");
-			writeBig("imagebox/scarf/scarfHome3.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/scarfHome3.jpg", "Art by Enoshima Iki");
 			writeSpeech("green", "casual.jpg", "Ooough~!");
 			writeSpeech("player", "", "Hah... Hah... That good enough for ya?");
 			break;
 		}
 		case "greenWork": {
 			writeText("A lovely dream overtakes you, but you can't quite get comfortable in the chair. You hear a pretty familiar sound, so you open your eyes juuuust a bit.");
-			writeBig("imagebox/scarf/greenBlow1.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/greenBlow1.jpg", "Art by Enoshima Iki");
 			writeText("There's no sign as to how long greenF's been sucking you off. She's mostly focused on the head, jerking the shaft with one hand as she does. She seems more like she's trying to enjoy herself than put on a show.");
 			writeText("Out of politeness? Awkwardness? Maybe you're more tired than you thought. Whatever it is, you opt to just keep resting until...");
-			writeBig("imagebox/scarf/greenBlow2.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/greenBlow2.jpg", "Art by Enoshima Iki");
 			writeSpeech("green", "", "Hmm~");
 			writeText("She swallows like it's no big deal, like she's having a nice drink. You feel a bit sore, actually, like this isn't your first orgasm of the day.");
 			writeSpeech("green", "", "Ah~<br>Not bad. I should remind you to vary your diet tomorrow.");
-			writeBig("imagebox/scarf/greenBlow3.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/greenBlow3.jpg", "Art by Enoshima Iki");
 			writeText("She gives your dick a soft kiss, then starts getting dressed herself.");
 			writeSpeech("green", "", "Deep sleeper, huh?<br>Alright, sleep tight playerF.");
 			writeText("After a bit you realize you've dozed off again, and it's starting to get late.");

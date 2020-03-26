@@ -397,13 +397,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "principalBeach1": {
-			writeBig("imagebox/scarf/principalBeach.jpg");
+			writeBig("images/scarf/principalBeach.jpg");
 			writeSpeech("principal", "bikini.jpg", "Oh, playerF? What a coincidence. I was just breaking in the new outfit.");
 			writeSpeech("secretary", "bikini.jpg", "M-miss! Are you sure this is what you meant for me to wear? This is degrading!");
-			writeBig("imagebox/scarf/secretaryBeach.jpg");
+			writeBig("images/scarf/secretaryBeach.jpg");
 			writeSpeech("principal", "bikini.jpg", "Oh hush, you look fantastic. If I recall, you said you wanted me to see you wearing it, right?");
 			writeSpeech("secretary", "bikini.jpg", "Yes, but I wanted <i>you</i> to see me wearing it! Not the entire beach!");
-			writeBig("imagebox/scarf/blondeBeach.jpg");
+			writeBig("images/scarf/blondeBeach.jpg");
 			writeSpeech("Blonde", "images/principal/blonde.jpg", "This vacation was just what we needed, right sis?");
 			writeSpeech("principal", "bikini.jpg", "Liberating down to the soul. I suppose we should finish tormenting secretaryF for the day.<br>Unless... playerF, I don't suppose you'd like to join in on the fun?");
 			writeText("For all her struggle, secretaryF seems to be enjoying herself too...");
@@ -419,15 +419,15 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("principal", "bikini.jpg", "Relax, just let go.");
 			writeSpeech("Blonde", "images/principal/blonde.jpg", "We can all have fun together.");
 			writeSpeech("secretary", "bikini.jpg", "W-what are you doing? Have some decency!");
-			writeBig("imagebox/scarf/principalBeachSex1.jpg");
+			writeBig("images/scarf/principalBeachSex1.jpg");
 			writeSpeech("Blonde", "images/principal/blonde.jpg", "Go ahead, she's all ready for you!");
 			writeSpeech("principal", "bikini.jpg", "Don't hold back, she needs a good punishing.");
 			writeText("In the back of your mind you know you have somewhere to be, but...");
-			writeBig("imagebox/scarf/principalBeachSex2.jpg");
+			writeBig("images/scarf/principalBeachSex2.jpg");
 			writeSpeech("secretary", "bikini.jpg", "Aaah~!");
 			writeSpeech("principal", "bikini.jpg", "Relax, give in. There's nowhere you'd rather be but here.");
 			writeText("As she looks you in the eyes, it's clear she isn't talking to secretaryF.");
-			writeBig("imagebox/scarf/principalBeachSex3.jpg");
+			writeBig("images/scarf/principalBeachSex3.jpg");
 			writeText("Before you fall into an endless loop of pleasure, you can hear a voice whispering into your ear.");
 			writeSpeech("scarf", "bikini.jpg", "You put up a good resistance, child. Just relax, enjoy.");
 			writeFunction("loadEncounter('scarf', 'failure')", "The End");

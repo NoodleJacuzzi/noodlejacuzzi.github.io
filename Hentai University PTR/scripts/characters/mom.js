@@ -213,11 +213,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "momCasino1": {
-			writeBig("imagebox/scarf/casinoMom1.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/casinoMom1.jpg", "Art by Enoshima Iki");
 			writeSpeech("mom", "", "Heeey~! C'mon in, have a grand old time! Just the two of us!");
 			writeSpeech("player", "", "momF? What're you wearing?");
 			writeText("It's a trick of the mind, you're filling in the blanks of the casino yourself. You're aware enough to know that falling down the rabbit hole is a bad idea, but...");
-			writeBig("imagebox/scarf/casinoMom2.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/casinoMom2.jpg", "Art by Enoshima Iki");
 			writeSpeech("mom", "", "I'm headed in now. If you wanna follow, well...");
 			writeText("Too self concious to finish her statement, she walks through a small door you didn't see before.");
 			writeSpeech("scarf", "bunny.jpg", "Relax... Let yourself sink in and enjoy~");
@@ -226,14 +226,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "momCasino2": {
-			writeBig("imagebox/scarf/casinoMom3.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/casinoMom3.jpg", "Art by Enoshima Iki");
 			writeSpeech("mom", "", "So, what kinda fun were you hoping to have with me? I was hoping we could...");
 			writeText("Her voice fades out as a pleasant haze fills your mind.");
-			writeBig("imagebox/scarf/casinoMom4.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/casinoMom4.jpg", "Art by Enoshima Iki");
 			writeSpeech("scarf", "bunny.jpg", "Just relax, enjoy. There's nothing left to worry about, I'll do all the thinking for you.");
-			writeBig("imagebox/scarf/casinoMom5.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/casinoMom5.jpg", "Art by Enoshima Iki");
 			writeSpeech("scarf", "bunny.jpg", "Your body will follow my instructions, while your mind enjoys a little slice of heaven on repeat.");
-			writeBig("imagebox/scarf/casinoMom6.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/casinoMom6.jpg", "Art by Enoshima Iki");
 			writeSpeech("scarf", "bunny.jpg", "Forever and ever. Goodnight, child.");
 			writeText("Her voice is like waves against brittle rocks. Each splash takes a little more of you away, until you're broken apart and spread throughout the ocean.");
 			writeText("Some small, last part of you recognizes her soft hand on your cheek before it fades away, leaving you with nothing but the pleasure of an endless night in the casino with momF.");

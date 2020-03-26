@@ -126,7 +126,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("The room feels you a little warmer as scarfF gives you a familiar whistful smile.");
 			writeText("The air conditioner is pretty strong in this room, you can almost feel a breeze as scarfF grabs the bottom of her sweater. You were expecting some new hypnosis technique, but this works too.");
 			writeText("scarfF gives a playful sigh as she pulls up her sweater. The soft sound of the nearby waves aren't enough to distract you as she flashes you her-<br>Wait.");
-			writeBig("imagebox/scarf/scarfBeach1.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/scarfBeach1.jpg", "Art by Enoshima Iki");
 			writeText("You're on the beach. She's in a bikini. There's sand beneath your feet. Did you teleport? More likely, you're hallucinating. Everything around you has that same fuzz scarfF does, but when did she put you in a trance?");
 			writeSpeech("scarf", "bikini.jpg", "Just now noticing? I'm flattered my body has your attention.<br>You know, daydreaming isn't a very accurate phrase. Actually making the brain dream in the middle of the day is actually quite hard, but the advantages are wonderful.");
 			writeSpeech("player", "", "How long have I been dreaming? Was any of that real? How do I do this?");
@@ -147,7 +147,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "scarfVictory": {
 			writeText("The air conditioner is pretty strong in this room, you can almost feel a breeze as scarfF grabs the bottom of her sweater. You were expecting some new hypnosis technique, but this works too.");
 			writeText("scarfF gives a playful sigh as she pulls up her sweater. The soft sound of the nearby waves aren't enough to distract you as she flashes you her-<br>Wait.");
-			writeBig("imagebox/scarf/scarfBeach1.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/scarfBeach1.jpg", "Art by Enoshima Iki");
 			writeText("You're on the beach. She's in a bikini. There's sand beneath your feet. Did you teleport? More likely, you're hallucinating. Everything around you has that same fuzz scarfF does, but when did she put you in a trance?");
 			writeSpeech("scarf", "bikini.jpg", "Just now noticing? I'm flattered my body has your attention.<br>You know, daydreaming isn't a very accurate phrase. Actually making the brain dream in the middle of the day is actually quite hard, but the advantages are wonderful.");
 			writeSpeech("player", "", "How long have I been dreaming? Was any of that real? How do I do this?");
@@ -226,13 +226,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Don't need it. So, what's this gonna be? We take turns swinging a pendant?");
 			writeSpeech("scarf", "", "I don't intend to mislead you, to unravel your mind with impossible geometry. You're a simple *man, playerF. I intend to find what you truly desire, and offer it to you. <i>Forever</i>.<br>Your consciousness will be satisfied in a never-ending loop of fantasy, while your body is mine to play with.");
 			writeText("This isn't a game you'll win or lose, it's a dance where you take the lead or enjoy following.");
-			writeBig("imagebox/scarf/casinoStart1.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/casinoStart1.jpg", "Art by Enoshima Iki");
 			writeSpeech("scarf", "", "I'll go easy on you, just this once. An incredulous setting, bizarre outfits, outlandish personalities. You should be able to keep your head together for a practice run, right?");
 			writeSpeech("player", "", "You'll regret taking it easy on me, scarfF.");
-			writeBig("imagebox/scarf/casinoStart2.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/casinoStart2.jpg", "Art by Enoshima Iki");
 			writeSpeech("scarf", "bunny.jpg", "No, I don't think I will.");
 			writeText("She pulls up her shirt, exposing her huge tits to open air. But as she does, you notice lights swirling in your peripheral vision and your sight grows haze. As you blink and rub your eyes, everything changes in less than a heartbeat.");
-			writeBig("imagebox/scarf/casinoStart3.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/casinoStart3.jpg", "Art by Enoshima Iki");
 			writeSpeech("player", "", "Fucking with reality around me, huh? You gonna titfuck me into submission?");
 			writeSpeech("scarf", "bunny.jpg", "Ooh, not a bad idea~<br>But first, you'll need to catch me. Try not to get too distracted by everyone else, alright?");
 			writeSpeech("player", "", "Huh?");
@@ -256,24 +256,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "casino2": {
-			writeText("You spot her again and make sure to keep a close eye on her bunny ears as you force your way through the crowd. Focusing on the image of her in your mind, the crowd seems to grow thinner, almost vanish.");
-			writeSpeech("scarf", "", "I can see the locale isn't to your liking.");
-			writeSpeech("player", "", "I'm not a gambling *man, scarfF. The game is ending here in my win.");
-			writeText("The crowd is gone now, scarfF isn't running anymore. She walks towards you, placing a single finger on your chest, and before you know it you're flat on your back.");
-			writeBig("imagebox/scarf/casinoEnd1.jpg", "Art by Enoshima Iki");
-			writeSpeech("scarf", "bunny.jpg", "You'll buckle under the pressure, you know. You don't get to waltz through my playhouse and walk away, no one ever leaves here.");
-			writeText("It feels really, way too real. Pushing past the people of the crowd felt like trying to bat away smoke, but this really feels like you're fucking her tits.");
-			writeBig("imagebox/scarf/casinoEnd2.jpg", "Art by Enoshima Iki");
-			writeSpeech("scarf", "bunny.jpg", "Aaaah~<br>Why continue to resist? Is it spite, or simply the urge to remain dominant?");
-			writeText("You remain focused even under a barrage of sexual pleasure.");
-			writeSpeech("scarf", "bunny.jpg", "Can you hold out much lo...");
-			writeText("Her voice has a strange echo to it, so you try to tune it out and focus on a smaller voice, it feels distant.");
-			writeSpeech("scarf", "casual.jpg", "God, he's huge, I should take this off... I hope he didn't break greenF...");
-			writeText("As you feel yourself rapidly approaching orgasm you hold tight to whatever reality you can latch onto.");
-			writeBig("imagebox/scarf/casinoEnd3.jpg", "Art by Enoshima Iki");
-			writeBig("imagebox/scarf/casinoEnd4.jpg", "Art by Enoshima Iki");
-			writeText("For a moment you can see with perfect clarity, until a familiar fuzz overtakes your vision.");
-			writeSpeech("scarf", "", "Oh my, you're awake~<br>Perhaps you were right, I would've so loved to have taken you as a permanent pet though.");
+			writeEvent('scarfCasino');
 			writeSpeech("player", "", "I won... I beat you at your own game, scarfF... What's my reward?");
 			writeSpeech("scarf", "", "Silly child, you've earned it. Or did you expect you'd crush my spirit after a quick game like that?");
 			writeText("Her voice has that same mysterious echo it usually does, something's seriously fishy about her. She seems pretty calm and collected, but you swear she looked a lot more off-balance right after you broke free of your trance.");
@@ -296,12 +279,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She begins to slide up her sweater.");
 			writeSpeech("player", "", "Do you really use your tits for hypnotism?");
 			writeSpeech("scarf", "", "Not usually, my eyes are often enough. But when I need to get serious...");
-			writeBig("imagebox/scarf/scarfBeach2.jpg");
+			writeBig("images/scarf/scarfBeach2.jpg");
 			writeSpeech("scarf", "", "I find the results speak for themselves.");
 			writeSpeech("player", "", "Ooh, a beach. I haven't been to one... Well, it actually hasn't been that long. You gonna run about?");
-			writeBig("imagebox/scarf/scarfBeach1.jpg");
+			writeBig("images/scarf/scarfBeach1.jpg");
 			writeSpeech("scarf", "bikini.jpg", "Mm-mm.<br>No you'll have to entertain yourself for a while. Go have fun, try not to get too distracted. greenF Often finds building a sandcastle in a mental world to be quite the engaging task. Just wander around the beach for a bit, child.");
-			writeBig("imagebox/scarf/scarfBeach3.jpg");
+			writeBig("images/scarf/scarfBeach3.jpg");
 			writeSpeech("scarf", "bikini.jpg", "Good luck~");
 			writeText("The strategy is sound, without chasing her to occupy your mind, you're a lot more vulnerable to getting distracted and getting stuck in a trance. Still, you aren't a child, you should be able to stay focused long enough.");
 			writeFunction("changeLocation('beach')", "The challenge begins");
@@ -313,12 +296,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("In a world where physics are based in your own mind, things could get a little fucky with reality if you don't keep a strong mental map.");
 			writeSpeech("player", "", "Sand beneath my toes, the scent of saltwater...<br>Oh, hey, I've got a swimsuit. Pretty nice br-<br>Ah, shit, stay focused. This should be long enough, I should get back to-");
 			writeSpeech("green", "bikini.jpg", "Yo!");
-			writeBig("imagebox/scarf/greenBeach1.jpg");
+			writeBig("images/scarf/greenBeach1.jpg");
 			writeSpeech("green", "bikini.jpg", "Fancy seeing you in my dream like this.");
 			writeSpeech("player", "", "No time, got a competition to win. Talk to you-");
 			writeText("Letting yourself engage with the fake reality is a bad idea, you could get distracted for longer than you realize.");
 			writeSpeech("Playboy", "images/none.png", "Hey hot stuff, you're lookin pretty good!");
-			writeBig("imagebox/scarf/greenBeach2.jpg");
+			writeBig("images/scarf/greenBeach2.jpg");
 			writeText("A pair of tanned beachgoes have come up to start hitting on greenF");
 			writeSpeech("green", "bikini.jpg", "Oh, stop. I'm old enough to be your-");
 			writeSpeech("Playboy", "images/none.png", "One second. Hey, bro. She yours?");
@@ -329,37 +312,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "beach2": {
-			writeBig("imagebox/scarf/scarfBeach4.jpg");
-			writeSpeech("scarf", "bikini.jpg", "You're back. <br>I suppose I shouldn't be too surprised.");
-			writeSpeech("player", "", "Yeah. You ready to submit and cut the hypnosis?<br><i>All</i> of it?");
-			writeSpeech("scarf", "bikini.jpg", "My, you really are something. I still have one last trick up my sleeve, of course, but at this point it all seems a bit moot. Why don't we at least have some fun before this all ends?");
-			writeSpeech("player", "", "... What did you have in mind?");
-			writeBig("imagebox/scarf/scarfBeachSex1.jpg");
-			writeSpeech("scarf", "bikini.jpg", "If you've made it this far, some quick fun ought not to be a problem, right?");
-			writeBig("imagebox/scarf/scarfBeachSex2.jpg");
-			writeSpeech("player", "", "One last ditch effort, huh?<br>... Fuck it. I didn't get here by <i>not</i> listening to my dick.");
-			writeBig("imagebox/scarf/scarfBeachSex3.jpg");
-			writeText("As you thrust into her waiting cunt, you hear a moan from somewhere. Distant, yet all around you.");
-			writeSpeech("scarf", "bikini.jpg", "I'd expected you to hesitate a little longer.<br>And honestly, where does that confidence of yours come from? I certainly hope you have some technique, or at least that your stamina is impressive, because-");
-			writeBig("imagebox/scarf/scarfBeachSex4.jpg");
-			writeText("You ignore scarfF's taunting and start thrusting faster, trying to figure out what direction the moans are coming from as they grow louder.");
-			writeSpeech("scarf", "bikini.jpg", "Such fervor! Are you trying to compensate for something? Or do --u thin- that a br--e like-");
-			writeText("The scent of saltwater is starting to fade, the moans are growing louder, and scarfF's taunts are starting to fade out mid-word.");
-			writeText("You close your eyes and put everything you have into a rough, hard fuck, and when you open your eyes back up again...");
-			writeBig("imagebox/scarf/scarfBeachSex5.jpg");
-			writeSpeech("scarf", "alt.jpg", "AAaah~! S-slo-Ghhh~!");
-			writeText("The office is filled with a high-pitch scream as the hypnosis she's kept you under is finally completely shattered, leaving only a woman getting railed while her sense of control breaks down.");
-			writeSpeech("player", "", "Ghh... I've got big plans for you, for this school, but right now all I care about is making you... SUBMIT!");
-			writeSpeech("scarf", "alt.jpg", "Y-yes~! I will! I'll~!");
-			writeBig("imagebox/scarf/scarfBeachSex6.jpg");
-			writeSpeech("scarf", "alt.jpg", "CUMMING~!");
-			writeText("Her voice reaches new heights, the hypnotist's will is broken with a final creampie to seal the deal. For all her planning, one thing has been settled for good.");
-			writeText("<b>scarfF is yours now</b>.");
+			writeEvent('scarfBeach');
 			writeText("You take a step back to admire your handiwork, only to realize something as you look around.");
 			writeSpeech("player", "", "... When did I get to scarfF's house?");
 			writeText("She must've taken you hear while you were in a trance, not like you can ask the twitching, leaking mess for the full story though.");
 			writeText("...");
-			writeBig("imagebox/scarf/scarfNormal.jpg");
+			writeBig("images/scarf/scarfNormal.jpg");
 			writeSpeech("scarf", "alt.jpg", "So you don't actually have a plan for taking the school?");
 			writeSpeech("player", "", "I figured I'd wing it. Not like I'm gonna plan domination <i>before</i> I have fun with the school.");
 			writeText("Once she's awake scarfF gets dressed properly. The battle lost, it's clear there's no question about which of you is on top anymore.");
@@ -413,14 +371,62 @@ function writeEncounter(name) { //Plays the actual encounter.
 }
 
 var eventArray = [ //Lists the events of the character for unlocking and replaying in the gallery.
+	{index: "scarfCasino", name: "First Challenge - Dream Casino",},
+	{index: "scarfBeach", name: "Second Challenge - Dream Beach",},
 ];
 
 function writeEvent(name) { //Plays the actual event.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
-			writeFunction("changeLocation('playerHouse')", "Go back");
+		case "scarfCasino": {
+			writeText("You spot her again and make sure to keep a close eye on her bunny ears as you force your way through the crowd. Focusing on the image of her in your mind, the crowd seems to grow thinner, almost vanish.");
+			writeSpeech("scarf", "", "I can see the locale isn't to your liking.");
+			writeSpeech("player", "", "I'm not a gambling *man, scarfF. The game is ending here in my win.");
+			writeText("The crowd is gone now, scarfF isn't running anymore. She walks towards you, placing a single finger on your chest, and before you know it you're flat on your back.");
+			writeBig("images/scarf/casinoEnd1.jpg", "Art by Enoshima Iki");
+			writeSpeech("scarf", "bunny.jpg", "You'll buckle under the pressure, you know. You don't get to waltz through my playhouse and walk away, no one ever leaves here.");
+			writeText("It feels really, way too real. Pushing past the people of the crowd felt like trying to bat away smoke, but this really feels like you're fucking her tits.");
+			writeBig("images/scarf/casinoEnd2.jpg", "Art by Enoshima Iki");
+			writeSpeech("scarf", "bunny.jpg", "Aaaah~<br>Why continue to resist? Is it spite, or simply the urge to remain dominant?");
+			writeText("You remain focused even under a barrage of sexual pleasure.");
+			writeSpeech("scarf", "bunny.jpg", "Can you hold out much lo...");
+			writeText("Her voice has a strange echo to it, so you try to tune it out and focus on a smaller voice, it feels distant.");
+			writeSpeech("scarf", "casual.jpg", "God, he's huge, I should take this off... I hope he didn't break greenF...");
+			writeText("As you feel yourself rapidly approaching orgasm you hold tight to whatever reality you can latch onto.");
+			writeBig("images/scarf/casinoEnd3.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/casinoEnd4.jpg", "Art by Enoshima Iki");
+			writeText("For a moment you can see with perfect clarity, until a familiar fuzz overtakes your vision.");
+			writeSpeech("scarf", "", "Oh my, you're awake~<br>Perhaps you were right, I would've so loved to have taken you as a permanent pet though.");
+			break;
+		}
+		case "scarfBeach": {
+			writeBig("images/scarf/scarfBeach4.jpg");
+			writeSpeech("scarf", "bikini.jpg", "You're back. <br>I suppose I shouldn't be too surprised.");
+			writeSpeech("player", "", "Yeah. You ready to submit and cut the hypnosis?<br><i>All</i> of it?");
+			writeSpeech("scarf", "bikini.jpg", "My, you really are something. I still have one last trick up my sleeve, of course, but at this point it all seems a bit moot. Why don't we at least have some fun before this all ends?");
+			writeSpeech("player", "", "... What did you have in mind?");
+			writeBig("images/scarf/scarfBeachSex1.jpg");
+			writeSpeech("scarf", "bikini.jpg", "If you've made it this far, some quick fun ought not to be a problem, right?");
+			writeBig("images/scarf/scarfBeachSex2.jpg");
+			writeSpeech("player", "", "One last ditch effort, huh?<br>... Fuck it. I didn't get here by <i>not</i> listening to my dick.");
+			writeBig("images/scarf/scarfBeachSex3.jpg");
+			writeText("As you thrust into her waiting cunt, you hear a moan from somewhere. Distant, yet all around you.");
+			writeSpeech("scarf", "bikini.jpg", "I'd expected you to hesitate a little longer.<br>And honestly, where does that confidence of yours come from? I certainly hope you have some technique, or at least that your stamina is impressive, because-");
+			writeBig("images/scarf/scarfBeachSex4.jpg");
+			writeText("You ignore scarfF's taunting and start thrusting faster, trying to figure out what direction the moans are coming from as they grow louder.");
+			writeSpeech("scarf", "bikini.jpg", "Such fervor! Are you trying to compensate for something? Or do --u thin- that a br--e like-");
+			writeText("The scent of saltwater is starting to fade, the moans are growing louder, and scarfF's taunts are starting to fade out mid-word.");
+			writeText("You close your eyes and put everything you have into a rough, hard fuck, and when you open your eyes back up again...");
+			writeBig("images/scarf/scarfBeachSex5.jpg");
+			writeSpeech("scarf", "alt.jpg", "AAaah~! S-slo-Ghhh~!");
+			writeText("The office is filled with a high-pitch scream as the hypnosis she's kept you under is finally completely shattered, leaving only a woman getting railed while her sense of control breaks down.");
+			writeSpeech("player", "", "Ghh... I've got big plans for you, for this school, but right now all I care about is making you... SUBMIT!");
+			writeSpeech("scarf", "alt.jpg", "Y-yes~! I will! I'll~!");
+			writeBig("images/scarf/scarfBeachSex6.jpg");
+			writeSpeech("scarf", "alt.jpg", "CUMMING~!");
+			writeText("Her voice reaches new heights, the hypnotist's will is broken with a final creampie to seal the deal. For all her planning, one thing has been settled for good.");
+			writeText("<b>scarfF is yours now</b>.");
 			break;
 		}
 		default: {

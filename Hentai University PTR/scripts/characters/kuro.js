@@ -477,10 +477,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Time feels vague and loose, moments blurring between one another as pleasure starts to stuff your mind, like cotton in your brain.");
 			writeText("You lose track of sensation and the moment-to-moment details, your thoughts quickly focusing solely on her body.");
 			writeSpeech("scarf", "bunny.jpg", "That's very good~ Just relax and enjoy this, and leave your body to me.");
-			writeBig("imagebox/scarf/casinoKuro1.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/casinoKuro1.jpg", "Art by Enoshima Iki");
 			writeText("Your mind and skin feel more sensitive than ever before, wave after wave of ecstasy flooding your head.");
 			writeSpeech("scarf", "bunny.jpg", "You don't have to worry about anything anymore. Just keep having fun with that slutty little body and leave everything to me.");
-			writeBig("imagebox/scarf/casinoKuro2.jpg", "Art by Enoshima Iki");
+			writeBig("images/scarf/casinoKuro2.jpg", "Art by Enoshima Iki");
 			writeText("You're sure she kept talking. A part of you is still able to recognize that, though what she's actually <i>saying</i>, you can't be sure.");
 			writeText("Eventually, she even stops that much, leaving you to the endless cacophany of sexual sensation that you chose.");
 			writeText("The only thing you can think about anymore, the only thing you <i>want</i> to think about anymore, is the pleasure of an endless night in the casino with kuroF.");
