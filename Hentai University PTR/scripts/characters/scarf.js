@@ -131,7 +131,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("scarf", "bikini.jpg", "Just now noticing? I'm flattered my body has your attention.<br>You know, daydreaming isn't a very accurate phrase. Actually making the brain dream in the middle of the day is actually quite hard, but the advantages are wonderful.");
 			writeSpeech("player", "", "How long have I been dreaming? Was any of that real? How do I do this?");
 			writeSpeech("scarf", "bikini.jpg", "Only a few moments, all of that was quite real up until now, and many, many years of practice and learning.");
-			writeText("As she speaks you can dimly hear words floating through the back of your mind. Another conversation, you can hear your own voice and someone else's.<br>Scarf gives you a wry smile as you focus on the conversation, and the blue sky above you fades into a grey ceiling.");
+			writeText("As she speaks you can dimly hear words floating through the back of your mind. Another conversation, you can hear your own voice and someone else's.<br>scarfF gives you a wry smile as you focus on the conversation, and the blue sky above you fades into a grey ceiling.");
 			writeSpeech("principal", "", "playerF?");
 			writeSpeech("player", "", "Huh?");
 			writeText("You snap out of it, now sitting in principalF's office.");
@@ -152,7 +152,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("scarf", "bikini.jpg", "Just now noticing? I'm flattered my body has your attention.<br>You know, daydreaming isn't a very accurate phrase. Actually making the brain dream in the middle of the day is actually quite hard, but the advantages are wonderful.");
 			writeSpeech("player", "", "How long have I been dreaming? Was any of that real? How do I do this?");
 			writeSpeech("scarf", "bikini.jpg", "Only a few moments, all of that was quite real up until now, and many, many years of practice and learning.");
-			writeText("As she speaks you can dimly hear words floating through the back of your mind. Another conversation, you can hear your own voice and someone else's.<br>Scarf gives you a wry smile as you focus on the conversation, and the blue sky above you fades into a grey ceiling.");
+			writeText("As she speaks you can dimly hear words floating through the back of your mind. Another conversation, you can hear your own voice and someone else's.<br>scarfF gives you a wry smile as you focus on the conversation, and the blue sky above you fades into a grey ceiling.");
 			writeSpeech("principal", "", "playerF?");
 			writeSpeech("player", "", "Huh?");
 			writeText("You snap out of it, now sitting in principalF's office.");
