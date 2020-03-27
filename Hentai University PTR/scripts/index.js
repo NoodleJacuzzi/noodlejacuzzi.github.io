@@ -341,9 +341,12 @@ function modCharacter() {
 	loadCharacter(goof);
 	document.getElementById('output').innerHTML = '';
 	writeBig("images/"+goof+"/profile.jpg", "New character");
-	writeText("Loaded the index file, has been added to the game! If the above image is broken, one of the following has happened:");
+	writeText("Loaded the index file, a mod has been loaded into to the game! Be sure to drop by the modding channel to encourage the artist! If the above image is broken, one of the following has happened:");
 	writeText("The character you added does not have a profile.jpg image in their images folder.");
 	writeText("The images folder isn't named appropriately, or is in the wrong place. It should be in Hentai University/images");
+	writeText("If the characters aren't appearing below, one of the following has happened:");
+	writeText("You've already loaded this mod.");
+	writeText("The mod character's .js file is in the wrong place. It should be in the Hentai University/scripts/characters folder.");
 	writeText("You mistyped the index. If this is the case, load an older save immediately and try again.");
 	if (data.player.location == "") {
 		writeFunction("writeEncounter('system', 'start')", "Back to the start menu");
