@@ -448,6 +448,9 @@ function writeEvent(name) { //Plays the actual event.
 	else {
 		console.log("Error, no scene named "+name+" found to unlock.");
 	}
+	if (data.player.location == "gallery") {
+		writeFunction("changeLocation(data.player.location)", "Finish");
+	}
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.

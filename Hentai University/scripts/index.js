@@ -315,7 +315,7 @@ function passTime() {
 function loadCharacter(name) {
 	for (loadIndex = 0; loadIndex < data.story.length; loadIndex++) {
 		if (data.story[loadIndex].index == name) {
-			alert(name+' found already in the data variable, aborting function');
+			console.log(name+' found already in the data variable, aborting function');
 			name = 'failed';
 		}
 	}
@@ -341,9 +341,12 @@ function modCharacter() {
 	loadCharacter(goof);
 	document.getElementById('output').innerHTML = '';
 	writeBig("images/"+goof+"/profile.jpg", "New character");
-	writeText("Loaded the index file, has been added to the game! If the above image is broken, one of the following has happened:");
+	writeText("Loaded the index file, a mod has been loaded into to the game! Be sure to drop by the modding channel to encourage the artist! If the above image is broken, one of the following has happened:");
 	writeText("The character you added does not have a profile.jpg image in their images folder.");
 	writeText("The images folder isn't named appropriately, or is in the wrong place. It should be in Hentai University/images");
+	writeText("If the characters aren't appearing below, one of the following has happened:");
+	writeText("You've already loaded this mod.");
+	writeText("The mod character's .js file is in the wrong place. It should be in the Hentai University/scripts/characters folder.");
 	writeText("You mistyped the index. If this is the case, load an older save immediately and try again.");
 	if (data.player.location == "") {
 		writeFunction("writeEncounter('system', 'start')", "Back to the start menu");
@@ -1986,7 +1989,7 @@ function saveFile(){
 	hideStuff();
 	document.getElementById('output').innerHTML = '';
 	writeText("Copy the full length below and paste it into the input box when you want to load the data. I recommend copying to a txt file.");
-	writeText("" + JSON.stringify(data) + "");
+	document.getElementById('output').innerHTML += JSON.stringify(data);
 	writeFunction("changeLocation(data.player.location)", "Finished copying");
 }
 
@@ -2471,7 +2474,7 @@ function diagnostic() {
 		case "nuclear option": {
 			data.player.hypnosis = 3;
 			data.player.hacking = 3;
-			data.player.counseling = 3;
+			data.player.counseling = 4;
 			updateMenu();
 			writeSpecial("All of your stats have been set to 3. You can keep improving them past this point, but you shouldn't see any skill-related roadblocks from here on!");
 			break;

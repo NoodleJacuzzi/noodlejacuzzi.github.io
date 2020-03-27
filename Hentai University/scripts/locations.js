@@ -78,6 +78,10 @@ var locationArray = [
 	{index: "store", buttons: [
 		{name: "Go Outside", top: 30, left: 25, type: "location", target: "shoppingDistrict", time: "MorningEvening",},
 	],},
+	{index: "casino", buttons: [
+	],},
+	{index: "beach", buttons: [
+	],},
 	{index: "map", buttons: [
 		{name: "University", top: 35, left: 23, type: "location", target: "schoolMap", time: "MorningEvening",},
 		{name: "Streets", top: 55, left: 40, type: "location", target: "street", time: "MorningEvening",},
@@ -147,7 +151,7 @@ function changeLocation(n) {
 					);
 				}
 			}
-			if (data.player.time != "Night" && data.player.location != "map"  && data.player.location != "schoolMap" && checkItem("Town Map") == true) {
+			if (data.player.time != "Night" && data.player.location != "map"  && data.player.location != "casino" && data.player.location != "schoolMap" && checkItem("Town Map") == true) {
 				printLocationButton(
 					'Use Map', 
 					0, 

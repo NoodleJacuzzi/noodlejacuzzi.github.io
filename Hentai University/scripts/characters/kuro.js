@@ -20,6 +20,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "kuro4", name: "kuro is leaning against the fence", location: 'roof', time: "Morning", itemReq: "", trustMin: 21, trustMax: 25, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "kuro5", name: "kuro is fiddling with her phone, rubbing her thighs together as she waits", location: 'roof', time: "Morning", itemReq: "", trustMin: 60, trustMax: 62, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "kuro6", name: "kuro is sitting near the fence, her panties in clear view", location: 'roof', time: "Morning", itemReq: "", trustMin: 63, trustMax: 63, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "kuroCasino1", name: "kuro is here", location: 'casino', time: "MorningEvening", itemReq: "", trustMin: 60, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
 ]
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -450,6 +451,42 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation(data.player.location)", "Finish (for now)");
 			break;
 		}
+		case "kuroCasino1": {
+			writeBig("images/kuro/7-1.jpg", "Art by Enoshima Iki");
+			writeSpeech("kuro", "", "Heyhey~! I was wondering how long you'd keep me waiting, *Mister Counselor~");
+			writeSpeech("player", "", "kuroF? Is that a swimsuit?");
+			writeSpeech("kuro", "", "Yup!");
+			writeText("She raises her hands a bit, running her palms along the sides of her chest as she thumbs the straps on her shoulders.");
+			writeSpeech("kuro", "", "Of course, if you don't like it, I'd be happy to let you take it off for me~");
+			writeText("Given the nature of the casino, it's no surprise she's here to tempt you. You should probably keep going, but...");
+			writeSpeech("kuro", "", "I'm gonna head in there. If you're interested in getting a good feel for the beds, I'd love the company of something more fun than my fingers!");
+			writeText("She sways her hips smoothly, her shorts hiding nothing as she starts through the door.");
+			writeSpeech("scarf", "bunny.jpg", "Come, it's fine to relax~ Just enjoy yourself, playerF...");
+			if(checkTrust('kuro') == 64 || checkFlag('kuro','Triggered')){
+				writeText("kuroF pauses for a moment though, running her her hand along the doorframe and smirking over her shoulder at you.");
+				writeSpeech("kuro", "", "But don't go slamming the door <i>too</i> hard, hun. <i>I want you <b>inside</b> when I start to cum~!</i>");
+			}
+			writeFunction("writeEncounter('kuroCasino2')", "Go into the room with kuroF");
+			writeFunction("changeLocation(data.player.location)", "Resist, keep on track");
+			break;
+		}
+		case "kuroCasino2": {
+			writeBig("images/kuro/7-2.jpg", "Art by Enoshima Iki");
+			writeSpeech("kuro", "", "Hah~ Looks like we get to have a bit of fun, hm? Let's see how I look in a couple of <i>saucy outfits</i>...!");
+			writeText("kuroF smirks, her arms raised as you feel a pleasant haze starting to fill your head.");
+			writeText("Time feels vague and loose, moments blurring between one another as pleasure starts to stuff your mind, like cotton in your brain.");
+			writeText("You lose track of sensation and the moment-to-moment details, your thoughts quickly focusing solely on her body.");
+			writeSpeech("scarf", "bunny.jpg", "That's very good~ Just relax and enjoy this, and leave your body to me.");
+			writeBig("images/scarf/casinoKuro1.jpg", "Art by Enoshima Iki");
+			writeText("Your mind and skin feel more sensitive than ever before, wave after wave of ecstasy flooding your head.");
+			writeSpeech("scarf", "bunny.jpg", "You don't have to worry about anything anymore. Just keep having fun with that slutty little body and leave everything to me.");
+			writeBig("images/scarf/casinoKuro2.jpg", "Art by Enoshima Iki");
+			writeText("You're sure she kept talking. A part of you is still able to recognize that, though what she's actually <i>saying</i>, you can't be sure.");
+			writeText("Eventually, she even stops that much, leaving you to the endless cacophany of sexual sensation that you chose.");
+			writeText("The only thing you can think about anymore, the only thing you <i>want</i> to think about anymore, is the pleasure of an endless night in the casino with kuroF.");
+			writeFunction("loadEncounter('scarf', 'failure')", "The End");
+			break;
+		}
 	}
 }
 
@@ -621,7 +658,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("You shut it behind you, the sound of it ringing loudly in the otherwise-silent house.");
 			writeSpeech("kuro","","In here~!");
 			writeText("Following her voice, you quickly spot her lazing on her bed, phone in hand.");
-			writeBig("images/kuro/3-1.jpg");
+			writeBig("images/kuro/3-1.jpg", "Art by Enoshima Iki");
 			writeText("She's gently bouncing her legs on the bed, shifting yet another lollipop in her mouth.");
 			writeSpeech("kuro","","Mm, don't mind the phone. I'm just texting, so nobody'll hear you... this time.");
 			writeText("She shifts a bit, her shift sliding further up and exposing more of her back.");
@@ -634,8 +671,8 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("kuro","","Jeez. Do you take this long on your own all the time?");
 			writeText("One foot continues rubbing against your sack, the other teasing at your head as you keep stroking.");
 			writeText("Despite that, even as you get closer to the edge, she just returns to her phone, typing with one hand...");
-			writeBig("images/kuro/3-3.jpg");
-			writeBig("images/kuro/3-4.jpg");
+			writeBig("images/kuro/3-3.jpg", "Art by Enoshima Iki");
+			writeBig("images/kuro/3-4.jpg", "Art by Enoshima Iki");
 			writeSpeech("kuro","","Ah, you're finished. And it looks like you shot a pretty big load, too... Not too bad.");
 			writeText("She shifts around a bit, angling her phone down.");
 			writeSpeech("kuro","","There's not a whole lot a girl can do when you're the one jerking, but it looks like you still enjoyed yourself. Anyway, I'm meeting with someone in a bit, so I have to get changed. Later, hun.");
@@ -688,7 +725,7 @@ function writeEvent(name) { //Plays the actual event.
 				writeSpeech("kuro","","Guess I'm not the only girl excited to be here~!");
 			}
 			writeText("You feel her hand gently grasp around your base as she winks.");
-			writeBig("images/kuro/5-1.jpg");
+			writeBig("images/kuro/5-1.jpg", "Art by Enoshima Iki");
 			writeSpeech("kuro","","Let's see how you taste, hm?");
 			writeText("She slowly lowers her mouth onto your head, her wet lips sliding down as her tongue starts lapping at the bottom of the head.");
 			writeText("She bobs up and down a bit, her eyes never leaving yours as she moans around your cock.");
@@ -710,7 +747,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("kuro","","Just one sec, hun...");
 			writeText("Her other hand raises up a condom (which, you realize, she must've unwrapped while throating you) and gently pinches the tip.");
 			writeText("The slow rolling slide of the condom down your shaft isn't the most interesting sensation but, given that it only lasts a moment, it doesn't <i>really</i> matter.");
-			writeBig("images/kuro/5-2.jpg");
+			writeBig("images/kuro/5-2.jpg", "Art by Enoshima Iki");
 			writeText("She grins and brings it right up to her face, breathing deeply for a moment.");
 			writeSpeech("kuro","","There we go... Are you ready for the main event, hun?");
 			writeFunction("writeEvent('kuroMoney2')", "Absolutely");
@@ -748,7 +785,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player","","Well, I think...");
 			writeText("You press your head against her, feeling just as much as hearing her breathing speed up.");
 			writeSpeech("player","","...that <i><b>sex-toys</b></i> don't talk.");
-			writeBig("images/kuro/5-4.jpg");
+			writeBig("images/kuro/5-4.jpg", "Art by Enoshima Iki");
 			writeText("She lets out a half-laugh, half-moan as you push into her, her slit squeezing down on you and feeling warm even through the condom.");
 			writeSpeech("kuro","","S-Sounds like you haven't been using the right ones, "+data.player.title+" Counselor~!");
 			writeText("You feel her squeeze tightly around you as you slide in deeper.");
@@ -775,7 +812,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Despite yourself, you can't stop thrusting wildly into her, barely able to hold on.");
 			writeText("After only a few more thrusts, you can't hold back any more.");
 			writeSpeech("player","","<i><b>Cumming...!</b></i>");
-			writeBig("images/kuro/5-5.jpg");
+			writeBig("images/kuro/5-5.jpg", "Art by Enoshima Iki");
 			writeSpeech("kuro","","Nnn~... I can <i>feel</i> your hot, <i>fat</i> load stretching that condom down there... Looks like I won, huh?");
 			writeText("After the last few ropes spurt into the condom, you slowly pull out with wet sound.");
 			writeSpeech("player","","Looks like it. Still, it's not like I'm <i>completely</i> spent.");
@@ -799,7 +836,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Seems like telling her to get turned on whenever she's around you is paying off pretty quickly...");
 			writeSpeech("kuro","","Come on, don't go leaving a girl hangin'~!");
 			writeText("Stripping down, you walk into her room, seeing her laying down and spreading herself.");
-			writeBig("images/kuro/phone5a.jpg");
+			writeBig("images/kuro/phone5a.jpg", "Art by Enoshima Iki");
 			writeSpeech("kuro","","You enjoyin' the view?");
 			writeText("She spreads her legs a bit, a damp spot on the sheets becoming visible as she grins.");
 			writeSpeech("kuro","","Or do you think you need a closer look?");
@@ -824,7 +861,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player","","That's a good question, kuroF. But how I about <i>I order you to relax.</i>");
 			writeText("Her eyes unfocus as you grab one of her tits, her entire body relaxing underneath you.");
 			writeSpeech("kuro","","W-Whaa...?");
-			writeBig("images/kuro/6-2.jpg");
+			writeBig("images/kuro/6-2.jpg", "Art by Enoshima Iki");
 			writeText("She tries raising her body up, but only goes up a bit as her eyes narrow slightly.");
 			writeSpeech("kuro","","I can't control my...");
 			writeText("She pauses, her eyes nearly coming back into focus...");
@@ -885,7 +922,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("You bottom-out one last time, shooting a last load into her cunt as she lays there.");
 			writeText("You still didn't let her cum, the pleasure rising in her until she couldn't think of anything else.");
 			writeText("As you pull out, her folds don't hold nearly as tightly as when you started, your head pulling her open with barely a slick *pop* as you pull out.");
-			writeBig("images/kuro/6-3.jpg");
+			writeBig("images/kuro/6-3.jpg", "Art by Enoshima Iki");
 			writeText("As your cum starts to spill out, kuroF twitches slightly.");
 			writeSpeech("kuro","","<i><b>N-No...</b></i>");
 			writeText("She reaches down, her body still hypnotically relaxed as she limply presses her hand against her gaping pussy.");

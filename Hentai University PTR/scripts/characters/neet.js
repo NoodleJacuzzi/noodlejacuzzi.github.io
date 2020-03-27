@@ -688,6 +688,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 }
 
 var eventArray = [ //Lists the events of the character for unlocking and replaying in the gallery.
+	{index: "neetA-1", name: "Hypnotism Taking Hold",},
+	{index: "neetA-1-2", name: "Frustration",},
+	{index: "neetA-2-2", name: "Relaxation",},
+	{index: "neetTitjobRepeat", name: "Titjob",},
+	{index: "neetSexRepeat", name: "Sex",},
 ];
 
 function writeEvent(name) { //Plays the actual event.

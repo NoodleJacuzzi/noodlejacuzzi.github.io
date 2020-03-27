@@ -31,6 +31,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "purple9", name: "purple's house is here.", location: 'vintageStreet', time: "MorningEvening", itemReq: "", trustMin: 99, trustMax: 99, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "branchingPoint", name: "purple's house is here.", location: 'vintageStreet', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "routeAQuo", name: "purple's house is here.", location: 'vintageStreet', time: "MorningEvening", itemReq: "", trustMin: 101, trustMax: 101, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "purpleCasino1", name: "purple and her mother are here putting on a public show with faceless dudes.", location: 'casino', time: "MorningEvening", itemReq: "", trustMin: 90, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
 ]
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -501,6 +502,36 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("writeEncounter('routeAQuo')", "Go back");
 			break;
 		}
+		case "purpleCasino1": {
+			writeBig("images/scarf/casinoPurple1.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "Oooh~!<br>M-mom, look~!");
+			writeSpeech("chubby", "", "Nnngh~! Oh, it's mister playerF~! Would... Would you care to join us?");
+			writeSpeech("purple", "", "purpleF? chubbyF?");
+			writeText("You're awash with jealousy for a moment before you cool your head. It's just another mindgame, one that's pretty easy to push through. scarfF really must be going easy on you.");
+			writeSpeech("purple", "", "Pleeease~! I need you~! Mommy needs you too~!");
+			writeSpeech("chubby", "", "Gimme~!");
+			writeBig("images/scarf/casinoPurple2.jpg", "Art by Oreteki18kin");
+			writeFunction("writeEncounter('purpleCasino2')", "Join the pair");
+			writeFunction("changeLocation(data.player.location)", "Resist, keep on track");
+			break;
+		}
+		case "purpleCasino2": {
+			writeBig("images/scarf/casinoPurple3.jpg", "Art by Oreteki18kin");
+			writeSpeech("purple", "", "*Mwah*! So messy~!");
+			writeSpeech("chubby", "", "Mmmph~! Mmmm~!");
+			writeSpeech("purple", "", "I think she wants your cock in her ass, mister playerF~! I think I want it too, who will you...");
+			writeText("Her voice fades out as a pleasant haze fills your mind.");
+			writeBig("images/scarf/casinoPurple4.jpg", "Art by Oreteki18kin");
+			writeSpeech("scarf", "bunny.jpg", "Just relax, enjoy. There's nothing left to worry about, I'll do all the thinking for you.");
+			writeBig("images/scarf/casinoPurple5.jpg", "Art by Oreteki18kin");
+			writeSpeech("scarf", "bunny.jpg", "Your body will follow my instructions, while your mind enjoys a little slice of heaven on repeat.");
+			writeBig("images/scarf/casinoPurple6.jpg", "Art by Oreteki18kin");
+			writeSpeech("scarf", "bunny.jpg", "Forever and ever. Goodnight, child.");
+			writeText("Her voice is like waves against brittle rocks. Each splash takes a little more of you away, until you're broken apart and spread throughout the ocean.");
+			writeText("Some small, last part of you recognizes her soft hand on your cheek before it fades away, leaving you with nothing but the pleasure of an endless night in the casino with momF.");
+			writeFunction("loadEncounter('scarf', 'failure')", "The End");
+			break;
+		}
 	}
 }
 
@@ -692,7 +723,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("chubby", "", "Yes~! Please, I'll be your good little slut~! My daughter might be tighter, but I promise I'll let you use my breasts however you like~!");
 			writeBig("images/purple/AA4.jpg", "Art by Oreteki18kin");
 			writeSpeech("chubby", "", "Aaah~!");
-			writeSpeech("purple", "", "Fuck, she's cumming~! You'd better swallow fast, bitch, or I'll suck that load right out of your mouth!");
+			writeSpeech("purple", "", "Fuck, *he's cumming~! You'd better swallow fast, bitch, or I'll suck that load right out of your mouth!");
 			writeText("chubbyF does her best to swallow your load, whatever strands of jizz actually land in her open mouth that is. All of the cum that goes astray, landing in her hair or on her face, is quickly lapped up by her daughter's agile tongue.");
 			writeText("As you step back purpleF is true to her word, leaning into a deep kiss with her mother to try and fish out any unswallowed ropes of jizz. Thoroughly cock-drunk, chubbyF dazedly lets her daughter eat the jizz from her mouth before she begins fighting back. The two of them wrestle tongues for a moment, until they realize the only free drops of cum left are dripping from your cock onto the carpet.");
 			writeSpeech("chubby", "", "Ah, more~! Mo-");

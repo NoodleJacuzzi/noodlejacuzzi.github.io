@@ -21,6 +21,7 @@ var newItems = [//Lists the shop items unique to this character
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "introduction1", name: "Principal principal's Office is here. You should introduce yourself.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "caseSelect", name: "Enter Principal principal's Office.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 41, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "principalBeach1", name: "principal is here with some other women.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 41, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -46,7 +47,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Hello?");
 			writeSpeech("???", "none", "Just a moment!");
 			writeBig("images/principal/profile.jpg", "Art by Oreteki18Kin");
-			if (data.story.day == 1) {
+			if (data.player.day == 1) {
 				writeSpeech("principal", "", "Ah, you must be "+data.player.name+". Quite punctual to meet with me so soon, a good habit.");
 				writeSpeech("player", "", "I'm very forward thinking. Forward in general, really.");
 				writeSpeech("principal", "", "So, your supervisor should have filled you in on your responsibilities already. Correct? We've never had a dedicated counselor here, so I'm afraid there's not much framework for you.");
@@ -97,7 +98,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			else {
 				if (data.story[8].met.includes('purpleF') != true) {
 					writeSpeech("principal", "", "Have you had a chance to speak with Ms. "+lName('purple')+" yet?");
-					if(checkTrust('purple') > 0) {
+					if(checkTrust('purple') > 80) {
 						writeFunction("writeEncounter('purpleCaseEnd')", "Report on "+fName('purple')+"'s case.");
 					}
 				}
@@ -121,7 +122,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			else {
 				if (data.story[8].met.includes('starletF') != true) {
 					writeSpeech("principal", "", "Have you spoken with Miss starletL yet? Gotten her to change her mind?");
-					if(checkTrust('starlet') > 81) {
+					if(checkTrust('starlet') > 83) {
 						writeFunction("writeEncounter('starletCaseEnd')", "Report on starletL's case.");
 					}
 				}
@@ -393,6 +394,43 @@ function writeEncounter(name) { //Plays the actual encounter.
 			updateMenu();
 			writeSpecial("Your 'counseling' ability has improved! This means a pay bump, and "+fName('principal')+" trusts you more!");
 			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "principalBeach1": {
+			writeBig("images/scarf/principalBeach.jpg");
+			writeSpeech("principal", "bikini.jpg", "Oh, playerF? What a coincidence. I was just breaking in the new outfit.");
+			writeSpeech("secretary", "bikini.jpg", "M-miss! Are you sure this is what you meant for me to wear? This is degrading!");
+			writeBig("images/scarf/secretaryBeach.jpg");
+			writeSpeech("principal", "bikini.jpg", "Oh hush, you look fantastic. If I recall, you said you wanted me to see you wearing it, right?");
+			writeSpeech("secretary", "bikini.jpg", "Yes, but I wanted <i>you</i> to see me wearing it! Not the entire beach!");
+			writeBig("images/scarf/blondeBeach.jpg");
+			writeSpeech("Blonde", "images/principal/blonde.jpg", "This vacation was just what we needed, right sis?");
+			writeSpeech("principal", "bikini.jpg", "Liberating down to the soul. I suppose we should finish tormenting secretaryF for the day.<br>Unless... playerF, I don't suppose you'd like to join in on the fun?");
+			writeText("For all her struggle, secretaryF seems to be enjoying herself too...");
+			writeSpeech("secretary", "bikini.jpg", "Please, we should be getting back!");
+			writeSpeech("player", "", "Huh. I didn't know principalF had a sister.");
+			writeSpeech("scarf", "bikini.jpg", "She's quite sweet. Won't you get to know her better?");
+			writeFunction("writeEncounter('principalBeach2')", "Join the trio");
+			writeFunction("changeLocation(data.player.location)", "Ignore them, focus");
+			break;
+		}
+		case "principalBeach2": {
+			writeText("You grab principalF by the hand, more on instinct than anything else.");
+			writeSpeech("principal", "bikini.jpg", "Relax, just let go.");
+			writeSpeech("Blonde", "images/principal/blonde.jpg", "We can all have fun together.");
+			writeSpeech("secretary", "bikini.jpg", "W-what are you doing? Have some decency!");
+			writeBig("images/scarf/principalBeachSex1.jpg");
+			writeSpeech("Blonde", "images/principal/blonde.jpg", "Go ahead, she's all ready for you!");
+			writeSpeech("principal", "bikini.jpg", "Don't hold back, she needs a good punishing.");
+			writeText("In the back of your mind you know you have somewhere to be, but...");
+			writeBig("images/scarf/principalBeachSex2.jpg");
+			writeSpeech("secretary", "bikini.jpg", "Aaah~!");
+			writeSpeech("principal", "bikini.jpg", "Relax, give in. There's nowhere you'd rather be but here.");
+			writeText("As she looks you in the eyes, it's clear she isn't talking to secretaryF.");
+			writeBig("images/scarf/principalBeachSex3.jpg");
+			writeText("Before you fall into an endless loop of pleasure, you can hear a voice whispering into your ear.");
+			writeSpeech("scarf", "bikini.jpg", "You put up a good resistance, child. Just relax, enjoy.");
+			writeFunction("loadEncounter('scarf', 'failure')", "The End");
 			break;
 		}
 	}
