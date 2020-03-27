@@ -129,7 +129,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeFunction("changeLocation(data.player.location)", "Finish");
 				break;
 			}
-			else if()
 			if(checkFlag('housekeep','Hypno') != true)
 				data.player.money -= 15;
 			passTime();
