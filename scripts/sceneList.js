@@ -2,10 +2,10 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 3/13/2020</p>
-				<p class = "centeredText">Anomaly Vault v6</p>
-				<p class = "centeredText">A new release of Anomaly Vault, featuring scenes for the Free ___ Sign and others!</p>
-				<p class = "centeredText">Thank you to: Swallows999, Joshua Ingram, Madgunner, Robbie, CaptainMontana, Lasse B, andres mejia, Ark555, Badaxe, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, FearlessViper26, Filament, G, J_C_L, jack spencer, Jesse Greene, Jinouga, Marc Maldon, Marco Wassmer, Negativatron, Ramsey Bisher, Scal, Terry Leininger, Tyberius Kirk, XxrobothacksxX, Aegil, Alec8686, Andy Amundy, Angel, Anthony Munso, Ariados, Arthur radcliffe, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Colin, Danny Nguyen, Darrell Goodman, DarthMalak, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Erin Trippet, Grim2011, Gwen Yurick, ItsAllOgreNow, Jane, joe, John Lewis, john smith, Joshua Melzark, KH dg, lm Carma, Louis Hayes, mazterlith, Monkey, murgatroid99, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, qwerty, Roy, Scumstango, Sebastian Eckel, Shirofang, Simon Rencher, sky, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, valdis, Vincent Madaire-Cullen, waazzzup14, Wayne culbert, Wei, Wild Bill, William Richardson, Your Husbando, Z, สิรวิชณ์ อาสว่าง, 凱 陳, and 魏 for supporting my work!</p>
+				<p class = "centeredText">Lastest News 3/27/2020</p>
+				<p class = "centeredText">Hentai University v8</p>
+				<p class = "centeredText">A new release of Hentai University, featuring scenes for Cassandra, Emma, Tia, Anri, and the work of SlackerSavior!</p>
+				<p class = "centeredText">Thank you to: Swallows999, Joshua Ingram, Madgunner, Robbie, CaptainMontana, Lasse B, andres mejia, Ark555, Badaxe, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, fayman, FearlessViper26, Filament, G, J_C_L, jack spencer, Jesse Greene, Jinouga, Marc Maldon, Marco Wassmer, Negativatron, Ramsey Bisher, Scal, Skyrim mod lvr, Taylor Trout, XxrobothacksxX, Aegil, Alec8686, Andy Amundy, Angel, Anthony Munso, Ariados, Arthur radcliffe, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Colin, Daekash, Danny Nguyen, Darrell Goodman, DarthMalak, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, fireballcreations, Grim2011, Gwen Yurick, ItsAllOgreNow, Jane, joe, joel larsen, John Lewis, john smith, Joshua Melzark, KH dg, lm Carma, Louis Hayes, Markus Hansen, mazterlith, Monkey, murgatroid99, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, qwerty, Roy, Scumstango, Sebastian Eckel, Simon Rencher, sky, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, valdis, Vincent Madaire-Cullen, Wei, Wild Bill, William Richardson, Your Husbando, Z, สิรวิชณ์ อาสว่าง, 凱 陳, and 魏 for supporting my work!</p>
 			`;
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://discord.gg/B3AszYM'">Visit my discord server</p>
@@ -38,7 +38,7 @@ function writeScene(scene) {
 			writeText("The end goal here is a town packed with dozens of characters using a framework I can continually add more content to.");
 			writeText("Tags: Hypnosis, features many other tags entirely avoidable tags based on characters such as incest, dubcon, and gay content");
 			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/34040934'">Download the game</p>
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/35317697'">Download the game</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">Play the mobile version</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'">Modding Tutorial</p>
