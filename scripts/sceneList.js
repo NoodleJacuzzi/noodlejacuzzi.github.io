@@ -31,7 +31,7 @@ function writeScene(scene) {
 			`;
 			writeTransition("artifactList", "See a roadmap of current / planned content");
 			writeBig("images/HentaiUniversity.png");
-			writeText("Hentai University v7");
+			writeText("Hentai University v8");
 			writeText("A game made in cooperation with author Captain Cryptogreek, who works as the game's lead writer.");
 			writeText("You play as a young man with a strong grasp on hypnotic magic, and have embedded yourself as a counselor in a school with a fantastically attractive student body. The faculty and your neighbors in town look pretty good too.");
 			writeText("This game uses art by Enoshima Iki, Nagi Ichi, Oreteki18kin, Gujira 4 Gou, and Kinta no Mousou and is meant to be similar in feel to Hentai High School, but without the focus on school management, more emphasis on wandering / corruption, and a much higher quality body of images.");
