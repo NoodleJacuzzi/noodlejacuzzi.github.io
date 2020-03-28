@@ -681,7 +681,48 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("...A little <i>too</i> well.");
 			writeSpeech("player","","I was expecting that to take more finagling, but this is probably fine...?");
 			writeText("Though, you are a bit curious about what he means by improve...");
-			writeEncounter("housekeepHypnoMenuIntro");
+			writeSpeech("player","","What kind of things are you looking to improve? Anything specific?");
+			writeSpeech("housekeep","","There are several... <i>niche</i> magazines I've read that discuss certain services.");
+			writeText("housekeepF's expression doesn't change, but his face flushes a bit more.");
+			writeSpeech("housekeep","","It could take a little while to prepare for some of them, though. I could attempt to requisition an outfit or two, for example.");
+			writeText("Requisition? Weird phrasing, but...");
+			writeSpeech("player","","You mean like a bunny-girl outfit?");
+			writeSpeech("housekeep","","...!");
+			writeText("You can see his back just barely straighten up.");
+			writeSpeech("housekeep","","That would be one example, yes.");
+			writeText("...Ah, wait.");
+			writeText("Ever since the hypnosis started, he's spoken a bit more formally, and with less hesitation...");
+			writeSpeech("player","","...housekeepF.");
+			writeSpeech("housekeep","","Yes, *Master?");
+			writeSpeech("player","","You're not actually hypnotized. If I had to guess, you're paraphrasing a magazine or something you read.");
+			writeText("It's not a question, and there's a momentary silence.");
+			writeSpeech("housekeep","","...I apologize, *Master.");
+			if(checkTrust('tomgirl') >= 2){
+				if(checkTrust('meji') > 20 && checkTrust('meji') != 40)
+					writeText("Well, shit. In hindsight, not everyone is going to be as easy as mejiF or tomgirlF, but still...");
+				else
+					writeText("Well, shit. In hindsight, not everyone is going to be as easy as tomgirlF, but still...");
+			}
+			else if(checkTrust('meji') > 20 && checkTrust('meji') != 40)
+				writeText("Well, shit. Obviously, not everyone is going to be as easy as mejiF, but still...");
+			else if(checkTrust('neet') >= 60)
+				writeText("Well, shit. Maybe he's just not comfortable enough around you, like with neetF? But still...");
+			else
+				writeText("Well, shit. There are obviously going to people who are more resistant, but still...");
+			writeText("Well, something seems a bit off, but that just means that it'll require a different approach.");
+			writeSpeech("player","","It's fine. It'll probably be easier for you the more time you spend around me, so I'll just have to call on you more, I suppose.");
+			writeText("housekeepF purses his lips for a moment before nodding.");
+			writeSpeech("player","","Now... You were saying something about being excited over a bunny-girl outfit?");
+			writeText("He quickly perks up, his face flushing again, but his tone remaining collected... Mostly.");
+			writeSpeech("housekeep","","A-Ah, no. I was just saying that I could requisition an outfit. That is, if <i>you</i> were interested in it, *Master.");
+			writeText("You hold off on replying for a few moments, watching him slowly get redder.");
+			writeSpeech("housekeep","","...And I would like to try wearing one, yes.");
+			writeSpeech("player","","I thought you might. When you can get one, I'd be happy to see you wearing it.");
+			writeSpeech("housekeep","","Of course.");
+			writeText("housekeepF gives a small curtsy before standing up a bit straighter.");
+			writeSpeech("housekeep","","In the meantime, though, was there anything you wanted me to do for you tonight?");
+			writeFunction("writeEncounter('housekeepSexMenu')", "Do sexual things");
+			writeFunction("writeEncounter('housekeepCleanHypno')", "Just some tidying up will be fine");
 			break;
 		}
 		case "housekeepHypnoEncounter2" : {
@@ -771,10 +812,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("That went over pretty well, actually. It wasn't that much of a test, actually...");
 			writeSpeech("player","","I was expecting that to take more finagling, but this is probably fine...?");
 			writeText("Though, you are a bit curious about what he means by improve...");
-			writeEncounter("housekeepHypnoMenuIntro");
-			break;
-		}
-		case "housekeepHypnoMenuIntro" : {
 			writeSpeech("player","","What kind of things are you looking to improve? Anything specific?");
 			writeSpeech("housekeep","","There are several... <i>niche</i> magazines I've read that discuss certain services.");
 			writeText("housekeepF's expression doesn't change, but his face flushes a bit more.");
