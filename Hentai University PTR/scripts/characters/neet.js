@@ -10,7 +10,7 @@ var logbook = {
 	body: "She's very well endowed despite being short, but she could really take some time to take care of herself. Notably, her hair is a mess.",
 	clothes: "You aren't sure if she even owns anything aside from the school uniform, and it always looks perpetually wrinkled.",
 	home: "According to her file, she lives in the computer lab.",
-	tags: "No scenes yet, sorry!",
+	tags: "Romance, Masturbation, Titjob, Condom Sex, Raw Sex",
 	artist: "Enoshima Iki",
 	author: "Noodle Jacuzzi",
 };

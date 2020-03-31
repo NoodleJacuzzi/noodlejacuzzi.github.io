@@ -10,7 +10,7 @@ var logbook = { //Logbook details for each character.
 	body: "It's not clear how old she is. When you really focus, there's a slight blur around her body whenever you look at her.",
 	clothes: "Her preferred outfit is a v-neck shirt and a yellow scarf. She must be wearing some sort of herbal perfume because your head feels fuzzy around her.",
 	home: "She lives somewhere south of the shopping district, but spends most of her time at the school. ",
-	tags: "No scenes yet, sorry! In the future her content will be dependent on increasing your Hypnosis skill.",
+	tags: "Hypnotized Sex, Bikini, Bunnygirl Outfit, Dom turned Sub",
 	artist: "Artist: Enoshima Iki",
 	author: "Noodle Jacuzzi",
 };

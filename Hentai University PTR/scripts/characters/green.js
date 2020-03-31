@@ -10,7 +10,7 @@ var logbook = { //Logbook details for each character.
 	body: "She's the younger sister, and keeps herself more in shape.",
 	clothes: "She prefers to wear green over any other color, it goes well with her sister's outfits.",
 	home: "She lives somewhere south of the shopping district, but spends most of her time at the school. ",
-	tags: "No scenes yet, sorry!",
+	tags: "Drunken Sex, Morning Blowjob",
 	artist: "Artist: Enoshima Iki",
 	author: "Noodle Jacuzzi",
 };
