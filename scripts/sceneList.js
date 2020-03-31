@@ -2,6 +2,8 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
+				<p class = "centeredText">Bonus News! 3/30/2020</p>
+				<p class = "centeredText">Hentai University v9 Character Poll Available Here: https://www.patreon.com/posts/hentai-v9-poll-35421448</p>
 				<p class = "centeredText">Lastest News 3/27/2020</p>
 				<p class = "centeredText">Hentai University v8</p>
 				<p class = "centeredText">A new release of Hentai University, featuring scenes for Cassandra, Emma, Tia, Anri, and the work of SlackerSavior!</p>

@@ -315,7 +315,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeEvent('scarfBeach');
 			writeText("You take a step back to admire your handiwork, only to realize something as you look around.");
 			writeSpeech("player", "", "... When did I get to scarfF's house?");
-			writeText("She must've taken you hear while you were in a trance, not like you can ask the twitching, leaking mess for the full story though.");
+			writeText("She must've taken you here while you were in a trance, not like you can ask the twitching, leaking mess for the full story though.");
 			writeText("...");
 			writeBig("images/scarf/scarfNormal.jpg");
 			writeSpeech("scarf", "alt.jpg", "So you don't actually have a plan for taking the school?");

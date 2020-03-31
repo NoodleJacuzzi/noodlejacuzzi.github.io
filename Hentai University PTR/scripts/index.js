@@ -2009,6 +2009,47 @@ function loadFile(){
 	updateSave();
 }
 
+function saveTXT() {
+    var textFileAsBlob = new Blob([JSON.stringify(data)], {type:'text/plain'});
+    var downloadLink = document.createElement("a");
+    downloadLink.download = "Hentai University Savedata.txt";
+    downloadLink.innerHTML = "Download File";
+    if (window.webkitURL != null)
+    {
+        // Chrome allows the link to be clicked
+        // without actually adding it to the DOM.
+        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    }
+    else
+    {
+        // Firefox requires the link to be added to the DOM
+        // before it can be clicked.
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+    }
+
+    downloadLink.click();
+}
+
+const fr = new FileReader();
+fr.addEventListener("load", fileLoaded)
+var loadText = document.getElementById("loadText");
+var output = document.getElementById("output");
+loadText.addEventListener("change", loadSave);
+
+function loadSave(){
+    files = this.files;
+    if(files.length == 0)
+        return;
+    file = files[0];
+    fr.readAsText(file);
+}
+function fileLoaded(){
+    output.value = fr.result;
+}
+
 function generateSave() {
 	for (i = 101; i < 109; i++) {
 		var searchName = 'data' + i;
