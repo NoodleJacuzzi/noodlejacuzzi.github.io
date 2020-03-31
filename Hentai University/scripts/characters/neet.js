@@ -658,7 +658,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "neetBeach2": {
-			writeText("You grab greenF by the hand, more on instinct than anything else.");
+			writeText("You grab neetF by the hand, more on instinct than anything else.");
 			writeSpeech("player", "", "Fuck off, she's my cinnamon roll.");
 			writeText("You pull neetF away from the crowd, not quite sure where you're heading. Eventually the crowds around you are gone, and you have no idea where you are.");
 			writeSpeech("player", "", "Okay, gotta focus... neetF, you're holding me a bit tight.");

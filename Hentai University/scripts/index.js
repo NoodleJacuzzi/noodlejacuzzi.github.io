@@ -1071,92 +1071,86 @@ function writeSpecial (text) {
 	}
 }
 
-function writeSpeech (name, img, text) {
-	var cssName = name;
-	var fullName = name;
-	//console.log(img);
-	var cssColor = "#CCCCCC";
-	if (img == "" && img != 'none') {
-		if (data.player.pervert != true) {
-			var checkForError = "";
-			img = "images/"+name+"/"+name+".jpg";
-		}
-		else {
-			var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+name+`.jpg'"`;
-			img = "images/"+name+"/"+name+"P.jpg";
-		}
+function writeSpeech (name, img, text, altName, altColor) {
+	var finalName = "";
+	var finalImg = "";
+	var finalColor = "";
+	var checkForError = "";
+	//If the player is using a shortcut...
+	if (img == "") {
+		finalImg = "images/"+name+"/"+name+".jpg";
 	}
 	else {
-		if (img.includes("images") != true && img != 'none') {
-			if (data.player.pervert != true) {
-				var checkForError = "";
-				img = "images/"+cssName+"/"+img;
-			}
-			else {
-				var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+img+`'"`;
-				img = "images/"+cssName+"/"+img+"P.jpg";
-			}
-		}
-	}
-	if (img.includes('.jpgP') == true) {
-		img = img.replace('.jpgP', 'P');
-	}
-	if (name == "player") {
-		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
-		fullName = data.player.name;
-		if (data.player.pervert != true) {
-			cssColor = "#86b4dc";
+		if (img.includes("images") != true) {
+			finalImg = "images/"+name+"/"+img;
 		}
 		else {
-			cssColor = "#fc53f1";
+			finalImg = img;
 		}
 	}
-	//console.log(img);
+	//Check for pervert mode
+	if (data.player.pervert == true) {
+		var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+name+`P.jpg'"`;
+		finalImg = finalImg.replace('.jpg', 'P.jpg');
+	}
+	//Check if a transparent shot should be used
 	if (data.player.style == "persona" || data.player.style == "royalty") {
-		var checkForError = `onerror ="javascript:this.src='`+img+`'"`;
-		if (data.player.pervert == true) {
-			if (name == "player") {
-				img = img.replace('.jpg', 'T.png');
-			}
-			else {
-				img = img.replace('P.jpg', 'T.png');
-			}
-		}
-		else {
-			img = img.replace('.jpg', 'T.png');
-		}
+		var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+name+`.jpg'"`;
+		finalImg = finalImg.replace('P.jpg', '.jpg');
+		finalImg = finalImg.replace('.jpg', 'T.png');
 	}
+	//Search the data variable for if a shortcut was used
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].index == name) {
-			fullName = data.story[i].fName + ' ' + data.story[i].lName;
-			cssColor = data.story[i].color;
-			
+			finalName = data.story[i].fName + ' ' + data.story[i].lName;
+			finalColor = data.story[i].color;
+		}
+	}
+	//If the name is player, use the player's details
+	if (name == "player") {
+		finalImg = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
+		finalName = data.player.name;
+		switch (data.player.color) {
+			case null:
+			case "":
+			data.player.color = "#86b4dc"
+			default:
+			finalColor = data.player.color;
 		}
 	}
 	if (img == "none") {
-		var checkForError = "";
-		img = "scripts/gamefiles/none.png";
+		finalImg = "images/none.png";
 	}
+	//HIDDEN shortcut for crypto to mask the name of the character
 	if (text.includes("HIDDEN") == true) {
-		fullName = "???";
+		finalName = "???";
 		text = text.replace("HIDDEN", "");
 	}
+	//Check if an alternate final color should be used.
+	if (altColor != null && altColor != "") {
+		finalColor = altColor;
+	}
+	//Check if an alternate final name should be used.
+	if (altName != null && altName != "") {
+		finalName = altName;
+	}
+	//Output the speech in the assigned style.
 	switch (data.player.style) {
 		case "lobotomy": {
 			document.getElementById('output').innerHTML += `
-			<div class="textBoxLobotomy" style="border-color: `+cssColor+`;
+			<div class="textBoxLobotomy" style="border-color: `+finalColor+`;
 			background: linear-gradient(90deg, 
 			#000000 10px, 
-			`+cssColor+` 10px, 
-			`+cssColor+` 210px, 
+			`+finalColor+` 10px, 
+			`+finalColor+` 210px, 
 			#000000 210px);">
-				<div class = "lobotomyThumb" style="background-color: `+cssColor+`">
+				<div class = "lobotomyThumb" style="background-color: `+finalColor+`">
 					<div class = "lobotomyThumbBorder">
 						<img class = "textThumbLobotomy" src = "
-							`+ img +`
+							`+ finalImg +`
 						"`+checkForError+`>
 					</div>
-					<p class = "textNameLobotomy">`+ fullName + `</p>
+					<p class = "textNameLobotomy">`+ finalName + `</p>
 				</div>
 				<div class="textBoxContentLobotomy">
 				<p>` + replaceCodenames(text) + `</p>
@@ -1172,19 +1166,19 @@ function writeSpeech (name, img, text) {
 					<div class = "royaltyImageHolder">
 						<img class = "textThumbRoyalty" style="
 							position:absolute;
-							-webkit-filter: drop-shadow(2px 2px 0 `+cssColor+`)
-							drop-shadow(-2px -2px 0 `+cssColor+`);
-							filter: drop-shadow(2px 2px 0 `+cssColor+`)
-							drop-shadow(-2px -2px 0 `+cssColor+`);"
-						src = "`+img+`"`+checkForError+`>
-						<img class = "textThumbRoyalty" src = "`+img+`"`+checkForError+`>
+							-webkit-filter: drop-shadow(2px 2px 0 `+finalColor+`)
+							drop-shadow(-2px -2px 0 `+finalColor+`);
+							filter: drop-shadow(2px 2px 0 `+finalColor+`)
+							drop-shadow(-2px -2px 0 `+finalColor+`);"
+						src = "`+finalImg+`"`+checkForError+`>
+						<img class = "textThumbRoyalty" src = "`+finalImg+`"`+checkForError+`>
 					</div>
-					<div class="nameBoxRoyalty" style = "border-color:`+cssColor+`;">
-						<p class = "textNameRoyalty" style = "color:`+cssColor+`;">`+fullName+`</p>
+					<div class="nameBoxRoyalty" style = "border-color:`+finalColor+`;">
+						<p class = "textNameRoyalty" style = "color:`+finalColor+`;">`+finalName+`</p>
 					</div>
 				</div>
 				<div class="textBoxContentRoyalty">
-					<div class="dialogueBoxRoyalty" style = "border-color:`+cssColor+`">
+					<div class="dialogueBoxRoyalty" style = "border-color:`+finalColor+`">
 						<p>` + replaceCodenames(text) + `</p>
 					</div>
 				</div>
@@ -1196,17 +1190,17 @@ function writeSpeech (name, img, text) {
 			document.getElementById('output').innerHTML += `
 			<div class="textBoxPersona">
 				<div class = "personaThumb">
-					<img class = "textThumbPersona" src = "`+img+`"`+checkForError+`>
+					<img class = "textThumbPersona" src = "`+finalImg+`"`+checkForError+`>
 				</div>
 				<div class="textBoxContentPersona">
 					<div class="nameBoxPersona">
-						<p class = "textNamePersona" style = "color:`+cssColor+`">`+ fullName + `</p>
-						<div class="textNamePersonaWhite" style = "border-color:`+cssColor+`"></div>
+						<p class = "textNamePersona" style = "color:`+finalColor+`">`+ finalName + `</p>
+						<div class="textNamePersonaWhite" style = "border-color:`+finalColor+`"></div>
 						<div class="textNamePersonaBlack"></div>
 						<div class="personaNameArrow"></div>
-						<div class="personaNameArrowShadow" style = "border-right-color:`+cssColor+`"></div>
+						<div class="personaNameArrowShadow" style = "border-right-color:`+finalColor+`"></div>
 					</div>
-					<div class="dialogueBoxPersona" style = "border-color:`+cssColor+`">
+					<div class="dialogueBoxPersona" style = "border-color:`+finalColor+`">
 						<p>` + replaceCodenames(text) + `</p>
 					</div>
 				</div>
@@ -1216,12 +1210,12 @@ function writeSpeech (name, img, text) {
 		}
 		default: {
 			document.getElementById('output').innerHTML +=`
-			<div class="textBox" style="border-color: `+cssColor+`">
-				<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "
-					`+ img +`
+			<div class="textBox" style="border-color: `+finalColor+`">
+				<img class = "textThumb" style="box-shadow: -5px 5px `+finalColor+`" src = "
+					`+ finalImg +`
 				"`+checkForError+`>
 				<div class="textBoxContent">
-				<p class = "textName" style="color:`+cssColor+`">`+ fullName + `</p>
+				<p class = "textName" style="color:`+finalColor+`">`+ finalName + `</p>
 				<p>` + replaceCodenames(text) + `</p>
 			</div>
 			<br>
@@ -1379,6 +1373,108 @@ function writeFunction (name, func) {
 					` + replaceCodenames(func) + `
 				</p>
 			`;
+		}
+	}
+}
+
+function writeHTML(text) {
+	//Separate the text into lines
+	var lines = text.split('\n');
+	//For each of these lines
+	for(var lineCounter = 0;lineCounter < lines.length;lineCounter++){
+		//Remove all tabs from the line, in case we use tab spacing
+		while (lines[lineCounter].includes('\t') == true) {
+			lines[lineCounter] = lines[lineCounter].replace(`\t`, ``);
+		}
+		//If the line is not empty (we don't want to print empty lines)
+		if (lines[lineCounter] != "") {
+			//Grab the first word of the line to use as the command
+			var command = lines[lineCounter].replace(/ .*/,'');
+			//Depending on which command, execute different code. Convert the command to lowercase as well in case we used Sp instead of sp, as js is case-sensitive.
+			switch (command.toLowerCase()) {
+				//If the command is "t"
+				case "t": {
+					//Remove the command from the line we actually want to print.
+					lines[lineCounter] = lines[lineCounter].replace(command+` `, ``);
+					//Execute the writeText command to print everything left to the screen.
+					writeText(lines[lineCounter]);
+					//Don't execute any of the below switch cases.
+					break;
+				}
+				case "sp": {
+					//Get the name of our speaker
+					var name = lines[lineCounter].split(command+` `).pop().split(`;`)[0];
+					//If "; im" is in our code we want to specify a specific profile image, so use that. Otherwise set the image variable blank so it can be automatically found.
+					if (lines[lineCounter].includes("; im")) {
+						var image = lines[lineCounter].split(`im `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`im `+image+`; `, ``);
+					}
+					else {
+						var image = "";
+					}
+					//If "; altName" is in our code we want to use an alternate name for the character, so use that. Otherwise set the altName variable blank.
+					if (lines[lineCounter].includes("; altName")) {
+						var altName = lines[lineCounter].split(`altName `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`altName `+altName+`; `, ``);
+					}
+					else {
+						var altName = "";
+					}
+					//If "; altColor" is in our code we want to specify a specific color for the character, so use that. Otherwise set the altColor variable blank.
+					if (lines[lineCounter].includes("; altColor")) {
+						var altColor = lines[lineCounter].split(`altColor `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`altColor `+altColor+`; `, ``);
+					}
+					else {
+						var altColor = "";
+					}
+					//Remove the command from the line we actually want to print.
+					lines[lineCounter] = lines[lineCounter].replace(command+` `+name+`; `, ``);
+					//Execute the writeSpeech command to print everything we have left.
+					//TODO: Add custom colors and custom names
+					writeSpeech(name, image, lines[lineCounter], altName, altColor);
+					break;
+				}
+				case "im": {
+					//Get the location of the image
+					var location = lines[lineCounter].split(command+` `).pop().split(`;`)[0];
+					//If "; cap" is in our code we want to attach a caption to our image. Otherwise leave the caption blank.
+					if (lines[lineCounter].includes("; cap")) {
+						var caption = lines[lineCounter].split(`cap `).pop().split(`;`)[0];
+					}
+					else {
+						var caption = "";
+					}
+					//Bring up the image on screen. Since we aren't printing the line itself we don't need to clean it by removing commands.
+					writeBig(location, caption);
+					break;
+				}
+				case "b": {
+					//Get the label of our button
+					var name = lines[lineCounter].split(`b `).pop().split(`;`)[0];
+					//Get the function we want our button to perform
+					var func = lines[lineCounter].split(`f `).pop().split(`;`)[0];
+					//If "; arg" is in our code we want the function to have a special argument. Otherwise leave the argument section blank.
+					if (lines[lineCounter].includes("; arg")) {
+						var argument = lines[lineCounter].split(`arg `).pop().split(`;`)[0];
+					}
+					else {
+						var argument = "";
+					}
+					//Write the button to the screen using the information we've collected.
+					writeFunction(func+"('"+argument+"')", name)
+					break;
+				}
+				//This is for convenience. If the line is just an elipses, replace it with a horizontal line cutting across the screen.
+				case "...": {
+					writeText("<hr>");
+					break;
+				}
+				//If the command isn't found in the list above then the code can't be parsed (understood), print an error code in red.
+				default: {
+					writeText("<span style='color:red'>Unknown command. The line '"+lines[lineCounter]+"' could not be parsed.");
+				}
+			}
 		}
 	}
 }
@@ -2009,6 +2105,55 @@ function loadFile(){
 	updateSave();
 }
 
+function saveTXT() {
+	var date = new Date();
+	date = date.toDateString() + " " + date.toLocaleTimeString();
+    var textFileAsBlob = new Blob([JSON.stringify(data)], {type:'text/plain'});
+    var downloadLink = document.createElement("a");
+    downloadLink.download = "HU "+date+".noodle";
+    downloadLink.innerHTML = "Download File";
+    if (window.webkitURL != null)
+    {
+        // Chrome allows the link to be clicked
+        // without actually adding it to the DOM.
+        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    }
+    else
+    {
+        // Firefox requires the link to be added to the DOM
+        // before it can be clicked.
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+    }
+
+    downloadLink.click();
+}
+
+const fr = new FileReader();
+fr.addEventListener("load", fileLoaded)
+
+function loadSave(){
+    files = document.getElementById('loadFile').files;
+    if(files.length == 0)
+        return;
+    file = files[0];
+    fr.readAsText(file);
+}
+function fileLoaded(){
+    console.log(fr.result);
+	var fakedata = fr.result;
+	fakedata = JSON.parse(fakedata);
+	if (fakedata.player.hypnosis == null) {
+		alert("Whoa there! I don't think that's a Hentai University save file! If it is, be sure to let me (Noodlejacuzzi) know and I'll help you out.");
+	}
+	else {
+		data = fakedata;
+		changeLocation(data.player.location);
+	}
+}
+
 function generateSave() {
 	for (i = 101; i < 109; i++) {
 		var searchName = 'data' + i;
@@ -2408,11 +2553,13 @@ function diagnostic() {
 			if (data.player.pervert != true) {
 				data.player.pervert = true;
 				writeSpecial("Pervert mode activated!");
+				data.player.color = "#fc53f1";
 				updateMenu();
 			}
 			else {
 				data.player.pervert = false;
 				writeSpecial("Pervert mode deactivated!");
+				data.player.color = "#86b4dc";
 				updateMenu();
 			}
 			break;

@@ -151,7 +151,7 @@ function changeLocation(n) {
 					);
 				}
 			}
-			if (data.player.time != "Night" && data.player.location != "map"  && data.player.location != "casino" && data.player.location != "schoolMap" && checkItem("Town Map") == true) {
+			if (data.player.time != "Night" && data.player.location != "map" && data.player.location != "casino" && data.player.location != "beach" && data.player.location != "schoolMap" && checkItem("Town Map") == true) {
 				printLocationButton(
 					'Use Map', 
 					0, 
