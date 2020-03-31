@@ -1071,92 +1071,86 @@ function writeSpecial (text) {
 	}
 }
 
-function writeSpeech (name, img, text) {
-	var cssName = name;
-	var fullName = name;
-	//console.log(img);
-	var cssColor = "#CCCCCC";
-	if (img == "" && img != 'none') {
-		if (data.player.pervert != true) {
-			var checkForError = "";
-			img = "images/"+name+"/"+name+".jpg";
-		}
-		else {
-			var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+name+`.jpg'"`;
-			img = "images/"+name+"/"+name+"P.jpg";
-		}
+function writeSpeech (name, img, text, altName, altColor) {
+	var finalName = "";
+	var finalImg = "";
+	var finalColor = "";
+	var checkForError = "";
+	//If the player is using a shortcut...
+	if (img == "") {
+		finalImg = "images/"+name+"/"+name+".jpg";
 	}
 	else {
-		if (img.includes("images") != true && img != 'none') {
-			if (data.player.pervert != true) {
-				var checkForError = "";
-				img = "images/"+cssName+"/"+img;
-			}
-			else {
-				var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+img+`'"`;
-				img = "images/"+cssName+"/"+img+"P.jpg";
-			}
-		}
-	}
-	if (img.includes('.jpgP') == true) {
-		img = img.replace('.jpgP', 'P');
-	}
-	if (name == "player") {
-		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
-		fullName = data.player.name;
-		if (data.player.pervert != true) {
-			cssColor = "#86b4dc";
+		if (img.includes("images") != true) {
+			finalImg = "images/"+name+"/"+img;
 		}
 		else {
-			cssColor = "#fc53f1";
+			finalImg = img;
 		}
 	}
-	//console.log(img);
+	//Check for pervert mode
+	if (data.player.pervert == true) {
+		var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+name+`P.jpg'"`;
+		finalImg = finalImg.replace('.jpg', 'P.jpg');
+	}
+	//Check if a transparent shot should be used
 	if (data.player.style == "persona" || data.player.style == "royalty") {
-		var checkForError = `onerror ="javascript:this.src='`+img+`'"`;
-		if (data.player.pervert == true) {
-			if (name == "player") {
-				img = img.replace('.jpg', 'T.png');
-			}
-			else {
-				img = img.replace('P.jpg', 'T.png');
-			}
-		}
-		else {
-			img = img.replace('.jpg', 'T.png');
-		}
+		var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+name+`.jpg'"`;
+		finalImg = finalImg.replace('P.jpg', '.jpg');
+		finalImg = finalImg.replace('.jpg', 'T.png');
 	}
+	//Search the data variable for if a shortcut was used
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].index == name) {
-			fullName = data.story[i].fName + ' ' + data.story[i].lName;
-			cssColor = data.story[i].color;
-			
+			finalName = data.story[i].fName + ' ' + data.story[i].lName;
+			finalColor = data.story[i].color;
+		}
+	}
+	//If the name is player, use the player's details
+	if (name == "player") {
+		finalImg = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
+		finalName = data.player.name;
+		switch (data.player.color) {
+			case null:
+			case "":
+			data.player.color = "#86b4dc"
+			default:
+			finalColor = data.player.color;
 		}
 	}
 	if (img == "none") {
-		var checkForError = "";
-		img = "scripts/gamefiles/none.png";
+		finalImg = "images/none.png";
 	}
+	//HIDDEN shortcut for crypto to mask the name of the character
 	if (text.includes("HIDDEN") == true) {
-		fullName = "???";
+		finalName = "???";
 		text = text.replace("HIDDEN", "");
 	}
+	//Check if an alternate final color should be used.
+	if (altColor != null && altColor != "") {
+		finalColor = altColor;
+	}
+	//Check if an alternate final name should be used.
+	if (altName != null && altName != "") {
+		finalName = altName;
+	}
+	//Output the speech in the assigned style.
 	switch (data.player.style) {
 		case "lobotomy": {
 			document.getElementById('output').innerHTML += `
-			<div class="textBoxLobotomy" style="border-color: `+cssColor+`;
+			<div class="textBoxLobotomy" style="border-color: `+finalColor+`;
 			background: linear-gradient(90deg, 
 			#000000 10px, 
-			`+cssColor+` 10px, 
-			`+cssColor+` 210px, 
+			`+finalColor+` 10px, 
+			`+finalColor+` 210px, 
 			#000000 210px);">
-				<div class = "lobotomyThumb" style="background-color: `+cssColor+`">
+				<div class = "lobotomyThumb" style="background-color: `+finalColor+`">
 					<div class = "lobotomyThumbBorder">
 						<img class = "textThumbLobotomy" src = "
-							`+ img +`
+							`+ finalImg +`
 						"`+checkForError+`>
 					</div>
-					<p class = "textNameLobotomy">`+ fullName + `</p>
+					<p class = "textNameLobotomy">`+ finalName + `</p>
 				</div>
 				<div class="textBoxContentLobotomy">
 				<p>` + replaceCodenames(text) + `</p>
@@ -1172,19 +1166,19 @@ function writeSpeech (name, img, text) {
 					<div class = "royaltyImageHolder">
 						<img class = "textThumbRoyalty" style="
 							position:absolute;
-							-webkit-filter: drop-shadow(2px 2px 0 `+cssColor+`)
-							drop-shadow(-2px -2px 0 `+cssColor+`);
-							filter: drop-shadow(2px 2px 0 `+cssColor+`)
-							drop-shadow(-2px -2px 0 `+cssColor+`);"
-						src = "`+img+`"`+checkForError+`>
-						<img class = "textThumbRoyalty" src = "`+img+`"`+checkForError+`>
+							-webkit-filter: drop-shadow(2px 2px 0 `+finalColor+`)
+							drop-shadow(-2px -2px 0 `+finalColor+`);
+							filter: drop-shadow(2px 2px 0 `+finalColor+`)
+							drop-shadow(-2px -2px 0 `+finalColor+`);"
+						src = "`+finalImg+`"`+checkForError+`>
+						<img class = "textThumbRoyalty" src = "`+finalImg+`"`+checkForError+`>
 					</div>
-					<div class="nameBoxRoyalty" style = "border-color:`+cssColor+`;">
-						<p class = "textNameRoyalty" style = "color:`+cssColor+`;">`+fullName+`</p>
+					<div class="nameBoxRoyalty" style = "border-color:`+finalColor+`;">
+						<p class = "textNameRoyalty" style = "color:`+finalColor+`;">`+finalName+`</p>
 					</div>
 				</div>
 				<div class="textBoxContentRoyalty">
-					<div class="dialogueBoxRoyalty" style = "border-color:`+cssColor+`">
+					<div class="dialogueBoxRoyalty" style = "border-color:`+finalColor+`">
 						<p>` + replaceCodenames(text) + `</p>
 					</div>
 				</div>
@@ -1196,17 +1190,17 @@ function writeSpeech (name, img, text) {
 			document.getElementById('output').innerHTML += `
 			<div class="textBoxPersona">
 				<div class = "personaThumb">
-					<img class = "textThumbPersona" src = "`+img+`"`+checkForError+`>
+					<img class = "textThumbPersona" src = "`+finalImg+`"`+checkForError+`>
 				</div>
 				<div class="textBoxContentPersona">
 					<div class="nameBoxPersona">
-						<p class = "textNamePersona" style = "color:`+cssColor+`">`+ fullName + `</p>
-						<div class="textNamePersonaWhite" style = "border-color:`+cssColor+`"></div>
+						<p class = "textNamePersona" style = "color:`+finalColor+`">`+ finalName + `</p>
+						<div class="textNamePersonaWhite" style = "border-color:`+finalColor+`"></div>
 						<div class="textNamePersonaBlack"></div>
 						<div class="personaNameArrow"></div>
-						<div class="personaNameArrowShadow" style = "border-right-color:`+cssColor+`"></div>
+						<div class="personaNameArrowShadow" style = "border-right-color:`+finalColor+`"></div>
 					</div>
-					<div class="dialogueBoxPersona" style = "border-color:`+cssColor+`">
+					<div class="dialogueBoxPersona" style = "border-color:`+finalColor+`">
 						<p>` + replaceCodenames(text) + `</p>
 					</div>
 				</div>
@@ -1216,12 +1210,12 @@ function writeSpeech (name, img, text) {
 		}
 		default: {
 			document.getElementById('output').innerHTML +=`
-			<div class="textBox" style="border-color: `+cssColor+`">
-				<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "
-					`+ img +`
+			<div class="textBox" style="border-color: `+finalColor+`">
+				<img class = "textThumb" style="box-shadow: -5px 5px `+finalColor+`" src = "
+					`+ finalImg +`
 				"`+checkForError+`>
 				<div class="textBoxContent">
-				<p class = "textName" style="color:`+cssColor+`">`+ fullName + `</p>
+				<p class = "textName" style="color:`+finalColor+`">`+ finalName + `</p>
 				<p>` + replaceCodenames(text) + `</p>
 			</div>
 			<br>
@@ -2010,9 +2004,11 @@ function loadFile(){
 }
 
 function saveTXT() {
+	var date = new Date();
+	date = date.toDateString() + " " + date.toLocaleTimeString();
     var textFileAsBlob = new Blob([JSON.stringify(data)], {type:'text/plain'});
     var downloadLink = document.createElement("a");
-    downloadLink.download = "Hentai University Savedata.txt";
+    downloadLink.download = "HU "+date+".noodle";
     downloadLink.innerHTML = "Download File";
     if (window.webkitURL != null)
     {
@@ -2035,19 +2031,26 @@ function saveTXT() {
 
 const fr = new FileReader();
 fr.addEventListener("load", fileLoaded)
-var loadText = document.getElementById("loadText");
-var output = document.getElementById("output");
 loadText.addEventListener("change", loadSave);
 
 function loadSave(){
-    files = this.files;
+    files = document.getElementById('loadFile').files;
     if(files.length == 0)
         return;
     file = files[0];
     fr.readAsText(file);
 }
 function fileLoaded(){
-    output.value = fr.result;
+    console.log(fr.result);
+	var fakedata = fr.result;
+	fakedata = JSON.parse(fakedata);
+	if (fakedata.player.hypnosis == null) {
+		alert("Whoa there! I don't think that's a Hentai University save file! If it is, be sure to let me (Noodlejacuzzi) know and I'll help you out.");
+	}
+	else {
+		data = fakedata;
+		changeLocation(data.player.location);
+	}
 }
 
 function generateSave() {
@@ -2449,11 +2452,13 @@ function diagnostic() {
 			if (data.player.pervert != true) {
 				data.player.pervert = true;
 				writeSpecial("Pervert mode activated!");
+				data.player.color = "#fc53f1";
 				updateMenu();
 			}
 			else {
 				data.player.pervert = false;
 				writeSpecial("Pervert mode deactivated!");
+				data.player.color = "#86b4dc";
 				updateMenu();
 			}
 			break;
