@@ -841,7 +841,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("starlet", "", "Thanks! My mom would say that to cheer me up when I failed a subject. Now, out. Dinner is soon and I've got a new app that'll let me stream three porn videos at once.");
 			writeText("You leave to go take a nap. Overall the household seems pretty normal. If starletF and pornstarF weren't taking this so seriously, you could absolutely believe you're in the house of a regular mother and daughter pair.");
 			writeText("...");
-			writeText("You wake up for a lovely dinner, the pair remaining professional as they sey the table.");
+			writeText("You wake up for a lovely dinner, the pair remaining professional as they set the table.");
 			writeText("The food looks good, but before you can all start eating starletF and pornstarF close their eyes and start... Praying? Are they saying grace?");
 			writeSpeech("pornstar", "", "... And... Action.");
 			writeText("Their body languages immediately shift as they slide deep into character.");
