@@ -2716,6 +2716,17 @@ function diagnostic() {
 			}
 			break;
 		}
+		case "find mii": {
+			if (data.player.gps != true) {
+				data.player.gps = true;
+				writeSpecial("GPS mode activated. NPC encounters will appear on the map.");
+			}
+			else {
+				data.player.gps = false;
+				writeSpecial("GPS mode deactivated.");
+			}
+			break;
+		}
 		case "spookwave": {
 			if (checkItem('Ghost AR') != true) {
 				addItem('Ghost AR', true, 'scripts/gamefiles/items/ghostAR.jpg');
