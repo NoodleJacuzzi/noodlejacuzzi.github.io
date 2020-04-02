@@ -65,6 +65,11 @@ var data = {
 		{index: "pinstripe", 	met: false, fName: "Edith", lName: "Weber", 		trust: 0, encountered: false, textEvent: "", color: "#924F82", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false,},
 		{index: "instructor", 	met: false, fName: "Charlotte", lName: "Reid", 		trust: 0, encountered: false, textEvent: "", color: "#FD7380", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,},
 		{index: "nagatoro", 	met: false, fName: "Ash", lName: "Martin", 			trust: 0, encountered: false, textEvent: "", color: "#6E6C94", author: "NoodleJacuzzi", artist: "Kinta no Mousou", textHistory: "", unreadText: false,},
+		{index: "sports", 		met: false, fName: "Zoe", lName: "Parker", 			trust: 0, encountered: false, textEvent: "", color: "#496EBF", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
+		{index: "swimmer", 		met: false, fName: "Naomi", lName: "Greens", 		trust: 0, encountered: false, textEvent: "", color: "#8DB7D0", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
+		{index: "orange", 		met: false, fName: "Vanessa", lName: "Lions", 		trust: 0, encountered: false, textEvent: "", color: "#BA5B17", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
+		{index: "cold", 		met: false, fName: "Kelsey", lName: "Lowe", 		trust: 0, encountered: false, textEvent: "", color: "#FCFFFA", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
+		{index: "coach", 		met: false, fName: "Amy", lName: "Silver", 			trust: 0, encountered: false, textEvent: "", color: "#D7BB2E", author: "Slackersavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
 	],
 	gallery: [
 	],
@@ -2092,27 +2097,27 @@ function updateSave() {
 			data.story[y].textHistory = "";
 			data.story[y].unreadText = false;
 		}
-		var loadZoe = true
-		for (loadIndex = 0; loadIndex < data.story.length; loadIndex++) {
-			if (data.story[loadIndex].index == "sports") {
-				console.log('sports found already in the data variable, aborting function');
-				var loadZoe = false
-			}
-		}
-		if (loadZoe == true) {
-			var goof = {index: "sports", fName: "Zoe", lName: "Parker", trust: 0, encountered: false, textEvent: "", met: false, color: "#496EBF", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
-			data.story.push(goof);
-			var goof = {index: "swimmer", fName: "Naomi", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#8DB7D0", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
-			data.story.push(goof);
-			var goof = {index: "orange", fName: "Vanessa", lName: "Lions", trust: 0, encountered: false, textEvent: "", met: false, color: "#BA5B17", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
-			data.story.push(goof);
-			var goof = {index: "cold", fName: "Kelsey", lName: "Lowe", trust: 0, encountered: false, textEvent: "", met: false, color: "#FCFFFA", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
-			data.story.push(goof);
-			var goof = {index: "coach", fName: "Amy", lName: "Silver", trust: 0, encountered: false, textEvent: "", met: false, color: "#D7BB2E", author: "Slackersavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
-			data.story.push(goof);
-			writeSpecial("Characters by mod author SlackerSavior have been added to the game!");
-		}
 		console.log(data.story);
+	}
+	var loadZoe = true
+	for (loadIndex = 0; loadIndex < data.story.length; loadIndex++) {
+		if (data.story[loadIndex].index == "sports") {
+			console.log('sports found already in the data variable, aborting function');
+			var loadZoe = false
+		}
+	}
+	if (loadZoe == true) {
+		var goof = {index: "sports", fName: "Zoe", lName: "Parker", trust: 0, encountered: false, textEvent: "", met: false, color: "#496EBF", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+		data.story.push(goof);
+		var goof = {index: "swimmer", fName: "Naomi", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#8DB7D0", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+		data.story.push(goof);
+		var goof = {index: "orange", fName: "Vanessa", lName: "Lions", trust: 0, encountered: false, textEvent: "", met: false, color: "#BA5B17", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+		data.story.push(goof);
+		var goof = {index: "cold", fName: "Kelsey", lName: "Lowe", trust: 0, encountered: false, textEvent: "", met: false, color: "#FCFFFA", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+		data.story.push(goof);
+		var goof = {index: "coach", fName: "Amy", lName: "Silver", trust: 0, encountered: false, textEvent: "", met: false, color: "#D7BB2E", author: "Slackersavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+		data.story.push(goof);
+		writeSpecial("Characters by mod author SlackerSavior have been added to the game!");
 	}
 	saveSlot(110);
 }
