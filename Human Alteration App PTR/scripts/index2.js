@@ -612,13 +612,13 @@ function replaceCodenames(text) {
 			text = text.replace('MISTER', 'MISS');
 			}
 			while (text.includes('sir') == true) {
-			text = text.replace('sir', 'ma'am');
+			text = text.replace('sir', "ma'am");
 			}
 			while (text.includes('Sir') == true) {
-			text = text.replace('Sir', 'Ma'am');
+			text = text.replace('Sir', "Ma'am");
 			}
 			while (text.includes('SIR') == true) {
-			text = text.replace('SIR', 'MA'AM');
+			text = text.replace('SIR', "MA'AM");
 			}
 			while (text.includes('male') == true) {
 			text = text.replace('male', 'female');
@@ -645,7 +645,7 @@ function replaceCodenames(text) {
 			text = text.replace('Master', 'Mistress');
 			}
 			while (text.includes('MASTER') == true) {
-			text = text.replace('MASTER', 'Mistress');
+			text = text.replace('MASTER', 'MISTRESS');
 			}
 			break;
 		}
@@ -1062,6 +1062,7 @@ function checkForEncounters() {
 			encounterArray[encounterIndex].altName,
 			encounterArray[encounterIndex].altImage,
 			encounterArray[encounterIndex].altColor,
+			);
 		}
 	}
 }

@@ -169,7 +169,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She uses her free hand to tease at her lips, spreading herself out for you.");
 			writeSpeech("mistress","","I'm not over-dressed, am I?");
 			writeSpeech("player","","I think it's a perfect fit.");
-			if(data.player.gender == "Man")
+			if(data.player.gender == "man")
 				writeSpeech("mistress","","Well, aren't you just the perfect gentleman?");
 			else
 				writeSpeech("mistress","","Well, aren't you just the perfect gentlewoman?");

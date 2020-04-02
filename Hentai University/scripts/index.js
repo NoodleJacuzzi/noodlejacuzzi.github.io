@@ -966,10 +966,7 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 			altName = "";
 		}
 		if (altImage != "") {
-			img = altImage;
-		}
-		if (altName != "") {
-			name = altName;
+			img = altImage
 		}
 		//console.log(tabIndex);
 		console.log(cssColor);
@@ -978,7 +975,8 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 			writeSpeech(name, img, `
 				<p class="status"> Status: ` + tabTrust + `</p>	
 				<p class="switch" onclick="loadEncounter('`+data.story[tabIndex].index+`', '`+scene+`')">` + replaceCodenames(text) + `</p>
-			`);
+			`, altName, ""
+			);
 		}
 	}
 }
