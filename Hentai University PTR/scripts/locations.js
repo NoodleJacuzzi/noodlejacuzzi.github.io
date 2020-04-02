@@ -140,7 +140,7 @@ function changeLocation(n) {
 				</div>
 			`;
 			data.player.location = n;
-			console.log(data.player.location);
+			//console.log(data.player.location);
 			for (i = 0; i < locationArray[locationTarget].buttons.length; i++) {
 				if (locationArray[locationTarget].buttons[i].time.includes(data.player.time)) {
 					printLocationButton(

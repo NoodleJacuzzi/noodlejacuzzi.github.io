@@ -265,7 +265,7 @@ function startup() {
 }
 
 function preloadImages(){
-	console.log("preloading start");
+	console.log("preloading...");
     var preloaded = new Image();
 	for (i = 0; i < locationArray.length; i++) {
 		var bg = "images/locations/"+locationArray[i].index+"Morning.jpg";
@@ -277,7 +277,7 @@ function preloadImages(){
 		var bg = "images/"+data.story[characterIndex].index+"/"+data.story[characterIndex].index+".jpg";
 		document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 	}
-	console.log("preloading finished");
+	//console.log("preloading finished");
 }
 
 function restartButton() {
@@ -990,7 +990,7 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 			}
 		}
 		//console.log(tabIndex);
-		console.log(cssColor);
+		//console.log(cssColor);
 		if (cancelTab != true) {
 			console.log("Now generating tab for " + name + ", linking to scene " + scene + " with the text " + text + " " +altImage);
 			writeSpeech(name, img, `
@@ -1930,7 +1930,7 @@ function updateMenu() {
 			else {
 				document.getElementById('playerImage').style.borderColor = "#fc53f1";
 			}
-			console.log(data.player.style);
+			//console.log(data.player.style);
 			break;
 		}
 		case "royalty": {
@@ -1956,13 +1956,13 @@ function updateMenu() {
 			else {
 				document.getElementById('playerImage').style.borderColor = "#fc53f1";
 			}
-			console.log(data.player.style);
+			//console.log(data.player.style);
 			break;
 		}
 		default: {
 			document.getElementById('title').style.fontFamily = "arial, sans-serif";
 			document.getElementById('menu').style.fontFamily = "arial, sans-serif";
-			console.log(document.getElementById('title').style.fontFamily);
+			//console.log(document.getElementById('title').style.fontFamily);
 			for (i = 0; i < menuButtons.length; i++) {
 				document.getElementById(menuButtons[i].ID).innerHTML = menuButtons[i].name;
 				document.getElementById(menuButtons[i].ID).style.borderRadius = "5px";
@@ -2091,6 +2091,26 @@ function updateSave() {
 		for (y = 0; y < data.story.length; y++) {
 			data.story[y].textHistory = "";
 			data.story[y].unreadText = false;
+		}
+		var loadZoe = true
+		for (loadIndex = 0; loadIndex < data.story.length; loadIndex++) {
+			if (data.story[loadIndex].index == "sports") {
+				console.log('sports found already in the data variable, aborting function');
+				var loadZoe = false
+			}
+		}
+		if (loadZoe == true) {
+			var goof = {index: "sports", fName: "Zoe", lName: "Parker", trust: 0, encountered: false, textEvent: "", met: false, color: "#496EBF", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+			data.story.push(goof);
+			var goof = {index: "swimmer", fName: "Naomi", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#8DB7D0", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+			data.story.push(goof);
+			var goof = {index: "orange", fName: "Vanessa", lName: "Lions", trust: 0, encountered: false, textEvent: "", met: false, color: "#BA5B17", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+			data.story.push(goof);
+			var goof = {index: "cold", fName: "Kelsey", lName: "Lowe", trust: 0, encountered: false, textEvent: "", met: false, color: "#FCFFFA", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+			data.story.push(goof);
+			var goof = {index: "coach", fName: "Amy", lName: "Silver", trust: 0, encountered: false, textEvent: "", met: false, color: "#D7BB2E", author: "Slackersavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+			data.story.push(goof);
+			writeSpecial("Characters by mod author SlackerSavior have been added to the game!");
 		}
 		console.log(data.story);
 	}

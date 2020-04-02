@@ -1,4 +1,4 @@
-var character = {index: "neet", fName: "Tia", lName: "Sun", trust: 0, encountered: false, textEvent: "", met: false, color: "#da924b", author: "NoodleJacuzzi", artist: "Enoshima Iki"};
+var character = {index: "neet", fName: "Tia", lName: "Sun", trust: 0, encountered: false, textEvent: "", met: false, color: "#F683C8", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false,};
 
 var logbook = {
 	index: "", 
@@ -17,7 +17,7 @@ var newItems = [
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-	{index: "placeholder", name: "", requirements: "" altName: "", altImage: "",},
+	{index: "placeholder", name: "", requirements: "trust principal 10000;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
