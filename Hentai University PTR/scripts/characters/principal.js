@@ -488,6 +488,14 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 //console.log(character.index+'.js loaded correctly. request type is '+requestType)
 
 switch (requestType) {
+	case "load": {
+		data.story.push(character);
+		console.log(character);
+		console.log(data.story);
+		writeSpecial(character.fName+" has been added to the game!");
+		writeSpeech(character.index, "", character.fName+ " " + character.lName + ", written by "+ logbook.author + ", art by "+ logbook.artist+".");
+		break;
+	}
 	case "encounter": {
 		writeEncounter(eventName);
 		break;
@@ -516,7 +524,6 @@ switch (requestType) {
 		break;
 	}
 	case "check": {
-		if (encounteredCheck(character.index) != true) {
 			for (number = 0; number < encounterArray.length; number++) { //start going through encounter array
 				var finalLocation = "";
 				var finalResult = true;
@@ -657,7 +664,6 @@ switch (requestType) {
 					//console.log("!!!!!!!!!!!!!!!!!!!!!!!!!final result for "+encounterArray[number].index+" false, location is "+finalLocation);
 				}
 			}
-		}
 		break;
 	}
 	case "shop": {

@@ -350,6 +350,12 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 console.log(character.index+'.js loaded correctly. request type is '+requestType)
 
 switch (requestType) {
+	case "load": {
+		data.story.push(character);
+		console.log(character);
+		console.log(data.story);
+		break;
+	}
 	case "encounter": {
 		writeEncounter(eventName);
 		break;
