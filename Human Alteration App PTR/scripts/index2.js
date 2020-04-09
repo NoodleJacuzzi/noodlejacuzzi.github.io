@@ -5,8 +5,8 @@ var randNum;
 var data = {
 	player: {
 		name: "You",
-		body: 0,
-		image: "Male",
+		body: "Male",
+		image: "",
 		clothing: "menShorts",
 		underwear: "nothing",
 		version: 1,
@@ -41,6 +41,7 @@ var data = {
 		{index: "evil", name: "???", trust: 0, outfit: "", flags: "",},
 		{index: "camboi", name: "???", trust: 0, outfit: "", flags: "",},
 		{index: "neighbor", name: "???", trust: 0, outfit: "", flags: "",},
+		{index: "doll", name: "???", trust: 0, outfit: "", flags: "",},
 	],
 	inventory: [],
 	wardrobe: [],
@@ -769,6 +770,123 @@ function renameCharacter(target, scene) {
 }
 
 //Scene creation
+function checkRequirements(string) {
+	var finalJudgement = true;
+	while (string.includes("!location ") == true) {
+		var check = string.split(`!location `).pop().split(`;`)[0];
+		if (check.includes(data.player.location) == true) {
+			finalResult = false;
+		}
+		string = string.replace(`!location `+check+`;`, ``);
+	}
+	while (string.includes("?location ") == true) {
+		var check = string.split(`?location `).pop().split(`;`)[0];
+		if (check.includes(data.player.location) != true) {
+			finalResult = false;
+		}
+		string = string.replace(`?location `+check+`;`, ``);
+	}
+	while (string.includes("!item ") == true) {
+		var check = string.split(`!item `).pop().split(`;`)[0];
+		if (checkItem(check)) == true) {
+			finalResult = false;
+		}
+		string = string.replace(`!item `+check+`;`, ``);
+	}
+	while (string.includes("?item ") == true) {
+		var check = string.split(`?item `).pop().split(`;`)[0];
+		if (checkItem(check)) != true) {
+			finalResult = false;
+		}
+		string = string.replace(`?item `+check+`;`, ``);
+	}
+	while (string.includes("!skill ") == true) {
+		var check = string.split(`!skill `).pop().split(`;`)[0];
+		if (data.player.skill => check) {
+			finalResult = false;
+		}
+		string = string.replace(`!skill `+check+`;`, ``);
+	}
+	while (string.includes("?skill ") == true) {
+		var check = string.split(`?skill `).pop().split(`;`)[0];
+		if (data.player.skill < check) {
+			finalResult = false;
+		}
+		string = string.replace(`?skill `+check+`;`, ``);
+	}
+	while (string.includes("!time ") == true) {
+		var check = string.split(`!time `).pop().split(`;`)[0];
+		if (data.player.time == check) {
+			finalResult = false;
+		}
+		string = string.replace(`!time `+check+`;`, ``);
+	}
+	while (string.includes("?time ") == true) {
+		var check = string.split(`?time `).pop().split(`;`)[0];
+		if (data.player.time != check) {
+			finalResult = false;
+		}
+		string = string.replace(`?time `+check+`;`, ``);
+	}
+	while (string.includes("?flag player ") == true) {
+		var check = string.split(`?flag player `).pop().split(`;`)[0];
+		if (data.player.flags.includes(check) != true) {
+			finalResult = false;
+		}
+		string = string.replace(`?flag player  `+check+`;`, ``);
+	}
+	while (string.includes("!flag player ") == true) {
+		var check = string.split(`!flag player `).pop().split(`;`)[0];
+		if (data.player.flags.includes(check) == true) {
+			finalResult = false;
+		}
+		string = string.replace(`!flag player  `+check+`;`, ``);
+	}
+	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
+		var corruptionTarget = data.story[characterIndex].index;
+		while (string.includes("?trust "+corruptionTarget) == true) {
+			var check = string.split(`?trust `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkTrust(corruptionTarget) != check) {
+				finalResult = false;
+			}
+			string = string.replace(`?trust `corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?minTrust "+corruptionTarget) == true) {
+			var check = string.split(`?minTrust `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkTrust(corruptionTarget) < check) {
+				finalResult = false;
+			}
+			string = string.replace(`?minTrust `corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?maxTrust "+corruptionTarget) == true) {
+			var check = string.split(`?maxTrust `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkTrust(corruptionTarget) > check) {
+				finalResult = false;
+			}
+			string = string.replace(`?maxTrust `corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("!flag "+corruptionTarget) == true) {
+			var check = string.split(`!flag `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkFlag(corruptionTarget, check) == true) {
+				finalResult = false;
+			}
+			string = string.replace(`!flag `corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?flag "+corruptionTarget) == true) {
+			var check = string.split(`?flag `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkFlag(corruptionTarget, check) != true) {
+				finalResult = false;
+			}
+			string = string.replace(`?flag `corruptionTarget+` `+check+`;`, ``);
+		}
+	}
+	if (finalResult == true) {
+		return string;
+	}
+	else {
+		return false;
+	}
+}
 
 function changeLocation(n) {
 	document.getElementById('output').innerHTML = ``;
@@ -1001,68 +1119,35 @@ function printLocationButton(name, top, left, target) {
 
 function checkForEncounters() {
 	for (encounterIndex = 0; encounterIndex < encounterArray.length; encounterIndex++) {
-		var finalResult = true;
-		if (encounterArray[encounterIndex].requirements.includes("time") == true) {
-			var time = encounterArray[encounterIndex].requirements.split(`time: `).pop().split(`;`)[0];
-			if (time.includes(data.player.time) != true) {
-				var finalResult = false;
-				break;
-			}
-		}
-		if (encounterArray[encounterIndex].requirements.includes("item") == true) {
-			var item = encounterArray[encounterIndex].requirements.split(`item: `).pop().split(`;`)[0];
-			if (itemCheck(item) != true) {
-				var finalResult = false;
-				break;
-			}
-		}
-		if (encounterArray[encounterIndex].requirements.includes("flag player") == true) {
-			var flag = encounterArray[encounterIndex].requirements.split(`flag player: `).pop().split(`;`)[0];
-			if (data.player.flags.includes(flag) != true) {
-				var finalResult = false;
-				break;
-			}
-		}
-		for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
-			var corruptionTarget = data.story[characterIndex].index;
-			if (encounterArray[encounterIndex].requirements.includes("corruption " + corruptionTarget) == true) {
-				var corruption = encounterArray[encounterIndex].requirements.split(`corruption `+corruptionTarget+`: `).pop().split(`;`)[0];
-				if (checkTrust(corruptionTarget) != corruption) {
-					var finalResult = false;
+		var requirements = checkRequirements(encounterArray[encounterIndex].requirements);
+		if (requirements != false) {
+			switch (encounterArray[encounterIndex].type) {
+				case "button": {
+					printEncounterButton(
+					encounterArray[encounterIndex].text, 
+					encounterArray[encounterIndex].top, 
+					encounterArray[encounterIndex].left, 
+					encounterArray[encounterIndex].index
+					);
 					break;
 				}
-			}
-			if (encounterArray[encounterIndex].requirements.includes("corruptionMin " + corruptionTarget) == true) {
-				var corruptionMin = encounterArray[encounterIndex].requirements.split(`corruptionMin `+corruptionTarget+`: `).pop().split(`;`)[0];
-				if (checkTrust(corruptionTarget) > corruptionMin) {
-					var finalResult = false;
+				case "message": {
+					writeText(encounterArray[encounterIndex].text);
 					break;
 				}
-			}
-			if (encounterArray[encounterIndex].requirements.includes("corruptionMax " + corruptionTarget) == true) {
-				var corruptionMax = encounterArray[encounterIndex].requirements.split(`corruptionMax `+corruptionTarget+`: `).pop().split(`;`)[0];
-				if (checkTrust(corruptionTarget) < corruptionMax) {
-					var finalResult = false;
-					break;
+				default: {
+					if (finalResult == true) {
+						printEncounterTab(
+						encounterArray[encounterIndex].character, 
+						encounterArray[encounterIndex].index,
+						encounterArray[encounterIndex].text,
+						encounterArray[encounterIndex].altName,
+						encounterArray[encounterIndex].altImage,
+						encounterArray[encounterIndex].altColor
+						);
+					}
 				}
 			}
-			if (encounterArray[encounterIndex].requirements.includes("flag " + corruptionTarget) == true) {
-				var flag = encounterArray[encounterIndex].requirements.split(`flag `+corruptionTarget+`: `).pop().split(`;`)[0];
-				if (checkFlag(corruptionTarget, flag) != true) {
-					var finalResult = false;
-					break;
-				}
-			}
-		}
-		if (finalResult == true) {
-			printEncounterTab(
-			encounterArray[encounterIndex].character, 
-			encounterArray[encounterIndex].index,
-			encounterArray[encounterIndex].text,
-			encounterArray[encounterIndex].altName,
-			encounterArray[encounterIndex].altImage,
-			encounterArray[encounterIndex].altColor,
-			);
 		}
 	}
 }
@@ -1083,8 +1168,10 @@ function writeHTML(text) {
 		while (lines[lineCounter].includes('\t') == true) {
 			lines[lineCounter] = lines[lineCounter].replace(`\t`, ``);
 		}
+		//Check for requirements
+		lines[lineCounter] = checkRequirements(lines[lineCounter]);
 		//If the line is not empty (we don't want to print empty lines)
-		if (lines[lineCounter] != "") {
+		if (lines[lineCounter] != "" && lines[lineCounter] != false) {
 			//Grab the first word of the line to use as the command
 			var command = lines[lineCounter].replace(/ .*/,'');
 			//Depending on which command, execute different code. Convert the command to lowercase as well in case we used Sp instead of sp, as js is case-sensitive.
@@ -1555,6 +1642,11 @@ function generateWindow(type) {
 	</div>
 	`;
 	switch (type) {
+		case "string": {
+			document.getElementById('window').innerHTML += `<p>Copy the full length below and paste it into the input box when you want to load the data. I recommend copying to a txt file.</p>`;
+			document.getElementById('window').innerHTML += JSON.stringify(data);
+			break;
+		}
 		case "save": {
 			document.getElementById('window').innerHTML += `
 				<h1 class = "windowTitle" onclick="deleteWindow()">SAVE/LOAD</h1>
@@ -1684,33 +1776,65 @@ function generateWindow(type) {
 //Menu
 
 function updateMenu() {
-	
+	//Update player name, image, color, time, money
+	//Update corruption list
+	//Update menu buttons
 }
 
 function changeBody(n) {
-	
+	//change data.player.body
+	//change data.player.image
+	//updateMenu
+	//check if big player image exists, if so update it
 }
 
 function closeButton() {
-	
+	document.getElementById("menu").style.width = "0px";	
+	document.getElementById("closeButton").style.visibility = "hidden";	
+	document.getElementById("openButton").style.visibility = "visible";	
 }
 
 function openButton() {
-	
+	document.getElementById("menu").style.width = "400px";	
+	document.getElementById("closeButton").style.visibility = "visible";	
+	document.getElementById("openButton").style.visibility = "hidden";	
 }
 
 //Saving
 
 function transferToNewEngine() {
-	
+	//player name, player body, version, clothing, underwear, currentScene, time, money, route, skill
+	//flags: freeSample, exoticVisited, candyVisited, clothingVisited, salonVisited, laptopSetup,
+	//Inventory
+	//mother
+	//sister
+	//friend
+	//teacher
+	//office
+	//chef
+	//doll
+	//clothing
+	//underwear
+	//gallery
 }
 
 function saveSlot(slot) {
-	
+	saveName = "data" + slot;
+	localStorage.setItem(saveName,JSON.stringify(data));
+	var date = new Date();
+	date = date.toDateString() + " " + date.toLocaleTimeString();
+	saveName = "date" + slot;
+	localStorage.setItem(saveName,date);
+	generateSave();
 }
 
 function loadSlot(slot) {
-	
+	saveName = "data" + slot;
+	localStorage.removeItem(saveName);
+	console.log("Saved data");
+	saveName = "date" + slot;
+	localStorage.removeItem(saveName);
+	generateSave();
 }
 
 function deleteSlot(slot) {
