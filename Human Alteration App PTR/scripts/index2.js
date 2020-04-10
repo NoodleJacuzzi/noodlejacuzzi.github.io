@@ -1817,22 +1817,6 @@ function openButton() {
 
 //Saving
 
-function transferToNewEngine() {
-	//player name, player body, version, clothing, underwear, currentScene, time, money, route, skill
-	//flags: freeSample, exoticVisited, candyVisited, clothingVisited, salonVisited, laptopSetup,
-	//Inventory
-	//mother
-	//sister
-	//friend
-	//teacher
-	//office
-	//chef
-	//doll
-	//clothing
-	//underwear
-	//gallery
-}
-
 function saveSlot(slot) {
 	saveName = "data" + slot;
 	localStorage.setItem(saveName,JSON.stringify(data));
