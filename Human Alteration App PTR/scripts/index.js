@@ -227,11 +227,8 @@ var items = [
 
 //Start & System Config Stuff
 function startup() {
+	generateHTML();
 	saveSlot(11);
-	document.getElementById("inventory").style.visibility = "hidden"; 
-	document.getElementById("save").style.visibility = "hidden"; 
-	document.getElementById("self").style.visibility = "hidden"; 
-	document.getElementById("wardrobe").style.visibility = "hidden"; 
 	gameMode = "dialogue";
 	hidePrincess();
 	init();
@@ -243,6 +240,43 @@ function startup() {
 	else{
 		sceneTransition('start');
 	}
+}
+
+function generateHTML() {
+	document.getElementById('body').innerHTML = `
+		<div id = "menu" class = "menu">
+			<div id="titlePanel">
+				<p id = "title" class = "title">Human Alteration App</p>
+				<div id="closeButton" class="closeButton" onclick="closeButton()"><</div>
+				<p id = "version" class = "version">V1.1</p>
+				<p id = "author">
+					<a href="https://noodlejacuzzi.github.io/index.html">Noodle Jacuzzi</a><br>
+					<a href="https://www.patreon.com/noodlejacuzzi">Patreon</a>
+				</p>
+			</div>
+			<div id="buttonMenu">
+				<div id="buttonMenuPrimary" class="flexbox">
+				</div>
+			</div>
+			<div id="playerPanel" class="flexbox">
+				<img id="playerImage" class="playerImage" src="scripts/gamefiles/none.png">
+				<img id="playerClothes" class="playerImage" src="scripts/gamefiles/none.png">
+				<h3 id = "playerName" class = "char_player version">???</h3>
+				<p id = "playerMoney" class = "version">$0</p>
+			</div>
+		</div>
+		<div id="openButton" class="openButton" onclick="openButton()">></div>
+		<div id = "wrapper" class = "wrapper">
+			<div id="wrapperBG"></div>
+			<div id = "output" class = "output">
+			<div class="loader"></div> 
+			</div>
+			<div id = "windowHolder" class = "windowHolder">
+			</div>
+			<div id="footer" class="footer">
+			</div>
+		</div>
+	`;
 }
 
 function disablePictures() {

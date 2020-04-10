@@ -1,8 +1,6 @@
 function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
-			hidePrincess();
-			updateBody(0);
 			writeBig("scripts/gamefiles/logo.png");
 			writeText("Human Alteration App is an adult game created by NoodleJacuuzi. You can find and keep up with all of my work at my master index here:<br>https://noodlejacuzzi.github.io/index.html");
 			writeText("Here you can find all of my other games, and play HAA online without needing to play it on a website like gamcore. I posted HAA first at TFgames, and later found it had a thread at F95Zone. You can find links to those threads in the index as well. I check them every day, but I probably wont see it if you post somewhere like gamcore.");
@@ -15,9 +13,9 @@ function writeScene(scene) {
 			writeText("The submissive path features scenes of sissification, sexual depictions of shemale characters, sounding, and other more extreme fetishes drawn almost entirely by the artist Aya. Consider checking out their work at their patreon, at https://www.patreon.com/aya_shobon");
 			writeText("There is no depiction of minors or scatological content herein.");
 			writeText("As an additional note, you can click on the title of a window to close it. For example, if you click 'LOGBOOK' on the left there, you can close the new window by clicking anywhere in the 'LOGBOOK' section at the top.");
-			writeTransition("prologue", "Start the game");
-			writeTransition("altStart", "Alternate intro without actual incest");
-			writeTransition("prologueSkip", "Skip the prologue, go straight to the dom/sub branching point");
+			writeFunction("sceneTransition('prologue')", "Start the game");
+			writeFunction("sceneTransition('altStart')", "Alternate intro without actual incest");
+			writeFunction("sceneTransition('prologueSkip')", "Skip the prologue, go straight to the dom/sub branching point");
 			writeText("Here's a list of currently finished content:");
 			writeBig("scripts/gamefiles/progress.jpg");
 			
@@ -30,7 +28,7 @@ function writeScene(scene) {
 			writeText("While most of the app's features are unusable, some features have been enabled as per user review to encourage you to complete our terms of service. This includes a character creation mode, allowing you to change yourself to match one of our pre-designated bodytypes, and allowing you to rename non-administrator class individuals.");
 			writeText("This app cannot be bought or sold, but can be transferred between devices. Once transferred between users, you will be forever blacklisted from the app's use. Illegal sale of this product, or an attempt to transfer the device to a previous user will result in immediate termination of both parties and all individuals either party have ever spoken to.");
 			writeText("The download and installation process have already been completed in the time taken to read this email. Please proceed to character creation mode.");
-			writeTransition("characterCreation", "You close the email, and the app opens");
+			//writeTransition("characterCreation", "You close the email, and the app opens");
 			break;
 		}
 		case "altStart": {
@@ -4746,10 +4744,10 @@ function writeScene(scene) {
 			writeText("Something went wrong, and you've encountered a bug. Keep in mind where you just where and what you did, and let me know so I can fix it.");
 			writeText("Here's a list of important details. If you message me directly with these jams, I should have a better idea of what caused the problem:");
 			writeText("" + JSON.stringify(data) + "");
-			writeText("Inventory window:" + invHidden + "");
-			writeText("Wardrobe window:" + warHidden + "");
-			writeText("Browser:" + navigator.appCodeName  + "");
-			writeText("OS:" + navigator.platform  + "");
+			//writeText("Inventory window:" + invHidden + "");
+			//writeText("Wardrobe window:" + warHidden + "");
+			//writeText("Browser:" + navigator.appCodeName  + "");
+			//writeText("OS:" + navigator.platform  + "");
 			writeBig("images/butts.jpg");
 			writeTransition("home", "Go back home.");
 		}

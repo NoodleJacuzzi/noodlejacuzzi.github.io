@@ -1,17 +1,19 @@
 var picturesDisabled = false;
 var saveName;
 var randNum;
+var tempScene = "";
+var activeWindow = "";
 
 var data = {
 	player: {
 		name: "You",
-		body: "Male",
+		body: "male",
 		image: "",
 		clothing: "menShorts",
 		underwear: "nothing",
 		version: 1,
 		currentScene: "start",
-		time: "Afternoon",
+		time: "Evening",
 		money: 20,
 		route: "dom",
 		skill: 0,
@@ -44,7 +46,6 @@ var data = {
 		{index: "doll", name: "???", trust: 0, outfit: "", flags: "",},
 	],
 	inventory: [],
-	wardrobe: [],
 	gallery: [],
 }
 
@@ -212,12 +213,12 @@ var logbookArray = [
 ];
 
 var menuArray = [
-	{ID: "invButton", name:"INVENTORY", func: "generateWindow('inventory')"},
-	{ID: "logButton", name:"LOGBOOK", func: "generateWindow('inventory')"},
-	{ID: "saveButton", name:"SAVE/LOAD", func: "generateWindow('inventory')"},
-	{ID: "setButton", name:"SETTINGS", func: "generateWindow('inventory')"},
-	{ID: "restartButton", name:"RESTART", func: "restartButton()"},
-	{ID: "mobButton", name:"MOBILE VERSION", func: "mobileButton()"},
+	{ID: "invButton", name:"INVENTORY", func: "generateWindow('inventory')", div: "buttonMenuPrimary"},
+	{ID: "logButton", name:"LOGBOOK", func: "generateWindow('logbook')", div: "buttonMenuPrimary"},
+	{ID: "saveButton", name:"SAVE/LOAD", func: "generateWindow('save')", div: "buttonMenuPrimary"},
+	{ID: "setButton", name:"SETTINGS", func: "generateWindow('settings')", div: "buttonMenuPrimary"},
+	{ID: "restartButton", name:"RESTART", func: "restartButton()", div: "buttonMenu"},
+	{ID: "mobButton", name:"MOBILE VERSION", func: "mobileButton()", div: "buttonMenu"},
 ];
 
 var encounterArray = [
@@ -270,26 +271,35 @@ var shopArray = [
 	{type: "clothesTrapTransLewd", price: 5, route: "dom", index: "transparentbikini", name: "Transparent Bikini", desc: "a transparent bikini."},
 	{type: "clothesTrapTransLewd", price: 5, route: "dom", index: "transparentShort", name: "Transparent Dress", desc: "a transparent dress."},
 	{type: "clothesSub", price: 5, route: "sub", index: "dress", name: "Black Dress", desc: "a thin black dress that barely goes down your thighs."},
-	{type: "clothesdrawn", price: 5, route: "sub", index: "skirt", name: "Skirt", desc: "a thin black dress that barely goes down your thighs."},
-	{type: "clothesdrawn", price: 5, route: "sub", index: "schoolgirl", name: "Schoolgirl", desc: "a thin black dress that barely goes down your thighs."},
+	{type: "clothesSub", price: 5, route: "sub", index: "skirt", name: "Skirt", desc: "a thin black dress that barely goes down your thighs."},
+	{type: "clothesSub", price: 5, route: "sub", index: "schoolgirl", name: "Schoolgirl", desc: "a thin black dress that barely goes down your thighs."},
+	{type: "underwearMale", price: 5, route: "dom", index: "boxers", name: "Boxers", desc: "a slightly-worn pair of boxers."},
+	{type: "underwearTrapTrans", price: 5, route: "dom", index: "erotic5", name: "Black Panties", desc: "a pair of black panties."},
+	{type: "underwearTrapTrans", price: 5, route: "dom", index: "erotic5", name: "Dong Hammock", desc: "a pair of panties that tries its best to smuggle your fruit."},
+	{type: "underwearTrapTrans", price: 5, route: "dom", index: "erotic5", name: "Pink Panties", desc: "a pair of pink panties."},
+	{type: "underwearTrapTrans", price: 5, route: "dom", index: "erotic5", name: "Skimpy Thong", desc: "a small thong."},
+	{type: "underwearSub", price: 5, route: "dom", index: "panties", name: "Panties", desc: "a tight pair of white panties that have been altered to cradle your balls."},
+	{type: "underwearSub", price: 5, route: "dom", index: "frilly", name: "Frilly Panties", desc: "a tight pair of frilly panties that have been altered to cradle your balls."},
+	{type: "underwearSub", price: 5, route: "dom", index: "thong", name: "Packed Thong", desc: "an extremely tight thong that barely contains your flaccid dick."},
 ];
 
 //Startup & Systems config
 
 function startup() {
+	generateHTML();
 	saveSlot(11);
 	wrapper.scrollTop = 0;
-	generateHTML();
 	if(localStorage.getItem('data10')) {
-		loadSlot(10);
+		//loadSlot(10);
+		sceneTransition('start');
 	}
 	else{
 		sceneTransition('start');
 	}
-	updateMenu();
 }
 
 function generateHTML() {
+	//console.log("Now generating HTML foundation");
 	document.getElementById('body').innerHTML = `
 		<div id = "menu" class = "menu">
 			<div id="titlePanel">
@@ -307,28 +317,33 @@ function generateHTML() {
 			</div>
 			<div id="playerPanel" class="flexbox">
 				<img id="playerImage" class="playerImage" src="scripts/gamefiles/none.png">
+				<div id="playerStats">
+					<h3 id = "playerName" class = "char_player version">???</h3>
+					<p id = "playerMoney" class = "version">$0</p>
+				</div>
 				<img id="playerClothes" class="playerImage" src="scripts/gamefiles/none.png">
-				<h3 id = "playerName" class = "char_player version">???</h3>
-				<p id = "playerMoney" class = "version">$0</p>
+				<div id="corruptionList">
+				</div>
 			</div>
 		</div>
 		<div id="openButton" class="openButton" onclick="openButton()">></div>
+		<div id = "windowHolder" class = "windowHolder">
+		</div>
 		<div id = "wrapper" class = "wrapper">
 			<div id="wrapperBG"></div>
 			<div id = "output" class = "output">
 			<div class="loader"></div> 
 			</div>
-			<div id = "windowHolder" class = "windowHolder">
-			</div>
 			<div id="footer" class="footer">
 			</div>
 		</div>
 	`;
+	updateMenu();
 }
 
 function disablePictures() {
-	if (imagesDisabled == false) {
-		imagesDisabled = true;
+	if (picturesDisabled == false) {
+		picturesDisabled = true;
 		updateMenu();
 		writeText("<i>Images disabled. No further images aside from navigation and dialogue profiles will appear.</i>");
 	}
@@ -657,86 +672,89 @@ function replaceCodenames(text) {
 		codenameCheck = data.story[codenameIndex].index + "L";
 		text = text.replace(codenameCheck, data.story[codenameIndex].lName);
 	}
-	while (text.includes('<br>') == true) {
-	text = text.replace('<br>', 'TESTTHING');
+	if (data.player.oowoo == true) {
+		while (text.includes('<br>') == true) {
+		text = text.replace('<br>', 'TESTTHING');
+		}
+		while (text.includes('th') == true) {
+		text = text.replace('th', 'd');
+		}
+		while (text.includes('Th') == true) {
+		text = text.replace('Th', 'D');
+		}
+		while (text.includes('what') == true) {
+		text = text.replace('what', 'wat');
+		}
+		while (text.includes('What') == true) {
+		text = text.replace('What', 'Wat');
+		}
+		while (text.includes('l') == true) {
+		text = text.replace('l', 'w');
+		}
+		while (text.includes('r') == true) {
+		text = text.replace('r', 'w');
+		}
+		while (text.includes('L') == true) {
+		text = text.replace('L', 'W');
+		}
+		while (text.includes('R') == true) {
+		text = text.replace('R', 'W');
+		}
+		while (text.includes('TESTTHING') == true) {
+		text = text.replace('TESTTHING', '<br>');
+		}
+		switch (getRandomInt(15)) {
+			case 0:
+				text = text + " ♥w♥";
+			break;
+			case 1:
+				text = text + " (˘ω˘)";
+			break;
+			case 2:
+				text = text + " (U ᵕ U❁)";
+			break;
+			case 3:
+				text = text + " ( ˊ.ᴗˋ )";
+			break;
+			case 4:
+				text = text + " ( ͡o ꒳ ͡o )";
+			break;
+			case 5:
+				text = text + " ( ´ω` )۶";
+			break;
+			case 6:
+				text = text + " OwO";
+			break;
+			case 7:
+				text = text + " (*ฅ́˘ฅ̀*)";
+			break;
+			case 8:
+				text = text + " ( ͡o ᵕ ͡o )";
+			break;
+			case 9:
+				text = text + " ✧･ﾟ: *✧･ﾟ♡*(ᵘʷᵘ)*♡･ﾟ✧*:･ﾟ✧";
+			break;
+			case 10:
+				text = text + " ★⌒ヽ(˘꒳˘ *)";
+			break;
+			case 11:
+				text = text + " (◕ ˬ ◕✿)";
+			break;
+			case 12:
+				text = text + " (◕∇◕✿)";
+			break;
+			case 13:
+				text = text + " (ꈍ ᴗ ꈍ✿)";
+			break;
+			case 14:
+				text = text + " (◕‸ ◕✿) *pout*";
+			break;
+			case 15:
+				text = text + " (≖ ︿ ≖ ✿)";
+			break;
+		}
 	}
-	while (text.includes('th') == true) {
-	text = text.replace('th', 'd');
-	}
-	while (text.includes('Th') == true) {
-	text = text.replace('Th', 'D');
-	}
-	while (text.includes('what') == true) {
-	text = text.replace('what', 'wat');
-	}
-	while (text.includes('What') == true) {
-	text = text.replace('What', 'Wat');
-	}
-	while (text.includes('l') == true) {
-	text = text.replace('l', 'w');
-	}
-	while (text.includes('r') == true) {
-	text = text.replace('r', 'w');
-	}
-	while (text.includes('L') == true) {
-	text = text.replace('L', 'W');
-	}
-	while (text.includes('R') == true) {
-	text = text.replace('R', 'W');
-	}
-	while (text.includes('TESTTHING') == true) {
-	text = text.replace('TESTTHING', '<br>');
-	}
-	switch (getRandomInt(15)) {
-		case 0:
-			text = text + " ♥w♥";
-		break;
-		case 1:
-			text = text + " (˘ω˘)";
-		break;
-		case 2:
-			text = text + " (U ᵕ U❁)";
-		break;
-		case 3:
-			text = text + " ( ˊ.ᴗˋ )";
-		break;
-		case 4:
-			text = text + " ( ͡o ꒳ ͡o )";
-		break;
-		case 5:
-			text = text + " ( ´ω` )۶";
-		break;
-		case 6:
-			text = text + " OwO";
-		break;
-		case 7:
-			text = text + " (*ฅ́˘ฅ̀*)";
-		break;
-		case 8:
-			text = text + " ( ͡o ᵕ ͡o )";
-		break;
-		case 9:
-			text = text + " ✧･ﾟ: *✧･ﾟ♡*(ᵘʷᵘ)*♡･ﾟ✧*:･ﾟ✧";
-		break;
-		case 10:
-			text = text + " ★⌒ヽ(˘꒳˘ *)";
-		break;
-		case 11:
-			text = text + " (◕ ˬ ◕✿)";
-		break;
-		case 12:
-			text = text + " (◕∇◕✿)";
-		break;
-		case 13:
-			text = text + " (ꈍ ᴗ ꈍ✿)";
-		break;
-		case 14:
-			text = text + " (◕‸ ◕✿) *pout*";
-		break;
-		case 15:
-			text = text + " (≖ ︿ ≖ ✿)";
-		break;
-	}
+	return(text);
 }
 
 function renameCharacter(target, scene) {
@@ -788,21 +806,21 @@ function checkRequirements(string) {
 	}
 	while (string.includes("!item ") == true) {
 		var check = string.split(`!item `).pop().split(`;`)[0];
-		if (checkItem(check)) == true) {
+		if (checkItem(check) == true) {
 			finalResult = false;
 		}
 		string = string.replace(`!item `+check+`;`, ``);
 	}
 	while (string.includes("?item ") == true) {
 		var check = string.split(`?item `).pop().split(`;`)[0];
-		if (checkItem(check)) != true) {
+		if (checkItem(check) != true) {
 			finalResult = false;
 		}
 		string = string.replace(`?item `+check+`;`, ``);
 	}
 	while (string.includes("!skill ") == true) {
 		var check = string.split(`!skill `).pop().split(`;`)[0];
-		if (data.player.skill => check) {
+		if (data.player.skill >= check) {
 			finalResult = false;
 		}
 		string = string.replace(`!skill `+check+`;`, ``);
@@ -849,35 +867,35 @@ function checkRequirements(string) {
 			if (checkTrust(corruptionTarget) != check) {
 				finalResult = false;
 			}
-			string = string.replace(`?trust `corruptionTarget+` `+check+`;`, ``);
+			string = string.replace(`?trust `+corruptionTarget+` `+check+`;`, ``);
 		}
 		while (string.includes("?minTrust "+corruptionTarget) == true) {
 			var check = string.split(`?minTrust `+corruptionTarget+` `).pop().split(`;`)[0];
 			if (checkTrust(corruptionTarget) < check) {
 				finalResult = false;
 			}
-			string = string.replace(`?minTrust `corruptionTarget+` `+check+`;`, ``);
+			string = string.replace(`?minTrust `+corruptionTarget+` `+check+`;`, ``);
 		}
 		while (string.includes("?maxTrust "+corruptionTarget) == true) {
 			var check = string.split(`?maxTrust `+corruptionTarget+` `).pop().split(`;`)[0];
 			if (checkTrust(corruptionTarget) > check) {
 				finalResult = false;
 			}
-			string = string.replace(`?maxTrust `corruptionTarget+` `+check+`;`, ``);
+			string = string.replace(`?maxTrust `+corruptionTarget+` `+check+`;`, ``);
 		}
 		while (string.includes("!flag "+corruptionTarget) == true) {
 			var check = string.split(`!flag `+corruptionTarget+` `).pop().split(`;`)[0];
 			if (checkFlag(corruptionTarget, check) == true) {
 				finalResult = false;
 			}
-			string = string.replace(`!flag `corruptionTarget+` `+check+`;`, ``);
+			string = string.replace(`!flag `+corruptionTarget+` `+check+`;`, ``);
 		}
 		while (string.includes("?flag "+corruptionTarget) == true) {
 			var check = string.split(`?flag `+corruptionTarget+` `).pop().split(`;`)[0];
 			if (checkFlag(corruptionTarget, check) != true) {
 				finalResult = false;
 			}
-			string = string.replace(`?flag `corruptionTarget+` `+check+`;`, ``);
+			string = string.replace(`?flag `+corruptionTarget+` `+check+`;`, ``);
 		}
 	}
 	if (finalResult == true) {
@@ -926,9 +944,7 @@ function changeLocation(n) {
 				);
 			}
 		}
-		else {
-			checkForEncounters();
-		}
+		checkForEncounters();
 	}
 	writeScene(n);
 }
@@ -1517,7 +1533,7 @@ function writeBig (img, cap) {
 			//console.log(img);
 		}
 	}
-	if (imagesDisabled != true) {
+	if (picturesDisabled != true) {
 		document.getElementById('output').innerHTML += `
 			<img class="bigPicture" src="` + img + `"`+checkForError+` title="` + cap + `">
 			<br>
@@ -1538,7 +1554,7 @@ function writeMed (img, cap) {
 			//console.log(img);
 		}
 	}
-	if (imagesDisabled != true) {
+	if (picturesDisabled != true) {
 		document.getElementById('output').innerHTML += `
 			<img class="medPicture" src="` + img + `"`+checkForError+` title="` + cap + `">
 			<br>
@@ -1629,103 +1645,75 @@ function credits() {
 	
 }
 
+function sceneTransition(scene) {
+	wrapper.scrollTop = 0;
+	updateMenu();
+	document.getElementById('output').innerHTML = '';
+	tempScene = scene;
+	writeScene(scene);
+	data.player.currentScene = scene;
+	saveSlot(10);
+}
+
 //Creating & Deleting windows
 
 function deleteWindow() {
+	activeWindow = "";
 	document.getElementById('windowHolder').innerHTML = ``;
 }
 
 function generateWindow(type) {
+	activeWindow = type;
 	document.getElementById('windowHolder').innerHTML = `
-	<div id = 'backDrop' onclick = 'deleteWindow'>
-		<div id = 'window' class = 'popup'></div>
+	<div class = 'windowBackdrop' onclick = 'deleteWindow()'>
+		<div id = 'window' class = 'popup' onclick="event.stopPropagation()"></div>
 	</div>
 	`;
 	switch (type) {
 		case "string": {
-			document.getElementById('window').innerHTML += `<p>Copy the full length below and paste it into the input box when you want to load the data. I recommend copying to a txt file.</p>`;
-			document.getElementById('window').innerHTML += JSON.stringify(data);
+			document.getElementById('window').innerHTML += `
+			<h1 class = "windowTitle" onclick="deleteWindow()">SAVE/LOAD</h1>
+			<div id = "windowList" class="saveList">
+			<p>Copy the full length below and paste it into the input box when you want to load the data. I recommend copying to a txt file.</p>
+			<p>`+JSON.stringify(data)+`</p>
+			</div>`;
 			break;
 		}
 		case "save": {
 			document.getElementById('window').innerHTML += `
 				<h1 class = "windowTitle" onclick="deleteWindow()">SAVE/LOAD</h1>
-				<div class="saveList">
-				<div class = "saveSlot">
-					<p id = "save101Name" class = "saveName">Slot 1</p>
-					<p id = "save101Date" class = "saveDate">Jan 9th, 8:31</p>
-					<p id = "load101Button" class = "loadButton button" onclick = "loadSlot(101)"></p>
-					<p id = "delete101Button" class = "deleteButton button" onclick = "deleteSlot(101)"></p>
-					<p id = "save101Button" class = "saveButton button" onclick = "saveSlot(101)">SAVE</p>
+				<div id = "windowList" class="saveList">
 				</div>
+			`;
+			for (saveCounter = 1; saveCounter < 9; saveCounter++) {
+				document.getElementById('windowList').innerHTML += `
 				<div class = "saveSlot">
-					<p id = "save102Name" class = "saveName">Slot 2</p>
-					<p id = "save102Date" class = "saveDate"></p>
-					<p id = "load102Button" class = "loadButton button" onclick = "loadSlot(102)"></p>
-					<p id = "delete102Button" class = "deleteButton button" onclick = "deleteSlot(102)"></p>
-					<p id = "save102Button" class = "saveButton button" onclick = "saveSlot(102)">SAVE</p>
+					<p id = "save`+saveCounter+`Name" class = "saveName">Slot `+saveCounter+`</p>
+					<p id = "save`+saveCounter+`Date" class = "saveDate"></p>
+					<p id = "load`+saveCounter+`Button" class = "loadButton button" onclick = "loadSlot(`+saveCounter+`)"></p>
+					<p id = "delete`+saveCounter+`Button" class = "deleteButton button" onclick = "deleteSlot`+saveCounter+`)"></p>
+					<p id = "save`+saveCounter+`Button" class = "saveButton button" onclick = "saveSlot(`+saveCounter+`)">SAVE</p>
 				</div>
+				`;
+			}
+			document.getElementById('windowList').innerHTML += `
 				<div class = "saveSlot">
-					<p id = "save103Name" class = "saveName">Slot 3</p>
-					<p id = "save103Date" class = "saveDate"></p>
-					<p id = "load103Button" class = "loadButton button" onclick = "loadSlot(103)"></p>
-					<p id = "delete103Button" class = "deleteButton button" onclick = "deleteSlot(103)"></p>
-					<p id = "save103Button" class = "saveButton button" onclick = "saveSlot(103)">SAVE</p>
-				</div>
-				<div class = "saveSlot">
-					<p id = "save104Name" class = "saveName">Slot 4</p>
-					<p id = "save104Date" class = "saveDate"></p>
-					<p id = "load104Button" class = "loadButton button" onclick = "loadSlot(104)"></p>
-					<p id = "delete104Button" class = "deleteButton button" onclick = "deleteSlot(104)"></p>
-					<p id = "save104Button" class = "saveButton button" onclick = "saveSlot(104)">SAVE</p>
-				</div>
-				<div class = "saveSlot">
-					<p id = "save105Name" class = "saveName">Slot 5</p>
-					<p id = "save105Date" class = "saveDate"></p>
-					<p id = "load105Button" class = "loadButton button" onclick = "loadSlot(105)"></p>
-					<p id = "delete105Button" class = "deleteButton button" button onclick = "deleteSlot(105)"></p>
-					<p id = "save105Button" class = "saveButton button" onclick = "saveSlot(105)">SAVE</p>
-				</div>
-				<div class = "saveSlot">
-					<p id = "save106Name" class = "saveName">Slot 6</p>
-					<p id = "save106Date" class = "saveDate"></p>
-					<p id = "load106Button" class = "loadButton button" onclick = "loadSlot(106)"></p>
-					<p id = "delete106Button" class = "deleteButton button" onclick = "deleteSlot(106)"></p>
-					<p id = "save106Button" class = "saveButton button" onclick = "saveSlot(106)">SAVE</p>
-				</div>
-				<div class = "saveSlot">
-					<p id = "save107Name" class = "saveName">Slot 7</p>
-					<p id = "save107Date" class = "saveDate"></p>
-					<p id = "load107Button" class = "loadButton button" onclick = "loadSlot(107)"></p>
-					<p id = "delete107Button" class = "deleteButton button" onclick = "deleteSlot(107)"></p>
-					<p id = "save107Button" class = "saveButton button" onclick = "saveSlot(107)">SAVE</p>
-				</div>
-				<div class = "saveSlot">
-					<p id = "save108Name" class = "saveName">Slot 8</p>
-					<p id = "save108Date" class = "saveDate"></p>
-					<p id = "load108Button" class = "loadButton button" onclick = "loadSlot(108)"></p>
-					<p id = "delete108Button" class = "deleteButton button" onclick = "deleteSlot(108)"></p>
-					<p id = "save108Button" class = "saveButton button" onclick = "saveSlot(108)">SAVE</p>
-				</div>
-				<div class = "saveSlot">
-					<p id = "save109Name" class = "saveName">Manual</p>
-					<p id = "save109Date" class = "saveDate"></p>
-					<!-- <p id = "load109Button" class = "loadFileButton button" onclick = "loadFile()">Load from text string</p>
-					<!-- <p id = "delete109Button" class = "deleteButton button" onclick = "deleteSlot(9)"></p> -->
-					<!-- <p id = "save109Button" class = "saveFileButton button" onclick = "saveFile()">Save to text string</p> -->
-					<p id = "save109Button" class = "saveFileButton button" onclick = "saveTXT()">Save to .txt file</p>
+					<p id = "save9Name" class = "saveName">Manual</p>
+					<!-- <p id = "load9Button" class = "loadFileButton button" onclick = "loadFile()">Load from text string</p>
+					<!-- <p id = "delete9Button" class = "deleteButton button" onclick = "deleteSlot(9)"></p> -->
+					<!-- <p id = "save9Button" class = "saveFileButton button" onclick = "saveFile()">Save to text string</p> -->
+					<p id = "save9Button" class = "saveFileButton button" onclick = "saveTXT()">Save to .txt file</p>
 					<input type="file" id="loadFile" onload="fileLoaded()" class = "loadFileButton button" onchange = "loadSave()"></input>
 				</div>
 				<div class = "saveSlot">
-					<p id = "save109Name" class = "saveName">String</p>
-					<p id = "save109Date" class = "saveDate"></p>
-					<p id = "load109Button" class = "loadFileButton button" onclick = "loadFile()">Load from text string</p>
-					<!-- <p id = "delete109Button" class = "deleteButton button" onclick = "deleteSlot(9)"></p> -->
-					<p id = "save109Button" class = "saveFileButton button" onclick = "saveFile()">Save to text string</p>
+					<p id = "save9Name" class = "saveName">String</p>
+					<p id = "load9Button" class = "loadFileButton button" onclick = "loadString()">Load from text string</p>
+					<!-- <p id = "delete9Button" class = "deleteButton button" onclick = "deleteSlot(9)"></p> -->
+					<p id = "save9Button" class = "saveFileButton button" onclick = "saveString()">Save to text string</p>
 				</div>
 				<div class = "saveSlot">
-					<p id = "save109Name" class = "saveName">Auto</p>
-					<p class = "loadFileButton button">The game autosaves regularly. Refresh the page to load the autosave anytime.</p>
+					<p id = "save9Name" class = "saveName">Auto</p>
+					<p class = "loadFileButton button" onClick="window.location.reload();">The game autosaves regularly. Refresh the page to load the autosave anytime.</p>
 				</div>
 			`;
 			generateSave();
@@ -1733,13 +1721,18 @@ function generateWindow(type) {
 		}
 		case "inventory": {
 			document.getElementById('window').innerHTML += `
-				<h1 class = "windowTitle" onclick="deleteWindow()">INVENTORY</h1>
-				<div class = "logbookLeft" id = "windowLeft">
-				</div>
-				<div class = "logbookRight" id = "windowRight">
+				<h1 class = "windowTitle" onclick="deleteWindow()">Inventory</h1>
+				<div id = "gridInventory" class="gridInventory">
 				</div>
 			`;
-			generateInv();
+			for (i = 0; i < data.inventory.length; i++) {
+				document.getElementById('gridInventory').innerHTML += `
+				<div class = "item">
+					<p class = "itemName">`+data.inventory[i].name+`</p>
+					<img class ="itemImage" src="`+data.inventory[i].image+`">
+				<div>
+				`;
+			}
 			break;
 		}
 		case "logbook": {
@@ -1750,7 +1743,7 @@ function generateWindow(type) {
 				<div class = "logbookRight" id = "windowRight">
 				</div>
 			`;
-			generateSelf();
+			//generateSelf();
 			break;
 		}
 		case "settings": {
@@ -1776,9 +1769,31 @@ function generateWindow(type) {
 //Menu
 
 function updateMenu() {
-	//Update player name, image, color, time, money
-	//Update corruption list
+	//Update player name, image, color, money
+	document.getElementById('playerName').innerHTML = data.player.name;
+	document.getElementById('playerMoney').innerHTML = "$" + data.player.money;
+	document.getElementById('playerImage').src = "scripts/gamefiles/characters/"+data.player.body+data.player.image+".jpg";
+	document.getElementById('playerClothes').src = "images/clothes/"+data.player.clothing+".jpg";
+	//Update corruption listfor (i = 0; i < data.story.length; i++) {
+	document.getElementById('corruptionList').innerHTML = `
+		<h3 class = "char_player version">Corruption</h3>
+	`;
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].name != "???" && data.story[i].trust != 0) {
+			document.getElementById('corruptionList').innerHTML += `<p>`+data.story[i].name+`: `+data.story[i].trust+`</p>`;
+		}
+	}
 	//Update menu buttons
+	document.getElementById('buttonMenu').innerHTML = `<div id="buttonMenuPrimary" class="flexbox"></div>`;
+	switch (data.style.menu) {
+		default: {
+			for (i = 0; i < menuArray.length; i++) {
+				document.getElementById(menuArray[i].div).innerHTML += `
+					<h4 id="`+menuArray[i].ID+`" class="button" onclick="`+menuArray[i].func+`">`+menuArray[i].name+`</h4>
+				`;
+			}
+		}
+	}
 }
 
 function changeBody(n) {
@@ -1822,13 +1837,42 @@ function saveSlot(slot) {
 	saveName = "data" + slot;
 	localStorage.setItem(saveName,JSON.stringify(data));
 	var date = new Date();
-	date = date.toDateString() + " " + date.toLocaleTimeString();
+	switch (data.player.route) {
+		case "dom": {
+			date = date.toDateString() + " " + date.toLocaleTimeString() + "<br>Dom Route";
+			if (data.player.flags.includes("vegetarian") == true) {
+				date += " (Vegetarian)";
+			}
+			break;
+		}
+		case "sub": {
+			date = date.toDateString() + " " + date.toLocaleTimeString() + "<br>Sub Route";
+			break;
+		}
+		default: {
+			date = date.toDateString() + " " + date.toLocaleTimeString();
+			break;
+		}
+	}
 	saveName = "date" + slot;
 	localStorage.setItem(saveName,date);
-	generateSave();
+	//deleteWindow();
+	if (activeWindow == "save") {
+		generateSave();
+	}
 }
 
 function loadSlot(slot) {
+	saveName = "data" + slot;
+	data = localStorage.getItem(saveName);
+	data = JSON.parse(data);
+	console.log("loaded data");
+	sceneTransition(data.player.currentScene);
+	updateSave();
+	deleteWindow();
+}
+
+function deleteSlot(slot) {
 	saveName = "data" + slot;
 	localStorage.removeItem(saveName);
 	console.log("Saved data");
@@ -1837,16 +1881,24 @@ function loadSlot(slot) {
 	generateSave();
 }
 
-function deleteSlot(slot) {
-	
-}
-
 function saveString() {
-	
+	deleteWindow();
+	generateWindow("string");
 }
 
 function loadString() {
-	
+	var dataPlaceholder = prompt("Please paste the data", "");
+	dataPlaceholder = JSON.parse(dataPlaceholder);
+	if (dataPlaceholder == "") {
+		alert("Invalid pasted data! If we tried to use this, the game would completely break!");
+		loadSlot(111);
+	}
+	else {
+		data = dataPlaceholder;
+		updateSave();
+		saveSlot(110);
+		loadSlot(110);
+	}
 }
 
 function saveToFile() {
@@ -1864,6 +1916,7 @@ function fileLoaded() {
 function generateSave() {
 	for (i = 1; i < 9; i++) {
 		var searchName = 'data' + i;
+		//console.log(localStorage.getItem(searchName));
 		if(localStorage.getItem(searchName)) {
 			var buttonName = 'load' + i + 'Button';
 			document.getElementById(buttonName).innerHTML = "LOAD";
@@ -1881,6 +1934,312 @@ function generateSave() {
 			var buttonName = 'save' + i + 'Date';
 			document.getElementById(buttonName).innerHTML = "";
 		}
+	}
+}
+
+function updateSave() {
+	if (typeof data.story.version == 'undefined') {
+		if (typeof data.player.version == 'undefined') {
+			if (data.story.route == "sub") {
+				data.galleryArray[2].name = "Loving Milk-Tank";
+				data.galleryArray[5].name = "Punishment";
+				data.galleryArray[6].name = "Tokyo Pop";
+				data.galleryArray[6].hint = 'Talk to her after learning about the Tokyo Pop filming and after completing the event "Punishment".'
+				data.galleryArray[10].name = "True Romance";
+				data.galleryArray[14].hint = 'Corruption level 3. Talk to her during the day with a Plug Pop.'
+				data.galleryArray[15].name = "Sounding";
+				data.galleryArray[15].hint = 'Corruption level 3. Talk to her during the day with a Stretchy Taffy.'
+				data.galleryArray[16].name = "Fisting";
+				data.galleryArray[16].hint = 'Corruption level 4. Talk to her during the day.'
+				data.galleryArray[24].hint = "Corruption level 3. Talk to her during the day with a Pop Rock.";
+				data.galleryArray[25].hint = "Corruption level 4. Talk to her during the day.";
+				data.galleryArray[3].name = "REMOVED";
+				data.galleryArray.splice(3, 1);
+				data.galleryArray.splice(10, 1);
+				data.galleryArray.splice(15, 1);
+				data.galleryArray.splice(18, 1);
+				data.galleryArray.splice(22, 1);
+			}
+			else {
+				data.galleryArray.splice(31, 1);
+			}
+			data.story.version = 0.7;
+			console.log("Updating save to version 0.7");
+		}
+	}
+	if (data.story.version == 0.7) {
+		if (data.story.route == "sub") {
+			var office4 = {index: 'office4S', name: "Public Punishment", unlocked: false, hint: 'Corruption level 4. Talk to her during the day.'};
+			var sister4 = {index: 'sister4S', name: "New Toy", unlocked: false, hint: 'Talk to her after triggering the event "Student Teacher Dynamic".'};
+			var sister5 = {index: 'sister5S', name: "Pushing Limits", unlocked: false, hint: 'Talk to her after triggering the event "New Toy".'};
+			data.galleryArray.push(office4);
+			data.galleryArray.push(sister4);
+			data.galleryArray.push(sister5);
+			data.story.freeSample = false;
+			data.galleryArray[14].name = "Student Teacher Dynamic";
+		}
+		data.story.version = 0.75;
+		console.log("Updating save to version 0.7.5");
+	}
+	if (data.story.version == 0.75) {
+		if (data.story.route == "dom") {
+			data.galleryArray.splice(41, 5);
+		}
+		if (data.story.route == "sub") {
+			console.log(data.galleryArray[35].index);
+			console.log(data.galleryArray[26].index);
+			data.galleryArray.splice(35, 5);
+			data.galleryArray.splice(26, 4);
+		}
+		data.story.version = 0.8;
+		console.log("Updating save to version 0.8");
+		alert("Older version save data detected. Your save data has been automatically updated for version 0.8");
+	}
+	if (data.story.version == 0.8) {
+		console.log("ver 1.0 save detected, updating");
+		var newSaveContainer = {
+			player: {
+				name: "You",
+				body: "male",
+				image: "",
+				clothing: "menShorts",
+				underwear: "nothing",
+				version: 1,
+				currentScene: "start",
+				time: "Afternoon",
+				money: 20,
+				route: "dom",
+				skill: 0,
+				flags: "",
+				color: "#86b4dc",
+				pervert: false,
+			},
+			style: {
+				dialogue: "basic",
+				menu: "basic",
+				choices: "basic",
+				font: "basic",
+				imageSize: 1,
+				fontSize: 1,
+			},
+			story: [
+				{index: "mother", name: "???", trust: 0, outfit: "", flags: "",},
+				{index: "sister", name: "???", trust: 0, outfit: "", flags: "",},
+				{index: "friend", name: "???", trust: 0, outfit: "", flags: "",},
+				{index: "teacher", name: "???", trust: 0, outfit: "", flags: "",},
+				{index: "chef", name: "???", trust: 0, outfit: "", flags: "",},
+				{index: "office", name: "???", trust: 0, outfit: "", flags: "",},
+				{index: "exotic", name: "Adriana", trust: 0, outfit: "", flags: "",},
+				{index: "clothes", name: "Danny", trust: 0, outfit: "", flags: "",},
+				{index: "candy", name: "???", trust: 0, outfit: "", flags: "",},
+				{index: "bully", name: "???", trust: 0, outfit: "", flags: "",},
+				{index: "evil", name: "???", trust: 0, outfit: "", flags: "",},
+				{index: "camboi", name: "???", trust: 0, outfit: "", flags: "",},
+				{index: "neighbor", name: "???", trust: 0, outfit: "", flags: "",},
+				{index: "doll", name: "???", trust: 0, outfit: "", flags: "",},
+			],
+			inventory: [],
+			gallery: [],
+		}
+		newSaveContainer.player.name = data.story.name;
+		newSaveContainer.player.version = 1.0;
+		newSaveContainer.player.currentScene = data.story.currentScene;
+		newSaveContainer.player.money = data.story.money;
+		newSaveContainer.player.route = data.story.route;
+		newSaveContainer.player.skill = data.story.skill;
+		newSaveContainer.story[0].name = data.story.motherName;
+		newSaveContainer.story[0].trust = data.story.motherScore;
+		newSaveContainer.story[1].name = data.story.sisterName;
+		newSaveContainer.story[1].trust = data.story.sisterScore;
+		newSaveContainer.story[2].name = data.story.friendName;
+		newSaveContainer.story[2].trust = data.story.friendScore;
+		newSaveContainer.story[3].name = data.story.teacherName;
+		newSaveContainer.story[3].trust = data.story.teacherScore;
+		newSaveContainer.story[4].name = data.story.chefName;
+		newSaveContainer.story[4].trust = data.story.chefScore;
+		newSaveContainer.story[5].name = data.story.officeName;
+		newSaveContainer.story[5].trust = data.story.officeScore;
+		if (data.story.candyVisited == true) {
+			newSaveContainer.story[7].name = "Gina";
+		}
+		switch (data.story.bodytype) {
+			case 0: 
+				newSaveContainer.player.body = "";
+			break;
+			case 1: 
+				newSaveContainer.player.body = "male";
+				newSaveContainer.player.clothing = "menShorts";
+				newSaveContainer.player.underwear = "boxers";
+			break;
+			case 2: 
+				newSaveContainer.player.body = "boi";
+				newSaveContainer.player.clothing = "sissy";
+				newSaveContainer.player.underwear = "regular5";
+			break;
+			case 3: 
+				newSaveContainer.player.body = "trans";
+				newSaveContainer.player.clothing = "blue";
+				newSaveContainer.player.underwear = "regular7";
+			break;
+			case 4: 
+				newSaveContainer.player.body = "sub";
+				newSaveContainer.player.clothing = "dress";
+				newSaveContainer.player.underwear = "panties";
+			break;
+		}
+		if (data.story.popRocks > 0) {
+			for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+				if (shopArray[itemIndex].index == "popRocks") {
+					var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+					newSaveContainer.inventory.push(addedItem);
+				}
+			}
+		}
+		if (data.story.caramelMelts > 0) {
+			for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+				if (shopArray[itemIndex].index == "caramelMelts") {
+					var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+					newSaveContainer.inventory.push(addedItem);
+				}
+			}
+		}
+		if (data.story.plugPops > 0) {
+			for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+				if (shopArray[itemIndex].index == "plugPops") {
+					var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+					newSaveContainer.inventory.push(addedItem);
+				}
+			}
+		}
+		if (data.story.stretchyTaffy > 0) {
+			for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+				if (shopArray[itemIndex].index == "stretchyTaffy") {
+					var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+					newSaveContainer.inventory.push(addedItem);
+				}
+			}
+		}
+		if (data.story.fruitGushers > 0) {
+			for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+				if (shopArray[itemIndex].index == "fruitGushers") {
+					var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+					newSaveContainer.inventory.push(addedItem);
+				}
+			}
+		}
+		if (data.story.vrMachine == true) {
+			for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+				if (shopArray[itemIndex].index == "vrMachine") {
+					var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+					newSaveContainer.inventory.push(addedItem);
+				}
+			}
+		}
+		if (data.story.laptop == true) {
+			for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+				if (shopArray[itemIndex].index == "laptop") {
+					var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+					newSaveContainer.inventory.push(addedItem);
+				}
+			}
+		}
+		if (data.story.creamer == true) {
+			for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+				if (shopArray[itemIndex].index == "creamer") {
+					var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+					newSaveContainer.inventory.push(addedItem);
+				}
+			}
+		}
+		if (data.story.doll == true) {
+			for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+				if (shopArray[itemIndex].index == "doll") {
+					var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+					newSaveContainer.inventory.push(addedItem);
+				}
+			}
+		}
+		if (data.story.toy == true) {
+			for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+				if (shopArray[itemIndex].index == "toy") {
+					var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+					newSaveContainer.inventory.push(addedItem);
+				}
+			}
+		}
+		if (data.story.horse == true) {
+			for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+				if (shopArray[itemIndex].index == "horse") {
+					var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+					newSaveContainer.inventory.push(addedItem);
+				}
+			}
+		}
+		if (data.story.onahole == true) {
+			for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+				if (shopArray[itemIndex].index == "onahole") {
+					var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+					newSaveContainer.inventory.push(addedItem);
+				}
+			}
+		}
+		if (data.story.clothingTicket == true) {
+			for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+				if (shopArray[itemIndex].index == "clothingTicket") {
+					var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+					newSaveContainer.inventory.push(addedItem);
+				}
+			}
+		}
+		if (data.story.candyTicket == true) {
+			for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+				if (shopArray[itemIndex].index == "candyTicket") {
+					var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+					newSaveContainer.inventory.push(addedItem);
+				}
+			}
+		}
+		for (oldIndex = 0; oldIndex < data.clothingArray.length; oldIndex++) {
+			if (data.clothingArray[oldIndex].owned == true) {
+				for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+					if (data.clothingArray[oldIndex].name == shopArray[itemIndex].name) {
+						var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+						newSaveContainer.inventory.push(addedItem);
+					}
+				}
+			}
+		}
+		for (oldIndex = 0; oldIndex < data.underwearArray.length; oldIndex++) {
+			if (data.underwearArray[oldIndex].owned == true) {
+				for (itemIndex = 0; itemIndex < shopArray.length; itemIndex++) {
+					if (data.underwearArray[oldIndex].name == shopArray[itemIndex].name) {
+						var addedItem = {type: shopArray[itemIndex].type, index: shopArray[itemIndex].index, name: shopArray[itemIndex].name, desc: shopArray[itemIndex].desc};
+						newSaveContainer.inventory.push(addedItem);
+					}
+				}
+			}
+		}
+		for (oldIndex = 0; oldIndex < data.galleryArray.length; oldIndex++) {
+			//console.log("Scene detected. Unlocked status is "+data.galleryArray[oldIndex].unlocked);
+			if (data.galleryArray[oldIndex].unlocked == true) {
+				for (newIndex = 0; newIndex < galleryArray.length; newIndex++) {
+					if (galleryArray[newIndex].index == data.galleryArray[oldIndex].index) {
+						var newScene = {index: galleryArray[newIndex].index, name: galleryArray[newIndex].name};
+						newSaveContainer.gallery.push(newScene);
+					}
+				}
+			}
+		}
+		if (data.story.exoticVisited == true) {
+			newSaveContainer.player.flags += "exoticVisited";
+		}
+		if (data.story.clothingVisited == true) {
+			newSaveContainer.player.flags += "clothingVisited";
+		}
+		if (data.story.laptopSetup == true) {
+			newSaveContainer.player.flags += "laptopSetup";
+		}
+		data = newSaveContainer;
 	}
 }
 
@@ -1927,7 +2286,6 @@ function purchaseItemTab(name, price, image, desc) {
 }
 
 function purchase(index) {
-	
 }
 
 function flashMoney() {
@@ -1939,7 +2297,12 @@ function flashy() {
 }
 
 function addItem(index) {
-	
+	for (addItemIndex = 0; addItemIndex < shopArray.length; addItemIndex++) {
+		if (shopArray[addItemIndex].index == index) {
+			var addedItem = {type: shopArray[addItemIndex].type, index: shopArray[addItemIndex].index, name: shopArray[addItemIndex].name, desc: shopArray[addItemIndex].desc};
+			data.items.push(addedItem);
+		}
+	}
 }
 
 function removeItem(index) {
@@ -1948,6 +2311,23 @@ function removeItem(index) {
 
 function checkItem(index) {
 	
+}
+
+function generateInv() {
+	clearInv();
+	for (i = 0; i < data.inventory.length; i++) {
+		document.getElementById('windowLeft').innerHTML += `
+		<div class = "item">
+			<p class = "itemName">`+data.inventory[i].name+`</p>
+			<img class ="itemImage" src="`+data.inventory[i].image+`">
+		<div>
+		`;
+	}
+}
+
+function clearInv() {
+	document.getElementById('windowLeft').innerHTML = ""
+	document.getElementById('windowRight').innerHTML = ""
 }
 
 //Wardrobe
