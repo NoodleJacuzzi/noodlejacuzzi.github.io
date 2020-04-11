@@ -1096,7 +1096,7 @@ function writeSpecial (text) {
 }
 
 function writeSpeech (name, img, text, altName, altColor) {
-	var finalName = "";
+	var finalName = name;
 	var finalImg = "";
 	var finalColor = "";
 	var checkForError = "";
@@ -1105,7 +1105,7 @@ function writeSpeech (name, img, text, altName, altColor) {
 		finalImg = "images/"+name+"/"+name+".jpg";
 	}
 	else {
-		if (img.includes("images") != true) {
+		if (img.includes("images") != true && img.includes("scripts") != true) {
 			finalImg = "images/"+name+"/"+img;
 		}
 		else {
@@ -1133,6 +1133,10 @@ function writeSpeech (name, img, text, altName, altColor) {
 	//If the name is player, use the player's details
 	if (name == "player") {
 		finalImg = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
+		if (data.player.style == "persona" || data.player.style == "royalty") {
+			finalImg = "scripts/gamefiles/profiles/" + data.player.character + "T.png";
+			//var checkForError = `onerror ="javascript:this.src='scripts/gamefiles/profiles/' + data.player.character + 'T.png'`;
+		}
 		finalName = data.player.name;
 		switch (data.player.color) {
 			case null:
@@ -1572,6 +1576,11 @@ function writePorn() {
 }
 
 function listArtists() {
+	writeSpecial("Here's a list of authors who's written for the game:");
+	writeSpeech("Noodle Jacuzzi", "scripts/gamefiles/characters/noodle.jpg", "<b>Author of momF, starletF, tomgirlF, succubusF, and others.</b><br>I almost named myself Dwayne 'The Guac' Johnson.");
+	writeSpeech("Cryptogreek", "scripts/gamefiles/characters/crypto.jpg", "<b>Author of kuroF, mistressF, maidF, mejiF, housekeepF, and others.</b><br>Thanks for enjoying the game my fellow degenerates!");
+	writeSpeech("SlackerSavior", "scripts/gamefiles/characters/slacker.jpg", "<b>Author of sportsF, coachF, coldF, swimmerF, and orangeF.</b><br>I wanted to write 'Don't ask me for shit' here, but it felt a little too rude.<br>So feel free to ask, but don't expect results anytime soon.");
+	writeSpecial("Here's a list of artists who's works are currently in the game:");
 	writeMed("images/mom/profile.jpg", "Art by Enoshima Iki");
 	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/26267">Enoshima Iki's Pixiv</a>`;
 	writeMed("images/tomgirl/profile.jpg", "Art by Nagi Ichi");
@@ -1582,7 +1591,6 @@ function listArtists() {
 	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/215082">Gujira 4 Gou's Pixiv</a>`;
 	writeMed("images/housekeep/profile.jpg", "Art by Kinta no Mousou");
 	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/13253890">Kinta no Mousou's Pixiv</a>`;
-	
 }
 
 //Showing & hiding windows
@@ -2571,6 +2579,28 @@ function diagnostic() {
 		case "princess quest": {
 			if (checkBody("elizabeth") != true) {
 				var goof = {index: "elizabeth", artist: "Art by Neromashin",};
+				data.bodytypes.push(goof);
+				writeSpecial("Unlocked a new bodytype! Change via the wardrobe.");
+			}
+			else {
+				goof = "null";
+			}
+			break;
+		}
+		case "slackersavior": {
+			if (checkBody("slacker") != true) {
+				var goof = {index: "slacker", artist: "Art by Nainsoo",};
+				data.bodytypes.push(goof);
+				writeSpecial("Unlocked a new bodytype! Change via the wardrobe.");
+			}
+			else {
+				goof = "null";
+			}
+			break;
+		}
+		case "slacker": {
+			if (checkBody("slacker") != true) {
+				var goof = {index: "slacker", artist: "Art by Nainsoo",};
 				data.bodytypes.push(goof);
 				writeSpecial("Unlocked a new bodytype! Change via the wardrobe.");
 			}

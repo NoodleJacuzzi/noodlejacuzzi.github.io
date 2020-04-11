@@ -300,7 +300,6 @@ function writeEncounter(scene) {
 			writeText("Thank you to: Swallows999, Joshua Ingram, Madgunner, Robbie, CaptainMontana, Lasse B, andres mejia, Ark555, Badaxe, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, fayman, FearlessViper26, Filament, G, J_C_L, jack spencer, Jesse Greene, Jinouga, Marc Maldon, Marco Wassmer, Negativatron, Ramsey Bisher, Scal, Skyrim mod lvr, Taylor Trout, XxrobothacksxX, Aegil, Alec8686, Andy Amundy, Angel, Anthony Munso, Ariados, Arthur radcliffe, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Colin, Daekash, Danny Nguyen, Darrell Goodman, DarthMalak, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, fireballcreations, Grim2011, Gwen Yurick, ItsAllOgreNow, Jane, joe, joel larsen, John Lewis, john smith, Joshua Melzark, KH dg, lm Carma, Louis Hayes, Markus Hansen, mazterlith, Monkey, murgatroid99, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, qwerty, Roy, Scumstango, Sebastian Eckel, Simon Rencher, sky, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, valdis, Vincent Madaire-Cullen, Wei, Wild Bill, William Richardson, Your Husbando, Z, สิรวิชณ์ อาสว่าง, 凱 陳, and 魏 for funding this work!");
 			writeSpecial("Thanks for playing! We hope you'll be seeing more endings in the future!");
 			writeFunction("changeLocation('playerHouse')", "Keep playing");
-			writeSpecial("Here's a list of artists who's works are currently in the game:");
 			listArtists();
 			break;
 		}
