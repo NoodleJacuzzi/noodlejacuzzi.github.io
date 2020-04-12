@@ -1797,10 +1797,16 @@ function updateMenu() {
 }
 
 function changeBody(n) {
-	//change data.player.body
-	//change data.player.image
-	//updateMenu
-	//check if big player image exists, if so update it
+	data.player.body = n;
+	changeImage("");
+}
+
+function changeImage(n) {
+	data.player.image = "";
+	updateMenu();
+	if(typeof(document.getElementById('selfBig')) != 'undefined'){
+		document.getElementById('selfBig').src = "scripts/gamefiles/characters/"+data.player.body+data.player.image+".jpg";
+    }
 }
 
 function closeButton() {
