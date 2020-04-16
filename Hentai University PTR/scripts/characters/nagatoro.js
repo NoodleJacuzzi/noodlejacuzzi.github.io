@@ -74,7 +74,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "empty", requirements: "trust principal 0;"},
+	{index: "empty", requirements: "trust principal 10000;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
