@@ -1,11 +1,11 @@
-var character = {index: "cold", fName: "Kelsey", lName: "Lowe", trust: 0, encountered: false, textEvent: "", met: false, color: "#FCFFFA", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+var character = {index: "cold", fName: "Kelsey", lName: "Lowe", trust: 0, encountered: false, textEvent: "", met: false, color: "#FCFFFA", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas"};
 
 var logbook = {
 	index: "cold", 
-	desc: "A seniro student approaching graduation. Part of the volleyball team, though apparently not close to many students on campus.",
+	desc: "A senior student approaching graduation. Part of the volleyball team, though apparently not close to many students on campus.",
 	body: "An older student, her maturity shows. Curvy in all the right places,.",
 	clothes: "Tends towards practical clothing, a tight t-shirt and jeans are the usual fare.",
-	home: "eastHallway",
+	home: "street",
 	tags: "",
 	artist: "Himitsu Kessha Vanitas",
 	author: "Slackersavior",
@@ -17,8 +17,7 @@ var newItems = [
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-	{index: "cold2", name: "coldF arranged a meeting, and she comes ", location: '', time: "", itemReq: "", trustMin: 30, trustMax: 40, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
-	{index: "placeholder", name: "", location: '', time: "", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	{index: "cold2", name: "The door slowly opens and you see a tuft of white hair poke its way in.", location: 'playerOffice', time: "MorningEvening", itemReq: "", trustMin: 30, trustMax: 35, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -73,90 +72,62 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "cold2": {
-			passTime();
-			setTrust('cold', 41)
-			writeText("coldF walks quietly into your office, sitting across from you.");
 			writeBig("images/cold/profile.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("player", "", "Ah, coldF, good to see you back. So, how have you been lately?");
-			writeText("coldF fiddles with her hands as she sits, looking a little nervous before she speaks.");
-			writeSpeech("cold", "", "I've been... Okay, I guess? I thought about your offer some. And talked to sportsF about it.");
-			writeText("She quiets down again, taking a minute before she speaks. You give her a small nod and smile when she looks up. Easier to work at her pace.");
-			writeSpeech("cold", "", "I umm... Hmm. I'm not really sure how to put this. sportsF told me about the whole hypnosis thing. She said it really helped her study. Even she thinks it's still goofy, but...");
-			writeSpeech("player", "", "I won't argue that. If you don't want to do it, that's fine, coldF. We can work without it. It's just another tool in my belt.");
-			writeText("It'll make things a little harder, but you've found ways around these things before.");
-			writeSpeech("cold", "", "No, I... I think it could help. sportsF was pretty insistent that even if it is goofy it did help a lot. And even coachF gave a recommendation when she heard us talking about it. She says it's how she stopped smoking... Well, as much.");
-			writeSpeech("cold", "", "And I figure if you could help coachF cut back on smoking, you can do most anything.");
-			writeSpeech("player", "", "If you're sure. But first, let's just talk for a bit. This all works better when you're comfortable, and when I know how to work with you. No need to rush into things. The goofy bits can come later.");
-			writeText("coldF almost looks a little disappointed before speaking again.");
-			writeSpeech("cold", "", "Oh, okay. I just... Sorry, I'm a little nervous.");
-			writeSpeech("player", "", "That's fine, coldF. Just try to relax a bit. We're just going to have a talk. How's the University treating you? Are your classes going well?");
-			writeSpeech("cold", "", "Well enough I guess...");
-			writeFunction("loadEncounter('cold2a')", "It takes a bit before coldF starts to open up again, but eventually you manage to get her a little more relaxed.");
+			writeSpeech("cold", "", "Sorry to butt in kind of suddenly playerF, do you have some time?");
+			writeSpeech("player", "", "Is there something wrong, coldF? Or did you just want to chat?");
+			writeSpeech("cold", "", "No. Nothing is wrong. I was just thinking, maybe if you had time we could do what we talked about last time?");
+			writeSpeech("player", "", "Are you sure? You seemed hesitant about it last time, and if you're uncomfortable we can just...");
+			writeText("She holds up one hand to stop you, and holds one hand over her own mouth as mumbles her answer.");
+			writeSpeech("cold", "", "I talked to sportsF about it, and she said it really did help her. And coachF heard us and told me that was also the reason she was able to stop smoking... Well, as much. And that's about as glowing a review as I can think of.");
+			writeSpeech("cold", "", "I mean, it still seems silly, but...");
+			writeSpeech("player", "", "I understand, coldF. I'd be more than willing to try it out with you...");
+			writeFunction("loadEncounter('cold', 'cold2a')", "Just lean back and we can get started.");
+			writeFunction("changeLocation(data.player.location)", "But I'll need some time to get something prepared. Come back later?");
 			break;
 		}
 		case "cold2a": {
-			writeText("coldF laughs quietly as she continues.");
-			writeBig("images/cold/2c.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("cold", "", "... and then swimmerF came in <i>two hours</i> late for her own class, apparently she didn't realize that the Calc being taught had nothing to do with art history.");
-			writeSpeech("player", "", "She really is something huh?");
-			writeSpeech("cold", "", "Yeah... I guess all of them are. So... I don't want to rush things, but are we going to...");
-			writeText("coldF looks down and... Blushes? As she trails off. She looks a little nervous, but she seems much more relaxed than at the start of things. Now's as good a time as any, really.");
-			writeSpeech("player", "", "You want to try out hypnosis?");
-			writeSpeech("cold", "", "Uhhm. Yeah. It's a big reason why I'm here, after all.");
-			writeSpeech("player", "", "Alright then, coldF. Take a few deep breaths for me then. Close your eyes and wiggle around in your chair. Find a comfortable spot you can sit at for a long time.");
-			writeSpeech("cold", "", "Just how long do you expect me to be here?");
-			writeText("coldF grumbles while she moves, but she relaxes back into the chair, and you can see her chest rise and fall slowly as she breathes deep.");
-			writeSpeech("cold", "", "So, just lay back and relax? Nothing special? That seems-");
-			writeSpeech("player", "", "Shh. You're right, there's nothing special to it. You just lie back, relax, and listen to me. I'll guide you down and help you where you need it.");
-			writeText("coldF grunts as she adjusts herself in the chair. Big movements, but as you speak and as she settles in and gets more and more comfortable, the movements slow down and stop.");
-			writeSpeech("player", "", "Take it easy, coldF. We're here to make you comfortable. We're here to help you. Once you're settled in completely, let me know, and I'll start taking you down into trance, okay?");
-			writeText("To be honest, this is kind of nice, not having to work at a frantic pace, being able to take your time, and having a willing subject. No crazy plans, no panicked moves. You could get used to this, but then again, if you did, you wouldn't get to have half the fun you usually do. You take your time with her, running her through a basic relaxation induction, from the top of her head to the tip of her toes, let all the tension ou with your breath, deeper and deeper. Basic stuff, but it works like a charm. Hell, it worked better than you expected, considering her apparent tension with relaxing around people.");
-			writeSpeech("player", "", "One last deep breath, coldF. Gather up whatever tension managed to escape you so far and hold it there for a second. Take your time making sure you get every little bit before you let it all out, emptying your lungs and your mind. Nothing left but my words.");
-			writeText("One last gasp, and she's putty in your hands.");
-			writeSpeech("player", "", "Now, open up your eyes and telll me how you feel, coldF?");
-			writeBig("images/cold/2c.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("cold", "", "Feels really good, playerH. Even better than sportsF said...");
-			writeText("That's... Interesting.");
-			writeSpeech("player", "", "Oh, so sportsF told you how it felt? How did she describe the feeling of being under?");
-			writeText("coldF rubs her thighs together as she speaks, and you can see the faintest wet spot in the crotch of her jeans. Huh. You think you may have hit the jackpot here.");
-			writeSpeech("cold", "", "She said... She said it felt kind of like an out of body experience. Like everything else faded away and all that was left was whatever you were focusing on. And that you were a great thing to focus on.");
-			writeText("Well that answers that.");
-			writeSpeech("player", "", "And how does being under feel to you, coldF?");
-			writeText("She takes a moment before answering, her expression, which was easy and relaxed, twists for a moment as she tries to gather up her thoughts.");
-			writeSpeech("cold", "", "Hard to describe. Feels nice. No worries. No thoughts. Just floating. And...");
-			writeText("She stops herself, thighs rubbing together again.");
-			writeSpeech("player", "", "It's okay, coldF. Tell me how it feels. The more I know, the more I can guide you to what feels good.");
-			writeText("Another moment of silence, before the slightest nod as coldF starts to speak again. Slowly, but that seems to be a side effect of just how deep she went, not a sign of struggle.");
-			writeSpeech("cold", "", "It feels really good to have you guide me. I... I always feel lost when I'm out, or dealing with people. Worried that I'm going to do something wrong. That I'll say something that makes people upset. That people won't like me if I screw up...");
-			writeText("Her breathing picks up, and you step in.");
-			writeSpeech("player", "", "Hey. I'm right here with you. Take a breath. Let all that tension go. Take it as slow as you need to.");
-			writeText("coldF stops and breathes for a few minutes.");
-			writeSpeech("cold", "", "It just feels so nice to not have to worry about that stuff, playerH. I don't want to screw anything up again.");
-			writeText("More or less what you thought then. The girl's just anxious. Luckily, you can help with that.");
-			writeSpeech("player", "", "Listen, coldF. You're doing great. Trust me. There's nothing to worry about.");
-			writeText("You bring yourself behind her and start to rub her shoulders.");
-			writeSpeech("player", "", "I'm right here and you've got nothing to worry about, right? I'll guide you all the way through.");
-			writeText("You let your hands wander slowly. down her arms before letting them pass over her breasts. As soon as you make contact, you hear coldF gasp in pleasure, and her hands shoot towards her crotch.");
-			writeText("You pull yourself out slowly, letting your cum spread and run on her.");
-			writeBig("images/coach/2b6.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("coach", "", "Holy shit, playerH. That's quite a load. Maybe someone needs to get out and get active more often if you're pent up like that.");
-			writeText("You resist the urge to laugh. If she knew just how much you were getting around the school, she'd probably have reported you, even with the blackmail you've got on her.");
-			writeSpeech("player", "", "Quiet, slut. Or did you forget the pictures I could still send out? See you soon for your next orientation video. I'm sure you'll find it much more exciting than this last one.");
-			writeText("coachF stops her teasing quickly at the mention of the picture. She quickly starts to clean herself up, though the tissue in your office only gets so much cum off of her chest and you can see faint cum stains on her jacket as she moves to the door.");
-			writeSpeech("coach", "", "Yeah, yeah. I hope for your sake that's true.");
-			writeFunction("changeLocation(data.player.location)", "As she leaves, you get to work cleaning your office.");
-			updateMenu();
+			passTime();
+			setTrust('cold', 50)
+			writeText("You take your time. It's nice to not be under the gun for once. And to have a willing participant.");
+			writeSpeech("player", "", "We'll start easy, coldF. Start breathing deeper. Nice slow breaths. In through your nose, and out through your mouth. As you do, let everything around you fade away. Just leaving your body, and my voice...");
+			writeText("It's a simple relaxation induction. Nothing fancy, but old standards are standard for a reason.");
+			writeSpeech("player", "", "We're going to make sure you're stress free for all of this. Start at the top of your head, and when you breathe in I want you to tense up the muscles there and bundle <i>all</i> the stress you can together. Then slowly, as you breathe out, let it all leave your body with that breath.");
+			writeSpeech("cold", "", "O...Okay. That seems... Nice.");
+			writeText("Honestly, for all the ridiculous stuff you've been up to lately, you really did miss this sort of thing. Slowly watching your subject fall more and more under your influence as you spoke. Trusting and moldable right in your hands.");
+			writeSpeech("player", "", "Down and down we'll go. From your neck, to your shoulders. Deep breath in... Hold it and gather the stress... Then <i>let it all out</i>. Until you're light and relaxed. Then we'll go deeper...");
+			writeText("The change is subtle, at first, if you don't know what you're looking for. Her shoulders resting easier. Her breathing coming more slowly.");
+			writeSpeech("player", "", "From your shoulders, down to your arms. In. Tense. Hold. Out. Further and further down. Slowly. Finding comfort with each movement, each shift of your body weight. Sinking further as we move down your body.");
+			writeText("And you continue moving down. Slowly and steadily, you bring her fully into trance. And once she's there, you can start working in earnest.");
+			writeSpeech("player", "", "And finally, your feet, coldF. We've cornered the last of the stress here. One last breath, nice and deep. Gather it all up. And let it out. How do you feel now?");
+			writeSpeech("cold", "", "Relaxed. Calm. It's... Really nice.");
+			writeSpeech("player", "", "Good. That's good. Now we can have a talk, okay?");
+			writeSpeech("cold", "", "Of course playerF... I did come here to talk.");
+			writeText("Time to get things going.");
+			writeSpeech("player", "", "Now, coldF... Has all this felt good? We've been talking for quite a bit. Have you felt awkward or worried about any of this? No stress, right? And any that comes leaves on your breath nice and easy.");
+			writeSpeech("cold", "", "It has felt good. And yeah, I'm not anxious. But that's with <i>you</i>. How do I know about everyone else? I don't know how swimmerF and sportsF do it.");
+			writeSpeech("player", "", "What do you mean?");
+			writeSpeech("cold", "", "Both of them are so confident. They always seem to know what to say and how to act. They're always sure that other people like them. And if they don't, they let it slide off of them.");
+			writeSpeech("cold", "", "I just don't know how they trust people like that.");
+			writeSpeech("player", "", "You have that confidence inside you. I'm sure of it. When we talk, you feel confident, right? No anxieties?");
+			writeSpeech("cold", "", "Well, no.");
+			writeSpeech("player", "", "See? And if you can feel like that with me, or with the other girls, you can feel that way all the time. Even if you need a little help.");
+			writeSpeech("cold", "", "I... I guess I could? But how?");
+			writeBig("images/cold/hypnohand1.jpg", "Art by Himitsu Kessha Vanitas");
+			writeText("You move your hand to her face, bringing it up over her head.");
+			writeSpeech("player", "", "You see my hand, coldF? When I hold it up like this and say the word 'release' you'll feel all your stress, all your anxiety leave you. Like little strands, little threads. From your body to my fingers. Just like with your breathing earlier. Doing it again will bring you back to normal. You won't remember the details of what we did, but you will remember how good it felt. Each time, you'll get a little less tension back. A few less worries. Until eventually, I've taken them all away. Does that sound like something you'd like?");
+			writeSpeech("cold", "", "It does. I actually... I really like the sound of that.");
+			writeFunction("writeEvent('cold2b')", "Then, release.");
 			break;
 		}
 		default: {
-			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
+			writePhoneSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
 		}
 	}
 }
 
 var eventArray = [
-	{index: "cold2a", name: "Getting comfortable"},
+	{index: "cold2b", name: "Reinforcement"},
 	{index: "placeholder", name: "Event Name"},
 ];
 
@@ -164,8 +135,75 @@ function writeEvent(name) { //Plays the actual event.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "cold2a": {
-			
+		case "cold2b": { //First Trigger
+			writeBig("images/cold/hypnohand2.jpg", "Art by Himitsu Kessha Vanitas");
+			writeText("coldF's breath leaves her quickly, and you see her lean back, eyes going hazy for a moment before coming back to look at your hand again.");
+			writeSpeech("cold", "", "I... Holy... sportsF said that hypnosis felt good, but I didn't really think...");
+			writeText("She starts to shake herself a little, and you're afraid for a minute she may have come up before she speaks up again.");
+			writeSpeech("cold", "", "This feels <b>really</b> good. What was I worried about in the first place?");
+			writeText("She turns to face you and smiles. She's speaking a lot louder and without covering her face now.");
+			writeSpeech("cold", "", "I think I could get used to this. Is this how sportsF feels all the time? Hang on... I want to try something...");
+			writeText("She gets to her feet and moves to you, and quickly moves her head in for a kiss.");
+			writeBig("images/cold/2b1.jpg", "Art by Himitsu Kessha Vanitas");
+			writeText("The kiss starts shallow, her exploring your lips. It's all slow, tentative. It's clear she's learning as she goes. So you decide to take the initiative.");
+			writeBig("images/cold/2b2.jpg", "Art by Himitsu Kessha Vanitas");
+			writeText("You open your mouth and start probing your tongue into her mouth, as you move, she starts to try and emulate what you're doing. Tongues swirling and meeting, and with each move you can feel her moan lightly, causing vibrations along your own tongue.");
+			writeBig("images/cold/2b3.jpg", "Art by Himitsu Kessha Vanitas");
+			writeText("But finally, you have to come up for air. As you pull back, she leaves her mouth still open, breathing heavy and trailing spit from the two of you down her chin, little droplets staining the top of her shirt.");
+			writeText("She breathes deep one last time, then lets loose a tiny giggle.");
+			writeSpeech("cold", "", "My first kiss... You're good at that, playerF.");
+			writeText("As she sits there, you notice her shifting her legs. The <i>tiniest</> wet spot showing on her jeans as she shuffles.");
+			writeSpeech("player", "", "Excited, coldF?");
+			writeSpeech("cold", "", "Well, yeah. But I've never...");
+			writeSpeech("player", "", "That's okay. We can take it slowly, no need for...");
+			writeText("Another laugh.");
+			writeSpeech("cold", "", "No, no. You don't get it. I've never even had someone else touch me. Every time I thought about it I'd get too scared to go any further...");
+			writeText("She stops. Seemingly trying to find a thought.");
+			writeSpeech("cold", "", "But... Not now. Now, all I want is for you to touch me.");
+			writeSpeech("player", "", "Take your pants off, we don't want them ruined.");
+			writeText("coldF stands and slowly takes off her jeans, and you shuffle yourself onto the chair she had been sitting before patting your lap. Slowly, she lowers herself down. You move your hands to her legs and spread them apart, leaving her pussy spread underneath her panties. Despite her lack of worrying thoughts, her body is tense and rigid.");
+			writeSpeech("player", "", "Stay where I move you, coldF. Let me take over. Let me take control. When I'm in control, you've got nothing to worry about.");
+			writeText("Her body almost immediately relaxes, leaving her putty in your hands. You pull her arms up over her head, giving you access to her breasts as well as her now wet slit.");
+			writeBig("images/cold/2b4.jpg", "Art by Himitsu Kessha Vanitas");
+			writeSpeech("player", "", "See, coldF? When you let me take control. When you let me take all your worries away. Tell me how it feels.");
+			writeText("You start to move your fingers, teasing the flash of her breasts, but avoiding her sensitive nipples for the moment. Doing the same with the other hand. Teasing the area around her cunt, fingers touching slightly around her lower lips briefly, before moving to the areas above and to the side. Fingers lightly brushing the sensitive area above, and along her thighs.");
+			writeSpeech("cold", "", "Feels good. To give you control. No need to overthink. I can just... Enjoy it.");
+			writeText("You let your fingers wander closer. Finally letting your fingers fix around her clit and her nipple. Giving the <i>slightest</i> pinch, eliciting a swift cry of pleasure from coldF's lips.");
+			writeBig("images/cold/2b5.jpg", "Art by Himitsu Kessha Vanitas");
+			writeSpeech("cold", "", "Fuu~! Too good. Don't stop!");
+			writeText("It's time. You line your fingers up with her cunt. Prodding gently. Not entering.");
+			writeSpeech("player", "", "Beg for it.");
+			writeSpeech("cold", "", "Please! I need your fingers inside me! Don't~");
+			writeSpeech("cold", "", "Aaa~!");
+			writeText("Your fingers start slow. One moving in, pushing pash whatever resistance her body still had, and slowly prodding. It's not long before you feel her gushing faster and harder onto your hand. You get the feeling this girl was pent up before she came here. You keep up the movement, making sure she's ready before finger two enters, and she lets loose another cry.");
+			writeSpeech("cold", "", "That's... Too much! Keep going! Feels too good!");
+			writeText("Never one to disappoint, you double down. Fingers moving rapidly now that you've felt out her sensitive spots, each move of the wrist moving your fingers in and out, and each full entrance causing her to shake in pleasure. Each shake a mini orgasm, pre shocks for the main event, which is quick to come when you finally manage to find a spot that lets your pinky rest on her clit as you continue to finger fuck her.");
+			writeBig("images/cold/2b6.jpg", "Art by Himitsu Kessha Vanitas");
+			writeText("She screams as she cums, her panties soaked by the gush as you keep going. It takes a minute before she stops moaning, and you let your fingers slowly stop.");
+			writeBig("images/cold/2b7.jpg", "Art by Himitsu Kessha Vanitas");
+			writeSpeech("cold", "", "That was really intense... Can I move now, playerH?");
+			writeSpeech("player", "", "Oh, yeah. Get your pants on. And while you get dressed, I need you to listen to me.");
+			writeSpeech("player", "", "Remember, when you're released, you'll forget the details of what happened here. But you'll remember that it felt good. When I send you a text that starts with 'Release' you'll feel the same thing as when we're together and I use my hand. Got it?");
+			writeSpeech("cold", "", "If it makes me feel like this? Whatever you say, playerT.");
+			writeText("Easier than you thought. You'll have to make sure that works later.");
+			writeSpeech("player", "", "Good, then now that you're dressed, sit down. And let's bring you back up.");
+			writeSpeech("cold", "", "Do we have to?");
+			writeSpeech("player", "", "Yep. Now, Release.");
+			writeBig("images/cold/hypnohand2.jpg", "Art by Himitsu Kessha Vanitas");
+			writeText("Another few seconds of blank stare, before coldF looks up past your hand.");
+			writeSpeech("cold", "", "Holy... That was weird. Almost like I could see little strands coming from your fingers... What exactly did we do?");
+			writeSpeech("player", "", "Nothing much, mostly just talked and worked on some relaxation methods. Why, how much do you remember?");
+			writeSpeech("cold", "", "I remember the relaxing stuff. Lying back and like, tensing and untensing. Breathing deep, and...");
+			writeText("Her eyes go out of focus very briefly before moving back to look at you.");
+			writeSpeech("cold", "", "I dunno, it's kind of fuzzy. But I think it worked. I feel a lot lighter now. And a little... Wet? Weird. Is it hot in here?");
+			writeSpeech("player", "", "Sorry, I like it hot. But I'm glad to hear it worked. I'll give you my number, if you ever need anything, be sure to let me know.");
+			writeFunction("changeLocation(data.player.location)", "She mumbles a thanks as you exchange numbers, then leaves. Here's hoping everything sticks.");
+			updateMenu();
+			break;
+		}
+		case "placeholder": {
+			writeFunction("changeLocation('playerHouse')", "Go back");
+			break;
 		}
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong event. Error code: Failed to write event ("+name+") in "+character.index+".js");
@@ -189,7 +227,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "coldreward", trust: 30,},
+	{index: "coldreward", trust: 50,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event

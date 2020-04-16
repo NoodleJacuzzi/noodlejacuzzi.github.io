@@ -1,11 +1,11 @@
-var character = {index: "swimmer", fName: "Naomi", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#8DB7D0", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+var character = {index: "swimmer", fName: "Naomi", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#8DB7D0", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas"};
 
 var logbook = {
 	index: "swimmer", 
 	desc: "A student on the swimming team. She's also a backup for the volleyball team, though she tends to only fill in there if there's been an injury, or during practice.",
 	body: "Sun kissed, with tan lines. Her body makes it clear that she spends much of her time in a swimsuit outdoors.",
 	clothes: "Wears her school uniform relaxed, in a way that shows her tan lines off obviously.",
-	home: "eastHallway",
+	home: "vintageStreet",
 	tags: "",
 	artist: "Himitsu Kessha Vanitas",
 	author: "Slackersavior",
@@ -36,7 +36,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeBig("images/swimmer/profile.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("swimmer", "", "Hi, playerF! coachF told me something about... Uh.. 'a student goodness program' or something and she asked me to come see you!");
 			writeSpeech("player", "", "'Student Wellness Program.' And you're a little late, swimmerF. Did something happen?");
-			writeText("She looks a little embarassed and looks away from you.");
+			writeText("She looks a little embarrassed and looks away from you.");
 			writeSpeech("swimmer", "", "I'm not <i>that</i> late, am I?");
 			writeSpeech("player", "", "Getting close to an hour late, actually.");
 			writeSpeech("swimmer", "", "Oof. Sorry, playerH. I just... I got distracted on my way here. I got to talking with a friend I saw in the hallway, then I had to go to the bathroom, then I forgot my backpack in the gym, so I had to go back there, and then when I got there I got caught up talking to orangeF about...");
@@ -77,7 +77,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She truns around and looks at the door leerily, before getting up and checking the handle.");
 			writeSpeech("swimmer", "", "Whew. Okay, I did lock it. Is this room private?");
 			writeText("Well, you did do some soundproofing, and... Wait, hang on.");
-			writeSpeech("player", "", "It is. It wouldn't really be good if the counsellor's office wasn't private. We can talk about whatever you need and you don't have to worry about it.");
+			writeSpeech("player", "", "It is. It wouldn't really be good if the counselor's office wasn't private. We can talk about whatever you need and you don't have to worry about it.");
 			writeSpeech("swimmer", "", "Nonono, I mean... Is this room <i>private</i>? Like, do other people know what happens here?");
 			writeText("Don't like the sound of that...");
 			writeSpeech("player", "", "Whatever happens in this room is private, yes. Whatever goes on is just between us, barring something I'd be legally obligated to tell to the authorities or the staff. So... As long as you didn't kill anyone.");
@@ -143,10 +143,10 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("swimmer", "", "I mean, mostly the sex. I just knew after I saw you and sportsF I needed to get in on that action, though.");
 			writeBig("images/swimmer/2b4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("She starts to pick up the pace as she continues.");
-			writeSpeech("swimmer", "", "Seeing sportsF turned to a pile of jelly was... Fuuuck, playerT playerL, it was the fucking hottest thing I've ever seen. And I watch a <i>lot</i> of porn.");
+			writeSpeech("swimmer", "", "Seeing sportsF turned to a pile of jelly was... Fuuuck, playerT playerF, it was the fucking hottest thing I've ever seen. And I watch a <i>lot</i> of porn.");
 			writeText("swimmerF gets back to licking your cock. You're pretty sure she's stopped the actual blowjob because her jaw is too tired. She really isn't very good at this. Tons of enthusiasm and plenty of energy, but she keeps catching you against her teeth and obviously can't get you very deep. But hey, a blowjob is a blowjob.");
 			writeSpeech("swimmer", "", "Gotta say though, this is a lot more work than I thought.");
-			writeText("swimmerF starts to try and go deeper, every time causing her to gag more and more. On the positive side, the gagging and sweezing around your cock feels much better than her ameteurish tongue work.");
+			writeText("swimmerF starts to try and go deeper, every time causing her to gag more and more. On the positive side, the gagging and squeezing around your cock feels much better than her amateurish tongue work.");
 			writeText("And you still need to figure out how to turn this around... Maybe time for a hail Mary.");
 			writeSpeech("player", "", "For the love of... Look, swimmerF, tell you what. Fine. You don't tell anyone about what I'm doing on the side, and I'll fuck you. But for the love of all that is holy, <i>watch your teeth</i>.");
 			writeText("swimmer pops herself off of you, rubbing her jaw with one hand and idly rubbing your cock with the other.");
@@ -197,7 +197,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("You keep pumping. You've got to hold it in as long as possible. The longer you last, the more of a chance at least some of this sinks in.");
 			writeSpeech("swimmer", "", "I... I didn't want to be different! I wanted <i>this</i>. I wanted to feel like sportsF did!");
 			writeText("Hope this works.");
-			writeSpeech("player", "", "Then you remember what sportsF called me, swimmerF? Of course you do. That's burned into your mind, isn't it? What am I to sportsF? What am I to <i>you</i>>?");
+			writeSpeech("player", "", "Then you remember what sportsF called me, swimmerF? Of course you do. That's burned into your mind, isn't it? What am I to sportsF? What am I to <i>you</i>?");
 			writeSpeech("swimmer", "", "But... But I was... You're...");
 			writeText("She's too lost in the feeling of your cock inside her, and your words are full of enough half-truths to confuse her addled mind. Her lack of focus may have bitten you in the ass, but it also seems like...");
 			writeSpeech("swimmer", "", "You're... swimmerF's... My? <i>mmm-maa...</i>");
@@ -253,7 +253,8 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "swimmerreward", trust: 40,},
+	{index: "swimmerreward", trust: 51,},
+	{index: "swimmersphone1", trust: 40,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
@@ -262,6 +263,24 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 		case "swimmerreward": {
 			writePhoneImage("images/swimmer/phoneReward.jpg", "Art by Himitsu Kessha Vanitas")
 			writePhoneSpeech("SlackerSavior","","That's all for swimmerF for now! I'll be expanding on the students soonish.");
+			break;
+		}
+		case "swimmerphone1": {
+			setTrust('swimmer', 51)
+			writePhoneImage("images/swimmer/phone1.jpg", "Art by Himitsu Kessha Vanitas")
+			writePhoneSpeech("swimmer","","sportsF said she switched to a smaller swimsuit size, so I thought I'd change things up too!");
+			writePhoneSpeech("swimmer","","It rubs some really sensitive spots. I'm surprised you can't see my nipples, they're rock hard in this thing.");
+			writePhoneSpeech("player","","You already talked to sportsF about this stuff?");
+			writePhoneSpeech("swimmer","","Duh. I haven't had a chance to talk to coachF yet, though. I don't have her number.");
+			writePhoneSpeech("player","","Just.. Remember to keep this stuff quiet. I already got caught once, I don't want to get caught again.");
+			writePhoneSpeech("swimmer","","I know, Master! I'm very careful. All the time.");
+			writePhoneSpeech("swimmer","","So when are you going to fuck me in this thing?");
+			writePhoneSpeech("player","","Not at the school. I'm not risking that again.");
+			writePhoneSpeech("swimmer","","Oooh! Come on, Master! No risk is no fun!");
+			writePhoneSpeech("player","","No. Have to come up with something else.");
+			writePhoneSpeech("swimmer","","Oh! I may have an idea! Can you meet me in the park?");
+			writePhoneSpeech("player","","... Fine.");
+			writePhoneSpeech("swimmer","","Yeees! I can't wait!");
 			break;
 		}
 		default: {
