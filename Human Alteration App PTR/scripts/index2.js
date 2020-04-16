@@ -1314,6 +1314,20 @@ function checkRequirements(string) {
 			}
 			string = string.replace(`?maxTrust `+corruptionTarget+` `+check+`;`, ``);
 		}
+		while (string.includes("?trustMin "+corruptionTarget) == true) {
+			var check = string.split(`?trustMin `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkTrust(corruptionTarget) < check) {
+				finalResult = false;
+			}
+			string = string.replace(`?trustMin `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?trustMax "+corruptionTarget) == true) {
+			var check = string.split(`?trustMax `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkTrust(corruptionTarget) > check) {
+				finalResult = false;
+			}
+			string = string.replace(`?trustMax `+corruptionTarget+` `+check+`;`, ``);
+		}
 		while (string.includes("!flag "+corruptionTarget) == true) {
 			var check = string.split(`!flag `+corruptionTarget+` `).pop().split(`;`)[0];
 			if (checkFlag(corruptionTarget, check) == true) {

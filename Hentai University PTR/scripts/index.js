@@ -661,6 +661,175 @@ function renameEveryone() {
 	changeLocation("playerHouse");
 }
 
+function checkRequirements(string) {
+	var finalResult = true;
+	while (string.includes("!location ") == true) {
+		var check = string.split(`!location `).pop().split(`;`)[0];
+		if (check.includes(data.player.location) == true) {
+			finalResult = false;
+		}
+		string = string.replace(`!location `+check+`;`, ``);
+	}
+	while (string.includes("?location ") == true) {
+		var check = string.split(`?location `).pop().split(`;`)[0];
+		if (data.player.gps == true && data.player.location != "map") {
+			//Do nothing
+		}
+		else {
+			if (check.includes(data.player.location) != true) {
+				finalResult = false;
+			}
+		}
+		string = string.replace(`?location `+check+`;`, ``);
+	}
+	while (string.includes("!item ") == true) {
+		var check = string.split(`!item `).pop().split(`;`)[0];
+		if (checkItem(check) == true) {
+			finalResult = false;
+		}
+		string = string.replace(`!item `+check+`;`, ``);
+	}
+	while (string.includes("?item ") == true) {
+		var check = string.split(`?item `).pop().split(`;`)[0];
+		if (checkItem(check) != true) {
+			finalResult = false;
+		}
+		string = string.replace(`?item `+check+`;`, ``);
+	}
+	while (string.includes("!hypnosis ") == true) {
+		var check = string.split(`!hypnosis `).pop().split(`;`)[0];
+		if (data.player.hypnosis >= check) {
+			finalResult = false;
+		}
+		string = string.replace(`!hypnosis `+check+`;`, ``);
+	}
+	while (string.includes("?hypnosis ") == true) {
+		var check = string.split(`?hypnosis `).pop().split(`;`)[0];
+		if (data.player.hypnosis < check) {
+			finalResult = false;
+		}
+		string = string.replace(`?hypnosis `+check+`;`, ``);
+	}
+	while (string.includes("!hacking ") == true) {
+		var check = string.split(`!hacking `).pop().split(`;`)[0];
+		if (data.player.hacking >= check) {
+			finalResult = false;
+		}
+		string = string.replace(`!hacking `+check+`;`, ``);
+	}
+	while (string.includes("?hacking ") == true) {
+		var check = string.split(`?hacking `).pop().split(`;`)[0];
+		if (data.player.hacking < check) {
+			finalResult = false;
+		}
+		string = string.replace(`?hacking `+check+`;`, ``);
+	}
+	while (string.includes("!counseling ") == true) {
+		var check = string.split(`!counseling `).pop().split(`;`)[0];
+		if (data.player.counseling >= check) {
+			finalResult = false;
+		}
+		string = string.replace(`!counseling `+check+`;`, ``);
+	}
+	while (string.includes("?counseling ") == true) {
+		var check = string.split(`?counseling `).pop().split(`;`)[0];
+		if (data.player.counseling < check) {
+			finalResult = false;
+		}
+		string = string.replace(`?counseling `+check+`;`, ``);
+	}
+	while (string.includes("!time ") == true) {
+		var check = string.split(`!time `).pop().split(`;`)[0];
+		if (data.player.time == check) {
+			finalResult = false;
+		}
+		string = string.replace(`!time `+check+`;`, ``);
+	}
+	while (string.includes("?time ") == true) {
+		var check = string.split(`?time `).pop().split(`;`)[0];
+		if (data.player.time != check) {
+			finalResult = false;
+		}
+		string = string.replace(`?time `+check+`;`, ``);
+	}
+	while (string.includes("?flag player ") == true) {
+		var check = string.split(`?flag player `).pop().split(`;`)[0];
+		if (data.player.flags.includes(check) != true) {
+			finalResult = false;
+		}
+		string = string.replace(`?flag player `+check+`;`, ``);
+	}
+	while (string.includes("!flag player ") == true) {
+		var check = string.split(`!flag player `).pop().split(`;`)[0];
+		if (data.player.flags.includes(check) == true) {
+			finalResult = false;
+		}
+		string = string.replace(`!flag player `+check+`;`, ``);
+	}
+	if (string.includes("parity") == true) {
+		var check = string.split(`parity `).pop().split(`;`)[0];
+		switch (check) {
+			case "even": {
+				if (data.player.day%2 == 1) {
+					finalResult = false;
+				}
+			}
+			case "odd": {
+				if (data.player.day%2 == 0) {
+					finalResult = false;
+				}
+			}
+			default: {
+				console.log("Error! Parity defined but an invalid parity used. BE sure to use either even or odd, and make sure you have a semicolon afterwards.");
+			}
+		}
+	}
+	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
+		var corruptionTarget = data.story[characterIndex].index;
+		while (string.includes("?trust "+corruptionTarget) == true) {
+			var check = string.split(`?trust `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkTrust(corruptionTarget) != check) {
+				finalResult = false;
+			}
+			string = string.replace(`?trust `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?minTrust "+corruptionTarget) == true) {
+			var check = string.split(`?minTrust `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkTrust(corruptionTarget) < check) {
+				finalResult = false;
+			}
+			string = string.replace(`?minTrust `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?maxTrust "+corruptionTarget) == true) {
+			var check = string.split(`?maxTrust `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkTrust(corruptionTarget) > check) {
+				finalResult = false;
+			}
+			string = string.replace(`?maxTrust `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("!flag "+corruptionTarget) == true) {
+			var check = string.split(`!flag `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkFlag(corruptionTarget, check) == true) {
+				finalResult = false;
+			}
+			string = string.replace(`!flag `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?flag "+corruptionTarget) == true) {
+			var check = string.split(`?flag `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkFlag(corruptionTarget, check) != true) {
+				finalResult = false;
+			}
+			string = string.replace(`?flag `+corruptionTarget+` `+check+`;`, ``);
+		}
+	}
+	if (finalResult == true) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 //Scene creation
 function loadEncounter(js, name) {
 	var targetFile = 'system';
@@ -2110,7 +2279,7 @@ function updateSave() {
 	var loadZoe = true
 	for (loadIndex = 0; loadIndex < data.story.length; loadIndex++) {
 		if (data.story[loadIndex].index == "sports") {
-			console.log('sports found already in the data variable, aborting function');
+			//console.log('sports found already in the data variable, aborting function');
 			var loadZoe = false
 		}
 	}
@@ -2794,7 +2963,7 @@ function checkForPhone() {
 		
 		//Append new script file
 		document.getElementsByTagName("head")[0].appendChild(fileref);
-		console.log(targetFile+ ' import successful');
+		//console.log(targetFile+ ' import successful');
 		
 		//Delete script file afterwards
 		var select = document.getElementsByTagName("head")[0];
