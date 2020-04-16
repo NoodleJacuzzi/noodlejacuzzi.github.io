@@ -90,7 +90,7 @@ hr {
 
 /**** Menu ****/
 div#menu {
-    width: 400px;
+    width: 35%;
     height: 100%;
     flex:none;
     border-right: 2px solid;
@@ -372,19 +372,16 @@ p.status{
 
 /*Windows*/
 .windowLeft {
-	position:absolute;
-	box-sizing: border-box;
-	position: block;
 	height: 80%;
-	width: 50%;
+	width: 30%;
+	float:left;
+	overflow: auto;
 }
 .windowRight {
-	position:absolute;
-	box-sizing: border-box;
-	left:50%;
-	position: block;
 	height: 80%;
-	width: 50%;
+	width: 70%;
+	float:right;
+	overflow: auto;
 }
 .popup{
 	position: absolute;
@@ -589,6 +586,7 @@ display: flex;
     overflow-y: scroll;
     width: 100%;
 	height: 80%;
+	word-wrap: break-word;
 }
 .deleteButton{
 	color:#FF0000;
@@ -1069,6 +1067,7 @@ img.textThumbPersona {
 
 #buttonMenu {
 	display:inline-block;
+	width: 100%;
 }
 /*Royalty Schema*/
 .textBoxRoyalty {
@@ -1220,5 +1219,27 @@ img.textThumbRoyalty {
 .gridInventory {
 	display: grid;
 	gap: 1rem;
-	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(240px, .4fr));
+}
+
+.gridButtons {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 50%);
+}
+
+.itemName {
+	max-width: 50%
+}
+
+#corruptionList {
+	margin: auto;
+	padding-top: 15px;
+}
+
+.selfSwitch {
+	color:#509cea;
+}
+
+.selfImage {
+	width: 40%;
 }

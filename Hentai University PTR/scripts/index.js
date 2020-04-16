@@ -62,7 +62,7 @@ var data = {
 		{index: "treasurer", 	met: false, fName: "Abigail", lName: "Adams", 		trust: 0, encountered: false, textEvent: "", color: "#CFA18A", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,},
 		{index: "ojou", 		met: false, fName: "Olivia", lName: "Wright", 		trust: 0, encountered: false, textEvent: "", color: "#4EAAB5", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,},
 		{index: "mama", 		met: false, fName: "Sofia", lName: "Rossi", 		trust: 0, encountered: false, textEvent: "", color: "#A2DAF1", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false,},
-		{index: "pinstripe", 	met: false, fName: "Edith", lName: "Weber", 		trust: 0, encountered: false, textEvent: "", color: "#924F82", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false,},
+		{index: "pinstripe", 	met: false, fName: "Evelyn", lName: "Weber", 		trust: 0, encountered: false, textEvent: "", color: "#924F82", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false,},
 		{index: "instructor", 	met: false, fName: "Charlotte", lName: "Reid", 		trust: 0, encountered: false, textEvent: "", color: "#FD7380", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,},
 		{index: "nagatoro", 	met: false, fName: "Ash", lName: "Martin", 			trust: 0, encountered: false, textEvent: "", color: "#6E6C94", author: "NoodleJacuzzi", artist: "Kinta no Mousou", textHistory: "", unreadText: false,},
 		{index: "sports", 		met: false, fName: "Zoe", lName: "Parker", 			trust: 0, encountered: false, textEvent: "", color: "#496EBF", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
@@ -2095,7 +2095,7 @@ function updateSave() {
 		data.story.push(goof);
 		var goof = {index: "mama", fName: "Sofia", lName: "Rossi", trust: 0, encountered: false, textEvent: "", met: false, color: "#A2DAF1", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false,};
 		data.story.push(goof);
-		var goof = {index: "pinstripe", fName: "Edith", lName: "Weber", trust: 0, encountered: false, textEvent: "", met: false, color: "#924F82", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false,};
+		var goof = {index: "pinstripe", fName: "Evelyn", lName: "Weber", trust: 0, encountered: false, textEvent: "", met: false, color: "#924F82", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false,};
 		data.story.push(goof);
 		var goof = {index: "instructor", fName: "Charlotte", lName: "Reid", trust: 0, encountered: false, textEvent: "", met: false, color: "#FD7380", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,};
 		data.story.push(goof);
