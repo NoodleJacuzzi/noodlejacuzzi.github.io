@@ -642,13 +642,13 @@ var menuArray = [
 
 var encounterArray = [
 	//character: "mom", index: "", text: "momF trust 0", requirements: "?trust mom 0;", altName: "", altImage: "", altColor: "", type: "button", top: 0, left: 0,},
-	{character: "exotic", index: "", text: "Enter the Exotic Shop", requirements: "?location streets;", altName: "Adriana", altImage: "scripts/gamefiles/profiles/exoticSub.jpg", altColor: "",},
-	{character: "candy", index: "", text: "Enter the Candy Shop", requirements: "?location streets;", altName: "Jynx", altImage: "scripts/gamefiles/profiles/candySub.jpg", altColor: "",},
-	{character: "friend", index: "", text: "friendF is here", requirements: "?location school;", altName: "", altImage: "", altColor: "",},
-	{character: "bully", index: "", text: "Lexi is here", requirements: "?location school;", altName: "Lexi", altImage: "", altColor: "",},
-	{character: "bully", index: "", text: "Lexi is working today", requirements: "?location streets;", altName: "Lexi", altImage: "scripts/gamefiles/profiles/bullySub.jpg", altColor: "",},
-	{character: "camboi", index: "", text: "Avery is streaming today", requirements: "?location homePlayerRoom;", altName: "Avery", altImage: "", altColor: "",},
-	//character: "evil", index: "", text: "Enter the 'Beauty Salon'", requirements: "?location streets;", altName: "???", altImage: "", altColor: "",},
+	{character: "mom", index: "sleep", text: "Go to sleep", requirements: "?location homePlayerRoom;", altName: "", altImage: "", altColor: "", type: "button", top: 55, left: 60,},
+	{character: "mom", index: "", text: "You can hear your mother in her room, schlicking sounds and wanton moans easily audible through her door. You should head to bed and fix this soon.", requirements: "?location homeFoyer; !flag mom ready; ?trust mom  0;", altName: "", altImage: "", altColor: "", type: "message", top: 55, left: 60,},
+	{character: "mom", index: "mom2Fail", text: "momF is here.", requirements: "?location homeFoyer; !flag mom ready; ?trust mom  1;", altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,},
+	{character: "mom", index: "mom3", text: "momF is here. You can enjoy the results of your alteration", requirements: "?location homeFoyer; ?flag mom ready; ?trust mom  2;", altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,},
+	{character: "mom", index: "mom3Fail", text: "momF is here.", requirements: "?location homeFoyer; !flag mom ready; ?trust mom  2;", altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,},
+	{character: "mom", index: "mom4", text: "momF is here. You can enjoy the results of your alteration", requirements: "?location homeFoyer; ?flag mom ready; ?trust mom  3;", altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,},
+	{character: "mom", index: "mom4Fail", text: "momF is here.", requirements: "?location homeFoyer; !flag mom ready; ?trust mom 3;", altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,},
 ];
 
 var locationArray = [
@@ -881,6 +881,14 @@ function checkFlag(character, flag) {
 			else {
 				return false;
 			}
+		}
+	}
+}
+
+function checkOutfit(name) {
+	for (trustIndex = 0; trustIndex < data.story.length; trustIndex++) {
+		if (data.story[trustIndex].index == name) {
+			return data.story[trustIndex].outfit;
 		}
 	}
 }
@@ -1436,7 +1444,7 @@ function changeLocation(n) {
 			}
 		}
 		checkForEncounters();
-		//writeScene(n);
+		writeScene(n);
 	}
 	saveSlot(10);
 }
@@ -3315,4 +3323,8 @@ function clearInv() {
 function changeClothes(n) {
 	data.player.clothing = n;
 	deleteWindow();
+}
+
+function outfitGeneration(n) {
+	writeBig("scripts/gamefiles/profiles/mom"+checkOutfit('mom')+".jpg");
 }

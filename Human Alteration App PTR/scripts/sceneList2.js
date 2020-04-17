@@ -309,17 +309,113 @@ function writeScene(scene) {
 			break;
 		}
 		case "morning": {
+			data.player.time = "Evening";
+			if (data.player.route == "dom") {
+				if (checkTrust('mom') == 1 && checkFlag('mom', 'ready') == true) {
+					changeOutfit('mom', '');
+					writeEvent("mom2");
+					writeText("...");
+					writeText("You arrive at school as normal. Just before class starts you approach teacherF. You lean over to whisper to her, telling her that she didn't want to disturb you today, since you're a busy man.");
+					writeSpeech("teacher", "", "Of course I remember that, obviously. Now take your seat.");
+					writeText("And just like that, she ignores you even when you prop your feet onto the table.");
+					writeFunction("changeLocation('classroom')", "Finish classes for the day");
+					removeFlag('mom', 'ready');
+				}
+				else {
+					switch (checkTrust('mom')) {
+						case 1: {
+							writeText("You wake up to the scent of coffee, and see your mother patiently waiting beside your bed to wake you up.");
+							writeSpeech("mom", "", "Good morning sweetie!");
+							writeText("...");
+							break;
+						}
+						case 2: {
+							writeBig("images/real/general/handjob1.gif");
+							writeText("You awaken to the lovely feeling of your mother gently coaxing the sperm from your balls.");
+							writeSpeech("mom", "", "Good morning sweetie!");
+							writeText("...");
+							break;
+						}
+						case 3: {
+							writeBig("images/real/general/deepthroat4.gif");
+							writeText("You awaken to the lovely feeling of your mother's throat. She gives you an eager look once she realizes you're awaken and quickly brings you to orgasm so that she can greet you with a smile.");
+							writeSpeech("mom", "", "Good morning master!");
+							writeText("...");
+							break;
+						}
+						case 4: {
+							if (galleryCheck("mom6") == true) {
+								if (galleryCheck("mom7") == false) {
+									writeText("You awaken laying on top of your sleeping mother, it seems you had more than just a wet dream last night. While her pussy is certainly inviting, you do need to use the bathroom.");
+									writeTransition("morningPiss", "You could always just stay inside.");
+								}
+								else {
+									writeBig("images/real/general/vaginal6.gif");
+									writeText("You awaken to the lovely feeling of your mother riding atop you, your dick deep inside her.");
+									writeSpeech("mom", "", "Good mo... Good mooOOOOHH!");
+									writeText("...");
+								}
+							}
+							else {
+								writeBig("images/real/general/vaginal6.gif");
+								writeText("You awaken to the lovely feeling of your mother riding atop you, your dick deep inside her.");
+								writeSpeech("mom", "", "Good mo... Good mooOOOOHH!");
+								writeText("...");
+							}
+							break;
+						}
+					}
+					if (galleryCheck("mom6") == false || galleryCheck("mom7") == true) {
+						switch (checkTrust('teacher')) {
+							case 1:
+								writeText("School passes quickly, teacherF takes great care not to disturb you.");
+							break;
+							case 2:
+								writeText("School passes quickly, teacherF takes great care not to disturb you. Her skin is looking quite nice today.");
+							break;
+							case 3:
+								writeBig("images/real/general/titfuck3.gif");
+								writeText("You arrive at school early, teacherF is waiting and ready to take care of you.");
+							break;
+							case 4:
+								writeBig("images/real/general/deepthroat5.gif");
+								writeText("You arrive at school early, teacherF is waiting and ready to take care of you.");
+							break;
+							case 5:
+								writeBig("images/real/general/vaginal4.gif");
+								writeText("School passes the time, as usual. After a short nap you walk up behind teacherF and slide into her to relieve yourself of some lingering tension.");
+							break;
+							case 6:
+								writeBig("images/real/general/vaginal4.gif");
+								writeText("School passes the time, as usual. After a short nap you walk up behind teacherF and slide into her to relieve yourself of some lingering tension.");
+							break;
+						}
+						writeFunction("changeLocation('classroom')", "Finish classes for the day");
+					}
+					else {
+						writeFunction("changeLocation('classroom')", "Or pull out and go about your day");
+					}
+				}
+			}
+			else {
+				
+			}
 			break;
 		}
 		case "sleep": {
 			data.player.time = "Evening";
 			if (data.player.route == "dom") {
-				for (corruptionIndex = 0; corruptionIndex < data.story.length; corruptionIndex++) {
-					if (data.story[corruptionIndex].name != "???") {
-						writeSpeech(data.story[corruptionIndex].index, ``, `<p class="switch" onclick="sceneTransition('`+data.story[corruptionIndex].index+`CorruptionHub')">` + replaceCodenames(text) + `</p>`);
-					}
+				if (checkTrust('mom') == 0) {
+					writeTransition("globalCorruption1", "Start implementing your plant with the app");
 				}
-				writeTransition("morning", "Just go to sleep");
+				else {
+					for (corruptionIndex = 0; corruptionIndex < data.story.length; corruptionIndex++) {
+						if (data.story[corruptionIndex].name != "???") {
+							writeSpeech(data.story[corruptionIndex].index, ``, `<p class="switch" onclick="sceneTransition('`+data.story[corruptionIndex].index+`CorruptionHub')">Alter `+data.story[corruptionIndex].name+`</p>`);
+						}
+					}
+					writeTransition("morning", "Just go to sleep");
+				}
 			}
 			else {
 				
@@ -372,6 +468,28 @@ function writeScene(scene) {
 		}
 		//Mom corruption
 		case "momCorruptionHub": {
+			writeBig("scripts/gamefiles/profiles/mom"+checkOutfit('mom')+".jpg");
+			if (checkFlag('mom', 'ready') == false) {
+				switch (checkTrust('mom')) {
+					case 1: {
+						writeTransition("momCorruption1", "Reduce your mother's self control");
+						break;
+					}
+					case 2: {
+						if (data.player.skill > 1) {
+							writeTransition("momCorruption2", "Turn up your mother's libido");
+						}
+						else {
+							writeText("You don't have the skill to corrupt your mother further right now.");
+						}
+						break;
+					}
+					case 3: {
+						writeTransition("momCorruption2", "Transform your mother into more of a proper maid");
+						break;
+					}
+				}
+			}
 			writeTransition("sleep", "Go back");
 			break;
 		}
@@ -531,6 +649,50 @@ function writeScene(scene) {
 		case "mom1": {
 			writeEvent(scene);
 			writeFunction("changeLocation('classroom')", "Finish up with school");
+			break;
+		}
+		case "mom2": {
+			//Empty. This event is triggered in the morning.
+			break;
+		}
+		case "mom2Fail": {
+			writeSpeech("player", "", "Hey mom!");
+			writeText("She jumps in surprise at your greeting, it's clear she was deep in thought about something.");
+			writeSpeech("mom", "", "Hello dear. Dinner is... Dinner will be ready soon.");
+			writeText("There's a lot of hesitation and confliction in her voice. If you want this to progress further, you'll need to use the app tonight to make it happen.");
+			writeFunction("changeLocation(data.player.location)", "Go back");
+			break;
+		}
+		case "mom3": {
+			writeEvent(scene);
+			removeFlag('mother', 'ready');
+			data.story.time = "Night";
+			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
+			break;
+		}
+		case "mom3Fail": {
+			writeText("You walk in through the door, tossing your bag onto the couch and taking a moment to relax.");
+			writeSpeech("mom", "", "Welcome back, master.");
+			writeText("Her voice drops in volume at that last word, careful not to be heard by your sister. She places a small plate of food on the coffee table for you.");
+			writeSpeech("mom", "", "This should give you some energy to make it to dinner.");
+			writeText("She's serving you much more faithfully lately, but you can tell she's still a little confused as to exactly why. If you want to push this further, you'll need to use the app on her tonight.");
+			writeFunction("changeLocation(data.player.location)", "Go back");
+			break;
+		}
+		case "mom4": {
+			writeEvent(scene);
+			removeFlag('mother', 'ready');
+			data.story.time = "Night";
+			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
+			break;
+		}
+		case "mom4Fail": {
+			writeText("You walk in through the front door, and in moments your mother has rushed into the living room to greet you.");
+			writeText("She sets down a bucket full of cleaning supplies and gives you a little curtsy in her sterile-looking cleaning uniform.");
+			writeSpeech("mom", "", "Master! Welcome home. I was just about to clean up before dinner. Are you feeling... pent up?");
+			writeText("There's a sly hunger in her eyes as she licks her lips.");
+			writeText("It seems like this is how life will be from now on, unless you decide you want to push her a bit further tonight.");
+			writeFunction("changeLocation(data.player.location)", "Go back");
 			break;
 		}
 		//Dom route nonerotic encounters

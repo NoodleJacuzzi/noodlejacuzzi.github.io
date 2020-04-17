@@ -22,6 +22,8 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "introduction", name: "A teacher is doing paperwork here", location: 'teacherLounge', time: "MorningEvening", itemReq: "File T-1", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "greenQuo", name: "green is hanging out in her sister's office", location: 'teacherLounge', time: "MorningEvening", itemReq: "", trustMin: 41, trustMax: 41, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "filler", name: "green's office is here", location: 'teacherLounge', time: "MorningEvening", itemReq: "", trustMin: 43, trustMax: 43, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "greenBeachReturn", name: "green is here, being hit on by some men", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "greenNewQuo", name: "green's office is here", location: 'teacherLounge', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "greenNewQuo", name: "green's office is here", location: 'teacherLounge', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
@@ -320,6 +322,21 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Before you fall into an endless loop of pleasure, you can hear a voice whispering into your ear.");
 			writeSpeech("scarf", "bikini.jpg", "You put up a good resistance, child. Just relax, enjoy.");
 			writeFunction("loadEncounter('scarf', 'failure')", "The End");
+			break;
+		}
+		case "greenBeachReturn": {
+			writeSpeech("green", "bikini.jpg", "Yo!");
+			writeBig("images/scarf/greenBeach1.jpg");
+			writeSpeech("green", "bikini.jpg", "Fancy seeing you in my dream like this.");
+			writeSpeech("player", "", "No time, got a competition to win. Talk to you-");
+			writeText("Letting yourself engage with the fake reality is a bad idea, you could get distracted for longer than you realize.");
+			writeSpeech("Playboy", "images/none.png", "Hey hot stuff, you're lookin pretty good!");
+			writeBig("images/scarf/greenBeach2.jpg");
+			writeText("A pair of tanned beachgoes have come up to start hitting on greenF");
+			writeSpeech("green", "bikini.jpg", "Oh, stop. I'm old enough to be your-");
+			writeSpeech("Playboy", "images/none.png", "One second. Hey, bro. She yours?");
+			writeFunction("writeEncounter('greenBeach')", "Yeah, she's with me");
+			writeFunction("changeLocation(data.player.location)", "Ignore them, focus");
 			break;
 		}
 		case "greenNewQuo": {

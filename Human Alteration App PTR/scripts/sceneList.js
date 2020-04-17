@@ -286,7 +286,7 @@ function writeScene(scene) {
 			writeSpecial("You've achieved a novice level of understanding of the Human Alteration App's use!");
 			writeText("As an added bonus, you can crank that exhaustion value back up to fall back asleep.");
 			writeTransition("mother", "Drift off to sleep, and anticipate the morning");
-			data.story.motherReady = true;
+			addFlag('mother', 'ready');
 			data.story.skill = 1;
 			break;
 		}
@@ -294,7 +294,7 @@ function writeScene(scene) {
 			data.galleryArray = gallerySubArray;
 			data.clothingArray = clothingSubArray;
 			data.underwearArray = underwearSubArray;
-			data.story.route = "sub";
+			data.player.route = "sub";
 			updateBody(4);
 			writeEvent("misc1S");
 			unlockScene("misc1S");
@@ -380,16 +380,16 @@ function writeScene(scene) {
 			if (data.story.onahole == true && data.story.skill == 2) {
 				writeTransition("publicToy", "Practice your skills with the app");
 			}
-			if (data.story.motherScore > 1 && data.story.friendScore > 1 && data.story.teacherScore > 1 && data.story.officeScore > 1 && data.story.chefScore > 1) {
+			if (checkTrust('mom') > 1 && checkTrust('friend') > 1 && checkTrust('teacher') > 1 && checkTrust('office') > 1 && checkTrust('chef') > 1) {
 				if (data.story.freeSample != true) {
-					if (data.story.route == "sub") {
+					if (data.player.route == "sub") {
 						if (data.story.candyTicket == false) {
 							writeTransition("freeSample", "Someone is waving you down");
 						}
 					}
 				}
 			}
-			if (data.story.route == "sub") {
+			if (data.player.route == "sub") {
 				if (galleryCheck("sister2") == true) {
 					if (galleryCheck("sister3") == false) {
 						writeText("The streets are a little busier than usual, and you overhear two people talking about some filming going on in the area. They're filming the live action adaptation of Tokyo Pop Reee Black Medallion // XX.<br>You're sister isn't exactly a fan of the adaptation, but it'd be a fun fact to tell her about once you get home.");
@@ -413,7 +413,7 @@ function writeScene(scene) {
 				writeTransition("streetsBeautyShop", "Beauty Salon");
 			}
 			else {
-				if (data.story.route != "sub") {
+				if (data.player.route != "sub") {
 					document.getElementById('output').innerHTML += `
 						<p class="choiceText">
 							There's a beauty salon down the road, but they can't improve you more than the app has.
@@ -434,14 +434,14 @@ function writeScene(scene) {
 		}
 		case "school": {
 			writeBig("images/real/locations/school.jpg");
-			writeTransition("schoolClassroom", "Enter your classroom");
+			writeTransition("school", "Enter your classroom");
 			writeTransition("friend", "It looks like friendF is waiting outside of the classroom.");
 			writeTransition("streets", "Leave school");
 			break;
 		}
-		case "schoolClassroom": {
-			writeBig("images/real/locations/schoolClassroom.jpg");
-			if (data.story.route == "sub") {
+		case "school": {
+			writeBig("images/real/locations/school.jpg");
+			if (data.player.route == "sub") {
 				if (galleryCheck("teacher5S") == true) {
 					console.log("true");
 					if (galleryCheck("sister4S") == true) {
@@ -464,19 +464,18 @@ function writeScene(scene) {
 			break;
 		}
 		case "morning": {
-			if (data.story.route == "dom") {
-				if (data.story.motherScore == 1 && data.story.motherReady == true) {
+			if (data.player.route == "dom") {
+				if (checkTrust('mom') == 1 && checkFlag('mother', 'ready') == true) {
 					writeEvent("mom2");
-					unlockScene("mom2");
 					writeText("...");
 					writeText("You arrive at school as normal. Just before class starts you approach teacherF. You lean over to whisper to her, telling her that she didn't want to disturb you today, since you're a busy man.");
 					writeSpeech("teacher", "", "Of course I remember that, obviously. Now take your seat.");
 					writeText("And just like that, she ignores you even when you prop your feet onto the table.");
-					writeTransition("schoolClassroom", "Finish classes for the day");
-					data.story.motherReady = false;
+					writeTransition("school", "Finish classes for the day");
+					removeFlag('mother', 'ready');
 				}
 				else {
-					switch (data.story.motherScore) {
+					switch (checkTrust('mom')) {
 						case 1: {
 							writeText("You wake up to the scent of coffee, and see your mother patiently waiting beside your bed to wake you up.");
 							writeSpeech("mom", "", "Good morning sweetie!");
@@ -520,7 +519,7 @@ function writeScene(scene) {
 						}
 					}
 					if (galleryCheck("mom6") == false || galleryCheck("mom7") == true) {
-						switch (data.story.teacherScore) {
+						switch (checkTrust('teacher')) {
 							case 1:
 								writeText("School passes quickly, teacherF takes great care not to disturb you.");
 							break;
@@ -544,25 +543,25 @@ function writeScene(scene) {
 								writeText("School passes the time, as usual. After a short nap you walk up behind teacherF and slide into her to relieve yourself of some lingering tension.");
 							break;
 						}
-						writeTransition("schoolClassroom", "Finish classes for the day");
+						writeTransition("school", "Finish classes for the day");
 					}
 					else {
-						writeTransition("schoolClassroom", "Or pull out and go about your day");
+						writeTransition("school", "Or pull out and go about your day");
 					}
 				}
 			}
 			else {
-				if (data.story.motherScore == 1 && data.story.motherReady == true) {
+				if (checkTrust('mom') == 1 && checkFlag('mother', 'ready') == true) {
 					writeEvent("mom1S");
 					unlockScene("mom1S");
 					writeText("...");
 					writeText("School is... Strange. teacherF. Came into class today wearing a bikini and a pair of shorts. You can't help but visualize the beach whenever you look at her.");
 					writeText("Whenever her vision passes over you, she has a weird look in her eyes.");
-					writeTransition("schoolClassroom", "Finish classes for the day");
-					data.story.motherReady = false;
+					writeTransition("school", "Finish classes for the day");
+					removeFlag('mother', 'ready');
 				}
 				else {
-					switch (data.story.motherScore) {
+					switch (checkTrust('mom')) {
 						case 1: {
 							writeText("You wake up to see your mother standing at the side of your bed, gently shaking you awake.");
 							writeSpeech("mom", "", "It is time to wake up. Breakfast is already prepared.");
@@ -596,7 +595,7 @@ function writeScene(scene) {
 							break;
 						}
 					}
-					switch (data.story.teacherScore) {
+					switch (checkTrust('teacher')) {
 						case 1:
 							writeText("School passes quickly. teacherF glances at you once or twice with a strange look in her eyes, but aside from that classes pass as normal.");
 						break;
@@ -620,7 +619,7 @@ function writeScene(scene) {
 							}
 						break;
 					}
-					writeTransition("schoolClassroom", "Finish classes for the day");
+					writeTransition("school", "Finish classes for the day");
 				}
 			}
 			break;
@@ -630,8 +629,8 @@ function writeScene(scene) {
 			//During sleep, check who isn't ready, and offer a choice to corrupt them. Can't skip this unless mom's corruption is above 0. Doll and VR are auto-readied.
 			data.story.time = "day";
 			data.story.dollReady = true;
-			if (data.story.route == "dom") {
-				if (data.story.motherScore == 0) {
+			if (data.player.route == "dom") {
+				if (checkTrust('mom') == 0) {
 					document.getElementById('output').innerHTML += `
 						<p class="choiceText" onclick="corrupt('many')">
 							Start implementing your plan with the app
@@ -641,8 +640,8 @@ function writeScene(scene) {
 				else {
 					data.story.dollReady = true;
 					data.story.vrReady = true;
-					if (data.story.motherReady == false) {
-						switch (data.story.motherScore) {
+					if (checkFlag('mother', 'ready') == false) {
+						switch (checkTrust('mom')) {
 							case 1:
 								document.getElementById('output').innerHTML += `
 									<p class="choiceText" onclick="corrupt('mother')">
@@ -675,8 +674,8 @@ function writeScene(scene) {
 							break;
 						}
 					}
-					if (data.story.sisterReady == false) {
-						switch (data.story.sisterScore) {
+					if (checkFlag('sister', 'ready') == false) {
+						switch (checkTrust('sister')) {
 							case 1:
 								document.getElementById('output').innerHTML += `
 									<p class="choiceText" onclick="corrupt('sister')">
@@ -717,7 +716,7 @@ function writeScene(scene) {
 						}
 					}
 					if (data.story.friendReady == false) {
-						switch (data.story.friendScore) {
+						switch (checkTrust('friend')) {
 							case 0:
 								document.getElementById('output').innerHTML += `
 									<p class="choiceText" onclick="corrupt('friend')">
@@ -773,8 +772,8 @@ function writeScene(scene) {
 							break;
 						}
 					}
-					if (data.story.teacherReady == false) {
-						switch (data.story.teacherScore) {
+					if (checkFlag('teacher', 'ready') == false) {
+						switch (checkTrust('teacher')) {
 							case 1:
 								if (data.story.skill > 1) {
 									document.getElementById('output').innerHTML += `
@@ -823,8 +822,8 @@ function writeScene(scene) {
 							break;
 						}
 					}
-					if (data.story.chefReady == false) {
-						switch (data.story.chefScore) {
+					if (checkFlag('chef', 'ready') == false) {
+						switch (checkTrust('chef')) {
 							case 0:
 								document.getElementById('output').innerHTML += `
 									<p class="choiceText" onclick="corrupt('chef')">
@@ -848,8 +847,8 @@ function writeScene(scene) {
 							break;
 						}
 					}
-					if (data.story.officeReady == false) {
-						switch (data.story.officeScore) {
+					if (checkFlag('office', 'ready') == false) {
+						switch (checkTrust('office')) {
 							case 0:
 								if (data.story.skill > 1) {
 									document.getElementById('output').innerHTML += `
@@ -892,7 +891,7 @@ function writeScene(scene) {
 						}
 					}
 				}
-				if (data.story.motherScore > 1 && data.story.sisterScore > 1 && data.story.friendScore > 1 && data.story.teacherScore > 1 && data.story.chefScore > 1 && data.story.officeScore > 0) {
+				if (checkTrust('mom') > 1 && checkTrust('sister') > 1 && checkTrust('friend') > 1 && checkTrust('teacher') > 1 && checkTrust('chef') > 1 && checkTrust('office') > 0) {
 					writeTransition("ending", "It's time to end this");
 				}
 				document.getElementById('output').innerHTML += `
@@ -904,35 +903,35 @@ function writeScene(scene) {
 			else {
 				writeText("You lay your head down to rest after a long day, but as you do your phone buzzes. It's your sister texting you.");
 				writeSpeech("sister", "", "Heeeey bro. How was school? Have any fun today?");
-				if (data.story.motherScore < 3 && data.story.motherReady == false) {
+				if (checkTrust('mom') < 3 && checkFlag('mother', 'ready') == false) {
 					document.getElementById('output').innerHTML += `
 						<p class="choiceText" onclick="corrupt('mother')">
 							Talk about mom
 						</p>
 					`;
 				}
-				if (data.story.friendScore < 4 && data.story.friendReady == false) {
+				if (checkTrust('friend') < 4 && data.story.friendReady == false) {
 					document.getElementById('output').innerHTML += `
 						<p class="choiceText" onclick="corrupt('friend')">
 							Talk about ` + data.story.friendName + `
 						</p>
 					`;
 				}
-				if (data.story.teacherScore < 4 && data.story.teacherReady == false) {
+				if (checkTrust('teacher') < 4 && checkFlag('teacher', 'ready') == false) {
 					document.getElementById('output').innerHTML += `
 						<p class="choiceText" onclick="corrupt('teacher')">
 							Talk about ` + data.story.teacherName + `
 						</p>
 					`;
 				}
-				if (data.story.chefScore < 4 && data.story.chefReady == false) {
+				if (checkTrust('chef') < 4 && checkFlag('chef', 'ready') == false) {
 					document.getElementById('output').innerHTML += `
 						<p class="choiceText" onclick="corrupt('chef')">
 							Talk about ` + data.story.chefName + `
 						</p>
 					`;
 				}
-				if (data.story.officeScore < 4 && data.story.officeReady == false) {
+				if (checkTrust('office') < 4 && checkFlag('office', 'ready') == false) {
 					document.getElementById('output').innerHTML += `
 						<p class="choiceText" onclick="corrupt('office')">
 							Talk about ` + data.story.officeName + `
@@ -953,8 +952,8 @@ function writeScene(scene) {
 			break;
 		}
 		case "motherCorruption": {
-			if (data.story.route == "dom") {
-				switch (data.story.motherScore) {
+			if (data.player.route == "dom") {
+				switch (checkTrust('mom')) {
 					case 0: {
 						writeText("You can't just crank up values as high as you can, as your mother has shown you today. Thus, you come up with a plan.");
 						writeText("The first target is your mother. For her, you'll raise factors like loyalty and subservience to you. You increase sexual promiscuity and alter her common sense to make her less prudish. You'll instill a command to wake you herself, and make her think that sexual contact with you is completely natural. Other factors, like libido and sexual receptiveness, will need to wait for now.");
@@ -983,7 +982,7 @@ function writeScene(scene) {
 				}
 			}
 			else {
-				switch (data.story.motherScore) {
+				switch (checkTrust('mom')) {
 					case 0: {
 						writeText("Sleep comes easily to you. Before you'd had trouble getting to sleep with any consistency, but now the moment you close your eyes...");
 						writeText("...");
@@ -1051,7 +1050,7 @@ function writeScene(scene) {
 					}
 				}
 			}
-			data.story.motherReady = true;
+			addFlag('mother', 'ready');
 			updateMenu;
 			document.getElementById('output').innerHTML += `
 				<p class="choiceText" onclick="sceneTransition('dreaming')">
@@ -1061,7 +1060,7 @@ function writeScene(scene) {
 			break;
 		}
 		case "sisterCorruption": {
-			switch (data.story.sisterScore) {
+			switch (checkTrust('sister')) {
 				case 0: {
 					document.getElementById('output').innerHTML += `
 						You start corrupting her.
@@ -1094,7 +1093,7 @@ function writeScene(scene) {
 					break;
 				}
 			}
-			data.story.sisterReady = true;
+			addFlag('sister', 'ready');
 			updateMenu;
 			document.getElementById('output').innerHTML += `
 				<p class="choiceText" onclick="sceneTransition('dreaming')">
@@ -1104,8 +1103,8 @@ function writeScene(scene) {
 			break;
 		}
 		case "friendCorruption": {
-			if (data.story.route == "dom") {
-				switch (data.story.friendScore) {
+			if (data.player.route == "dom") {
+				switch (checkTrust('friend')) {
 					case 0: {
 						writeText("Here's your opportunity. The girl you've crushed on for years is finally in your grasp. Meddling with some statistics is all it should...");
 						writeText("Wait, this can't be right. 'Affection 40 / 51'? 'Impression: Good'? These are some really high numbers. Higher than you own mother's even.");
@@ -1151,7 +1150,7 @@ function writeScene(scene) {
 				}
 			}
 			else {
-				switch (data.story.friendScore) {
+				switch (checkTrust('friend')) {
 					case 1: {
 						writeSpeech("player", "", "Not really.");
 						writeSpeech("sister", "", "Cmon you were so late in getting home today. Something must have happened.");
@@ -1214,8 +1213,8 @@ function writeScene(scene) {
 			break;
 		}
 		case "teacherCorruption": {
-			if (data.story.route == "dom") {
-				switch (data.story.teacherScore) {
+			if (data.player.route == "dom") {
+				switch (checkTrust('teacher')) {
 					case 0: {
 						break;
 					}
@@ -1245,7 +1244,7 @@ function writeScene(scene) {
 				}
 			}
 			else {
-				switch (data.story.teacherScore) {
+				switch (checkTrust('teacher')) {
 					case 1: {
 						writeSpeech("player", "", "teacherF was teaching today.");
 						writeSpeech("sister", "", "Ooh did you see her new outfit?");
@@ -1311,14 +1310,14 @@ function writeScene(scene) {
 					}
 				}
 			}
-			data.story.teacherReady = true;
+			addFlag('teacher', 'ready');
 			updateMenu;
 			document.getElementById('output').innerHTML += `<p class="choiceText" onclick="sceneTransition('dreaming')">Go to sleep</p>`;
 			break;
 		}
 		case "chefCorruption": {
-			if (data.story.route == "dom") {
-				switch (data.story.chefScore) {
+			if (data.player.route == "dom") {
+				switch (checkTrust('chef')) {
 					case 0: {
 						writeText("chefF has always been there for you, and yet she's struggling right now. She's making payments, but her stress levels are through the roof. Even if you lower them, you'll need to help her find some way of dealing with them in the future.");
 						writeText("And you have the perfect thing to do that. Some changes to yourself, and changes to her biology later, and you've got the perfect solution.");
@@ -1346,7 +1345,7 @@ function writeScene(scene) {
 				}
 			}
 			else {
-				switch (data.story.chefScore) {
+				switch (checkTrust('chef')) {
 					case 1: {
 						writeSpeech("player", "", "I helped out at chefF's today.");
 						writeSpeech("sister", "", "Oh cool, how'd that go?");
@@ -1391,7 +1390,7 @@ function writeScene(scene) {
 					}
 				}
 			}
-			data.story.chefReady = true;
+			addFlag('chef', 'ready');
 			updateMenu;
 			document.getElementById('output').innerHTML += `
 				<p class="choiceText" onclick="sceneTransition('dreaming')">
@@ -1401,8 +1400,8 @@ function writeScene(scene) {
 			break;
 		}
 		case "officeCorruption": {
-			if (data.story.route == "dom") {
-				switch (data.story.officeScore) {
+			if (data.player.route == "dom") {
+				switch (checkTrust('office')) {
 					case 0: {
 						writeText("Thinking about what to do here is tougher than you'd thought it would be. You really want to push your limits with her, no being gentle like with your mother or sister. But at the same time you aren't interested in some brain-dead fuck-puppet.");
 						writeText("Maybe what you need is a push to her already bitchy personality. To really have some fun with her traits and statistics, and make her walk the path to being a cum-dumpster herself.");
@@ -1425,7 +1424,7 @@ function writeScene(scene) {
 				}
 			}
 			else {
-				switch (data.story.officeScore) {
+				switch (checkTrust('office')) {
 					case 1: {
 						writeSpeech("player", "", "I saw somebody jerking off in an alleyway if that counts.");
 						writeSpeech("sister", "", "Was it a hobo? I thought I got rid of those.");
@@ -1474,7 +1473,7 @@ function writeScene(scene) {
 					}
 				}
 			}
-			data.story.officeReady = true;
+			addFlag('office', 'ready');
 			updateMenu;
 			document.getElementById('output').innerHTML += `
 				<p class="choiceText" onclick="sceneTransition('dreaming')">
@@ -1498,7 +1497,7 @@ function writeScene(scene) {
 			break;
 		}
 		case "volunteering": {
-			switch (data.story.chefScore) {
+			switch (checkTrust('chef')) {
 				case 0:
 					writeText("You help out at the coffee shop for a little bit, and are given $10 for your troubles.");
 					writeSpeech("chef", "", "Thank you so much for your help, playerF. I wish I could give you more, but I still need to pay this month's electric bills.");
@@ -1546,14 +1545,14 @@ function writeScene(scene) {
 		}
 		//Characters
 		case "mother": {
-			if (data.story.route == "dom") {
-				switch (data.story.motherScore) {
+			if (data.player.route == "dom") {
+				switch (checkTrust('mom')) {
 					case 0: {
-						if (data.story.motherReady == true) {
+						if (checkFlag('mother', 'ready') == true) {
 							writeEvent("mom1");
 							unlockScene("mom1");
-							writeTransition("schoolClassroom", "Finish up with school");
-							data.story.motherReady = false;
+							writeTransition("school", "Finish up with school");
+							removeFlag('mother', 'ready');
 						}
 						else {
 							writeText("You can still hear your mother in her room, schlicking sounds and wanton moans easily audible through her door. You should head to bed and fix this soon.");
@@ -1562,10 +1561,10 @@ function writeScene(scene) {
 						break;
 					}
 					case 1: {
-						if (data.story.motherReady == true) {
+						if (checkFlag('mother', 'ready') == true) {
 							writeText("You really shouldn't be reading this. The second mother event was supposed to trigger in the morning. Here, I'll unlock it for you, go watch it with the laptop.");
 							unlockScene("mom2");
-							data.story.motherReady = false;
+							removeFlag('mother', 'ready');
 							writeTransition("homePlayerRoom", "Player's room");
 						}
 						else {
@@ -1578,10 +1577,10 @@ function writeScene(scene) {
 						break;
 					}
 					case 2: {
-						if (data.story.motherReady == true) {
+						if (checkFlag('mother', 'ready') == true) {
 							writeEvent("mom3");
 							unlockScene("mom3");
-							data.story.motherReady = false;
+							removeFlag('mother', 'ready');
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish up for the day");
 						}
@@ -1596,10 +1595,10 @@ function writeScene(scene) {
 						break;
 					}
 					case 3: {
-						if (data.story.motherReady == true) {
+						if (checkFlag('mother', 'ready') == true) {
 							writeEvent("mom4");
 							unlockScene("mom4");
-							data.story.motherReady = false;
+							removeFlag('mother', 'ready');
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish up for the day");
 						}
@@ -1640,14 +1639,14 @@ function writeScene(scene) {
 				}
 			}
 			else {
-				switch (data.story.motherScore) {
+				switch (checkTrust('mom')) {
 					case 1: {
-						if (data.story.motherReady == true) {
+						if (checkFlag('mother', 'ready') == true) {
 							writeEvent("mom1S");
 							unlockScene("mom1S");
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish up for the day");
-							data.story.motherReady = false;
+							removeFlag('mother', 'ready');
 						}
 						else {
 							writeSpeech("mom", "", "Was there something you needed?");
@@ -1659,12 +1658,12 @@ function writeScene(scene) {
 						break;
 					}
 					case 2: {
-						if (data.story.motherReady == true) {
+						if (checkFlag('mother', 'ready') == true) {
 							writeEvent("mom2S");
 							unlockScene("mom2S");
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish up for the day");
-							data.story.motherReady = false;
+							removeFlag('mother', 'ready');
 						}
 						else {
 							writeSpeech("player", "", "Hey mom, I'm home!");
@@ -1680,12 +1679,12 @@ function writeScene(scene) {
 						break;
 					}
 					case 3: {
-						if (data.story.motherReady == true) {
+						if (checkFlag('mother', 'ready') == true) {
 							writeEvent("mom3S");
 							unlockScene("mom3S");
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish up for the day");
-							data.story.motherReady = false;
+							removeFlag('mother', 'ready');
 						}
 						else {
 							writeSpeech("player", "", "Hey mom, I'm home!");
@@ -1702,12 +1701,12 @@ function writeScene(scene) {
 						break;
 					}
 					case 4: {
-						if (data.story.motherReady == true) {
+						if (checkFlag('mother', 'ready') == true) {
 							writeEvent("mom4S");
 							unlockScene("mom4S");
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish up for the day");
-							data.story.motherReady = false;
+							removeFlag('mother', 'ready');
 						}
 						else {
 							writeSpeech("player", "", "Hey mom, I'm home!");
@@ -1728,8 +1727,8 @@ function writeScene(scene) {
 			break;
 		}
 		case "sister": {
-			if (data.story.route == "dom") {
-				switch (data.story.sisterScore) {
+			if (data.player.route == "dom") {
+				switch (checkTrust('sister')) {
 					case 0: {
 						writeSpeech("sister", "", "Fuck off  dweeb, I'm working. <br>... Nah, just messing with you bro. Hey, have you noticed what's up with mom?");
 						writeText("You can't trigger an event right now. You'll need to put your plan into action by going to sleep if you want to do anything with sisterF.");
@@ -1737,10 +1736,10 @@ function writeScene(scene) {
 						break;
 					}
 					case 1: {
-						if (data.story.sisterReady == true) {
+						if (checkFlag('sister', 'ready') == true) {
 							writeEvent("sister1");
 							unlockScene("sister1");
-							data.story.sisterReady = false;
+							removeFlag('sister', 'ready');
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish for the day");
 						}
@@ -1752,11 +1751,11 @@ function writeScene(scene) {
 						break;
 					}
 					case 2: {
-						if (data.story.sisterReady == true) {
+						if (checkFlag('sister', 'ready') == true) {
 							if (data.story.toy == true) {
 								writeEvent("sister2");
 								unlockScene("sister2");
-								data.story.sisterReady = false;
+								removeFlag('sister', 'ready');
 								data.story.time = "night";
 								writeTransition("homePlayerRoom", "Finish for the day");
 							}
@@ -1774,10 +1773,10 @@ function writeScene(scene) {
 						break;
 					}
 					case 3: {
-						if (data.story.sisterReady == true) {
+						if (checkFlag('sister', 'ready') == true) {
 							writeEvent("sister3");
 							unlockScene("sister3");
-							data.story.sisterReady = false;
+							removeFlag('sister', 'ready');
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish for the day");
 						}
@@ -1790,7 +1789,7 @@ function writeScene(scene) {
 						break;
 					}
 					case 4: {
-						if (data.story.sisterReady == true) {
+						if (checkFlag('sister', 'ready') == true) {
 							if (galleryCheck("sister4") == false) {
 								if (data.story.plugPops > 0) {
 									data.story.plugPops -= 1;
@@ -1810,7 +1809,7 @@ function writeScene(scene) {
 									data.story.stretchyTaffy -= 1;
 									writeEvent("sister5");
 									unlockScene("sister5");
-									data.story.sisterReady = false;
+									removeFlag('sister', 'ready');
 									data.story.time = "night";
 									writeTransition("homePlayerRoom", "Finish for the day");
 								}
@@ -1835,7 +1834,7 @@ function writeScene(scene) {
 							writeSpeech("player", "", "Ah. Well, that's the cost of foregoing underwear.");
 							writeSpeech("sister", "", "I thought it would be hot. I didn't think of what would happen if my own mother saw me!");
 							writeSpeech("player", "", "Did she say anything?");
-							switch (data.story.motherScore) {
+							switch (checkTrust('mom')) {
 								case 1:
 									writeSpeech("sister", "", "Yeah. She tried to act like she couldn't see it, but she was blushing like a nun.");
 								break;
@@ -1862,7 +1861,7 @@ function writeScene(scene) {
 						writeSpeech("sister", "", "Heeey bro~");
 						writeText("As she responds, she rubs a small bulge in her abdomen.");
 						writeSpeech("sister", "", "Just testin' out one of mom's new toys~<br>What's up?");
-						if (data.story.motherScore > 3) {
+						if (checkTrust('mom') > 3) {
 							if (data.story.popRocks > 0) {
 								if (galleryCheck("sister7") == false) {
 									writeText("She and mom have both been reveling in being your fuckpuppets, but the pop rocks in your pocket are giving you an idea for a new kind of playtime.");
@@ -1891,7 +1890,7 @@ function writeScene(scene) {
 			}
 			else {
 				if (galleryCheck("sister1S") == false) {
-					if (data.story.motherScore > 1 && data.story.friendScore > 1 && data.story.teacherScore > 1 && data.story.officeScore > 1 && data.story.chefScore > 1) {
+					if (checkTrust('mom') > 1 && checkTrust('friend') > 1 && checkTrust('teacher') > 1 && checkTrust('office') > 1 && checkTrust('chef') > 1) {
 						if (data.story.popRocks > 0) {
 							writeSpeech("sister", "", "Hey. Was there something you needed little bro?");
 							writeTransition("tasteOfRevenge", "'Yeah, I picked up some candy in town today...'");
@@ -1954,8 +1953,8 @@ function writeScene(scene) {
 			break;
 		}
 		case "friend": {
-			if (data.story.route == "dom") {
-				switch (data.story.friendScore) {
+			if (data.player.route == "dom") {
+				switch (checkTrust('friend')) {
 					case 0: {
 						writeSpeech("friend", "", "And so then he said that he'd rather eat the pit of a plum. I don't really...");
 						writeText("She doesn't seem to notice you right now.");
@@ -2108,7 +2107,7 @@ function writeScene(scene) {
 				}
 			}
 			else {
-				switch (data.story.friendScore) {
+				switch (checkTrust('friend')) {
 					case 1: {
 						if (data.story.friendReady == true) {
 							writeEvent("friend1S");
@@ -2201,19 +2200,19 @@ function writeScene(scene) {
 			break;
 		}
 		case "teacher": {
-			if (data.story.route == "dom") {
-				switch (data.story.teacherScore) {
+			if (data.player.route == "dom") {
+				switch (checkTrust('teacher')) {
 					case 0: {
 						writeSpeech("teacher", "", "Oh? playerF? Here to take up my offer on those take-home assignments? I can't imagine you'll be passing if you don't.");
 						writeText("You can't trigger an event right now. You'll need to put your plan into action by going to sleep if you want to do anything with teacherF.");
-						writeTransition("schoolClassroom", "Go back");
+						writeTransition("school", "Go back");
 						break;
 					}
 					case 1: {
-						if (data.story.teacherReady == true) {
+						if (checkFlag('teacher', 'ready') == true) {
 							writeEvent("teacher1");
 							unlockScene("teacher1");
-							data.story.teacherReady = false;
+							removeFlag('teacher', 'ready');
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish for the day");
 						}
@@ -2222,15 +2221,15 @@ function writeScene(scene) {
 							writeSpeech("player", "", "Not today, I'm not really feeling up to it.");
 							writeSpeech("teacher", "", "I see... Well, do you have any time? You fell asleep during the section on the morality associated with godhood. I could give you a refresher.");
 							writeText("If you want to trigger another event, you'll need to corrupt teacherF further tonight.");
-							writeTransition("schoolClassroom", "Go back");
+							writeTransition("school", "Go back");
 						}
 						break;
 					}
 					case 2: {
-						if (data.story.teacherReady == true) {
+						if (checkFlag('teacher', 'ready') == true) {
 							writeEvent("teacher2");
 							unlockScene("teacher2");
-							data.story.teacherReady = false;
+							removeFlag('teacher', 'ready');
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish for the day");
 						}
@@ -2246,15 +2245,15 @@ function writeScene(scene) {
 							writeSpeech("player", "", "Oh yeah, I guess I'd get some undue attention. Keep it a private sort of thing.");
 							writeSpeech("teacher", "", "Of course, master.");
 							writeText("If you want to trigger another event, you'll need to corrupt teacherF further tonight.");
-							writeTransition("schoolClassroom", "Go back");
+							writeTransition("school", "Go back");
 						}
 						break;
 					}
 					case 3: {
-						if (data.story.teacherReady == true) {
+						if (checkFlag('teacher', 'ready') == true) {
 							writeEvent("teacher3");
 							unlockScene("teacher3");
-							data.story.teacherReady = false;
+							removeFlag('teacher', 'ready');
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish for the day");
 						}
@@ -2270,15 +2269,15 @@ function writeScene(scene) {
 							writeText("You push her down onto the floor and grab onto her hair.");
 							writeSpeech("player", "", "Here, a reward.");
 							writeText("She's certainly fun to play with, but if you want to trigger another event, you'll need to corrupt teacherF further tonight.");
-							writeTransition("schoolClassroom", "Go back");
+							writeTransition("school", "Go back");
 						}
 						break;
 					}
 					case 4: {
-						if (data.story.teacherReady == true) {
+						if (checkFlag('teacher', 'ready') == true) {
 							writeEvent("teacher4");
 							unlockScene("teacher4");
-							data.story.teacherReady = false;
+							removeFlag('teacher', 'ready');
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish for the day");
 						}
@@ -2297,15 +2296,15 @@ function writeScene(scene) {
 							writeSpeech("teacher", "", "Ah, no, I wasn't talking about marriage. Doing such a thing with a student, disgraceful. No, I was hoping you could get me pregnant. My husband and I last had sex only two weeks ago. If I became pregnant now, I could claim it as his.");
 							writeSpeech("player", "", "Jesus, I forget how fucked up you are sometimes. Go ahead and beg like a dog and I'll consider it.");
 							writeText("She slides off the desk and begins to bark like a dog for you to impregnate her. While it's certainly hilarious, you won't be able to trigger another scene unless you corrupt her further tonight.");
-							writeTransition("schoolClassroom", "Go back");
+							writeTransition("school", "Go back");
 						}
 						break;
 					}
 					case 5: {
-						if (data.story.teacherReady == true) {
+						if (checkFlag('teacher', 'ready') == true) {
 							writeEvent("teacher5");
 							unlockScene("teacher5");
-							data.story.teacherReady = false;
+							removeFlag('teacher', 'ready');
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish for the day");
 						}
@@ -2325,34 +2324,34 @@ function writeScene(scene) {
 							writeSpeech("player", "", "And you pay him with?");
 							writeSpeech("teacher", "", "With money. I'm a student urinal. Paying with my body? To a school janitor? That'd be disgusting. So, will you please use me?");
 							writeText("With a sigh you realize you could go for a piss, and unzip yourself.");
-							writeTransition("schoolClassroom", "Go back");
+							writeTransition("school", "Go back");
 						}
 						break;
 					}
 					case 6: {
-						if (data.story.teacherReady == true) {
+						if (checkFlag('teacher', 'ready') == true) {
 							writeEvent("teacher6");
 							unlockScene("teacher6");
-							data.story.teacherReady = false;
+							removeFlag('teacher', 'ready');
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish for the day");
 						}
 						else {
 							writeText("Test for teacher's non-ready scene at corruption level 6.");
-							writeTransition("schoolClassroom", "Go back");
+							writeTransition("school", "Go back");
 						}
 						break;
 					}
 				}
 			}
 			else {
-				switch (data.story.teacherScore) {
+				switch (checkTrust('teacher')) {
 					case 1: {
-						if (data.story.teacherReady == true) {
+						if (checkFlag('teacher', 'ready') == true) {
 							writeEvent("teacher1S");
 							unlockScene("teacher1S");
 							writeTransition("school", "Head out into the hallway");
-							data.story.teacherReady = false;
+							removeFlag('teacher', 'ready');
 						}
 						else {
 							writeText("The classroom is full of an awkward silence once you and teacherF are the only ones inside.");
@@ -2360,17 +2359,17 @@ function writeScene(scene) {
 							writeSpeech("teacher", "", "Was there something you needed? I'm just grading papers.");
 							writeSpeech("player", "", "No, sorry. I was just leaving.");
 							writeText("She looks like she wants to stop you, but is obviously feeling very conflicted right now. It's strange to see her acting so normal in what is basically too-small swimwear.");
-							writeTransition("schoolClassroom", "Go back.");
+							writeTransition("school", "Go back.");
 						}
 						break;
 					}
 					case 2: {
-						if (data.story.teacherReady == true) {
+						if (checkFlag('teacher', 'ready') == true) {
 							writeEvent("teacher2S");
 							unlockScene("teacher2S");
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish up for the day");
-							data.story.teacherReady = false;
+							removeFlag('teacher', 'ready');
 						}
 						else {
 							writeSpeech("teacher", "", "Come here for a moment. I want to talk about your Kant assignment.");
@@ -2379,12 +2378,12 @@ function writeScene(scene) {
 							writeText("She seems frustrated and very pent up. It seems like she's taking those frustrations out on you through schoolwork.");
 							writeSpeech("teacher", "", "In short, there's nothing on the subject of relativism, and yet you decide it's his main focus? There's no evidence in your whole paper...");
 							writeText("Luckily, it seems like your sister hasn't corrupted teacherF any further yet. still, if she doesn't do anything, you might end up needing to do a 100+ paper by sunday.");
-							writeTransition("schoolClassroom", "Go back.");
+							writeTransition("school", "Go back.");
 						}
 						break;
 					}
 					case 3: {
-						if (data.story.teacherReady == true) {
+						if (checkFlag('teacher', 'ready') == true) {
 							writeText("She's grading papers like a real teacher would. When she notices you're staying as everyone else leaves, she locks eyes with you.");
 							writeSpeech("teacher", "", "Something you need, playerF?");
 							if (galleryCheck("teacher3S") == false) {
@@ -2408,7 +2407,7 @@ function writeScene(scene) {
 									writeText("You could also use some stretchy taffy if you put your creativity to it, but you don't have any right now.");
 								}
 							}
-							writeTransition("schoolClassroom", "Go back.");
+							writeTransition("school", "Go back.");
 						}
 						else {
 							writeSpeech("teacher", "", "And so that's why your claim is completely baseless! Did you even read the quotations in the text?");
@@ -2436,17 +2435,17 @@ function writeScene(scene) {
 							writeSpeech("teacher", "", "Oh? Hit a nerve? Well, fine is exactly my point. She was a gifted student in everything but discipline. A lot like you. I think you could do better than staying in this city.");
 							writeSpeech("player", "", "...");
 							writeSpeech("teacher", "", "Haaah... Fuck, the mood is gone. You should be getting home now.");
-							writeTransition("schoolClassroom", "Go back.");
+							writeTransition("school", "Go back.");
 						}
 						break;
 					}
 					case 4: {
-						if (data.story.teacherReady == true) {
+						if (checkFlag('teacher', 'ready') == true) {
 							writeEvent("teacher5S");
 							unlockScene("teacher5S");
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish up for the day");
-							data.story.teacherReady = false;
+							removeFlag('teacher', 'ready');
 						}
 						else {
 							writeSpeech("teacher", "", "By temporary, I was expecting more 'two hours' and not 'two months'.");
@@ -2463,12 +2462,12 @@ function writeScene(scene) {
 							writeSpeech("teacher", "", "<i>Did he actually notice the imprint of the tip? Is it that obvious?<br>... No, you can't see it. He was just fucking with me.</i>");
 							writeText("It seems like teacherF has been pushed as far as she ever will be. So long as she's careful, she should have a fun life ahead of her.");
 							
-							writeTransition("schoolClassroom", "Go back.");
+							writeTransition("school", "Go back.");
 						}
 						break;
 					}
 					case 5: {
-						if (data.story.teacherReady == true) {
+						if (checkFlag('teacher', 'ready') == true) {
 							writeText("She's grading papers like a real teacher would. When she notices you're staying as everyone else leaves, she shoots you a wink and sticks her tongue out.");
 							writeText("It seems like all that's in her bag are bundles and bundles of papers, probably a big test from another class.");
 							if (data.story.plugPops > 0) {
@@ -2481,10 +2480,10 @@ function writeScene(scene) {
 								writeText("You can actually feel your dicklette harden a little at the idea. If you play your cards right, you could be the one doing the fucking, and not with a plastic pole.");
 								writeTransition("sounding", "Give her some Stretchy Taffy");
 							}
-							writeTransition("schoolClassroom", "Go back.");
+							writeTransition("school", "Go back.");
 						}
 						else {
-							writeTransition("schoolClassroom", "Go back.");
+							writeTransition("school", "Go back.");
 						}
 						break;
 					}
@@ -2493,8 +2492,8 @@ function writeScene(scene) {
 			break;
 		}
 		case "chef": {
-			if (data.story.route == "dom") {
-				switch (data.story.chefScore) {
+			if (data.player.route == "dom") {
+				switch (checkTrust('chef')) {
 					case 0: {
 						writeSpeech("chef", "", "playerF! Perfect timing. A group of college students came in a moment ago, and I could use an extra set of hands. Can you help me out?");
 						writeText("You can't trigger an event right now. You'll need to corrupt her with the app by going to sleep if you want to do anything with chefF.");
@@ -2503,7 +2502,7 @@ function writeScene(scene) {
 						break;
 					}
 					case 1: {
-						if (data.story.chefReady == true) {
+						if (checkFlag('chef', 'ready') == true) {
 							if (data.story.creamer == false) {
 								writeText("chefF doesn't realize it, but subtle clues are showing that your changes have taken effect. You have a plan, but you don't have what you need right now to pull it off. You'll need something to sneak the taste of semen into her drink. The exotic shop will have what you need.");
 								writeSpeech("chef", "", "playerF! Perfect timing. A group of college students came in a moment ago, and I could use an extra set of hands. Can you help me out?");
@@ -2515,7 +2514,7 @@ function writeScene(scene) {
 								data.story.money += 15;
 								writeEvent("chef1");
 								unlockScene("chef1");
-								data.story.chefReady = false;
+								removeFlag('chef', 'ready');
 								data.story.time = "night";
 								writeTransition("homePlayerRoom", "Finish for the day");
 							}
@@ -2528,10 +2527,10 @@ function writeScene(scene) {
 						break;
 					}
 					case 2: {
-						if (data.story.chefReady == true) {
+						if (checkFlag('chef', 'ready') == true) {
 							writeEvent("chef2");
 							unlockScene("chef2");
-							data.story.chefReady = false;
+							removeFlag('chef', 'ready');
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish for the day");
 						}
@@ -2543,10 +2542,10 @@ function writeScene(scene) {
 						break;
 					}
 					case 3: {
-						if (data.story.chefReady == true) {
+						if (checkFlag('chef', 'ready') == true) {
 							writeEvent("chef3");
 							unlockScene("chef3");
-							data.story.chefReady = false;
+							removeFlag('chef', 'ready');
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish for the day");
 						}
@@ -2558,12 +2557,12 @@ function writeScene(scene) {
 						break;
 					}
 					case 4: {
-						if (data.story.chefReady == true) {
+						if (checkFlag('chef', 'ready') == true) {
 							if (data.story.popRocks > 0) {
 								data.story.popRocks -= 1;
 								writeEvent("chef4");
 								unlockScene("chef4");
-								data.story.chefReady = false;
+								removeFlag('chef', 'ready');
 								data.story.time = "night";
 								writeTransition("homePlayerRoom", "Finish for the day");
 							}
@@ -2583,13 +2582,13 @@ function writeScene(scene) {
 				}
 			}
 			else {
-				switch (data.story.chefScore) {
+				switch (checkTrust('chef')) {
 					case 1: {
-						if (data.story.chefReady == true) {
+						if (checkFlag('chef', 'ready') == true) {
 							writeEvent("chef1S");
 							unlockScene("chef1S");
 							writeTransition("streets", "Head back onto the streets");
-							data.story.chefReady = false;
+							removeFlag('chef', 'ready');
 						}
 						else {
 							writeSpeech("chef", "", "playerF! It's so good to see you. I don't need any help right now actually, what can I do for you?");
@@ -2599,12 +2598,12 @@ function writeScene(scene) {
 						break;
 					}
 					case 2: {
-						if (data.story.chefReady == true) {
+						if (checkFlag('chef', 'ready') == true) {
 							writeEvent("chef2S");
 							unlockScene("chef2S");
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish up for the day");
-							data.story.chefReady = false;
+							removeFlag('chef', 'ready');
 						}
 						else {
 							writeSpeech("chef", "", "playerF! It's so good to see you. I don't need any help right now actually, what can I do for you?");
@@ -2614,14 +2613,14 @@ function writeScene(scene) {
 						break;
 					}
 					case 3: {
-						if (data.story.chefReady == true) {
+						if (checkFlag('chef', 'ready') == true) {
 							if (data.story.popRocks > 0) {
 								data.story.popRocks -= 1;
 								writeEvent("chef3S");
 								unlockScene("chef3S");
 								data.story.time = "night";
 								writeTransition("homePlayerRoom", "Finish up for the day");
-								data.story.chefReady = false;
+								removeFlag('chef', 'ready');
 							}
 							else {
 								writeSpeech("chef", "", "playerF! It's so good to see you. What would you like?");
@@ -2643,12 +2642,12 @@ function writeScene(scene) {
 						break;
 					}
 					case 4: {
-						if (data.story.chefReady == true) {
+						if (checkFlag('chef', 'ready') == true) {
 							writeEvent("chef4S");
 							unlockScene("chef4S");
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish up for the day");
-							data.story.chefReady = false;
+							removeFlag('chef', 'ready');
 						}
 						else {
 							writeSpeech("chef", "", "playerF! It's so good to see you. I don't need any help right now actually, what can I do for you?<br>Sales volumes have been keeping pretty steady lately, and I'm able to keep up with demand now thanks to your help!");
@@ -2663,8 +2662,8 @@ function writeScene(scene) {
 			break;
 		}
 		case "office": {
-			if (data.story.route == "dom") {
-				switch (data.story.officeScore) {
+			if (data.player.route == "dom") {
+				switch (checkTrust('office')) {
 					case 0: {
 						writeText("She walks by, visibly uninterested in having a conversation with you.");
 						writeText("You can't trigger an event right now. You'll need to put your plan into action by going to sleep if you want to do anything with " + "officeF.");
@@ -2672,10 +2671,10 @@ function writeScene(scene) {
 						break;
 					}
 					case 1: {
-						if (data.story.officeReady == true) {
+						if (checkFlag('office', 'ready') == true) {
 							writeEvent("office1");
 							unlockScene("office1");
-							data.story.officeReady = false;
+							removeFlag('office', 'ready');
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish for the day");
 						}
@@ -2701,10 +2700,10 @@ function writeScene(scene) {
 							writeTransition("homePlayerRoom", "Finish for the day");
 						}
 						else {
-							if (data.story.officeReady == true) {
+							if (checkFlag('office', 'ready') == true) {
 								writeEvent("office3");
 								unlockScene("office3");
-								data.story.officeReady = false;
+								removeFlag('office', 'ready');
 								data.story.time = "night";
 								writeTransition("homePlayerRoom", "Finish for the day");
 							}
@@ -2721,10 +2720,10 @@ function writeScene(scene) {
 						break;
 					}
 					case 3: {
-						if (data.story.officeReady == true) {
+						if (checkFlag('office', 'ready') == true) {
 							writeEvent("office4");
 							unlockScene("office4");
-							data.story.officeReady = false;
+							removeFlag('office', 'ready');
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish for the day");
 						}
@@ -2748,14 +2747,14 @@ function writeScene(scene) {
 				}
 			}
 			else {
-				switch (data.story.officeScore) {
+				switch (checkTrust('office')) {
 					case 1: {
-						if (data.story.officeReady == true) {
+						if (checkFlag('office', 'ready') == true) {
 							writeEvent("office1S");
 							unlockScene("office1S");
 							data.story.time = "night";
 							writeTransition("streets", "Back out of the alleyway");
-							data.story.officeReady = false;
+							removeFlag('office', 'ready');
 						}
 						else {
 							writeText("officeF walks by on the street. She looks quite composed, a far cry from how she looked when you saw her last.");
@@ -2765,12 +2764,12 @@ function writeScene(scene) {
 						break;
 					}
 					case 2: {
-						if (data.story.officeReady == true) {
+						if (checkFlag('office', 'ready') == true) {
 							writeEvent("office2S");
 							unlockScene("office2S");
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish up for the day");
-							data.story.officeReady = false;
+							removeFlag('office', 'ready');
 						}
 						else {
 							writeText("officeF walks by on the street, pretending she doesn't recognize you.");
@@ -2781,10 +2780,10 @@ function writeScene(scene) {
 						break;
 					}
 					case 3: {
-						if (data.story.officeReady == true) {
+						if (checkFlag('office', 'ready') == true) {
 							writeEvent("office3S");
 							unlockScene("office3S");
-							data.story.officeReady = false;
+							removeFlag('office', 'ready');
 						}
 						else {
 							writeText("On the walk home, a familiar feeling of being watched comes over you. Four left turns later, you determine that the woman in a coat a few dozen feet behind you has been tailing you. You slip into a side-alley and hide behind a garbage can.");
@@ -2803,12 +2802,12 @@ function writeScene(scene) {
 						break;
 					}
 					case 4: {
-						if (data.story.officeReady == true) {
+						if (checkFlag('office', 'ready') == true) {
 							writeEvent("office4S");
 							unlockScene("office4S");
 							data.story.time = "night";
 							writeTransition("homePlayerRoom", "Finish up for the day");
-							data.story.officeReady = false;
+							removeFlag('office', 'ready');
 						}
 						else {
 							writeText("Holding a box you found on the sidewalk, you head into the alleyway with the inconspicuous sign labeled 'Alley of Justice'. Waiting on a wooden box is the 'champion of justice' in her lackluster disguise.");
@@ -2902,7 +2901,7 @@ function writeScene(scene) {
 		}
 		//Store
 		case "streetsExoticShop": {
-			if (data.story.route == "dom") {
+			if (data.player.route == "dom") {
 				if (galleryCheck("misc1") == true) {
 					if (galleryCheck("misc2") == true) {
 						writeBig("images/real/adriana/profile3.jpg");
@@ -2928,7 +2927,7 @@ function writeScene(scene) {
 		}
 		case "streetsClothingShop": {
 			if (imagesDisabled != true) {
-				if (data.story.route == "dom") {
+				if (data.player.route == "dom") {
 					if (data.story.clothingVisited == false && data.story.clothingTicket == true) {
 						writeEvent("misc3");
 						unlockScene("misc3");
@@ -3149,7 +3148,7 @@ function writeScene(scene) {
 			writeEvent("mom7");
 			unlockScene("mom7");
 			writeText("...");
-			switch (data.story.teacherScore) {
+			switch (checkTrust('teacher')) {
 				case 1:
 					writeText("School passes quickly, teacherF takes great care not to disturb you.");
 				break;
@@ -3173,7 +3172,7 @@ function writeScene(scene) {
 					writeText("School passes the time, as usual. After a short nap you walk up behind teacherF and slide into her to relieve yourself of some lingering tension.");
 				break;
 			}
-			writeTransition("schoolClassroom", "Finish classes for the day");
+			writeTransition("school", "Finish classes for the day");
 			break;
 		}
 		case "familyDinner": {
@@ -3231,7 +3230,7 @@ function writeScene(scene) {
 		}
 		case "smothering": {
 			if (galleryCheck("teacher4S") == true) {
-				data.story.teacherReady = false;
+				removeFlag('teacher', 'ready');
 			}
 			data.story.plugPops -= 1;
 			writeEvent("teacher3S");
@@ -3242,7 +3241,7 @@ function writeScene(scene) {
 		}
 		case "sounding": {
 			if (galleryCheck("teacher3S") == true) {
-				data.story.teacherReady = false;
+				removeFlag('teacher', 'ready');
 			}
 			data.story.stretchyTaffy -= 1;
 			writeEvent("teacher4S");
@@ -3253,7 +3252,7 @@ function writeScene(scene) {
 		}
 		case "enjoyingTheWork": {
 			if (galleryCheck("chefSpecial") == true) {
-				data.story.teacherReady == false;
+				checkFlag('teacher', 'ready') == false;
 			}
 			data.story.caramelMelts -= 1;
 			data.story.money +=50;
@@ -3265,7 +3264,7 @@ function writeScene(scene) {
 		}
 		case "chefSpecial": {
 			if (galleryCheck("enjoyingTheWork") == true) {
-				data.story.teacherReady == false;
+				checkFlag('teacher', 'ready') == false;
 			}
 			data.story.fruitGushers -= 1;
 			data.story.money +=50;
@@ -3316,7 +3315,7 @@ function writeScene(scene) {
 				`;
 				data.story.laptopSetup = true;
 			}
-			if (data.story.route == "dom") {
+			if (data.player.route == "dom") {
 				document.getElementById('output').innerHTML += `
 					<p class="choiceText" onclick="sceneTransition('gallery')">
 						View the gallery
@@ -3355,7 +3354,7 @@ function writeScene(scene) {
 		}
 		case "gallery" : {
 			//List player's scenes
-			if (data.story.route == "dom") {
+			if (data.player.route == "dom") {
 				writeMed("images/real/body/body" + data.story.bodytype + ".jpg");
 			}
 			else {
@@ -3364,7 +3363,7 @@ function writeScene(scene) {
 			generateGallery('misc');
 			//generateGallery('dream');
 			//List mom's scenes
-			if (data.story.route == "dom") {
+			if (data.player.route == "dom") {
 				writeMed("images/real/lisa/profile1.jpg");
 			}
 			else {
@@ -3372,7 +3371,7 @@ function writeScene(scene) {
 			}
 			generateGallery('mom');
 			//List sister's scenes
-			if (data.story.route == "dom") {
+			if (data.player.route == "dom") {
 				writeMed("images/real/jean/profile1.jpg");
 			}
 			else {
@@ -3380,7 +3379,7 @@ function writeScene(scene) {
 			}
 			generateGallery('sister');
 			//List friend's scenes
-			if (data.story.route == "dom") {
+			if (data.player.route == "dom") {
 				writeMed("images/real/riley/profile1.jpg");
 			}
 			else {
@@ -3388,7 +3387,7 @@ function writeScene(scene) {
 			}
 			generateGallery('friend');
 			//List teacher's scenes
-			if (data.story.route == "dom") {
+			if (data.player.route == "dom") {
 				writeMed("images/real/kendra/profile1.jpg");
 			}
 			else {
@@ -3396,7 +3395,7 @@ function writeScene(scene) {
 			}
 			generateGallery('teacher');
 			//List chef's scenes
-			if (data.story.route == "dom") {
+			if (data.player.route == "dom") {
 				writeMed("images/real/ava/profile1.jpg");
 			}
 			else {
@@ -3404,7 +3403,7 @@ function writeScene(scene) {
 			}
 			generateGallery('chef');
 			//List office's scenes
-			if (data.story.route == "dom") {
+			if (data.player.route == "dom") {
 				writeMed("images/real/alexis/profile1.jpg");
 			}
 			else {
@@ -3420,7 +3419,7 @@ function writeScene(scene) {
 			break;
 		}
 		case "ending": {
-			if (data.story.route == "dom") {
+			if (data.player.route == "dom") {
 				endingChoices = {family: 1, friend: 1, teacher: 1, chef: 1, office: 1, sub: 0,}
 				writeMed("images/real/lisa/profile1.jpg");
 				document.getElementById('output').innerHTML += `
@@ -3428,10 +3427,10 @@ function writeScene(scene) {
 					<button type="button" id="familyButton2" onclick="changeEnding('family', 2)">LOCKED</button>
 					<button type="button" id="familyButton3" onclick="changeEnding('family', 3)">LOCKED</button>
 				`;
-				if (data.story.motherScore > 2 && data.story.sisterScore > 2) {
+				if (checkTrust('mom') > 2 && checkTrust('sister') > 2) {
 					document.getElementById('familyButton2').innerHTML = 'Stress Relief Sister';
 					endingsLocked.family2 = false;
-					if (data.story.motherScore > 3 && data.story.sisterScore > 3) {
+					if (checkTrust('mom') > 3 && checkTrust('sister') > 3) {
 						document.getElementById('familyButton3').innerHTML = 'Camwhore Mother';
 						endingsLocked.family3 = false;
 					}
@@ -4062,7 +4061,7 @@ function writeScene(scene) {
 			break;
 		}
 		case "endMorning": {
-			writeBig("images/real/locations/schoolClassroom.jpg");
+			writeBig("images/real/locations/school.jpg");
 			writeText("...");
 			writeTransition("endKendra", "Speak with Kendra");
 			writeTransition("endSchool", "Finish classes");
@@ -4755,7 +4754,7 @@ function writeEvent(scene) {
 	switch (scene) {
 		//Dom route
 		case "mom1": {
-			if (data.story.route == "dom") {
+			if (data.player.route == "dom") {
 				writeText("You awaken in the morning, eager to appreciate the fruits of your labor. You walk out of your room, eager to see your mother transformed into the sex-fiend of your dreams, but you stop in your tracks as you walk past her room. Her door is cracked slightly open.");
 				writeBig("images/real/general/solo2.gif");
 				writeText("Still laying in bed well into the morning, your mother is rubbing at her pussy. The wet spot on her sheets leads you to believe she's been at it for quite a while now. Her moans have a tinge of panic to them as she rolls onto her side.");
