@@ -105,7 +105,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 
 var eventArray = [
 	{index: "swimmer2b", name: "Surprise!"},
-	{index: "placeholder", name: "Event Name"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -122,7 +121,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/swimmer/2b2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("swimmer", "", "You really were blessed with a gift here.");
 			writeSpeech("player", "", "Goddamn it! Listen to me. This is all kinds of inappropriate, so please-");
-			writeSpeech("swimmer", "", "Oh come <i>oooonn</i> playerT playerL! You fucked sportsF! I saw it. I could go and tell the principal... Or... Well, this sounds way more fun, right?");
+			writeSpeech("swimmer", "", "Oh come <i>oooonn</i> playerT playerF! You fucked sportsF! I saw it. I could go and tell the principal... Or... Well, this sounds way more fun, right?");
 			writeText("She starts to lick as you try to keep your voice level. You can make this work. Just gotta think on your feet.");
 			writeSpeech("player", "", "Fuck it! Fine!");
 			writeSpeech("swimmer", "", "Fuck yes!");
@@ -149,7 +148,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("swimmerF starts to try and go deeper, every time causing her to gag more and more. On the positive side, the gagging and squeezing around your cock feels much better than her amateurish tongue work.");
 			writeText("And you still need to figure out how to turn this around... Maybe time for a hail Mary.");
 			writeSpeech("player", "", "For the love of... Look, swimmerF, tell you what. Fine. You don't tell anyone about what I'm doing on the side, and I'll fuck you. But for the love of all that is holy, <i>watch your teeth</i>.");
-			writeText("swimmer pops herself off of you, rubbing her jaw with one hand and idly rubbing your cock with the other.");
+			writeText("swimmerF pops herself off of you, rubbing her jaw with one hand and idly rubbing your cock with the other.");
 			writeSpeech("swimmer", "", "<b>Seriously?!</b> Hell yes! That's what I'm talking about!");
 			writeSpeech("swimmer", "", "So how are we gonna... I mean, how should I... I mean, you should... I...");
 			writeText("She's flailing. It's pretty obvious she didn't think this far ahead.");
@@ -254,7 +253,7 @@ function writeEvent(name) { //Plays the actual event.
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
 	{index: "swimmerreward", trust: 51,},
-	{index: "swimmersphone1", trust: 40,},
+	{index: "swimmerphone1", trust: 40,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event

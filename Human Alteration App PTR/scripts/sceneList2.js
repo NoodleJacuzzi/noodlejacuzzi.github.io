@@ -468,7 +468,7 @@ function writeScene(scene) {
 		}
 		//Mom corruption
 		case "momCorruptionHub": {
-			writeBig("scripts/gamefiles/profiles/mom"+checkOutfit('mom')+".jpg");
+			outfitGeneration('mom');
 			if (checkFlag('mom', 'ready') == false) {
 				switch (checkTrust('mom')) {
 					case 1: {

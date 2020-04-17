@@ -929,6 +929,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You sharply pull away.");
 			writeSpeech("player","","Yes?");
 			writeSpeech("meji","","Y-Yes <i>*Sir!</i>");
+			writeSpeech("player","","Two, and you're getting closer. Much, <i>much</i> closer to finishing, to cumming from nothing but your chest.");
+			writeText("He lets out a few gasping pants, just as you press your lips to his ear.");
 			writeSpeech("player","","One.");
 			writeText("You reach towards his chest, pinches his nipples almost roughly and pulling.");
 			writeSpeech("meji","","Oh holy <i>FUCK~</i>");
@@ -961,7 +963,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You lean forward, your lips gently brushing against his ear as you speak.");
 			writeSpeech("player","","Then say it.");
 
-			writeSpeech("meji","","Y-Yes *Sir! Please, fill my ass with fat fucking cock~! <i>Use my ass until you cum!</i>");
+			writeSpeech("meji","","Y-Yes *Sir! Please, fill my ass with your fat fucking cock~! <i>Use my ass until you cum!</i>");
 			writeSpeech("player","","Very good.");
 			writeText("Without another moment of hesitation, you slide your body forward, feeling his body shake gently as you push into him and spread his ass with you cock.");
 			writeSpeech("meji","","God, yes~! Thank you so much, *Sir~!");
@@ -1076,7 +1078,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","Actually I was curious if you had any plans for the future, after college.");
 			if(checkFlag('meji','willful')){
 				writeText("He chuckles abashedly, scratching the back of his head.");
-				writeSpeech("meji","","Oof. Gotta hit me where it hurts, huh? But I guess you are a counselor. I had some thoughts about it recently, but how about we chat in your office?");
+				writeSpeech("meji","","Oof. Gotta hit me where it hurts, huh? But I guess you are a counselor, and I have had some thoughts about it recently. How about we chat in your office?");
 				writeSpeech("player","","Sure.");
 				writeText("...");
 				writeText("When he enters the office, he reflexively checks the lock before sitting down.");
@@ -1088,7 +1090,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("player","","And when you say <i>'work for me,'</i> you mean...?");
 				writeSpeech("meji","","Both elements, actually. I don't know what I want to do for the <i>long</i> long-term, but getting a job here and helping you with counseling seems like a good job with great company.");
 				writeSpeech("meji","","...Plus, call me a total perv, but I may or may not have fantasized about helping you do your hypno thing to other guys. I think the idea of you having a harem of dudes where I'm the top-bitch is just a solid life goal, really.");
-				writeSpeech("player","","Well... that's not really a bad idea. I'm a fairly ambitious guy, so getting some help for the long-run might pay off, and you're definitely good company to have.");
+				writeSpeech("player","","Well... that's not really a bad idea. I do have some fairly ambitious plans for the future, so getting some help for the long-run might pay off, and you're definitely good company to have.");
 				writeSpeech("meji","","For things like the upcoming PTA meeting, yeah.");
 				writeSpeech("player","","...Wait, the what?");
 				writeText("mejiF pauses.");
@@ -1514,6 +1516,8 @@ function writeEvent(name) { //Plays the actual event.
 			break;
 		}
 		case "meji5" : {
+			if(data.player.location == 'gallery')
+				document.getElementById('output').innerHTML = '';
 			if (data.player.location != 'gallery' && (checkTrust('meji') == 26 || checkTrust('meji') == 46) && (checkFlag('meji','submissive') == false || checkFlag('meji','willful') == false)) {
 				writeText("mejiF grins as he raises his free hand to his shirt.");
 				writeSpeech("meji","","I was hoping I'd get to show you this soon. See, I recently saved up just enough cash to pick up something I think we'll <i>both</i> enjoy...");
@@ -1692,9 +1696,10 @@ function writeEvent(name) { //Plays the actual event.
 				writeSpeech("meji","","I love it... <i>M-Mistress...</i>");
 			writeText("His breathing levels out quickly, meaning that he fell asleep. Not that you can blame him, given the hypnosis treatment.");
 			writeSpeech("player","","...Well, might as well clean up. Hope he doesn't mind me using one of his towels to wipe him off...");
-			if(data.player.location != "gallery")
+			if(data.player.location != "gallery"){
 				data.player.location = "vintageStreet";
-			writeFunction("changeLocation(data.player.location)", "Finish");
+				writeFunction("changeLocation(data.player.location)", "Finish");
+			}
 			break;
 		}
 		case "meji8" : {
