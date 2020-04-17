@@ -8,11 +8,13 @@ var data = {
 	player: {
 		name: "You",
 		body: "null",
+		pronoun: "man",
 		image: "",
 		clothing: "menShorts",
 		underwear: "nothing",
 		version: 1,
 		currentScene: "start",
+		location: "",
 		time: "Evening",
 		money: 20,
 		route: "dom",
@@ -615,12 +617,12 @@ var logbookArray = [
 	{
 		index: "bully", 
 		desc: "N/A",
-		color: "#FFD800",
+		color: "#CCB982",
 	},
 	{
 		index: "camboi", 
 		desc: "N/A",
-		color: "#2D70FF",
+		color: "#7D8790",
 	},
 	{
 		index: "neighbor", 
@@ -639,43 +641,50 @@ var menuArray = [
 ];
 
 var encounterArray = [
-	{character: "mom", index: "", text: "momF trust 0", requirements: "?trust mom 0;", altName: "", altImage: "", altColor: "", type: "button", top: 0, left: 0,},
+	//character: "mom", index: "", text: "momF trust 0", requirements: "?trust mom 0;", altName: "", altImage: "", altColor: "", type: "button", top: 0, left: 0,},
+	{character: "exotic", index: "", text: "Enter the Exotic Shop", requirements: "?location streets;", altName: "Adriana", altImage: "scripts/gamefiles/profiles/exoticSub.jpg", altColor: "",},
+	{character: "candy", index: "", text: "Enter the Candy Shop", requirements: "?location streets;", altName: "Jynx", altImage: "scripts/gamefiles/profiles/candySub.jpg", altColor: "",},
+	{character: "friend", index: "", text: "friendF is here", requirements: "?location school;", altName: "", altImage: "", altColor: "",},
+	{character: "bully", index: "", text: "Lexi is here", requirements: "?location school;", altName: "Lexi", altImage: "", altColor: "",},
+	{character: "bully", index: "", text: "Lexi is working today", requirements: "?location streets;", altName: "Lexi", altImage: "scripts/gamefiles/profiles/bullySub.jpg", altColor: "",},
+	{character: "camboi", index: "", text: "Avery is streaming today", requirements: "?location homePlayerRoom;", altName: "Avery", altImage: "", altColor: "",},
+	//character: "evil", index: "", text: "Enter the 'Beauty Salon'", requirements: "?location streets;", altName: "???", altImage: "", altColor: "",},
 ];
 
 var locationArray = [
 	{index: "homeFoyer", buttons: [
-		{name: "Your Room", top: 50, left: 50, type: "location", target: "homePlayerRoom", time: "Evening",},
-		{name: "sisterF's Room", top: 40, left: 40, type: "location", target: "homeSisterRoom", time: "Evening",},
-		{name: "Head Out", top: 30, left: 30, type: "location", target: "alleyway", time: "Evening",},
+		{name: "Your Room", top: 55, left: 80, type: "location", target: "homePlayerRoom", time: "Evening",},
+		{name: "sisterF's Room", top: 40, left: 3, type: "location", target: "homeSisterRoom", time: "Evening",},
+		{name: "Head Out", top: 40, left: 70, type: "location", target: "alleyway", time: "Evening",},
 	],},
 	{index: "homePlayerRoom", buttons: [
-		{name: "Leave the Room", top: 50, left: 50, type: "location", target: "homeFoyer", time: "Evening",},
+		{name: "Leave the Room", top: 80, left: 40, type: "location", target: "homeFoyer", time: "Evening",},
 	],},
 	{index: "homeGameRoom", buttons: [
-		{name: "Leave the Room", top: 50, left: 50, type: "location", target: "homeFoyer", time: "Evening",},
+		{name: "Leave the Room", top: 80, left: 40, type: "location", target: "homeFoyer", time: "Evening",},
 	],},
 	{index: "homeSisterRoom", buttons: [
-		{name: "Leave the Room", top: 50, left: 50, type: "location", target: "homeFoyer", time: "Evening",},
+		{name: "Leave the Room", top: 80, left: 40, type: "location", target: "homeFoyer", time: "Evening",},
 	],},
 	{index: "streets", buttons: [
-		{name: "Alleyway Shortcut", top: 50, left: 50, type: "location", target: "alleyway", time: "Evening",},
-		{name: "chefF's Cafe", top: 40, left: 40, type: "location", target: "restaurant", time: "Evening",},
-		{name: "Head to School", top: 30, left: 30, type: "location", target: "school", time: "Evening",},
+		{name: "Alleyway Shortcut", top: 40, left: 38, type: "location", target: "alleyway", time: "Evening",},
+		{name: "chefF's Cafe", top: 50, left: 10, type: "location", target: "restaurant", time: "Evening",},
+		{name: "Head to School", top: 80, left: 40, type: "location", target: "school", time: "Evening",},
 	],},
 	{index: "alleyway", buttons: [
-		{name: "Head Home", top: 50, left: 50, type: "location", target: "homeFoyer", time: "Evening",},
-		{name: "Back to the Streets", top: 40, left: 40, type: "location", target: "streets", time: "Evening",},
+		{name: "Head Home", top: 40, left: 40, type: "location", target: "homeFoyer", time: "Evening",},
+		{name: "Back to the Streets", top: 80, left: 37, type: "location", target: "streets", time: "Evening",},
 	],},
 	{index: "restaurant", buttons: [
 		{name: "Back to the Streets", top: 50, left: 50, type: "location", target: "streets", time: "Evening",},
 	],},
 	{index: "school", buttons: [
-		{name: "Your Classroom", top: 50, left: 50, type: "location", target: "classroom", time: "Evening",},
+		{name: "Your Classroom", top: 80, left: 38, type: "location", target: "classroom", time: "Evening",},
 		{name: "Leave School", top: 40, left: 40, type: "location", target: "streets", time: "Evening",},
 	],},
 	{index: "classroom", buttons: [
-		{name: "Leave Class", top: 50, left: 50, type: "location", target: "school", time: "Evening",},
-		{name: "Head Straight Home", top: 40, left: 40, type: "location", target: "homeFoyer", time: "Evening",},
+		{name: "Leave Class", top: 80, left: 40, type: "location", target: "school", time: "Evening",},
+		{name: "Head Straight Home", top: 80, left: 5, type: "location", target: "homeFoyer", time: "Evening",},
 	],},
 ];
 
@@ -775,8 +784,6 @@ function generateHTML() {
 			</div>
 		</div>
 		<div id="openButton" class="openButton" onclick="openButton()">></div>
-		<div id = "windowHolder" class = "windowHolder">
-		</div>
 		<div id = "wrapper" class = "wrapper">
 			<div id="wrapperBG"></div>
 			<div id = "output" class = "output">
@@ -784,6 +791,8 @@ function generateHTML() {
 			</div>
 			<div id="footer" class="footer">
 			</div>
+		</div>
+		<div id = "windowHolder" class = "windowHolder">
 		</div>
 	`;
 	updateMenu();
@@ -937,6 +946,24 @@ function replaceCodenames(text) {
 			while (text.includes('*BOY') == true) {
 			text = text.replace('*BOY', 'BOY');
 			}
+			while (text.includes('*brother') == true) {
+			text = text.replace('*brother', 'brother');
+			}
+			while (text.includes('*Brother') == true) {
+			text = text.replace('*Brother', 'Brother');
+			}
+			while (text.includes('*BROTHER') == true) {
+			text = text.replace('*BROTHER', 'BROTHER');
+			}
+			while (text.includes('*bro') == true) {
+			text = text.replace('*bro', 'bro');
+			}
+			while (text.includes('*Bro') == true) {
+			text = text.replace('*Bro', 'Bro');
+			}
+			while (text.includes('*BRO') == true) {
+			text = text.replace('*BRO', 'BRO');
+			}
 			while (text.includes('*guy') == true) {
 			text = text.replace('*guy', 'guy');
 			}
@@ -1038,6 +1065,24 @@ function replaceCodenames(text) {
 			}
 			while (text.includes('*BOY') == true) {
 			text = text.replace('*BOY', 'GIRL');
+			}
+			while (text.includes('*brother') == true) {
+			text = text.replace('*brother', 'sister');
+			}
+			while (text.includes('*Brother') == true) {
+			text = text.replace('*Brother', 'Sister');
+			}
+			while (text.includes('*BROTHER') == true) {
+			text = text.replace('*BROTHER', 'SISTER');
+			}
+			while (text.includes('*bro') == true) {
+			text = text.replace('*bro', 'sis');
+			}
+			while (text.includes('*Bro') == true) {
+			text = text.replace('*Bro', 'Sis');
+			}
+			while (text.includes('*BRO') == true) {
+			text = text.replace('*BRO', 'SIS');
 			}
 			while (text.includes('*guy') == true) {
 			text = text.replace('*guy', 'girl');
@@ -1393,6 +1438,7 @@ function changeLocation(n) {
 		checkForEncounters();
 		//writeScene(n);
 	}
+	saveSlot(10);
 }
 
 function changeBG(n) {
@@ -1583,7 +1629,7 @@ function printFunctionButton(type, name, top, left, target) {
 		default: {
 			document.getElementsByClassName('playerRoom')[0].innerHTML += `
 				<div class="pictureButton" onclick='`+func+target+`")'
-				style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+name+`</div>
+				style="top: `+top+`%; left: `+left+`%; max-width: 30%;">`+replaceCodenames(name)+`</div>
 			`;
 		}
 	}
@@ -1626,10 +1672,10 @@ function checkForEncounters() {
 }
 
 function printEncounterTab(character, scene, text, altName, altImage, altColor) {
-	console.log("Now generating tab for " + name + ", linking to scene " + scene + " with the text " + text + " " +altImage);
-	writeSpeech(character, "", `
+	console.log("Now generating tab for " + character + ", linking to scene " + scene + " with the text " + text + " " +altImage);
+	writeSpeech(character, altImage, `
 	<p class="switch" onclick="sceneTransition('`+scene+`')">` + replaceCodenames(text) + `</p>`,
-	altName, altImage, altColor);
+	altName, altColor);
 }
 
 function writeHTML(text) {
@@ -1836,17 +1882,6 @@ function writeSpeech (name, img, text, altName, altColor) {
 	var finalColor = "";
 	var checkForError = "";
 	//If the player is using a shortcut...
-	if (img == "") {
-		finalImg = "images/"+name+"/"+name+".jpg";
-	}
-	else {
-		if (img.includes("images") != true) {
-			finalImg = "images/"+name+"/"+img;
-		}
-		else {
-			finalImg = img;
-		}
-	}
 	//Check for pervert mode
 	if (data.player.pervert == true) {
 		var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+name+`P.jpg'"`;
@@ -1862,7 +1897,12 @@ function writeSpeech (name, img, text, altName, altColor) {
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].index == name) {
 			finalName = data.story[i].name;
-			finalImg = "scripts/gamefiles/profiles/"+name+data.story[i].outfit+".jpg";
+			if (img == "") {
+				finalImg = "scripts/gamefiles/profiles/"+name+data.story[i].outfit+".jpg";
+			}
+			else {
+				finalImg = img;
+			}
 		}
 	}
 	for (i = 0; i < logbookArray.length; i++) {
@@ -2299,6 +2339,17 @@ function updateMenu() {
 function changeBody(n) {
 	data.player.body = n;
 	changeImage("");
+	switch (n) {
+		case "man": 
+			data.player.pronoun = "man";
+		break;
+		case "sissy": 
+			data.player.pronoun = "woman";
+		break;
+		case "trans": 
+			data.player.pronoun = "woman";
+		break;
+	}
 }
 
 function changeImage(n) {
@@ -2357,7 +2408,12 @@ function loadSlot(slot) {
 	data = localStorage.getItem(saveName);
 	data = JSON.parse(data);
 	console.log("loaded data");
-	sceneTransition(data.player.currentScene);
+	if (data.player.location == "") {
+		sceneTransition(data.player.currentScene);
+	}
+	else {
+		changeLocation(data.player.location);
+	}
 	updateSave();
 	deleteWindow();
 }
@@ -2531,11 +2587,13 @@ function updateSave() {
 			player: {
 				name: "You",
 				body: "male",
+				pronoun: "man",
 				image: "",
 				clothing: "menShorts",
 				underwear: "boxers",
 				version: 1,
 				currentScene: "start",
+				location: "",
 				time: "Afternoon",
 				money: 20,
 				route: "dom",
@@ -2610,6 +2668,7 @@ function updateSave() {
 			break;
 			case 3: 
 				newSaveContainer.player.body = "trans";
+				newSaveContainer.player.pronoun = "woman";
 				newSaveContainer.player.clothing = "blue";
 				newSaveContainer.player.underwear = "regular7";
 			break;
@@ -3186,7 +3245,7 @@ function purchase(index, price) {
 		updateMenu();
 		buyItem(index);
 	}
-	sceneTransition(data.player.currentScene);
+	changeLocation(data.player.location);
 }
 
 function buyItem(index) {

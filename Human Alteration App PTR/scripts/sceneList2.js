@@ -236,7 +236,7 @@ function writeScene(scene) {
 			writeSpecial("You've finished 80% of the terms of service!");
 			writeText("You plug in your phone as a low battery message pops up. You'd forgotten to charge it once you got home.");
 			writeText("The caffeine isn't enough any more. You're four-fifths of the way through, but it feels like you're bashing your head against a brick wall. Your sister was always the better one at studying. Speaking of which, there's a knock at the door.");
-			writeSpeech("sister", "", "The bathroom's open for your shower. You doing alright?");
+			writeSpeech("sister", "", "The bathroom's open for your shower. You doing alright *bro?");
 			writeText("Maybe a bath would give you the energy you need to finish this. You'd need to leave your phone here to charge though. Of course, you could just keep going.");
 			writeTransition("takeBreak", "Take a break to bathe");
 			writeTransition("powerThrough", "Power through");
