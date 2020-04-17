@@ -839,6 +839,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "meji9" : {
 			document.getElementById('output').innerHTML = '';
+			passTime();
 			setTrust('meji',65);
 			writeSpeech("player","","Do you happen to have any women's workout shorts?");
 			if(checkFlag('meji','willful')){
@@ -1120,7 +1121,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("meji","","Both the actual counseling part, and the... <i>lewd</i> parts.");
 				writeText("His face flushes a bit, but he stays focused.");
 				writeSpeech("meji","","I don't know if it's necessarily something I'd want to do forever, but getting a job here and helping you with counseling seems like a good job with great company.");
-				if(checkTrust('tomgirl') >= 100){
+				if(checkTrust('tomgirl') >= 100)
 					writeSpeech("meji","","...And I may or may not have fantasized about helping you do your hypno thing to other guys. I do know about tomgirlF, at least - he hasn't been very subtle since getting back.");
 				else
 					writeSpeech("meji","","...And I may or may not have fantasized about helping you do your hypno thing to other guys.");
@@ -1148,7 +1149,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("...");
 			writeText("The two of you spend a while discussing class schedules and the optimal amount of free time to be spent on convincing boys to join your harem before heading your separate way for the day.");
 			writeFunction("changeLocation(data.player.location)", "Finish up");
-			}
 			break;
 		}
 		case "meji11" : {
@@ -1156,7 +1156,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("meji","","Pretty good, aside from upcoming exams anyway. Nothing new to report by the way - none of the students seem to know much about the PTA meeting. And I actually have to study today, so...");
 			writeSpeech("player","","That's fine. Good luck with your exams - you've got this.");
 			writeText("He blushes slightly and nods before heading off to another class.");
-			writeSpecial("You've finished all content for mejiF for this update!");
+			writeSpecial("You've finished all content for mejiF for this version!");
 			writeFunction("changeLocation(data.player.location)", "Go back");
 			break;
 		}
@@ -1891,7 +1891,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "mejiReward", trust: 62,},
+	{index: "mejiReward", trust: 100,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
