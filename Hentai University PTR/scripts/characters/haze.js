@@ -22,6 +22,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "haze0B", name: "You're feeling a bit tired again. If you went back to sleep, you might have that dream about haze again...", location: 'playerHouse', time: "Morning", itemReq: "", trustMin: 20, trustMax: 20, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 	//{index: "haze2", name: "TEST: If you laid back down in bed, you could probably visit haze again.", location: 'playerHouse', time: "Morning", itemReq: "", trustMin: 40, trustMax: 40, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 	{index: "haze2", name: "Despite there being nothing here, you can sense that if you focused on haze in your mind, a door would appear...", location: 'playerHouse', time: "Morning", itemReq: "", trustMin: 40, trustMax: 40, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	{index: "haze3", name: "You could focus on going under and speaking with haze if you wanted...", location: 'playerHouse', time: "Morning", itemReq: "", trustMin: 60, trustMax: 60, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -227,7 +228,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","I can't stop...!");
 			writeText("More and more cum spurts out, your body tensing up as cum rope after rope, covering her hair and hand for what feels like minutes before she finally lets out a gentle giggle.");
 			writeSpeech("haze","","Haah~ Jeez, you really are something, aren't you playerF?");
-			writeBig("images/1-6.jpg","Art by Purple Haze");
+			writeBig("images/haze/1-6.jpg","Art by Purple Haze");
 			writeSpeech("haze","","This is totally my favorite part~");
 			writeText("Pulling away from you, your breathing heavy, she uses her hands to pick up as much cum as she can with one hand, and starts licking it up.");
 			writeSpeech("haze","","Mmn~!");
@@ -727,6 +728,16 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("writeEncounter('hazeStory')", "Go back");
 			break;
 		}
+		case "haze3" : {
+			writeText("As you focus, your mind lingers fixates for a few seconds on the idea of the door, the sensation of your body getting heavier weighing you down...");
+			writeText("And when you 'open' your eyes, it's to the familiar sight of the pink void and the just-as-pink dream demon.");
+			writeSpeech("haze","","Heya. You here for a bit of fun, hun~? I don't have another form quite ready for you yet, but I'm up for a bit of play like this~!");
+			writeSpecial("You've finished all content for hazeF for this version.");
+			writeFunction("writeEvent('haze1C')", "Fuck her as she is again");
+			writeFunction("writeEncounter('hazeStory')", "Chat with her");
+			writeFunction("changeLocation(data.player.location)", "Leave");
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -852,7 +863,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "hazeReward": {
 			writePhoneImage("images/haze/fin.jpg", "Art by Purple Haze");
-			writePhoneSpeech("haze", "", "You've finished all of hazeF's content for this version, congratulations!");
+			writePhoneSpeech("haze", "", "You've finished all of hazeF's content for this version, congratulations! You can return to hazeF to see the other option for the sex scene.");
 			break;
 		}
 		default: {
