@@ -1516,8 +1516,12 @@ function writeEvent(name) { //Plays the actual event.
 			break;
 		}
 		case "meji5" : {
-			if(data.player.location == 'gallery')
+			if(data.player.location == 'gallery' && checkFlag('meji','Intro') != true){
 				document.getElementById('output').innerHTML = '';
+			}
+			else{
+				removeFlag('meji','Intro');
+			}
 			if (data.player.location != 'gallery' && (checkTrust('meji') == 26 || checkTrust('meji') == 46) && (checkFlag('meji','submissive') == false || checkFlag('meji','willful') == false)) {
 				writeText("mejiF grins as he raises his free hand to his shirt.");
 				writeSpeech("meji","","I was hoping I'd get to show you this soon. See, I recently saved up just enough cash to pick up something I think we'll <i>both</i> enjoy...");
@@ -1584,8 +1588,11 @@ function writeEvent(name) { //Plays the actual event.
 			break;
 		}
 		case "meji6" : {
-			if(data.player.location == "gallery")
+			if(data.player.location == "gallery"){
 				document.getElementById('output').innerHTML = '';
+				if(checkFlag('meji','Intro') != true)
+					addFlag('meji','Intro');
+			}
 			writeBig("images/meji/8-1.jpg","Art by Nagi Ichi");
 			writeSpeech("meji","","Do you like it? I've been wearing it under my uniform lately... including in your office back then.");
 			writeSpeech("player","","I'd say it looks nice, but I feel like you're not looking for a <i>verbal</i> reply.");
