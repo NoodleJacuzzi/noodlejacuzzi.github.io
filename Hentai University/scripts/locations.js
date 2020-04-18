@@ -1,88 +1,88 @@
 var locationArray = [
-	{index: "playerHouse", buttons: [
+	{index: "playerHouse", name: "Your House", buttons: [
 		{name: "Leave the Apartment", top: 79, left: 20, type: "location", target: "apartmentOutside", time: "MorningEvening",},
 		{name: "Head Straight to Work", top: 79, left: 50, type: "location", target: "playerOffice", time: "MorningEvening",},
 	],},
-	{index: "street", buttons: [
+	{index: "street", name: "Streets", buttons: [
 		{name: "Go Home", top: 80, left: 33, type: "location", target: "apartmentOutside", time: "MorningEvening",},
 		{name: "University", top: 60, left: 42, type: "location", target: "schoolEntrance", time: "MorningEvening",},
 		{name: "Park District", top: 80, left: 70, type: "location", target: "parkDistrict", time: "MorningEvening",},
 		{name: "Vintage Street", top: 58, left: 70, type: "location", target: "vintageStreet", time: "MorningEvening",},
 		{name: "Shopping District", top: 60, left: 0, type: "location", target: "shoppingDistrict", time: "MorningEvening",},
 	],},
-	{index: "apartmentOutside", buttons: [
+	{index: "apartmentOutside", name: "Outside Your Apartment", buttons: [
 		{name: "Your Home", top: 55, left: 65, type: "location", target: "playerHouse", time: "MorningEvening",},
 		{name: "Head into Town", top: 50, left: 28, type: "location", target: "street", time: "MorningEvening",},
 	],},
-	{index: "schoolEntrance", buttons: [
+	{index: "schoolEntrance", name: "School Entrance", buttons: [
 		{name: "Head into Town", top: 50, left: 25, type: "location", target: "street", time: "MorningEvening",},
 		{name: "Upper Floor", top: 50, left: 65, type: "location", target: "northHallway", time: "MorningEvening",},
 		{name: "West Hallway", top: 79, left: 2, type: "location", target: "westHallway", time: "MorningEvening",},
 		{name: "East Hallway", top: 79, left: 70, type: "location", target: "eastHallway", time: "MorningEvening",},
 	],},
-	{index: "northHallway", buttons: [
+	{index: "northHallway", name: "Upper Floor", buttons: [
 		{name: "Your Office", top: 70, left: 70, type: "location", target: "playerOffice", time: "MorningEvening",},
 		{name: "Teacher's Lounge", top: 45, left: 70, type: "location", target: "teacherLounge", time: "MorningEvening",},
 		{name: "Stairs to the Roof", top: 40, left: 40, type: "location", target: "roof", time: "MorningEvening",},
 		{name: "School Entrance", top: 79, left: 40, type: "location", target: "schoolEntrance", time: "MorningEvening",},
 	],},
-	{index: "westHallway", buttons: [
+	{index: "westHallway", name: "West Hallway", buttons: [
 		{name: "Classroom A", top: 50, left: 70, type: "location", target: "classroomA", time: "MorningEvening",},
 		{name: "Library", top: 47, left: 50, type: "location", target: "library", time: "MorningEvening",},
 		{name: "Cafeteria", top: 60, left: 37, type: "location", target: "cafeteria", time: "MorningEvening",},
 		{name: "School Entrance", top: 79, left: 35, type: "location", target: "schoolEntrance", time: "MorningEvening",},
 	],},
-	{index: "eastHallway", buttons: [
+	{index: "eastHallway", name: "East Hallway", buttons: [
 		{name: "Classroom B", top: 50, left: 15, type: "location", target: "classroomB", time: "MorningEvening",},
 		{name: "Computer Room", top: 50, left: 45, type: "location", target: "computerRoom", time: "MorningEvening",},
 		{name: "Gym", top: 45, left: 75, type: "location", target: "gym", time: "MorningEvening",},
 		{name: "School Entrance", top: 79, left: 70, type: "location", target: "schoolEntrance", time: "MorningEvening",},
 	],},
-	{index: "playerOffice", buttons: [
+	{index: "playerOffice", name: "Your Office", buttons: [
 		{name: "Back to the Hallway", top: 79, left: 35, type: "location", target: "northHallway", time: "MorningEvening",},
 		{name: "Go Back Home", top: 25, left: 41, type: "location", target: "playerHouse", time: "MorningEvening",},
 	],},
-	{index: "teacherLounge", buttons: [
+	{index: "teacherLounge", name: "Teacher's Lounge", buttons: [
 		{name: "Back to the Hallway", top: 79, left: 35, type: "location", target: "northHallway", time: "MorningEvening",},
 	],},
-	{index: "roof", buttons: [
+	{index: "roof", name: "School Rooftop", buttons: [
 		{name: "Back to the Hallway", top: 35, left: 30, type: "location", target: "northHallway", time: "MorningEvening",},
 	],},
-	{index: "classroomA", buttons: [
+	{index: "classroomA", name: "Classroom A", buttons: [
 		{name: "West Hallway", top: 30, left: 45, type: "location", target: "westHallway", time: "MorningEvening",},
 	],},
-	{index: "library", buttons: [
+	{index: "library", name: "Library", buttons: [
 		{name: "West Hallway", top: 79, left: 45, type: "location", target: "westHallway", time: "MorningEvening",},
 	],},
-	{index: "cafeteria", buttons: [
+	{index: "cafeteria", name: "Cafeteria", buttons: [
 		{name: "West Hallway", top: 79, left: 45, type: "location", target: "westHallway", time: "MorningEvening",},
 	],},
-	{index: "classroomB", buttons: [
+	{index: "classroomB", name: "Classroom B", buttons: [
 		{name: "East Hallway", top: 79, left: 65, type: "location", target: "eastHallway", time: "MorningEvening",},
 	],},
-	{index: "gym", buttons: [
+	{index: "gym", name: "School Gym", buttons: [
 		{name: "East Hallway", top: 39, left: 0, type: "location", target: "eastHallway", time: "MorningEvening",},
 	],},
-	{index: "computerRoom", buttons: [
+	{index: "computerRoom", name: "Computer Room", buttons: [
 		{name: "East Hallway", top: 79, left: 35, type: "location", target: "eastHallway", time: "MorningEvening",},
 	],},
-	{index: "vintageStreet", buttons: [
+	{index: "vintageStreet", name: "Vintage Street", buttons: [
 		{name: "Back into Town", top: 79, left: 0, type: "location", target: "street", time: "MorningEvening",},
 	],},
-	{index: "parkDistrict", buttons: [
+	{index: "parkDistrict", name: "Park District", buttons: [
 		{name: "Back into Town", top: 79, left: 40, type: "location", target: "street", time: "MorningEvening",},
 	],},
-	{index: "shoppingDistrict", buttons: [
+	{index: "shoppingDistrict", name: "Shopping District", buttons: [
 		{name: "Back into Town", top: 79, left: 0, type: "location", target: "street", time: "MorningEvening",},
 	],},
-	{index: "store", buttons: [
+	{index: "store", name: "General Store", buttons: [
 		{name: "Go Outside", top: 30, left: 25, type: "location", target: "shoppingDistrict", time: "MorningEvening",},
 	],},
-	{index: "casino", buttons: [
+	{index: "casino", name: "Dream Casino", buttons: [
 	],},
-	{index: "beach", buttons: [
+	{index: "beach", name: "Dream Beach", buttons: [
 	],},
-	{index: "map", buttons: [
+	{index: "map", name: "Town Map", buttons: [
 		{name: "University", top: 35, left: 23, type: "location", target: "schoolMap", time: "MorningEvening",},
 		{name: "Streets", top: 55, left: 40, type: "location", target: "street", time: "MorningEvening",},
 		{name: "Your Home", top: 45, left: 70, type: "location", target: "playerHouse", time: "MorningEvening",},
@@ -90,7 +90,7 @@ var locationArray = [
 		{name: "Vintage Street", top: 10, left: 30, type: "location", target: "vintageStreet", time: "MorningEvening",},
 		{name: "Park District", top: 65, left: 10, type: "location", target: "parkDistrict", time: "MorningEvening",},
 	],},
-	{index: "schoolMap", buttons: [
+	{index: "schoolMap", name: "School Map", buttons: [
 		{name: "Back to Town", 			top: 82, 	left: 40, 	type: "location", target: "map", time: "MorningEvening",},
 		{name: "School Entrance", 		top: 67, 	left: 40, 	type: "location", target: "schoolEntrance", time: "MorningEvening",},
 		{name: "West Hallway", 			top: 45, 	left: 25, 	type: "location", target: "westHallway", time: "MorningEvening",},
@@ -140,7 +140,7 @@ function changeLocation(n) {
 				</div>
 			`;
 			data.player.location = n;
-			console.log(data.player.location);
+			//console.log(data.player.location);
 			for (i = 0; i < locationArray[locationTarget].buttons.length; i++) {
 				if (locationArray[locationTarget].buttons[i].time.includes(data.player.time)) {
 					printLocationButton(

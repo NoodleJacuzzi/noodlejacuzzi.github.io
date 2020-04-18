@@ -32,28 +32,44 @@ var data = {
 		counseling: 0,
 		lastText: 100,
 		dayID: 1,
-		version: 6,
+		version: 7,
 		location: "",
 		pervert: false,
 		color: "#86b4dc",
 	},
 	story: [
-		{index: "mom", met: false, fName: "Emily", lName: "Smith", trust: 0, encountered: false, textEvent: "", color: "#CCCCCC",},
-		{index: "kuro", met: false, fName: "Steph", lName: "Black", trust: 0, encountered: false, textEvent: "", color: "#fde1a5"},
-		{index: "tomgirl", met: false, fName: "Sam", lName: "White", trust: 0, encountered: false, textEvent: "", color: "#a79e9a"},
-		{index: "purple", met: false, fName: "Mary", lName: "Williams", trust: 0, encountered: false, textEvent: "", color: "#cb86ef"},
-		{index: "chubby", met: false, fName: "Margaret", lName: "Williams", trust: 0, encountered: false, textEvent: "", color: "#da924b"},
-		{index: "maid", met: false, fName: "Lena", lName: "Rogers", trust: 0, encountered: false, textEvent: "", color: "#CCCCCC"},
-		{index: "mistress", met: false, fName: "Anna", lName: "Fletcher", trust: 0, encountered: false, textEvent: "", color: "#ed9082"},
-		{index: "meji", met: false, fName: "Reese", lName: "Kieran", trust: 0, encountered: false, textEvent: "", color: "#7e52a3"},
-		{index: "principal", met: false, fName: "Victoria", lName: "Devons", trust: 0, encountered: false, textEvent: "", color: "#e47311"},
-		{index: "secretary", met: false, fName: "Lisa", lName: "Jones", trust: 0, encountered: false, textEvent: "", color: "#888888"},
-		{index: "neet", met: false, fName: "Tia", lName: "Sun", trust: 0, encountered: false, textEvent: "", color: "#da924b"},
-		{index: "scarf", met: false, fName: "Casandra", lName: "Hamilton", trust: 0, encountered: false, textEvent: "", color: "#954655"},
-		{index: "green", met: false, fName: "Emma", lName: "Hamilton", trust: 0, encountered: false, textEvent: "", color: "#677b4c"},
-		{index: "succubus", fName: "Gou", lName: "", trust: 0, encountered: false, textEvent: "", met: false, color: "#BF76DF"},
-		{index: "nurse", fName: "Justine", lName: "Walton", trust: 0, encountered: false, textEvent: "", met: false, color: "#8D756B"},
-		{index: "housekeep", fName: "Anri", lName: "Ramona", trust: 0, encountered: false, textEvent: "", met: false, color: "#df5877", author: "CryptoGreek", artist: "Kinta no Mousou"},
+		{index: "mom", 			met: false, fName: "Emily", lName: "Smith", 		trust: 0, encountered: false, textEvent: "", color: "#CCCCCC", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false},
+		{index: "kuro", 		met: false, fName: "Steph", lName: "Black", 		trust: 0, encountered: false, textEvent: "", color: "#fde1a5", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false},
+		{index: "tomgirl", 		met: false, fName: "Sam", lName: "White", 			trust: 0, encountered: false, textEvent: "", color: "#a79e9a", author: "NoodleJacuzzi", artist: "Nagi Ichi", textHistory: "", unreadText: false},
+		{index: "purple", 		met: false, fName: "Mary", lName: "Williams", 		trust: 0, encountered: false, textEvent: "", color: "#cb86ef", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false},
+		{index: "chubby", 		met: false, fName: "Margaret", lName: "Williams", 	trust: 0, encountered: false, textEvent: "", color: "#da924b", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false},
+		{index: "maid", 		met: false, fName: "Lena", lName: "Rogers", 		trust: 0, encountered: false, textEvent: "", color: "#CCCCCC", author: "CryptoGreek", artist: "Oreteki18kin", textHistory: "", unreadText: false},
+		{index: "mistress", 	met: false, fName: "Anna", lName: "Fletcher", 		trust: 0, encountered: false, textEvent: "", color: "#ed9082", author: "CryptoGreek", artist: "Oreteki18kin", textHistory: "", unreadText: false},
+		{index: "meji", 		met: false, fName: "Reese", lName: "Kieran", 		trust: 0, encountered: false, textEvent: "", color: "#7e52a3", author: "CryptoGreek", artist: "Nagi Ichi", textHistory: "", unreadText: false},
+		{index: "principal", 	met: false, fName: "Victoria", lName: "Devons", 	trust: 0, encountered: false, textEvent: "", color: "#e47311", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false},
+		{index: "secretary", 	met: false, fName: "Lisa", lName: "Jones", 			trust: 0, encountered: false, textEvent: "", color: "#888888", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false},
+		{index: "neet", 		met: false, fName: "Tia", lName: "Sun", 			trust: 0, encountered: false, textEvent: "", color: "#da924b", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false},
+		{index: "scarf", 		met: false, fName: "Casandra", lName: "Hamilton", 	trust: 0, encountered: false, textEvent: "", color: "#954655", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false},
+		{index: "green", 		met: false, fName: "Emma", lName: "Hamilton", 		trust: 0, encountered: false, textEvent: "", color: "#677b4c", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false},
+		{index: "succubus", 	met: false, fName: "Gou", lName: "", 				trust: 0, encountered: false, textEvent: "", color: "#BF76DF", author: "NoodleJacuzzi", artist: "Gujira 4 Gou", textHistory: "", unreadText: false},
+		{index: "nurse", 		met: false, fName: "Justine", lName: "Walton", 		trust: 0, encountered: false, textEvent: "", color: "#8D756B", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false},
+		{index: "housekeep", 	met: false, fName: "Anri", lName: "Ramona", 		trust: 0, encountered: false, textEvent: "", color: "#df5877", author: "CryptoGreek", artist: "Kinta no Mousou", textHistory: "", unreadText: false},
+		{index: "haze", 		met: false, fName: "Sienna", lName: "", 			trust: 0, encountered: false, textEvent: "", color: "#F683C8", author: "CryptoGreek", artist: "Purple Haze", textHistory: "", unreadText: false,},
+		{index: "nikki", 		met: false, fName: "Nikki", lName: "Hunt", 			trust: 0, encountered: false, textEvent: "", color: "#445B6D", author: "CryptoGreek", artist: "Kinta no Mousou", textHistory: "", unreadText: false,},
+		{index: "cafedark", 	met: false, fName: "Mia", lName: "Gray", 			trust: 0, encountered: false, textEvent: "", color: "#83E4B7", author: "CryptoGreek", artist: "Oreteki18kin", textHistory: "", unreadText: false,},
+		{index: "incubus", 		met: false, fName: "Lily", lName: "", 				trust: 0, encountered: false, textEvent: "", color: "#FFF6BD", author: "NoodleJacuzzi", artist: "Gujira 4 Gou", textHistory: "", unreadText: false,},
+		{index: "president", 	met: false, fName: "Madison", lName: "Moore", 		trust: 0, encountered: false, textEvent: "", color: "#AD7961", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,},
+		{index: "treasurer", 	met: false, fName: "Abigail", lName: "Adams", 		trust: 0, encountered: false, textEvent: "", color: "#CFA18A", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,},
+		{index: "ojou", 		met: false, fName: "Olivia", lName: "Wright", 		trust: 0, encountered: false, textEvent: "", color: "#4EAAB5", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,},
+		{index: "mama", 		met: false, fName: "Sofia", lName: "Rossi", 		trust: 0, encountered: false, textEvent: "", color: "#A2DAF1", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false,},
+		{index: "pinstripe", 	met: false, fName: "Evelyn", lName: "Weber", 		trust: 0, encountered: false, textEvent: "", color: "#924F82", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false,},
+		{index: "instructor", 	met: false, fName: "Charlotte", lName: "Reid", 		trust: 0, encountered: false, textEvent: "", color: "#FD7380", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,},
+		{index: "nagatoro", 	met: false, fName: "Ash", lName: "Martin", 			trust: 0, encountered: false, textEvent: "", color: "#6E6C94", author: "NoodleJacuzzi", artist: "Kinta no Mousou", textHistory: "", unreadText: false,},
+		{index: "sports", 		met: false, fName: "Zoe", lName: "Parker", 			trust: 0, encountered: false, textEvent: "", color: "#496EBF", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
+		{index: "swimmer", 		met: false, fName: "Naomi", lName: "Greens", 		trust: 0, encountered: false, textEvent: "", color: "#8DB7D0", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
+		{index: "orange", 		met: false, fName: "Vanessa", lName: "Lions", 		trust: 0, encountered: false, textEvent: "", color: "#BA5B17", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
+		{index: "cold", 		met: false, fName: "Kelsey", lName: "Lowe", 		trust: 0, encountered: false, textEvent: "", color: "#FCFFFA", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
+		{index: "coach", 		met: false, fName: "Amy", lName: "Silver", 			trust: 0, encountered: false, textEvent: "", color: "#D7BB2E", author: "Slackersavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
 	],
 	gallery: [
 	],
@@ -254,7 +270,7 @@ function startup() {
 }
 
 function preloadImages(){
-	console.log("preloading start");
+	console.log("preloading...");
     var preloaded = new Image();
 	for (i = 0; i < locationArray.length; i++) {
 		var bg = "images/locations/"+locationArray[i].index+"Morning.jpg";
@@ -266,7 +282,7 @@ function preloadImages(){
 		var bg = "images/"+data.story[characterIndex].index+"/"+data.story[characterIndex].index+".jpg";
 		document.getElementById('wrapperBG').style.backgroundImage = "url("+bg+")";
 	}
-	console.log("preloading finished");
+	//console.log("preloading finished");
 }
 
 function restartButton() {
@@ -645,6 +661,175 @@ function renameEveryone() {
 	changeLocation("playerHouse");
 }
 
+function checkRequirements(string) {
+	var finalResult = true;
+	while (string.includes("!location ") == true) {
+		var check = string.split(`!location `).pop().split(`;`)[0];
+		if (check.includes(data.player.location) == true) {
+			finalResult = false;
+		}
+		string = string.replace(`!location `+check+`;`, ``);
+	}
+	while (string.includes("?location ") == true) {
+		var check = string.split(`?location `).pop().split(`;`)[0];
+		if (data.player.gps == true && data.player.location != "map") {
+			//Do nothing
+		}
+		else {
+			if (check.includes(data.player.location) != true) {
+				finalResult = false;
+			}
+		}
+		string = string.replace(`?location `+check+`;`, ``);
+	}
+	while (string.includes("!item ") == true) {
+		var check = string.split(`!item `).pop().split(`;`)[0];
+		if (checkItem(check) == true) {
+			finalResult = false;
+		}
+		string = string.replace(`!item `+check+`;`, ``);
+	}
+	while (string.includes("?item ") == true) {
+		var check = string.split(`?item `).pop().split(`;`)[0];
+		if (checkItem(check) != true) {
+			finalResult = false;
+		}
+		string = string.replace(`?item `+check+`;`, ``);
+	}
+	while (string.includes("!hypnosis ") == true) {
+		var check = string.split(`!hypnosis `).pop().split(`;`)[0];
+		if (data.player.hypnosis >= check) {
+			finalResult = false;
+		}
+		string = string.replace(`!hypnosis `+check+`;`, ``);
+	}
+	while (string.includes("?hypnosis ") == true) {
+		var check = string.split(`?hypnosis `).pop().split(`;`)[0];
+		if (data.player.hypnosis < check) {
+			finalResult = false;
+		}
+		string = string.replace(`?hypnosis `+check+`;`, ``);
+	}
+	while (string.includes("!hacking ") == true) {
+		var check = string.split(`!hacking `).pop().split(`;`)[0];
+		if (data.player.hacking >= check) {
+			finalResult = false;
+		}
+		string = string.replace(`!hacking `+check+`;`, ``);
+	}
+	while (string.includes("?hacking ") == true) {
+		var check = string.split(`?hacking `).pop().split(`;`)[0];
+		if (data.player.hacking < check) {
+			finalResult = false;
+		}
+		string = string.replace(`?hacking `+check+`;`, ``);
+	}
+	while (string.includes("!counseling ") == true) {
+		var check = string.split(`!counseling `).pop().split(`;`)[0];
+		if (data.player.counseling >= check) {
+			finalResult = false;
+		}
+		string = string.replace(`!counseling `+check+`;`, ``);
+	}
+	while (string.includes("?counseling ") == true) {
+		var check = string.split(`?counseling `).pop().split(`;`)[0];
+		if (data.player.counseling < check) {
+			finalResult = false;
+		}
+		string = string.replace(`?counseling `+check+`;`, ``);
+	}
+	while (string.includes("!time ") == true) {
+		var check = string.split(`!time `).pop().split(`;`)[0];
+		if (data.player.time == check) {
+			finalResult = false;
+		}
+		string = string.replace(`!time `+check+`;`, ``);
+	}
+	while (string.includes("?time ") == true) {
+		var check = string.split(`?time `).pop().split(`;`)[0];
+		if (data.player.time != check) {
+			finalResult = false;
+		}
+		string = string.replace(`?time `+check+`;`, ``);
+	}
+	while (string.includes("?flag player ") == true) {
+		var check = string.split(`?flag player `).pop().split(`;`)[0];
+		if (data.player.flags.includes(check) != true) {
+			finalResult = false;
+		}
+		string = string.replace(`?flag player `+check+`;`, ``);
+	}
+	while (string.includes("!flag player ") == true) {
+		var check = string.split(`!flag player `).pop().split(`;`)[0];
+		if (data.player.flags.includes(check) == true) {
+			finalResult = false;
+		}
+		string = string.replace(`!flag player `+check+`;`, ``);
+	}
+	if (string.includes("parity") == true) {
+		var check = string.split(`parity `).pop().split(`;`)[0];
+		switch (check) {
+			case "even": {
+				if (data.player.day%2 == 1) {
+					finalResult = false;
+				}
+			}
+			case "odd": {
+				if (data.player.day%2 == 0) {
+					finalResult = false;
+				}
+			}
+			default: {
+				console.log("Error! Parity defined but an invalid parity used. BE sure to use either even or odd, and make sure you have a semicolon afterwards.");
+			}
+		}
+	}
+	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
+		var corruptionTarget = data.story[characterIndex].index;
+		while (string.includes("?trust "+corruptionTarget) == true) {
+			var check = string.split(`?trust `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkTrust(corruptionTarget) != check) {
+				finalResult = false;
+			}
+			string = string.replace(`?trust `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?minTrust "+corruptionTarget) == true) {
+			var check = string.split(`?minTrust `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkTrust(corruptionTarget) < check) {
+				finalResult = false;
+			}
+			string = string.replace(`?minTrust `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?maxTrust "+corruptionTarget) == true) {
+			var check = string.split(`?maxTrust `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkTrust(corruptionTarget) > check) {
+				finalResult = false;
+			}
+			string = string.replace(`?maxTrust `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("!flag "+corruptionTarget) == true) {
+			var check = string.split(`!flag `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkFlag(corruptionTarget, check) == true) {
+				finalResult = false;
+			}
+			string = string.replace(`!flag `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?flag "+corruptionTarget) == true) {
+			var check = string.split(`?flag `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkFlag(corruptionTarget, check) != true) {
+				finalResult = false;
+			}
+			string = string.replace(`?flag `+corruptionTarget+` `+check+`;`, ``);
+		}
+	}
+	if (finalResult == true) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 //Scene creation
 function loadEncounter(js, name) {
 	var targetFile = 'system';
@@ -968,8 +1153,18 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 		if (altImage != "") {
 			img = altImage
 		}
+		if (scene.includes("Beach")==true) {
+			if (data.player.location != "beach") {
+				cancelTab = true;
+			}
+		}
+		if (scene.includes("Casino")==true) {
+			if (data.player.location != "casino") {
+				cancelTab = true;
+			}
+		}
 		//console.log(tabIndex);
-		console.log(cssColor);
+		//console.log(cssColor);
 		if (cancelTab != true) {
 			console.log("Now generating tab for " + name + ", linking to scene " + scene + " with the text " + text + " " +altImage);
 			writeSpeech(name, img, `
@@ -1070,7 +1265,7 @@ function writeSpecial (text) {
 }
 
 function writeSpeech (name, img, text, altName, altColor) {
-	var finalName = "";
+	var finalName = name;
 	var finalImg = "";
 	var finalColor = "";
 	var checkForError = "";
@@ -1079,7 +1274,7 @@ function writeSpeech (name, img, text, altName, altColor) {
 		finalImg = "images/"+name+"/"+name+".jpg";
 	}
 	else {
-		if (img.includes("images") != true) {
+		if (img.includes("images") != true && img.includes("scripts") != true) {
 			finalImg = "images/"+name+"/"+img;
 		}
 		else {
@@ -1107,6 +1302,10 @@ function writeSpeech (name, img, text, altName, altColor) {
 	//If the name is player, use the player's details
 	if (name == "player") {
 		finalImg = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
+		if (data.player.style == "persona" || data.player.style == "royalty") {
+			finalImg = "scripts/gamefiles/profiles/" + data.player.character + "T.png";
+			//var checkForError = `onerror ="javascript:this.src='scripts/gamefiles/profiles/' + data.player.character + 'T.png'`;
+		}
 		finalName = data.player.name;
 		switch (data.player.color) {
 			case null:
@@ -1546,6 +1745,11 @@ function writePorn() {
 }
 
 function listArtists() {
+	writeSpecial("Here's a list of authors who's written for the game:");
+	writeSpeech("Noodle Jacuzzi", "scripts/gamefiles/characters/noodle.jpg", "<b>Author of momF, starletF, tomgirlF, succubusF, and others.</b><br>I almost named myself Dwayne 'The Guac' Johnson.");
+	writeSpeech("Cryptogreek", "scripts/gamefiles/characters/crypto.jpg", "<b>Author of kuroF, mistressF, maidF, mejiF, housekeepF, and others.</b><br>Thanks for enjoying the game my fellow degenerates!");
+	writeSpeech("SlackerSavior", "scripts/gamefiles/characters/slacker.jpg", "<b>Author of sportsF, coachF, coldF, swimmerF, and orangeF.</b><br>I wanted to write 'Don't ask me for shit' here, but it felt a little too rude.<br>So feel free to ask, but don't expect results anytime soon.");
+	writeSpecial("Here's a list of artists who's works are currently in the game:");
 	writeMed("images/mom/profile.jpg", "Art by Enoshima Iki");
 	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/26267">Enoshima Iki's Pixiv</a>`;
 	writeMed("images/tomgirl/profile.jpg", "Art by Nagi Ichi");
@@ -1556,7 +1760,6 @@ function listArtists() {
 	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/215082">Gujira 4 Gou's Pixiv</a>`;
 	writeMed("images/housekeep/profile.jpg", "Art by Kinta no Mousou");
 	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/13253890">Kinta no Mousou's Pixiv</a>`;
-	
 }
 
 //Showing & hiding windows
@@ -1909,7 +2112,7 @@ function updateMenu() {
 			else {
 				document.getElementById('playerImage').style.borderColor = "#fc53f1";
 			}
-			console.log(data.player.style);
+			//console.log(data.player.style);
 			break;
 		}
 		case "royalty": {
@@ -1935,13 +2138,13 @@ function updateMenu() {
 			else {
 				document.getElementById('playerImage').style.borderColor = "#fc53f1";
 			}
-			console.log(data.player.style);
+			//console.log(data.player.style);
 			break;
 		}
 		default: {
 			document.getElementById('title').style.fontFamily = "arial, sans-serif";
 			document.getElementById('menu').style.fontFamily = "arial, sans-serif";
-			console.log(document.getElementById('title').style.fontFamily);
+			//console.log(document.getElementById('title').style.fontFamily);
 			for (i = 0; i < menuButtons.length; i++) {
 				document.getElementById(menuButtons[i].ID).innerHTML = menuButtons[i].name;
 				document.getElementById(menuButtons[i].ID).style.borderRadius = "5px";
@@ -2042,6 +2245,57 @@ function updateSave() {
 		data.story.push(goof);
 		console.log(data.story);
 	}
+	if (data.player.version == 6) {
+		console.log('version 6 detected, updating save');
+		data.player.version = 7;
+		var loadZoe = true
+		for (loadIndex = 0; loadIndex < data.story.length; loadIndex++) {
+			if (data.story[loadIndex].index == "sports") {
+				//console.log('sports found already in the data variable, aborting function');
+				var loadZoe = false
+			}
+		}
+		if (loadZoe == true) {
+			var goof = {index: "sports", fName: "Zoe", lName: "Parker", trust: 0, encountered: false, textEvent: "", met: false, color: "#496EBF", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+			data.story.push(goof);
+			var goof = {index: "swimmer", fName: "Naomi", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#8DB7D0", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+			data.story.push(goof);
+			var goof = {index: "orange", fName: "Vanessa", lName: "Lions", trust: 0, encountered: false, textEvent: "", met: false, color: "#BA5B17", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+			data.story.push(goof);
+			var goof = {index: "cold", fName: "Kelsey", lName: "Lowe", trust: 0, encountered: false, textEvent: "", met: false, color: "#FCFFFA", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+			data.story.push(goof);
+			var goof = {index: "coach", fName: "Amy", lName: "Silver", trust: 0, encountered: false, textEvent: "", met: false, color: "#D7BB2E", author: "Slackersavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+			data.story.push(goof);
+			writeSpecial("Characters by mod author SlackerSavior have been added to the game!");
+		}
+		var goof = {index: "haze", fName: "Sienna", lName: "", trust: 0, encountered: false, textEvent: "", met: false, color: "#F683C8", author: "CryptoGreek", artist: "Purple Haze", textHistory: "", unreadText: false,};
+		data.story.push(goof);
+		var goof = {index: "nikki", fName: "Nikki", lName: "Hunt", trust: 0, encountered: false, textEvent: "", met: false, color: "#445B6D", author: "CryptoGreek", artist: "Kinta no Mousou", textHistory: "", unreadText: false,};
+		data.story.push(goof);
+		var goof = {index: "cafedark", fName: "Mia", lName: "Grey", trust: 0, encountered: false, textEvent: "", met: false, color: "#83E4B7", author: "CryptoGreek", artist: "Kinta no Mousou", textHistory: "", unreadText: false,};
+		data.story.push(goof);
+		var goof = {index: "incubus", fName: "Lily", lName: "", trust: 0, encountered: false, textEvent: "", met: false, color: "#FFF6BD", author: "NoodleJacuzzi", artist: "Gujira 4 Gou", textHistory: "", unreadText: false,};
+		data.story.push(goof);
+		var goof = {index: "president", fName: "Madison", lName: "Moore", trust: 0, encountered: false, textEvent: "", met: false, color: "#AD7961", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,};
+		data.story.push(goof);
+		var goof = {index: "treasurer", fName: "Abigail", lName: "Adams", trust: 0, encountered: false, textEvent: "", met: false, color: "#CFA18A", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,};
+		data.story.push(goof);
+		var goof = {index: "ojou", fName: "Olivia", lName: "Wright", trust: 0, encountered: false, textEvent: "", met: false, color: "#4EAAB5", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,};
+		data.story.push(goof);
+		var goof = {index: "mama", fName: "Sofia", lName: "Rossi", trust: 0, encountered: false, textEvent: "", met: false, color: "#A2DAF1", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false,};
+		data.story.push(goof);
+		var goof = {index: "pinstripe", fName: "Evelyn", lName: "Weber", trust: 0, encountered: false, textEvent: "", met: false, color: "#924F82", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false,};
+		data.story.push(goof);
+		var goof = {index: "instructor", fName: "Charlotte", lName: "Reid", trust: 0, encountered: false, textEvent: "", met: false, color: "#FD7380", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,};
+		data.story.push(goof);
+		var goof = {index: "nagatoro", fName: "Ash", lName: "Martin", trust: 0, encountered: false, textEvent: "", met: false, color: "#6E6C94", author: "NoodleJacuzzi", artist: "Kinta no Mousou", textHistory: "", unreadText: false,};
+		data.story.push(goof);
+		for (y = 0; y < data.story.length; y++) {
+			data.story[y].textHistory = "";
+			data.story[y].unreadText = false;
+		}
+		console.log(data.story);
+	}
 	saveSlot(110);
 }
 
@@ -2130,7 +2384,7 @@ function saveTXT() {
 }
 
 const fr = new FileReader();
-fr.addEventListener("load", fileLoaded)
+fr.addEventListener("load", fileLoaded);
 
 function loadSave(){
     files = document.getElementById('loadFile').files;
@@ -2502,6 +2756,28 @@ function diagnostic() {
 			}
 			break;
 		}
+		case "slackersavior": {
+			if (checkBody("slacker") != true) {
+				var goof = {index: "slacker", artist: "Art by Nainsoo",};
+				data.bodytypes.push(goof);
+				writeSpecial("Unlocked a new bodytype! Change via the wardrobe.");
+			}
+			else {
+				goof = "null";
+			}
+			break;
+		}
+		case "slacker": {
+			if (checkBody("slacker") != true) {
+				var goof = {index: "slacker", artist: "Art by Nainsoo",};
+				data.bodytypes.push(goof);
+				writeSpecial("Unlocked a new bodytype! Change via the wardrobe.");
+			}
+			else {
+				goof = "null";
+			}
+			break;
+		}
 		case "rainy dayz": {
 			if (checkBody("jill") != true) {
 				var goof = {index: "jill", artist: "Unknown artist",};
@@ -2639,6 +2915,17 @@ function diagnostic() {
 			}
 			break;
 		}
+		case "find mii": {
+			if (data.player.gps != true) {
+				data.player.gps = true;
+				writeSpecial("GPS mode activated. NPC encounters will appear on the map.");
+			}
+			else {
+				data.player.gps = false;
+				writeSpecial("GPS mode deactivated.");
+			}
+			break;
+		}
 		case "spookwave": {
 			if (checkItem('Ghost AR') != true) {
 				addItem('Ghost AR', true, 'scripts/gamefiles/items/ghostAR.jpg');
@@ -2676,7 +2963,7 @@ function checkForPhone() {
 		
 		//Append new script file
 		document.getElementsByTagName("head")[0].appendChild(fileref);
-		console.log(targetFile+ ' import successful');
+		//console.log(targetFile+ ' import successful');
 		
 		//Delete script file afterwards
 		var select = document.getElementsByTagName("head")[0];
@@ -2807,6 +3094,10 @@ function generateContacts() {
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].textEvent!= "") {
 			document.getElementById('phoneLeft').innerHTML += `<h3 class = "button char_` + data.story[i].index + `" style = "color: `+data.story[i].color+`" onclick = "switchContact('`+i+`')">` + data.story[i].fName + `</h3 >`;
+		}
+	}
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].unreadText != false) {
 			data.player.lastText = i;
 		}
 	}
@@ -2829,8 +3120,33 @@ function switchContact(n) {
 	console.log("contact switched");
 	document.getElementById('phoneRight').innerHTML = '';
 	document.getElementById('phoneWindow').innerHTML = data.story[n].fName;
+	data.story[n].unreadText = false;
 	data.player.lastText = n;
 	loadPhoneEvent(data.story[data.player.lastText].index, data.story[data.player.lastText].textEvent);
+}
+
+function checkUnread(n) {
+	for (textIndex = 0; textIndex < data.story.length; textIndex++) {
+		if (data.story[textIndex].index.includes(n)) {
+			if (data.story[textIndex].unreadText == true) {
+				return true;
+				break;
+			}
+		}
+	}
+	return false;
+}
+
+function checkText(character, target) {
+	for (textIndex = 0; textIndex < data.story.length; textIndex++) {
+		if (data.story[textIndex].index.includes(character)) {
+			if (data.story[textIndex].textHistory.includes(target)) {
+				return true;
+				break;
+			}
+		}
+	}
+	return false;
 }
 
 function phoneImages() {
