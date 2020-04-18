@@ -1176,7 +1176,7 @@ function writeEvent(name) { //Plays the actual event.
 
 switch (requestType) {
 	case "load": {
-		data.story.push(character);
+		//data.story.push(character);
 		console.log(character);
 		console.log(data.story);
 		writeSpecial(character.fName+" has been added to the game!");

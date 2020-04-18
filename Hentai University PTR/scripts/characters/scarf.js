@@ -30,8 +30,8 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "beach1", name: "Explore the beach.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 62, trustMax: 62, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "beach2", name: "Explore the beach.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 63, trustMax: 63, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "statusQuo", name: "scarf is here in her office.", location: 'teacherLounge', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "escape", name: "scarf is here.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "escape", name: "scarf is here.", location: 'casino', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "escapeBeach", name: "scarf is here.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "escapeBeach", name: "scarf is here.", location: 'casino', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -356,7 +356,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			unencounter('scarf');
 			break;
 		}
-		case "escape": {
+		case "escapeBeach": {
 			writeSpeech("scarf", "", "Bored already? Well, it's to be expected. The more interesting your own life, the more interesting these hypnotic palaces are. Oho~<br>Care to head back now?");
 			writeFunction("changeLocation('teacherLounge')", "Finish");
 			writeFunction("changeLocation(data.player.location)", "Change your mind");

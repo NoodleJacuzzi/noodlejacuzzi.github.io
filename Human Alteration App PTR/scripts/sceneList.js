@@ -287,7 +287,7 @@ function writeScene(scene) {
 			writeText("As an added bonus, you can crank that exhaustion value back up to fall back asleep.");
 			writeTransition("mother", "Drift off to sleep, and anticipate the morning");
 			addFlag('mother', 'ready');
-			data.story.skill = 1;
+			data.player.skill = 1;
 			break;
 		}
 		case "takeBreak" : {
@@ -377,7 +377,7 @@ function writeScene(scene) {
 		}
 		case "streets": {
 			writeBig("images/real/locations/street.jpg");
-			if (data.story.onahole == true && data.story.skill == 2) {
+			if (data.story.onahole == true && data.player.skill == 2) {
 				writeTransition("publicToy", "Practice your skills with the app");
 			}
 			if (checkTrust('mom') > 1 && checkTrust('friend') > 1 && checkTrust('teacher') > 1 && checkTrust('office') > 1 && checkTrust('chef') > 1) {
@@ -650,7 +650,7 @@ function writeScene(scene) {
 								`;
 							break;
 							case 2:
-								if (data.story.skill > 1) {
+								if (data.player.skill > 1) {
 									document.getElementById('output').innerHTML += `
 										<p class="choiceText" onclick="corrupt('mother')">
 											Turn up your mother's libido
@@ -684,7 +684,7 @@ function writeScene(scene) {
 								`;
 							break;
 							case 2:
-								if (data.story.skill > 1) {
+								if (data.player.skill > 1) {
 									document.getElementById('output').innerHTML += `
 										<p class="choiceText" onclick="corrupt('sister')">
 											Make ` + data.story.sisterName + ` more open to your advances
@@ -725,7 +725,7 @@ function writeScene(scene) {
 								`;
 							break;
 							case 1:
-								if (data.story.skill > 1) {
+								if (data.player.skill > 1) {
 									document.getElementById('output').innerHTML += `
 										<p class="choiceText" onclick="corrupt('friend')">
 											Make proof of the app to show ` + data.story.friendName + `
@@ -755,7 +755,7 @@ function writeScene(scene) {
 								`;
 							break;
 							case 4:
-								if (data.story.skill > 2) {
+								if (data.player.skill > 2) {
 									document.getElementById('output').innerHTML += `
 										<p class="choiceText" onclick="corrupt('friend')">
 											Check up on ` + data.story.friendName + `
@@ -775,7 +775,7 @@ function writeScene(scene) {
 					if (checkFlag('teacher', 'ready') == false) {
 						switch (checkTrust('teacher')) {
 							case 1:
-								if (data.story.skill > 1) {
+								if (data.player.skill > 1) {
 									document.getElementById('output').innerHTML += `
 										<p class="choiceText" onclick="corrupt('teacher')">
 											Tweak ` + data.story.teacherName + `'s suggestibility
@@ -805,7 +805,7 @@ function writeScene(scene) {
 								`;
 							break;
 							case 4:
-								if (data.story.skill > 2) {
+								if (data.player.skill > 2) {
 									document.getElementById('output').innerHTML += `
 										<p class="choiceText" onclick="corrupt('teacher')">
 											Let the whole class use ` + data.story.teacherName + ` (Watersports warning, optional content!)
@@ -850,7 +850,7 @@ function writeScene(scene) {
 					if (checkFlag('office', 'ready') == false) {
 						switch (checkTrust('office')) {
 							case 0:
-								if (data.story.skill > 1) {
+								if (data.player.skill > 1) {
 									document.getElementById('output').innerHTML += `
 										<p class="choiceText" onclick="corrupt('office')">
 											Brainstorm ideas for what to do to ` + data.story.officeName + `
@@ -873,7 +873,7 @@ function writeScene(scene) {
 								`;
 							break;
 							case 2:
-								if (data.story.skill > 2) {
+								if (data.player.skill > 2) {
 									document.getElementById('output').innerHTML += `
 										<p class="choiceText" onclick="corrupt('office')">
 											Change ` + data.story.officeName + `'s goals in life
@@ -3102,7 +3102,7 @@ function writeScene(scene) {
 		case "exoticSpecial1": {
 			writeEvent("misc1");
 			unlockScene("misc1");
-			data.story.skill = 2;
+			data.player.skill = 2;
 			writeSpecial("You've gained an advanced level of understanding of the Human Alteration App!");
 			writeTransition("streetsExoticShop", "Go back");
 			break;
@@ -3123,7 +3123,7 @@ function writeScene(scene) {
 		case "publicToy": {
 			writeEvent("misc5");
 			unlockScene("misc5");
-			data.story.skill = 3;
+			data.player.skill = 3;
 			data.story.time = "night";
 			writeTransition("homePlayerRoom", "Finish for the day.");
 			break;

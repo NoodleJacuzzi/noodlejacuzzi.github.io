@@ -23,7 +23,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "greenQuo", name: "green is hanging out in her sister's office", location: 'teacherLounge', time: "MorningEvening", itemReq: "", trustMin: 41, trustMax: 41, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "filler", name: "green's office is here", location: 'teacherLounge', time: "MorningEvening", itemReq: "", trustMin: 43, trustMax: 43, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "greenBeachReturn", name: "green is here, being hit on by some men", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "greenNewQuo", name: "green's office is here", location: 'teacherLounge', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
+	//index: "greenNewQuo", name: "green's office is here", location: 'teacherLounge', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "greenNewQuo", name: "green's office is here", location: 'teacherLounge', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
 ];
 

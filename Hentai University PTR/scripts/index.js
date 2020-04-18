@@ -2248,6 +2248,26 @@ function updateSave() {
 	if (data.player.version == 6) {
 		console.log('version 6 detected, updating save');
 		data.player.version = 7;
+		var loadZoe = true
+		for (loadIndex = 0; loadIndex < data.story.length; loadIndex++) {
+			if (data.story[loadIndex].index == "sports") {
+				//console.log('sports found already in the data variable, aborting function');
+				var loadZoe = false
+			}
+		}
+		if (loadZoe == true) {
+			var goof = {index: "sports", fName: "Zoe", lName: "Parker", trust: 0, encountered: false, textEvent: "", met: false, color: "#496EBF", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+			data.story.push(goof);
+			var goof = {index: "swimmer", fName: "Naomi", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#8DB7D0", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+			data.story.push(goof);
+			var goof = {index: "orange", fName: "Vanessa", lName: "Lions", trust: 0, encountered: false, textEvent: "", met: false, color: "#BA5B17", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+			data.story.push(goof);
+			var goof = {index: "cold", fName: "Kelsey", lName: "Lowe", trust: 0, encountered: false, textEvent: "", met: false, color: "#FCFFFA", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+			data.story.push(goof);
+			var goof = {index: "coach", fName: "Amy", lName: "Silver", trust: 0, encountered: false, textEvent: "", met: false, color: "#D7BB2E", author: "Slackersavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+			data.story.push(goof);
+			writeSpecial("Characters by mod author SlackerSavior have been added to the game!");
+		}
 		var goof = {index: "haze", fName: "Sienna", lName: "", trust: 0, encountered: false, textEvent: "", met: false, color: "#F683C8", author: "CryptoGreek", artist: "Purple Haze", textHistory: "", unreadText: false,};
 		data.story.push(goof);
 		var goof = {index: "nikki", fName: "Nikki", lName: "Hunt", trust: 0, encountered: false, textEvent: "", met: false, color: "#445B6D", author: "CryptoGreek", artist: "Kinta no Mousou", textHistory: "", unreadText: false,};
@@ -2275,26 +2295,6 @@ function updateSave() {
 			data.story[y].unreadText = false;
 		}
 		console.log(data.story);
-	}
-	var loadZoe = true
-	for (loadIndex = 0; loadIndex < data.story.length; loadIndex++) {
-		if (data.story[loadIndex].index == "sports") {
-			//console.log('sports found already in the data variable, aborting function');
-			var loadZoe = false
-		}
-	}
-	if (loadZoe == true) {
-		var goof = {index: "sports", fName: "Zoe", lName: "Parker", trust: 0, encountered: false, textEvent: "", met: false, color: "#496EBF", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
-		data.story.push(goof);
-		var goof = {index: "swimmer", fName: "Naomi", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#8DB7D0", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
-		data.story.push(goof);
-		var goof = {index: "orange", fName: "Vanessa", lName: "Lions", trust: 0, encountered: false, textEvent: "", met: false, color: "#BA5B17", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
-		data.story.push(goof);
-		var goof = {index: "cold", fName: "Kelsey", lName: "Lowe", trust: 0, encountered: false, textEvent: "", met: false, color: "#FCFFFA", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
-		data.story.push(goof);
-		var goof = {index: "coach", fName: "Amy", lName: "Silver", trust: 0, encountered: false, textEvent: "", met: false, color: "#D7BB2E", author: "Slackersavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
-		data.story.push(goof);
-		writeSpecial("Characters by mod author SlackerSavior have been added to the game!");
 	}
 	saveSlot(110);
 }
