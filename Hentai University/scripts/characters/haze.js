@@ -42,7 +42,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("And standing suggestively in front of you, her hands casually roaming her body, is a pink-haired woman.");
 			writeBig("images/haze/profile.jpg","Art by Purple Haze");
 			writeSpeech("haze","","HIDDENHah~! Wasn't expecting to see <i>you</i> down here, playerF.");
-			if(checkTrust('succubus' >= 60)){
+			if(checkTrust('succubus') >= 60){
 				writeSpeech("player","","...I attracted another succubus...?");
 				writeText("You can't say you're entirely surprised, given what succubusF mentioned about you having a lot of power, but still...");
 				writeSpeech("haze","","HIDDENEh?");
@@ -76,7 +76,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She seems to need a moment to figure out how to explain the situation and, being the polite person you are, you oblige.");
 			writeText("It isn't long before she nods firmly, refocusing on you.");
 			writeSpeech("haze","","This place is your dream. However, I'm a visitor here - I popped in since I noticed a nice, deep dream on my... radar? It's not <i>actually</i> a <i><b>radar,</b></i> but you probably get what I mean.");
-			if(checkTrust('succubus' >= 60)){
+			if(checkTrust('succubus') >= 60){
 				writeSpeech("haze","","And I'm not a succubus, by the way. Not technically, anyway. I am a creature that subsists off the sexual energies of humans, but...");
 				writeText("She thinks for another few moments.");
 				writeSpeech("haze","","...I guess I'm like a cousin? I'm a dream-eating demon, so we're kinda similar, but the fact that I eat sexual dreams is just personal preference. For example, I know this one guy that only eats dreams that have whales in them.");
@@ -104,7 +104,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if(checkFlag('haze','Dreamer') != true)
 				addFlag('haze','Dreamer');
 			writeSpeech("haze","","Oh, and don't worry about, like, having your dreams and aspirations for the future eaten by the way - you taking over the town with hypnosis would <i>literally</i> be the best thing that could happen to me right now, so I support you ten billion percent!");
-			if(checkTrust('succubus' >= 60)){
+			if(checkTrust('succubus') >= 60){
 				writeSpeech("player","","...Neat. So I guess that makes you like my familiar or something?");
 				writeSpeech("haze","","Definitely the 'something'. I don't do the whole 'contracting' thing - I don't like being tied down, y'know? I'll leave that to the cum-drunk subby-succys. I'd rather just flit about and enjoy dreams from all over the world, free to enjoy whatever I'm feeling into that year.");
 				writeText("She chuckles softly.");
@@ -558,7 +558,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("haze","","Mm, fuck yes~! Absolutely <i>cover</i> me, playerF~!");
 			writeText("After a few more seconds of bucking your hips, you feel like you've completely emptied yourself all over her, and given how satisfied she looks...");
 			writeBig("images/haze/1-6.jpg","Art by Purple Haze");
-			writeSpeech("haze","","Mm, you even got your chick, sticky cum in my hair~");
+			writeSpeech("haze","","Mm, you even got your thick, sticky cum in my hair~");
 			writeText("You're pretty sure she enjoyed it too.");
 			writeText("Now that you've cum, your mind is starting to wake up a bit more, a few dots of light appearing in your vision.");
 			writeSpeech("haze","","Come back soon~!");
