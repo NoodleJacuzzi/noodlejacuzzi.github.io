@@ -301,6 +301,7 @@ function writeScene(scene) {
 			writeFunction("renameCharacter('prologueSkip', 'arriveAtHome')", "Continue to route selection");
 			break;
 		}
+		
 		//System
 		case "laptop": {
 			break;
@@ -422,6 +423,7 @@ function writeScene(scene) {
 			}
 			break;
 		}
+		
 		//Navigation
 		case "homeFoyer": {
 			break;
@@ -450,6 +452,7 @@ function writeScene(scene) {
 		case "classroom": {
 			break;
 		}
+		
 		//Dom route corruption scenes
 		case "globalCorruption1": {
 			setTrust('mom', 1);
@@ -485,7 +488,7 @@ function writeScene(scene) {
 						break;
 					}
 					case 3: {
-						writeTransition("momCorruption2", "Transform your mother into more of a proper maid");
+						writeTransition("momCorruption3", "Transform your mother into more of a proper maid");
 						break;
 					}
 				}
@@ -645,7 +648,9 @@ function writeScene(scene) {
 			addFlag('office', 'ready');
 			break;
 		}
+		
 		//Dom route encounters
+		//Mom encounters
 		case "mom1": {
 			writeEvent(scene);
 			writeFunction("changeLocation('classroom')", "Finish up with school");
@@ -665,7 +670,7 @@ function writeScene(scene) {
 		}
 		case "mom3": {
 			writeEvent(scene);
-			removeFlag('mother', 'ready');
+			removeFlag('mom', 'ready');
 			data.story.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
@@ -681,7 +686,7 @@ function writeScene(scene) {
 		}
 		case "mom4": {
 			writeEvent(scene);
-			removeFlag('mother', 'ready');
+			removeFlag('mom', 'ready');
 			data.story.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
@@ -695,7 +700,55 @@ function writeScene(scene) {
 			writeFunction("changeLocation(data.player.location)", "Go back");
 			break;
 		}
-		//Dom route nonerotic encounters
+		case "momBranch": {
+			writeText("You relax onto the living room couch. Simply calling 'Mom' is enough to have her quickly running to respond to you.");
+			writeSpeech("mom", "", "Master! You called?");
+			writeText("It's clear that she was just in the middle of deep-cleaning the bathroom. It's probably spotless by now, but she's nothing if not thorough these days.");
+			if (checkFlag("mom", "plugPops") == true && checkFlag("mom", "gushers") == true) {
+				writeText("With how much your relationship has changed over these last few days, it seems like she's a totally different person. Thanks to the app, it seems like this is how daily life is going to be from now on.");
+				writeText("She's swallowing dryly as she eyes your crotch. At this point, you can't think of any way you could corrupt her farther.");
+			}
+			if (checkItem("plugPops") == true) {
+				if (checkFlag("mom", "plugPops") != true) {
+					writeText("A plug pop is sitting in your pocket, but there's no real reason to use it on mom. You can get anal elsewhere.");
+					writeText("The idea of keeping yourself clean at all times is an appealing one though. And with her latest changes, you can imaging mom would get a kick out of pleasing you in a new way.");
+					writeTransition("mom5", "Use a Plug Pop");
+				}							
+			}
+			if (checkItem("fruitGushers") == true) {
+				if (checkFlag("mom", "gushers") != true) {
+					writeText("But you kinda do need to take a piss. You're about to tell her to wait outside, before an idea strikes you.");
+					writeTransition("mom6", "Eat your Fruit Gushers");
+				}
+			}
+			writeTransition("home", "Go back");
+			break;
+		}
+		case "mom5": {
+			writeEvent(scene);
+			addFlag("mom", "plugPops");
+			data.story.time = "Night";
+			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
+			break;
+		}
+		case "mom6": {
+			writeEvent(scene);
+			addFlag("mom", "gushers");
+			data.story.time = "Night";
+			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
+			break;
+		}
+		case "mom7": {
+			writeEvent(scene);
+			writeFunction("changeLocation('classroom')", "Finish up with school");
+			break;
+		}
+		//Sister encounters
+		//Friend encounters
+		//Teacher encounters
+		//Chef (Ava) encounters
+		//Office encounters
+		
 		//Sub route corruption
 		//Mom corruption
 		//Sister corruption
@@ -784,7 +837,6 @@ function writeScene(scene) {
 			break;
 		}
 		//Sub route encounters
-		//Sub route nonerotic encounters
 		default: {
 			writeText("Something went wrong, and you've encountered a bug. Keep in mind where you just where and what you did, and let me know so I can fix it.");
 			writeText("Here's a list of important details. If you message me directly with these jams, I should have a better idea of what caused the problem:");
