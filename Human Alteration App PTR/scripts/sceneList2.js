@@ -648,6 +648,10 @@ function writeScene(scene) {
 			addFlag('office', 'ready');
 			break;
 		}
+		//Bully corruption
+		//Neighbor corruption
+		//Camboi corruption
+		
 		
 		//Dom route encounters
 		//Mom encounters
@@ -748,6 +752,13 @@ function writeScene(scene) {
 		//Teacher encounters
 		//Chef (Ava) encounters
 		//Office encounters
+		//Bully encounters
+		//Neighbor encounters
+		//Camboi encounters
+		
+		//Dom route exotic shop stuff
+		//Dom route candy shop stuff
+		//Dom route clothing store stuff
 		
 		//Sub route corruption
 		//Mom corruption
@@ -836,7 +847,22 @@ function writeScene(scene) {
 			addFlag('office', 'ready');
 			break;
 		}
+		//Bully corruption
+		//Doll corruption
+		
 		//Sub route encounters
+		//Mom encounters
+		//Sister encounters
+		//Friend encounters
+		//Teacher encounters
+		//Chef (Ava) encounters
+		//Office encounters
+		//Bully encounters
+		//Doll encounters
+		
+		//Sub route exotic shop stuff
+		//Sub route candy shop stuff
+		//Sub route beauty salon stuff
 		default: {
 			writeText("Something went wrong, and you've encountered a bug. Keep in mind where you just where and what you did, and let me know so I can fix it.");
 			writeText("Here's a list of important details. If you message me directly with these jams, I should have a better idea of what caused the problem:");
