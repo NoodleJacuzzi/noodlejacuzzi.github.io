@@ -90,10 +90,10 @@ function writeEvent(scene) {
 			sp player; You want it, don't you? Beg. 
 			sp mom; Y-yes, I want it... 
 			sp player; <b>Beg.</b>
-			im imagebox/real/makeup1.gif
+			im images/real/makeup1.gif
 			sp mom; Please, I want your cum, I want to feel your hot load on my face! 
 			t Her body is on autopilot following your orders, but her mind is willingly along for the ride as she watches you slide your hand up and down your cock. She clearly wishes she could have a taste, but for now... 
-			im imagebox/real/makeup2.gif
+			im images/real/makeup2.gif
 			t Completely lost in the moment now, she humbly accepts as you begin to glaze her face in jizz. Her breathing is growing heavier as she smiles under your load, clearly she's already in heat from your degrading treatment. 
 			sp mom; Th-thank you... 
 			t Now it's time for the next phase of your plan. You walk over to her windowsill and quickly draw the curtain, allowing natural light to fill the room. 
@@ -125,9 +125,9 @@ function writeEvent(scene) {
 			t Stopping for a moment you start doing some quick work with the app to have some fun and improve your skills. 
 			t The plug pop's bizarre plumping and sensitivity enhancements were pretty cool, so you start trying to work out how you could do something similar to other body parts at will. 
 			...
-			sp player; Move your hands, I want a clear look. 
+			sp player; Come on, I want a clear look. 
 			sp sister; F-fine, alright. 
-			im imagebox/real/plumping1.gif;
+			im images/real/plumping1.gif;
 			t Because of your early modifications sisterF should be a pretty good test subject. You wouldn't want to increase the sensitivity of someone who's already got it pretty high already. 
 			sp player; Okay... Let me see... 
 			t <i>sisterF vaginal sensitivity increased 5x.<br>Custom variable "plumpness" increased.</i>
@@ -140,7 +140,7 @@ function writeEvent(scene) {
 			t She jerks and writhes again as her hand snakes down to lightly rub at her cunt lips. You still can't get a good view though. 
 			sp player; Hold fucking still already, I wanna see. 
 			t She finally manages to calm herself down, trying her best not to cum like a premature firecracker. 
-			im imagebox/real/plumping2.gif
+			im images/real/plumping2.gif
 			sp player; Whoa...
 			sp sister; God, it's so much bigger... I wanna cum really, really bad right now... 
 			sp player; No. No touching. 
@@ -149,7 +149,7 @@ function writeEvent(scene) {
 			sp sister; I don't... Holy shit *bro, I don't know if I can. 
 			t You tell her to relax as you grab the lips of her now highly sensitive pussy. Immediately she beings squirming and crying out through clenched teeth. 
 			t The sensitivity increases are starting to get fucky with her brain despite how low her sensitivity started at. 
-			im imagebox/real/plumping3.gif
+			im images/real/plumping3.gif
 			sp sister; G-gggaaaaahd fuck~! Cumming~! 
 			t Sandwiching the length of your cock between her cunt lips, you enjoy the feeling of her extremely plump flesh and the copious amounts of lubrication she's generating. 
 			t Once you get into a rhythm of thrusting she's thrown out of her rhythm and starts having trouble forming words. Wordless screams fill the house, especially as you start to play rough a little. 
@@ -174,10 +174,27 @@ function writeEvent(scene) {
 			T She starts counting things off on her fingers detailing a half dozen bizarre confectionaries.
 			sp candy; Now some customers can't eat certain kinds of candies. If you've got no pussy, a candy that supercharges your ovaries isn't going to give you anything more than a tummyache. But, as a bonus, the store now has a 'free to try' policy! You get a chance to try out candies to see their effects before you buy them!
 			t She takes a good long look at you, her gaze lingering more than a little at your crotch. 
-			sp candy; A real slab of beef like you would probably get some real fun out of our pop rocks in particular. 
-			sp candy; A cutie like you might really like to try out our plug pop. Girls these days go nuts for a chance to snack on a peach like yours. 
-			sp candy; Our heart-heat suckers will put that womb-<br>Oh, sorry, didn't mean to jump the gun there. I see now a girl with a jawbreaker like yours would have a lot of fun with our specialty taffy. 
 			`);
+			switch (data.player.body) {
+				case "male": {
+					writeHTML(`
+			sp candy; A real slab of beef like you would probably get some real fun out of our pop rocks in particular. 
+					`);
+					break;
+				}
+				case "trans": {
+					writeHTML(`
+			sp candy; Our heart-heat suckers will put that womb-<br>Oh, sorry. I see now a girl with a jawbreaker like yours would have a lot of fun with our specialty taffy. 
+					`);
+					break;
+				}
+				case "sissy": {
+					writeHTML(`
+			sp candy; A cutie like you might really like to try out our plug pop. Girls these days go nuts for a chance to snack on a peach like yours. 
+					`);
+					break;
+				}
+			}
 			break;
 		}
 		case "candyPlug1": {
@@ -196,19 +213,18 @@ function writeEvent(scene) {
 			sp player; Are there any benefits to repeat usage? 
 			sp candy; The sensitivity increase keeps building up. I started using them so I could double-stuff myself in the morning. Faster to cum that way, less days where I'm late to start my shift, you know? Honestly though I've had so many pops I don't even need my cunt stuffed to get off anymore.
 			...
-			im imagebox/real/plugSample1.gif
+			im images/real/plugSample1.gif
 			sp candy; G-gawd yes~
-			sp Holy shit, is the muscle control part of the candy's effects too? 
+			sp player; Holy shit, is the muscle control part of the candy's effects too? 
 			sp candy; No way honey, this's all me... <br>Nggh, now normally they'd be a lot smaller than this, but I'm a greedy girl~<br>Nnhg~! 
-			im imagebox/real/plugSample2.gif
+			im images/real/plugSample2.gif
 			t Sighing between deep, pleasure-drunk grunts, she pushes the massive plug out of her ass. It's clear at this point she doesn't even need to touch her pussy to cum anymore. 
 			t Once the plug is out she lets out a small whine, but makes sure you can see the effect the candy has had on her. 
 			sp candy; I'll be using this one aaaall day hun, this one is bug enough that it's meant for all-day use, but it'd be rude to not show you what these sweeties can do... 
-			im imagebox/real/plugSample3.gif
+			im images/real/plugSample3.gif
 			t Her pucketed donut asshole gapes and does its best to try and wink shut, the feeling of cool air in her rim clearly setting candyF off something fierce. 
 			sp candy; So fucking ghuuuud~!<br>S-sorry hon, I know you probably wanna buy one now, but this little candyslut needs to close up shop for the day. There's no way I can do my job proper when all. my ass wants to do is suck on this plug all day. <br>Though, I don't mind you watching... 
 			... 
-			im imagebox/real/plugSample4.gif
 			t By the time her free sample show has finished it's started to get dark. You head home. 
 			`);
 			break;
@@ -224,13 +240,13 @@ function writeEvent(scene) {
 		case "candyTaffy2": {
 			writeHTML(`
 			sp candy; Now, for these sweeties the sky's the limits. My best record was a three-foot horsecock, seeing the flared tip in my womb was one hell of a show, but you still wanna pace yourself. 
-			im imagebox/real/taffySample1.gif
+			im images/real/taffySample1.gif
 			sp candy; Start with two fingers... 
-			im imagebox/real/taffySample2.gif
+			im images/real/taffySample2.gif
 			sp candy; Then three... Gawd... <br>Even if you aren't pushing yourself to your limits, the elasticity boost means any size feels great. Now... 
-			im imagebox/real/taffySample3.gif
+			im images/real/taffySample3.gif
 			sp candy; M-more on to four... 
-			im imagebox/real/taffySample4.gif
+			im images/real/taffySample4.gif
 			sp candy; Fuck fuck fuck~! 
 			t At this point the pretense of this being an educational demonstration has vanished and it's clear she's just using this as an excuse to fist herself on the job. 
 			t But as she writhes and squirts from anal pleasure, there's not much to complain about.
