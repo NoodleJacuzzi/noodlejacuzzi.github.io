@@ -558,7 +558,7 @@ function writeEvent(scene) {
 			T Well, you're kind of a brave adventurer. You start with some dirty rags and a stick, but you'll make it work. 
 			T ...
 			T Questing, braving dungeons, it's all a total blast! 
-			T Well, maybe it's a little repetitive. And maybe a little too difficult. But whatever! You aren't playing this for the gameplay, you're playing this to best the armored warlock and now that you have, the final prize is yours... 
+			T Well, maybe it's a little repetitive. And maybe a little too difficult. But whatever! You aren't playing this for the gameplay, you're playing this to best the warlock and now that you have, the final prize is yours... 
 			im images/drawn/twintail10.jpg
 			sp Princess; im scripts/gamefiles/profiles/princess.jpg; Brave hero... I know we should wait until we are lawfully wed, yet... My loins ache for you! Please, take m-
 			sp mom; playerF! Dinner! 
@@ -590,18 +590,18 @@ function writeEvent(scene) {
 			im images/drawn/twintail5.jpg
 			sp Princess; im scripts/gamefiles/profiles/princess.jpg; N-no... She has forsaken me? Or... Is this her answer? Goddess, are you watching? Is your gaze upon my fat cock as well? T-to be blessed with her holy gaze, and to be exposing myself to the hero who saved my life~! 
 			im images/drawn/twintail6.jpg
-			sp Princess; im scripts/gamefiles/profiles/princess.jpg; G-goddess! I'm defiling myself, and your champion, with the sludge from my fat, churning nutsack. 
+			sp Princess; im scripts/gamefiles/profiles/princess.jpg; G-goddess! I'm defiling myself, and your champion, with the sludge from my fat, churning nutsack! 
 			T Suddenly a bright light overtakes the room. 
 			sp player; Fuck, my eyes! 
 			T Once it clears, you see the princess standing before you once again, but very different. 
 			im images/drawn/twintail8.jpg
 			sp Princess; im scripts/gamefiles/profiles/princess.jpg; Brave hero... 
-			sp player; WHAT THE FUCK IS HAPPENING? WHY DID YOU FUCK WITH MY GAME, SIsp ???; im images/none.png; 
+			sp player; WHAT THE FUCK IS HAPPENING? WHY DID YOU FUCK WITH MY GAME, SIS? 
 			sp Princess; im scripts/gamefiles/profiles/princess.jpg; Brave hero, the goddess has blessed me. I've changed my class from dick-growing mutant to blessed sperm cannoness.
 			sp player; Of course you have. 
 			sp Princess; im scripts/gamefiles/profiles/princess.jpg; Soon I shall depart to ruin the divine lady's womb with my impure seed, the church's doctrine shall be remade, the nuns shall drink from the new chalice of suckling upon the goddess's cum-swollen womb. The brave warriors shall be remade in your image to better arouse me. 
 			sp player; What? I'm a regular war- Aw son of a bitch. 
-			T Your macho avatar has been replaced, now you look like... Well, you. 
+			T Your in-game avatar has been replaced, now you look like... Well, you. 
 			sp Princess; im scripts/gamefiles/profiles/princess.jpg; But before I transform my figure of worship into a symbol of whoreship, I want to offer you my first blessing. 
 			im images/drawn/twintail9.jpg
 			sp Princess; im scripts/gamefiles/profiles/princess.jpg; Forgive my impure tongue. First I must remove the holy lady's necklace, for it clogs my cockshaft. The beads... For the goddess to squirt at the sight of my slavering-
@@ -624,7 +624,7 @@ function writeEvent(scene) {
 			T To be honest, you can't bring yourself to fight a lot of them. Luckily the game supports a stealth build.
 			T But it is no matter! For now you are at the end of the journey, here at the castle at the end of the world, the <b>final battle</b> is nigh!
 			im images/drawn/corruption1.jpg
-			sp player; I've come to slay you, and bring peace back to the land! To return the fair princess to her former self! Tell me, demon, what is your name? I'll have the church make a plaque with my victory over you.
+			sp player; I've come to slay you, and bring peace back to the land! To return the fair princess to her former self! Tell me, demon, what is your name? I'll have the church make a plaque honoring my victory over you.
 			sp Succubus; im scripts/gamefiles/profiles/succubus.jpg; Ara ara~<br>Such a brave little *man to have traveled so far. I am but a servant to the true dark lord, sisterF.
 			sp player; ... Of course you are.
 			T Sometimes you hate having a techie for a sister.
@@ -632,6 +632,7 @@ function writeEvent(scene) {
 			sp Succubus; im scripts/gamefiles/profiles/succubus.jpg; Fiiine. I'll play with you, but only because you're a cutie.
 			...
 			sp player; Ghhg... Damn it all...
+			t The battle is swift, and not at all in your favor.
 			sp Succubus; im scripts/gamefiles/profiles/succubus.jpg; Uh, you okay? It's only been two rounds.
 			sp player; How the hell am I supposed to win this? This is total bullshit!
 			sp Succubus; im scripts/gamefiles/profiles/succubus.jpg; Calm down, you'll excite me...<br>Did you get the staff of domination?
@@ -644,7 +645,7 @@ function writeEvent(scene) {
 			sp player; I never wanna see another tentacle... The way she slithered all over me...
 			sp Succubus; im scripts/gamefiles/profiles/succubus.jpg; D-don't-<br>Oh no...
 			im images/drawn/corruption3.jpg
-			sp Succubus; im scripts/gamefiles/profiles/succubus.jpg; The seal has been broken...<br>Listen, you're pretty cute, but you're also pretty pathetic. Leave, go grind, and-
+			sp Succubus; im scripts/gamefiles/profiles/succubus.jpg; T-the seal has been broken...<br>Listen, you're pretty cute, but you're also pretty pathetic. Leave, go grind, and-
 			sp player; Never! I hate grinding, I can take anything you can dish out! What is that, five inches? Please, that's nothing!
 			sp Succubus; im scripts/gamefiles/profiles/succubus.jpg; N-no... Please...
 			im images/drawn/corruption6.jpg
@@ -652,7 +653,7 @@ function writeEvent(scene) {
 			sp Succubus; im scripts/gamefiles/profiles/succubus.jpg; I don't... My... Nggh~!
 			im images/drawn/corruption7.jpg
 			im images/drawn/corruption9.jpg
-			sp Succubus; im scripts/gamefiles/profiles/succubus.jpg; Hah, poor *boy. No, my fetish is putting cocky adventurers in their place. Covering them in sperm... It's embarrassing, really.
+			sp Succubus; im scripts/gamefiles/profiles/succubus.jpg; Oooh, poor *boy. No, my fetish is putting cocky adventurers in their place. Covering them in sperm... It's embarrassing, really.
 			sp player; I...
 			sp Succubus; im scripts/gamefiles/profiles/succubus.jpg; Speechless? Poor *boy, let me help you.
 			im images/drawn/corruption11.jpg
@@ -767,7 +768,7 @@ function writeEvent(scene) {
 			sp candy; Large or small, honey? 
 			t You're about to answer before your stomache grumbles, answering for you. 
 			sp candy; Large it is! Here, take a cup. Now, lemme just... 
-			t She reaches down with her tongue as you take a cup, fishing for the handle of whatever's keeping her cockhead plugged shut. as she wiggles her tits and her tight dress rub against her huge cock, it throbs angrily. 
+			t She reaches down with her tongue as you take a cup, fishing for the handle of whatever's keeping her cockhead plugged shut as she wiggles her tits and her tight dress rub against her huge cock, it throbs angrily. 
 			sp player; Do you need any help? 
 			sp candy; All 'art ah 'ha 'how, honey~! 'here! <br><i>All part of the show, honey~! There! </i>
 			im images/drawn/1473.jpg
@@ -777,7 +778,7 @@ function writeEvent(scene) {
 			sp player; Uh... Oh! Sorry! 
 			im images/drawn/1477.jpg
 			t Her breathing has grown ragged as a thick bead of precum-
-			t No, it the smell hits your nose and it's clear what it is. The first drop of an extremely thick, sticky, potent load of pure dickgirl cum. 
+			t No, the smell hits your nose and it's clear what it is. The first drop of an extremely thick, sticky, potent load of pure dickgirl cum. 
 			t She grunts in frustration, as she wiggles her hips, letting her fat nuts swing beneath her skirt to coax the load out. It honestly might be too thick, it might be stuck keeping her agonizingly on-edge. 
 			t You've been walking around for a while today, you're a little dehydrated so you lick your lips. Her eyes are locked on your face as you do, and...
 			im images/drawn/1478.jpg
