@@ -755,6 +755,13 @@ function writeScene(scene) {
 		//Bully encounters
 		//Neighbor encounters
 		//Camboi encounters
+		//Skill improvement scenes
+		case "makeup": {
+			break;
+		}
+		case "plumping": {
+			break;
+		}
 		
 		//Dom route exotic shop stuff
 		//Dom route candy shop stuff
