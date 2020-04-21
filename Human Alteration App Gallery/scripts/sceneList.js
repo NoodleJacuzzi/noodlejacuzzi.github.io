@@ -352,17 +352,17 @@ function writeEvent(scene) {
 			im images/drawn/1141.jpg
 			sp office; For... For as long as there are still... Still cumsluts starving in the streets...
 			sp player; Holy shit, you're still chained up? Are you alright? You people are starving this woman!
-			S? Don't talk about our heroine like that!
-			S? Yeah, she can handle anything!
+			sp ???; im images/none.png; Don't talk about our heroine like that!
+			sp ???; im images/none.png; Yeah, she can handle anything!
 			sp office; Citizens, please! Do not fear, for the Prostate Punisher needs no sustenance. My ability to deliver creamy justice in an unending stream is a sign that I was destined for this!
 			sp player; Jesus, sisterF seriously fucked with your mind and body. This is too far, I'll text her and-
 			sp office; Oooh my, I can see you still harbor darkness in your heart~!
 			sp player; ... No, no I don't. Stop looking at me like th-
 			T Suddenly arms grab yours.
-			S? This child has been chosen for baptism! He is-Ghhhk!
+			sp ???; im images/none.png; This child has been chosen for baptism! He is-Ghhhk!
 			T Suddenly she lets you go, acting like she's just been socked in the face.
-			S? Witchcraft! Villainy! 
-			S? Let the heroine handle this, we need to get to safety!
+			sp ???; im images/none.png; Witchcraft! Villainy! 
+			sp ???; im images/none.png; Let the heroine handle this, we need to get to safety!
 			T The crowd begin to flee around you. You just sigh and look up to the sky.
 			sp player; Alright sisterF. I appreciate the save, but you've had your fun. Let this poor woman g-
 			im images/drawn/1139.jpg
@@ -596,7 +596,7 @@ function writeEvent(scene) {
 			T Once it clears, you see the prinbcess standing before you once again, but very different. 
 			im images/drawn/twintail8.jpg
 			sp Princess; im scripts/gamefiles/profiles/princess.jpg; Brave hero... 
-			sp player; WHAT THE FUCK IS HAPPENING? WHY DID YOU FUCK WITH MY GAME, SIS? 
+			sp player; WHAT THE FUCK IS HAPPENING? WHY DID YOU FUCK WITH MY GAME, SIsp ???; im images/none.png; 
 			sp Princess; im scripts/gamefiles/profiles/princess.jpg; Brave hero, the goddess has blessed me. I've changed my class from dick-growing mutant to blessed sperm cannoness.
 			sp player; Of course you have. 
 			sp Princess; im scripts/gamefiles/profiles/princess.jpg; Soon I shall depart to ruin the divine lady's womb with my impure seed, the church's doctrine shall be remade, the nuns shall drink from the new chalice of suckling upon the goddess's cum-swollen womb. The brave warriors shall be remade in your image to better arouse me. 
