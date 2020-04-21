@@ -5,8 +5,8 @@ function writeScene(scene) {
 				<p class = "centeredText">Lastest News 4/17/2020</p>
 				<p class = "centeredText">Hentai University v9: https://www.patreon.com/posts/36121668</p>
 				<p class = "centeredText">A new release of Hentai University, featuring scenes written by Cryptogreek and SlackerSavior!</p>
-				<p class = "centeredText">Bonus News 4/17/2020</p>
-				<p class = "centeredText">Human Alteration App v1.1 coming on the 24th: https://www.patreon.com/posts/36087265</p>
+				<p class = "centeredText">Bonus News 4/21/2020</p>
+				<p class = "centeredText">Human Alteration App v1.1 scenes out now, game itself has been delayed due to me getting sick: https://www.patreon.com/posts/36232154</p>
 				<p class = "centeredText">Thank you to: Swallows999, Joshua Ingram, Madgunner, Robbie, CaptainMontana, Alex, andres mejia, Badaxe, Carlos, ChronosEdge, Colin E, Daniel Vivette, Dkells, dragoon48, Dustin Leichsenring, Filament, G, J_C_L, jack spencer, Jesse Greene, Jinouga, Macarga, Marc Maldon, Marco Wassmer, michael patrick murphy, Negativatron, Ramsey Bisher, Richard, Scal, Skyrim mod lvr, StormSight, Taylor Trout, XxrobothacksxX, æž—å®¶è±ª, Aegil, Andy Amundy, Angel, Anthony Ewing, Anthony Munso, Ariados, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Daekash, Danny Nguyen, Darrell Goodman, DarthMalak, ddkre, Debarre Sonny, dhccpmc, Drashin, Dugelle, fireballcreations, GirmusCz, Grim2011, Gwen Yurick, Harry Brasch, ItsAllOgreNow, Iâ€™m a Mitch, Jane, joel larsen, John Lewis, john smith, Joshua Melzark, KH dg, Louis Hayes, Markus Hansen, mazterlith, murgatroid99, Nathan Vicary, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, Roy, Scumstango, Sebastian Eckel, sky, SmolFish, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, Vincent Madaire-Cullen, Wei, Wild Bill, William Richardson, Your Husbando, Z, สิรวิชณ์ อาสว่าง, 凱 陳, and 魏 for supporting my work!</p>
 			`;
 			document.getElementById('output').innerHTML +=`
