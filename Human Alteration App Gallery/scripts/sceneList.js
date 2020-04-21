@@ -32,7 +32,7 @@ function writeScene(scene) {
 			writeFunction("writeEvent('vr3S')", "Virtual Reality - The True Demon");
 			writeFunction("writeEvent('candyIntroS')", "Candy Shop - Introduction");
 			writeFunction("writeEvent('candyRocksS1')", "Candy Shop - Pop Rocks Free Sample");
-			writeFunction("writeEvent('candyTaffyS2')", "Candy Shop - Stretchy Taffy Free Sample");
+			writeFunction("writeEvent('candyTaffyS1')", "Candy Shop - Stretchy Taffy Free Sample");
 			break;
 		}
 		case "personalize": {
@@ -170,7 +170,7 @@ function writeEvent(scene) {
 			T As she speaks the woman spies the piece of paper in your hands and quickly sets her large box down. 
 			sp candy; You're a VIP customer?
 			sp player; I can come back sone other time, I was hoping you could tell me about this. 
-			sp candy; No no no honey, you're a VIP customer! The merchandise wairs for you, not the other way around. Normally we just sell regular confections and keep our secret stuff under wraps. Fantastic candies that can change your body in exciting and fun ways! Pop rocks that turn you into a quick-shot cum fountain, caramel that makes whatever you suck on turn yummy...
+			sp candy; No no no honey, you're a VIP customer! The merchandise waits for you, not the other way around. Normally we just sell regular confections and keep our secret stuff under wraps. Fantastic candies that can change your body in exciting and fun ways! Pop rocks that turn you into a quick-shot cum fountain, caramel that makes whatever you suck on turn yummy...
 			T She starts counting things off on her fingers detailing a half dozen bizarre confectionaries.
 			sp candy; Now some customers can't eat certain kinds of candies. If you've got no pussy, a candy that supercharges your ovaries isn't going to give you anything more than a tummyache. But, as a bonus, the store now has a 'free to try' policy! You get a chance to try out candies to see their effects before you buy them!
 			t She takes a good long look at you, her gaze lingering more than a little at your crotch. 
@@ -220,10 +220,10 @@ function writeEvent(scene) {
 			im images/real/plugSample2.gif
 			t Sighing between deep, pleasure-drunk grunts, she pushes the massive plug out of her ass. It's clear at this point she doesn't even need to touch her pussy to cum anymore. 
 			t Once the plug is out she lets out a small whine, but makes sure you can see the effect the candy has had on her. 
-			sp candy; I'll be using this one aaaall day hun, this one is bug enough that it's meant for all-day use, but it'd be rude to not show you what these sweeties can do... 
+			sp candy; I'll be using this one aaaall day hun, this one is big enough that it's meant for all-day use, but it'd be rude to not show you what these sweeties can do... 
 			im images/real/plugSample3.gif
-			t Her pucketed donut asshole gapes and does its best to try and wink shut, the feeling of cool air in her rim clearly setting candyF off something fierce. 
-			sp candy; So fucking ghuuuud~!<br>S-sorry hon, I know you probably wanna buy one now, but this little candyslut needs to close up shop for the day. There's no way I can do my job proper when all. my ass wants to do is suck on this plug all day. <br>Though, I don't mind you watching... 
+			t Her puckered donut asshole gapes and does its best to try and wink shut, the feeling of cool air in her rim clearly setting candyF off something fierce. 
+			sp candy; So fucking ghuuuud~!<br>S-sorry hon, I know you probably wanna buy one now, but this little candyslut needs to close up shop for the day. There's no way I can do my job proper when all my ass wants to do is suck on this plug all day. <br>Though, I don't mind you watching... 
 			... 
 			t By the time her free sample show has finished it's started to get dark. You head home. 
 			`);
@@ -245,7 +245,7 @@ function writeEvent(scene) {
 			im images/real/taffySample2.gif
 			sp candy; Then three... Gawd... <br>Even if you aren't pushing yourself to your limits, the elasticity boost means any size feels great. Now... 
 			im images/real/taffySample3.gif
-			sp candy; M-more on to four... 
+			sp candy; M-move on to four... 
 			im images/real/taffySample4.gif
 			sp candy; Fuck fuck fuck~! 
 			t At this point the pretense of this being an educational demonstration has vanished and it's clear she's just using this as an excuse to fist herself on the job. 
@@ -268,7 +268,7 @@ function writeEvent(scene) {
 				T She pulls you in tight and you close your eyes. She's a lot softer, bustier too, but it's still your mom despite all that.
 				T Then you breathe in through your nose, and the scent hits you. You open your eyes, and...
 				im images/drawn/0827.jpg
-				sp mom; It's okay, just let it all...<br>PlayerF? What's wrong? What are you loo-<br>Ah, of course. You hungry dear?
+				sp mom; It's okay, just let it all...<br>playerF? What's wrong? What are you loo-<br>Ah, of course. You hungry dear?
 				T With everything that's happened, how crazy your life has become lately, you just nod your head on autopilot. Your mom just smiles patiently and sighs.
 				im images/drawn/0828.jpg
 				im images/drawn/0829.jpg
@@ -593,7 +593,7 @@ function writeEvent(scene) {
 			sp Princess; im scripts/gamefiles/profiles/princess.jpg; G-goddess! I'm defiling myself, and your champion, with the sludge from my fat, churning nutsack. 
 			T Suddenly a bright light overtakes the room. 
 			sp player; Fuck, my eyes! 
-			T Once it clears, you see the prinbcess standing before you once again, but very different. 
+			T Once it clears, you see the princess standing before you once again, but very different. 
 			im images/drawn/twintail8.jpg
 			sp Princess; im scripts/gamefiles/profiles/princess.jpg; Brave hero... 
 			sp player; WHAT THE FUCK IS HAPPENING? WHY DID YOU FUCK WITH MY GAME, SIsp ???; im images/none.png; 
@@ -717,29 +717,29 @@ function writeEvent(scene) {
 			setToSub();
 			writeHTML(`
 			T You push open the door to the candy shop, the little bell jingles. You have no idea what this little ticket in your hand will give you, hopefully it's enough to get your mind off all this craziness.
-			Sc Welcome, welcome! I'm a bit, ah...
+			sp candy; Welcome, welcome! I'm a bit, ah...
 			im images/drawn/1520.jpg
-			Sc <i>Indisposed</i> at the moment. If you could-
+			sp candy; <i>Indisposed</i> at the moment. If you could-
 			sp player; S-sorry!
 			T You quickly turn around, but before you do the naked woman spies the piece of paper in your hands.
-			Sc Wait! You're a VIP customer, right? There's no need to go then. I was about to start making some cream soda, but that can wait. If you're okay with waiting just a moment I can make myself presentable and help you out.
+			sp candy; Wait! You're a VIP customer, right? There's no need to go then. I was about to start making some cream soda, but that can wait. If you're okay with waiting just a moment I can make myself presentable and help you out.
 			sp player; S-sure, whatever.
 			T You turn around to respect her privacy and wait patiently. What kinda shop is this that she can just let her cock hang out like that?
-			Sc Okay, sorry about that.
+			sp candy; Okay, sorry about that.
 			sp player; It's no pr-
 			im images/drawn/1518.jpg
 			sp player; Why are you still naked?!
-			Sc ...? You're a VIP customer.
+			sp candy; ...? You're a VIP customer.
 			sp player; How are this and that related?!<br><i>Did sisterF do this? This place probably sold some weird stuff before, but this is on a whole-other level now...</i>
-			Sc Well, I do have some clothes. If you're easily embarrassed they won't help with that though.
+			sp candy; Well, I do have some clothes. If you're easily embarrassed they won't help with that though.
 			sp player; I think anything would help at this point.
 			T ...
 			im images/drawn/endingB-2.jpg
-			Sc So, we're starting over? Well, my name's candyF.
+			sp candy; So, we're starting over? Well, my name's candyF.
 			sp player; Nice to meet you...<br><i>It really didn't help...</i>
-			Sc And you're a VIP customer! Normally we just sell regular confections and keep our secret stuff under wraps. Fantastic candies that can change your body in exciting and fun ways! Pop rocks that turn you into a quick-shot cum fountain, caramel that makes whatever you suck on turn yummy...
+			sp candy; And you're a VIP customer! Normally we just sell regular confections and keep our secret stuff under wraps. Fantastic candies that can change your body in exciting and fun ways! Pop rocks that turn you into a quick-shot cum fountain, caramel that makes whatever you suck on turn yummy...
 			T She starts counting things off on her fingers detailing a half dozen bizarre confectionaries.
-			Sc Now some customers can't eat certain kinds of candies. If you've got not pussy, a candy that supercharges your ovaries isn't going to give you anything more than a tummyache. But, as a bonus, the store now has a 'free to try' policy! You get a chance to try out candies to see their effects before you buy them! So, take a look and let me know what I can get for you.
+			sp candy; Now some customers can't eat certain kinds of candies. If you've got not pussy, a candy that supercharges your ovaries isn't going to give you anything more than a tummyache. But, as a bonus, the store now has a 'free to try' policy! You get a chance to try out candies to see their effects before you buy them! So, take a look and let me know what I can get for you.
 			`);
 			break;
 		}
@@ -751,6 +751,7 @@ function writeEvent(scene) {
 			sp player; But why would you-
 			sp candy; I think you know the answer. Being so pent up that a stiff breeze could have you leaking an orgasm on the floor, being so sensitive that all it takes is a single stroke to turn a short shot into a long drool of cum... Ooh, I've decided. I wanna have a special! I dunno why I've never thought of it before, but I really wanna try one out. You interested in a little show? 
 			`);
+			writeFunction("writeEvent('candyRocksS2')", "Continue");
 			break;
 		}
 		case "candyRocksS2": {
@@ -807,6 +808,7 @@ function writeEvent(scene) {
 			sp player; I guess. Like your nose? 
 			sp candy; I'm talking more about the urethra. Turns out the nerves in your dickhole are a great match with a good fucking when you're suped up on taffy. Wanna try? 
 			`);
+			writeFunction("writeEvent('candyTaffyS2')", "Continue");
 			break;
 		}
 		case "candyTaffyS2": {
@@ -831,7 +833,7 @@ function writeEvent(scene) {
 			sp candy; Feels good, huh? You've got the sensitivity of an experienced dickpussy, with none of the years of practice required! Now, I think you know what you need to do. 
 			t You close your eyes and take a deep breath, telling yourself you're just doing this to get this thing out of your cock, not for any other reason of course. 
 			im images/drawn/plain8.jpg
-			sp player; <i>One smooth motion... One snooth motion... Don't hesitate! </i>
+			sp player; <i>One smooth motion... One smooth motion... Don't hesitate! </i>
 			im images/drawn/plain9.jpg
 			sp player; MmmMMM~! 
 			sp candy; Yes! Keep going! Your brain can't tell the difference between that and an orgasm, it thinks you're cumming! 
