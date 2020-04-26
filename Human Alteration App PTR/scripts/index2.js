@@ -649,6 +649,8 @@ var encounterArray = [
 	{character: "mom", index: "mom3Fail", text: "momF is here.", requirements: "?location homeFoyer; !flag mom ready; ?trust mom  2;", altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,},
 	{character: "mom", index: "mom4", text: "momF is here. You can enjoy the results of your alteration", requirements: "?location homeFoyer; ?flag mom ready; ?trust mom  3;", altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,},
 	{character: "mom", index: "mom4Fail", text: "momF is here.", requirements: "?location homeFoyer; !flag mom ready; ?trust mom 3;", altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,},
+	
+	{character: "sister", index: "sister2NeedItem", text: "You don't have what you need right now. Maybe you should head to the exotic shop?", requirements: "?location homeSisterRoom; ?flag sister ready; ?trust sister 2;", altName: "", altImage: "", altColor: "", type: "message", top: 55, left: 60,},
 ];
 
 var locationArray = [

@@ -4,7 +4,7 @@ function writeScene(scene) {
 		case "start" : {
 			writeHTML(`
 			im scripts/gamefiles/logo.png
-			t Salutations friends! Human Alteration App is an adult game created by me, NoodleJacuuzi. You can find and keep up with all of my work at my<a href='https://noodlejacuzzi.github.io/index.html'>Master Index</a>
+			t Salutations friends! Human Alteration App is an adult game created by me, NoodleJacuuzi. You can find and keep up with all of my work at my <a href='https://noodlejacuzzi.github.io/index.html'>Master Index</a>
 			`);
 			writeText("I also have a <a href='https://www.patreon.com/noodlejacuzzi'>Patreon</a>");
 			writeText("I post regular content previews and polls there, and all releases are open and visible to the public even if you aren't a patron. I don't intend to gate content with it, so it's easy to ignore, but I would appreciate any support. If you don't have a dollar to spare, leaving your thoughts in the game's discussion forums, writing a review or spreading the word about the game are all helpful as well.");
@@ -748,6 +748,53 @@ function writeScene(scene) {
 			break;
 		}
 		//Sister encounters
+		case "sister0Fail": {
+			writeSpeech("sister", "", "Fuck off  dweeb, I'm working. <br>... Nah, just messing with you *bro. Hey, have you noticed what's up with mom?");
+			writeText("You can't trigger an event right now. You'll need to put your plan into action by going to sleep if you want to do anything with sisterF.");
+			writeFunction("changeLocation(data.player.location)", "Go back");
+			break;
+		}
+		case "sister1": {
+			writeEvent(scene);
+			removeFlag('sister', 'ready');
+			data.story.time = "Night";
+			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
+			break;
+		}
+		case "sister1Fail": {
+			writeSpeech("sister", "", "Fuck off. Working.");
+			writeText("She's obviously still sexually frustrated. You'll need to fine-tune her with the app to fix that. A purchase from the exotic shop should also help.");
+			writeFunction("changeLocation(data.player.location)", "Go back");
+			break;
+		}
+		case "sister2": {
+			writeEvent(scene);
+			removeFlag('sister', 'ready');
+			data.story.time = "Night";
+			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
+			break;
+		}
+		case "sister2Fail": {
+			writeSpeech("sister", "", "Oh, hey bro. Listen, you haven't been hearing anything weird, have you?");
+			writeSpeech("player", "", "Nope. Why, you looking at weird anime porn?");
+			writeText("She's still way too reserved for you to pull anything directly. You'll need to fix that the with the app tonight.");
+			writeFunction("changeLocation(data.player.location)", "Go back");
+			break;
+		}
+		case "sister3": {
+			writeEvent(scene);
+			removeFlag('sister', 'ready');
+			data.story.time = "Night";
+			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
+			break;
+		}
+		case "sister3Fail": {
+			writeText("Once your sister notices you, she closes her eyes and opens her mouth invitingly.");
+			writeSpeech("player", "", "Good girl.");
+			writeText("You have some fun with her, but if you want to trigger another event you'll need to use the app.");
+			writeFunction("changeLocation(data.player.location)", "Go back");
+			break;
+		}
 		//Friend encounters
 		//Teacher encounters
 		//Chef (Ava) encounters

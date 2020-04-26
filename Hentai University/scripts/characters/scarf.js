@@ -30,8 +30,8 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "beach1", name: "Explore the beach.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 62, trustMax: 62, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "beach2", name: "Explore the beach.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 63, trustMax: 63, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "statusQuo", name: "scarf is here in her office.", location: 'teacherLounge', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "escapeCasino", name: "scarf is here.", location: 'casino', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "escapeBeach", name: "scarf is here.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "escapeBeach", name: "scarf is here.", location: 'casino', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -353,6 +353,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("scarf", "", "You want to return into that fantasy world? Well, I won't judge, just be careful not to become distracted. Best of luck, let me know when you'd like to leave.");
 			writeFunction("changeLocation('beach')", "Enter the dream beach");
 			writeFunction("changeLocation('teacherLounge')", "Change your mind");
+			unencounter('scarf');
+			break;
+		}
+		case "escapeCasino": {
+			writeSpeech("scarf", "", "Bored already? Well, it's to be expected. The more interesting your own life, the more interesting these hypnotic palaces are. Oho~<br>Care to head back now?");
+			writeFunction("changeLocation('teacherLounge')", "Finish");
+			writeFunction("changeLocation(data.player.location)", "Change your mind");
 			unencounter('scarf');
 			break;
 		}
