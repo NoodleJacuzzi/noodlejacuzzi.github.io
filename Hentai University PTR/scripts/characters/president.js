@@ -535,8 +535,13 @@ function writeEvent(name) { //Plays the actual event.
 				sp player; Yoga, sure. Of course the most important part of yoga... Ghh... <br>Is the stretching! 
 				im images/president/artRoom2.jpg
 				sp president; im images/president/presidentP.jpg; Oooh~! Th-this is it! This is what I was looking for, and more~! 
+				sp player; You're mine now, you understand? And as a reward, whenever things start getting stressful, you'll make up some flimsy excuse and come to me for a good cunt-gaping!
+				sp president; W-wha-?<br>B-but I can't!<br>I need to-<br>I need~<br>More~!
 				im images/president/artRoom3.jpg
-				... 
+				sp president; Cumming~!
+				t As you stuff her with cum, it's clear she's already picturing being used for twisted, yet deeply satisfying means. Whether it's the hypnosis or her own weakness, she's made her choice between you and the students she represents.
+				...
+				t As the two of you get dressed she looks almost giddy, like a child who's just stolen something. Her straight-laced nature has come to an end, you clearly have a newly-formed degenerate on your hands.
 				sp player; Listen, presidentF, this is important. At the next PTSA meeting, I intend to be bringing up a few changes to the school I'd like to make. 
 				sp president; im images/president/presidentP.jpg; About your methods, I presume? Will they help everyone like you've helped me? 
 				sp player; Absolutely. 
