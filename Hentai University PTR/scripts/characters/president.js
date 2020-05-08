@@ -436,7 +436,7 @@ function writeMeetingList() {
 		}
 	}
 	if (checkFlag('president', 'nurse') != true) {
-		if (checkTrust('nurse') > 99) {
+		if (checkTrust('nurse') > 80) {
 			writeFunction("writeEncounter('nurseMeeting')", "Introduce presidentF to nurseF");
 		}
 	}
