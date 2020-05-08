@@ -442,7 +442,7 @@ function writeMeetingList() {
 	}
 	if (checkFlag('president', 'coach') != true) {
 		if (checkTrust('coach') > 99) {
-			writeFunction("writeEncounter('coachMeeting')", "Introduce coachF to nurseF");
+			writeFunction("writeEncounter('coachMeeting')", "Introduce presidentF to coachF");
 		}
 	}
 }
