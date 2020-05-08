@@ -579,7 +579,7 @@ function replaceCodenames(text) {
 			text = text.replace(codenameCheck, data.story[codenameIndex].lName);
 		}
 	}
-	if (data.player.uwu == true) {
+	if (data.player.uwu == true && text.includes('onclick') == false) {
 		for (uwuLoop = 0; uwuLoop < 30; uwuLoop++) {
 			text = text.replace('<br>', "TESTTHING");
 			text = text.replace('th', "d");
@@ -672,7 +672,7 @@ function checkRequirements(string) {
 	}
 	while (string.includes("?location ") == true) {
 		var check = string.split(`?location `).pop().split(`;`)[0];
-		if (data.player.gps == true && data.player.location != "map") {
+		if (data.player.gps == true && data.player.location == "map") {
 			//Do nothing
 		}
 		else {
@@ -806,6 +806,20 @@ function checkRequirements(string) {
 				finalResult = false;
 			}
 			string = string.replace(`?maxTrust `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?trustMin "+corruptionTarget) == true) {
+			var check = string.split(`?trustMin `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkTrust(corruptionTarget) < check) {
+				finalResult = false;
+			}
+			string = string.replace(`?trustMin `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?trustMax "+corruptionTarget) == true) {
+			var check = string.split(`?trustMax `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkTrust(corruptionTarget) > check) {
+				finalResult = false;
+			}
+			string = string.replace(`?trustMax `+corruptionTarget+` `+check+`;`, ``);
 		}
 		while (string.includes("!flag "+corruptionTarget) == true) {
 			var check = string.split(`!flag `+corruptionTarget+` `).pop().split(`;`)[0];
@@ -2331,12 +2345,33 @@ function loadSlot(slot) {
 	}
 	//sceneTransition(data.player.currentScene);
 	updateSave();
+	for (layer1 = 0; layer1 < data.story.length; layer1++) {
+		var counter = 0;
+		var index = data.story[layer1].index;
+		for (layer2 = 0; layer2 < data.story.length; layer2++) {
+			if (index == data.story[layer2].index) {
+				counter += 1;
+			}
+		}
+		if (counter > 1) {
+			console.log('duplicate character found in data variable, removing '+index);
+			data.story.splice(layer1, 1);
+			console.log(data);
+		}
+	}
 }
 
 function saveFile(){
 	hideStuff();
+	document.getElementById('output').innerHTML += `<textArea id = "copyData">`+JSON.stringify(data)+`</textAread>`;
+	var copyText = document.getElementById("copyData");
+	copyText.select();
+	copyText.setSelectionRange(0, 99999);
+	document.execCommand("copy");
+	//alert("Copied the text: " + copyText.value);
+	
 	document.getElementById('output').innerHTML = '';
-	writeText("Copy the full length below and paste it into the input box when you want to load the data. I recommend copying to a txt file.");
+	writeText("Save data copied! It's been added to your clipboard, or you can manually copy the information below.");
 	document.getElementById('output').innerHTML += JSON.stringify(data);
 	writeFunction("changeLocation(data.player.location)", "Finished copying");
 }
@@ -2848,6 +2883,7 @@ function diagnostic() {
 			setTrust('meji', -1);
 			setTrust('succubus', -1);
 			setTrust('housekeep', -1);
+			setTrust('nagatoro', -1);
 			writeSpecial("Trap / male characters have been deactivated. You might need to use this code again in the future when more traps are added.");
 			break;
 		}
@@ -2895,9 +2931,9 @@ function diagnostic() {
 		case "nuclear option": {
 			data.player.hypnosis = 3;
 			data.player.hacking = 3;
-			data.player.counseling = 4;
+			data.player.counseling = 9;
 			updateMenu();
-			writeSpecial("All of your stats have been set to 3. You can keep improving them past this point, but you shouldn't see any skill-related roadblocks from here on!");
+			writeSpecial("All of your stats have been set to 3 or above. You can keep improving them past this point, but you shouldn't see any skill-related roadblocks from here on!");
 			break;
 		}
 		case "new name": {

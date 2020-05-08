@@ -17,20 +17,41 @@ var newItems = [
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-	{index: "placeholder", name: "", requirements: "?trust principal 10000;", altName: "", altImage: "",},
+	{index: "presidentAway", name: "The Student Council room is here", requirements: "?trust president 81; ?location northHallway;", altName: "", altImage: "",},
+	{index: "warning", name: "Someone is knocking at your door", requirements: "?trust president 82; ?location playerHouse;!flag president warning;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "neet1": {
-			writeText("You walk into the room.");
-			writeSpeech("player", "", "Hello, neetF.");
-			writeSpeech("neet", "", "And hello to you, playerMister playerF.");
-			writeSpecial("You made a new friend!");
-			writeFunction("changeLocation('playerHouse')", "Go home");
-			writeBig("images/neet/profile.jpg", "Art by Enoshima Iki");
+		case "presidentAway": {
+			writeHTML(`
+				t You knock on the door to the student council, and after a moment treasurerF opens the door.
+				sp treasurer; Ye- Ugh. She isn't here, go away. 
+				sp player; Ah, do you know where presidentF is then?
+				sp treasurer; She's off taking a break from councilwork. 
+				sp player; Do you need any help? I could-
+				t The door is shut quite rudely in your face.
+			`);
+			unencounter('treasurer');
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "warning": {
+			writeHTML(`
+				sp player; Can I help-
+				sp treasurer; Yeah, you can stay away from presidentF!
+				sp player; Ah, treasurerF. It's a bit early for this, isn't it? presidentF is receiving counseling of her own volition.
+				sp treasurer; If you even THINK of trying anything with her... 
+				sp player; That's a pretty aggressive way to say "I'm worried about my friend", treasurerF. Don't worry, she's doing fine. She's in good hands. 
+				sp treasurer; Creepy statements like that are exactly why I'm worried! And I'm not! presidentF can handle herself! 
+				sp player; No, she can't. Nobody can handle life alone, and that's okay. How about we talk about it-
+				sp treasurer; No way! Just... I'm watching you! 
+				t She quickly leaves while moving her fingers from her eyes to point at you. Her little "I'm watching you" is pretty amusing, especially when she nearly trips over from not watching where she's walking. 
+			`);
+			addFlag('president', 'warning');
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		default: {
@@ -138,7 +159,7 @@ switch (requestType) {
 				var finalResult = true;
 				if (encounterArray[number].location != null) {
 					var finalLocation = encounterArray[number].location;
-					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map") { //check the location
+					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map" && data.player.gps == true) { //check the location
 						if (encounterArray[number].time.includes(data.player.time)) { //check the time
 							if (encounterArray[number].trustMin <= checkTrust(character.index) && encounterArray[number].trustMax >= checkTrust(character.index)) { //check the trust requirements
 								if (encounterArray[number].day == "even" && data.player.day%2 == 1) {
@@ -170,9 +191,9 @@ switch (requestType) {
 					}
 				}
 				else {
-					//console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
+					console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
 					var requirements = checkRequirements(encounterArray[number].requirements);
-					//console.log(requirements);
+					console.log(requirements);
 					if (requirements != true) {
 						finalResult = false;
 					}

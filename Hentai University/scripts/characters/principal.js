@@ -6,7 +6,7 @@ var character = {index: "principal", met: false, fName: "Victoria", lName: "Devo
 
 var logbook = { //Logbook details for each character.
 	index: "principal", 
-	desc: "The principal of the university you work at. She's pretty kind but is suprisingly strong willed.",
+	desc: "The principal of the university you work at. She's pretty kind but is surprisingly strong willed.",
 	body: "She's probably in her early thirties, but could be as young as 25.",
 	clothes: "She prefers an older style of dress with a white blouse and a black pencil skirt, but her shirt is worn out enough that you can clearly make out her bra underneath.",
 	home: "You have no idea where she lives, she's pretty private when it comes to her personal life. With her, it's all business all the time.",
@@ -20,7 +20,9 @@ var newItems = [//Lists the shop items unique to this character
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "introduction1", name: "Principal principal's Office is here. You should introduce yourself.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "caseSelect", name: "Enter Principal principal's Office.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 41, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "caseSelect", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?trustMin principal 41; !counseling 9; !flag principal council;",},
+	{index: "councilStart", name: "principal wanted to see you", requirements: "?location northHallway; ?trustMin principal 41; ?counseling 9; !flag principal council;",},
+	{index: "caseSelect", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?trustMin principal 41; ?counseling 9; ?flag principal council;",},
 	{index: "principalBeach1", name: "principal is here with some other women.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 41, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
@@ -433,7 +435,27 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("loadEncounter('scarf', 'failure')", "The End");
 			break;
 		}
+		case "councilStart": {
+			writeHTML(`
+				sp player; So, what did you want to speak to me about?
+				sp principal; Take a seat.<br>As you know this university prides itself on maintaining a professional environment. In order to ensure that environment is maintained I regularly host a forum with influential representatives of the school.
+				sp player; Ah, like a PTA meeting?
+				sp principal; PTSA, actually. It stands for Parent Teacher Student Association. Attendance is opt-in, faculty and major donors are invited to attend, although some donors choose to have their children represent their interests instead. Hence the "Student" in PTSA. Mostly it's a forum for suggesting policy change and identifying... <i>Problematic</i> elements of the school.
+				t They way she says that sounds ominous, but this could be a pretty good opportunity for you. If you have control of the council, the school is essentially yours. 
+				sp principal; You're certainly welcome to attend, one of the talking points will be reviewing your performance after all. Looking over student performance after counselings, discussing the results of the secondary background check.
+				sp player; ... The what now?
+				sp principal; Well, you're working with students in a private environment. I know a few members of the student body have requested additional screening.<br>... They won't find anything though, right?
+				sp player; Of course not.
+				t As you lie like a dog it's clear this is the time to begin hatching a plan. If you can't manage control of the council you're dead in the water. 
+				sp player; Who else will be there?
+				sp principal; Well, there's plenty of time before the meeting, and it is opt-in. Once the best time for the meeting is determined secretaryF will handle the dates. I know the school nurse nurseF always makes it a point to attend, and I intend to strongarm scarfF into finally attending for once.<br>Oh! And the student council president, their room is just outside of here.  She's asked a lot of questions about you actually, I'd perhaps take some time to get to know her and show her your good side.<br>Now, I'm actually quite held up at the moment, secretaryF double-booked my evening. I'll have details sent to you as they arise.
+			`);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			addFlag('principal', 'council');
+			break;
+		}
 	}
+	unencounter('principal');
 }
 
 var eventArray = [ //Lists the events of the character for unlocking and replaying in the gallery.
@@ -467,14 +489,14 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
+	{index: "council", requirements: "?counseling 9;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
-		case "testPhone": {
+		case "council": {
 			//Write the event's text here using writePhoneSpeech, writePhoneImage for images, and writePhoneChoices
-			writePhoneSpeech("mom", "", "Hello. This is "+fName('mom')+".");
-			writePhoneChoices("Sleep well?", "Who?");
+			writePhoneSpeech("principal", "", "If you aren't busy, I'd like to see you in my office later today. There's a matter coming up you could use a briefing on.");
 			break;
 		}
 		default: {
@@ -530,7 +552,7 @@ switch (requestType) {
 				var finalResult = true;
 				if (encounterArray[number].location != null) {
 					var finalLocation = encounterArray[number].location;
-					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map") { //check the location
+					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map" && data.player.gps == true) { //check the location
 						if (encounterArray[number].time.includes(data.player.time)) { //check the time
 							if (encounterArray[number].trustMin <= checkTrust(character.index) && encounterArray[number].trustMax >= checkTrust(character.index)) { //check the trust requirements
 								if (encounterArray[number].day == "even" && data.player.day%2 == 1) {
@@ -562,9 +584,9 @@ switch (requestType) {
 					}
 				}
 				else {
-					//console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
+					console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
 					var requirements = checkRequirements(encounterArray[number].requirements);
-					//console.log(requirements);
+					console.log(requirements);
 					if (requirements != true) {
 						finalResult = false;
 					}

@@ -3,11 +3,9 @@ function writeScene(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
 				<p class = "centeredText">Lastest News 4/17/2020</p>
-				<p class = "centeredText">Hentai University v9: https://www.patreon.com/posts/36121668</p>
-				<p class = "centeredText">A new release of Hentai University, featuring scenes written by Cryptogreek and SlackerSavior!</p>
-				<p class = "centeredText">Bonus News 4/21/2020</p>
-				<p class = "centeredText">Human Alteration App v1.1 scenes out now, game itself has been delayed due to me getting sick: https://www.patreon.com/posts/36232154</p>
-				<p class = "centeredText">Thank you to: Swallows999, Joshua Ingram, Madgunner, Robbie, CaptainMontana, Alex, andres mejia, Badaxe, Carlos, ChronosEdge, Colin E, Daniel Vivette, Dkells, dragoon48, Dustin Leichsenring, Filament, G, J_C_L, jack spencer, Jesse Greene, Jinouga, Macarga, Marc Maldon, Marco Wassmer, michael patrick murphy, Negativatron, Ramsey Bisher, Richard, Scal, Skyrim mod lvr, StormSight, Taylor Trout, XxrobothacksxX, æž—å®¶è±ª, Aegil, Andy Amundy, Angel, Anthony Ewing, Anthony Munso, Ariados, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Daekash, Danny Nguyen, Darrell Goodman, DarthMalak, ddkre, Debarre Sonny, dhccpmc, Drashin, Dugelle, fireballcreations, GirmusCz, Grim2011, Gwen Yurick, Harry Brasch, ItsAllOgreNow, Iâ€™m a Mitch, Jane, joel larsen, John Lewis, john smith, Joshua Melzark, KH dg, Louis Hayes, Markus Hansen, mazterlith, murgatroid99, Nathan Vicary, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, Roy, Scumstango, Sebastian Eckel, sky, SmolFish, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, Vincent Madaire-Cullen, Wei, Wild Bill, William Richardson, Your Husbando, Z, สิรวิชณ์ อาสว่าง, 凱 陳, and 魏 for supporting my work!</p>
+				<p class = "centeredText">Hentai University v9.5: https://www.patreon.com/posts/36881411</p>
+				<p class = "centeredText">A new half-release of Hentai University, introducing a new character: The president of the student council!</p>
+				<p class = "centeredText">Thank you to: Swallows999, Joshua Ingram, Robbie, andres mejia, Badaxe, Carlos, ChronosEdge, Colin E, Daniel Vivette, Dkells, dragoon48, Dustin Leichsenring, Filament, G, Hi There, J_C_L, jack spencer, Jesse Greene, Jinouga, Keith, Marc Maldon, Marco Wassmer, Negativatron, Ramsey Bisher, Richard, Scal, Skyrim mod lvr, StormSight, Taylor Trout, XxrobothacksxX, æž—å®¶è±ª, Aegil, Alec8686, Angel, Anthony Ewing, Anthony Munso, Ariados, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, ChubbiestThread, Daekash, Danny Nguyen, Darrell Goodman, DarthMalak, ddkre, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Emanuel  Garcia, fireballcreations, Grim2011, Gwen Yurick, Harry Brasch, henry grobins, ItsAllOgreNow, Iâ€™m a Mitch, Jane, joel larsen, John Lewis, john smith, Joshua Melzark, KH dg, Kieron Kow, l1monat, Louis Hayes, Magnus, Markus Hansen, mazterlith, murgatroid99, Nathan Martin, Nils Maier, Noah, Nutburger, Phanes, PR0 x THUNDER, Reverberations, Roy, Scumstango, Sebastian Eckel, ShadowFalls, Simon Rencher, Slomberg, SmolFish, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, Vincent Madaire-Cullen, Wei, Wild Bill, William Parker, William Richardson, wolfboom, XaiuX, Your Husbando, Z, 凱 陳, and 魏 for supporting my work!</p>
 			`;
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://discord.gg/B3AszYM'">Visit my discord server</p>
@@ -40,7 +38,7 @@ function writeScene(scene) {
 			writeText("The end goal here is a town packed with dozens of characters using a framework I can continually add more content to.");
 			writeText("Tags: Hypnosis, features many other tags entirely avoidable tags based on characters such as incest, dubcon, and gay content");
 			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/36121668'">Download the game</p>
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/36881411'">Download the game</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">Play the mobile version</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'">Modding Tutorial</p>
