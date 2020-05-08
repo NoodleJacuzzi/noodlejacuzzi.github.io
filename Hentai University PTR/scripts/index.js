@@ -807,6 +807,20 @@ function checkRequirements(string) {
 			}
 			string = string.replace(`?maxTrust `+corruptionTarget+` `+check+`;`, ``);
 		}
+		while (string.includes("?trustMin "+corruptionTarget) == true) {
+			var check = string.split(`?trustMin `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkTrust(corruptionTarget) < check) {
+				finalResult = false;
+			}
+			string = string.replace(`?trustMin `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?trustMax "+corruptionTarget) == true) {
+			var check = string.split(`?trustMax `+corruptionTarget+` `).pop().split(`;`)[0];
+			if (checkTrust(corruptionTarget) > check) {
+				finalResult = false;
+			}
+			string = string.replace(`?trustMax `+corruptionTarget+` `+check+`;`, ``);
+		}
 		while (string.includes("!flag "+corruptionTarget) == true) {
 			var check = string.split(`!flag `+corruptionTarget+` `).pop().split(`;`)[0];
 			if (checkFlag(corruptionTarget, check) == true) {
@@ -2848,6 +2862,7 @@ function diagnostic() {
 			setTrust('meji', -1);
 			setTrust('succubus', -1);
 			setTrust('housekeep', -1);
+			setTrust('nagatoro', -1);
 			writeSpecial("Trap / male characters have been deactivated. You might need to use this code again in the future when more traps are added.");
 			break;
 		}
@@ -2895,9 +2910,9 @@ function diagnostic() {
 		case "nuclear option": {
 			data.player.hypnosis = 3;
 			data.player.hacking = 3;
-			data.player.counseling = 4;
+			data.player.counseling = 9;
 			updateMenu();
-			writeSpecial("All of your stats have been set to 3. You can keep improving them past this point, but you shouldn't see any skill-related roadblocks from here on!");
+			writeSpecial("All of your stats have been set to 3 or above. You can keep improving them past this point, but you shouldn't see any skill-related roadblocks from here on!");
 			break;
 		}
 		case "new name": {

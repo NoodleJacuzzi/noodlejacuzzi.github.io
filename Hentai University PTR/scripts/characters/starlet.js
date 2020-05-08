@@ -1712,8 +1712,8 @@ switch (requestType) {
 		data.story.push(character);
 		console.log(character);
 		console.log(data.story);
-		writeSpecial(character.fName+" has been added to the game!");
-		writeSpeech(character.index, "", character.fName+ " " + character.lName + ", written by "+ logbook.author + ", art by "+ logbook.artist+".");
+		//writeSpecial(character.fName+" has been added to the game!");
+		//writeSpeech(character.index, "", character.fName+ " " + character.lName + ", written by "+ logbook.author + ", art by "+ logbook.artist+".");
 		break;
 	}
 	case "encounter": {

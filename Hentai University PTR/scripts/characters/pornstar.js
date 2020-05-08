@@ -1,4 +1,4 @@
-var character = {index: "pornstar", fName: "Andrea", lName: "Cummings", trust: 0, encountered: false, textEvent: "", met: false, color: "#454857", author: "NoodleJacuzzi", artist: "Oreteki18kin"};
+var character = {index: "pornstar", fName: "Andrea", lName: "Cummings", trust: 0, encountered: false, textEvent: "", textHistory: "", met: false, color: "#454857", author: "NoodleJacuzzi", artist: "Oreteki18kin"};
 
 var logbook = {
 	index: "pornstar", 
@@ -112,8 +112,8 @@ switch (requestType) {
 		data.story.push(character);
 		console.log(character);
 		console.log(data.story);
-		writeSpecial(character.fName+" has been added to the game!");
-		writeSpeech(character.index, "", character.fName+ " " + character.lName + ", written by "+ logbook.author + ", art by "+ logbook.artist+".");
+		//writeSpecial(character.fName+" has been added to the game!");
+		//writeSpeech(character.index, "", character.fName+ " " + character.lName + ", written by "+ logbook.author + ", art by "+ logbook.artist+".");
 		break;
 	}
 	case "encounter": {
