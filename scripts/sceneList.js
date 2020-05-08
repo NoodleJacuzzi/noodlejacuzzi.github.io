@@ -2,7 +2,7 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 4/17/2020</p>
+				<p class = "centeredText">Lastest News 5/8/2020</p>
 				<p class = "centeredText">Hentai University v9.5: https://www.patreon.com/posts/36881411</p>
 				<p class = "centeredText">A new half-release of Hentai University, introducing a new character: The president of the student council!</p>
 				<p class = "centeredText">Thank you to: Swallows999, Joshua Ingram, Robbie, andres mejia, Badaxe, Carlos, ChronosEdge, Colin E, Daniel Vivette, Dkells, dragoon48, Dustin Leichsenring, Filament, G, Hi There, J_C_L, jack spencer, Jesse Greene, Jinouga, Keith, Marc Maldon, Marco Wassmer, Negativatron, Ramsey Bisher, Richard, Scal, Skyrim mod lvr, StormSight, Taylor Trout, XxrobothacksxX, æž—å®¶è±ª, Aegil, Alec8686, Angel, Anthony Ewing, Anthony Munso, Ariados, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, ChubbiestThread, Daekash, Danny Nguyen, Darrell Goodman, DarthMalak, ddkre, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Emanuel  Garcia, fireballcreations, Grim2011, Gwen Yurick, Harry Brasch, henry grobins, ItsAllOgreNow, Iâ€™m a Mitch, Jane, joel larsen, John Lewis, john smith, Joshua Melzark, KH dg, Kieron Kow, l1monat, Louis Hayes, Magnus, Markus Hansen, mazterlith, murgatroid99, Nathan Martin, Nils Maier, Noah, Nutburger, Phanes, PR0 x THUNDER, Reverberations, Roy, Scumstango, Sebastian Eckel, ShadowFalls, Simon Rencher, Slomberg, SmolFish, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, Vincent Madaire-Cullen, Wei, Wild Bill, William Parker, William Richardson, wolfboom, XaiuX, Your Husbando, Z, 凱 陳, and 魏 for supporting my work!</p>
@@ -31,7 +31,7 @@ function writeScene(scene) {
 			`;
 			writeTransition("artifactList", "See a roadmap of current / planned content");
 			writeBig("images/HentaiUniversity.png");
-			writeText("Hentai University v9");
+			writeText("Hentai University v9.5");
 			writeText("A game made in cooperation with author Captain Cryptogreek, who works as the game's lead writer.");
 			writeText("You play as a young man with a strong grasp on hypnotic magic, and have embedded yourself as a counselor in a school with a fantastically attractive student body. The faculty and your neighbors in town look pretty good too.");
 			writeText("This game uses art by Enoshima Iki, Nagi Ichi, Oreteki18kin, Gujira 4 Gou, and Kinta no Mousou and is meant to be similar in feel to Hentai High School, but without the focus on school management, more emphasis on wandering / corruption, and a much higher quality body of images.");
