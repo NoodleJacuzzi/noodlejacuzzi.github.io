@@ -579,7 +579,7 @@ function replaceCodenames(text) {
 			text = text.replace(codenameCheck, data.story[codenameIndex].lName);
 		}
 	}
-	if (data.player.uwu == true) {
+	if (data.player.uwu == true && text.includes('onclick') == false) {
 		for (uwuLoop = 0; uwuLoop < 30; uwuLoop++) {
 			text = text.replace('<br>', "TESTTHING");
 			text = text.replace('th', "d");
@@ -2309,6 +2309,23 @@ function updateSave() {
 			data.story[y].unreadText = false;
 		}
 		console.log(data.story);
+	}
+	if (data.player.version == 7) {
+		data.player.version = 8;
+		for (layer1 = 0; layer1 < data.story.length; layer1++) {
+			var counter = 0;
+			var index = data.story[layer1].index;
+			for (layer2 = 0; layer2 < data.story.length; layer2++) {
+				if (index == data.story[layer2].index) {
+					counter += 1;
+				}
+			}
+			if (counter > 1) {
+				console.log('duplicate character found in data variable, removing '+index);
+				data.story.splice(data.story[layer1], 1);
+				console.log(data);
+			}
+		}
 	}
 	saveSlot(110);
 }
