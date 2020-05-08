@@ -10,22 +10,23 @@ function writeEncounter(scene) {
 		case "start" : {
 			updateMenu();
 			writeBig("scripts/gamefiles/logo2.png");
-			writeText("Hello! This is a tutorial written by NoodleJacuzzi, developer of Hentai University.");
+			writeText("Hello! This is version 2 of a modding tutorial written by NoodleJacuzzi, developer of Hentai University.");
 			writeText("You can find and keep up with all of my games, including Human Alteration App, Princess Quest, and Rainy DayZ, Anomaly Vault, and Hentai University at the master index here: <a href='https://noodlejacuzzi.github.io/index.html'>Noodle Jacuzzi's Index</a>");
 			writeText("CaptainCryptogreek, Hentai University's writer, had nothing to do with this tutorial, but you can find his work here: <a href='https://www.reddit.com/user/CaptainCryptogreek'>Captain Cryptogreek on Reddit</a>");
-			writeText("Hentai University and this tutorial would not exist without support from my patrons! You can find the Patreon here: <a href='https://www.patreon.com/noodlejacuzzi'>Patreon Link</a><br>");
+			writeText("Hentai University and this tutorial would not exist without support from my patrons! You can find the Patreon here: <a href='https://www.patreon.com/noodlejacuzzi'>Patreon Link</a>>");
 			writeText("You can also send me a message directly. Come on over to my <a href='https://discord.gg/B3AszYM'>discord</a> or you can send an email at noodlejacuzzi@gmail.com");
 			writeText("Captain Cryptogreek can be messaged on his reddit account where he regularly posts captions. You can also shoot him an email if you'd like him to proofread or you'd like to commission his skills at cryptogreekcaptions@gmail.com");
 			writeSpecial("And special thanks to Stiggy752 for the CSS!");
-			writeFunction("writeEncounter('gettingStarted')", "Get started");
-			writeFunction("writeEncounter('installation')", "I'm just here to install a mod");
+			writeFunction("writeEncounter('gettingStarted')", "Get started writing a mod");
+			writeFunction("writeEncounter('installation')", "How to isntall mods");
 			break;
 		}
 		case "gettingStarted": {
 			writeText("For this tutorial I'll be adding a character named Tia Sun, and I'll be walking you through the process of implementation step-by-step.");
 			writeText("The very first step of adding your own character is the most important one: planning.");
-			writeText("You'll need a bevy of images for your character, I recommend collecting them from a single artist CG set for consistency. I use sadpanda, although I've collected a few from Hitomi.la as well.");
-			writeText("I'll be using [Izakaya Yocchan (Enoshima Iki)] Sunao de Otonashikute Mucchimuchi na Imouto no Love Love Hatsujouki, making sure only to use textless images. You can create your own images or pick singles off of a site like Gelbooru if you prefer.");
+			writeText("You'll need a bevy of images for your character, I recommend collecting them from a single artist CG set for consistency. I use sadpanda, although I've collected a few from Hitomi.la as well. In preparing for Hentai University I collected several hundred image sets");
+			writeText("I'll be using [Izakaya Yocchan (Enoshima Iki)] Sunao de Otonashikute Mucchimuchi na Imouto no Love Love Hatsujouki, making sure only to use textless images. You also can create your own images or pick singles off of a site like Gelbooru if you prefer.");
+			//Link to artist list
 			writeBig("images/1-1.jpg", "Having a lot of images is helpful because you might not use all of them. Please credit artists, and more importantly don't rip off the efforts of translators who might have already done the cg sets you're using.");
 			writeText("Now this is important. Each character has a unique <b>codename</b>. This is unrelated to their actual name, and can be anything you like. I would keep it short though for efficiency. This codename must be unique otherwise the game will break. Because the girl I've chosen looks like a shut-in, I'll be using the codename neet.");
 			document.getElementById('output').innerHTML += `
@@ -45,6 +46,9 @@ function writeEncounter(scene) {
 			writeText("Next we need the talking profile, for this you'll need to open your profile.jpg image in an image editor and crop out a square image of the character's face.");
 			writeText("Save this cropped square image to the Hentai University/images/CODENAME folder as CODENAME.jpg");
 			writeBig("images/2-3.jpg", "Try to pick a neutral expression, since this is your character's face for pretty much everything.");
+			//Pervert mode stuff
+			//Persona style stuff
+			//Example image with P.jpg and T.png
 			writeText("With that, we have the required images. More images can be added later as you need them for scenes.");
 			writeFunction("writeEncounter('JSFile')", "Continue to the next section, the .js file");
 			break;

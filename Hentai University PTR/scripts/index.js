@@ -672,7 +672,7 @@ function checkRequirements(string) {
 	}
 	while (string.includes("?location ") == true) {
 		var check = string.split(`?location `).pop().split(`;`)[0];
-		if (data.player.gps == true && data.player.location != "map") {
+		if (data.player.gps == true && data.player.location == "map") {
 			//Do nothing
 		}
 		else {
@@ -2310,23 +2310,6 @@ function updateSave() {
 		}
 		console.log(data.story);
 	}
-	if (data.player.version == 7) {
-		data.player.version = 8;
-		for (layer1 = 0; layer1 < data.story.length; layer1++) {
-			var counter = 0;
-			var index = data.story[layer1].index;
-			for (layer2 = 0; layer2 < data.story.length; layer2++) {
-				if (index == data.story[layer2].index) {
-					counter += 1;
-				}
-			}
-			if (counter > 1) {
-				console.log('duplicate character found in data variable, removing '+index);
-				data.story.splice(data.story[layer1], 1);
-				console.log(data);
-			}
-		}
-	}
 	saveSlot(110);
 }
 
@@ -2362,12 +2345,33 @@ function loadSlot(slot) {
 	}
 	//sceneTransition(data.player.currentScene);
 	updateSave();
+	for (layer1 = 0; layer1 < data.story.length; layer1++) {
+		var counter = 0;
+		var index = data.story[layer1].index;
+		for (layer2 = 0; layer2 < data.story.length; layer2++) {
+			if (index == data.story[layer2].index) {
+				counter += 1;
+			}
+		}
+		if (counter > 1) {
+			console.log('duplicate character found in data variable, removing '+index);
+			data.story.splice(layer1, 1);
+			console.log(data);
+		}
+	}
 }
 
 function saveFile(){
 	hideStuff();
+	document.getElementById('output').innerHTML += `<textArea id = "copyData">`+JSON.stringify(data)+`</textAread>`;
+	var copyText = document.getElementById("copyData");
+	copyText.select();
+	copyText.setSelectionRange(0, 99999);
+	document.execCommand("copy");
+	//alert("Copied the text: " + copyText.value);
+	
 	document.getElementById('output').innerHTML = '';
-	writeText("Copy the full length below and paste it into the input box when you want to load the data. I recommend copying to a txt file.");
+	writeText("Save data copied! It's been added to your clipboard, or you can manually copy the information below.");
 	document.getElementById('output').innerHTML += JSON.stringify(data);
 	writeFunction("changeLocation(data.player.location)", "Finished copying");
 }

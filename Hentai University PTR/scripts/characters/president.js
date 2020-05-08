@@ -339,9 +339,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp player; A second-person pronoun.
 				sp president; Quit joking around. You and I have something important to discuss.
 				t You sigh and ruffle your hair a little. After a night's rest she's clearly quite spirited. You open the door to your office and invite her in.
-				sp president; No manipulation. You drugged me, didn't you? I want the truth, if you try to lie a quick blood test expose you.
+				sp president; No manipulation. You drugged me, didn't you? I want the truth, if you try to lie a quick blood will test expose you.
 				sp player; And why would you think you've been drugged, exactly?
-				sp president; An immediate exhaustion? Sleeping through several alarms? Now this? I took my heart rate this morning, I know you've done something.
+				sp president; An immediate exhaustion following our meeting? Sleeping through several alarms? Now this? I took my heart rate this morning, I know you've done something.
 				sp player; I have indeed. You've got a chemical flowing through you right now thanks to what I've done.
 				sp president; I knew it! What did you drug me with!?
 				sp player; Gamma-aminobutryic acid. GABA, for short.
@@ -349,13 +349,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp player; A chemical that healthy sleep builds up, it helps your nerves basically. You got a good night's sleep, presidentF, is that so foreign to you that you think you've been drugged?
 				t She leans back in her chair and sighs in defeat. 
 				sp president; I... <br>I'm sorry, *sir. Accusing a member of the faculty like that, I don't know what I was thinking. 
-				sp player; You have a very traditional mindset and a healthy skepticism, there's nothing wrong with that. So long as you grow and improve it's all water under the bridge. 
+				sp player; You have a very traditional mindset and a healthy skepticism, there's nothing wrong with that. So long as you grow and improve it's all water under the bridge.
 				sp president; I actually have a confession to make. During the last session I... I recorded you. I'm sorry.
-				sp player; I'm shocked. 
-				t As a show of good faith she pulls a recording device out of her bag and drops it firmly in the garbage bag. 
+				sp player; I'm shocked.
+				t As a show of good faith she pulls a recording device out of her bag and drops it firmly in the garbage bag.
 				sp player; Well, with that out of the way, care for another session? I've got some free time lined up.
 				sp president; What? But I just...<br>You'd really continue to help me after how I acted?
-				sp player; Of course! Now, take a seat and relax. I'll get out the pendant... 
+				sp player; Of course! Now, take a seat and relax. I'll get out the pendant...
 			`);
 			writeFunction("writeEncounter('corruptionFollowup2')", "Continue");
 			break;
@@ -499,10 +499,10 @@ function writeEvent(name) { //Plays the actual event.
 			writeHTML(`
 				t As you push your way through the bustling entrance, you can hear various students clamoring around you.
 				sp purple; Whoa, it's so realistic... But... What do you think?
-				sp starlet; It's incredible! You can really tell she's really got a passion for the arts.
+				sp starlet; It's incredible! You can really tell she's got a passion for the arts.
 				sp ojou; I think it's just that she's crazy...
 				t Even members of the faculty are discussing whatever's causing the commotion.
-				sp nurse; But is it really 'entrance to the school' material? Shouldn't it be kept in the art room?
+				sp nurse; But is it really the sort of thing which should be in the school's entrance? Shouldn't it at least be kept in the art room?
 				sp principal; It's an incredible expression of the artistic talent of one of our top students. It should stay, at the very least for today. I may have it moved to my office if it serves as too much of a distraction.
 				t And as you manage to push your way through the crowd, a large percentage of the inner circle crowding the entrance being male, you can hear two people fervently arguing.
 				sp treasurer; Please, ma'am, please tell me this is a joke!
@@ -512,7 +512,7 @@ function writeEvent(name) { //Plays the actual event.
 				t In full glory, a large oil painting hangs upon the wall for everyone to see. A nude painting of presidentF with a plaque at the bottom denoting this as a self-portrait. And of course a major draw is that presidentF herself seems to have been standing right next to it this entire time proudly showing it off.
 				sp president; I took the time to re-explore one of my abandoned passions. It's quite liberating to release the emotions I've kept bottled up lately.<br>To see so many of the students here, and even the faculty, and especially you... I can already feel my desires building up again...
 				sp treasurer; Please... If you won't take that thing down, can we just get to work? The way everyone here is staring at you, and the painting...
-				sp president; Isn't it wonderful? I'm invigorated! I feel ready to accomplish that big stack of budgetary reports today! Come on treasurerF!
+				sp president; Isn't it wonderful? I'm invigorated! I feel ready to chew through that big stack of budgetary reports today! Come on treasurerF!
 				sp treasurer; Thank god...
 				t presidentF leaves, and after a while the crowd mostly disperses too. Everyone keeps stealing glances, but nobody want to be the one drooling over 'fine art' with everyone else around.
 			`);
@@ -639,7 +639,7 @@ switch (requestType) {
 				var finalResult = true;
 				if (encounterArray[number].location != null) {
 					var finalLocation = encounterArray[number].location;
-					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map") { //check the location
+					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map" && data.player.gps == true) { //check the location
 						if (encounterArray[number].time.includes(data.player.time)) { //check the time
 							if (encounterArray[number].trustMin <= checkTrust(character.index) && encounterArray[number].trustMax >= checkTrust(character.index)) { //check the trust requirements
 								if (encounterArray[number].day == "even" && data.player.day%2 == 1) {
@@ -671,9 +671,9 @@ switch (requestType) {
 					}
 				}
 				else {
-					//console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
+					console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
 					var requirements = checkRequirements(encounterArray[number].requirements);
-					//console.log(requirements);
+					console.log(requirements);
 					if (requirements != true) {
 						finalResult = false;
 					}
