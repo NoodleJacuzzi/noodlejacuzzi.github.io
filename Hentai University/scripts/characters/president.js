@@ -421,7 +421,7 @@ function writeMeetingList() {
 		}
 	}
 	if (checkFlag('president', 'starlet') != true) {
-		if (checkTrust('starlet') > 99) {
+		if (checkTrust('starlet') > 84) {
 			writeFunction("writeEncounter('starletMeeting')", "Introduce presidentF to starletF");
 		}
 	}
