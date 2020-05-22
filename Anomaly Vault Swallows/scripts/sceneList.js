@@ -1571,33 +1571,9 @@ function writeScene(scene) {
 			writeEvent('nymphResearch2');
 			break;
 		}
-		case "vhsResearch" : {
-			tempScene = "vault";
-			writeText("It seems like some of the 'research materials' for the VHS player have arrived, and they even have a list of tags on the back, written by assistantF if the handwriting is anything to go by...");
-			var vhsScenes = 0;
-			var vhsTotal = 0;
-			for (i = 0; i < galleryArray.length; i++) {
-				if (galleryArray[i].index.includes('vhs')) {
-					vhsTotal += 1;
-					if (galleryCheck(galleryArray[i].index) == true) {
-						 vhsScenes += 1;
-					}
-				}
-			}
-			if(!galleryCheck("vhsResearch2")){
-				writeSpeech("Majuu Jouka Shoujo Utea", "images/vhs/utea.jpg", "Also called Devil Purification Girl Utea - A hentai where the main character is a magical girl that has sex with monsters to purify them. <br>Tag List: Monster, Rape, Mindbreak, Stomach Deformation, Bad End");
-				writeFunction("writeEvent('vhsResearch2')", "Put the Utea tape into the VHS player");
-				writeText("<br>Of course, you could also put in one of the older tapes, though nothing about them has changed...");
-				writeSpeech("Enjo Kouhai, Crossbreeding Assistance", "images/vhs/enjo.jpg", "A hentai where the main character is an elf girl getting impregnated. <br>Tag List: Vanilla, Elf, Creampie");
-				writeFunction("writeEvent('vhsResearch1')", "Put the Enjo Kouhai tape into the VHS player");
-			}
-			else if(vhsScenes == vhsTotal) {
-				writeText("Ah, but it doesn't look like any of it is new. Though, you could always put in one of the older tapes...");
-				writeSpeech("Enjo Kouhai, Crossbreeding Assistance", "images/vhs/enjo.jpg", "A hentai where the main character is an elf girl getting impregnated. <br>Tag List: Vanilla, Elf, Creampie");
-				writeFunction("writeEvent('vhsResearch1')", "Put the Enjo Kouhai tape into the VHS player");
-				writeSpeech("Majuu Jouka Shoujo Utea", "images/vhs/utea.jpg", "Also called Devil Purification Girl Utea - A hentai where the main character is a magical girl that has sex with monsters to purify them. <br>Tag List: Monster, Rape, Mindbreak, Stomach Deformation, Bad End");
-				writeFunction("writeEvent('vhsResearch2')", "Put the Utea tape into the VHS player");
-			}
+		case "vhsResearch": {
+			tempScene = 'work';
+			researchLevel('vhs');
 			break;
 		}
 		case "vhsFailed": {
@@ -5601,6 +5577,35 @@ function writeEvent(scene) {
 			writeText("...");
 			writeText("But there's a ray of hope. You can go on, and awaken from this bad dream, if you like.");
 			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.reddit.com/user/CaptainCryptogreek`'>Captain Cryptogreek</span>");
+			break;
+		}
+		case "vhsResearch" : {
+			tempScene = "vault";
+			writeText("It seems like some of the 'research materials' for the VHS player have arrived, and they even have a list of tags on the back, written by assistantF if the handwriting is anything to go by...");
+			var vhsScenes = 0;
+			var vhsTotal = 0;
+			for (i = 0; i < galleryArray.length; i++) {
+				if (galleryArray[i].index.includes('vhs')) {
+					vhsTotal += 1;
+					if (galleryCheck(galleryArray[i].index) == true) {
+						 vhsScenes += 1;
+					}
+				}
+			}
+			if(!galleryCheck("vhsResearch2")){
+				writeSpeech("Majuu Jouka Shoujo Utea", "images/vhs/utea.jpg", "Also called Devil Purification Girl Utea - A hentai where the main character is a magical girl that has sex with monsters to purify them. <br>Tag List: Monster, Rape, Mindbreak, Stomach Deformation, Bad End");
+				writeFunction("writeEvent('vhsResearch2')", "Put the Utea tape into the VHS player");
+				writeText("<br>Of course, you could also put in one of the older tapes, though nothing about them has changed...");
+				writeSpeech("Enjo Kouhai, Crossbreeding Assistance", "images/vhs/enjo.jpg", "A hentai where the main character is an elf girl getting impregnated. <br>Tag List: Vanilla, Elf, Creampie");
+				writeFunction("writeEvent('vhsResearch1')", "Put the Enjo Kouhai tape into the VHS player");
+			}
+			else if(vhsScenes == vhsTotal) {
+				writeText("Ah, but it doesn't look like any of it is new. Though, you could always put in one of the older tapes...");
+				writeSpeech("Enjo Kouhai, Crossbreeding Assistance", "images/vhs/enjo.jpg", "A hentai where the main character is an elf girl getting impregnated. <br>Tag List: Vanilla, Elf, Creampie");
+				writeFunction("writeEvent('vhsResearch1')", "Put the Enjo Kouhai tape into the VHS player");
+				writeSpeech("Majuu Jouka Shoujo Utea", "images/vhs/utea.jpg", "Also called Devil Purification Girl Utea - A hentai where the main character is a magical girl that has sex with monsters to purify them. <br>Tag List: Monster, Rape, Mindbreak, Stomach Deformation, Bad End");
+				writeFunction("writeEvent('vhsResearch2')", "Put the Utea tape into the VHS player");
+			}
 			break;
 		}
 		case "credits": {
