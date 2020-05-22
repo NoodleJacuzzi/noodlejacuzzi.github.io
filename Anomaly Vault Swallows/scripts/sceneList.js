@@ -1578,7 +1578,7 @@ function writeScene(scene) {
         }
         case "vhsFailed": {
             tempScene = "work";
-            writeEvent('vhsResearch1');
+            writeEvent('vhsResearch');
             break;
         }
 		case "gummyResearch": {
