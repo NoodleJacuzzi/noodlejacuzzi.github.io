@@ -1571,9 +1571,33 @@ function writeScene(scene) {
 			writeEvent('nymphResearch2');
 			break;
 		}
-		case "vhsResearch": {
-			tempScene = 'work';
-			researchLevel('vhs');
+		case "vhsResearch" : {
+			tempScene = "vault";
+			writeText("It seems like some of the 'research materials' for the VHS player have arrived, and they even have a list of tags on the back, written by assistantF if the handwriting is anything to go by...");
+			var vhsScenes = 0;
+			var vhsTotal = 0;
+			for (i = 0; i < galleryArray.length; i++) {
+				if (galleryArray[i].index.includes('vhs')) {
+					vhsTotal += 1;
+					if (galleryCheck(galleryArray[i].index) == true) {
+						 vhsScenes += 1;
+					}
+				}
+			}
+			if(!galleryCheck("vhsResearch2")){
+				writeSpeech("Majuu Jouka Shoujo Utea", "images/vhs/utea.jpg", "Also called Devil Purification Girl Utea - A hentai where the main character is a magical girl that has sex with monsters to purify them. <br>Tag List: Monster, Rape, Mindbreak, Stomach Deformation, Bad End");
+				writeFunction("writeEvent('vhsResearch2')", "Put the Utea tape into the VHS player");
+				writeText("<br>Of course, you could also put in one of the older tapes, though nothing about them has changed...");
+				writeSpeech("Enjo Kouhai, Crossbreeding Assistance", "images/vhs/enjo.jpg", "A hentai where the main character is an elf girl getting impregnated. <br>Tag List: Vanilla, Elf, Creampie");
+				writeFunction("writeEvent('vhsResearch1')", "Put the Enjo Kouhai tape into the VHS player");
+			}
+			else if(vhsScenes == vhsTotal) {
+				writeText("Ah, but it doesn't look like any of it is new. Though, you could always put in one of the older tapes...");
+				writeSpeech("Enjo Kouhai, Crossbreeding Assistance", "images/vhs/enjo.jpg", "A hentai where the main character is an elf girl getting impregnated. <br>Tag List: Vanilla, Elf, Creampie");
+				writeFunction("writeEvent('vhsResearch1')", "Put the Enjo Kouhai tape into the VHS player");
+				writeSpeech("Majuu Jouka Shoujo Utea", "images/vhs/utea.jpg", "Also called Devil Purification Girl Utea - A hentai where the main character is a magical girl that has sex with monsters to purify them. <br>Tag List: Monster, Rape, Mindbreak, Stomach Deformation, Bad End");
+				writeFunction("writeEvent('vhsResearch2')", "Put the Utea tape into the VHS player");
+			}
 			break;
 		}
 		case "vhsFailed": {
@@ -2850,7 +2874,7 @@ function writeEvent(scene) {
 		case "braceletLibrary1": {
 			writeHTML(`
 				t You decide to head to the local library to have some good clean fun with the bracelet. The place is a little shabby and worn down, but overall time has been pretty kind to it. 
-				t And when you arrive you can see time has also been kind to the current librarian, her nameplate reading librarianF.
+				t And when you arrive you can see this place has been kind to the current librarian, her nameplate reading librarianF.
 				im scripts/gamefiles/characters/librarian.jpg
 				t You're ready to walk right up to her and have your way, but something causes her to perk up. At first you think she somehow noticed you, but then you hear it as well. The stifled moans of someone else in the library.
 				...
@@ -5478,6 +5502,104 @@ function writeEvent(scene) {
 			writeSpeech("player","","...");
 			writeText("There's a momentary warmth that goes through your body at the thought of that, a phantom sensation leaving a tingling in parts that your body doesn't actually possess...");
 			writeText("You could always make assistantF forget what she saw with the Bracelet later but, while it might be a mental effect from the artifact, your heart beats much faster at the thought of her remembering <b>everything</b> she saw on that tape.");
+			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.reddit.com/user/CaptainCryptogreek`'>Captain Cryptogreek</span>");
+			break;
+		}
+		case "vhsResearch2" : {
+			tempScene = "vault";
+			writeText("You grab the Utea tape cautiously, rolling it in your hand for a moment as assistantF's staticky voice rings in over the comms.");
+			writeSpeech("assistant","","That one might be a bit dangerous...");
+			writeSpeech("player","","You could say the same of most Dark Vault artifacts.");
+			var vhsScenes = 0;
+			var vhsTotal = 0;
+			for (i = 0; i < galleryArray.length; i++) {
+				if (galleryArray[i].index.includes('vhs')) {
+					vhsTotal += 1;
+					if (galleryCheck(galleryArray[i].index) == true && galleryArray[i] != "vhsResearch2") {
+						 vhsScenes += 1;
+					}
+				}
+			}
+			writeSpeech("assistant","","Fair. Then let's begin DVA-09-16, Test-#"+vhsScenes+". Audio is recording - insert the tape when you're ready, playerF.");
+			writeText("You hesitate for a moment, your mind going to the tags on the back... but only a moment.");
+			writeText("Sliding the tape in, you take a deep breath and feel very, very tired...");
+			writeText("...");
+			writeText("This time, you're not dropped into the meat of the video quite as suddenly, though your mind is a bit... hazy.");
+			writeText("Thoughts and memories seem to flood your mind, all of them keyed around a young woman... You.");
+			writeText("Your thinking starts clearing up the further along you go, hearing about monsters and devils and how only 'Magical Girls' can stop them.");
+			writeText("Magical girls like you.");
+			writeBig("images/vhs/research2-1.gif");
+			writeText("The battles blur together, but you're sure you've been doing it for months.");
+			writeText("Transforming into a stronger magical form...");
+			writeBig("images/vhs/research2-2.gif");
+			writeText("...and saving the day every time.");
+			writeText("Almost every time, at least.");
+			writeText("Your mind finally completely clears up as you realize exactly why your life had been flashing before your eyes.");
+			writeBig("images/vhs/research2-3.gif");
+			writeText("Your stomach sinks sharply as warm, slick tendrils crawl along your arms and back, the wet sensation of the creatures breath and tongue making your skin tingle.");
+			writeText("You open your mouth to speak, but all that comes out is a shuddering grunt as its tongue sharply wraps around your throat, squeezing just enough to impede speech as it leans in.");
+			writeText("Several of the smaller, darker tendrils from its mouth slide across your face, leaving trails of thick spit as its blank, glowing eyes remain unmoving.");
+
+			writeSpeech("player","scripts/gamefiles/profiles/vhsUtea1.jpg","<i>I-It's blind...? So it's using its tongue to see me?</i>");
+			writeText("The scientist-part of you can't help but focus on that little, simple fact as the rest of your mind tries its best not to recoil from the sensation of the slimy tendrils gliding across your skin.");
+			writeText("You were fast enough to shut your mouth before any of them got in, but a new sensation overrides your thoughts.");
+			writeBig("images/vhs/research2-4.gif");
+			writeSpeech("player","scripts/gamefiles/profiles/vhsUtea1.jpg","<b>AH~!</b>");
+			writeText("Your back arches suddenly as your all-too-sensitive chest gets carressed by the firm, green tentacles sliding beneath your outfit.");
+			writeText("Not even a moment passes before another of the green appendages pushes its way past your lips, smearing the hot, sticky substance that was covering it around the insides of your mouth.");
+			writeSpeech("player","scripts/gamefiles/profiles/vhsUtea1.jpg","<i>It's sweet...?</i>");
+			writeText("The surprisingly pleasant taste spreads around, your head feeling hazy for a moment... in a surprisingly familiar way. It almost feels like the Lovey Doves, the artifact that put you in a hospital...");
+			writeText("An aphrodisiac, your scientist-mind tells you, though the rest of your head is focused on the sensations flooding your body.");
+			writeText("But looking down, something much larger and much more imposing catches your focus, your mouth going dry as you see it.");
+			writeSpeech("player","scripts/gamefiles/profiles/vhsUtea1.jpg","<i>T-That thing... would absolutely break me~</i>");
+			writeText("An impossibly huge, monstrous and violet cock hangs from the creature's hips, as thick as your thigh and nearly as long. It's practically pissing precum, a thin and steady stream running down the shaft.");
+			writeText("Even as your attention is held on that, the beast doesn't seem intent on doing nothing.");
+			writeText("The same green tendril keeps exploring your mouth, but you feel your entire body pitch forward and twist, feeling weightless as you feel its hot breath against your practically paper-thin clothes.");
+			writeText("You barely get a moment to reorient yourself as it pulls the green tentacle from your mouth, leaving it feeling almost disappointingly empty. There's a tearing sound, and the breath of the creature feels even hotter against your bare skin.");
+			writeSpeech("player","scripts/gamefiles/profiles/vhsUtea1.jpg","W-Wait, no...! Stop, you can't-!");
+			writeBig("images/vhs/research2-5.gif");
+			writeText("It teases you for a moment longer, before <b>slamming</b> deep inside.");
+			writeSpeech("player","scripts/gamefiles/profiles/vhsUtea1.jpg","<i><b>FUCK~!</b></i>");
+			writeText("Your entire body starts shaking and shuddering uncontrollably, your voice betraying you as the thick, viscous aphrodisiac gets spread throughout your pussy, lighting your mind aflame with pleasure.");
+			writeText("You can barely remember your duty, cleansing the monster as a magical girl, as you realize its using its tongue to look inside of you.");
+			writeText("The smaller, tinier tendrils squirm and tease your insides, leaving you to spasm lightly as it inspects every inch of your insides, looking and tasting for something.");
+			writeText("And when it pulls its tongue out, a deep, satisfied growl vibrating the air from its throat, it's clear that it found what it was seeking.");
+			writeText("Your womb.");
+			writeSpeech("player","scripts/gamefiles/profiles/vhsUtea1.jpg","Oh God...!");
+			writeText("Your body pitches backward this time, your vision blurring as you feel its tight grip on your thighs as it slowly presses you down against <b>it.</b>");
+			writeBig("images/vhs/research2-6.gif");
+			writeText("You try to buck half-heartedly away from it, your breathing getting deep and ragged as the steady stream of precum spilling from its tip has your body <b>screaming</b> to push against it, rather than push away.");
+			writeText("It keeps rolling its hips as your chest heaves, his thick head sliding against your cunt and ass as it presses harder and harder each time.");
+			writeSpeech("player","scripts/gamefiles/profiles/vhsUtea1.jpg","It won't fit...!");
+			writeText("It doesn't understand you, pressing even harder now as your eyes start to widen, your heart racing as, suddenly, you remember something.");
+			writeText("A Magical Girl's body is far stronger and more resilient than a normal person's.");
+			writeText("That was the last thought before your mind went completely blank with searing pleasure, your throat tightening as your eyes widen, and it <b>happens.</b>");
+			writeBig("images/vhs/research2-7.gif");
+			writeText("For several seconds, you can't think to move or scream or even <b>think</b> as you stare at the impossible bulge, your body somehow compensating for his massive shaft.");
+			writeText("There's no pain, only a twitchy, orgasmic pleasure as you feel that first stream of precum spill into your fucked-open cunt, and you <b>scream</b> in raw ecstasy.");
+			writeText("Your vision goes white as he slides his cock back out, your abs shifting visibly as he drags his flared head through your body, an almost gentle cautiousness to his movements as he grips your thighs.");
+			writeText("The next thrust isn't even a fraction as forecful, aimed away from your guts... and right at your womb.");
+			writeSpeech("player","scripts/gamefiles/profiles/vhsUtea1.jpg","F-Fuck, you're stretching me out so <i><b>good~!</b></i>");
+			writeText("The thick head grinds against your most sensitive points time and again, his speed picking up more and more as he realizes he's finally aiming right at your womb - at his <b>seedbed.</b>");
+			writeText("More of his precum spills into you, the sticky aphrodisiac leaving you in a near-constant state of orgasm, whorish squeals of pleasure spilling out of your mouth as you relish being used like a cocksleeve.");
+			writeSpeech("player","scripts/gamefiles/profiles/vhsUtea1.jpg","More...!");
+			writeText("There's no pretending that you're anything but infatuated with this sensation.");
+			writeSpeech("player","scripts/gamefiles/profiles/vhsUtea1.jpg","More, more, <i><b>more!</b></i> Fuck me, stretch me out, and <i><b>FILL ME UP~!</b></i>");
+			writeText("For the first time, you're sure he could understand the intent behind your words as his grip tightens around your thighs and he starts rolling his hips more.");
+			writeBig("images/vhs/research2-8.gif");
+			writeText("Your eyes linger hungrily on the small bulge in your abdomen every time he slams his hips into you, your half-screamed half-moaned shouts of Yes and frantic begging to get filled being nearly as loud as the demon's grunting.");
+			writeText("It only seems to be picking up speed, slamming against your womb with every thrust, the hot, slimy precum making you scream in blissful pleasure as you lose yourself in ecstasy...");
+			writeText("...");
+			writeBig("images/vhs/research2-9.gif");
+			writeSpeech("player","scripts/gamefiles/profiles/vhsUtea1.jpg","<i><b>AHN~!</b></i>");
+			writeText("Another orgasm rips through your body as even more monstrous cum spills inside you, your throat feeling hoarse from all the cumming.");
+			writeText("Your body collapses to the ground after that one, the creature finally spilling enough of its energy into your pussy to tire out, its watery jizz spilling out between your legs as you spasm.");
+			writeText("Even as its cock slides out of you, the phantom sensation of it pounding against your womb doesn't go away, your mind too addled with demon cum to be able to think.");
+			writeText("You don't even know how long you're laying there before the region turns back into the testing room, or how long it takes for them take you to a hospital bed again.");
+			writeText("The only thing you can think about is the feeling of being stretched out and filled up, desperately trying to recapture the sensation of being knocked up by a monster as you cum again and again, losing all mental faculties required to continue working at the Vault.");
+			writeText("BAD END");
+			writeText("...");
+			writeText("But there's a ray of hope. You can go on, and awaken from this bad dream, if you like.");
 			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.reddit.com/user/CaptainCryptogreek`'>Captain Cryptogreek</span>");
 			break;
 		}

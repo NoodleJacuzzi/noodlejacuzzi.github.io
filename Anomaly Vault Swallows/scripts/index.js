@@ -155,7 +155,8 @@ var galleryArray = [
 	//Domino Playlist Events
 	{index: "playlistResearch1", dark: true, girl: "", name: "Domino PMV - SISSY JOI HYPNO 1 - WEEB TRASH", hint: ""},
 	//ErotiVHS Player events
-	{index: "vhsResearch1", dark: true, girl: "", name: "ErotiVHS - Enjo Kouhai Crossbreeding Assistance, Elven Princess Episode 2", hint: ""},
+	{index: "vhsResearch1", dark: true, girl: "crypto", name: "ErotiVHS - Enjo Kouhai Crossbreeding Assistance, Elven Princess Episode 2", hint: ""},
+	{index: "vhsResearch2", dark: true, girl: "crypto", name: "ErotiVHS - Majuu Jouka Shoujo Utea, Devil Purification Girl Utea", hint: ""},
 ]
 
 var logbookArray = [
