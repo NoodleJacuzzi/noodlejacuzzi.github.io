@@ -1324,9 +1324,16 @@ function loadSlot(slot) {
 
 function saveFile(){
 	hideStuff();
+	document.getElementById('output').innerHTML += `<textArea id = "copyData">`+JSON.stringify(data)+`</textAread>`;
+	var copyText = document.getElementById("copyData");
+	copyText.select();
+	copyText.setSelectionRange(0, 99999);
+	document.execCommand("copy");
+	//alert("Copied the text: " + copyText.value);
+	
 	document.getElementById('output').innerHTML = '';
-	writeText("Copy the full length below and paste it into the input box when you want to load the data. I recommend copying to a txt file.");
-	writeText("" + JSON.stringify(data) + "");
+	writeText("Save data copied! It's been added to your clipboard, or you can manually copy the information below.");
+	document.getElementById('output').innerHTML += JSON.stringify(data);
 	writeTransition(data.player.currentScene, "Finished copying");
 }
 
@@ -1345,6 +1352,55 @@ function loadFile(){
 	}
 	updateSave();
 	nameUpdate();
+}
+
+function saveTXT() {
+	var date = new Date();
+	date = date.toDateString() + " " + date.toLocaleTimeString();
+    var textFileAsBlob = new Blob([JSON.stringify(data)], {type:'text/plain'});
+    var downloadLink = document.createElement("a");
+    downloadLink.download = "AV "+date+".noodle";
+    downloadLink.innerHTML = "Download File";
+    if (window.webkitURL != null)
+    {
+        // Chrome allows the link to be clicked
+        // without actually adding it to the DOM.
+        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    }
+    else
+    {
+        // Firefox requires the link to be added to the DOM
+        // before it can be clicked.
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+    }
+
+    downloadLink.click();
+}
+
+const fr = new FileReader();
+fr.addEventListener("load", fileLoaded);
+
+function loadSave(){
+    files = document.getElementById('loadFile').files;
+    if(files.length == 0)
+        return;
+    file = files[0];
+    fr.readAsText(file);
+}
+function fileLoaded(){
+    console.log(fr.result);
+	var fakedata = fr.result;
+	fakedata = JSON.parse(fakedata);
+	if (fakedata.player.fName == null) {
+		alert("Whoa there! I don't think that's an Anomaly Vault save file! If it is, be sure to let me (Noodlejacuzzi) know and I'll help you out.");
+	}
+	else {
+		data = fakedata;
+		sceneTransition(data.player.currentScene);
+	}
 }
 
 function generateSave() {
