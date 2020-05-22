@@ -1572,15 +1572,15 @@ function writeScene(scene) {
 			break;
 		}
 		case "vhsResearch": {
-			tempScene = 'work';
-			researchLevel('vhs');
-			break;
-		}
-		case "vhsFailed": {
-			tempScene = "work";
-			writeEvent('vhsResearch1');
-			break;
-		}
+            tempScene = 'work';
+            researchLevel('vhs');
+            break;
+        }
+        case "vhsFailed": {
+            tempScene = "work";
+            writeEvent('vhsResearch1');
+            break;
+        }
 		case "gummyResearch": {
 			tempScene = 'work';
 			researchLevel('gummy');
