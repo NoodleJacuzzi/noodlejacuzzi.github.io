@@ -27,6 +27,7 @@ var girlfriendImages = [
 ]
 
 function blocks() {
+	blockGame = true;
 	caseStage = 0;
 	document.getElementById('output').innerHTML = `
 	<div class = "game-area">
@@ -1396,10 +1397,107 @@ function setBoard() {
 			}
 			break;
 		}
+		case "jockA": {
+			tileImages = jockImages;
+			switch (caseStage) {
+				case 0:
+					target = 16;
+					n = 8;
+					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing.";
+				break;
+			break;
+			}
+		}
+		case "milfA": {
+			tileImages = milfImages;
+			switch (caseStage) {
+				case 0:
+					target = 16;
+					n = 8;
+					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing.";
+				break;
+			break;
+			}
+		}
+		case "junkieA": {
+			tileImages = junkieAImages;
+			switch (caseStage) {
+				case 0:
+					target = 16;
+					n = 8;
+					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing.";
+				break;
+				case 1:
+					target = 16;
+					n = 8;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "<b>Modification Plan Complete</b>";
+				break;
+			break;
+			}
+		}
+		case "junkieB": {
+			tileImages = junkieBImages;
+			switch (caseStage) {
+				case 0:
+					target = 16;
+					n = 8;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 1:
+					target = 16;
+					n = 8;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "<b>Modification Plan Complete</b>";
+				break;
+			break;
+			}
+		}
+		case "junkieC": {
+			tileImages = junkieCImages;
+			switch (caseStage) {
+				case 0:
+					target = 16;
+					n = 8;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 1:
+					target = 16;
+					n = 8;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "<b>Modification Plan Complete</b>";
+				break;
+			break;
+			}
+		}
 	}
-	for (i = 0; i < 16; i++) {
-		if (maps[n][i] != 0) {
-			makeTile(maps[n][i], i);
+	if (tempScene != "creation") {
+		for (i = 0; i < 16; i++) {
+			if (maps[n][i] != 0) {
+				makeTile(maps[n][i], i);
+			}
+		}
+	}
+	else {
+		for (i = 0; i < 16; i++) {
+			if (data.player.board[i] != 0) {
+				makeTile(data.player.board[i], i);
+			}
 		}
 	}
 	document.getElementById("score-target").innerHTML = target;
@@ -1417,6 +1515,9 @@ function setBoard() {
 	}
 	else {
 		document.getElementById("finishButton").innerHTML = "";
+	}
+	if (tempScene == "creation") {
+		document.getElementById("abortButton").innerHTML = `<p class="choiceText" onclick="sceneTransition('creation')">Back to creation</p>`;
 	}
 	updateImages();
 }

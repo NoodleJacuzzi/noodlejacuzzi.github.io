@@ -60,16 +60,20 @@ var galleryArray = [
 	{index: "braceletOutdoor1", dark: false, girl: "gym", name: "Fitness Instructor's Exercise Plan", hint: "Assistant event"},
 	{index: "braceletOutdoor2", dark: false, girl: "gym", name: "Fitness Instructor's Home", hint: "Assistant event"},
 	{index: "braceletOutdoor4", dark: false, girl: "swallows", name: "Bar Room Fun", hint: "Assistant event"},
-	{index: "braceletDream1", dark: false, girl: "", name: "Bracelet's Fate", hint: "Assistant event"},
+	{index: "braceletLibrary1", dark: false, girl: "librarian", name: "Library Part 1", hint: "Assistant event"},
+	{index: "braceletLibrary2", dark: false, girl: "librarian", name: "Fitness Instructor's Home", hint: "Assistant event"},
+	{index: "braceletDream1", dark: false, girl: "", name: "Library Part 2", hint: "Assistant event"},
 	//Erotibox Events
 	{index: "erotiboxResearch1", dark: false, girl: "", name: "Demo Reel - Sex Tape", hint: ""},
 	{index: "erotiboxResearch2", dark: false, girl: "assistant", name: "Taser - Slut Shocker", hint: ""},
 	{index: "erotiboxResearch3", dark: false, girl: "", name: "Mona Lisa - Work of Art", hint: ""},
+	{index: "erotiboxResearch11", dark: false, girl: "assistant", name: "Mona Lisa - Second Painting", hint: ""},
 	{index: "erotiboxResearch4", dark: false, girl: "", name: "Chessboard - Curseboard", hint: ""},
 	{index: "erotiboxResearch5", dark: false, girl: "", name: "$20 - Stripper Money", hint: ""},
 	{index: "erotiboxResearch6", dark: false, girl: "", name: "Water Bottle - Aphrodisiac Drink", hint: ""},
 	{index: "erotiboxResearch7", dark: false, girl: "assistant", name: "Flower - Squirt Inducer", hint: ""},
 	{index: "erotiboxResearch9", dark: false, girl: "assistant", name: "Alcoholic Drink - 'Sex on the Bar'", hint: ""},
+	{index: "erotiboxResearch12", dark: false, girl: "assistant", name: "Ice Cream - I Scream", hint: ""},
 	{index: "erotiboxResearch8", dark: false, girl: "assistant", name: "Assistant - Sex Fiend", hint: ""},
 	//Antique Mirror Events
 	{index: "mirrorResearch1-1", dark: false, girl: "", name: "Gender Dynamics - First Research", hint: ""},
@@ -114,7 +118,15 @@ var galleryArray = [
 	{index: "shadesResearch2", dark: false, girl: "assistant", name: "Chaddicus Shades - First Conquest", hint: ""},
 	{index: "shadesResearch3", dark: false, girl: "boss", name: "Chaddicus Shades - Second Conquest", hint: ""},
 	{index: "shadesHome1", dark: false, girl: "roommategirlfriend", name: "Chaddicus Shades - Two For One", hint: ""},
+	{index: "shadesHome3", dark: false, girl: "sister", name: "Chaddicus Shades - Vlogg'd", hint: ""},
 	{index: "shadesDream1", dark: false, girl: "", name: "Chaddicus Shades - Shades' Fate", hint: ""},
+	//CEO Pass Events
+	{index: "passResearch1", dark: false, girl: "", name: "CEO Pass - First Research", hint: ""},
+	{index: "passResearch2", dark: false, girl: "assistant", name: "CEO Pass - The Assistant", hint: ""},
+	{index: "passResearch3", dark: false, girl: "boss", name: "CEO Pass - Ms. Boss", hint: ""},
+	{index: "passHome1", dark: false, girl: "roommate", name: "CEO Pass - Roommate", hint: ""},
+	{index: "passHome2", dark: false, girl: "roommategirlfriend", name: "CEO Pass - Girlfriend", hint: ""},
+	{index: "passDream1", dark: false, girl: "", name: "CEO Pass - CEO's Fate", hint: ""},
 	//Free ___ Sign Events
 	{index: "signResearch1", dark: false, girl: "", name: "FREE HUGS", hint: ""},
 	{index: "signHome1", dark: false, girl: "roommategirlfriend", name: "FREE RIMJOBS", hint: ""},
@@ -991,6 +1003,108 @@ function signTrigger() {
 		desiredScene = "signOutdoor1";
 	}
 	writeEvent(desiredScene);
+}
+
+function writeHTML(text) {
+	//Separate the text into lines
+	var lines = text.split('\n');
+	//For each of these lines
+	for(var lineCounter = 0;lineCounter < lines.length;lineCounter++){
+		//Remove all tabs from the line, in case we use tab spacing
+		while (lines[lineCounter].includes('\t') == true) {
+			lines[lineCounter] = lines[lineCounter].replace(`\t`, ``);
+		}
+		//If the line is not empty (we don't want to print empty lines)
+		if (lines[lineCounter] != "") {
+			//Grab the first word of the line to use as the command
+			var command = lines[lineCounter].replace(/ .*/,'');
+			//Depending on which command, execute different code. Convert the command to lowercase as well in case we used Sp instead of sp, as js is case-sensitive.
+			switch (command.toLowerCase()) {
+				//If the command is "t"
+				case "t": {
+					//Remove the command from the line we actually want to print.
+					lines[lineCounter] = lines[lineCounter].replace(command+` `, ``);
+					//Execute the writeText command to print everything left to the screen.
+					writeText(lines[lineCounter]);
+					//Don't execute any of the below switch cases.
+					break;
+				}
+				case "sp": {
+					//Get the name of our speaker
+					var name = lines[lineCounter].split(command+` `).pop().split(`;`)[0];
+					//If "; im" is in our code we want to specify a specific profile image, so use that. Otherwise set the image variable blank so it can be automatically found.
+					if (lines[lineCounter].includes("; im")) {
+						var image = lines[lineCounter].split(`im `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`im `+image+`; `, ``);
+					}
+					else {
+						var image = "";
+					}
+					//If "; altName" is in our code we want to use an alternate name for the character, so use that. Otherwise set the altName variable blank.
+					if (lines[lineCounter].includes("; altName")) {
+						var altName = lines[lineCounter].split(`altName `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`altName `+altName+`; `, ``);
+					}
+					else {
+						var altName = "";
+					}
+					//If "; altColor" is in our code we want to specify a specific color for the character, so use that. Otherwise set the altColor variable blank.
+					if (lines[lineCounter].includes("; altColor")) {
+						var altColor = lines[lineCounter].split(`altColor `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`altColor `+altColor+`; `, ``);
+					}
+					else {
+						var altColor = "";
+					}
+					//Remove the command from the line we actually want to print.
+					lines[lineCounter] = lines[lineCounter].replace(command+` `+name+`; `, ``);
+					//Execute the writeSpeech command to print everything we have left.
+					//TODO: Add custom colors and custom names
+					writeSpeech(name, image, lines[lineCounter], altName, altColor);
+					break;
+				}
+				case "im": {
+					//Get the location of the image
+					var location = lines[lineCounter].split(command+` `).pop().split(`;`)[0];
+					//If "; cap" is in our code we want to attach a caption to our image. Otherwise leave the caption blank.
+					if (lines[lineCounter].includes("; cap")) {
+						var caption = lines[lineCounter].split(`cap `).pop().split(`;`)[0];
+					}
+					else {
+						var caption = "";
+					}
+					//Bring up the image on screen. Since we aren't printing the line itself we don't need to clean it by removing commands.
+					writeBig(location, caption);
+					break;
+				}
+				case "b": {
+					//Get the label of our button
+					var name = lines[lineCounter].split(`b `).pop().split(`;`)[0];
+					//Get the function we want our button to perform
+					var func = lines[lineCounter].split(`f `).pop().split(`;`)[0];
+					//If "; arg" is in our code we want the function to have a special argument. Otherwise leave the argument section blank.
+					if (lines[lineCounter].includes("; arg")) {
+						var argument = lines[lineCounter].split(`arg `).pop().split(`;`)[0];
+					}
+					else {
+						var argument = "";
+					}
+					//Write the button to the screen using the information we've collected.
+					writeFunction(func+"('"+argument+"')", name)
+					break;
+				}
+				//This is for convenience. If the line is just an elipses, replace it with a horizontal line cutting across the screen.
+				case "...": {
+					writeText("<hr>");
+					break;
+				}
+				//If the command isn't found in the list above then the code can't be parsed (understood), print an error code in red.
+				default: {
+					writeText("<span style='color:red'>Unknown command. The line '"+lines[lineCounter]+"' could not be parsed.");
+				}
+			}
+		}
+	}
 }
 
 //Menu

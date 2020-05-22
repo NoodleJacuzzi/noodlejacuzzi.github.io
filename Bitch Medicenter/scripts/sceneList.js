@@ -20,9 +20,28 @@ function writeScene(scene) {
 			writeTransition("funding", "Medicenter Funding", "#91eba9");
 			writeTransition("affiliates", "Affiliate & Medicenter Advertisement Log", "#91eba9");
 			writeTransition("settings", "Console Settings", "#91eba9");
+			writeTransition("creation", "Treatment Design Experiment", "#91eba9");
 			//writeTransition("cheat", "Enter Cheat Codes", "#91eba9");
 			writeText("...");
 			writeTransition("start", "Log out", "#FF0000");
+			break;
+		}
+		case "creation": {
+			target = 9999;
+			if (data.player.board == null) {
+				data.player.board = 
+				[
+					0, 0, 0, 0,
+					0, 0, 0, 0,
+					0, 0, 0, 0,
+					0, 0, 0, 0,
+				]
+			}
+			generateCreationBoard();
+			writeFunction("blocks()", "Test");
+			writeFunction("clearCreation()", "Empty");
+			writeFunction("outputCreation()", "Output to Array");
+			writeTransition("mainMenu", "Go back");
 			break;
 		}
 		case "funding": {

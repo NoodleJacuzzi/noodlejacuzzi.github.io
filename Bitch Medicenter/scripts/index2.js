@@ -262,6 +262,62 @@ function eatSnack() {
 	dropItem("Snack");
 }
 
+//Case creation
+function generateCreationBoard() {
+	document.getElementById('output').innerHTML += `
+	<div id = "creationBoard"
+	style = "
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-gap: 60px;
+	font-size: 4rem;
+	"
+	>
+	</div>
+	`;
+	for (counter = 0; counter < 16; counter++) {
+			document.getElementById('creationBoard').innerHTML += `
+			<div id = "creationUnit`+counter+`" 
+			onclick="increment(`+counter+`)"
+			style = "
+			"
+			>
+				`+data.player.board[counter]+`
+			</div>
+			`;
+	}
+}
+
+function increment(i) {
+	data.player.board[i] = data.player.board[i]*2;
+	if (data.player.board[i] == 0) {
+		data.player.board[i] = 2;
+	}
+	if (data.player.board[i] == 512) {
+		data.player.board[i] = 0;
+	}
+	document.getElementById('creationUnit'+i).innerHTML = data.player.board[i];
+}
+
+function clearCreation() {
+	for (counter = 0; counter < 16; counter++) {
+		data.player.board[counter] = 0;
+		document.getElementById('creationUnit'+counter).innerHTML = data.player.board[counter];
+	}
+}
+
+function outputCreation() {
+	document.getElementById('output').innerHTML += `
+	[
+	`;
+	for (counter = 0; counter < 16; counter++) {
+		document.getElementById('output').innerHTML += data.player.board[counter]+", ";
+	}
+	document.getElementById('output').innerHTML += `
+	],
+	`;
+}
+
 //Scene creation
 function writeText (text) {
 	if (text == "...") {

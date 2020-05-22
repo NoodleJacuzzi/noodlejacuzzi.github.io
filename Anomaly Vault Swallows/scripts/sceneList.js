@@ -1453,20 +1453,28 @@ function writeScene(scene) {
 			if (galleryCheck('erotiboxResearch3') != true) {
 				writeFunction("writeEvent('erotiboxResearch3')", "Test a copy of the Mona Lisa");
 			}
+			else {
+				if (galleryCheck('erotiboxResearch11') != true) {
+					writeFunction("writeEvent('erotiboxResearch11')", "Test another copy of the Mona Lisa");
+				}
+			}
 			if (galleryCheck('erotiboxResearch4') != true) {
 				writeFunction("writeEvent('erotiboxResearch4')", "Test a chessboard");
 			}
 			if (galleryCheck('erotiboxResearch5') != true) {
 				writeFunction("writeEvent('erotiboxResearch5')", "Test $20");
 			}
-			if (galleryCheck('erotiboxResearch7') != true && data.player.color.includes('rose') == true) {
+			if (galleryCheck('erotiboxResearch7') != true) {
 				writeFunction("writeEvent('erotiboxResearch7')", "Test a rose");
 			}
-			if (galleryCheck('erotiboxResearch9') != true && data.player.color.includes('beer') == true) {
+			if (galleryCheck('erotiboxResearch9') != true) {
 				writeFunction("writeEvent('erotiboxResearch9')", "Test an alcoholic drink");
 			}
 			if (galleryCheck('erotiboxResearch6') != true) {
 				writeFunction("writeEvent('erotiboxResearch6')", "Test a water bottle");
+			}
+			if (galleryCheck('erotiboxResearch10') != true) {
+				writeFunction("writeEvent('erotiboxResearch10')", "Test an icecream cone");
 			}
 			var erotiboxScenes = 0;
 			var erotiboxTotal = 0;
@@ -2827,6 +2835,51 @@ function writeEvent(scene) {
 			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.patreon.com/swallows999`'>Swallows999</span>");
 			break;
 		}
+		case "braceletLibrary1": {
+			writeHTML(`
+				t You decide to head to the local library to have some good clean fun with the bracelet. The place is a little shabby and worn down, but overall time has been pretty kind to it. 
+				t And when you arrive you can see time has also been kind to the current librarian, her nameplate reading librarianF.
+				im scripts/gamefiles/profiles/librarian.jpg
+				t You're ready to walk right up to her and have your way, but something causes her to perk up. At first you think she somehow noticed you, but then you hear it as well. The stifled moans of someone else in the library.
+				...
+				im images/bracelet/library1-1.gif
+				sp librarian; O-oh my...
+				t You take in the kinky exhibitionist's show. What's just as interesting though is librarianF peeking from behind a shelf to watch as well.
+				t The exhibitionist is clearly awakening something in librarianF, although that could also be the fact that you're stroking her cunt through her clothes. You make a mental note that the bracelet might be pretty good at giving other people fetishes.
+				im images/bracelet/library1-2.gif
+				t Using the bracelet to stay unnoticed you grab librarianF's panties and pull them aside, enjoying the fact that she's already completely soaked.
+				t librarianF bites down on her knuckle trying to keep her voice under control, but she doesn't even consider taking her eyes away from the exhibitionist in front of her for a second.
+				sp librarian; <i>Oh god, what's happening to me? Just from watching... I'm... I'm...</i>
+				im images/bracelet/library1-3.gif
+				sp librarian; <i>Cumming~!</i>
+				t Her legs shake and quiver as she hits an orgasm even stronger than the exhibitionist's. Her eyelids flutter and her stance wavers as she needs to lean on the shelf for support.
+				t The woman putting on the show quickly composes herself and starts getting dressed. Panicking that she'll be found librarianF tries to scramble away as well. You leave librarianF to see how she'll develop the next time you see her.
+			`);
+			break;
+		}
+		case "braceletLibrary2": {
+			writeHTML(`
+				t You arrive back at the library to find that librarianF isn't at her desk. After a bit of searching you find her neatly organizing books.
+				t As she approaches the row where the exhibitionist was putting on her show last time, you can see her stop and hesitate, her eyes lingering as she remembers what she say.
+				t It's actually pretty cute to see her put down her stack of books and look around to make sure nobody's watching. She lifts up her skirt, but hesitates.
+				sp librarian; Jesus... Get ahold of yourself... I shouldn't-
+				im images/bracelet/library2-1.gif
+				t librarianF gasps as you start preparing her ass for some fun, you might as well get her addicted to anal and rough sex while you're turning her into an exhibitionist.
+				t librarianF leans against a bookshelf for support, her mind trying to rationalize what's going on. As far as she knows she's losing control of her body and being overwhelmed by sensations as part of a newly developing kink.
+				t You drag her by the hips over to a small table, still making sure nobody will see her partially so you can leave her her as a broken mess, but also partially because you want something for her clit to rub against between thrusts.
+				t The bracelet still affecting her mind, she can't really be sure why she's moved, all she can really be sure of is that she's horny as fuck.
+				im images/bracelet/library2-2.gif
+				sp librarian; Ghh~! Ghh~!
+				t And that her ass feels incredible. She really is doing her best to hold her voice in. Enjoying the torment, you grab her by the legs to ensure the fetishes you're pounding into her will stick.
+				im images/bracelet/library2-3.gif
+				sp librarian; Ouuuugh~!
+				t In her defense there really isn't a woman alive who could handle this kind of assfucking and stay quiet, although her pussy spasming in the throes of an orgasm is one-hundred percent on her. Just to really drive the point home you keep pounding her well through her orgasm.
+				t At this point it's guarenteed that she'll be the next one to start jilling off in the library, and that's kinda your fault, so you do her at least one last good service by lowering her and pulling out. 
+				im images/bracelet/library2-4.gif
+				t Although whether cumming on her ass compared to creampieing it is a good service is arguable. What matters is that she and you are both satisfied.
+			`);
+			break;
+		}
 		case "braceletDream1": {
 			writeText("Visions float through your mind, spinning through your psyche.");
 			writeBig("images/bracelet/dream1-1.gif");
@@ -3062,6 +3115,46 @@ function writeEvent(scene) {
 			writeText("You've dealt with artifacts that have mind-altering properties before. They're like a heat that worms its way through your brain trying to cloud your thoughts, this is different. This is like staring at the sun, an incredible power that doesn't give a shit about you or your place in the universe.");
 			data.player.color += "cherry";
 			writeFunction("writeEvent('serumEnding')", "Take the power for yourself, take over the Anomaly Vault");
+			break;
+		}
+		case "erotiboxResearch11": {
+			writeHTML(`
+			writeSpeech("player", "", "Now beginning test EB-03-2, I've got another recreation of Leonardo Da Vinci's Mona Lisa.");
+			writeText("You place the painting in the box, then shut the front gate.");
+			writeText("Within seconds a bright purple light illuminates the room, before quickly dying down again.");
+			writeText("Inside the box is...");
+			im images/erotibox/painting2.jpg
+			sp player; What the fuck...
+			sp assistant; Is that?
+			t The painting is a conglomerated image of dozens of pornographic stills positioned to look like a painting. 
+			sp player; That's not the same thing as last time. That's not even... The Mona...
+			t It's getting harder to voice your thoughts as looking at the painting starts to play sounds in your head. Hundreds of writhing women getting pounded simultaneously, their moans and the sound of slapping flesh coming from every direction.
+			t Just barely you can hear assistantF screaming something at you. Even looking away doesn't help cull the noise.
+			sp notes; Findings:<br>The painting was replaced by a bizarre mismash of pronographic screencaptures made to look like a classical painting. Notably not the Mona Lisa. <br>When viewed for any length of time the subject will hear a mentally overwhelming mental white noise of loud sex. Even when separated the noise continued, thus the painting was destroyed and the effect ended. <br>The result of this test shows that the Erotibox will not always produce the same product with the same input. Even more worrying is the suggestion by Research Assistant assistantL that the box is improving in its ability to alter objects. 
+			`);
+			break;
+		}
+		case "erotiboxResearch12": {
+			writeHTML(`
+			sp player; Now beginning test EB-012, I've got a strawberry flavored icecream cone.
+			t  You place the ice cream on a paper towel in the box, then shut the front gate.
+			t Within seconds a bright purple light illuminates the room, before quickly dying down again.
+			t Inside the box is...
+			im images/erotibox/icecream.jpg
+			sp player; Oh, neat. It's shaped like a-
+			sp assistant; ... I'm not eating that.<br>Would you eat a dicksickle?
+			sp player; Coward, fine. I like the flavor anyways.
+			t You take a long lick of the icecream, the moment your tongue hits the sweet treat assistantF gasps and crosses her legs.
+			sp assistant; H-holy shit, stop!
+			sp player; It's linked to you, huh? I don't think I will.
+			t After a few more licks assistantF quickly stumbles out of the room. Using the bracelet you follow behind her unseen, watching as she desperately shimmies out of her panties.
+			im images/erotibox/icecream.gif
+			t With every lick her pussy and ass twitch, and she squirms beneath phantom stimulation. 
+			t Suddenly, an alarm goes off signalling a containment breach. The doors shut and lock as red lights flare.
+			...
+			t You gently place the icecream in a refrigerated box for future study as armed guards make sure the rest of the facility is safe.
+			sp notes; Findings:<br>The ice cream was replaced with a lewdly-shaped cone of the same strawberry flavor. When the frozen confection was licked, every woman within the vault and a two-mile radius outside felt a strong stimulation as though someone was performing cunnilingus on them.<br>The effects seem only to occur when a human is interacting with the treat; exposing it to freezing or hot temperatures did not produce the same effect. Future testing will be conducted at the arctic vault site.
+			`);
 			break;
 		}
 		case "erotiboxEnding": {
@@ -4162,6 +4255,42 @@ function writeEvent(scene) {
 			writeText("With the power of the bracelet you can undo your mistakes and hope that's enough.");
 			break;
 		}
+		case "shadesHome3": {
+			writeHTML(`
+			sp sister; Heeey everybody, can you hear me?
+			t You can clearly hear sisterF from the living room talking enthusiastically to what is probably a pretty large virtual audience. She probably should have closed her door, but it isn't a big deal.
+			t Or at least it isn't until she starts walking around the house holding up her phone.
+			sp sister; So this is the new place, this one teacher was cool enough to hook me up. Got food, internet, it's been a real dream so far.<br>I mean, it isn't perfect.
+			t You can see out of the corner of your eye that she's recording herself, and has tilted her phone to get you into the shot.
+			t While she's a brat, she isn't usually this antagonistic. Maybe the shades are affecting her, even if you aren't doing anything? Are they trying to cause conflict? Whatever the case you stand up and start walking over towards her.
+			sp sister; Ah, and here's my roommate. Anything you wanna say to the camera?
+			sp player; You recording, or streaming?
+			sp sister; Why? Worried the world will see you with those dollar-store douchebag glasses? It's recording.<br>So then, old man, if you would kindly go ahead and fuck off, that'd be great! Bye bye!
+			... 
+			im images/shades/home3-1.gif
+			sp sister; Hguuugh~
+			sp player; Bitch, you're cunt's squirting before we've even started fucking!
+			sp sister; C-cumming~
+			T You slap her in the face and her hips rock to grind her pussy against your dick.
+			sp sister; Yes~ Punish your little slut harder~!
+			im images/shades/home3-2.gif
+			sp sister; I c-I can't... 
+			sp player; You can't <b>WHAT</b>?! Can't hold back from cumming on camera? Here... Let's get a closeup! Squirt on the creampie you want so much! <b>NOW</b>!
+			im images/shades/home3-3.gif
+			sp sister; F-fuck~! I'm squirting~! I'M SQUIRTING ON YOUR FUCKING DICK~! I WANNA POST IIIIT~! I WANT EVERYONE...<br>Eberyone to shee... assistantF... cuhmin'...
+			t Her eyelids flutter as you fuck the consciousness out of her. No longer able to verbalize how much you've broken her, you drop her unceremoniously onto the floor in a squirting heap.
+			t The next few seconds are a blur, but you finally come back to your senses holding your finger just over the upload button on your phone.
+			t It takes every bit of willpower you have not to upload it to her public account and ruin her life forever. It's a battle of wills between you and the glasses until some unseen mind decides on a 'compromise'. Almost on autopilot, you open up a porn site in a new tab and create a new account.
+			...
+			t A while later you're relaxing on the couch again, the glasses off your face so you have some time to reflect. sisterF slowly stumbles out of her room.
+			sp player; Hey, you alright?
+			t She jumps a little and squeezes her thighs together as she hears your voice.
+			sp sister; Y-yeah. I think I took a nap or something, I missed my usual upload time too... I'm gonna head back to bed after I get a drink of water. Do... Nevermind.
+			t It's clear from her voice that she was about to ask you to come with her. She's still pretty disorientated, hopefully she'll bounce back quickly.
+			t And hopefully nobody surfing for porn recognizes her face in the anonymous video that was just uploaded.
+			`);
+			break;
+		}
 		case "shadesDream1": {
 			writeText("As you lay down in bed you realize you're still wearing the shades. You take them off and set them on your nightstand. Artifact dreams are fun, but the shades seem a bit too dangerous to wear overnight. Not to mention uncomfortable.");
 			writeText("...");
@@ -4175,6 +4304,137 @@ function writeEvent(scene) {
 			writeSpeech("player", "", "Fuck!");
 			writeText("You jolt awake, instinctively checking your body for bullet holes. That was a surprisingly realistic dream almost like...");
 			writeText("You reach up to your face. You're wearing the shades. Did you put them on in your sleep? Doubts are starting to run through your mind. Once you've had your fun you should distance yourself from these shades ASAP.");
+			break;
+		}
+		case "passResearch1": {
+				writeBig("scripts/gamefiles/items/pass.jpg");
+			writeHTML(`
+				sp assistant; Alright, let's do this!
+				sp player; You're a lot more chipper then usual.
+				sp assistant; Hehe, that's because today will be easy. Because for the first time we're researching an artifact with...<br>Dah dah daaaah~ Instructions! 
+				t She holds up a small white pamphlet, titled "The Struggle at the Top; A CEO's New Best Friend. A Full Guide to the CEO's Pass, to maximize dividends and improve equity ratios in..."
+				t And the title just goes on and on, dozens of buzzwords, at some point the thing is meaningless to read.
+				sp player; Let's not get ahead of ourselves. If the booklet was found with the artifact, the book might be part of the artifact's effects. Lemme read this thing...<br> What the hell? 
+				t The first page of the booklet simply reads 'show the card to the designated presenter, then allow 1-2 hours for presentation, followed by the most arcane garbling you' ve ever seen. As you skim through the pages that look more like QR codes put through a blender, you realixe you've already hit page 600 of a booklet that's less than an inch thick. It's clearly anonymous, so you pick up the passcode and flash it at assistantF. 
+				t She looks confused for a second before her eyes glaxe over, her body goes limp, and a forced smile overtakes her face. She stumbles over you like a puppet controlled by an amateur puppetmaster and takes the booklet from you. 
+				sp assistant; Congratulations on your purchase of this highly experimental CEO pass, brought to you Seltsame Industries! Though we still lack an official sponsor, hopefully this display of the capabilities of our latest product will show we have what it takes! 
+				t The lights of the room somehow dim, and what appears to be a slide presentation is displayed on the blank wall behind assistantF. 
+				sp assistant; The crux of the pass is the ability to awaken the inner assistant within your employees. Everyone views the boss above them differently, but in all cases we've shown solid results of near perfect submissive responses towards the CEO. 
+				t You take a seat to relax and watch the presentation as assistantF unbuttons her blouse, obviously trying to show cleavage while speaking with much more confidence than usual. 
+				sp assistant; Mind-wiping and personality overwrite techniques unfortunately don't cut it in today's climate. A diverse pool of minds leads to better performance overall. <br>Our technology relies on the preferences and fetishes of the individual, combined with a servile persona, to better motivate and satisfy the CEO of a modern world. What business are you running, exactly?
+				sp player; I'd really like to just understand how the pass works, so feel free just to focus on whatever satisfaction methods you deem best.
+				t There's a sparkle in assistantF's eyes as you say that, and you see the face of the CEO pass shift in color ever so slightly.
+				sp player; So, all of my new 'assistants' will have their own preferences on what exactly satisfaction means, yeah? What about this one?
+				sp assistant; Hmm... I've got a poor sense of balance and self-awareness, she'll try to make up for it in enthusiasm! 
+				t You walk up to assistantF and pinch her on the cheek. She does her best to keep her smile up as you tug, until you let go. 
+				sp player; Did that hurt?
+				sp assistant; Yes it did, thank you for your concern! Now, essential to the understanding of the pass is the comprehensive legal overview...
+				...
+				sp assistant; Ugh... What's going on? Is it over?
+				t As the presentation finishes assistantF comes back to her senses, only a little disorientated and rubbing her cheek.
+				sf notes; The pass is much more obviously artificial than a traditional artifact, even having an entire presentation built in for novice users. The sexual nature of its use depends more on the target than on the user, as each person will show their submission to authority in a different way and subjects seem not to remember what they did while affected by the pass.<br>Practical tests are the best way to examine the artifact, and additional resources dedicated to finding out how the makers of the pass created the artifact is highly recommended. 
+			`);
+			break;
+		}
+		case "passResearch2": {
+			writeHTML(`
+			sp assistant; Hey, we testing the pass aga-
+			t  You flash the CEO pass to assistantF, and again her eyes glaze over as a smile is painted across her face.
+			sp player; Alright, now that we're done with legal jargon, let's get right to it.
+			sp assistant; Sure!
+			t She begins unbuttoning her blouse, but instead of approaching you walks over to your desk and moves your chair out of the way.
+			sp assistant; We still have a pretty large amount of paperwork we should be filling out on artifact usage and interactions, right? I've got a pretty good idea of how we can get some multitasking done.
+			...
+			im images/pass/research2-1.gif
+			sp boss; playerF, have you seen assistantF recently?
+			sp player; Not recently, I think she's on a break. Wh-why?
+			sp boss; There's an unexplained three minute gap between one of the EB-generated artifacts being taken out for cleaning and being returned.
+			sp player; Well, I'll be sure... Sure to let ask her about it. She's been really attentive lately, maybe it's just a misspelling of the time?
+			t She gives you a glare, her instincts sensing something is off. But you're pretty sure "he's getting a blowjob under the desk right now" isn't her first assumption. She just shakes her head and takes her leave.
+			im images/pass/research2-2.gif
+			sp assistant; Mmph...<br>Ah... You became much more excited when she arrived, it's more efficient this way. If you're still pent up, I could shout her name and try to get you off again before she arrives.
+			sp player; I think I'm alright for now, thanks.
+			`);
+			break;
+		}
+		case "passResearch3": {
+			writeHTML(`
+			t Suddenly bossL's body goes rigid. 
+			sp boss; I'm very sorry about this sir, but an automatic defense of the pass has kicked in. It would appear that this woman harbors murderous intentions! We don't recommend allowing full autonomy to people with a sociopathic nature. 
+			sp player; She wants to kill me? 
+			sp boss; Perhaps not you specifically, some people do not do well when confronted with authority. We recommend a full reconditioning. 
+			t You walk up to more closely examine bossL's face, she's sweating slightly but otherwise looks completely satisfied to serve you. 
+			sp player; So you've overwritten her personality then? Is she still in there? 
+			sp boss; Only temporarily! And yes, she is. Her fight or flight responses are kicking in, and she's battling the pass's control. Her exact remarks contain 32 unprofessional expletives, would you like to hear them? 
+			sp player; Actually, no. Knowing she's still in there is enough for me. bossL, tear open your pants. 
+			im images/pass/research3-1.gif
+			sp boss; Without hesitation! Her state of anger is evolving into a level of blind fury, mixed with heavy levels of shame. Please keep in mind what while assistants keep no memory of their actions, they may subconciously harbor feelings of anger or arousal afterwards. 
+			sp player; That's fantastic! Ah, was she not wearing panties today? 
+			sp boss; They were removed recently to allow for anal masturbation in the men's bathroom! <br>Ah, shame levels have risen dramatically. 
+			sp player; Well, I guess I know what she wants at least. Get ready.
+			im images/pass/research3-2.gif
+			sp boss; Absolutely! Please do not worry about the comfort of assistants, what matters most is your satisfaction! And personal feelings of arousal strongly suggest that even if this assistant were not already lubed up from self pleasure, she would still achieve climax from anal fucking. 
+			t You grin and press the head of your cock against her puckered ass. Between the smile on her face and the feeling of her body pushing back against yours, you're getting a clear message to hurry up.
+			im images/pass/research3-3.gif
+			t You thrust in, feeling the warmth of her ass. There's a flicker of something behind her glazed-over eyes, like her true self was struggling to break free for a second, but it's quickly gone and bossL happily hums a tune as you fuck her ass.
+			sp boss; It is worth noting that her ass and anal fetish are already highly developed. Do you find this to your liking? I could suck your dick to ensure a more lubed experience, her reaction to that idea is quit positive behind her forced rage.
+			sp player; M-maybe another... Time... God she's tight, I'm not gonna last long...
+			sp boss; Fantastic! Remember this assistant is completely devoted to your pleasure. Not only that, but she will not last much longer either before achieving release. Her inner voice is mostly a chorus of moans at this point.
+			sp player; Gonna...
+			sp boss; I can sense you are close. I will forcibly trigger an orgasm to ensure maximum tightness.
+			im images/pass/research3-4.gif
+			sp boss; Release achieved! She is cumming, both from the rough anal stimulation and the feeling of sperm flooding her ass. Good job!
+			t You keep thrusting away trying to ride out the orgasm as her ass clenches around you, until you fire off your last load and pull out. Her ass clenches, doing its damnedest to hold in your load.
+			sp boss; On the inside you could consider her to be unconscious, like she fainted. Shall I return to her office and release control? Ah, should I clean out the cum from her ass as well?
+			sp player; ... Nah, let her handle it after she wakes up. You can go ahead and clean me off though.
+			sp boss; Gladly!
+			`);
+			break;
+		}
+		case "passHome1": {
+			writeHTML(`
+			sp player; Hey roommateF, check this out.
+			t You flash roommateF the pass and watch as her eyes glaze over. Instead of standing stock still though she nearly tackles you and forces your lips against hers.
+			t Reflexively you push her away for a moment and see an almost animalistic lust on her face, before it's replaced with a blank smile.
+			sp roommate; Apologies. The pass uses the complete removal of inhibitions by default, it would appear this assistant has an incredibly high level of libido and sexual desire already. Are you not satisfied with this assistant's definition of achieving CEO satisfaction? 
+			t While the pass is talking through roommateF's mouth she's grinding her lower body against your leg and her breasts against your body. The incredible level of sexual hunger unleashed by the pass is just something intrinsic to roommateF, apparently. 
+			sp player; No, this is fi-mpph
+			t Before you can even finish your sentence roommateF has already locked lips with you again.
+			sp player; Mph- God damn, you're in a committed relationship you know.
+			t You push her away for a second to take another breath before she voraciously tries to satisfy you again. A look of shame crosses her face as she kneels down.
+			sp roommate; I sorry, I just... I can't hold on, I need... I need-
+			t Her shame vanishes as she tugs down your pants and finds exactly what she needs. An almost tearful joy overtakes her before she is on you like a lioness starved for meat.
+			im images/pass/home1-1.gif
+			t You shudder as needy woman and loyal assistant combine into a perfect cockscuking machine. Too soon though she's finished, it seems like she was just trying to get you lubed up. 
+			t Part of you wants to say some dig about what girlfriendF 
+			`);
+			break;
+		}
+		case "passHome2": {
+			writeHTML(`
+			sp girlfriend; Absolutely! Please keep in mind that the effects will mostly dissipate at the end of the session, however some residual effects will still linger. Prior study data suggests this assistant has a strong change of developing an irreperable cuckholding fetish. Is this acceptable? 
+			sp player; Go ahead. 
+			sp roommate; Nnnngh~! 
+			im images/pass/home2-2.gif
+			sp assistant; Very well, now reconditioning. I will begin sexual stimulation, if you could ensure an adequate amount of visual stimulus, that would ensure success at this stage. 
+			sp girlfriend; Absolutely! Feelings of betrayal and heartbreak have begun to diminish rapidly, and are being replaced by a strong feeling of arousal.
+
+			sp girlfriend; Third orgasm approaching, results suggest that the cuckqueening fetish has taken root. Ease of development suggests this fetish was already present tk a small degree. Now releasing control. 
+			t girlfriendF's body suddenly spasms like she's hit by lightning as control is released. No longer content with the slow teasing of her pussy now she's writhing and fingerfucking her cunt as fast as she can, making sure to angle herself so she has a good view of you fucking her girlfriend of course. 
+
+			t As you haul roommateF over to her, there's a look of hope in her eyes for a moment until roommateF scrambles back up and plants her cum-leaking pussy on her girlfriend's face and tries to grind herself to one more orgasm. 
+			t As you lean back to enjoy the show, girlfriendF's eyes flutter and it's clear she's given into the degeneracy. 
+			t Luckily with the bracelet even when the effect of the pass ends all this will just be a hazy memory, and you'll get off scott free for having caused only a small kink in their relationship. 
+			`);
+			break;
+		}
+		case "passDream1": {
+			writeHTML(`
+			im images/pass/dream.gif
+			t Dozens of women line the walls, each wearing an unbreakable smile. The results of many successful tests. 
+			t Two noisy men are arguing at your desk. One thinks the passcard in your hand is the first key to your company's future. The other believes your company will be found out within the month, claiming that 'dark magic or however it works' is likely to attract the attention of a group far worse than the government. 
+			t The hairs on the back of your neck stand up. You look around, confused, unaware the room is already filling up with invisible gasses meant to knock you out. 
+			`);
 			break;
 		}
 		case "signPrompt": {
