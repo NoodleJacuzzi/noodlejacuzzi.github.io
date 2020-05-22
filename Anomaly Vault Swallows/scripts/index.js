@@ -129,6 +129,12 @@ var galleryArray = [
 	{index: "passDream1", dark: false, girl: "", name: "CEO Pass - CEO's Fate", hint: ""},
 	//Free ___ Sign Events
 	{index: "signResearch1", dark: false, girl: "", name: "FREE HUGS", hint: ""},
+	{index: "signHome1", dark: false, girl: "roommategirlfriend", name: "FREE RIMJOBS", hint: ""},
+	{index: "signHome2", dark: false, girl: "", name: "FREE CREAMPIES", hint: "FREE CREAMPIES"},
+	{index: "signHome3", dark: false, girl: "", name: "FREE BLOWJOBS", hint: "FREE BLOWJOBS"},
+	{index: "signHome4", dark: false, girl: "", name: "FREE SEX", hint: "FREE SEX"},
+	{index: "signHome6", dark: false, girl: "", name: "FREE ANAL", hint: "FREE ANAL"},
+	{index: "signOutdoor1", dark: false, girl: "", name: "FREE TITFUCK", hint: ""},
 	{index: "signDream1", dark: false, girl: "agent", name: "FREE DREAMS", hint: ""},
 	//Exchange Gas Events
 	{index: "gasResearch1", dark: true, girl: "assistant", name: "Exchange Gas - Personal Test", hint: ""},
@@ -607,6 +613,9 @@ function listArtifact(name) {
 				researchStatus += 1;
 			}
 		}
+	}
+	if (name == "sign") {
+		researchTotal = "???";
 	}
 	if (tempScene == "vault") {
 		store = "";
@@ -1116,7 +1125,7 @@ function updateMenu() {
 	}
 	document.getElementById('playerImage').src = "scripts/gamefiles/characters/"+data.player.character+".jpg";
 	for (i = 0; i < galleryArray.length; i++) {
-		if (galleryArray[i].dark != true) {
+		if (galleryArray[i].dark != true && galleryArray[i].index.includes("sign") != true) {
 			researchTotal += 1;
 			if (galleryCheck(galleryArray[i].index) == true) {
 				researchStatus += 1;

@@ -1396,7 +1396,7 @@ function writeScene(scene) {
 			break;
 		}
 		case "passFailed": {
-			writeText("A passkey that causes people to become servile assistants, the possibilities are pretty limitless. You could probably take of the vault with this thing...");
+			writeText("A passkey that causes people to become servile assistants, the possibilities are pretty limitless. You could probably take over the vault with this thing...");
 			writeText("Maybe you'll be hit with inspiration soon.");
 			writeTransition("work", "Go back");
 			break;
@@ -2877,13 +2877,13 @@ function writeEvent(scene) {
 		case "braceletLibrary2": {
 			writeHTML(`
 				t You arrive back at the library to find that librarianF isn't at her desk. After a bit of searching you find her neatly organizing books.
-				t As she approaches the row where the exhibitionist was putting on her show last time, you can see her stop and hesitate, her eyes lingering as she remembers what she say.
+				t As she approaches the row where the exhibitionist was putting on her show last time, you can see her stop and hesitate, her eyes lingering as she remembers what she saw.
 				t It's actually pretty cute to see her put down her stack of books and look around to make sure nobody's watching. She lifts up her skirt, but hesitates.
 				sp librarian; Jesus... Get ahold of yourself... I shouldn't-
 				im images/bracelet/library2-1.gif
 				t librarianF gasps as you start preparing her ass for some fun, you might as well get her addicted to anal and rough sex while you're turning her into an exhibitionist.
 				t librarianF leans against a bookshelf for support, her mind trying to rationalize what's going on. As far as she knows she's losing control of her body and being overwhelmed by sensations as part of a newly developing kink.
-				t You drag her by the hips over to a small table, still making sure nobody will see her partially so you can leave her her as a broken mess, but also partially because you want something for her clit to rub against between thrusts.
+				t You drag her by the hips over to a small table, still making sure nobody will see her partially so you can leave her as a broken mess, but also partially because you want something for her clit to rub against between thrusts.
 				t The bracelet still affecting her mind, she can't really be sure why she's moved, all she can really be sure of is that she's horny as fuck.
 				im images/bracelet/library2-2.gif
 				sp librarian; Ghh~! Ghh~!
@@ -4275,7 +4275,7 @@ function writeEvent(scene) {
 		case "shadesHome3": {
 			writeHTML(`
 			t You lie back for a short rest, but as you close your eyes you feel... Hungry. Not for food, but for something else.
-			t As you try to ignore the stange feelings the shades tingle on your face for just a moment.
+			t As you try to ignore the strange feelings the shades tingle on your face for just a moment.
 			sp sister; Heeey everybody, can you hear me?
 			t You can clearly hear sisterF from the living room talking enthusiastically to what is probably a pretty large virtual audience. She probably should have closed her door, but it isn't a big deal.
 			t Or at least it isn't until she starts walking around the house holding up her phone.
@@ -4334,8 +4334,8 @@ function writeEvent(scene) {
 				t She holds up a small white pamphlet, titled "The Struggle at the Top; A CEO's New Best Friend. A Full Guide to the CEO's Pass, to maximize dividends and improve equity ratios in..."
 				t And the title just goes on and on, dozens of buzzwords, at some point the thing is meaningless to read.
 				sp player; Let's not get ahead of ourselves. If the booklet was found with the artifact, the book might be part of the artifact's effects. Lemme read this thing...<br> What the hell? 
-				t The first page of the booklet simply reads 'show the card to the designated presenter, then allow 1-2 hours for presentation, followed by the most arcane garbling you' ve ever seen. As you skim through the pages that look more like QR codes put through a blender, you realixe you've already hit page 600 of a booklet that's less than an inch thick. It's clearly anonymous, so you pick up the passcode and flash it at assistantF. 
-				t She looks confused for a second before her eyes glaxe over, her body goes limp, and a forced smile overtakes her face. She stumbles over you like a puppet controlled by an amateur puppetmaster and takes the booklet from you. 
+				t The first page of the booklet simply reads 'show the card to the designated presenter, then allow 1-2 hours for presentation, followed by the most arcane garbling you' ve ever seen. As you skim through the pages that look more like QR codes put through a blender, you realize you've already hit page 600 of a booklet that's less than an inch thick. It's clearly anonymous, so you pick up the passcode and flash it at assistantF. 
+				t She looks confused for a second before her eyes glaze over, her body goes limp, and a forced smile overtakes her face. She stumbles over you like a puppet controlled by an amateur puppetmaster and takes the booklet from you. 
 				sp assistant; Congratulations on your purchase of this highly experimental CEO pass, brought to you Seltsame Industries! Though we still lack an official sponsor, hopefully this display of the capabilities of our latest product will show we have what it takes! 
 				t The lights of the room somehow dim, and what appears to be a slide presentation is displayed on the blank wall behind assistantF. 
 				sp assistant; The crux of the pass is the ability to awaken the inner assistant within your employees. Everyone views the boss above them differently, but in all cases we've shown solid results of near perfect submissive responses towards the CEO. 
@@ -4425,7 +4425,7 @@ function writeEvent(scene) {
 			t Before you can even finish your sentence roommateF has already locked lips with you again.
 			sp player; Mph- God damn, you're in a committed relationship you know.
 			t You push her away for a second to take another breath before she voraciously tries to satisfy you again. A look of shame crosses her face as she kneels down.
-			sp roommate; I sorry, I just... I can't hold on, I need... I need-
+			sp roommate; I'm sorry, I just... I can't hold on, I need... I need-
 			t Her shame vanishes as she tugs down your pants and finds exactly what she needs. An almost tearful joy overtakes her before she is on you like a lioness starved for meat.
 			im images/pass/home1-1.gif
 			t You shudder as needy woman and loyal assistant combine into a perfect cockscuking machine. Too soon though she's finished, it seems like she was just trying to get you lubed up. 
@@ -4439,7 +4439,7 @@ function writeEvent(scene) {
 			writeHTML(`
 			im images/pass/home2-1.gif
 			t As you're enjoying the results of flashing the pass to roommateF again, you hear the door opening.
-			t You can hear a friendly greeting cut short by the sound of you fucking roomateF into the ground, you look up and you can see girlfriendF standing in the doorway. For a few seconds she's in a stunned silence before her eyes glaze over when you flash her the CEO pass.
+			t You can hear a friendly greeting cut short by the sound of you fucking roommateF into the ground, you look up and you can see girlfriendF standing in the doorway. For a few seconds she's in a stunned silence before her eyes glaze over when you flash her the CEO pass.
 			sp player; roommateF? Your girlfriend's here.
 			sp roommate; Ghh~! Harder~!
 			sp player; Seems like you don't really care...<br>girlfriendF? You enjoying the show?
@@ -4603,7 +4603,7 @@ function writeEvent(scene) {
 			writeSpeech("Older Man", "scripts/gamefiles/profiles/olderMan.jpg", "... Sorry, sorry. It's just that it's her first time.");
 			writeSpeech("player", "", "Sure as hell doesn't feel like it.");
 			writeSpeech("Young Lady", "scripts/gamefiles/profiles/daughter.jpg", "Mmmph~!");
-			writeSpeech("Older Man", "scripts/gamefiles/profiles/olderMan.jpg", "you realize what's she's doing right now?");
+			writeSpeech("player", "", "you realize what's she's doing right now?");
 			writeSpeech("Older Man", "scripts/gamefiles/profiles/olderMan.jpg", "Of course! She's sucking dick, doing a public service. And she must just be a natural at it, that's all.");
 			writeSpeech("player", "", "If you say so... God damn!");
 			writeText("Bored of the conversation you focus on the much more interesting bobbing head on your cock. You have to grab her by the hair and pull her off your length, otherwise she'd stay balls deep and probably choke herself out.");
