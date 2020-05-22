@@ -316,7 +316,7 @@ function writeScene(scene) {
 					}
 				break;
 			}
-			writeScene("home");
+			sceneTransition("home");
 			break;
 		}
 		case "napWork": {
@@ -461,6 +461,7 @@ function writeScene(scene) {
 				default: {
 					switch (data.player.time) {
 						case "Morning": {
+							checkForEvents();
 							writeTransition("room", "Head to your room");
 							break;
 						}
@@ -1389,6 +1390,17 @@ function writeScene(scene) {
 			writeTransition("work", "Go back");
 			break;
 		}
+		case "passResearch": {
+			tempScene = 'work';
+			researchLevel('pass');
+			break;
+		}
+		case "passFailed": {
+			writeText("A passkey that causes people to become servile assistants, the possibilities are pretty limitless. You could probably take of the vault with this thing...");
+			writeText("Maybe you'll be hit with inspiration soon.");
+			writeTransition("work", "Go back");
+			break;
+		}
 		case "signResearch": {
 			tempScene = 'work';
 			researchLevel('sign');
@@ -1474,7 +1486,7 @@ function writeScene(scene) {
 				writeFunction("writeEvent('erotiboxResearch6')", "Test a water bottle");
 			}
 			if (galleryCheck('erotiboxResearch10') != true) {
-				writeFunction("writeEvent('erotiboxResearch10')", "Test an icecream cone");
+				writeFunction("writeEvent('erotiboxResearch12')", "Test an icecream cone");
 			}
 			var erotiboxScenes = 0;
 			var erotiboxTotal = 0;
@@ -2839,7 +2851,7 @@ function writeEvent(scene) {
 			writeHTML(`
 				t You decide to head to the local library to have some good clean fun with the bracelet. The place is a little shabby and worn down, but overall time has been pretty kind to it. 
 				t And when you arrive you can see time has also been kind to the current librarian, her nameplate reading librarianF.
-				im scripts/gamefiles/profiles/librarian.jpg
+				im scripts/gamefiles/characters/librarian.jpg
 				t You're ready to walk right up to her and have your way, but something causes her to perk up. At first you think she somehow noticed you, but then you hear it as well. The stifled moans of someone else in the library.
 				...
 				im images/bracelet/library1-1.gif
@@ -3118,11 +3130,11 @@ function writeEvent(scene) {
 			break;
 		}
 		case "erotiboxResearch11": {
-			writeHTML(`
 			writeSpeech("player", "", "Now beginning test EB-03-2, I've got another recreation of Leonardo Da Vinci's Mona Lisa.");
 			writeText("You place the painting in the box, then shut the front gate.");
 			writeText("Within seconds a bright purple light illuminates the room, before quickly dying down again.");
 			writeText("Inside the box is...");
+			writeHTML(`
 			im images/erotibox/painting2.jpg
 			sp player; What the fuck...
 			sp assistant; Is that?
@@ -4257,6 +4269,8 @@ function writeEvent(scene) {
 		}
 		case "shadesHome3": {
 			writeHTML(`
+			t You lie back for a short rest, but as you close your eyes you feel... Hungry. Not for food, but for something else.
+			t As you try to ignore the stange feelings the shades tingle on your face for just a moment.
 			sp sister; Heeey everybody, can you hear me?
 			t You can clearly hear sisterF from the living room talking enthusiastically to what is probably a pretty large virtual audience. She probably should have closed her door, but it isn't a big deal.
 			t Or at least it isn't until she starts walking around the house holding up her phone.
@@ -4332,7 +4346,7 @@ function writeEvent(scene) {
 				...
 				sp assistant; Ugh... What's going on? Is it over?
 				t As the presentation finishes assistantF comes back to her senses, only a little disorientated and rubbing her cheek.
-				sf notes; The pass is much more obviously artificial than a traditional artifact, even having an entire presentation built in for novice users. The sexual nature of its use depends more on the target than on the user, as each person will show their submission to authority in a different way and subjects seem not to remember what they did while affected by the pass.<br>Practical tests are the best way to examine the artifact, and additional resources dedicated to finding out how the makers of the pass created the artifact is highly recommended. 
+				sp notes; The pass is much more obviously artificial than a traditional artifact, even having an entire presentation built in for novice users. The sexual nature of its use depends more on the target than on the user, as each person will show their submission to authority in a different way and subjects seem not to remember what they did while affected by the pass.<br>Practical tests are the best way to examine the artifact, and additional resources dedicated to finding out how the makers of the pass created the artifact is highly recommended. 
 			`);
 			break;
 		}
@@ -4359,13 +4373,17 @@ function writeEvent(scene) {
 		}
 		case "passResearch3": {
 			writeHTML(`
+			t Feeling lucky, you take the CEO pass into your supervisor's office.
+			sp player; Hey, Ms. bossL? Could you take a look at this?
+			t As you expected her eyes glaze over for a moment, but as the haze fades she's clearly a lot more 'in control' than assistantF was while under the pass's effects.
+			sp boss; Hello sir, how can I serve you to-
 			t Suddenly bossL's body goes rigid. 
 			sp boss; I'm very sorry about this sir, but an automatic defense of the pass has kicked in. It would appear that this woman harbors murderous intentions! We don't recommend allowing full autonomy to people with a sociopathic nature. 
-			sp player; She wants to kill me? 
-			sp boss; Perhaps not you specifically, some people do not do well when confronted with authority. We recommend a full reconditioning. 
+			sp player; She wants to kill me?
+			sp boss; Certainly not you specifically, it's just that some people do not do well when confronted with authority. The defense system kicks in and takes over when we detect you're in any sort of danger. We recommend a full reconditioning. 
 			t You walk up to more closely examine bossL's face, she's sweating slightly but otherwise looks completely satisfied to serve you. 
 			sp player; So you've overwritten her personality then? Is she still in there? 
-			sp boss; Only temporarily! And yes, she is. Her fight or flight responses are kicking in, and she's battling the pass's control. Her exact remarks contain 32 unprofessional expletives, would you like to hear them? 
+			sp boss; Only temporarily! And yes, she is. Her fight or flight responses are kicking in, and she's battling the pass's control. Her exact remarks in her inner thoughts contain 32 unprofessional expletives, would you like to hear them? 
 			sp player; Actually, no. Knowing she's still in there is enough for me. bossL, tear open your pants. 
 			im images/pass/research3-1.gif
 			sp boss; Without hesitation! Her state of anger is evolving into a level of blind fury, mixed with heavy levels of shame. Please keep in mind what while assistants keep no memory of their actions, they may subconciously harbor feelings of anger or arousal afterwards. 
@@ -4391,7 +4409,7 @@ function writeEvent(scene) {
 			`);
 			break;
 		}
-		case "passHome1": {
+		case "passHome1": { //unfinished
 			writeHTML(`
 			sp player; Hey roommateF, check this out.
 			t You flash roommateF the pass and watch as her eyes glaze over. Instead of standing stock still though she nearly tackles you and forces your lips against hers.
@@ -4406,25 +4424,44 @@ function writeEvent(scene) {
 			t Her shame vanishes as she tugs down your pants and finds exactly what she needs. An almost tearful joy overtakes her before she is on you like a lioness starved for meat.
 			im images/pass/home1-1.gif
 			t You shudder as needy woman and loyal assistant combine into a perfect cockscuking machine. Too soon though she's finished, it seems like she was just trying to get you lubed up. 
-			t Part of you wants to say some dig about what girlfriendF 
+			t Part of you wants to say some dig about what girlfriendF would think seeing her like this, but as roommateF sways her hypnotic ass from side to side the words die in your mouth.
+			im images/pass/home1-2.gif
+			im images/pass/home1-3.gif
 			`);
 			break;
 		}
 		case "passHome2": {
 			writeHTML(`
-			sp girlfriend; Absolutely! Please keep in mind that the effects will mostly dissipate at the end of the session, however some residual effects will still linger. Prior study data suggests this assistant has a strong change of developing an irreperable cuckholding fetish. Is this acceptable? 
+			im images/pass/home2-1.gif
+			t As you're enjoying the results of flashing the pass to roommateF again, you hear the door opening.
+			t You can hear a friendly greeting cut short by the sound of you fucking roomateF into the ground, you look up and you can see girlfriendF standing in the doorway. For a few seconds she's in a stunned silence before her eyes glaze over when you flash her the CEO pass.
+			sp player; roommateF? Your girlfriend's here.
+			sp roommate; Ghh~! Harder~!
+			sp player; Seems like you don't really care...<br>girlfriendF? You enjoying the show?
+			sp girlfriend; ... Apologies. This assistant has a naturally rebelious nature towards authority. Combined with the sudden shock of seeing her lover cheat on her, her ability to perform as an assistant is... Lacking.
+			sp player; Well that's... That's a problem. roommateF? Got anything to say?
+			t She doesn't respond, her eyes rolled back too far in her head to look at her girlfriend.
+			sp player; Can you help her? Make her be into this, or something?
+			sp girlfriend; Absolutely! Please keep in mind that the effects will mostly dissipate at the end of the session, however some residual effects will still linger. Prior study data suggests this assistant has a strong chance of developing an irreperable cuckqueening fetish. Is this acceptable? 
 			sp player; Go ahead. 
 			sp roommate; Nnnngh~! 
+			sp girlfriend; Very well, now reconditioning. I will begin sexual stimulation, if you could ensure an adequate amount of visual stimulus, that would ensure success at this stage. 
+			sp player; Visual stimulus, huh? Like this?
+			t You angle yourself so that girlfriendF has an up-close and personal view of you fucking her lover.
+			im images/pass/home2-6.gif
 			im images/pass/home2-2.gif
-			sp assistant; Very well, now reconditioning. I will begin sexual stimulation, if you could ensure an adequate amount of visual stimulus, that would ensure success at this stage. 
 			sp girlfriend; Absolutely! Feelings of betrayal and heartbreak have begun to diminish rapidly, and are being replaced by a strong feeling of arousal.
-
-			sp girlfriend; Third orgasm approaching, results suggest that the cuckqueening fetish has taken root. Ease of development suggests this fetish was already present tk a small degree. Now releasing control. 
+			sp roommate; GGGHHH~!
+			t With three more strong thrusts loud enough to cause slapping sounds to take root in girlfriendF's head, you make sure she can see as your balls tighten.
+			sp girlfriend; Orgasm approaching, results suggest that the cuckqueening fetish has taken root. Ease of development suggests this fetish was already present t a small degree. Now releasing control. 
 			t girlfriendF's body suddenly spasms like she's hit by lightning as control is released. No longer content with the slow teasing of her pussy now she's writhing and fingerfucking her cunt as fast as she can, making sure to angle herself so she has a good view of you fucking her girlfriend of course. 
-
+			t You pull out, giving roommateF enough of a breather to ensure she locks eyes with girlfriendF.
+			im images/pass/home2-3.gif
+			im images/pass/home2-4.gif
 			t As you haul roommateF over to her, there's a look of hope in her eyes for a moment until roommateF scrambles back up and plants her cum-leaking pussy on her girlfriend's face and tries to grind herself to one more orgasm. 
+			im images/pass/home2-5.gif
 			t As you lean back to enjoy the show, girlfriendF's eyes flutter and it's clear she's given into the degeneracy. 
-			t Luckily with the bracelet even when the effect of the pass ends all this will just be a hazy memory, and you'll get off scott free for having caused only a small kink in their relationship. 
+			t Luckily with the bracelet even when the effect of the pass ends all this will just be a hazy memory, and you'll get off scott free for having caused only a small kink in their relationship.
 			`);
 			break;
 		}
@@ -5542,6 +5579,17 @@ function checkForEvents() {
 							writeArtifact("shades");
 							if (data.player.color.includes('sign') == true) {
 								writeArtifact("sign");
+								if (data.player.color.includes('pass') == true) {
+									writeArtifact("pass");
+								}
+								else {
+									if (timeSince != 1) {
+										writeSpeech("assistant", "", "The latest artifact has arrived, this one's some kinda passcard, like we use for the elevator.");
+										writeArtifact("pass");
+										data.player.color += 'pass';
+										timeSince = 1;
+									}
+								}
 							}
 							else {
 								if (timeSince != 1) {
@@ -5627,6 +5675,14 @@ function checkForEvents() {
 						writeFunction("writeEvent('braceletOutdoor2')", "Take the bracelet to the gym again");
 					}
 				}
+				if (galleryCheck('braceletLibrary1') == false) {
+					writeFunction("writeEvent('braceletLibrary1')", "Take the bracelet to the library");
+				}
+				else {
+					if (galleryCheck('braceletLibrary2') == false) {
+						writeFunction("writeEvent('braceletLibrary2')", "Take the bracelet to the library again");
+					}
+				}
 				if (data.player.color.includes('katyaIntro') == true) {
 					for (katyaIndex = 0; katyaIndex < data.story.length; katyaIndex++) {
 						if (data.story[katyaIndex].index.includes("sister") == true) {
@@ -5684,6 +5740,22 @@ function checkForEvents() {
 				case "shades": {
 					if (galleryCheck('shadesHome1') == false) {
 						writeFunction("writeEvent('shadesHome1')", "Show off the shades to "+roommateF);
+					}
+					if (data.player.color.includes('katyaIntro') == true) {
+						if (galleryCheck('shadesHome3') == false) {
+							writeFunction("writeEvent('shadesHome3')", "Rest while wearing the shades");
+						}
+					}
+					break;
+				}
+				case "pass": {
+					if (galleryCheck('passHome1') == false) {
+						writeFunction("writeEvent('passHome1')", "Show off the pass to "+roommateF);
+					}
+					else {
+						if (galleryCheck('passHome2') == false) {
+							writeFunction("writeEvent('passHome2')", "Show off the pass to "+roommateF+" again");
+						}
 					}
 					break;
 				}
