@@ -1573,7 +1573,12 @@ function writeScene(scene) {
 		}
 		case "vhsResearch": {
             tempScene = 'work';
-            researchLevel('vhs');
+            if(!galleryCheck("vhsResearch1")){
+                writeEvent("vhsResearch1");
+                break;
+            }
+            else
+                writeEvent("vhsResearch");
             break;
         }
         case "vhsFailed": {
