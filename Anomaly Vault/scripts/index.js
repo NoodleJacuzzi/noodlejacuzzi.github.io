@@ -60,16 +60,20 @@ var galleryArray = [
 	{index: "braceletOutdoor1", dark: false, girl: "gym", name: "Fitness Instructor's Exercise Plan", hint: "Assistant event"},
 	{index: "braceletOutdoor2", dark: false, girl: "gym", name: "Fitness Instructor's Home", hint: "Assistant event"},
 	{index: "braceletOutdoor4", dark: false, girl: "swallows", name: "Bar Room Fun", hint: "Assistant event"},
-	{index: "braceletDream1", dark: false, girl: "", name: "Bracelet's Fate", hint: "Assistant event"},
+	{index: "braceletLibrary1", dark: false, girl: "librarian", name: "Library Part 1", hint: "Assistant event"},
+	{index: "braceletLibrary2", dark: false, girl: "librarian", name: "Library Part 1", hint: "Assistant event"},
+	{index: "braceletDream1", dark: false, girl: "", name: "Fate of the Bracelet", hint: "Assistant event"},
 	//Erotibox Events
 	{index: "erotiboxResearch1", dark: false, girl: "", name: "Demo Reel - Sex Tape", hint: ""},
 	{index: "erotiboxResearch2", dark: false, girl: "assistant", name: "Taser - Slut Shocker", hint: ""},
 	{index: "erotiboxResearch3", dark: false, girl: "", name: "Mona Lisa - Work of Art", hint: ""},
+	{index: "erotiboxResearch11", dark: false, girl: "assistant", name: "Mona Lisa - Second Painting", hint: ""},
 	{index: "erotiboxResearch4", dark: false, girl: "", name: "Chessboard - Curseboard", hint: ""},
 	{index: "erotiboxResearch5", dark: false, girl: "", name: "$20 - Stripper Money", hint: ""},
 	{index: "erotiboxResearch6", dark: false, girl: "", name: "Water Bottle - Aphrodisiac Drink", hint: ""},
 	{index: "erotiboxResearch7", dark: false, girl: "assistant", name: "Flower - Squirt Inducer", hint: ""},
 	{index: "erotiboxResearch9", dark: false, girl: "assistant", name: "Alcoholic Drink - 'Sex on the Bar'", hint: ""},
+	{index: "erotiboxResearch12", dark: false, girl: "assistant", name: "Ice Cream - I Scream", hint: ""},
 	{index: "erotiboxResearch8", dark: false, girl: "assistant", name: "Assistant - Sex Fiend", hint: ""},
 	//Antique Mirror Events
 	{index: "mirrorResearch1-1", dark: false, girl: "", name: "Gender Dynamics - First Research", hint: ""},
@@ -114,7 +118,15 @@ var galleryArray = [
 	{index: "shadesResearch2", dark: false, girl: "assistant", name: "Chaddicus Shades - First Conquest", hint: ""},
 	{index: "shadesResearch3", dark: false, girl: "boss", name: "Chaddicus Shades - Second Conquest", hint: ""},
 	{index: "shadesHome1", dark: false, girl: "roommategirlfriend", name: "Chaddicus Shades - Two For One", hint: ""},
+	{index: "shadesHome3", dark: false, girl: "sister", name: "Chaddicus Shades - Vlogg'd", hint: ""},
 	{index: "shadesDream1", dark: false, girl: "", name: "Chaddicus Shades - Shades' Fate", hint: ""},
+	//CEO Pass Events
+	{index: "passResearch1", dark: false, girl: "", name: "CEO Pass - First Research", hint: ""},
+	{index: "passResearch2", dark: false, girl: "assistant", name: "CEO Pass - The Assistant", hint: ""},
+	{index: "passResearch3", dark: false, girl: "boss", name: "CEO Pass - Ms. Boss", hint: ""},
+	{index: "passHome1", dark: false, girl: "roommate", name: "CEO Pass - Roommate", hint: ""},
+	{index: "passHome2", dark: false, girl: "roommategirlfriend", name: "CEO Pass - Girlfriend", hint: ""},
+	{index: "passDream1", dark: false, girl: "", name: "CEO Pass - CEO's Fate", hint: ""},
 	//Free ___ Sign Events
 	{index: "signResearch1", dark: false, girl: "", name: "FREE HUGS", hint: ""},
 	{index: "signHome1", dark: false, girl: "roommategirlfriend", name: "FREE RIMJOBS", hint: ""},
@@ -149,7 +161,8 @@ var galleryArray = [
 	//Domino Playlist Events
 	{index: "playlistResearch1", dark: true, girl: "", name: "Domino PMV - SISSY JOI HYPNO 1 - WEEB TRASH", hint: ""},
 	//ErotiVHS Player events
-	{index: "vhsResearch1", dark: true, girl: "", name: "ErotiVHS - Enjo Kouhai Crossbreeding Assistance, Elven Princess Episode 2", hint: ""},
+	{index: "vhsResearch1", dark: true, girl: "crypto", name: "ErotiVHS - Enjo Kouhai Crossbreeding Assistance, Elven Princess Episode 2", hint: ""},
+	{index: "vhsResearch2", dark: true, girl: "crypto", name: "ErotiVHS - Majuu Jouka Shoujo Utea, Devil Purification Girl Utea", hint: ""},
 ]
 
 var logbookArray = [
@@ -178,8 +191,8 @@ var logbookArray = [
 		color: "#9298b3",
 	},
 	{index: "librarian", 
-		desc: "A very superstitious librarian hoping to document the weird occurrences at her library (you) for her dissertation.",
-		body: "She's very reserved in general, but you've heard more than a few rumors online that she used to be a model.",
+		desc: "A very superstitious librarian who you've given an exhibitionism fetish How she handles it without losing her job isn't really your problem.",
+		body: "She's very reserved in general, but her outstanding looks suggest she could have been a model at one point.",
 		clothes: "In her small library the work uniform policy is more than a little sexist, and her outfit almost looks like it could be used in a porno. She looks good in it though.",
 		color: "#ebf288",
 	},
@@ -229,6 +242,7 @@ var artifactArray = [
 	{index: "coin", dark: false, equipable: true, title: "Midas Coin", desc: "A single gold coin with an inscription on the back written in Ancient Greek.", desc2: "When held, sexual activities performed by the holder will be 'normalized', and not perceived to be socially outrageous no matter how depraved the action. In addition, sexual acts will be seen to have 'value', meaning that the holder can exchange sexual acts as though they had a cash value.", glasses: "As you look at the coin the image comes to mind of a genie, trapped in a lamp. He grants wishes, but his desire is for a human to appear, greedy and foolish enough to free him from his cage."},
 	{index: "serum", dark: false, equipable: true, title: "Truth Serum", desc: "A set of vials of green, minty liquid.", desc2: "When drunk, everything you say becomes the 'truth'. Not in the reality warping way, but in that everyone around you will believe whatever you say.", glasses: "As you look at the bottles a set of potted plastic plants come to mind. Totally inanimate, they have no will or drive of their own, but they were obviously crafted with great care."},
 	{index: "shades", dark: false, equipable: true, title: "Chaddicus Shades", desc: "A pair of aviator sunglasses which, when worn, increase the wearer's confidence by several dozen degrees.", desc2: "Nearby women tend to become irritable and argue with the wearer, at which point some mysterious process causes the argument to almost immediately devolve into sex, with the wearer as the dominant partner.", glasses: "The shades call to mind a very fit man on a beach. Though attractive, it's clear from his demeanor that he's cocky and arrogant."},
+	{index: "pass", dark: false, equipable: true, title: "CEO's Pass", desc: "A small passcard typically used as a key. It was produced by an organization known as Seltsame Industries.", desc2: "When shown to someone it will rewrite their sense of self to make them act as an 'assistant' to whoever possesses the pass. If they aren't deemed fit to be an assistant their personality will be overwritten as well to make them more submissive.", glasses: "An image comes to mind of a polite yet metallic woman in officewear, she looks eager to serve you."},
 	{index: "sign", dark: false, equipable: true, title: "Free ___ Sign", desc: "A piece of torn cardboard with the words 'FREE ___'.", desc2: "When an action is written in the blank space, the sign will vanish and appear in the hands of someone the user finds attractive and compels them to freely offer the written action.", glasses: "As you look at the sign a small abused puppy comes to mind. He's hurt and easily frightened, but he's overjoyed at finally having a good home."},
 	{index: "gas", dark: true, equipable: false, title: "Exchange Gas", desc: "Several aerosol gas containers. Subjects who inhale the gas experience a process called 'gender-swapping'. In most cases the process is temporary.", desc2: "", glasses: "An image comes to mind of a weaponsmith, carefully crafting and tuning his blades, but for what purpose?"},
 	{index: "gummy", dark: true, equipable: false, title: "Gummy Dicks", desc: "A package of several erect dicks seemingly made from the same candy as gummy bears. A fluid inside feminizes men, preventing erections and increasing both prostate size & sensitivity. Effects not permanent unless used repeatedly.", desc2: "", glasses: "An image comes to mind of a woman in punk attire, gleefully smashing things with a bat. It isn't out of anger or malice, she just likes smashing stuff."},
@@ -599,6 +613,9 @@ function listArtifact(name) {
 				researchStatus += 1;
 			}
 		}
+	}
+	if (name == "sign") {
+		researchTotal = "???";
 	}
 	if (tempScene == "vault") {
 		store = "";
@@ -993,6 +1010,108 @@ function signTrigger() {
 	writeEvent(desiredScene);
 }
 
+function writeHTML(text) {
+	//Separate the text into lines
+	var lines = text.split('\n');
+	//For each of these lines
+	for(var lineCounter = 0;lineCounter < lines.length;lineCounter++){
+		//Remove all tabs from the line, in case we use tab spacing
+		while (lines[lineCounter].includes('\t') == true) {
+			lines[lineCounter] = lines[lineCounter].replace(`\t`, ``);
+		}
+		//If the line is not empty (we don't want to print empty lines)
+		if (lines[lineCounter] != "") {
+			//Grab the first word of the line to use as the command
+			var command = lines[lineCounter].replace(/ .*/,'');
+			//Depending on which command, execute different code. Convert the command to lowercase as well in case we used Sp instead of sp, as js is case-sensitive.
+			switch (command.toLowerCase()) {
+				//If the command is "t"
+				case "t": {
+					//Remove the command from the line we actually want to print.
+					lines[lineCounter] = lines[lineCounter].replace(command+` `, ``);
+					//Execute the writeText command to print everything left to the screen.
+					writeText(lines[lineCounter]);
+					//Don't execute any of the below switch cases.
+					break;
+				}
+				case "sp": {
+					//Get the name of our speaker
+					var name = lines[lineCounter].split(command+` `).pop().split(`;`)[0];
+					//If "; im" is in our code we want to specify a specific profile image, so use that. Otherwise set the image variable blank so it can be automatically found.
+					if (lines[lineCounter].includes("; im")) {
+						var image = lines[lineCounter].split(`im `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`im `+image+`; `, ``);
+					}
+					else {
+						var image = "";
+					}
+					//If "; altName" is in our code we want to use an alternate name for the character, so use that. Otherwise set the altName variable blank.
+					if (lines[lineCounter].includes("; altName")) {
+						var altName = lines[lineCounter].split(`altName `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`altName `+altName+`; `, ``);
+					}
+					else {
+						var altName = "";
+					}
+					//If "; altColor" is in our code we want to specify a specific color for the character, so use that. Otherwise set the altColor variable blank.
+					if (lines[lineCounter].includes("; altColor")) {
+						var altColor = lines[lineCounter].split(`altColor `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`altColor `+altColor+`; `, ``);
+					}
+					else {
+						var altColor = "";
+					}
+					//Remove the command from the line we actually want to print.
+					lines[lineCounter] = lines[lineCounter].replace(command+` `+name+`; `, ``);
+					//Execute the writeSpeech command to print everything we have left.
+					//TODO: Add custom colors and custom names
+					writeSpeech(name, image, lines[lineCounter], altName, altColor);
+					break;
+				}
+				case "im": {
+					//Get the location of the image
+					var location = lines[lineCounter].split(command+` `).pop().split(`;`)[0];
+					//If "; cap" is in our code we want to attach a caption to our image. Otherwise leave the caption blank.
+					if (lines[lineCounter].includes("; cap")) {
+						var caption = lines[lineCounter].split(`cap `).pop().split(`;`)[0];
+					}
+					else {
+						var caption = "";
+					}
+					//Bring up the image on screen. Since we aren't printing the line itself we don't need to clean it by removing commands.
+					writeBig(location, caption);
+					break;
+				}
+				case "b": {
+					//Get the label of our button
+					var name = lines[lineCounter].split(`b `).pop().split(`;`)[0];
+					//Get the function we want our button to perform
+					var func = lines[lineCounter].split(`f `).pop().split(`;`)[0];
+					//If "; arg" is in our code we want the function to have a special argument. Otherwise leave the argument section blank.
+					if (lines[lineCounter].includes("; arg")) {
+						var argument = lines[lineCounter].split(`arg `).pop().split(`;`)[0];
+					}
+					else {
+						var argument = "";
+					}
+					//Write the button to the screen using the information we've collected.
+					writeFunction(func+"('"+argument+"')", name)
+					break;
+				}
+				//This is for convenience. If the line is just an elipses, replace it with a horizontal line cutting across the screen.
+				case "...": {
+					writeText("<hr>");
+					break;
+				}
+				//If the command isn't found in the list above then the code can't be parsed (understood), print an error code in red.
+				default: {
+					writeText("<span style='color:red'>Unknown command. The line '"+lines[lineCounter]+"' could not be parsed.");
+				}
+			}
+		}
+	}
+}
+
 //Menu
 function updateMenu() {
 	var researchStatus = 0;
@@ -1006,7 +1125,7 @@ function updateMenu() {
 	}
 	document.getElementById('playerImage').src = "scripts/gamefiles/characters/"+data.player.character+".jpg";
 	for (i = 0; i < galleryArray.length; i++) {
-		if (galleryArray[i].dark != true) {
+		if (galleryArray[i].dark != true && galleryArray[i].index.includes("sign") != true) {
 			researchTotal += 1;
 			if (galleryCheck(galleryArray[i].index) == true) {
 				researchStatus += 1;
@@ -1205,9 +1324,16 @@ function loadSlot(slot) {
 
 function saveFile(){
 	hideStuff();
+	document.getElementById('output').innerHTML += `<textArea id = "copyData">`+JSON.stringify(data)+`</textAread>`;
+	var copyText = document.getElementById("copyData");
+	copyText.select();
+	copyText.setSelectionRange(0, 99999);
+	document.execCommand("copy");
+	//alert("Copied the text: " + copyText.value);
+	
 	document.getElementById('output').innerHTML = '';
-	writeText("Copy the full length below and paste it into the input box when you want to load the data. I recommend copying to a txt file.");
-	writeText("" + JSON.stringify(data) + "");
+	writeText("Save data copied! It's been added to your clipboard, or you can manually copy the information below.");
+	document.getElementById('output').innerHTML += JSON.stringify(data);
 	writeTransition(data.player.currentScene, "Finished copying");
 }
 
@@ -1226,6 +1352,55 @@ function loadFile(){
 	}
 	updateSave();
 	nameUpdate();
+}
+
+function saveTXT() {
+	var date = new Date();
+	date = date.toDateString() + " " + date.toLocaleTimeString();
+    var textFileAsBlob = new Blob([JSON.stringify(data)], {type:'text/plain'});
+    var downloadLink = document.createElement("a");
+    downloadLink.download = "AV "+date+".noodle";
+    downloadLink.innerHTML = "Download File";
+    if (window.webkitURL != null)
+    {
+        // Chrome allows the link to be clicked
+        // without actually adding it to the DOM.
+        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    }
+    else
+    {
+        // Firefox requires the link to be added to the DOM
+        // before it can be clicked.
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+    }
+
+    downloadLink.click();
+}
+
+const fr = new FileReader();
+fr.addEventListener("load", fileLoaded);
+
+function loadSave(){
+    files = document.getElementById('loadFile').files;
+    if(files.length == 0)
+        return;
+    file = files[0];
+    fr.readAsText(file);
+}
+function fileLoaded(){
+    console.log(fr.result);
+	var fakedata = fr.result;
+	fakedata = JSON.parse(fakedata);
+	if (fakedata.player.fName == null) {
+		alert("Whoa there! I don't think that's an Anomaly Vault save file! If it is, be sure to let me (Noodlejacuzzi) know and I'll help you out.");
+	}
+	else {
+		data = fakedata;
+		sceneTransition(data.player.currentScene);
+	}
 }
 
 function generateSave() {

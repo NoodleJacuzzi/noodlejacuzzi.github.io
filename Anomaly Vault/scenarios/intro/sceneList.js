@@ -26,7 +26,7 @@ function writeScenarioScene(scene) {
 			writeImageButton("Back Outside", "townSquare", "", 45, 75);
 			writeImageButton("Grumpy Man", "grumpyMan", "grumpyManProfile.jpg", 40, 32);
 			if (data.player.color.includes("beer") != true) {
-				writeImageButton("Bottle of Booze", "booze", "beer.jpg", 40, 7);
+				//writeImageButton("Bottle of Booze", "booze", "beer.jpg", 40, 7);
 			}
 			break;
 		}
@@ -35,7 +35,7 @@ function writeScenarioScene(scene) {
 			writeImageButton("Back Outside", "townSquare", "", 65, 10);
 			writeImageButton("Rich-Looking Woman", "grumpyWife", "grumpyWifeProfile.jpg", 30, 32);
 			if (data.player.color.includes("rose") != true) {
-				writeImageButton("Rose", "rose", "rose.jpg", 40, 62);
+				//writeImageButton("Rose", "rose", "rose.jpg", 40, 62);
 			}
 			break;
 		}

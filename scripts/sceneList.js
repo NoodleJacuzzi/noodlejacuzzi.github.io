@@ -2,10 +2,10 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 5/8/2020</p>
-				<p class = "centeredText">Hentai University v9.5: https://www.patreon.com/posts/36881411</p>
-				<p class = "centeredText">A new half-release of Hentai University, introducing a new character: The president of the student council!</p>
-				<p class = "centeredText">Thank you to: Swallows999, Joshua Ingram, Robbie, andres mejia, Badaxe, Carlos, ChronosEdge, Colin E, Daniel Vivette, Dkells, dragoon48, Dustin Leichsenring, Filament, G, Hi There, J_C_L, jack spencer, Jesse Greene, Jinouga, Keith, Marc Maldon, Marco Wassmer, Negativatron, Ramsey Bisher, Richard, Scal, Skyrim mod lvr, StormSight, Taylor Trout, XxrobothacksxX, æž—å®¶è±ª, Aegil, Alec8686, Angel, Anthony Ewing, Anthony Munso, Ariados, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, ChubbiestThread, Daekash, Danny Nguyen, Darrell Goodman, DarthMalak, ddkre, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Emanuel  Garcia, fireballcreations, Grim2011, Gwen Yurick, Harry Brasch, henry grobins, ItsAllOgreNow, Iâ€™m a Mitch, Jane, joel larsen, John Lewis, john smith, Joshua Melzark, KH dg, Kieron Kow, l1monat, Louis Hayes, Magnus, Markus Hansen, mazterlith, murgatroid99, Nathan Martin, Nils Maier, Noah, Nutburger, Phanes, PR0 x THUNDER, Reverberations, Roy, Scumstango, Sebastian Eckel, ShadowFalls, Simon Rencher, Slomberg, SmolFish, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, Vincent Madaire-Cullen, Wei, Wild Bill, William Parker, William Richardson, wolfboom, XaiuX, Your Husbando, Z, 凱 陳, and 魏 for supporting my work!</p>
+				<p class = "centeredText">Lastest News 5/22/2020</p>
+				<p class = "centeredText">Anomaly Vault v7: https://www.patreon.com/posts/37422705</p>
+				<p class = "centeredText">A new release of Anomaly Vault, featuring the CEO Pass, some scenes for the Erotibox and more, and a VHS scene written by Cryptogreek!</p>
+				<p class = "centeredText">Thank you to: Swallows999, O Xy Enkin, Joshua Ingram, Robbie, CaptainMontana, andres mejia, Badaxe, Carlos, ChronosEdge, Colin E, Dkells, dragoon48, Dustin Leichsenring, Filament, G, Hi There, J_C_L, jack spencer, Jesse Greene, Jinouga, Keith, Macarga, Marc Maldon, Marco Wassmer, Negativatron, Ramsey Bisher, Richard, Scal, Skyrim mod lvr, StormSight, Taylor Trout, XxrobothacksxX, 林家豪, Aegil, Alec8686, Alfonso, Angel, Anthony Ewing, Anthony Munso, Ariados, Blaise Fenn, Bonelessunknown, brandon, Bryson, Carlos, Chaaaanon, Charles Morris, ChubbiestThread, Daekash, Daniel Vivette, Danny Nguyen, Darrell Goodman, DarthMalak, ddkre, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Emanuel  Garcia, fireballcreations, Geoff Heimos, GirmusCz, Greg Torres, Grim2011, Gwen Yurick, Harry Brasch, henry grobins, ItsAllOgreNow, I'm a Mitch, Jane, joel larsen, John Lewis, john smith, Johnathan Thornburg, Joshua Melzark, KH dg, Kieron Kow, KVBismarc, l, l1monat, liam paterson, Limitless, Louis Hayes, Magnus, Markus Hansen, Mars, mazterlith, murgatroid99, Muryu, Nathan Martin, Nils Maier, Noah, Nutburger, Phanes, PR0 x THUNDER, qwerty, ranchy sanchy, Reverberations, Riven Drasek, Roy, Scumstango, Sebastian Eckel, ShadowFalls, Simon Rencher, Slomberg, SmolFish, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, Vincent Madaire-Cullen, Wei, Wild Bill, William Parker, William Richardson, wolfboom, XaiuX, Your Husbando, Z, and 魏 for supporting my work!</p>
 			`;
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://discord.gg/B3AszYM'">Visit my discord server</p>
@@ -15,14 +15,14 @@ function writeScene(scene) {
 			//writeTransition("recommendations", "Recommendations");
 			writeText("<br><br>");
 			writeBig("images/AnomalyVault.png");
-			writeText("Anomaly Vault v6");
+			writeText("Anomaly Vault v7");
 			writeText("You play as a researcher performing experiments on various reality warping artifacts, currently including a presence-erasing bracelet and a crate that converts anything inside into a hypersexualized version of itself.");
 			writeText("The game uses real porn gifs, and is similar in tone to Human Alteration App's dom route.");
 			writeText("The themes and fetishes of the game are governed by what artifacts you interact with, hopefully as time passes you'll find and artifact you really connect with. Let me know if you have any artifact / scene ideas!");
 			writeText("Nonoptional Tags: Unpercieved Sex, Ignored Sex, Dubious Consent, Seduction of Women in Committed Relationships");
 			writeText("Optional Tags: Corruption, Mind Control, Deepfake, Genderbending (both M to F and F to M) among others. See the content list below.");
 			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/34857048'">Download Links</p>
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/37422705'">Download Links</p>
 				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/33013457'">Cheat Codes</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault%20Mobile.html'">Play the mobile version</p>
