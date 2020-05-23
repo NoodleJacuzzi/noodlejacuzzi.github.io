@@ -640,7 +640,7 @@ function writeScene(scene) {
 							break;
 						}
 						case "Night": {
-							writeTransition("office", "Go back to your office");
+							writeTransition("home", "Head home");
 							break;
 						}
 					}
@@ -4920,15 +4920,35 @@ function writeEvent(scene) {
 		}
 		case "signDream1": {
 			writeBig("images/sign/signDream1-1.gif");
-			writeSpeech("???","scripts/gamefiles/profiles/agent.jpg","Yes ma'am, you were spot on with the evacuation. I was the only woman for three miles, so it ended up with me.");
+			if (data.player.color.includes("interview") == true) {
+				writeSpeech("agent", "", "Yes ma'am, you were spot on with the evacuation. I was the only woman for three miles, so it ended up with me.");
+			}
+			else {
+				writeSpeech("???","scripts/gamefiles/profiles/agent.jpg","Yes ma'am, you were spot on with the evacuation. I was the only woman for three miles, so it ended up with me.");
+			}
 			writeText("It's strange, it's not clear what she's talking about. She's all business, even while getting her ass railed. With one hand she's holding her phone to her ear, and with the other she holds the cardboard sign with 'free anal' scrawled onto it.");
-			writeSpeech("???","scripts/gamefiles/profiles/agent.jpg","Am I being affected? Not sure. Coffee for breakfast, interrogated the witnesses, offered anal sex to a stranger, nothing unusual so far. <br> Oh, that's not normal? It must have a mind-altering property then. It's class-1 at most. Ah, cumming by the way, think he is too.");
+			if (data.player.color.includes("interview") == true) {
+				writeSpeech("agent", "", "Am I being affected? Not sure. Coffee for breakfast, interrogated the witnesses, offered anal sex to a stranger, nothing unusual so far. <br> Oh, that's not normal? It must have a mind-altering property then. It's class-1 at most. Ah, cumming by the way, think he is too.");
+			}
+			else {
+				writeSpeech("???","scripts/gamefiles/profiles/agent.jpg","Am I being affected? Not sure. Coffee for breakfast, interrogated the witnesses, offered anal sex to a stranger, nothing unusual so far. <br> Oh, that's not normal? It must have a mind-altering property then. It's class-1 at most. Ah, cumming by the way, think he is too.");
+			}
 			writeBig("images/sign/signDream1-2.gif");
 			writeText("You sigh in relief and look over to where the sign has reappeared. Maybe you'll have her offer her mouth next.");
 			writeText("But suddenly she presses something small and metallic against your neck, and your legs give out almost immediately.");
-			writeSpeech("???","scripts/gamefiles/profiles/agent.jpg","Yes ma'am, I was still able to incapacitate him. The effects are still active, I'll probably keep offering anal sex until he's unconscious.<br>... Yeah it seems like the sign has a mind of it's own, it's trying to please whoever wrote on it. I'll bring him back to the vault for interrogation then.");
+			if (data.player.color.includes("interview") == true) {
+				writeSpeech("agent", "", "Yes ma'am, I was still able to incapacitate him. The effects are still active, I'll probably keep offering anal sex until he's unconscious.<br>... Yeah it seems like the sign has a mind of it's own, it's trying to please whoever wrote on it. I'll bring him back to the vault for interrogation then.");
+			}
+			else {
+				writeSpeech("???","scripts/gamefiles/profiles/agent.jpg","Yes ma'am, I was still able to incapacitate him. The effects are still active, I'll probably keep offering anal sex until he's unconscious.<br>... Yeah it seems like the sign has a mind of it's own, it's trying to please whoever wrote on it. I'll bring him back to the vault for interrogation then.");
+			}
 			writeText("With a click she hangs up her phone.");
-			writeSpeech("???","scripts/gamefiles/profiles/agent.jpg","Sorry, looks like this is it for you. Probably shouldn't have fucked around with this bit of cardboard so openly. <br>Hey, don't worry. Honestly, I was a bit of a buttslut already, so we can have a little more fun. Give you a good last memory before we pick your brain, yeah?");
+			if (data.player.color.includes("interview") == true) {
+				writeSpeech("agent", "", "Sorry, looks like this is it for you. Probably shouldn't have fucked around with this bit of cardboard so openly. <br>Hey, don't worry. Honestly, I was a bit of a buttslut already, so we can have a little more fun. Give you a good last memory before we pick your brain, yeah?");
+			}
+			else {
+				writeSpeech("???","scripts/gamefiles/profiles/agent.jpg","Sorry, looks like this is it for you. Probably shouldn't have fucked around with this bit of cardboard so openly. <br>Hey, don't worry. Honestly, I was a bit of a buttslut already, so we can have a little more fun. Give you a good last memory before we pick your brain, yeah?");
+			}
 			writeText("The rest is a pleasant blur until a sharp pain in the side of your head causes you to shoot awake.");
 			break;
 		}
