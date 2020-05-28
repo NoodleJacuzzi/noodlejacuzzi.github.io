@@ -567,12 +567,20 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("player","","You had fun, then?");
 				writeSpeech("kuro","","It was a little awkward at first, but around the second time I came because someone came into the same store as me and the chime went off?");
 				writeText("Her hands trace along her body, a small shiver going through her at the thought.");
-				writeSpeech("kuro","","So yeah, I had a <i>lot</i> of fun~");
+				writeSpeech("kuro","","Yeah, I'd say I had a <i>lot</i> of fun~");
 				writeText("She steps closer to you, her chest pressing against yours now as she grins.");
 				writeSpeech("kuro","","But honestly, it's nowhere near as fun when I'm cumming all on my own~!");
 				writeSpeech("player","","Well, in that case...");
 				writeText("You run your hands along her hips for a moment, before she clicks her tongue.");
-				writeSpeech("kuro","","Not here, hun. The student council president has been going around checking on places a lot more since word about the PTA meeting spread, and I don't wanna get caught.");
+				writeSpeech("kuro","","Not here, hun. The student council president has been going around checking on places a lot more since word about another faculty meeting spread, and I don't wanna get caught.");
+				if(!checkFlag('principal','council')){
+					writeSpeech("player","","Faculty meeting? First I'm hearing about it...");
+					writeSpeech("kuro","","I'd probably hit up the principal and ask her then. Well, after we're finished, of course~");
+				}
+				else{
+					writeSpeech("player","","Right... That'd be a problem.");
+					writeSpeech("kuro","","Yup. Better to take this somewhere <i>private~</i>");
+				}
 				writeSpeech("player","","Your place, then?");
 				writeSpeech("kuro","","Just lead me to the bed and I'll be a happy little bitch~");
 				writeText("...");
@@ -688,6 +696,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Now that you two are alone and in private, the hypnosis isn't forcing her to act 'normal'.");
 			writeSpeech("player","","kuroF.");
 			writeText("She turns to look at you, standing a bit straighter as she bites her lip.");
+			writeSpeech("player","","Before we start, I have some questions for you.");
+			writeText("Her hands start messing with her skirt even more, but she nods.");
 			writeSpeech("player","","How many times did you edge yesterday?");
 			writeSpeech("kuro","","I lost count.");
 			writeSpeech("player","","Then make an educated guess.");
@@ -778,7 +788,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("...");
 			writeText("Your hand swats against her ass again, the loud slap ringing out with her moans.");
 			writeText("Gently running your fingers along the red cheek, you go back to fingering her, counting the seconds.");
-			writeText("After around twelve seconds, you pull your hand out.");
+			writeText("After around twelve seconds, you pull your hand away.");
 			writeSpeech("player","","How long?");
 			writeSpeech("kuro","","F-Fifteen...~!");
 			writeSpeech("player","","Wrong.");
@@ -858,11 +868,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 					}
 				}
 			}
-			writeSpeech("player","","Then let's have some fun.");
+			writeSpeech("player","","You learn fast. Now let's have some fun...");
 			writeText("She keeps bobbing her head up and down as you pull your tongue along her pussy, focusing especially hard right above where her lips meet... It isn't long before she starts pushing her hips towards you, her cunt desperate for you to pick up the pace.");
 			writeText("When you do, the stimulation only makes her pick up speed herself, though, as she takes you deeper and faster, the throaty sounds of her moans mixing with the wet sounds of her using your cock to fuck her mouth.");
 			writeText("She stops using her hand as she starts taking you even deeper with each movement, her lips nearly pressing against your base every second as she twists her head just enough to make you feel it.");
-			writeText("In all honesty, if you were a normal guy, she'd get you off first and win the challenge handily - she's damn good.");
+			writeText("In all honesty, if you were a normal *guy, she'd get you off first and win the challenge handily - she's damn good.");
 			writeText("So you call her phone, and it starts to ring.");
 			writeText("The way she gently shakes on top of you just makes every stroke from your tongue that much more stimulating for her, and she has trouble focusing on blowing you.");
 			writeText("Her phone just keeps ringing as her moans get louder and louder, her hands going to your thighs to stabilize herself as she takes you into her throat as deep as she can, before she finally loses completely.");
@@ -1070,19 +1080,21 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","Every time you cum, everything will feel <i>so much better.</i>");
 			writeText("Her eyes go wide as you roll you hips back, only getting rougher with her chest.");
 			writeText("...");
-			writeText("Your hand swats against her ass again, the loud slap ringing out with her moans.");
-			writeText("Gently running your fingers along the red cheek, you go back to fingering her, counting the seconds.");
-			writeText("After around twelve seconds, you pull your hand out.");
-			writeSpeech("player","","How long?");
-			writeSpeech("kuro","","F-Fifteen...~!");
-			writeSpeech("player","","Wrong.");
-			writeText("Another slap rings out, her body shuddering at the brink of orgasm as she gasps sharply.");
-			writeSpeech("player","","The next slap will feel even better.");
-			writeText("She lets out a gentle moan as you bring your hand to her pussy again.");
-			writeText("Ten seconds this time.");
-			writeSpeech("kuro","","E-Eleven~...");
-			writeSpeech("player","","Close.");
-			writeText("Her body shakes with the sound of the slap again.");
+			writeText("Laying on her back, her head over the side of the bed, kuroF keeps uselessly fingering herself while you thrust into her throat.");
+			writeText("The wet, sloppy sounds of you using her mouth like a sextoy fill the room as she tries to moan around your shaft.");
+			writeSpeech("player","","That throat of yours feel better than your cunt, doesn't it?");
+			writeText("Even half-choked by cock, you can still recognize her attempt to say 'Yes', her body quivering a bit.");
+			writeText("Drawing your body back a bit, you pull your cock out of her mouth as she gasps sharply, taking deep breaths.");
+			writeText("You give her a few seconds, before asking,");
+			writeSpeech("player","","Did you cum from just your throat yet?");
+			writeSpeech("kuro","","H-Hah... No~...");
+			writeSpeech("player","","That must be making it <i>so much more sensitive.</i>");
+			writeText("Her body shudders, her mouth the only hole that can give her pleasure right now.");
+			writeSpeech("kuro","","Yes...! Please, keep using my throat~!");
+			writeText("Stepping forward, you line your back up to her mouth as you run your thumb along her neck.");
+			writeSpeech("player","","Are you ready?");
+			writeSpeech("kuro","","<i>Yes~!</i>");
+			writeText("Thrusting forward, you push into her throat fully, your balls resting on her face as she moans in pleasure.");
 			writeText("...");
 			writeText("By the time you're finally finished, she's laying on the bed, her breathing finally calming down a bit as she rests a bit.");
 			writeText("Her arm is over her eyes, her body covered in sweat.");
@@ -1190,13 +1202,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			}
 			writeSpeech("player","","I see no reason why we can't be civilized people and do both. Plus it's literally my job, and I have to do it at least once a week or principalF might catch on.");
 			writeText("She laughs, shrugging again as she pockets her phone.");
-			writeSpeech("kuro","","Well, when you put it that way, why not? First we cover the theoreticals on population growth, and then the <i>practical~</i>");
+			writeSpeech("kuro","","Well, when you put it that way, why not? First we cover the theoreticals on population growth, and then we cover the <i>practical~</i>");
 			writeSpeech("player","","That's a good way to put it. Now, if the subject really is growth rates...");
 			writeText("...");
 			writeSpeech("kuro","","I think I get it. It's fuckin' weird though.");
 			writeSpeech("player","","A little, but you'll get used to logarithmic growth after a while.");
 			writeSpeech("kuro","","Hun, I can't trust myself to <i>pronounce</i> that shit.");
-			writeSpeech("player","","Then it's a good thing you won't be tested on that, isn't it?");
+			writeSpeech("player","","Then it's a good thing you won't be tested on pronounciation, isn't it?");
 			writeText("Shutting the textbook, kuroF rolls her shoulders a bit.");
 			writeSpeech("kuro","","God, nothing quite like a textbook to get you drier than the Sahara, right?");
 			writeSpeech("player","","They're not exactly known for being page-turners, no.");
@@ -1206,9 +1218,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("writeEvent('kuro7')", "Have her blow you"+(galleryCheck('kuroMoney') ? " again" : ""));
 			writeFunction("writeEvent('kuro8')", "Fuck her in a swimsuit");
 			writeFunction("writeEncounter('kuroMoneyRedo')", "Use hypnosis to make her think you're buying an hour");
+			writeFunction("writeEncounter('kuroJustStudy')", "That was it, actually");
 			break;
 		}
 		case "kuroMoneyRedo" : {
+			document.getElementById('output').innerHTML = '';
 			passTime();
 			writeText("Looking kuroF in the eyes, you calmly say,");
 			writeSpeech("player","","I'm going to give you an <i>order.</i>");
@@ -1226,7 +1240,18 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("writeEvent('kuroMoney2')", "Get right to it");
 			break;
 		}
+		case "kuroJustStudy" : {
+			document.getElementById('output').innerHTML = '';
+			writeSpeech("player","","...Actually, I think that was kinda it. The textbook may have taken my sex drive.");
+			writeSpeech("kuro","","God, <i>right?</i> I swear, if it weren't for how expensive these things can be, I'd chuck the thing over the fence and watch it fall.");
+			writeSpeech("player","","I get that. See you tomorrow?");
+			writeSpeech("kuro","","Sure. Thanks for the help though, even if it ended up being a total buzzkill.");
+			writeSpeech("player","","Happy to help.");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
 		case "kuro9" : {
+			document.getElementById('output').innerHTML = '';
 			writeText("kuroF grins up at you as you shut the roof-door behind you.");
 			writeSpeech("kuro","","Heyhey~! How's it going? Did you come up just to see me, or...");
 			writeText("Her smile widens further.");
@@ -1861,7 +1886,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Raising her head a bit, she grins as she strokes you.");
 			writeSpeech("kuro","","Now, for the fun part~");
 			writeText("Lining it up, she places her hands on your hips and moves down fast, taking you right to the throat barrier...");
-			writeSpeech("kuro","","Glrk~!");
+			writeSpeech("kuro","","<i>Glrk~!</i>");
 			writeText("...and now past it.");
 			writeText("Her tight, wet mouth and throat squeeze around you as she bobs up and down, the sloppy sounds of her mouth getting fucked filling the room.");
 			writeText("She takes every inch almost hungrily, locking eyes with you and relishing every sound of pleasure you make.");
@@ -1869,7 +1894,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Again and again, she takes you deep, bringing you closer and closer to the edge...");
 			writeText("Reaching forward, you grab the back of her head and, for a moment, pause.");
 			writeText("She she gives a slight nod up at you, you grasp her hair in your fist and <b>pull.</b>");
-			writeSpeech("kuro","","MMF~!");
+			writeSpeech("kuro","","<i><b>MMF~!</b></i>");
 			writeText("Bouncing her forward and back, you let out a throaty groan as you rapidly throatfuck her, using her mouth like a cocksleeve.");
 			writeText("The rapid, controlled rate is what finally puts you over, your cum spurting into her mouth before you pull out a bit.");
 			writeBig("images/kuro/9-2.jpg","Art by Enoshima Iki");
@@ -2897,7 +2922,8 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 					writePhoneSpeech("kuro", "", "You've finished all of "+fName('kuro')+"'s content for this version, congratulations!");
 					writePhoneSpeech("kuro","","If you haven't seen the new scenes on the roof with kuroF (swimsuit and blowjob), you should check them out.");
 				}
-				writePhoneSpeech("kuro","","Additionally, there are three versions of the event 'Taking Her Home, and in Many Positions'. If you access it through the Gallery (in your house, on your computer), you can view all of them!");
+				writePhoneSpeech("kuro","","Plus, there's actually three versions of the event 'Taking Her Home, and in Many Positions'. If you access it through the Gallery (in your house, on your computer), you can view any of the versions you like!");
+				writePhoneSpeech("kuro","","There's also a little snippet explaining how each version is triggered - basically, the version you get depends on your choices when you reply to texts.");
 				writePhoneSpeech("kuro","","Thanks for playing, and look forward to the next update!");
 				break;
 			}
