@@ -32,7 +32,7 @@ function writeEncounter(name) { //Plays the actual encounter.
     				data.story[i].encountered = false;
 			writeText("You spotted a flier hung up on a post.");
 			writeBig("images/housekeep/0-1.jpg", "Art by Kinta no Mousou");
-			writeSpeech("Flier","none","Are you in need of some cleaning? At Maid in Heaven Cleaning Services, we bring you only the best maids(M) to help you make sure that all your <i>favorite</i> things nice and clean, thanks to the help from the greatest maids(M) from the Maid Dimension*!");
+			writeSpeech("Flier","none","Are you in need of some cleaning? At Maid in Heaven Cleaning Services, we bring you only the best maids(M) to help you make sure that all your <i>favorite</i> things get nice and clean, thanks to the help from the greatest maids(M) from the Maid Dimension*!");
 			writeSpeech("Flier","none","An hour of an adorable maid's time can be yours at the low price of just $15 thanks to our special start-of-business sale! Not only that, but first-time customers get the first hour free!");
 			writeText("Looking a little bit lower, you can see some fine-print.");
 			writeSpeech("Flier","none"," <font size='-2'> *Maids do not actually come from a maid dimension; customers may only order one hour of time each night; and the company and the maid reserve the right to refuse service should the maid feel the client dangerous, belligerent, or 'no fun'.</font>");
@@ -274,7 +274,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("housekeep","","Waah... There's so much this time, too...!");
 			writeText("He watches, entranced as you shoot out ropes of cum, your hands bunching up the sheets below.");
 			writeText("After you finish, you run your hands through his hair for a moment.");
-			writeSpeech("housekeep","","That was pretty good...");
+			writeSpeech("player","","That was pretty good...");
 			writeText("He smiles up at you, beaming a bit from the praise.");
 			writeSpeech("housekeep","","I'm glad to hear it! I practiced 'vacuum-blowjobs' at home after I read about them in a magazine, but it's quite different on a real cock!");
 			writeSpeech("player","","Heh, you're pretty enthusiastic about your job, aren't you?");
@@ -384,7 +384,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			else
 				writeSpeech("housekeep","","I'll be fine momentarily, Mistress. And, I think that this feeling might be the best part...~!");
 			writeText("Huh. Looks like he might have had a breathplay fetish without realizing it.");
-			writeSpeech("player","","Alright. Just make to slap my thigh if you really need to breathe. Safewords are a bit hard to say with a cock in your throat.");
+			writeSpeech("player","","Alright. Just make sure to slap my thigh if you really need to breathe. Safewords are a bit hard to say with a cock in your throat.");
 			writeSpeech("housekeep","","Of course!");
 			writeText("He finishes wiping at his lips and chin, storing the cloth with a beaming grin.");
 			if(data.player.gender == "man")
@@ -497,7 +497,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				addFlag("housekeep","Clean1");
 				writeSpeech("player","","Well, a maid's job is to clean, isn't it?");
 				writeText("He smiles, nodding as he stands up straight.");
-				writeSpeech("housekeep","","Then I'll get work immediately~");
+				writeSpeech("housekeep","","Then I'll get to work immediately~");
 				writeText("Reaching into the small, apron-like front-piece of his outfit, he pulls out a miniature duster and cloth.");
 				writeText("With greater speed than you expected from the drowsy-looking boy, he starts flitting about and examining the surfaces of the room.");
 				writeText("He's actually surprisingly diligent, inspecting every surface with a keen eye and dusting at them efficiently.");
@@ -668,7 +668,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("There's no hesitation, but there isn't any of the teasing or the enjoyment housekeepF had on his face last time...");
 			writeBig("images/housekeep/hypno1.jpg","Art by Kinta no Mousou");
 			writeSpeech("housekeep","","Was there something else you would like as well?");
-			writeText("...Actually, thinking about it, he probably wouldn't have hesitated without hypnosis, rould he?");
+			writeText("...Actually, thinking about it, he probably wouldn't have hesitated without hypnosis, would he?");
 			writeText("Ah, whatever. Reinforcing it in the future won't be too hard, so it's probably fine. It seems like it has set in (albeit a bit strangely), so it's probably better to finish what you started before moving to the fun stuff.");
 			writeSpeech("player","","Since you enjoy being a maid so much, it's only logical that you could waive the fee for your services for the opportunity to improve as a maid, right?");
 			writeSpeech("housekeep","","...That sounds reasonable.");
@@ -707,7 +707,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			else if(checkTrust('neet') >= 60)
 				writeText("Well, shit. Maybe he's just not comfortable enough around you, like with neetF? But still...");
 			else
-				writeText("Well, shit. There are obviously going to people who are more resistant, but still...");
+				writeText("Well, shit. There are obviously going to be people who are more resistant, but still...");
 			writeText("Well, something seems a bit off, but that just means that it'll require a different approach.");
 			writeSpeech("player","","It's fine. It'll probably be easier for you the more time you spend around me, so I'll just have to call on you more, I suppose.");
 			writeText("housekeepF purses his lips for a moment before nodding.");
@@ -943,7 +943,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You hear his moans peak as he presses his hands against his hips, trying and failing to hold back as he rolls his pelvis forward, breathy moans spilling out as his spills his load.");
 			writeText("The first few ropes spatter against the back of your mouth, feeling warm and a nice kind of sticky as he pulls his hands away from his hips to run them through your hair.");
 			writeText("You're half-expecting something bitter, but it's surprisingly not. It's definitely still cum, but there's a faintly pleasant sweetness to it that lingers for just a few seconds on your tongue.");
-			writeText("You're honestly not too sure how long he was cumming, or even when you started swallowing, but when he finally finishes, it's with a deeply satisfied sigh,");
+			writeText("You're honestly not too sure how long he was cumming, or even when you started swallowing, but when he finally finishes, it's with a deeply satisfied sigh.");
 			writeText("You can feel housekeepF's hand running gently through your hair, a surprisingly pleasant feeling as he begins to collect himself, his tone still a bit dopey.");
 			writeBig("images/housekeep/blowHim5.jpg","Art by Kinta no Mousou");
 			writeSpeech("housekeep","","Thank you so much, *Master~... You were incredible~");
@@ -986,11 +986,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "housekeepBlowjobDodge" : {
-			writeText("You pull your back from his shaft, your hand moving to grasp it as he starts to tense up, his dick expanding a bit in your hand.");
+			writeText("You pull your mouth back from his shaft, your hand moving to grasp it as he starts to tense up, his dick expanding a bit in your hand.");
 			writeText("You hear his moans peak as he presses his hands against his hips, trying and failing to hold back as he rolls his pelvis forward, breathy moans spilling out as his spills his load.");
 			writeText("He ends up spraying his load pretty far across the floor, a mess you imagine housekeepF will take pleasure in cleaning, even as his hands finally leave his hips to run through his own hair as he spurts again and again.");
 			writeText("You can see each pearly-white rope shoot out right in front of you, spattering the floor as you jerk every drop out of housekeepF's shaft, just continuing to gently squeeze and stroke until he's stopped cumming.");
-			writeText("When he's finally finished, the scent of arousal and cum still thick in the air, you can hear an almost dopey giggle from housekeepF as gently pull your hand away from his softening penis.");
+			writeText("When he's finally finished, the scent of arousal and cum still thick in the air, you can hear an almost dopey giggle from housekeepF as you gently pull your hand away from his softening penis.");
 			writeSpeech("housekeep","","Thank you so much, *Master~... You were incredible~");
 			writeText("You can feel housekeepF's hand running gently through your hair, a surprisingly pleasant feeling as he tries to collect himself.");
 			writeText("He shifts forward a bit, the feeling of his lips pressing gently on the top of your head as he giggles and breathes slowly and deeply.");
@@ -1242,10 +1242,10 @@ function writeEvent(name) { //Plays the actual event.
 			else
 				writeSpeech("housekeep","","Thank you for letting me worship it, <i>Mistress~</i>");
 			writeBig("images/housekeep/1-4.jpg","Art by Kinta no Mousou");
-			writeText("He gently presses his lips against your cock, kissing it up and down as he jerks off faster, spreading your spit and his precum up and down your dick.");
+			writeText("He gently presses his lips against your cock, kissing it up and down as he jerks off faster, spreading his spit and your precum up and down your dick.");
 			writeSpeech("player","","O-Oh <i>fuck...!</i>");
 			writeText("Between the alternating licking and kissing, the faster and faster jerking, and the soft moaning from underneath you, you're getting close fast...!");
-			writeText("Almost like housekeepF can sense that, his breathing gets heavier as focuses his kisses on your sensitive head.");
+			writeText("Almost like housekeepF can sense that, his breathing gets heavier as he focuses his kisses on your sensitive head.");
 			writeText("A moment later, you feel yourself pass his lips as he takes your head into his mouth, his tongue still swirling against you as his fingers make a ring as he jerks you off.");
 			writeText("He quickly starts to bob up and down, his hand trailing behind his mouth as he breathes in sharply...!");
 			if(data.player.gender == "man")
@@ -1264,7 +1264,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player","","<i><b>Cumming!</b></i>");
 			writeBig("images/housekeep/1-6.jpg","Art by Kinta no Mousou");
 			writeText("housekeepF's eyes go wide as you start to spurt, but it quickly gives way to a smile as he carefully strokes you, milking the cum out of your shaft.");
-			writeText("When you're finished, most of ends up on his hand, though as you recover from your orgasm, he picks up the bits that spurted onto your abdomen.");
+			writeText("When you're finished, most of it ends up on his hand, though as you recover from your orgasm, he picks up the bits that spurted onto your abdomen.");
 			writeText("He smiles wide, raising his fingers to his mouth as he opens wide.");
 			writeBig("images/housekeep/1-7.jpg","Art by Kinta no Mousou");
 			writeSpeech("housekeep","","Geez... A beautiful cock, <i>and</i> you taste good~ If I'm not careful, <i>I'll</i> end up hooked on <i>you~!</i>");
@@ -1351,7 +1351,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/housekeep/sink-1.jpg","Art by Kinta no Mousou");
 			writeSpeech("housekeep","","<i>Haahn...~!</i>");
 			writeText("His eyes flutter shut for a few moments, your cock sinking deep into him as he moans.");
-			writeText("After a second, though, he refocuses as looks into your eyes.");
+			writeText("After a second, though, he refocuses as he looks into your eyes.");
 			if(data.player.gender == "man")
 				writeSpeech("housekeep","","I could hardly call myself a maid if I made my *Master do all the work~!");
 			else
@@ -1460,7 +1460,7 @@ function writeEvent(name) { //Plays the actual event.
 			else
 				writeSpeech("housekeep","","Y-Yes, Mistress~!");
 			writeText("With that, you start savagely fucking him as quickly, roughly, and violently as you can.");
-			writeText("Your hands graps and pull him into your with every thrust, his own hands sliding around the counter as he desperately tries to focus on staying standing.");
+			writeText("Your hands grab and pull him into you with every thrust, his own hands sliding around the counter as he desperately tries to focus on staying standing.");
 			writeText("Pulling him into you, you can feel the wild, uncontrolled twitching of his ass around you, wordless moans spilling out of his mouth every time you slam forward.");
 			writeText("You have no idea how many minutes you spend slamming into him before you finally reach your climax.");
 			writeSpeech("player","","I'm cumming...!");
@@ -1485,7 +1485,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player","","You're fine with having sex with me... but you're embarrassed by saying the word 'spanking'?");
 			writeText("He huffs up just a bit, resting his hands on his hips.");
 			writeSpeech("housekeep","","It's one thing to <i>do</i> that sort of thing, but it's quite another to <i>say</i> it! It's <i><b>lewd!</b></i>");
-			writeText("It takes you a second to realize that he is, in fact, entirely serious abou that.");
+			writeText("It takes you a second to realize that he is, in fact, entirely serious about that.");
 			writeText("So of course, it seems like a good time to turn the teasing tables.");
 			writeSpeech("player","","...Well, unfortunately, I couldn't <i>quite</i> hear what you were asking me to do next time.");
 			writeText("His eyes widen slightly as you shrug.");
@@ -1544,7 +1544,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("His eyes tightly shut, housekeepF shakes gently, the warm sensation of just being in your mouth already making him throb.");
 			writeText("You'd make a quip about how sensitive he must be down here, but given that your mouth's full...");
 			writeText("Instead, you focus on the task at hand.");
-			writeText("You take it slow at first, just circling your tongue around his tip a bit, looking for the spots the make him moan or, even better, the ones that feel good enough that he can't make a sound.");
+			writeText("You take it slow at first, just circling your tongue around his tip a bit, looking for the spots that make him moan or, even better, the ones that feel good enough that he can't make a sound.");
 			writeText("Taunting those spots, teasing them relentlessly while gently running your hands up and down his legs, has him practically falling apart in a minute.");
 			writeSpeech("housekeep","","N-No fair...~! Your mouth feels <i><b>way</b></i> too good, *Master...!");
 			writeText("As he says that, you can feel his shaft tense up a bit, more of his precum starting to come out, but this time into your mouth.");
@@ -1677,7 +1677,7 @@ switch (requestType) {
 				var finalResult = true;
 				if (encounterArray[number].location != null) {
 					var finalLocation = encounterArray[number].location;
-					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map" && data.player.gps == true) { //check the location
+					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map") { //check the location
 						if (encounterArray[number].time.includes(data.player.time)) { //check the time
 							if (encounterArray[number].trustMin <= checkTrust(character.index) && encounterArray[number].trustMax >= checkTrust(character.index)) { //check the trust requirements
 								if (encounterArray[number].day == "even" && data.player.day%2 == 1) {
