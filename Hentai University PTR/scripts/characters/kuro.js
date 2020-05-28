@@ -36,6 +36,10 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+	var nikkiInitial = "";
+	for(var i = 0; i < data.story.length; i++)
+		if(data.story[i].index == 'nikki')
+			nikkiInitial = data.story[i].fName.charAt(0);
 	switch (name) {
 		case "kuro1" : {
 			//meeting kuro
@@ -702,11 +706,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("kuro","","I lost count.");
 			writeSpeech("player","","Then make an educated guess.");
 			writeText("She takes a slow, deep breath and closes her eyes.");
-			writeSpeech("kuro","","We, um... bought something like thirty or forty small items at one point, since "+data.story[17].fName.charAt(0)+" wanted to pick up groceries.");
-			writeSpeech("kuro","","I don't know how to count that. It kept beeping over, and over, and over... and I could barely think. The beeping just kept going, and I kept talking with "+data.story[17].fName.charAt(0)+", but the only thing I could think about was how close I was.");
+			writeSpeech("kuro","","We, um... bought something like thirty or forty small items at one point, since "+nikkiInitial+" wanted to pick up groceries.");
+			writeSpeech("kuro","","I don't know how to count that. It kept beeping over, and over, and over... and I could barely think. The beeping just kept going, and I kept talking with "+nikkiInitial+", but the only thing I could think about was how close I was.");
 			writeSpeech("player","","And was there ever a moment you were alone? When you didn't have to look <i>normal</i> in front of people?");
 			writeText("Her body shudders again as she nods.");
-			writeSpeech("kuro","","A few times, yeah. Whenever "+data.story[17].fName.charAt(0)+" would use the bathroom, and I was sure no one could see me. I'd just be <i>so turned on,</i> but I couldn't get off...!");
+			writeSpeech("kuro","","A few times, yeah. Whenever "+nikkiInitial+" would use the bathroom, and I was sure no one could see me. I'd just be <i>so turned on,</i> but I couldn't get off...!");
 			writeSpeech("player","","Then it sounds like you followed my orders perfectly, kuroF. And checking the text-log...");
 			writeText("She visibly perks up.");
 			writeSpeech("player","","...It seems I <i>did</i> promise a reward, didn't I?");
@@ -1381,6 +1385,10 @@ var eventArray = [ //Lists the events of the character for unlocking and replayi
 function writeEvent(name) { //Plays the actual event.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+	var nikkiInitial = "";
+	for(var i = 0; i < data.story.length; i++)
+		if(data.story[i].index == 'nikki')
+			nikkiInitial = data.story[i].fName.charAt(0);
 	switch (name) {
 		case "kuro1" : {
 			document.getElementById('output').innerHTML = '';
@@ -2509,7 +2517,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			case "kuroPhone8A" : {
 				writePhoneSpeech("player","","You don't like it?");
 				writePhoneSpeech("kuro","","My mouth is for putting dicks in, not words");
-				writePhoneSpeech("kuro","","It's different when I'm actually with "+data.story[17].fName.charAt(0)+" instead of on the phone");
+				writePhoneSpeech("kuro","","It's different when I'm actually with "+nikkiInitial+" instead of on the phone");
 				writePhoneSpeech("kuro","","She bought a whole bunch of stuff, and the cashier had to scan");
 				writePhoneSpeech("kuro","","Every");
 				writePhoneSpeech("kuro","","Single");
@@ -2519,7 +2527,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			}
 			case "kuroPhone8AA" : {
 				writePhoneSpeech("player","","Sounds like you had fun.");
-				writePhoneSpeech("kuro","","I had to ask "+data.story[17].fName.charAt(0)+" to handle paying while I went to the bathroom");
+				writePhoneSpeech("kuro","","I had to ask "+nikkiInitial+" to handle paying while I went to the bathroom");
 				writePhoneSpeech("kuro","","If this stall were cleaner I'd be jilling myself silly to a pic of you rn");
 				writePhoneSpeech("player","","That's a pretty high compliment.");
 				writePhoneSpeech("kuro","","Ahhhh she keeps texting me");
@@ -2535,7 +2543,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneSpeech("kuro","","It's just");
 				writePhoneSpeech("kuro","","Embarassing");
 				writePhoneSpeech("kuro","","Ahhhh she keeps texting me");
-				writePhoneSpeech("kuro","","Y u gotta text in short messages "+data.story[17].fName.charAt(0));
+				writePhoneSpeech("kuro","","Y u gotta text in short messages "+nikkiInitial);
 				writePhoneSpeech("kuro","","God and we're not even half done with shopping");
 				writePhoneSpeech("kuro","","I'm totally getting you back for this hun");
 				writePhoneChoices("I'm looking forward to it", "[Discipline her by sending a bunch of texts]");
@@ -2546,7 +2554,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneSpeech("kuro","","I'll make sure to fulfill your expectations then hun");
 				writePhoneSpeech("kuro","","Assuming this beeping doesn't make me cum my braind out anyway");
 				writePhoneSpeech("kuro","","We totes oughta talk about that next time btw, you still haven't told me how you do it");
-				writePhoneSpeech("kuro","","In the meantime tho, gotta get back to "+data.story[17].fName.charAt(0)+", but you'd better meat me tomorrow");
+				writePhoneSpeech("kuro","","In the meantime tho, gotta get back to "+nikkiInitial+", but you'd better meat me tomorrow");
 				writePhoneSpeech("player","","Meet*");
 				writePhoneSpeech("kuro","","That wasn't a typo hun");
 				writePhoneSpeech("kuro","","Kisses~!");
@@ -2573,7 +2581,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneSpeech("player","","...You there?");
 				writePhoneSpeech("kuro","","Just checking that I'm alone in the bathroom");
 				writePhoneSpeech("kuro","","If someone heard me cumming my brains out in a public toilet, I'd die of shame");
-				writePhoneSpeech("kuro","","Gotta get back to "+data.story[17].fName.charAt(0)+", but you'd better meat me tomorrow");
+				writePhoneSpeech("kuro","","Gotta get back to "+nikkiInitial+", but you'd better meat me tomorrow");
 				writePhoneSpeech("player","","Meet*");
 				writePhoneSpeech("kuro","","That wasn't a typo hun");
 				writePhoneSpeech("kuro","","Kisses~!");
@@ -2584,7 +2592,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneSpeech("kuro","","I'll make sure to fulfill your expectations then hun");
 				writePhoneSpeech("kuro","","Assuming this beeping doesn't make me cum my brains out anyway");
 				writePhoneSpeech("kuro","","We totes oughta talk about that next time btw, you still haven't told me how you do it");
-				writePhoneSpeech("kuro","","In the meantime tho, gotta get back to "+data.story[17].fName.charAt(0)+", but you'd better meat me tomorrow");
+				writePhoneSpeech("kuro","","In the meantime tho, gotta get back to "+nikkiInitial+", but you'd better meat me tomorrow");
 				writePhoneSpeech("player","","Meet*");
 				writePhoneSpeech("kuro","","That wasn't a typo hun");
 				writePhoneSpeech("kuro","","Kisses~!");
@@ -2611,7 +2619,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneSpeech("player","","...You there?");
 				writePhoneSpeech("kuro","","Just checking that I'm alone in the bathroom");
 				writePhoneSpeech("kuro","","If someone heard me cumming my brains out in a public toilet, I'd die of shame");
-				writePhoneSpeech("kuro","","Gotta get back to "+data.story[17].fName.charAt(0)+", but you'd better meat me tomorrow");
+				writePhoneSpeech("kuro","","Gotta get back to "+nikkiInitial+", but you'd better meat me tomorrow");
 				writePhoneSpeech("player","","Meet*");
 				writePhoneSpeech("kuro","","That wasn't a typo hun");
 				writePhoneSpeech("kuro","","Kisses~!");
@@ -2621,7 +2629,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneSpeech("player","","That's kinda the point.");
 				writePhoneSpeech("kuro","","Ye, but still");
 				writePhoneSpeech("kuro","","I keep almost moaning whenever I hear something beep");
-				writePhoneSpeech("kuro","","Like, it's totally hot, but I could swear "+data.story[17].fName.charAt(0)+"'s getting sus");
+				writePhoneSpeech("kuro","","Like, it's totally hot, but I could swear "+nikkiInitial+"'s getting sus");
 				writePhoneSpeech("kuro","","If I didn't know better, I'd say she knows and bought like 40 different things just to rile me up");
 				writePhoneSpeech("kuro","","Had to ask her to handle paying while I 'use the bathroom'");
 				writePhoneSpeech("kuro","","Srsly, if this stall was cleaner, I'd probably skip texting and go straight to jilling with a pic of u");
@@ -2634,7 +2642,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneSpeech("kuro","","It's just");
 				writePhoneSpeech("kuro","","Embarassing");
 				writePhoneSpeech("kuro","","Ahhhh she keeps texting me");
-				writePhoneSpeech("kuro","","Y u gotta text in short messages "+data.story[17].fName.charAt(0));
+				writePhoneSpeech("kuro","","Y u gotta text in short messages "+nikkiInitial);
 				writePhoneSpeech("kuro","","God and we're not even half done with shopping");
 				writePhoneSpeech("kuro","","I'm totally getting you back for this hun");
 				writePhoneChoices("I'm looking forward to it", "[Discipline her by sending a bunch of texts]");
@@ -2645,7 +2653,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneSpeech("kuro","","I'll make sure to fulfill your expectations then hun");
 				writePhoneSpeech("kuro","","Assuming this beeping doesn't make me cum my braind out anyway");
 				writePhoneSpeech("kuro","","We totes oughta talk about that next time btw, you still haven't told me how you do it");
-				writePhoneSpeech("kuro","","In the meantime tho, gotta get back to "+data.story[17].fName.charAt(0)+", but you'd better meat me tomorrow");
+				writePhoneSpeech("kuro","","In the meantime tho, gotta get back to "+nikkiInitial+", but you'd better meat me tomorrow");
 				writePhoneSpeech("player","","Meet*");
 				writePhoneSpeech("kuro","","That wasn't a typo hun");
 				writePhoneSpeech("kuro","","Kisses~!");
@@ -2672,7 +2680,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneSpeech("player","","...You there?");
 				writePhoneSpeech("kuro","","Just checking that I'm alone in the bathroom");
 				writePhoneSpeech("kuro","","If someone heard me cumming my brains out in a public toilet, I'd die of shame");
-				writePhoneSpeech("kuro","","Gotta get back to "+data.story[17].fName.charAt(0)+", but you'd better meat me tomorrow");
+				writePhoneSpeech("kuro","","Gotta get back to "+nikkiInitial+", but you'd better meat me tomorrow");
 				writePhoneSpeech("player","","Meet*");
 				writePhoneSpeech("kuro","","That wasn't a typo hun");
 				writePhoneSpeech("kuro","","Kisses~!");
@@ -2708,7 +2716,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				if(checkTrust('kuro')==65)
 					setTrust('kuro',70);
 				writePhoneSpeech("kuro","","Just wanted to give you a quick update!");
-				writePhoneSpeech("kuro","","Me and "+data.story[17].fName.charAt(0)+" are spending the rest of the day shopping around");
+				writePhoneSpeech("kuro","","Me and "+nikkiInitial+" are spending the rest of the day shopping around");
 				writePhoneSpeech("kuro","","We'll be finishing up sometime later today, though we'll be kicking back and watching some movies tonite");
 				writePhoneSpeech("kuro","","Will be available tomorrow tho! I'm sure you missed me a whole bunch~");
 				writePhoneChoices("I'm fine, you should enjoy your time with your friend","I get the feeling you're the one that misses me","It's a little boring without my cocksleeve");
@@ -2720,7 +2728,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneSpeech("kuro","","kuroF my life is so lonely without a tanned sex goddess draining my balls, I totes need you around my cock ASAP");
 				writePhoneSpeech("kuro","","Gotta make a girl feel wanted y'know?");
 				writePhoneSpeech("player","","kuroF, I want to pin you down and fuck you until neither one of us can move, but I can be patient enough to wait for you to hang out with friends between rampant sweaty fuck-fests.");
-				writePhoneSpeech("kuro","","Ahhhhhhh that was perfect!! If I didn't want to make "+data.story[17].fName.charAt(0)+" wait, I'd totally end up jilling myself in bathroom stall while sexting~");
+				writePhoneSpeech("kuro","","Ahhhhhhh that was perfect!! If I didn't want to make "+nikkiInitial+" wait, I'd totally end up jilling myself in bathroom stall while sexting~");
 				writePhoneSpeech("kuro","","But fun times will have to wait until I see you on the roof~ Just thinking about what you did, what you can do to me and make me cum from, gets me so fcking horny");
 				writePhoneSpeech("kuro","","I'm looking forward to all the fun we'll be having but I gtg, kisses~!");
 				break;
@@ -2731,7 +2739,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneSpeech("kuro","","I swear, closing my front door might not have made me cum, but just remembering it");
 				writePhoneSpeech("kuro","","Unf. Just thinking about what you did, what you can do to me and make me cum from, gets me so fcking horny");
 				writePhoneSpeech("kuro","","I can't wait to see you again");
-				writePhoneSpeech("kuro","","But I'd better get back to "+data.story[17].fName.charAt(0)+" before chatting with you ends with me jilling it in a public bathroom, lol~");
+				writePhoneSpeech("kuro","","But I'd better get back to "+nikkiInitial+" before chatting with you ends with me jilling it in a public bathroom, lol~");
 				writePhoneSpeech("player","","I'll see on the roof some time, then.");
 				writePhoneSpeech("kuro","","I'm looking forward to it, kisses~!");
 				break;
@@ -2742,7 +2750,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneSpeech("kuro","","I can't wait to see you on the roof again");
 				writePhoneSpeech("kuro","","That thing you did with the doors, I totally wanna know more about it");
 				writePhoneSpeech("kuro","","Closing my front door didn't make me start cumming and stuff, but just remembering it got me so fcking wet");
-				writePhoneSpeech("kuro","","But I'd better get back to "+data.story[17].fName.charAt(0)+" before chatting with you ends with me jilling it in a public bathroom, lol~");
+				writePhoneSpeech("kuro","","But I'd better get back to "+nikkiInitial+" before chatting with you ends with me jilling it in a public bathroom, lol~");
 				writePhoneSpeech("player","","I'll see on the roof some time, and you'd better be ready to make me shudder hun (not that you've had trouble with it thus far~)");
 				writePhoneSpeech("kuro","","I'm looking forward to it, kisses~!");
 				break;
@@ -2766,7 +2774,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			case "kuroPhone12" : {
 				if(checkTrust('kuro')==70)
 					setTrust('kuro',71);
-				writePhoneSpeech("kuro","","Heyhey~! Got my new sheets, spent some time watching movies with "+data.story[17].fName.charAt(0)+", and my schedule just happns to be open~");
+				writePhoneSpeech("kuro","","Heyhey~! Got my new sheets, spent some time watching movies with "+nikkiInitial+", and my schedule just happns to be open~");
 				writePhoneSpeech("kuro","","I wonder if a certain sexy counselor will be cumming by the roof today~?");
 				writePhoneSpeech("kuro","","But for realzies, I'm pretty horny ngl");
 				writePhoneSpeech("kuro","","We gonna fck today?");
