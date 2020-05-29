@@ -745,7 +745,7 @@ function writeEvent(name) { //Plays the actual event.
 				sp president; No, I told her that if she stayed in control that I'd be hers to do with as she pleased. 
 				sp player; Oh, wow. You put a lot of faith into my performance.
 				sp president; And you delivered. Now, I'll be spending the evening with treasurerF to make sure the work we did... <i>Sticks</i>. My goal is that when you and her are... Relaxing... That she'll see you as me. I'll see you again?
-				sp player; Sometimes you act like you're in charge, presidentF;
+				sp player; Sometimes you act like you're in charge, presidentF.
 				t presidentF merely smirks and goes back to amusing herself with treasurerF's shuddering body.
 			`);
 			break;
