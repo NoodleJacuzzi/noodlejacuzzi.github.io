@@ -398,6 +398,20 @@ function checkTrust(name) {
 	}
 }
 
+function resetProgress(name) {
+	for (trustIndex = 0; trustIndex < data.story.length; trustIndex++) {
+		if (data.story[trustIndex].index == name) {
+			alert("Progress with "+data.story[trustIndex].fName+" has been reset. Hopefully this doesn't cause any issues!");
+			console.log('setting the trust of '+name+' to 0');
+			data.story[trustIndex].trust = 0;
+			data.story[trustIndex].met = "";
+			data.story[trustIndex].textHistory = "";
+			data.story[trustIndex].encountered = false;
+			data.story[trustIndex].textEvent = "";
+		}
+	}
+}
+
 function addFlag(character, flag) {
 	console.log(character+flag);
 	for (flagIndex = 0; flagIndex < data.story.length; flagIndex++) {
@@ -1774,6 +1788,10 @@ function listArtists() {
 	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/215082">Gujira 4 Gou's Pixiv</a>`;
 	writeMed("images/housekeep/profile.jpg", "Art by Kinta no Mousou");
 	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/13253890">Kinta no Mousou's Pixiv</a>`;
+	writeMed("images/haze/profile.jpg", "Art by Purple Haze");
+	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/1233996">Purple Haze's Pixiv</a>`;
+	writeMed("images/coach/profile.jpg", "Art by Himitsu Kessha Vanitas");
+	document.getElementById('output').innerHTML += `<a class="choiceText" href = "https://www.pixiv.net/en/users/16913239">Himitsu Kessha Vanitas's Pixiv</a>`;
 }
 
 //Showing & hiding windows
@@ -2363,7 +2381,7 @@ function loadSlot(slot) {
 
 function saveFile(){
 	hideStuff();
-	document.getElementById('output').innerHTML += `<textArea id = "copyData">`+JSON.stringify(data)+`</textAread>`;
+	document.getElementById('output').innerHTML += `<textArea id = "copyData">`+JSON.stringify(data)+`</textArea>`;
 	var copyText = document.getElementById("copyData");
 	copyText.select();
 	copyText.setSelectionRange(0, 99999);

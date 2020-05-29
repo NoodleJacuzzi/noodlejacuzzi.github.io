@@ -255,8 +255,9 @@ function writeEncounter(scene) {
 				document.getElementById('output').innerHTML += `
 				<p class="centeredText"><input type="text" id="nameSubmission`+i+`1" value="`+data.story[i].fName+`"> <input type="text" id="nameSubmission`+i+`2" value="`+data.story[i].lName+`"></p>
 				`;
+				writeFunction("resetProgress('"+data.story[i].index+"')", "Reset progress with "+data.story[i].fName);
 			}
-			writeFunction("renameEveryone()')", "Rename characters");
+			writeFunction("renameEveryone()", "Rename characters");
 			writeFunction("changeLocation('playerHouse')", "Cancel and leave");
 			break;
 		}
