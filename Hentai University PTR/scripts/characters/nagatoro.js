@@ -334,12 +334,17 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "empty", requirements: "?trust principal 10000;"},
+	{index: "nagatoroReward", requirements: "?trust nagatoro 100;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
+		case "nagatoroReward": {
+			writePhoneImage("images/nagatoro/reward.jpg", "Art by Kinta no Mousou");
+			writePhoneSpeech("nagatoro", "", "You've finished all of nagatoroF's content for this version, what would you like to see next? I bet it's something lewd!");
+			break;
+		}
 		case "placeholder": {
 			//Write the event's text here using writePhoneSpeech, writePhoneImage, and writePhoneChoices
 			break;

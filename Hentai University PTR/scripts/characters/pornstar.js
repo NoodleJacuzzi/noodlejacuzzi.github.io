@@ -45,7 +45,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "All this to test if I'm worthy of your daughter?");
 			writeSpeech("pornstar", "", "Of course not! But hearing about how my little girl shot her first creampie...<br>I'm just horny, now hurry up and-");
 			writeBig("images/pornstar/1-2.jpg", "Art by Oreteki");
-			writeSpeech("pornstar", "", "Ah~! Oh my, so forwards!");
+			writeSpeech("pornstar", "", "Ah~! Oh my, so forward!");
 			writeSpeech("player", "", "Shut up! What the fuck is wrong with your head? 'My little girl got creampied'! How the hell does that get you off?");
 			writeSpeech("pornstar", "", "Nnngh~! More! I love when you talk dirty to me. Tell me what it was like.<br>She said it was ass to pussy. Did she feel good-Nnngh~!");
 			writeSpeech("player", "", "SHUT. UP. You and your daughter are both fucked in the head! I fucked her into the ground and she liked it!");

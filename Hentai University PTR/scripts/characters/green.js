@@ -45,7 +45,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText(fName('green')+" suddenly stands up with a angry glare in her eyes.");
 			writeSpeech("green", "", "So you're the piece of shit that's been doing all this...");
 			writeSpeech("player", "", "Fuck, wait.");
-			writeText("She starts charging towards you. You've never actually fought anybody, and your hypnosis has never backfired this hard before. It likes like you have no choice but to fight.");
+			writeText("She starts charging towards you. You've never actually fought anybody, and your hypnosis has never backfired this hard before. It looks like you have no choice but to fight.");
 			writeText("... Or that's what you thought. You hear someone snapping their fingers and "+fName('green')+" goes slump on the ground.");
 			writeSpeech("scarf", "", "You shouldn't play with other people's toys, you know.");
 			writeBig("images/scarf/profile.jpg", "Art by Enoshima Iki");
@@ -162,7 +162,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("...");
 			writeText("Hopefully a more casual environment will let you bypass scarfF's protection.");
 			writeSpeech("green", "", "Ah, don't mind any of her stuff. She's into those Chinese cartoons.");
-			writeText("The place is pretty tidy on first pass, but a lot of the stuff all around is pretty weirdly organized. Like somebody told robot 'clean this place up' without explaining any of the nuance.");
+			writeText("The place is pretty tidy on first pass, but a lot of the stuff all around is pretty weirdly organized. Like somebody told a robot 'clean this place up' without explaining any of the nuance.");
 			writeBig("images/scarf/scarfApron.jpg", "Art by Enoshima Iki");
 			writeSpeech("green", "", "So, what're ya hungry for?");
 			writeSpeech("player", "", "Oh, uh, anything's fine. You don't really need to make anything.");
@@ -180,7 +180,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Why would she need a book on snapping? She sounded fine before.");
 			writeSpeech("green", "casual.jpg", "Dunno why, but she said she needed to sound consistent. Honestly, she practiced so much I can still hear it when I go to sleep.<br>Helpful tip, I fuckin' hate the sound. No faster way for your ass to hit the street.");
 			writeSpeech("player", "", "I'll keep it to myself then.");
-			writeSpeech("green", "casual.jpg", "Ah, you're fine, doesn't hit those notes that fuck me right up. You don't got that echo-y sound afterwards. Now stop snoopin' through boring shit and come eat.");
+			writeSpeech("green", "casual.jpg", "Ah, you're fine, yours don't hit those notes that fuck me right up. You don't got that echo-y sound afterwards. Now stop snoopin' through boring shit and come eat.");
 			writeFunction("writeEncounter('greenHome2')", "Continue");
 			break;
 		}
@@ -266,7 +266,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("green", "", "Yeah? What's up?");
 			writeText("Really quick, that psychology exam, how did tomgirlF do again?");
 			writeSpeech("green", "", "He passed.");
-			writeSpeech("player", "", "The what now?");
+			writeSpeech("player", "", "What did he pass, exactly?");
 			writeSpeech("green", "", "He passed the test, why? What's up?");
 			writeText("*SNAP*");
 			writeText("greenF goes slack as scarfF cuts her out of the conversation.");
@@ -332,7 +332,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Letting yourself engage with the fake reality is a bad idea, you could get distracted for longer than you realize.");
 			writeSpeech("Playboy", "images/none.png", "Hey hot stuff, you're lookin pretty good!");
 			writeBig("images/scarf/greenBeach2.jpg");
-			writeText("A pair of tanned beachgoes have come up to start hitting on greenF");
+			writeText("A pair of tanned beachgoers have come up to start hitting on greenF");
 			writeSpeech("green", "bikini.jpg", "Oh, stop. I'm old enough to be your-");
 			writeSpeech("Playboy", "images/none.png", "One second. Hey, bro. She yours?");
 			writeFunction("writeEncounter('greenBeach')", "Yeah, she's with me");

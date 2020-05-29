@@ -313,7 +313,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "purple7A": {
 			writeSpeech("purple", "", "Ah! *Master! I've been waiting for-");
 			writeSpeech("player", "", "Shh! Calling me *Master in public isn't <b>normal</b>.");
-			writeText("She enthusiasm is instantly halted as she looks around.");
+			writeText("Her enthusiasm is instantly halted as she looks around.");
 			writeSpeech("purple", "", "Sorry "+data.player.honorific+". Would you like to head home with me now?");
 			writeFunction("writeEncounter('purple7B')", "Of course. Let's go");
 			data.player.location = 'playerOffice';
@@ -379,7 +379,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "branchingPoint": {
 			writeEvent("purpleBranching");
-			writeText("Still, she asks a good question. Having her turned into more of a free use whore could be neat to watch, and you've got plenty of prey in town go focus on yourself. Of course, having the pair devote themselves entirely to you could be plenty fun too. For now there's just one thing to do.");
+			writeText("Still, she asks a good question. Having her turned into more of a free use whore could be neat to watch, and you've got plenty of prey in town to focus on yourself. Of course, having the pair devote themselves entirely to you could be plenty fun too. For now there's just one thing to do.");
 			//writeFunction("writeEncounter('branchingB')", "Go ahead and post it");
 			writeFunction("writeEncounter('branchingA')", "No, you're mine");
 			break;
@@ -465,7 +465,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("purple", "", "What's up? You seem distracted, want me to suck you off?");
 			writeSpeech("player", "", "Hey, purpleF. Focus, I wanna check something out.<br>When I snap my fingers, all of the hypnosis will fade away, you'll be right back to your normal self aware of everything that's happened thus far.");
 			writeSpeech("purple", "", "Hypnosis? I'm not under anything, but oka-");
-			writeText("As you raise your arms pretending you're about to snap your fingers, purpleF looks manic for a moment as she lunges forwards to try and keep your fist closed to prevent your from breaking her trance.");
+			writeText("As you raise your arms pretending you're about to snap your fingers, purpleF looks manic for a moment as she lunges forwards to try and keep your fist closed to prevent you from breaking her trance.");
 			writeText("Quickly though, a look of realization flashes on her face and she backs off.");
 			writeSpeech("purple", "", "Ah, I'm sorry! I don't know why I did that...");
 			writeSpeech("player", "", "It's no problem, don't worry.");
@@ -505,8 +505,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "purpleCasino1": {
 			writeBig("images/scarf/casinoPurple1.jpg", "Art by Oreteki18kin");
 			writeSpeech("purple", "", "Oooh~!<br>M-mom, look~!");
-			writeSpeech("chubby", "", "Nnngh~! Oh, it's mister playerF~! Would... Would you care to join us?");
-			writeSpeech("purple", "", "purpleF? chubbyF?");
+			writeSpeech("chubby", "", "Nnngh~! Oh, it's *mister playerF~! Would... Would you care to join us?");
+			writeSpeech("player", "", "purpleF? chubbyF?");
 			writeText("You're awash with jealousy for a moment before you cool your head. It's just another mindgame, one that's pretty easy to push through. scarfF really must be going easy on you.");
 			writeSpeech("purple", "", "Pleeease~! I need you~! Mommy needs you too~!");
 			writeSpeech("chubby", "", "Gimme~!");
@@ -528,7 +528,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeBig("images/scarf/casinoPurple6.jpg", "Art by Oreteki18kin");
 			writeSpeech("scarf", "bunny.jpg", "Forever and ever. Goodnight, child.");
 			writeText("Her voice is like waves against brittle rocks. Each splash takes a little more of you away, until you're broken apart and spread throughout the ocean.");
-			writeText("Some small, last part of you recognizes her soft hand on your cheek before it fades away, leaving you with nothing but the pleasure of an endless night in the casino with momF.");
+			writeText("Some small, last part of you recognizes her soft hand on your cheek before it fades away, leaving you with nothing but the pleasure of an endless night in the casino with purpleF and chubbyF.");
 			writeFunction("loadEncounter('scarf', 'failure')", "The End");
 			break;
 		}
@@ -547,14 +547,14 @@ function writeEvent(name) { //Plays the actual event.
 	wrapper.scrollTop = 0;
 	switch (name) {
 		case "purple1": {
-			writeText("The two of enter "+fName('purple')+"'s house together.");
+			writeText("The two of you enter "+fName('purple')+"'s house together.");
 			writeSpeech("chubby", "", "Welcome home! Oh, hello "+data.player.name+"!");
 			writeSpeech("player", "", "Good to see you again "+fName('chubby')+". I'm here to help your daughter in a more relaxed environment. We'll be heading up to her room, if that's fine.");
 			writeSpeech("chubby", "", "Oh, well I don't-");
 			writeSpeech("purple", "", "It's fine, mom! I'll see you up there, alright "+data.player.honorific+"?");
 			writeText(""+fName('purple')+" runs upstairs. "+fName('chubby')+" is left shocked and turns to you.");
 			writeSpeech("chubby", "", "My goodness, she's just like her old self! I...");
-			writeText("Tears are starting to form in "+fName('purple')+"'s eyes.");
+			writeText("Tears are starting to form in "+fName('chubby')+"'s eyes.");
 			writeSpeech("chubby", "", "Thank you! Thank you so much! Whatever you need, go ahead. Can I make something for you for after?");
 			writeSpeech("player", "", "No thank you. I'll be out of your hair before too long.");
 			writeSpeech("chubby", "", "Take as long as you need!");
@@ -673,14 +673,14 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("chubby", "", "Ah, welcome back *master!");
 			writeText("chubbyF calls out to you from the kitchen. ");
 			writeSpeech("chubby", "", "I'm a bit tied up with cooking at the moment. purpleF is upstairs if you'd like to relieve yourself, and I can do it myself later if you'd like.");
-			writeText("At this point you're at a crossroads. purpleF and chubbyF are happier than before, hypnosis is funny like that. Of course you could go the classic route and keep then loyal fuckpuppets, but if you have your way with the whole town you could get stretched pretty thin.");
+			writeText("At this point you're at a crossroads. purpleF and chubbyF are happier than before, hypnosis is funny like that. Of course you could go the classic route and keep them loyal fuckpuppets, but if you have your way with the whole town you could get stretched pretty thin.");
 			writeText("You could always keep pushing them deeper into depravity for something interesting to watch, that's a given. But should they be yours exclusively? ");
 			writeSpeech("player", "", "<i>These sorts of decisions are best made while having fun. </i>");
 			writeText("...");
 			writeBig("images/purple/branching1.jpg", "Art by Oreteki18kin");
 			writeSpeech("purple", "", "And so I was thinking I might get back into soccer. I know I'm not going to make one of the private teams, but still.");
 			writeText("One extremely neat facet of hypnosis comes when someone actually builds a dependence on the hypnotic state. If they want to stay in the happy mindset the hypnosis allows and they can't get into a positive headspace any other way, they fall so deep into suggestibility that it's almost like you can rewire their brains. At this point purpleF probably wouldn't reject the hypnosis even if she could. ");
-			writeSpeech("purple", "", "So tryouts are in a few days, and-<br>Oh, could you keep hittingnthat spot? I'll cum super fast if you keep this pace.");
+			writeSpeech("purple", "", "So tryouts are in a few days, and-<br>Oh, could you keep hitting that spot? I'll cum super fast if you keep this pace.");
 			writeSpeech("player", "", "No problem.");
 			writeSpeech("purple", "", "Thanks. Cumming.");
 			writeText("Her sense of normality is so warped at this point that the only sign on her face of her latest orgasm is a very slight curl at the edge of her lips, even as her cunt squeezes and squirts.");
@@ -831,7 +831,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("purple", "", "Nooo~! It's not fair, you stole him from me! If you hadn't seen us that day, he'd be all mine! How come you wanna fuck <i>her</i>, instead of this teen ass? I'm way ti-");
 			writeSpeech("chubby", "", "QUIET!");
 			writeSpeech("purple", "", "...");
-			writeSpeech("chubby", "", "I'm tired of your attitude! Mommy needs breaking too, so shut up and wait for your your turn to get your womb ballooned!");
+			writeSpeech("chubby", "", "I'm tired of your attitude! Mommy needs breaking too, so shut up and wait for your turn to get your womb ballooned!");
 			writeSpeech("purple", "", "Okay...");
 			writeSpeech("chubby", "", "And you! Take some responsibility for ruining my sweet little girl, for breaking my psyche by making me watch as you stuffed her, and <b>fuck</b>! <b>My</b>! <b>CUNT</b>!");
 			writeBig("images/purple/BC3.jpg", "Art by Oreteki18kin");
