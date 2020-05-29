@@ -2372,7 +2372,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneChoices("There's always me","I can hypnotize a guy");
 				break;
 			}
-			case "kuroPhoneBA" : {
+			case "kuroPhone6BA" : {
 				if(checkTrust('kuro') < 62){
 					setTrust('kuro',62);
 				}
@@ -2822,7 +2822,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneSpeech("kuro","","I'll be on the roof again. Come by if you can?");
 				break;
 			}
-			case "kuroPhone13A" : {
+			case "kuroPhone13C" : {
 				writePhoneSpeech("player","","I wanted to tease you a bit more.");
 				writePhoneSpeech("kuro","","Ah. See, I didn't really get that from the text?");
 				writePhoneSpeech("kuro","","I was more disappointed than aroused by being stood up");
@@ -2908,7 +2908,6 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			case "kuroPhone16" : {
 				writePhoneSpeech("kuro","","Heyhey! Just wanted to say thanks again for helping with chem work");
 				writePhoneSpeech("kuro","","It's still Hella boring, but it's at least more interesting wit u");
-
 				break;
 			}
 			case "kuroPhoneTemp" : {
