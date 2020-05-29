@@ -19,6 +19,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "demonShopping", name: "A familiar face is here", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 	{index: "demonPaint", name: "A familiar face is here again", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 101, trustMax: 101, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 	{index: "demonStart", name: "You should be able to find your way to demonF's hotel from here.", location: 'streets', time: "MorningEvening", itemReq: "", trustMin: 102, trustMax: 102, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	{index: "demonQuo", name: "You should be able to find your way to demonF's hotel from here.", location: 'streets', time: "MorningEvening", itemReq: "", trustMin: 103, trustMax: 104, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -101,18 +102,19 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeHTML(`
 				t With how you last saw demonF, you wouldn't be surprised if he ended up in a jail cell since the last time you saw him. You decide to go check up on his hotel, and see how it's changed since your last visit.
 				...
-				t Not very much. The place looks almost identical, although there's a different demon boi at the receptionist's desk.
-				sp Black-Haired Succubus; Oh, why hello there. Are you here for business, or for pleasure? We aren't taking new customers at the moment, but if you're just browsing I can introduce you to some antsy-
+				t Not very much. The place looks almost identical, although there's a different demon boi here in the lobby.
+				im images/demon/darkProfile.jpg
+				sp Black-Haired Succubus; im images/demon/dark.jpg; Oh, why hello there. Are you here for business, or for pleasure? We aren't taking new customers at the moment, but if you're just browsing I can introduce you to some very antsy-
 				sp player; I'm here to speak with demonF, is he here?
 				t His seductive gaze completely falters.
-				sp Black-Haired Succubus; The master? Oh my, I'm terribly sorry to waste your time.
+				sp Black-Haired Succubus; im images/demon/dark.jpg; The master? Oh my, I'm terribly sorry to waste your time.
 				t He steps out from behind the desk, his sandals clacking against the floor. 
-				sp Black-Haired Succubus; The master is in his suite. Here, I'll guide you.
+				sp Black-Haired Succubus; im images/demon/dark.jpg; The master is in his suite. Here, I'll guide you.
 				t He leads you to a the elevator. With a wave of his hand the doors slide open.
 				...
 				t The ride is silent and awkward. In such a cramped space you can clearly smell something like perfume, your guide smells kinda like raw, concentrated desperation, which happens to smell like citrus.
 				t The elevator comes to a stop at the top floor before you can make break the ice.
-				sp Black-Haired Succubus; He's just a few doors down, it's the one with the golden marker.
+				sp Black-Haired Succubus; im images/demon/dark.jpg; He's just a few doors down, it's the one with the golden marker.
 				sp player; Thanks, take care.
 				t He bows, despite his best efforts he seems nervous about something.
 				t Pressing on, you head into demonF's room.
@@ -143,20 +145,23 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t With an extra hit of demon jizz fueling the smell of many, many shamegasms in the room, you stumble out. Dating a fap-junkie femboi could be fun, although you get the impression that demonF isn't really after capturing a romantic relationship. 
 				t If you want to, you could come back sometime and see what kind of events demonF has planned for the two of you.
 			`);
+			passTime();
+			raiseTrust('demon', 1);
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "demonQuo": {
 			switch (checkTrust('demon')) {
-				case 102:
+				case 103:
 					writeHTML(`
 						t You arrive at the hotel. At the receptionist's desk is the same black-haired girl as before, but this time his hair is matted down in a thin layer of sweat.
 						sp player; I'm here to see demonF.<br>... You alright? It's not that hot.
-						sp dark; Of course sir, I'm fine. Lately the master hasn't requested us to bring in any customers. We have a lot of girls who are free right now, but I need to keep up my duties.
+						sp Black-Haired Succubus; im images/demon/dark.jpg; Of course sir, I'm fine. Lately the master hasn't requested us to bring in any customers. We have a lot of girls who are free right now, but I need to keep up my duties.
 						t She sighs whistfully at the word "free".
 						sp player; <i>That's probably from when I first broke demonF... </i><br>Can't you just leave? 
-						sp dark; Err, I'm afraid we're on different pages here, *sir. That's not the sort of freedom I'm talking about... 
+						sp Black-Haired Succubus; im images/demon/dark.jpg; Err, I'm afraid we're on different pages here, *sir. That's not the sort of freedom I'm talking about... 
 						t She guides you into the elevator, and presses the button.
-						sp dark; A-aplogies sir, but I'm not quite in the best state to ride up with you.. Please be careful not to wander. Since the master hasn't seemed interested in hosting customers for the hotel lately. Most of the girls here are feeling... Antsy. 
+						sp Black-Haired Succubus; im images/demon/dark.jpg; A-aplogies sir, but I'm not quite in the best state to ride up with you.. Please be careful not to wander. Since the master hasn't seemed interested in hosting customers for the hotel lately. Most of the girls here are feeling... Antsy. 
 						t You just nod and step in. As the elevator doors close behind you, you catch a glimpse of the facade fading from your guide. Their expression transforming into one of lustful desperation as their hands go to their crotch to move their kimono out of the way. Just before the doors shut completely, you see something pink and plastic between your guide's legs. 
 						...
 						t Before you even make it to demonF's room, he opens the door and rushes out to greet you already fully dressed for a night out.
@@ -165,7 +170,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 					`);
 					raiseTrust('demon', 1);
 				break;
-				case 103:
+				case 104:
 					writeHTML(`
 						t You arrive at the hotel. At the receptionist's desk is the same black-haired girl as before. She's laying down, sleeping. The elevator door is already open so you head inside.
 						...
@@ -174,7 +179,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 						t He's pretty presumptive. Still, he has a few suggestions that actually seem pretty appealing.
 					`);
 				break;
-				case 104:
+				case 105:
 					writeHTML(`
 						t You arrive at the hotel. The receptionist isn't at her desk, the entire lobby is empty. There's a strange sound coming from nearly every wall, but it'd be a bad idea to wander around right now.
 						...
@@ -184,12 +189,26 @@ function writeEncounter(name) { //Plays the actual encounter.
 					`);
 				break;
 			}
+			writeFunction("writeEncounter('dateAqua')", "Go on a date to the local aquarium");
+			writeFunction("writeEncounter('dateForest')", "Go for a walk in the forest");
 			break;
 		}
 		case "dateAqua": {
+			writeEvent("demonAqua");
+			passTime();
+			if (checkFlag('demon', 'aqua') != true) {
+				addFlag('demon', 'aqua');
+			}
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "dateForest": {
+			writeEvent("demonForest");
+			passTime();
+			if (checkFlag('demon', 'forest') != true) {
+				addFlag('demon', 'forest');
+			}
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "dateReceptionist": {
@@ -216,6 +235,8 @@ var eventArray = [
 	{index: "demon1", name: "First Circle - Limbo"},
 	{index: "demonShopping", name: "Second Circle - Lust"},
 	{index: "demonPaint", name: "Third Circle - Gluttony"},
+	{index: "demonAqua", name: "Fourth Circle - Greed"},
+	{index: "demonForest", name: "Fifth Circle - Pride"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -403,6 +424,93 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/demon/demonPaint7.jpg", "Art by Gujira 4 Gou");
 			writeText("Then he spots you.");
 			writeText("He looks about ready to call you out by name, you need to get out of here. He's a powerful demon, he should be able to get himself out of this mess.");
+			break;
+		}
+		case "demonAqua": {
+			writeHTML(`
+				t You decided to go on a date to the local aquarium.
+				...
+				t The cute fish swimming by actually do give the place a relaxing atmosphere. The feeling is almost nostalgic. The only thing ruining it is every few minutes you spend admiring the fish, you're interrupted.
+				im images/demon/aqua1.jpg
+				sp demon; So many people around, wouldn't it be hot if we just started fucking right here?
+				sp player; And what exactly do we do about the crowd?
+				sp demon; They all get a free show to you pounding the shit out of my bitch-button. Maybe it awakens something in them, I don't give a fuck and you shouldn't either. <br>Your mother could stare you right in the face and she wouldn't recognize you, so stop thinking like a pussy and make with the dicking.
+				t His tone is gradually rising, it's clear only one thing will satisfy him. Still, even with a magic wig, years of paranoia about getting caught hypnotizing people don't just vanish because some boi is being sassy at you. Not quite willing to traumatize the crowd here, you think quickly about how to shut him up for a minute.
+				im images/demon/aqua2.jpg
+				t You push your hand down his shorts, groping and feeling around.
+				sp demon; Eh? Finally starting to-
+				sp player; Quiet, or this is all you're ever getting.
+				sp demon; So mean~<br>Fine, I'll whisper, just thrust deeper.<br>Fuck's sake, anal is so much more fun than cumming with my dick, it's really not fair...
+				t Despite his earlier sass he does start to quiet down, his taunting stops and the most he pipes up is a deep satisfied sigh when your fingers bump into a small spongey mass a few inches into his ass.
+				t As you keep rubbing his prostate, his sighs grow louder and closer together. Luckily a friendly dolphin swims by, so that his "Aaaah~" is mixed in with a chorus of "Ooooh"s.
+				im images/demon/aqua3.jpg
+				t Out of the corner of your eye you can see a dark spot form on the front of his short shorts, but from the look in his eye it's clear he isn't satisfied yet.
+				t Soon the crowd around you is moving to follow the excited sea life, while you and demonF are staying behind.
+				...
+				im images/demon/aqua5.jpg
+				sp demon; Come on, hurry up~! You're just gonna tease your date? Fuck that~!
+				sp player; God damn you are insatiable.
+				sp demon; Yeah yeah, life's a sassy, fat-bottomed bitch. Fuck me. Right. Now.
+				t You have no idea how this boi, bent over against the glass wagging his ass like a bitch in heat has taken a dominant position here, but you don't intend to let him keep it. 
+				im images/demon/aqua6.jpg
+				sp demon; Oooh~<br>That's it, that's what the dildo can't match...
+				t Just sliding your cock into the little brat has your vision start to swim a little. Little Ms. Anal Whore here might have shattered his bravado on your cock, but he's still got an ass that won't quit.
+				sp demon; G-good boy, thrust deeper...<br>Give my greedy hole the relief it needs, make me spurt like one of your common bitches~
+				sp player; You... Hrg... Are a common bitch, demonF...
+				sp demon; Some bite~! But I can hear from your voice you're barely holding on~!<br>Stop thinking, just turn off your brain and beat my ass into the ground, show my whimpy little nutsack how a <i>real</i> man-
+				im images/demon/aqua7.jpg
+				t His voice and attitude are smashed flat as you become a primal, thrusting mess, but more importantly is when he can feel the first shot of the cum you intend to paint his asshole white with.
+				im images/demon/aqua8.jpg
+				sp demon; GHHH~! GHHHHHUMMMIN'~!
+				t If he were still wearing shorts they'd be soaked through right now. The only thing on his mind is total bliss. If he's still aware of where the two of you are, it's only making him cum harder. His volume control has shut off completely.
+				t As you fire off your last shot of cum you pull out, lest his incredible ass milk you completely dry.
+				im images/demon/aqua9.jpg
+				t Even as you can hear shouts and realize you've been noticed, he's still panting like a bitch in heat and leaking from his cocklette.
+				t While you're safe from consequences thanks to your wig, he isn't. Thinking quickly, you zip up and pick up the barely lucid boi like you would a big bag of flour.
+				...
+				sp player; Jesus, you're still out of it?
+				sp demon; Ehehe, cumming feelsh gewd~
+				t Even as you were carrying him to safety once his post-orgasmic haze mostly wore off, he just used the opportunity to start jerking off while rubbing against you however he could.
+				sp player; Honestly demonF, you're gonna get into serious trouble one of these days. What'll you do then?
+				sp demon; Cum~! I'll cum lotsh and lotsh~!
+				t You just sigh. Now that you're out of trouble you can just set him down somewhere secluded. 
+			`);
+			break;
+		}
+		case "demonForest": {
+			writeHTML(`
+				t You decided to for a walk in the forest. It seems a bit tame for his usual antics, but demonF is excited nonetheless.
+				...
+				sp demon; I-it's quite dark this deep in the forest, quite cold too.
+				sp player; Really? Feels fine to me.
+				im images/demon/forest1.jpg
+				sp demon; W-well maybe that's because you have more clothes than me. Maybe we should huddle together to war-
+				sp player; demonF, you're drenched in sweat.
+				im images/demon/forest2.jpg
+				sp demon; Fiiiine. Honestly, how are your predator instincts not kicking in? A cutie like me, so defenseless. 
+				t He pouts, but his true intentions are clear from his body language. At this point he's broken enough that he treats his dick like a tail to be wagged when happy.
+				t You're enjoying stringing him along, but each time you inhale you catch a whiff of the smell of his sweat. It's... Sweet. Not chocolate sin like succubusF, more like honey. Just focusing on the smell makes your legs feel wobbly.
+				sp demon; You're sweating yourself you know. The walk too much for little old you?
+				sp player; Please... I could do this all night...
+				t But he's actually pretty on the mark. You can't keep walking much longer. Not from exhaustion, but because of the opposite instead.
+				...
+				im images/demon/forest3.jpg
+				sp demon; Raaape~! The b-ggggh~! The big scary man's pounding my bitch button~!
+				sp player; Shut up!
+				sp demon; Ooough~! If you want me quiet, stop rewarding me for screaming~! Balls deep, that's what it'll take!
+				t He announces every word loud enough it feels like the entire forest can hear him. He must've chosen this location so he could scream his lungs out without holding back.
+				t So you pick up the pace and force his voice to go up an octave or two. Being exposed to the scent of raw, concentrated sexual perfection for so long, it's no wonder you're turning into a sexual beast right now.
+				sp demon; Give up! Pump that wonderful jizz into me, and do it fast or I'll make your precious succubusF suck it out of me while I suck-<br>OOOOUGH~!
+				im images/demon/forest4.jpg
+				t You're a primal mess of a blur right now, taking out your frustrations on what is essential a stress toy and an onahole in the shape of a squealing brat.
+				im images/demon/forest5.jpg
+				sp demon; Oh, oh I feel it~ It's cumming~!
+				im images/demon/forest6.jpg
+				t As you start to come back to reality he's already leaving it. Cum drools down his thighs and wasted jizz leaks from his cock. His eyes squint shut and open again as his pupils dilate, and any attempts at further screaming are just soundless gasps of a bitch drowning in pleasure.
+				t You stumble back as his body is still being wracked with aftershocks, cum is leaking from his less-than-modest dick in a solid clear stream. He twitches are breathes erratically, only able to communicate one thing; You'll need to carry him out of the woods.
+				...
+				t Luckily the forest is surrounded on all sides by civilization. As your reputation is protected by the wig and his reputation isn't worth shit, you make your way back to his hotel without incident, even if you get a lot of shocked looks along the way.
+			`);
 			break;
 		}
 		default: {
