@@ -36,6 +36,7 @@ a, a:visited {
   	border: 5px solid white;
   	border-radius: 20px;
 	color:white;
+	cursor: pointer;
 	
 }
 .openButton {
@@ -47,6 +48,7 @@ a, a:visited {
   	border: 5px solid white;
   	border-radius: 20px;
 	color:white;
+	cursor: pointer;
 }
 .ghost {
 	position: absolute;
@@ -106,6 +108,7 @@ p#title {
 }
 p#author {
     font-size: 0.75em;
+	cursor: pointer;
 }
 
 .flexbox{
