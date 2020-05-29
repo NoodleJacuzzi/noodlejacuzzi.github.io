@@ -95,7 +95,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("hazeF scoffs, shaking her head.");
 			writeSpeech("haze","","I can only eat the dreams of people that are either sleeping deeply... or who are basically in the same <i>state</i> as sleeping. And if I like my dreams sexually-charged...");
 			writeSpeech("player","","...then you'd want to hang around a sexual hypnotist.");
-			writeSpeech("haze","","Bingo-bongo! I've been making sure those victims of yours end up in my neck of the dream-woods when you put them under - you have <i>excellent</i> taste by the way - but in all the time I've been around you, this is the first you've popped in here. So...");
+			writeSpeech("haze","","Bingo-bongo! I've been making sure those victims of yours end up in my neck of the dream-woods when you put them under - you have <i>excellent</i> taste by the way - but in all the time I've been around you, this is the first time you've popped in here. So...");
 			writeText("She grins widely again, spreading her arms out wide.");
 
 			writeSpeech("haze","","Welcome to my place! It's basically a dream, but also kinda not. You could think of it as a manifestation of a subsection of the collective unconscious manipulable by supernatural entities... or just a Dreamland. They're basically the same thing.");
@@ -147,6 +147,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "haze1AB" : {
+			addFlag('haze','NoSex');
 			writeSpeech("player","","If there's something you can convince me with, I say go for it.");
 			writeText("hazeF frowns, sighing as she scratches the back of her head.");
 			writeSpeech("haze","","...Fine. But only because you've been helping me out a whole bunch, okay?");
@@ -158,7 +159,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","...Huh.");
 			writeText("Bringing your hand to your neck, you can feel the light sensation of glitter. Taking a look at your fingers, it's obvious that it's the same stuff from hazeF's lips.");
 			writeSpeech("player","","Well, she's real... but fucking glitter?");
-			writeText("You look down at your sheets, seeing the abominable stuff on it.");
+			writeText("You look down at your sheets, seeing the abominable glittery substance on it.");
 			writeSpeech("player","","...That's not gonna wash off, is it...?");
 			writeText("Might as well try and wash it before getting on with your day.");
 			writeText("At least you were only asleep for a few minutes...");
@@ -226,7 +227,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("But she doesn't slow down, her body still bouncing and her hand still stroking as you realize the pleasure isn't getting weaker.");
 			writeSpeech("haze","","Keep going~! Empty those thick, beautiful balls all over me~!");
 			writeSpeech("player","","I can't stop...!");
-			writeText("More and more cum spurts out, your body tensing up as cum rope after rope, covering her hair and hand for what feels like minutes before she finally lets out a gentle giggle.");
+			writeText("More and more cum spurts out, your body tensing up as you cum rope after rope, covering her hair and hand for what feels like minutes before she finally lets out a gentle giggle.");
 			writeSpeech("haze","","Haah~ Jeez, you really are something, aren't you playerF?");
 			writeBig("images/haze/1-6.jpg","Art by Purple Haze");
 			writeSpeech("haze","","This is totally my favorite part~");
@@ -395,6 +396,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "haze0B" : {
 			passTime();
+			if(galleryCheck('haze') != true)
+				addFlag('haze','NoSex');
 			if(checkTrust('haze')<60)
 				setTrust('haze',60);
 			writeText("You did mention that you'd come back later, and now's as good a time as any, so...");
@@ -405,18 +408,31 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You try to focus on standing and, sure enough, you feel the sensation of solid ground beneath your feet a moment later.");
 			writeSpeech("haze","","Ooh, nice - fast learner, aren't ya?");
 			writeText("She smiles and sits down on the air, though you can still see the shape of ass flatten a bit like she was sitting on an invisible chair.");
-			writeSpeech("haze","","Sorry about last time, by the way. I'm usually better with controlling myself, but you don't exactly have a long history of hypnotizing and fucking <i>studs</i>, so I got a little <i>too</i> excited.");
-			writeText("She pauses, looking over you.");
-			writeSpeech("haze","","I, uh... didn't drain you <i>too</i> hard, right? You were fine after you woke up?");
-			writeSpeech("player","","I was out for most of the afternoon, if that's what you mean.");
-			writeText("hazeF relaxes a bit, smiling.");
-			writeSpeech("haze","","If that's all, then good. Humans can be pretty fragile, so I just wanted to make sure I didn't break you.");
-			writeSpeech("player","","...I feel mildly offended that you think I'd break that easily.");
-			writeText("hazeF just kinda shrugs, leaning back on the non-existant furniture.");
-			writeSpeech("haze","","Sorry, then. Like I said before, I don't get to feed as often as I'd like, and most of the people I <i>do</i> feed on tend to be pretty average - one of many trade-offs, I guess.");
-			writeText("At that, her grin quickly returns, a faint shimmer surrounding her body.");
-			writeSpeech("haze","","Speaking of, if you're here looking for a quickie, I'd be <i>thrilled</i> to get another taste of you~ Though if you're interested, I could try on another 'look' for you~");
-			writeFunction("writeEvent('haze1C')", "Use her as she is");
+			if(checkFlag('haze','NoSex') != true){
+				writeSpeech("haze","","Sorry about last time, by the way. I'm usually better with controlling myself, but you don't exactly have a long history of hypnotizing and fucking <i>studs</i>, so I got a little <i>too</i> excited.");
+				writeText("She pauses, looking over you.");
+				writeSpeech("haze","","I, uh... didn't drain you <i>too</i> hard, right? You were fine after you woke up?");
+				writeSpeech("player","","I was out for most of the afternoon, if that's what you mean.");
+				writeText("hazeF relaxes a bit, smiling.");
+				writeSpeech("haze","","If that's all, then good. Humans can be pretty fragile, so I just wanted to make sure I didn't break you.");
+				writeSpeech("player","","...I feel mildly offended that you think I'd break that easily.");
+				writeText("hazeF just kinda shrugs, leaning back on the non-existant furniture.");
+				writeSpeech("haze","","Sorry, then. Like I said before, I don't get to feed as often as I'd like, and most of the people I <i>do</i> feed on tend to be pretty average - one of many trade-offs, I guess.");
+				writeText("At that, her grin quickly returns, a faint shimmer surrounding her body.");
+				writeSpeech("haze","","Speaking of, if you're here looking for a quickie, I'd be <i>thrilled</i> to get another taste of you~ Though if you're interested, I could try on another 'look' for you~");
+				writeFunction("writeEvent('haze1A')", "Use her as she is");
+			}
+			else{
+				writeSpeech("haze","","So, are you fully convinced now~?");
+				writeSpeech("player","","Now that my sheets have been filled with glitter, yup. I swear, I'll have to burn the things to get rid of it.");
+				writeSpeech("haze","","You wanted evidence, hun. Plus, it's magically generated, and I didn't feel like making anything permanent, so... it'll actually dissolve pretty soon.");
+				writeSpeech("player","","Oh, neat... Self-disposing glitter.");
+				writeText("She smirks.");
+				writeSpeech("haze","","Of course. I'm not <i>evil,</i> hun. Now, what brings you down into here?");
+				writeText("Her hand roams around her stomach, slowly tracing a line to her chest.");
+				writeSpeech("haze","","Maybe you're looking for a bit of fun~?");
+				writeFunction("writeEvent('haze1A')", "Use her as she is");
+			}
 			//writeFunction("writeEncounter('hazeChange1')", "Take a look at her other forms [1 available]");
 			writeFunction("writeEncounter('hazeStory')", "You came to chat, actually");
 			break;
@@ -629,7 +645,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "hazeTalkReturn" : {
 			writeSpeech("haze","","So, what do you wanna do~?");
-			writeFunction("writeEvent('haze1C')", "Fuck her as she is");
+			if(checkFlag('haze','NoSex'))
+				writeFunction("writeEvent('haze1A')", "Fuck her");
+			else
+				writeFunction("writeEvent('haze1C')", "Fuck her as she is again");
 			//writeFunction("writeEncounter('hazeChange1')", "Take a look at her other forms [1 available]");
 			writeFunction("writeEncounter('hazeStory')", "Chat with her");
 			writeFunction("changeLocation(data.player.location)", "Leave");
@@ -766,6 +785,8 @@ function writeEvent(name) { //Plays the actual event.
 				if(checkFlag('haze','Explain'))
 					removeFlag('haze','Explain');
 			}
+			if(checkFlag('haze','NoSex'))
+				removeFlag('haze','NoSex');
 			document.getElementById('output').innerHTML = '';
 			writeText("Might as well have some fun while you're down here, right?");
 			writeText("You reach forward, your hands grabbing her tits as she lets out a soft moan.");
@@ -774,7 +795,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("haze","","Good answer, darling~ Feel free to play with these tits all you like~!");
 			writeText("You can feel her nipples stiffen under your palms as she uses her hands to get you both off, the sound of her stirring up her wet pussy filling the air as she bites her lip.");
 			writeText("A moment later, she pulls both of her hands away, switching them around as you feel her slick hand start to get your shaft wet with her fluids.");
-			writeText("Moving you own hands, you give her nipples a sharp squeeze.");
+			writeText("Moving your own hands, you give her nipples a sharp squeeze.");
 			writeBig("images/haze/1-3.jpg","Art by Purple Haze");
 			writeSpeech("haze","","Ahn~!");
 			writeText("She seems to enjoy it, her grip tightening a little bit as she starts jerking you off more slowly.");
@@ -919,7 +940,7 @@ switch (requestType) {
 				var finalResult = true;
 				if (encounterArray[number].location != null) {
 					var finalLocation = encounterArray[number].location;
-					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map" && data.player.gps == true) { //check the location
+					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map") { //check the location
 						if (encounterArray[number].time.includes(data.player.time)) { //check the time
 							if (encounterArray[number].trustMin <= checkTrust(character.index) && encounterArray[number].trustMax >= checkTrust(character.index)) { //check the trust requirements
 								if (encounterArray[number].day == "even" && data.player.day%2 == 1) {

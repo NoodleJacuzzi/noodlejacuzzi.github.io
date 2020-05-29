@@ -3,7 +3,7 @@ var character = {index: "mom", met: false, fName: "Emily", lName: "Smith", trust
 var logbook = { //Logbook details for each character.
 	index: "mom", 
 	desc: "A widowed woman, she's older than you. She honestly seems lonely sometimes, even though she can be a bit blunt.",
-	body: "She's probably into her fourties, but she'd never tell. She has light hair and a very curvaceous body.",
+	body: "She's probably into her forties, but she'd never tell. She has light hair and a very curvaceous body.",
 	clothes: "Her preferred outfit is a v-neck shirt thin enough that you can faintly make out her black bra through it and a pair of jeans.",
 	home: "She lives in the same apartment complex as you. She occasionally goes to buy groceries in the shopping district.",
 	tags: "Unshaven, Drunken Sex, Vanilla, Pregnancy (Ending)",
@@ -37,7 +37,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You crack your neck and walk over to open the door.");
 			writeBig("images/mom/profile.jpg", "Art by Enoshima Iki");
 			writeSpeech('mom', '', 'Hiya!');
-			writeText("A woman is at the door, probably in her early fourties but still quite beautiful. She has faint wrinkles beside her eyes, but what catch your attention right away are her nipples, large enough to make visible bumps through her bra and shirt.");
+			writeText("A woman is at the door, probably in her early fourties but still quite beautiful. She has faint wrinkles beside her eyes, but what catches your attention right away are her nipples, large enough to make visible bumps through her bra and shirt.");
 			writeText("You manage to play it off as a wandering glance though, totally smooth.");
 			writeSpeech('mom', '', "The name's " + fName('mom') + " " + lName('mom') + ", I'm your neighbor a few doors down.");
 			writeSpeech('player', '', "Nice to meet you, I'm " +data.player.name + ".");
@@ -53,7 +53,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech('mom', '', "Aw damnit, is it that late already? I gotta get back in and quit wasting your time.");
 			writeSpeech('player', '', "Only if you promise to waste it again, it's been lovely to get to know you.");
 			writeSpeech('mom', '', "Ha! Little flirt, I'm old enough to be your mother.");
-			writeSpeech('player', '', "Talk you later, " + fName('mom') + ".");
+			writeSpeech('player', '', "Talk to you later, " + fName('mom') + ".");
 			writeSpeech('mom', '', "Bye!");
 			passTime();
 			setTrust('mom', 40);
@@ -111,7 +111,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Yeah I think I've got a pretty good grasp of the town by now. It's a nice place. I could definitely see myself staying here.");
 			writeSpeech("mom", "", "That's great! It's always nice to know you can set your roots somewhere.");
 			writeText("...");
-			writeText("The conversation carries on for several hours of what feels like small talk. This time both of you are carrying of the conversation, and " + fName('mom') + " follows along with what you say with patient attentiveness.");
+			writeText("The conversation carries on for several hours of what feels like small talk. This time both of you are carrying the conversation, and " + fName('mom') + " follows along with what you say with patient attentiveness.");
 			writeText("It's soothing to just whittle away the time, and you feel like you both understand each other better. Eventually though you make it back to the apartment complex and you wish each other well before you go your separate ways.");
 			writeFunction("changeLocation(data.player.location)", "Go back");
 			break;
@@ -164,7 +164,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "mom3": {
 			writeText("It'd be hard to miss her, as she's drunkenly mumbling half the words to some old pop song while fumbling with her keys.");
 			writeSpeech('player', '', "Have a fun afternoon?");
-			writeText("She jumps on the spot, scard for just a second before she gives you a smile that says 'glad to see you'.");
+			writeText("She jumps on the spot, scared for just a second before she gives you a smile that says 'glad to see you'.");
 			writeSpeech('mom', '', "" +data.player.name + "! Heyyyyyy! Cmon in!");
 			writeText("You'd intended just to say hi, but what the hell.");
 			writeText("...");

@@ -100,7 +100,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "neet3": {
 			writeSpeech("player", "", "Hello neetF.");
 			writeSpeech("neet", "", "Hello playerMister counselor.");
-			writeText("this time she's at a computer instead of preparing for bed.");
+			writeText("This time she's at a computer instead of preparing for bed.");
 			writeSpeech("player", "", "Have time for a lesson before the day is out?");
 			writeSpeech("neet", "", "Yes playerSir.");
 			writeText("She scoots her rolling chair out of the way to give you access to the computer.");
@@ -130,7 +130,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "neet4": {
 			clearText('neet');
-			writeText("You take a seat, Tia sitting across of you. There's a cold tension in the air. With how experienced she is with tech, she likely has some kind of master plan involving backups. You'll need to keep on your toes to stay out of prison.");
+			writeText("You take a seat, Tia sitting across from you. There's a cold tension in the air. With how experienced she is with tech, she likely has some kind of master plan involving backups. You'll need to keep on your toes to stay out of prison.");
 			writeSpeech("player", "", "So. What did you want?");
 			writeSpeech("neet", "", "I would like you to hypnotize me.");
 			writeSpeech("player", "", "... I see. <br>Actually no, I don't see at all. What?");
@@ -403,7 +403,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("The two of you make your way to her house, and she invites you in.");
 			writeSpeech("neet", "", "It... Um... Wasn't all untrue. I really am more comfortable here than outside. And we've gotten a lot closer... So...");
 			writeText("She's still visibly nervous as she takes a seat on her bed and starts taking off her cardigan. The room is extremely tidy, although the trashcan is packed. It seems like someone was cleaning in a hurry.");
-			writeText("This is the moment of decision, you have an important choice ahead of you. this is you opportunity to hypnotize her, even a half trance would help you get her to open up.");
+			writeText("This is the moment of decision, you have an important choice ahead of you. this is your opportunity to hypnotize her, even a half trance would help you get her to open up.");
 			writeText("But on the opposite end, she's made a lot of progress without the hypnosis. She already has feelings for you, your relationship could go a lot farther naturally.");
 			writeSpeech("neet", "", "Do you want to... To try again?");
 			writeFunction("writeEncounter('neetDate4a')", "Let's go, let's give this another shot");

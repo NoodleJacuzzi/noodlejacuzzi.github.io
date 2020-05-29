@@ -1310,7 +1310,9 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			writePhoneSpeech("player","","And for each new addition, I promise to reward you, slut.");
 			writePhoneSpeech("coach",""," Oh! Thank you Master! Then I'll get right to it.");
 			writePhoneSpeech("player","","I already have a few ideas, slut. I'm going to send you some students' files. I'll meet you in the teacher's lounge when I'm ready.");
-			setTrust('coach', 100);
+			if (checkTrust('coach') == 81) {
+				setTrust('coach', 100);
+			}
 			break;
 		}
 		case "coachreward": {
