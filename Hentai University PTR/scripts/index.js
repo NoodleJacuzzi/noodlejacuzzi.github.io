@@ -3093,20 +3093,20 @@ function writePhoneChoices (text1, text2, text3) {
 		var choiceList = `
 				<div id = "phoneChoice">
 				<p class="choiceText" onclick="phoneChoice('A')">
-					` + text1 + `
+					` + replaceCodenames(text1) + `
 				</p>
 		`;
 		if (typeof text2 != 'undefined') {
 			choiceList += `
 				<p class="choiceText" onclick="phoneChoice('B')">
-					` + text2 + `
+					` + replaceCodenames(text2) + `
 				</p>
 		`;
 		}
 		if (typeof text3 != 'undefined') {
 			choiceList += `
 				<p class="choiceText" onclick="phoneChoice('C')">
-					` + text3 + `
+					` + replaceCodenames(text3) + `
 				</p>
 		`;
 		}
