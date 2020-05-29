@@ -18,6 +18,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "demon1", name: "demon is waiting for you tonight", location: 'playerHouse', time: "Night", itemReq: "", trustMin: 2, trustMax: 2, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 	{index: "demonShopping", name: "A familiar face is here", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 	{index: "demonPaint", name: "A familiar face is here again", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 101, trustMax: 101, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	{index: "demonStart", name: "You should be able to find your way to demonF's hotel from here.", location: 'streets', time: "MorningEvening", itemReq: "", trustMin: 102, trustMax: 102, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -94,6 +95,112 @@ function writeEncounter(name) { //Plays the actual encounter.
 			setTrust('demon', 102);
 			passTime();
 			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "demonStart": {
+			writeHTML(`
+				t With how you last saw demonF, you wouldn't be surprised if he ended up in a jail cell since the last time you saw him. You decide to go check up on his hotel, and see how it's changed since your last visit.
+				...
+				t Not very much. The place looks almost identical, although there's a different demon boi at the receptionist's desk.
+				sp Black-Haired Succubus; Oh, why hello there. Are you here for business, or for pleasure? We aren't taking new customers at the moment, but if you're just browsing I can introduce you to some antsy-
+				sp player; I'm here to speak with demonF, is he here?
+				t His seductive gaze completely falters.
+				sp Black-Haired Succubus; The master? Oh my, I'm terribly sorry to waste your time.
+				t He steps out from behind the desk, his sandals clacking against the floor. 
+				sp Black-Haired Succubus; The master is in his suite. Here, I'll guide you.
+				t He leads you to a the elevator. With a wave of his hand the doors slide open.
+				...
+				t The ride is silent and awkward. In such a cramped space you can clearly smell something like perfume, your guide smells kinda like raw, concentrated desperation, which happens to smell like citrus.
+				t The elevator comes to a stop at the top floor before you can make break the ice.
+				sp Black-Haired Succubus; He's just a few doors down, it's the one with the golden marker.
+				sp player; Thanks, take care.
+				t He bows, despite his best efforts he seems nervous about something.
+				t Pressing on, you head into demonF's room.
+				...
+				t You give a knock on the large, gaudy door. It's opened almost immediately. The smell of sex flows over you like a wave, it's enough to make your head spin.
+				sp demon; Ooh~! I knew it was you! I've been waiting for days! You must've been really excited by my little text, hmm? I've got the perfect thing right in here... Somewhere... Don't mind the mess.
+				t He walks back into his room. The place is a wreck, the room is coated in the familiar scent of demon jizz and saliva. 
+				sp player; I didn't get any, I was coming to see if you'd been arrested yet.
+				sp demon; Wha? Did your little bat not pass it along to you? I must've sent you hundreds of... Here!
+				t He throws aside a wooden paddle and pulls out a wig of red hair, thankfully saved from being coated like other areas of the room.
+				sp player; Christ, what happened here?
+				sp demon; Do you like it? Before I got bored and started cumming in public, I had some fun with just about anything I could find. Buttplugs, dildos, my bedpost, chastity cages weren't any fun though since I don't care about cumming with my dick. Here!
+				t He tosses you the wig.
+				sp demon; You didn't play with me before since you were scared of being arrested, yeah? This is really strong. A cop could be slapping cuffs on you and they'd forget you before the locks even go click. We could do anything, anywhere, and there wouldn't be a single consequence in the world for you. Now we can play all we want!
+				t You put on the wig, nothing happens. Out of the corner of your eye you see a standing mirror. In the areas not coated with demonF's wasted jizz, you see an unfamiliar face staring back at you.
+				sp player; And what about you? 
+				sp demon; Well, that's up to you, isn't it? Knowing you could just leave me anywhere...
+				t His eyes go manic for a second and he actually shivers as his imagination runs wild. Clearly exerting some self control he does his best to keep trying to keep focused on the negotiation. 
+				sp demon; You can take it with you. Lately I've been having some security issues with some of the fun toys I've collected over the years. Your familiar wouldn't happen to know anything about that, would he? <br>Well, whatever. The point is it needs my a demon's touch to work. So, what do you say? Take a cute girl out on the town, we could have some f... Fun... We'd feel really good together... 
+				t It's clear at this point his cracks are starting to show as he takes a few steps forwards towards you. He's no longer able to conceal the manic greed in his eyes. His negotiation skills are seriously deteriorating like your presence is like you're waving a hit in front of an addict. 
+				t As he gets closer you push him down like you would a dog to get some breathing room, he rubs his face against your palm and with his bow-legged sitting position her's humping the ground as he breaths in your scent. 
+				sp demon; Ngggh~! Cmon~! I haven't cum yet today~! Well, aside from when I thought about where you'd take me~!
+				sp player; Come on, get a hold of yourself. What would your employees think if they saw you right now?
+				t His breathing and thrusting grow more erratic, until you hear him whimper into your hand. He's off in his own little world as his thrusts start to slow down and he's more slowly grinding his crotch into the floor than humping. There's a subtle smell about him now.
+				sp player; Did... Did you just cum from that? 
+				sp demon; Ehe... Ehehe... 
+				t He gently lays backwards, content to lie on the floor with a starstruck expression on his face. No longer able to keep up with you in converation.
+				t With an extra hit of demon jizz fueling the smell of many, many shamegasms in the room, you stumble out. Dating a fap-junkie femboi could be fun, although you get the impression that demonF isn't really after capturing a romantic relationship. 
+				t If you want to, you could come back sometime and see what kind of events demonF has planned for the two of you.
+			`);
+			break;
+		}
+		case "demonQuo": {
+			switch (checkTrust('demon')) {
+				case 102:
+					writeHTML(`
+						t You arrive at the hotel. At the receptionist's desk is the same black-haired girl as before, but this time his hair is matted down in a thin layer of sweat.
+						sp player; I'm here to see demonF.<br>... You alright? It's not that hot.
+						sp dark; Of course sir, I'm fine. Lately the master hasn't requested us to bring in any customers. We have a lot of girls who are free right now, but I need to keep up my duties.
+						t She sighs whistfully at the word "free".
+						sp player; <i>That's probably from when I first broke demonF... </i><br>Can't you just leave? 
+						sp dark; Err, I'm afraid we're on different pages here, *sir. That's not the sort of freedom I'm talking about... 
+						t She guides you into the elevator, and presses the button.
+						sp dark; A-aplogies sir, but I'm not quite in the best state to ride up with you.. Please be careful not to wander. Since the master hasn't seemed interested in hosting customers for the hotel lately. Most of the girls here are feeling... Antsy. 
+						t You just nod and step in. As the elevator doors close behind you, you catch a glimpse of the facade fading from your guide. Their expression transforming into one of lustful desperation as their hands go to their crotch to move their kimono out of the way. Just before the doors shut completely, you see something pink and plastic between your guide's legs. 
+						...
+						t Before you even make it to demonF's room, he opens the door and rushes out to greet you already fully dressed for a night out.
+						sp demon; You have the wig, right? Cmon~! I've got some ideas for our date!
+						t He's pretty presumptive. Still, he has a few suggestions that actually seem pretty appealing.
+					`);
+					raiseTrust('demon', 1);
+				break;
+				case 103:
+					writeHTML(`
+						t You arrive at the hotel. At the receptionist's desk is the same black-haired girl as before. She's laying down, sleeping. The elevator door is already open so you head inside.
+						...
+						t Before you even make it to demonF's room, he opens the door and rushes out to greet you already fully dressed for a night out.
+						sp demon; You have the wig, right? Cmon~! I've got some ideas for our date!
+						t He's pretty presumptive. Still, he has a few suggestions that actually seem pretty appealing.
+					`);
+				break;
+				case 104:
+					writeHTML(`
+						t You arrive at the hotel. The receptionist isn't at her desk, the entire lobby is empty. There's a strange sound coming from nearly every wall, but it'd be a bad idea to wander around right now.
+						...
+						t Before you even make it to demonF's room, he opens the door and rushes out to greet you already fully dressed for a night out.
+						sp demon; You have the wig, right? Cmon~! I've got some ideas for our date!
+						t He's pretty presumptive. Still, he has a few suggestions that actually seem pretty appealing.
+					`);
+				break;
+			}
+			break;
+		}
+		case "dateAqua": {
+			break;
+		}
+		case "dateForest": {
+			break;
+		}
+		case "dateReceptionist": {
+			writeHtml(`
+				sp player; Actually, we need to talk. What's going on around here? Your receptionist looked like she was wearing a chastity cage.
+				sp demon; Hmm? Oh, him? Why, are you worried?
+				sp player; You said you'd be treating your staff better, right?
+				sp demon; Aww, cmon. You didn't really mean that, right? You shouldn't assume all succubi are like your familiar.
+			`);
+			setTrust('demon', 104);
+			addFlag('demon', 'receptionist');
 			break;
 		}
 		default: {
