@@ -2876,6 +2876,11 @@ function diagnostic() {
 			loadEncounter('system', 'prologue');
 			break;
 		}
+		case "merry darky": {
+			setTrust('succubus', 77);
+			writeFunction("loadEncounter('succubus', 'date1')", "Push this button, Merry");
+			break;
+		}
 		case "pervert": {
 			if (data.player.pervert != true) {
 				data.player.pervert = true;
