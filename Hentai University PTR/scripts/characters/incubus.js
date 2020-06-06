@@ -17,20 +17,28 @@ var newItems = [
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-	{index: "placeholder", name: "", requirements: "?trust principal 10000;", altName: "", altImage: "",},
+	{index: "intro", name: "Someone is leaning on the wall of a strange shop", requirements: "?trust incubus 0; ?location shoppingDistrict;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "neet1": {
-			writeText("You walk into the room.");
-			writeSpeech("player", "", "Hello, neetF.");
-			writeSpeech("neet", "", "And hello to you, playerMister playerF.");
-			writeSpecial("You made a new friend!");
+		case "intro": {
+			writeHTML(`
+				sp incubus; Yo, ground rules: Don't touch anything unless you buy it. Don't let anything touch you until you paid for it. Blackboard services are for VIP customers only.
+				t She raps her finger on a blackboard listing services ranging from blowjobs to rimjobs, all at low prices. 
+				sp incubus; Humans usually don't come by this place very often, so just don't fuck around. Most of the stuff in here will make eternal damnation look like candyland to you. Some of it will make you see an actual candyland, but that's besides the point. 
+				sp player; Humans? What are... What exactly is this place? 
+				sp incubus; You've heard of making deals with the devil, right? They pop in and fix some massive roadblock, like systemic oppression or lack of talent, just for you in exchange for your soul.<br>I deal with smaller roadblocks, conveniences and problems you could probably solve on your own. For money.
+				sp player; If you really have supernatural powers, why do you need money?
+				sp incubus; Microtransactions.
+				t She flashes you her phone. On screen is a massive collection of icons of young-looking anime-styled boys.
+				sp incubus; Anyways, whatever shit your lazy ass needs that I can fix easily, that's what I do. My dog Chunky can help with memory issues too. If you wanna send someone back to square one to try some newer, freakier shit, he's your boy. Isn't that right Chunky?
+				t An iron lockbox nearby suddenly shudders, a sound coming out of it that sounds like a bark coming from a broken walkie-talkie submerged in oil.
+				sp incubus; Good boy. 
+			`);
 			writeFunction("changeLocation('playerHouse')", "Go home");
-			writeBig("images/neet/profile.jpg", "Art by Enoshima Iki");
 			break;
 		}
 		default: {

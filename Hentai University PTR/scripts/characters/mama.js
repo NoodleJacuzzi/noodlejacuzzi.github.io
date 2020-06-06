@@ -17,20 +17,42 @@ var newItems = [
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-	{index: "placeholder", name: "", requirements: "?trust principal 10000;", altName: "", altImage: "",},
+	{index: "intro", name: "Someone walking by catches your eye", requirements: "?trust mama 0; ?location streets;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "neet1": {
-			writeText("You walk into the room.");
-			writeSpeech("player", "", "Hello, neetF.");
-			writeSpeech("neet", "", "And hello to you, playerMister playerF.");
-			writeSpecial("You made a new friend!");
+		case "intro": {
+			writeHTML(`
+				t As you're walking down the street a woman wearing a pair of expensive-looking necklaces catches your eye.
+				im imagebox/mama/108.jpg
+				t Well, there are other features about her too. But it'd be impolite to stare. You do notice that she's noticed something about you as well.
+				sp mama; Oh, I think I recognize you.
+				sp player; Have you been around the local university lately? I'm a counselor there.
+				sp mama; Ah, that's the school my son will be attending~!<br>*ahem* Right, I was sent the itinerary for the next PTSA meeting, I think you came up.
+				sp player; You're attending the meetings before your son starts attending the school?
+				t There's something odd about her, but more importantly if she'll be attending the meeting it's important to have her in your pocket. You can't exactly pass the "I want to enslave every woman in the school to serve as my sex slave" order with just a majority vote.
+				sp player; Well, in any case would you like to talk for a moment? I was hoping to discuss some things with you, about the PTSA and maybe even about your son when he starts attending.
+				im 110.jpg
+				t She gives you a once over.
+				sp mama; ... No thank you, I'm quite alright. I'm sure I'll be seeing enough of you at the meeting.<br>Plus, my son certainly won't be needing any... What did you say you did? Counseling? None of that, so I don't think we'll be seeing very much of each other.
+				sp player; I... Wh-
+				t With that she starts walking away, not even interested in pretending you're worth the time. She probably lives in a well-off neighborhood given how fancy her clothes, jewelry, and purse were, and she'd need to be close, so Vintage Street is most likely where you can find her.
+				t But if she's well off you can't exactly barge in through the front door, and her curtness tells you she might not have a wide social circle you can take advantage of. You'll need some serious help to get close enough to hypnotize her. Maybe you should start with some of the other PTSA members?
+				
+				t You explain the situation to nurseF, and she's already mixing together some chemicals.
+sp nurse; Brunette you said? I'll have to guestimate how sensitive her nose is, and... Alright. I've got a formula ready. A potion that'll allow you to transform yourself to disguise yourself as the object of her affection, or whatever she's really horny for at the moment.
+				
+				sp player; ... Okay, I guess I can do something with that. I could disguise myself and fake some scandalous shot of her coming on to me, blackmail her, the works. 
+sp scarf; I suppose I could help you out in that regard by teaching you a small something. It's all in the posture after all. <br>But I'm surprised. I thought you'd go straight for dominating her, pounding her senseless as she believes she's being impregnated by her own son. 
+sp player; Eeh... I mean... 
+sp scarf; Plus, she's exactly the type for you to disguise yourself as a fat-cocked bull and pound her so hard she'd throw her child under a bus to snort a line of your jizz. I know the type.
+
+
+			`);
 			writeFunction("changeLocation('playerHouse')", "Go home");
-			writeBig("images/neet/profile.jpg", "Art by Enoshima Iki");
 			break;
 		}
 		default: {
@@ -49,7 +71,25 @@ function writeEvent(name) { //Plays the actual event.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
+		case "intro": {
+			writeHTML(`
+				t As you're walking down the street a woman wearing a pair of expensive-looking necklaces catches your eye.
+				im 108.jpg
+				t Well, there are other features about her too. But it'd be impolite to stare. You do notice that she's noticed something about you as well.
+				sp mama; Oh, I think I recognize you.
+				sp player; Have you been around the local university lately? I'm a counselor there.
+				sp mama; Ah, that's the school my son will be attending~!<br>*ahem* Right, I was sent the itinerary for the next PTSA meeting, I think you came up.
+				sp player; You're attending the meetings before your son starts attending the school?
+				t There's something odd about her, but more importantly if she'll be attending the meeting it's important to have her in your pocket. You can't exactly pass the "I want to enslave every woman in the school to serve as my sex slave" order with just a majority vote.
+				sp player; Well, in any case would you like to talk for a moment? I was hoping to discuss some things with you, about the PTSA and maybe even about your son when he starts attending.
+				im 110.jpg
+				t She gives you a once over.
+				sp mama; ... No thank you, I'm quite alright. I'm sure I'll be seeing enough of you at the meeting.<br>Plus, my son certainly won't be needing any... What did you say you did? Counseling? None of that, so I don't think we'll be seeing very much of each other.
+				sp player; I... Wh-
+				t With that she starts walking away, not even interested in pretending you're worth the time. She probably lives in a well-off neighborhood given how fancy her clothes, jewelry, and purse were, and she'd need to be close, so Vintage Street is most likely where you can find her.
+				t But if she's well off you can't exactly barge in through the front door, and her curtness tells you she might not have a wide social circle you can take advantage of. You'll need some serious help to get close enough to hypnotize her. Maybe you should start with some of the other PTSA members?
+			`);
+			writeFunction("changeLocation('playerHouse')", "Go home");
 			break;
 		}
 		default: {
