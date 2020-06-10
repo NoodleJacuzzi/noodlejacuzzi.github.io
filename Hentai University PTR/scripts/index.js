@@ -3000,6 +3000,17 @@ function diagnostic() {
 			}
 			break;
 		}
+		case "no disguise": {
+			if (data.player.noDisguise != true) {
+				data.player.noDisguise = true;
+				writeSpecial("No Disguise mode activated. Default player image will be used for speech during scenes with characters like mamaF.");
+			}
+			else {
+				data.player.noDisguise = false;
+				writeSpecial("You will now use disguise images in place of your usual picture for scenes with characters like mamaF.");
+			}
+			break;
+		}
 	}
 	if (goof == "null") {
 		writeText("You've already used this code before.");

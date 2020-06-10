@@ -310,6 +310,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 					}
 				}
 			}
+			if (checkTrust('mama') == 1) {
+				writeFunction("writeEncounter('nurseMama')", "Ask for help with mamaF");
+			}
 			writeFunction("writeEncounter('chatHub')", "Chat");
 			writeFunction("changeLocation(data.player.location)", "Leave");
 			break;
@@ -485,6 +488,38 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "analPotion2": {
 			writeEvent('nurseAnal');
 			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "nurseMama": {
+			writeHTML(`
+				sp player; I could use your help. There's a member of the PTSA council, mamaF. She's...
+				...
+				t You explain the situation to nurseF, and she's already mixing together some chemicals.
+				sp nurse; Brunette you said? I'll have to guestimate how sensitive her nose is, and... Alright. I've got a formula ready. A potion that'll allow you to transform yourself to disguise yourself as the object of her affection, or whatever she's really horny for at the moment.
+				sp player; What will you need?
+				sp nurse; A lock of her hair, or any large amount of her DNA, and the pollen of an extremely rare flower. Luckily I already have DNA samples for all one-hundred and eight potential PTSA candidates.
+				sp player; Where did you get those, again?
+				sp nurse; What? I thought I told you my older self planned to take over the school as well...<br>In any case, you'll need to collect the pollen.
+				sp player; Where can I find it?
+				sp nurse; Medicine cabinet on your left, third shelf.
+				...
+				t After a short mixing, nurseF's latest potion is complete. A small vial of white fluid, when you shake it the fluid turns black, before relaxing and turning back again.
+				sp nurse; Take it without shaking and you'll turn into an identical copy of her son, and I've got a change of clothes here for good measure. Shake it, and you'll transform into a large black man.
+				sp player; ... May I ask why?
+				sp nurse; Don't be so quick to jump upon the gun, *master. If my many dozens of reference materials are accurate, the potion's secondary form is likely her greatest weakness as a housewife.
+				sp player; I really should not ask, but... <i>why?</i> Why do you have this recipe prepared?
+				sp nurse; *Master, please! Do I really come off as so unprepared?
+				sp player; One of these days you'll need to show me everything you're working on, no more surprises.
+				sp nurse; It'll take much more than a day. <br>In any case, if you want her to be yours, the path is clear. You darken her doorstep, and then the proverbial magic happens! Racially charged epithets will fly, she'll utter something along the lines of "I'll accept racial equality the day I accept your black cock in my womb", you'll impregnate her and convert her into your loyal slave.
+				sp player; Or, and hear me out, I just transform into son and hypnotize her into supporting me.
+				t nurseF looks at you quizically.
+				sp nurse; I... Suppose. It's unlikely, but it could work.
+				t You've obtained a potion that will transform you into mamaF's son! Or into a form best suited for hard NTR, if that's the way you want to play this song and dance.
+				sp player; Anyways, thank you nurseF.
+				sp nurse; I'm at your disposal, *sir.
+			`);
+			setTrust('mama', 2);
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}

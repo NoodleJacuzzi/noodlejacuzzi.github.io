@@ -336,6 +336,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "statusQuo": {
 			writeSpeech("scarf", "", "Oh, come to pay me a visit, playerF? Was there something you needed?<br>I'm not exactly sure what you have planned for the school, but when that plan comes into play I'll support you.");
+			if (checkTrust('mama') == 1) {
+				writeFunction("writeEncounter('scarfMama')", "Ask for help with mamaF");
+			}
 			writeFunction("writeEncounter('casinoRepeat')", "Return to the dream casino");
 			writeFunction("writeEncounter('beachRepeat')", "Return to the dream beach");
 			writeFunction("changeLocation(data.player.location)", "Go back");
@@ -368,6 +371,54 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation('teacherLounge')", "Finish");
 			writeFunction("changeLocation(data.player.location)", "Change your mind");
 			unencounter('scarf');
+			break;
+		}
+		case "scarfMama": {
+			writeHTML(`
+				sp player; I could use your help. There's a member of the PTSA council, mamaF. She's...
+				...
+				t You explain the situation to scarfF, apparently they've met before.
+				sp scarf; I've spent maybe five minutes alone with her my entire life, and I was barely paying attention for those. 
+				sp player; Ah, I guess I'll try some other-
+				sp scarf; She's sexually attracted to her own son.<br>Even though I was nearly ignoring her, it was extremely obvious. 
+				sp player; ... Okay, I guess I can do something with that. I could disguise myself and fake some scandalous shot of her coming on to me, blackmail her, the works. 
+				sp scarf; I suppose I could help you out in that regard by teaching you a small something. It's all in the posture after all. <br>But I'm surprised. I thought you'd go straight for dominating her, pounding her senseless as she believes she's being impregnated by her own son. 
+				sp player; Eeh... I mean... 
+				sp scarf; Plus, she's exactly the type for you to disguise yourself as a fat-cocked bull and pound her so hard she'd throw her child under a bus to snort a line of your jizz. I know the type.
+				sp player; ...
+				sp scarf; Well, you can do either once I've planted the hypnotic seed, you don't need to decide now. <br>Shall we begin? It shouldn't take too long. 
+			`);
+			writeFunction("writeEncounter('scarfMamaAccept')", "Okay");
+			writeFunction("writeEncounter('scarfMamaRejection')", "Change your mind");
+			break;
+		}
+		case "scarfMamaAccept": {
+			writeHTML(`
+				sp player; Sure, Let's go for it. 
+				sp scarf; Of course. Now, I'll assume you want to take the easy way out and have this take an hour instead of two years? 
+				sp player; You assume correctly. 
+				sp scarf; Good. Now, everyone has certain phrases or actions that can put them off guard. Finding the perfect technique for everyone is what takes years, but something just for her should be easy. Describe your previous interaction with her, and be extremely thorough.
+				... 
+				t It's certainly a bizrarre feeling to let your guard down around a hypnotist., but after a short lesson she's wrapping up.
+				sp scarf; You'll need to be forceful with her if you want to tap into her darker fetishes. The technique should alter her sense of reason as well, regardless of who you choose to disguise yourself as.
+				t You learned a new technique, allowing you to disguise yourself as either mamaF's son or as her darkest fetish realized! By design it'll only work on mamaF though.
+				(if the player is a woman)
+				sp scarf; I'd like to apologize in advance, playerF.
+				sp player; Why?
+				sp scarf; Well, to be honest, you're very pretty, but from our brief interactions I could tell mamaF wasn't interested in the fairer sex. The techniques will make you <i>feel</i> like who she sees you as, your very self image will change while you're in her presence.<br>It's a shame, perhaps after you've brought her into your fold, she'll appreciate your true, softer self.
+			`);
+			setTrust('mama', 2);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "scarfMamaRejection": {
+			writeHTML(`
+				sp player; No thanks, I think I'll find another way. 
+				sp scarf; Suit yourself, although it costs you nothing for me to give you the knowledge. Are you worried I'll tease you knowing she'll call you pet names? 
+				sp player; I'm more worried it'll backfire and I'll face the full ethical karma of disguising myself as a kid. Or for turning her potential rape fantasy into a rape reality.
+			`);
+			unencounter('scarf');
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		default: {
