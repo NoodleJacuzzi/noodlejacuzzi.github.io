@@ -402,11 +402,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t It's certainly a bizrarre feeling to let your guard down around a hypnotist., but after a short lesson she's wrapping up.
 				sp scarf; You'll need to be forceful with her if you want to tap into her darker fetishes. The technique should alter her sense of reason as well, regardless of who you choose to disguise yourself as.
 				t You learned a new technique, allowing you to disguise yourself as either mamaF's son or as her darkest fetish realized! By design it'll only work on mamaF though.
-				(if the player is a woman)
-				sp scarf; I'd like to apologize in advance, playerF.
-				sp player; Why?
-				sp scarf; Well, to be honest, you're very pretty, but from our brief interactions I could tell mamaF wasn't interested in the fairer sex. The techniques will make you <i>feel</i> like who she sees you as, your very self image will change while you're in her presence.<br>It's a shame, perhaps after you've brought her into your fold, she'll appreciate your true, softer self.
 			`);
+			if (data.player.gender != "man") {
+				writeHTML(`
+					sp scarf; I'd like to apologize in advance, playerF.
+					sp player; Why?
+					sp scarf; Well, to be honest, you're very pretty, but from our brief interactions I could tell mamaF wasn't interested in the fairer sex. The techniques will make you <i>feel</i> like who she sees you as, your very self image will change while you're in her presence.<br>It's a shame, perhaps after you've brought her into your fold, she'll appreciate your true, softer self.
+				`);
+			}
 			setTrust('mama', 2);
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
