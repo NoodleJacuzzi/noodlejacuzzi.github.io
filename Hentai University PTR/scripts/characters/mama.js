@@ -94,7 +94,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t You've seen a lot in your time as a hypnotist, but you've never seen a heart melt quite like the one right in front of you.
 				sp mama; I... I didn't...<br> Oh kenji, I'm so sorry! Come here, mama loves you!
 				im imagebox/mama/004.jpg
-				t She weaps her arms around you for a kiss, but it's hard to reciprocate. Her calling you by another name is... Weird. You'll need to fix that.
+				t She wraps her arms around you for a kiss, but it's hard to reciprocate. Her calling you by another name is... Weird. You'll need to fix that.
 				sp mama; Aww, cmon, didn't you miss mama? Pleeeease? I can do that "Ara ara~" thing from that cartoon you really like!<br>... Oh, food!
 				t Completely airheaded, she runs back inside at the sound of a pot boiling over. You close and lock the door behind you.
 				t You take a seat and fish out your pendant, and get ready for what you have planned. What exactly will you do?
@@ -207,6 +207,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("loadEncounter('system', 'credits')", "The End");
 			break;
 		}
+		case "mamaBbcStart": {
+			writeHTML(`
+			
+			`);
+			writeFunction("writeEncounter('mamaBbcLewd')", "Continue");
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -230,7 +237,6 @@ function writeEvent(name) { //Plays the actual event.
 			writeHTML(`
 				t It's not often you have someone in the palm of your hand from the word go, you might as well have some fun with something different than usual.
 				t So with a simple command you implant the idea in her mind that she should be taking her motherly duties just a little bit farther. 
-				t So with a simple command you implant the idea in her mind that she should be taking her motherly duties just a little bit farther. 
 				im imagebox/mama/073.jpg
 				sp mama; You looks sleepy. Do you wanna just rest here, and nap on mama's lap? 
 				t She runs her fingers through your hair. It is getting late though, so it's time to wrap up your fun for now. 
@@ -244,14 +250,14 @@ function writeEvent(name) { //Plays the actual event.
 				sp mama; Ah, honey, mama's reeeally sensitive there, so please, ghh... 
 				t She continues to try and rinse you and herself off as you enjoy the torment. Shower sex usually isn't too comfortable and fun, so mostly you pass the time seeing her grow more and more aroused behind her patient smile at your teasing. 
 				... 
-				t After you've had your fun you make a game about continuing to to torment mamaF for the day. As she's picking out clothes, getting dressed, cleaning, every step of the way you're with her playfully rubbing and fondling her gorgeous milf body. 
+				t After you've had your fun you make a game about continuing to torment mamaF for the day. As she's picking out clothes, getting dressed, cleaning, every step of the way you're with her playfully rubbing and fondling her gorgeous milf body. 
 				im imagebox/mama/025.jpg
 				sp mama; What am I going to do with you? When did you turn into such a prankster? 
 				sp player; Aww, cmon. It's just some harmless fun. And isn't it your job to make me happy anyway? 
 				sp mama; Young man, even if you're having fun you should be considerate of mama's feelings. 
 				sp player; Don't be like that, I just missed you so much! All this is just because I love you, mama!
 				t Her frustrated expression vanishes as her heart melts again. 
-				sp mama; Oh my. Could... Could ypu say that again? 
+				sp mama; Oh my. Could... Could you say that again? 
 				sp player; You know, you weren't very thorough in the bath. There's a spot you missed. 
 				sp mama; O-oh! Right, I'm so sorry. I've been scatterbrained all day. Where was-
 				t You adjust your crotch a little beneath the smooth sating pajamas mamaF gave you so that to ur bulge is more visible. Instead of surprise, or even revulsion, she just smiles. 
@@ -295,7 +301,7 @@ function writeEvent(name) { //Plays the actual event.
 				im imagebox/mama/092.jpg
 				sp mama; Hmm hmm~<br>Does my special little pumpkin like my breasts? They're so big they swallow you up whole!
 				im imagebox/mama/093.jpg
-				sp mama; You can them as much as you like, you know. This outfit didn't come with any underwear, so if I ever squirt from you handling handling my sensitive mommy tits, the only mess will be on the floor.<br>And if you squirt from how soft and wonderful they are around your cock... Well, I wouldn't mind cleaning that mess up at all~
+				sp mama; You can touch them as much as you like, you know. This outfit didn't come with any underwear, so if I ever squirt from you handling handling my sensitive mommy tits, the only mess will be on the floor.<br>And if you squirt from how soft and wonderful they are around your cock... Well, I wouldn't mind cleaning that mess up at all~
 				im imagebox/mama/094.jpg
 				t She grabs both her breasts and starts milking your cock thoroughly as you feel yourself begin to cum, squirting high arms of cum from between her tits. Soon enough her face is completely splattered.
 				im imagebox/mama/095.jpg
@@ -322,7 +328,7 @@ function writeEvent(name) { //Plays the actual event.
 				t Once the command is set in stone you snap your fingers.
 				...
 				im imagebox/mama/035.jpg
-				The two of you undressed, there isn't a trace of doubt or hesitation in her, just a happy acceptance of what's about to come. What she wants, needs even. 
+				t The two of you undressed, there isn't a trace of doubt or hesitation in her, just a happy acceptance of what's about to come. What she wants, needs even. 
 				sp player; You're really sure about this?
 				t She nods. 
 				sp mama; Of course! There isn't anything in the world that would make mama happier than becoming one with you.
@@ -389,7 +395,7 @@ function writeEvent(name) { //Plays the actual event.
 				t Cum.
 				t You feel yourself squirting a load of cum into her womb, her eyes open and pure, concentrated submissiveness is visible in them. The message she's trying to send you is clear.
 				t <i>I want to stay like this forever.</i>
-				t Her legs are still locked around you, not allowing even the slightest chance that a single spurt of her cum ends up anywhere but her starved womb. You realize why you instinctively didn't stay the night before.
+				t Her legs are still locked around you, not allowing even the slightest chance that a single spurt of your cum ends up anywhere but her starved womb. You realize why you instinctively didn't stay the night before.
 				t Sleeping in the same house as this woman, waking up to her in bed... Your will to leave would vanish. Your dream of dominating the school, all the work you've done corrupting the PTSA...
 				t And yet the alternative has her legs wrapped around your hips.
 				t What will you do? You could resist and continue with your plans, or stay here with mamaF as her son. Sure, when her real son comes back she might snap out of her hypnosis, but something tells you that she'll pick you in the long run, given enough training.
@@ -401,7 +407,7 @@ function writeEvent(name) { //Plays the actual event.
 				im imagebox/mama/241.jpg
 				t It's a commitment. Any good relationship is, after all. Awoken to a newfound set of desires mamaF has developed into a suitable sexual outlet.
 				im imagebox/mama/254.jpg
-				im imagebox/mama/256.jpg (Edit to remove hand)
+				im imagebox/mama/256.jpg
 				t You've built yourself a new life with a sex-fiend mama. She takes care of your every worldly desire.
 				im imagebox/mama/245.jpg
 				t And every night ends the same way, with a reward for her loyal devotion.  It's a wonderful daily cycle, until one fateful day...
