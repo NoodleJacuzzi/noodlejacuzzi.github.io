@@ -1,14 +1,14 @@
 var character = {index: "mama", fName: "Sofia", lName: "Rossi", trust: 0, encountered: false, textEvent: "", met: false, color: "#A2DAF1", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false,};
 
 var logbook = {
-	index: "", 
-	desc: "",
-	body: "",
-	clothes: "",
-	home: "",
-	tags: "",
-	artist: "",
-	author: "",
+	index: "mama", 
+	desc: "A member of the Parent Teacher Student Association council, and one who religiously attends every meeting despite how her son who doesn't actually attend the university yet. It might seem like her son is her only weakness, but she's quite sexually frustrated as well.",
+	body: "She has the kind of body that turns the heads of men and women alike, the kind divinely-gifted to bear children. In ancient times people would worship fertility symbols that were maybe half as curvy as she is.",
+	clothes: "She has a variety of personal outfits, ranging from a blue sundress to a sleeveless wool turtleneck. Her collection of fetish-wear and lingerie actually rivals the size of the rest of her wardrobe.",
+	home: "She lives in a nice house on Vintage Street, the most well-off district in town. Half of her home is kept mostly empty for when her son moves in.",
+	tags: "Ara ara~, mother & son play, milf, Ara ara~, netorare/mother-stealing/son cucking, impregnation, Ara ara~",
+	artist: "Artist: Enoshima Iki",
+	author: "Author: NoodleJacuzzi",
 };
 
 var newItems = [

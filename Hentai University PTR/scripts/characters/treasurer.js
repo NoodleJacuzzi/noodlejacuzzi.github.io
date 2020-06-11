@@ -1,14 +1,14 @@
 var character = {index: "treasurer", fName: "Abigail", lName: "Adams", trust: 0, encountered: false, textEvent: "", met: false, color: "#CFA18A", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,};
 
 var logbook = {
-	index: "", 
-	desc: "",
-	body: "",
-	clothes: "",
-	home: "",
-	tags: "",
-	artist: "",
-	author: "",
+	index: "treasurer", 
+	desc: "The treasurer of the university's student council, she handles the student council's own budget and organizes fundraising events. Although in practice she actually serves as a general assistant to the president and helps with the mountain of paperwork the pair need to deal with every day.",
+	body: "She's much more petite than the president, with smaller A or B-cup breasts and thinner hips. Her hair is a light brown, almost blonde.",
+	clothes: "She wears a heavily modified version of the school's uniform that designates her as a special member of the council, including a brown coat and black skirt with pink highlights. Also part of the ensemble is a pair of black stockings that tightly hug her thighs.",
+	home: "Like the president she admires, she spends nearly all her time in the student council room on the second floor.",
+	tags: "Corruption, bisexual, virginity",
+	artist: "Artist: Oreteki18kin",
+	author: "Author: NoodleJacuzzi",
 };
 
 var newItems = [

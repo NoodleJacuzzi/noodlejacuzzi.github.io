@@ -199,7 +199,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("Girl", "none", "Fucking hot! God, I knew those fanfics had some merit!");
 				writeSpeech("Boy", "none", "Yeah, good on you for accepting yourself! Hey, you wanna go shopping later? I'd love to get a chance to meet your boyfriend.");
 				writeSpeech("tomgirl", "new.jpg", "Maybe some other time. I'm hoping to... Ah, playerSir!");
-				writeText("tomgirlF quickly bows out of the conversation to head over to you. It doesn't take a mind reader to guess that the two female students he was talking with are now fantasizing about you and tomgirlF together.");
+				writeText("tomgirlF quickly bows out of the conversation to head over to you. It doesn't take a mind reader to guess that the two students he was talking with are now fantasizing about you and tomgirlF together.");
 				writeText("The two of you walk out of the office, and once you're out of sight he pulls your hand drawing it to his ass. You give it a grope. ");
 				writeSpeech("tomgirl", "new.jpg", "Mmm, can you feel it? My suprise for later?");
 				writeSpeech("player", "", "Feel what?");
@@ -363,7 +363,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("You shove your index finger into him, and it goes in with little resistance. You already know the answer, but you want to see him squirm.");
 			writeSpeech("player", "", "If you don't start talking, I'm gonna force some answers out of you.");
 			writeBig("images/tomgirl/3-3.jpg", "Art by Nagi Ichi");
-			writeSpeech("tomgirl", "", "And yet he remains silent.");
+			writeText("And yet he remains silent.");
 			writeText("...");
 			writeText("After a few minutes of silence and anal torment, his dick has started to dribble precum.");
 			writeSpeech("player", "", "Feel like talking now, or do I need to keep going until you cum?");
@@ -399,7 +399,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/tomgirl/4-4.jpg", "Art by Nagi Ichi");
 			writeSpeech("tomgirl", "", "<i>Cumming! Fuck!</i>");
 			writeText("You start cumming into his mouth, he's so lost in his own orgasm that he swallows every drop on reflex.");
-			writeText("Once he's finished he realized what's happen, takes your dick out of his mouth, and starts spitting out onto the floor.");
+			writeText("Once he's finished he realized what's happened, takes your dick out of his mouth, and starts spitting out onto the floor.");
 			writeSpeech("player", "", "Careful not to make too much of a mess. Don't want anyone asking questions, do we?");
 			tempScene = 'gym';
 			if (data.player.location != 'gallery') {
@@ -424,7 +424,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/tomgirl/5-2.jpg", "Art by Nagi Ichi");
 			writeSpeech("tomgirl", "", "Aaaah~!");
 			writeText("He pushes the black dildo into his asshole, his dick wobbles as the rubber toy slides into him.");
-			writeText("The video almost seems like it skips on parts, editing out bit of him talking.");
+			writeText("The video almost seems like it skips on parts, editing out bits of him talking.");
 			writeText("He pushes the toy deeper into himself, finally hilting it and...");
 			writeBig("images/tomgirl/5-3.jpg", "Art by Nagi Ichi");
 			writeSpeech("tomgirl", "", "C-cumming...~");
@@ -532,13 +532,13 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/tomgirl/new2-1.jpg", "Art by Nagi Ichi");
 			writeSpeech("tomgirl", "new.jpg", "Well, that's really your fault, isn't it? There's no way I'd go back to normal sex after I've had a taste of you.");
 			writeSpeech("player", "", "And there's not a drop of hesitation left? Who owns you?");
-			writeSpeech("tomgirl", "new.jpg", "You do~! I'll get playerF tatooed on me if you'd like me to prove it~");
+			writeSpeech("tomgirl", "new.jpg", "You do~! I'll get playerF tattooed on me if you'd like me to prove it~");
 			writeSpeech("player", "", "I might take you up on that someday. But for now...");
 			writeBig("images/tomgirl/new2-2.jpg", "Art by Nagi Ichi");
 			writeSpeech("tomgirl", "new.jpg", "Aah~!");
 			writeSpeech("player", "", "Have you finally gotten what you've wanted? What you <b>needed</b>?");
 			writeSpeech("tomgirl", "new.jpg", "Yes! Yes playerSir~!");
-			writeSpeech("player", "", "You were pretty- Nggh<br>Pretty arrogant when I met you. Who know how deep the cocklust went under the surface?");
+			writeSpeech("player", "", "You were pretty- Nggh<br>Pretty arrogant when I met you. Who knows how deep the cocklust went under the surface?");
 			writeSpeech("tomgirl", "new.jpg", "You did! You saw right through me, playerSir! You didn't believe my shit for a second, and you could see the slut I really was all along~!");
 			writeSpeech("player", "", "And... Ngh... And what do you have to say to me?");
 			writeBig("images/tomgirl/new2-3.jpg", "Art by Nagi Ichi");
@@ -590,7 +590,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("tomgirl", "new.jpg", "C-come on, then. You should kiss your... Your w-wife...");
 			writeSpeech("player", "", "Actually, I was thinking. Lately you've been lasting longer than I have, so I went and bought you a wedding gift on my way home.");
 			writeSpeech("tomgirl", "new.jpg", "A gift?");
-			writeText("Rather than answer with words, you pul your wedding gift out of your bag and put it to good use.");
+			writeText("Rather than answer with words, you pull your wedding gift out of your bag and put it to good use.");
 			writeBig("images/tomgirl/new3-3.jpg", "Art by Nagi Ichi");
 			writeSpeech("tomgirl", "new.jpg", "Khhg~<br> Ah~!");
 			writeSpeech("player", "", "Now, I love you. I do. But you and I aren't the type of people who are going to have a warm relationship where we cuddle through the night.<br>Well, maybe after.<br>But if you want me to be yours exclusively, you know what you need to do, right?");

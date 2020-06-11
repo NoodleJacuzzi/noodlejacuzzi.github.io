@@ -1,14 +1,14 @@
 var character = {index: "pinstripe", fName: "Edith", lName: "Weber", trust: 0, encountered: false, textEvent: "", met: false, color: "#924F82", author: "NoodleJacuzzi", artist: "Enoshima Iki", textHistory: "", unreadText: false,};
 
 var logbook = {
-	index: "", 
-	desc: "",
-	body: "",
-	clothes: "",
-	home: "",
-	tags: "",
-	artist: "",
-	author: "",
+	index: "pinstripe", 
+	desc: "An attendant of Parent Teacher Student Association council meetings, she's a member of the university's legal department. She's been looking a little to hard into your past for your tastes.",
+	body: "She has the body of a mature woman turned up to eleven, she could probably moonlight as a pornstar quite easily. Still, with her attitude it doesn't seem likely that she'll want to settle for becoming anyone's trophy wife.",
+	clothes: "She usually wears professional-looking suits, albeit ones that tightly hug her body. Upon her face is a pair of thin reading glasses.",
+	home: "She lives in a small apartment you should be able to navigate to from the central area of the city's streets, when she isn't around the school trying to catch you red handed and have you thrown out of the university on your ass.",
+	tags: "Ageplay, kinkshaming, blackmail, straight shota, dom turned sub",
+	artist: "Artist: Enoshima Iki",
+	author: "Author: NoodleJacuzzi",
 };
 
 var newItems = [

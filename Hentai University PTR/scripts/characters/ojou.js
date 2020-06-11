@@ -1,14 +1,14 @@
 var character = {index: "ojou", fName: "Olivia", lName: "Wright", trust: 0, encountered: false, textEvent: "", met: false, color: "#4EAAB5", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false};
 
 var logbook = {
-	index: "", 
-	desc: "",
-	body: "",
-	clothes: "",
-	home: "",
-	tags: "",
-	artist: "",
-	author: "",
+	index: "ojou", 
+	desc: "The daughter of a major donor to the university, she attends Parent Teacher Student Association meetings in his stead. She actually has a small circle of friends as her haughty, bratty attitude only seems to extend to members of the faculty and authority figures.",
+	body: "She's quite petite, a little skinnier than your usual targets. She doesn't seem to sexually confident either, just a normal girl attending university, albeit one with a very refined air about her.",
+	clothes: "There's no chance that her outfit could even be considered close to what's assigned to students, most of the time she's at the university she's either wearing expensive-looking clothes or casual outfits.",
+	home: "You have no idea where she lives, she might even be a rug above the higher-end houses on Vintage Street.",
+	tags: "Time-stop, moral degradation",
+	artist: "Artist: Oreteki18kin",
+	author: "Author: NoodleJacuzzi",
 };
 
 var newItems = [

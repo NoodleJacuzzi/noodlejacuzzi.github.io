@@ -2,13 +2,13 @@ var character = {index: "nagatoro", fName: "Ash", lName: "Martin", trust: 0, enc
 
 var logbook = {
 	index: "nagatoro", 
-	desc: "",
-	body: "",
-	clothes: "",
-	home: "",
-	tags: "",
-	artist: "",
-	author: "",
+	desc: "A freshman student of the university you work at, he's a pretty sly young man with a penchant for teasing. He wants to establish a crossdressing club with you as the faculty advisor.",
+	body: "He has a very slim build with wider hips than most boys would want to be gifted with. However they wouldn't stand out too much if it weren't for his effeminate body language and passion for makeup.",
+	clothes: "During school hours he sticks to a regulation school uniform, but he prefers softer, prettier clothes whenever he can wear them. His collection of fetishwear and cosplay outfits suggest he's related to some serious money.",
+	home: "While he lives close to the school he prefers to spend his time with you in the clubroom he found outside his class in the university's East Hallway.",
+	tags: "Crossdressing, bratty sub, teasing, anal",
+	artist: "Artist: Kinta no Mousou",
+	author: "Author: NoodleJacuzzi",
 };
 
 var newItems = [
@@ -70,7 +70,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				im images/nagatoro/040.jpg
 				sp nagatoro; Haha! You got me~<br>So, what do ya say?
 				sp player; And why exactly should I say yes? I'm a new hire and championing a crossdressing club isn't exactly a good first step for my reputation.
-				sp nagatoro; Aww, cmon. You'd get to spend as much time with me as you want after classes, and I have plenty of really cute outfits I bet you'd love to see me try out.<br>Plus, helping students to be honest with themselves? Your 'reputation' would be one of openness and compassion. And all the experienced faculty, minus the witch who teachers psychology of course, are advising a club already. It'd make you look pretty good in the principal's eyes I bet.<br>Pleeeeease?
+				sp nagatoro; Aww, cmon. You'd get to spend as much time with me as you want after classes, and I have plenty of really cute outfits I bet you'd love to see me try out.<br>Plus, helping students to be honest with themselves? Your 'reputation' would be one of openness and compassion. And all the experienced faculty, minus the witch who teacher psychology of course, are advising a club already. It'd make you look pretty good in the principal's eyes I bet.<br>Pleeeeease?
 			`);
 			writeFunction("writeEncounter('intro2')", "You'll consider it");
 			writeFunction("writeEncounter('cancel')", "Decline");
@@ -211,7 +211,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "nagatoroComfort1": {
 			writeHTML(`
 				t You find nagatoroF near where you two first spoke. You're a lot more out of the way than before, directly behind a small wall.
-				t As you seem him crouched against the wall he looks melancholic. It's a little weird how different he seems to act when he isn't around you. 
+				t As you see him crouched against the wall he looks melancholic. It's a little weird how different he seems to act when he isn't around you. 
 				sp player; You alright? Angry?
 				sp nagatoro; ...? Oh, hey.<br>I'm fine. Frustrated I guess.
 				t You take a seat on the ground.
@@ -225,7 +225,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeHTML(`
 				t You sit up only to kneel down in front of nagatoroF. Despite him acting confident he doesn't seem to want to make eye contact right now. 
 				sp player; Why not tell her that? 
-				sp nagatoro; Eh? Sure, tell the principal she wears too. much makeup, great idea. <br>Also, uh, personal space? Ever heard of it? 
+				sp nagatoro; Eh? Sure, tell the principal she wears too much makeup, great idea. <br>Also, uh, personal space? Ever heard of it? 
 				sp player; I mean that you wanna just be cute. You didn't stand up for yourself in there at all. 
 				sp nagatoro; Listen, teasing you is fun, but you're some nobody counselor. No offense, but I don't think you're sticking around. Male faculty never do here. Messing with you compared to messing with her or anybody else, it's a whole different thing. 
 				sp player; What if I could help you with that? What if I could help you be your real self whenever you wanted? 
@@ -271,7 +271,7 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "nagatoroComfort": {
 			writeHTML(`
-				t nagatoroF sits slumped against the wall, barely concious as you work your magic. The concept of a crossdressing club actually isn't too bad, the idea is going nowhere fast at the moment. He needs confidence, less anxiety, and more to the point the ability to take what he wants. 
+				t nagatoroF sits slumped against the wall, barely concious as you work your magic. The concept of a crossdressing club actually isn't too bad, the idea is going nowhere fast at the moment. He needs confidence, less anxiety, and more to the point he needs the ability to take what he wants. 
 				t Of course loyalty is important too, and maybe a few more fun commands for down the line as well. Once you're done... 
 				t *SNAP*! 
 				t ... But he doesn't budge. Still as a stone, he just keeps laying there like a broken doll. His eyes do focus a little so you lean in for a closer look only to be flicked in the nose. 

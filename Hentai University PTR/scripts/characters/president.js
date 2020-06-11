@@ -1,14 +1,14 @@
 var character = {index: "president", fName: "Madison", lName: "Moore", trust: 0, encountered: false, textEvent: "", met: false, color: "#AD7961", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,};
 
 var logbook = {
-	index: "", 
-	desc: "",
-	body: "",
-	clothes: "",
-	home: "",
-	tags: "",
-	artist: "",
-	author: "",
+	index: "president", 
+	desc: "An attendant of Parent Teacher Student Association meetings and president of the university's student council. She mostly handles busywork like relaying student proposals to the principal, managing budgetary reports, and providing general guidance to students in matters that don't require faculty assistance. Despite most of her responsibilities being taken on voluntarily, she's heavily overworked.",
+	body: "She has maybe a C-cup bust, but probably the most impressive part of her body is that her hips are wider than her shoulders are broad, her silhouette making an incredible pear shape.",
+	clothes: "She wears a heavily modified version of the school's uniform that designates her as a special member of the council, including a brown coat and black skirt with pink highlights. Also part of the ensemble is a pair of black stockings that tightly hug her thighs.",
+	home: "Rumors abound that she practically lives at school, spending nearly every hour of the day on the school's grounds. Though she's usually to be found in the student council room on the second floor, she can also be found very rarely in the art club room practicing her painting.",
+	tags: "Corruption, moral degradation, exhibitionism, good girl turned dom",
+	artist: "Artist: Oreteki18kin",
+	author: "Author: NoodleJacuzzi",
 };
 
 var newItems = [

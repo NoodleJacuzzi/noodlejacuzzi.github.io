@@ -1,14 +1,14 @@
 var character = {index: "instructor", fName: "Charlotte", lName: "Reid", trust: 0, encountered: false, textEvent: "", met: false, color: "#FD7380", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false,};
 
 var logbook = {
-	index: "", 
-	desc: "",
-	body: "",
-	clothes: "",
-	home: "",
-	tags: "",
-	artist: "",
-	author: "",
+	index: "instructor", 
+	desc: "A former gold-medal olympian. She's a member of the Parent Teacher Student Association council despite not being a member of the faculty, yet. Rumors abound that she's eyeing the current physical education teacher's position.",
+	body: "She's certainly a former olympian, but her body must have seriously thickened out over the years.",
+	clothes: "Technically not employed by the school, complaints that her outfit is inappropriate are typically ignored by her and the principal. There must be a lot though, as you suspect she doesn't wear anything under her red hoodie, and she wears a nearly skin-tight pair of spats that clearly outline her pussy.",
+	home: "You don't know where she lives, but you can usually find her taking a section of the school gym to assist members of various sporting or fitness clubs.",
+	tags: "Common sense manipulation, fit girl",
+	artist: "Artist: Oreteki18kin",
+	author: "Author: NoodleJacuzzi",
 };
 
 var newItems = [

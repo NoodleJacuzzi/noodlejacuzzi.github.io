@@ -46,7 +46,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Eyes still locked on his phone, he leads you to a nearby hotel.");
 			writeSpeech("player", "", "Not getting the money up front? And you'll just do anyone who asks?");
 			writeSpeech("succubus", "",  "I've got my standards and my methods.");
-			writeText("The hotel is a actually a pretty nice looking place, but the receptionist doesn't even seem to notice as the two of you walk by.");
+			writeText("The hotel is actually a pretty nice looking place, but the receptionist doesn't even seem to notice as the two of you walk by.");
 			writeText("The elevator ride up is pretty slow. He tends to answer your questions with single-word 'yup's.");
 			writeSpeech("player", "", "Gotta say, not impressed so far. Not super interested in a boy going starfish under me.");
 			writeSpeech("succubus", "",  "Heh. You don't need to worry, you're about to have the time of your life.");
@@ -298,7 +298,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("succubus", "demon.jpg", "No.<br>Because I got a papercut on the flier.");
 			writeSpeech("player", "", "... I'm sorry?");
 			writeSpeech("succubus", "demon.jpg", "Listen dude, I'm a demon. I don't experience most of the inconveniences of modern life. I get a bad omen, I stay away.");
-			writeSpeech("player", "", "I'll be sure to be careful around the dangerous edges of the paper then, and keep and eye out.");
+			writeSpeech("player", "", "I'll be sure to be careful around the dangerous edges of the paper then, and keep an eye out.");
 			writeSpeech("succubus", "demon.jpg", "Hah hah, very funny. Lemme know if the maid stuff pans out, I can help you dirty up whatever they clean.");
 			writeText("succubusF gives you a sly wink.");
 			addFlag('succubus', 'housekeepS');
@@ -653,7 +653,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "What?");
 			writeSpeech("succubus", "", "Stomach! Yeah, stomach! Wow, bet you really want to take your frustrations out on me now, haha!");
 			writeSpeech("player", "", "Fuck, this was fishy after all.");
-			writeText("You start to leave, this is almost definitely a trap. As you get moving, finally makes eye contact with you, shooting you his best bedroom eyes. If he seriously thinks that's going to be en-");
+			writeText("You start to leave, this is almost definitely a trap. As you get moving, he finally makes eye contact with you, shooting you his best bedroom eyes. If he seriously thinks that's going to be en-");
 			writeBig("images/succubus/profileP.jpg", "Art by Gujira");
 			writeSpeech("succubus", "", "Aww, come on. Don't you want some of this? You know you <span style='color: #fc53f1'>can't resist</span>.");
 			writeText("Something's wrong. Something's wrong. You need to keep repeating that to yourself because your body isn't listening. There's something in the air, it's relaxing and energizing you at the same time.");
@@ -662,11 +662,11 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("succubus", "eyes.jpg", "<span style='color: #fc53f1'>Shhhh.</span>");
 			writeBig("images/succubus/1-1.jpg", "Art by Gujira");
 			writeSpeech("succubus", "eyes.jpg", "I'm <span style='color: #fc53f1'>really</span> sorry about how I've been acting. A real <span style='color: #fc53f1'>playerMan</span> like you deserves better, right?");
-			writeText("You feel like the wind got knocked flat out of you as his tongue runs across you nipple.");
+			writeText("You feel like the wind got knocked flat out of you as his tongue runs across your nipple.");
 			writeBig("images/succubus/1-2.jpg", "Art by Gujira");
 			writeSpeech("succubus", "", "Just close your eyes, I'll make you feel a lot better, okay? Don't worry about money, time, or even your life. Just sit tight and let me blow your mind.");
 			writeBig("images/succubus/1-3.jpg", "Art by Gujira");
-			writeText("He's got to have some kind off drugged lipstick or something, because the moment he wraps his lips around your nipple you feel like a live wire current is ripping through you.");
+			writeText("He's got to have some kind of drugged lipstick or something, because the moment he wraps his lips around your nipple you feel like a live wire current is ripping through you.");
 			writeBig("images/succubus/1-4.jpg", "Art by Gujira");
 			writeSpeech("succubus", "", "Aaaah~<br>You're really incredible playerMister.<br>And you're still hard too! I've changed my mind, I don't need anyone else, you're my new sex slave, okay?");
 			writeSpeech("player", "", "Ghh...");
@@ -693,7 +693,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("succubus", "", "Nonono, please~! I can't... Aaaa~!");
 			writeBig("images/succubus/1-8.jpg", "Art by Gujira");
 			writeText("His eyes roll back in his head and his body starts shaking, suddenly his piddly droplets of cum turn into a constant leaking stream.");
-			writeText("His grimace turns into a drunken smile and his tonge lolls out of his mouth as he defiles the sheets with his jizz.");
+			writeText("His grimace turns into a drunken smile and his tongue lolls out of his mouth as he defiles the sheets with his jizz.");
 			writeBig("images/succubus/1-9.jpg", "Art by Gujira");
 			writeSpeech("succubus", "", "Cumming~! I'm washting it all... But if feelsh sho gewd~!");
 			writeText("Dimly, you're aware that your second orgasm never actually finished, you've been cumming non stop and your vision is starting to fade.");
@@ -715,7 +715,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("succubus", "demon.jpg", "That's the spirit! C'mon, dick out!");
 			writeText("He cheers you on as you begin to disrobe.");
 			writeSpeech("player", "", "You're a lot more enthusiastic than last time.");
-			writeSpeech("succubus", "demon.jpg", "Well, let's just say most people take my street offer tend to be... Lowest common denominator types. Of course I'd be excited when I'm about to get some top-quality product waved in front of my face.<br>Ooh, speak of the devil...");
+			writeSpeech("succubus", "demon.jpg", "Well, let's just say most people who take me up on my street offer tend to be... Lowest common denominator types. Of course I'd be excited when I'm about to get some top-quality product waved in front of my face.<br>Ooh, speak of the devil...");
 			writeBig("images/succubus/2-1.jpg", "Art by Gujira");
 			writeSpeech("succubus", "demon.jpg", "Eheh... You sure you're all human?");
 			writeSpeech("player", "", "You sure you aren't stalling? Is it too big for you?");

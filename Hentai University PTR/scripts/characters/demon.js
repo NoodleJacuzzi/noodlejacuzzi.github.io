@@ -110,10 +110,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp Black-Haired Succubus; im images/demon/dark.jpg; The master? Oh my, I'm terribly sorry to waste your time.
 				t He steps out from behind the desk, his sandals clacking against the floor. 
 				sp Black-Haired Succubus; im images/demon/dark.jpg; The master is in his suite. Here, I'll guide you.
-				t He leads you to a the elevator. With a wave of his hand the doors slide open.
+				t He leads you to the elevator. With a wave of his hand the doors slide open.
 				...
 				t The ride is silent and awkward. In such a cramped space you can clearly smell something like perfume, your guide smells kinda like raw, concentrated desperation, which happens to smell like citrus.
-				t The elevator comes to a stop at the top floor before you can make break the ice.
+				t The elevator comes to a stop at the top floor before you can break the ice.
 				sp Black-Haired Succubus; im images/demon/dark.jpg; He's just a few doors down, it's the one with the golden marker.
 				sp player; Thanks, take care.
 				t He bows, despite his best efforts he seems nervous about something.
@@ -133,15 +133,15 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp player; And what about you? 
 				sp demon; Well, that's up to you, isn't it? Knowing you could just leave me anywhere...
 				t His eyes go manic for a second and he actually shivers as his imagination runs wild. Clearly exerting some self control he does his best to keep trying to keep focused on the negotiation. 
-				sp demon; You can take it with you. Lately I've been having some security issues with some of the fun toys I've collected over the years. Your familiar wouldn't happen to know anything about that, would he? <br>Well, whatever. The point is it needs my a demon's touch to work. So, what do you say? Take a cute girl out on the town, we could have some f... Fun... We'd feel really good together... 
-				t It's clear at this point his cracks are starting to show as he takes a few steps forwards towards you. He's no longer able to conceal the manic greed in his eyes. His negotiation skills are seriously deteriorating like your presence is like you're waving a hit in front of an addict. 
+				sp demon; You can take it with you. Lately I've been having some security issues with some of the fun toys I've collected over the years. Your familiar wouldn't happen to know anything about that, would he? <br>Well, whatever. The point is it needs a demon's touch to work. So, what do you say? Take a cute girl out on the town, we could have some f... Fun... We'd feel really good together... 
+				t It's clear at this point his cracks are starting to show as he takes a few steps forward towards you. He's no longer able to conceal the manic greed in his eyes. His negotiation skills are seriously deteriorating like your presence is like you're waving a hit in front of an addict. 
 				t As he gets closer you push him down like you would a dog to get some breathing room, he rubs his face against your palm and with his bow-legged sitting position her's humping the ground as he breaths in your scent. 
 				sp demon; Ngggh~! Cmon~! I haven't cum yet today~! Well, aside from when I thought about where you'd take me~!
 				sp player; Come on, get a hold of yourself. What would your employees think if they saw you right now?
 				t His breathing and thrusting grow more erratic, until you hear him whimper into your hand. He's off in his own little world as his thrusts start to slow down and he's more slowly grinding his crotch into the floor than humping. There's a subtle smell about him now.
 				sp player; Did... Did you just cum from that? 
 				sp demon; Ehe... Ehehe... 
-				t He gently lays backwards, content to lie on the floor with a starstruck expression on his face. No longer able to keep up with you in converation.
+				t He gently lays backwards, content to lie on the floor with a starstruck expression on his face. No longer able to keep up with you in conversation.
 				t With an extra hit of demon jizz fueling the smell of many, many shamegasms in the room, you stumble out. Dating a fap-junkie femboi could be fun, although you get the impression that demonF isn't really after capturing a romantic relationship. 
 				t If you want to, you could come back sometime and see what kind of events demonF has planned for the two of you.
 			`);
@@ -416,9 +416,9 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "Ah. That makes sense.");
 			writeText("The cashier continues like nothing's unusual, even as demonF is noticed by other people in the store. With so many eyes watching him, he starts to shake.");
 			writeBig("images/demon/demonPaint4.jpg", "Art by Gujira 4 Gou");
-			writeText("Unfortuately if he cums he'll be out of luck. No demonic powers to hide his nudity.");
+			writeText("Unfortunately if he cums he'll be out of luck. No demonic powers to hide his nudity.");
 			writeBig("images/demon/demonPaint5.jpg", "Art by Gujira 4 Gou");
-			writeText("Not that it matters. A thin line of cum drips down his painted thigh. You can't hear what the cashier is saying, but it's clear that she confused. demonF just starts drunkenly laughing before he turns around and starts walking away from the counter, still spurting onto the floor all the while.");
+			writeText("Not that it matters. A thin line of cum drips down his painted thigh. You can't hear what the cashier is saying, but it's clear that she's confused. demonF just starts drunkenly laughing before he turns around and starts walking away from the counter, still spurting onto the floor all the while.");
 			writeBig("images/demon/demonPaint6.jpg", "Art by Gujira 4 Gou");
 			writeText("Nearly everyone in the store has noticed at this point. He looks around as his cum haze ends, probably reveling in the depravity.");
 			writeBig("images/demon/demonPaint7.jpg", "Art by Gujira 4 Gou");
@@ -507,7 +507,7 @@ function writeEvent(name) { //Plays the actual event.
 				sp demon; Oh, oh I feel it~ It's cumming~!
 				im images/demon/forest6.jpg
 				t As you start to come back to reality he's already leaving it. Cum drools down his thighs and wasted jizz leaks from his cock. His eyes squint shut and open again as his pupils dilate, and any attempts at further screaming are just soundless gasps of a bitch drowning in pleasure.
-				t You stumble back as his body is still being wracked with aftershocks, cum is leaking from his less-than-modest dick in a solid clear stream. He twitches are breathes erratically, only able to communicate one thing; You'll need to carry him out of the woods.
+				t You stumble back as his body is still being wracked with aftershocks, cum is leaking from his less-than-modest dick in a solid clear stream. He twitches and breathes erratically, only able to communicate one thing; You'll need to carry him out of the woods.
 				...
 				t Luckily the forest is surrounded on all sides by civilization. As your reputation is protected by the wig and his reputation isn't worth shit, you make your way back to his hotel without incident, even if you get a lot of shocked looks along the way.
 			`);
