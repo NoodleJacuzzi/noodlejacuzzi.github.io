@@ -1,14 +1,14 @@
 var character =  {index: "incubus", fName: "Lily", lName: "", trust: 0, encountered: false, textEvent: "", met: false, color: "#FFF6BD", author: "NoodleJacuzzi", artist: "Gujira 4 Gou", textHistory: "", unreadText: false,};
 
 var logbook = {
-	index: "", 
-	desc: "",
-	body: "",
-	clothes: "",
-	home: "",
-	tags: "",
-	artist: "",
-	author: "",
+	index: "incubus", 
+	desc: "A mysterious shopkeeper who sells a variety of magical items, as well as her body to the rare human customer. She's definitely some kind of demon.",
+	body: "She has the body of a freshly-18 teenager, and probably will look that way forever. Despite how apathetic she seems in general, she unconsciously moves with an incredibly seductive grace.",
+	clothes: "She wears a school uniform, although you don't know where it's from. It could be from back when she was still human.",
+	home: "She lives on the second floor of her store in the city's main shopping district. Because of her sensitive nose she keeps a separate room and bed for lewd service, otherwise she wouldn't be able to sleep.",
+	tags: "It depends on what you pay for.",
+	artist: "Artist: Gujira 4 Gou",
+	author: "Author: NoodleJacuzzi",
 };
 
 var newItems = [

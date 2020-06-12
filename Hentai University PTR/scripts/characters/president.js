@@ -136,8 +136,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp president; ... You're much more easygoing. I hope this means less 'spirited' conversations with your friends right outside the council room's door?
 				sp tomgirl; Oh shit, were we bothering you? I'll be careful, sorry.
 				t presidentF seems shocked that the stubborn tomgirlF would just accept fault like that, she looks at you for a moment and sighs.
-				sp president; Fine, I'll admit defeat here, I suppose in some cases whatever methods playerF uses can have <i>some</i> merit. Thank you for your time tomgirlF.
-				sp president; Fine, I admit defeat. I've clearly misjudged playerF's methods Thank you for your time tomgirlF.
+				sp president; ?trust president 2; Fine, I'll admit defeat here, I suppose in some cases whatever methods playerF uses can have <i>some</i> merit. Thank you for your time tomgirlF.
+				sp president; ?trust president 3; Fine, I admit defeat. I've clearly misjudged playerF's methods Thank you for your time tomgirlF.
 				sp tomgirl; No problem at all!
 				t With that presidentF takes her leave, probably to go back to work and try to wrap her head around what she's seen today.
 				sp tomgirl; Geez, she's gonna be a real bitch to turn, huh? Wouldn't you rather just stay home all day and pound me into being a proper girl? 
@@ -159,16 +159,16 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp purple; It's... It's been tough. The whole world just kept going on while it felt like I just fell over, and I couldn't seem to want to stand back up. <br>playerF here helped everything feel normal again, you know? 
 				sp president; I see.<br>That's really incredible... 
 				t presidentF lets out a relaxed sigh while continuing to hold purpleF's hand. 
-				sp purple; Anyways mast-Mister!<nr>A-anyways mister, will I be seeing you later? 
-				sp purple; Anyways mistr-Mss! <br>A-anyways miss, will I be seeing you again later? 
+				sp purple; ?gender man; Anyways mast-Mister!<nr>A-anyways mister, will I be seeing you later? 
+				sp purple; ?gender woman; Anyways mistr-Mss! <br>A-anyways miss, will I be seeing you again later? 
 				sp president; It sounded like you were about to say something else. 
 				sp purple; Haha, did it? That's so funny, slip of the-
 				t purpleF is interrupted as presidentF suddenly takes her in for a hug. 
 				sp president; You haven't laughed in so long... I never knew what to say, I'm sorry I wasn't there for you... 
 				sp purple; Ah, it's uh... Thank you? 
 				t purpleF awkwardly pats presidentF on the back as the hug goes on for just a little too long before presidentF pulls away. 
-				sp president; Fine, I'll admit defeat here, I suppose in some cases whatever methods playerF uses can have <i>some</i> merit. Thank you for your time purpleF.
-				sp president; Fine, I admit defeat. I've clearly misjudged playerF's methods Thank you for your time purpleF.
+				sp president; ?trust president 2; Fine, I'll admit defeat here, I suppose in some cases whatever methods playerF uses can have <i>some</i> merit. Thank you for your time purpleF.
+				sp president; ?trust president 3; Fine, I admit defeat. I've clearly misjudged playerF's methods Thank you for your time purpleF.
 				sp purple; No problem. I'll see you around?
 				sp president; Of course.
 				t With that presidentF takes her leave, probably to go back to work and try to wrap her head around what she's seen today.
@@ -196,8 +196,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp president; I... I had no idea, I always thought she was serious about wanting to film adult movies... <br>To think she was just trying to cope with fears of inadequacy... 
 				t You nod wisely at your expert level bullshittery. If you had to bet, starletF actually is writing about porn, just crunching demographic numbers while making it look like she's actually doing schoolwork.
 				t Still, presidentF is completely starstruck. 
-				sp president; Fine, I'll admit defeat here, I suppose in some cases whatever methods you use can have <i>some</i> merit. Thank you for your lesson, playerF.
-				sp president; Fine, I admit defeat. I've clearly misjudged your methods Thank you for your lesson, playerF.
+				sp president; ?trust president 2; Fine, I'll admit defeat here, I suppose in some cases whatever methods you use can have <i>some</i> merit. Thank you for your lesson, playerF.
+				sp president; ?trust president 3; Fine, I admit defeat. I've clearly misjudged your methods Thank you for your lesson, playerF.
 				t With that presidentF takes her leave, probably to go back to work and try to wrap her head around what she's seen today.
 				t Through the window you can see starletF notice you and you give a thumbs-up, which she reciprocates despite not understanding what's going on.
 			`);

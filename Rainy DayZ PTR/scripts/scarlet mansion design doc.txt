@@ -1,0 +1,138 @@
+Scarlet mansion layout
+
+Foyer
+	2F Parlor (spade key)
+		Wardrobe room (labcoat with login credentials)
+			Balcony
+	2F West Wing
+		Spade Bathroom (siren)
+		Spade Bedroom (heart key, infected in chastity)
+		Guest Bedroom (crop)
+	Main Halls
+		Heart Bathroom (urinal)
+		Heart Bedroom (urethral insertion)
+		Garage (club key)
+		Theater Room
+		Dining Room (cum tap)
+		Storage Room (requires club key)
+			Basement
+				Lab entrance (requires crop)
+					Server room (files require credentials)
+					Cell room (stuck in wall woman)
+					Diamond control room (lansley is here)
+				Trapped room (thirsty woman, diamond key))
+		
+		
+Full scenelist
+Locations:
+	Arrival (COMPLETE)
+	Forest (COMPLETE)
+		t You're in the forest.
+	Destroyed shack (COMPLETE)
+		t You're in the destroyed shack.
+	Entrance (COMPLETE)
+		t You're standing at the entrance to a mansion.
+	Dog kennel (COMPLETE)
+		t You're standing in front of the dog kennel.
+	Foyer
+		t You're in the mansion's foyer.
+	Parlor
+		t You're in the parlor. A pair of comfortable chairs have small end-tables next to them. There's a variety of books here, ranging from fiction to an extensive collection of encyclopedias ranging from history to microbiology. A lot of them have been thrown haphazardly across the ground, it's a mess.
+		t The fireplace is lit, suggesting someone has been here recently. That said, the fireplace is locked up tight, it's not clear how it was opened to ignite the wood in the first place.
+		t Atop the fireplace is a [spadeKey|single crooked candelabra], it stands out as it's the only thing atop the mantle that hasn't been thrown to the ground.
+		t You've already aligned the candelabra and taken one of the spade keys. Who could've taken the other one?
+	spadeKey
+		t You gently align the candelabra, it's attached to the mantle itself. As you nudge it you can hear a *click* and a small compartment opens up, revealing a neatly aligned tray of keys with a spade symbol at the end. One of the keys has already been taken.
+		t <b>You got a spade key!</b>
+		t With the key taken, you should return to the [parlor|parlor].
+	Wardrobe room
+		t You're in the wardrobe room. The walls are lined with wardrobes and closets. Some fancier wardrobes hold elegant looking dresses or suits, there are also a few designated for casual clothing, and a few that are locked up tight.
+		t One of the wardrobes designed to be locked has been smashed open, and you can see it's filled with labcoats and hazard equipment. 
+		t !item Login Credentials; You can see one labcoat has a [loacoatObtained|piece of paper inside].
+		t You can return to the [parlor|parlor] through the big wooden door, and there's a side-door here that probably leads to the [balcony|balcony].
+	Balcony
+		t You're standing on the mansion's balcony. A storm has picked up, the wind is raging and the rain is not pleasant to stand in.
+		t Beneath you are a half-dozen guard dogs patrolling the area, not one seems fazed by the bad weather. It seems like you're still trapped here.
+		t You can return to the [wardrobeRoom|wardrobe room] from here.
+	West wing
+		t You're in the west wing hallway.
+	Spade bedroom
+		t You're in the spade bedroom.
+	Spade bathroom
+		t You're in the spade bathroom.
+	Guest bedroom
+		t You're in the guest bedroom.
+	Main halls
+		t You're in the set of hallways at the center of the mansion, multiple doorways here lead to other rooms.
+	Heart bathroom
+		t You're in the heart bathroom, the light in here glows a soft yellow.
+		t The toilet is chained shut, and bound atop it is an obviously infected woman. She whimpers as she hears you approach, her eyes behind a blindfold and dick kept in a cruel-looking chastity cage.
+		t !scene heartBathroom; Probably unable to speak due to her infection, instead of attacking you she just opens her mouth to let her tongue hang out. With the toilet made unavailable, it's pretty clear [heartBathroom|what her purpose is meant to be].
+		t ?scene heartBathroom; She sputters a little, her face and hair still wet with your piss.
+		t If you're finished in here, you can return to the [mainHalls|main halls].
+	Heart bedroom
+		t You're in the heart bedroom, the whole room is decorated with a red color scheme. In a large pile are tools used for erotic punishment, ranging from chastity cages and dog shock collars
+		t On the large bed against the wall is an infected woman, chained, bound, and blindfolded. Her cock is fully erect and standing proud, with several broken pieces of plastic and metal strewn about the sheets and the floor near the bed, probably the broken remains of chastity cages.
+		t She's extremely aggressive, writhing against her bindings and growling as she hears you enter the room. 
+	Garage
+	Theater room
+		t You're in the theater room. A large TV is mounted to the wall and a comfy-looking bed is set up for a comfortable viewing experience.
+		t Below the TV is a large wooden mantle with a sealed fireplace beneath it, atop the mantle is a single crooked candelabra.
+	Dining Room
+		t You're in the dining room, a large, albeit slightly crooked painting of a river overlooks a large dining table. 
+		t Most of the tables are clear, although one looks to be recently used. There are several dishes and a cup that have a small amount of a clear, white, smelly fluid covering them.
+		t Next to the plate is a small bell.
+		t You can go back out to the hallway here.
+	Storage room
+		t You're in the storage room. There's a large smashed up supply closet in the corner revealing a hidden staircase inside, it looks like it was broken by some kind of axe or sharp object.
+		t Despite the room being filled with various tools, nearly everything aside from the broken wardrobe is covered in dust. However in an area recently cleared of cobwebs is a red button.
+		t You can go back out to the hallway here.
+	Basement
+		t You're in the hidden basement of the mansion. It's pretty dark, but a great deal of obvious effort has been put into keeping the passageway clean and tidy. The walls are made of smooth stone, not fitting in with the spooky decor of the mansion at all.
+		t At the base of the stairs is a thick iron door, there's a keycard reader next to it but it isn't necessary. The reader has been smashed and the lock beneath the handle broken, so you can easily enter.
+		t That is if there weren't a 'guard dog' at the door, an infected woman with a collar connected to a chain unceremoniously bolted to the wall. She's completely calm and avoids eye contact, but even the slightest motion towards the door causes her to growl.
+		Aside from that there are a few other doors. One is labeled 'Server Room', and the other is labeled 'Containment Cells'.
+		t You can head back up the stairs to the storage room from here.
+	Server room
+		t You're in the server room in the secret basement. The room is pretty warm despite the dozens of fans providing ventilation. 
+		t There's a single computer station here, on a screen requiring login credentials.
+		t There's a small lightswitch, but for some reason it doesn't seem to be connected to any of the room's lights. It's currently flipped off.
+		t The lightswitch is connected to a tiny flashlight setup, now that it's on you can see the light is illuminating a small impression in the wall.
+		t You can head back into the basement from here.
+	Cell room
+		t You're in the cell room in the secret basement. It's extremely dark, so you fumble around for a moment until you find a lightswitch and click it on. As you do, you can hear several gasps.
+		t The room has several containment cells with large glass panes to let you clearly see who's inside, only two of which are occupied. One is full of infected woman, some completely naked but others wearing shredded labcoats over their mostly nude bodies. As the light comes on they shudder and huddle together in a corner, seemingly scared of you.
+		t In the other cell is a woman who looks to be just waking up. She's also naked, but from her lack of dick it's clear she isn't infected.
+		sp scientist; Gh... Wha-<br> Who are you? Are you... No, you don't look infected. Hey, listen, you gotta help me! There's this crazy bitch who's got me locked up in here, I think she's gonna feed me to these women! 
+		t There's a large valve next to the cell doors, if you turned her door it'd probably open the door enough for her to escape. You could help her, or you could leave and return to the basement.
+	Cell room 2
+		t You're in the cell room in the secret basement. Inside are several cells filled with infected women.
+		t The woman you attempted to save is still stuck in the partially-open door, her eyes glazed over as she attempts to get herself off by rubbing against the floor. She groans and attempts to squeeze through once she notices to attack you, but without any luck.
+		t The rest of the infected are content to huddle in the corner trying to be invisible, like they're expecting you to hurt them.
+		t Without anything else to do in here, you should probably return to the basement.
+	Control room
+	Trap room
+Scenes
+	labcoat obtained
+		t You fish through the exposed labcoat for a moment searching for anything useful. No key or keycard, or anything like that, but you do find a small piece of paper with what appears to be a username and password written on it.
+		t You got the login credentials!
+	spade bathroom siren
+	spade bedroom chastity (COMPLETE)
+	guest bedroom crop
+	heart bathroom urinal
+	heart bedroom urethral
+	garage dogs on infected (COMPLETE)
+	Dining room cum tap
+	lab entrance guard dog
+	lab entrance guard dog crop'd
+	trapped room give cum
+	lansley confrontation
+	lansley join
+	lansley fight
+	theater room lansley torture 1
+	theater room lansley torture 2
+	theater room lansley torture 3
+	theater room lansley payback
+	server room dog mutation notes
+	server room siren gag
+	server room infection resistance via sugar
