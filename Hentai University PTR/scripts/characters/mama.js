@@ -35,7 +35,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 	wrapper.scrollTop = 0;
 	switch (name) {
 		case "cancel": {
-			unencounter('president');
+			unencounter('mama');
 			changeLocation(data.player.location);
 			break;
 		}

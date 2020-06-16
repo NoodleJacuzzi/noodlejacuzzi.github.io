@@ -1573,6 +1573,11 @@ function writeSpeech (name, img, text, altName, altColor) {
 }
 
 function writeBig (img, cap) {
+	if (cap == "") {
+		if (character.artist != null) {
+			cap = character.artist;
+		}
+	}
 	if (img.includes('profile') == true) {
 		if (data.player.pervert != true) {
 			var checkForError = "";

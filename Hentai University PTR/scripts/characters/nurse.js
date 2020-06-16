@@ -511,7 +511,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp player; I really should not ask, but... <i>why?</i> Why do you have this recipe prepared?
 				sp nurse; *Master, please! Do I really come off as so unprepared?
 				sp player; One of these days you'll need to show me everything you're working on, no more surprises.
-				sp nurse; It'll take much more than a day. <br>In any case, if you want her to be yours, the path is clear. You darken her doorstep, and then the proverbial magic happens! Racially charged epithets will fly, she'll utter something along the lines of "I'll accept racial equality the day I accept your black cock in my womb", you'll impregnate her and convert her into your loyal slave.
+				sp nurse; It'll take much more than a day. <br>In any case, if you want her to be yours, the path is clear. You darken her doorstep, and then the proverbial magic happens! Racially charged epithets will fly, she'll utter something along the lines of "I'll accept racial equality the day I accept your black cock in my womb!", and then you'll impregnate her and convert her into your loyal slave.
 				sp player; Or, and hear me out, I just transform into her son and hypnotize her into supporting me.
 				t nurseF looks at you quizically.
 				sp nurse; I... Suppose. It's unlikely, but it could work.
