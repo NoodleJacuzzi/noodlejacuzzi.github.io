@@ -277,11 +277,25 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp incubus; Another one, huh? Careful, you'll get addicted. And if your performance drops I'm upping the price, I've got my eyes on an event banner running for the week.
 				...
 				t You're led to the back room. Despite her attitude, incubusF is clearly as excited for another round as you are.
+				t You're led to a back room, a mostly-unused bed is here. There's the sound of something unclasping as incubusF tosses her skirt aside and leans into your chest before taking a deep breath.
+				t She takes a deep breath, holding it in her lungs. As she exhales her scowl has faded. She leans in even closer for another deep inhale as her nose brushes against your skin. 
+				t Her eyes unfocus as a sweet smell fills the room. Seemingly satisfied she lays on the bed and waves her ass at you, lifting her cardigan to show you she's wearing nothing underneath.
 				im imagebox/incubus/creampie1.jpg
+				t She bites her lip to hold back a sudden moan, she's sopping wet so you meet no resistance inside her.
+				sp incubus; Fff... Fuck, slow down... Pace yourself so I can finish too, alr-
 				im imagebox/incubus/creampie2.jpg
+				t incubusF is at a loss for words, deciding to give herself in and let herself be used.
+				t You slide her cardigan up further, copping a feel of her perky tits, before firmly grasping her hips again. The sight of her ass against your hips, the bizarre scent of hers, all of is messing with your head. You vision blurs over as you start to cum.
 				im imagebox/incubus/creampie3.jpg
 				im imagebox/incubus/creampie4.jpg
+				t incubusF goes stiff beneath you. Something about your cum pushing, if now completely throwing her over the edge.
+				t After the full-body jolt passes through her, she can finally catch her breath.
+				...
 				im imagebox/incubus/creampie5.jpg
+				t You cum again, and it hits her like a ton of bricks. Her eyes roll back and her eyelids flutter, the sweet scent in the room grows tenfold as her muscles tense and a small stream of squirt soaks the bedding beneath you, then another, and another.
+				t She babbles something as her eyes close. Fatigue overtakes her. Whatever she's been doing to your nody is still ongoing, your heart is still racing, but exhaustion is starting to take its toll on you and you can't keep yourself upright much longer. At least you manage to fall to your side so you don't fall asleep on top of her.
+				...
+				t By the time you're awake again incubusF has left to sleep off the sexual haze, and you should get going.
 			`);
 			passTime();
 			writeFunction("changeLocation(data.player.location)", "Finish");
@@ -395,11 +409,41 @@ function writeEvent(name) { //Plays the actual event.
 	switch (name) {
 		case "incubuscreampie": {
 			writeHTML(`
+				t Despite the lewd message advertising free creampie service, incubusF doesn't seem too enthusiastic as she finally puts her phone away.
+				sp incubus; Going for the VIP privileges, huh? You got anything left on your bucket list?
+				sp player; What's that supposed to mean?
+				sp incubus; Nothing, just a bad joke.
+				...
+				t You're led to a back room, a mostly-unused bed is here. There's the sound of something unclasping as incubusF tosses her skirt aside and leans into your chest before taking a deep breath.
+				sp player; Eager, huh?
+				sp incubus; Shut up, I hate talkers... *huff*<br>Just let me get wet... So we can start...
+				t She takes a deep breath, holding it in her lungs. As she exhales her scowl has faded. She leans in even closer for another deep inhale as her nose brushes against your skin. 
+				t Her eyes unfocus as a sweet smell fills the room. Seemingly satisfied she lays on the bed and waves her ass at you, lifting her cardigan to show you she's wearing nothing underneath.
+				sp player; I figured a girl with a nose as sensitive as yours would want missionary or something. 
+				sp incubus; Ugh, no... I need to have some self control, right?
+				t You rub a finger along her pussy, she's wet enough that there's a string of clear fluid connecting your finger to her lower lips now. 
+				t It's got a flowery scent, maybe like orchids or lilies. It's strange, but it's almost like you can feel your lungs tingle as you inhale, and your heartrate speeds up a little. Blood is rushing through your body, and your cheeks feel hot. 
+				sp incubus; Don't hold back, I'll stop you after your first round so you don't hurt yourself, just go ahe-
 				im imagebox/incubus/creampie1.jpg
+				t She bites her lip to hold back a sudden moan, she's sopping wet so you meet no resistance inside her.
+				sp incubus; Fff... Fuck, slow down... Pace yourself so I can finish too, alr-
 				im imagebox/incubus/creampie2.jpg
+				t Something about her body is affecting you in a strange way. Your heart is racing, you feel like an beast in a rut.
+				t incubusF is at a loss for words, deciding to give herself in and let herself be used.
+				t You slide her cardigan up further, copping a feel of her perky tits, before firmly grasping her hips again. The sight of her ass against your hips, the bizarre scent of hers, all of is messing with your head. You vision blurs over as you start to cum.
 				im imagebox/incubus/creampie3.jpg
+				sp incubus; Y-you finally calming down? Almost at your limit, huh? Even an animal needs-
 				im imagebox/incubus/creampie4.jpg
+				t incubusF goes stiff beneath you. Something about your cum pushing, if now completely throwing her over the edge.
+				t After the full-body jolt passes through her, she can finally catch her breath.
+				sp incubus; Hah~<br>... Hell's bells, you're still...? C-can you go again?
+				t Her voice is sheepish and partially muffled by the blanket, but her body speaks for her. Something about her juices is seriously setting you off, and combined with the way she sways her hips while you're still inside her you're already good for another round.
+				...
 				im imagebox/incubus/creampie5.jpg
+				t You cum again, and even though this time she's ready for your cum it still hits her like a ton of bricks. Her eyes roll back and her eyelids flutter, the sweet scent in the room grows tenfold as her muscles tense and a small stream of squirt soaks the bedding beneath you, then another, and another.
+				t She babbles something as her eyes close. Fatigue overtakes her. Whatever she's been doing to your nody is still ongoing, your heart is still racing, but exhaustion is starting to take its toll on you and you can't keep yourself upright much longer. At least you manage to fall to your side so you don't fall asleep on top of her.
+				...
+				t You wake up in the back room, still weary and sticky. incubusF is gone, but at least she left you a towel. There's a little card on top, reading 'congrats on surviving and being a VIP'.
 			`);
 			break;
 		}
@@ -418,8 +462,20 @@ function writeEvent(name) { //Plays the actual event.
 				im imagebox/incubus/rim2.jpg
 				im imagebox/incubus/rim3.jpg
 				im imagebox/incubus/rim4.jpg
+				
+				sp incubus; Oh ghhhd!
+				t Her eyes roll back and she grits her teeth, the sweet smell filling the room grows more intense and she clenches your thighs hard to hold back from stroking herself, trying to keep herself on edge for as long as possible.
+				t The sour whore from before is gone, all that's left is a girl with a fetish for making out with your asshole. Her saliva is finally pushing you over the edge, and she knows it. Her frenching and stroking are growing more feverish as you feel yourself start to cum.
 				im imagebox/incubus/rim5.jpg
+				t She moans into your ass as the sudden mix of jizz splurting on her hand causes the smell of thick cum to fill her brain as well. She moans, squeals, and squirms on the spot as she matches your orgasm completely hands-free.
 				im imagebox/incubus/rim6.jpg
+				sp incubus; Mmmmph~! 
+				t Splurt, splurt, splurt. Her palm is rubbing the head of your cock, both to ensure you spill every last sperm cell, and to catch everything she can.
+				t She takes one last long, slow stroke while her tongue is still greedily rubbing your prostate, before she uses both hands to hold as much unspilled jizz as she can. She pulls her tongue free in a long exagerated slurping motion so that she can lift her messy hands to her mouth.
+				t Gulp, gulp, gulp. A depraved look on her face as she chugs a handfull of jizz. The very last mouthful is held for a moment to savor the taste and the depravity of the situation. Once she's swallowed it's only a moment before her tongue is out again to lick her hands clean.
+				t You lie on the bed, needing to take a moment to catch your breath.
+				...
+				t Like before once you're done with your breather you're ushered out. Her previous attitude slowly returning as the sexual hunger fades, you leave so that incubusF can close up shop and shower to calm yourself down. 
 			`);
 			break;
 		}
