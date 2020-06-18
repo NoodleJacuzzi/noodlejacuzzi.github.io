@@ -211,28 +211,61 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeHTML(`
 				t You take a deep breath and start applying what you gained from your helper. By the time you exhale, you're a new man.
 				sp player; Well, here goes nothing.
-				t You walk up to the door and give it a knock. You feel... Strong. More muscular than before, mamaF must have some pretty specific tastes tucked deep away.
+				t You walk up to the door and give it a knock. You feel... Strong. More muscular than before, mamaF must have some pretty specific tastes tucked deep away. You're too young-looking though to pose as someone like a plumber or a masseuse doing a house call. You'll just need to wing it.
 				t The door opens hesitantly.
 				sp mama; Can I help you?
 				sp player; Yeah, I'm... I'm here to deliver and work through these forms with you on request from some faculty at my school.
 				sp mama; I don't really-
 				sp player; Miss, I really do need to insist. They're important for your son's enrollment, let me in.
 				t It's a flimsy argument, but as she swallows dryly and relents in trying to close the door.
+				sp mama; O-okay, please come in.
+				t She's clearly off-kilter and trying to regain her composure. She draws an arm over her breasts, trying to keep herself in check. You probably look exactly like someone from one of her fantasies, so you'll need to play the part.
+				t She closes the door behind you and leads you to the kitchen, obviously wanting to get through this as soon as possible. You, however, take the time to look around, even picking up a picture of her kid off the dresser.
+				sp player; So, this is him, huh? Pretty twiggy, honestly.
+				sp mama; That is Kenji, yes. Please put that down, he doesn't like having his picture taken so I don't have many-
+				sp player; Honestly, it's a shame. A kid like this is gonna get walked all over, torn apart even.
+				sp mama; What is that supposed to mean?
+				t It's a bluff, the only students you really know are big-mouthed twinks and highschool bombshells, none of them really capable of tearing apart a tought plastic bag, let alone some brat.
+				sp player; Well, I mean if he doesn't act like a dick or anything, or be a whiny little bitch to anybody.
+				t You hit the nail right on the head as mamaF begins to sweat a little.
+				sp player; You alright, ma'am?
+				im imagebox/mama/023.jpg
+				sp mama; Y-yes, of course! I'm just... I'm sure everything will be fine. Now, those papers-
+				sp player; I could keep an eye out for him, you know.
+				t And now you have her attention. Suddenly she doesn't care about the papers, but about making sure her poor son isn't shredded by imaginary bullies at his new school.
+				sp player; I mean, maybe he's cool? Maybe I'll stick up for him out of the goodness of my heart.<br>But maybe I could use a little incentive too.
+				sp mama; What... What do you mean by that? You don't mean-
+				t It's the question on the tip of her tongue. What <i>do</i> you mean by that?
 			`);
 			writeFunction("writeEncounter('mamaBbcLewd')", "Take her body");
-			writeFunction("writeEncounter('mamaBbcNoLewd')", "Take her support on the PTSA");
+			writeFunction("writeEncounter('mamaBbcNoLewd')", "Have her stay out of the PTSA meeting");
 			break;
 		}
 		case "mamaBbcLewd": {
 			writeEvent(name);
+			writeHTML(`
+			...
+			t You take out your pendant, mamaF's glazed-over eyes barely able to follow the movement. You've got her in your pocket now.
+			t Obviously the first thing you do is make sure she'll obey you at the PTSA council meeting, but honestly this whole deal doesn't seem too bad. She's clearly getting off on the treatment, and you've got a new pet you can play with a little differently than the others. It all works out.
+			t So you leave her with a simple command, and from now on she'll be compelled to obey your every order. That should be enough, even if she pretends to resist.
+			t Your glorious work complete, all that's left to do is head home for the day.
+			`);
 			setTrust('mama', 20);
-			passTime();
+			data.player.time = "Night";
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "mamaBbcNoLewd": {
 			writeHTML(`
-			
+				sp player; It's very, very simple. All you need to do is stay out of the next council meeting. Just stay home that day.
+				sp mama; That's it? And then Kenji will-
+				sp player; I'll keep an eye out for him myself, no worries.
+				sp mama; A-and if he acts out, you won't get... He can be a little...
+				sp player; Even if he's the whiniest little bitch in the school, someone who desperately needs five fingers across the face.
+				t She gulps, satisfied.
+				sp mama; Okay. I'll stay home for as long as I need to. But if I hear even the slightest complaint about you, or anyone else at that school...
+				t By the time her son is attending, you'll be in full control.
+				t With her agreement you're in the clear, that's another member of the PTSA council down!
 			`);
 			setTrust('mama', 19);
 			passTime();
@@ -245,31 +278,42 @@ function writeEncounter(name) { //Plays the actual encounter.
 				case 20: {
 					writeHTML(`
 						im imagebox/mama/103.jpg;
+						sp mama; Ah, i-it's you... You came back...
+						sp player; Miss me? You and I have a lot of fun in our future, if you want your brat kept safe after all. Now, what to do...
 					`);
 					break;
 				}
 				case 30: {
 					writeHTML(`
+						sp mama; You again... What are you pla-
 						im imagebox/mama/202.jpg;
+						t You grab her by the back of the neck and pull her lips to yours. What do you have planned for today?
 					`);
 					break;
 				}
 				case 40: {
 					writeHTML(`
+						sp mama; Ah, hello... I d-don't suppose you're here for something else this time?
+						t You don't answer, just taking another step closer to her. She chuckles to mask her nervousness as she instinctively tries to push you away.
 						im imagebox/mama/100.jpg;
+						sp player; Oh?
+						sp mama; Oh, I'm sorry, I was just, uh... Admiring your chest. Your very... Firm...
+						t She is actually at a loss for words as her attempts to play it off are failing. What did you have planned for today?
 					`);
 					break;
 				}
 				default: {
 					writeHTML(`
+						t As you arrive she wordlessly opens the door and closes it behind you.
 						im imagebox/mama/203.jpg;
+						t At this point she's learned her place. What's your plan for this time?
 					`);
 				}
 			}
 			writeFunction("writeEncounter('mamaBbcCumWearing')", "Give her an appropriate makeover");
 			writeFunction("writeEncounter('mamaBbcBunny')", "Check her closet for a kinky outfit");
 			writeFunction("writeEncounter('mamaBbcTour')", "Take her on a tour of the school while still in disguise");
-			if (checkTrust('mama') > 40) {
+			if (checkTrust('mama') > 30) {
 				writeFunction("writeEncounter('mamaBbcMarriage')", "Make her properly swear devotion to you");
 			}
 			writeFunction("writeEncounter('cancel')", "Go back");
@@ -303,11 +347,22 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "mamaBbcMarriage": {
-			if (checkTrust('mama') < 90) {
-				raiseTrust('mama', 10);
-			}
+			setTrust('mama', 90);
 			writeEvent(name);
 			passTime();
+			writeFunction("writeEncounter('mamaBbcEnding')", "Stay");
+			writeFunction("writeEncounter('mamaBbcRefuse')", "Don't");
+			break;
+		}
+		case "mamaBbcRefuse": {
+			writeHTML(`
+				sp player; No.
+				t She gasps, suddenly looking horrified and broken-hearted all at once.
+				t You walk up and press your cock against her face, rubbing the still-wet dick against her nose.
+				sp player; You think this is yours? Fat chance yu greedy whore. Think for just one second about all the women in this city I could have. That I <b>will</b> have. Every one of them, broken on my cock just like you.
+				t Her eyes glaze over, she starts breathing deeply from the still messy with jizz rod rubbing against her face, before you take it away.
+				sp player; Picture it in your head as you get off tonight, and <i>maybe</i> I'll decide that your slutty body is fun enough to play with tomorrow.
+			`);
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -339,6 +394,15 @@ var eventArray = [
 function writeEvent(name) { //Plays the actual event.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+	var originalProfile = data.player.character;
+	if (data.player.noDisguise != true) {
+		if (name.includes("Son") == true) {
+			data.player.character = "son";
+		}
+		if (name.includes("Bbc") == true) {
+			data.player.character = "bbc";
+		}
+	}
 	switch (name) {
 		case "mamaSonCleaning": {
 			writeHTML(`
@@ -555,31 +619,96 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "mamaBbcLewd": {
 			writeHTML(`
-				im imagebox/mama/103.jpg
-				im imagebox/mama/106.jpg
+				sp player; It'll be easy. You and I can just have some harmless fun! You and I can get to know each other better.
+				sp mama; I... Okay, just...
+				t You grab her by the chin and silence her with a deep kiss. She probably thought that her body would instinctively reject you, maybe she'd slap you across the face, but no. She moans into your mouth, the proper response of a lonely, hungry housewife.
+				...
+				t She's putty in your hands. Slowly you escalate your commands and she meekly follows along, her mind whirling.
 				im imagebox/mama/129.jpg
+				sp mama; This... This isn't what most people mean when they suggest some 'harmless fun'.
+				sp player; You think I don't know what harmless means? You calling me stupid? 
+				sp mama; N-no! I just...<br><i>How did I get myself wrapped up in all this? I just... Need to...
 				im imagebox/mama/133.jpg
+				t The pretense at this point that this is all for her son is fading as the situation has spiralled out of mamaF's control. 
+				t You break the kiss, a line of saliva hangs between your tongues.
+				sp player; You're enjoying this, aren't you?
+				sp mama; Just... Just get this over with.
+				t She half growls, half moans as a line of love drool slides down her thigh.
+				t She takes a seat on her bed, telling herself that this is all for her son. That her demure attitude is for him, and that her body isn't eager at all.
+				t That it'll all be over soon.
+				t You crack your knuckles. Once she's yours it'll be the time for slow paced sex where you revel in her body and lust, but right now? Right now you need to break her. Being out of her mind in a post-orgasmic haze is just as good a time to hypnotize her as if she were relaxed.
+				t You take a deep breath and steel yourself for a marathon, and mamaF gulps.
+				...
 				im imagebox/mama/136.jpg
+				sp mama; Gghhh, you ffffucking animal, I can feel the condom inflating! Just stop cumming already!
+				...
 				im imagebox/mama/139.jpg
+				sp player; Say it! Scream it!
+				sp mama; You're fucking me so hard~! I can feel your massive cock breaking me apart~!
+				...
 				im imagebox/mama/140.jpg
+				sp mama; O-oh my gawd~! 
+				sp player; I'm gonna cum!
+				sp mama; N-nooooo~! We already used the last one! Pull it out, or ffFFFUCK~! NO~! I'/ll GET-
 				im imagebox/mama/142.jpg
+				Sp mama; GGGHHHHUUUUMMMING~
+				...
 				im imagebox/mama/144.jpg
+				sp mama; O-okay, it's probably okay. It just <i>feels</i> like a lot, like my womb is stuffed up. It won't happen, when was my last safe day? Think...
+				t She's lost in thought and rambling to herself, on the verge of losing her mind completely.
+				sp player; Here, let me help.
+				sp mama; Okay, if I take a pill... Where's the nearest-
 				im imagebox/mama/147.jpg
+				sp mama; ...!
+				sp player; You didn't think we were done, did you? You've already been creampied, so there's no harm in another round or two, right?
+				...
 				im imagebox/mama/153.jpg
+				t You recline on a chair as mamaF squirts across the bed. Her voice has already given out, so all she can do is wordlessly scream as she's on the verge of passing out.
+				sp player; I'm gonna grab a drink, then we can keep going, right?
+				sp mama; ...
 			`);
 			break;
 		}
 		case "mamaBbcBunny": {
 			writeHTML(`
 				im imagebox/mama/158.jpg
+				sp mama; T-tada! How do I look?
+				t It did not take you long at all to find something amazing in her closet, this bitch is seriously depraved. Of course she protested at first, but simply asking her to put it on with a smile was enough to convince her.
+				t Instead of responding to her, you just unzip and let your hard cock do the talking.
+				sp mama; It's... It's so... Y-you'll wear a condom, right? I have some, so-
+				sp player; Bitch, is that how you ask?
+				t You pick up a condom she had laying on a desk and toss it at her. She dryly swallows, and realizes how she should be begging.
 				im imagebox/mama/160.jpg
-				im imagebox/mama/162.jpg
+				sp mama; M-master, would you please put this on... So I can... Ghh... Drink it later, please?
+				t You take back the package, tear it, and drop the piece of plastic on her face.
+				sp player; Go ahead. No using your hands.
+				...
 				im imagebox/mama/164.jpg
+				sp player; God you're fucking tight! 
+				sp mama; Mmm~ Y-you're... You're just too big!
+				sp player; Stop pretending you don't love it!
+				sp mama; I-I don't!
+				im imagebox/mama/162.jpg
+				sp mama; Fff~ F-for my son! I'm not... I won't let you make me into your bitch, I'm only doing this-
 				im imagebox/mama/166.jpg
+				sp mama; Ah~!
+				sp player; <i>Make</i> you my bitch? Am I forcing you to moan like a bitch in heat? Am I forcing this slutty pussy to squirt?<br>Am I<br>Making!<br>You!<br>CUM?!
+				t You stop thrusting and pull out. She gasps, but her look of confusion is replaced with panic as you pull off the condom and throw it aside.
+				sp mama; P-please, I'll do what you want, but-
+				t You ignore her and turn her over as she barely even pretends to resist.
 				im imagebox/mama/168.jpg
+				sp player; Mouthy fucking slut, you'll talk garbage but the moment I thrust in your legs are wrapped around my hips!
+				sp mama; Ooooh~!
 				im imagebox/mama/170.jpg
+				sp player; Embrace it! You just wanna get ploughed all day and have these fat whore tits played with, right?
+				sp mama; Y-yes~! Harder~!
 				im imagebox/mama/172.jpg
+				sp mama; Cumming~!
+				t The sheets beneath you are soaked between what cum is leaking out of her cunt and all that she's squirting against your abdomen.
+				t Her arms fall from around you neck as her eyes roll back, then flutter closed. Cumming as hard as a firecracker, she's out like a light now.
+				t You pull out and a squirt of cum rushes from her cunt. You'll leave her to clean herself up when she wakes back up. As for you, you clean your dick off with her hair before getting dressed.
 			`);
+			writePhoneImage("imagebox/mama/160.jpg", "Art by Enoshima Iki");
 			break;
 		}
 		case "mamaBbcCumWearing": {
@@ -610,13 +739,13 @@ function writeEvent(name) { //Plays the actual event.
 				sp player; That's some pretty shit dirty talk, we'll be at this all day like this. 
 				sp mama; Sh-shut up~<br>Stop talking, someone might hear us~!
 				sp player; You're talking pretty loud though, and you're moaning even louder.
-				im imagebox/mama/228.jpg (edit to remove other man)
+				im imagebox/mama/228.jpg
 				sp mama; That's because yo-ffffffuuuh...<br>You're ruining... My pussy~ With your fat brute dick~!
 				sp player; Ruining? Ha, you'll be stroking your cunt remembering my little tour tonight, won't you?
 				sp mama; No, I won't~!
 				sp player; Don't lie. If a bitch can't manage to tell the truth, I'll-
 				sp mama; Not... Lying~!<br>I can't~! I can't cum with my fingers anymore~! I'll rub, I'll finger myself, but ever since you fucked me I can't... I can't...
-				im imagebox/mama/227.jpg (edit to remove other man)
+				im imagebox/mama/227.jpg
 				sp mama; Cumming~!
 				t She pants, exhausted. The orgasms at this point are obviously becoming strong enough almost to frighten her.
 				sp mama; Ghh...<br>Ah~! Stop, I need time to rest!
@@ -627,7 +756,7 @@ function writeEvent(name) { //Plays the actual event.
 				sp player; Did I stutter? You think I wore a rubber cause I'm polite? Fuck that, make a pretty face for the camera and show me how much you love those balloons so I have something to jerk off to later.
 				t mamaF swallows dryly as she holds the filled condoms in her hands, a dark tingle growing in her already well-fucked loins.
 				sp mama; <i>He's already cum twice, and he's already thinking of jerking off? How virile can one man be?</i>
-				t That word, <b>virile</b> echoes through her head as she poses as depravedly as she can for your camera.
+				t That word, <b>virile</b>, echoes through her head as she poses as depravedly as she can for your camera.
 				im imagebox/mama/229.jpg
 				t With each *click* of the camera, she shudders very slightly.
 				sp mama; <i>I'm getting my picture taken while holding a jizz balloon between my teeth...<br>Fuck, just imagining him jerking off to these pictures... Instead of cumming inside me...<br>No! I still need to resist, I can't-</i>
@@ -637,7 +766,7 @@ function writeEvent(name) { //Plays the actual event.
 				sp player; How's it taste? Show me.
 				t She drops the empty condom from between her teeth and answers with an open mouth, followed with a delirious smile.
 				im imagebox/mama/231.jpg
-				sp mama; It tastes so fucking baaaaad~! It's so much worse than when I suck it fresh out of your balls~<br>And it makes my womb quiver so fucking haaaaard~!
+				sp mama; It tastes so fucking baaaaad~! It's so much worse than when it's fresh out of your balls~<br>And it makes my womb quiver so fucking haaaaard~!
 				sp player; Damn straight, and it'll fry your brain even harder when you drink the other one tonight. Now, tongue back out, you wanna suck it, don't you? You wanna feel me cumming on your face?
 				sp mama; Uh-uh~!
 				t It's hard for her to lie through her teeth when she's sticking her tongue out to catch your sperm, but that's exactly what she does as she pants like a bitch in heat watching you jerk yourself back to full hardness.
@@ -653,20 +782,42 @@ function writeEvent(name) { //Plays the actual event.
 				sp player; Now... You go home, just like that... I'll be around to play with you again.
 				t She doesn't respond, her conscious mind on vacation right now. Barely able to move, she still tries to crawl towards you even as you leave. She's insatiable, but at least you left her with some snacks for tonight. Maybe they'll be enough for her to get off by herself, or maybe they'll just leave her more frustrated and ready for your next visit.
 			`);
+			writePhoneImage("imagebox/mama/229.jpg", "Art by Enoshima Iki");
 			break;
 		}
 		case "mamaBbcMarriage": {
-			setTrust('mama', 90);
 			writeHTML(`
+				im imagebox/mama/207.jpg
+				sp mama; Fffuck, when you pull my hair like that...!
+				im imagebox/mama/209.jpg
+				sp mama; Ahh~! I'm gonna... Gonna...!
+				t You grunt to show your dissatisfaction, and pull out.
+				sp mama; No! Wh-why'd you stop?!
+				sp player; We're doing something different this time.
+				sp mama; O-oh, really?
+				t She looks nervous as she pulls off her shirt, bracing herself for more degradation.
+				sp player; I'm tired of this bullshit song and dance. No more pretending this shit is for your son. If you want this dick, you'll need to beg for it.
+				t You carefully word your phrase so that it isn't a command, you want to see where she goes from here.
+				t And she hesitates. Her eyes linger on a nearby portrait on her wardrobe. You can clearly see the conflict in her eyes for a moment as her gaze moves to the side, away from the picture...
+				t Years of motherly love and devotion are being put to the test, right here, right now. Her eyes stop, leaving her staring at your cock, still wet with her cunt's juices.
+				sp mama; I... I want...<br>I want this... This fat, disgusting, hard cock to pump it's load in my unprotected cunt.
 				im imagebox/mama/174.jpg
+				sp mama; I want to feel it pummel my slutty pussy until I can't squirt anymore. I want to cum so hard the shame of giving myself up to you completely vanishes beneath a soul-shattering... Fucking...
 				im imagebox/mama/259.jpg
+				sp mama; Mmm~<br>I want to feel this massive dick's heat sear itself against my womb. I want to cum around it, knowing that every single stud sperm in your fat, fucking balls wants nothing more than to impregnate me.
 				im imagebox/mama/260.jpg
+				sp mama; Mpph~
+				t She sucks you down to the hilt before pulling back off with a *pop* and looking you right in the eyes.
+				sp mama; I want... I want you to grab me by the hair, and pull my face down around your-
+				sp player; Gladly.
+				t You pull her down and start smashing your cock down her throat, ignoring her *glrrrk*s and *glark*s as she never breaks eye contact with you. You feel your balls clench.
 				im imagebox/mama/261.jpg
-				im imagebox/mama/269.jpg
-				im imagebox/mama/271.jpg
-				im imagebox/mama/273.jpg
-				im imagebox/mama/241.jpg
-				im imagebox/mama/245.jpg
+				t She coughs, unable to handle your full load. Still, she's staring you in the eye and gulping down everything she can.
+				t You can hear her from here, staining the bed with a powerful squirt as she declares absolute submission to you with every facet of her being.
+				t By the time you've pulled out, she's already done swallowing. She's panting, hungry and desperate, but she grabs onto your wrist.
+				sp mama; I... I want you to stay...
+				t She's still going.
+				sp mama; I want you to be mine... I want you here... I want my son to see what I've become... With you... Forever...
 			`);
 			break;
 		}
@@ -676,6 +827,10 @@ function writeEvent(name) { //Plays the actual event.
 				im imagebox/mama/237.jpg
 				im imagebox/mama/239.jpg
 				im imagebox/mama/127.jpg
+				...
+				
+				im imagebox/mama/269.jpg
+				im imagebox/mama/245.jpg
 			`);
 			break;
 		}
@@ -684,6 +839,7 @@ function writeEvent(name) { //Plays the actual event.
 			break;
 		}
 	}
+	data.player.character = originalProfile;
 	//Don't touch the rest of this stuff, it has to do with unlocking scenes.
 	var unlockedScene = "";
 	for (i = 0; i < eventArray.length; i++) {
