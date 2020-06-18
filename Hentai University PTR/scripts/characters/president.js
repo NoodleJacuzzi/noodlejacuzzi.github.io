@@ -509,6 +509,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "treasurerCorruption": {
 			writeEvent("presidenttreasurerCorruption");
 			setTrust('president', 101);
+			passTime();
 			addFlag('president', 'treasurerCorrupted');
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;

@@ -36,7 +36,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t Normally you'd just walk past someone passing time on their phone, but something about her just seems... Off. Not quite in a bad way.
 				t ?trustMin succubus 1; Wait, something about this feeling is very familiar.
 				im imagebox/incubus/intro2.jpg
-				t She notices you, but instead of saying anything just starts walking to a nearby store. It's closed, but she turns the handle as though it's unlocked. 
+				t She notices you, but instead of saying anything she just starts walking to a nearby store. It's closed, but she turns the handle as though it's unlocked. 
 				t The sign on the front reads "MIDNIGHT BLISS", you aren't sure how you missed it before.
 			`);
 			data.player.incubusDiscount = 0;
@@ -186,7 +186,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust('mama') == 1) {
 				sale("incubusMama", 50, "images/mama/mama.jpg", "Mystic Perfume<br>Gives you a disguise to corrupt mamaF without needing to corrupt scarfF or nurseF.");
 			}
-			if (checkTrust('mama') > 79) {
+			if (checkTrust('mama') > 18) {
 				sale("mamaReset", 40, "images/mama/mama.jpg", "Chunky's Meal - mamaF<br>Erases mamaF's memories, allowing you to try something different with her.");
 			}
 			if (checkTrust('president') == 2 || checkTrust('president') == 3) {
@@ -232,7 +232,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp incubus; You can... Get them back? My boysh?
 				...
 				t After about an hour of backing up her system and making sure everything is up-to-date, she starts up the app to be greeted by a twinky-looking boy, who looks maybe twelve but is probably secretly over two-thousand years old or some shit.
-				t She snifs as tears form in her red eyes again, but this time tears of joy. Luckily she's recovered from her drug-addled state. Mostly.
+				t She sniffs as tears form in her red eyes again, but this time tears of joy. Luckily she's recovered from her drug-addled state. Mostly.
 				sp incubus; This is really recent! Thank you! I'll uh, give you a discount~! Oh, and that outfit I have in the back... Oh, thank you thank-
 				t She's interupted as the boy onscreen lets out a moan, apparently he's happy that her stamina meter is fully charged. Her eyes shoot open and her legs clench together.
 				t She looks sheepish as she moves around the cashier counter, stumbling to a door leading to a back room and muttering to herself.
@@ -276,8 +276,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeHTML(`
 				sp incubus; Another one, huh? Careful, you'll get addicted. And if your performance drops I'm upping the price, I've got my eyes on an event banner running for the week.
 				...
-				t You're led to the back room. Despite her attitude, incubusF is clearly as excited for another round as you are.
-				t You're led to a back room, a mostly-unused bed is here. There's the sound of something unclasping as incubusF tosses her skirt aside and leans into your chest before taking a deep breath.
+				t You're led to the back room. Despite her attitude, incubusF is clearly as excited for another round as you are. There's the sound unclasping as incubusF tosses her skirt aside and leans into your chest before taking a deep breath.
 				t She takes a deep breath, holding it in her lungs. As she exhales her scowl has faded. She leans in even closer for another deep inhale as her nose brushes against your skin. 
 				t Her eyes unfocus as a sweet smell fills the room. Seemingly satisfied she lays on the bed and waves her ass at you, lifting her cardigan to show you she's wearing nothing underneath.
 				im imagebox/incubus/creampie1.jpg
@@ -285,7 +284,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp incubus; Fff... Fuck, slow down... Pace yourself so I can finish too, alr-
 				im imagebox/incubus/creampie2.jpg
 				t incubusF is at a loss for words, deciding to give herself in and let herself be used.
-				t You slide her cardigan up further, copping a feel of her perky tits, before firmly grasping her hips again. The sight of her ass against your hips, the bizarre scent of hers, all of is messing with your head. You vision blurs over as you start to cum.
+				t You slide her cardigan up further, copping a feel of her perky tits, before firmly grasping her hips again. The sight of her ass against your hips, the bizarre scent of hers, all of it is messing with your head. Your vision blurs over as you start to cum.
 				im imagebox/incubus/creampie3.jpg
 				im imagebox/incubus/creampie4.jpg
 				t incubusF goes stiff beneath you. Something about your cum pushing, if now completely throwing her over the edge.
@@ -293,7 +292,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				...
 				im imagebox/incubus/creampie5.jpg
 				t You cum again, and it hits her like a ton of bricks. Her eyes roll back and her eyelids flutter, the sweet scent in the room grows tenfold as her muscles tense and a small stream of squirt soaks the bedding beneath you, then another, and another.
-				t She babbles something as her eyes close. Fatigue overtakes her. Whatever she's been doing to your nody is still ongoing, your heart is still racing, but exhaustion is starting to take its toll on you and you can't keep yourself upright much longer. At least you manage to fall to your side so you don't fall asleep on top of her.
+				t She babbles something as her eyes close. Fatigue overtakes her. Whatever she's been doing to your body is still ongoing, your heart is still racing, but exhaustion is starting to take its toll on you and you can't keep yourself upright much longer. At least you manage to fall to your side so you don't fall asleep on top of her.
 				...
 				t By the time you're awake again incubusF has left to sleep off the sexual haze, and you should get going.
 			`);
@@ -315,7 +314,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				...
 				t You're led to the back room. Despite her attitude, incubusF is clearly as excited for another round as you are.
 				im imagebox/incubus/blow1.jpg
-				t You relax yourself on the edge of a chair, incubusF doesnt take the time to get herself ready on your scent this time. 
+				t You relax yourself on the edge of a chair, incubusF doesn't take the time to get herself ready on your scent this time. 
 				t Both her hands on the floor she has the head of your cock in her mouth, running her long, flexible tongue around it.
 				im imagebox/incubus/blow2.jpg
 				t She looks up at you, as if she's carefully watching for every small twitch or groan of pleasure you make.
@@ -451,9 +450,9 @@ function writeEvent(name) { //Plays the actual event.
 				t She bites her lip to hold back a sudden moan, she's sopping wet so you meet no resistance inside her.
 				sp incubus; Fff... Fuck, slow down... Pace yourself so I can finish too, alr-
 				im imagebox/incubus/creampie2.jpg
-				t Something about her body is affecting you in a strange way. Your heart is racing, you feel like an beast in a rut.
+				t Something about her body is affecting you in a strange way. Your heart is racing, you feel like a beast in a rut.
 				t incubusF is at a loss for words, deciding to give herself in and let herself be used.
-				t You slide her cardigan up further, copping a feel of her perky tits, before firmly grasping her hips again. The sight of her ass against your hips, the bizarre scent of hers, all of is messing with your head. You vision blurs over as you start to cum.
+				t You slide her cardigan up further, copping a feel of her perky tits, before firmly grasping her hips again. The sight of her ass against your hips, the bizarre scent of hers, all of it is messing with your head. Your vision blurs over as you start to cum.
 				im imagebox/incubus/creampie3.jpg
 				sp incubus; Y-you finally calming down? Almost at your limit, huh? Even an animal needs-
 				im imagebox/incubus/creampie4.jpg
@@ -464,7 +463,7 @@ function writeEvent(name) { //Plays the actual event.
 				...
 				im imagebox/incubus/creampie5.jpg
 				t You cum again, and even though this time she's ready for your cum it still hits her like a ton of bricks. Her eyes roll back and her eyelids flutter, the sweet scent in the room grows tenfold as her muscles tense and a small stream of squirt soaks the bedding beneath you, then another, and another.
-				t She babbles something as her eyes close. Fatigue overtakes her. Whatever she's been doing to your nody is still ongoing, your heart is still racing, but exhaustion is starting to take its toll on you and you can't keep yourself upright much longer. At least you manage to fall to your side so you don't fall asleep on top of her.
+				t She babbles something as her eyes close. Fatigue overtakes her. Whatever she's been doing to your body is still ongoing, your heart is still racing, but exhaustion is starting to take its toll on you and you can't keep yourself upright much longer. At least you manage to fall to your side so you don't fall asleep on top of her.
 				...
 				t You wake up in the back room, still weary and sticky. incubusF is gone, but at least she left you a towel. There's a little card on top, reading 'congrats on surviving and being a VIP'.
 			`);
@@ -477,7 +476,7 @@ function writeEvent(name) { //Plays the actual event.
 				sp incubus; Of course. A girl of my... Circumstances... Needs to know everything there is about how best to use her mouth.
 				...
 				im imagebox/incubus/blow1.jpg
-				t You relax yourself on the edge of a chair, incubusF doesnt take the time to get herself ready on your scent this time. 
+				t You relax yourself on the edge of a chair, incubusF doesn't take the time to get herself ready on your scent this time. 
 				t Both her hands on the floor she has the head of your cock in her mouth, running her long, flexible tongue around it.
 				im imagebox/incubus/blow2.jpg
 				t She looks up at you, as if she's carefully watching for every small twitch or groan of pleasure you make.
@@ -552,7 +551,7 @@ var phoneArray = [//Lists the potential text events the player can receive at th
 function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
+		case "reward": {
 			writePhoneImage("imagebox/incubus/reward.jpg", "Art by Gujira");
 			writePhoneSpeech("incubus", "", "You've finished all of incubusF's content for this version, how would you like it to end?");
 			break;

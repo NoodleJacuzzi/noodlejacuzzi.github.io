@@ -19,6 +19,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "failure", name: "mama's house is here", requirements: "?trust mama 1; ?location vintageStreet; !flag mama disguise;", altName: "", altImage: "",},
 	{index: "mamaChoice", name: "mama's house is here", requirements: "?trust mama 2; ?location vintageStreet;", altName: "", altImage: "",},
 	{index: "mamaSonRepeat", name: "mama's house is here", requirements: "?trust mama 100; ?location vintageStreet;", altName: "", altImage: "",},
+	{index: "mamaBbcRepeat", name: "mama's house is here", requirements: "?trustMin mama 20; ?trustMax mama 99; ?location vintageStreet;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -78,7 +79,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t This is probably a decision you should think carefully about.
 				`);
 				writeFunction("writeEncounter('mamaSonStart')", "Disguise yourself as her son");
-				//writeFunction("writeEncounter('mamaBbcStart')", "Disguise yourself another way");
+				writeFunction("writeEncounter('mamaBbcStart')", "Disguise yourself another way");
 				writeFunction("writeEncounter('cancel')", "Go back");
 			break;
 		}
@@ -166,7 +167,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp mama; Oh that sounds wonderful~!
 				t With mamaF firmly in your pocket, the only question now is what will you do?
 			`);
-			setTrust('mama', 100);
 			writeFunction("writeEncounter('mamaSonCleaning')", "It's a mother's duty to clean her son thoroughly.");
 			writeFunction("writeEncounter('mamaSonAnime')", "Make her want to get into her son's hobbies to become closer no matter what");
 			writeFunction("writeEncounter('mamaSonCreampie')", "Make her desperately want her son to impregnate her");
@@ -209,9 +209,111 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "mamaBbcStart": {
 			writeHTML(`
+				t You take a deep breath and start applying what you gained from your helper. By the time you exhale, you're a new man.
+				sp player; Well, here goes nothing.
+				t You walk up to the door and give it a knock. You feel... Strong. More muscular than before, mamaF must have some pretty specific tastes tucked deep away.
+				t The door opens hesitantly.
+				sp mama; Can I help you?
+				sp player; Yeah, I'm... I'm here to deliver and work through these forms with you on request from some faculty at my school.
+				sp mama; I don't really-
+				sp player; Miss, I really do need to insist. They're important for your son's enrollment, let me in.
+				t It's a flimsy argument, but as she swallows dryly and relents in trying to close the door.
+			`);
+			writeFunction("writeEncounter('mamaBbcLewd')", "Take her body");
+			writeFunction("writeEncounter('mamaBbcNoLewd')", "Take her support on the PTSA");
+			break;
+		}
+		case "mamaBbcLewd": {
+			writeEvent(name);
+			setTrust('mama', 20);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "mamaBbcNoLewd": {
+			writeHTML(`
 			
 			`);
-			writeFunction("writeEncounter('mamaBbcLewd')", "Continue");
+			setTrust('mama', 19);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "mamaBbcRepeat": {
+			//I want her to slowly progress in terms of lewdness as you keep fucking with her, so I'll use a switch statement to generate her response when you show up. Each event will increase her trust by 10 up to a maximum of 90, after 50 she'll stop progressing so I'll use the default case. It'll be annoying to have the tab say things like 'friendly', but I don't want any confusing overlap with the son route's trust values.
+			switch(checkTrust('mama')) {
+				case 20: {
+					writeHTML(`
+						im imagebox/mama/103.jpg;
+					`);
+					break;
+				}
+				case 30: {
+					writeHTML(`
+						im imagebox/mama/202.jpg;
+					`);
+					break;
+				}
+				case 40: {
+					writeHTML(`
+						im imagebox/mama/100.jpg;
+					`);
+					break;
+				}
+				default: {
+					writeHTML(`
+						im imagebox/mama/203.jpg;
+					`);
+				}
+			}
+			writeFunction("writeEncounter('mamaBbcCumWearing')", "Give her an appropriate makeover");
+			writeFunction("writeEncounter('mamaBbcBunny')", "Check her closet for a kinky outfit");
+			writeFunction("writeEncounter('mamaBbcTour')", "Take her on a tour of the school while still in disguise");
+			if (checkTrust('mama') > 40) {
+				writeFunction("writeEncounter('mamaBbcMarriage')", "Make her properly swear devotion to you");
+			}
+			writeFunction("writeEncounter('cancel')", "Go back");
+			break;
+		}
+		case "mamaBbcCumWearing": {
+			if (checkTrust('mama') < 90) {
+				raiseTrust('mama', 10);
+			}
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "mamaBbcBunny": {
+			if (checkTrust('mama') < 90) {
+				raiseTrust('mama', 10);
+			}
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "mamaBbcTour": {
+			if (checkTrust('mama') < 90) {
+				raiseTrust('mama', 10);
+			}
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "mamaBbcMarriage": {
+			if (checkTrust('mama') < 90) {
+				raiseTrust('mama', 10);
+			}
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "mamaBbcEnding": {
+			writeEvent(name);
+			writeFunction("loadEncounter('system', 'credits')", "The End");
 			break;
 		}
 		default: {
@@ -227,6 +329,11 @@ var eventArray = [
 	{index: "mamaSonAnime", name: "A mother's duty is to entertain her son"},
 	{index: "mamaSonCreampie", name: "A mother's duty is to bear her son"},
 	{index: "mamaSonSolo", name: "A mother's duty is to get off on her son"},
+	{index: "mamaBbcLewd", name: "A mother's duty is to a virile bull"},
+	{index: "mamaBbcCumWearing", name: "A mother's duty is to look presentable"},
+	{index: "mamaBbcBunny", name: "A mother's duty is to breed like a rabbit"},
+	{index: "mamaBbcTour", name: "A mother's duty is to be educated"},
+	{index: "mamaBbcMarriage", name: "A mother's duty is to be married to a stud"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -443,6 +550,132 @@ function writeEvent(name) { //Plays the actual event.
 				t That's exactly what she needed to hear, her daze expression finally fades.
 				sp mama; Ara ara~<br>I'm so sorry honey, I don't know what I was thinking. Of course you'd never run away~! I'm sorry, I doubted you, punish mama thoroughly today, please? I need another spanking~!
 				sp player; Found a new fetish, huh? Alright, I'll indulge you for as long as you like.
+			`);
+			break;
+		}
+		case "mamaBbcLewd": {
+			writeHTML(`
+				im imagebox/mama/103.jpg
+				im imagebox/mama/106.jpg
+				im imagebox/mama/129.jpg
+				im imagebox/mama/133.jpg
+				im imagebox/mama/136.jpg
+				im imagebox/mama/139.jpg
+				im imagebox/mama/140.jpg
+				im imagebox/mama/142.jpg
+				im imagebox/mama/144.jpg
+				im imagebox/mama/147.jpg
+				im imagebox/mama/153.jpg
+			`);
+			break;
+		}
+		case "mamaBbcBunny": {
+			writeHTML(`
+				im imagebox/mama/158.jpg
+				im imagebox/mama/160.jpg
+				im imagebox/mama/162.jpg
+				im imagebox/mama/164.jpg
+				im imagebox/mama/166.jpg
+				im imagebox/mama/168.jpg
+				im imagebox/mama/170.jpg
+				im imagebox/mama/172.jpg
+			`);
+			break;
+		}
+		case "mamaBbcCumWearing": {
+			writeHTML(`
+				im imagebox/mama/210.jpg
+				im imagebox/mama/214.jpg
+				im imagebox/mama/215.jpg
+				im imagebox/mama/216.jpg
+			`);
+			break;
+		}
+		case "mamaBbcTour": {
+			writeHTML(`
+				im imagebox/mama/221.jpg
+				sp mama; Ah, so this is where all of the children run around, playing sports?
+				sp player; It's a university, not gonna be any kids running about.
+				im imagebox/mama/219.jpg
+				sp mama; You know, my darling Kenji isn't much a fan of running. Maybe once he's attended you could encourage him here? I think if he were to be a bit more active, he might find that... That...
+				t A bead of sweat runs down her cheek as you lead her towards the equipment shed.
+				sp mama; We aren't... Not here... The faculty here know my face...
+				sp player; Who gives a damn about some chatty bitch at some meetings? You backing out? This shed is pretty private at these hours. If you won't join me in here, that's fine. But in a few months I'll drag someone else back here and-
+				sp mama; No!<br>... Fine, alright, I'll go. We need to make this quick though, alright?
+				sp player; No promises, but hey. I brought condoms this time.
+				sp mama; Wha-? Why would we need...
+				...
+				im imagebox/mama/225.jpg
+				sp mama; Ah~! You scum~! You brute~!
+				sp player; That's some pretty shit dirty talk, we'll be at this all day like this. 
+				sp mama; Sh-shut up~<br>Stop talking, someone might hear us~!
+				sp player; You're talking pretty loud though, and you're moaning even louder.
+				im imagebox/mama/228.jpg (edit to remove other man)
+				sp mama; That's because yo-ffffffuuuh...<br>You're ruining... My pussy~ With your fat brute dick~!
+				sp player; Ruining? Ha, you'll be stroking your cunt remembering my little tour tonight, won't you?
+				sp mama; No, I won't~!
+				sp player; Don't lie. If a bitch can't manage to tell the truth, I'll-
+				sp mama; Not... Lying~!<br>I can't~! I can't cum with my fingers anymore~! I'll rub, I'll finger myself, but ever since you fucked me I can't... I can't...
+				im imagebox/mama/227.jpg (edit to remove other man)
+				sp mama; Cumming~!
+				t She pants, exhausted. The orgasms at this point are obviously becoming strong enough almost to frighten her.
+				sp mama; Ghh...<br>Ah~! Stop, I need time to rest!
+				sp player; No can do, I need another of these filled.
+				...
+				sp player; Now, we're gonna put those things to use. Pose for me.
+				sp mama; H-huh?
+				sp player; Did I stutter? You think I wore a rubber cause I'm polite? Fuck that, make a pretty face for the camera and show me how much you love those balloons so I have something to jerk off to later.
+				t mamaF swallows dryly as she holds the filled condoms in her hands, a dark tingle growing in her already well-fucked loins.
+				sp mama; <i>He's already cum twice, and he's already thinking of jerking off? How virile can one man be?</i>
+				t That word, <b>virile</b> echoes through her head as she poses as depravedly as she can for your camera.
+				im imagebox/mama/229.jpg
+				t With each *click* of the camera, she shudders very slightly.
+				sp mama; <i>I'm getting my picture taken while holding a jizz balloon between my teeth...<br>Fuck, just imagining him jerking off to these pictures... Instead of cumming inside me...<br>No! I still need to resist, I can't-</i>
+				sp player; Fuck yeah. I'll tell you what, you've been a good bitch today. I'll let you keep the red one as a snack for later, but I wanna see you drink up the blue one right now. Hands-free, you look good in that pose.
+				t As if she was waiting for an excuse to do it, she begins slurping as best as she can, like blowing a balloon in reverse.
+				t It isn't just a one-and-done deal, it takes a good amount of effort to suck the condom dry, each time the taste hits her tongue she whimpers and squirms, but does her best to keep her pose.
+				sp player; How's it taste? Show me.
+				t She drops the empty condom from between her teeth and answers with an open mouth, followed with a delirious smile.
+				im imagebox/mama/231.jpg
+				sp mama; It tastes so fucking baaaaad~! It's so much worse than when I suck it fresh out of your balls~<br>And it makes my womb quiver so fucking haaaaard~!
+				sp player; Damn straight, and it'll fry your brain even harder when you drink the other one tonight. Now, tongue back out, you wanna suck it, don't you? You wanna feel me cumming on your face?
+				sp mama; Uh-uh~!
+				t It's hard for her to lie through her teeth when she's sticking her tongue out to catch your sperm, but that's exactly what she does as she pants like a bitch in heat watching you jerk yourself back to full hardness.
+				sp player; Just for that, you're wearing it! And any of your new cum-makeup you don't eat is what you're walking home wearing!
+				im imagebox/mama/233.jpg
+				sp mama; Ah~!
+				t As you give her a good facial to use as today's makeup, you can hear something dripping onto the floor. Each inhale she makes fills her brain with the thick scent of jizz.
+				t All pretenses of resistance have faded away as you mark her to proclaim dominance.
+				...
+				t You've pushed yourself to the limit today. After her little facial she lapped it up so quickly that it hardly makes for a good punishment. So, you filled up another condom, and another, and then went bareback on her for good measure.
+				im imagebox/mama/235.jpg 
+				t Eves half-lidded, she slurps up the latest mess to dribble down her lips.
+				sp player; Now... You go home, just like that... I'll be around to play with you again.
+				t She doesn't respond, her conscious mind on vacation right now. Barely able to move, she still tries to crawl towards you even as you leave. She's insatiable, but at least you left her with some snacks for tonight. Maybe they'll be enough for her to get off by herself, or maybe they'll just leave her more frustrated and ready for your next visit.
+			`);
+			break;
+		}
+		case "mamaBbcMarriage": {
+			setTrust('mama', 90);
+			writeHTML(`
+				im imagebox/mama/174.jpg
+				im imagebox/mama/259.jpg
+				im imagebox/mama/260.jpg
+				im imagebox/mama/261.jpg
+				im imagebox/mama/269.jpg
+				im imagebox/mama/271.jpg
+				im imagebox/mama/273.jpg
+				im imagebox/mama/241.jpg
+				im imagebox/mama/245.jpg
+			`);
+			break;
+		}
+		case "mamaBbcEnding": {
+			writeHTML(`
+				im imagebox/mama/236.jpg
+				im imagebox/mama/237.jpg
+				im imagebox/mama/239.jpg
+				im imagebox/mama/127.jpg
 			`);
 			break;
 		}
