@@ -350,6 +350,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 			setTrust('mama', 90);
 			writeEvent(name);
 			passTime();
+			writeHTML(`
+				t You've got a descision to make. Are you a one-act man, so long as that act is a bombshell milf? Are you sticking around just to cuck some kid from his mom?
+			`);
 			writeFunction("writeEncounter('mamaBbcEnding')", "Stay");
 			writeFunction("writeEncounter('mamaBbcRefuse')", "Don't");
 			break;
@@ -713,10 +716,30 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "mamaBbcCumWearing": {
 			writeHTML(`
+				t As you start to undress, mamaF does the same until you raise a hand to stop her.
+				sp player; No. Keep them on.
+				sp mama; B-but this apron... It was a gift from-
+				sp player; Oh, you like gifts, huh?
 				im imagebox/mama/210.jpg
+				sp mama; Oh my...
+				sp player; See something you like? Don't worry, I've got my special gift right here.
 				im imagebox/mama/214.jpg
+				sp mama; I... I don't...
+				t Her head is spinning, she doesn't even have time to think as you start jerking off inches from her face.
+				t A bead of sweat runs down her face as she watches, unable to take her eyes off of you.
+				t Her licks her dry lips.
+				sp player; Tongue... Out!
 				im imagebox/mama/215.jpg
+				sp mama; Ah~!
+				t The powerful scent is messing with her brain, it feels warm wherever the jizz splashes onto her face.
+				t The first few jets are powerful enough that they blast against her tongue, even her hair, but...
 				im imagebox/mama/216.jpg
+				sp mama; Hah... Hah...
+				sp player; You like it?
+				t She nods. With how fried her brain is, it's almost certainly a reflexive action.
+				sp player; Good, cause you're wearing it all day. Let it soak in, you shouldn't have any trouble cumming tonight.
+				sp mama; B-but what if... Someone comes by?
+				sp player; Then you'll greet them with a smile.
 			`);
 			break;
 		}
@@ -823,13 +846,30 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "mamaBbcEnding": {
 			writeHTML(`
+				t It's been... Awhile. 
+				t A young man walks up to his mother's house. He's recieved some emails lately that sent him through a serious emotional journey. Rage, despair, jealousy...
+				t Lust.
+				t He was greeted with an emotional "It's so good to see you!" Like everything was normal.
 				im imagebox/mama/236.jpg
+				sp mama; So, was the flight too rough? Will you be ready once classes start next week?
 				im imagebox/mama/237.jpg
+				sp mama; Ah, that reminds me, I got a letter last week about tuition. I saved the bill.
 				im imagebox/mama/239.jpg
+				t There's a wet splurting sound as the pair of tits in the son's video are coated with cum. She's wearing nothing but a smile.
+				t Despite the lewd sounds of a titfuck, despite the soft giggling, despite how obvious it is that her son is watching porn, the mother's smile doesn't falter.
+				sp mama; Kenji? You got those videos I sent you, right? Did you watch them all-
+				t The boy jumps as he hears the door behind him open, but his mother's smile just widens.
 				im imagebox/mama/127.jpg
+				sp mama; Ah, Kenji, this is... Well, he'll be living here. I gave him your room, you don't mind right? But don't worry, he hasn't used it recently, so you should be fine most nights.
+				t The boy just gulps as you rub his mother's shoulder.
+				sp mama; Now, I'm sure you're tired, right? I know you just arrived, but I think you should get some rest.
 				...
-				
+				t Yet there isn't a trace of exhaustion in his body. He ignores his hunger, fakes being tired, and goes off to bed. Through the door he can hear giggling, moaning, and a soft "Not here, in the room."
+				t Once the sounds have stopped he sneaks out. The door to his mother's room has been left open just a crack.
 				im imagebox/mama/269.jpg
+				sp mama; Ara ara~<br>You're excited today, aren't you? Well, I am too. We should put on a good show, right? I have some special lingerie for you tonight.
+				t The door being open was intentional. There's no telling what's in store for the boy, but his mother's future is in your hands now.
+				...
 				im imagebox/mama/245.jpg
 			`);
 			break;
