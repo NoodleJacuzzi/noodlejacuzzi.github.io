@@ -665,6 +665,11 @@ function renamePlayer() {
 	loadEncounter("system", "prologue2");
 }
 
+function renamePlayerAlt() {
+	data.player.name = document.getElementById('nameSubmission').value;
+	changeLocation(data.player.location);
+}
+
 function renameEveryone() {
 	for (i = 0; i < data.story.length; i++) {
 		var sheet = 'nameSubmission' + i + '1';

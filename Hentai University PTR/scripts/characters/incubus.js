@@ -192,6 +192,21 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust('president') == 2 || checkTrust('president') == 3) {
 				sale("incubusPresident", 50, "images/president/president.jpg", "Demonic Consultation<br>incubusF will come by and convince presidentF that she should trust hypnosis, without you needing to bring other students by to convince her.");
 			}
+			if (data.player.gender == "man") {
+				sale("genderswap", 50, "scripts/gamefiles/profiles/basil.jpg", "Genderswap<br>Don't worry, you'll still have a dick. But if you want to look a little softer, be a little more feminine, I got you.<br>Comes with a free name change too.");
+			}
+			if (data.player.gender == "woman") {
+				sale("genderswap", 50, "scripts/gamefiles/profiles/basic.jpg", "Genderswap<br>Wanna be a little more rugged? Wanna be able to buy four comfortable shirts that fit you out of the packaging for just five dollars? I got you.<br>Comes with a free name change too.");
+			}
+			if (data.player.noDisguise != true) {
+				sale("noDisguise", 50, "scripts/gamefiles/profiles/son.jpg", "I hate disguises!<br>Dislike the disguises you use for some characters, like mamaF? I can make your speech normal at least.");
+			}
+			if (data.player.gps != true) {
+				sale("findmii", 50, "scripts/gamefiles/items/map.jpg", "Find Mii<br>Can't find somebody? Instead of asking chaos or something, buy this and everybody will be a cinch to find wherever they are. Town map not included.");
+			}
+			if (data.player.counseling < 9) {
+				sale("counseling", 500, "scripts/gamefiles/profiles/principal.jpg", "Counseling++<br>You didn't become a counselor to actually do your job, right? Consider this a kind of lesser nuclear option. Watch out for the PTSA though.");
+			}
 			writeFunction("writeEncounter('cancel')", "Leave");
 			if (checkTrust('incubus') == 4) {
 				writeEncounter('discount');
@@ -199,6 +214,88 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust('incubus') == 3) {
 				raiseTrust('incubus', 1);
 			}
+			break;
+		}
+		case "genderswap": {
+			if (data.player.gender == "man") {
+				data.player.gender = "woman";
+				data.player.title = "Miss";
+				data.player.honorific = "ma'am";
+				if (checkBody("basil") != true) {
+					var goof = {index: "basil", artist: "Art by Ishimura",};
+					data.bodytypes.push(goof);
+				}
+				data.player.character = "basil";
+				updateMenu();
+				writeHTML(`
+					t As you hand incubusF the money she takes a small can and sprays you in the face.
+					t it doesn't burn, but it does have a strange smell. By the time your vision has cleared up...
+					im scripts/gamefiles/characters/basil.jpg
+					sp player; It's done?
+					sp incubus; There you go. Fully reversible too, for cash. I've got a thing that'll handle the cleanup too, nobody will notice the change. You're a new woman. Congratulations...
+				`);
+				writeText("<input type='text' id='nameSubmission' value='Tomara'>");
+				writeFunction("renamePlayerAlt()", "Finish");
+			}
+			else {
+				data.player.gender = "man";
+				data.player.title = "Mister";
+				data.player.honorific = "sir";
+				if (checkBody("basic") != true) {
+					var goof = {index: "basic", artist: "Art by Ishimura",};
+					data.bodytypes.push(goof);
+				}
+				data.player.character = "basic";
+				updateMenu();
+				writeHTML(`
+					t As you hand incubusF the money she takes a small can and sprays you in the face.
+					t it doesn't burn, but it does have a strange smell. By the time your vision has cleared up...
+					im scripts/gamefiles/characters/basic.jpg
+					sp player; It's done?
+					sp incubus; There you go. Fully reversible too, for cash. I've got a thing that'll handle the cleanup too, nobody will notice the change. You're a new man. Congratulations...
+				`);
+				writeText("<input type='text' id='nameSubmission' value='Thomas'>");
+				writeFunction("renamePlayerAlt()", "Finish");
+			}
+			unencounter('incubus');
+			break;
+		}
+		case "noDisguise": {
+			data.player.noDisguise = true;
+			writeHTML(`
+				t incubusF picks up a small mirror, you can see your reflection in it.
+				sp incubus; There, for your dialogue at least. The mirror doesn't work on larger images.
+				sp player; ???
+				sp incubus; And if you want to re-enable it, use a cheat code. I'm not clogging up my store with that.
+				t She's speaking some arcane gibberish at you, it'd be best to finish up.
+			`);
+			writeFunction("writeEncounter('cancel')", "Leave");
+			break;
+		}
+		case "findmii": {
+			data.player.gps = true;
+			writeHTML(`
+				t incubusF types something into her phone, and yours buzzes.
+				sp incubus; That's a phone upgrade, it'll help you find people around town. Specifically hot ones. No more searching around. You'll need to have a town map to use it though. Basically life's on easy mode now.
+				sp player; What's hard mode?
+				t incubusF looks over to a box with UwU written on the front, and shudders.
+				sp incubus; You don't want to know.
+			`);
+			writeFunction("writeEncounter('cancel')", "Leave");
+			break;
+		}
+		case "counseling": {
+			writeHTML(`
+				t incubusF takes a small keyboard connected to what looks like a small game console, and types out the phrase "nuclear option".
+				t Suddenly, you feel... Trusted.
+			`);
+			writeSpecial("Victoria's trust in you has been greatly increased!");
+			writeHTML(`
+				sp incubus; Alright, that's that. This is an older console though, so it doesn't help your other skills. You also probably got a raise, so this'll probably pay for itself in... Maybe like fifty-six weeks? Probably faster to get some cash money directly.
+			`);
+			data.player.counseling = 9;
+			updateMenu();
+			writeFunction("writeEncounter('cancel')", "Leave");
 			break;
 		}
 		case "discount": {

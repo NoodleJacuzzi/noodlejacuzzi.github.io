@@ -297,7 +297,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 						t You don't answer, just taking another step closer to her. She chuckles to mask her nervousness as she instinctively tries to push you away.
 						im imagebox/mama/100.jpg;
 						sp player; Oh?
-						sp mama; Oh, I'm sorry, I was just, uh... Admiring your chest. Your very... Firm...
+						sp mama; Oh, I'm sorry, I was just, uh... Admiring your chest. You're very... Firm...
 						t She is actually at a loss for words as her attempts to play it off are failing. What did you have planned for today?
 					`);
 					break;
@@ -362,7 +362,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp player; No.
 				t She gasps, suddenly looking horrified and broken-hearted all at once.
 				t You walk up and press your cock against her face, rubbing the still-wet dick against her nose.
-				sp player; You think this is yours? Fat chance yu greedy whore. Think for just one second about all the women in this city I could have. That I <b>will</b> have. Every one of them, broken on my cock just like you.
+				sp player; You think this is yours? Fat chance you greedy whore. Think for just one second about all the women in this city I could have. That I <b>will</b> have. Every one of them, broken on my cock just like you.
 				t Her eyes glaze over, she starts breathing deeply from the still messy with jizz rod rubbing against her face, before you take it away.
 				sp player; Picture it in your head as you get off tonight, and <i>maybe</i> I'll decide that your slutty body is fun enough to play with tomorrow.
 			`);
@@ -652,7 +652,7 @@ function writeEvent(name) { //Plays the actual event.
 				im imagebox/mama/140.jpg
 				sp mama; O-oh my gawd~! 
 				sp player; I'm gonna cum!
-				sp mama; N-nooooo~! We already used the last one! Pull it out, or ffFFFUCK~! NO~! I'/ll GET-
+				sp mama; N-nooooo~! We already used the last one! Pull it out, or ffFFFUCK~! NO~! I'LL GET-
 				im imagebox/mama/142.jpg
 				Sp mama; GGGHHHHUUUUMMMING~
 				...
@@ -727,7 +727,7 @@ function writeEvent(name) { //Plays the actual event.
 				sp mama; I... I don't...
 				t Her head is spinning, she doesn't even have time to think as you start jerking off inches from her face.
 				t A bead of sweat runs down her face as she watches, unable to take her eyes off of you.
-				t Her licks her dry lips.
+				t She licks her dry lips.
 				sp player; Tongue... Out!
 				im imagebox/mama/215.jpg
 				sp mama; Ah~!
