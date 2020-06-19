@@ -1190,17 +1190,17 @@ function writeEvent(name) { //Plays the actual event.
 				sp succubus; im demon.jpg; It might be slow-acting. Cmon, let's get ready for when they take effect.
 				...
 				sp succubus; im demon.jpg; M-master? I, um... I'm not sure it's working.
-				im imagebox/succubus/067.jpg
+				im images/succubus/067.jpg
 				sp succubus; im demon.jpg; M-maybe you could untie me, and we could try something different?<br>Ah, you can just untie me, I don't keep clippers in the box or anyth...
 				t You dig through the box of toys succubusF brought over and pull out some things that catch your eye.
 				sp succubus; im demon.jpg; Eheh... V-very funny, but those are, uh...<br>Listen, my body's more sensitive than a normal person, so maybe we should just leave those unti-<br>Hey, heyheyhey wait a-<br>Mpph! Mmmmph!
-				im imagebox/succubus/067a.jpg
+				im images/succubus/067a.jpg
 				sp player; It's kicking in just fine from me, and your cock's being pretty honest with how hard it is.<br>It <i>is</i> hard, right? It's hard to tell sometimes.
 				sp succubus; im demon.jpg; Mppph~!
 				t He sputters and jerks on the spot as best he can.
 				sp player; Now you just hold still for a moment, plenty of toys in this little box to play with, and we've got all night together.
 				t You grab some more goods and connect them to the squirming boy beneath you with some tape. Despite his earlier protests...
-				im imagebox/succubus/067b.jpg
+				im images/succubus/067b.jpg
 				sp player; You're already leaking, huh? Are these special vibes, or are you so much of a pervert that these little toys are enough to break your will?
 				sp succubus; im demon.jpg; Phhooh~!<br>Mpphphrr~!
 				sp player; I'll give you one chance. If you can last just a few seconds now without leaking any more, I'll untie you.
@@ -1208,13 +1208,13 @@ function writeEvent(name) { //Plays the actual event.
 				sp player; And if you can't, I'll fuck you until you can't see straight, then I'll pound you even harder while these vibes go off at max power.
 				t His breathing hitches, his ass clenches reflexively, and you can see a small almost-transparent drop of precum at the crotch of his outfit.
 				sp player; Good answer
-				im imagebox/succubus/068.jpg
+				im images/succubus/068.jpg
 				sp succubus; im demon.jpg; Mpppph~! Mh-hh-hh-hhh~!
 				t He flexes and squrms but he can't break through the ropes or the iron bar keeping his legs spread. You turn a small dial and the sound of buzzing becomes very audible.
 				t Between the stimulation to his little cocklette, his puffy nipples, and the sensation of a powerful dick giving his prostate plenty of lovetaps, it's obvious that his willpower has shattered.
 				sp player; D-damn, I'm already close~! You want it inside, right?
 				sp succubus; im demon.jpg; Mhhhm~! Mhhhm~!
-				im imagebox/succubus/069.jpg
+				im images/succubus/069.jpg
 				sp succubus; im demon.jpg; Phhhhhhckck~!
 				t As if on command his body shudders as he cums hard enough to leak through the suit. He's gasping for breath, before his body jerks in response to the feeling of cum inside him fucking his body up, hard.
 				sp player; Hoo... Now, I'm pulling out, but don't you worry. You brought us enough toys to last the night. You ready?
@@ -1222,7 +1222,7 @@ function writeEvent(name) { //Plays the actual event.
 				sp player; Good girl.
 				...
 				t Finally you feel the potion's effects starting to wear off, and the exhaustion is starting to set in. You're back to your senses.
-				im imagebox/succubus/070.jpg
+				im images/succubus/070.jpg
 				sp succubus; im demon.jpg; Maaa... Mathter...
 				t He's soaked to the bone in cum, every vibe in the box still noisily buzzing as they pleasure his cocklette and nipples.
 				t Two large vibrators and several beads in his ass keep his bitch hole satisfied, and a little clamp over his tongue keeps him from pulling it back in making it harder to swallow.
@@ -1239,17 +1239,17 @@ function writeEvent(name) { //Plays the actual event.
 				...
 				sp succubus; im demon.jpg; Now hold still, lemme just... Oh, these are really comfy.
 				sp player; I... I think the potions are kicking in...
-				im imagebox/succubus/020.jpg
+				im images/succubus/020.jpg
 				sp succubus; im demon.jpg; Oh? <br>... Oh. You're enjoying this already, huh?
 				t He's really flexible, slowly stroking your length with his feet.
 				sp succubus; im demon.jpg; Ooh, looks like that got a reaction out of you. Is my big, strong master getting off on this? You know, if you just tried really <b>hard</b> you could overpower me right now. 
-				im imagebox/succubus/021.jpg
+				im images/succubus/021.jpg
 				sp succubus; im demon.jpg; But you won't! Hehe, my big puppy of a master just wants to get off any way he can! <br>Don't you worry my sweet little master, I'll play with you. Whenever you want, whenever you feel that perverted throbbing in your balls, I can be there. You'll never need to look at another skanky boi. 
 				t He's speeding up now, stimulating the head of your dick before returning to stroking your shaft.
 				sp succubus; im demon.jpg; You want to cum? Of course you do, that's all you ever want. But instead of plowing my fuckable hole, you're just going to spray it all over my feet! <br>Aha~! Don't worry master, no matter what kind of pathetic face you make when you start splurting, you'll always be mine! <br>My ass, my mouth, maybe something kinkier like my armpits, I'll never leave my precious pleasure piggy behind~! 
-				im imagebox/succubus/022.jpg
+				im images/succubus/022.jpg
 				sp succubus; im demon.jpg; Aha, ahahaha~! You're cumming! Just this once, I'm in charge, and I say you don't get to stop squirting until my feet are covered in your slime~!
-				im imagebox/succubus/022a.jpg
+				im images/succubus/022a.jpg
 				sp succubus; im demon.jpg; Ehe, eheheh~! More, more~! Spray every drop from that filthy cock~! <br>Get addicted to my soles and be <b>my</b> servant for tonight~! Ahahaha~! 
 				t Even as your orgasm starts to wind down, the addictive drug that is a succubus's body is pushing you to the edge again already. 
 				t His eyes have a manic hunger in them as he keeps stroking your still-sensitive dick, every bit of reservation fading from his mind. Even as he's cackling about finally having control, you can actually see some fluid splurting from the crotch of his hotpants.
