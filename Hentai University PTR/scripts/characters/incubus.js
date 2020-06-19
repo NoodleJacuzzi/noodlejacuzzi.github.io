@@ -685,7 +685,7 @@ function sale(encounter, cost, image, text) {
 	else {
 		document.getElementById('output').innerHTML += `
 			<div class = "shopItem">
-				<p class = "shopDesc">`+text+` - <b>TOO EXPENSIVE!</b></p>
+				<p class = "shopDesc">`+replaceCodenames(text)+` - <b>TOO EXPENSIVE!</b></p>
 				<p class = "shopPrice">$`+finalPrice+`</p>
 				<img class ="shopImage" src="`+image+`">
 			</div>
