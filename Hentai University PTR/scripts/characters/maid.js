@@ -779,7 +779,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 				else{
 					if(checkFlag('maid','fullSub') != true){
 						addFlag('maid','fullSub');
-						setTrust('maid',28);
+						if(checkTrust('maid') < 28)
+							setTrust('maid',28);
 					}
 					writeText("When you two arrive at her place, maidF barely lets the door shut all the way before wrapping her arms around you from behind.");
 					writeText("She gently rests her chin on your shoulder, her breath feeling warm against your ear.");
@@ -1398,6 +1399,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "maidTalkedMistress" : {
 			document.getElementById('output').innerHTML = '';
+			passTime();
 			writeSpeech("player","","Actually, I spoke with mistressF.");
 			writeText("maidF pauses for a moment, before smiling almost excitedly.");
 			writeSpeech("maid","","That's wonderful! You two got along well, I hope?");

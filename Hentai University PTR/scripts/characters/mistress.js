@@ -25,7 +25,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 {index: "mistress4", name: "mistress is at the same bench, but she seems to be stretching her legs.", location: 'parkDistrict', time: "MorningEvening", itemReq: "", trustMin: 42, trustMax: 44, type: "tab", top: 0, left: 0, day: "even",},
 {index: "mistress5", name: "You can see maidF's friend, mistress, sitting on the bench, swinging her legs playfully while humming.", requirements: "?trust mistress 55; ?location parkDistrict;", altName: "", altImage: "",},
 {index: "mistress6", name: "You can see mistress at the bench again, but she seems to be stretching her legs this time.", requirements: "?trust mistress 45; ?location parkDistrict;", altName: "", altImage: "",},
-{index: "mistress7", name: "You can see mistress at the bench again, humming a soft melody while kicking the dirt playfully.", requirements: "?trust mistress 115; ?location parkDistrict;", altName: "", altImage: "",},
+{index: "mistress7", name: "You can see mistress at the bench again, humming a soft melody while kicking the dirt playfully.", requirements: "?trustMin mistress 100; ?trustMax mistress 115; ?location parkDistrict;", altName: "", altImage: "",},
 ]
 
 function writeEncounter(name) { //Plays the actual encounter.
