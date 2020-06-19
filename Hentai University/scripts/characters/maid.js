@@ -29,14 +29,18 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "maid5", name: "maid is standing near the cafe, softly humming to herself as she looks around.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 25, trustMax: 28, type: "tab", top: 0, left: 0, day: "odd",},
 
 	//Mistress-First Route
-	//{index: "maidA1", name: "You can see maid standing near a cafe. Based on the bag she's carrying, she must've just finished shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 30, trustMax: 30, type: "tab", top: 0, left: 0, day: "odd",},
-];
+	{index: "maidA1", name: "You can see mistressF's friend, maid, standing near a cafe. Based on the bag she's carrying, she seems to be shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 30, trustMax: 30, type: "tab", top: 0, left: 0, day: "odd",},
+	{index: "maidA1", name: "You can see mistressF's friend, maid, standing near a cafe. Based on the bag she's carrying, she seems to be shopping.", requirements: "?trustMax maid 29; ?trust mistress 50; ?location shoppingDistrict;", altName: "", altImage: "",},
+	{index: "maidA2", name: "maid seems to be standing near a cafe. She doesn't have her baskets this time, so it doesn't seem like she's shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 105, trustMax: 110, type: "tab", top: 0, left: 0, day: "odd",},
+	{index: "maidA3", name: "maid seems to be standing near a cafe. She seems to have just finished shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 115, trustMax: 115, type: "tab", top: 0, left: 0, day: "odd",},
+
+	];
 
 function writeEncounter(name) { //Plays the actual encounter.
-	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "maid1" : {//Introduce Maid while she's shopping
+		case "maid1" : {
+			document.getElementById('output').innerHTML = '';
 			writeText("The maid stands out quite a bit as she moves around the shop, her eyes quickly combing the shelves.");
 			writeBig("images/maid/profile.jpg","Art by Oreteki18kin");
 			writeText("After a few more seconds, she notices you staring.");
@@ -46,6 +50,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maid1a" : {
+			document.getElementById('output').innerHTML = '';
 			writeSpeech("player","","Sorry, it's just that you don't exactly see a lot of people in maid outfits nowadays.");
 			writeText("She smiles wryly.");
 			writeSpeech("maid","","That's fair. It's a bit old-fashioned, perhaps, but I think there's some value in that, too.");
@@ -78,14 +83,16 @@ function writeEncounter(name) { //Plays the actual encounter.
 			passTime();
 			break;
 		}
-		case "maid2" : {//Meet Maid in the shopping district again, she invites you over and gives you a titjob while hypno'd
+		case "maid2" : {
+			//Meet Maid in the shopping district again, she invites you over and gives you a titjob while hypno'd
+			document.getElementById('output').innerHTML = '';
 			writeSpeech("maid","","Ah, "+data.player.name+". I was hoping I'd see you before I left.");
 			writeSpeech("player","","Sorry to keep you waiting, then. What's up?");
 			writeSpeech("maid","","I enjoyed our talk yesterday, and was interested to know if you'd like to chat? I'm headed home now.");
 			writeSpeech("player","","Sounds great. Are we walking, or...?");
 			writeSpeech("maid","","Driving.")
 			writeText("She grins wryly.");
-			writeSpeech("maid","","I'm not <i>nearly</i> so cruel as to force you to carry these all the way to park district.");
+			writeSpeech("maid","","I'm not <i>nearly</i> so cruel as to force you to carry these all the way to the park district.");
 			writeText("...");
 			writeText("The two of your arrive at her place fairly quickly, and putting away her purchases is quick.");
 			writeText("You spend most of the time talking about your jobs. She, being a maid, usually handles cleaning her boss's apartment... which, apparently, is a challenge given how large it is.");
@@ -153,6 +160,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maid3" : {
+			document.getElementById('output').innerHTML = '';
 			writeSpeech("player","","Not shopping today?");
 			writeText("maidF turns and smiles to you.");
 			writeSpeech("maid","","Not today, no. I had some other business to attend to here, but thought you might come by.");
@@ -163,6 +171,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maid3a" : {
+			document.getElementById('output').innerHTML = '';
 			writeSpeech("player","","If it's important, then I can <i>make</i> time.");
 			writeText("She nods, the two of you walking to her car...");
 			writeText("...");
@@ -180,6 +189,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maid3aa" : {
+			document.getElementById('output').innerHTML = '';
 			if(checkTrust('maid') == 21)
 				setTrust('maid',22);
 			writeSpeech("player","","I never assumed that <i>was</i> normal. I mean, do you think that sort of thing is normal for <i>me?</i>");
@@ -206,6 +216,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maid3ab" : {
+			document.getElementById('output').innerHTML = '';
 			if(checkTrust('maid') == 21)
 				setTrust('maid',23);
 			writeText("Seems like it's time for a little damage control...");
@@ -264,6 +275,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maid4" : {
+			document.getElementById('output').innerHTML = '';
 			passTime();
 			setTrust('maid',25);
 			writeText("You approach her, waving casually as she spots you.");
@@ -389,8 +401,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("She takes a moment to fish out her wallet, pulling out a picture and handing it to you.");
 				writeBig("images/mistress/profile.jpg", "Art by Oreteki18kin");
 				if(checkTrust('mistress') == 40){
-					addFlag('maid','first');
-					addFlag('maid','mistress40');
+					if(!checkFlag('maid','first'))
+						addFlag('maid','first');
+					if(!checkFlag('maid','mistress40'))
+						addFlag('maid','mistress40');
 					writeSpeech("player","","...Anna?");
 					writeText("maidF pauses.");
 					writeSpeech("maid","","You know her?");
@@ -433,7 +447,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 				}
 				else if(checkTrust('mistress') == 41 || checkTrust('mistress') == 43){
 					setTrust('mistress',45);
-					addFlag('maid','first');
+					if(!checkFlag('maid','first'))
+						addFlag('maid','first');
 					writeSpeech("player","","...Anna?");
 					writeText("maidF pauses.");
 					writeSpeech("maid","","You know her?");
@@ -489,6 +504,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 				}
 				else{
 					setTrust('mistress',55);
+					if(!checkFlag('maid','first'))
+						addFlag('maid','first');
 					writeSpeech("maid","","This is mistressF mistressL. We've been friends since college, and... to be frank, we're not exactly <i>unfamiliar</i> with each other.");
 					writeSpeech("player","","...I feel like you're implying something, but I also feel like it would be rude to assume.");
 					writeSpeech("maid","","We've been friends with benefits for years. However, we've been talking recently about certain... <i>things.</i>");
@@ -524,7 +541,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maid4a" : {
-			addFlag('maid','cafeDark');
+			document.getElementById('output').innerHTML = '';
+			if(!checkFlag('maid','cafeDark'))
+				addFlag('maid','cafeDark');
 			writeText("After she sets down your coffee, you take a moment to look over her.");
 			writeBig("images/cafedark/profile.jpg","Art by Oreteki18kin");
 			writeText("Nice.");
@@ -541,6 +560,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maid5" : {
+			document.getElementById('output').innerHTML = '';
 			//IN PROGRESS, IGNORE ME
 			if(checkTrust('maid') == 25){
 				setTrust('maid',26);
@@ -548,39 +568,49 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("She smiles as she shakes her head.");
 				writeSpeech("maid","","Not at all. You have quite the remarkable tendency to arrive just as I'm finishing up, playerF.");
 				writeSpeech("player","","The side-effect of a well-coordinated schedule, I guess.");
-				if(checkTrust('mistress') == 55 || checkTrust('mistress') == 45 || checkTrust('mistress') == 40 || checkTrust('mistress') == 50){
+				if(checkTrust('mistress') == 55 || checkTrust('mistress') == 45 || checkTrust('mistress') == 40 || checkTrust('mistress') == 50 || checkFlag('maid','TalkedMistress')){
 					writeSpeech("maid","","It seems so. I, um...");
 					writeText("Her tone lowers a bit, taking a step closer to you.");
 					writeSpeech("maid","","I don't suppose you've talked to mistressF about... what we discussed?");
 					writeSpeech("player","","Not yet. My schedule's been a bit busy lately.");
 					writeText("She nods, smiling gently.");
-					writeSpeech("maid","","I understand. mistressF said she might be busy for a while too - a shame, but an unavoidable one.");
-					//writeSpeech("maid","","Of course, of course. I don't mean to sound impatient or anything, I'm just... I'd be lying if I said the thought didn't excite me.");
+					// writeSpeech("maid","","I understand. mistressF said she might be busy for a while too - a shame, but an unavoidable one.");
+					writeSpeech("maid","","Of course, of course. I don't mean to sound impatient or anything, I'm just... I'd be lying if I said the thought didn't excite me.");
 					writeText("She thinks for a moment.");
-					writeSpeech("maid","","I'm not sure when she'll be available again, but I do know that she likes to relax in the park, so you might find her there when her schedule clears up.");
-					//writeSpeech("maid","","If you're ever looking for her, she does enjoy her walks in the park. You should be able to find her there on most days that I'm busy.");
+					// writeSpeech("maid","","I'm not sure when she'll be available again, but I do know that she likes to relax in the park, so you might find her there when her schedule clears up.");
+					writeSpeech("maid","","If you're ever looking for her, she does enjoy her walks in the park. You should be able to find her there on most days that I'm busy.");
 					writeSpeech("player","","I'll keep that in mind. Though, in the meantime, why don't we take some time to relax between the two of us?");
 					writeText("maidF shifts in place for a moment, looking a bit unsure.");
 					writeSpeech("maid","","Well, mistressF did say it was fine, but I'm not sure about doing... <i>that</i> before you speak with her.");
 					writeFunction("writeEncounter('maid5a')", "\"If mistressF's fine with it, what's the problem?\"");
-					writeFunction("changeLocation(data.player.location)", "\"I'll come back after talking to mistressF.\"");
+					if(checkFlag('maid','TalkedMistress'))
+						writeFunction("writeEncounter('maidTalkedMistress')", "\"Actually, I 'spoke' to mistressF...\"");
+					writeFunction("changeLocation(data.player.location)", "\"I'll come back later.\"");
 				}
 			}
 			else{
 				writeSpeech("maid","","Ah, playerF! You're doing well today, I hope?");
-				writeSpeech("player","","Yup. Though, I haven't found the time to talk to mistressF yet.");
-				writeText("She nods understandingly.");
-				writeSpeech("maid","","She's been quite busy lately, so I'm not surprised. She's surprisingly diligent at times like these.");
-				//writeSpeech("maid","","Whenever you find the time is perfectly alright. Was there something you wanted to talk about?");
+				if(!checkFlag('maid','TalkedMistress')){
+					writeSpeech("player","","Yup. Though, I haven't found the time to talk to mistressF yet.");
+					writeText("She nods understandingly.");
+					writeSpeech("maid","","Whenever you find the time is perfectly alright. Was there something you wanted to talk about?");
+				}
+				else{
+					writeSpeech("player","","I have, yup. How about you?");
+					writeSpeech("maid","","I've been quite well myself. Was there anything you wanted to do, since we're together?");
+				}
 				if(checkFlag('maid','fuck55'))
-					writeFunction("writeEncounter('maid5a')", "\"In the meantime, how about we head to your place again?\"");
+					writeFunction("writeEncounter('maid5a')", "\"How about we head to your place again?\"");
 				else
 					writeFunction("writeEncounter('maid5a')", "\"You mentioned that mistressF was fine with us, so...\"");
-				writeFunction("changeLocation(data.player.location)", "\"I'll come back after talking to mistressF.\"");
+				if(checkFlag('maid','TalkedMistress'))
+					writeFunction("writeEncounter('maidTalkedMistress')", "\"Actually, I 'spoke' to mistressF...\"");
+				writeFunction("changeLocation(data.player.location)", "\"I'll come back later.\"");
 			}
 			break;
 		}
 		case "maid5a" : {
+			document.getElementById('output').innerHTML = '';
 			passTime();
 			if(checkTrust('maid') == 25){
 				writeSpeech("player","","mistressF said that there's no problem with it, right?");
@@ -632,6 +662,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maid5b" : {
+			document.getElementById('output').innerHTML = '';
 			//first-time fuck
 			//First, we check if the player has seen maid2. If not, play maid2.
 			//If so, check if the player has fucked maid in her uniform.
@@ -730,7 +761,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 						writeSpeech("maid","","And whose fault could that be, I wonder?");
 						writeText("She smiles as she looks over her shoulder at you, winking.");
 						writeSpeech("maid","","I'll go get changed so we can get started, playerF~");
-						//writeFunction("writeEvent('maid3')", "Have her keep her uniform on");
+						writeFunction("writeEvent('maid3')", "Have her keep her uniform on");
 						writeFunction("writeEvent('maid2A')", "Let her get changed again");
 						break;
 					}
@@ -740,7 +771,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 						writeSpeech("maid","","Absolutely.");
 						writeText("She smiles as she looks over her shoulder at you, winking.");
 						writeSpeech("maid","","I'll go get changed so we can get started, playerF~");
-						//writeFunction("writeEvent('maid3')", "Have her keep her uniform on");
+						writeFunction("writeEvent('maid3')", "Have her keep her uniform on");
 						writeFunction("writeEvent('maid2A')", "Let her get changed again");
 						break;
 					}
@@ -748,12 +779,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 				else{
 					if(checkFlag('maid','fullSub') != true){
 						addFlag('maid','fullSub');
-						setTrust('maid',28);
+						if(checkTrust('maid') < 28)
+							setTrust('maid',28);
 					}
 					writeText("When you two arrive at her place, maidF barely lets the door shut all the way before wrapping her arms around you from behind.");
 					writeText("She gently rests her chin on your shoulder, her breath feeling warm against your ear.");
 					writeSpeech("maid","","Am I getting changed this time, or do you want to just get right to the fun parts, <i><b>*Master~?</b></i>");
-					writeFunction("writeEvent('maid3A')", "Have her keep her uniform on again");
+					//writeFunction("writeEvent('maid3A')", "Have her keep her uniform on again");
 					writeFunction("writeEvent('maid2A')", "Have her change into her robes again");
 					break;
 				}
@@ -761,8 +793,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maidEvent2A" : {
+			document.getElementById('output').innerHTML = '';
 			if(checkFlag('maid','anal') != true){
-				addFlag('maid','anal');
+				if(!checkFlag('maid','anal'))
+					addFlag('maid','anal');
 				writeText("While she's still panting, her hands holding her pussy open, you grin down at her.");
 				writeSpeech("player","","If you think you're feeling filled up now, let's see how you feel about <i>this.</i>");
 				writeText("You drag your cock down to her ass as her eyes go wide.");
@@ -798,7 +832,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("maid","","Please... C-Cum inside!");
 				writeText("You frown down at her, slowing down more.");
 				writeSpeech("player","","I said <i>properly.</i>");
-				writeSpeech("maid","","Master, <i>please </i> fill this dirty buttslut's ass with your cum~!");
+				writeSpeech("maid","","*Master, <i>please</i> fill this dirty buttslut's ass with your cum~!");
 				writeText("You smile and nod, looking into her eyes.");
 				writeSpeech("player","","<i><b>Good girl.</b></i>");
 				writeText("Just as her body starts to shudder from the praise, you <b>hammer</b> yourself in.");
@@ -820,7 +854,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("When you're all washed up and no longer covered in a mixture of your and maidF's juices, you see her walking towards the door with the tell-tale posture of someone who had a bit of rough fun.");
 				writeSpeech("maid","","Ah, I forgot to tell you something before I shower.");
 				writeText("She leans in towards you, gently kissing you on the cheek.");
-				writeSpeech("maid","","Thank you very much, <i><b>Master~</b></i>");
+				writeSpeech("maid","","Thank you very much, <i><b>*Master~</b></i>");
 				writeSpeech("player","","You're more than welcome, especially since I had fun too.");
 				writeText("She beams a bit from the praise, nodding.");
 				writeSpeech("maid","","Have a wonderful day, alright?");
@@ -832,7 +866,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("You lower your cock down against her ass, her breathing picking up.");
 				writeSpeech("player","","You remember how to ask, don't you?");
 				writeText("She nods, smiling as she wiggles her ass.");
-				writeSpeech("maid","","Please use my other hole until you're satisfied, Master!");
+				writeSpeech("maid","","Please use my other hole until you're satisfied, *Master!");
 				writeSpeech("player","","There's a <b>good girl.</b>");
 				writeText("She bites her lip as you push in, a moan spilling out as you reach halfway.");
 				writeBig("images/maid/5-1.jpg","Art by Oreteki18kin");
@@ -862,6 +896,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maidEvent2AGallery" : {
+			document.getElementById('output').innerHTML = '';
 			writeText("While she's still panting, her hands holding her pussy open, you grin down at her.");
 			writeSpeech("player","","If you think you're feeling filled up now, let's see how you feel about <i>this.</i>");
 			writeText("You drag your cock down to her ass as her eyes go wide.");
@@ -897,7 +932,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("maid","","Please... C-Cum inside!");
 			writeText("You frown down at her, slowing down more.");
 			writeSpeech("player","","I said <i>properly.</i>");
-			writeSpeech("maid","","Master, <i>please</i> fill this dirty buttslut's ass with your cum~!");
+			writeSpeech("maid","","*Master, <i>please</i> fill this dirty buttslut's ass with your cum~!");
 			writeText("You smile and nod, looking into her eyes.");
 			writeSpeech("player","","<i><b>Good girl.</b></i>");
 			writeText("Just as her body starts to shudder from the praise, you <b>hammer</b> yourself in.");
@@ -919,7 +954,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("When you're all washed up and no longer covered in a mixture of your and maidF's juices, you see her walking towards the door with the tell-tale posture of someone who had a bit of rough-fun.");
 			writeSpeech("maid","","Ah, I forgot to tell you something before I shower.");
 			writeText("She leans in towards you, gently kissing you on the cheek.");
-			writeSpeech("maid","","Thank you very much, <i><b>Master~</b></i>");
+			writeSpeech("maid","","Thank you very much, <i><b>*Master~</b></i>");
 			writeSpeech("player","","You're more than welcome, especially since I had fun too.");
 			writeText("She beams a bit from the praise, nodding.");
 			writeSpeech("maid","","Have a wonderful day, alright?");
@@ -929,6 +964,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maidEvent2B" : {
+			document.getElementById('output').innerHTML = '';
 			writeSpeech("player","","Well, looks like there's quite a mess to clean up.");
 			writeText("maidF's eyes move back to you, clearing up a bit as she sees your cum-covered cock.");
 			writeText("She sits up a bit, breathing deeply as she tries to clear her head with a smile.");
@@ -1000,6 +1036,407 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
+		case "maidA1" : {
+			document.getElementById('output').innerHTML = '';
+			setTrust('maid',100);
+			writeText("As you approach her, maidF's eyes seem to settle on you as well, looking you over almost sharply.");
+			writeText("Going by her expression, it seems like it only takes another moment for some spark of recognition to go off.");
+			writeSpeech("maid","","You're playerF.");
+			writeSpeech("player","","Yup, that's me. You must be maidF - it's a pleasure to meet you.");
+			writeText("You look at the bag at her side.");
+			writeSpeech("player","","Do you need any help with that?");
+			writeText("She gives a thin, wry smile.");
+			writeSpeech("maid","","I suppose, yes. I do have a few more items I need, and it would be nice to speak while I shop. Assuming, of course, that you know to control your volume - unlike mistressF, I don't really have a taste for public things.");
+			writeSpeech("player","","I'll keep it to low tones.");
+			writeText("She offers you the bag before turning slightly.");
+			writeSpeech("maid","","Would you mind telling me how you two met?");
+			writeSpeech("player","","No problem...");
+			writeText("...");
+			writeText("You and maidF talk for some time while shopping, maidF gradually relaxing a bit more around you, though she seemed pretty exasperated by mistressF's public antics and even apologized on mistressF's behalf.");
+			writeText("It was obviously unnecessary, but she seemed happier for it.");
+			writeText("After that, you simply discussed minor things - how you're a counselor, how she works as a contracted housekeep, and a few other mundane things.");
+			writeText("Of course, when the subject of your... <b>unique</b> methods came up, you decided to be fairly upfront about it.");
+			writeSpeech("maid","","Hypnosis?");
+			writeText("She shakes her head, looking amused.");
+			writeSpeech("maid","","And it really works?");
+			writeSpeech("player","","Not the way the movies say it does, but yeah. It puts them in a relaxed state of mind, which helps them open up.");
+			writeSpeech("maid","","Really? That's all?");
+			writeSpeech("player","","...You know, just because some people <i>can</i> make a guy cluck like a chicken doesn't mean that's all it's good for.");
+			writeText("She laughs, shaking her head.");
+			writeSpeech("maid","","I really meant no offense, it's just... It sounds a bit silly, I suppose since I don't know much about it.");
+			writeSpeech("player","","Well, if you're ever interested in it, you'd be in the hands of a professional with me. Hell, half of hypnosis is just Pavlovian conditioning on a different level, so there's actually a lot you can use it for in just day-to-day stuff.");
+			writeSpeech("maid","","I see... I suppose that makes sense. I wouldn't be against learning more in the future, though for now...");
+			writeText("She gestures towards her car.");
+			writeSpeech("maid","","I do believe we're finished shopping.");
+			writeText("You help "+fName('maid')+" empty the two <i>very</i> well-packed baskets into her car, you shut the trunk and relish the freedom of your hands from the basket-handles.");
+			writeText("maidF looks over you for a moment with a small, reserved smile.");
+			writeSpeech("maid","","Thank you very much for your assistance, playerF.");
+			writeSpeech("player","","Happy to help. Did you want to meet up some other time? mistressF mentioned that you wanted to get to know me a bit before... you know.");
+			writeText("She thinks for a moment... before she begins to blush slightly.");
+			writeSpeech("maid","","...This may be terribly forward, but... If you like, it doesn't have to be some other time. mistressF has always been a good judge of character, and you seem like a gentleman, so...");
+			writeText("Hm, she seems a bit hesitant...");
+			writeSpeech("player","","If you're not comfortable with it, that's fine. There's no need to rush, after all.");
+			writeText("Plus, hypnosis doesn't work on the overly-tense anyway. Well, strong hypnosis at least.");
+			writeText("But hearing you say that, she seems to relax a bit more.");
+			writeSpeech("maid","","It's not that I'm uncomfortable, I just... am not used to this. My college days are years behind me, and I was hardly adventurous then either.");
+			writeText("She takes a deep breath, focusing on you.");
+			writeSpeech("maid","","Would you like to come home with me, playerF?");
+			writeText("A bit formal, but that can change.");
+			writeSpeech("player","","I'd be happy to.");
+			writeText("She smiles again, nodding as she clicks her keys, the doors to the car unlocking.");
+			writeSpeech("maid","","Let's go, then.");
+			writeFunction("writeEncounter('maidA1a')", "Go to maidF's place");
+			break;
+		}
+		case "maidA1a" : {
+			document.getElementById('output').innerHTML = '';
+			writeText("After arriving and helping her put away her groceries, the two of you head to a couch and sit for a moment.");
+			writeText("maidF looks fairly composed on the surface, but her eyes seem to look anywhere but at you as she collects herself.");
+			writeSpeech("player","","I take it this is the first time in a while? With someone new, I mean.");
+			writeSpeech("maid","","Correct. Sorry, I'm... probably seeming fairly awkward here.");
+			writeText("She tucks a bit of hair behind her ear, though it seems to come back loose just a moment later.");
+			writeSpeech("player","","It's fine, just relax.");
+			writeText("You toy with your pendant a bit, the small movement attracting her eyes.");
+			writeSpeech("maid","","Ah... Do you use that for...?");
+			writeSpeech("player","","...for hypnosis? Yes. Some people prefer a stopwatch or a coin, and some people just use countdowns, but it really depends on the hypnotist.");
+			writeText("You hold it out for her to hold.");
+			writeSpeech("player","","The tool never really matters much, though. In the end, the only things that happen are all in your head - it's kinda humbling, honestly, when you realize that a hypnotist can never <i>force</i> someone into doing something they don't want.");
+			writeText("Of course, revealing their true desires, or even driving them to new ones, can basically render that point moot, but that's neither here nor there.");
+			writeSpeech("maid","","I see...");
+			writeText("She gently takes the pendant, rolling it in her hand for a moment before giving it a gentle sway, holding the string.");
+			writeSpeech("maid","","Ah, the way the light bounces off of it makes it seem to shimmer.");
+			writeSpeech("player","","It's easier to focus on shiny things - hence why the stereotype is a swaying silver or gold pocketwatch.");
+			writeSpeech("maid","","Ah, I see...");
+			writeText("Watching it for another moment, she hands it back to you with a smile.");
+			writeSpeech("maid","","Thank you.");
+			writeSpeech("player","","Did you want to try it?");
+			writeText("She pauses slightly, and you recall one of her purchases.");
+			writeSpeech("player","","You don't have to, of course, but it can help to relax you a bit... like a can of beer would.");
+			writeSpeech("maid","","Really?");
+			writeText("maidF shifts in place again, thinking it over... before nodding.");
+			writeSpeech("maid","","I'm not sure how well it will work on a skeptic, but I'm open to trying it. How would we start?");
+			writeSpeech("player","","With something called an induction, but you don't have to worry about names - just leave it to me...");
+			writeText("...");
+			writeText("It doesn't take long to put her into trance. Actually, it almost seems to take too <b>little</b> time - you have to stop and check if she's really under or just messing with you, but it seems like she just went into trance that easily.");
+			writeText("For someone so wound up and proper, she seems to be willing to completely submit very, <i>very</i> fast...");
+			writeText("Which, honestly, can probably be attributed to mistressF.");
+			writeSpeech("player","","You and mistressF must have quite the close relationship...");
+			writeText("maidF's eyes are unfocused, but she nods.");
+			writeSpeech("maid","","I am very close to Mistress.");
+			writeSpeech("player","","...Huh. Neat.");
+			writeText("Driven by scientific curiousity, you ask,");
+			writeSpeech("player","","Just how close do you mean?");
+			writeSpeech("maid","","I love being used. Mistress likes it when I eat her out, and I love pleasing Mistress.");
+			writeSpeech("player","","Well, there go my doubts... You're completely under, aren't you?");
+			writeText("She seems confused, not able to figure out how to reply.");
+			writeSpeech("player","","The answer is yes... and saying 'yes' to my questions makes you feel good.");
+			writeSpeech("maid","","Ye-");
+			writeText("She freezes for a moment, her breath hitching.");
+			writeSpeech("maid","","...Yes.");
+			writeText("Good. You can start setting up other triggers in the future, but for now...");
+			writeSpeech("player","","...Is that how you normally dress at home?");
+			writeText("She slowly, hazily shakes her head.");
+			writeSpeech("player","","Hm. Well, why don't you make yourself a bit more comfortable, then?");
+			writeText("You change your tone, leaning in a bit closer.");
+			writeSpeech("player","","After all, you feel <i>completely relaxed</i> around me, don't you? It's only <i>natural</i> that you'd be as relaxed as if you were alone.");
+			writeText("A pause... then she stands. The haze fades from her eyes quickly.");
+			writeText("She clearly relaxes her posture, taking a sharp breath in.");
+			writeSpeech("maid","","Sorry, but could you give me a sec? Gotta change.");
+			writeText("She casually kicks her shoes off, barely paying attention to where they land as she walks off.");
+			writeText("...Guess she's not as formal when alone, then?");
+			writeText("After a minute or so, you can hear her walking back into the room, accompanied by the hiss of a can as she cracks open a beer.");
+			writeText("She hops the side of the couch easily, thumping onto it with a relaxed sigh.");
+			writeText("Turning to face her, you see...");
+			writeBig("images/maid/2-1.jpg", "Art by Oreteki18kin");
+			writeSpeech("player","","You, uh... really made yourself comfortable.");
+			writeSpeech("maid","","Yup.");
+			writeText("She takes a slow sip, before offering it to you. You turn it down - better to stay sober while hypnotizing someone.");
+			writeSpeech("maid","","I love my job, and I <i>love</i> the outfit, but it can be a bit stuffy, y'know? Plus I never really know when mistressF might be in the mood, so it's not like I can skimp on the prepwork.");
+			writeSpeech("player","","Makes sense. You like making sure you're always available to her, then?");
+			writeSpeech("maid","","When I'm working for her, yeah - half the fun is not knowing whether she'll walk past me with a wink, or fingerbang me against the wall.");
+			writeText("She takes a deep drink from her beer.");
+			writeSpeech("maid","","Plus, since I get to dictate her diet, she's an absolute <i>treat</i> to eat out. Had to learn some two-dozen recipes for it, but her taste is worth it. That, and it's not like she's complaining about the extra enthusiasm, y'know?");
+			writeText("...Well, fuck. You're now even more turned on than before.");
+			writeSpeech("player","","...It's getting hot in here.");
+			writeText(fName('maid')+" frowns.");
+			writeSpeech("maid","","Is it? I can always turn on the air condi-");
+			writeSpeech("player","","It's broken, <i>remember?</i>");
+			writeText("She pauses, confusion playing across her face.");
+			writeSpeech("maid","","...Right. I guess I forgot.");
+			writeSpeech("player","","And given that it's hot, you should-");
+			writeText("Before you even finish, she pulls open the front of her robe, her tits spilling out as she lets out a sigh of relief. She then turns to you.");
+			writeSpeech("maid","","Sorry, I missed that. What's up?");
+			writeSpeech("player","","...I was just saying I was going to take off some clothes, since that's the <i>natural</i> response to this heat.");
+			writeSpeech("maid","","Naturally.");
+			writeText("She takes another long drink from the beer, which has to be nearing empty at this point.");
+			writeFunction("writeEvent('maid1')", "Pull down your pants");
+			break;
+		}
+		case "maidA2" : {
+			passTime();
+			document.getElementById('output').innerHTML = '';
+			if(checkTrust('maid') == 105)
+				setTrust('maid',110);
+			writeSpeech("player","","Hey there. Not shopping today?");
+			writeText("She turns to face you, smiling.");
+			writeSpeech("maid","","Not today. I was planning on getting coffee from Starway Cafe, and I thought I would wait a minute or two in case you happened along.");
+			writeSpeech("player","","I'm lucky I did, then. Did you want to chat?");
+			writeSpeech("maid","","I did... and I was hoping to also invite you to my place again afterwards, if you were interested.");
+			writeSpeech("player","","I would be more than happy to. Lead the way.");
+			writeText("...");
+			if(!checkFlag('cafedark','Start')) {
+				if(!checkFlag('maid','cafeDark'))
+					addFlag('maid','cafeDark');
+				writeText("You two get seated at the cafe pretty quickly, given that cafedarkF is currently handling customers.");
+				writeText("Being the proprietor has its perks.");
+			}
+			else{
+				writeText("You two get seated pretty quickly, and it seems like maidF knows the girl that takes your orders.");
+				writeText("She's very quick about it, before smirking at maidF knowingly.");
+				writeSpeech("???","images/cafedark/cafedark.jpg","I'll give you two some alone time while I get your coffee~");
+				writeText("maidF just rolls her eyes a little as the woman moves to the back of the cafe.");
+				writeSpeech("maid","","Don't mind cafedarkF, she's just teasing.");
+				writeSpeech("player","","You come here often?");
+				writeSpeech("maid","","Quite. It's admittedly not quite what it was before the current owner, but I've grown attached to it.");
+				writeSpeech("player","","I see...");
+			}
+			writeText("maidF shifts in her seat slightly, though you notice she's a lot more relaxed this time than when last you met.");
+			writeSpeech("maid","","Ah, I didn't have anything specific I wanted to talk about, by the way. Was there any particular subject you were interested in?");
+			if(!checkFlag('maid','Chat1'))
+				writeFunction("writeEncounter('maidA2a')", "\"How did you and mistressF meet?\"");
+			if(!checkFlag('maid','Chat2'))
+				writeFunction("writeEncounter('maidA2b')", "\"How long have you been working as a maid?\"");
+			writeFunction("writeEncounter('maidA2c')", "\"Nothing in particular\" - head to her place");
+			writeFunction("writeEncounter('maidA2d')", "\"Do you want to call mistressF for some fun?\"");
+			break;
+		}
+		case "maidA2a" : {
+			document.getElementById('output').innerHTML = '';
+			if(!checkFlag('maid','Chat1'))
+				addFlag('maid','Chat1');
+			writeSpeech("player","","How did you and mistressF meet?");
+			writeSpeech("maid","","It was in college - we were roommates. What started out as us sitting down and studying together ended up... transforming, I suppose. With the help of a particularly rowdy night and more than a bit of alcohol, we ended up back in our room and...");
+			writeText("She flushes slightly.");
+			writeSpeech("maid","","Well, you can imagine the rest. mistressF was very casual about things, which was nice back then. It's still nice, actually, though she's mellowed out quite a bit since then. She used to play matchmaker with half the campus, which was... interesting, to say the least.");
+			writeSpeech("player","","Sounds like you two are really close.");
+			writeText("She smiles fondly, nodding.");
+			writeSpeech("maid","","We are. It can be a bit of challenge with her sometimes, but she's always been more than worth it.");
+			writeSpeech("maid","","...Ah, I got a bit sappy there, didn't I? Was there anything else you wanted to ask about?");
+			if(!checkFlag('maid','Chat2'))
+				writeFunction("writeEncounter('maidA2b')", "\"How long have you been working as a maid?\"");
+			writeFunction("writeEncounter('maidA2c')", "\"Nothing in particular\" - head to her place");
+			writeFunction("writeEncounter('maidA2d')", "\"Do you want to call mistressF for some fun?\"");
+			break;
+		}
+		case "maidA2b" : {
+			document.getElementById('output').innerHTML = '';
+			if(!checkFlag('maid','Chat2'))
+				addFlag('maid','Chat2');
+			writeSpeech("player","","How long have you been working as a maid?");
+			writeSpeech("maid","","Ah, a few years. It's a surprisingly stable job, though I think that's just because there are so many people in town that have a lot of expendable funds. I'd blame the local university for that - it attracts some high-profile people, and those sorts of people rarely clean their own homes.");
+			writeSpeech("player","","Do you enjoy the work?");
+			writeSpeech("maid","","I do. I don't always enjoy the employers, but the work itself is good. Fulfilling would be the right word, I suppose? Or maybe satisfying.");
+			writeSpeech("player","","Alright, makes sense... Plus, the uniform suits you <i>very</i> well.");
+			writeText("She smiles, looking a bit proud now.");
+			writeSpeech("maid","","Thanks. I like the outfit myself, too. Did you have any other questions?");
+			if(!checkFlag('maid','Chat1'))
+				writeFunction("writeEncounter('maidA2a')", "\"How did you and mistressF meet?\"");
+			writeFunction("writeEncounter('maidA2c')", "\"Nothing in particular\" - head to her place");
+			writeFunction("writeEncounter('maidA2d')", "\"Do you want to call mistressF for some fun?\"");
+			break;
+		}
+		case "maidA2c" : {
+			document.getElementById('output').innerHTML = '';
+			writeSpeech("player","","Nothing in particular.");
+			writeText("She nods, and the two of you make small-talk while waiting for and while drinking your coffee.");
+			writeText("It isn't long before you two finish up, pay the bill, and head out of the cafe. It doesn't take that much longer to get to her place again.");
+			writeEncounter('maidASexSelect');
+			break;
+		}
+		case "maidA2d" : {
+			document.getElementById('output').innerHTML = '';
+			if(checkTrust('maid') > 30){
+				writeSpeech("player","","Actually, do you want to call mistressF for some fun?");
+				writeText("maidF flushes, fiddling with her skirt a bit under the table.");
+				writeSpeech("maid","","That sounds like a wonderful idea. I'll text her now, and we can head over after we finish our coffee.");
+			}
+			else{
+				writeSpeech("player","","Let's do it - it sounds like we all want it, after all.");
+				writeSpeech("maid","","We do indeed. I'll text her, and we can go after we finish our drinks.");
+				writeSpeech("player","","Perfect.");
+			}
+			if(checkTrust('mistress') < 115)
+				setTrust('mistress',115);
+			if(checkTrust('maid') < 115)
+				setTrust('maid',115);
+			writeText("...");
+			writeText("Finishing your drinks doesn't take long, and the drive is even shorter this time - rather than going to maidF's apartment, you're meeting at mistressF's place.");
+			writeText("When you arrive, it's to a visibly excited mistressF as she smiles at the both of you, handing you both water bottles with a wry smile.");
+			writeSpeech("mistress","","Here you go! Gotta stay hydrated.");
+			writeSpeech("player","","Thanks.");
+			writeSpeech("maid","","Thanks, mistressF.");
+			writeSpeech("mistress","","Mm, I'm doing it as much for myself as for you two... But you're welcome~!");
+			writeText("She winks to you two.");
+			writeSpeech("mistress","","Besides, I'm hoping for some sticky payback deep inside me in exchange anyway~");
+			writeText("mistressF leads you to her room with an infectious enthusiasm, smiling happily.");
+			writeSpeech("mistress","","This is going to be so much fun~!");
+			writeText("Stripping off her shirt, she looks at you.");
+			writeSpeech("mistress","","Our safeword is 'tax exemptions' by the way.");
+			writeSpeech("maid","","We wanted something boring.");
+			writeSpeech("player","","I'll keep that in mind.");
+			writeText("You strip down yourself, mistressF's infectious excitement spilling over to both you and maidF as they get on the bed.");
+			writeSpeech("mistress","","Ooh, here...");
+			writeText("mistressF helps maidF get into a good position, now practically laying atop maidF to get a good look at her pussy as she beckons you over.");
+			writeSpeech("mistress","","I've used a dildo to fuck maidF in tons of different positions before, but this'll be my first time seeing her get plowed by a <i>real</i> cock~! Are you ready?");
+			writeFunction("writeEvent('maid4')", "Get fucking");
+			break;
+		}
+		case "maidASexSelect" : {
+			if(!galleryCheck('maid2')){
+				writeText("When the two of you arrive, she seems to visibly relax a bit, though she does still fiddle with her uniform.");
+				writeSpeech("player","","Nervous?");
+				writeSpeech("maid","","A little. This <i>is</i> only our second time, after all. Would you mind...?");
+				writeText("Her eyes go to your pendant again, and you nod.");
+				writeSpeech("player","","Sure. If it helps relax you, I'm all for it. Is there anything you want to do first, to get more comfortable?");
+				writeText("She nods, running her hands along her uniform.");
+				writeSpeech("maid","","Just let me get changed into my robe. I'd rather not have sex in my work-clothes.");
+				writeText("...");
+				writeText("When she comes back in, wearing only the same bathrobe as before and her face just a little red, you get to work.");
+				writeText("It's just as easy to put her under this time as it was last time, though you plan on adding a couple more commands this time...");
+				writeSpeech("player","","maidF, can you hear me?");
+				writeSpeech("maid","","...Yes.");
+				writeText("Her head bobs up and down lazily, her eyes unfocused.");
+				writeSpeech("player","","How are you feeling right now?");
+				writeText("Her eyes narrow for a brief moment, her chest raising with a slow breath.");
+				writeSpeech("maid","","...Fuzzy. And warm.");
+				writeSpeech("player","","And what else?");
+				writeText("She smiles faintly.");
+				writeSpeech("maid","","<i>Comfortable.</i>");
+				writeSpeech("player","","Very good. I have a few things to tell you, now. Are you listening?");
+				writeText("She nods slowly, though her eyes still seem glazed over.");
+				writeSpeech("player","","When you're nice and relaxed, and comfortable, and feeling <i>fuzzy</i>, I want you to call me *Master.");
+				if(data.player.gender != "man"){
+					writeText("Her brow furrows for a moment, starting to clear up.");
+					writeSpeech("maid","","*Master...? But I already have a Mistress. Wouldn't that get confusing?");
+					writeText("Ah, right...");
+					writeSpeech("player","","Not at all. It's <i>nice</i> to have two Mistresses, isn't it?");
+					writeText("She seems to relax a bit again, slowly nodding.");
+					writeSpeech("player","","Two people, both here to help you <i>relax...</i> And have <i><b>fun.</b></i> That's not confusing, right?");
+					writeSpeech("maid","","Ah... Yes, *Master playerF.");
+				}
+				else{
+					writeSpeech("maid","","Ah... *Master...? *Master...");
+					writeText("She shifts slightly, trying out the word on her tongue before nodding, a half-dopey smile on her face.");
+					writeSpeech("maid","","I have a *Master, and a Mistress... Oh, I wonder what mistressF's doing right now...?");
+					writeSpeech("player","","You don't have to worry about that right now.");
+					writeText("You lean forward, placing your hand on her thigh as she shivers slightly.");
+					writeSpeech("player","","Just <i><b>relax.</b></i>");
+					writeSpeech("maid","","Ah... Yes, <i>*Master.</i>");
+				}
+				if(checkTrust('purple') >= 90)
+					writeText("Seems like that's working. Not the hardest suggestion, especially since you recently did the same thing with purpleF...");
+				else
+					writeText("Seems like that's working. It's not really the hardest suggestion though, considering her and mistressF's relationship...");
+				writeText("Still, there's more to do before pulling her out of trance.");
+				writeSpeech("player","","maidF. Are you comfortable when wearing your uniform?");
+				writeSpeech("maid","","Ah...?");
+				writeText("She mulls that thought over for a moment, unsure of how to answer.");
+				writeSpeech("player","","Let me rephrase that: <br>You're comfortable when wearing your uniform around me, <i>right?</i>");
+				writeSpeech("maid","","Right.");
+				writeText("No hesitation this time? mistressF must ask a lot of leading questions herself...");
+				writeSpeech("player","","You're just as comfortable in your uniform around me as you feel right now, right?");
+				writeSpeech("maid","","Right.");
+				writeSpeech("player","","And that means if I wanted to have sex while you're still in uniform... What would you do?");
+				writeText("Her face goes red a bit, and her breathing speeds up.");
+				writeSpeech("maid","","...I'd wear it~");
+				writeSpeech("player","","Good girl. Now-");
+				writeSpeech("maid","","<i><b>Nn~!</b></i>");
+				writeText("You stop, watching maidF's hands bunch her robe in her hands as she shudders.");
+				writeSpeech("player","","...Good girl?");
+				writeText("She shudders again, trying her best to stay sitting up straight.");
+				writeSpeech("maid","","<i><b>T-Thank you, *Master~</b></i>");
+				writeText("...Neat. Gonna have to remember that trigger for later...");
+				writeText("In the meantime, it's probably time to get to the fun parts.");
+				writeFunction("writeEvent('maid2')", "Take her to her bed");
+			}
+			else{
+				if(galleryCheck("maid3") != true){
+					if(galleryCheck("maid2A") != true){
+						writeText("As you two arrive at her place again, she clearly relaxes quite a bit as she stretches out her shoulders.");
+						writeSpeech("player","","You're looking a lot more relaxed this time around. Looking forward to this?");
+						writeSpeech("maid","","And whose fault could that be, I wonder?");
+						writeText("She smiles as she looks over her shoulder at you, winking.");
+						writeSpeech("maid","","I'll go get changed so we can get started, playerF~");
+						writeFunction("writeEvent('maid3')", "Have her keep her uniform on");
+						writeFunction("writeEvent('maid2A')", "Let her get changed again");
+						break;
+					}
+					else{
+						writeText("As you two arrive at her place again, she visibly relaxes as rolls her neck a bit.");
+						writeSpeech("player","","Glad to be home?");
+						writeSpeech("maid","","Absolutely.");
+						writeText("She smiles as she looks over her shoulder at you, winking.");
+						writeSpeech("maid","","I'll go get changed so we can get started, playerF~");
+						writeFunction("writeEvent('maid3')", "Have her keep her uniform on");
+						writeFunction("writeEvent('maid2A')", "Let her get changed again");
+						break;
+					}
+				}
+				else{
+					if(checkFlag('maid','fullSub') != true){
+						addFlag('maid','fullSub');
+						setTrust('maid',28);
+					}
+					writeText("When you two arrive at her place, maidF barely lets the door shut all the way before wrapping her arms around you from behind.");
+					writeText("She gently rests her chin on your shoulder, her breath feeling warm against your ear.");
+					writeSpeech("maid","","Am I getting changed this time, or do you want to just get right to the fun parts, <i><b>*Master~?</b></i>");
+					//writeFunction("writeEvent('maid3A')", "Have her keep her uniform on again");
+					writeFunction("writeEvent('maid2A')", "Have her change into her robes again");
+					break;
+				}
+			}
+			break;
+		}
+		case "maidTalkedMistress" : {
+			document.getElementById('output').innerHTML = '';
+			passTime();
+			writeSpeech("player","","Actually, I spoke with mistressF.");
+			writeText("maidF pauses for a moment, before smiling almost excitedly.");
+			writeSpeech("maid","","That's wonderful! You two got along well, I hope?");
+			writeSpeech("player","","We did, yes. She seemed <i>very</i> interested in the idea of the threesome.");
+			writeText("maidF nods.");
+			writeSpeech("maid","","That means that you...");
+			writeText("She lowers her tone, making sure not to be heard.");
+			writeSpeech("maid","","...fucked?");
+			if(galleryCheck('mistress2') || galleryCheck('mistress4'))
+				writeSpeech("player","","Yup.");
+			else
+				writeSpeech("player","","Pretty much.");
+			writeText("She relaxes a bit, nodding.");
+			writeSpeech("maid","","That's good. I don't know why I was worried you wouldn't get along.");
+			writeSpeech("maid","","Ah... Were you thinking about having the threesome today? I can text her now to see if she's available.");
+			writeFunction("writeEncounter('maidA2d')", "\"Let's do it.\"");
+			break;
+		}
+		case "maidA3" : {
+			document.getElementById('output').innerHTML = '';
+			writeSpeech("maid","","Ah, playerF. How are you doing?");
+			writeSpeech("player","","I'm doing pretty good.");
+			writeText("She smiles, nodding.");
+			writeSpeech("maid","","Did you come to talk about something specific, or just to say hello?");
+			writeFunction("writeEncounter('maidA3a')", "\"Let's go back to your place.\"");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "maidA3a" : {
+			passTime();
+			document.getElementById('output').innerHTML = '';
+			writeText("She flushes, but smiles.");
+			writeSpeech("maid","","My car is parked just around the corner.");
+			writeText("...");
+			writeEncounter('maidASexSelect');
+			break;
+		}
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -1008,11 +1445,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 }
 
 var eventArray = [ //Lists the events of the character for unlocking and replaying in the gallery.
-	{index: "maid1", name: "Casual Titjob"},
-	{index: "maid2", name: "Fucked at Home"},
-	{index: "maid2A", name: "Fucked at Home Again"},
-	// {index: "maid3", name: "A Girl In Uniform"},
-	// {index: "maid3A", name: "Uniformed Again"},
+{index: "maid1", name: "Casual Titjob"},
+{index: "maid2", name: "Fucked at Home"},
+{index: "maid2A", name: "Fucked at Home Again"},
+{index: "maid3", name: "A Girl In Uniform"},
+// {index: "maid3A", name: "Uniformed Again"},
+{index: "maid4", name: "Threesome with mistressF"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -1024,7 +1462,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("When you pull out your cock, she nearly chokes on her drink.");
 			writeSpeech("maid","","Shit. You're big enough to do porn.");
 			writeText("She pauses.");
-			writeSpeech("maid","","Actually, <i>do</i> you do porn? Because I'm imagining eating out my boss under the desk while she watches a video of you fucking someone. It's... pretty hot.");
+			writeSpeech("maid","","Actually, <i>do</i> you do porn? Because I'm imagining eating out "+(checkTrust('maid')==30 ? "mistressF" : "my boss")+" under the desk while she watches a video of you fucking someone. It's... pretty hot.");
 			if(checkFlag('starlet','porn'))
 				writeSpeech("player","","I've actually done a couple amateur scenes before. If you want, we <i>could</i> record this with my phone.");
 			else
@@ -1049,8 +1487,8 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("In one smooth movement, she takes your cock to the base, pausing only to press your head past her throat barrier.");
 			writeText("One second turns to two as she starts humming something, the vibrations carrying through your cock before she slowly pulls back.");
 			writeText("Her drool oozes out all over your cock and her tits as she nods with satisfaction.");
-			writeSpeech("maid","","My boss throat-fucked me with a strap-on once, and there was a <i>lot</i> of extra-slick spit.");
-			writeSpeech("player","","...Okay, but can you do that again?.");
+			writeSpeech("maid","",(checkTrust('maid')==30 ? "mistressF" : "My boss")+" throat-fucked me with a strap-on once, and there was a <i>lot</i> of extra-slick spit.");
+			writeSpeech("player","","...Okay, but can you do that again?");
 			writeSpeech("maid","","Nah. She's distended my throat before, but we never tried a titjob. Didn't make sense with a strap-on, y'know?");
 			writeText("With that, she wraps her arms around her tits and winks at the camera.");
 			writeSpeech("maid","","Thinking of you, babe~!");
@@ -1078,17 +1516,32 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Pressing your cock against the outside of her chest, she winks and quickly taps a few buttons.");
 			writeSpeech("maid","","...'Kay, video's over, and I took a nice little photo. Mind if I plug my number in?");
 			writeText("She doesn't bother waiting for a response.");
-			writeSpeech("maid","","Aaaaand... sent.");
-			writeText("She flops back casually against the couch, grabbing a box of tissues from beneath it and starting to wipe off her chest.");
-			writeSpeech("maid","","Hey, do you mind if I introduce the two of you later? She's wanted to spice things up with a real dick for a while now.");
-			writeText("Feeling drained down to the last drop, you just nod.");
-			writeSpeech("maid","","Nice! Thanks so much, hun. You're a sweetie.");
-			writeText("She gives you a quick peck on the cheek.");
-			writeSpeech("maid","","Now, I'm off to take a shower, otherwise the smell of cum'll have me jilling it for hours. Talk to you later, babe!");
-			writeText("She bounds off casually, heading into what you assume is the bathroom.");
-			writeText("...");
-			writeText("It takes a while, but you do manage to pull yourself out of the afterglow and away from the couch.");
-			writeText("You're pretty interested in meeting this boss of hers but, for now, maybe it's better to head home and shower...");
+			if(checkTrust('maid') == 30){
+				writeSpeech("maid","","Aaaaand... "+(checkTrust('maid')==30 ? "sent." : "done."));
+				writeText("She flops back casually against the couch, grabbing a box of tissues from beneath it and starting to wipe off her chest.");
+				writeSpeech("maid","","Hey, do you mind if I send the video to mistressF? I want to get her nice and riled up for next time - when I tease her enough, she does this thing where she bites my ear and my neck that <i>really</i> gets me going.");
+				writeText("Feeling drained down to the last drop, you just nod.");
+				writeSpeech("maid","","Nice! Thanks so much, hun. You're a sweetie.");
+				writeText("She gives you a quick peck on the cheek.");
+				writeSpeech("maid","","Now, I'm off to take a shower, otherwise the smell of cum'll have me jilling it for hours. Talk to you later, babe!");
+				writeText("She bounds off casually, heading into what you assume is the bathroom.");
+				writeText("...");
+				writeText("It takes a while, but you do manage to pull yourself out of the afterglow and away from the couch.");
+				writeText("Knowing a bit more about their relationship is pretty nice, though you're really looking forward to that threesome... Though, if this was anything to go by, you might need to use self-hypnosis if you want to dominate them both at once...");
+			}
+			else{
+				writeSpeech("maid","","Aaaaand... sent.");
+				writeText("She flops back casually against the couch, grabbing a box of tissues from beneath it and starting to wipe off her chest.");
+				writeSpeech("maid","","Hey, do you mind if I introduce the two of you later? She's wanted to spice things up with a real dick for a while now.");
+				writeText("Feeling drained down to the last drop, you just nod.");
+				writeSpeech("maid","","Nice! Thanks so much, hun. You're a sweetie.");
+				writeText("She gives you a quick peck on the cheek.");
+				writeSpeech("maid","","Now, I'm off to take a shower, otherwise the smell of cum'll have me jilling it for hours. Talk to you later, babe!");
+				writeText("She bounds off casually, heading into what you assume is the bathroom.");
+				writeText("...");
+				writeText("It takes a while, but you do manage to pull yourself out of the afterglow and away from the couch.");
+				writeText("You're pretty interested in meeting this boss of hers but, for now, maybe it's better to head home and shower...");
+			}
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -1204,7 +1657,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Unable to really resist, you pull your hand back a bit...");
 			writeSpeech("maid","","<i><b>UHN~!</b></i>");
 			writeText("The slap across her ass echoes through the room as maidF looks over her shoulder at you, her face even redder now.");
-			writeSpeech("maid","","...Thank you, Master~");
+			writeSpeech("maid","","...Thank you, *Master~");
 			writeText("...");
 			writeText("She lays back in her bed, her robe loosely pulled onto her body as she raises her legs like before.");
 			writeBig("images/maid/4-1.jpg","Art by Oreteki18kin");
@@ -1250,23 +1703,114 @@ function writeEvent(name) { //Plays the actual event.
 			writeFunction("writeEncounter('maidEvent2B')", "Have her suck you clean");
 			break;
 		}
-		// case "maid3" : {
-		// 	document.getElementById('output').innerHTML = '';
-		// 	writeSpecial("This is the scene in her uniform.");
-
-			
-
-
-
-		// 	//writeFunction("writeEncounter('maid5b')","Go back")
-		// 	writeFunction("changeLocation(data.player.location)", "Finish");
-		// 	break;
-		// }
+		case "maid3" : {
+			document.getElementById('output').innerHTML = '';
+			writeSpeech("player","","Actually, why don't you leave it on?");
+			writeText("She pauses for a moment, opening her mouth to shoot down the idea...");
+			writeText("...but she seems to visibly relax instead, smiling.");
+			writeSpeech("maid","","Alright, that sounds fine.");
+			writeText("She's definitely a lot more relaxed around you, thanks to the hypnosis.");
+			writeText("Speaking of, it might be fun to use it in a more <b>creative</b> way this time...");
+			writeSpeech("maid","","Here.");
+			writeText("She gently leads you by the hand to her bed, smiling at you as her face begins to get a little flushed.");
+			writeSpeech("maid","","You just lay down, and let your slutty maid do all the work.");
+			writeText("Sitting onto the bed, you lean back as she straddles you, her hands lifting her skirt to show you her panties as she does.");
+			writeText("From the dark patch, you can tell exactly how excited she's getting from this.");
+			writeText("As she slides her panties to the side, you speak up:");
+			writeSpeech("player","","maidF... How relaxed are you right now?");
+			writeSpeech("maid","","Ah? Hm...");
+			writeText("She pauses for a moment, the familiar sight of her eyes unfocusing a little showing that, once again, she goes into trance incredibly easily.");
+			writeSpeech("player","","You remember using your mouth and throat, don't you? The taste, the texture, the sensation of it in your mouth...");
+			writeText("She swallows slightly, nodding.");
+			writeSpeech("player","","Focus on it, on the feeling of your entire mouth being filled up...");
+			writeText("She licks her lips a bit, nodding once again.");
+			writeSpeech("player","","You remember it almost as clearly as if it was happening right now, correct?");
+			writeSpeech("maid","","Y-Yes, I...");
+			writeText("Her body shudders slightly as she nods again.");
+			writeSpeech("maid","","I remember very, <i>very</i> clearly...");
+			writeSpeech("player","","Then you remember how good it felt to please your *Master, don't you?");
+			writeSpeech("maid","","Ye- <i>Haah~!</i>");
+			writeText("You slowly push your cock into her pussy, her body shuddering as you do.");
+			writeSpeech("player","","You can almost feel it right now, can't you?");
+			writeText("You press your hips against her ass, watching her squirm as you bottom-out.");
+			writeSpeech("maid","","Yes, *Master...!");
+			writeText("She swallows heavily, her mouth watering now.");
+			writeSpeech("maid","","I-I can feel it...!");
+			writeBig("images/maid/7-1.jpg","Art by Oreteki18kin");
+			writeText("You watch, slowly pulling out and pushing back in as she starts drooling.");
+			writeSpeech("player","","And you can feel it sliding in and out, so hard and slick, like you're getting <i>throat-fucked</i> every time that I bottom-out in your pussy... Right?");
+			writeText("You push your hips against hers again, her spit dribbling off her lips as she shudders.");
+			writeSpeech("maid","","Y-Yes, "+(data.player.gender == 'man' ? "Mashter~" : "Mishtress!"));
+			writeSpeech("player","","<i><b>Good girl.</b></i>");
+			writeText("Her cunt squeezes tightly around you as she hears your praise, her eyes only half-focused as you start to pick up speed.");
+			writeText("Every time you raise your hips up, you hear her let out her breath sharply, the sensation like getting spit-roasted having her squirming on top of you.");
+			writeText("But the rate that she's bouncing is almost agonizingly slow, so you clear your throat.");
+			writeSpeech("player","","<b>Faster.</b>");
+			writeText("She shudders in pleasure at the order, before starting to go faster. Her half-gasped gagging sounds different when there isn't an actual cock filling her throat, but hearing her gag is still its own kind of pleasure.");
+			writeText("She lets out soft, high moans as she rides you, trying to stay focused on your pleasure as she bounces up and down, rolling her hips as she takes you balls-deep with every drop of her body.");
+			writeText("Each slap of her thighs against your hips gets louder and wetter as she keeps bouncing more and more, her hands gripping your thighs behind her for stability, and gripping them tighter and tighter with every passing moment.");
+			writeSpeech("player","","You love it, don't you? The feeling of having your holes used for someone else's pleasure, for your Mistress's pleasure, for <i>my</i> pleasure.");
+			writeText("She picks up speed even more, the wet, sloppy sounds of her fucking her cunt on your cock filling the room as she bites her lip.");
+			writeSpeech("maid","","Yes...! I love it, <i>I love it so much!</i> I love being your slutty maid, *Master!");
+			writeText("You grin, bucking your hips up in response as she goes down, fucking her harder.");
+			writeSpeech("maid","","Yes, yes, yes, <i><b>yes...!</b></i>");
+			writeSpeech("player","","But you know, if you're a good slutty maid... <i>You'd know not to cum on your own.</i>");
+			writeSpeech("maid","","A-Ah?");
+			writeText("She doesn't slow down, a small look of confusion on her face as the pleasure keeps building.");
+			writeSpeech("player","","Your pleasure comes <i>after</i> your *Master's, after all. But I think we both know what would make you feel better than anything, don't you?");
+			writeText("She nods, biting her lip.");
+			writeSpeech("maid","","M-Making you cum...! Feeling you fill my holes with your jizz, and <i>using</i> me like a <i><b>sex-toy...!</b></i>");
+			writeSpeech("player","","Very good. Now tell me, <i><b>slut...</b></i> When is the <i>only</i> time you can orgasm?");
+			writeSpeech("maid","","W-When I'm making"+(data.player.gender == "man" ? " Master or Mistress " : " one of my Mistresses ")+"cum...! When mistressF squeezes my head between my thighs and cums all over my face, or when you <i>pump me <b>full</b> of cum~!</i>");
+			writeSpeech("player","","That's right.");
+			writeText("You run a hand along her thigh, smirking up at her.");
+			writeSpeech("player","","<i><b>Good girl.</b></i>");
+			writeText("Her full body shudders, her mouth opening wide in a shock of pleasure, but the desperation to cum not weakening in the slightest.");
+			writeSpeech("player","","You're such a good slutty maid... After all, the way you are right now, I bet you're <b>edging on every thrust,</b> right?");
+			writeText("She flinches at that, her cunt squeezing tightly around you as she shudders more and more... but still refuses to slow down.");
+			writeBig("images/maid/7-2.jpg","Art by Oreteki18kin");
+			writeSpeech("maid","","Y-Yes, *Master...! Please, use me more~!");
+			writeSpeech("player","","You're a polite little <i>slut,</i> aren't you?");
+			writeText("She tries to say yes, but you buck your hips up again, matching her speed as she starts shaking even more on top of you, her fingers rapidly squeezing against your thighs as she desperately tries not to moan.");
+			writeText("With the phantom sensation of your cock in her throat, fucking her mouth even harder now, she can hardly form coherent syllables as her eyes start to roll up.");
+			writeText("As she does, you point out to her, in a half-disappointed tone,");
+			writeSpeech("player","","You're slowing down.");
+			writeText("For a moment, you're not sure if she could hear you... before she speeds back up.");
+			writeText("And then speeds up some more.");
+			writeText("She leans her body forward a bit more, bouncing her ass up and down your cock faster and faster as drool drips down her chin, completely overtaken by the pleasure of being filled by your cock.");
+			writeSpeech("maid","","Fff- Ffuh... Fuhck...~!");
+			writeText("The stimulation is even getting to be too much for you, bringing you to the edge yourself.");
+			writeText("But just finishing inside her and making her cum isn't <b>quite</b> enough...");
+			writeSpeech("player","","Tell me what you want.");
+			writeSpeech("maid","","P-Puh... Please, fill me...!");
+			writeText("Her lips try to form the words, but the hypnotic spit-roasting keeps breaking her focus.");
+			writeSpeech("player","","If you can't say it properly... Then I'll <i>stop.</i>");
+			writeText("The threat makes her body shudder again, and her eyes seem to focus again as she tries her best to focus.");
+			writeSpeech("maid","","F-Fill my pussy, paint it white and m-make it <i><b>yours...!</b></i> Cum inside me, M-*Master~!");
+			writeText("She stuttered a bit, but...");
+			writeSpeech("player","","<i><b>Good girl.</b></i>");
+			writeText("The trigger makes her tighten around you again, pushing you all the way over the edge.");
+			writeText("You hear her half-gag again even as her entire body tenses up in a full-body orgasm, the sensations of her cunt and mouth being flooded with cum slamming every orgasm into her all at once.");
+			writeBig("images/maid/7-3.jpg","Art by Oreteki18kin");
+			writeText("Her convulsing pussy practically milks every drop of cum out of you as her eyes roll up, her spit dribbling heavily from her chin and onto her apron now, her thighs spasming slightly in front of you as she lets out a throaty, high-pitched, orgasmic shout.");
+			writeText("The shout slowly turns to gasping, shuddering breathing as she tries to focus, slowly rising off of your cock... only to shudder sharply as your head slides out of her, her body falling forward slightly.");
+			writeText("Her arms end up on either side of your head, her eyes half-shut as she tries to calm down, before eventually managing to give you a satisfied smile.");
+			writeSpeech("maid","","T-Thank you for using me, *Master~");
+			writeText("Rolling over slightly, she flops onto the bed, landing on her back as she shuts her eyes for a moment.");
+			writeText("You can probably take a moment to rest before heading to the shower...");
+			writeText("Leaning back yourself, you take a moment to think about the trigger that maidF can only cum from making you or mistressF orgasm...");
+			writeText("...It'd probably be a good idea to make sure mistressF knows about that, actually.");
+			writeText("Still, for now? A bit of rest, a shower, and the rest of the day...");
+			if(data.player.location != 'gallery' && checkFlag('maid','OrgasmLock') != true)
+				addFlag('maid','OrgasmLock');
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
 		// case "maid3A" : {
 		// 	document.getElementById('output').innerHTML = '';
 		// 	writeSpecial("This is the second scene in her uniform.");
 
-			
+
 
 
 
@@ -1274,6 +1818,161 @@ function writeEvent(name) { //Plays the actual event.
 		// 	writeFunction("changeLocation(data.player.location)", "Finish");
 		// 	break;
 		// }
+		case "maid4" : {
+			document.getElementById('output').innerHTML = '';
+			writeHTML(`
+				t mistressF helps line you up with maidF's pussy, your head almost pressing into her as mistressF keeps those lips spread wide. 
+				sp mistress; Come on stud~ She's all wet and ready for you, her cute little cunny is practically <i>begging</i> to be used like your <i>personal pocket-pussy~!</i>
+				t You pause slightly, looking up at maidF first...
+				sp maid; P-Please... Use me, *Master playerF. I want mistressF to watch me get pumped full...!
+				sp player; Then let's get started.
+			`);
+			writeBig("images/mistress/threesome1.jpg","Art by Oreteki18kin");
+			writeHTML(`
+				sp mistress; Ooh~!
+				t maidF lets out a shuddering moan as you push into her, looking away in flushed embarrassment as mistressF excitedly watches you fuck her.
+				t mistressF looks up at you with a wide smile and a wink, before leaning her head forward just a little bit.
+				sp maid; <i><b>U-UOH~!</b></i>
+				t mistressF's tongue teases at maidF's clit, each flick of the tongue against it causing maidF to tighten around your cock sharply, which mistressF enjoys using to tease you both.
+			`);
+			writeText("As maidF squirms more and more beneath you, mistressF pushes her arms against maidF's thighs harder to keep her steady.");
+			writeSpeech("mistress","","Hold still, slut~ Your *Master's trying to use you to get off!");
+			writeText("Looking up at you, she clearly mouths \"Go faster\" with a grin, before taking her tongue back to maidF's clit.");
+			writeText("You're more than happy to oblige, pulling your cock out of her hot, wet folds before thrusting harder and faster, every inch of your cock rapidly sliding in and out of her.");
+			writeSpeech("maid","","O-Oh <i><b>god</b></i> of f-fuh-<i><b>FUCK</b></i> p-please~!");
+			writeText("mistressF lets out a laugh, shaking her head.");
+			writeSpeech("mistress","","That's 'slutty maid' for <i><b>'fuck me harder.'</b></i>");
+			writeText("mistressF's grin is almost malicious as she moves one hand, toying with maidF's clit even more as you nod.");
+			if(checkFlag('maid','OrgasmLock')){writeText("If she could cum right now, you're sure that she'd be squirting her brains out.");}
+			writeText("maidF lets out a high squeal, rolling her head back and continuing to haltingly sputter out half-words and high-pitched moans.");
+			writeText("mistressF keeps teasing maidF's clit while you keep thrusting, the constant overload of sensation causing maidF to squeeze around you unpredictably.");
+			writeSpeech("player","","Fuck, I'm already...!");
+			writeText("Hearing you mutter that, you can see mistressF get visibly more excited.");
+			writeSpeech("mistress","","Yes, yes, yes...! Pump my slutty maid full~! You've got us both so horny, so blow your hot, sticky load inside your <i>sex-toy~!</i>");
+			writeSpeech("maid","","Inside...~! M-*Master, p-please~!"+(checkFlag('maid','OrgasmLock') ? " Make me cum with your jizz~!" : ""));
+			writeText("maidF's sqeezing gets even more sporadic as her breathing speeds up, mistressF's hands spreading maidF again as she stares down at your cock, almost enchanted by the sight.");
+			writeSpeech("player","","Cumming!");
+			writeBig("images/mistress/threesome2.jpg","Art by Oreteki18kin");
+			writeSpeech("maid","","<i><b>YES~!</b></i>");
+			writeSpeech("mistress","","Woah~!");
+			writeText("maidF's eyes roll up, her entire body tensing as she's pushed over the edge by being filled up with your cum.");
+			writeText("You buck your hips several times as you pump her full, but mistressF's enraptured face just makes too good of a target...");
+			writeSpeech("mistress","","Waah~!?");
+			writeText("She gives a small shout as you pull completely out, your cock mere inches from her face as you buck your hips again and spurt cum all over her.");
+			writeText("mistressF's shock wears off quickly, at which point she lets out a happy giggle.");
+			writeSpeech("mistress","","I must;'ve done good to get a reward, *Master~");
+			writeText("Her face half-covered in cum, mistressF looks back down at maidF's pussy, letting out a small coo as she sees how much cum is spilling out.");
+			writeBig("images/mistress/threesome3.jpg","Art by Oreteki18kin");
+			writeText("mistressF's hand goes down a bit, pooling a bit of the cum in her hand for a second before letting it drip down again, teasing maidF a bit in the process.");
+			writeText("But really, maidF's had enough fun getting her cunt played with for now.");
+			writeSpeech("player","","mistressF.");
+			writeText("She pauses, perking up at her name with a smile.");
+			writeSpeech("mistress","","Yes, *Master~?");
+			writeSpeech("player","","Your turn.");
+			writeText("She grins, nodding as she reaches up to her face.");
+			writeText("She pools most of it into her hands as she moves back a bit on the bed, moving right up to maidF's head.");
+			writeSpeech("mistress","","Open~");
+			writeText("Barely waiting a moment, mistressF pours your cum into maidF's mouth, who swallows it almost reflexively.");
+			writeText("Though, mistressF pauses for a moment to get a little off of maidF's chin first, lapping it up with her own tongue before turning back to you.");
+			writeText("Shifting her posture, she's crouching just past maidF's face as she beckons you over.");
+			writeSpeech("mistress","","I got a good view of my slutty maid-toy getting fucked, so I thought I'd repay the favor while you <i>pound me like a bitch~!</i>");
+			writeBig("images/mistress/threesome4.jpg","Art by Oreteki18kin");
+			writeText("You approach her carefully, minding maidF's arms as you kneel above her as well.");
+			writeText("maidF takes a deep breath as you move over her, letting out a pleased hum as she nudges her face against your balls.");
+			writeSpeech("maid","","God, you just came but they still seem so full~");
+			writeText("mistressF grins, rolling her hips a bit for you.");
+			writeSpeech("mistress","","We'll just have to fix that then, won't we~?");
+			writeSpeech("player","","Sounds good to me.");
+			writeText("Her eyes widen slightly in surprise as you thrust forward - seems like she was expecting a bit more playful banter.");
+			writeText("Still, given the way she shudders as you push into her pussy, she won't be complaining.");
+			writeBig("images/mistress/threesome5.jpg","Art by Oreteki18kin");
+			writeText("She grins widely, a shuddering moan spilling out of her as she does.");
+			writeSpeech("mistress","","Haah, you are just so <i><b>perfect~!</b></i> It's nothing like a dildo, it's <i>so much better...~!</i>");
+			writeText("She lets out a laugh, enjoying every second as you push deeper and deeper into her, before slowly pulling back out.");
+			writeText("maidF's face is getting spattered with every thrust, each drop on her skin making her squirm and moan more.");
+			writeText("She's getting off on this <b>hard.</b>");
+			writeText("Notcing this, mistressF smirks.");
+			writeSpeech("mistress","","Oh, and maidF?");
+			writeSpeech("maid","","Hah~?");
+			writeSpeech("mistress","","I want a nice, <i>fat</i> load, and you went a drained so much... You know what to do, don't you?");
+			writeText("You can feel maidF's breathing speed up beneath you.");
+			writeSpeech("mistress","","<i><b>Lick.</b></i>");
+			writeText("There's no hesitation as maidF's mouth goes to your balls, hungrily teasing them with her lips and tongue.");
+			writeText("You let out a moan as you go, slowing down in your thrusts for a moment before mistressF hums once, looking up at you with an almost defiant amusement.");
+			writeSpeech("mistress","","Hoh? Oh my, it seems like the two of us together might be a bit too much~");
+			writeText("She looks at you smugly, but you can see it in her eyes.");
+			writeText("She <b>wants</b> to be punished.");
+			writeSpeech("mistress","","If you like, we can slow-");
+			writeText("You roughly grab her by the chin, <b>bucking</b> your hips forward as the words turn to a moan in her throat.");
+			writeText("You bring her face to yours, making her look you in the eyes as you speak.");
+			writeSpeech("player","","Are you that desperate for discipline, <i><b>bitch?</b></i>");
+			writeText("She shudders as you degrade her, but she keeps smirking despite it.");
+			writeSpeech("mistress","","It's been years since I was anything but a dom. If you want me to submit in front of my fucktoy, <i>*Master,</i> then you'll need to <i>earn it~</i>");
+			writeText("She's willful...");
+			writeText("But that's only going to make things more fun.");
+			writeText("You maintain eye contact, focusing on her as you time your thrusts.");
+			writeSpeech("player","","You're enjoying this, aren't you?");
+			writeSpeech("mistress","","Oh, so much~");
+			writeText("The rhythmic slapping your your hips against hers rings out like a metronome, the only interruption to it being mistressF's moans and maidF's ball-worshipping.");
+			writeSpeech("player","","I bet you think you can outlast me, don't you? That I'll cum while going <b>deeper</b> and <b>deeper.</b>");
+			writeText("She blinks once, her focus shifting briefly before she laughs again.");
+			writeSpeech("mistress","","Your words, not mine~");
+			writeSpeech("player","","But the truth is that you <i>want</i> to lose.");
+			writeText("mistressF lets out a small, involuntary grunt.");
+			writeSpeech("player","","You want to be used even harder than your little ball-licking fucktoy, don't you?");
+			writeText("She swallows sharply, her eyes continuing to unfocus.");
+			writeSpeech("player","","There's nothing you want more than to be dominated, and reduced to a cum-drinking <i>cum-dump <b>breeding-bitch.</b></i>");
+			writeText("her body tenses up sharply, another throaty hum of pleasure coming from her throat.");
+			writeSpeech("mistress","","I... I feels...?");
+			writeSpeech("player","","You feel <b>sensitive,</b> don't you?");
+			writeText("She doesn't even realize she's been put under, her pleasure growing as you release her chin and keep fucking her.");
+			writeSpeech("mistress","","Y-Yes...");
+			writeSpeech("player","","You feel <b>empty</b> when I pull out, don't you?");
+			writeSpeech("mistress","","H-Hn...!");
+			writeSpeech("player","","But you feel so <b>full</b> when I'm inside... Right, <b>bitch></b>");
+			writeText("mistressF bites her lip, failing to keep in a groan of pleasure.");
+			writeSpeech("player","","And every single thrust just makes you feel more and more like you belong, like the only thing you <i>deserve</i> to be used by me.");
+			writeText("You give her cheek a light slap, her cunt squeezing tightly as you do.");
+			writeSpeech("player","","You might be maidF's mistress, mistressF...");
+			writeSpeech("player","","But you're <i><b>my <font size='+1'>bitch.</font></b></i>");
+			writeSpeech("mistress","","F-Fuck yes...~!");
+			writeText("She lets out heavy, breathy moans as her hips shake against you.");
+			writeSpeech("player","","And feel free to act up again, bitch. Because when you do...");
+			writeText("You drop your voice low, leaning forward.");
+			writeSpeech("player","","I'll remind you of your place, and just how much you love it.");
+			writeSpeech("mistress","","Y-Yes...! Thank you, *Master~!");
+			writeText("She lets out a soft laugh, her breathing still heavy as she tries to squeeze around you to make every thrust pleasurable.");
+			writeSpeech("mistress","","Fuck me, use me, fill me up and paint my body with your jizz...! Promise to make me your fucktoy, and I'll be your loyal <i>bitch~!</i>");
+			writeText("Feeling your own climax approaching again, you laugh at her, which only seems to make her tighter.");
+			writeSpeech("player","","Then take my load like a good girl, slut.");
+			writeSpeech("mistress","","Oh God yes, thank you~!");
+			writeText("She takes a deep breath as you piston in, your balls gently slapping against maidF's face as you thrust into her mistress, until...");
+			writeSpeech("player","","Cumming...!");
+			writeSpeech("mistress","","<i><b>UOOOHH~!</b></i>");
+			writeBig("images/mistress/threesome6.jpg","Art by Oreteki18kin");
+			writeText("As you pump your bitch full of cum, you can see her cum onto maidF's face, whose own body seems to tense up.");
+			if(checkFlag('maid','OrgasmLock')){writeText("Another unexpected effect from the orgasm trigger... Just seeing you both cum managed to make her orgasm hands-free.");}
+			writeText("When you finally finish cumming, you pull out of mistressF's pussy with a wet sound, followed by your cum spilling out.");
+			writeBig("images/mistress/threesome7.jpg","Art by Oreteki18kin");
+			writeText("mistressF seems overjoyed for a moment before managing to collect herself, getting down onto the bed next to maidF.");
+			writeText("Her voice seems softer now as she lays down, her fingers gently tracing along maidF's face with a smile.");
+			writeSpeech("mistress","","You were wonderful, maidF~");
+			writeText("mistressF gently kisses her cheek before looking over to you, smiling dopily from the orgasm.");
+			writeSpeech("mistress","","You too~ Doms deserve some loving aftercare too~");
+			writeText("Before you can really respond, you're pulled towards the two of them as mistressF basically uses you as a big cuddly body-pillow.");
+			writeText("You can hear a faint, half-hearted chuckle from maidF as she looks at you.");
+			writeSpeech("maid","","Looks like your bitch is experiencing puppy love, *Master...");
+			writeSpeech("mistress","","Hush, or no cuddles for you...");
+			writeText("You can't help but laugh at that, shaking your head a bit as you relax.");
+			if(data.player.location != 'gallery'){
+				writeText("...");
+				writeText("A while later, when mistressF is all cuddled out, you all get up to clean up, rinse off, and head out.");
+				writeText("It takes a while, particularly when mistressF tried to pull aside maidF for a little fingerbanging, but it was fun.");
+				writeText("Still, it's about time to get going - time waits for no man, and all that...");
+			}
+			writeFunction("changeLocation(data.player.location)", "Finish (for now)");
+			break;
+		}
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong event. Error code: Failed to write event ("+name+") in "+character.index+".js");
 			break;
@@ -1296,11 +1995,11 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "maidPhone1", trust: 22,},
-	{index: "maidPhone1", trust: 23,},
-	//{index: "maidPhone2", trust: 25,},
-	{index: "maidReward", trust: 27,},
-	{index: "maidRewardDuo", trust: 30,},
+{index: "maidPhone1", trust: 22,},
+{index: "maidPhone1", trust: 23,},
+//{index: "maidPhone2", trust: 25,},
+{index: "maidReward", trust: 115,},
+//{index: "maidRewardDuo", trust: 30,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
@@ -1448,7 +2147,7 @@ switch (requestType) {
 				var finalResult = true;
 				if (encounterArray[number].location != null) {
 					var finalLocation = encounterArray[number].location;
-					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map" && data.player.gps == true) { //check the location
+					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map") { //check the location
 						if (encounterArray[number].time.includes(data.player.time)) { //check the time
 							if (encounterArray[number].trustMin <= checkTrust(character.index) && encounterArray[number].trustMax >= checkTrust(character.index)) { //check the trust requirements
 								if (encounterArray[number].day == "even" && data.player.day%2 == 1) {
@@ -1522,24 +2221,24 @@ switch (requestType) {
 			if (newItems[item].price != 0) {
 				if (newItems[item].key == false) {
 					document.getElementById('output').innerHTML += `
-						<div class = "shopItem" onclick = "purchase('`+newItems[item].name+`','`+newItems[item].image+`','`+newItems[item].price+`','`+newItems[item].key+`')">
-							<p class = "shopName">`+newItems[item].name+`</p>
-							<p class = "shopDesc">`+newItems[item].description+`</p>
-							<p class = "shopPrice">$`+newItems[item].price+`</p>
-							<img class ="shopImage" src="`+newItems[item].image+`">
-						</div>
-						<br>
+					<div class = "shopItem" onclick = "purchase('`+newItems[item].name+`','`+newItems[item].image+`','`+newItems[item].price+`','`+newItems[item].key+`')">
+					<p class = "shopName">`+newItems[item].name+`</p>
+					<p class = "shopDesc">`+newItems[item].description+`</p>
+					<p class = "shopPrice">$`+newItems[item].price+`</p>
+					<img class ="shopImage" src="`+newItems[item].image+`">
+					</div>
+					<br>
 					`;
 				}
 				else {
 					if (checkItem(newItems[item].name) == false) {
 						document.getElementById('output').innerHTML += `
 						<div class = "shopItem" onclick = "purchase('`+newItems[item].name+`','`+newItems[item].image+`','`+newItems[item].price+`','`+newItems[item].key+`')">
-								<p class = "shopName">`+newItems[item].name+`</p>
-								<p class = "shopDesc">`+newItems[item].description+`</p>
-								<p class = "shopPrice">$`+newItems[item].price+`</p>
-								<img class ="shopImage" src="`+newItems[item].image+`">
-							</div>
+						<p class = "shopName">`+newItems[item].name+`</p>
+						<p class = "shopDesc">`+newItems[item].description+`</p>
+						<p class = "shopPrice">$`+newItems[item].price+`</p>
+						<img class ="shopImage" src="`+newItems[item].image+`">
+						</div>
 						<br>
 						`;
 					}
@@ -1562,13 +2261,13 @@ switch (requestType) {
 					//If the character has no unread texts
 					//If the character does not have this text in their text history
 					if (
-					data.story[phoneHistoryCheck].unreadText != true &&
-					data.story[phoneHistoryCheck].textHistory.includes(phoneArray[number].index) != true &&
-					data.story[phoneHistoryCheck].textEvent != phoneArray[number].index
-					) {
+						data.story[phoneHistoryCheck].unreadText != true &&
+						data.story[phoneHistoryCheck].textHistory.includes(phoneArray[number].index) != true &&
+						data.story[phoneHistoryCheck].textEvent != phoneArray[number].index
+						) {
 						//If the phone record is using the old system...
-						if (phoneArray[number].trust != null) {
-							var finalResult = false;
+					if (phoneArray[number].trust != null) {
+						var finalResult = false;
 							if (checkTrust(character.index) == phoneArray[number].trust) { //if the player's trust with the character meets the text requirement
 								for (phoneEventCheck = 0; phoneEventCheck < data.story.length; phoneEventCheck++) { //go through the characters
 									if (data.story[phoneEventCheck].index == character.index) { //check what text is currently assigned to the character

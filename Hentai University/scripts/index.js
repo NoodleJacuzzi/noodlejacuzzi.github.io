@@ -665,6 +665,11 @@ function renamePlayer() {
 	loadEncounter("system", "prologue2");
 }
 
+function renamePlayerAlt() {
+	data.player.name = document.getElementById('nameSubmission').value;
+	changeLocation(data.player.location);
+}
+
 function renameEveryone() {
 	for (i = 0; i < data.story.length; i++) {
 		var sheet = 'nameSubmission' + i + '1';
@@ -780,23 +785,47 @@ function checkRequirements(string) {
 		}
 		string = string.replace(`!flag player `+check+`;`, ``);
 	}
-	if (string.includes("parity") == true) {
-		var check = string.split(`parity `).pop().split(`;`)[0];
+	while (string.includes("?parity") == true) {
+		var check = string.split(`?parity `).pop().split(`;`)[0];
 		switch (check) {
 			case "even": {
 				if (data.player.day%2 == 1) {
 					finalResult = false;
 				}
+				break;
 			}
 			case "odd": {
 				if (data.player.day%2 == 0) {
 					finalResult = false;
 				}
+				break;
 			}
 			default: {
 				console.log("Error! Parity defined but an invalid parity used. BE sure to use either even or odd, and make sure you have a semicolon afterwards.");
 			}
 		}
+		string = string.replace(`?parity `+check+`;`, ``);
+	}
+	while (string.includes("?gender") == true) {
+		var check = string.split(`?gender `).pop().split(`;`)[0];
+		switch (check) {
+			case "man": {
+				if (data.player.gender == "woman") {
+					finalResult = false;
+				}
+				break;
+			}
+			case "woman": {
+				if (data.player.gender == "man") {
+					finalResult = false;
+				}
+				break;
+			}
+			default: {
+				console.log("Error! Parity defined but an invalid parity used. BE sure to use either even or odd, and make sure you have a semicolon afterwards.");
+			}
+		}
+		string = string.replace(`?gender `+check+`;`, ``);
 	}
 	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
 		var corruptionTarget = data.story[characterIndex].index;
@@ -856,6 +885,105 @@ function checkRequirements(string) {
 	else {
 		return false;
 	}
+}
+
+function cullRequirements(string) {
+	while (string.includes("!location ") == true) {
+		var check = string.split(`!location `).pop().split(`;`)[0];
+		string = string.replace(`!location `+check+`;`, ``);
+	}
+	while (string.includes("?location ") == true) {
+		var check = string.split(`?location `).pop().split(`;`)[0];
+		string = string.replace(`?location `+check+`;`, ``);
+	}
+	while (string.includes("!item ") == true) {
+		var check = string.split(`!item `).pop().split(`;`)[0];
+		string = string.replace(`!item `+check+`;`, ``);
+	}
+	while (string.includes("?item ") == true) {
+		var check = string.split(`?item `).pop().split(`;`)[0];
+		string = string.replace(`?item `+check+`;`, ``);
+	}
+	while (string.includes("!hypnosis ") == true) {
+		var check = string.split(`!hypnosis `).pop().split(`;`)[0];
+		string = string.replace(`!hypnosis `+check+`;`, ``);
+	}
+	while (string.includes("?hypnosis ") == true) {
+		var check = string.split(`?hypnosis `).pop().split(`;`)[0];
+		string = string.replace(`?hypnosis `+check+`;`, ``);
+	}
+	while (string.includes("!hacking ") == true) {
+		var check = string.split(`!hacking `).pop().split(`;`)[0];
+		string = string.replace(`!hacking `+check+`;`, ``);
+	}
+	while (string.includes("?hacking ") == true) {
+		var check = string.split(`?hacking `).pop().split(`;`)[0];
+		string = string.replace(`?hacking `+check+`;`, ``);
+	}
+	while (string.includes("!counseling ") == true) {
+		var check = string.split(`!counseling `).pop().split(`;`)[0];
+		string = string.replace(`!counseling `+check+`;`, ``);
+	}
+	while (string.includes("?counseling ") == true) {
+		var check = string.split(`?counseling `).pop().split(`;`)[0];
+		string = string.replace(`?counseling `+check+`;`, ``);
+	}
+	while (string.includes("!time ") == true) {
+		var check = string.split(`!time `).pop().split(`;`)[0];
+		string = string.replace(`!time `+check+`;`, ``);
+	}
+	while (string.includes("?time ") == true) {
+		var check = string.split(`?time `).pop().split(`;`)[0];
+		string = string.replace(`?time `+check+`;`, ``);
+	}
+	while (string.includes("?flag player ") == true) {
+		var check = string.split(`?flag player `).pop().split(`;`)[0];
+		string = string.replace(`?flag player `+check+`;`, ``);
+	}
+	while (string.includes("!flag player ") == true) {
+		var check = string.split(`!flag player `).pop().split(`;`)[0];
+		string = string.replace(`!flag player `+check+`;`, ``);
+	}
+	while (string.includes("?parity") == true) {
+		var check = string.split(`?parity `).pop().split(`;`)[0];
+		string = string.replace(`?parity `+check+`;`, ``);
+	}
+	while (string.includes("?gender") == true) {
+		var check = string.split(`?gender `).pop().split(`;`)[0];
+		string = string.replace(`?gender `+check+`;`, ``);
+	}
+	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
+		var corruptionTarget = data.story[characterIndex].index;
+		while (string.includes("?trust "+corruptionTarget) == true) {
+			var check = string.split(`?trust `+corruptionTarget+` `).pop().split(`;`)[0];
+			string = string.replace(`?trust `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?minTrust "+corruptionTarget) == true) {
+			var check = string.split(`?minTrust `+corruptionTarget+` `).pop().split(`;`)[0];
+			string = string.replace(`?minTrust `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?maxTrust "+corruptionTarget) == true) {
+			var check = string.split(`?maxTrust `+corruptionTarget+` `).pop().split(`;`)[0];
+			string = string.replace(`?maxTrust `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?trustMin "+corruptionTarget) == true) {
+			var check = string.split(`?trustMin `+corruptionTarget+` `).pop().split(`;`)[0];
+			string = string.replace(`?trustMin `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?trustMax "+corruptionTarget) == true) {
+			var check = string.split(`?trustMax `+corruptionTarget+` `).pop().split(`;`)[0];
+			string = string.replace(`?trustMax `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("!flag "+corruptionTarget) == true) {
+			var check = string.split(`!flag `+corruptionTarget+` `).pop().split(`;`)[0];
+			string = string.replace(`!flag `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?flag "+corruptionTarget) == true) {
+			var check = string.split(`?flag `+corruptionTarget+` `).pop().split(`;`)[0];
+			string = string.replace(`?flag `+corruptionTarget+` `+check+`;`, ``);
+		}
+	}
+	return string;
 }
 
 //Scene creation
@@ -1450,6 +1578,11 @@ function writeSpeech (name, img, text, altName, altColor) {
 }
 
 function writeBig (img, cap) {
+	if (cap == "") {
+		if (character.artist != null) {
+			cap = character.artist;
+		}
+	}
 	if (img.includes('profile') == true) {
 		if (data.player.pervert != true) {
 			var checkForError = "";
@@ -1612,7 +1745,7 @@ function writeHTML(text) {
 			lines[lineCounter] = lines[lineCounter].replace(`\t`, ``);
 		}
 		//If the line is not empty (we don't want to print empty lines)
-		if (lines[lineCounter] != "") {
+		if (lines[lineCounter] != "" && checkRequirements(lines[lineCounter]) == true) {
 			//Grab the first word of the line to use as the command
 			var command = lines[lineCounter].replace(/ .*/,'');
 			//Depending on which command, execute different code. Convert the command to lowercase as well in case we used Sp instead of sp, as js is case-sensitive.
@@ -1622,7 +1755,7 @@ function writeHTML(text) {
 					//Remove the command from the line we actually want to print.
 					lines[lineCounter] = lines[lineCounter].replace(command+` `, ``);
 					//Execute the writeText command to print everything left to the screen.
-					writeText(lines[lineCounter]);
+					writeText(cullRequirements(lines[lineCounter]));
 					//Don't execute any of the below switch cases.
 					break;
 				}
@@ -1657,7 +1790,7 @@ function writeHTML(text) {
 					lines[lineCounter] = lines[lineCounter].replace(command+` `+name+`; `, ``);
 					//Execute the writeSpeech command to print everything we have left.
 					//TODO: Add custom colors and custom names
-					writeSpeech(name, image, lines[lineCounter], altName, altColor);
+					writeSpeech(name, image, cullRequirements(lines[lineCounter]), altName, altColor);
 					break;
 				}
 				case "im": {
@@ -1687,7 +1820,7 @@ function writeHTML(text) {
 						var argument = "";
 					}
 					//Write the button to the screen using the information we've collected.
-					writeFunction(func+"('"+argument+"')", name)
+					writeFunction(func+"('"+argument+"')", cullRequirements(name))
 					break;
 				}
 				//This is for convenience. If the line is just an elipses, replace it with a horizontal line cutting across the screen.
@@ -2457,6 +2590,7 @@ function fileLoaded(){
 		data = fakedata;
 		changeLocation(data.player.location);
 	}
+	document.getElementById('loadFile').value = '';
 }
 
 function generateSave() {
@@ -2876,11 +3010,6 @@ function diagnostic() {
 			loadEncounter('system', 'prologue');
 			break;
 		}
-		case "merry darky": {
-			setTrust('succubus', 77);
-			writeFunction("loadEncounter('succubus', 'date1')", "Push this button, Merry");
-			break;
-		}
 		case "pervert": {
 			if (data.player.pervert != true) {
 				data.player.pervert = true;
@@ -3002,6 +3131,17 @@ function diagnostic() {
 			else {
 				ghostBoost += .2;
 				writeSpecial("Increased the visibility of ghosts! You can repeat this code if you need to. Refreshing the game will undo this code.");
+			}
+			break;
+		}
+		case "no disguise": {
+			if (data.player.noDisguise != true) {
+				data.player.noDisguise = true;
+				writeSpecial("No Disguise mode activated. Default player image will be used for speech during scenes with characters like mamaF.");
+			}
+			else {
+				data.player.noDisguise = false;
+				writeSpecial("You will now use disguise images in place of your usual picture for scenes with characters like mamaF.");
 			}
 			break;
 		}

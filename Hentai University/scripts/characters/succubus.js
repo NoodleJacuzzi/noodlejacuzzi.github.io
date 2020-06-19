@@ -21,7 +21,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "windowProposal", name: "Someone in cosplay is sitting in your windowsill", location: 'playerHouse', time: "Night", itemReq: "", trustMin: 1, trustMax: 1, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "demon.jpg",},
 	{index: "caseSelect", name: "succubus is here again", location: 'playerHouse', time: "Night", itemReq: "", trustMin: 60, trustMax: 76, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "demon.jpg",},
 	{index: "date1", name: "succubus is here waiting for you", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 77, trustMax: 77, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
-	{index: "caseSelect", name: "succubus is here again", location: 'playerHouse', time: "Night", itemReq: "", trustMin: 78, trustMax: 200, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "demon.jpg",},
+	{index: "postQuo", name: "succubus is here again", location: 'playerHouse', time: "Night", itemReq: "", trustMin: 78, trustMax: 99, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "demon.jpg",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -46,7 +46,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Eyes still locked on his phone, he leads you to a nearby hotel.");
 			writeSpeech("player", "", "Not getting the money up front? And you'll just do anyone who asks?");
 			writeSpeech("succubus", "",  "I've got my standards and my methods.");
-			writeText("The hotel is a actually a pretty nice looking place, but the receptionist doesn't even seem to notice as the two of you walk by.");
+			writeText("The hotel is actually a pretty nice looking place, but the receptionist doesn't even seem to notice as the two of you walk by.");
 			writeText("The elevator ride up is pretty slow. He tends to answer your questions with single-word 'yup's.");
 			writeSpeech("player", "", "Gotta say, not impressed so far. Not super interested in a boy going starfish under me.");
 			writeSpeech("succubus", "",  "Heh. You don't need to worry, you're about to have the time of your life.");
@@ -190,6 +190,18 @@ function writeEncounter(name) { //Plays the actual encounter.
 					}
 				}
 			}
+			if (checkFlag('succubus', 'nagatoroS') != true) {
+				writeSpeech("succubus", "demon.jpg", "I was skulking around your school for a bit looking for a mark, and I think I found someone good in one of the hallways.");
+				writeFunction("writeEncounter('nagatoroStart')", "nagatoroF nagatoroL");
+			}
+			else {
+				if (checkFlag('succubus', 'nagatoroF') != true) {
+					writeSpeech("succubus", "demon.jpg", "You look into that twinky boi looking for a faculty advisor yet? Apparantly he's trying to form a club, I think on the east side of your school.");
+					if (checkTrust('nagatoro') > 99) {
+						writeFunction("writeEncounter('nagatoroEnd')", "Talk about nagatoroF");
+					}
+				}
+			}
 			if (checkFlag('succubus', 'housekeepS') != true) {
 				writeSpeech("succubus", "demon.jpg", "I saw this flier in town while in disguise advertising for a maid service. You wanna check it out?");
 				writeFunction("writeEncounter('housekeepStart')", "housekeepF housekeepL");
@@ -199,14 +211,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeSpeech("succubus", "demon.jpg", "You hired a maid yet? Honestly, something seems fishy about them.");
 					if (checkTrust('housekeep') > 20) {
 						writeFunction("writeEncounter('housekeepEnd')", "Talk about housekeepF");
-					}
-				}
-			}
-			if (checkFlag('succubus', 'mephF') != true) {
-				if (checkFlag('succubus', 'mission') == true) {
-					writeSpeech("succubus", "demon.jpg", "Hey, you play with demonF yet? He wasn't at his hotel, so I was able to swipe some stuff off him.");
-					if (galleryCheck('demon1') == true) {
-						writeFunction("writeEncounter('mephEnd')", "Talk about demonF");
 					}
 				}
 			}
@@ -290,6 +294,33 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("writeEncounter('reward')", "Get started");
 			break;
 		}
+		case "nagatoroStart": {
+			writeSpeech("succubus", "demon.jpg", "I was skulking around your school for a bit looking for a mark, and I think I found someone good in one of the hallways. They're looking for a faculty advisor from what I hear, that's your jam right?");
+			writeSpeech("player", "", "I can keep an eye out.");
+			writeSpeech("succubus", "demon.jpg", "You should have some fun, I could feel an almost tangible aura of smugness coming from him. And I know you have a thing for smug bois.");
+			addFlag('succubus', 'nagatoroS');
+			writeFunction("writeEncounter('caseSelect')", "Back");
+			if (checkTrust('nagatoro') > 50) {
+				writeEncounter('nagatoroEarly');
+			}
+			break;
+		}
+		case "nagatoroEnd": {
+			writeSpeech("succubus", "demon.jpg", " You look into that twinky boi looking for a faculty advisor yet? Apparently he's trying to form a club, I think on the east side of your school.");
+			writeSpeech("player", "", "nagatoroF? Yeah, I spoke to him. He wanted to start a crossdressing club, you interested? ");
+			writeSpeech("succubus", "demon.jpg", "I don't need a club to... Nevermind. Well, if you've got another boi for your harem, I'll need to do something to stand out, huh?  How about...");
+			addFlag('succubus', 'nagatoroF');
+			writeFunction("writeEncounter('reward')", "Get started");
+			break;
+		}
+		case "nagatoroEarly": {
+			writeSpeech("succubus", "demon.jpg", "I was skulking around your school for a bit looking for a mark, and I think I found someone good in one of the hallways. They're looking for a faculty advisor from what I hear, that's your jam right?");
+			writeSpeech("player", "", "You mean nagatoroF? He wanted to start a crossdressing club, you interested? ");
+			writeSpeech("succubus", "demon.jpg", "I don't need a club to... Nevermind. Jeez, making me feel a little useless, master! Well, I guess I can reward you for being ahead of the curve~");
+			addFlag('succubus', 'nagatoroF');
+			writeFunction("writeEncounter('reward')", "Get started");
+			break;
+		}
 		case "housekeepStart": {
 			writeSpeech("succubus", "demon.jpg", "I saw a flier advertising a maid service in town, looks like more of a fetish thing than an actual cleaner though. Call 'em in, get them alone, work your magic. Seems like an easy catch.");
 			writeSpeech("player", "", "Can I see the flier?");
@@ -297,8 +328,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Why? Is it a front for another succubus or something?");
 			writeSpeech("succubus", "demon.jpg", "No.<br>Because I got a papercut on the flier.");
 			writeSpeech("player", "", "... I'm sorry?");
-			writeSpeech("succubus", "demon.jpg", "Listen dude, I'm a demon. I don't experience most of the inconveniences of modern life. I get a bad omen, I stay away.");
-			writeSpeech("player", "", "I'll be sure to be careful around the dangerous edges of the paper then, and keep and eye out.");
+			writeSpeech("succubus", "demon.jpg", "Listen master, I'm a demon. I don't experience most of the inconveniences of modern life. I get a bad omen, I stay away.");
+			writeSpeech("player", "", "I'll be sure to be careful around the dangerous edges of the paper then, and keep an eye out.");
 			writeSpeech("succubus", "demon.jpg", "Hah hah, very funny. Lemme know if the maid stuff pans out, I can help you dirty up whatever they clean.");
 			writeText("succubusF gives you a sly wink.");
 			addFlag('succubus', 'housekeepS');
@@ -326,7 +357,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "No, why? Is he a succubus in disguise?");
 			writeSpeech("succubus", "demon.jpg", "No.<br>Because I got a papercut on the flier.");
 			writeSpeech("player", "", "... I'm sorry?");
-			writeSpeech("succubus", "demon.jpg", "Listen dude, I'm a demon. I don't experience most of the inconveniences of modern life. I get a bad omen, I stay away.");
+			writeSpeech("succubus", "demon.jpg", "Listen master, I'm a demon. I don't experience most of the inconveniences of modern life. I get a bad omen, I stay away.");
 			writeSpeech("player", "", "I'll be sure to be careful around the dangerous edges of the paper then, and keep and eye out.");
 			writeSpeech("succubus", "demon.jpg", "Hah hah, very funny. Honestly, you stink of purity yourself. How about I clean that maid's touch right off of you, and we get seriously dirty?");
 			addFlag('succubus', 'housekeepF');
@@ -357,7 +388,16 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("writeEncounter('chatClothes')", "Your clothes");
 			writeFunction("writeEncounter('chatDemons')", "Other kinds of demons");
 			writeFunction("writeEncounter('chatTransformation')", "Demonization process");
-			writeFunction("writeEncounter('chatCorruption')", "How to corrupt souls");
+			if (checkFlag('succubus', 'mission') == true) {
+				if (checkFlag('succubus', 'newCorruption') != true) {
+					if (checkFlag('succubus', 'corruption') == true) {
+						writeFunction("writeEncounter('oldCorruption')", "Ask about how you can add more succubi to your harem");
+					}
+					else {
+						writeFunction("writeEncounter('newCorruptionPrompt')", "Ask about how you can add more succubi to your harem");
+					}
+				}
+			}
 			writeFunction("changeLocation('playerHouse')", "Finish");
 			break;
 		}
@@ -606,8 +646,140 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("loadEvent('system', 'newDay')", "Go to sleep");
 			break;
 		}
+		case "postQuo": {
+			writeHTML(`
+				sp succubus; im demon.jpg; I'm hoooome~<br>Were you lonely while I was away? Stealing from demonF is getting easier by the day. 
+				sp player; What do you have for me tonight, succubusF?
+				sp succubus; im demon.jpg; With a new big source of income, we should be in the green for a long time. You can have fun for as long as we want, but...
+				t succubusF rummages through his bag of goods.
+			`);
+			if (checkFlag('succubus', 'dominance') == false) {
+				writeHTML(`
+					sp succubus; im demon.jpg; I stole some potions from demonF's vault! They mess with your dominance and submissiveness, wanna try 'em out?
+				`);
+				writeFunction("writeEncounter('dominancePrompt')", "Have some dom/sub play fun");
+			}
+			else {
+				writeHTML(`
+					sp succubus; im demon.jpg; Hey, hey, you wanna try out those dom and sub potions again tonight?
+				`);
+				writeFunction("writeEncounter('dominancePrompt')", "Have some dom/sub play fun");
+			}
+			if (checkFlag('succubus', 'mephF') != true) {
+				if (checkFlag('succubus', 'mission') == true) {
+					writeSpeech("succubus", "demon.jpg", "Hey, you play with demonF yet? He wasn't at his hotel, so I was able to swipe some stuff off him.");
+					if (galleryCheck('demon1') == true) {
+						writeFunction("writeEncounter('mephEnd')", "Talk about demonF");
+					}
+				}
+			}
+			writeSpeech("succubus", "demon.jpg", "We could also just spend the night chatting, if you wanted. Anything on your mind?");
+			writeFunction("writeEncounter('chatSelect')", "Chat");
+			writeFunction("changeLocation('playerHouse')", "Finish");
+			if (checkFlag('succubus', 'mission') == true) {
+				if (checkFlag('succubus', 'missionF') != true) {
+					addFlag('succubus', 'missionF');
+					writeEncounter('missionF');
+				}
+			}
+			break;
+		}
+		case "dominancePrompt": {
+			if (checkFlag('succubus', 'dominance') == false) {
+				addFlag('succubus', 'dominance');
+				writeHTML(`
+					t succubusF holds up two small potion bottles with the star signs of Virgo and Aries on the front.
+					sp succubus; im demon.jpg; Ta-da~! These two potions drastically increase dominance and submissiveness. It's a temporary thing, mostly for sex.
+					sp player; As expected of a sex demon's cache.
+					sp succubus; im demon.jpg; Yep! And I also brought some stuff to play with as well. I'm a sub at heart, but I'm also a bit of a wimp, honestly so the potion should make me a little more comfortable with some of the things I brought.
+					t succubusF brings out a small box of outfits, some pink egg vibrators, and other various things. One of them catches your attention for a second, they're...
+					sp player; Are these... Bridal gloves... But for your feet?
+					t They're large stockings with a ring for the middle toe that expose most of the feet. As you inspect them succubusF blushes almost as hard as he does when he splurts on himself.
+					sp succubus; im demon.jpg; Well, ah, you only need to drink a little of the potions to get them working, so... I was maybe thinking I could try out the dominant one, just once? I know you're usually on top... Ah, it's silly. Nevermind, I also brought some rope you can use on me, and...
+					t He rambles on about what he brought with him as you mull over his words. If you only need to drink a small amount then you effectively can use the potions as much as you want with the demon boi. What will you do tonight?
+				`);
+			}
+			else {
+				writeHTML(`
+					t succubusF holds up two small potion bottles with the star signs of Virgo and Aries on the front.
+					sp succubus; im demon.jpg; Hehe, now for some fun on the other side, right? I brought toys too, so which one do you want tonight?
+				`);
+			}
+			writeFunction("writeEncounter('succubusPlayerDom')", "Take the dom potion");
+			writeFunction("writeEncounter('succubusPlayerSub')", "Take the sub potion");
+			writeFunction("writeEncounter('postQuo')", "Change your mind");
+			break;
+		}
+		case "succubusPlayerDom": {
+			writeEvent(name);
+			writeFunction("changeLocation('playerHouse')", "Finish");
+			break;
+		}
+		case "succubusPlayerSub": {
+			writeEvent(name);
+			writeFunction("changeLocation('playerHouse')", "Finish");
+			break;
+		}
+		case "oldCorruption": {
+			writeHTML(`
+			sp player; I was hoping to talk to you about the demonization process.
+			sp succubus; im demon.jpg; Oh yeah! You corrupt anybody yet?
+			sp player; I haven't. Honestly, turning people into whores who'll sleep around...
+			sp succubus; im demon.jpg; Ehehe, don't worry about that, master. With a direct line into demonF's vault, we're set for life! You could have a gaggle of girlyboys for a harem and you'd be... Well...
+			sp player; Is there a problem?
+			sp succubus; im demon.jpg; Yeah, it's you actually. Listen, you're a stud, I won't deny it. But entertaining more than one demon a day is... Risky. Three? You're tempting fate. Four is a very enjoyable way to commit suicide.
+			t succubusF rubs his chin, deep in thought.
+			sp succubus; im demon.jpg; There <i>is</i> a way. We could sap them of their masculinity, whatever they have anyways, and leave them on the verge of corruption. If you do decide to take the leap with me then I turn them and you get a demon harem. <br>And if you change your mind they'll stay normal humans.<br>Well, their cocks would be a little smaller, and they might squirt from a good spanking, but that's not a big deal if they're already good buttsluts.
+			t succubusF smiles a catlike grin.
+			sp succubus; im demon.jpg; Hehe... Maybe you should start with that feisty one, tomgirlF I think his name was? He'd be a perfect guinea pig. 
+			`);
+			addFlag('succubus', 'newCorruption');
+			writeFunction("writeEncounter('postQuo')", "Finish");
+			break;
+		}
+		case "newCorruptionPrompt": {
+			writeSpeech("succubus", "demon.jpg", "Oh ho? You wanna learn how to corrupt souls? Well, it's one of the first, non-sexual things I was taught.<br>It'll take me awhile, but I can teach you. I need to warn you though...");
+			writeText("succubusF leans in close.");
+			writeSpeech("succubus", "demon.jpg", "You're turning people who trust you, people you have control over, into semen demons.");
+			writeHTML(`
+				sp player; What, will they sleep around or something?
+				sp succubus; im demon.jpg; Ehehe, don't worry about that, master. With a direct line into demonF's vault, we're set for life! You could have a gaggle of girlyboys for a harem and you'd be... Well...
+				sp player; Is there a problem?
+				sp succubus; im demon.jpg; Yeah, it's you actually. Listen, you're a stud, I won't deny it. But entertaining more than one demon a day is... Risky. Three? You're tempting fate. Four is a very enjoyable way to commit suicide.
+				t succubusF rubs his chin, deep in thought.
+				sp succubus; im demon.jpg; There <i>is</i> a way. We could sap them of their masculinity, whatever they have anyways, and leave them on the verge of corruption. If you do decide to take the leap with me then I turn them and you get a demon harem. <br>And if you change your mind they'll stay normal humans.<br>Well, their cocks would be a little smaller, and they might squirt from a good spanking, but that's not a big deal if they're already good buttsluts.
+				t succubusF smiles a catlike grin.
+				sp succubus; im demon.jpg; So, what do you say? Interested in a harem of boys who are just as hungry as I am? 
+			`);
+			writeFunction("writeEncounter('newCorruptionAgree')", "Agree");
+			writeFunction("writeEncounter('postQuo')", "Decline");
+			break;
+		}
+		case "newCorruptionAgree": {
+			writeSpeech("succubus", "demon.jpg", "Well, the more the merrier! C'mere.");
+			writeText("succubusF pulls you close, his lips inches from yours.");
+			writeSpeech("player", "", "Ah, fuck!");
+			writeText("You pull back at a burning sensation on the back of your right hand, there's a dark mark there that quickly fades away.");
+			writeSpeech("succubus", "demon.jpg", "Sorry, probably should've warned you, but you look like you aren't super good at dealing with pain.<br>Anyways it's super easy. Just focus on where the mark was and it'll come back, allowing you to corrupt people.<br>They need to be deep, and I mean balls-deep in love with you though. Only the most broken bois may apply.");
+			writeSpeech("player", "", "Neat, thanks.");
+			writeSpeech("succubus", "demon.jpg", "... You really are an oddball, *Master.");
+			addFlag('succubus', 'newCorruption');
+			writeFunction("writeEncounter('postQuo')", "Finish");
+			break;
+		}
+		case "tomgirlCorruption": {
+			writeHTML(`
+			sp succubus; Wow, you really did a number on him.
+			t You jump a little as you hear succubusF's voice from behind your shoulder. You sigh and pull out of tomgirlF's ass with a *schlorp*.
+			sp succubus; Good work, I'll make sure nothing happens to him overnight, mess with his memories a little. He'll think that the shrinkage of his dick is a result of swearing loyalty to you. He, uh, won't really be able to get off with his hand anymore though. And sterility... Well, it doesn't really matter if it'll just splatter onto the floor while you pound his ass.
+			sp player; He should be his usual self tomorrow then?
+			sp succubus; Yep! And I can pull the trigger on his full transformation afterwards.<br>Let's see... No special powers, but I'm sure he has what it takes to make a good member of the harem.
+			`);
+			writeFunction("changeLocation('playerHouse')", "Finish");
+			break;
+		}
 		default: {
-			writePhoneSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
+			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
 		}
 	}
@@ -624,6 +796,8 @@ var eventArray = [
 	{index: "succubusDate1", name: "Date Part 1"},
 	{index: "succubusDate2", name: "Date Part 2"},
 	{index: "succubus4", name: "Paradise Found"},
+	{index: "succubusPlayerDom", name: "Ares Potion"},
+	{index: "succubusPlayerSub", name: "Virgo Potion"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -653,7 +827,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "What?");
 			writeSpeech("succubus", "", "Stomach! Yeah, stomach! Wow, bet you really want to take your frustrations out on me now, haha!");
 			writeSpeech("player", "", "Fuck, this was fishy after all.");
-			writeText("You start to leave, this is almost definitely a trap. As you get moving, finally makes eye contact with you, shooting you his best bedroom eyes. If he seriously thinks that's going to be en-");
+			writeText("You start to leave, this is almost definitely a trap. As you get moving, he finally makes eye contact with you, shooting you his best bedroom eyes. If he seriously thinks that's going to be en-");
 			writeBig("images/succubus/profileP.jpg", "Art by Gujira");
 			writeSpeech("succubus", "", "Aww, come on. Don't you want some of this? You know you <span style='color: #fc53f1'>can't resist</span>.");
 			writeText("Something's wrong. Something's wrong. You need to keep repeating that to yourself because your body isn't listening. There's something in the air, it's relaxing and energizing you at the same time.");
@@ -662,11 +836,11 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("succubus", "eyes.jpg", "<span style='color: #fc53f1'>Shhhh.</span>");
 			writeBig("images/succubus/1-1.jpg", "Art by Gujira");
 			writeSpeech("succubus", "eyes.jpg", "I'm <span style='color: #fc53f1'>really</span> sorry about how I've been acting. A real <span style='color: #fc53f1'>playerMan</span> like you deserves better, right?");
-			writeText("You feel like the wind got knocked flat out of you as his tongue runs across you nipple.");
+			writeText("You feel like the wind got knocked flat out of you as his tongue runs across your nipple.");
 			writeBig("images/succubus/1-2.jpg", "Art by Gujira");
 			writeSpeech("succubus", "", "Just close your eyes, I'll make you feel a lot better, okay? Don't worry about money, time, or even your life. Just sit tight and let me blow your mind.");
 			writeBig("images/succubus/1-3.jpg", "Art by Gujira");
-			writeText("He's got to have some kind off drugged lipstick or something, because the moment he wraps his lips around your nipple you feel like a live wire current is ripping through you.");
+			writeText("He's got to have some kind of drugged lipstick or something, because the moment he wraps his lips around your nipple you feel like a live wire current is ripping through you.");
 			writeBig("images/succubus/1-4.jpg", "Art by Gujira");
 			writeSpeech("succubus", "", "Aaaah~<br>You're really incredible playerMister.<br>And you're still hard too! I've changed my mind, I don't need anyone else, you're my new sex slave, okay?");
 			writeSpeech("player", "", "Ghh...");
@@ -693,7 +867,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("succubus", "", "Nonono, please~! I can't... Aaaa~!");
 			writeBig("images/succubus/1-8.jpg", "Art by Gujira");
 			writeText("His eyes roll back in his head and his body starts shaking, suddenly his piddly droplets of cum turn into a constant leaking stream.");
-			writeText("His grimace turns into a drunken smile and his tonge lolls out of his mouth as he defiles the sheets with his jizz.");
+			writeText("His grimace turns into a drunken smile and his tongue lolls out of his mouth as he defiles the sheets with his jizz.");
 			writeBig("images/succubus/1-9.jpg", "Art by Gujira");
 			writeSpeech("succubus", "", "Cumming~! I'm washting it all... But if feelsh sho gewd~!");
 			writeText("Dimly, you're aware that your second orgasm never actually finished, you've been cumming non stop and your vision is starting to fade.");
@@ -715,7 +889,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("succubus", "demon.jpg", "That's the spirit! C'mon, dick out!");
 			writeText("He cheers you on as you begin to disrobe.");
 			writeSpeech("player", "", "You're a lot more enthusiastic than last time.");
-			writeSpeech("succubus", "demon.jpg", "Well, let's just say most people take my street offer tend to be... Lowest common denominator types. Of course I'd be excited when I'm about to get some top-quality product waved in front of my face.<br>Ooh, speak of the devil...");
+			writeSpeech("succubus", "demon.jpg", "Well, let's just say most people who take me up on my street offer tend to be... Lowest common denominator types. Of course I'd be excited when I'm about to get some top-quality product waved in front of my face.<br>Ooh, speak of the devil...");
 			writeBig("images/succubus/2-1.jpg", "Art by Gujira");
 			writeSpeech("succubus", "demon.jpg", "Eheh... You sure you're all human?");
 			writeSpeech("player", "", "You sure you aren't stalling? Is it too big for you?");
@@ -1006,6 +1180,85 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/succubus/5-6.jpg");
 			writeText("The rest of the night is spent giving succubusF some positive reinforcement in the form of anal pounding. At some point you passed what you thought was your limit, relying on succubusF's performance enhancing saliva to keep you going after your own stamina gave out. It was all worth it by the time succubusF's broken psyche shattered again into even smaller bits of giggling joy at every orgasm.");
 			writeText("It's not really clear if fucking the self-loathing out of a demon counts as a good deed, but by the time you collapse, naked and spent, you're pretty sure you've fucked a new fetish into the heart of your chocolate demon femboi.");
+			break;
+		}
+		case "succubusPlayerDom": {
+			writeHTML(`
+				t The two of you take a small amount of the potion fluids and down them like shots.
+				t The taste is... Meaty. Like a steak in drink form.
+				sp player; ... I don't feel any different.
+				sp succubus; im demon.jpg; It might be slow-acting. Cmon, let's get ready for when they take effect.
+				...
+				sp succubus; im demon.jpg; M-master? I, um... I'm not sure it's working.
+				im images/succubus/067.jpg
+				sp succubus; im demon.jpg; M-maybe you could untie me, and we could try something different?<br>Ah, you can just untie me, I don't keep clippers in the box or anyth...
+				t You dig through the box of toys succubusF brought over and pull out some things that catch your eye.
+				sp succubus; im demon.jpg; Eheh... V-very funny, but those are, uh...<br>Listen, my body's more sensitive than a normal person, so maybe we should just leave those unti-<br>Hey, heyheyhey wait a-<br>Mpph! Mmmmph!
+				im images/succubus/067a.jpg
+				sp player; It's kicking in just fine from me, and your cock's being pretty honest with how hard it is.<br>It <i>is</i> hard, right? It's hard to tell sometimes.
+				sp succubus; im demon.jpg; Mppph~!
+				t He sputters and jerks on the spot as best he can.
+				sp player; Now you just hold still for a moment, plenty of toys in this little box to play with, and we've got all night together.
+				t You grab some more goods and connect them to the squirming boy beneath you with some tape. Despite his earlier protests...
+				im images/succubus/067b.jpg
+				sp player; You're already leaking, huh? Are these special vibes, or are you so much of a pervert that these little toys are enough to break your will?
+				sp succubus; im demon.jpg; Phhooh~!<br>Mpphphrr~!
+				sp player; I'll give you one chance. If you can last just a few seconds now without leaking any more, I'll untie you.
+				t He goes mostly quiet, trying to control his breathing until he squeaks when you displace the base of his skimpy swimsuit.
+				sp player; And if you can't, I'll fuck you until you can't see straight, then I'll pound you even harder while these vibes go off at max power.
+				t His breathing hitches, his ass clenches reflexively, and you can see a small almost-transparent drop of precum at the crotch of his outfit.
+				sp player; Good answer
+				im images/succubus/068.jpg
+				sp succubus; im demon.jpg; Mpppph~! Mh-hh-hh-hhh~!
+				t He flexes and squrms but he can't break through the ropes or the iron bar keeping his legs spread. You turn a small dial and the sound of buzzing becomes very audible.
+				t Between the stimulation to his little cocklette, his puffy nipples, and the sensation of a powerful dick giving his prostate plenty of lovetaps, it's obvious that his willpower has shattered.
+				sp player; D-damn, I'm already close~! You want it inside, right?
+				sp succubus; im demon.jpg; Mhhhm~! Mhhhm~!
+				im images/succubus/069.jpg
+				sp succubus; im demon.jpg; Phhhhhhckck~!
+				t As if on command his body shudders as he cums hard enough to leak through the suit. He's gasping for breath, before his body jerks in response to the feeling of cum inside him fucking his body up, hard.
+				sp player; Hoo... Now, I'm pulling out, but don't you worry. You brought us enough toys to last the night. You ready?
+				sp succubus; im demon.jpg; Mmm... Mhmm...
+				sp player; Good girl.
+				...
+				t Finally you feel the potion's effects starting to wear off, and the exhaustion is starting to set in. You're back to your senses.
+				im images/succubus/070.jpg
+				sp succubus; im demon.jpg; Maaa... Mathter...
+				t He's soaked to the bone in cum, every vibe in the box still noisily buzzing as they pleasure his cocklette and nipples.
+				t Two large vibrators and several beads in his ass keep his bitch hole satisfied, and a little clamp over his tongue keeps him from pulling it back in making it harder to swallow.
+				t These potions are really effective. The least you can do is untie him so he can get a shower while you pass out.
+			`);
+			break;
+		}
+		case "succubusPlayerSub": {
+			writeHTML(`
+				t The two of you take a small amount of the potion fluids and down them like shots.
+				t The taste is... Green. Like you're drinking celery mixed with apple-flavored candy.
+				sp player; ... I don't feel any different.
+				sp succubus; im demon.jpg; It might be slow-acting. Cmon, let's get ready for when they take effect.
+				...
+				sp succubus; im demon.jpg; Now hold still, lemme just... Oh, these are really comfy.
+				sp player; I... I think the potions are kicking in...
+				im images/succubus/020.jpg
+				sp succubus; im demon.jpg; Oh? <br>... Oh. You're enjoying this already, huh?
+				t He's really flexible, slowly stroking your length with his feet.
+				sp succubus; im demon.jpg; Ooh, looks like that got a reaction out of you. Is my big, strong master getting off on this? You know, if you just tried really <b>hard</b> you could overpower me right now. 
+				im images/succubus/021.jpg
+				sp succubus; im demon.jpg; But you won't! Hehe, my big puppy of a master just wants to get off any way he can! <br>Don't you worry my sweet little master, I'll play with you. Whenever you want, whenever you feel that perverted throbbing in your balls, I can be there. You'll never need to look at another skanky boi. 
+				t He's speeding up now, stimulating the head of your dick before returning to stroking your shaft.
+				sp succubus; im demon.jpg; You want to cum? Of course you do, that's all you ever want. But instead of plowing my fuckable hole, you're just going to spray it all over my feet! <br>Aha~! Don't worry master, no matter what kind of pathetic face you make when you start splurting, you'll always be mine! <br>My ass, my mouth, maybe something kinkier like my armpits, I'll never leave my precious pleasure piggy behind~! 
+				im images/succubus/022.jpg
+				sp succubus; im demon.jpg; Aha, ahahaha~! You're cumming! Just this once, I'm in charge, and I say you don't get to stop squirting until my feet are covered in your slime~!
+				im images/succubus/022a.jpg
+				sp succubus; im demon.jpg; Ehe, eheheh~! More, more~! Spray every drop from that filthy cock~! <br>Get addicted to my soles and be <b>my</b> servant for tonight~! Ahahaha~! 
+				t Even as your orgasm starts to wind down, the addictive drug that is a succubus's body is pushing you to the edge again already. 
+				t His eyes have a manic hunger in them as he keeps stroking your still-sensitive dick, every bit of reservation fading from his mind. Even as he's cackling about finally having control, you can actually see some fluid splurting from the crotch of his hotpants.
+				... 
+				t succubusF's forehead touches the floor. He's bowing all the way to the ground, apologizing for how carried away he got. 
+				t You take another sip of the sports drink he picked up for you. 
+				sp player; It's... Fine. We just need to be more careful about dehydration next time. 
+				t You rub the head of your bat-winged familiar to cheer him up. Now's a good a time as any to get some rest. 
+			`);
 			break;
 		}
 		default: {

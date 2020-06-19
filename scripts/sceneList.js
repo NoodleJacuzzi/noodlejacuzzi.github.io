@@ -2,10 +2,10 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 6/5/2020</p>
-				<p class = "centeredText">Hentai University v11 Preview & Poll: https://www.patreon.com/posts/37943648</p>
-				<p class = "centeredText">A poll up until the 9th on whether I should release on the 12th or the 19th, also includes a lot of rad preview images! Well, rad is subjective.</p>
-				<p class = "centeredText">Thank you to: O Xy Enkin, Swallows999, Joshua Ingram, Robbie, 4MinuteWarning, andres mejia, Badaxe, Carlos, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, Filament, G, Hi There, J_C_L, jack spencer, Jesse Greene, Jinouga, Keith, Marco Wassmer, Negativatron, Ramsey Bisher, ryguy, Scal, Skyrim mod lvr, Taylor Trout, XxrobothacksxX, 林家豪, Aegil, Alec8686, Angel, Anthony Ewing, Anthony Munso, Ariados, Blaise Fenn, Bonelessunknown, brandon, Bryson, CaptainMontana, Carlos, Chaaaanon, Charles Morris, ChubbiestThread, Daekash, Daniel Vivette, Danny Nguyen, Darrell Goodman, DarthMalak, ddkre, Debarre Sonny, dhccpmc, Drashin, Dugelle, Emanuel  Garcia, fireballcreations, FrostyTB, Gavin Davis, Geoff Heimos, GirmusCz, greatred, Grim2011, Gwen Yurick, Harry Brasch, henry grobins, ItsAllOgreNow, I'm a Mitch, Jane, John Lewis, john smith, Joshua Melzark, Kaliden, KH dg, Kieron Kow, Krose, KVBismarc, l, l1monat, liam paterson, Limitless, Louis Hayes, Lucas, Magnus, Markus Hansen, mazterlith, murgatroid99, Muryu, Nils Maier, Noah, Nutburger, Phanes, ranchy sanchy, Reverberations, Riven Drasek, Roy, Scumstango, ShadowFalls, Simon Rencher, Slomberg, SmolFish, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, Tyler Ross, Vincent Madaire-Cullen, Wei, Wild Bill, William Parker, William Richardson, wolfboom, XaiuX, Your Husbando, Z, and 魏 for supporting my work!</p>
+				<p class = "centeredText">Lastest News 6/19/2020</p>
+				<p class = "centeredText">Hentai University v11 released: https://www.patreon.com/posts/</p>
+				<p class = "centeredText">v11 of Hentai University is here! Featuring two full routes of the new character Sofia, the introduction of the new shopkeep character Lily, two new scenes for the lovable Gou, the ability to corrupt Sam, and scenes for Anna & Lena!</p>
+				<p class = "centeredText">Thank you to: O Xy Enkin, Swallows999, Iron Alex, Joshua Ingram, Robbie, 4MinuteWarning, andres mejia, Badaxe, Carlos, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, Filament, G, Hi There, J_C_L, jack spencer, Jesse Greene, Jinouga, Keith, Macarga, Marco Wassmer, Negativatron, Ramsey Bisher, ryguy, Scal, Skyrim mod lvr, Taylor Trout, XxrobothacksxX, 林家豪 , Aegil, Alec8686, Angel, AnotherAccount333, Anthony Ewing, Anthony Munso, Ariados, Blaise Fenn, Bonelessunknown, brandon, Bryson, CaptainMontana, Carlos, Chaaaanon, Charles Morris, ChubbiestThread, Daekash, Daniel Vivette, Danny Nguyen, Darrell Goodman, DarthMalak, ddkre, Debarre Sonny, dhccpmc, Drashin, Dravenmd114, Dugelle, Emanuel  Garcia, fireballcreations, FrostyTB, Gavin Davis, Geoff Heimos, GirmusCz, greatred, Greg Torres, Grim2011, Gwen Yurick, Harry Brasch, henry grobins, ItsAllOgreNow, I'm a Mitch, Jane, John Lewis, john smith, Joshua Melzark, Kaliden, KH dg, Kieron Kow, Krose, Kudon, KVBismarc, l, l1monat, liam paterson, Limitless, Louis Hayes, Lucas, Magnus, Markus Hansen, mazterlith, murgatroid99, Muryu, Nils Maier, Noah, Nutburger, Phanes, ranchy sanchy, Reverberations, Riven Drasek, Roy, Scumstango, Sebastian Eckel, ShadowFalls, Simon Rencher, Slomberg, SmolFish, Snaked, stratum, Sveny13, Tanman, Taurus Travon Rashad Lemar Brackin, theoron, Trevor, Tyler Ross, Vincent Madaire-Cullen, Wei, Wild Bill, William Parker, William Richardson, XaiuX, yami, Your Husbando, and Z for supporting my work!</p>
 			`;
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://discord.gg/B3AszYM'">Visit my discord server</p>
@@ -31,14 +31,14 @@ function writeScene(scene) {
 			`;
 			writeTransition("artifactList", "See a roadmap of current / planned content");
 			writeBig("images/HentaiUniversity.png");
-			writeText("Hentai University v9.5");
+			writeText("Hentai University v11");
 			writeText("A game made in cooperation with author Captain Cryptogreek, who works as the game's lead writer.");
 			writeText("You play as a young man with a strong grasp on hypnotic magic, and have embedded yourself as a counselor in a school with a fantastically attractive student body. The faculty and your neighbors in town look pretty good too.");
 			writeText("This game uses art by Enoshima Iki, Nagi Ichi, Oreteki18kin, Gujira 4 Gou, and Kinta no Mousou and is meant to be similar in feel to Hentai High School, but without the focus on school management, more emphasis on wandering / corruption, and a much higher quality body of images.");
 			writeText("The end goal here is a town packed with dozens of characters using a framework I can continually add more content to.");
 			writeText("Tags: Hypnosis, features many other tags entirely avoidable tags based on characters such as incest, dubcon, and gay content");
 			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/37676832'">Download the game</p>
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/'">Download the game</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">Play the mobile version</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'">Modding Tutorial</p>

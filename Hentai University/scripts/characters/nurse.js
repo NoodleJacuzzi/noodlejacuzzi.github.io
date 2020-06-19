@@ -42,7 +42,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Sure.");
 			writeText("It's something about the way she acts. It's like she's trying to get you to relax. It's familiar because usually that's what you're doing.");
 			writeSpeech("player", "", "Say, you ever hear about hypnotism?");
-			writeSpeech("nurse", "", "Ah, I don't mean to be rude, but I practice actual medicine here. I don't keep up with peudoscience. If I could maybe get you a drink we could talk about whatever you like.");
+			writeSpeech("nurse", "", "Ah, I don't mean to be rude, but I practice actual medicine here. I don't keep up with pseudoscience. If I could maybe get you a drink we could talk about whatever you like.");
 			writeSpeech("player", "", "I'm not thirsty.");
 			writeSpeech("nurse", "", "Are you sure? You look parched, in my professional opinion. ");
 			writeSpeech("player", "", "I'm really fine. I should probably-");
@@ -130,7 +130,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Unless you can somehow jumpstart your vocabulary and re-learn what you need to do as the school's nurse overnight, you can't solve this problem.");
 			writeText("She pouts. It'd be cute if the situation weren't so dire.");
 			writeSpeech("nurse", "", "I can solve problems...");
-			writeText("Suddenly the school's bell rings, causing her to squeaks in fright.");
+			writeText("Suddenly the school's bell rings, causing her to squeak in fright.");
 			writeSpeech("player", "", "Well, that's a good a signal as any to get out of here. Alright, let's get you home, and... Well, I'll think of something.");
 			writeSpeech("nurse", "", "Oh, thinking of something! I'm good at that too! I think...<br>Ah, see? I did it!");
 			writeText("Proud of herself, she stands only to immediately stumble.");
@@ -196,7 +196,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Okay! I get the picture. Alright, potions. I can get down with that. ");
 			writeSpeech("nurse", "", "Indeed. Now, the hidden stashes of exotic ingredients weren't kept too organized. I tried to replace some, but... <br>I won't bore or terrify you with the results, lest you be put off the idea of drinking my work in the future. Suffice it to say we have enough for precisely nothing right now. Each potion is missing at least one essential ingredient. I'll do my best to collect what I can of course. And things will need to be organized of course so you can decide what we'll craft. I do have some of this, though.");
 			writeText("She holds up a glass bottle filled with a red-pink fluid. Notably, little heart-shaped bubbles rise to the top.");
-			writeSpeech("nurse", "", "I've discovered that a great deal of my work was performed on me directly, likely through self testing. I'm compatible with nearly every potion I have a recipe for, but most people aren't. I'll do compatibility tests in the to see if anyone in the school would make for a good guinea pig.");
+			writeSpeech("nurse", "", "I've discovered that a great deal of my work was performed on me directly, likely through self testing. I'm compatible with nearly every potion I have a recipe for, but most people aren't. I'll do compatibility tests to see if anyone in the school would make for a good guinea pig.");
 			writeSpeech("player", "", "Yeah, yeah. What's in the bottle?");
 			writeSpeech("nurse", "", "This is a heart-heat potion. It has a particularly entrancing effect on the human eye, while also supercharging certain chemical reactions in my body. I'd like to drink it to show you what these potions can do, if that would be alright.");
 			writeFunction("writeEncounter('heartHeatA1')", "Go ahead, impress me");
@@ -212,7 +212,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "heartHeatA2": {
 			writeSpeech("nurse", "", "Hmm, I can see why I considered that batch a failure.");
-			writeText("She pours our the remainder of the heart-heat potion into the sink.");
+			writeText("She pours out the remainder of the heart-heat potion into the sink.");
 			writeSpeech("player", "", "What?! Why? That was incredible!");
 			writeSpeech("nurse", "", "Indeed, the effects are extremely pronounced. It can cause extreme levels of heightened arousal and sensitivity improvements. My gusto was clearly displayed in my eyes, no?");
 			writeSpeech("player", "", "It was. So then what was the problem?");
@@ -310,6 +310,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 					}
 				}
 			}
+			if (checkTrust('mama') == 1) {
+				writeFunction("writeEncounter('nurseMama')", "Ask for help with mamaF");
+			}
 			writeFunction("writeEncounter('chatHub')", "Chat");
 			writeFunction("changeLocation(data.player.location)", "Leave");
 			break;
@@ -372,7 +375,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "potionFiller": {
 			writeText("Setting the baking soda and flower petal aside from the moment, you'll need to help nurseF with the first ingredient.");
 			writeSpeech("player", "", "Let's make that potion filler then.");
-			writeSpeech("nurse", "", "Indeed. It will dilute my work enough that effectively we'll have an unlimited amount of each potion we create, quite handy if I say so myself. We have everything we need already, aside from the listed 'four hours of hard labor'. That said, when I wrote this entry I was apparently quite the shut it, I'm sure a big strong figure of masculinity will have no trouble!");
+			writeSpeech("nurse", "", "Indeed. It will dilute my work enough that effectively we'll have an unlimited amount of each potion we create, quite handy if I say so myself. We have everything we need already, aside from the listed 'four hours of hard labor'. That said, when I wrote this entry I was apparently quite the shut-in, I'm sure a big strong figure of masculinity will have no trouble!");
 			writeText("...");
 			writeText("The two of you spend a few hours preparing materials, measuring out solutions, and most of all constantly stirring and mixing fluids. By the end of it you're both tired and it's gotten a bit late.");
 			writeSpeech("nurse", "", "Mmm, I've worked up a sweat, and you have too.");
@@ -397,7 +400,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "level1Reward": {
 			writeSpeech("player", "", "The filler stuff is done, you've got the flower petal, and here's the baking soda.");
-			writeSpeech("nurse", "", "Wonderful! With this, more than a potions are ready to mix. A first attempt at my youth potion, one to bolster charisma, one to increase anal sensitivity, and a lovely genderswap potion for some of the cuter boys in the school... I'll have them all ready by tomorrow for you... But...");
+			writeSpeech("nurse", "", "Wonderful! With this, more than a few potions are ready to mix. A first attempt at my youth potion, one to bolster charisma, one to increase anal sensitivity, and a lovely genderswap potion for some of the cuter boys in the school... I'll have them all ready by tomorrow for you... But...");
 			writeSpeech("player", "", "But?");
 			writeSpeech("nurse", "", "I don't suppose you'd... That I can reward you now? I wanted to encourage you as best I could but I may have overestimated myself...");
 			writeFunction("writeEncounter('nurseReward1')", "Accept your reward");
@@ -434,7 +437,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Wait, what?");
 			writeSpeech("nurse", "", "Pay me no mind, I'm rambling. This potion ought to improve your mental faculties, nowhere near the level of mine of course. The social skills you use in your daily life ought to be improved by this.<br>There's no point in letting this one sit, and the ingredients might separate if left out, so open up please.");
 			writeSpeech("player", "", "I don't suppose I can change my-<br>Urk!");
-			writeText("The potion takes like you've just licked the page of an old textbook, but the effects are pretty immediate. As you look at nurseF, words fly into your head. One-liners that'd make you seem clever or comebacks to any potential arguments.");
+			writeText("The potion tastes like you've just licked the page of an old textbook, but the effects are pretty immediate. As you look at nurseF, words fly into your head. One-liners that'd make you seem clever or comebacks to any potential arguments.");
 			writeSpecial("Your hypnosis skill has improved!");
 			writeSpecial("Your counseling skill has improved!");
 			data.player.hypnosis += 1;
@@ -447,7 +450,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "imperfectYouthPotion1": {
 			writeSpeech("nurse", "", "The first draft of my youth potion is ready...<br>Weak. *Ahem*");
 			writeText("nurseF takes a moment to pose dramatically.");
-			writeSpeech("nurse", "", "The latest draft is ready, the potion that will push the very boundaries of science is is now complete and ready for you to unleash upon my body! Feel your manhood tremble as you behold the first draft of the spring of eternal youth made real!");
+			writeSpeech("nurse", "", "The latest draft is ready, the potion that will push the very boundaries of science is now complete and ready for you to unleash upon my body! Feel your manhood tremble as you behold the first draft of the spring of eternal youth made real!");
 			writeSpeech("player", "", "Really playing this up, huh? So it's like a skin cream, it'll make you look younger?");
 			writeSpeech("nurse", "", "Skin cream... A wonderful excuse. And it certainly will. If my studies are correct I'll revert to a post-puberty age, probably about when I had graduated highschool. The effects will unfortunately be temporary though. I must test it...");
 			writeSpeech("player", "", "Isn't that just a tiny bit dangerous?");
@@ -485,6 +488,38 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "analPotion2": {
 			writeEvent('nurseAnal');
 			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "nurseMama": {
+			writeHTML(`
+				sp player; I could use your help. There's a member of the PTSA council, mamaF. She's...
+				...
+				t You explain the situation to nurseF, and she's already mixing together some chemicals.
+				sp nurse; Brunette you said? I'll have to guestimate how sensitive her nose is, and... Alright. I've got a formula ready. A potion that'll allow you to transform yourself to disguise yourself as the object of her affection, or whatever she's really horny for at the moment.
+				sp player; What will you need?
+				sp nurse; A lock of her hair, or any large amount of her DNA, and the pollen of an extremely rare flower. Luckily I already have DNA samples for all one-hundred and eight potential PTSA candidates.
+				sp player; Where did you get those, again?
+				sp nurse; What? I thought I told you my older self planned to take over the school as well...<br>In any case, you'll need to collect the pollen.
+				sp player; Where can I find it?
+				sp nurse; Medicine cabinet on your left, third shelf.
+				...
+				t After a short mixing, nurseF's latest potion is complete. A small vial of white fluid, when you shake it the fluid turns black, before relaxing and turning back again.
+				sp nurse; Take it without shaking and you'll turn into an identical copy of her son, and I've got a change of clothes here for good measure. Shake it, and you'll transform into a large black man.
+				sp player; ... May I ask why?
+				sp nurse; Don't be so quick to jump upon the gun, *master. If my many dozens of reference materials are accurate, the potion's secondary form is likely her greatest weakness as a housewife.
+				sp player; I really should not ask, but... <i>why?</i> Why do you have this recipe prepared?
+				sp nurse; *Master, please! Do I really come off as so unprepared?
+				sp player; One of these days you'll need to show me everything you're working on, no more surprises.
+				sp nurse; It'll take much more than a day. <br>In any case, if you want her to be yours, the path is clear. You darken her doorstep, and then the proverbial magic happens! Racially charged epithets will fly, she'll utter something along the lines of "I'll accept racial equality the day I accept your black cock in my womb!", and then you'll impregnate her and convert her into your loyal slave.
+				sp player; Or, and hear me out, I just transform into her son and hypnotize her into supporting me.
+				t nurseF looks at you quizically.
+				sp nurse; I... Suppose. It's unlikely, but it could work.
+				t You've obtained a potion that will transform you into mamaF's son! Or into a form best suited for hard NTR, if that's the way you want to play this song and dance.
+				sp player; Anyways, thank you nurseF.
+				sp nurse; I'm at your disposal, *sir.
+			`);
+			setTrust('mama', 2);
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -539,7 +574,7 @@ function writeEvent(name) { //Plays the actual event.
 		case "nurseBath": {
 			writeText("The two of you head off to her home, the sweat from a day's work only getting thicker from the uphill walk.");
 			writeSpeech("player", "", "You think you could whip something up for stamina?");
-			writeSpeech("nurse", "", "I'm a skip ahead of you, not to worry. Plus, a soothing cleanse after a struggle makes the mind feel cleaner by the end.");
+			writeSpeech("nurse", "", "I'm a hop, skip, and a jump ahead of you, not to worry. Plus, a soothing cleanse after a struggle makes the mind feel cleaner by the end.");
 			writeText("...");
 			writeText("Her house is as cluttered as ever, nearly every wall lined with books. Hundreds of papers used for notes are scattered about or stuffed into boxes, ranging from complex chemical formulae to what appears to be a basic 'learning to read' alphabet.");
 			writeSpeech("nurse", "", "You go ahead and get the bath started. I'll prepare some towels and set our clothes to wash.");
@@ -552,7 +587,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/nurse/bathing2.jpg", "Art by Oreteki18kin");
 			writeSpeech("nurse", "", "My~<br>You really are tempting me, aren't you... I understand that you're excited, but you should control yourself. What if I wasn't someone who wanted to be covered in your sperm? What if I were some innocent young woman just trying to bathe with a friend? <br>Why, I'd surely be scared away from a member as magnificent as yours...");
 			writeText("She licks her lips as she watches you stroke yourself.");
-			writeSpeech("nurse", "", "I'd... My, I'd want nothing to do with you... I'd have to be a pervert beyond any hope of redemption, someone who'd want nothing more than to fulfill my <i>purpose in life</i> with you. That's the sort of person I'd have to be to stay in this bath.<br>But of course, I have self control. I'm <i>not</i> fantasizing about what that perfect member would feel like inside me, and I'm certainly not getting we at... At the thought...<br>At the thought of bathing. In. Your. <b>Cum</b>~!");
+			writeSpeech("nurse", "", "I'd... My, I'd want nothing to do with you... I'd have to be a pervert beyond any hope of redemption, someone who'd want nothing more than to fulfill my <i>purpose in life</i> with you. That's the sort of person I'd have to be to stay in this bath.<br>But of course, I have self control. I'm <i>not</i> fantasizing about what that perfect member would feel like inside me, and I'm certainly not getting weat... At the thought...<br>At the thought of bathing. In. Your. <b>Cum</b>~!");
 			writeBig("images/nurse/bathing3.jpg", "Art by Oreteki18kin");
 			writeSpeech("nurse", "", "Ah~! Such a m-mess~<br>We're supposed to get clean, you know, but I feel <i>dirty</i> and it's all your fault~<br>But... At least you're satisfied for now. You'll be patient, and work for your reward, right?");
 			writeText("...");
@@ -629,7 +664,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "Geez, fine. Drink it and hit the sack already.");
 			writeText("She downs the bottle's contents, commenting on how it tastes like what she imagines a beach vacation feels like, before she retires to one of the unused beds behind a curtain.");
 			writeText("...");
-			writeText("Thankfully nobody needed any medical help, although you could probably have managed with hypnosis and a few placebos. A few hours pass uneventfully, before you hear relax enough that you actually start to drift off.");
+			writeText("Thankfully nobody needed any medical help, although you could probably have managed with hypnosis and a few placebos. A few hours pass uneventfully, before you relax enough that you actually start to drift off.");
 			writeSpeech("player", "", "Hey, nurseF, you up yet?");
 			writeText("No response, still asleep.");
 			writeSpeech("player", "", "<i>Oh well, she'll wake me when the process is finished. Might as well lock up and get a nap in...</i>");
