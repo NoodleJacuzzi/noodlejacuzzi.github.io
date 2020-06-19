@@ -264,13 +264,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "mistress4" : {
+			passTime();
 			document.getElementById('output').innerHTML = '';
 			if(checkTrust('mistress')==42){
 				if(checkFlag('maid','mistressSexTape') != true){
 					addFlag('maid','mistressSexTape');
 				}
 			}
-			setTrust('mistress',50);
+			setTrust('mistress',100);
 			writeText("As you approach, you can see that her leggings are noticably thicker today. One leg is lifted onto the bench as she leans her body forward, her hand lazily reaching her ankle.");
 			writeSpeech("player","","You're a fan of stretching yourself out, then?");
 			writeSpeech("mistress","","It's more fun with a partner~!");
@@ -718,16 +719,20 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "mistress7" : {
+			document.getElementById('output').innerHTML = '';
 			if(checkTrust('mistress') < 100)
 				setTrust('mistress',100);
 			document.getElementById('output').innerHTML = '';
 			writeText("Spotting you, mistressF smiles at you with a wave.");
 			writeSpeech("mistress","","Hello again, playerF~ Did you come by for a bit of fun, or just to say hi?");
+			writeFunction("writeEncounter('mistress7b')", "\"Let's head over to your place\"");
+			writeFunction("writeEncounter('mistress7c')", "\"Let's have some fun right here\"");
 			writeFunction("writeEncounter('mistress7a')", "\"Do you want to call maidF for some fun?\"");
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "mistress7a" : {
+			document.getElementById('output').innerHTML = '';
 			passTime();
 			if(checkTrust('mistress') < 115)
 				setTrust('mistress',115);
@@ -749,6 +754,27 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("mistressF helps maidF get into a good position, now practically laying atop maidF to get a good look at her pussy as she beckons you over.");
 			writeSpeech("mistress","","I've used a dildo to fuck maidF in tons of different positions before, but this'll be my first time seeing her get plowed by a <i>real</i> cock~! Are you ready?");
 			writeFunction("writeEvent('mistress5')", "Get fucking");
+			break;
+		}
+		case "mistress7b" : {
+			document.getElementById('output').innerHTML = '';
+			passTime();
+			writeSpeech("player","","How about we go back to your place for some fun?");
+			writeSpeech("mistress","","Mm, I'd be happy to~");
+			writeText("...");
+			writeText("When you arrive at her place, she spins on her heel to face you with a playful smile.");
+			writeSpeech("mistress","","So, what did you want to do with me today~?");
+			writeFunction("writeEvent('mistress1-1')", "Get a blowjob");
+			writeFunction("writeEvent('mistress2-1')", "Mating Press");
+			break;
+		}
+		case "mistress7c" : {
+			document.getElementById('output').innerHTML = '';
+			writeSpeech("player","","Let's have some fun right here.");
+			writeText("A spark of excitement shines in mistressF's eyes as she smiles widely.");
+			writeSpeech("mistress","","It's a good thing I skipped the panties today, isn't it~?");
+			writeText("mistressF raises one arm to your shoulder, leaning back onto the bench and pulling you with her.");
+			writeFunction("writeEvent('mistress4-1')", "Roll with it");
 			break;
 		}
 	}
