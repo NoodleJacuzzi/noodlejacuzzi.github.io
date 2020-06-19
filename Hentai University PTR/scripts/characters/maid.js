@@ -23,7 +23,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "maid1", name: "You see a woman in an unusual outfit looking through some items, looking for something.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "odd",},
 	{index: "maid2", name: "You can see maid nearby. It looks like she just finished shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 20, trustMax: 20, type: "tab", top: 0, left: 0, day: "odd",},
 	{index: "maid3", name: "maid is standing near the store entrance, but isn't holding a basket or anything.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 21, trustMax: 21, type: "tab", top: 0, left: 0, day: "odd",},
-	{index: "maid4", name: "maid seems to have finished shopping and is standing near the cafe.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 105, trustMax: 105, type: "tab", top: 0, left: 0, day: "odd",},
+	{index: "maid4", name: "maid seems to have finished shopping and is standing near the cafe.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 24, trustMax: 24, type: "tab", top: 0, left: 0, day: "odd",},
 
 	//Maid-First Route
 	{index: "maid5", name: "maid is standing near the cafe, softly humming to herself as she looks around.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 25, trustMax: 28, type: "tab", top: 0, left: 0, day: "odd",},
@@ -37,6 +37,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 	wrapper.scrollTop = 0;
 	switch (name) {
 		case "maid1" : {
+			document.getElementById('output').innerHTML = '';
 			writeText("The maid stands out quite a bit as she moves around the shop, her eyes quickly combing the shelves.");
 			writeBig("images/maid/profile.jpg","Art by Oreteki18kin");
 			writeText("After a few more seconds, she notices you staring.");
@@ -1240,17 +1241,25 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maidA2d" : {
+			document.getElementById('output').innerHTML = '';
+			if(checkTrust('maid') > 30){
+				writeSpeech("player","","Actually, do you want to call mistressF for some fun?");
+				writeText("maidF flushes, fiddling with her skirt a bit under the table.");
+				writeSpeech("maid","","That sounds like a wonderful idea. I'll text her now, and we can head over after we finish our coffee.");
+			}
+			else{
+				writeSpeech("player","","Let's do it - it sounds like we all want it, after all.");
+				writeSpeech("maid","","We do indeed. I'll text her, and we can go after we finish our drinks.");
+				writeSpeech("player","","Perfect.");
+			}
 			if(checkTrust('mistress') < 115)
 				setTrust('mistress',115);
 			if(checkTrust('maid') < 115)
 				setTrust('maid',115);
-			document.getElementById('output').innerHTML = '';
-			writeSpeech("player","","Actually, do you want to call mistressF for some fun?");
-			writeText("maidF flushes, fiddling with her skirt a bit under the table.");
-			writeSpeech("maid","","That sounds like a wonderful idea. I'll text her now, and we can head over after we finish our coffee.");
 			writeText("...");
 			writeText("Finishing your drinks doesn't take long, and the drive is even shorter this time - rather than going to maidF's apartment, you're meeting at mistressF's place.");
 			writeText("When you arrive, it's to a visibly excited mistressF as she smiles at the both of you, handing you both water bottles with a wry smile.");
+			writeSpeech("mistress","","Here you go! Gotta stay hydrated.");
 			writeSpeech("player","","Thanks.");
 			writeSpeech("maid","","Thanks, mistressF.");
 			writeSpeech("mistress","","Mm, I'm doing it as much for myself as for you two... But you're welcome~!");
@@ -1373,6 +1382,26 @@ function writeEncounter(name) { //Plays the actual encounter.
 					break;
 				}
 			}
+			break;
+		}
+		case "maidTalkedMistress" : {
+			document.getElementById('output').innerHTML = '';
+			writeSpeech("player","","Actually, I spoke with mistressF.");
+			writeText("maidF pauses for a moment, before smiling almost excitedly.");
+			writeSpeech("maid","","That's wonderful! You two got along well, I hope?");
+			writeSpeech("player","","We did, yes. She seemed <i>very</i> interested in the idea of the threesome.");
+			writeText("maidF nods.");
+			writeSpeech("maid","","That means that you...");
+			writeText("She lowers her tone, making sure not to be heard.");
+			writeSpeech("maid","","...fucked?");
+			if(galleryCheck('mistress2') || galleryCheck('mistress4'))
+				writeSpeech("player","","Yup.");
+			else
+				writeSpeech("player","","Pretty much.");
+			writeText("She relaxes a bit, nodding.");
+			writeSpeech("maid","","That's good. I don't know why I was worried you wouldn't get along.");
+			writeSpeech("maid","","Ah... Were you thinking about having the threesome today? I can text her now to see if she's available.");
+			writeFunction("writeEncounter('maidA2d')", "\"Let's do it.\"");
 			break;
 		}
 		default: {
@@ -1756,7 +1785,9 @@ function writeEvent(name) { //Plays the actual event.
 		// 	writeFunction("changeLocation(data.player.location)", "Finish");
 		// 	break;
 		// }
-		case "maid4" : {writeHTML(`
+		case "maid4" : {
+			document.getElementById('output').innerHTML = '';
+			writeHTML(`
 				t mistressF helps line you up with maidF's pussy, your head almost pressing into her as mistressF keeps those lips spread wide. 
 				sp mistress; Come on stud~ She's all wet and ready for you, her cute little cunny is practically <i>begging</i> to be used like your <i>personal pocket-pussy~!</i>
 				t You pause slightly, looking up at maidF first...
