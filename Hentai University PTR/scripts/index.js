@@ -2590,6 +2590,7 @@ function fileLoaded(){
 		data = fakedata;
 		changeLocation(data.player.location);
 	}
+	document.getElementById('loadFile').value = '';
 }
 
 function generateSave() {
