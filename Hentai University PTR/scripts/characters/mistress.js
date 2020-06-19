@@ -25,7 +25,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 {index: "mistress4", name: "mistress is at the same bench, but she seems to be stretching her legs.", location: 'parkDistrict', time: "MorningEvening", itemReq: "", trustMin: 42, trustMax: 44, type: "tab", top: 0, left: 0, day: "even",},
 {index: "mistress5", name: "You can see maidF's friend, mistress, sitting on the bench, swinging her legs playfully while humming.", requirements: "?trust mistress 55; ?location parkDistrict;", altName: "", altImage: "",},
 {index: "mistress6", name: "You can see mistress at the bench again, but she seems to be stretching her legs this time.", requirements: "?trust mistress 45; ?location parkDistrict;", altName: "", altImage: "",},
-{index: "mistress7", name: "You can see mistress at the bench again, humming a soft melody while kicking the dirt playfully.", requirements: "?trust mistress 50; ?location parkDistrict;", altName: "", altImage: "",},
+{index: "mistress7", name: "You can see mistress at the bench again, humming a soft melody while kicking the dirt playfully.", requirements: "?trust mistress 115; ?location parkDistrict;", altName: "", altImage: "",},
 ]
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -183,6 +183,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if(!checkFlag('maid','mistressSexTape'))
 				addFlag('maid','mistressSexTape');
 			setTrust('mistress', 42);
+			setTrust('maid',105);
 			writeSpeech("player","","This might be a weird question, but you mentioned a maid. Her name wouldn't happen to be maidF, would it?");
 			writeText("Her eyes widen in surprise.");
 			writeSpeech("mistress","","You know her?");
@@ -517,9 +518,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("mistress","","Mm, interesting...");
 			}
 			writeText("You and mistressF start off with pretty idle chat about you, but it isn't long before mistressF mentions her and maidF's history...");
-			writeSpeech("mistress","","Well, maidF and I met in high school - we shared a few classes, and she helped me out a few times. She started coming over to help me study, and...");
+			writeSpeech("mistress","","Well, maidF and I met in college - we were roommates and shared a few classes. She started helping me study, and...");
 			writeText("She smirks.");
-			writeSpeech("mistress","","She came to help me study Poli-Sci, but we spent a whole lot more time on <i>anatomy</i>, you could say.");
+			writeSpeech("mistress","","Well, she came to help me study Poli-Sci, but we spent a whole lot more time on <i>anatomy</i>, you could say.");
 			writeText("mistressF smiles brightly, her hands folded in her lap as she looks at you.");
 			writeSpeech("mistress","","The rest is just raunchy, dirty history. What about you two? From what I hear, you only met recently.");
 			writeSpeech("player","","Yeah, that's true. We met in the shopping district - her outfit caught my eye, and we started talking.");
@@ -719,17 +720,15 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "mistress7" : {
 			if(checkTrust('mistress') < 100)
 				setTrust('mistress',100);
-			passTime();
 			document.getElementById('output').innerHTML = '';
 			writeText("Spotting you, mistressF smiles at you with a wave.");
 			writeSpeech("mistress","","Hello again, playerF~ Did you come by for a bit of fun, or just to say hi?");
 			writeFunction("writeEncounter('mistress7a')", "\"Do you want to call maidF for some fun?\"");
-			if(galleryCheck('mistress5'))
-				writeSpecial("You've completed all of mistressF's content for this update! Thanks for playing, and see you next time!");
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "mistress7a" : {
+			passTime();
 			if(checkTrust('mistress') < 115)
 				setTrust('mistress',115);
 			if(checkTrust('maid') < 115)
@@ -989,6 +988,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("mistress","","Don't worry about helping clean up, playerF. I get the feeling maidF will be <i>more</i> than happy to help. Though next time, if you fuck us <i>both</i> this hard, we might need the help~!");
 			writeSpeech("mistress","","Oh, and feel free to use my shower if you need it! I don't have anywhere I need to be for a while, so I'll just lay here for a little while.");
 			writeText("With that, she lays her back on the table, clearly relaxing as she reaches down next to the couch and grabbing her water bottle.");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "mistress3" : {
@@ -1317,16 +1317,16 @@ function writeEvent(name) { //Plays the actual event.
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
 {index: "mistressReward", trust: 115,},
 //{index: "mistressRewardDuo", trust: 55,},
-{index: "mistressMaid1", requirements: "?trust mistress 100; ?trust maid 100;",},
+{index: "mistressMaid1", requirements: "?trustMin mistress 100; ?trustMax mistress 110; ?trustMin maid 100; ?trustMax maid 110;",},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "mistressMaid1" : {
-			if(checkTrust('maid') == 100 && checkTrust('mistress') == 100){
+			if(checkTrust('maid') == 100)
 				setTrust('maid',105);
+			if(checkTrust('mistress') == 100)
 				setTrust('mistress',105);
-			}
 			writePhoneSpeech("mistress","","test");
 			writePhoneSpeech("maid","","It looks like the group chat is working, mistressF.");
 			writePhoneSpeech("mistress","","Nice, now we can chat about raunchy things and stuff all together!");

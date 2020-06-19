@@ -31,7 +31,9 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	//Mistress-First Route
 	{index: "maidA1", name: "You can see mistressF's friend, maid, standing near a cafe. Based on the bag she's carrying, she seems to be shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 30, trustMax: 30, type: "tab", top: 0, left: 0, day: "odd",},
 	{index: "maidA1", name: "You can see mistressF's friend, maid, standing near a cafe. Based on the bag she's carrying, she seems to be shopping.", requirements: "?trustMax maid 29; ?trust mistress 50; ?location shoppingDistrict;", altName: "", altImage: "",},
-	{index: "maidA2", name: "maid seems to be standing near a cafe. She doesn't have her baskets this time, so it doesn't seem like she's shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 110, trustMax: 115, type: "tab", top: 0, left: 0, day: "odd",},
+	{index: "maidA2", name: "maid seems to be standing near a cafe. She doesn't have her baskets this time, so it doesn't seem like she's shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 105, trustMax: 110, type: "tab", top: 0, left: 0, day: "odd",},
+	{index: "maidA3", name: "maid seems to be standing near a cafe. She seems to have just finished shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 115, trustMax: 115, type: "tab", top: 0, left: 0, day: "odd",},
+
 	];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -1170,6 +1172,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maidA2" : {
+			passTime();
 			document.getElementById('output').innerHTML = '';
 			if(checkTrust('maid') == 105)
 				setTrust('maid',110);
@@ -1198,14 +1201,18 @@ function writeEncounter(name) { //Plays the actual encounter.
 			}
 			writeText("maidF shifts in her seat slightly, though you notice she's a lot more relaxed this time than when last you met.");
 			writeSpeech("maid","","Ah, I didn't have anything specific I wanted to talk about, by the way. Was there any particular subject you were interested in?");
-			writeFunction("writeEncounter('maidA2a')", "\"How did you and mistressF meet?\"");
-			writeFunction("writeEncounter('maidA2b')", "\"How long have you been working as a maid?\"");
+			if(!checkFlag('maid','Chat1'))
+				writeFunction("writeEncounter('maidA2a')", "\"How did you and mistressF meet?\"");
+			if(!checkFlag('maid','Chat2'))
+				writeFunction("writeEncounter('maidA2b')", "\"How long have you been working as a maid?\"");
 			writeFunction("writeEncounter('maidA2c')", "\"Nothing in particular\" - head to her place");
 			writeFunction("writeEncounter('maidA2d')", "\"Do you want to call mistressF for some fun?\"");
 			break;
 		}
 		case "maidA2a" : {
 			document.getElementById('output').innerHTML = '';
+			if(!checkFlag('maid','Chat1'))
+				addFlag('maid','Chat1');
 			writeSpeech("player","","How did you and mistressF meet?");
 			writeSpeech("maid","","It was in college - we were roommates. What started out as us sitting down and studying together ended up... transforming, I suppose. With the help of a particularly rowdy night and more than a bit of alcohol, we ended up back in our room and...");
 			writeText("She flushes slightly.");
@@ -1214,13 +1221,16 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She smiles fondly, nodding.");
 			writeSpeech("maid","","We are. It can be a bit of challenge with her sometimes, but she's always been more than worth it.");
 			writeSpeech("maid","","...Ah, I got a bit sappy there, didn't I? Was there anything else you wanted to ask about?");
-			writeFunction("writeEncounter('maidA2b')", "\"How long have you been working as a maid?\"");
+			if(!checkFlag('maid','Chat2'))
+				writeFunction("writeEncounter('maidA2b')", "\"How long have you been working as a maid?\"");
 			writeFunction("writeEncounter('maidA2c')", "\"Nothing in particular\" - head to her place");
 			writeFunction("writeEncounter('maidA2d')", "\"Do you want to call mistressF for some fun?\"");
 			break;
 		}
 		case "maidA2b" : {
 			document.getElementById('output').innerHTML = '';
+			if(!checkFlag('maid','Chat2'))
+				addFlag('maid','Chat2');
 			writeSpeech("player","","How long have you been working as a maid?");
 			writeSpeech("maid","","Ah, a few years. It's a surprisingly stable job, though I think that's just because there are so many people in town that have a lot of expendable funds. I'd blame the local university for that - it attracts some high-profile people, and those sorts of people rarely clean their own homes.");
 			writeSpeech("player","","Do you enjoy the work?");
@@ -1228,7 +1238,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","Alright, makes sense... Plus, the uniform suits you <i>very</i> well.");
 			writeText("She smiles, looking a bit proud now.");
 			writeSpeech("maid","","Thanks. I like the outfit myself, too. Did you have any other questions?");
-			writeFunction("writeEncounter('maidA2a')", "\"How did you and mistressF meet?\"");
+			if(!checkFlag('maid','Chat1'))
+				writeFunction("writeEncounter('maidA2a')", "\"How did you and mistressF meet?\"");
 			writeFunction("writeEncounter('maidA2c')", "\"Nothing in particular\" - head to her place");
 			writeFunction("writeEncounter('maidA2d')", "\"Do you want to call mistressF for some fun?\"");
 			break;
@@ -1403,6 +1414,25 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("maid","","That's good. I don't know why I was worried you wouldn't get along.");
 			writeSpeech("maid","","Ah... Were you thinking about having the threesome today? I can text her now to see if she's available.");
 			writeFunction("writeEncounter('maidA2d')", "\"Let's do it.\"");
+			break;
+		}
+		case "maidA3" : {
+			document.getElementById('output').innerHTML = '';
+			writeSpeech("maid","","Ah, playerF. How are you doing?");
+			writeSpeech("player","","I'm doing pretty good.");
+			writeText("She smiles, nodding.");
+			writeSpeech("maid","","Did you come to talk about something specific, or just to say hello?");
+			writeFunction("writeEncounter('maidA3a')", "\"Let's go back to your place.\"");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "maidA3a" : {
+			passTime();
+			document.getElementById('output').innerHTML = '';
+			writeText("She flushes, but smiles.");
+			writeSpeech("maid","","My car is parked just around the corner.");
+			writeText("...");
+			writeEncounter('maidASexSelect');
 			break;
 		}
 		default: {
