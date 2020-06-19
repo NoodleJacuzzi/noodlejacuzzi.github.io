@@ -3,7 +3,7 @@ function writeScene(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
 				<p class = "centeredText">Lastest News 6/19/2020</p>
-				<p class = "centeredText">Hentai University v11 released: https://www.patreon.com/posts/</p>
+				<p class = "centeredText">Hentai University v11 released: https://www.patreon.com/posts/38415950</p>
 				<p class = "centeredText">v11 of Hentai University is here! Featuring two full routes of the new character Sofia, the introduction of the new shopkeep character Lily, two new scenes for the lovable Gou, the ability to corrupt Sam, and scenes for Anna & Lena!</p>
 				<p class = "centeredText">Thank you to: O Xy Enkin, Swallows999, Iron Alex, Joshua Ingram, Robbie, 4MinuteWarning, andres mejia, Badaxe, Carlos, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, Filament, G, Hi There, J_C_L, jack spencer, Jesse Greene, Jinouga, Keith, Macarga, Marco Wassmer, Negativatron, Ramsey Bisher, ryguy, Scal, Skyrim mod lvr, Taylor Trout, XxrobothacksxX, 林家豪 , Aegil, Alec8686, Angel, AnotherAccount333, Anthony Ewing, Anthony Munso, Ariados, Blaise Fenn, Bonelessunknown, brandon, Bryson, CaptainMontana, Carlos, Chaaaanon, Charles Morris, ChubbiestThread, Daekash, Daniel Vivette, Danny Nguyen, Darrell Goodman, DarthMalak, ddkre, Debarre Sonny, dhccpmc, Drashin, Dravenmd114, Dugelle, Emanuel  Garcia, fireballcreations, FrostyTB, Gavin Davis, Geoff Heimos, GirmusCz, greatred, Greg Torres, Grim2011, Gwen Yurick, Harry Brasch, henry grobins, ItsAllOgreNow, I'm a Mitch, Jane, John Lewis, john smith, Joshua Melzark, Kaliden, KH dg, Kieron Kow, Krose, Kudon, KVBismarc, l, l1monat, liam paterson, Limitless, Louis Hayes, Lucas, Magnus, Markus Hansen, mazterlith, murgatroid99, Muryu, Nils Maier, Noah, Nutburger, Phanes, ranchy sanchy, Reverberations, Riven Drasek, Roy, Scumstango, Sebastian Eckel, ShadowFalls, Simon Rencher, Slomberg, SmolFish, Snaked, stratum, Sveny13, Tanman, Taurus Travon Rashad Lemar Brackin, theoron, Trevor, Tyler Ross, Vincent Madaire-Cullen, Wei, Wild Bill, William Parker, William Richardson, XaiuX, yami, Your Husbando, and Z for supporting my work!</p>
 			`;
@@ -38,7 +38,7 @@ function writeScene(scene) {
 			writeText("The end goal here is a town packed with dozens of characters using a framework I can continually add more content to.");
 			writeText("Tags: Hypnosis, features many other tags entirely avoidable tags based on characters such as incest, dubcon, and gay content");
 			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/'">Download the game</p>
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/38415950'">Download the game</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html'">Play the game online</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html'">Play the mobile version</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'">Modding Tutorial</p>
