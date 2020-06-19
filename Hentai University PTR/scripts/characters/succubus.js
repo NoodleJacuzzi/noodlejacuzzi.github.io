@@ -328,7 +328,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Why? Is it a front for another succubus or something?");
 			writeSpeech("succubus", "demon.jpg", "No.<br>Because I got a papercut on the flier.");
 			writeSpeech("player", "", "... I'm sorry?");
-			writeSpeech("succubus", "demon.jpg", "Listen dude, I'm a demon. I don't experience most of the inconveniences of modern life. I get a bad omen, I stay away.");
+			writeSpeech("succubus", "demon.jpg", "Listen master, I'm a demon. I don't experience most of the inconveniences of modern life. I get a bad omen, I stay away.");
 			writeSpeech("player", "", "I'll be sure to be careful around the dangerous edges of the paper then, and keep an eye out.");
 			writeSpeech("succubus", "demon.jpg", "Hah hah, very funny. Lemme know if the maid stuff pans out, I can help you dirty up whatever they clean.");
 			writeText("succubusF gives you a sly wink.");
@@ -357,7 +357,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "No, why? Is he a succubus in disguise?");
 			writeSpeech("succubus", "demon.jpg", "No.<br>Because I got a papercut on the flier.");
 			writeSpeech("player", "", "... I'm sorry?");
-			writeSpeech("succubus", "demon.jpg", "Listen dude, I'm a demon. I don't experience most of the inconveniences of modern life. I get a bad omen, I stay away.");
+			writeSpeech("succubus", "demon.jpg", "Listen master, I'm a demon. I don't experience most of the inconveniences of modern life. I get a bad omen, I stay away.");
 			writeSpeech("player", "", "I'll be sure to be careful around the dangerous edges of the paper then, and keep and eye out.");
 			writeSpeech("succubus", "demon.jpg", "Hah hah, very funny. Honestly, you stink of purity yourself. How about I clean that maid's touch right off of you, and we get seriously dirty?");
 			addFlag('succubus', 'housekeepF');
@@ -650,7 +650,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeHTML(`
 				sp succubus; im demon.jpg; I'm hoooome~<br>Were you lonely while I was away? Stealing from demonF is getting easier by the day. 
 				sp player; What do you have for me tonight, succubusF?
-				sp succubus; im demon.jpg; With a new big source of income, we should be in the green for a long tome. You can have fun for as long as we want, but...
+				sp succubus; im demon.jpg; With a new big source of income, we should be in the green for a long time. You can have fun for as long as we want, but...
 				t succubusF rummages through his bag of goods.
 			`);
 			if (checkFlag('succubus', 'dominance') == false) {
@@ -688,7 +688,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkFlag('succubus', 'dominance') == false) {
 				addFlag('succubus', 'dominance');
 				writeHTML(`
-					t succubusF holds up a two small potion bottles with the star signs of Virgo and Aries on the front.
+					t succubusF holds up two small potion bottles with the star signs of Virgo and Aries on the front.
 					sp succubus; im demon.jpg; Ta-da~! These two potions drastically increase dominance and submissiveness. It's a temporary thing, mostly for sex.
 					sp player; As expected of a sex demon's cache.
 					sp succubus; im demon.jpg; Yep! And I also brought some stuff to play with as well. I'm a sub at heart, but I'm also a bit of a wimp, honestly so the potion should make me a little more comfortable with some of the things I brought.
@@ -701,7 +701,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			}
 			else {
 				writeHTML(`
-					t succubusF holds up a two small potion bottles with the star signs of Virgo and Aries on the front.
+					t succubusF holds up two small potion bottles with the star signs of Virgo and Aries on the front.
 					sp succubus; im demon.jpg; Hehe, now for some fun on the other side, right? I brought toys too, so which one do you want tonight?
 				`);
 			}
@@ -765,6 +765,17 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("succubus", "demon.jpg", "... You really are an oddball, *Master.");
 			addFlag('succubus', 'newCorruption');
 			writeFunction("writeEncounter('postQuo')", "Finish");
+			break;
+		}
+		case "tomgirlCorruption": {
+			writeHTML(`
+			sp succubus; Wow, you really did a number on him.
+			t You jump a little as you hear succubusF's voice from behind your shoulder. You sigh and pull out of tomgirlF's ass with a *schlorp*.
+			sp succubus; Good work, I'll make sure nothing happens to him overnight, mess with his memories a little. He'll think that the shrinkage of his dick is a result of swearing loyalty to you. He, uh, won't really be able to get off with his hand anymore though. And sterility... Well, it doesn't really matter if it'll just splatter onto the floor while you pound his ass.
+			sp player; He should be his usual self tomorrow then?
+			sp succubus; Yep! And I can pull the trigger on his full transformation afterwards.<br>Let's see... No special powers, but I'm sure he has what it takes to make a good member of the harem.
+			`);
+			writeFunction("changeLocation('playerHouse')", "Finish");
 			break;
 		}
 		default: {
@@ -1205,7 +1216,7 @@ function writeEvent(name) { //Plays the actual event.
 				sp succubus; im demon.jpg; Mhhhm~! Mhhhm~!
 				im imagebox/succubus/069.jpg
 				sp succubus; im demon.jpg; Phhhhhhckck~!
-				t As if on comand his body shudders as he cums hard enough to leak through the suit. He's gasping for breath, before his body jerks in response to the feeling of cum inside him fucking his body up, hard.
+				t As if on command his body shudders as he cums hard enough to leak through the suit. He's gasping for breath, before his body jerks in response to the feeling of cum inside him fucking his body up, hard.
 				sp player; Hoo... Now, I'm pulling out, but don't you worry. You brought us enough toys to last the night. You ready?
 				sp succubus; im demon.jpg; Mmm... Mhmm...
 				sp player; Good girl.
@@ -1237,7 +1248,7 @@ function writeEvent(name) { //Plays the actual event.
 				t He's speeding up now, stimulating the head of your dick before returning to stroking your shaft.
 				sp succubus; im demon.jpg; You want to cum? Of course you do, that's all you ever want. But instead of plowing my fuckable hole, you're just going to spray it all over my feet! <br>Aha~! Don't worry master, no matter what kind of pathetic face you make when you start splurting, you'll always be mine! <br>My ass, my mouth, maybe something kinkier like my armpits, I'll never leave my precious pleasure piggy behind~! 
 				im imagebox/succubus/022.jpg
-				sp succubus; im demon.jpg; Aha, ahahaha~! You're cumming! Just this once, I'm in charge, and I say say you don't get to stop squirting until my feet are covered in your slime~!
+				sp succubus; im demon.jpg; Aha, ahahaha~! You're cumming! Just this once, I'm in charge, and I say you don't get to stop squirting until my feet are covered in your slime~!
 				im imagebox/succubus/022a.jpg
 				sp succubus; im demon.jpg; Ehe, eheheh~! More, more~! Spray every drop from that filthy cock~! <br>Get addicted to my soles and be <b>my</b> servant for tonight~! Ahahaha~! 
 				t Even as your orgasm starts to wind down, the addictive drug that is a succubus's body is pushing you to the edge again already. 
