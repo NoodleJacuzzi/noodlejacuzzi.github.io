@@ -263,7 +263,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "noDisguise": {
 			data.player.noDisguise = true;
 			writeHTML(`
-				t incubusF picks up a small mirror, you can see your reflection in it.
+				t incubusF steps out from behind the counter and picks up a small mirror, you can see your reflection in it.
 				sp incubus; There, for your dialogue at least. The mirror doesn't work on larger images.
 				sp player; ???
 				sp incubus; And if you want to re-enable it, use a cheat code. I'm not clogging up my store with that.
@@ -275,10 +275,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "findmii": {
 			data.player.gps = true;
 			writeHTML(`
-				t incubusF types something into her phone, and yours buzzes.
-				sp incubus; That's a phone upgrade, it'll help you find people around town. Specifically hot ones. No more searching around. You'll need to have a town map to use it though. Basically life's on easy mode now.
+				t incubusF pulls out a perfume bottle with a red X on the side and sprays you with it.
+				sp incubus; There, this'll help you find people around town. Specifically hot ones, no more searching around. You'll need to have a town map to use it though. Basically life's on easy mode now.
 				sp player; What's hard mode?
-				t incubusF looks over to a box with UwU written on the front, and shudders.
+				t incubusF looks over to a box with OwO written on the front, and shudders.
 				sp incubus; You don't want to know.
 			`);
 			writeFunction("writeEncounter('cancel')", "Leave");
@@ -286,12 +286,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "counseling": {
 			writeHTML(`
-				t incubusF takes a small keyboard connected to what looks like a small game console, and types out the phrase "nuclear option".
+				t incubusF takes out a small jet-black bottle of perfume and sprays you with it.
 				t Suddenly, you feel... Trusted.
 			`);
-			writeSpecial("Victoria's trust in you has been greatly increased!");
+			writeSpecial("Your ability as a competent school counselor has been greatly increased!");
 			writeHTML(`
-				sp incubus; Alright, that's that. This is an older console though, so it doesn't help your other skills. You also probably got a raise, so this'll probably pay for itself in... Maybe like fifty-six weeks? Probably faster to get some cash money directly.
+				sp incubus; Alright, that's that. I don't have a console to mess with your other skills though, so I'd find a teacher for those. And I think you'll find your boss will be a lot more trusting of you now.
 			`);
 			data.player.counseling = 9;
 			updateMenu();
