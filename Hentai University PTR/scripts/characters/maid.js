@@ -30,6 +30,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 
 	//Mistress-First Route
 	{index: "maidA1", name: "You can see mistressF's friend, maid, standing near a cafe. Based on the bag she's carrying, she seems to be shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 30, trustMax: 30, type: "tab", top: 0, left: 0, day: "odd",},
+	{index: "maidA1", name: "You can see mistressF's friend, maid, standing near a cafe. Based on the bag she's carrying, she seems to be shopping.", requirements: "?trustMax maid 29; ?trust mistress 50; ?location shoppingDistrict;", altName: "", altImage: "",},
 	{index: "maidA2", name: "maid seems to be standing near a cafe. She doesn't have her baskets this time, so it doesn't seem like she's shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 110, trustMax: 115, type: "tab", top: 0, left: 0, day: "odd",},
 	];
 
