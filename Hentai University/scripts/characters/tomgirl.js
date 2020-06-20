@@ -696,7 +696,6 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			break;
 		}
 		case "tomgirlCorrupted": {
-			clearText('tomgirl');
 			writePhoneImage("images/tomgirl/9-5.jpg", "Art by Nagi Ichi");
 			writePhoneSpeech("tomgirl", "", "You've transformed tomgirlF into a succubus (male)! More content will come along soon!");
 			break;
