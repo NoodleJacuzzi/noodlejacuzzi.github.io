@@ -31,7 +31,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	//Mistress-First Route
 	{index: "maidA1", name: "You can see mistressF's friend, maid, standing near a cafe. Based on the bag she's carrying, she seems to be shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 30, trustMax: 30, type: "tab", top: 0, left: 0, day: "odd",},
 	{index: "maidA1", name: "You can see mistressF's friend, maid, standing near a cafe. Based on the bag she's carrying, she seems to be shopping.", requirements: "?trustMax maid 29; ?trust mistress 50; ?location shoppingDistrict;", altName: "", altImage: "",},
-	{index: "maidA2", name: "maid seems to be standing near a cafe. She doesn't have her baskets this time, so it doesn't seem like she's shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 105, trustMax: 110, type: "tab", top: 0, left: 0, day: "odd",},
+	{index: "maidA2", name: "maid seems to be standing near a cafe. She doesn't have her baskets this time, so it doesn't seem like she's shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 110, type: "tab", top: 0, left: 0, day: "odd",},
 	{index: "maidA3", name: "maid seems to be standing near a cafe. She seems to have just finished shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 115, trustMax: 115, type: "tab", top: 0, left: 0, day: "odd",},
 
 	];
@@ -276,6 +276,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "maid4" : {
 			document.getElementById('output').innerHTML = '';
+			if(!checkFlag('cafedark','Visited'))
+				addFlag('cafedark','Visited');
 			passTime();
 			setTrust('maid',25);
 			writeText("You approach her, waving casually as she spots you.");
@@ -335,9 +337,15 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("player","","You said you come here often, so I don't want to show the staff my erection.");
 				writeText("She flushes a deep scarlet, before smiling wider than you've seen before, a shine in her eyes as she leans forward.");
 				writeSpeech("maid","","If you enjoyed me talking about it, I'm sure you'd enjoy <i>watching</i> even more. The sight of me teasing open mistressF, using my tongue to get her <i>nice and-</i>");
-				writeSpeech("???","images/cafedark/cafedark.jpg","maidF!");
+				if(checkFlag('cafedark','Visited'))
+					writeSpeech("???","images/cafedark/cafedark.jpg","maidF!");
+				else
+					writeSpeech("cafedark","","maidF!");
 				writeText("There's a loud bang as she jumps enough for her hips to hit the table, her eyes going wide as a waitress steps towards you both.");
-				writeSpeech("???","images/cafedark/cafedark.jpg","Sorry, I totally missed you there! Are you ordering the-");
+				if(checkFlag('cafedark','Visited'))
+					writeSpeech("cafedark","images/cafedark/cafedark.jpg","Sorry, I totally missed you two here! Are you ordering the-");
+				else
+					writeSpeech("???","images/cafedark/cafedark.jpg","Sorry, I totally missed you there! Are you ordering the-");
 				writeSpeech("maid","","<b>No.</b>");
 				writeText("The girl flinches, but maidF takes a slow, deep breath, before smiling up at her.");
 				writeSpeech("maid","","Sorry, I hit my... knee. Just... two coffees.");
@@ -377,7 +385,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeSpeech("player","","What's this about a chaotic student-life? No offense, but you don't seem like the type to raise Hell.");
 				}
 				writeText("She smiles, shaking her head.");
-				writeSpeech("maid","","Well, I wasn't <i>really</i> the wild one. It was the woman I shared a a dorm-room with that was the <i>real</i> hellion... Though, I admit to having helped organize her parties.");
+				writeSpeech("maid","","Well, I wasn't <i>really</i> the wild one. It was one of my roommates that was the <i>real</i> hellion... Though, I admit to having helped organize her parties.");
 				writeText("Her eyes shut for a second, her smile widening as she laughs lightly.");
 				writeSpeech("maid","","God, I remember one of our professors getting absolutely <i>plastered.</i> There was even a rumor that she woke up in a student's bed the next morning, though people stopped spreading <i>that</i> one pretty quickly.");
 				writeSpeech("player","","Sounds like you had a pretty great time. Do you and this 'hellion' stay in touch?");
@@ -1173,9 +1181,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "maidA2" : {
+			if(!checkFlag('cafedark','Visited'))
+				addFlag('cafedark','Visited');
 			passTime();
 			document.getElementById('output').innerHTML = '';
-			if(checkTrust('maid') == 105)
+			if(checkTrust('maid') == 105 || checkTrust('maid') == 100)
 				setTrust('maid',110);
 			writeSpeech("player","","Hey there. Not shopping today?");
 			writeText("She turns to face you, smiling.");
