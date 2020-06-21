@@ -350,7 +350,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("The girl flinches, but maidF takes a slow, deep breath, before smiling up at her.");
 				writeSpeech("maid","","Sorry, I hit my... knee. Just... two coffees.");
 				writeText("The girl's eyes linger on you for a moment, before a wry grin spreads across her face.");
-				writeSpeech("???","images/cafedark/cafedark.jpg","Of course. I'll be back in a bit~!");
+				if(checkFlag('cafedark','Visited'))
+					writeSpeech("cafedark","","Of course. I'll be back in a bit~!");
+				else
+					writeSpeech("???","images/cafedark/cafedark.jpg","Of course. I'll be back in a bit~!");
 				writeText("She darts off quickly as maidF's hands finally relax their deathgrip on the table's edge.");
 				writeSpeech("player","","You, uh... You okay?");
 				writeSpeech("maid","","...I have no idea what part of almost getting caught seems to be a turn on for mistressF, but it is <i>not</i> for me.");
@@ -394,16 +397,33 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("She nods thoughtfully.");
 				writeSpeech("maid","","Mm. I might just do that... <i>playerT Counselor.</i>");
 				writeText("She smirks teasingly, leaning forward a bit herself... only for you both to hear footsteps approaching.");
-				writeSpeech("???","images/cafedark/cafedark.jpg","maidF!");
-				writeText("A waitress bounds over with a grin as maidF sits up a bit straighter. The dark-haired girl looks you over for a moment, before smirking wryly.");
-				writeSpeech("???","images/cafedark/cafedark.jpg","Sorry about that, I missed you two coming in.");
+
+				if(checkFlag('cafedark','Start')){
+					writeSpeech("cafedark","","maidF!");
+					writeText("You see cafedarkF bound over with a grin as maidF sits up a bit straighter. cafedarkF pauses slightly when she sees you at the table before her grin turns to a wry smirk.");
+					writeSpeech("cafedark","","Sorry about that, I missed you two coming in.");
+				}
+				else{
+					writeSpeech("???","images/cafedark/cafedark.jpg","maidF!");
+					writeText("A waitress bounds over with a grin as maidF sits up a bit straighter. The dark-haired girl looks you over for a moment, before smirking wryly.");
+					writeSpeech("???","images/cafedark/cafedark.jpg","orry about that, I missed you two coming in.");
+				}
 				writeSpeech("maid","","It's fine - we weren't waiting long. For now, just two coffees...?");
 				writeText("She looks at you for a moment, and you give a slight shrug and a nod.");
 				writeSpeech("maid","","Two coffees.");
 				writeText("The waitress nods, looking over the both of you.");
-				writeSpeech("???","images/cafedark/cafedark.jpg","I'll be back with that in just a minute - sorry to interrupt you two~!");
-				writeText("maidF blushes for a second as the woman bounces off, her skirt going almost indecently high with each step.");
-				writeSpeech("player","","She seems nice.");
+
+				if(checkFlag('cafedark','Start')){
+					writeSpeech("cafedark","","I'll be back with that in just a minute - sorry to interrupt you two~!");
+					writeText("maidF blushes for a second as the woman bounces off, her skirt going almost indecently high with each step.");
+					writeSpeech("player","","She seems nice.");
+				}
+				else{
+					writeSpeech("???","images/cafedark/cafedark.jpg","I'll be back with that in just a minute - sorry to interrupt you two~!");
+					writeText("maidF blushes for a second as cafedarkF bounces off, her skirt going almost indecently high with each step.");
+					writeText("Given that she gives you a subtle wink, it's clear that she wanted to show off for you before heading to the back.");
+					writeSpeech("player","","You two seem to get along.");
+				}
 				writeSpeech("maid","","Quite. A bit energetic, and I think she's a jogger in her free time. I've run into her on more than one occasion.");
 				writeSpeech("maid","","...Though, to be frank, there's actually someone else I wanted to talk to you about. Specifically, my best friend and employer.");
 				writeText("She takes a moment to fish out her wallet, pulling out a picture and handing it to you.");
@@ -434,14 +454,23 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeSpeech("player","","...Huh. I mean, not what I was expecting, but I'd have to be an idiot to turn that down.");
 					writeText("Her expression brightens.");
 					writeSpeech("maid","","Wonderful! I'll talk to her about it tomorrow. Believe me, you will absolutely <i>adore</i> what she can do with her-");
-					writeSpeech("???","images/cafedark/cafedark.jpg","Two coffees-!");
+					if(checkFlag('cafedark','Start'))
+						writeSpeech("cafedark","","Two coffees-!");
+					else
+						writeSpeech("???","images/cafedark/cafedark.jpg","Two coffees-!");
 					writeText("There's a loud bang as maidF jumps enough for her hips to hit the table, her eyes going wide as the waitress steps towards you both.");
 					writeText("A thick silence reigns for a moment as maidF bites her lip gently.");
-					writeSpeech("???","images/cafedark/cafedark.jpg","...Are you okay?");
+					if(checkFlag('cafedark','Start'))
+						writeSpeech("cafedark","","...Are you okay?");
+					else
+						writeSpeech("???","images/cafedark/cafedark.jpg","...Are you okay?");
 					writeSpeech("maid","","<i><b>Fine, thank you.</b></i>");
 					writeText("Taking a slow, deep breath, maidF collects herself and smiles gently.");
 					writeSpeech("maid","","It's fine, just a bit of bad timing. Not your fault at all.");
-					writeSpeech("???","images/cafedark/cafedark.jpg","...Okay. I'll just leave you to it.");
+					if(checkFlag('cafedark','Start'))
+						writeSpeech("???","images/cafedark/cafedark.jpg","...Okay. I'll just leave you to it.");
+					else
+						writeSpeech("cafedark","","...Okay. I'll just leave you to it.");
 					writeText("She moves to help some of the customers closer to the entrance as maidF slowly sighs.");
 					writeSpeech("maid","","I just don't know what she sees in this...");
 					writeText("Shaking her head, she refocuses on you.");
@@ -490,14 +519,23 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeSpeech("player","","...Huh. I mean, not what I was expecting, but I'd have to be an idiot to turn that down.");
 					writeText("Her expression brightens.");
 					writeSpeech("maid","","Wonderful! I'll talk to her about it tomorrow. Believe me, you will absolutely <i>adore</i> what she can do with her-");
-					writeSpeech("???","images/cafedark/cafedark.jpg","Two coffees-!");
+					if(checkFlag('cafedark','Start'))
+						writeSpeech("cafedark","","Two coffees-!");
+					else
+						writeSpeech("???","images/cafedark/cafedark.jpg","Two coffees-!");
 					writeText("There's a loud bang as maidF jumps enough for her hips to hit the table, her eyes going wide as the waitress steps towards you both.");
 					writeText("A thick silence reigns for a moment as maidF bites her lip gently.");
-					writeSpeech("???","images/cafedark/cafedark.jpg","...Are you okay?");
+					if(checkFlag('cafedark','Start'))
+						writeSpeech("cafedark","","...Are you okay?");
+					else
+						writeSpeech("???","images/cafedark/cafedark.jpg","...Are you okay?");
 					writeSpeech("maid","","<i><b>Fine, thank you.</b></i>");
 					writeText("Taking a slow, deep breath, maidF collects herself and smiles gently.");
 					writeSpeech("maid","","It's fine, just a bit of bad timing. Not your fault at all.");
-					writeSpeech("???","images/cafedark/cafedark.jpg","...Okay. I'll just leave you to it.");
+					if(checkFlag('cafedark','Start'))
+						writeSpeech("???","images/cafedark/cafedark.jpg","...Okay. I'll just leave you to it.");
+					else
+						writeSpeech("cafedark","","...Okay. I'll just leave you to it.");
 					writeText("She moves to help some of the customers closer to the entrance as maidF slowly sighs.");
 					writeSpeech("maid","","...I have no idea what part of almost getting caught seems to be a turn on for mistressF, but it is <i>not</i> for me.");
 					writeSpeech("player","","Ah. Well, everyone's a little different, I guess.");
@@ -525,14 +563,23 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeSpeech("player","","...Huh. I mean, not what I was expecting, but I'd have to be an idiot to turn that down.");
 					writeText("Her expression brightens.");
 					writeSpeech("maid","","Wonderful! I'll talk to her about it tomorrow. Believe me, you will absolutely <i>adore</i> what she can do with her-");
-					writeSpeech("???","images/cafedark/cafedark.jpg","Two coffees-!");
+					if(checkFlag('cafedark','Start'))
+						writeSpeech("cafedark","","Two coffees-!");
+					else
+						writeSpeech("???","images/cafedark/cafedark.jpg","Two coffees-!");
 					writeText("There's a loud bang as maidF jumps enough for her hips to hit the table, her eyes going wide as the waitress steps towards you both.");
 					writeText("A thick silence reigns for a moment as maidF bites her lip gently.");
-					writeSpeech("???","images/cafedark/cafedark.jpg","...Are you okay?");
+					if(checkFlag('cafedark','Start'))
+						writeSpeech("cafedark","","...Are you okay?");
+					else
+						writeSpeech("???","images/cafedark/cafedark.jpg","...Are you okay?");
 					writeSpeech("maid","","<i><b>Fine, thank you.</b></i>");
 					writeText("Taking a slow, deep breath, maidF collects herself and smiles gently.");
 					writeSpeech("maid","","It's fine, just a bit of bad timing. Not your fault at all.");
-					writeSpeech("???","images/cafedark/cafedark.jpg","...Okay. I'll just leave you to it.");
+					if(checkFlag('cafedark','Start'))
+						writeSpeech("???","images/cafedark/cafedark.jpg","...Okay. I'll just leave you to it.");
+					else
+						writeSpeech("cafedark","","...Okay. I'll just leave you to it.");
 					writeText("She moves to help some of the customers closer to the entrance as maidF slowly sighs.");
 					writeSpeech("maid","","...I have no idea what part of almost getting caught seems to be a turn on for mistressF, but it is <i>not</i> for me.");
 					writeSpeech("player","","Ah. Well, everyone's a little different, I guess.");
@@ -1395,7 +1442,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 				else{
 					if(checkFlag('maid','fullSub') != true){
 						addFlag('maid','fullSub');
-						setTrust('maid',28);
+						if(checkTrust('maid') < 28)
+							setTrust('maid',28);
 					}
 					writeText("When you two arrive at her place, maidF barely lets the door shut all the way before wrapping her arms around you from behind.");
 					writeText("She gently rests her chin on your shoulder, her breath feeling warm against your ear.");
@@ -1836,7 +1884,7 @@ function writeEvent(name) { //Plays the actual event.
 				t You pause slightly, looking up at maidF first...
 				sp maid; P-Please... Use me, *Master playerF. I want mistressF to watch me get pumped full...!
 				sp player; Then let's get started.
-			`);
+				`);
 			writeBig("images/mistress/threesome1.jpg","Art by Oreteki18kin");
 			writeHTML(`
 				sp mistress; Ooh~!
@@ -1844,7 +1892,7 @@ function writeEvent(name) { //Plays the actual event.
 				t mistressF looks up at you with a wide smile and a wink, before leaning her head forward just a little bit.
 				sp maid; <i><b>U-UOH~!</b></i>
 				t mistressF's tongue teases at maidF's clit, each flick of the tongue against it causing maidF to tighten around your cock sharply, which mistressF enjoys using to tease you both.
-			`);
+				`);
 			writeText("As maidF squirms more and more beneath you, mistressF pushes her arms against maidF's thighs harder to keep her steady.");
 			writeSpeech("mistress","","Hold still, slut~ Your *Master's trying to use you to get off!");
 			writeText("Looking up at you, she clearly mouths \"Go faster\" with a grin, before taking her tongue back to maidF's clit.");
