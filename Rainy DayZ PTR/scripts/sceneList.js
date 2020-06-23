@@ -637,7 +637,7 @@ function writeScene(scene) {
 				<p class='centeredText'>Enter passcode: <input type="text" id="cheatSubmission" value=""></p>
 				<p class='choiceText' onclick='passcodeEntry()'>Submit</p>
 			`;
-			writeText("[Go back|lockedCell].");
+			writeText("[Go back|weaponLab].");
 			break;
 		}
 		case "labHub": {
@@ -1687,7 +1687,7 @@ function writeEvent(n) {
 			writeText("<b<HELP ME</b>");
 			writeText("You need the noise to stop. The ringing in your ears is making you see stars.");
 			writeText("<b>I'M STUCK</b>");
-			writeText("But slowly the painful ringing stops, and whatever was making the sound goes quiet. As your mind unclouds, you realize you've just finished undoing the know of your trap.");
+			writeText("But slowly the painful ringing stops, and whatever was making the sound goes quiet. As your mind unclouds, you realize you've just finished undoing the knot of your trap.");
 			writeText("You step back, the zombie is freed. Worse than that, you can hear the sounds of other zombies closing in, obviously alerted by the sound.");
 			writeText("The zombie you freed tackles you. She's light, and a lot weaker than the others, so you should have no trouble thr-");
 			writeText("... All your worries start to fade away as her lips meet yours. What were you thinking about?");
@@ -1706,7 +1706,7 @@ function writeEvent(n) {
 			if (data.player.beastDisabled == false) {
 				writeText("You drop your pack and heft your bat. There's only one thing left to do now.");
 				writeText("One of the zombified dogs comes out from behind a tree. You're wounded and have almost no energy left, but you still have some fight in you.");
-				writeText("He bars his teeth and growls, and yoh get ready to start swinging.");
+				writeText("He bars his teeth and growls, and you get ready to start swinging.");
 				writeSpeech("player", "", "Come get some, motherfucker.");
 				writeText("...");
 				writeBig("hunter1.gif");
@@ -2002,7 +2002,7 @@ function writeEvent(n) {
 			writeText("These fuckers are the most dangerous types I've ever seen. Normal zombies are tough to deal with, but they have weaknesses. These ones are smart, really smart. They can open doors, use tools, climb up ladders, the works.");
 			writeText("They aren't anywhere near as strong though, I think I could take one in a fight if I had to, but the most dangerous part of them is their pheromones.");
 			writeText("See, their bodies are way softer, and their dicks are so small I don't think they even can get erections. What they do is emit pheromones that turn men into sex fiends, and try to seduce the men into fucking their asses. They infect the men like an STD while still pumping spunk all over everything.");
-			writeText("Not only that, but they can make this weird screech sound. I hurt like a glass shard in the head, but for some reason whenever a man heard it they started running out of cover towards her.");
+			writeText("Not only that, but they can make this weird screech sound. It hurt like a glass shard in the head, but for some reason whenever a man heard it they started running out of cover towards her.");
 			writeText("They got Tommy, so the building is compromised. I was able to stay safe and eventually everyone else left the building. Sirens still get horny like normal zombies but they can't cum from their dicks, so they need to keep an entourage with them when they aren't hunting. When they find prey they'll ditch their fuckbudies, who are still covered in pheromones.");
 			writeText("Now, Tommy wasn't exactly what I'd call a 'tough guy'. Honestly he was a do-no-harm sort of pacifist, pretty rare these days. I guess that's why he turned into a girly-looking one unlike the rest.");
 			writeText("The one that got Tommy was headed to the south last time I saw her, maybe she's heading to that unfinished place at Ridgewood?");
