@@ -47,6 +47,7 @@ var galleryArray = [
 	{index: 'survivor2', name: "Succumb to Greed", 	scenario: "Rainy DayZ",		hint: 'While not infected, find the fellow survivor in the red house on your way back to the safehouse.'},
 	{index: 'tainted', 	name: "Tainted", 			scenario: "Rainy DayZ",		hint: 'Eat the infected food in the convenience store.'},
 	{index: 'infected', name: "Infected Ending", 	scenario: "Rainy DayZ",		hint: 'Eat the infected food in the convenience store, then beat the game.'},
+	//The Facility's scenes
 	{index: 'start', 	name: "Overwhelmed", 		scenario: "The Facility",	hint: 'Begin chapter 2.'},
 	//index: 'licker', 	name: "Tongue Tied", 		scenario: "The Facility",	hint: 'Go back into the Weapons Testing Lab and interact with the pile of guns.'},
 	{index: 'mindWorms',name: "Mind Worms", 		scenario: "The Facility",	hint: 'Masturbate in the Parasite Lab.'},
@@ -54,10 +55,20 @@ var galleryArray = [
 	{index: 'whizzer', 	name: "Whizzer's Fluid", 	scenario: "The Facility",	hint: 'Drink the yellow fluid in the Chemical Lab.'},
 	{index: 'alpha1', 	name: "Alpha's Bitch", 		scenario: "The Facility",	hint: 'Fail to escape from the alpha after curing your infection.'},
 	{index: 'alpha2', 	name: "Failed Escape", 		scenario: "The Facility",	hint: 'Try to fit through the crawlspace in the Containment Lab after curing your infection.'},
+	{index: 'alpha3', 	name: "Hypnotic Ass", 		scenario: "The Facility",	hint: 'Try to hide from the alpha in the weapon lab after opening the sealed door.'},
 	{index: 'solo1', 	name: "Private Time", 		scenario: "The Facility",	hint: 'Masturbate in the Chemical Lab.'},
+	{index: 'domination', 	name: "Domination", 		scenario: "The Facility",	hint: 'Relieve yourself with the subdued woman in the weapon lab after learning the passcode.'},
 	{index: 'solo2',	name: "Exposed Time", 		scenario: "The Facility",	hint: 'Masturbate in the Containment Lab.'},
 	{index: 'releaseTheHorde',	name: "Release the Horde", 		scenario: "The Facility",	hint: 'Masturbate in the Containment Lab and release the horde.'},
 	{index: 'cure', 	name: "Cured", 				scenario: "The Facility",	hint: 'Cure your infection by bringing 3 keycards to the Innoculation Lab.'},
+	{index: 'mindBreak', 	name: "Purple Potion", 				scenario: "The Facility",	hint: 'Combine the "break" and "mind" ingredients at the chemistry table.'},
+	{index: 'cockBreak', 	name: "Pink Potion", 				scenario: "The Facility",	hint: 'Combine the "break" and "penis" ingredients at the chemistry table.'},
+	{index: 'cockMind', 	name: "Light Blue Potion", 				scenario: "The Facility",	hint: 'Combine the "penis" and "mind" ingredients at the chemistry table.'},
+	{index: 'cockRock', 	name: "Light Yellow Potion", 		scenario: "The Facility",	hint: 'Combine the "rock" and "penis" ingredients at the chemistry table, then try to cure yourself of the infection.'},
+	{index: 'failure', 	name: "Failure to Escape", 				scenario: "The Facility",	hint: 'Fail to escape from the Alpha because you are too pent up from not jerking off.'},
+	{index: 'fireteam1', 	name: "Jones's Recording", 			scenario: "The Facility",	hint: 'Find the first memory card in the weapon lab and view it in the lobby.'},
+	{index: 'fireteam2', 	name: "Carla's Recording", 			scenario: "The Facility",	hint: 'Find the second memory card in the parasite lab and view it in the lobby.'},
+	{index: 'fireteam3', 	name: "Vasquez's Recording", 			scenario: "The Facility",	hint: 'Find the final memory card in the chemistry lab and view it in the lobby.'},
 ];
 
 //Startup & Systems config
@@ -443,6 +454,20 @@ function sceneTransition(scene) {
 	console.log(data);
 }
 
+function passcodeEntry() {
+	var goof = document.getElementById('cheatSubmission').value;
+	switch (goof) {
+		case "828": {
+			data.player.flags += "weaponLabDoor";
+			sceneTransition("weaponLab");
+			break;
+		}
+		default: {
+			writeText("Passcode rejected.");
+		}
+	}
+}
+
 //Showing & hiding windows
 function hideStuff() {
 	hideInv();
@@ -558,7 +583,9 @@ function checkMenu() {
 		data.player.currentScene == "unusedIdeas"
 	) {
 		document.getElementById("menu").style.width = "0px";	
-		document.getElementById("closeButton").style.visibility = "hidden";	
+		if (document.getElementById("closeButton")) {
+			document.getElementById("closeButton").style.visibility = "hidden";	
+		}
 		document.getElementById("openButton").style.visibility = "hidden";	
 		document.getElementById("menu").style.borderRight = "0px";	
 		document.getElementById("footer").style.visibility = "hidden";	
@@ -573,6 +600,156 @@ function checkMenu() {
 			document.getElementById("footer").style.overflow = footerOverflow;
 		}
 	}
+}
+
+function writeHTML(text) {
+	//Separate the text into lines
+	var lines = text.split('\n');
+	//For each of these lines
+	for(var lineCounter = 0;lineCounter < lines.length;lineCounter++){
+		//Remove all tabs from the line, in case we use tab spacing
+		while (lines[lineCounter].includes('\t') == true) {
+			lines[lineCounter] = lines[lineCounter].replace(`\t`, ``);
+		}
+		//If the line is not empty (we don't want to print empty lines)
+		if (lines[lineCounter] != "" && checkRequirements(lines[lineCounter]) == true) {
+			//Grab the first word of the line to use as the command
+			var command = lines[lineCounter].replace(/ .*/,'');
+			//Depending on which command, execute different code. Convert the command to lowercase as well in case we used Sp instead of sp, as js is case-sensitive.
+			switch (command.toLowerCase()) {
+				//If the command is "t"
+				case "t": {
+					//Remove the command from the line we actually want to print.
+					lines[lineCounter] = lines[lineCounter].replace(command+` `, ``);
+					//Execute the writeText command to print everything left to the screen.
+					writeText(cullRequirements(lines[lineCounter]));
+					//Don't execute any of the below switch cases.
+					break;
+				}
+				case "sp": {
+					//Get the name of our speaker
+					var name = lines[lineCounter].split(command+` `).pop().split(`;`)[0];
+					//If "; im" is in our code we want to specify a specific profile image, so use that. Otherwise set the image variable blank so it can be automatically found.
+					if (lines[lineCounter].includes("; im")) {
+						var image = lines[lineCounter].split(`im `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`im `+image+`; `, ``);
+					}
+					else {
+						var image = "";
+					}
+					//If "; altName" is in our code we want to use an alternate name for the character, so use that. Otherwise set the altName variable blank.
+					if (lines[lineCounter].includes("; altName")) {
+						var altName = lines[lineCounter].split(`altName `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`altName `+altName+`; `, ``);
+					}
+					else {
+						var altName = "";
+					}
+					//If "; altColor" is in our code we want to specify a specific color for the character, so use that. Otherwise set the altColor variable blank.
+					if (lines[lineCounter].includes("; altColor")) {
+						var altColor = lines[lineCounter].split(`altColor `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`altColor `+altColor+`; `, ``);
+					}
+					else {
+						var altColor = "";
+					}
+					//Remove the command from the line we actually want to print.
+					lines[lineCounter] = lines[lineCounter].replace(command+` `+name+`; `, ``);
+					//Execute the writeSpeech command to print everything we have left.
+					//TODO: Add custom colors and custom names
+					writeSpeech(name, image, cullRequirements(lines[lineCounter]), altName, altColor);
+					break;
+				}
+				case "im": {
+					//Get the location of the image
+					var location = lines[lineCounter].split(command+` `).pop().split(`;`)[0];
+					//If "; cap" is in our code we want to attach a caption to our image. Otherwise leave the caption blank.
+					//Bring up the image on screen. Since we aren't printing the line itself we don't need to clean it by removing commands.
+					writeBig(location);
+					break;
+				}
+				//This is for convenience. If the line is just an elipses, replace it with a horizontal line cutting across the screen.
+				case "...": {
+					writeText("<hr>");
+					break;
+				}
+				//If the command isn't found in the list above then the code can't be parsed (understood), print an error code in red.
+				default: {
+					writeText("<span style='color:red'>Unknown command. The line '"+lines[lineCounter]+"' could not be parsed.");
+				}
+			}
+		}
+	}
+}
+
+function checkRequirements(string) {
+	var finalResult = true;
+	while (string.includes("?fetish ") == true) {
+		var check = string.split(`?fetish `).pop().split(`;`)[0];
+		switch(check) {
+			case "beast": {
+				if (data.player.beastDisabled == true) {
+					finalResult = false;
+				}
+				break;
+			}
+			case "rim": {
+				if (data.player.rimDisabled == true) {
+					finalResult = false;
+				}
+				break;
+			}
+			case "worm": {
+				if (data.player.wormDisabled == true) {
+					finalResult = false;
+				}
+				break;
+			}
+			case "ws": {
+				if (data.player.wsDisabled == true) {
+					finalResult = false;
+				}
+				break;
+			}
+		}
+		string = string.replace(`?fetish `+check+`;`, ``);
+	}
+	while (string.includes("?flag player ") == true) {
+		var check = string.split(`?flag player `).pop().split(`;`)[0];
+		if (data.player.flags.includes(check) != true) {
+			finalResult = false;
+		}
+		string = string.replace(`?flag player `+check+`;`, ``);
+	}
+	while (string.includes("!flag player ") == true) {
+		var check = string.split(`!flag player `).pop().split(`;`)[0];
+		if (data.player.flags.includes(check) == true) {
+			finalResult = false;
+		}
+		string = string.replace(`!flag player `+check+`;`, ``);
+	}
+	if (finalResult == true) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+function cullRequirements(string) {
+	while (string.includes("?fetish ") == true) {
+		var check = string.split(`?fetish `).pop().split(`;`)[0];
+		string = string.replace(`?fetish `+check+`;`, ``);
+	}
+	while (string.includes("?flag player ") == true) {
+		var check = string.split(`?flag player `).pop().split(`;`)[0];
+		string = string.replace(`?flag player `+check+`;`, ``);
+	}
+	while (string.includes("!flag player ") == true) {
+		var check = string.split(`!flag player `).pop().split(`;`)[0];
+		string = string.replace(`!flag player `+check+`;`, ``);
+	}
+	return string;
 }
 
 //Saving
@@ -627,6 +804,57 @@ function loadFile(){
 	}
 	updateSave();
 }
+
+function saveTXT() {
+	var date = new Date();
+	date = date.toDateString() + " " + date.toLocaleTimeString();
+    var textFileAsBlob = new Blob([JSON.stringify(data)], {type:'text/plain'});
+    var downloadLink = document.createElement("a");
+    downloadLink.download = "Rainy "+date+".noodle";
+    downloadLink.innerHTML = "Download File";
+    if (window.webkitURL != null)
+    {
+        // Chrome allows the link to be clicked
+        // without actually adding it to the DOM.
+        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    }
+    else
+    {
+        // Firefox requires the link to be added to the DOM
+        // before it can be clicked.
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+    }
+
+    downloadLink.click();
+}
+
+const fr = new FileReader();
+fr.addEventListener("load", fileLoaded);
+
+function loadSave(){
+    files = document.getElementById('loadFile').files;
+    if(files.length == 0)
+        return;
+    file = files[0];
+    fr.readAsText(file);
+}
+function fileLoaded(){
+    console.log(fr.result);
+	var fakedata = fr.result;
+	fakedata = JSON.parse(fakedata);
+	if (fakedata.player.flower == null) {
+		alert("Whoa there! I don't think that's a Rainy DayZ save file! If it is, be sure to let me (Noodlejacuzzi) know and I'll help you out.");
+	}
+	else {
+		data = fakedata;
+		sceneTransition("settings");
+	}
+	document.getElementById('loadFile').value = '';
+}
+
 
 function quickSave() {
 	data.quicksave = Object.assign({}, data.player)
