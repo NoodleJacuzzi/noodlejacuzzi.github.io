@@ -1084,6 +1084,14 @@ function diagnostic() {
 			}
 			break;
 		}
+		case "pool noodle": {
+			for (unlockIndex = 0; unlockIndex < galleryArray.length; unlockIndex++) {
+				if (galleryCheck(galleryArray[unlockIndex].index) != true) {
+					writeText(galleryArray[unlockIndex].scenario + " - " + galleryArray[unlockIndex].hint);
+				}
+			}
+			break;
+		}
 	}
 	if (goof == "null") {
 		writeText("You've already used this code before, or you entered a code that doesn't exist.");
