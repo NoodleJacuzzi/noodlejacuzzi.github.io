@@ -583,10 +583,12 @@ function checkMenu() {
 		data.player.currentScene == "unusedIdeas"
 	) {
 		document.getElementById("menu").style.width = "0px";	
-		if (document.getElementById("closeButton")) {
+		if (document.getElementById("closeButton") != null) {
 			document.getElementById("closeButton").style.visibility = "hidden";	
+		}	
+		if (document.getElementById("openButton") != null) {
+			document.getElementById("openButton").style.visibility = "hidden";	
 		}
-		document.getElementById("openButton").style.visibility = "hidden";	
 		document.getElementById("menu").style.borderRight = "0px";	
 		document.getElementById("footer").style.visibility = "hidden";	
 		document.getElementById("footer").style.height = "0px";	
