@@ -730,6 +730,20 @@ function checkRequirements(string) {
 		}
 		string = string.replace(`!flag player `+check+`;`, ``);
 	}
+	while (string.includes("?item ") == true) {
+		var check = string.split(`?item `).pop().split(`;`)[0];
+		if (checkItem(check) == false) {
+			finalResult = false;
+		}
+		string = string.replace(`?item  `+check+`;`, ``);
+	}
+	while (string.includes("!item ") == true) {
+		var check = string.split(`!item `).pop().split(`;`)[0];
+		if (checkItem(check) == true) {
+			finalResult = false;
+		}
+		string = string.replace(`!item  `+check+`;`, ``);
+	}
 	if (finalResult == true) {
 		return true;
 	}
@@ -750,6 +764,14 @@ function cullRequirements(string) {
 	while (string.includes("!flag player ") == true) {
 		var check = string.split(`!flag player `).pop().split(`;`)[0];
 		string = string.replace(`!flag player `+check+`;`, ``);
+	}
+	while (string.includes("?item ") == true) {
+		var check = string.split(`?item `).pop().split(`;`)[0];
+		string = string.replace(`?item  `+check+`;`, ``);
+	}
+	while (string.includes("!item ") == true) {
+		var check = string.split(`!item `).pop().split(`;`)[0];
+		string = string.replace(`!item  `+check+`;`, ``);
 	}
 	return string;
 }

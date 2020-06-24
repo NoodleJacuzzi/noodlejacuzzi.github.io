@@ -1020,7 +1020,7 @@ function writeScene(scene) {
 			writeText("Alright, I don't have long. Security will be in soon to transport me, so I need to get this writing done quickly.");
 			writeText("These worms are an emergency measure. In less than 1% of the population mental resistance is strong enough for infected to retain their rationality for a time. These worms seek out those resistant infected, inject them with a powerful paralytic, then enter the infected's body through their ears or nose to access the brain.");
 			writeText("I understand it sounds gross but it feels so goooooo");
-			writeText("I need to focus, losing control already. I'm hosting one now, I can feel it growing acclimated to my brain chemistry. They find the parts of your brain responsible for rational though and hijack them. If they think you can lead them to other resistant individuals they'll turn you into a sort of sleeper agent to infect others.");
+			writeText("I need to focus, losing control already. I'm hosting one now, I can feel it growing acclimated to my brain chemistry. They find the parts of your brain responsible for rational thought and hijack them. If they think you can lead them to other resistant individuals they'll turn you into a sort of sleeper agent to infect others.");
 			writeText("But if they think you have nothing to offer they'll just crush those parts of your grey matter, removing what individuality you might have left. After that they start injecting pleasure chemicals directly into your brain. The guards are almost here to escort me to the inoculation chamber so that the worm can be removed before it finds the sections dedicated to rational tho");
 			writeText("<i>The log ends here. You probably shouldn't touch the console, as it's coated in an inhuman amount of cum.</i>");
 			writeText("[CLOSE FILE|parasiteLab]");
@@ -1375,6 +1375,102 @@ function writeScene(scene) {
 		}
 		case "scarletSirenTorture": {
 			writeEvent(scene);
+			break;
+		}
+		case "scarletParlor": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletWardrobe": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletBalcony": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletGuestBedroom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletMainHall": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletHeartBathroom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletHeartBedroom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletTheaterRoom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletDiningRoom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletStorageRoom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletBasement": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletLabEntrance": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletServerRoom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletCellRoom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletControlRoom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletTrappedRoom": {
+			writeHTML(`
+			
+			`);
 			break;
 		}
 		//Typhoid Mary
@@ -2039,7 +2135,7 @@ function writeEvent(n) {
 			writeText("There was no blaring alarm, no warning broadcast, nothing official to warn everyone. All you had were an alert on your phone from a close friend telling you to be ready to fight for your life, a squadron of armed soldiers bursting into your office for a 'surprise inspection', then the lights went out.");
 			writeText("Blind panic hit your assistants, they didn't last long. They ran out of the room and were taken immediately. The soldiers followed soon after, and now you are alone.");
 			writeText("But you're not like them. You're brilliant, and willing to do whatever it takes. From all the evidence you have, it's clear exactly what's going on, what pathogen is breaching containment.");
-			writeText("So you get a vial from cryo-storage, a green fluid inside and a biohazard earning on the front.");
+			writeText("So you get a vial from cryo-storage, a green fluid inside and a biohazard warning on the front.");
 			writeSpeech("player", "", "I'm not ending up like the rest of them... I didn't sacrifice everything to lose my mind.");
 			writeText("Taking the final plunge you down the vial and double over just moments later.");
 			writeSpeech("player", "", "Hagck... Fuck, it's awful.");
@@ -2050,7 +2146,7 @@ function writeEvent(n) {
 			writeSpeech("player", "", "Focus... focus...");
 			writeText("There's a stretching sound, then a tearing sound as your clit strains against your now too-tight stockings. You feel your pussy dilate as something is trying to push it's way out.");
 			writeSpeech("player", "", "Gotta stay... In... Cont-");
-			writeText("And finally it happens with a muffled *POP*, what remain of your womb descends and a pair of brand new testicles burst free as your stockings are torn to shreds.");
+			writeText("And finally it happens with a muffled *POP*, what remains of your womb descends and a pair of brand new testicles burst free as your stockings are torn to shreds.");
 			writeText("Your skin burns and itches, every but of your body trying to fight back against the infection, and your mind is fighting too.");
 			writeSpeech("player", "", "Guuuddd~! Fuhhhck~!");
 			writeText("You tear off your clothes, throwing every piece as far as you can to escape the feeling of confinement.");
@@ -2083,7 +2179,7 @@ function writeEvent(n) {
 				writeText("Finally the worm finds the part of your brain it's looking for and squeezes.");
 				writeBig("worm-2.gif");
 				writeText("Reflexively you cum as your vision and mind go a bright white of pleasure. It's recognized you as resistant to the virus, so now it's taking away your rationality by force.");
-				writeText("Desperately in the back your your mind, the part not bathing in pleasure chemicals, you try to think of a last way out. Of a way you could be useful to the worm. Anything at all to save your mind.");
+				writeText("Desperately in the back of your mind, the part not bathing in pleasure chemicals, you try to think of a last way out. Of a way you could be useful to the worm. Anything at all to save your mind.");
 				writeText("But the worm squeezes again on what's left of your rationality and starts injecting chemicals directly into your grey matter. No longer capable of rational thought, or of any thought at all, you'll sit here spurting and leaking until the worm is finished with you. ");
 			}
 			else {
@@ -2110,7 +2206,7 @@ function writeEvent(n) {
 			writeText("Wordlessly you shake as your cock starts spraying infectious piss onto yourself and the floor.");
 			writeSpeech("player", "", "Gguuuuhhhd~!");
 			writeText("It feels like an orgasm but just won't stop. Every time you try to stem the stream it builds up unbearably and feels even better when you relax and blast with full force.");
-			writeText("Thoughts of survival and the cure are far behind you. As the stream weakens you feel your bladder working overdrive as more piss is ready to be released already. You do your best to hold yourself back, only a small stream leaking out as you stand up.");
+			writeText("Thoughts of survival and the cure are far behind you. As the stream weakens you feel your bladder working overtime as more piss is ready to be released already. You do your best to hold yourself back, only a small stream leaking out as you stand up.");
 			writeText("Piss dribbling down your leg with every step, you begin making your way to the containment lab. The infected in there are going to have a very good drink tonight. ");
 			}
 			else {
@@ -2150,7 +2246,7 @@ function writeEvent(n) {
 			writeText("You feel your heartbeat in your ears as you decide to play things a little risky and push a button on the console. The clear plastic shield lifts, meaning that the only thing between you and the infected is a set of iron bars.");
 			writeBig("solo2-1.gif");
 			writeText("One puts on a show for you, eagerly waving her cock side to side to entice you.");
-			writeSpeech("player", "", "Ghh... This is so wrong... I'm jerking off in front of a bunch off... <br>Fuck, I don't have much longer...!");
+			writeSpeech("player", "", "Ghh... This is so wrong... I'm jerking off in front of a bunch of... <br>Fuck, I don't have much longer...!");
 			writeBig("solo2-2.gif");
 			writeSpeech("player", "", "Nnnhg!");
 			writeText("Your legs shake as you paint the floor with your infectious spunk, filling the room with the heady scent of jizz. The infected are even more riled up now. You move to press the button to close the outer shield, but the large red button next to it...");
@@ -2185,7 +2281,7 @@ function writeEvent(n) {
 				t You stumble backwards, trying to regain a hold on your sanity. Yet the only thing on your mind is... 
 				im mindBreak2.gif
 				t The image of someone you've hunted down. Once a proud man, now someone near the end of their infection process gleefully taking your cum as his body changes. 
-				t You mind is slipping away, becoming more primal. The scientist is gone, you are a regular infected now, someone on the hunt. 
+				t Your mind is slipping away, becoming more primal. The scientist is gone, you are a regular infected now, someone on the hunt. 
 				t But there's no one here left to hunt, and your ruined brain can't think of a way out. You are stuck here, maybe forever. 
 				t Oh well, you can jerk off for as long as you want at least. 
 			`);
@@ -2199,7 +2295,7 @@ function writeEvent(n) {
 				t Yet your grip is rough, ineligant, like you're trying to punish yourself. You stroke faster as your balls clench up, before you pull your hand away and thrust at the air. 
 				t Without any kind of stimulation the orgasm is ruined. It'll allow you to cum, but without any relief from the sexual hunger overtaking you. 
 				im cockBreak.gif
-				t As your cock spews out it's last rope of cum it sags, noticably smaller than before. It looks almost whinpy, pathetic like this, but for some reason you can't help but feel happy. 
+				t As your cock spews out it's last rope of cum it sags, noticably smaller than before. It looks almost whimpy, pathetic like this, but for some reason you can't help but feel happy. 
 				t You reach down to grasp the head between your index finger and thumb, stroking yourself again. Your hips jerk as you coo, and you feel yourself about to cum even faster this time. 
 				t Suddenly you pull your hands away again, this time right on the edge. You can feel yourself about to cum, you're so close. 
 				t On autopilot again, you stick out your ass and lift your hand, before... 
@@ -2294,7 +2390,7 @@ function writeEvent(n) {
 			writeText("The door slides open and you race into the chemical lab searching for a place to hide, the only realistic hiding place is underneath a desk. You get beneath one away from the door, now all you can do is wait.");
 			writeText("The door starts to slide closed, but you don't actually hear it seal. Rather, the sliding is interrupted by a metallic whir and the crunch of a broken motor, before it's ripped off its track and tossed aside.");
 			writeText("<b style = 'font-size: 200%;'>\"HUNGRY.\"</b>");
-			writeText("The voice booms through the lab. You pull in your knees draw yourself tightly into a ball as the sound of footsteps grow closer.");
+			writeText("The voice booms through the lab. You pull in your knees draw yourself tightly into a ball as the sound of footsteps grows closer.");
 			writeText("Your heart is pounding, but there's something in the air that's making your thoughts feel hazy. Her voice keeps echoing in your head, and despite your fear you reach between your legs.");
 			writeText("Terror and panic hold you back from moving quickly, but you are absolutely soaked. You do your best to try and focus on the footsteps as they grow closer still, hoping she can't find you and that she'll get bored of hunting. You'll make a break for it once she leaves, and-");
 			writeBig("chemChase1.gif");
@@ -2302,13 +2398,13 @@ function writeEvent(n) {
 			writeText("You take action, reaching out and moving out from beneath the desk. As she sees you, she gives a deep, bemused chuckle that sends a tingle down your spine.");
 			writeSpeech("player", "", "It's so... So big, and so perfect... I w-... I need it...");
 			writeText("You grasp the massive fuckmonster, feeling its weight in your hands. You lean in forwards and give the length a worshipful lick.");
-			writeText("The beast is incredible, the head as thick as an apple. There's no way you could take it, so all you can do is reverently stroke it with your hands and press the head against your mouth. Sticking your your tongue, you french kiss her urethra like you're making love just in time for her to grunt and a single massive glob of sperm hits your tongue and is forced into your mouth.");
+			writeText("The beast is incredible, the head as thick as an apple. There's no way you could take it, so all you can do is reverently stroke it with your hands and press the head against your mouth. Sticking out your tongue, you french kiss her urethra like you're making love just in time for her to grunt and a single massive glob of sperm hits your tongue and is forced into your mouth.");
 			writeText("You try to swallow it right away, but it's just too thick. Your eyes water and your sinuses burn, but you wouldn't dare try to spit it out. All of your work curing your infection fades away as you chew the alpha's ball jelly.");
-			writeText("Finally you pull your mouth away from her cock with a lewd squelch, tip your head back, and suck in your cheeks as you force the thick, sticky load down your throat. You can actually feel the distension on your neck as the jizz slides down, infecting you. The heat travels down through your chest until you swear you can hear it enter your stomach.");
+			writeText("Finally you pull your mouth away from her cock with a lewd squelch, tip your head back, and suck in your cheeks as you force the thick, sticky load down your throat. You can actually feel the distention on your neck as the jizz slides down, infecting you. The heat travels down through your chest until you swear you can hear it enter your stomach.");
 			writeText("You lower a hand to start fingering your sopping twat, you won't have it much longer anyway. Having ingested such a thick load of infected sperm, it'll be replaced with a cock within minutes. Already you can feel yourself riding your jizz-fueled high to an orgasm, and-");
 			writeBig("chemChase2.gif");
 			writeText("<b style = 'font-size: 200%;'>\"HUNGRY.\"</b>");
-			writeText("You'red snapped out of your stupor and want to slap yourself as you realize how selfish you were being. You belong to her now, and you pull your hand away from your cunt back to her massive dick,");
+			writeText("You're snapped out of your stupor and want to slap yourself as you realize how selfish you were being. You belong to her now, and you pull your hand away from your cunt back to her massive dick,");
 			writeText("But she isn't interested in worshipful kisses or a slow handjob. She grabs you by the hair and mashes her cockhead against your mouth. It can't possibly fit, you tell yourself, but you don't try to stop her. You are hers to toy with, and hers to break.");
 			writeText("But to your amazement you feel your jaw stretching until finally her massive cockhead is forced inside. It stretches your jaw, and then your throat too. Soon enough you're impaled on her throbbing cock and she grabs you by the neck to pump her fuck-baton in and out of her new jizz-sock.");
 			writeText("She lets out another deep grunt. That first load was just precum, just enough to prepare you to accept her monstrous length. Now you can feel the full effects of her cum as her balls tighten and throb.");
@@ -2341,7 +2437,7 @@ function writeEvent(n) {
 			writeBig("containmentChase.gif");
 			writeText("Every thrust is a battle, even for the alpha. A human's cunt wasn't meant for this kind of treatment.");
 			writeSpeech("player", "", "YESH~! HARDER~!");
-			writeText("But you aren't human anymore. Less than halfway in and her cockhead bumps against your cervix. You can feel a distension on her cock going down your cunt, stretching you even more, until your womb is suddenly packed full of alpha infected cum.");
+			writeText("But you aren't human anymore. Less than halfway in and her cockhead bumps against your cervix. You can feel a distention on her cock going down your cunt, stretching you even more, until your womb is suddenly packed full of alpha infected cum.");
 			writeText("It won't stay that way for long. As your womb is attacked by the virus, the alpha pulls out from your pussy leaving you a gaping mess, and aligns her cock with your asshole. Your consciousness begins to fade, but that's okay.");
 			writeText("You'll probably wake up to the feeling of her load in your ass.");
 			if (data.player.currentScene != "gallery") {
@@ -2362,7 +2458,7 @@ function writeEvent(n) {
 				t Thrust, clench, pull back. 
 				t Thrust, clench, pull back. 
 				t <b>Thrust, clench, pull back. </b>
-				t You'd swear you can hear every splurt of alpha cum filling up the infected woman's ass. You can <b>SEE</b> the distension of the alpha's cockhead bulge in the infected woman's body, and you can see the way the bulge inflates for just a moment with every rope of sperm fired. 
+				t You'd swear you can hear every splurt of alpha cum filling up the infected woman's ass. You can <b>SEE</b> the distention of the alpha's cockhead bulge in the infected woman's body, and you can see the way the bulge inflates for just a moment with every rope of sperm fired. 
 				t But once the flow stops, the Alpha just resumes thrusting. No cool down, no waiting. The infected woman has either accepted her fate or fainted, you can't hear her struggling anymore. All that's left of her is a twitch of her legs as she paints the floor again. 
 				t You can't hold yourself back anymore as you push open the cabinet door and crawl out. Part of you is screaming to escape, to get to the elevator, but... 
 				t You aren't crawling towards the exit. 
@@ -2388,7 +2484,7 @@ function writeEvent(n) {
 			writeText("You make your way up and into some kind of small cave, or crawlspace. The floor and walls are lined with extremely sticky white ropes.");
 			writeSpeech("player", "", "Fuck... I wish I were wearing... Anything, really.");
 			writeText("You barely hear the parasite lab door smash open. You should be safe but you keep crawling forwards just in case.");
-			writeText("Suddenly, a rope wraps around your face covering your mouth. Your arms and legs follow and are pulled taught when the sticky ropes on the floor lift a few inches off the ground.");
+			writeText("Suddenly, a rope wraps around your face covering your mouth. Your arms and legs follow and are pulled taut when the sticky ropes on the floor lift a few inches off the ground.");
 			writeText("You hear the sounds of inhuman legs scuttling around you as another rope, they must be some kind of webbing, wraps around your face covering your eyes.");
 			writeSpeech("player", "", "Mmph! Mmmpfh!");
 			writeText("Desperately you try and struggle, bite, and gnaw through the webbing, only to find your muscles start to relax and your heartbeat slow. The webs taste...");
@@ -2434,7 +2530,7 @@ function writeEvent(n) {
 				im soldier1.gif
 				t The soldier's body has changed. Her womb and clit unrecognizable. Where once a pussy was leaking infected cum, now a bulging cock is leaking infected precum. 
 				t "F-fuck you, captain... You fucking... Ice queen bitch... When I make it out..."
-				t She strokes her cock as her rambling becomes less coherent. Another hand foes between her legs, circling the rim off her asshole before she begins to finger herself. 
+				t She strokes her cock as her rambling becomes less coherent. Another hand goes between her legs, circling the rim of her asshole before she begins to finger herself. 
 				t "Your husband... I know you peg him, how would he like... A real dick...<br>And that cute son of yours was looking at my ass last time, maybe I'll let him shoot out his first load inside me... Before I turn him into a girlyboy slut!" 
 				t As she bucks her hips and begins to cum, spraying the floor and the camera in a thick layer of cum, her bitter fantasies melt away into wild grunts and moans. The audio makes it clear she's still pleasuring herself, but it's also clear her mind is long gone at this point. 
 			`);
@@ -2467,15 +2563,15 @@ function writeEvent(n) {
 				t "You... You sons of bitches! If you think you'll get away with this, you're dead wrong!" 
 				t The woman on screen looks seriously pissed off. She's taken her helmet off and is using it as a recording device. 
 				t "This is captain Rita Vasquez, I'm the captain of a fireteam for the fucked up organization that started all this shit. I was sent here on a containment job. All my subordinates have already been infected.
-				t I completed my mission, but... Those mother fuckers... They're abandoning me. They'd rather just study what going on in here, using their own employees as 'data points'. They've sent in hounds after me, I don't have much longer. I already infected myself too, I'd rather turn from drinking some vial than getting fucked by some zombie with a dick. It was some research sample called 'Echidna', maybe the hounds will ignore me since I'm infected. 
+				t I completed my mission, but... Those mother fuckers... They're abandoning me. They'd rather just study what's going on in here, using their own employees as 'data points'. They've sent in hounds after me, I don't have much longer. I already infected myself too, I'd rather turn from drinking some vial than getting fucked by some zombie with a dick. It was some research sample called 'Echidna', maybe the hounds will ignore me since I'm infected. 
 				t Listen, I know if you're reading this you probably work for them too. Get out. They don't care about your life, the world, or even money. Those motherfuckers just want to see the world burn. But I'm not scared."
 				t She holds up a small handgun.
 				t "I'm taking them down with me. I'm a warrior, I'll go down with honor, with dignity-"
-				t The captain is interrupted a makeshift blockade is shattered, and barking can be heard from offscreen. The camera is knocked over and glitches out. 
+				t The captain is interrupted as her makeshift blockade is shattered, and barking can be heard from offscreen. The camera is knocked over and glitches out. 
 				... 
 				t When the video resumes, a much happier-looking captain is smiling into the screen. She looks happy that the camera has resumed recording, and a large hound enters the frame and begins licking her face. 
 				t The captain giggles, and begins reciprocating the kiss. It seems like she's already infected. 
-				t The dog stops licking and the captain whines, until the dog steps onto the table. Its bright red, fully erect cock dangling between its legs. The captain looks completely hypnotizes. She adjusts her uniform and softly gasps as the hound places his dick between her breasts. 
+				t The dog stops licking and the captain whines, until the dog steps onto the table. Its bright red, fully erect cock dangling between its legs. The captain looks completely hypnotized. She adjusts her uniform and softly gasps as the hound places his dick between her breasts. 
 				im soldier3.gif
 				t At the height of his thrusts the captain will lean her head forwards to plant a small smooch on the growing knot at the base of her lover's fat dick. The hound grunts and begins to thrust even faster, before slamming down his hips so that the knot rests between the captain's large breasts. 
 				t The captain giggles as a sticky sound can be heard, the hound's cock beginning to fill her jumpsuit with infected jizz. 

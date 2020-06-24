@@ -17,7 +17,7 @@ var newItems = [
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-	{index: "orange2", name: "You hear a knock at you door, one loud knock before hearing a voice outside.", location: 'playerOffice', time: "MorningEvening", itemReq: "", trustMin: 40, trustMax: 50, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	{index: "orange2", name: "You hear a knock at your door, one loud knock before hearing a voice outside.", location: 'playerOffice', time: "MorningEvening", itemReq: "", trustMin: 40, trustMax: 50, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 	{index: "placeholder", name: "", location: '', time: "", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 ];
 
@@ -156,7 +156,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "Well, orangeF, I do see you that way. Like I said, you're a very beautiful girl. Does that make you feel like lashing out? Or does that make you feel good?");
 			writeSpeech("orange", "", "It makes me feel good. But I don't know what to <i>do</i> about it. It feels like anything I should do is wrong.");
 			writeSpeech("player", "", "Trust me, orangeF. There's nothing wrong going on here. Just run with what feels natural.");
-			writeSpeech("orange", "", "Ookay. I... Thank you playerF. I appreciate you saying that about me. I... Do you want to see more?");
+			writeSpeech("orange", "", "Ooo... kay. I... Thank you playerF. I appreciate you saying that about me. I... Do you want to see more?");
 			writeText("Interesting. That's not what you expected.");
 			writeSpeech("player", "", "If you're comfortable with it, orangeF, I would love to see more.");
 			writeSpeech("orange", "", "Just... The other girls have told me that when you feel this way about a boy, and when he feels that way about you... You can... Uhmm.");
@@ -227,15 +227,28 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "orangereward", trust: 51,},
+	{index: "orangephone1", trust: 51,},
+	{index: "orangereward", trust: 55,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
+		case "orangephone1": {
+			if (checkTrust('orange') == 51) {
+				setTrust('orange', 55)
+			}
+			writePhoneSpeech("orange","","Hey! So! When and how are we doing this teach?");
+			writePhoneSpeech("player","","The private lessons? Hmm. Can you meet me at my apartment?");
+			writePhoneSpeech("orange","","Uhh. I could manage that during the day. You're not far from campus, right? I have a like, two hour gap where I usually have nothing to do between a calc and bio.");
+			writePhoneSpeech("player","","Sounds great. Just swing by anytime. If I'm not home, sorry. Things come up sort of short notice sometimes.");
+			writePhoneSpeech("orange","","If you don't answer after the first knock, I'm outta there. Fair warning.");
+			writePhoneSpeech("player","","I think I can manage that.");
+			break;
+		}
 		case "orangereward": {
-			writePhoneImage("images/orange/phoneReward.jpg", "Art by Himitsu Kessha Vanitas")
-			writePhoneSpeech("SlackerSavior","","That's all for orangeF for now! I'll be expanding on the students soonish.");
+			writePhoneImage("images/orange/phoneReward.jpg", "Art by Himitsu Kessha Vanitas");
+			writePhoneSpeech("SlackerSavior","scripts\gamefiles\characters\slacker.jpg","That's all for orangeF for now! I'll be expanding on the students soonish.");
 			break;
 		}
 		default: {

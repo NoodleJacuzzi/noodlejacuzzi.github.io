@@ -24,6 +24,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "sports6", name: "The Volleyball Team practice is in full swing.", location: 'gym', time: "Evening", itemReq: "", trustMin: 112, trustMax: 115, type: "tab", top: 0, left: 0, day: "odd",},
 	{index: "sports7", name: "sports is waiting patiently for you.", location: 'classroomB', time: "Evening", itemReq: "", trustMin: 125, trustMax: 125, type: "tab", top: 0, left: 0, day: "even", altImage:"class.jpg",},
 	{index: "sports8", name: "sports is working on homework again, though now she looks much happier with it than when you first saw her.", location: 'classroomB', time: "Evening", itemReq: "", trustMin: 131, trustMax: 140, type: "tab", top: 0, left: 0, day: "even", altImage:"class.jpg",},
+	{index: "sportsbusy1", name: "Volleyball practice is in full swing.", location: 'gym', time: "Evening", itemReq: "", trustMin: 1, trustMax: 20, type: "tab", top: 0, left: 0, day: "odd",},
 	{index: "sportsfinalclass", name: "sports is hanging around the classroom, she glows when she sees you.", location: 'classroomB', time: "Evening", itemReq: "", trustMin: 150, trustMax: 200, type: "tab", top: 0, left: 0, day: "even", altImage:"class.jpg",},
 	{index: "sportsfinalgym", name: "sports is finishing up practice. You could always go hang out with her for the night.", location: 'gym', time: "Evening", itemReq: "", trustMin: 150, trustMax: 200, type: "tab", top: 0, left: 0, day: "odd",},
 ];
@@ -537,6 +538,20 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You pull yourself out and take a moment to admire your handiwork before putting a cover over your pet. You can hear her muttering quietly as you do.");
 			writeSpeech("sports", "sportsP.jpg", "Thank you Master... I love you Master...")
 			writeFunction("changeLocation(data.player.location)", "You let her rest for a bit, and do the cleaning yourself this time. Once she's gathered her wits, you send her home.");
+			break;
+		}
+		case "sportsbusy1": {//In gym early on
+			writeText("sportsF and the rest of the team are all giving it their all on the court.");
+			writeSpeech("sports", "", "swimmerF! Coming to you!");
+			writeSpeech("swimmer", "", "Got it!");
+			writeText("You stick around for a little bit, but you don't think you'll have a chance to get sportsF alone tonight.");
+			writeSpeech("cold", "", "I've got it. orangeF, setting you up!");
+			writeSpeech("orange", "", "You got it!");
+			writeText("The coach is on the sidelines, berating the girls.");
+			writeSpeech("coach", "", "Move faster, swimmerF! God! Just go back to the pool if this is the best you've got here! Fuck this. I need a smoke.");
+			writeText("She walks away, leaving the girls to their practice. Apparently the girls are used to it.");
+			writeText("You know volleyball practice happens every other day. From what you can gather, sportsF usually spends her days off studying in Classroom B. Wonder if you could catch her there?");
+			writeFunction("changeLocation(data.player.location)", "Interesting. You leave the gym for now, brainstorming some new ideas.");
 			break;
 		}
 	}
