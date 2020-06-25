@@ -348,7 +348,6 @@ p#author {
 
 /**** Canvas ****/
 .wrapper{
-    margin-left: 25px;
     background: none; /*To ensure WrapperBG shows, in case browser-native forces white background as default*/
     width: 100%;
 	height: 100%;
@@ -359,6 +358,8 @@ p#author {
 div#output {
     padding: 0px;
 	margin-top: 0px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 div#wrapperBG {

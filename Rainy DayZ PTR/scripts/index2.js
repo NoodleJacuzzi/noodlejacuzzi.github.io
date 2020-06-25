@@ -69,6 +69,18 @@ var galleryArray = [
 	{index: 'fireteam1', 	name: "Jones's Recording", 			scenario: "The Facility",	hint: 'Find the first memory card in the weapon lab and view it in the lobby.'},
 	{index: 'fireteam2', 	name: "Carla's Recording", 			scenario: "The Facility",	hint: 'Find the second memory card in the parasite lab and view it in the lobby.'},
 	{index: 'fireteam3', 	name: "Vasquez's Recording", 			scenario: "The Facility",	hint: 'Find the final memory card in the chemistry lab and view it in the lobby.'},
+	//Spead Island
+	{index: 'frozen', name: "Frozen in Place", scenario: "Spread Island",	hint: "Fail to save your wife at the start of Spread Island."},
+	{index: 'hotelMainExit', name: "Shut the Front Door", scenario: "Spread Island",	hint: "Try to leave through the hotel's front door."},
+	{index: 'hotelFreshSiren', name: "Newborn Siren", scenario: "Spread Island",	hint: "Comfort the newly-turned siren in room 202."},
+	{index: 'hotelPleasureGas', name: "Pink Gas", scenario: "Spread Island",	hint: "Pull the plug on the mysterious gas in room 203."},
+	{index: 'hotelWifePleasureGas', name: "Fun for the Family", scenario: "Spread Island",	hint: "Spray your wife with the pink gas you found in room 203. Because that's a great idea!"},
+	{index: 'hotelAbandon', name: "Left 4 Bred", scenario: "Spread Island",	hint: "Leave the hotel without going back for your wife. Why is this a bad end? Because I'm lazy!"},
+	{index: 'wifeHelp', name: "A Helping Hand", scenario: "Spread Island",	hint: "Offer your hand as a sexual relief tool in the king's villa."},
+	{index: 'wifeDildo', name: "Self-Pleasure: Dildo", scenario: "Spread Island",	hint: "Offer a dildo as a sexual relief tool in the king's villa."},
+	{index: 'wifeOnahole', name: "Self-Pleasure: Onahole", scenario: "Spread Island",	hint: "Offer the fleshlight from room 204 as a sexual relief tool in the king's villa."},
+	{index: 'wifeCage', name: "Caged", scenario: "Spread Island",	hint: "Force your wife into a chastity cage in the king's villa."},
+	{index: 'wifeSacrifice', name: "The Sacrifice", scenario: "Spread Island",	hint: "Bludgeon the scrounger in the soldier's villa and use her to satisfy your wife."},
 ];
 
 //Startup & Systems config
@@ -580,6 +592,9 @@ function checkMenu() {
 		data.player.currentScene == "author" || 
 		data.player.currentScene == "gallery" || 
 		data.player.currentScene == "cheat" || 
+		data.player.currentScene == "rainyDayZ" || 
+		data.player.currentScene == "theFacility" || 
+		data.player.currentScene == "spreadIsland" || 
 		data.player.currentScene == "unusedIdeas"
 	) {
 		document.getElementById("menu").style.width = "0px";	
@@ -594,12 +609,16 @@ function checkMenu() {
 		document.getElementById("footer").style.height = "0px";	
 		document.getElementById("footer").style.overflow = "hidden";	
 	}
-	else {
+	else {	
+		if (document.getElementById("closeButton") != null) {
 		if (document.getElementById("closeButton").style.visibility == "hidden") {
-			document.getElementById("openButton").style.visibility = "visible";	
+			if (document.getElementById("openButton") != null) {
+				document.getElementById("openButton").style.visibility = "hidden";	
+			}
 			document.getElementById("footer").style.visibility = footerVisibility;	
 			document.getElementById("footer").style.height = footerHeight;	
 			document.getElementById("footer").style.overflow = footerOverflow;
+		}
 		}
 	}
 }
@@ -735,14 +754,15 @@ function checkRequirements(string) {
 		if (checkItem(check) == false) {
 			finalResult = false;
 		}
-		string = string.replace(`?item  `+check+`;`, ``);
+		console.log(check);
+		string = string.replace(`?item `+check+`;`, ``);
 	}
 	while (string.includes("!item ") == true) {
 		var check = string.split(`!item `).pop().split(`;`)[0];
 		if (checkItem(check) == true) {
 			finalResult = false;
 		}
-		string = string.replace(`!item  `+check+`;`, ``);
+		string = string.replace(`!item `+check+`;`, ``);
 	}
 	if (finalResult == true) {
 		return true;
@@ -767,11 +787,11 @@ function cullRequirements(string) {
 	}
 	while (string.includes("?item ") == true) {
 		var check = string.split(`?item `).pop().split(`;`)[0];
-		string = string.replace(`?item  `+check+`;`, ``);
+		string = string.replace(`?item `+check+`;`, ``);
 	}
 	while (string.includes("!item ") == true) {
 		var check = string.split(`!item `).pop().split(`;`)[0];
-		string = string.replace(`!item  `+check+`;`, ``);
+		string = string.replace(`!item `+check+`;`, ``);
 	}
 	return string;
 }

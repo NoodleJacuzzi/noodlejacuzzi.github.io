@@ -753,7 +753,7 @@ function writeScene(scene) {
 			if (data.player.horny == true) {
 				writeText("Insatiable despite how recently you just came, your cock is still standing strong. The chairs here are comfortable, you could [take a moment to pleasure yourself|chemJerk] if you wanted.");
 			}
-			writeText("There are several research terminals in the room, with your authentication you can access a synopsis of whatever the researchers here were working on. One is on a project labeled '[whizzer|whizzerFile]' and the other is some kind of [email on the infection process|infectionFile].");
+			writeText("There are several research terminals in the room, with your authentication you can access a synopsis of whatever the researchers here were working on. One is on a project labeled '[whizzer|whizzerFile]' another is an [unread email on resistance to the infection|resistanceFile], and another is some kind of [email on the infection process|infectionFile].");
 			if (checkItem('Orange Potion') == true) {
 				if (checkItem('Blue Keycard') != true) {
 					writeText("You spy the blue plastic card you'll need to get into the innoculation lab, but it's down a grate. Now that you have the acidic potion, with careful application you can get into the grate and take the item[access keycard|Blue Keycard] inside.");
@@ -943,6 +943,17 @@ function writeScene(scene) {
 			writeText("[CLOSE FILE|chemLab]");
 			break;
 		}
+		case "resistanceFile": {
+			writeHTML(`
+				t Re: INFECTION WEAKNESS (URGENT)
+				t Recent tests performed on infection vectors show extremely positive results, however test ID #Gamma-1872 resulted in another example of an infected with near full control of mental capacity. 
+				t The linking factor between these cases may be sugar consumption. It's possible that taking infected fluids orally along with food or drink high in sugar will result in a situation similar to a mental vaccine. It's possible this is why there were so many cases of mentally-resistant infected during the test case at Sanctuary Hotel Resort, as the infection was first distributed through cocktails. Some of these likely coated the rim with sugar. The aerosolized drug spread through the hotel afterwards may have been the reason the tests were not a complete failure.
+				t Team C formally requests a budget increase to study this phenomenon, and hopefully engineer a resistance in the highly dangerous alpha strain. Having <i>her</i> in the facility can be quite nerve-wracking for some members of the staff.nerve-wracking for some members of the staff. 
+				t We already have a test subject, some military officer came into a testing site claiming she was looking for shelter. There's a blockade around the city, nobody should come looking for her. Even if she does develop some of the characteristics like enhanced strength, we don't forsee her containment being a problem.
+			`);
+			writeText("[CLOSE FILE|chemLab]");
+			break;
+		}
 		case "containmentLab": {
 			writeText("You're in the containment lab, and you aren't alone. There's at least five other infected in here, but luckily they're locked up. They're stuck behind a full three inches of strong plastic shielding and a set of thick iron bars.");
 			writeText("One is agitated by your presence, and is humping the wall with her sizable cock. Others are attempting to get through the wall and attack you, and the rest don't seem to care.");
@@ -1123,7 +1134,9 @@ function writeScene(scene) {
 			writeText("You, a loving husband, must find a way to get yourself and your infected wife to safety.");
 			data.player.scenario = "Spread Island";
 			updateMenu();
-			writeSpecial("This scenario is only a demo, so all that's available are a few short scenes that are made to convey the idea of what this route will contain. If you like it, please voice your opinion! Rainy DayZ has a smaller fanbase than my other two current works, so please (respectfully) voice your desires and ideas for what you'd like this game to contain. Leave comments or a review on TFGames, voice what you like on Discord, or support me on Patreon.");
+			//countScenes();
+			writeSpecial("This scenario is only a demo, so all that's available are a few short scenes that are made to convey the idea of what this route will contain.");
+			//writeText("There's also a bit of structure past this point, but many scenes don't have images yet!");
 			writeSpecial("Also, for this campaign you'll need to name your wife:");
 			document.getElementById('output').innerHTML += `
 				<p class='centeredText'>Your wife's name: <input type="text" id="nameSubmission" value="Kate"></p>
@@ -1177,25 +1190,7 @@ function writeScene(scene) {
 			break;
 		}
 		case "frozen": {
-			writeText("This must be a dream, it has to be. Some woman, with a dick, stumbles into your hotel room as your wife is out of her mind. You must've gotten wasted, or high, or passed out at some point after hitting your head.");
-			writeText("The woman's thick cock spreads your wife's pussy, but only makes it a few inches in before it seems like the girl can't thrust any farther.");
-			writeBig("frozen-1.gif");
-			writeText("After only a few thrusts the woman, an annoyed look on her face, pulls out. Your wife groans, her eyes crossing as she makes one bug push, and...");
-			writeText("*POP*");
-			writeText("A single, egg-sized ball pops out of your wife's pussy. She moans in relief, before grunting and spasming and...");
-			writeText("*POP*");
-			writeText("Tears run down your wife's face, ones of relief, and maybe even pleasure. Her clit has fully transformed into a full-on cock and her pussy has become a pair of fat nuts.");
-			writeText("You finally work up the nerve to pinch yourself, and the pain is too real for you to pretend isn't there.");
-			writeSpeech("player", "", "Please... Please let me wake up... Honey, please tell me this is-");
-			writeText("The woman lunges at you, tackling you to the ground. With inhuman strength she begins to tear your clothes off while trying to smear her cock against your face.");
-			writeText("You try to fight back, but you've got no spirit left. Everything that's happened up to now has been insane, you can't muster up the will.");
-			writeText("The woman lets out a small hiss as her cock leaks a glob of precum onto your check, and you instantly feel much better. The hopelessness and despair seem a lot smaller now, and your head suddenly feels too stuffy to focus on anything except the woman atop you.");
-			writeText("She repositions herself as she snaps the button on your pants and starts pulling them off. No longer needing to pin your down, she gets your bottom half exposed quickly.");
-			writeText("You relax and close your eyes for a moment ready to accept your fate, until you feel something pressing against your cheek. As you opem them, you see your wife's loving eyes, her gorgeous body, and...");
-			writeBig("frozen-2.gif");
-			writeText("Her throbbing cock.");
-			writeText("She presses her head against your lips, and you relent. At least this way you'll be together forever, just not in the way you expected when you married her.");
-			writeText("The woman presses her head against your asshole as you take your wife's cock in your mouth. Whatever happened to them is happening to you too, your body is already changing. You feel softer, more ready for the pair of infected women about to spitroast you. Your mind has begun to fade away, your identity as a human is gone.");
+			writeEvent(scene);
 			writeTransition('scenarioSelect', 'GAME OVER', '#FF0000');
 			break;
 		}
@@ -1210,11 +1205,191 @@ function writeScene(scene) {
 			writeSpeech("player", "", "Honey! Honey please, stay with me! We need to get out of here, I won't abandon you! We need to get back home, home to our families!");
 			writeSpeech("wife", "", "Home... Where everyone else is... Everyone else...");
 			writeText("She's in some kind of delusion as her cock jerks. Someone on the mainland must be able to help, some doctor, some surgery, anything. But first you need to get out of here.");
-			writeSpeech("player", "", "Keep the door locked, don't open it for anyone but me, alright? I'll find some help, a wheelchair if I have to, and we're making it out of here alive. You still with me?");
+			writeSpeech("player", "", "Keep the door closed, don't open it for anyone but me, alright? I'll find some help, a wheelchair if I have to, and we're making it out of here alive. You still with me?");
 			writeSpeech("wife", "", "Mhmm...");
 			writeText("She weakly mumbles out a response before closing her eyes. She needs rest, at least she isn't going psycho rapist like that woman you kicked out.");
-			writeText("For now you need to find a safe way out of the resort so that you and your wife can get off the island, and quickly. From the sounds of things, this isn't a localized incident. People all over the resort are turning. You need to get moving, quickly.");
+			//writeText("For now you need to find a safe way out of the resort so that you and your wife can get off the island, and quickly. From the sounds of things, this isn't a localized incident. People all over the resort are turning. [You need to get moving, quickly|hotelRoom].");
 			writeTransition('scenarioSelect', 'END OF PREVIEW', '#FF0000');
+			break;
+		}
+		case "hotelRoom": {
+			writeHTML(`
+				t You're in room 201 of the Sanctuary Hotel. The structure of the room means there aren't any windows.
+				t Your wife, wifeF is on the bed getting some rest. Once you've found a safe way out you should wake her and get moving, there's no telling how long until another infected arrives.
+				t ?item Strange Gas; You have the container of strange gas with you. It might be some kind of antidote, but it isn't likely. Still, looking at the flaccid dick between your wife's legs, you're desperate for any kind of hope. Will you [expose her to the strange gas?|hotelWifePleasureGas]?
+				t ?item Bedding Rope; You found a safe way out by [climbing down from the window of room 204|hotelEscape]
+				t It seems like the woman from earlier was distracted, it should be safe to [head out into the hallway|hotelHallway].
+			`);
+			break;
+		}
+		case "hotelWifePleasureGas": {
+			writeEvent(scene);
+			break;
+		}
+		case "hotelHallway": {
+			writeHTML(`
+				t You're in the second floor hallway of the Sanctuary Hotel. Something's going on with the hotel's systems, every door's electronic lock is registered as 'unlocked'. Almost like someone <i>wants</i> the rooms to be accessible.
+				t [Room 201|hotelRoom] is where you and your wife are staying. With the doors malfunctioning it's not safe to stick around. Once you've found a way out you can safely go back and get her.
+				t [Room 202|hotel202] is across the hallway, you can hear someone sobbing through the door.
+				t [Room 203|hotel203] is a little down the hall, and is unlocked.
+				t [Room 204|hotel204] a little down and across the hall, the door is wide open and nobody's inside.
+				t Down the stairs is the main lobby, maybe the only way out. You could [grab your wife and head downstairs|hotelMainExit] as a last resort, but you can hear the sounds of chaos down there.
+			`);
+			break;
+		}
+		case "hotelMainExit": {
+			writeEvent(scene);
+			break;
+		}
+		case "hotel202": {
+			writeHTML(`
+				t You're in room 202 of the Sanctuary Hotel, or at least you're looking inside.
+				t The room is trashed, with no windows or working lamps to illuminate the room. In the shadows you can see someone, it almost looks like her hair is growing. The noises she's making are having some kind of effect on your head, like you've got a headache and her voice is clearing it.
+				t [She seems so sad, you can comfort her with your big strong arms|hotelFreshSiren].
+				t [Or you could resist and close the door|hotelHallway].
+			`);
+			break;
+		}
+		case "hotelFreshSiren": {
+			writeEvent(scene);
+			break;
+		}
+		case "hotel203": {
+			writeHTML(`
+				t You're in room 203 of the Sanctuary Hotel. The room is in pristine condition.
+				t Atop the bed is a strange suitcase. It's open, with a pair of canisters of some strange pink gas inside. One of the canisters has a hose attached, and is connected to an air vent. You could probably [break the hose|hotelPleasureGas] if you really tried.
+				t !item Strange Gas; The other canister isn't in use. It's definitely got something to do with what's going on, maybe you should item[take the unused canister|Strange Gas]?
+				t ?item Strange Gas; You already took the other canister.
+				t !item Bedding; Since the room is untouched, the item[bedding and sheets|Bedding] are still here. They might be useful.
+				t ?item Bedding; The beds are bare aside from the suitcase, as you took the bedding and sheets.
+				t [Head out into the hallway|hotelHallway].
+			`);
+			break;
+		}
+		case "hotelPleasureGas": {
+			writeEvent(scene);
+			break;
+		}
+		case "hotel204": {
+			writeHTML(`
+				t You're in room 204 of the Sanctuary Hotel. It's been picked clean. Food from the fridge, towels, even the sheets from the bed have been taken.
+				t !item Onahole; Everything... Except a fleshlight. There's an onahole here, still in the box inside one of the drawers. This probably wasn't a priority to be taken. If you really feel like you'll need it, you could item[take it with you|Onahole].
+				t ?item Onahole; The drawers are empty.
+				t !item Bedding; There's a window here, but it's a full story drop to a paved walkway below. 
+				t ?item Bedding; !item Bedding Rope; There's a window here, but it's a full story drop to a paved walkway below. With the bedding you took from the other room, you could item[make a rope to climb down|Bedding Rope].
+				t ?item Bedding; ?item Bedding Rope; There's a window here, but it's a full story drop to a paved walkway below. You've created a rope to [climb down and escape|hotelAbandon], but what about wifeF? You'll need to go back for her if you want to escape together.
+				t [Head out into the hallway|hotelHallway].
+			`);
+			break;
+		}
+		case "hotelAbandon": {
+			writeEvent(scene);
+			break;
+		}
+		case "hotelEscape": {
+			writeHTML(`
+				t You gently nudge wifeF awake. She's exhausted from the toll the infection is taking on her body, but she's human. That's all that matters. 
+				sp player; Come on honey, it isn't safe here. I've got a safe way out, let's go.
+				t She nods and slowly climbs out of bed, needing to lean on you as you make your way to room 204.
+				t As you pass the strange suitcase her eyes linger on it and the pink gas container inside.
+				t But you have bigger things to focus on. You set up the rope, throw down a pile of pillows, and make sure it's secure before you climb down. She's behind you, although she nearly falls and you need to help her.
+				sp wife; Honey... I can't focus...
+				sp player; It's fine, just stay in control.
+				t Looking around you can see a way out of the hotel towards the less populated expensive villa area. If anyone is getting help right now it'd be the richest folk. 
+				...
+				t You arrive in the villa area, but there's nobody to be seen. Maybe they've already been evacuated?
+				t Suddenly, wifeF can no longer support herself and nearly falls.
+				sp player; wifeF? What's wrong?!
+				t Her breathing is ragged, so you take her into a thankfully unoccupied building and set her upon the large bed. Almost immediately she begins stroking the very erect member between her legs.
+				sp wife; I... I can't!
+				t Her balls look full to burst, and she's jacking herself off as furiously as she can. Yet...
+				t She can't cum. At least not with just her hand.
+				t You gulp dryly as you come to a stunning conclusion. If you and her are going to get off this island, you'll need to [find some way for her to get off|villaKing]
+			`);
+			break;
+		}
+		case "villaKing": {
+			writeHTML(`
+				t You're in the king villa, a large resort villa for the ultra wealthy. It must have been evacuated already, because the place has clearly been looted. The fridge, hanging open, has nothing but partially melted ice inside.
+				t There's nothing of value left besides wifeF on the bed, fruitlessly jerking herself off. Tears are forming in her eyes as she arches her back, it wasn't exhaustion slowing you two down before, but mind-consuming lust. It's clear she isn't able to get off herself, despite how frantically she jerks herself.
+				t If you can't find anything to help her with... You may need to [help her yourself|wifeHelp].
+				t ?item Onahole; [You could give her the onahole you found.|wifeOnahole].
+				t ?item Dildo; [You could give her the dildo you found.|wifeDildo].
+				t ?item Chastity Cage; [You use the ice from the nearby fridge combined with the chastity cage to keep her dick in check|wifeCage].
+				t [You can head outside, into the affluent villa district|villaOutside].
+			`);
+			break;
+		}
+		case "wifeHelp": {
+			writeEvent(scene);
+			break;
+		}
+		case "wifeDildo": {
+			writeEvent(scene);
+			writeHTML(`
+				...
+				t The two of you move on, leaving the affluent district behind. There's no helicopter, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
+				t As you're wandering around a hiking path looking for any kind of help, you feel a small bite on your neck.
+				t You hear wifeF freaking out for some reason as you lift your hand to scratch the bite, only for your hand to brush against something... Metal.
+				t The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundRoom].
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scenarioSelect', 'END OF PREVIEW', '#FF0000');
+			}
+			break;
+		}
+		case "wifeOnahole": {
+			writeEvent(scene);
+			writeHTML(`
+				...
+				t The two of you move on, leaving the affluent district behind. There's no helicopter, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
+				t As you're wandering around a hiking path looking for any kind of help, you feel a small bite on your neck.
+				t You hear wifeF freaking out for some reason as you lift your hand to scratch the bite, only for your hand to brush against something... Metal.
+				t The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundRoom].
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scenarioSelect', 'END OF PREVIEW', '#FF0000');
+			}
+			break;
+		}
+		case "wifeCage": {
+			writeEvent(scene);
+			break;
+		}
+		case "villaQueen": {
+			writeHTML(`
+				t You're in the queen villa, a medium resort villa for the wealthy.
+				t And the perverted, apparently. The walls are lined with bondage gear and sex toys of varying shapes and sizes. From ball-gags to zipper outfits...
+				t !item Dildo; There's a collection of dildos on the wall, you could item[grab one and take it back to your wife|Dildo].
+				t ?item Dildo; There's a collection of dildos on the wall, you don't need more than one. You hope.
+				t !item Chastity Cage; There's also a collection of chastity cages in varying sizes. The largest one should fit wifeF. She might not like being caged up, but you might need to item[take one with you|Chastity Cage].
+				t ?item Chastity Cage; You already took a chastity cage, there's no reason to take another. It's not like any of the other infected will let you put one on them.
+				t [You can head outside, into the rich district|villaOutside].
+			`);
+			break;
+		}
+		case "villaSoldier": {
+			writeHTML(`
+				t You're in the queen villa, a small resort villa for the wealthy. Despite it's name it seems to be made for high class vacationers just like the other two.
+				t Peeking inside, you can see someone's already here. Someone is rummaging through the fridge with a pile of foodstuffs besides her. It's a looter.
+				t Aside from her, there doesn't seem to be anything worth taking in here. Nothing that will help wifeF anyways. Unless...
+				t You could grab something blunt, drag her across the way, throw her in through the door...
+				t You shake your head. You can't be considering [sacrificing her to get your wife off|wifeSacrifice], can you?
+				t [You can head outside, into the affluent villa district|villaOutside].
+			`);
+			break;
+		}
+		case "wifeSacrifice": {
+			writeEvent(scene);
+			break;
+		}
+		case "villaOutside": {
+			writeHTML(`
+				t You're in the wealthier area of the resort. This place was already advertised as paradise, so this must've been sold as a 'premium paradise'. No hotel rooms here, instead each guest is given an entire villa to relax and enjoy their vacation in.
+				t First is the [king villa|villaKing] where wifeF is. You can just barely hear her frantically moaning inside, unable to find relief. You'll need to be quick, otherwise you risk someone or something hearing her.
+				t Next is the [queen villa|villaQueen], a little ways off.
+				t Finally is the [soldier villa|villaSoldier], slightly smaller than the other two.
+			`);
 			break;
 		}
 		//Scarlet Mansion
@@ -1641,6 +1816,7 @@ function writeEvent(n) {
 	wrapper.scrollTop = 0;
 	document.getElementById('output').innerHTML = '';
 	switch (n) {
+		//Rainy DayZ
 		case "basic1": {
 			writeText("You're so exhausted you barely even register the feeling as the zombie pushes you down into a puddle of running rainwater. Try as you might, you don't have the strength to resist as she rips your pants off.");
 			writeSpeech("player", "", "No! Please, stop!");
@@ -2129,6 +2305,7 @@ function writeEvent(n) {
 			writeText("[journal|Finish reading].");
 			break;
 		}
+		//The Facility
 		case "start": {
 			writeBig("player.jpg");
 			writeText("It all happened so fast.");
@@ -2607,6 +2784,201 @@ function writeEvent(n) {
 			}
 			break;
 		}
+		//Spread Island
+		case "frozen": {
+			writeText("This must be a dream, it has to be. Some woman, with a dick, stumbles into your hotel room as your wife is out of her mind. You must've gotten wasted, or high, or passed out at some point after hitting your head.");
+			writeText("The woman's thick cock spreads your wife's pussy, but only makes it a few inches in before it seems like the girl can't thrust any farther.");
+			writeBig("frozen-1.gif");
+			writeText("After only a few thrusts the woman, an annoyed look on her face, pulls out. Your wife groans, her eyes crossing as she makes one bug push, and...");
+			writeText("*POP*");
+			writeText("A single, egg-sized ball pops out of your wife's pussy. She moans in relief, before grunting and spasming and...");
+			writeText("*POP*");
+			writeText("Tears run down your wife's face, ones of relief, and maybe even pleasure. Her clit has fully transformed into a full-on cock and her pussy has become a pair of fat nuts.");
+			writeText("You finally work up the nerve to pinch yourself, and the pain is too real for you to pretend isn't there.");
+			writeSpeech("player", "", "Please... Please let me wake up... Honey, please tell me this is-");
+			writeText("The woman lunges at you, tackling you to the ground. With inhuman strength she begins to tear your clothes off while trying to smear her cock against your face.");
+			writeText("You try to fight back, but you've got no spirit left. Everything that's happened up to now has been insane, you can't muster up the will.");
+			writeText("The woman lets out a small hiss as her cock leaks a glob of precum onto your check, and you instantly feel much better. The hopelessness and despair seem a lot smaller now, and your head suddenly feels too stuffy to focus on anything except the woman atop you.");
+			writeText("She repositions herself as she snaps the button on your pants and starts pulling them off. No longer needing to pin your down, she gets your bottom half exposed quickly.");
+			writeText("You relax and close your eyes for a moment ready to accept your fate, until you feel something pressing against your cheek. As you opem them, you see your wife's loving eyes, her gorgeous body, and...");
+			writeBig("frozen-2.gif");
+			writeText("Her throbbing cock.");
+			writeText("She presses her head against your lips, and you relent. At least this way you'll be together forever, just not in the way you expected when you married her.");
+			writeText("The woman presses her head against your asshole as you take your wife's cock in your mouth. Whatever happened to them is happening to you too, your body is already changing. You feel softer, more ready for the pair of infected women about to spitroast you. Your mind has begun to fade away, your identity as a human is gone.");
+			break;
+		}
+		case "hotelWifePleasureGas": {
+			writeHTML(`
+				t You gently nudge wifeF from her half-asleep state. 
+				t She's disorientated, exhausted by the toll whatever is going on is having on her body. ut more importantly she's still human, at least mentally. 
+				sp player; Here, I found this... Thing in another room, I think it might be related to whatever apocalypse thing is going on right now. <br>It's a long shot, but it could be a cure, or some kind of vaccine. 
+				t You hold up the small device with the nozzle pointed at her. She looks worried, but she trusts you. She closes her eyes, and you press the button. 
+				t A small pink spray is released. wifeF takes a breath hesistantly and her eyes shoot open. She starts taking deep breaths and twitching, leaning forwards as if searching for more. Her cock throbs once, twice, then a third time as it goes from flaccid to fully erect. 
+				t She clenches her teeth hard and her eyes cross. Her cock is cumming without the slightest bit of stimulation. 
+				im wifePleasureDrug1.gif
+				t You hold on to at least some last, small hope that it's just purging the virus from her system until you see her already large dick throb again, it's undeniably larger than it was a second ago. 
+				t She looks at you, eyes tinged pink and without a trace of humanity behind them, and lunges. 
+				t The next thing you know you're on the ground beneath her, her cock's head still leaking cum and pointed right at your face. She grabs the device from your hand, barely recognizing how close her dick is to an uninfected mouth. And to make matters worse you hear ferocious sounds of banging and clawing at the door. 
+				t She nuzzles against it like a cat and catnip, bites at it, scratches it, everything to try and get <b>more</b>, until she finds the button by accident and sprays a large hit of it directly into her face. 
+				t She takes a deep breath and makes a sound halfway between a squeal and a giggle before her body starts to shake. Her balls audibly <b>gurgle</b> as you make a last ditch effort to try and free yourself before... 
+				im wifePleasureDrug2.gif
+				t Too late. A few small shots, the kind you could expect a normal human to fire, before a torrent of infected nut-sludge is seemingly pissed out of her urethra onto your face and upper body.
+				t You can barely avoid it getting into your mouth, let alone your nose. And to make matters worse wifeF knows how to use the device now. Holding down the button the room is nearly filled with the pink gas.
+				t The pure jizz coating you, the strange pink chemical, it's too much.
+				t You start to cum, splurting everything into your pants. Your jizz, your pride, dignity, every intelligent thought you've ever had as a human is splurted out by force as your body is changed and infected.
+				t The door breaks down, letting a torrent of infected inside. Attracted by the gas, all they see is a room of pink, and two infected in the throes of orgasm. 
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "hotelMainExit": {
+			writeHTML(`
+				t You make your way back into the room, the sound of you grabbing whatever you need to survive waking up wifeF from her stupor. 
+				t She's exhausted from the toll the infection is taking on her body, but she's human. That's all that matters. 
+				t You take her by the arm. You'll carry her if you need to, and head out towards the main lobby. 
+				... 
+				t It's a shitshow down here, people fighting to get in for shelter and people like you fighting to get out. Hotel staff are abandoning ship and looters have already started grabbing everything they can. You hold wifeF close as you force your way through the crowd of terrified people. 
+				t "SHE'S INFECTED!" 
+				t You aren't sure who said it, but the crowd around you pulls away. The chaos isn't stopping yet though. There's the sound of a window shattering, screams of panic and terror, and wifeF stumbles slowing you down. 
+				sp wife; I can't... I can't stop!<br>I'm sorry, all these people...! 
+				t She's got an erection tenting her dress, a dead giveaway of her infection, and she's doing her absolute best to control herself but can't stop from stroking her dick through the thin fabric of her dress. 
+				t You reach out to help her, to pull her hands away so you can get moving again, but you feel a weight against you as the room goes sideways. 
+				t The nect thing you know a woman with a crazed look in her eyes is dry-humping you, a fat bulge in her shorts. 
+				sp player; wifeF! Help! 
+				t She steps forwards on shaky legs looking you right in the eyes. So close to exploding, her willpower on the verge of shattering, the sight of her husband pinned down by some crazy woman with a dick is enough to push her over the edge. 
+				im mainExit.gif
+				t Biting her lip she can't help but fully commit to jerking off, a large glob of precum splashing against your cheek as the infected woman tears apart your and her clothes. 
+				sp wife; I'm sorry! I'm sorry, but I can't stop! 
+				t She presses the head of her cock against your mouth as another jet of precum is fired. The other infected has finished clearing the way as well. The precum must alreafy be infecting you, because the feeling of her dick against the rim of your anus makes you want to scream out in pleasure instead of pain. 
+				t The edges of your vision go faint and the last thing you see is wifeF's crying face as she bites her lip, the horror of the situation making her cum even harder into your mouth. 
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "hotelFreshSiren": {
+			writeHTML(`
+				t You reach out to hug the girl. Her skin is so soft... She hugs you back, her sobs feel musical to your ears. Everything in the room seems to darken in your vision, except for her. 
+				t Dimly you're aware that you're being pushed down, and she parts her skirt to show you the small cock between her legs. 
+				t She's infected. You should be scared of this girl who basically has you pinned, scared of the small dick that's about to infect you, yet... It's so cute! 
+				t You reach down, unzipping your fly and trying to shimmy free of your pants, and she giggles to reward your newborn loyalty. You hear the door open, and the two of you look up. 
+				sp wife; H... Honey? 
+				t The girl atop you laughs when she sees your wife, terrified and distraught, and the sound seems to soothe her. Your wife steps forward not of her own accord, her dick ay full erection. She appreciates the girl's voice as much as you do. 
+				im freshSiren.gif
+				t Every one of her moans feels so perfect in your ears. Even her gagging on your wife's dick is like a series of perfect notes to a wonderful song. 
+				t Your wife squeals, rudly interupting the girl's voice, but the girl just giggles as her mouth is flooded with cum to let you know that everything is alright. 
+				t The girl pulls her mouth off of your wife's cock, her cheeks puffed out, and leans down to you with her lips puckered for a kiss. 
+				t Some small part of you is still trying to pull away, and she can see it, but she just giggles to rid you of that last pesky independent thought as your lips meet. Your mouth is flooded with a wonderful fluid you can feel changing you from the inside out.
+				t You drink from her. From your wife's balls to her mouth to yours. Your own cock throbs and grows. She hums a playful tune, happy that she now has two toys to keep her satisfied while all hell breaks loose on the island. 
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "hotelPleasureGas": {
+			writeHTML(`
+				t You tug at the hose attached to the wall. It's got a pretty strong bond, but if you just... Pull... Harder...! 
+				t There's a sound of rubber breaking before the *KSSSSSSH* of gas as you break the seal. A thick gout of pink gas is spraying from the hose. You cover your mouth and nose, but it's too late. 
+				t The gas makes your skin tingle, eyes water, and the small amount you inhaled begins fucking up your body from the inside. You feel a sudden, <b>intense</b> pressure from your nuts as it feels like they're about to burst.
+				im pleasureGas.gif
+				t You pull your pants down. Probably not the best course of action, but you can't think straight as it feels like the gas is melting away your brain. You gasp, no longer in control of yourself, but yiu do notice that your voice is higher. It almost has a songlike quality to it. 
+				t You feel yourself fall down onto the floor, your cock feels white hot yet there's a cool sensation coming from your urethra, like you're leaking. 
+				t Leaking... Leaking... 
+				t A giggle escapes your lips. You feel... Smaller... The gas fills your body, replacing what's human with something else. 
+				t Soon, there isn't anything human left in your mind or body. 
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "hotelAbandon": {
+			writeHTML(`
+				t You've landed safely in the pile of soft bedding, and stand up unharmed. Looking around you can see a way out of the hotel towards the less populated expensive villa area. If anyone is getting help right now it'd be the richest folk. 
+				t You take a step forwards, but can't help but look back up from where you came. 
+				t wifeF... 
+				t But there's no turning back now. Even if you could get back up she's already infected. Even if you can't live with yourself after escaping alone, you'll be alive to try. 
+				t Yet as you make a break for it, you can only imagine what horrible things are happening to wifeF right now... 
+				...
+				im wifeAbandoned.gif
+				t Scores of them have swarmed her, she's given up hope that you'll be back. 
+				t As her mind goes blank, only one thing is for sure anymore. Even if you survive your journey off the island the image of your wife will always be on your mind, but your image won't ever cross hers again.
+				t But you didn't escape the island. What happened to you remains to be seen, but the dream of escaping together, or even safely, is gone.
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "wifeHelp": {
+			writeHTML(`
+				sp wife; It's not...! Not enough! <br>Please, you mouth, I need it! 
+				sp player; But-
+				sp wife; PLEASE! You can spit it out, but I <b>NEED</b> to cum! 
+				t Your wife, broken and begging with tears in her eyes, convinces you to swallow your pride (and hopefully nothing else). 
+				t The moment your lips are around the head of her cock a torrent of spooge floods your mouth. You back off quickly, spitting it out and hoping you aren't infected. 
+				t Your mouth feels... Fuzzy. 
+				sp wife; Put it back! Please! That was... Ggghh... Just precum! 
+				t You look at her dick in disbelief, her precum was thicker than a normal man could shoot out in a full load. 
+				t You try to keep focused, trying not to think about how the numbness in your mouth might actually be a plesant buzz, or how much more eager you are to continue than you were a second ago. 
+				t You slide your lips back onto her dick again, carefully, slowly you-
+				t She isn't having any of it. She grabs you by the hair and starts ruthlessly fucking your face. Another glob of precum fills your mouth and the entrance to your throat. You tap on wifeF's thigh begging for mercy. 
+				t And that's when she thrusts deep enough to tap her balls against your chin, and starts cumming. 
+				im wifeHelp.gif
+				t You can hear the audible splorting noise, you're well past being infected now. But when you look up, the eyes staring back at you don't have a trace of human intelligence, just animalistic, bestial lust.
+				t You feel the coolness of the infection overtaking you, and the edges of your vision darken. 
+				t ?fetish ws; But just before you black out, you feel her hand stroking your hair lovingly. She sighs, and you feel something traveling down her urethra. The very last sensation you feel before blacking out is your wife's piss flooding your stomach. She moans, as if this is just as good as getting off. 
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "wifeOnahole": {
+			writeHTML(`
+				
+			`);
+			break;
+		}
+		case "wifeDildo": {
+			writeHTML(`
+				sp player; Here, I found this, I hope it-
+				t She grabs the toy from your hand without a second thought, pressing it against her nutsack on instinct, before lowering it down to her asshole. 
+				t Your wife had never been a fan of anal before, but... 
+				im wifeDildo.gif
+				t The sensation of the plastic dick is enough to trick her body, and she's <b>squirting</b> a full stream of cum from her infected cock. You need to keep away as she's spraying over a foot away. 
+				t Her eyes are glazed over, like she's ignoring the whole world and focusing only on the thrusting of her anus, and the feeling of the dildo smashing against her prostate as quickly as she can bounce. 
+				t As she slowly comes to a stop, her cock flagging and the dildo creating a distention on her abdomen, her eyes flutter closed. 
+				sp player; Honey? Honey, are you okay? 
+				sp wife; Mmm... Hmm? 
+				sp player Come on, we need to get moving, let's go. 
+				t She nods, looking only half awake. She softly coos as she slides off the dildo, one last spurt of cum splattering the floor as she stands up on unsteady legs. 
+			`);
+			break;
+		}
+		case "wifeCage": {
+			writeHTML(`
+				
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "wifeSacrifice": {
+			writeHTML(`
+				
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		//Scarlet Mansion
 		case "scarletChastityTorture": {
 			writeText("You pick up the device, it's like some kind of remote. The woman is still struggling against her bonds. There's also a small condom on her caged dick.");
 			writeText("You turn the dial and the woman lets out a sudden breathy moan. A dim buzzing can be heard from her chastity cage, and she's gritting her teeth now.");
