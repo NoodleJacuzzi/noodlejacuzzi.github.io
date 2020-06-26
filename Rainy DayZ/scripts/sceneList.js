@@ -27,7 +27,7 @@ function writeScene(scene) {
 			//writeTransition("onTheRecord", "Preview - On the Record");
 			writeText("...");
 			writeTransition("settings", "Game Settings", "#91eba9");
-			writeTransition("author", "Author Information", "#91eba9");
+			writeTransition("author", "Author & Credits Information", "#91eba9");
 			writeTransition("gallery", "Scene Gallery", "#91eba9");
 			writeTransition("cheat", "Enter Cheat Codes", "#91eba9");
 			writeText("...");
@@ -62,8 +62,13 @@ function writeScene(scene) {
 				writeFunction("toggle('ws')", "Enable watersports content", "#91eba9");
 			}
 			writeFunction("saveFile()", "Export save data to string");
+			writeFunction("saveTXT()", "Export save data to .noodle file");
 			writeText("NOTE: Playing in incognito or with cookies disabled can prevent the game from saving. Use this to save your gallery data if needed.");
-			writeFunction("loadFile()", "Import save data");
+			writeFunction("loadFile()", "Import save data from string");
+			document.getElementById('output').innerHTML += `
+			<p class='rawText'>You can also load external data from .noodle file:</p>
+			<input type="file" id="loadFile" onload="fileLoaded()" class = "loadFileButton button" onchange = "loadSave()"></input>
+			`;
 			writeText("NOTE: This game is incompatible with pre v1.1 Rainy DayZ save files. Trying to load saves from versions before v1.1 will cause the game to break.");
 			writeFunction("restartButton()", "Delete all save data", "#FF0000");
 			writeTransition("scenarioSelect", "Go back");
@@ -71,7 +76,7 @@ function writeScene(scene) {
 		}
 		case "author": {
 			writeText("Rainy DayZ is a game created by Noodle Jacuzzi. You can find and check out my other works at my <a href='https://noodlejacuzzi.github.io/index.html'>Master Index</a>.");
-			writeText("I'm funded by <a href='https://www.patreon.com/noodlejacuzzi'>Patreon</a>, but Rainy DayZ as a whole doesn't perform too well in monthly polls against Anomaly Vault and Hentai University. If you'd like to support this game's development consider supporting me and letting me know you'd like more. Still, I wouldn't be making this game, or any of my others past Human Alteration App, if not for the people who support me! <br>Thank you to: Swallows999, Joshua Ingram, MrManPerson, Robbie, CaptainMontana, Lasse B, andres mejia, Arthorias28, Badaxe, ChronosEdge, Colin E, Dkells, Filament, J_C_L, Jinouga, Marco Wassmer, maxime, Ramiel Palomino, Scal, Taylor Trout, XxrobothacksxX, Aegil, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arthur radcliffe, AxiosMIles, Bawornnan samart, Blaise Fenn, Bonelessunknown, brandon, Carlos, Chaaaanon, Charles Morris, Colin, Darrell Goodman, David Lange, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Ed, Guy68691, Gwen Yurick, ItsAllOgreNow, Jane, jdktjk205, Jesse Greene, joe, John Lewis, john smith, Joseph Gibbs, Joshua Melzark, lm Carma, mazterlith, Monkey, murgatroid99, Nils Maier, Noah, Nutburger, Phanes, Prodigal211, ptw1985, qwerty, Roy, sage, Scumstango, Sebastian Eckel, Simon Rencher, sky, Smiley Green, Snaked, stratum, Taurus Travon Rashad Lemar Brackin, valdis, Vincent Madaire-Cullen, Wayne culbert, Wei, Wild Bill, William Richardson, Your Husbando, Z, zoobot5, and 凱 陳 for supporting my work!");
+			writeText("I'm funded by <a href='https://www.patreon.com/noodlejacuzzi'>Patreon</a>, but Rainy DayZ as a whole doesn't perform too well in monthly polls against Anomaly Vault and Hentai University. If you'd like to support this game's development consider supporting me and letting me know you'd like more. Still, I wouldn't be making this game, or any of my others past Human Alteration App, if not for the people who support me! <br>Thank you to: O Xy Enkin, Swallows999, Iron Alex, Robbie, Joshua Ingram, Justifiable Gaming, ryguy, 4MinuteWarning, Hi There, Keith, Carlos, Macarga, 林家豪, Richard, Skyrim mod lvr, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, J_C_L, Filament, XxrobothacksxX, Dkells, Jinouga, Marco Wassmer, Taylor Trout, andres mejia, Colin E, Badaxe, Jesse Greene, Scal, ChronosEdge, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Yesdani Perez, Vikteren, Dean, Sveny13, Dravenmd114, Kudon, theoron, AnotherAccount333, Gavin Davis, Lucas, Kaliden, Krose, Tyler Ross, greatred, FrostyTB, Riven Drasek, l, ranchy sanchy, Bryson, Limitless, Greg Torres, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, Reverberations, ShadowFalls, William Parker, Magnus, Emanuel  Garcia, XaiuX, l1monat, Kieron Kow, Slomberg, henry grobins, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Daekash, fireballcreations, Markus Hansen, Louis Hayes, Alec8686, Tanman, DarthMalak, Danny Nguyen, yami, Trevor, Grim2011, KH dg, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, CaptainMontana, Simon Rencher, dhccpmc, Chaaaanon, Charles Morris, Nutburger, Noah, William Richardson, mazterlith, Sebastian Eckel, Taurus Travon Rashad Lemar Brackin, Anthony Munso, john smith, Your Husbando, Carlos, Joshua Melzark, Vincent Madaire-Cullen, ItsAllOgreNow, Gwen Yurick, Nils Maier, Blaise Fenn, stratum, Angel, Ariados, Jane, Snaked, Muryu, Debarre Sonny, Drashin, murgatroid99, Roy, Wild Bill, and brandon for supporting my work!");
 			writeText("As a note, this game also features a dog zombie. To view his scenes you must deliberately wound yourself, go to the forest, and either leave your weapon behind or have 0 stamina when you encounter him. If you dislike this sort of content, you can avoid it easily by doing anything other than what I've just described. To avoid any potential legal troubles, this dog is actually a woman in a very, very convincing dog suit. If you want absolutely no part in this at all, disable some of the more out-there fetishes in the settings menu.");
 			writeText("If you have any comments, criticisms, or suggestions for content for this or future chapters, please let me know about them in the <a href='https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12575'>TFgames thread</a>, on my patreon, or in the Noodle Jacuzzi <a href='https://discord.gg/pDht5BZ'>Discord</a>.");
 			writeText("As an extra note, no cheat codes aside from <b>oowoo</b>, sorry. There's one you get for unlocking all the game's scenes, but you get that for unlocking all the scenes. If you have any cheat code ideas, please let me know!");
@@ -79,7 +84,6 @@ function writeScene(scene) {
 			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/streets.jpg)";
 			writeTransition("unusedIdeas", "Unused Concepts");
 			writeTransition("scenarioSelect", "Go back");
-			writeText("DayZ is a registered trademark of Bohemia Interactive. Rainy DayZ is not associated with Bohemia Interactive.");
 			break;
 		}
 		case "unusedIdeas": {
@@ -107,7 +111,8 @@ function writeScene(scene) {
 			break;
 		}
 		case "cheat": {
-			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/streets.jpg)";document.getElementById('output').innerHTML += `
+			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/streets.jpg)";
+			document.getElementById('output').innerHTML += `
 				<p class='centeredText'>Enter cheat code: <input type="text" id="cheatSubmission" value=""></p>
 				<p class='choiceText' onclick='diagnostic()'>Submit</p>
 			`;
@@ -589,14 +594,50 @@ function writeScene(scene) {
 		case "facilityStart": {
 			data.player.horny = true;
 			data.player.keycards = 0;
+			data.player.flags = "";
 			data.items = [];
 			writeEvent('start');
 			data.quicksave = null;
 			break;
 		}
 		case "weaponLab": {
-			writeText("The weapons lab is empty and dark. From what you can gather you were unconscious for at least a few hours. Most of the work you did here was theoretical, there's nothing you can take to defend yourself. Plus, all the work you did made sure that conventional weapons were ineffective against the infected.");
-			writeText("There's nothing else to do here, you should probably leave and head into the [laboratory hub|labHub].");
+			writeText("The weapons lab is empty and dark. From what you can gather you were unconscious for at least a few hours. Most of the work you did here was theoretical, there's nothing you can take to defend yourself. Plus, the idea of hurting your masterpieces makes you feel a little queasy.");
+			if (checkItem('Soldier Recording 1') != true) {
+				writeText("Laying on a nearby table is a soldier's helmet, the kind used by armed fireteams sent in to evaluate containment breaches. Has a team already been down here? Were you abandoned? In any case, these helmets are equipped with cameras, and have small item[memory cards that keep a backup of their footage|Soldier Recording 1]");
+			}
+			else {
+				writeText("Laying on a nearby table is a soldier's helmet, the kind used by armed fireteams sent in to evaluate containment breaches. You've already taken the memory card inside, but you can't view its contents here.");
+			}
+			if (data.player.flags.includes("weaponLabDoor") != true) {
+				writeText("The room is filled with weapon testing rooms, basically broom closets where new strains are tested on bound infected. All but one are empty, it looks like one is still in use. You could [try to input the passcode for the door|lockedCell].");
+			}
+			else {
+				if (data.player.flags.includes("domination") != true) {
+					writeText("The weapon's lab cell door is open. Inside, nearly frothing at the mouth is a woman wearing almost nothing. It looks like her hands are zip-tied to an outcropping of the wall.");
+					writeText("She lunges at you, or at least she attempts to. The restraints aren't enough to keep her tied up forever though, you should get moving.");
+					if (data.player.horny == true) {
+					writeText("Although... Just looking at her, tied up and her cock angry from a lack of release... You're pretty hard yourself. Maybe you should [shut her up|domination] and get some relief at the same time.");
+					}
+				}
+				else {
+					writeText("The weapon's lab cell door is open. Inside the soldier formerly known as Jones is laying glassy-eyed in a puddle of your and her cum. Though her restraints look like they're on the verge of breaking, you should be alright for now.");
+				}
+			}
+			writeText("If there's nothing else to do here, you should probably leave and head into the [laboratory hub|labHub].");
+			break;
+		}
+		case "domination": {
+			writeEvent(scene);
+			data.player.horny == false;
+			data.player.flags += "domination";
+			break;
+		}
+		case "lockedCell": {
+			document.getElementById('output').innerHTML += `
+				<p class='centeredText'>Enter passcode: <input type="text" id="cheatSubmission" value=""></p>
+				<p class='choiceText' onclick='passcodeEntry()'>Submit</p>
+			`;
+			writeText("[Go back|weaponLab].");
 			break;
 		}
 		case "labHub": {
@@ -611,23 +652,256 @@ function writeScene(scene) {
 			else {
 				writeText("The largest door in front of you leads to the Inoculation Lab, but the door is sealed shut. It's the most likely location of the cure you need, but there's no way in. An ID reader is on the side of the door, in order to gain access despite containment you'd need three keycards to insert here.");
 			}
-			writeText("Finally, the exit elevator appears to be working, but in your condition you won't last long. You need to find the cure before you can escape.");
+			writeHTML(`
+				t Finally, there's a pathway to the [main lobby|lobby]. Inside is the elevator you can use to escape.
+			`);
+			break;
+		}
+		case "lobby": {
+			writeText("You're in this floor's entrance lobby. There's a desk at the front for a security guard, but there's nobody on duty right now.");
+			writeText("At the desk is a computer used for checking records and observing the status of various other rooms. Each room is labeled with a bright red 'COMPROMISED' warning, except for the inoculation lab which is marked with the word 'LOCKDOWN'.");
+			writeText("Also on screen is a data file, someone was viewing it before everything went to shit. The file is labeled ['Alternative Siren Strains'|sirenFile].");
+			writeText("Attached to the computer is a small external memory card reader. If you have any, you could [view their recordings here|recordingFiles].");
+			writeText("The exit elevator appears to be working, but in your condition you won't last long. You need to find the cure before you can escape. For now, you should head back into the [central hub|labHub].");
+			break;
+		}
+		case "recordingFiles": {
+			writeText("You open the program needed to view memory card recordings. What will you do?");
+			if (checkItem('Soldier Recording 1') == true) {
+				writeText("[View the memory card you found in the weapons lab|fireteam1].");
+			}
+			if (checkItem('Soldier Recording 2') == true) {
+				writeText("[View the memory card you found in the parasite lab|fireteam2].");
+			}
+			if (checkItem('Captain Recording') == true) {
+				writeText("[View the captain's memory card|fireteam3].");
+			}
+			writeText("[Power off the terminal|lobby].");
+			break;
+		}
+		case "fireteam1": {
+			writeEvent(scene);
+			writeText("[Finish watching|recordingFiles].");
+			break;
+		}
+		case "fireteam2": {
+			writeEvent(scene);
+			writeText("[Finish watching|recordingFiles].");
+			break;
+		}
+		case "fireteam3": {
+			writeEvent(scene);
+			writeText("[Finish watching|recordingFiles].");
+			break;
+		}
+		case "sirenFile": {
+			writeSpecial("AUTHENTICATION GRANTED");
+			writeHTML(`
+				t The following are several logs for an alternative to the current Siren-class infection strain. Due to their method of hunting proving to be extremely dangerous for male employees and administrative personnel, large amounts of research have been conducted to finding another method as good at attracting male victims. 
+				...
+			`);
+			if (data.player.wsDisabled != true) {
+				writeHTML(`
+					im sirenPiss.gif
+					t Siren-deviation delta, Water Nymph
+					t Sirens possess a valuable ability to draw in targets from secure locations without line of sight. Suggestions were posed that the sense of smell and taste would make good alternatives. 
+					t With this deviation the smell and taste of the subject's urine were enhanced with string pheromones. The desired result was obtained as victims would desperately lap up the deviation's piss and greedily beg for more until full infection was guaranteed. 
+					t However already infected individuals also showed similar desires for the liquid, and results have shown that nearly every other strain of infected will even ignore humans in the area to find these nymphs and drink from them. 
+					t Even if we make the nymphs dislike pissing on or in already infected individuals, other infected quickly realize the nymphs can be forced to urinate if subjected to prostate stimulation. Thus results in a large-form gangrape until the nymph admits total defeat and wets herself before quickly being licked clean. This continues until the nymph can no longer hold back from spraying piss from any kind of anal pleasure, and wetting themselves becomes linked to achieving orgasm. 
+					t Result: Partial failure. Some researchers believe the nymph's strain can be repurposed into another unique strain entirely. 
+				`);
+			}
+			else {
+				writeHTML(`
+					t REDACTED INFORMATION.
+					t RESEARCH CONTENT HAS BEEN AUTOMATICALLY PURGED BASED ON USER SETTINGS.
+				`);
+			}
+			writeHTML(`
+				...
+				im sirenUrethra.gif
+				t Siren deviation gamma, Charybdis. 
+				t The siren's soft bodytype has proven attractive towards male subjects who would normally resist the allure of common infected. Thus this strain attempts to capitalize on that. The infected's urethra becomes stretchier allowing for better urethral stimulation. The already existing nervous structure means that sensitivity enhancement is not required as the play is already highly pleasurable when combined with the usual endurance improvements of basic strains. 
+				t However allowing the urethral to accept an insertion the size of an average male's cock has proven difficult and time-consuming. Not only that but the treatment has had the side-effect of causing the charybdis to become extremely masochistic, often manually preventing herself from cumming by sounding herself deeply just before orgasm, preventing any ejaculation but prolonging the pleasure of masturbation sessions. 
+				t Result: Total failure. Creating a strain of masochistic small-dicked girls who want their cocks to be fucked is not getting us closer to global infection. The researchers conducting the tests were revealed to have sounding fetishes, and were promptly infected with the charybdis strain themselves. Videos will be distributed for employee morale and to make an example of the charybdis team. 
+				...
+			`);
+			if (data.player.beastDisabled != true) {
+				writeHTML(`
+					im sirenBeast.gif
+					t Siren deviation epsilon, Echidna. 
+					t Result has proven generally positive in using a siren deviation as a support type infected. Their ability to guide and nurture other strains, particularly hound strains, has proven effective so far. By removing their ability to hypnotically attract men, and instead giving them the ability to attract and infect animals, the advantages of the siren remain intact without posing danger to research and combat staff. Like most siren strains they have higher than usual intelligence, though not to the point of speech. 
+					t ?fetish rim; Notably, echidnas do not use animals strictly for infection and pleasure, and will often spend long periods of time pampering their "children", referring to their infected pets. While typically this includes bending over and being knotted one-by-one by an entire pack of hounds, this also means slowly pleasuring her children with her hands while passionately rimming their asses and moaning like a normal woman would make out with her husband. Though this seems like a waste of infected sperm, hounds treated this way seem to become even stronger and more virile after these milking situations. 
+					t ?fetish ws; New children invited into the pack tend to become very attached to their denmother, and often after their first sexual experience with their echidna they will mark her. This seems to result in extreme sexual pleasure for the echidna, who will quickly achieve orgasm by being sprayed with piss. Echidnas with large packs will sometimes even request that the entire pack spray and mark her all at once, cumming extremely hard from her small, unused penis while attempting to drink as much as she can. Hounds involved in this ritual seem to lose respect for their denmother at this point and begin to treat the echidna roughly, much to the denmother's delight. 
+					t Result: Partial success. While they synergize with hound-type infected, that strain was already extremely effective. The echidna strain is being further tested, but has not recieved final approval yet. 
+				`);
+			}
+			else {
+				writeHTML(`
+					t REDACTED INFORMATION.
+					t RESEARCH CONTENT HAS BEEN AUTOMATICALLY PURGED BASED ON USER SETTINGS.
+				`);
+			}
+			writeHTML(`
+				t [CLOSE FILE|lobby]
+			`);
 			break;
 		}
 		case "chemLab": {
 			writeText("The chemical lab smells very powerfully of alcohol, the kind used for cleaning. There aren't any traces of infected in the area, so you should be fine to relax.");
+			writeText("The primary research station has a number of chemicals lined out for study. You have a lot of experience here, so if you have the time you could [mix up something useful at the table|chemistry].");
 			if (data.player.horny == true) {
 				writeText("Insatiable despite how recently you just came, your cock is still standing strong. The chairs here are comfortable, you could [take a moment to pleasure yourself|chemJerk] if you wanted.");
 			}
-			writeText("There are several research terminals in the room, with your authentication you can access a synopsis of whatever the researchers here were working on. One is on a project labeled '[whizzer|whizzerFile]' and the other is some kind of [email on the infection process|infectionFile].");
-			if (checkItem('Blue Keycard') != true) {
-				writeText("Several researchers must've left in a hurry, one of them very high ranked. Researchers of that level keep an item[access keycard|Blue Keycard] on their person, which you could use to get into the Inoculation Lab.");
+			writeText("There are several research terminals in the room, with your authentication you can access a synopsis of whatever the researchers here were working on. One is on a project labeled '[whizzer|whizzerFile]' another is an [unread email on resistance to the infection|resistanceFile], and another is some kind of [email on the infection process|infectionFile].");
+			if (checkItem('Orange Potion') == true) {
+				if (checkItem('Blue Keycard') != true) {
+					writeText("You spy the blue plastic card you'll need to get into the innoculation lab, but it's down a grate. Now that you have the acidic potion, with careful application you can get into the grate and take the item[access keycard|Blue Keycard] inside.");
+				}
+				else {
+					writeText("You've already grabbed the keycard from the grate.");
+				}
 			}
 			else {
-				writeText("You've already grabbed the keycard from the abandoned coat.");
+				writeText("Several researchers must've left in a hurry, one of them very high ranked. Researchers of that level keep an access keycard, so after looking around you spy the blue plastic card you'll need to get into the innoculation lab, but it's down a grate. The thing is bolted on, you'll need to break or melt the bolts to get inside.");
+			}
+			if (checkItem('Captain Recording') != true) {
+				writeText("Laying on a nearby table is another soldier's helmet, why are these just laying around? There's an extra marking on it to signify this is a squad leader's helmet. The helmet is intact, and you can item[take the memory card inside|Captain Recording]");
+			}
+			else {
+				writeText("Laying on a nearby table is a squad leader's helmet, you've already taken the memory card from it.");
 			}
 			writeText("Your throat is starting to feel a little dry, you might've been out for a long time, and spurting from your cock probably isn't helping the matter. Normally you wouldn't chance it, but an open beaker of an off-yellow fluid is here. It seems inviting somehow, and you are really thirsty, so maybe you should [drink it?|whizzerDrink]");
 			writeText("If there's nothing else to do here you should probably leave and go back to the [laboratory hub|labHub].");
+			break;
+		}
+		case "chemistry": {
+			writeHTML(`
+				t You're sitting at the chemistry table. A number of ingredients are available to you.
+			`);
+			if (data.player.horny == true) {
+				writeHTML(`
+					t Your cock throbs, distracting you for just a moment and reminding you of how horny you are right now. You'll need to be quick so as not to end up in a jerk-off frenzy, or relieve yourself so you can work at 100%.
+				`);
+			}
+			writeText("First up is the [yellow ingredient, marked with an image of a rock|yellow].");
+			writeText("Next is the [red ingredient, marked with an image of an object shattering|red].");
+			writeText("Then there's the [blue ingredient, marked with an image of a brain|blue].");
+			writeText("Then there's the [white ingredient, marked with an image of a penis|white].");
+			writeText("If you don't want to mix anything, you could [step away from the table|chemLab]");
+			break;
+		}
+		case "yellow": {
+			writeText("You take the yellow ingredient, marked with an image of a rock. What will you mix it with?");
+			writeText("Mix with the [red ingredient, marked with an image of an object shattering|yellowred].");
+			writeText("Mix with the [blue ingredient, marked with an image of a brain|yellowblue].");
+			if (data.player.horny == true) {
+				writeText("Mix with the [white ingredient, marked with an image of a penis|yellowwhite].");
+			}
+			else {
+				writeText("Mix with the [white ingredient, marked with an image of a penis|yellowwhite]. Your mind unclouded, you think this will probably create a dangerous, unstable mixture.");
+			}
+			writeText("You could always [change your mind|chemistry]");
+			break;
+		}
+		case "red": {
+			writeText("You take the red ingredient, marked with an image of an object shattering. What will you mix it with?");
+			writeText("Mix with the [yellow ingredient, marked with an image of a rock|yellowred].");
+			if (data.player.horny == true) {
+				writeText("Mix with the [blue ingredient, marked with an image of a brain|redblue].");
+			}
+			else {
+				writeText("Mix with the [blue ingredient, marked with an image of a brain|redblue]. Your mind unclouded, you think this will probably create a dangerous, unstable mixture.");
+			}
+			if (data.player.horny == true) {
+				writeText("Mix with the [white ingredient, marked with an image of a penis|redwhite].");
+			}
+			else {
+				writeText("Mix with the [white ingredient, marked with an image of a penis|redwhite]. Your mind unclouded, you think this will probably create a dangerous, unstable mixture.");
+			}
+			writeText("You could always [change your mind|chemistry]");
+			break;
+		}
+		case "blue": {
+			writeText("You take the blue ingredient, marked with an image of a brain. What will you mix it with?");
+			writeText("Mix with the [yellow ingredient, marked with an image of a rock|yellowblue].");
+			if (data.player.horny == true) {
+				writeText("Mix with the [red ingredient, marked with an image of an object shattering|redblue].");
+			}
+			else {
+				writeText("Mix with the [red ingredient, marked with an image of an object shattering|redblue]. Your mind unclouded, you think this will probably create a dangerous, unstable mixture.");
+			}
+			if (data.player.horny == true) {
+				writeText("Mix with the [white ingredient, marked with an image of a penis|bluewhite].");
+			}
+			else {
+				writeText("Mix with the [white ingredient, marked with an image of a penis|bluewhite]. Your mind unclouded, you think this will probably create a dangerous, unstable mixture.");
+			}
+			writeText("You could always [change your mind|chemistry]");
+			break;
+		}
+		case "white": {
+			writeText("You take the white ingredient, marked with an image of a penis. What will you mix it with?");
+			if (data.player.horny == true) {
+				writeText("Mix with the [yellow ingredient, marked with an image of a rock|yellowwhite].");
+			}
+			else {
+				writeText("Mix with the [yellow ingredient, marked with an image of a rock|yellowwhite]. Your mind unclouded, you think this will probably create a dangerous, unstable mixture.");
+			}
+			if (data.player.horny == true) {
+				writeText("Mix with the [red ingredient, marked with an image of an object shattering|redwhite].");
+			}
+			else {
+				writeText("Mix with the [red ingredient, marked with an image of an object shattering|redwhite]. Your mind unclouded, you think this will probably create a dangerous, unstable mixture.");
+			}
+			if (data.player.horny == true) {
+				writeText("Mix with the [blue ingredient, marked with an image of a brain|bluewhite].");
+			}
+			else {
+				writeText("Mix with the [white ingredient, marked with an image of a brain|bluewhite]. Your mind unclouded, you think this will probably create a dangerous, unstable mixture.");
+			}
+			writeText("You could always [change your mind|chemistry]");
+			break;
+		}
+		case "yellowred": {
+			writeText("You mix together the ingredients, and the result is a frothy orange liquid that's quite fizzy. You recognize the reaction, you've just created acid!");
+			writeText("It's safe for any kind of organic material, it'll just melt things like metal or stone.");
+			addItem("Orange Potion");
+			writeText("[Potion in hand, you should finish up|chemLab]");
+			break;
+		}
+		case "yellowblue": {
+			writeText("You mix together the ingredients, and the result is a frothy green liquid that's doesn't seem very reactive. You recognize the consistency, you've created a sleeping potion!");
+			writeText("Splashing this on someone should knock them clean out, it's quite effective on infected individuals and is the most common type of sedative used here.");
+			addItem("Green Potion");
+			writeText("[Potion in hand, you should finish up|chemLab]");
+			break;
+		}
+		case "yellowwhite": {
+			writeHTML(`
+				t The moment the first drip of the mixtures touch, you realize this was a bad idea. The liquids meeting fuzz and bubble, before exploding outwards in a cloud of gas. 
+				t You cough and run back, but you definitely inhaled a lot of the stuff. As you clear your lungs and wait for the cloud to dissipate, you feel your cock twitch. 
+				t It's... Absolutely larger than before, by at least two inches. At the very least though it doesn't seem to be growing any further. You'll need to hope nothing bad comes from this. 
+				t As you step forwards you sigh with pleasure. Just from walking forwards it's clear your cock's sensitivity is even higher. <b>You'll need to jerk off at some point if you want to be clear headed!</b>
+			`);
+			data.player.horny = true;
+			data.player.flags += "rockPotion";
+			writeText("[Clean yourself off|chemLab]");
+			break;
+		}
+		case "redblue": {
+			writeEvent('mindBreak');
+			writeTransition('theFacility', 'GAME OVER', '#FF0000');
+			break;
+		}
+		case "redwhite": {
+			writeEvent('cockBreak');
+			writeTransition('theFacility', 'GAME OVER', '#FF0000');
+			break;
+		}
+		case "bluewhite": {
+			writeEvent('cockMind');
+			writeTransition('theFacility', 'GAME OVER', '#FF0000');
 			break;
 		}
 		case "chemJerk": {
@@ -669,6 +943,17 @@ function writeScene(scene) {
 			writeText("[CLOSE FILE|chemLab]");
 			break;
 		}
+		case "resistanceFile": {
+			writeHTML(`
+				t Re: INFECTION WEAKNESS (URGENT)
+				t Recent tests performed on infection vectors show extremely positive results, however test ID #Gamma-1872 resulted in another example of an infected with near full control of mental capacity. 
+				t The linking factor between these cases may be sugar consumption. It's possible that taking infected fluids orally along with food or drink high in sugar will result in a situation similar to a mental vaccine. It's possible this is why there were so many cases of mentally-resistant infected during the test case at Sanctuary Hotel Resort, as the infection was first distributed through cocktails. Some of these likely coated the rim with sugar. The aerosolized drug spread through the hotel afterwards may have been the reason the tests were not a complete failure.
+				t Team C formally requests a budget increase to study this phenomenon, and hopefully engineer a resistance in the highly dangerous alpha strain. Having <i>her</i> in the facility can be quite nerve-wracking for some members of the staff.nerve-wracking for some members of the staff. 
+				t We already have a test subject, some military officer came into a testing site claiming she was looking for shelter. There's a blockade around the city, nobody should come looking for her. Even if she does develop some of the characteristics like enhanced strength, we don't forsee her containment being a problem.
+			`);
+			writeText("[CLOSE FILE|chemLab]");
+			break;
+		}
 		case "containmentLab": {
 			writeText("You're in the containment lab, and you aren't alone. There's at least five other infected in here, but luckily they're locked up. They're stuck behind a full three inches of strong plastic shielding and a set of thick iron bars.");
 			writeText("One is agitated by your presence, and is humping the wall with her sizable cock. Others are attempting to get through the wall and attack you, and the rest don't seem to care.");
@@ -676,11 +961,17 @@ function writeScene(scene) {
 			if (data.player.horny == true) {
 				writeText("Your cock is already acting up again, it seems like the humping infected woman's show is getting to you more than you expected. If you wanted you could take a seat and [jerk off|containmentJerk].");
 			}
-			if (checkItem('White Keycard') != true) {
-				writeText("Inserted into a catch slot is a item[white access keycard|White Keycard], used for accessing secure data and locations.");
+			if (checkItem('Green Potion') == true) {
+				if (checkItem('White Keycard') != true) {
+					writeText("One cell in particular is marked as unused, but has a single infected woman inside. On her neck is a lanyard with your prize. Now that you have the sleeping gas potion, with careful application you can get into the cell and take the item[access keycard|White Keycard] she's wearing.");
+				}
+				else {
+					writeText("You put the infected researcher to sleep, and stole their access keycard.");
+				}
 			}
 			else {
-				writeText("The catch slot is empty, as you've already taken the keycard.");
+				writeText("One cell in particular is marked as unused, but has a single infected woman inside. She's pressing against the plexiglass for freedom, and you notice she's wearing a tattered labcoat.");
+				writeText("Hanging from her neck on a lanyard is a white keycard. Grabbing it would probably help get you into the innoculation lab, but you'll need to disable or knock the infected researcher out first.");
 			}
 			writeText("There's an air vent shaft on the floor here, the cover has been unscrewed and taken off. It'll lead back to the laboratory hub, but it's so small you should only use it in case of an emergency, like if you were being chased.");
 			writeText("If there's nothing else to do here you should probably leave and go back to the [laboratory hub|labHub].");
@@ -711,6 +1002,12 @@ function writeScene(scene) {
 			else {
 				writeText("You already took the keycard, making sure to clean it off thoroughly.");
 			}
+			if (checkItem('Soldier Recording 2') != true) {
+				writeText("Laying on a nearby table is another soldier's helmet, covered in a very thick layer of slime. Though it's a bit sticky, the item[the memory card inside should be intact|Soldier Recording 2]");
+			}
+			else {
+				writeText("Laying on a nearby table is a soldier's helmet caked in slime. The memory card was intact though, so you took it.");
+			}
 			writeText("There are a pair of still-functional research terminals in the room. A terminal partially covered in the sticky white substance is on a project codenamed '[spider|spiderFile]', and another caked in cum is a log on a project codenamed '[mind worm|wormFile]'. With your high level of security clearance, you could read up on these to get an idea of what might be on the loose.");
 			if (data.player.horny == true) {
 				writeText("Something about the unnerving environment is making your skin tingle. You know it'd probably be risky, but a dark part of you wants to take a seat and [jerk off|parasiteJerk].");
@@ -734,7 +1031,7 @@ function writeScene(scene) {
 			writeText("Alright, I don't have long. Security will be in soon to transport me, so I need to get this writing done quickly.");
 			writeText("These worms are an emergency measure. In less than 1% of the population mental resistance is strong enough for infected to retain their rationality for a time. These worms seek out those resistant infected, inject them with a powerful paralytic, then enter the infected's body through their ears or nose to access the brain.");
 			writeText("I understand it sounds gross but it feels so goooooo");
-			writeText("I need to focus, losing control already. I'm hosting one now, I can feel it growing acclimated to my brain chemistry. They find the parts of your brain responsible for rational though and hijack them. If they think you can lead them to other resistant individuals they'll turn you into a sort of sleeper agent to infect others.");
+			writeText("I need to focus, losing control already. I'm hosting one now, I can feel it growing acclimated to my brain chemistry. They find the parts of your brain responsible for rational thought and hijack them. If they think you can lead them to other resistant individuals they'll turn you into a sort of sleeper agent to infect others.");
 			writeText("But if they think you have nothing to offer they'll just crush those parts of your grey matter, removing what individuality you might have left. After that they start injecting pleasure chemicals directly into your brain. The guards are almost here to escort me to the inoculation chamber so that the worm can be removed before it finds the sections dedicated to rational tho");
 			writeText("<i>The log ends here. You probably shouldn't touch the console, as it's coated in an inhuman amount of cum.</i>");
 			writeText("[CLOSE FILE|parasiteLab]");
@@ -765,20 +1062,42 @@ function writeScene(scene) {
 			break;
 		}
 		case "infectionCure": {
-			writeEvent('cure');
-			writeText("You don't have long, you've got no chance if whatever's in there catches you. You need to [get out of the lab|hubChase] as soon as possible.");
+			if (data.player.flags.includes("rockPotion") != true) {
+				writeEvent('cure');
+				writeText("You don't have long, you've got no chance if whatever's in there catches you. You need to [get out of the lab|hubChase] as soon as possible.");
+			}
+			else {
+				writeEvent('cockRock');
+			}
 			break;
 		}
 		case "hubChase": {
-			writeText("You should be fine, you tell yourself. You've got a big lead and whatever's behind you is held back by strong metal containments.");
-			writeText("When you reach the center of the laboratory hub, you hear a large metal wall being thrown aside in the room behind you. You don't have a lot of choices or time to make one.");
-			writeText("The [elevator|elevatorEscape] to the surface is within reach. But if it's slow you could be caught before the doors close.");
-			writeText("Otherwise, you could try to hide in the [chemical lab|chemChase], in the [containment lab|containmentChase], or the [parasite lab|parasiteChase].");
-			writeText("Whatever you decide, you'll need to hurry.");
+			if (data.player.horny == true) {
+				writeEvent('failure');
+			}
+			else {
+				writeText("You should be fine, you tell yourself. You've got a big lead and whatever's behind you is held back by strong metal containments.");
+				writeText("When you reach the center of the laboratory hub, you hear a large metal wall being thrown aside in the room behind you. You don't have a lot of choices or time to make one.");
+				writeText("The [lobby|lobbyChase] is straight ahead.");
+				writeText("Otherwise, you could try to hide in the [chemical lab|chemChase], in the [containment lab|containmentChase], or the [parasite lab|parasiteChase].");
+				if (data.player.flags.includes("weaponLabDoor") == true) {
+					writeText("You remember you left the cell door open in the [weapon lab|weaponChase]. If you hide in there the alpha might be distracted by the chained-up infected woman.");
+				}
+				writeText("Whatever you decide, you'll need to hurry.");
+			}
+			break;
+		}
+		case "lobbyChase": {
+			writeText("You make a mad dash into the floor's main lobby. You can hear the alpha behind you.");
+			writeText("The [elevator|elevatorEscape] to the surface is within reach. But if it's slow you could be caught before the doors close. Still, it's your only option now.");
 			break;
 		}
 		case "parasiteChase": {
 			writeEvent("spider");
+			break;
+		}
+		case "weaponChase": {
+			writeEvent("alpha3");
 			break;
 		}
 		case "chemChase": {
@@ -815,7 +1134,9 @@ function writeScene(scene) {
 			writeText("You, a loving husband, must find a way to get yourself and your infected wife to safety.");
 			data.player.scenario = "Spread Island";
 			updateMenu();
-			writeSpecial("This scenario is only a demo, so all that's available are a few short scenes that are made to convey the idea of what this route will contain. If you like it, please voice your opinion! Rainy DayZ has a smaller fanbase than my other two current works, so please (respectfully) voice your desires and ideas for what you'd like this game to contain. Leave comments or a review on TFGames, voice what you like on Discord, or support me on Patreon.");
+			//countScenes();
+			writeSpecial("This scenario is only a demo, so all that's available are a few short scenes that are made to convey the idea of what this route will contain. Apologies if you're hunting down those scenes listed in the pool noodle cheat, the whole section isn't done yet!");
+			//writeText("There's also a bit of structure past this point, but many scenes don't have images yet!");
 			writeSpecial("Also, for this campaign you'll need to name your wife:");
 			document.getElementById('output').innerHTML += `
 				<p class='centeredText'>Your wife's name: <input type="text" id="nameSubmission" value="Kate"></p>
@@ -869,25 +1190,7 @@ function writeScene(scene) {
 			break;
 		}
 		case "frozen": {
-			writeText("This must be a dream, it has to be. Some woman, with a dick, stumbles into your hotel room as your wife is out of her mind. You must've gotten wasted, or high, or passed out at some point after hitting your head.");
-			writeText("The woman's thick cock spreads your wife's pussy, but only makes it a few inches in before it seems like the girl can't thrust any farther.");
-			writeBig("frozen-1.gif");
-			writeText("After only a few thrusts the woman, an annoyed look on her face, pulls out. Your wife groans, her eyes crossing as she makes one bug push, and...");
-			writeText("*POP*");
-			writeText("A single, egg-sized ball pops out of your wife's pussy. She moans in relief, before grunting and spasming and...");
-			writeText("*POP*");
-			writeText("Tears run down your wife's face, ones of relief, and maybe even pleasure. Her clit has fully transformed into a full-on cock and her pussy has become a pair of fat nuts.");
-			writeText("You finally work up the nerve to pinch yourself, and the pain is too real for you to pretend isn't there.");
-			writeSpeech("player", "", "Please... Please let me wake up... Honey, please tell me this is-");
-			writeText("The woman lunges at you, tackling you to the ground. With inhuman strength she begins to tear your clothes off while trying to smear her cock against your face.");
-			writeText("You try to fight back, but you've got no spirit left. Everything that's happened up to now has been insane, you can't muster up the will.");
-			writeText("The woman lets out a small hiss as her cock leaks a glob of precum onto your check, and you instantly feel much better. The hopelessness and despair seem a lot smaller now, and your head suddenly feels too stuffy to focus on anything except the woman atop you.");
-			writeText("She repositions herself as she snaps the button on your pants and starts pulling them off. No longer needing to pin your down, she gets your bottom half exposed quickly.");
-			writeText("You relax and close your eyes for a moment ready to accept your fate, until you feel something pressing against your cheek. As you opem them, you see your wife's loving eyes, her gorgeous body, and...");
-			writeBig("frozen-2.gif");
-			writeText("Her throbbing cock.");
-			writeText("She presses her head against your lips, and you relent. At least this way you'll be together forever, just not in the way you expected when you married her.");
-			writeText("The woman presses her head against your asshole as you take your wife's cock in your mouth. Whatever happened to them is happening to you too, your body is already changing. You feel softer, more ready for the pair of infected women about to spitroast you. Your mind has begun to fade away, your identity as a human is gone.");
+			writeEvent(scene);
 			writeTransition('scenarioSelect', 'GAME OVER', '#FF0000');
 			break;
 		}
@@ -902,11 +1205,293 @@ function writeScene(scene) {
 			writeSpeech("player", "", "Honey! Honey please, stay with me! We need to get out of here, I won't abandon you! We need to get back home, home to our families!");
 			writeSpeech("wife", "", "Home... Where everyone else is... Everyone else...");
 			writeText("She's in some kind of delusion as her cock jerks. Someone on the mainland must be able to help, some doctor, some surgery, anything. But first you need to get out of here.");
-			writeSpeech("player", "", "Keep the door locked, don't open it for anyone but me, alright? I'll find some help, a wheelchair if I have to, and we're making it out of here alive. You still with me?");
+			writeSpeech("player", "", "Keep the door closed, don't open it for anyone but me, alright? I'll find some help, a wheelchair if I have to, and we're making it out of here alive. You still with me?");
 			writeSpeech("wife", "", "Mhmm...");
 			writeText("She weakly mumbles out a response before closing her eyes. She needs rest, at least she isn't going psycho rapist like that woman you kicked out.");
-			writeText("For now you need to find a safe way out of the resort so that you and your wife can get off the island, and quickly. From the sounds of things, this isn't a localized incident. People all over the resort are turning. You need to get moving, quickly.");
+			//writeText("For now you need to find a safe way out of the resort so that you and your wife can get off the island, and quickly. From the sounds of things, this isn't a localized incident. People all over the resort are turning. [You need to get moving, quickly|hotelRoom].");
 			writeTransition('scenarioSelect', 'END OF PREVIEW', '#FF0000');
+			break;
+		}
+		case "hotelRoom": {
+			writeHTML(`
+				t You're in room 201 of the Sanctuary Hotel. The structure of the room means there aren't any windows.
+				t Your wife, wifeF is on the bed getting some rest. Once you've found a safe way out you should wake her and get moving, there's no telling how long until another infected arrives.
+				t ?item Strange Gas; You have the container of strange gas with you. It might be some kind of antidote, but it isn't likely. Still, looking at the flaccid dick between your wife's legs, you're desperate for any kind of hope. Will you [expose her to the strange gas?|hotelWifePleasureGas]?
+				t ?item Bedding Rope; You found a safe way out by [climbing down from the window of room 204|hotelEscape]
+				t It seems like the woman from earlier was distracted, it should be safe to [head out into the hallway|hotelHallway].
+			`);
+			break;
+		}
+		case "hotelWifePleasureGas": {
+			writeEvent(scene);
+			break;
+		}
+		case "hotelHallway": {
+			writeHTML(`
+				t You're in the second floor hallway of the Sanctuary Hotel. Something's going on with the hotel's systems, every door's electronic lock is registered as 'unlocked'. Almost like someone <i>wants</i> the rooms to be accessible.
+				t [Room 201|hotelRoom] is where you and your wife are staying. With the doors malfunctioning it's not safe to stick around. Once you've found a way out you can safely go back and get her.
+				t [Room 202|hotel202] is across the hallway, you can hear someone sobbing through the door.
+				t [Room 203|hotel203] is a little down the hall, and is unlocked.
+				t [Room 204|hotel204] a little down and across the hall, the door is wide open and nobody's inside.
+				t Down the stairs is the main lobby, maybe the only way out. You could [grab your wife and head downstairs|hotelMainExit] as a last resort, but you can hear the sounds of chaos down there.
+			`);
+			break;
+		}
+		case "hotelMainExit": {
+			writeEvent(scene);
+			break;
+		}
+		case "hotel202": {
+			writeHTML(`
+				t You're in room 202 of the Sanctuary Hotel, or at least you're looking inside.
+				t The room is trashed, with no windows or working lamps to illuminate the room. In the shadows you can see someone, it almost looks like her hair is growing. The noises she's making are having some kind of effect on your head, like you've got a headache and her voice is clearing it.
+				t [She seems so sad, you can comfort her with your big strong arms|hotelFreshSiren].
+				t [Or you could resist and close the door|hotelHallway].
+			`);
+			break;
+		}
+		case "hotelFreshSiren": {
+			writeEvent(scene);
+			break;
+		}
+		case "hotel203": {
+			writeHTML(`
+				t You're in room 203 of the Sanctuary Hotel. The room is in pristine condition.
+				t Atop the bed is a strange suitcase. It's open, with a pair of canisters of some strange pink gas inside. One of the canisters has a hose attached, and is connected to an air vent. You could probably [break the hose|hotelPleasureGas] if you really tried.
+				t !item Strange Gas; The other canister isn't in use. It's definitely got something to do with what's going on, maybe you should item[take the unused canister|Strange Gas]?
+				t ?item Strange Gas; You already took the other canister.
+				t !item Bedding; Since the room is untouched, the item[bedding and sheets|Bedding] are still here. They might be useful.
+				t ?item Bedding; The beds are bare aside from the suitcase, as you took the bedding and sheets.
+				t [Head out into the hallway|hotelHallway].
+			`);
+			break;
+		}
+		case "hotelPleasureGas": {
+			writeEvent(scene);
+			break;
+		}
+		case "hotel204": {
+			writeHTML(`
+				t You're in room 204 of the Sanctuary Hotel. It's been picked clean. Food from the fridge, towels, even the sheets from the bed have been taken.
+				t !item Onahole; Everything... Except a fleshlight. There's an onahole here, still in the box inside one of the drawers. This probably wasn't a priority to be taken. If you really feel like you'll need it, you could item[take it with you|Onahole].
+				t ?item Onahole; The drawers are empty.
+				t !item Bedding; There's a window here, but it's a full story drop to a paved walkway below. 
+				t ?item Bedding; !item Bedding Rope; There's a window here, but it's a full story drop to a paved walkway below. With the bedding you took from the other room, you could item[make a rope to climb down|Bedding Rope].
+				t ?item Bedding; ?item Bedding Rope; There's a window here, but it's a full story drop to a paved walkway below. You've created a rope to [climb down and escape|hotelAbandon], but what about wifeF? You'll need to go back for her if you want to escape together.
+				t [Head out into the hallway|hotelHallway].
+			`);
+			break;
+		}
+		case "hotelAbandon": {
+			writeEvent(scene);
+			break;
+		}
+		case "hotelEscape": {
+			writeHTML(`
+				t You gently nudge wifeF awake. She's exhausted from the toll the infection is taking on her body, but she's human. That's all that matters. 
+				sp player; Come on honey, it isn't safe here. I've got a safe way out, let's go.
+				t She nods and slowly climbs out of bed, needing to lean on you as you make your way to room 204.
+				t As you pass the strange suitcase her eyes linger on it and the pink gas container inside.
+				t But you have bigger things to focus on. You set up the rope, throw down a pile of pillows, and make sure it's secure before you climb down. She's behind you, although she nearly falls and you need to help her.
+				sp wife; Honey... I can't focus...
+				sp player; It's fine, just stay in control.
+				t Looking around you can see a way out of the hotel towards the less populated expensive villa area. If anyone is getting help right now it'd be the richest folk. 
+				...
+				t You arrive in the villa area, but there's nobody to be seen. Maybe they've already been evacuated?
+				t Suddenly, wifeF can no longer support herself and nearly falls.
+				sp player; wifeF? What's wrong?!
+				t Her breathing is ragged, so you take her into a thankfully unoccupied building and set her upon the large bed. Almost immediately she begins stroking the very erect member between her legs.
+				sp wife; I... I can't!
+				t Her balls look full to burst, and she's jacking herself off as furiously as she can. Yet...
+				t She can't cum. At least not with just her hand.
+				t You gulp dryly as you come to a stunning conclusion. If you and her are going to get off this island, you'll need to [find some way for her to get off|villaKing]
+			`);
+			break;
+		}
+		case "villaKing": {
+			writeHTML(`
+				t You're in the king villa, a large resort villa for the ultra wealthy. It must have been evacuated already, because the place has clearly been looted. The fridge, hanging open, has nothing but partially melted ice inside.
+				t There's nothing of value left besides wifeF on the bed, fruitlessly jerking herself off. Tears are forming in her eyes as she arches her back, it wasn't exhaustion slowing you two down before, but mind-consuming lust. It's clear she isn't able to get off herself, despite how frantically she jerks herself.
+				t If you can't find anything to help her with... You may need to [help her yourself|wifeHelp].
+				t ?item Onahole; [You could give her the onahole you found.|wifeOnahole].
+				t ?item Dildo; [You could give her the dildo you found.|wifeDildo].
+				t ?item Chastity Cage; [You use the ice from the nearby fridge combined with the chastity cage to keep her dick in check|wifeCage].
+				t [You can head outside, into the affluent villa district|villaOutside].
+			`);
+			break;
+		}
+		case "wifeHelp": {
+			writeEvent(scene);
+			break;
+		}
+		case "wifeDildo": {
+			writeEvent(scene);
+			writeHTML(`
+				...
+				t The two of you move on, leaving the affluent district behind. There's no helicopter, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
+				t As you're wandering around a hiking path looking for any kind of help, you feel a small bite on your neck.
+				t You hear wifeF freaking out for some reason as you lift your hand to scratch the bite, only for your hand to brush against something... Metal.
+				t The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundRoom].
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scenarioSelect', 'END OF PREVIEW', '#FF0000');
+			}
+			break;
+		}
+		case "wifeOnahole": {
+			writeEvent(scene);
+			writeHTML(`
+				...
+				t The two of you move on, leaving the affluent district behind. There's no helicopter, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
+				t As you're wandering around a hiking path looking for any kind of help, you feel a small bite on your neck.
+				t You hear wifeF freaking out for some reason as you lift your hand to scratch the bite, only for your hand to brush against something... Metal.
+				t The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundRoom].
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scenarioSelect', 'END OF PREVIEW', '#FF0000');
+			}
+			break;
+		}
+		case "wifeCage": {
+			writeEvent(scene);
+			break;
+		}
+		case "villaQueen": {
+			writeHTML(`
+				t You're in the queen villa, a medium resort villa for the wealthy.
+				t And the perverted, apparently. The walls are lined with bondage gear and sex toys of varying shapes and sizes. From ball-gags to zipper outfits...
+				t !item Dildo; There's a collection of dildos on the wall, you could item[grab one and take it back to your wife|Dildo].
+				t ?item Dildo; There's a collection of dildos on the wall, you don't need more than one. You hope.
+				t !item Chastity Cage; There's also a collection of chastity cages in varying sizes. The largest one should fit wifeF. She might not like being caged up, but you might need to item[take one with you|Chastity Cage].
+				t ?item Chastity Cage; You already took a chastity cage, there's no reason to take another. It's not like any of the other infected will let you put one on them.
+				t [You can head outside, into the rich district|villaOutside].
+			`);
+			break;
+		}
+		case "villaSoldier": {
+			writeHTML(`
+				t You're in the queen villa, a small resort villa for the wealthy. Despite it's name it seems to be made for high class vacationers just like the other two.
+				t Peeking inside, you can see someone's already here. Someone is rummaging through the fridge with a pile of foodstuffs besides her. It's a looter.
+				t Aside from her, there doesn't seem to be anything worth taking in here. Nothing that will help wifeF anyways. Unless...
+				t You could grab something blunt, drag her across the way, throw her in through the door...
+				t You shake your head. You can't be considering [sacrificing her to get your wife off|wifeSacrifice], can you?
+				t [You can head outside, into the affluent villa district|villaOutside].
+			`);
+			break;
+		}
+		case "wifeSacrifice": {
+			writeEvent(scene);
+			break;
+		}
+		case "villaOutside": {
+			writeHTML(`
+				t You're in the wealthier area of the resort. This place was already advertised as paradise, so this must've been sold as a 'premium paradise'. No hotel rooms here, instead each guest is given an entire villa to relax and enjoy their vacation in.
+				t First is the [king villa|villaKing] where wifeF is. You can just barely hear her frantically moaning inside, unable to find relief. You'll need to be quick, otherwise you risk someone or something hearing her.
+				t Next is the [queen villa|villaQueen], a little ways off.
+				t Finally is the [soldier villa|villaSoldier], slightly smaller than the other two.
+			`);
+			break;
+		}
+		case "compoundAwaken": {
+			writeHTML(`
+				[compoundRoom|compoundRoom]
+			`);
+			data.player.guardMovement = 0;
+			break;
+		}
+		case "compoundRoom": {
+			writeHTML(`
+				t You're in some kind of cell, or at least the best one that cound be made out of some kind of closet.
+				t !flag playerDoorUnlocked; The door is locked, and won't budge.
+				t ?flag playerDoorUnlocked; You unlocked the door from the other side, so you can freely [head out into the hallway|compoundHall], so long as you're careful not to be caught.
+				t Searching around, you can see an air vent that probably connects to a series of ventilation shafts. Why some prying you can [crawl inside|compoundVent1].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundVent1": {
+			writeHTML(`
+				t Through the grate you can see the room you were trapped in. You can [climb out|compoundRoom] if you'd like.
+				t You can head [forwards|compoundVent2], [backwards|compoundVent4], or [wait|compoundVent1].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundVent2": {
+			writeHTML(`
+				t Through the grate you can see a room filled with transparent containers of pink gas.
+				t !flag gasDisturbed; t The grate here is loose, you can [climb out into the gas room|compoundGasRoom].
+				t ?flag gasDisturbed; A soldier with a mask is trying to patch up the hose you broke. It's not safe to head in.
+				t You can head [forwards|compoundVent3], [backwards|compoundVent1], or [wait|compoundVent2].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundVent3": {
+			writeHTML(`
+				t Through the grate you can see a large kennel, each cage containing a sleeping dog.
+				t !flag kennelDisturbed; The grate here is loose too, you can [sneak in|compoundKennels] if you're careful.
+				t ?flag kennelDisturbed; Several soldiers are trying to calm the dogs down, it's not safe to go in.
+				t You can head [forwards|compoundVent4], [backwards|compoundVent2], or [wait|compoundVent3].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundVent4": {
+			writeHTML(`
+				t Through the grate you can see wifeF, resting on a bed.
+				t You can head [forwards|compoundVent1] [backwards|compoundVent3], or [wait|compoundVent4].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundGasRoom": {
+			writeHTML(`
+				t You're in a room filled with transparent canisters filled with a strange pink gas. They're probably the same as the ones you saw in the suitcase back at your hotel.
+				t You can head back through the [grate, into the air vents|compoundVent2].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundKennels": {
+			writeHTML(`
+				t You can head back through the [grate, into the air vents|compoundVent3].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundWifeRoom": {
+			writeHTML(`
+				t !flag wifeDoorUnlocked;
+				t ?flag wifeDoorUnlocked;
+				t You can head back through the [grate, into the air vents|compoundVent4].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundHall": {
+			writeHTML(`
+				t The door to your cell is here. From this side it's easy to unlock, so you can [head inside|compoundRoom].
+				t The door to your wife's cell is here as well. You can [head inside|compoundWifeRoom], or if you're ready to make your escape attempt you can grab your wife and [make a break for it|compoundEscape].
+				t !flag gasDisturbed; There are still a few soldiers around, but you should be able to sneak into the [gas room|compoundGasRoom].
+				t !flag kennelDisturbed; There are still a few soldiers around, but you should be able to sneak into the [kennel room|compoundKennels].
+				t ?flag gasDisturbed; ?flag kennelDisturbed; You see what appears to be a temporary control room. With the dogs riled up and the gas leak, the room is currently empty.
+			`);
+			addFlag("playerDoorUnlocked");
+			addFlag("wifeDoorUnlocked");
+			calculateMovement();
+			break;
+		}
+		case "compoundControlRoom": {
+			writeHTML(`
+				
+			`);
+			break;
+		}
+		case "compoundEscape": {
+			writeHTML(`
+				
+			`);
 			break;
 		}
 		//Scarlet Mansion
@@ -1069,6 +1654,102 @@ function writeScene(scene) {
 			writeEvent(scene);
 			break;
 		}
+		case "scarletParlor": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletWardrobe": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletBalcony": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletGuestBedroom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletMainHall": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletHeartBathroom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletHeartBedroom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletTheaterRoom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletDiningRoom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletStorageRoom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletBasement": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletLabEntrance": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletServerRoom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletCellRoom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletControlRoom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
+		case "scarletTrappedRoom": {
+			writeHTML(`
+			
+			`);
+			break;
+		}
 		//Typhoid Mary
 		case "typhoidMary": {
 			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/typhoidMary.jpg)";
@@ -1227,6 +1908,65 @@ function writeScene(scene) {
 	}
 }
 
+function calculateMovement(location) {
+	data.player.guardMovement += 1;
+	if (data.player.guardMovement == 5) {
+		data.player.guardMovement = 1;
+	}
+	if (checkFlag("kennelDisturbed") == true || checkFlag("gasDisturbed") == true) {
+		//Do nothing
+	}
+	else {
+	switch (data.player.currentScene) {
+		case "compoundRoom": {
+			if (guardMovement == 1) {
+				writeText("You can hear someone outside the door. Peering through the window of the door you can see several figures in what looks like special ops gear, fully covered and holding strange guns.");
+			}
+			break;
+		}
+		case "compoundVent2": {
+			if (guardMovement == 1) {
+				writeText("You can hear someone moving outside the vent, but they're getting farther away. If you exit the vent now you'll be caught.");
+			}
+		}
+		case "compoundVent3": {
+			if (guardMovement == 2) {
+				writeText("You can hear someone moving outside the vent, but they're getting farther away. If you exit the vent now you'll be caught.");
+			}
+		}
+		case "compoundVent4": {
+			if (guardMovement == 3) {
+				writeText("You can hear someone moving outside the vent, but they're getting farther away. If you exit the vent now you'll be caught.");
+			}
+		}
+		case "compoundGasRoom": {
+			if (guardMovement == 1) {
+				writeText("You can hear someone approaching!");
+			}
+			if (guardMovement == 2) {
+				writeEvent("compoundCaught");
+			}
+		}
+		case "compoundKennels": {
+			if (guardMovement == 2) {
+				writeText("You can hear someone approaching!");
+			}
+			if (guardMovement == 3) {
+				writeEvent("compoundCaught");
+			}
+		}
+		case "compoundWifeRoom": {
+			if (guardMovement == 3) {
+				writeText("You can hear someone approaching!");
+			}
+			if (guardMovement == 4) {
+				writeEvent("compoundCaught");
+			}
+		}
+	}
+	}
+}
+
 function renameWife() {
 	var goof = document.getElementById('nameSubmission').value;
 	data.player.wife = goof;
@@ -1237,6 +1977,7 @@ function writeEvent(n) {
 	wrapper.scrollTop = 0;
 	document.getElementById('output').innerHTML = '';
 	switch (n) {
+		//Rainy DayZ
 		case "basic1": {
 			writeText("You're so exhausted you barely even register the feeling as the zombie pushes you down into a puddle of running rainwater. Try as you might, you don't have the strength to resist as she rips your pants off.");
 			writeSpeech("player", "", "No! Please, stop!");
@@ -1379,7 +2120,7 @@ function writeEvent(n) {
 			writeText("<b<HELP ME</b>");
 			writeText("You need the noise to stop. The ringing in your ears is making you see stars.");
 			writeText("<b>I'M STUCK</b>");
-			writeText("But slowly the painful ringing stops, and whatever was making the sound goes quiet. As your mind unclouds, you realize you've just finished undoing the know of your trap.");
+			writeText("But slowly the painful ringing stops, and whatever was making the sound goes quiet. As your mind unclouds, you realize you've just finished undoing the knot of your trap.");
 			writeText("You step back, the zombie is freed. Worse than that, you can hear the sounds of other zombies closing in, obviously alerted by the sound.");
 			writeText("The zombie you freed tackles you. She's light, and a lot weaker than the others, so you should have no trouble thr-");
 			writeText("... All your worries start to fade away as her lips meet yours. What were you thinking about?");
@@ -1398,7 +2139,7 @@ function writeEvent(n) {
 			if (data.player.beastDisabled == false) {
 				writeText("You drop your pack and heft your bat. There's only one thing left to do now.");
 				writeText("One of the zombified dogs comes out from behind a tree. You're wounded and have almost no energy left, but you still have some fight in you.");
-				writeText("He bars his teeth and growls, and yoh get ready to start swinging.");
+				writeText("He bars his teeth and growls, and you get ready to start swinging.");
 				writeSpeech("player", "", "Come get some, motherfucker.");
 				writeText("...");
 				writeBig("hunter1.gif");
@@ -1694,7 +2435,7 @@ function writeEvent(n) {
 			writeText("These fuckers are the most dangerous types I've ever seen. Normal zombies are tough to deal with, but they have weaknesses. These ones are smart, really smart. They can open doors, use tools, climb up ladders, the works.");
 			writeText("They aren't anywhere near as strong though, I think I could take one in a fight if I had to, but the most dangerous part of them is their pheromones.");
 			writeText("See, their bodies are way softer, and their dicks are so small I don't think they even can get erections. What they do is emit pheromones that turn men into sex fiends, and try to seduce the men into fucking their asses. They infect the men like an STD while still pumping spunk all over everything.");
-			writeText("Not only that, but they can make this weird screech sound. I hurt like a glass shard in the head, but for some reason whenever a man heard it they started running out of cover towards her.");
+			writeText("Not only that, but they can make this weird screech sound. It hurt like a glass shard in the head, but for some reason whenever a man heard it they started running out of cover towards her.");
 			writeText("They got Tommy, so the building is compromised. I was able to stay safe and eventually everyone else left the building. Sirens still get horny like normal zombies but they can't cum from their dicks, so they need to keep an entourage with them when they aren't hunting. When they find prey they'll ditch their fuckbudies, who are still covered in pheromones.");
 			writeText("Now, Tommy wasn't exactly what I'd call a 'tough guy'. Honestly he was a do-no-harm sort of pacifist, pretty rare these days. I guess that's why he turned into a girly-looking one unlike the rest.");
 			writeText("The one that got Tommy was headed to the south last time I saw her, maybe she's heading to that unfinished place at Ridgewood?");
@@ -1725,13 +2466,14 @@ function writeEvent(n) {
 			writeText("[journal|Finish reading].");
 			break;
 		}
+		//The Facility
 		case "start": {
 			writeBig("player.jpg");
 			writeText("It all happened so fast.");
 			writeText("There was no blaring alarm, no warning broadcast, nothing official to warn everyone. All you had were an alert on your phone from a close friend telling you to be ready to fight for your life, a squadron of armed soldiers bursting into your office for a 'surprise inspection', then the lights went out.");
 			writeText("Blind panic hit your assistants, they didn't last long. They ran out of the room and were taken immediately. The soldiers followed soon after, and now you are alone.");
 			writeText("But you're not like them. You're brilliant, and willing to do whatever it takes. From all the evidence you have, it's clear exactly what's going on, what pathogen is breaching containment.");
-			writeText("So you get a vial from cryo-storage, a green fluid inside and a biohazard earning on the front.");
+			writeText("So you get a vial from cryo-storage, a green fluid inside and a biohazard warning on the front.");
 			writeSpeech("player", "", "I'm not ending up like the rest of them... I didn't sacrifice everything to lose my mind.");
 			writeText("Taking the final plunge you down the vial and double over just moments later.");
 			writeSpeech("player", "", "Hagck... Fuck, it's awful.");
@@ -1742,7 +2484,7 @@ function writeEvent(n) {
 			writeSpeech("player", "", "Focus... focus...");
 			writeText("There's a stretching sound, then a tearing sound as your clit strains against your now too-tight stockings. You feel your pussy dilate as something is trying to push it's way out.");
 			writeSpeech("player", "", "Gotta stay... In... Cont-");
-			writeText("And finally it happens with a muffled *POP*, what remain of your womb descends and a pair of brand new testicles burst free as your stockings are torn to shreds.");
+			writeText("And finally it happens with a muffled *POP*, what remains of your womb descends and a pair of brand new testicles burst free as your stockings are torn to shreds.");
 			writeText("Your skin burns and itches, every but of your body trying to fight back against the infection, and your mind is fighting too.");
 			writeSpeech("player", "", "Guuuddd~! Fuhhhck~!");
 			writeText("You tear off your clothes, throwing every piece as far as you can to escape the feeling of confinement.");
@@ -1775,7 +2517,7 @@ function writeEvent(n) {
 				writeText("Finally the worm finds the part of your brain it's looking for and squeezes.");
 				writeBig("worm-2.gif");
 				writeText("Reflexively you cum as your vision and mind go a bright white of pleasure. It's recognized you as resistant to the virus, so now it's taking away your rationality by force.");
-				writeText("Desperately in the back your your mind, the part not bathing in pleasure chemicals, you try to think of a last way out. Of a way you could be useful to the worm. Anything at all to save your mind.");
+				writeText("Desperately in the back of your mind, the part not bathing in pleasure chemicals, you try to think of a last way out. Of a way you could be useful to the worm. Anything at all to save your mind.");
 				writeText("But the worm squeezes again on what's left of your rationality and starts injecting chemicals directly into your grey matter. No longer capable of rational thought, or of any thought at all, you'll sit here spurting and leaking until the worm is finished with you. ");
 			}
 			else {
@@ -1802,7 +2544,7 @@ function writeEvent(n) {
 			writeText("Wordlessly you shake as your cock starts spraying infectious piss onto yourself and the floor.");
 			writeSpeech("player", "", "Gguuuuhhhd~!");
 			writeText("It feels like an orgasm but just won't stop. Every time you try to stem the stream it builds up unbearably and feels even better when you relax and blast with full force.");
-			writeText("Thoughts of survival and the cure are far behind you. As the stream weakens you feel your bladder working overdrive as more piss is ready to be released already. You do your best to hold yourself back, only a small stream leaking out as you stand up.");
+			writeText("Thoughts of survival and the cure are far behind you. As the stream weakens you feel your bladder working overtime as more piss is ready to be released already. You do your best to hold yourself back, only a small stream leaking out as you stand up.");
 			writeText("Piss dribbling down your leg with every step, you begin making your way to the containment lab. The infected in there are going to have a very good drink tonight. ");
 			}
 			else {
@@ -1842,7 +2584,7 @@ function writeEvent(n) {
 			writeText("You feel your heartbeat in your ears as you decide to play things a little risky and push a button on the console. The clear plastic shield lifts, meaning that the only thing between you and the infected is a set of iron bars.");
 			writeBig("solo2-1.gif");
 			writeText("One puts on a show for you, eagerly waving her cock side to side to entice you.");
-			writeSpeech("player", "", "Ghh... This is so wrong... I'm jerking off in front of a bunch off... <br>Fuck, I don't have much longer...!");
+			writeSpeech("player", "", "Ghh... This is so wrong... I'm jerking off in front of a bunch of... <br>Fuck, I don't have much longer...!");
 			writeBig("solo2-2.gif");
 			writeSpeech("player", "", "Nnnhg!");
 			writeText("Your legs shake as you paint the floor with your infectious spunk, filling the room with the heady scent of jizz. The infected are even more riled up now. You move to press the button to close the outer shield, but the large red button next to it...");
@@ -1866,6 +2608,85 @@ function writeEvent(n) {
 			}
 			break;
 		}
+		case "mindBreak": {
+			writeHTML(`
+				t The moment the first drip of the mixtures touch, you realize this was a bad idea. The liquids meeting fuzz and bubble, before exploding outwards in a cloud of gas. 
+				t You cough and run back, but you definitely inhaled a lot of the stuff. As you clear your lungs and wait for the cloud to dissipate, you feel... Different. 
+				t Your body is the same, your cock dangling between your legs and your fat nuts twitching as they prepare a load of infectious cum for an unassuming woman. 
+				t ... Why did that thought pass your mind? You squint and rub your temples, trying to focus. Yet all you can think about is... 
+				im mindBreak1.gif
+				t Chasing down some woman, forcing your cock between her legs until her screams of terror are replaced with begging for more. 
+				t You stumble backwards, trying to regain a hold on your sanity. Yet the only thing on your mind is... 
+				im mindBreak2.gif
+				t The image of someone you've hunted down. Once a proud man, now someone near the end of their infection process gleefully taking your cum as his body changes. 
+				t Your mind is slipping away, becoming more primal. The scientist is gone, you are a regular infected now, someone on the hunt. 
+				t But there's no one here left to hunt, and your ruined brain can't think of a way out. You are stuck here, maybe forever. 
+				t Oh well, you can jerk off for as long as you want at least. 
+			`);
+			break;
+		}
+		case "cockBreak": {
+			writeHTML(`
+				t The moment the first drip of the mixtures touch, you realize this was a bad idea. The liquids meeting fuzz and bubble, before exploding outwards in a cloud of gas. 
+				t You cough and run back, but you definitely inhaled a lot of the stuff. As you clear your lungs and wait for the cloud to dissipate, you feel... Different.
+				t Your cock is rock hard between your legs, yet you look down at it and feel... Dissapointed. You reach down and grasp it, stroking it up and down. 
+				t Yet your grip is rough, ineligant, like you're trying to punish yourself. You stroke faster as your balls clench up, before you pull your hand away and thrust at the air. 
+				t Without any kind of stimulation the orgasm is ruined. It'll allow you to cum, but without any relief from the sexual hunger overtaking you. 
+				im cockBreak.gif
+				t As your cock spews out it's last rope of cum it sags, noticably smaller than before. It looks almost whimpy, pathetic like this, but for some reason you can't help but feel happy. 
+				t You reach down to grasp the head between your index finger and thumb, stroking yourself again. Your hips jerk as you coo, and you feel yourself about to cum even faster this time. 
+				t Suddenly you pull your hands away again, this time right on the edge. You can feel yourself about to cum, you're so close. 
+				t On autopilot again, you stick out your ass and lift your hand, before... 
+				t *SPANK*! 
+				sp player; Oooh~! 
+				t You spray, no, <b>squirt</b> cum onto the floor, the load much smaller and weaker than the last. You grab and knead your asscheeks, spreading your soft asshole between them. 
+				t Your precious little dicky is so soft and small now. With what's left of your mental faculties you remember that there's a supply of containment devices around here. The thought of what you'd look like all caged-up and desperate...
+				t Oh no! Just the thought of your tiny clitty all locked up in a cage got you all excited again. It's time for another punishment session! 
+			`);
+			break;
+		}
+		case "cockMind": {
+			writeHTML(`
+				t The moment the first drip of the mixtures touch, you realize this was a bad idea. The liquids meeting fuzz and bubble, before exploding outwards in a cloud of gas. 
+				t You cough and run back, but you definitely inhaled a lot of the stuff. As you clear your lungs and wait for the cloud to dissipate, you feel... Different, yet you aren't sure where.
+				t Your wide hips are normal, your ass is still fat and jiggly, your cock is the same, long size. As you brush your fingers over your lips though, you realize how you've changed. 
+				im cockMind1.gif
+				t You lips are much larger, and way more sensitive. Just rubbing your fingers over your lips... No, your fat, plush fuckpillows, is enough to send a shiver down your spine. 
+				t You realize you're walking out of the chemical lab. You're worried your mind is being affected by the mixture, but you're probably just checking for some clues to escape. 
+				t You open the door of the containment lab and take a good, long look at the infected in captivity before licking your lips. You're probably just hungry. 
+				t You walk straight over to the control console. You're probably just checking for any hidden keycards. 
+				t You press the button to open the containment cells. You probably have some kind of plan, right? 
+				t You blow the biggest looking one of them a kiss as they approach you from all sides. You're... Probably... 
+				... 
+				im cockMind2.gif
+				t From the very first moment one of their cocks touched your newly altered lips, you were hooked. Your only worried that one of them would use your ass instead, leaving you one less load to slurp down. Luckily every single one seems to be completely hypnotized by your lips. 
+				t The one you're sucking off squirms and moans. She seemed like the dominant type, but the moment her cock was between your lips she was buckling at the knees. 
+				t You must be generating some kind of pleasure drug from your lips, but that's not what you're focused on anymore. All that matters is that your mouth feels amazing! Every thrust into your mouth is like firecrackers in your brain. Your cock splurts onto the floor, completely untouched. Your mouth is the only sexual hole you need any more. 
+				t But the other girls are starting to get antsy. At this rate you'll need to let two, maybe even three of them fuck your mouth at once. 
+			`);
+			break;
+		}
+		case "cockRock": {
+			writeText("You take the cure vial and an injector. Carefully, you align the needle and pump the vial's contents into yourself.");
+			writeSpeech("player", "", "Khh...");
+			writeText("You nearly topple over. A second round of body shifting is taking its toll on you. The cure systematically eradicates traces of the infection in your body, then reconstructs you to your older self.");
+			writeText("Clutching your stomach you fall down to your knees. Your balls, which dangled down at least two inches before, now tightly press against your taint.");
+			writeHTML(`
+				t You bite your lip as cum is forced out of you. Your balls being squeezed tight as they're forced back into your body. Your cock pulses and throbs, returning to the size of your normal clit but retaining the sensitivity.
+				t Then suddenly your eyes shoot wide open. You grit your teeth and another load fires from your urethra covering the floor in even more of your nut sludge. 
+				t You writhe on the floor as your cock is burning in white-hot pleasure. You try to grab it instinctualy, and you realize it's even bigger than before. 
+				im rockCock.gif
+				t The sensations won't stop, and neither will the growth. In the back of your mind you realize that the unstable mixture you exposed yourself to earlier is almost certainly the cause, but there's nothing you can do now. 
+				t It takes every bit of your willpower to pull your hand away from your cock. You forcibly try to control your breathing. Even if the innoculation failed, even if you are stuck with this fact dick for the rest of your life, you still can remain in control. 
+				t Until your cock says otherwise. Even without any kind of stimulation, you feel another rush of cum building up, your balls tightening, and what's left of your willpower spurt out of your penis in the form of sticky, white sperm. 
+				t Your cock surges again, becoming even larger and more sensitive. If you couldn't resist before, there's no chance now. You splurt again, the load actually taking a few seconds just to make it all the way up your towering dick. The second to last thought that passes through your mind is "this is the end". 
+				t After that, the last thought you have is "COCK! CUMMING! SPLURTING!" 
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('theFacility', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
 		case "cure": {
 			writeText("You take the cure vial and an injector. Carefully, you align the needle and pump the vial's contents into yourself.");
 			writeSpeech("player", "", "Khh...");
@@ -1881,11 +2702,33 @@ function writeEvent(n) {
 			writeText("You grab a wire and snap it clean out of place. The lights shudder before snapping off and the room is bathed in white light. The lab's doors shudder and unseal, and there's a loud BANG containment cell from the containment cell behind you");
 			break;
 		}
+		case "failure": {
+			writeHTML(`
+				t You... Can't seem to move. 
+				sp player; Shit... Shit shit shit... What is wrong... With... 
+				t You nearly topple over as your mind races with equal parts panic and lust as you realize what's going on. 
+				t You mave have cum when you drank the innoculation potion, but you never truly relieved yourself. All that pent up lust that came with your transformation into an infected shemale, combined with the lust of your newly highly sensitive pussy... It's all too much. 
+				im failure1.gif
+				t With reckless abandon you realize your only answer is to cum. <b>Hard</b>. You stroke your cunt, fingering it hoping you'll achieve release before the Alpha... 
+				t Your brain stops thinking as a powerful musk fills your brain. You turn your head and see her feet, and you intended to let your gaze travel up to her face, but the moment your eyes rest on her mammoth, 15 inch cock... 
+				im failure2.gif
+				t You squirt, spraying the floor. You're cumming harder than you ever have in your entire life, and you know it isn't because of your fingering. 
+				t She steps forwards and you pant tongue-out in desperate submission. 
+				t ?fetish ws; She chuckles, a deep, throaty noise that makes your pussy clench. She lifts her half-hard titan of a dick and sighs. 
+				t ?fetish ws; Your fingers never stopped stroking, and only grow faster as you realize what's happening. A thick, yellow fluid sprays from her cock as you squirt again putting your previous orgasm to shame as she marks you. 
+				t ?fetish ws; Her piss shouldn't be infectious, shouldn't be addictive, shouldn't be turning you into a mewling, squirting bitch, and yet only one thought reins supreme in your mind. 
+				t <b>Your Alpha is here.</b>
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('theFacility', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
 		case "alpha1": {
 			writeText("The door slides open and you race into the chemical lab searching for a place to hide, the only realistic hiding place is underneath a desk. You get beneath one away from the door, now all you can do is wait.");
 			writeText("The door starts to slide closed, but you don't actually hear it seal. Rather, the sliding is interrupted by a metallic whir and the crunch of a broken motor, before it's ripped off its track and tossed aside.");
 			writeText("<b style = 'font-size: 200%;'>\"HUNGRY.\"</b>");
-			writeText("The voice booms through the lab. You pull in your knees draw yourself tightly into a ball as the sound of footsteps grow closer.");
+			writeText("The voice booms through the lab. You pull in your knees draw yourself tightly into a ball as the sound of footsteps grows closer.");
 			writeText("Your heart is pounding, but there's something in the air that's making your thoughts feel hazy. Her voice keeps echoing in your head, and despite your fear you reach between your legs.");
 			writeText("Terror and panic hold you back from moving quickly, but you are absolutely soaked. You do your best to try and focus on the footsteps as they grow closer still, hoping she can't find you and that she'll get bored of hunting. You'll make a break for it once she leaves, and-");
 			writeBig("chemChase1.gif");
@@ -1893,13 +2736,13 @@ function writeEvent(n) {
 			writeText("You take action, reaching out and moving out from beneath the desk. As she sees you, she gives a deep, bemused chuckle that sends a tingle down your spine.");
 			writeSpeech("player", "", "It's so... So big, and so perfect... I w-... I need it...");
 			writeText("You grasp the massive fuckmonster, feeling its weight in your hands. You lean in forwards and give the length a worshipful lick.");
-			writeText("The beast is incredible, the head as thick as an apple. There's no way you could take it, so all you can do is reverently stroke it with your hands and press the head against your mouth. Sticking your your tongue, you french kiss her urethra like you're making love just in time for her to grunt and a single massive glob of sperm hits your tongue and is forced into your mouth.");
+			writeText("The beast is incredible, the head as thick as an apple. There's no way you could take it, so all you can do is reverently stroke it with your hands and press the head against your mouth. Sticking out your tongue, you french kiss her urethra like you're making love just in time for her to grunt and a single massive glob of sperm hits your tongue and is forced into your mouth.");
 			writeText("You try to swallow it right away, but it's just too thick. Your eyes water and your sinuses burn, but you wouldn't dare try to spit it out. All of your work curing your infection fades away as you chew the alpha's ball jelly.");
-			writeText("Finally you pull your mouth away from her cock with a lewd squelch, tip your head back, and suck in your cheeks as you force the thick, sticky load down your throat. You can actually feel the distension on your neck as the jizz slides down, infecting you. The heat travels down through your chest until you swear you can hear it enter your stomach.");
+			writeText("Finally you pull your mouth away from her cock with a lewd squelch, tip your head back, and suck in your cheeks as you force the thick, sticky load down your throat. You can actually feel the distention on your neck as the jizz slides down, infecting you. The heat travels down through your chest until you swear you can hear it enter your stomach.");
 			writeText("You lower a hand to start fingering your sopping twat, you won't have it much longer anyway. Having ingested such a thick load of infected sperm, it'll be replaced with a cock within minutes. Already you can feel yourself riding your jizz-fueled high to an orgasm, and-");
 			writeBig("chemChase2.gif");
 			writeText("<b style = 'font-size: 200%;'>\"HUNGRY.\"</b>");
-			writeText("You'red snapped out of your stupor and want to slap yourself as you realize how selfish you were being. You belong to her now, and you pull your hand away from your cunt back to her massive dick,");
+			writeText("You're snapped out of your stupor and want to slap yourself as you realize how selfish you were being. You belong to her now, and you pull your hand away from your cunt back to her massive dick,");
 			writeText("But she isn't interested in worshipful kisses or a slow handjob. She grabs you by the hair and mashes her cockhead against your mouth. It can't possibly fit, you tell yourself, but you don't try to stop her. You are hers to toy with, and hers to break.");
 			writeText("But to your amazement you feel your jaw stretching until finally her massive cockhead is forced inside. It stretches your jaw, and then your throat too. Soon enough you're impaled on her throbbing cock and she grabs you by the neck to pump her fuck-baton in and out of her new jizz-sock.");
 			writeText("She lets out another deep grunt. That first load was just precum, just enough to prepare you to accept her monstrous length. Now you can feel the full effects of her cum as her balls tighten and throb.");
@@ -1932,9 +2775,41 @@ function writeEvent(n) {
 			writeBig("containmentChase.gif");
 			writeText("Every thrust is a battle, even for the alpha. A human's cunt wasn't meant for this kind of treatment.");
 			writeSpeech("player", "", "YESH~! HARDER~!");
-			writeText("But you aren't human anymore. Less than halfway in and her cockhead bumps against your cervix. You can feel a distension on her cock going down your cunt, stretching you even more, until your womb is suddenly packed full of alpha infected cum.");
+			writeText("But you aren't human anymore. Less than halfway in and her cockhead bumps against your cervix. You can feel a distention on her cock going down your cunt, stretching you even more, until your womb is suddenly packed full of alpha infected cum.");
 			writeText("It won't stay that way for long. As your womb is attacked by the virus, the alpha pulls out from your pussy leaving you a gaping mess, and aligns her cock with your asshole. Your consciousness begins to fade, but that's okay.");
 			writeText("You'll probably wake up to the feeling of her load in your ass.");
+			if (data.player.currentScene != "gallery") {
+				writeTransition('theFacility', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "alpha3": {
+			if (data.player.rimDisabled == false) {
+			writeHTML(`
+				t You dive into the weapon lab, hoping the alpha didn't see you. 
+				t As you hide in a small cabinet, the infected woman tied up in a testing cell begins to tug at her bonds. Good, she should work as a distraction. All you need to do is hope the alpha isn't intelligent enough to realize she's been tricked and you're home f-
+				t <b style = 'font-size: 200%;'>"HUNGRY"</b>
+				t The voice shakes you to your core, and you almost cry out on impulse. You hear the heavy footfalls of the alpha move past you, and you open the cabinet door just a peek. 
+				t The infected woman squirms and you hear a small snapping sound as she finally breaks free of her restraints. Pent up and in a frenzy, she charges at the alpha. 
+				... 
+				im weaponChase.gif
+				t Thrust, clench, pull back. 
+				t Thrust, clench, pull back. 
+				t <b>Thrust, clench, pull back. </b>
+				t You'd swear you can hear every splurt of alpha cum filling up the infected woman's ass. You can <b>SEE</b> the distention of the alpha's cockhead bulge in the infected woman's body, and you can see the way the bulge inflates for just a moment with every rope of sperm fired. 
+				t But once the flow stops, the Alpha just resumes thrusting. No cool down, no waiting. The infected woman has either accepted her fate or fainted, you can't hear her struggling anymore. All that's left of her is a twitch of her legs as she paints the floor again. 
+				t You can't hold yourself back anymore as you push open the cabinet door and crawl out. Part of you is screaming to escape, to get to the elevator, but... 
+				t You aren't crawling towards the exit. 
+				t The infected woman can barely be seen. The alpha's massive balls slamming into the much smaller pair, you'd be suprised if the infected could fuck anything with her dick after the alpha is finished. 
+				t You whimper as you struggle to stop yourself. Your eyes locked on the meaty ass making the infected woman its bitch with every thrust. You whimper reflexively. 
+				t The alpha notices you and reaches back with her strong hand and grabs you by the hair like a cheap whore, before yanking you forwards to press your face against her asshole.
+				t Your cunt throbs and your womb feels like jelly as you realize the faster you help the alpha to cum... 
+				t The sooner you'll be next. 
+			`);
+			}
+			else {
+				writeText("This scene has been disabled by your fetish settings. If for some reason want to watch it, you can still view it in the gallery after changing your settings.");
+			}
 			if (data.player.currentScene != "gallery") {
 				writeTransition('theFacility', 'GAME OVER', '#FF0000');
 			}
@@ -1947,7 +2822,7 @@ function writeEvent(n) {
 			writeText("You make your way up and into some kind of small cave, or crawlspace. The floor and walls are lined with extremely sticky white ropes.");
 			writeSpeech("player", "", "Fuck... I wish I were wearing... Anything, really.");
 			writeText("You barely hear the parasite lab door smash open. You should be safe but you keep crawling forwards just in case.");
-			writeText("Suddenly, a rope wraps around your face covering your mouth. Your arms and legs follow and are pulled taught when the sticky ropes on the floor lift a few inches off the ground.");
+			writeText("Suddenly, a rope wraps around your face covering your mouth. Your arms and legs follow and are pulled taut when the sticky ropes on the floor lift a few inches off the ground.");
 			writeText("You hear the sounds of inhuman legs scuttling around you as another rope, they must be some kind of webbing, wraps around your face covering your eyes.");
 			writeSpeech("player", "", "Mmph! Mmmpfh!");
 			writeText("Desperately you try and struggle, bite, and gnaw through the webbing, only to find your muscles start to relax and your heartbeat slow. The webs taste...");
@@ -1977,6 +2852,294 @@ function writeEvent(n) {
 			}
 			break;
 		}
+		case "fireteam1": {
+			writeHTML(`
+				t "So, we got any more info on the situation down there?" A woman in full body armor asks. The elevator she's riding in is quite cramped, as two other heavily armed figures are riding with her.
+				t "None. We get in, activate containment procedures, ensure Alpha is still locked up, and get out."
+				t The elevator door opens. 
+				t The footage glitches, static covers the screen. 
+				... 
+				t "Captain... I can't... Please, don't leave me..." 
+				t The speaker, the same soldier as was speaking before, is sitting against the wall, her pants are missing and cum is leaking from her cunt. In front of her a large metal door seals shut.
+				t "I can't risk you infecting me, Jones. If you make it through this with your mind intact, the passcode is 828." Then the voice over the radio goes silent. "If you don't... I'll be in there soon to take your tags, and the recordings."
+				t "Captain... Captain please, it... Ghh..." 
+				t The soldier takes off her helmet and the camera attached to it and throws it aside as she writhes. Her muscles clench, she grunts, and there's a soft wet *POP* sound in the air. 
+				t The helmet settles on the ground, allowing the camera to record the soldier. 
+				im soldier1.gif
+				t The soldier's body has changed. Her womb and clit unrecognizable. Where once a pussy was leaking infected cum, now a bulging cock is leaking infected precum. 
+				t "F-fuck you, captain... You fucking... Ice queen bitch... When I make it out..."
+				t She strokes her cock as her rambling becomes less coherent. Another hand goes between her legs, circling the rim of her asshole before she begins to finger herself. 
+				t "Your husband... I know you peg him, how would he like... A real dick...<br>And that cute son of yours was looking at my ass last time, maybe I'll let him shoot out his first load inside me... Before I turn him into a girlyboy slut!" 
+				t As she bucks her hips and begins to cum, spraying the floor and the camera in a thick layer of cum, her bitter fantasies melt away into wild grunts and moans. The audio makes it clear she's still pleasuring herself, but it's also clear her mind is long gone at this point. 
+			`);
+			break;
+		}
+		case "fireteam2": {
+			if (data.player.wormDisabled == false) {
+			writeHTML(`
+				t This recording begins in the middle of a frantic battle in the parasite lab, or a different section you have access to at least. 
+				t A heavily pregnant woman in a labcoat has pushed down the soldier wearing the camera. The soldier is barely holding her back as she turns towards the lab's door, which has just clicked shut. 
+				t "Help! Don't leave me like this, this bitch is-" 
+				t The pregnant woman giggles, before she turns her head. Out from her ear slowly slithers a red worm, the woman cooing as the parasite stimulates her brain on its journey. 
+				t The soldier closes her mouth and tries to break free, but to no avail. The camera shakes as the soldier struggles, but suddenly she stops moving. 
+				t "No, no no no, why can't I move!?" 
+				t From the sounds of it the parasite has inflicted her with a paralytic chemical, and has now begun to crawl into her ear. Strange, the parasite should specifically target already infected woman, maybe it's a new mutation?
+				t The soldier's scared grunting and sobbing slowly gives way to disorientated moans. The pregnant woman holding her down relaxes her grip and backs off. 
+				t The soldier twitches, the mind worm parasite trying to figure out which parts of the brain trigger which reflexes. All the while the pregnant woman giggles and strokes the soldier's cunt to ease the transition along.
+				im soldier2.gif
+				t The soldier screams out as she's forced to a sudden, squirting orgasm that sprays the floor. The pregnant woman giggles again as her gut wriggles, suggesting that she's already been turned into a broodmother for these creatures. Once the mind worm has it's way, it's likely the soldier will willingly accept the same fate. 
+			`);
+			}
+			else {
+				writeText("This scene has been disabled by your fetish settings. If for some reason want to watch it, you can still view it in the gallery after changing your settings.");
+			}
+			break;
+		}
+		case "fireteam3": {
+			if (data.player.beastDisabled == false) {
+			writeHTML(`
+				t "You... You sons of bitches! If you think you'll get away with this, you're dead wrong!" 
+				t The woman on screen looks seriously pissed off. She's taken her helmet off and is using it as a recording device. 
+				t "This is captain Rita Vasquez, I'm the captain of a fireteam for the fucked up organization that started all this shit. I was sent here on a containment job. All my subordinates have already been infected.
+				t I completed my mission, but... Those mother fuckers... They're abandoning me. They'd rather just study what's going on in here, using their own employees as 'data points'. They've sent in hounds after me, I don't have much longer. I already infected myself too, I'd rather turn from drinking some vial than getting fucked by some zombie with a dick. It was some research sample called 'Echidna', maybe the hounds will ignore me since I'm infected. 
+				t Listen, I know if you're reading this you probably work for them too. Get out. They don't care about your life, the world, or even money. Those motherfuckers just want to see the world burn. But I'm not scared."
+				t She holds up a small handgun.
+				t "I'm taking them down with me. I'm a warrior, I'll go down with honor, with dignity-"
+				t The captain is interrupted as her makeshift blockade is shattered, and barking can be heard from offscreen. The camera is knocked over and glitches out. 
+				... 
+				t When the video resumes, a much happier-looking captain is smiling into the screen. She looks happy that the camera has resumed recording, and a large hound enters the frame and begins licking her face. 
+				t The captain giggles, and begins reciprocating the kiss. It seems like she's already infected. 
+				t The dog stops licking and the captain whines, until the dog steps onto the table. Its bright red, fully erect cock dangling between its legs. The captain looks completely hypnotized. She adjusts her uniform and softly gasps as the hound places his dick between her breasts. 
+				im soldier3.gif
+				t At the height of his thrusts the captain will lean her head forwards to plant a small smooch on the growing knot at the base of her lover's fat dick. The hound grunts and begins to thrust even faster, before slamming down his hips so that the knot rests between the captain's large breasts. 
+				t The captain giggles as a sticky sound can be heard, the hound's cock beginning to fill her jumpsuit with infected jizz. 
+				t ?fetish rim; She sighs appreciatively as she's marked, before she leans in to worship her new lover's ass. Wet sounds and moaning which would be much more appropriate for a steamy make-out session between lovers can be heard as the captain stimulates his anus with her tongue. 
+				t There's another bark from offscreen. It seems as though the pack has been ordered to return to the surface.
+			`);
+			}
+			else {
+				writeText("This scene has been disabled by your fetish settings. If for some reason want to watch it, you can still view it in the gallery after changing your settings.");
+			}
+			break;
+		}
+		case "domination": {
+			writeHTML(`
+				t The woman struggles against her bindings. They don't look too strong but they're keeping her in place for now.
+				t Unable to even jerk herself off she's clearly pent up and quite angry about it. As her bindings still keep her in place her anger fades for a moment replaced with a look of desperation. She thrusts her hips up and waves her cock in the air, hoping you'll stimulate it or at least fuck her into a squirting mess.
+				t But this is about your relief, not hers, so you grab her by the hair and press your dick against her lips. She resists, but only for a moment as you draw your cock back.
+				t *WHAP*!
+				t You smack her across the face with your dick, she whines and her cock jerks up. Either you just slapped the resistance right out of her body or you just slapped a masochistic fetish into her brain.
+				t Regardless she's a beast of instinct now, so all she cares about is that she got a surge of pleasure from that. She pants open-mouthed to show her apology for her earlier rudeness.
+				...
+				im domination.gif
+				t Her eyes and nose water as you relieve yourself with her face. You have a large grin on your face as you grip her by the hair. If someone were watching, they wouldn't be able to tell which of you is the mindless infected. 
+				t Dominance like this is... <b>Addictive</b>.
+				t Her cock bobs with each thrust, pulsing as if on the edge. Her eyes flutter as her consciousness fades, clearly hungrier for sexual relief than air. You want to see how much longer she can last, but...
+				t That's your inquisitive side thinking, it's why you're the best at what you do but you shouldn't play around too long. You firmly tug her by the hair and sigh in relief as your balls throb, and you begin to cum down her throat.
+				t You hear something splattering beneath you, she must be cumming on the floor as she blacks out. Of course the poor dear won't be feeling any less pent up if her orgasm is ruined like this. Oh well.
+				t You pull out, her body is still limp until she suddenly coughs and gasps for air. She looks up at you, eyes still full of desperate need even as her half-hard cock is flagging, but the only thing you give her is a facial.
+				t Well, that was fun, but you should...
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeText("[Get moving|weaponLab]");
+			}
+			break;
+		}
+		//Spread Island
+		case "frozen": {
+			writeText("This must be a dream, it has to be. Some woman, with a dick, stumbles into your hotel room as your wife is out of her mind. You must've gotten wasted, or high, or passed out at some point after hitting your head.");
+			writeText("The woman's thick cock spreads your wife's pussy, but only makes it a few inches in before it seems like the girl can't thrust any farther.");
+			writeBig("frozen-1.gif");
+			writeText("After only a few thrusts the woman, an annoyed look on her face, pulls out. Your wife groans, her eyes crossing as she makes one bug push, and...");
+			writeText("*POP*");
+			writeText("A single, egg-sized ball pops out of your wife's pussy. She moans in relief, before grunting and spasming and...");
+			writeText("*POP*");
+			writeText("Tears run down your wife's face, ones of relief, and maybe even pleasure. Her clit has fully transformed into a full-on cock and her pussy has become a pair of fat nuts.");
+			writeText("You finally work up the nerve to pinch yourself, and the pain is too real for you to pretend isn't there.");
+			writeSpeech("player", "", "Please... Please let me wake up... Honey, please tell me this is-");
+			writeText("The woman lunges at you, tackling you to the ground. With inhuman strength she begins to tear your clothes off while trying to smear her cock against your face.");
+			writeText("You try to fight back, but you've got no spirit left. Everything that's happened up to now has been insane, you can't muster up the will.");
+			writeText("The woman lets out a small hiss as her cock leaks a glob of precum onto your check, and you instantly feel much better. The hopelessness and despair seem a lot smaller now, and your head suddenly feels too stuffy to focus on anything except the woman atop you.");
+			writeText("She repositions herself as she snaps the button on your pants and starts pulling them off. No longer needing to pin your down, she gets your bottom half exposed quickly.");
+			writeText("You relax and close your eyes for a moment ready to accept your fate, until you feel something pressing against your cheek. As you opem them, you see your wife's loving eyes, her gorgeous body, and...");
+			writeBig("frozen-2.gif");
+			writeText("Her throbbing cock.");
+			writeText("She presses her head against your lips, and you relent. At least this way you'll be together forever, just not in the way you expected when you married her.");
+			writeText("The woman presses her head against your asshole as you take your wife's cock in your mouth. Whatever happened to them is happening to you too, your body is already changing. You feel softer, more ready for the pair of infected women about to spitroast you. Your mind has begun to fade away, your identity as a human is gone.");
+			break;
+		}
+		case "hotelWifePleasureGas": {
+			writeHTML(`
+				t You gently nudge wifeF from her half-asleep state. 
+				t She's disorientated, exhausted by the toll whatever is going on is having on her body. ut more importantly she's still human, at least mentally. 
+				sp player; Here, I found this... Thing in another room, I think it might be related to whatever apocalypse thing is going on right now. <br>It's a long shot, but it could be a cure, or some kind of vaccine. 
+				t You hold up the small device with the nozzle pointed at her. She looks worried, but she trusts you. She closes her eyes, and you press the button. 
+				t A small pink spray is released. wifeF takes a breath hesistantly and her eyes shoot open. She starts taking deep breaths and twitching, leaning forwards as if searching for more. Her cock throbs once, twice, then a third time as it goes from flaccid to fully erect. 
+				t She clenches her teeth hard and her eyes cross. Her cock is cumming without the slightest bit of stimulation. 
+				im wifePleasureDrug1.gif
+				t You hold on to at least some last, small hope that it's just purging the virus from her system until you see her already large dick throb again, it's undeniably larger than it was a second ago. 
+				t She looks at you, eyes tinged pink and without a trace of humanity behind them, and lunges. 
+				t The next thing you know you're on the ground beneath her, her cock's head still leaking cum and pointed right at your face. She grabs the device from your hand, barely recognizing how close her dick is to an uninfected mouth. And to make matters worse you hear ferocious sounds of banging and clawing at the door. 
+				t She nuzzles against it like a cat and catnip, bites at it, scratches it, everything to try and get <b>more</b>, until she finds the button by accident and sprays a large hit of it directly into her face. 
+				t She takes a deep breath and makes a sound halfway between a squeal and a giggle before her body starts to shake. Her balls audibly <b>gurgle</b> as you make a last ditch effort to try and free yourself before... 
+				im wifePleasureDrug2.gif
+				t Too late. A few small shots, the kind you could expect a normal human to fire, before a torrent of infected nut-sludge is seemingly pissed out of her urethra onto your face and upper body.
+				t You can barely avoid it getting into your mouth, let alone your nose. And to make matters worse wifeF knows how to use the device now. Holding down the button the room is nearly filled with the pink gas.
+				t The pure jizz coating you, the strange pink chemical, it's too much.
+				t You start to cum, splurting everything into your pants. Your jizz, your pride, dignity, every intelligent thought you've ever had as a human is splurted out by force as your body is changed and infected.
+				t The door breaks down, letting a torrent of infected inside. Attracted by the gas, all they see is a room of pink, and two infected in the throes of orgasm. 
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "hotelMainExit": {
+			writeHTML(`
+				t You make your way back into the room, the sound of you grabbing whatever you need to survive waking up wifeF from her stupor. 
+				t She's exhausted from the toll the infection is taking on her body, but she's human. That's all that matters. 
+				t You take her by the arm. You'll carry her if you need to, and head out towards the main lobby. 
+				... 
+				t It's a shitshow down here, people fighting to get in for shelter and people like you fighting to get out. Hotel staff are abandoning ship and looters have already started grabbing everything they can. You hold wifeF close as you force your way through the crowd of terrified people. 
+				t "SHE'S INFECTED!" 
+				t You aren't sure who said it, but the crowd around you pulls away. The chaos isn't stopping yet though. There's the sound of a window shattering, screams of panic and terror, and wifeF stumbles slowing you down. 
+				sp wife; I can't... I can't stop!<br>I'm sorry, all these people...! 
+				t She's got an erection tenting her dress, a dead giveaway of her infection, and she's doing her absolute best to control herself but can't stop from stroking her dick through the thin fabric of her dress. 
+				t You reach out to help her, to pull her hands away so you can get moving again, but you feel a weight against you as the room goes sideways. 
+				t The nect thing you know a woman with a crazed look in her eyes is dry-humping you, a fat bulge in her shorts. 
+				sp player; wifeF! Help! 
+				t She steps forwards on shaky legs looking you right in the eyes. So close to exploding, her willpower on the verge of shattering, the sight of her husband pinned down by some crazy woman with a dick is enough to push her over the edge. 
+				im mainExit.gif
+				t Biting her lip she can't help but fully commit to jerking off, a large glob of precum splashing against your cheek as the infected woman tears apart your and her clothes. 
+				sp wife; I'm sorry! I'm sorry, but I can't stop! 
+				t She presses the head of her cock against your mouth as another jet of precum is fired. The other infected has finished clearing the way as well. The precum must alreafy be infecting you, because the feeling of her dick against the rim of your anus makes you want to scream out in pleasure instead of pain. 
+				t The edges of your vision go faint and the last thing you see is wifeF's crying face as she bites her lip, the horror of the situation making her cum even harder into your mouth. 
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "hotelFreshSiren": {
+			writeHTML(`
+				t You reach out to hug the girl. Her skin is so soft... She hugs you back, her sobs feel musical to your ears. Everything in the room seems to darken in your vision, except for her. 
+				t Dimly you're aware that you're being pushed down, and she parts her skirt to show you the small cock between her legs. 
+				t She's infected. You should be scared of this girl who basically has you pinned, scared of the small dick that's about to infect you, yet... It's so cute! 
+				t You reach down, unzipping your fly and trying to shimmy free of your pants, and she giggles to reward your newborn loyalty. You hear the door open, and the two of you look up. 
+				sp wife; H... Honey? 
+				t The girl atop you laughs when she sees your wife, terrified and distraught, and the sound seems to soothe her. Your wife steps forward not of her own accord, her dick ay full erection. She appreciates the girl's voice as much as you do. 
+				im freshSiren.gif
+				t Every one of her moans feels so perfect in your ears. Even her gagging on your wife's dick is like a series of perfect notes to a wonderful song. 
+				t Your wife squeals, rudly interupting the girl's voice, but the girl just giggles as her mouth is flooded with cum to let you know that everything is alright. 
+				t The girl pulls her mouth off of your wife's cock, her cheeks puffed out, and leans down to you with her lips puckered for a kiss. 
+				t Some small part of you is still trying to pull away, and she can see it, but she just giggles to rid you of that last pesky independent thought as your lips meet. Your mouth is flooded with a wonderful fluid you can feel changing you from the inside out.
+				t You drink from her. From your wife's balls to her mouth to yours. Your own cock throbs and grows. She hums a playful tune, happy that she now has two toys to keep her satisfied while all hell breaks loose on the island. 
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "hotelPleasureGas": {
+			writeHTML(`
+				t You tug at the hose attached to the wall. It's got a pretty strong bond, but if you just... Pull... Harder...! 
+				t There's a sound of rubber breaking before the *KSSSSSSH* of gas as you break the seal. A thick gout of pink gas is spraying from the hose. You cover your mouth and nose, but it's too late. 
+				t The gas makes your skin tingle, eyes water, and the small amount you inhaled begins fucking up your body from the inside. You feel a sudden, <b>intense</b> pressure from your nuts as it feels like they're about to burst.
+				im pleasureGas.gif
+				t You pull your pants down. Probably not the best course of action, but you can't think straight as it feels like the gas is melting away your brain. You gasp, no longer in control of yourself, but yiu do notice that your voice is higher. It almost has a songlike quality to it. 
+				t You feel yourself fall down onto the floor, your cock feels white hot yet there's a cool sensation coming from your urethra, like you're leaking. 
+				t Leaking... Leaking... 
+				t A giggle escapes your lips. You feel... Smaller... The gas fills your body, replacing what's human with something else. 
+				t Soon, there isn't anything human left in your mind or body. 
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "hotelAbandon": {
+			writeHTML(`
+				t You've landed safely in the pile of soft bedding, and stand up unharmed. Looking around you can see a way out of the hotel towards the less populated expensive villa area. If anyone is getting help right now it'd be the richest folk. 
+				t You take a step forwards, but can't help but look back up from where you came. 
+				t wifeF... 
+				t But there's no turning back now. Even if you could get back up she's already infected. Even if you can't live with yourself after escaping alone, you'll be alive to try. 
+				t Yet as you make a break for it, you can only imagine what horrible things are happening to wifeF right now... 
+				...
+				im wifeAbandoned.gif
+				t Scores of them have swarmed her, she's given up hope that you'll be back. 
+				t As her mind goes blank, only one thing is for sure anymore. Even if you survive your journey off the island the image of your wife will always be on your mind, but your image won't ever cross hers again.
+				t But you didn't escape the island. What happened to you remains to be seen, but the dream of escaping together, or even safely, is gone.
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "wifeHelp": {
+			writeHTML(`
+				sp wife; It's not...! Not enough! <br>Please, you mouth, I need it! 
+				sp player; But-
+				sp wife; PLEASE! You can spit it out, but I <b>NEED</b> to cum! 
+				t Your wife, broken and begging with tears in her eyes, convinces you to swallow your pride (and hopefully nothing else). 
+				t The moment your lips are around the head of her cock a torrent of spooge floods your mouth. You back off quickly, spitting it out and hoping you aren't infected. 
+				t Your mouth feels... Fuzzy. 
+				sp wife; Put it back! Please! That was... Ggghh... Just precum! 
+				t You look at her dick in disbelief, her precum was thicker than a normal man could shoot out in a full load. 
+				t You try to keep focused, trying not to think about how the numbness in your mouth might actually be a plesant buzz, or how much more eager you are to continue than you were a second ago. 
+				t You slide your lips back onto her dick again, carefully, slowly you-
+				t She isn't having any of it. She grabs you by the hair and starts ruthlessly fucking your face. Another glob of precum fills your mouth and the entrance to your throat. You tap on wifeF's thigh begging for mercy. 
+				t And that's when she thrusts deep enough to tap her balls against your chin, and starts cumming. 
+				im wifeHelp.gif
+				t You can hear the audible splorting noise, you're well past being infected now. But when you look up, the eyes staring back at you don't have a trace of human intelligence, just animalistic, bestial lust.
+				t You feel the coolness of the infection overtaking you, and the edges of your vision darken. 
+				t ?fetish ws; But just before you black out, you feel her hand stroking your hair lovingly. She sighs, and you feel something traveling down her urethra. The very last sensation you feel before blacking out is your wife's piss flooding your stomach. She moans, as if this is just as good as getting off. 
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "wifeOnahole": {
+			writeHTML(`
+				
+			`);
+			break;
+		}
+		case "wifeDildo": {
+			writeHTML(`
+				sp player; Here, I found this, I hope it-
+				t She grabs the toy from your hand without a second thought, pressing it against her nutsack on instinct, before lowering it down to her asshole. 
+				t Your wife had never been a fan of anal before, but... 
+				im wifeDildo.gif
+				t The sensation of the plastic dick is enough to trick her body, and she's <b>squirting</b> a full stream of cum from her infected cock. You need to keep away as she's spraying over a foot away. 
+				t Her eyes are glazed over, like she's ignoring the whole world and focusing only on the thrusting of her anus, and the feeling of the dildo smashing against her prostate as quickly as she can bounce. 
+				t As she slowly comes to a stop, her cock flagging and the dildo creating a distention on her abdomen, her eyes flutter closed. 
+				sp player; Honey? Honey, are you okay? 
+				sp wife; Mmm... Hmm? 
+				sp player Come on, we need to get moving, let's go. 
+				t She nods, looking only half awake. She softly coos as she slides off the dildo, one last spurt of cum splattering the floor as she stands up on unsteady legs. 
+			`);
+			break;
+		}
+		case "wifeCage": {
+			writeHTML(`
+				
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "wifeSacrifice": {
+			writeHTML(`
+				
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		//Scarlet Mansion
 		case "scarletChastityTorture": {
 			writeText("You pick up the device, it's like some kind of remote. The woman is still struggling against her bonds. There's also a small condom on her caged dick.");
 			writeText("You turn the dial and the woman lets out a sudden breathy moan. A dim buzzing can be heard from her chastity cage, and she's gritting her teeth now.");

@@ -2,10 +2,10 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
-				<p class = "centeredText">Lastest News 6/19/2020</p>
-				<p class = "centeredText">Hentai University v11 released: https://www.patreon.com/posts/38415950</p>
-				<p class = "centeredText">v11 of Hentai University is here! Featuring two full routes of the new character Sofia, the introduction of the new shopkeep character Lily, two new scenes for the lovable Gou, the ability to corrupt Sam, and scenes for Anna & Lena!</p>
-				<p class = "centeredText">Thank you to: O Xy Enkin, Swallows999, Iron Alex, Joshua Ingram, Robbie, 4MinuteWarning, andres mejia, Badaxe, Carlos, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, Filament, G, Hi There, J_C_L, jack spencer, Jesse Greene, Jinouga, Keith, Macarga, Marco Wassmer, Negativatron, Ramsey Bisher, ryguy, Scal, Skyrim mod lvr, Taylor Trout, XxrobothacksxX, 林家豪 , Aegil, Alec8686, Angel, AnotherAccount333, Anthony Ewing, Anthony Munso, Ariados, Blaise Fenn, Bonelessunknown, brandon, Bryson, CaptainMontana, Carlos, Chaaaanon, Charles Morris, ChubbiestThread, Daekash, Daniel Vivette, Danny Nguyen, Darrell Goodman, DarthMalak, ddkre, Debarre Sonny, dhccpmc, Drashin, Dravenmd114, Dugelle, Emanuel  Garcia, fireballcreations, FrostyTB, Gavin Davis, Geoff Heimos, GirmusCz, greatred, Greg Torres, Grim2011, Gwen Yurick, Harry Brasch, henry grobins, ItsAllOgreNow, I'm a Mitch, Jane, John Lewis, john smith, Joshua Melzark, Kaliden, KH dg, Kieron Kow, Krose, Kudon, KVBismarc, l, l1monat, liam paterson, Limitless, Louis Hayes, Lucas, Magnus, Markus Hansen, mazterlith, murgatroid99, Muryu, Nils Maier, Noah, Nutburger, Phanes, ranchy sanchy, Reverberations, Riven Drasek, Roy, Scumstango, Sebastian Eckel, ShadowFalls, Simon Rencher, Slomberg, SmolFish, Snaked, stratum, Sveny13, Tanman, Taurus Travon Rashad Lemar Brackin, theoron, Trevor, Tyler Ross, Vincent Madaire-Cullen, Wei, Wild Bill, William Parker, William Richardson, XaiuX, yami, Your Husbando, and Z for supporting my work!</p>
+				<p class = "centeredText">Lastest News 6/25/2020</p>
+				<p class = "centeredText">Rainy DayZ v2.1 released: https://www.patreon.com/posts/38631424</p>
+				<p class = "centeredText">v2.1 of Rainy DayZ is here, this is a rework of the second scenario, The Facility! I hope you enjoy, and join me next week for the next release with Scenario 3: Spread Island!</p>
+				<p class = "centeredText">Thank you to: O Xy Enkin, Swallows999, Iron Alex, Robbie, Joshua Ingram, Justifiable Gaming, ryguy, 4MinuteWarning, Hi There, Keith, Carlos, Macarga, 林家豪, Richard, Skyrim mod lvr, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, J_C_L, Filament, XxrobothacksxX, Dkells, Jinouga, Marco Wassmer, Taylor Trout, andres mejia, Colin E, Badaxe, Jesse Greene, Scal, ChronosEdge, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Yesdani Perez, Vikteren, Dean, Sveny13, Dravenmd114, Kudon, theoron, AnotherAccount333, Gavin Davis, Lucas, Kaliden, Krose, Tyler Ross, greatred, FrostyTB, Riven Drasek, l, ranchy sanchy, Bryson, Limitless, Greg Torres, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, Reverberations, ShadowFalls, William Parker, Magnus, Emanuel  Garcia, XaiuX, l1monat, Kieron Kow, Slomberg, henry grobins, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Daekash, fireballcreations, Markus Hansen, Louis Hayes, Alec8686, Tanman, DarthMalak, Danny Nguyen, yami, Trevor, Grim2011, KH dg, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, CaptainMontana, Simon Rencher, dhccpmc, Chaaaanon, Charles Morris, Nutburger, Noah, William Richardson, mazterlith, Sebastian Eckel, Taurus Travon Rashad Lemar Brackin, Anthony Munso, john smith, Your Husbando, Carlos, Joshua Melzark, Vincent Madaire-Cullen, ItsAllOgreNow, Gwen Yurick, Nils Maier, Blaise Fenn, stratum, Angel, Ariados, Jane, Snaked, Muryu, Debarre Sonny, Drashin, murgatroid99, Roy, Wild Bill, and brandon for supporting my work!</p>
 			`;
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://discord.gg/B3AszYM'">Visit my discord server</p>
@@ -47,13 +47,14 @@ function writeScene(scene) {
 				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/30871183'">List of cheat codes</p>
 			`;
 			writeBig("images/RainyDayZ.jpg");
-			writeText("Rainy DayZ v2.0");
+			writeText("Rainy DayZ v2.1");
 			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry shemales, you play as a young woman searching for supplies to survive.");
 			writeText("Navigate a town and city deliberately working to sabotage yourself and throw yourself into the clutches of the zombie hordes, the goal of the game here is to be defeated and attacked to collect and unlock all of the game's scenes.");
 			writeText("Tags: Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Bestiality (can be disabled), Parasites (can be disabled), Watersports (can be disabled)");
+			writeSpecial("Use the cheat code <b>Pool Noodle</b> for a guide on how to unlock each scene!");
 			writeTransition("RainyDayZ", "Preview");
 			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/33222521'">Download the game</p>
+				<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/38631424'">Download the game</p>
 				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12575'">TFGamesDiscussion thread</p>
 				<p class="choiceText" onclick="window.location.href='https://f95zone.to/threads/rainy-dayz-v1-4-noodlejacuzzi.42457/'">F95Zone Discussion thread</p>
 				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html'">Play the game online</p>
