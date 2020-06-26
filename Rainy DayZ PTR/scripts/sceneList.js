@@ -1135,7 +1135,7 @@ function writeScene(scene) {
 			data.player.scenario = "Spread Island";
 			updateMenu();
 			//countScenes();
-			writeSpecial("This scenario is only a demo, so all that's available are a few short scenes that are made to convey the idea of what this route will contain.");
+			writeSpecial("This scenario is only a demo, so all that's available are a few short scenes that are made to convey the idea of what this route will contain. Apologies if you're hunting down those scenes listed in the pool noodle cheat, the whole section isn't done yet!");
 			//writeText("There's also a bit of structure past this point, but many scenes don't have images yet!");
 			writeSpecial("Also, for this campaign you'll need to name your wife:");
 			document.getElementById('output').innerHTML += `
@@ -1389,6 +1389,108 @@ function writeScene(scene) {
 				t First is the [king villa|villaKing] where wifeF is. You can just barely hear her frantically moaning inside, unable to find relief. You'll need to be quick, otherwise you risk someone or something hearing her.
 				t Next is the [queen villa|villaQueen], a little ways off.
 				t Finally is the [soldier villa|villaSoldier], slightly smaller than the other two.
+			`);
+			break;
+		}
+		case "compoundAwaken": {
+			writeHTML(`
+				[compoundRoom|compoundRoom]
+			`);
+			data.player.guardMovement = 0;
+			break;
+		}
+		case "compoundRoom": {
+			writeHTML(`
+				t You're in some kind of cell, or at least the best one that cound be made out of some kind of closet.
+				t !flag playerDoorUnlocked; The door is locked, and won't budge.
+				t ?flag playerDoorUnlocked; You unlocked the door from the other side, so you can freely [head out into the hallway|compoundHall], so long as you're careful not to be caught.
+				t Searching around, you can see an air vent that probably connects to a series of ventilation shafts. Why some prying you can [crawl inside|compoundVent1].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundVent1": {
+			writeHTML(`
+				t Through the grate you can see the room you were trapped in. You can [climb out|compoundRoom] if you'd like.
+				t You can head [forwards|compoundVent2], [backwards|compoundVent4], or [wait|compoundVent1].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundVent2": {
+			writeHTML(`
+				t Through the grate you can see a room filled with transparent containers of pink gas.
+				t !flag gasDisturbed; t The grate here is loose, you can [climb out into the gas room|compoundGasRoom].
+				t ?flag gasDisturbed; A soldier with a mask is trying to patch up the hose you broke. It's not safe to head in.
+				t You can head [forwards|compoundVent3], [backwards|compoundVent1], or [wait|compoundVent2].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundVent3": {
+			writeHTML(`
+				t Through the grate you can see a large kennel, each cage containing a sleeping dog.
+				t !flag kennelDisturbed; The grate here is loose too, you can [sneak in|compoundKennels] if you're careful.
+				t ?flag kennelDisturbed; Several soldiers are trying to calm the dogs down, it's not safe to go in.
+				t You can head [forwards|compoundVent4], [backwards|compoundVent2], or [wait|compoundVent3].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundVent4": {
+			writeHTML(`
+				t Through the grate you can see wifeF, resting on a bed.
+				t You can head [forwards|compoundVent1] [backwards|compoundVent3], or [wait|compoundVent4].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundGasRoom": {
+			writeHTML(`
+				t You're in a room filled with transparent canisters filled with a strange pink gas. They're probably the same as the ones you saw in the suitcase back at your hotel.
+				t You can head back through the [grate, into the air vents|compoundVent2].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundKennels": {
+			writeHTML(`
+				t You can head back through the [grate, into the air vents|compoundVent3].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundWifeRoom": {
+			writeHTML(`
+				t !flag wifeDoorUnlocked;
+				t ?flag wifeDoorUnlocked;
+				t You can head back through the [grate, into the air vents|compoundVent4].
+			`);
+			calculateMovement();
+			break;
+		}
+		case "compoundHall": {
+			writeHTML(`
+				t The door to your cell is here. From this side it's easy to unlock, so you can [head inside|compoundRoom].
+				t The door to your wife's cell is here as well. You can [head inside|compoundWifeRoom], or if you're ready to make your escape attempt you can grab your wife and [make a break for it|compoundEscape].
+				t !flag gasDisturbed; There are still a few soldiers around, but you should be able to sneak into the [gas room|compoundGasRoom].
+				t !flag kennelDisturbed; There are still a few soldiers around, but you should be able to sneak into the [kennel room|compoundKennels].
+				t ?flag gasDisturbed; ?flag kennelDisturbed; You see what appears to be a temporary control room. With the dogs riled up and the gas leak, the room is currently empty.
+			`);
+			addFlag("playerDoorUnlocked");
+			addFlag("wifeDoorUnlocked");
+			calculateMovement();
+			break;
+		}
+		case "compoundControlRoom": {
+			writeHTML(`
+				
+			`);
+			break;
+		}
+		case "compoundEscape": {
+			writeHTML(`
+				
 			`);
 			break;
 		}
@@ -1803,6 +1905,65 @@ function writeScene(scene) {
 			writeBig("images/butts.jpg");
 			writeTransition("start", "Go back to the title.");
 		}
+	}
+}
+
+function calculateMovement(location) {
+	data.player.guardMovement += 1;
+	if (data.player.guardMovement == 5) {
+		data.player.guardMovement = 1;
+	}
+	if (checkFlag("kennelDisturbed") == true || checkFlag("gasDisturbed") == true) {
+		//Do nothing
+	}
+	else {
+	switch (data.player.currentScene) {
+		case "compoundRoom": {
+			if (guardMovement == 1) {
+				writeText("You can hear someone outside the door. Peering through the window of the door you can see several figures in what looks like special ops gear, fully covered and holding strange guns.");
+			}
+			break;
+		}
+		case "compoundVent2": {
+			if (guardMovement == 1) {
+				writeText("You can hear someone moving outside the vent, but they're getting farther away. If you exit the vent now you'll be caught.");
+			}
+		}
+		case "compoundVent3": {
+			if (guardMovement == 2) {
+				writeText("You can hear someone moving outside the vent, but they're getting farther away. If you exit the vent now you'll be caught.");
+			}
+		}
+		case "compoundVent4": {
+			if (guardMovement == 3) {
+				writeText("You can hear someone moving outside the vent, but they're getting farther away. If you exit the vent now you'll be caught.");
+			}
+		}
+		case "compoundGasRoom": {
+			if (guardMovement == 1) {
+				writeText("You can hear someone approaching!");
+			}
+			if (guardMovement == 2) {
+				writeEvent("compoundCaught");
+			}
+		}
+		case "compoundKennels": {
+			if (guardMovement == 2) {
+				writeText("You can hear someone approaching!");
+			}
+			if (guardMovement == 3) {
+				writeEvent("compoundCaught");
+			}
+		}
+		case "compoundWifeRoom": {
+			if (guardMovement == 3) {
+				writeText("You can hear someone approaching!");
+			}
+			if (guardMovement == 4) {
+				writeEvent("compoundCaught");
+			}
+		}
+	}
 	}
 }
 

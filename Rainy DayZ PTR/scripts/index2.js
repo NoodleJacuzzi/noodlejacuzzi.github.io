@@ -611,14 +611,14 @@ function checkMenu() {
 	}
 	else {	
 		if (document.getElementById("closeButton") != null) {
-		if (document.getElementById("closeButton").style.visibility == "hidden") {
-			if (document.getElementById("openButton") != null) {
-				document.getElementById("openButton").style.visibility = "hidden";	
+			if (document.getElementById("closeButton").style.visibility == "hidden") {
+				if (document.getElementById("openButton") != null) {
+					document.getElementById("openButton").style.visibility = "visible";	
+				}
+				document.getElementById("footer").style.visibility = footerVisibility;	
+				document.getElementById("footer").style.height = footerHeight;	
+				document.getElementById("footer").style.overflow = footerOverflow;
 			}
-			document.getElementById("footer").style.visibility = footerVisibility;	
-			document.getElementById("footer").style.height = footerHeight;	
-			document.getElementById("footer").style.overflow = footerOverflow;
-		}
 		}
 	}
 }
