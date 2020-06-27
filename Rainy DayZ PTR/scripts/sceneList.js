@@ -1134,13 +1134,11 @@ function writeScene(scene) {
 			writeText("You, a loving husband, must find a way to get yourself and your infected wife to safety.");
 			data.player.scenario = "Spread Island";
 			updateMenu();
-			//countScenes();
-			writeSpecial("This scenario is only a demo, so all that's available are a few short scenes that are made to convey the idea of what this route will contain. Apologies if you're hunting down those scenes listed in the pool noodle cheat, the whole section isn't done yet!");
-			//writeText("There's also a bit of structure past this point, but many scenes don't have images yet!");
+			countScenes();
 			writeSpecial("Also, for this campaign you'll need to name your wife:");
 			document.getElementById('output').innerHTML += `
 				<p class='centeredText'>Your wife's name: <input type="text" id="nameSubmission" value="Kate"></p>
-				<p class='choiceText' onclick='renameWife()'>Play the preview</p>
+				<p class='choiceText' onclick='renameWife()'>Start Spread Island</p>
 			`;
 			writeTransition("scenarioSelect", "Go back");
 			break;
@@ -1273,13 +1271,14 @@ function writeScene(scene) {
 		case "hotel204": {
 			writeHTML(`
 				t You're in room 204 of the Sanctuary Hotel. It's been picked clean. Food from the fridge, towels, even the sheets from the bed have been taken.
-				t !item Onahole; Everything... Except a fleshlight. There's an onahole here, still in the box inside one of the drawers. This probably wasn't a priority to be taken. If you really feel like you'll need it, you could item[take it with you|Onahole].
+				
 				t ?item Onahole; The drawers are empty.
 				t !item Bedding; There's a window here, but it's a full story drop to a paved walkway below. 
 				t ?item Bedding; !item Bedding Rope; There's a window here, but it's a full story drop to a paved walkway below. With the bedding you took from the other room, you could item[make a rope to climb down|Bedding Rope].
 				t ?item Bedding; ?item Bedding Rope; There's a window here, but it's a full story drop to a paved walkway below. You've created a rope to [climb down and escape|hotelAbandon], but what about wifeF? You'll need to go back for her if you want to escape together.
 				t [Head out into the hallway|hotelHallway].
 			`);
+			//t !item Onahole; Everything... Except a fleshlight. There's an onahole here, still in the box inside one of the drawers. This probably wasn't a priority to be taken. If you really feel like you'll need it, you could item[take it with you|Onahole].
 			break;
 		}
 		case "hotelAbandon": {
@@ -1331,8 +1330,11 @@ function writeScene(scene) {
 				t The two of you move on, leaving the affluent district behind. There's no helicopter, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
 				t As you're wandering around a hiking path looking for any kind of help, you feel a small bite on your neck.
 				t You hear wifeF freaking out for some reason as you lift your hand to scratch the bite, only for your hand to brush against something... Metal.
-				t The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundAwaken].
 			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scenarioSelect', 'END OF PREVIEW', '#FF0000');
+			}
+			//writeText("The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundAwaken].");
 			break;
 		}
 		case "wifeOnahole": {
@@ -1344,9 +1346,6 @@ function writeScene(scene) {
 				t You hear wifeF freaking out for some reason as you lift your hand to scratch the bite, only for your hand to brush against something... Metal.
 				t The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundAwaken].
 			`);
-			if (data.player.currentScene != "gallery") {
-				writeTransition('scenarioSelect', 'END OF PREVIEW', '#FF0000');
-			}
 			break;
 		}
 		case "wifeCage": {
@@ -1367,10 +1366,10 @@ function writeScene(scene) {
 				t And the perverted, apparently. The walls are lined with bondage gear and sex toys of varying shapes and sizes. From ball-gags to zipper outfits...
 				t !item Dildo; There's a collection of dildos on the wall, you could item[grab one and take it back to your wife|Dildo].
 				t ?item Dildo; There's a collection of dildos on the wall, you don't need more than one. You hope.
-				t !item Chastity Cage; There's also a collection of chastity cages in varying sizes. The largest one should fit wifeF. She might not like being caged up, but you might need to item[take one with you|Chastity Cage].
 				t ?item Chastity Cage; You already took a chastity cage, there's no reason to take another. It's not like any of the other infected will let you put one on them.
 				t [You can head outside, into the rich district|villaOutside].
 			`);
+			//t !item Chastity Cage; There's also a collection of chastity cages in varying sizes. The largest one should fit wifeF. She might not like being caged up, but you might need to item[take one with you|Chastity Cage].
 			break;
 		}
 		case "villaSoldier": {
@@ -1401,8 +1400,8 @@ function writeScene(scene) {
 			writeHTML(`
 				t You awaken to a pounding headache, and the sound of mysterious voices garbled by what sound like gasmasks.
 				sp ???; im none; His wife has turned, but she's clearly a resistant. With so many the second formula must be defective, right? Any sign of infection on him?
-				sp ???; im none; No, not yet anyways. It's a shame, watching him get turned by his wife would've been pretty hot.
-				sp ???; im none; We get a bonus if we turn him with an eel. God, what were they thinking when they created a breed that needs hours to prepare?<br>And seriously Tasha, get your head out of the shitpipe. We're here on business.
+				sp ???; im none; No, not yet anyways. It's a shame, watching the guy get turned by his wife would've been pretty hot.
+				sp ???; im none; We get a bonus if we turn anyone with an eel. God, what were they thinking when they created a breed that needs hours to prepare?<br>And seriously Tasha, get your head out of the shitpipe. We're here on business.
 				sp ???; im none; Aww come on, you're still on that whole global destabilization thing? Why can't you be honest and admit you've got a massive fetish for...
 				t The conversation fades as the two of them walk away. Peering through a small hole into the hallway, you can see more people patrolling around. They're wearing some kind of urban camoflague, and their faces are obscured by thick masks. All of the men are wearing headphones as well.
 				t This is a dangerous situation, these people aren't working for any government you know. With wifeF somewhere else and you locked in here, there's no telling how you'll make it out of this alive.
@@ -1598,7 +1597,7 @@ function writeScene(scene) {
 					sp ???; im none; It's over, the mission's a failure. The higher-ups are gonna write this whole thing off, why the hell would they stick their necks out for us?<br>... You've seen the faces of the people who inhale this stuff, right? I haven't been satisfied with one-night flings since the first time I used this stuff on somebody.
 					t Tasha takes a deep breath of the pink gas and her eyes cross before they roll back in their sockets. The smoke works fast. It feels like lightning is arcing through her body, and she barely notices that her companion is undoing her belt.
 					sp ???; im none; Fuck's sake, at least get undressed first. I'm on top, alright? Honestly, I have always kinda wondered what dicking somebody felt like...<br>Hey, you fried already? Jesus this stuff pops your brain fast.
-					t It pops something else quickly too. By the time the soldier has her gasmask off Tasha is already able to start jerking off her brand new cock.
+					t It pops something else quickly too. By the time the soldier has her gasmask off Tasha is already able to start showing off her brand new cock.
 					im endingGas.gif
 					sp ???; im none; I'd better get one as big as that...<br>I guess something cute would be pretty hot too.
 					t The soldier takes a deep breath, and within seconds can feel her gray matter turning to mush.
@@ -3186,8 +3185,9 @@ function writeEvent(n) {
 				t You tug at the hose attached to the wall. It's got a pretty strong bond, but if you just... Pull... Harder...! 
 				t There's a sound of rubber breaking before the *KSSSSSSH* of gas as you break the seal. A thick gout of pink gas is spraying from the hose. You cover your mouth and nose, but it's too late. 
 				t The gas makes your skin tingle, eyes water, and the small amount you inhaled begins fucking up your body from the inside. You feel a sudden, <b>intense</b> pressure from your nuts as it feels like they're about to burst.
+				t You tug at your pants. Probably not the best course of action, but you can't think straight as it feels like the gas is melting away your brain. You gasp, no longer in control of yourself, but you do notice that your voice is higher. It almost has a songlike quality to it. 
 				im pleasureGas.gif
-				t You pull your pants down. Probably not the best course of action, but you can't think straight as it feels like the gas is melting away your brain. You gasp, no longer in control of yourself, but yiu do notice that your voice is higher. It almost has a songlike quality to it. 
+				t By the time your pants are off your body has already changed enough that you don't recognize what you see.
 				t You feel yourself fall down onto the floor, your cock feels white hot yet there's a cool sensation coming from your urethra, like you're leaking. 
 				t Leaking... Leaking... 
 				t A giggle escapes your lips. You feel... Smaller... The gas fills your body, replacing what's human with something else. 
@@ -3251,7 +3251,7 @@ function writeEvent(n) {
 				t As she slowly comes to a stop, her cock flagging and the dildo creating a distention on her abdomen, her eyes flutter closed. 
 				sp player; Honey? Honey, are you okay? 
 				sp wife; Mmm... Hmm? 
-				sp player Come on, we need to get moving, let's go. 
+				sp player; Come on, we need to get moving, let's go. 
 				t She nods, looking only half awake. She softly coos as she slides off the dildo, one last spurt of cum splattering the floor as she stands up on unsteady legs. 
 				t The smell is... Intoxicating, but you can't succumb.
 			`);
