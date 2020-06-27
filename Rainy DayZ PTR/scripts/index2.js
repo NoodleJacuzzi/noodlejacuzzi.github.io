@@ -735,19 +735,19 @@ function checkRequirements(string) {
 		}
 		string = string.replace(`?fetish `+check+`;`, ``);
 	}
-	while (string.includes("?flag player ") == true) {
-		var check = string.split(`?flag player `).pop().split(`;`)[0];
+	while (string.includes("?flag ") == true) {
+		var check = string.split(`?flag `).pop().split(`;`)[0];
 		if (data.player.flags.includes(check) != true) {
 			finalResult = false;
 		}
-		string = string.replace(`?flag player `+check+`;`, ``);
+		string = string.replace(`?flag `+check+`;`, ``);
 	}
-	while (string.includes("!flag player ") == true) {
-		var check = string.split(`!flag player `).pop().split(`;`)[0];
+	while (string.includes("!flag ") == true) {
+		var check = string.split(`!flag `).pop().split(`;`)[0];
 		if (data.player.flags.includes(check) == true) {
 			finalResult = false;
 		}
-		string = string.replace(`!flag player `+check+`;`, ``);
+		string = string.replace(`!flag `+check+`;`, ``);
 	}
 	while (string.includes("?item ") == true) {
 		var check = string.split(`?item `).pop().split(`;`)[0];
@@ -777,13 +777,13 @@ function cullRequirements(string) {
 		var check = string.split(`?fetish `).pop().split(`;`)[0];
 		string = string.replace(`?fetish `+check+`;`, ``);
 	}
-	while (string.includes("?flag player ") == true) {
-		var check = string.split(`?flag player `).pop().split(`;`)[0];
-		string = string.replace(`?flag player `+check+`;`, ``);
+	while (string.includes("?flag ") == true) {
+		var check = string.split(`?flag `).pop().split(`;`)[0];
+		string = string.replace(`?flag `+check+`;`, ``);
 	}
-	while (string.includes("!flag player ") == true) {
-		var check = string.split(`!flag player `).pop().split(`;`)[0];
-		string = string.replace(`!flag player `+check+`;`, ``);
+	while (string.includes("!flag ") == true) {
+		var check = string.split(`!flag `).pop().split(`;`)[0];
+		string = string.replace(`!flag `+check+`;`, ``);
 	}
 	while (string.includes("?item ") == true) {
 		var check = string.split(`?item `).pop().split(`;`)[0];
@@ -794,6 +794,25 @@ function cullRequirements(string) {
 		string = string.replace(`!item `+check+`;`, ``);
 	}
 	return string;
+}
+
+function addFlag(name) {
+	if (data.player.flags.includes(name) == false) {
+		data.player.flags += name;
+	}
+}
+
+function removeFlag(name) {
+	data.player.flags.replace(name, "");
+}
+
+function checkFlag(name) {
+	if (data.player.flags.includes(name) == true) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 //Saving

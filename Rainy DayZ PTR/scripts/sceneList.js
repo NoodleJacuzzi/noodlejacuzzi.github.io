@@ -1147,6 +1147,7 @@ function writeScene(scene) {
 		}
 		case "spreadStart": {
 			data.quicksave = null;
+			data.player.flags = "";
 			writeSpeech("DJ", "none", " Alright party people, you ready to turn it up!?");
 			writeText("The crowd roars in approval.");
 			writeSpeech("DJ", "none", " Then I'll give you all something to sink your teeth into, let's tear this place apart!");
@@ -1208,8 +1209,7 @@ function writeScene(scene) {
 			writeSpeech("player", "", "Keep the door closed, don't open it for anyone but me, alright? I'll find some help, a wheelchair if I have to, and we're making it out of here alive. You still with me?");
 			writeSpeech("wife", "", "Mhmm...");
 			writeText("She weakly mumbles out a response before closing her eyes. She needs rest, at least she isn't going psycho rapist like that woman you kicked out.");
-			//writeText("For now you need to find a safe way out of the resort so that you and your wife can get off the island, and quickly. From the sounds of things, this isn't a localized incident. People all over the resort are turning. [You need to get moving, quickly|hotelRoom].");
-			writeTransition('scenarioSelect', 'END OF PREVIEW', '#FF0000');
+			writeText("For now you need to find a safe way out of the resort so that you and your wife can get off the island, and quickly. From the sounds of things, this isn't a localized incident. People all over the resort are turning. [You need to get moving, quickly|hotelRoom].");
 			break;
 		}
 		case "hotelRoom": {
@@ -1331,11 +1331,8 @@ function writeScene(scene) {
 				t The two of you move on, leaving the affluent district behind. There's no helicopter, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
 				t As you're wandering around a hiking path looking for any kind of help, you feel a small bite on your neck.
 				t You hear wifeF freaking out for some reason as you lift your hand to scratch the bite, only for your hand to brush against something... Metal.
-				t The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundRoom].
+				t The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundAwaken].
 			`);
-			if (data.player.currentScene != "gallery") {
-				writeTransition('scenarioSelect', 'END OF PREVIEW', '#FF0000');
-			}
 			break;
 		}
 		case "wifeOnahole": {
@@ -1345,7 +1342,7 @@ function writeScene(scene) {
 				t The two of you move on, leaving the affluent district behind. There's no helicopter, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
 				t As you're wandering around a hiking path looking for any kind of help, you feel a small bite on your neck.
 				t You hear wifeF freaking out for some reason as you lift your hand to scratch the bite, only for your hand to brush against something... Metal.
-				t The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundRoom].
+				t The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundAwaken].
 			`);
 			if (data.player.currentScene != "gallery") {
 				writeTransition('scenarioSelect', 'END OF PREVIEW', '#FF0000');
@@ -1354,6 +1351,14 @@ function writeScene(scene) {
 		}
 		case "wifeCage": {
 			writeEvent(scene);
+			addFlag('caged');
+			writeHTML(`
+				...
+				t The two of you move on, leaving the affluent district behind. There's no helicopter, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
+				t As you're wandering around a hiking path looking for any kind of help, you feel a small bite on your neck.
+				t You hear wifeF freaking out for some reason as you lift your hand to scratch the bite, only for your hand to brush against something... Metal.
+				t The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundAwaken].
+			`);
 			break;
 		}
 		case "villaQueen": {
@@ -1394,7 +1399,14 @@ function writeScene(scene) {
 		}
 		case "compoundAwaken": {
 			writeHTML(`
-				[compoundRoom|compoundRoom]
+				t You awaken to a pounding headache, and the sound of mysterious voices garbled by what sound like gasmasks.
+				sp ???; im none; His wife has turned, but she's clearly a resistant. With so many the second formula must be defective, right? Any sign of infection on him?
+				sp ???; im none; No, not yet anyways. It's a shame, watching him get turned by his wife would've been pretty hot.
+				sp ???; im none; We get a bonus if we turn him with an eel. God, what were they thinking when they created a breed that needs hours to prepare?<br>And seriously Tasha, get your head out of the shitpipe. We're here on business.
+				sp ???; im none; Aww come on, you're still on that whole global destabilization thing? Why can't you be honest and admit you've got a massive fetish for...
+				t The conversation fades as the two of them walk away. Peering through a small hole into the hallway, you can see more people patrolling around. They're wearing some kind of urban camoflague, and their faces are obscured by thick masks. All of the men are wearing headphones as well.
+				t This is a dangerous situation, these people aren't working for any government you know. With wifeF somewhere else and you locked in here, there's no telling how you'll make it out of this alive.
+				t Still, you should [plan your escape|compoundRoom].
 			`);
 			data.player.guardMovement = 0;
 			break;
@@ -1402,17 +1414,35 @@ function writeScene(scene) {
 		case "compoundRoom": {
 			writeHTML(`
 				t You're in some kind of cell, or at least the best one that cound be made out of some kind of closet.
-				t !flag playerDoorUnlocked; The door is locked, and won't budge.
-				t ?flag playerDoorUnlocked; You unlocked the door from the other side, so you can freely [head out into the hallway|compoundHall], so long as you're careful not to be caught.
-				t Searching around, you can see an air vent that probably connects to a series of ventilation shafts. Why some prying you can [crawl inside|compoundVent1].
+				t !flag playerDoorUnlocked; The door is locked, and won't budge. It's some kind of electronic lock that's been fitted onto the door, they must still have power over here. There's no keyhole, but there is a small hole you can peer through.
+				t ?flag playerDoorUnlocked; You unlocked the door with the compound's command console, so you can freely [head out into the hallway|compoundHall], so long as you're careful not to be caught.
+				t Searching around, you can see an air vent that probably connects to a series of ventilation shafts. Why some prying the loose bolts break off and you can [crawl inside|compoundVent1].
 			`);
 			calculateMovement();
+			break;
+		}
+		case "compoundVent0": {
+			writeHTML(`
+				t Through the grate you can see a small storage closet. You can [climb out|compoundCloset] if you'd like.
+				t You can head [forwards|compoundVent1] or [wait|compoundVent0].
+			`);
+			break;
+		}
+		case "compoundCloset": {
+			writeHTML(`
+				t You're in a small storage closet. Various cleaning supplies and other goods tell you this building probably wasn't built to be a military stronghold, whoever's running the place must be using this as a temporary base of opperations.
+				t !item Wire Cutters; There doesn't seem to be anything too useful, especially against armed soldiers, but maybe you could use a pair of item[wire cutters|Wire Cutters] as a weapon?
+				t ?item Wire Cutters; You already took the pair of wire cutters.
+				t !flag closetDoor; The door out is locked tight, and breaking it open would make a ton of noise. Better play it safe.
+				t ?flag closetDoor; You unlocked the door from the other side, so you can [safely leave the closet|compoundMain].
+				t Aside from that there isn't anything too useful in this place, using a small box you can [climb back into the vent|compoundVent0].
+			`);
 			break;
 		}
 		case "compoundVent1": {
 			writeHTML(`
 				t Through the grate you can see the room you were trapped in. You can [climb out|compoundRoom] if you'd like.
-				t You can head [forwards|compoundVent2], [backwards|compoundVent4], or [wait|compoundVent1].
+				t You can head [forwards|compoundVent2], [backwards|compoundVent0], or [wait|compoundVent1].
 			`);
 			calculateMovement();
 			break;
@@ -1420,8 +1450,8 @@ function writeScene(scene) {
 		case "compoundVent2": {
 			writeHTML(`
 				t Through the grate you can see a room filled with transparent containers of pink gas.
-				t !flag gasDisturbed; t The grate here is loose, you can [climb out into the gas room|compoundGasRoom].
-				t ?flag gasDisturbed; A soldier with a mask is trying to patch up the hose you broke. It's not safe to head in.
+				t !flag gasDisturbed; The grate here is loose, you can [climb out into the gas room|compoundGasRoom]. However it's a solid drop, so you won't be able to climb back in.
+				t ?flag gasDisturbed; A soldier with a mask is trying to patch up the hose you broke. It's not safe to head in. You thank your lucky stars that the gas seems to be dense enough it can't reach up here.
 				t You can head [forwards|compoundVent3], [backwards|compoundVent1], or [wait|compoundVent2].
 			`);
 			calculateMovement();
@@ -1430,8 +1460,9 @@ function writeScene(scene) {
 		case "compoundVent3": {
 			writeHTML(`
 				t Through the grate you can see a large kennel, each cage containing a sleeping dog.
-				t !flag kennelDisturbed; The grate here is loose too, you can [sneak in|compoundKennels] if you're careful.
-				t ?flag kennelDisturbed; Several soldiers are trying to calm the dogs down, it's not safe to go in.
+				t !flag houndsDisturbed; The grate here is loose too, you can [sneak in|compoundKennels] if you're careful. However it's a solid drop, so you won't be able to climb back in.
+				t ?flag houndsDisturbed; Several soldiers are trying to calm the dogs down, it's not safe to go in. You're certain one is looking at you, if they set those dogs loose to hunt you down...
+				t You'd rather not think about it.
 				t You can head [forwards|compoundVent4], [backwards|compoundVent2], or [wait|compoundVent3].
 			`);
 			calculateMovement();
@@ -1439,8 +1470,9 @@ function writeScene(scene) {
 		}
 		case "compoundVent4": {
 			writeHTML(`
-				t Through the grate you can see wifeF, resting on a bed.
-				t You can head [forwards|compoundVent1] [backwards|compoundVent3], or [wait|compoundVent4].
+				t Through the grate you can see wifeF, resting on a bed. She's asleep, and the bolts on this vent have been properly maintained. No breaking in from here.
+				t You've crawled in a sort of circle, so her room must be directly next to yours. If you could unlock the doors in this place you'd have no trouble getting to her.
+				t You can head [backwards|compoundVent3], or [wait|compoundVent4].
 			`);
 			calculateMovement();
 			break;
@@ -1448,50 +1480,154 @@ function writeScene(scene) {
 		case "compoundGasRoom": {
 			writeHTML(`
 				t You're in a room filled with transparent canisters filled with a strange pink gas. They're probably the same as the ones you saw in the suitcase back at your hotel.
-				t You can head back through the [grate, into the air vents|compoundVent2].
+				t From here you can't actually climb back up to the vents, you're in serious danger if you're caught.
+				t !item Wire Cutters; A large machine seems to be pumping the strange pink gas. The hoses look a lot stronger than the one you saw before.
+				t ?item Wire Cutters; A large machine seems to be pumping the strange pink gas. The hoses look a lot stronger than the one you saw before. You could use your [wire cutters|gasDisturbed] to cause some serious mayhem with just a small cut, then sneak out.
+				t You're hiding behind the doorway as a patrol goes by, you should be able to [sneak out of the room|compoundMain] if you're careful.
 			`);
 			calculateMovement();
+			break;
+		}
+		case "gasDisturbed": {
+			writeHTML(`
+				t You pull out the wire cutters and get to work creating a gas leak.
+				t Only a very small cut will do, you can't risk exposing yourself to the stuff. Good thing too, because this is some seriously thick rubber tubing. It's under a lot of pressure, so once you break through you can hear a *HSSSSS* as pink smoke is released. You hold your breath and hide in a corner until a group of people runs in.
+				t Now, while the soldiers are focused on the gas leak, you need to [sneak out of the room|compoundMain]!
+			`);
+			addFlag("gasDisturbed");
 			break;
 		}
 		case "compoundKennels": {
 			writeHTML(`
-				t You can head back through the [grate, into the air vents|compoundVent3].
+				t You're in some kind of kennel, but the animals in here are anything but normal. Large, tough-looking hounds that could tear a man apart at a moment's notice. Good thing they're asleep.
+				t From here you can't actually climb back up to the vents, you're in serious danger if you're caught.
+				t There's an exit to some kind of main lobby, this whole building isn't too secure against people who still have functioning brains. Still, there are still patrols going on, you can't get out without causing a distraction. Speaking of a distraction... If you [rattled these cages a little|houndsDisturbed] these boys would probably make enough noise for the whole facility to hear, allowing you to sneak around the compound.
+				t There's not a lot of room here, if you need to hide the only spot is [right behind one of the cages|compoundHounds], and squeezing behind there would absolutely wake the beast up. 
 			`);
 			calculateMovement();
+			break;
+		}
+		case "compoundHounds": {
+			writeEvent(scene);
+			break;
+		}
+		case "houndsDisturbed": {
+			writeHTML(`
+				t The hounds are asleep, completely out of it at the moment. You silent tiptoe up to the cage...
+				t And smack the fuck out of it.
+				t The dog inside goes absolutely insane, thrashing about in surprise and anger, before it turns into just anger. He barks and snarls, and soon every dog in the room has joined him. You rush over to the side of the room until a few soldiers rush in to check on the hounds.
+				t Now, while the soldiers are focused on the dogs, you need to [sneak out of the room|compoundMain]!
+			`);
+			addFlag("houndsDisturbed");
 			break;
 		}
 		case "compoundWifeRoom": {
 			writeHTML(`
-				t !flag wifeDoorUnlocked;
-				t ?flag wifeDoorUnlocked;
-				t You can head back through the [grate, into the air vents|compoundVent4].
+				t You're in your wife's cell. She's currently asleep, although she's panting and rubbing her erect shaft through her clothes. You don't know how much longer she can take being cooped up in here. If you think the way out is clear, you can [wake her up and make a break for it|compoundEscape].
+				t You've unlocked the door with the main console, the way into the [main hallway|compoundHall] is clear.
 			`);
 			calculateMovement();
+			if (checkFlag('caged') == true) {
+				writeEvent("compoundCage");
+			}
 			break;
 		}
 		case "compoundHall": {
 			writeHTML(`
-				t The door to your cell is here. From this side it's easy to unlock, so you can [head inside|compoundRoom].
-				t The door to your wife's cell is here as well. You can [head inside|compoundWifeRoom], or if you're ready to make your escape attempt you can grab your wife and [make a break for it|compoundEscape].
-				t !flag gasDisturbed; There are still a few soldiers around, but you should be able to sneak into the [gas room|compoundGasRoom].
-				t !flag kennelDisturbed; There are still a few soldiers around, but you should be able to sneak into the [kennel room|compoundKennels].
-				t ?flag gasDisturbed; ?flag kennelDisturbed; You see what appears to be a temporary control room. With the dogs riled up and the gas leak, the room is currently empty.
+				t You're in a small, nondescript hallway. From here the escape route is open and in the chaos you should be okay.
+				t The door to your cell is here. You can [head inside|compoundRoom] if you have unfinished business.
+				t The door to your wife's cell is here as well. You can [head inside to rescue her|compoundWifeRoom].
 			`);
-			addFlag("playerDoorUnlocked");
-			addFlag("wifeDoorUnlocked");
-			calculateMovement();
+			break;
+		}
+		case "compoundMain": {
+			writeHTML(`
+				t You're in some kind of main lobby, various decorations welcoming you to 'the best vacation island on the ocean', multiple fliers advertising Sanctuary Hotel.
+				t !flag gasDisturbed; There are still a few soldiers around, but you should be able to sneak into a [room full of gas canisters|compoundGasRoom]. However, there might be someone inside, so it's risky to enter from here.
+				t ?flag gasDisturbed; There's a very mild pink fog seeping from the gas room, causing a distraction as the soldiers rush to repair the line.
+				t !flag houndsDisturbed; There are still a few soldiers around, but you should be able to sneak into what appears to be a [kennel room|compoundKennels]. However, there might be someone inside, so it's risky to enter from here.
+				t ?flag houndsDisturbed; The hounds are barking, attracting attention to the kennels. You should be safe to roam around the compound.
+				t You can sneak over to a [small door, probably some kind of closet|compoundCloset].
+				t Finally, there's a larger door, cracked halfway open. Inside you can see some monitors, it must be a sort of [control room|compoundControlRoom].
+			`);
+			addFlag("closetDoor");
 			break;
 		}
 		case "compoundControlRoom": {
 			writeHTML(`
-				
+				t You're in some kind of cobbled together control room, varying monitors showing what appear to be feeds all across the island. Several monitors are just command consoles, displaying stats measuring how many people have been infected, and what vector transformed them.
+				t Typing 'help' into the main console lists a variety of options, only a few of them are particularly useful though. You enter in the unlockDoor(*) command immediately, and a little feedback message shows that <b>all locked doors inside the building are now unlocked</b>.
+				t !item Kennels Opened; item[Set the kennels to open up on a timer|Kennels Opened].
+				t ?item Kennels Opened; You've set the kennels to open on a short timer, that should stop anyone from following you.
+				t !item Gas Opened; item[Start overloading the gas room, so that it explodes after a short buildup|Gas Opened].
+				t ?item Gas Opened; You've set the gas to build up, ignoring the warnings that critical mass will cause an explosion of infectious material soon. That'll serve them right for infecting wifeF.
+				t In the chaos you should be able to [sneak back out of the control room, into the lobby|compoundMain].
 			`);
+			addFlag("playerDoorUnlocked");
 			break;
 		}
 		case "compoundEscape": {
 			writeHTML(`
-				
+				t You shake wifeF awake, and her eyes shoot open. For a second you worry she's completely turned, until...
+				sp wife; Honey? What's-
+				sp player; No time, we need to get out of here. Come on!
+				t You take her by the hand and the two of you sprint off. This place is about to go to hell, so not much point in being sneaky anymore. In the chaos the two of you manage to get out of the facility, and it seems like the road is mostly clear of infected.
+				t You cast one last look at the building behind you.
+				...
 			`);
+			if (checkItem("Kennels Opened") == true) {
+				if (data.player.beastDisabled != true) {
+				writeHTML(`
+					t The place has gone to hell indeed. Instilling loyalty in the hounds should probably have been a priority. That isn't a mistake the hounds will make though.
+					t Teeth tear away at body armor, jaws crunch masks into pieces, and most soldiers go down before they can even fire a shot.
+					im endingHounds.gif
+					t The women are broken to serve the hounds, being pounded and knotted until their new masters cocks pop out, and they're turned into infected bitches soon after.
+					t The "men" are turned more slowly, forced to serve the hounds with their mouths and tongues until they're addicted to the taste of virile beast, but in the end every one of them is turned as well. Their new breasts make service easier.
+					...
+				`);
+				}
+				else {
+					writeText("This ending blurb has been disabled by your content preferences!");
+				}
+			}
+			if (checkItem("Gas Opened") == true) {
+				writeHTML(`
+					t The building is rocked by a sudden explosion, before a thick gout of gas begins to seep into a fortified safe room with a pair of soldiers in it.
+					t One of them simply sighs, and starts to undo the clasps on her mask.
+					sp ???; im none; Tasha! What the fuck are you thinking?!
+					sp ???; im none; It's over, the mission's a failure. The higher-ups are gonna write this whole thing off, why the hell would they stick their necks out for us?<br>... You've seen the faces of the people who inhale this stuff, right? I haven't been satisfied with one-night flings since the first time I used this stuff on somebody.
+					t Tasha takes a deep breath of the pink gas and her eyes cross before they roll back in their sockets. The smoke works fast. It feels like lightning is arcing through her body, and she barely notices that her companion is undoing her belt.
+					sp ???; im none; Fuck's sake, at least get undressed first. I'm on top, alright? Honestly, I have always kinda wondered what dicking somebody felt like...<br>Hey, you fried already? Jesus this stuff pops your brain fast.
+					t It pops something else quickly too. By the time the soldier has her gasmask off Tasha is already able to start jerking off her brand new cock.
+					im endingGas.gif
+					sp ???; im none; I'd better get one as big as that...<br>I guess something cute would be pretty hot too.
+					t The soldier takes a deep breath, and within seconds can feel her gray matter turning to mush.
+					...
+				`);
+			}
+			writeHTML(`
+				t Exhausted, you nearly collapse on the ground. You must be nearly half a mile away from the compound by now, yet you can still hear the sounds of chaos coming from the base.
+				t You lean against a large rock for support, and wifeF leans against you nuzzling you.
+				sp wife; We're... We're not making it off the island, are we? 
+				t Her voice isn't nearly as ragged as yours. Maybe the infection has it's perks after all. Yet there's an airyness to her breath, like she's barely holding herself back.
+				sp player; I don't think so.<br>... Make it quick, alright?
+				sp wife; What?
+				sp player; Living like this... I don't know how long I'll manage, but I'd rather go on my own terms, with you. I'm ready.
+				t You close your eyes, waiting to hear the sounds of wifeF shedding her clothes, or maybe the sensation of her tackling you, yet all you feel is a swift slap to the face.
+				sp wife; After all that, you're giving up?! Fuck that! If I've managed to hold back this long...<br>It wasn't for nothing. We're making it off this shithole, and I'm leaving a one-star review.
+				sp player; But...
+				sp wife; But nothing! I may... May not be able to hold myself back forever, but you and I are figuring out what made me like this. I'm not spending a single hour on this godforsaken island unless I at least have some company who can smash two brain cells together!
+				t You sigh, happy that wifeF seems to be keeping a hold on her ego at least. You aren't sure how she's managed to resist turning into a zombie, but she has a point. Wandering the island as a pair of horny dickgirls sounds a lot better than being hunted, or turning mindless yourself.
+				t The two of you have another adventure ahead of you, but for now, this is...
+				t <b>THE END</b>
+			`);
+			writeText("...");
+			writeText("You've done it! It's unsure what fate will befall this pair of lovebirds, but at least this honeymoon will be a lot more passionate than it would be otherwise. If this was the goal you've been shooting for, then great job!");
+			writeText("Check out the 'Author Information' section in the scenario selection menu for a more detailed set of credits, or play the game again to try and get some of those other scenes.");
+			writeTransition("spreadIsland", "Thanks for playing!");
+			if (checkItem("Opened") == false) {
+				writeEvent("compoundFailure");
+			}
 			break;
 		}
 		//Scarlet Mansion
@@ -1895,13 +2031,12 @@ function writeScene(scene) {
 			break;
 		}
 		default: {
-			writeText("Something went wrong, and you've encountered a bug. Keep in mind where you just where and what you did, and let me know so I can fix it.");
+			writeText("Something went wrong, and you've encountered a bug. Keep in mind where you just where and what you did, and let me know so I can fix it.<b>ERROR CODE:</b> Scene Write Failure, Scene "+scene+" does not exist.");
 			writeText("Here's a list of important details. If you message me directly with these jams, I should have a better idea of what caused the problem:");
-			writeText("" + JSON.stringify(data) + "");
+			document.getElementById('output').innerHTML += JSON.stringify(data);
 			writeText("Inventory window:" + invHidden + "");
 			writeText("Browser:" + navigator.appCodeName  + "");
 			writeText("OS:" + navigator.platform  + "");
-			writeText(scene);
 			writeBig("images/butts.jpg");
 			writeTransition("start", "Go back to the title.");
 		}
@@ -1913,55 +2048,61 @@ function calculateMovement(location) {
 	if (data.player.guardMovement == 5) {
 		data.player.guardMovement = 1;
 	}
-	if (checkFlag("kennelDisturbed") == true || checkFlag("gasDisturbed") == true) {
+	if (checkFlag("houndsDisturbed") == true || checkFlag("gasDisturbed") == true) {
 		//Do nothing
 	}
 	else {
 	switch (data.player.currentScene) {
 		case "compoundRoom": {
-			if (guardMovement == 1) {
+			if (data.player.guardMovement == 1) {
 				writeText("You can hear someone outside the door. Peering through the window of the door you can see several figures in what looks like special ops gear, fully covered and holding strange guns.");
 			}
 			break;
 		}
 		case "compoundVent2": {
-			if (guardMovement == 1) {
+			if (data.player.guardMovement == 1) {
 				writeText("You can hear someone moving outside the vent, but they're getting farther away. If you exit the vent now you'll be caught.");
 			}
+			if (data.player.guardMovement == 2) {
+				writeText("The sound of footsteps have stopped, you should be safe to exit now.");
+			}
+			break;
 		}
 		case "compoundVent3": {
-			if (guardMovement == 2) {
+			if (data.player.guardMovement == 2) {
 				writeText("You can hear someone moving outside the vent, but they're getting farther away. If you exit the vent now you'll be caught.");
 			}
-		}
-		case "compoundVent4": {
-			if (guardMovement == 3) {
-				writeText("You can hear someone moving outside the vent, but they're getting farther away. If you exit the vent now you'll be caught.");
+			if (data.player.guardMovement == 3) {
+				writeText("The sound of footsteps have stopped, you should be safe to exit now.");
 			}
+			break;
 		}
 		case "compoundGasRoom": {
-			if (guardMovement == 1) {
-				writeText("You can hear someone approaching!");
+			if (data.player.guardMovement == 1) {
+				writeText("You can hear someone approaching! You'll need to hide quickly!");
 			}
-			if (guardMovement == 2) {
+			if (data.player.guardMovement == 2) {
 				writeEvent("compoundCaught");
 			}
+			break;
 		}
 		case "compoundKennels": {
-			if (guardMovement == 2) {
-				writeText("You can hear someone approaching!");
+			if (data.player.guardMovement == 2) {
+				writeText("You can hear someone approaching! You'll need to hide quickly!");
 			}
-			if (guardMovement == 3) {
+			if (data.player.guardMovement == 3) {
 				writeEvent("compoundCaught");
 			}
+			break;
 		}
 		case "compoundWifeRoom": {
-			if (guardMovement == 3) {
-				writeText("You can hear someone approaching!");
+			if (data.player.guardMovement == 3) {
+				writeText("You can hear someone approaching! You'll need to hide quickly!");
 			}
-			if (guardMovement == 4) {
+			if (data.player.guardMovement == 4) {
 				writeEvent("compoundCaught");
 			}
+			break;
 		}
 	}
 	}
@@ -3099,12 +3240,6 @@ function writeEvent(n) {
 			}
 			break;
 		}
-		case "wifeOnahole": {
-			writeHTML(`
-				
-			`);
-			break;
-		}
 		case "wifeDildo": {
 			writeHTML(`
 				sp player; Here, I found this, I hope it-
@@ -3118,22 +3253,78 @@ function writeEvent(n) {
 				sp wife; Mmm... Hmm? 
 				sp player Come on, we need to get moving, let's go. 
 				t She nods, looking only half awake. She softly coos as she slides off the dildo, one last spurt of cum splattering the floor as she stands up on unsteady legs. 
+				t The smell is... Intoxicating, but you can't succumb.
+			`);
+			break;
+		}
+		case "wifeOnahole": {//unfinished starts here
+			writeHTML(`
+				im wifeOnahole1.gif
+				im wifeOnahole2.gif
 			`);
 			break;
 		}
 		case "wifeCage": {
 			writeHTML(`
-				
+				im wifeCage.gif
+			`);
+			break;
+		}
+		case "wifeSacrifice": {
+			writeHTML(`
+				im wifeSacrifice.gif
 			`);
 			if (data.player.currentScene != "gallery") {
 				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
 			}
 			break;
 		}
-		case "wifeSacrifice": {
+		case "compoundCage": {
 			writeHTML(`
-				
+				im compoundCage.gif
 			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "compoundCaught": {
+			if (data.player.wormDisabled == false) {
+				writeHTML(`
+					im compoundCaught.gif
+				`);
+			}
+			else {
+				writeText("This scene has been disabled by your fetish settings. If for some reason want to watch it, you can still view it in the gallery after changing your settings.");
+			}
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "compoundHounds": {
+			if (data.player.beastDisabled == false) {
+				writeHTML(`
+					im compoundHounds.gif
+				`);
+			}
+			else {
+				writeText("This scene has been disabled by your fetish settings. If for some reason want to watch it, you can still view it in the gallery after changing your settings.");
+			}
+			if (data.player.currentScene != "gallery") {
+				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
+			}
+			break;
+		}
+		case "compoundFailure": {
+			if (data.player.wormDisabled == false) {
+				writeHTML(`
+					im compoundFailure.gif
+				`);
+			}
+			else {
+				writeText("This scene has been disabled by your fetish settings. If for some reason want to watch it, you can still view it in the gallery after changing your settings.");
+			}
 			if (data.player.currentScene != "gallery") {
 				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
 			}
@@ -3187,13 +3378,12 @@ function writeEvent(n) {
 			break;
 		}
 		default: {
-			writeText("Something went wrong, and you've encountered a bug. Keep in mind where you just where and what you did, and let me know so I can fix it.");
+			writeText("Something went wrong, and you've encountered a bug. Keep in mind where you just where and what you did, and let me know so I can fix it. <b>ERROR CODE:</b> Event Write Failure, Event "+n+" does not exist.");
 			writeText("Here's a list of important details. If you message me directly with these jams, I should have a better idea of what caused the problem:");
-			writeText("" + JSON.stringify(data) + "");
+			document.getElementById('output').innerHTML += JSON.stringify(data);
 			writeText("Inventory window:" + invHidden + "");
 			writeText("Browser:" + navigator.appCodeName  + "");
 			writeText("OS:" + navigator.platform  + "");
-			writeText(n);
 			writeBig("images/butts.jpg");
 			writeTransition("start", "Go back to the title.");
 		}
