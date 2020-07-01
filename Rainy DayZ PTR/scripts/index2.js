@@ -130,6 +130,9 @@ function replaceCodenames(text) {
 	for (geminiLoop = 0; geminiLoop < 5; geminiLoop++) {
 		text = text.replace('playerF', data.player.name);
 	}
+	while (text.includes("wifeF")) {
+		text = text.replace('wifeF', data.player.wife);
+	}
 	if (data.player.oowoo == true) {
 		for (uwuLoop = 0; uwuLoop < 30; uwuLoop++) {
 			text = text.replace('<br>', "**");

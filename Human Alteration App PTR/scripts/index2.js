@@ -854,8 +854,10 @@ function addFlag(character, flag) {
 	console.log(character+flag);
 	for (flagIndex = 0; flagIndex < data.story.length; flagIndex++) {
 		if (data.story[flagIndex].index == character) {
-			console.log('adding the flag named '+flag+' to '+character);
-			data.story[flagIndex].flags += flag;
+			if (data.story[flagIndex].flags.includes(flag) == false) {
+				console.log('adding the flag named '+flag+' to '+character);
+				data.story[flagIndex].flags += flag;
+			}
 		}
 	}
 }
@@ -1406,6 +1408,105 @@ function checkRequirements(string) {
 	}
 }
 
+function cullRequirements(string) {
+	while (string.includes("!location ") == true) {
+		var check = string.split(`!location `).pop().split(`;`)[0];
+		string = string.replace(`!location `+check+`;`, ``);
+	}
+	while (string.includes("?location ") == true) {
+		var check = string.split(`?location `).pop().split(`;`)[0];
+		string = string.replace(`?location `+check+`;`, ``);
+	}
+	while (string.includes("!item ") == true) {
+		var check = string.split(`!item `).pop().split(`;`)[0];
+		string = string.replace(`!item `+check+`;`, ``);
+	}
+	while (string.includes("?item ") == true) {
+		var check = string.split(`?item `).pop().split(`;`)[0];
+		string = string.replace(`?item `+check+`;`, ``);
+	}
+	while (string.includes("!hypnosis ") == true) {
+		var check = string.split(`!hypnosis `).pop().split(`;`)[0];
+		string = string.replace(`!hypnosis `+check+`;`, ``);
+	}
+	while (string.includes("?hypnosis ") == true) {
+		var check = string.split(`?hypnosis `).pop().split(`;`)[0];
+		string = string.replace(`?hypnosis `+check+`;`, ``);
+	}
+	while (string.includes("!hacking ") == true) {
+		var check = string.split(`!hacking `).pop().split(`;`)[0];
+		string = string.replace(`!hacking `+check+`;`, ``);
+	}
+	while (string.includes("?hacking ") == true) {
+		var check = string.split(`?hacking `).pop().split(`;`)[0];
+		string = string.replace(`?hacking `+check+`;`, ``);
+	}
+	while (string.includes("!counseling ") == true) {
+		var check = string.split(`!counseling `).pop().split(`;`)[0];
+		string = string.replace(`!counseling `+check+`;`, ``);
+	}
+	while (string.includes("?counseling ") == true) {
+		var check = string.split(`?counseling `).pop().split(`;`)[0];
+		string = string.replace(`?counseling `+check+`;`, ``);
+	}
+	while (string.includes("!time ") == true) {
+		var check = string.split(`!time `).pop().split(`;`)[0];
+		string = string.replace(`!time `+check+`;`, ``);
+	}
+	while (string.includes("?time ") == true) {
+		var check = string.split(`?time `).pop().split(`;`)[0];
+		string = string.replace(`?time `+check+`;`, ``);
+	}
+	while (string.includes("?flag player ") == true) {
+		var check = string.split(`?flag player `).pop().split(`;`)[0];
+		string = string.replace(`?flag player `+check+`;`, ``);
+	}
+	while (string.includes("!flag player ") == true) {
+		var check = string.split(`!flag player `).pop().split(`;`)[0];
+		string = string.replace(`!flag player `+check+`;`, ``);
+	}
+	while (string.includes("?parity") == true) {
+		var check = string.split(`?parity `).pop().split(`;`)[0];
+		string = string.replace(`?parity `+check+`;`, ``);
+	}
+	while (string.includes("?gender") == true) {
+		var check = string.split(`?gender `).pop().split(`;`)[0];
+		string = string.replace(`?gender `+check+`;`, ``);
+	}
+	for (characterIndex = 0; characterIndex < data.story.length; characterIndex++) {
+		var corruptionTarget = data.story[characterIndex].index;
+		while (string.includes("?trust "+corruptionTarget) == true) {
+			var check = string.split(`?trust `+corruptionTarget+` `).pop().split(`;`)[0];
+			string = string.replace(`?trust `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?minTrust "+corruptionTarget) == true) {
+			var check = string.split(`?minTrust `+corruptionTarget+` `).pop().split(`;`)[0];
+			string = string.replace(`?minTrust `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?maxTrust "+corruptionTarget) == true) {
+			var check = string.split(`?maxTrust `+corruptionTarget+` `).pop().split(`;`)[0];
+			string = string.replace(`?maxTrust `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?trustMin "+corruptionTarget) == true) {
+			var check = string.split(`?trustMin `+corruptionTarget+` `).pop().split(`;`)[0];
+			string = string.replace(`?trustMin `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?trustMax "+corruptionTarget) == true) {
+			var check = string.split(`?trustMax `+corruptionTarget+` `).pop().split(`;`)[0];
+			string = string.replace(`?trustMax `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("!flag "+corruptionTarget) == true) {
+			var check = string.split(`!flag `+corruptionTarget+` `).pop().split(`;`)[0];
+			string = string.replace(`!flag `+corruptionTarget+` `+check+`;`, ``);
+		}
+		while (string.includes("?flag "+corruptionTarget) == true) {
+			var check = string.split(`?flag `+corruptionTarget+` `).pop().split(`;`)[0];
+			string = string.replace(`?flag `+corruptionTarget+` `+check+`;`, ``);
+		}
+	}
+	return string;
+}
+
 function changeLocation(n) {
 	document.getElementById('output').innerHTML = ``;
 	var locationTarget = 'failed';
@@ -1710,7 +1811,7 @@ function writeHTML(text) {
 					//Remove the command from the line we actually want to print.
 					lines[lineCounter] = lines[lineCounter].replace(command+` `, ``);
 					//Execute the writeText command to print everything left to the screen.
-					writeText(lines[lineCounter]);
+					writeText(cullRequirements(lines[lineCounter]));
 					//Don't execute any of the below switch cases.
 					break;
 				}
@@ -1745,7 +1846,7 @@ function writeHTML(text) {
 					lines[lineCounter] = lines[lineCounter].replace(command+` `+name+`; `, ``);
 					//Execute the writeSpeech command to print everything we have left.
 					//TODO: Add custom colors and custom names
-					writeSpeech(name, image, lines[lineCounter], altName, altColor);
+					writeSpeech(name, image, cullRequirements(lines[lineCounter]), altName, altColor);
 					break;
 				}
 				case "im": {
@@ -2418,6 +2519,7 @@ function loadSlot(slot) {
 	data = localStorage.getItem(saveName);
 	data = JSON.parse(data);
 	console.log("loaded data");
+	updateSave();
 	if (data.player.location == "") {
 		sceneTransition(data.player.currentScene);
 	}

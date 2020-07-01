@@ -1213,7 +1213,7 @@ function writeScene(scene) {
 		case "hotelRoom": {
 			writeHTML(`
 				t You're in room 201 of the Sanctuary Hotel. The structure of the room means there aren't any windows.
-				t Your wife, wifeF is on the bed getting some rest. Once you've found a safe way out you should wake her and get moving, there's no telling how long until another infected arrives.
+				t Your wife, wifeF, is on the bed getting some rest. Once you've found a safe way out you should wake her and get moving, there's no telling how long until another infected arrives.
 				t ?item Strange Gas; You have the container of strange gas with you. It might be some kind of antidote, but it isn't likely. Still, looking at the flaccid dick between your wife's legs, you're desperate for any kind of hope. Will you [expose her to the strange gas?|hotelWifePleasureGas]?
 				t ?item Bedding Rope; You found a safe way out by [climbing down from the window of room 204|hotelEscape]
 				t It seems like the woman from earlier was distracted, it should be safe to [head out into the hallway|hotelHallway].
@@ -1327,7 +1327,7 @@ function writeScene(scene) {
 			writeEvent(scene);
 			writeHTML(`
 				...
-				t The two of you move on, leaving the affluent district behind. There's no helicopter, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
+				t The two of you move on, leaving the affluent district behind. There's no helicopters, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
 				t As you're wandering around a hiking path looking for any kind of help, you feel a small bite on your neck.
 				t You hear wifeF freaking out for some reason as you lift your hand to scratch the bite, only for your hand to brush against something... Metal.
 			`);
@@ -1341,7 +1341,7 @@ function writeScene(scene) {
 			writeEvent(scene);
 			writeHTML(`
 				...
-				t The two of you move on, leaving the affluent district behind. There's no helicopter, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
+				t The two of you move on, leaving the affluent district behind. There's no helicopters, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
 				t As you're wandering around a hiking path looking for any kind of help, you feel a small bite on your neck.
 				t You hear wifeF freaking out for some reason as you lift your hand to scratch the bite, only for your hand to brush against something... Metal.
 				t The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundAwaken].
@@ -1353,7 +1353,7 @@ function writeScene(scene) {
 			addFlag('caged');
 			writeHTML(`
 				...
-				t The two of you move on, leaving the affluent district behind. There's no helicopter, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
+				t The two of you move on, leaving the affluent district behind. There's no helicopters, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
 				t As you're wandering around a hiking path looking for any kind of help, you feel a small bite on your neck.
 				t You hear wifeF freaking out for some reason as you lift your hand to scratch the bite, only for your hand to brush against something... Metal.
 				t The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundAwaken].
@@ -3257,7 +3257,7 @@ function writeEvent(n) {
 			`);
 			break;
 		}
-		case "wifeOnahole": {//unfinished starts here
+		case "wifeOnahole": {//unfinished
 			writeHTML(`
 				im wifeOnahole1.gif
 				im wifeOnahole2.gif
@@ -3266,11 +3266,21 @@ function writeEvent(n) {
 		}
 		case "wifeCage": {
 			writeHTML(`
+				sp player; wifeF, please! <br>Whatever you shoot out, it's infectious. If we're going to make it off this island... 
+				t You hold the chastity cage in one hand, and the ice cubs in the other. She looks at both, her face is very conflicted. She closes her eyes, releases her dick from her hands, and clutches the sheets tightly. 
+				t You move fast, there's no telling how long her willpower will hold out. Using the icecube, you-
+				sp wife; Oooough~! 
+				t Just the touch if it makes her jerk her hips, but that was absolutely not a moan of pain. You do your best to hold her down and force her cock to soften and numb, but it seems like she's getting off on this. 
+				t Yet, not actually enough to cum. You say a little prayer, hoping her brain makes it through this intact. 
+				... 
 				im wifeCage.gif
+				t Finally, the cage is in place. She's huffing and puffing on the bed like she's just been through labor. Just one look in her eyes tells you she's teetering on the edge of sanity. 
+				sp player; Can you keep going.
+				t She nods. It's clearly only one thing is on her mind though, and her fiddling with the chastity cage makes it clear what that is.
 			`);
 			break;
 		}
-		case "wifeSacrifice": {
+		case "wifeSacrifice": {//Below are unfinished too
 			writeHTML(`
 				im wifeSacrifice.gif
 			`);
