@@ -1166,7 +1166,7 @@ function writeScene(scene) {
 			writeSpeech("player", "", "Alright, you stay here. I'll go find some help, alright?");
 			writeSpeech("wife", "", "No! Please... Please stay, I can't... Gghh...");
 			writeText("Now you're starting to get worried. You grab the phone and dial the lobby, and within a single ring it's picked up.");
-			writeSpeech("Receptionist", "none", "Merridot lobby, how cna I help?");
+			writeSpeech("Receptionist", "none", "Merridot lobby, how can I help?");
 			writeSpeech("player", "", "It's my wife, I think she's sick. We're in room 106.");
 			writeSpeech("Receptionist", "none", "Alright sir, don't panic. We've gotten a few other reports like that so our medic is busy. I'll call in an ambulance for them to take a look-<br>Ma'am? Ma'am I'm sorry, you can't walk around dressed like that, I-");
 			writeText("You hear the receptionist drop the phone and the sounds of a scuffle.");
@@ -1179,7 +1179,7 @@ function writeScene(scene) {
 			writeSpeech("player", "", "Honey, you didn't... <br><i>No, she was only in the bathroom for a few minutes, and an STD wouldn't kick in this fast. <br>And what the hell am I thinking? She wouldn't cheat on me on our honeymoon.</i>");
 			writeSpeech("wife", "", "Aaagh! It won't... Hhhg... It won't come out!");
 			writeBig("intro-1.gif");
-			writeText("Her labia is spreads out as she tries to push something, but winks back closed and she groans from heavy exertion. There's a small but visible bulge on her pubic area.");
+			writeText("Her labia is spread out as she tries to push something, but winks back closed and she groans from heavy exertion. There's a small but visible bulge on her pubic area.");
 			writeText("Suddenly there's a thud at the door. Panicked, you rush over and open it, and a young woman stumbles, nearly falls, into your room.");
 			writeSpeech("player", "", "Thank god, you must've run all the way here. She's on the bed, quick, help her!");
 			writeText("The young woman shambles over to the bed, a strange look in her eyes. As she approaches your writhing wife, you finally notice the bulge in her shorts.");
@@ -1374,7 +1374,7 @@ function writeScene(scene) {
 		}
 		case "villaSoldier": {
 			writeHTML(`
-				t You're in the queen villa, a small resort villa for the wealthy. Despite it's name it seems to be made for high class vacationers just like the other two.
+				t You're in the soldier villa, a small resort villa for the wealthy. Despite it's name it seems to be made for high class vacationers just like the other two.
 				t Peeking inside, you can see someone's already here. Someone is rummaging through the fridge with a pile of foodstuffs besides her. It's a looter.
 				t Aside from her, there doesn't seem to be anything worth taking in here. Nothing that will help wifeF anyways. Unless...
 				t You could grab something blunt, drag her across the way, throw her in through the door...
@@ -3090,7 +3090,7 @@ function writeEvent(n) {
 			writeText("This must be a dream, it has to be. Some woman, with a dick, stumbles into your hotel room as your wife is out of her mind. You must've gotten wasted, or high, or passed out at some point after hitting your head.");
 			writeText("The woman's thick cock spreads your wife's pussy, but only makes it a few inches in before it seems like the girl can't thrust any farther.");
 			writeBig("frozen-1.gif");
-			writeText("After only a few thrusts the woman, an annoyed look on her face, pulls out. Your wife groans, her eyes crossing as she makes one bug push, and...");
+			writeText("After only a few thrusts the woman, an annoyed look on her face, pulls out. Your wife groans, her eyes crossing as she makes one big push, and...");
 			writeText("*POP*");
 			writeText("A single, egg-sized ball pops out of your wife's pussy. She moans in relief, before grunting and spasming and...");
 			writeText("*POP*");
@@ -3100,7 +3100,7 @@ function writeEvent(n) {
 			writeText("The woman lunges at you, tackling you to the ground. With inhuman strength she begins to tear your clothes off while trying to smear her cock against your face.");
 			writeText("You try to fight back, but you've got no spirit left. Everything that's happened up to now has been insane, you can't muster up the will.");
 			writeText("The woman lets out a small hiss as her cock leaks a glob of precum onto your check, and you instantly feel much better. The hopelessness and despair seem a lot smaller now, and your head suddenly feels too stuffy to focus on anything except the woman atop you.");
-			writeText("She repositions herself as she snaps the button on your pants and starts pulling them off. No longer needing to pin your down, she gets your bottom half exposed quickly.");
+			writeText("She repositions herself as she snaps the button on your pants and starts pulling them off. No longer needing to pin you down, she gets your bottom half exposed quickly.");
 			writeText("You relax and close your eyes for a moment ready to accept your fate, until you feel something pressing against your cheek. As you opem them, you see your wife's loving eyes, her gorgeous body, and...");
 			writeBig("frozen-2.gif");
 			writeText("Her throbbing cock.");
@@ -3111,7 +3111,7 @@ function writeEvent(n) {
 		case "hotelWifePleasureGas": {
 			writeHTML(`
 				t You gently nudge wifeF from her half-asleep state. 
-				t She's disorientated, exhausted by the toll whatever is going on is having on her body. ut more importantly she's still human, at least mentally. 
+				t She's disorientated, exhausted by the toll whatever is going on is having on her body. But more importantly she's still human, at least mentally. 
 				sp player; Here, I found this... Thing in another room, I think it might be related to whatever apocalypse thing is going on right now. <br>It's a long shot, but it could be a cure, or some kind of vaccine. 
 				t You hold up the small device with the nozzle pointed at her. She looks worried, but she trusts you. She closes her eyes, and you press the button. 
 				t A small pink spray is released. wifeF takes a breath hesistantly and her eyes shoot open. She starts taking deep breaths and twitching, leaning forwards as if searching for more. Her cock throbs once, twice, then a third time as it goes from flaccid to fully erect. 
@@ -3146,13 +3146,13 @@ function writeEvent(n) {
 				sp wife; I can't... I can't stop!<br>I'm sorry, all these people...! 
 				t She's got an erection tenting her dress, a dead giveaway of her infection, and she's doing her absolute best to control herself but can't stop from stroking her dick through the thin fabric of her dress. 
 				t You reach out to help her, to pull her hands away so you can get moving again, but you feel a weight against you as the room goes sideways. 
-				t The nect thing you know a woman with a crazed look in her eyes is dry-humping you, a fat bulge in her shorts. 
+				t The next thing you know a woman with a crazed look in her eyes is dry-humping you, a fat bulge in her shorts. 
 				sp player; wifeF! Help! 
 				t She steps forwards on shaky legs looking you right in the eyes. So close to exploding, her willpower on the verge of shattering, the sight of her husband pinned down by some crazy woman with a dick is enough to push her over the edge. 
 				im mainExit.gif
 				t Biting her lip she can't help but fully commit to jerking off, a large glob of precum splashing against your cheek as the infected woman tears apart your and her clothes. 
 				sp wife; I'm sorry! I'm sorry, but I can't stop! 
-				t She presses the head of her cock against your mouth as another jet of precum is fired. The other infected has finished clearing the way as well. The precum must alreafy be infecting you, because the feeling of her dick against the rim of your anus makes you want to scream out in pleasure instead of pain. 
+				t She presses the head of her cock against your mouth as another jet of precum is fired. The other infected has finished clearing the way as well. The precum must already be infecting you, because the feeling of her dick against the rim of your anus makes you want to scream out in pleasure instead of pain. 
 				t The edges of your vision go faint and the last thing you see is wifeF's crying face as she bites her lip, the horror of the situation making her cum even harder into your mouth. 
 			`);
 			if (data.player.currentScene != "gallery") {
@@ -3167,7 +3167,7 @@ function writeEvent(n) {
 				t She's infected. You should be scared of this girl who basically has you pinned, scared of the small dick that's about to infect you, yet... It's so cute! 
 				t You reach down, unzipping your fly and trying to shimmy free of your pants, and she giggles to reward your newborn loyalty. You hear the door open, and the two of you look up. 
 				sp wife; H... Honey? 
-				t The girl atop you laughs when she sees your wife, terrified and distraught, and the sound seems to soothe her. Your wife steps forward not of her own accord, her dick ay full erection. She appreciates the girl's voice as much as you do. 
+				t The girl atop you laughs when she sees your wife, terrified and distraught, and the sound seems to soothe her. Your wife steps forward not of her own accord, her dick at full erection. She appreciates the girl's voice as much as you do. 
 				im freshSiren.gif
 				t Every one of her moans feels so perfect in your ears. Even her gagging on your wife's dick is like a series of perfect notes to a wonderful song. 
 				t Your wife squeals, rudly interupting the girl's voice, but the girl just giggles as her mouth is flooded with cum to let you know that everything is alright. 
