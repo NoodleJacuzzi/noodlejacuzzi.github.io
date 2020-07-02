@@ -3257,13 +3257,6 @@ function writeEvent(n) {
 			`);
 			break;
 		}
-		case "wifeOnahole": {//unfinished
-			writeHTML(`
-				im wifeOnahole1.gif
-				im wifeOnahole2.gif
-			`);
-			break;
-		}
 		case "wifeCage": {
 			writeHTML(`
 				sp player; wifeF, please! <br>Whatever you shoot out, it's infectious. If we're going to make it off this island... 
@@ -3282,11 +3275,31 @@ function writeEvent(n) {
 		}
 		case "wifeSacrifice": {//Below are unfinished too
 			writeHTML(`
+				t Fear, hesitation, doubt, all those things seem to just fade away.
+				t Quietly you you walk up behind her, and...
+				...
+				t You push open the door to the king's villa, wifeF doesn't even stop jacking off as you walk in, but you can see her eyes widen in horror when she sees what... Or who, you brought for her.
+				t There are no words between you two as you set the scavenger down on the bed besides your wife. This is finally enough to stop her jerking off. She might be hesitant to infect someone, but wifeF is positively drooling over your offering.
+				t You decide to step out, but you leave the door open as you leave. You can hear wifeF's wanton moaning as you give her some time to get off.
+				t As you step out of the building your hards start to shake and your gut churns. You've essentially doomed someone, thrown away their lives, but nothing matters anymore except escaping with wifeF.
+				t Yet as you hear wifeF groan and a splorting sound letting you know she's cumming, you can't help but wonder... What's next? What if you do make it home? The way wifeF looked almost hungry when you reminded her of all her firends back on the mainland-
+				t You're shocked out of deep thought as you hear a second moan from an unfamiliar voice from the villa behind you and you rush back to see wifeF and the scavenger, but your wife isn't the one on top.
 				im wifeSacrifice.gif
+				t Your wife flaccid from freshly cumming is gleefully taking the newly infected woman's cock, her floppy dick dangling between her legs.
+				t The infected woman notices you and stos her thrusting, she pulls out of your wife's ass and sprints towards you.
+				t wifeF meanwhile just whines in dissapointment, until she notices you as well. Rather than trying to help, her hands snake between her legs as her cock starts to harden again.
+				t The infected woman tackles you, taking you down. Your head bumps against something and your vision goes dark, your last concious thought that <i>you</i> won't be waking up, and that the king's villa will soon be the home of three infected.
 			`);
 			if (data.player.currentScene != "gallery") {
 				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
 			}
+			break;
+		}
+		case "wifeOnahole": {//unfinished
+			writeHTML(`
+				im wifeOnahole1.gif
+				im wifeOnahole2.gif
+			`);
 			break;
 		}
 		case "compoundCage": {

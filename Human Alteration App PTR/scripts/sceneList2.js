@@ -53,7 +53,7 @@ function writeScene(scene) {
 				t ?flag office flat; She is as flat as a board. 
 				t ?flag office perky; !flag office sparse; Her tits are perky and youthful, like she's a freshly-18 teenager. Before she noticed you she was massaging them, she must like the feeling. 
 				t ?flag office perky; ?flag office sparse; Her tits are perky and youthful, like she's a freshly-18 teenager.
-				t ?flag office big; Her breasts are large. 
+				t ?flag office large; Her breasts are large. 
 				t ?flag office massive; Her breasts are so large they'd get a double take from anyone who saw them. She could titfuck a horse, and they're so sensitive she could get off from it. 
 				t ?flag office fuckable; Her breasts are massive and jiggle with every breath she takes. Her nipples are inverted, and you know they're deep enough you could fuck them like a pair of cunts.
 				t ?flag office pussy0; !flag office masochism; As you look at her crotch she cringes a little reflexively. Because of your changes traditional sex is downright painful. 
@@ -71,6 +71,8 @@ function writeScene(scene) {
 				t ?flag office masochism; She has a powerful masochism fetish. Even if her body experiences pain, pleasure will overshadow it by a mile. 
 				t ?flag office watersports; She has a powerful watersports fetish. She licks her lips and seems thirsty, but not for water. 
 			`);
+			writeTransition("officePussy", "Fuck her pussy");
+			writeTransition("officeAnal", "Fuck her ass");
 			writeTransition("officeModConditions", "Change her living conditions");
 			writeTransition("officeModPersonality", "Alter her personality");
 			writeTransition("officeModFetishes", "Alter her fetishes");
@@ -78,6 +80,218 @@ function writeScene(scene) {
 			writeTransition("officeModTits", "Alter her tits");
 			writeTransition("officeModPussy", "Alter her pussy");
 			writeTransition("officeModAss", "Alter her ass");
+			break;
+		}
+		case "officeModAss": {
+			writeTransition("officeModAss0", "Anal sex will be unpleasant, even painful, for her");
+			writeTransition("officeModAss1", "Anal sex will be very pleasurable for her");
+			writeTransition("officeModAss2", "She'll be a complete buttslut through-and-through.");
+			writeTransition("alexisQuo", "Change your mind");
+			break;
+		}
+		case "officeModAss0": {
+			addFlag("office", "ass0");
+			removeFlag("office", "ass1");
+			removeFlag("office", "ass2");
+			writeHTML(`
+				t You've finished altering officeF's ass. A sadistic grin flashes on your face as you imagine the possibilities.
+				...
+			`);
+			writeScene("alexisQuo");
+			break;
+		}
+		case "officeModAss1": {
+			addFlag("office", "ass1");
+			removeFlag("office", "ass0");
+			removeFlag("office", "ass2");
+			writeHTML(`
+				t You've finished altering officeF's ass. Pleasure, tightness, most importantly you'll have no problem keeping clean.
+				...
+			`);
+			writeScene("alexisQuo");
+			break;
+		}
+		case "officeModAss2": {
+			addFlag("office", "ass2");
+			removeFlag("office", "ass0");
+			removeFlag("office", "ass1");
+			writeHTML(`
+				t You've finished altering officeF's ass. You won't need to worry for a second about prep time, every single aspect of her asshole is for your pleasure now.
+				...
+			`);
+			writeScene("alexisQuo");
+			break;
+		}
+		case "officeModPussy": {
+			writeTransition("officeModPussy0", "Traditional sex will be unpleasant, even painful, for her");
+			writeTransition("officeModPussy1", "Traditional sex will feel good");
+			writeTransition("officeModPussy2", "Traditional sex with you will be heightened by a factor of ten");
+			writeTransition("officeModPussy3", "Traditional sex will be almost inhuman; her pussy and womb will actively seek impregnation");
+			writeTransition("alexisQuo", "Change your mind");
+			break;
+		}
+		case "officeModPussy0": {
+			addFlag("office", "pussy0");
+			removeFlag("office", "pussy1");
+			removeFlag("office", "pussy2");
+			removeFlag("office", "pussy3");
+			writeHTML(`
+				t You've finished altering officeF's twat. A sadistic grin flashes on your face as you imagine the possibilities.
+				...
+			`);
+			writeScene("alexisQuo");
+			break;
+		}
+		case "officeModPussy1": {
+			addFlag("office", "pussy1");
+			removeFlag("office", "pussy0");
+			removeFlag("office", "pussy2");
+			removeFlag("office", "pussy3");
+			writeHTML(`
+				t You've finished altering officeF's twat. It's back to its usual levels from when you first started using the app to fuck with her.
+				...
+			`);
+			writeScene("alexisQuo");
+			break;
+		}
+		case "officeModPussy2": {
+			addFlag("office", "pussy2");
+			removeFlag("office", "pussy0");
+			removeFlag("office", "pussy1");
+			removeFlag("office", "pussy3");
+			writeHTML(`
+				t You've finished altering officeF's twat. With the sensitivity tuned up, wetness increased, and tightness raised as well, sex with her should be fun.
+				...
+			`);
+			writeScene("alexisQuo");
+			break;
+		}
+		case "officeModPussy3": {
+			addFlag("office", "pussy3");
+			removeFlag("office", "pussy0");
+			removeFlag("office", "pussy1");
+			removeFlag("office", "pussy2");
+			writeHTML(`
+				t You've finished altering officeF's twat. There's an ever-so-slight twitch of her womb as the changes are finalized.
+				...
+			`);
+			writeScene("alexisQuo");
+			break;
+		}
+		case "officeModConditions": {
+			writeTransition("officeModConditionsSparse", "Have her live in poor, sparse conditions");
+			writeTransition("officeModConditionsFine", "Give her a decent bed to sleep on");
+			writeTransition("officeModConditionsNice", "Make the basement into a proper bedroom");
+			writeTransition("officeModConditionsLavish", "Make the room into a lavish bedroom, fitting for a member of your harem");
+			writeTransition("alexisQuo", "Change your mind");
+			break;
+		}
+		case "officeModConditionsSparse": {
+			addFlag("office", "sparse");
+			removeFlag("office", "fine");
+			removeFlag("office", "nice");
+			removeFlag("office", "lavish");
+			writeHTML(`
+				t You've finished changing officeF's conditions. Your basement will now be very sparse, she's practically living in a dungeon complete with shackles.
+				...
+			`);
+			writeScene("alexisQuo");
+			break;
+		}
+		case "officeModConditionsFine": {
+			addFlag("office", "fine");
+			removeFlag("office", "sparse");
+			removeFlag("office", "nice");
+			removeFlag("office", "lavish");
+			writeHTML(`
+				t You've finished changing officeF's conditions. Your basement now has a single, neatly made bed for her to sleep on.
+				...
+			`);
+			writeScene("alexisQuo");
+			break;
+		}
+		case "officeModConditionsNice": {
+			addFlag("office", "nice");
+			removeFlag("office", "sparse");
+			removeFlag("office", "fine");
+			removeFlag("office", "lavish");
+			writeHTML(`
+				t You've finished changing officeF's conditions. The basement actually looks pretty nice, like an ordinary bedroom, not the kind of place prisoners are usually kept.
+				...
+			`);
+			writeScene("alexisQuo");
+			break;
+		}
+		case "officeModConditionsLavish": {
+			addFlag("office", "lavish");
+			removeFlag("office", "sparse");
+			removeFlag("office", "nice");
+			removeFlag("office", "fine");
+			writeHTML(`
+				t You've finished changing officeF's conditions. With the help of the app the room now looks incredible, the living conditions you or a member of your harem deserve. Maybe you should change your room someday.
+				...
+			`);
+			writeScene("alexisQuo");
+			break;
+		}
+		case "officeModPersonality": {
+			writeTransition("officeModPersonalityBitch", "Return her original personality");
+			writeTransition("officeModPersonalitySlave", "Have her act in a way befitting of a slave");
+			writeTransition("officeModPersonalityBroken", "Break her mind, have her act like a pleasure junkie");
+			writeTransition("officeModPersonalitySilent", "Remove her capacity for speech");
+			writeTransition("alexisQuo", "Change your mind");
+			break;
+		}
+		case "officeModPersonalityBitch": {
+			addFlag("office", "bitch");
+			removeFlag("office", "slave");
+			removeFlag("office", "broken");
+			removeFlag("office", "silent");
+			writeHTML(`
+				t You've finished messing with officeF's head, and finalize the changes. Expectantly, you look into her eyes.
+				sp office; The fuck are you staring... Just let me go already!
+				...
+			`);
+			writeScene("alexisQuo");
+			break;
+		}
+		case "officeModPersonalitySlave": {
+			addFlag("office", "slave");
+			removeFlag("office", "bitch");
+			removeFlag("office", "broken");
+			removeFlag("office", "silent");
+			writeHTML(`
+				t You've finished messing with officeF's head, and finalize the changes. Expectantly, you look into her eyes.
+				sp office; M-master! I'm so sorry, I don't know what I was thinking acting like that!
+				...
+			`);
+			writeScene("alexisQuo");
+			break;
+		}
+		case "officeModPersonalityBroken": {
+			addFlag("office", "broken");
+			removeFlag("office", "slave");
+			removeFlag("office", "bitch");
+			removeFlag("office", "silent");
+			writeHTML(`
+				t You've finished messing with officeF's head, and finalize the changes. Expectantly, you look into her eyes.
+				t ... And she doesn't even seem to notice. Instead she's more interested in playing with her cunt
+				...
+			`);
+			writeScene("alexisQuo");
+			break;
+		}
+		case "officeModPersonalitySilent": {
+			addFlag("office", "silent");
+			removeFlag("office", "slave");
+			removeFlag("office", "broken");
+			removeFlag("office", "bitch");
+			writeHTML(`
+				t You've finished messing with officeF's head, and finalize the changes. Expectantly, you look into her eyes.
+				sp office; ...?
+				...
+			`);
+			writeScene("alexisQuo");
 			break;
 		}
 		case "officeModFetishes": {
@@ -111,7 +325,7 @@ function writeScene(scene) {
 			else {
 				writeTransition("officeModFetishes-watersportsRemove", "Remove her watersports fetish");
 			}
-			writeTransition("officeQuo", "Change your mind");
+			writeTransition("alexisQuo", "Change your mind");
 			break;
 		}
 		case "officeModFetishes-impregnationAdd": {
@@ -194,120 +408,266 @@ function writeScene(scene) {
 			`);
 			break;
 		}
-		case "officeModConditions": {
-			writeTransition("officeModConditionsSparse", "Have her live in poor, sparse conditions");
-			writeTransition("officeModConditionsFine", "Give her a decent bed to sleep on");
-			writeTransition("officeModConditionsNice", "Make the basement into a proper bedroom");
-			writeTransition("officeModConditionsLavish", "Make the room into a lavish bedroom, fitting for a member of your harem");
-			writeTransition("officeQuo", "Change your mind");
+		case "officeModMouth": {
+			writeTransition("officeModMouthNormal", "Return her mouth to normal");
+			writeTransition("officeModMouthFiend", "Increase her mouth sensitivity so she can get off from giving oral");
+			writeTransition("officeModMouthBimbo", "Give her a pair of bimbo dick sucking lips");
+			writeTransition("alexisQuo", "Change your mind");
 			break;
 		}
-		case "officeModConditionsSparse": {
-			addFlag("office", "sparse");
-			removeFlag("office", "fine");
-			removeFlag("office", "nice");
-			removeFlag("office", "lavish");
+		case "officeModMouthNormal": {
+			addFlag("office", "mouthNormal");
+			removeFlag("office", "mouthFiend");
+			removeFlag("office", "mouthBimbo");
 			writeHTML(`
-				t You've finished changing officeF's conditions. Your basement will now be very sparse, she's practically living in a dungeon complete with shackles.
+				t You've finished altering officeF's mouth. Her mouth, lips, and tongue are all exactly how they used to be.
 				...
 			`);
 			writeScene("alexisQuo");
 			break;
 		}
-		case "officeModConditionsFine": {
-			addFlag("office", "fine");
-			removeFlag("office", "sparse");
-			removeFlag("office", "nice");
-			removeFlag("office", "lavish");
+		case "officeModMouthFiend": {
+			addFlag("office", "mouthFiend");
+			removeFlag("office", "mouthNormal");
+			removeFlag("office", "mouthBimbo");
 			writeHTML(`
-				t You've finished changing officeF's conditions. Your basement now has a single, neatly made bed for her to sleep on.
+				t You've finished altering officeF's mouth. You finalize the changes and suddenly she jumps on the spot; just the feeling of her tongue in her mouth is enough to get her aroused.
 				...
 			`);
 			writeScene("alexisQuo");
 			break;
 		}
-		case "officeModConditionsNice": {
-			addFlag("office", "nice");
-			removeFlag("office", "sparse");
-			removeFlag("office", "fine");
-			removeFlag("office", "lavish");
+		case "officeModMouthBimbo": {
+			addFlag("office", "mouthBimbo");
+			removeFlag("office", "mouthFiend");
+			removeFlag("office", "mouthNormal");
 			writeHTML(`
-				t You've finished changing officeF's conditions. The basement actually looks pretty nice, like an ordinary bedroom, not the kind of place prisoners are usually kept.
+				t You've finished altering officeF's mouth. You finalize the changes and suddenly officeF's lips are much, much larger. To the point where she actively needs to push her tongue through her lips to stick it out. The sensitivity has also skyrocketed as well.
 				...
 			`);
 			writeScene("alexisQuo");
 			break;
 		}
-		case "officeModConditionsLavish": {
-			addFlag("office", "lavish");
-			removeFlag("office", "sparse");
-			removeFlag("office", "nice");
-			removeFlag("office", "fine");
+		case "officeModTits": {
+			writeTransition("officeModTitsFlat", "A-cup breasts, as flat as a cutting board");
+			writeTransition("officeModTitsPerky", "Smaller breaststhat look like they belong to a freshly 18 girl.");
+			writeTransition("officeModTitsLarge", "Her normal, large size.");
+			writeTransition("officeModTitsHuge", "Heaving sensitive breasts, you'll solve the back issues they might cause.");
+			writeTransition("officeModTitsFuckable", "Larger than her head, you can fuck the nipples (and they're sensitive too!)");
+			writeTransition("alexisQuo", "Change your mind");
+			break;
+		}
+		case "officeModTitsFlat": {
+			addFlag("office", "flat");
+			removeFlag("office", "perky");
+			removeFlag("office", "large");
+			removeFlag("office", "huge");
+			removeFlag("office", "fuckable");
 			writeHTML(`
-				t You've finished changing officeF's conditions. With the help of the app the room now looks incredible, the living conditions you or a member of your harem deserve. Maybe you should change your room someday.
+				t You've finished altering officeF's tits. Her chest is flat, barely a pair of mosquito bites on her.
 				...
 			`);
 			writeScene("alexisQuo");
 			break;
 		}
-		case "officeModPersonality": {
-			writeTransition("officeModPersonalityBitch", "Return her original personality");
-			writeTransition("officeModPersonalitySlave", "Have her act in a way befitting of a slave");
-			writeTransition("officeModPersonalityBroken", "Break her mind, have her act like a pleasure junkie");
-			writeTransition("officeModPersonalitySilent", "Remove her capacity for speech");
-			writeTransition("officeQuo", "Change your mind");
-			break;
-		}
-		case "officeModPersonalityBitch": {
-			addFlag("office", "bitch");
-			removeFlag("office", "slave");
-			removeFlag("office", "broken");
-			removeFlag("office", "silent");
+		case "officeModTitsPerky": {
+			addFlag("office", "perky");
+			removeFlag("office", "flat");
+			removeFlag("office", "large");
+			removeFlag("office", "huge");
+			removeFlag("office", "fuckable");
 			writeHTML(`
-				t You've finished messing with officeF's head, and finalize the changes. Expectantly, you look into her eyes.
-				sp office; The fuck are you staring... Just let me go already!
+				t You've finished altering officeF's tits. She has a pair of perky breasts, maybe C-cup at most.
 				...
 			`);
 			writeScene("alexisQuo");
 			break;
 		}
-		case "officeModPersonalitySlave": {
-			addFlag("office", "slave");
-			removeFlag("office", "bitch");
-			removeFlag("office", "broken");
-			removeFlag("office", "silent");
+		case "officeModTitsLarge": {
+			addFlag("office", "large");
+			removeFlag("office", "flat");
+			removeFlag("office", "perky");
+			removeFlag("office", "huge");
+			removeFlag("office", "fuckable");
 			writeHTML(`
-				t You've finished messing with officeF's head, and finalize the changes. Expectantly, you look into her eyes.
-				sp office; M-master! I'm so sorry, I don't know what I was thinking acting like that!
+				t You've finished altering officeF's tits. They're back to her normal size. Though she shouldn't notice the app's changes directly, she does seem a little relieved.
 				...
 			`);
 			writeScene("alexisQuo");
 			break;
 		}
-		case "officeModPersonalityBroken": {
-			addFlag("office", "broken");
-			removeFlag("office", "slave");
-			removeFlag("office", "bitch");
-			removeFlag("office", "silent");
+		case "officeModTitsLarge": {
+			addFlag("office", "huge");
+			removeFlag("office", "flat");
+			removeFlag("office", "perky");
+			removeFlag("office", "large");
+			removeFlag("office", "fuckable");
 			writeHTML(`
-				t You've finished messing with officeF's head, and finalize the changes. Expectantly, you look into her eyes.
-				t ... And she doesn't even seem to notice. Instead she's more interested in playing with her cunt
+				t You've finished altering officeF's tits. Her face blushes a little as the feeling of the air on her bare, sensitive chest is enough to set her off.
 				...
 			`);
 			writeScene("alexisQuo");
 			break;
 		}
-		case "officeModPersonalitySilent": {
-			addFlag("office", "silent");
-			removeFlag("office", "slave");
-			removeFlag("office", "broken");
-			removeFlag("office", "bitch");
+		case "officeModTitsFuckable": {
+			addFlag("office", "fuckable");
+			removeFlag("office", "flat");
+			removeFlag("office", "perky");
+			removeFlag("office", "large");
+			removeFlag("office", "huge");
 			writeHTML(`
-				t You've finished messing with officeF's head, and finalize the changes. Expectantly, you look into her eyes.
-				sp office; ...?
+				t You've finished altering officeF's tits. They're now absolutely massive, each tit larger than her head. Best of all you can see her inverted nipples, easily a perfect size for your dick.
 				...
 			`);
 			writeScene("alexisQuo");
+			break;
+		}
+		case "officePussy": {
+			writeHTML(`
+				sp player; Your pussy, now.
+				sp office; ?flag office bitch; ?flag office pussy0; Y-you can't be serious. A dick like that... I'll be torn in half. Please, my mouth, my chest... Anything, j-just-
+				sp office; ?flag office slave; ?flag office pussy0; M-master, I would never tell you no, of course... B-but, my pussy... Won't you consider using my mouth instead?
+				t ?flag office broken; ?flag office pussy0; She lets out a hesitant giggle. Her brain isn't capable of rejecting any kind of sexual act, she's just a beast of pleasure. Still, her body shivers in fear as you approach.
+				t ?flag office silent; ?flag office pussy0; She spreads her legs as you approach, a tear falling from her eye and she starts rubbing her cunt trying to make herself as wet as possible for you.
+
+				t ?flag office pussy1; She spreads her legs for you, already a little wet. Well, you know how she's been passing the time.
+
+				t ?flag office pussy2; ?flag office bitch; She spreads her legs for you almost reflexively. She has a dirty scowl on her face, but her cunt is absolutely drooling at the thought of being stuffed.
+
+				t ?flag office pussy2; !flag office bitch; She spreads her legs for you almost reflexively. She has an eager smile on her face at the thought of getting fucked, and her cunt is absolutely drooling at the thought of being stuffed.
+
+				t ?flag office pussy3; She spreads her legs for you almost reflexively, and you can actually see her cunt gaping the slightest bit as it winks open and shut. Her body is in heat now, and there's only one thing that'll satisfy it.
+
+				im images/real/officePussy0.gif ?flag office pussy0;
+				im images/real/officePussy1.gif ?flag office pussy1;
+				im images/real/officePussy2.gif ?flag office pussy2;
+				im images/real/officePussy3.gif ?flag office pussy3;
+
+				t ?flag office pussy0; !flag office masochism; As you thrust in tears start falling down her cheeks as she barely holds in sobs. She bites her lips, just trying to make it through this.
+				t ?flag office pussy0; ?flag office masochism; As you thrust in she bites her lower lip hard. The pain hits her first, but is quickly washed out by a growing pleasure at being used, fucked, <b>dominated</b>.
+				t ?flag office pussy1; ?flag office bitch; As you thrust in she bites her lip and lets out a small gasp. She closes her eyes, trying to focus on the sensation of being filled, and not on who's filling her.
+				t ?flag office pussy1; !flag office bitch; As you thrust in she bites her lip and lets out a small gasp. She looks you right in the eye, the knowledge of who's filling her giving her even more pleasure than the insertion..
+				t !flag office pussy1; !flag office pussy0; ?flag office bitch; As you thrust in she lets out a long, drawn out moan. She tries to bite her lip to hold back, to save at least some face in front of you, but it's clear that her pride is being shattered into pieces by the arcing pleasure spiking through her body.
+				t !flag office pussy1; !flag office pussy0; ?flag office silent; As you thrust in her mouth goes slack. The smallest of squeaks can be heard. Her voice may be well past the point of broken, but her body is actively relishing in every second of the insertion.
+				t !flag office pussy1; !flag office pussy0; !flag office bitch; !flag office silent; As you thrust in she lets out a long, drawn out moan. Still, even as her mind is going haywire because of the arcing pleasure spiking through her body, she grinds against you hoping that you're feeling just as good as she is.
+
+				t ?flag office pussy0; Your inner sadist delights as you take a moment to lick a tear off her face, her body shuddering at the touch of your tongue but even more tears fall as you get into a rhythm of thrusting.
+				t !flag office pussy0; !flag office mouthBimbo; Your inner dominant urges delight as you take a moment to kiss her, her body shuddering at the touch of your lips and the rhythm of your powerful thrusting.
+				t !flag office pussy0; ?flag office mouthBimbo; Your inner dominant urges delight as you take a moment to kiss her, your tongue needs to actively penetrate her fat lips, and the pleasure caused by this is almost enough to distract her for a moment from the rhythm of your powerful thrusting.
+
+				t For the first round of the night you can already feel your balls clenching. Your enhanced body enough that instead of a piddly stream of cum, you're flooding her insides with thick, sticky jizz.
+
+				t ?flag office pussy0; !flag office masochism; She just clenches her body as she can't hold back her sobbing anymore. The act of being completely defiled starts to shave away at any fragments of will or dignity she had left. As you pull out of her cunt she even gets a little hysterical, rolling over to face away from you and not wanting to look at her leaking, sore snatch.
+				t ?flag office pussy0; ?flag office masochism; Despite the pain, despite the indignity of being defiled, despite the last vestiges of any will or dignity she has left being shaved away, the moment she feels your sperm inside her cunt she squirts. Knowing that she hates this, that she's so broken she'll be able to cum tonight every time she even thinks about her sore cunt, knowing that her pathetic slut body has completely betrayed her and is enjoying every second of this... 
+				t ?flag office pussy0; ?flag office masochism; It only makes her squirt harder.
+
+				t ?flag office pussy1; ?flag office bitch; She grimaces as she feels you cum inside, knowing that the first round is nearly over keeping her just on the edge of finally squirting hard enough to forget her place here. She shoots you a powerful glare, hating you for her captivity, for defiling her, and for taking away her chance to finally cum.
+				t ?flag office pussy1; !flag office bitch; She grins as she feels you cum inside, knowing that the first round is nearly over means that she shoots her hand between her legs and starts roughly playing with her clit. The idea of cumming with you is more important than any grace or dignity she could ever have.
+				t ?flag office pussy1; !flag office bitch; And it's enough. As the last jet of sperm fills her stuffed cunt, her body quivers as she pushes herself over the edge with the help of your dick.
+				sp office; !flag office pussy1; !flag office pussy0; !flag office silent; Cumming~!
+				sp office; !flag office pussy1; !flag office pussy0; ?flag office silent; ...~!
+				t !flag office pussy1; !flag office pussy0; She loses control of herself completely in those last, final thrusts. Her back arches and a full body quiver starts at her toes and ends at her head. A grin is spread across her face, knowing she'll cum even harder on the second round.
+
+				t ?flag office pussy3; Suddenly her body goes rigid again. You can feel the walls of her pussy clenching around you rhythmically, as if trying to milk your cock.
+
+				sp office; ?flag office pussy3; ?flag office bitch; !flag office impregnation; N-no! I don't... My body is acting on it's own!
+				t ?flag office pussy3; ?flag office bitch; !flag office impregnation; A tear leaks down the front of her face. Realizing that her body intends on getting stuffed with your cum without her mind's consent. You feel something soft pressing against the head of your cock, almost like it's smooching against the head of your dick.
+				sp office; ?flag office pussy3; ?flag office bitch; !flag office impregnation; M-my cervix... My womb, is...
+				t ?flag office pussy3; ?flag office bitch; !flag office impregnation; It suddenly clicks in her mind the full extent of what's happening and her eyes flutter.
+				t ?flag office pussy3; ?flag office bitch; !flag office impregnation; Her body wracked, her mind fried with shame and pleasure, her brain shuts down and she faints. <b>She is now broken.</b>
+
+				sp office; ?flag office pussy3; ?flag office bitch; ?flag office impregnation; N-no! I don't... My body is acting on it's own!
+				t ?flag office pussy3; ?flag office bitch; ?flag office impregnation; Her legs start to quake, regardless of her conscious will her body intends on getting stuffed with your cum, and her powerful fetish for being bred is cracking her sense of reason in half. You feel something soft pressing against the head of your cock, almost like it's smooching against the head of your dick.
+				sp office; ?flag office pussy3; ?flag office bitch; ?flag office impregnation; M-my cervix... My womb, is...
+				t ?flag office pussy3; ?flag office bitch; ?flag office impregnation; It suddenly clicks in her mind the full extent of what's happening and her eyes flutter. The quaking of her legs grows more rapid, more frantic, until...
+				sp office; ?flag office pussy3; ?flag office bitch; ?flag office impregnation; CUMMING~! FUUHHH CUMM~!
+				t ?flag office pussy3; ?flag office bitch; ?flag office impregnation;  Her mind admits complete defeat as her brain is rocked with an explosive orgasm hard enough to rewire her very way of thinking. You can see as her eyes roll back she's clearly realizing your dominance, imagining her gut swelling with your child, and understanding your cock is the only way she'll ever feel this good again. As her eyes flutter, she begins to faint, but it's clear that <b>she has been broken into a bitch in heat</b>.
+
+				sp office; ?flag office pussy3; ?flag office slave; M-master's cumming! He's cumming in my... In his sex-toy's cunt!
+				sp office; ?flag office pussy3; ?flag office broken; Y-yes! Cream my filthy cumslut cunt!
+				sp office; ?flag office pussy3; ?flag office silent; ...!
+				t You feel something soft pressing against the head of your cock, almost like it's smooching against the head of your dick.
+				t ?flag office pussy3; !flag office bitch; !flag office impregnation; Her eyes roll back as she can feel her cervix actually <i>consuming</i> your sperm. The idea that her body is so broken for you causes an actual tear of joy to slide down the side of her face. The pleasure of her altered body is too much, and she faints. That doesn't stop her cervix from bumping against the head of your cock a few more times, winking just a little so that your final jet of cum splatters directly into her womb.
+				t ?flag office pussy3; !flag office bitch ?flag office impregnation; Her eyes roll back as she can feel her cervix actually <i>consuming</i> your sperm. The idea that her body is so broken for you causes an actual tear of joy to slide down the side of her face. Her powerful fetish for being bred. The impregnation fetish you programmed into her body hits her hard, shattering her mind. She lets out a shrill scream and a jet of squirt from her cunt that quickly dies out as her brain overloads, and she goes slack.
+			`);
+			writeTransition("alexisQuo", "Go back");
+			break;
+		}
+		case "officeAnal": {
+			writeHTML(`
+				sp player; I think tonight we'll play with your asshole. Bend over, ass in the air.
+				sp office; ?flag office bitch; ?flag office ass0; ... No. No fucking way, you son of a bitch. Let me out, let me go right now!
+				sp office; ?flag office slave; ?flag office ass0; M-master... My pussy, or my mouth... I...
+				sp office; ?flag office broken; ?flag office ass0; M-my ass... Anal sex...
+				sp office; ?flag office silent; ?flag office ass0; ...
+				t ?flag office bitch; ?flag office ass0; Yet even as she rebels, she can't help but turn around and present herself to you. It isn't chains or a locked door that keep her here, it's the app making sure her loyalty to your word overpowers whatever will she can muster.
+				sp office; ?flag office bitch; ?flag office ass0; Please, please just let me go. I'm sorry, okay? I'm sorry for whatever I did to deserve this, please forgive me...
+				t ?flag office bitch; ?flag office ass0; !flag office masochism; As you step forwards she realizes you have no intention of listening. Tears welling up in her eyes she buries her head in the sheets and bites down on them hard.
+				t ?flag office bitch; ?flag office ass0; ?flag office masochism; As you step forwards she realizes you have no intention of listening. Her breathing starts to pick up and you can see a trickle of wetness drip down her leg. She buries her head in the sheets and bites down on them hard.
+				t !flag office bitch; ?flag office ass0; !flag office masochism; As you step forwards she realizes you have no intention of changing your mind. She takes a few deep breaths to try and control her breathing, before she buries her head in the sheets and bites down on them hard.
+				t !flag office bitch; ?flag office ass0; ?flag office masochism; As you step forwards she realizes you have no intention of changing your mind. She takes a few deep breaths to try and control her breathing, before she buries her head in the sheets and bites down on them hard. Yet despite her trepidation you can see a trickle of wetness drip down her leg. 
+
+				sp office; ?flag office bitch; ?flag office ass1; Ghh... This is all a sick game to you, isn't it?
+				t ?flag office bitch; ?flag office ass1; Despite her tone, she turns around and wiggles her fat ass at you, tempting you to fuck it.
+				sp office; ?flag office slave; ?flag office ass1; Of course!<br>If... If I could make a request, could you be extra rough with me today?
+				sp office; ?flag office broken; ?flag office ass1; Ass?<br>Y-yes please!
+				sp office; ?flag office silent; ?flag office ass1; ...
+				t !flag office bitch; ?flag office ass1; She turns around and wiggles her fat ass at you, tempting you to fuck it.
+
+				sp office; ?flag office bitch; ?flag office ass2; My... Ass...
+				t ?flag office bitch; ?flag office ass2; She seems hesitant for a moment, but only for a moment. She turns around and waves her ass at you, tempting you to fuck it.
+				sp office; ?flag office slave; ?flag office ass2; Yes!<br>Ah, sorry, I got a bit... Please, this fuckhole is yours, master. <i>Ream</i> it until I can't sit anymore and I'm sure my devotion to you will somehow grow even stronger~
+				sp office; ?flag office broken; ?flag office ass2; Asshole... You'll fuck my asshole~
+				sp office; ?flag office silent; ?flag office ass2; ...
+				t !flag office bitch; ?flag office ass2; She turns around and wiggles her fat ass at you before grabbing it by the cheeks and spreading it out. She makes sure you have a good look at her puckered fuckhole before she lets go and <i>spanks</i> herself hard enough for it to ripple.
+
+				im images/real/officeAss0.gif ?flag office ass0;
+				t ?flag office ass0; !flag office masochism; You can hear her let out a muffled scream as you thrust into her ass, followed by a choked-back sob. With no lube it's clear that this is hurting.
+				t ?flag office ass0; ?flag office masochism; You can hear her let out a muffled scream as you thrust into her ass, followed by a guttural moan. With no lube it's clear that this is hurting, but officeF's broken mind is getting off on the sensation.
+
+				im images/real/officeAss1.gif ?flag office ass1;
+				t ?flag office ass1; You can feel her tight hole wrap around you, you were kind enough to lube yourself up, which she clearly appreciates.
+
+				im images/real/officeAss2.gif ?flag office ass2;
+				t ?flag office ass2; You can feel the walls of her ass flexing around you, her altered body changed to the point where she doesn't need even a drop of lube to enjoy a good assfucking.
+
+				t You grab her by the hair and pull her close.
+
+				sp player; ?flag office ass0; Listen, whore. I decide how you feel, when you get off and how hard. Carve this into your soul, and never, <b>ever</b> forget who owns you.
+				sp office; ?flag office ass0; !flag office masochism; Y-yes... Sir...!
+				t ?flag office ass0; !flag office masochism; As you slam your hips against hers she chokes out the words between brutal sobs. Rather than let her battered soul keep being abused by continuing to resist, she finally relents. Her brain, desperate for any kind of out from the relentless pain finally cracks.
+				t ?flag office ass0; !flag office masochism; She's broken.
+				sp office; ?flag office ass0; ?flag office masochism; Y-yes... GHHH...!
+				t ?flag office ass0; ?flag office masochism; As you slam your hips against hers she grits her teeth so hard they might crack. The sheets in front of her are absolutely soaked as a squirting orgasm hits her like a truck.
+				sp player; ?flag office ass0; ?flag office masochism; Bad... GIRL!
+				t ?flag office ass0; ?flag office masochism; You adjust yourself so that you can continue to thrust into her as you slam her face down onto the spot soaked with her cunt juices. This of course only makes her ass convulse around you again.
+
+				sp player; !flag office ass0; You're mine, you understand? You're <b>my</b> slut, and you'll happily beg to get fucked in the ass any day of the week!
+				sp office; ?flag office ass1; ?flag office bitch; No...! N-no, I won't... I'm not... CUMMING~!
+				sp office; ?flag office ass1; ?flag office slave; Yesss~! Your slave is cumming~!
+				sp office; ?flag office ass1; ?flag office broken; Yesss~! Fuck my ass harder, ruin me~!
+				sp office; ?flag office ass1; ?flag office silent; ...~!
+				sp office; ?flag office ass2; ?flag office bitch; YES~! HARDERRRR~! POUND YOUR LITTLE BUTTSLUT~!
+				t ?flag office ass2; ?flag office bitch; You see something in officeF's eyes as her body shakes and convulses on your dick. It's clear from how she looks back at you that she's cumming so hard her resistance has crumbled. <b>She has broken into your slave!</b>
+				sp office; ?flag office ass2; ?flag office slave; YES~! HARDERRRR~! POUND YOUR LITTLE BUTTSLUT SLAVE~!
+				sp office; ?flag office ass2; ?flag office broken; YES~! HARDERRRR~! I'M CUMMING FROM MY FUCKING ASSHOLE~!!!
+				sp office; ?flag office ass2; ?flag office silent; ...~!!!
+
+				t With one more powerful thrust you can feel yourself start to cum inside her as your hips clap against her cheeks.
+
+				t ?flag office watersports; But before you're done, there's one more step of self relief. You sigh and relax as you start filling her creampied rectum with a blast of piss.
+				im images/real/assPiss.gif; ?flag office watersports;
+
+				t ?flag office ass0; You pull out, letting your cock rub against her untouched pussy as it flops free of her asshole. You let go of her hair and she similarly flops slack onto the bed, she must've fainted from the pain.
+				t ?flag office ass1; You pull out, letting your cock rub against her untouched pussy as it flops free of her asshole. You let go of her hair, letting her try to catch her breath.
+				sp player; ?flag office ass1; You'll be cleaning me off, right?
+				sp office; ?flag office ass1; ?flag office bitch; Ghh... Fine, you fucking pig, bring your filthy dick over here and get this over with...
+				sp office; ?flag office ass1; ?flag office slave; Y-yes... Please, I want to taste master's dick more...
+				sp office; ?flag office ass1; ?flag office broken; Y-yes... If you'll fuck me like that again, I'll do anything...
+				t ?flag office ass1; ?flag office silent; She says nothing, she just rolls over and opens her mouth.
+				t ?flag office ass2; You pull out, letting your cock rub against her untouched pussy as it flops free of her asshole. You let go of her hair and she similarly flops slack onto the bed, she must've blacked out from that orgasm. Even though she's resting in a pool of her own fluids while yours leak from her ass, she's out like a light.
+			`);
+			writeTransition("alexisQuo", "Go back");
 			break;
 		}
 		//Prologue

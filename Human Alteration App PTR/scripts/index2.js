@@ -1425,29 +1425,12 @@ function cullRequirements(string) {
 		var check = string.split(`?item `).pop().split(`;`)[0];
 		string = string.replace(`?item `+check+`;`, ``);
 	}
-	while (string.includes("!hypnosis ") == true) {
-		var check = string.split(`!hypnosis `).pop().split(`;`)[0];
-		string = string.replace(`!hypnosis `+check+`;`, ``);
-	}
-	while (string.includes("?hypnosis ") == true) {
-		var check = string.split(`?hypnosis `).pop().split(`;`)[0];
-		string = string.replace(`?hypnosis `+check+`;`, ``);
-	}
-	while (string.includes("!hacking ") == true) {
-		var check = string.split(`!hacking `).pop().split(`;`)[0];
-		string = string.replace(`!hacking `+check+`;`, ``);
-	}
-	while (string.includes("?hacking ") == true) {
-		var check = string.split(`?hacking `).pop().split(`;`)[0];
-		string = string.replace(`?hacking `+check+`;`, ``);
-	}
-	while (string.includes("!counseling ") == true) {
-		var check = string.split(`!counseling `).pop().split(`;`)[0];
-		string = string.replace(`!counseling `+check+`;`, ``);
-	}
-	while (string.includes("?counseling ") == true) {
-		var check = string.split(`?counseling `).pop().split(`;`)[0];
-		string = string.replace(`?counseling `+check+`;`, ``);
+	while (string.includes("?skill ") == true) {
+		var check = string.split(`?skill `).pop().split(`;`)[0];
+		if (data.player.skill < check) {
+			finalResult = false;
+		}
+		string = string.replace(`?skill `+check+`;`, ``);
 	}
 	while (string.includes("!time ") == true) {
 		var check = string.split(`!time `).pop().split(`;`)[0];
@@ -1794,6 +1777,7 @@ function writeHTML(text) {
 	var lines = text.split('\n');
 	//For each of these lines
 	for(var lineCounter = 0;lineCounter < lines.length;lineCounter++){
+		console.info("Now testing line "+lineCounter+", contents reading"+ lines[lineCounter]);
 		//Remove all tabs from the line, in case we use tab spacing
 		while (lines[lineCounter].includes('\t') == true) {
 			lines[lineCounter] = lines[lineCounter].replace(`\t`, ``);
@@ -2526,7 +2510,6 @@ function loadSlot(slot) {
 	else {
 		changeLocation(data.player.location);
 	}
-	updateSave();
 	deleteWindow();
 }
 
