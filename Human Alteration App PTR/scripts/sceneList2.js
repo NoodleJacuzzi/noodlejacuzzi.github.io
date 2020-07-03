@@ -3,6 +3,7 @@ function writeScene(scene) {
 	switch(scene) {
 		case "start" : {
 			writeFunction("sceneTransition('alexisTest')", "Test officeF's ownership");
+			writeFunction("sceneTransition('averyTest')", "Test camboiF's ownership");
 			writeHTML(`
 			im scripts/gamefiles/logo.png
 			t Salutations friends! Human Alteration App is an adult game created by me, NoodleJacuuzi. You can find and keep up with all of my work at my <a href='https://noodlejacuzzi.github.io/index.html'>Master Index</a>
@@ -20,6 +21,19 @@ function writeScene(scene) {
 			writeFunction("sceneTransition('prologueSkip')", "Skip the prologue, go straight to the dom/sub branching point");
 			writeText("As of version 1.1 I've come back to polish the game's content, update the engine, and add content where I feel the earlier versions of the game could be improved. Please head on over to my patreon for more details on all that I ever intend to add to this game. Unlike my other works like Anomaly Vault and Hentai University, Human Alteration App is made to be finished.");
 			break;
+		}
+		case "averyTest": {
+			writeText("What will Avery's next episode be?");
+			writeTransition("camboiTest1", "Have him film his now feminized body jerking off.");
+			writeTransition("camboiTest2", "Have him film himself getting off in a chastity cage with a vibrator.");
+			writeTransition("camboiTest3", "Have him film himself getting off with a buttplug and a fleshlight.");
+			writeTransition("camboiTest3", "Have him do a reaction video to a BBC compilation.");
+			writeText("...");
+			writeText("What will Avery's next episode be?");
+			writeTransition("camboiTest1", "Have her use a special camera dildo to show off her womb.");
+			writeTransition("camboiTest1", "Have her get off in an anal-only special.");
+			writeTransition("camboiTest1", "Have her do a public show and record it.");
+			writeSpecial("The vegetarian cheat is now active! Many scenes in the dom route have been changed to replace content involving dicks, and certain characters such as Riley and Gina have been dramatically altered!");
 		}
 		case "alexisTest": {
 			data.story[5].name = "Alexis";
@@ -529,6 +543,10 @@ function writeScene(scene) {
 				sp office; ?flag office slave; ?flag office pussy0; M-master, I would never tell you no, of course... B-but, my pussy... Won't you consider using my mouth instead?
 				t ?flag office broken; ?flag office pussy0; She lets out a hesitant giggle. Her brain isn't capable of rejecting any kind of sexual act, she's just a beast of pleasure. Still, her body shivers in fear as you approach.
 				t ?flag office silent; ?flag office pussy0; She spreads her legs as you approach, a tear falling from her eye and she starts rubbing her cunt trying to make herself as wet as possible for you.
+				sp office; ?flag office bitch; ?flag office pussy1; Ghh... Fine, do what you want.
+				sp office; ?flag office slave; ?flag office pussy1; Right away master!
+				t ?flag office broken; ?flag office pussy1; Sex? Finally!
+				t ?flag office silent; ?flag office pussy1; Her eyes dilate slightly.
 
 				t ?flag office pussy1; She spreads her legs for you, already a little wet. Well, you know how she's been passing the time.
 

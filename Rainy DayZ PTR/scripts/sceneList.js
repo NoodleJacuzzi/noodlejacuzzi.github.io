@@ -21,7 +21,7 @@ function writeScene(scene) {
 			}
 			writeTransition("rainyDayZ", "Scenario 1 - RainyDayZ");
 			writeTransition("theFacility", "Scenario 2 - The Facility");
-			writeTransition("spreadIsland", "Preview - Spread Island");
+			writeTransition("spreadIsland", "Scenario 3 - Spread Island");
 			writeTransition("typhoidMary", "Preview - Typhoid Mary");
 			writeTransition("scarletMansion", "Preview - Scarlet Mansion");
 			//writeTransition("onTheRecord", "Preview - On the Record");
@@ -76,7 +76,7 @@ function writeScene(scene) {
 		}
 		case "author": {
 			writeText("Rainy DayZ is a game created by Noodle Jacuzzi. You can find and check out my other works at my <a href='https://noodlejacuzzi.github.io/index.html'>Master Index</a>.");
-			writeText("I'm funded by <a href='https://www.patreon.com/noodlejacuzzi'>Patreon</a>, but Rainy DayZ as a whole doesn't perform too well in monthly polls against Anomaly Vault and Hentai University. If you'd like to support this game's development consider supporting me and letting me know you'd like more. Still, I wouldn't be making this game, or any of my others past Human Alteration App, if not for the people who support me! <br>Thank you to: O Xy Enkin, Swallows999, Iron Alex, Robbie, Joshua Ingram, Justifiable Gaming, ryguy, 4MinuteWarning, Hi There, Keith, Carlos, Macarga, 林家豪, Richard, Skyrim mod lvr, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, J_C_L, Filament, XxrobothacksxX, Dkells, Jinouga, Marco Wassmer, Taylor Trout, andres mejia, Colin E, Badaxe, Jesse Greene, Scal, ChronosEdge, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Yesdani Perez, Vikteren, Dean, Sveny13, Dravenmd114, Kudon, theoron, AnotherAccount333, Gavin Davis, Lucas, Kaliden, Krose, Tyler Ross, greatred, FrostyTB, Riven Drasek, l, ranchy sanchy, Bryson, Limitless, Greg Torres, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, Reverberations, ShadowFalls, William Parker, Magnus, Emanuel  Garcia, XaiuX, l1monat, Kieron Kow, Slomberg, henry grobins, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Daekash, fireballcreations, Markus Hansen, Louis Hayes, Alec8686, Tanman, DarthMalak, Danny Nguyen, yami, Trevor, Grim2011, KH dg, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, CaptainMontana, Simon Rencher, dhccpmc, Chaaaanon, Charles Morris, Nutburger, Noah, William Richardson, mazterlith, Sebastian Eckel, Taurus Travon Rashad Lemar Brackin, Anthony Munso, john smith, Your Husbando, Carlos, Joshua Melzark, Vincent Madaire-Cullen, ItsAllOgreNow, Gwen Yurick, Nils Maier, Blaise Fenn, stratum, Angel, Ariados, Jane, Snaked, Muryu, Debarre Sonny, Drashin, murgatroid99, Roy, Wild Bill, and brandon for supporting my work!");
+			writeText("I'm funded by <a href='https://www.patreon.com/noodlejacuzzi'>Patreon</a>, but Rainy DayZ as a whole doesn't perform too well in monthly polls against Anomaly Vault and Hentai University. If you'd like to support this game's development consider supporting me and letting me know you'd like more. Still, I wouldn't be making this game, or any of my others past Human Alteration App, if not for the people who support me! <br>Thank you to: O Xy Enkin, Swallows999, Iron Alex, Robbie, Joshua Ingram, Justifiable Gaming, ryguy, 4MinuteWarning, Hi There, Keith, Carlos, 林家豪, Richard, Skyrim mod lvr, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, J_C_L, Filament, XxrobothacksxX, Dkells, Jinouga, Marco Wassmer, Taylor Trout, andres mejia, Colin E, Badaxe, Jesse Greene, Scal, ChronosEdge, Geoffrey Munoz, nicholas guerra, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Yesdani Perez, Vikteren, Dean, Sveny13, Kudon, theoron, AnotherAccount333, Gavin Davis, Lucas, Kaliden, Krose, Tyler Ross, greatred, FrostyTB, Riven Drasek, l, ranchy sanchy, Limitless, Greg Torres, Geoff Heimos, liam paterson, ChubbiestThread, Reverberations, ShadowFalls, William Parker, Magnus, Emanuel  Garcia, XaiuX, l1monat, Kieron Kow, Slomberg, henry grobins, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Daekash, Markus Hansen, Louis Hayes, Tanman, DarthMalak, Danny Nguyen, yami, Trevor, Grim2011, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, dhccpmc, Chaaaanon, Charles Morris, Nutburger, Noah, William Richardson, mazterlith, Sebastian Eckel, Anthony Munso, john smith, Your Husbando, Carlos, Joshua Melzark, Vincent Madaire-Cullen, ItsAllOgreNow, Gwen Yurick, Nils Maier, Blaise Fenn, stratum, Angel, Ariados, Jane, Snaked, Muryu, Debarre Sonny, Drashin, qwerty, murgatroid99, Roy, Wild Bill, and brandon for supporting my work!");
 			writeText("As a note, this game also features a dog zombie. To view his scenes you must deliberately wound yourself, go to the forest, and either leave your weapon behind or have 0 stamina when you encounter him. If you dislike this sort of content, you can avoid it easily by doing anything other than what I've just described. To avoid any potential legal troubles, this dog is actually a woman in a very, very convincing dog suit. If you want absolutely no part in this at all, disable some of the more out-there fetishes in the settings menu.");
 			writeText("If you have any comments, criticisms, or suggestions for content for this or future chapters, please let me know about them in the <a href='https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12575'>TFgames thread</a>, on my patreon, or in the Noodle Jacuzzi <a href='https://discord.gg/pDht5BZ'>Discord</a>.");
 			writeText("As an extra note, no cheat codes aside from <b>oowoo</b>, sorry. There's one you get for unlocking all the game's scenes, but you get that for unlocking all the scenes. If you have any cheat code ideas, please let me know!");
@@ -1129,7 +1129,7 @@ function writeScene(scene) {
 		case "spreadIsland": {
 			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/spreadIsland.jpg)";
 			writeMed("scripts/gamefiles/characters/Spread Island.jpg");
-			writeText("Scenario Preview - Spread Island");
+			writeText("Scenario 3 - Spread Island");
 			writeText("On a resort island, two newlyweds are enjoying a party-filled honeymoon vacation until all hell breaks loose.");
 			writeText("You, a loving husband, must find a way to get yourself and your infected wife to safety.");
 			data.player.scenario = "Spread Island";
@@ -3273,7 +3273,7 @@ function writeEvent(n) {
 			`);
 			break;
 		}
-		case "wifeSacrifice": {//Below are unfinished too
+		case "wifeSacrifice": {
 			writeHTML(`
 				t Fear, hesitation, doubt, all those things seem to just fade away.
 				t Quietly you you walk up behind her, and...

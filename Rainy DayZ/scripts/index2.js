@@ -57,7 +57,7 @@ var galleryArray = [
 	{index: 'alpha2', 	name: "Failed Escape", 		scenario: "The Facility",	hint: 'Try to fit through the crawlspace in the Containment Lab after curing your infection.'},
 	{index: 'alpha3', 	name: "Hypnotic Ass", 		scenario: "The Facility",	hint: 'Try to hide from the alpha in the weapon lab after opening the sealed door.'},
 	{index: 'solo1', 	name: "Private Time", 		scenario: "The Facility",	hint: 'Masturbate in the Chemical Lab.'},
-	{index: 'domination', 	name: "Domination", 		scenario: "The Facility",	hint: 'Relieve yourself with the subdued woman in the weapon lab after learning the passcode.'},
+	{index: 'domination', 	name: "Domination", 		scenario: "The Facility",	hint: 'Relieve yourself with the subdued woman in the weapon lab after learning the passcode is 828.'},
 	{index: 'solo2',	name: "Exposed Time", 		scenario: "The Facility",	hint: 'Masturbate in the Containment Lab.'},
 	{index: 'releaseTheHorde',	name: "Release the Horde", 		scenario: "The Facility",	hint: 'Masturbate in the Containment Lab and release the horde.'},
 	{index: 'cure', 	name: "Cured", 				scenario: "The Facility",	hint: 'Cure your infection by bringing 3 keycards to the Innoculation Lab.'},
@@ -78,9 +78,13 @@ var galleryArray = [
 	{index: 'hotelAbandon', name: "Left 4 Bred", scenario: "Spread Island",	hint: "Leave the hotel without going back for your wife. Why is this a bad end? Because I'm lazy!"},
 	{index: 'wifeHelp', name: "A Helping Hand", scenario: "Spread Island",	hint: "Offer your hand as a sexual relief tool in the king's villa."},
 	{index: 'wifeDildo', name: "Self-Pleasure: Dildo", scenario: "Spread Island",	hint: "Offer a dildo as a sexual relief tool in the king's villa."},
-	{index: 'wifeOnahole', name: "Self-Pleasure: Onahole", scenario: "Spread Island",	hint: "Offer the fleshlight from room 204 as a sexual relief tool in the king's villa."},
-	{index: 'wifeCage', name: "Caged", scenario: "Spread Island",	hint: "Force your wife into a chastity cage in the king's villa."},
 	{index: 'wifeSacrifice', name: "The Sacrifice", scenario: "Spread Island",	hint: "Bludgeon the scrounger in the soldier's villa and use her to satisfy your wife."},
+	//{index: 'wifeOnahole', name: "Self-Pleasure: Onahole", scenario: "Spread Island",	hint: "Offer the fleshlight from room 204 as a sexual relief tool in the king's villa."},
+	//{index: 'wifeCage', name: "Caged", scenario: "Spread Island",	hint: "Force your wife into a chastity cage in the king's villa."},
+	//{index: 'compoundCaught', name: "Caught Escaping", scenario: "Spread Island",	hint: "Get caught by the guards in the compound by coming out of the vent when you shouldn't."},
+	//{index: 'compoundHounds', name: "", scenario: "Spread Island",	hint: "Hide right behind a hound's cage in the compound."},
+	//{index: 'compoundCage', name: "", scenario: "Spread Island",	hint: "Rescue your chastity-caged wife from the compound."},
+	//{index: 'compoundFailure', name: "", scenario: "Spread Island",	hint: "Don't set a timer on either the kennels or the gas room at the computer console before escaping the compound."},
 ];
 
 //Startup & Systems config
@@ -125,6 +129,9 @@ function replaceCodenames(text) {
 	var codenameCheck = "";
 	for (geminiLoop = 0; geminiLoop < 5; geminiLoop++) {
 		text = text.replace('playerF', data.player.name);
+	}
+	while (text.includes("wifeF")) {
+		text = text.replace('wifeF', data.player.wife);
 	}
 	if (data.player.oowoo == true) {
 		for (uwuLoop = 0; uwuLoop < 30; uwuLoop++) {
@@ -735,19 +742,19 @@ function checkRequirements(string) {
 		}
 		string = string.replace(`?fetish `+check+`;`, ``);
 	}
-	while (string.includes("?flag player ") == true) {
-		var check = string.split(`?flag player `).pop().split(`;`)[0];
+	while (string.includes("?flag ") == true) {
+		var check = string.split(`?flag `).pop().split(`;`)[0];
 		if (data.player.flags.includes(check) != true) {
 			finalResult = false;
 		}
-		string = string.replace(`?flag player `+check+`;`, ``);
+		string = string.replace(`?flag `+check+`;`, ``);
 	}
-	while (string.includes("!flag player ") == true) {
-		var check = string.split(`!flag player `).pop().split(`;`)[0];
+	while (string.includes("!flag ") == true) {
+		var check = string.split(`!flag `).pop().split(`;`)[0];
 		if (data.player.flags.includes(check) == true) {
 			finalResult = false;
 		}
-		string = string.replace(`!flag player `+check+`;`, ``);
+		string = string.replace(`!flag `+check+`;`, ``);
 	}
 	while (string.includes("?item ") == true) {
 		var check = string.split(`?item `).pop().split(`;`)[0];
@@ -777,13 +784,13 @@ function cullRequirements(string) {
 		var check = string.split(`?fetish `).pop().split(`;`)[0];
 		string = string.replace(`?fetish `+check+`;`, ``);
 	}
-	while (string.includes("?flag player ") == true) {
-		var check = string.split(`?flag player `).pop().split(`;`)[0];
-		string = string.replace(`?flag player `+check+`;`, ``);
+	while (string.includes("?flag ") == true) {
+		var check = string.split(`?flag `).pop().split(`;`)[0];
+		string = string.replace(`?flag `+check+`;`, ``);
 	}
-	while (string.includes("!flag player ") == true) {
-		var check = string.split(`!flag player `).pop().split(`;`)[0];
-		string = string.replace(`!flag player `+check+`;`, ``);
+	while (string.includes("!flag ") == true) {
+		var check = string.split(`!flag `).pop().split(`;`)[0];
+		string = string.replace(`!flag `+check+`;`, ``);
 	}
 	while (string.includes("?item ") == true) {
 		var check = string.split(`?item `).pop().split(`;`)[0];
@@ -794,6 +801,25 @@ function cullRequirements(string) {
 		string = string.replace(`!item `+check+`;`, ``);
 	}
 	return string;
+}
+
+function addFlag(name) {
+	if (data.player.flags.includes(name) == false) {
+		data.player.flags += name;
+	}
+}
+
+function removeFlag(name) {
+	data.player.flags.replace(name, "");
+}
+
+function checkFlag(name) {
+	if (data.player.flags.includes(name) == true) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 //Saving
