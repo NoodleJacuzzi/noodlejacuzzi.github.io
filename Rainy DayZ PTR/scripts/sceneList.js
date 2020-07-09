@@ -1215,7 +1215,7 @@ function writeScene(scene) {
 			writeHTML(`
 				t You're in room 201 of the Sanctuary Hotel. The structure of the room means there aren't any windows.
 				t !flag hotelGassed; Your wife, wifeF, is on the bed getting some rest. Once you've found a safe way out you should wake her and get moving, there's no telling how long until another infected arrives.
-				t !flag hotelGassed; ?item Strange Gas; You have the container of strange gas with you. It might be some kind of antidote, but it isn't likely. Still, looking at the flaccid dick between your wife's legs, you're desperate for any kind of hope. Will you [expose her to the strange gas?|hotelWifePleasureGas]?
+				t !flag hotelGassed; ?item Strange Gas; You have the container of strange gas with you. It might be some kind of antidote, but it isn't likely. Still, looking at the flaccid dick between your wife's legs, you're desperate for any kind of hope. Will you [expose her to the strange gas|hotelWifePleasureGas]?
 				t !flag hotelGassed; ?item Bedding Rope; You found a safe way out by [climbing down from the window of room 204|hotelEscape]
 				t !flag hotelGassed; It seems like the woman from earlier was distracted, it should be safe to [head out into the hallway|hotelHallway].
 				
@@ -1369,9 +1369,6 @@ function writeScene(scene) {
 				t You hear wifeF freaking out for some reason as you lift your hand to scratch the bite, only for your hand to brush against something... Metal.
 				t The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundAwaken].
 			`);
-			if (data.player.currentScene != "gallery") {
-				writeTransition('scenarioSelect', 'END OF PREVIEW', '#FF0000');
-			}
 			//writeText(".");
 			break;
 		}
@@ -1552,8 +1549,8 @@ function writeScene(scene) {
 				t You're in some kind of kennel, but the animals in here are anything but normal. Large, tough-looking hounds that could tear a man apart at a moment's notice. Good thing they're asleep.
 				t From here you can't actually climb back up to the vents, you're in serious danger if you're caught.
 				t There's an exit to some kind of main lobby, this whole building isn't too secure against people who still have functioning brains. Still, there are still patrols going on, you can't get out without causing a distraction. Speaking of a distraction... If you [rattled these cages a little|houndsDisturbed] these boys would probably make enough noise for the whole facility to hear, allowing you to sneak around the compound.
-				t There's not a lot of room here, if you need to hide the only spot is [right behind one of the cages|compoundHounds], and squeezing behind there would absolutely wake the beast up. 
 			`);
+			//t There's not a lot of room here, if you need to hide the only spot is [right behind one of the cages|compoundHounds], and squeezing behind there would absolutely wake the beast up. 
 			calculateMovement();
 			break;
 		}
