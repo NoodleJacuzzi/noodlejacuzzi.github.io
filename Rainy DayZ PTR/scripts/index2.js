@@ -76,15 +76,15 @@ var galleryArray = [
 	{index: 'hotelPleasureGas', name: "Pink Gas", scenario: "Spread Island",	hint: "Pull the plug on the mysterious gas in room 203."},
 	{index: 'hotelWifePleasureGas', name: "Fun for the Family", scenario: "Spread Island",	hint: "Spray your wife with the pink gas you found in room 203. Because that's a great idea!"},
 	{index: 'hotelAbandon', name: "Left 4 Bred", scenario: "Spread Island",	hint: "Leave the hotel without going back for your wife. Why is this a bad end? Because I'm lazy!"},
-	{index: 'wifeHelp', name: "A Helping Hand", scenario: "Spread Island",	hint: "Offer your hand as a sexual relief tool in the king's villa."},
+	{index: 'wifeHelp', name: "A Helping Hand", scenario: "Spread Island",	hint: "Offer your hand as a sexual relief tool in the king's villa. (You need to escape via the bedding rope to get to the villa section)"},
 	{index: 'wifeDildo', name: "Self-Pleasure: Dildo", scenario: "Spread Island",	hint: "Offer a dildo as a sexual relief tool in the king's villa."},
 	{index: 'wifeSacrifice', name: "The Sacrifice", scenario: "Spread Island",	hint: "Bludgeon the scrounger in the soldier's villa and use her to satisfy your wife."},
-	//{index: 'wifeOnahole', name: "Self-Pleasure: Onahole", scenario: "Spread Island",	hint: "Offer the fleshlight from room 204 as a sexual relief tool in the king's villa."},
-	//{index: 'wifeCage', name: "Caged", scenario: "Spread Island",	hint: "Force your wife into a chastity cage in the king's villa."},
-	//{index: 'compoundCaught', name: "Caught Escaping", scenario: "Spread Island",	hint: "Get caught by the guards in the compound by coming out of the vent when you shouldn't."},
-	//{index: 'compoundHounds', name: "", scenario: "Spread Island",	hint: "Hide right behind a hound's cage in the compound."},
-	//{index: 'compoundCage', name: "", scenario: "Spread Island",	hint: "Rescue your chastity-caged wife from the compound."},
-	//{index: 'compoundFailure', name: "", scenario: "Spread Island",	hint: "Don't set a timer on either the kennels or the gas room at the computer console before escaping the compound."},
+	{index: 'wifeOnahole', name: "Self-Pleasure: Onahole", scenario: "Spread Island",	hint: "Offer the fleshlight from room 204 as a sexual relief tool in the king's villa."},
+	{index: 'wifeCage', name: "Caged", scenario: "Spread Island",	hint: "Force your wife into a chastity cage in the king's villa."},
+	{index: 'compoundCaught', name: "Caught Escaping", scenario: "Spread Island",	hint: "Get caught by the guards in the compound by coming out of the vent when you shouldn't."},
+	//index: 'compoundHounds', name: "", scenario: "Spread Island",	hint: "Hide right behind a hound's cage in the compound."},
+	{index: 'compoundCage', name: "", scenario: "Spread Island",	hint: "Rescue your chastity-caged wife from the compound."},
+	{index: 'compoundFailure', name: "", scenario: "Spread Island",	hint: "Don't set a timer on either the kennels or the gas room at the computer console before escaping the compound."},
 ];
 
 //Startup & Systems config
