@@ -1080,7 +1080,6 @@ function generateInv() {
 			document.getElementById('windowLeft').innerHTML += `
 			<div class = "item">
 				<p class = "itemName">`+data.items[i].name+`</p>
-				<img class ="itemImage" src="`+data.items[i].image+`">
 			<div>
 			`;
 		}
@@ -1088,7 +1087,6 @@ function generateInv() {
 			document.getElementById('windowRight').innerHTML += `
 			<div class = "item">
 				<p class = "itemName">`+data.items[i].name+`</p>
-				<img class ="itemImage" src="`+data.items[i].image+`">
 			</div>
 			`;
 		}

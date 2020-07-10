@@ -1306,8 +1306,8 @@ function writeScene(scene) {
 		case "hotel204": {
 			writeHTML(`
 				t You're in room 204 of the Sanctuary Hotel. It's been picked clean. Food from the fridge, towels, even the sheets from the bed have been taken.
-				t !item Wire Cutters; Even the TV has been taken, there's a pair of item[wire cutters|Wire Cutters] small enough to hide in the waistband of your clothes in here. Aside from that it's insane how cleanly everything in here is just gone. Maybe this place was robbed before the outbreak?
-				t ?item Wire Cutters; You already took the pair of wire cutters. It's insane how cleanly everything in here has been picked clean. Maybe this place was robbed before the outbreak?
+				t !item Wire Cutters; Even the TV has been taken, there's a pair of item[wire cutters|Wire Cutters] small enough to hide in the waistband of your clothes in here. Aside from that everything in here is just gone. Maybe this place was robbed before the outbreak?
+				t ?item Wire Cutters; You already took the pair of wire cutters. Everything in here has been picked clean. Maybe this place was robbed before the outbreak?
 				t !item Onahole; Everything is gone... Except a fleshlight. There's an onahole here, still in the box inside one of the drawers. This probably wasn't a priority to be taken. If you really feel like you'll need it, you could item[take it with you|Onahole].
 				t ?item Onahole; The drawers are empty.
 				t !flag hotelGassed; !item Bedding; There's a window here, but it's a full story drop to a paved walkway below. 
@@ -1349,8 +1349,8 @@ function writeScene(scene) {
 				t You're in the king villa, a large resort villa for the ultra wealthy. It must have been evacuated already, because the place has clearly been looted. The fridge, hanging open, has nothing but partially melted ice inside.
 				t There's nothing of value left besides wifeF on the bed, fruitlessly jerking herself off. Tears are forming in her eyes as she arches her back, it wasn't exhaustion slowing you two down before, but mind-consuming lust. It's clear she isn't able to get off herself, despite how frantically she jerks herself.
 				t If you can't find anything to help her with... You may need to [help her yourself|wifeHelp].
-				t ?item Onahole; [You could give her the onahole you found.|wifeOnahole].
-				t ?item Dildo; [You could give her the dildo you found.|wifeDildo].
+				t ?item Onahole; [You could give her the onahole you found|wifeOnahole].
+				t ?item Dildo; [You could give her the dildo you found|wifeDildo].
 				t ?item Chastity Cage; [You could use the ice from the nearby fridge combined with the chastity cage to keep her dick in check|wifeCage].
 				t [You can head outside, into the affluent villa district|villaOutside].
 			`);
@@ -1453,7 +1453,7 @@ function writeScene(scene) {
 				sp ???; im none; ?flag wifeCage; Heh. Need to Breed 2; Too Pent Up, Too Furious.
 				sp ???; im none; ?flag wifeCage; Tasha, seriously. We're professionals, not...
 				
-				t The conversation fades as the two of them walk away. Peering through a small hole into the hallway, you can see more people patrolling around. They're wearing some kind of urban camoflague, and their faces are obscured by thick masks. All of the men are wearing headphones as well.
+				t The conversation fades as the two of them walk away. Peering through a small hole into the hallway, you can see more people patrolling around. They're wearing some kind of urban camouflague, and their faces are obscured by thick masks. All of the men are wearing headphones as well.
 				t This is a dangerous situation, these people aren't working for any government you know. With wifeF somewhere else and you locked in here, there's no telling how you'll make it out of this alive.
 				t Still, you should [plan your escape|compoundRoom].
 			`);
@@ -1462,7 +1462,7 @@ function writeScene(scene) {
 		}
 		case "compoundRoom": {
 			writeHTML(`
-				t You're in some kind of cell, or at least the best one that cound be made out of some kind of closet.
+				t You're in some kind of cell, or at least the best one that could be made out of some kind of closet.
 				t !flag playerDoorUnlocked; The door is locked, and won't budge. It's some kind of electronic lock that's been fitted onto the door, they must still have power over here. There's no keyhole, but there is a small hole you can peer through.
 				t ?flag playerDoorUnlocked; You unlocked the door with the compound's command console, so you can freely [head out into the hallway|compoundHall], so long as you're careful not to be caught.
 				t Searching around, you can see an air vent that probably connects to a series of ventilation shafts. Why some prying the loose bolts break off and you can [crawl inside|compoundVent1].
@@ -1560,7 +1560,7 @@ function writeScene(scene) {
 		}
 		case "houndsDisturbed": {
 			writeHTML(`
-				t The hounds are asleep, completely out of it at the moment. You silent tiptoe up to the cage...
+				t The hounds are asleep, completely out of it at the moment. You silently tiptoe up to the cage...
 				t And smack the fuck out of it.
 				t The dog inside goes absolutely insane, thrashing about in surprise and anger, before it turns into just anger. He barks and snarls, and soon every dog in the room has joined him. You rush over to the side of the room until a few soldiers rush in to check on the hounds.
 				t Now, while the soldiers are focused on the dogs, you need to [sneak out of the room|compoundMain]!
@@ -3322,7 +3322,7 @@ function writeEvent(n) {
 				im wifeCage.gif
 				t Finally, the cage is in place. She's huffing and puffing on the bed like she's just been through labor. Just one look in her eyes tells you she's teetering on the edge of sanity. 
 				sp player; Can you keep going?
-				t She nods. It's clearly only one thing is on her mind though, and her fiddling with the chastity cage makes it clear what that is.
+				t She nods. It's clear that only one thing is on her mind though, and her fiddling with the chastity cage makes it clear what that is.
 			`);
 			break;
 		}
@@ -3436,18 +3436,18 @@ function writeEvent(n) {
 					sp wife; Stop it! Honey please, wake up! 
 					t Your eyes shoot open, you're in wifeF's cell, and she's sitting across from you bound to a chair. As you struggle to move you realize you're bound the same way. 
 					sp wife; Thank god you're alive... 
-					t WifeF's eyes are puffy, she's been crying and she's entirely naked. 
+					t wifeF's eyes are puffy, she's been crying and she's entirely naked. 
 					sp wife; It's okay, it's okay. We're gonna be alright. They caught us, they started beating you, and when I begged them to stop... 
 					t She takes a deep breath and forces a smile. A soldier, her entire body covered in a black paramilitary uniform, walks beside her with a small canister. 
 					sp wife; They said they'd do things to us... And that if we made it through they'd let us go. I convinced them to just do it to me, since I'm already, well... 
 					t The canister lets out a small hiss of pressurized air. You begin to struggle against your bindings as a small wormlike creature crawls out. wifeF either doesn't notice or is trying to ignore it as she keeps a calm facade. 
 					sp wife; We'll be okay. We're gonna make it out of here together, okay? I lov-GGHHHH! 
-					t She's cut short as the worm spreads some kind of mucus onto her, nearly every one her muscles tightens. 
+					t She's cut short as the worm spreads some kind of mucus onto her, nearly every one of her muscles tightens. 
 					t As you thrash and desperately try to free yourself wifeF goes slack. Her eyes are filled with panic but she can't move as the worm moves from the canister to the entrance of her ear, then crawls inside. 
-					t She lets out a shrill yet muffled shriek through gritted teeth as the worm crawls in, and suddenly her slack left arm jolts agains her bundings. Then her right leg, then both hands, and finally her cock jerks up and sprays a lance of precum onto the floor. 
+					t She lets out a shrill yet muffled shriek through gritted teeth as the worm crawls in, and suddenly her slack left arm jolts against her bindings. Then her right leg, then both hands, and finally her cock jerks up and sprays a lance of precum onto the floor. 
 					t There's one last moment where she hyperventilates and looks into your eyes with terror, before her eyes roll back. She lets out a deep drawn-out groan as her cock begins to squirt out rope after rope of thick cum. 
 					im compoundFailure.gif
-					t Her eyes unfocus, there's no sign of movement or intelligence left besides and occasional jerk of her body when she splurts another rope of jizz.
+					t Her eyes unfocus, there's no sign of movement or intelligence left besides an occasional jerk of her body when she splurts another rope of jizz.
 					sp ???; im none; Whelp, she didn't last long. Don't worry, honestly you got the good end of the bargain. The bigger one we have for you is gonna feel waaay better. 
 				`);
 			}
