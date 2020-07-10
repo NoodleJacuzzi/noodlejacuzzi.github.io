@@ -76,7 +76,8 @@ function writeScene(scene) {
 		}
 		case "author": {
 			writeText("Rainy DayZ is a game created by Noodle Jacuzzi. You can find and check out my other works at my <a href='https://noodlejacuzzi.github.io/index.html'>Master Index</a>.");
-			writeText("I'm funded by <a href='https://www.patreon.com/noodlejacuzzi'>Patreon</a>, but Rainy DayZ as a whole doesn't perform too well in monthly polls against Anomaly Vault and Hentai University. If you'd like to support this game's development consider supporting me and letting me know you'd like more. Still, I wouldn't be making this game, or any of my others past Human Alteration App, if not for the people who support me! <br>Thank you to: O Xy Enkin, Swallows999, Iron Alex, Robbie, Joshua Ingram, Justifiable Gaming, ryguy, 4MinuteWarning, Hi There, Keith, Carlos, 林家豪, Richard, Skyrim mod lvr, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, J_C_L, Filament, XxrobothacksxX, Dkells, Jinouga, Marco Wassmer, Taylor Trout, andres mejia, Colin E, Badaxe, Jesse Greene, Scal, ChronosEdge, Geoffrey Munoz, nicholas guerra, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Yesdani Perez, Vikteren, Dean, Sveny13, Kudon, theoron, AnotherAccount333, Gavin Davis, Lucas, Kaliden, Krose, Tyler Ross, greatred, FrostyTB, Riven Drasek, l, ranchy sanchy, Limitless, Greg Torres, Geoff Heimos, liam paterson, ChubbiestThread, Reverberations, ShadowFalls, William Parker, Magnus, Emanuel  Garcia, XaiuX, l1monat, Kieron Kow, Slomberg, henry grobins, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Daekash, Markus Hansen, Louis Hayes, Tanman, DarthMalak, Danny Nguyen, yami, Trevor, Grim2011, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, dhccpmc, Chaaaanon, Charles Morris, Nutburger, Noah, William Richardson, mazterlith, Sebastian Eckel, Anthony Munso, john smith, Your Husbando, Carlos, Joshua Melzark, Vincent Madaire-Cullen, ItsAllOgreNow, Gwen Yurick, Nils Maier, Blaise Fenn, stratum, Angel, Ariados, Jane, Snaked, Muryu, Debarre Sonny, Drashin, qwerty, murgatroid99, Roy, Wild Bill, and brandon for supporting my work!");
+			writeText("I'm funded by <a href='https://www.patreon.com/noodlejacuzzi'>Patreon</a>, but Rainy DayZ as a whole doesn't perform too well in monthly polls against Anomaly Vault and Hentai University. If you'd like to support this game's development consider supporting me and letting me know you'd like more. Still, I wouldn't be making this game, or any of my others past Human Alteration App, if not for the people who support me! <br>Thank you to: Swallows999, Iron Diana, Robbie, Joshua Ingram, Elias Errati, Justifiable Gaming, ryguy, 4MinuteWarning, Hi There, Keith, Carlos, Macarga, 林家豪, Richard, dragoon48, Skyrim mod lvr, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, J_C_L, Filament, XxrobothacksxX, Dkells, Jinouga, Marco Wassmer, Taylor Trout, andres mejia, Colin E, Badaxe, Jesse Greene, Scal, ChronosEdge, colt, Anton Schmidt, Geoffrey Munoz, nicholas guerra, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Don, Vikteren, Dean, Sveny13, Kudon, theoron, AnotherAccount333, Gavin Davis, Lucas, Kaliden, Krose, Tyler Ross, greatred, FrostyTB, Riven Drasek, l, ranchy sanchy, Bryson, Limitless, Greg Torres, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, Reverberations, ShadowFalls, William Parker, Magnus, Emanuel  Garcia, XaiuX, l1monat, Kieron Kow, Slomberg, henry grobins, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Daekash, fireballcreations, Markus Hansen, Louis Hayes, Tanman, DarthMalak, Danny Nguyen, yami, Trevor, Grim2011, KH dg, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, CaptainMontana, Simon Rencher, dhccpmc, Chaaaanon, Charles Morris, Nutburger, Noah, William Richardson, mazterlith, Sebastian Eckel, Anthony Munso, john smith, Your Husbando, Carlos, Joshua Melzark, Vincent Madaire-Cullen, ItsAllOgreNow, Gwen Yurick, Nils Maier, Blaise Fenn, stratum, Angel, Ariados, Jane, Snaked, Muryu, Debarre Sonny, Drashin, qwerty, murgatroid99, Roy, Wild Bill, and brandon for supporting my work!");
+			writeText("In addition, a special thanks to the people who've directly helped my writing and code. Wild Bill for his save to file system, Stiggy752 for the framework for the game's CSS, and OrangeMaestro for his work finding hundreds of typos and grammatical errors I've missed. Thank you!");
 			writeText("As a note, this game also features a dog zombie. To view his scenes you must deliberately wound yourself, go to the forest, and either leave your weapon behind or have 0 stamina when you encounter him. If you dislike this sort of content, you can avoid it easily by doing anything other than what I've just described. To avoid any potential legal troubles, this dog is actually a woman in a very, very convincing dog suit. If you want absolutely no part in this at all, disable some of the more out-there fetishes in the settings menu.");
 			writeText("If you have any comments, criticisms, or suggestions for content for this or future chapters, please let me know about them in the <a href='https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12575'>TFgames thread</a>, on my patreon, or in the Noodle Jacuzzi <a href='https://discord.gg/pDht5BZ'>Discord</a>.");
 			writeText("As an extra note, no cheat codes aside from <b>oowoo</b>, sorry. There's one you get for unlocking all the game's scenes, but you get that for unlocking all the scenes. If you have any cheat code ideas, please let me know!");
@@ -98,7 +99,6 @@ function writeScene(scene) {
 			writeText("A hard-boiled agent investigates a spooky mansion. This one would be straight from Resident Evil 1, and would actually use drawn CGs from Eroquis's work instead of real porn gifs. I ended up scrapping it since it would deviate too far from the shemale zombie concept to straight up use resident evil's monsters, but it could probably end up being its own game.");
 			writeText("Similar to the above, a game set in space based on the CG from Eroquis's <i>Dirty Prison Ship</i> game. This one would probably also need to be its own game, as aliens are even farther from the original concept.");
 			writeText("Lemme know if you have any ideas to expand on the above, or just suggestions in general! Over the next few updates I hope to add more demos, check out these ones for a preview of what's to come:");
-			writeTransition("scarletMansion", "Preview - Scarlet Mansion");
 			writeTransition("onTheRecord", "Preview - On the Record");
 			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/streets.jpg)";
 			writeTransition("scenarioSelect", "Go back");
@@ -1146,6 +1146,7 @@ function writeScene(scene) {
 		case "spreadStart": {
 			data.quicksave = null;
 			data.player.flags = "";
+			data.items = [];
 			writeSpeech("DJ", "none", " Alright party people, you ready to turn it up!?");
 			writeText("The crowd roars in approval.");
 			writeSpeech("DJ", "none", " Then I'll give you all something to sink your teeth into, let's tear this place apart!");
@@ -1213,10 +1214,13 @@ function writeScene(scene) {
 		case "hotelRoom": {
 			writeHTML(`
 				t You're in room 201 of the Sanctuary Hotel. The structure of the room means there aren't any windows.
-				t Your wife, wifeF, is on the bed getting some rest. Once you've found a safe way out you should wake her and get moving, there's no telling how long until another infected arrives.
-				t ?item Strange Gas; You have the container of strange gas with you. It might be some kind of antidote, but it isn't likely. Still, looking at the flaccid dick between your wife's legs, you're desperate for any kind of hope. Will you [expose her to the strange gas?|hotelWifePleasureGas]?
-				t ?item Bedding Rope; You found a safe way out by [climbing down from the window of room 204|hotelEscape]
-				t It seems like the woman from earlier was distracted, it should be safe to [head out into the hallway|hotelHallway].
+				t !flag hotelGassed; Your wife, wifeF, is on the bed getting some rest. Once you've found a safe way out you should wake her and get moving, there's no telling how long until another infected arrives.
+				t !flag hotelGassed; ?item Strange Gas; You have the container of strange gas with you. It might be some kind of antidote, but it isn't likely. Still, looking at the flaccid dick between your wife's legs, you're desperate for any kind of hope. Will you [expose her to the strange gas|hotelWifePleasureGas]?
+				t !flag hotelGassed; ?item Bedding Rope; You found a safe way out by [climbing down from the window of room 204|hotelEscape]
+				t !flag hotelGassed; It seems like the woman from earlier was distracted, it should be safe to [head out into the hallway|hotelHallway].
+				
+				t ?flag hotelGassed; Your wife, wifeF is by your side. She's wearing a gasmask like you, but these seem to be drawing air from small canisters instead of filtering it. Meaning you don't have very long before the masks are useless.
+				t ?flag hotelGassed; A thick pink fog has already begun filling the room. You should [get out of here while you can|hotelHallway].
 			`);
 			break;
 		}
@@ -1227,16 +1231,34 @@ function writeScene(scene) {
 		case "hotelHallway": {
 			writeHTML(`
 				t You're in the second floor hallway of the Sanctuary Hotel. Something's going on with the hotel's systems, every door's electronic lock is registered as 'unlocked'. Almost like someone <i>wants</i> the rooms to be accessible.
-				t [Room 201|hotelRoom] is where you and your wife are staying. With the doors malfunctioning it's not safe to stick around. Once you've found a way out you can safely go back and get her.
-				t [Room 202|hotel202] is across the hallway, you can hear someone sobbing through the door.
-				t [Room 203|hotel203] is a little down the hall, and is unlocked.
-				t [Room 204|hotel204] a little down and across the hall, the door is wide open and nobody's inside.
-				t Down the stairs is the main lobby, maybe the only way out. You could [grab your wife and head downstairs|hotelMainExit] as a last resort, but you can hear the sounds of chaos down there.
+				t !flag hotelGassed; [Room 201|hotelRoom] is where you and your wife are staying. With the doors malfunctioning it's not safe to stick around. Once you've found a way out you can safely go back and get her.
+				t !flag hotelGassed; [Room 202|hotel202] is across the hallway, you can hear someone sobbing through the door.
+				t !flag hotelGassed; [Room 203|hotel203] is a little down the hall, and is unlocked.
+				t !flag hotelGassed; [Room 204|hotel204] a little down and across the hall, the door is wide open and nobody's inside.
+				t !flag hotelGassed; Down the stairs is the main lobby, maybe the only way out. You could [grab your wife and head downstairs|hotelMainExit] as a last resort, but you can hear the sounds of chaos down there.
+				
+				t ?flag hotelGassed; Room 201 is behind you, but you don't have time to mess around. You'll need to get out of the hotel while you can still breath.
+				t ?flag hotelGassed; Room 202 is across the hallway, you can hear orgasmic moans through the door.
+				t ?flag hotelGassed; Room 203 is a little down the hall, and pink gas is billowing out the open door.
+				t ?flag hotelGassed; [Room 204|hotel204] a little down and across the hall, the door is wide open and nobody's inside.
+				t ?flag hotelGassed; Down the stairs is the main lobby, maybe the only way out. With your wife outside you could [head downstairs|hotelMainExit]. The gas is pretty heavy, so you can actually see it rolling down the steps. The sounds of chaos sound a lot more sensual than they did before.
 			`);
 			break;
 		}
 		case "hotelMainExit": {
-			writeEvent(scene);
+			if (checkFlag("hotelGassed") != true) {
+				writeEvent(scene);
+			}
+			else {
+				writeHTML(`
+					t It's a spectacle down here, everyone but you and wifeF is a writhing mess on the floor. Some are clearly already infected and are having their minds blitzed by the gas, but some...
+					im hotelGassed.gif
+					t One woman is clearly being changed by the gas itself. Her askew swimsuit clearly not built for the meat between her legs. The gas must be causing this, did you do the right thing?
+					t wifeF keeps hesitating as you try to pull her through the lobby, her eyes lingering on each freshly birthed cock, on every woman in her situation now content to splurt hands-free from the drugged fog.
+					t All you can hear at this point are screams and moans, with the occasional deep sucking breath from someone desperate for more mixed in, but eventually you push through the lobby's main door to freedom.
+					t Yet all you see before you is more hell. The quaint little vacation village is being torn apart by survivors desperate to escape and women chasing them down. You feel a small prick on your neck, you hear wifeF scream through her mask, and [you feel the world turn sideways|compoundAwaken].
+				`);
+			}
 			break;
 		}
 		case "hotel202": {
@@ -1258,6 +1280,8 @@ function writeScene(scene) {
 				t Atop the bed is a strange suitcase. It's open, with a pair of canisters of some strange pink gas inside. One of the canisters has a hose attached, and is connected to an air vent. You could probably [break the hose|hotelPleasureGas] if you really tried.
 				t !item Strange Gas; The other canister isn't in use. It's definitely got something to do with what's going on, maybe you should item[take the unused canister|Strange Gas]?
 				t ?item Strange Gas; You already took the other canister.
+				t !item Gas Masks; In a second container underneath the bed is item[a pair of gas masks|Gas Masks]. There's a spot for a third mask but it's already been taken. 
+				t ?item Gas Masks; You already took the gas masks. They draw air from small canisters, and don't filter the air, so you're on a time limit once you start using them.
 				t !item Bedding; Since the room is untouched, the item[bedding and sheets|Bedding] are still here. They might be useful.
 				t ?item Bedding; The beds are bare aside from the suitcase, as you took the bedding and sheets.
 				t [Head out into the hallway|hotelHallway].
@@ -1265,20 +1289,34 @@ function writeScene(scene) {
 			break;
 		}
 		case "hotelPleasureGas": {
-			writeEvent(scene);
+			if (checkItem("Gas Masks") != true) {
+				writeEvent(scene);
+			}
+			else {
+				writeHTML(`
+					t You slip on the gasmask and tug at the hose attached to the wall. It's got a pretty strong bond but if you just... Pull... Harder...! 
+					t There's a sound of rubber breaking before the *KSSSSSSH* of gas as you break the seal. A thick gout of pink gas is spraying from the hose.
+					t It's spreading quickly so you run back to your room, wasting no time at all as you slip the second mask onto your dazed wife. 
+					t The gas has already started to flow into the room, you should [get moving|hotelRoom].
+				`);
+				addFlag("hotelGassed");
+			}
 			break;
 		}
 		case "hotel204": {
 			writeHTML(`
 				t You're in room 204 of the Sanctuary Hotel. It's been picked clean. Food from the fridge, towels, even the sheets from the bed have been taken.
-				
+				t !item Wire Cutters; Even the TV has been taken, there's a pair of item[wire cutters|Wire Cutters] small enough to hide in the waistband of your clothes in here. Aside from that everything in here is just gone. Maybe this place was robbed before the outbreak?
+				t ?item Wire Cutters; You already took the pair of wire cutters. Everything in here has been picked clean. Maybe this place was robbed before the outbreak?
+				t !item Onahole; Everything is gone... Except a fleshlight. There's an onahole here, still in the box inside one of the drawers. This probably wasn't a priority to be taken. If you really feel like you'll need it, you could item[take it with you|Onahole].
 				t ?item Onahole; The drawers are empty.
-				t !item Bedding; There's a window here, but it's a full story drop to a paved walkway below. 
-				t ?item Bedding; !item Bedding Rope; There's a window here, but it's a full story drop to a paved walkway below. With the bedding you took from the other room, you could item[make a rope to climb down|Bedding Rope].
-				t ?item Bedding; ?item Bedding Rope; There's a window here, but it's a full story drop to a paved walkway below. You've created a rope to [climb down and escape|hotelAbandon], but what about wifeF? You'll need to go back for her if you want to escape together.
+				t !flag hotelGassed; !item Bedding; There's a window here, but it's a full story drop to a paved walkway below. 
+				t !flag hotelGassed; ?item Bedding; !item Bedding Rope; There's a window here, but it's a full story drop to a paved walkway below. With the bedding you took from the other room, you could item[make a rope to climb down|Bedding Rope].
+				t !flag hotelGassed; ?item Bedding; ?item Bedding Rope; There's a window here, but it's a full story drop to a paved walkway below. You've created a rope to [climb down and escape|hotelAbandon], but what about wifeF? You'll need to go back for her if you want to escape together.
+				t ?flag hotelGassed; ?item Bedding; ?item Bedding Rope; There's a window here, but it's a full story drop to a paved walkway below. You've created a rope to [climb down and escape|hotelEscape], and there's no time to lose.
 				t [Head out into the hallway|hotelHallway].
 			`);
-			//t !item Onahole; Everything... Except a fleshlight. There's an onahole here, still in the box inside one of the drawers. This probably wasn't a priority to be taken. If you really feel like you'll need it, you could item[take it with you|Onahole].
+			//
 			break;
 		}
 		case "hotelAbandon": {
@@ -1287,11 +1325,10 @@ function writeScene(scene) {
 		}
 		case "hotelEscape": {
 			writeHTML(`
-				t You gently nudge wifeF awake. She's exhausted from the toll the infection is taking on her body, but she's human. That's all that matters. 
-				sp player; Come on honey, it isn't safe here. I've got a safe way out, let's go.
-				t She nods and slowly climbs out of bed, needing to lean on you as you make your way to room 204.
-				t As you pass the strange suitcase her eyes linger on it and the pink gas container inside.
-				t But you have bigger things to focus on. You set up the rope, throw down a pile of pillows, and make sure it's secure before you climb down. She's behind you, although she nearly falls and you need to help her.
+				t !flag hotelGassed; You gently nudge wifeF awake. She's exhausted from the toll the infection is taking on her body, but she's human. That's all that matters. 
+				sp player; !flag hotelGassed; Come on honey, it isn't safe here. I've got a safe way out, let's go.
+				t !flag hotelGassed; She nods and slowly climbs out of bed, needing to lean on you as you make your way to room 204.
+				t You set up the rope, throw down a pile of pillows, and make sure it's secure before you climb down. She's behind you, although she nearly falls and you need to help her.
 				sp wife; Honey... I can't focus...
 				sp player; It's fine, just stay in control.
 				t Looking around you can see a way out of the hotel towards the less populated expensive villa area. If anyone is getting help right now it'd be the richest folk. 
@@ -1312,9 +1349,9 @@ function writeScene(scene) {
 				t You're in the king villa, a large resort villa for the ultra wealthy. It must have been evacuated already, because the place has clearly been looted. The fridge, hanging open, has nothing but partially melted ice inside.
 				t There's nothing of value left besides wifeF on the bed, fruitlessly jerking herself off. Tears are forming in her eyes as she arches her back, it wasn't exhaustion slowing you two down before, but mind-consuming lust. It's clear she isn't able to get off herself, despite how frantically she jerks herself.
 				t If you can't find anything to help her with... You may need to [help her yourself|wifeHelp].
-				t ?item Onahole; [You could give her the onahole you found.|wifeOnahole].
-				t ?item Dildo; [You could give her the dildo you found.|wifeDildo].
-				t ?item Chastity Cage; [You use the ice from the nearby fridge combined with the chastity cage to keep her dick in check|wifeCage].
+				t ?item Onahole; [You could give her the onahole you found|wifeOnahole].
+				t ?item Dildo; [You could give her the dildo you found|wifeDildo].
+				t ?item Chastity Cage; [You could use the ice from the nearby fridge combined with the chastity cage to keep her dick in check|wifeCage].
 				t [You can head outside, into the affluent villa district|villaOutside].
 			`);
 			break;
@@ -1330,11 +1367,9 @@ function writeScene(scene) {
 				t The two of you move on, leaving the affluent district behind. There's no helicopters, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
 				t As you're wandering around a hiking path looking for any kind of help, you feel a small bite on your neck.
 				t You hear wifeF freaking out for some reason as you lift your hand to scratch the bite, only for your hand to brush against something... Metal.
+				t The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundAwaken].
 			`);
-			if (data.player.currentScene != "gallery") {
-				writeTransition('scenarioSelect', 'END OF PREVIEW', '#FF0000');
-			}
-			//writeText("The earth goes wobbly, and [sleep suddenly seems like a great idea right now|compoundAwaken].");
+			//writeText(".");
 			break;
 		}
 		case "wifeOnahole": {
@@ -1350,7 +1385,7 @@ function writeScene(scene) {
 		}
 		case "wifeCage": {
 			writeEvent(scene);
-			addFlag('caged');
+			addFlag('wifeCage');
 			writeHTML(`
 				...
 				t The two of you move on, leaving the affluent district behind. There's no helicopters, no tanks, no police of any kind. The island must be devolving into chaos, but there's no trace of government response.
@@ -1366,10 +1401,10 @@ function writeScene(scene) {
 				t And the perverted, apparently. The walls are lined with bondage gear and sex toys of varying shapes and sizes. From ball-gags to zipper outfits...
 				t !item Dildo; There's a collection of dildos on the wall, you could item[grab one and take it back to your wife|Dildo].
 				t ?item Dildo; There's a collection of dildos on the wall, you don't need more than one. You hope.
+				t !item Chastity Cage; There's also a collection of chastity cages in varying sizes. The largest one should fit wifeF. She might not like being caged up, but you might need to item[take one with you|Chastity Cage].
 				t ?item Chastity Cage; You already took a chastity cage, there's no reason to take another. It's not like any of the other infected will let you put one on them.
 				t [You can head outside, into the rich district|villaOutside].
 			`);
-			//t !item Chastity Cage; There's also a collection of chastity cages in varying sizes. The largest one should fit wifeF. She might not like being caged up, but you might need to item[take one with you|Chastity Cage].
 			break;
 		}
 		case "villaSoldier": {
@@ -1398,12 +1433,27 @@ function writeScene(scene) {
 		}
 		case "compoundAwaken": {
 			writeHTML(`
+				t Reality itself seems... Fuzzy. Visions keep bouncing in and out of your head.
+				t You try to hold any of them in your mind but all that results is a lance of pain as the image fades away.
+				t Yet one seems to stick in your mind.
+				im hotelDream.gif; ?flag hotelGassed;
+				t ?flag hotelGassed; The women in the hotel, their bodies and minds ravaged by the gas. If one of them had been someone's wife... If one had been wifeF... Surely they would have been infected anyways... Right?
+				im villaDream.gif; !flag hotelGassed;
+				t !flag hotelGassed; The image of wifeF on the bed, so desperate for release she would do anthing to get off... Anything... <i>Anyone</i>...
+				...
 				t You awaken to a pounding headache, and the sound of mysterious voices garbled by what sound like gasmasks.
-				sp ???; im none; His wife has turned, but she's clearly a resistant. With so many the second formula must be defective, right? Any sign of infection on him?
-				sp ???; im none; No, not yet anyways. It's a shame, watching the guy get turned by his wife would've been pretty hot.
-				sp ???; im none; We get a bonus if we turn anyone with an eel. God, what were they thinking when they created a breed that needs hours to prepare?<br>And seriously Tasha, get your head out of the shitpipe. We're here on business.
-				sp ???; im none; Aww come on, you're still on that whole global destabilization thing? Why can't you be honest and admit you've got a massive fetish for...
-				t The conversation fades as the two of them walk away. Peering through a small hole into the hallway, you can see more people patrolling around. They're wearing some kind of urban camoflague, and their faces are obscured by thick masks. All of the men are wearing headphones as well.
+				sp ???; im none; !flag wifeCage; His wife has turned, but she's clearly a resistant. With so many the second formula must be defective, right? Any sign of infection on him?
+				sp ???; im none; !flag wifeCage; No, not yet anyways. It's a shame, watching the guy get turned by his wife would've been pretty hot.
+				sp ???; im none; !flag wifeCage; We get a bonus if we turn anyone with an eel. God, what were they thinking when they created a breed that needs hours to prepare?<br>And seriously Tasha, get your head out of the shitpipe. We're here on business.
+				sp ???; im none; !flag wifeCage; Aww come on, you're still on that whole global destabilization thing? Why can't you be honest and admit you've got a massive fetish for...
+				
+				sp ???; im none; ?flag wifeCage; His wife has turned, but she's clearly a resistant. With so many the second formula must be defective, right? Any sign of infection on him?
+				sp ???; im none; ?flag wifeCage; No, not yet anyways. Didn't he put his wife in a chastity cage? This is the strain that takes you out of commission when you don't get off enough, right?
+				sp ???; im none; ?flag wifeCage; No, that was the last one back in Georgia. This one just causes the need to get off to keep building up. That's why we're keeping it on, no data yet on what'll happen.
+				sp ???; im none; ?flag wifeCage; Heh. Need to Breed 2; Too Pent Up, Too Furious.
+				sp ???; im none; ?flag wifeCage; Tasha, seriously. We're professionals, not...
+				
+				t The conversation fades as the two of them walk away. Peering through a small hole into the hallway, you can see more people patrolling around. They're wearing some kind of urban camouflague, and their faces are obscured by thick masks. All of the men are wearing headphones as well.
 				t This is a dangerous situation, these people aren't working for any government you know. With wifeF somewhere else and you locked in here, there's no telling how you'll make it out of this alive.
 				t Still, you should [plan your escape|compoundRoom].
 			`);
@@ -1412,7 +1462,7 @@ function writeScene(scene) {
 		}
 		case "compoundRoom": {
 			writeHTML(`
-				t You're in some kind of cell, or at least the best one that cound be made out of some kind of closet.
+				t You're in some kind of cell, or at least the best one that could be made out of some kind of closet.
 				t !flag playerDoorUnlocked; The door is locked, and won't budge. It's some kind of electronic lock that's been fitted onto the door, they must still have power over here. There's no keyhole, but there is a small hole you can peer through.
 				t ?flag playerDoorUnlocked; You unlocked the door with the compound's command console, so you can freely [head out into the hallway|compoundHall], so long as you're careful not to be caught.
 				t Searching around, you can see an air vent that probably connects to a series of ventilation shafts. Why some prying the loose bolts break off and you can [crawl inside|compoundVent1].
@@ -1430,8 +1480,6 @@ function writeScene(scene) {
 		case "compoundCloset": {
 			writeHTML(`
 				t You're in a small storage closet. Various cleaning supplies and other goods tell you this building probably wasn't built to be a military stronghold, whoever's running the place must be using this as a temporary base of opperations.
-				t !item Wire Cutters; There doesn't seem to be anything too useful, especially against armed soldiers, but maybe you could use a pair of item[wire cutters|Wire Cutters] as a weapon?
-				t ?item Wire Cutters; You already took the pair of wire cutters.
 				t !flag closetDoor; The door out is locked tight, and breaking it open would make a ton of noise. Better play it safe.
 				t ?flag closetDoor; You unlocked the door from the other side, so you can [safely leave the closet|compoundMain].
 				t Aside from that there isn't anything too useful in this place, using a small box you can [climb back into the vent|compoundVent0].
@@ -1481,7 +1529,7 @@ function writeScene(scene) {
 				t You're in a room filled with transparent canisters filled with a strange pink gas. They're probably the same as the ones you saw in the suitcase back at your hotel.
 				t From here you can't actually climb back up to the vents, you're in serious danger if you're caught.
 				t !item Wire Cutters; A large machine seems to be pumping the strange pink gas. The hoses look a lot stronger than the one you saw before.
-				t ?item Wire Cutters; A large machine seems to be pumping the strange pink gas. The hoses look a lot stronger than the one you saw before. You could use your [wire cutters|gasDisturbed] to cause some serious mayhem with just a small cut, then sneak out.
+				t ?item Wire Cutters; A large machine seems to be pumping the strange pink gas. The hoses look a lot stronger than the one you saw before. Hidden on your person you could use your [wire cutters|gasDisturbed] to cause some serious mayhem with just a small cut, then sneak out.
 				t You're hiding behind the doorway as a patrol goes by, you should be able to [sneak out of the room|compoundMain] if you're careful.
 			`);
 			calculateMovement();
@@ -1501,8 +1549,8 @@ function writeScene(scene) {
 				t You're in some kind of kennel, but the animals in here are anything but normal. Large, tough-looking hounds that could tear a man apart at a moment's notice. Good thing they're asleep.
 				t From here you can't actually climb back up to the vents, you're in serious danger if you're caught.
 				t There's an exit to some kind of main lobby, this whole building isn't too secure against people who still have functioning brains. Still, there are still patrols going on, you can't get out without causing a distraction. Speaking of a distraction... If you [rattled these cages a little|houndsDisturbed] these boys would probably make enough noise for the whole facility to hear, allowing you to sneak around the compound.
-				t There's not a lot of room here, if you need to hide the only spot is [right behind one of the cages|compoundHounds], and squeezing behind there would absolutely wake the beast up. 
 			`);
+			//t There's not a lot of room here, if you need to hide the only spot is [right behind one of the cages|compoundHounds], and squeezing behind there would absolutely wake the beast up. 
 			calculateMovement();
 			break;
 		}
@@ -1512,7 +1560,7 @@ function writeScene(scene) {
 		}
 		case "houndsDisturbed": {
 			writeHTML(`
-				t The hounds are asleep, completely out of it at the moment. You silent tiptoe up to the cage...
+				t The hounds are asleep, completely out of it at the moment. You silently tiptoe up to the cage...
 				t And smack the fuck out of it.
 				t The dog inside goes absolutely insane, thrashing about in surprise and anger, before it turns into just anger. He barks and snarls, and soon every dog in the room has joined him. You rush over to the side of the room until a few soldiers rush in to check on the hounds.
 				t Now, while the soldiers are focused on the dogs, you need to [sneak out of the room|compoundMain]!
@@ -1526,7 +1574,7 @@ function writeScene(scene) {
 				t You've unlocked the door with the main console, the way into the [main hallway|compoundHall] is clear.
 			`);
 			calculateMovement();
-			if (checkFlag('caged') == true) {
+			if (checkFlag('wifeCage') == true) {
 				writeEvent("compoundCage");
 			}
 			break;
@@ -1624,8 +1672,13 @@ function writeScene(scene) {
 			writeText("You've done it! It's unsure what fate will befall this pair of lovebirds, but at least this honeymoon will be a lot more passionate than it would be otherwise. If this was the goal you've been shooting for, then great job!");
 			writeText("Check out the 'Author Information' section in the scenario selection menu for a more detailed set of credits, or play the game again to try and get some of those other scenes.");
 			writeTransition("spreadIsland", "Thanks for playing!");
-			if (checkItem("Opened") == false) {
-				writeEvent("compoundFailure");
+			if (checkFlag("wifeCage") == true) {
+				writeEvent("wifeCage");
+			}
+			else {
+				if (checkItem("Opened") == false) {
+					writeEvent("compoundFailure");
+				}
 			}
 			break;
 		}
@@ -3260,7 +3313,7 @@ function writeEvent(n) {
 		case "wifeCage": {
 			writeHTML(`
 				sp player; wifeF, please! <br>Whatever you shoot out, it's infectious. If we're going to make it off this island... 
-				t You hold the chastity cage in one hand, and the ice cubs in the other. She looks at both, her face is very conflicted. She closes her eyes, releases her dick from her hands, and clutches the sheets tightly. 
+				t You hold the chastity cage in one hand, and the ice cubs in the other. She looks at both, her face torn between what she knows she needs to do and terror at the idea. She closes her eyes, releases her dick from her hands, and clutches the sheets tightly. 
 				t You move fast, there's no telling how long her willpower will hold out. Using the icecube, you-
 				sp wife; Oooough~! 
 				t Just the touch if it makes her jerk her hips, but that was absolutely not a moan of pain. You do your best to hold her down and force her cock to soften and numb, but it seems like she's getting off on this. 
@@ -3268,8 +3321,8 @@ function writeEvent(n) {
 				... 
 				im wifeCage.gif
 				t Finally, the cage is in place. She's huffing and puffing on the bed like she's just been through labor. Just one look in her eyes tells you she's teetering on the edge of sanity. 
-				sp player; Can you keep going.
-				t She nods. It's clearly only one thing is on her mind though, and her fiddling with the chastity cage makes it clear what that is.
+				sp player; Can you keep going?
+				t She nods. It's clear that only one thing is on her mind though, and her fiddling with the chastity cage makes it clear what that is.
 			`);
 			break;
 		}
@@ -3297,14 +3350,36 @@ function writeEvent(n) {
 		}
 		case "wifeOnahole": {//unfinished
 			writeHTML(`
+				sp player; Here, I found this, I hope it helps.
+				t You unbox the onahole and give it to wifeF. She takes it, prodding the entrance with her finger. She catches her bottom lip with her teeth and you can see her dick throb as her finger sinks inside, a small jet of precum running down her shaft.
+				t The idea that wifeF would ever use one of these things... Just yesterday you would have laughed it off, but now...
 				im wifeOnahole1.gif
+				t You can't seem to take your eyes away.
+				t wifeF lets out a muted squeal of bliss as she thrusts her hips forwards. The sextoy must be close enough to a human pussy, or ass, because she groans in contentment.
 				im wifeOnahole2.gif
+				t The thick scent of wifeF's infection overpowers your senses, but wifeF doesn't seem to mind as she reaches between her legs to help relieve her overstuffed balls.
+				t Her cock flexes, stretching the dicksleeve to its limit. Any human at the end of her pole would be absolutely ruined...
 			`);
 			break;
 		}
 		case "compoundCage": {
 			writeHTML(`
+				t From the moment you walk into the room, you can tell something's off. Even though you've been avoiding patrols this entire time you still feel a predatory gaze on you.
+				t You see her, on the bed. Her eyes are already open, staring at you. But the thing behind those eyes isn't wifeF, not even human.
+				sp player; wifeF? Honey...?
+				t She pushes off the blankets. Her clothes have been torn to shreds, the bed is soaked with a clear fluid that looks like precum, and her chastity cage is misshapen like she's been trying to claw it open.
+				t She steps towards you. You avert your eyes for just a moment searching for something to protect yourself with, but that's a mistake as your focus is pulled back by a bloodthirsty scream from wifeF as she tackles you to the ground.
+				t You fall, her bodyweight atop you. You try to push her off but in a flash her lips are on yours and she's shoved her tongue in your mouth while she grinds her caged cock against your leg. You aren't sure if your head is spinning from being taken to the ground, or if you're already infected from her saliva.
+				t You can feel the resistance leaving your body. Your hope is fading, an adrenaline rush won't save you now that you're certainly infected. wifeF looks you in the eyes, her eyes filled with impotent rage and desperation before she finally makes a decision. She grabs your pants by the waist and begins tearing them off.
+				t You feel a creeping tingle beginning to spread across your skin, and suddenly a wave of pleasure causes your mind to flash white. As you let out a moan more effeminate than before wifeF shoves two of her fingers in your mouth. You can't help but swallow and the tingling increases. Her fingers are coated in something, probably her leaking precum. 
+				t As she pulls her fingers out you look down and you see your own dick standing at full mast. Stronger, larger than before. wifeF groans in delight as she steps forwards, rubbing her caged dick against your erect one. Your humanity is fading, before you thought to console her with a kind hug or to appeal to her humanity, now you know exactly what to do. You grab her by the wrists and push <i>her</i> down. You align your raging cock with her quivering hole and thrust. 
 				im compoundCage.gif
+				t Pent-up frustration is relieved as you push past the rim of her asshole and past something bloated and spongey. Even before you're balls deep the fluid leaking from her cock is more white than clear.
+				t The two of you scream, both of your voices reaching the same pitch. Her abused cock is finally finding relief, and yours is leaking away your humanity, your intelligence. 
+				t You keep thrusting but you can't last much longer. As you do you can hear the sound of a metal clasp breaking. As your first orgasm as an infected dickgirl ends, so does her chastity. 
+				t <b>THIS</b> is her liberation, not when you came in through the door to lead her out. She looks ready to cry tears of joy. Hesitantly she reaches out, but stops. She sits up, your cum leaking from her asshole, and licks her lips.
+				t As the last remnants of your humanity fade, one final thought passes through your mind.
+				t <b>You're next</b>. 
 			`);
 			if (data.player.currentScene != "gallery") {
 				writeTransition('spreadIsland', 'GAME OVER', '#FF0000');
@@ -3314,7 +3389,21 @@ function writeEvent(n) {
 		case "compoundCaught": {
 			if (data.player.wormDisabled == false) {
 				writeHTML(`
+					t As you sneak about you're noticing your shoes sound different than normal. And that you can hear your footsteps even when you aren't... Walking... 
+					t Before you can turn around your vision goes red, then black. 
+					... 
+					sp ???; im none; Honestly... I'm starting to see why the labcoats whipped this one up. It's slow and not great for spreading the infection by itself, but... 
+					sp ???; im none; Right? Cmon, we're expendable. They'll throw us away someday, and I hope it's either to that gas or one of these babies.
+					t You can feel your mind coming back to life. You feel... Full. In both body and mind you feel like you're full of a soft, gentle cloud. 
+					sp ???; im none; We can view the recordings ourselves right? I know the labcoats save them for research on their "anti-resistance strains", but I seriously wanna jill off to watching that baby change this one. 
+					t You can feel something shift inside you. You're in some kind of lab. The door is across the room and nobody's in here, you could make a break for it, yet... You can't seem to build up the strength to move.
+					t You look over yourself, you've changed. Either this is a dream... Or you're already infected. You feel your insides shift again, and you see something long, thick, and pink inserted into your asshole. Whatever it is it must be at least four feet deep... 
+					sp ???; im none; Oh god, he's gonna try to... <br>Fuck it, I can't wait for the recording. 
+					t You can hear the sound of a belt unclasping from behind a dark window, but your attention is focused on the... Thing... Inside of you. You grasp it as best you can, it's covered in a slippery mucus, and begin to pull. 
 					im compoundCaught.gif
+					t And as you do you can feel your mind begin to shatter beneath an all-encompassing white pleasure. Whatever it is, it flexes in your grasp and wriggles inside of you, before it shifts again and begins to thrust itself even deeper inside you than before and your vision goes pure white. 
+					t You're spread legged trying to relieve the pressure it's putting on you, and you feel a sticky fluid land on your face. Something the creature is doing, whether it's messing with your nervous system or releasing drugs inside of you... You've been cumming. Every flash of white has been a powerful enough orgasm to spray cum through the air. 
+					t The creature shifts inside you, it's found you to be a suitable host, and your vision goes white again. 
 				`);
 			}
 			else {
@@ -3342,7 +3431,24 @@ function writeEvent(n) {
 		case "compoundFailure": {
 			if (data.player.wormDisabled == false) {
 				writeHTML(`
+					sp ???; im none; ...-ney ple-... 
+					t Bright lights pass by your eyelids and pain slowly fades in as you feel yourself waking up. The back of your head hurts. Bad.
+					sp wife; Stop it! Honey please, wake up! 
+					t Your eyes shoot open, you're in wifeF's cell, and she's sitting across from you bound to a chair. As you struggle to move you realize you're bound the same way. 
+					sp wife; Thank god you're alive... 
+					t wifeF's eyes are puffy, she's been crying and she's entirely naked. 
+					sp wife; It's okay, it's okay. We're gonna be alright. They caught us, they started beating you, and when I begged them to stop... 
+					t She takes a deep breath and forces a smile. A soldier, her entire body covered in a black paramilitary uniform, walks beside her with a small canister. 
+					sp wife; They said they'd do things to us... And that if we made it through they'd let us go. I convinced them to just do it to me, since I'm already, well... 
+					t The canister lets out a small hiss of pressurized air. You begin to struggle against your bindings as a small wormlike creature crawls out. wifeF either doesn't notice or is trying to ignore it as she keeps a calm facade. 
+					sp wife; We'll be okay. We're gonna make it out of here together, okay? I lov-GGHHHH! 
+					t She's cut short as the worm spreads some kind of mucus onto her, nearly every one of her muscles tightens. 
+					t As you thrash and desperately try to free yourself wifeF goes slack. Her eyes are filled with panic but she can't move as the worm moves from the canister to the entrance of her ear, then crawls inside. 
+					t She lets out a shrill yet muffled shriek through gritted teeth as the worm crawls in, and suddenly her slack left arm jolts against her bindings. Then her right leg, then both hands, and finally her cock jerks up and sprays a lance of precum onto the floor. 
+					t There's one last moment where she hyperventilates and looks into your eyes with terror, before her eyes roll back. She lets out a deep drawn-out groan as her cock begins to squirt out rope after rope of thick cum. 
 					im compoundFailure.gif
+					t Her eyes unfocus, there's no sign of movement or intelligence left besides an occasional jerk of her body when she splurts another rope of jizz.
+					sp ???; im none; Whelp, she didn't last long. Don't worry, honestly you got the good end of the bargain. The bigger one we have for you is gonna feel waaay better. 
 				`);
 			}
 			else {
