@@ -83,8 +83,8 @@ var galleryArray = [
 	{index: 'wifeCage', name: "Caged", scenario: "Spread Island",	hint: "Force your wife into a chastity cage in the king's villa."},
 	{index: 'compoundCaught', name: "Caught Escaping", scenario: "Spread Island",	hint: "Get caught by the guards in the compound by coming out of the vent when you shouldn't."},
 	//index: 'compoundHounds', name: "", scenario: "Spread Island",	hint: "Hide right behind a hound's cage in the compound."},
-	{index: 'compoundCage', name: "", scenario: "Spread Island",	hint: "Rescue your chastity-caged wife from the compound."},
-	{index: 'compoundFailure', name: "", scenario: "Spread Island",	hint: "Don't set a timer on either the kennels or the gas room at the computer console before escaping the compound."},
+	{index: 'compoundCage', name: "Uncaged", scenario: "Spread Island",	hint: "Rescue your chastity-caged wife from the compound."},
+	{index: 'compoundFailure', name: "Failure to Escape", scenario: "Spread Island",	hint: "Don't set a timer on either the kennels or the gas room at the computer console before escaping the compound."},
 ];
 
 //Startup & Systems config
@@ -948,6 +948,7 @@ function quickLoad() {
 function generateGalleryNav() {
 	writeFunction("generateGalleryPage('Rainy DayZ')", "Rainy DayZ");
 	writeFunction("generateGalleryPage('The Facility')", "The Facility");
+	writeFunction("generateGalleryPage('Spread Island')", "Spread Island");
 	data.player.scenario = "";
 }
 
