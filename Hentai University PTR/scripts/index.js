@@ -785,7 +785,7 @@ function checkRequirements(string) {
 		}
 		string = string.replace(`!flag player `+check+`;`, ``);
 	}
-	while (string.includes("?parity") == true) {
+	if (string.includes("?parity") == true) {
 		var check = string.split(`?parity `).pop().split(`;`)[0];
 		switch (check) {
 			case "even": {
@@ -804,7 +804,6 @@ function checkRequirements(string) {
 				console.log("Error! Parity defined but an invalid parity used. BE sure to use either even or odd, and make sure you have a semicolon afterwards.");
 			}
 		}
-		string = string.replace(`?parity `+check+`;`, ``);
 	}
 	while (string.includes("?gender") == true) {
 		var check = string.split(`?gender `).pop().split(`;`)[0];
