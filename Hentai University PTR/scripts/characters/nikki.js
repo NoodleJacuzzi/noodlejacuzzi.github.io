@@ -23,6 +23,8 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "nikkiEnc2", name: "nikki seems to be reading a textbook just down the hall from your office.", requirements: "?trust nikki 30; ?location eastHallway; parity even;", altName: "", altImage: "",},
 	{index: "nikkiEnc3", name: "nikki seems to be reading another textbook.", requirements: "?trustMin nikki 40; ?trustMax nikki 45; ?location northHallway; parity odd;", altName: "", altImage: "",},
 	{index: "nikkiEnc3", name: "nikki's writing in a notebook nearby.", requirements: "?trustMin nikki 40; ?trustMax nikki 45; ?location eastHallway; parity even;", altName: "", altImage: "",},
+	{index: "nikkiEnc4", name: "nikki seems to be studying just down the hall.", requirements: "?trust nikki 50; ?location northHallway; parity odd;", altName: "", altImage: "",},
+	{index: "nikkiEnc4", name: "nikki's reading a textbook diligently.", requirements: "?trust nikki 50; ?location eastHallway; parity even;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -648,17 +650,17 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "nikkiEnc3" : {
-			passTime();
 			writeText("As you approach, nikkiF looks up at you again from her book. Psychology, this time.");
 			writeSpeech("nikki","","Well hello again, playerMister Counselor. How may I help you today?");
-			if(galleryCheck('nikki1repeat'))
-				writeSpecial("You've finished all of nikkiF's content as of this PTR upload.")
-			//writeFunction("writeEvent('nikkiEnc3A')", "Try to hypnotize her in your office");
+			writeFunction("writeEncounter('nikkiEnc3A')", "Try to hypnotize her in your office");
 			writeFunction("writeEvent('nikki1repeat')", "Go to your office for another handjob");
 			writeFunction("changeLocation(data.player.location)", "Never mind, nothing for today");
 			break;
 		}
 		case "nikkiEnc3A" : {
+			passTime();
+			if(checkTrust('nikki') < 50)
+				setTrust('nikki',50);
 			writeSpeech("player","","Actually, I was hoping to speak with you about the same thing as last time, if you're free.");
 			writeText("She shuts the textbook smoothly, the measured smile on her face as she folds her hands in front of herself.");
 			writeSpeech("nikki","","Of course, I'm happy to help. Your office, then?");
@@ -667,15 +669,78 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("With the door clicked shut again, Nikki's expression returns to neutral as she sits, though there's still that hint of excitement behind her eyes that she doesn't try to hide.");
 			writeSpeech("nikki","","Are you planning on using the pendant again, perhaps~?");
 			writeSpeech("player","","Picked up on that, hm?");
-			writeSpeech("","","");
-
-			writeText("Her ");
-			writeSpeech("player","","<b>Go blank.</b>");
-			writeText("Her body relaxes a bit, sinking back in her seat for a moment... before they start to refocus.");
-			writeSpeech("player","","I said <i><b>blank.</b></i>");
-			writeText("She shudders slightly again, her eyes fluttering a bit as her face flushes.");
-			writeSpeech("nikki","","Hah~...!");
-
+			writeText("You casually take the pendant out, but don't wrap it around your wrist - instead, you just place it onto the desk.");
+			writeSpeech("nikki","","...?");
+			writeText("She shifts in place as you sit across from her, her eyes still lingering on your hand for a moment even without your usual tool.");
+			writeText("Instead, you rest your hand on the desk gently, your fingers lightly drumming.");
+			writeSpeech("player","","You said before that you liked it - being mindless, that is.");
+			writeText("nikkiF nods, though her eyes narrow slightly.");
+			writeSpeech("player","","...Well?");
+			writeSpeech("nikki","","...Oh- Yes.");
+			writeText("She shudders slightly, the word leaving her mouth as you give the desk a firmer, harder tap.");
+			writeSpeech("player","","Is that statement made from experience?");
+			writeSpeech("nikki","","Yes.");
+			writeText("Another tap, and you watch her smile slightly. She gets what you're doing, then.");
+			writeSpeech("nikki","","It's the same reason I use these sorts of things to relax.");
+			writeText("She leans forward now, resting her chest on the desk.");
+			writeSpeech("nikki","","It's impossible to overthink things when you're <i>cumming your brains out,</i> after all.");
+			writeSpeech("player","","True enough... But I do have a question. You're a...");
+			writeText("You pause, your finger tapping once heavily.");
+			writeSpeech("player","","-<i><b>smart girl,</b></i> right?");
+			writeSpeech("nikki","","Yes~");
+			writeText("Her eyes momentarily drift to the pendant on the table, before shifting back to you.");
+			writeSpeech("player","","Then you've already figured out what's happening here.");
+			writeSpeech("nikki","","I have, yes. There's the long, scientific name for it, but... I don't think either of us care about that.");
+			writeText("She leans even more into the desk now.");
+			writeSpeech("nikki","","I'll freely admit, though, that I know very little about how hypnosis works... Though I'm happy to learn~");
+			writeSpeech("player","","In that case, I have to ask...");
+			writeText("You slowly stand, walking around to her. You don't stop the light drumming, doing it on your pants as you move, and then on her shoulder as you approach.");
+			writeSpeech("player","","Do you realize how much time and effort it normally takes to hypnotize someone? Answer <b>honestly.</b>");
+			writeText("She shudders in place slightly.");
+			writeSpeech("nikki","","N-No, I don't.");
+			writeSpeech("player","","Good girl. The answer, of course, depends on the person.");
+			writeText("You circle around again, the drumming continuing.");
+			writeSpeech("player","","And of course, you likely know that there are levels to how deep a person goes into trance.");
+			writeSpeech("nikki","","...Yes.");
+			writeSpeech("player","","Smart girl.");
+			writeText("Sitting down again, you focus on her, looking her in the eyes as you keep drumming.");
+			writeText("They're already starting to haze over a bit, the trance starting to affect her. Though, she'll probably have trouble going deep...");
+			writeText("Still, there's not very much thrill to winning the game in a second, is there?");
+			writeSpeech("player","","You know why you're already feeling tired, don't you? Why you're having trouble focusing, why you're already starting to stutter?");
+			writeSpeech("nikki","","...Y-Yes...?");
+			writeSpeech("player","","Smart girl. So <b>tell me.</b>");
+			writeText("She sits there quietly for a moment, before speaking softly:");
+			writeSpeech("nikki","","Because... I want this.");
+			writeSpeech("player","","Very good.");
+			writeText("Reaching forward, you grab the pendant... and put it back in your pocket.");
+			writeSpeech("player","","That'll be all for today.");
+			writeText("Her eyes almost immediately clear as she sharply sits up straight, perfectly in time with you stopping the drumming. She's used to switching mindsets on a dime, then...");
+			writeSpeech("nikki","","May I ask why? I wasn't aware I'd made any mistakes...");
+			writeSpeech("player","","And you were very aware, weren't you?");
+			writeText("She purses her lips.");
+			writeSpeech("nikki","","...I think I understand.");
+			writeSpeech("player","","If you can say that with a straight face, I guarantee you don't.");
+			writeText("You calmly stand up, moving towards the door as you can barely see her face take on a confused expression.");
+			writeSpeech("player","","And now you do.");
+			writeSpeech("nikki","","You've... lost me completely.");
+			writeSpeech("player","","Good. Now just accept that, and I'll call you back when we're <i>both</i> ready. Any questions?");
+			writeText("Her mouth immediately opens, but she stops herself with a pause.");
+			writeSpeech("nikki","","...No?");
+			writeText("You smile at her, nodding.");
+			writeSpeech("player","","Good girl.");
+			writeText("As she leaves the room, you shut the door with a sigh.");
+			writeText("That's the groundwork for induction and two triggers... It might take a while to get everything ready for the next step, but it's a start.");
+			writeText("Now, to occupy your own mind with other things...");
+			writeFunction("changeLocation(data.player.location)", "Finish (for now)");
+			break;
+		}
+		case "nikkiEnc4" : {
+			writeText("As you approach, nikkiF looks up at you again from her book. Medical terminology, this time.");
+			writeSpeech("nikki","","Hello again, playerMister Counselor. Did you need to speak with me again?");
+			if(galleryCheck('nikki1repeat'))
+				writeSpecial("You've finished all of nikkiF's content as of this update!")
+			writeFunction("writeEvent('nikki1repeat')", "Go to your office for another handjob");
+			writeFunction("changeLocation(data.player.location)", "Never mind, nothing for today");
 			break;
 		}
 		default: {
@@ -771,6 +836,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/nikki/1-3.jpg","Art by Enoshima Iki");
 			writeText("When you finish bucking your hips, your seed spraying across her again, she lets out a contented sigh.");
 			if(data.player.location != 'gallery'){
+				passTime();
 				if(checkTrust('nikki') < 45)
 					setTrust('nikki',45);
 				writeText("Then, pulling out a wet wipe and a small spray bottle, one almost like it's for perfume, she gives her hair a quick spritz.");
@@ -803,7 +869,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "nikkiReward", requirements: "?trust nikki 45;"},
+	{index: "nikkiReward", requirements: "?trust nikki 50;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
