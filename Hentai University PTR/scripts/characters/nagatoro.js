@@ -357,6 +357,55 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 	}
 }
 
+function openWardrobe() {
+	document.getElementById('output').innerHTML += `
+	<div id="wardrobeGrid" style="display:grid; grid-template-columns:auto auto auto auto;">
+	</div>
+	`;
+	writeWardrobeOption("150");
+	writeWardrobeOption("094");
+	writeWardrobeOption("082");
+	writeWardrobeOption("064Locked");
+	switch(checkTrust("nagatoro")) {
+		case 101:
+			writeWardrobeOption("nagatoroBunny1-1");
+		break;
+	}
+	if (checkTrust("nagatoro") > 101) {
+		
+	}
+}
+
+function writeWardrobeOption(wardrobeImage) {
+	if (wardrobeImage.includes("Locked")==false) {
+		document.getElementById('wardrobeGrid').innerHTML += `
+			<img class="bigPicture" id="`+wardrobeImage+`" src="images/nagatoro/`+wardrobeImage+`.jpg" title="Art by Kinta no Mousou"
+			onclick="writeEncounter('`+wardrobeImage+`')",
+			onmouseover="wardrobeMouseOver('`+wardrobeImage+`')"
+			onmouseout="wardrobeMouseOut('`+wardrobeImage+`')"
+			style="filter:brightness(50%);">
+		`;
+	}
+	else {
+		document.getElementById('wardrobeGrid').innerHTML += `
+			<img class="bigPicture" id="`+wardrobeImage+`" src="images/nagatoro/unknown.png" title="Tsk tsk, play with the outfits we have before you get greedy for more!"
+			onmouseover="wardrobeMouseOver('`+wardrobeImage+`')"
+			onmouseout="wardrobeMouseOut('`+wardrobeImage+`')"
+			style="filter:brightness(50%);">
+		`;
+	}
+}
+
+function wardrobeMouseOver(wardrobeImage) {
+	//console.log(document.getElementById(wardrobeImage).style.filter)
+	document.getElementById(wardrobeImage).style.filter = "brightness(100%)"
+}
+
+function wardrobeMouseOut(wardrobeImage) {
+	//console.log(document.getElementById(wardrobeImage).style.filter)
+	document.getElementById(wardrobeImage).style.filter = "brightness(50%)"
+}
+
 //Don't touch anything below this, or things will break.
 //console.log(character.index+'.js loaded correctly. request type is '+requestType)
 
