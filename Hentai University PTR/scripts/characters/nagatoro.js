@@ -505,13 +505,24 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "nagatoroBunny1-1": { //unfinished
+		case "nagatoroBunny1-1": {
 			writeHTML(`
 				im imagebox/nagatoro/148.jpg
+				t You're treated to quite the show today as nagatoroF slowly puts on his favorite outfit. The leotard, the ears, the whole ensemble hugging his curves and presenting a proper bunnyboi package.
 				im imagebox/nagatoro/nagatoroBunny1-1.jpg
+				t The smooth outfit must feel great on his skin, which he intends to show you first hand as he pushes you onto the bed. 
 				im imagebox/nagatoro/nagatoroBunny1-2.jpg
+				sp nagatoro; Seriously, aren't you <i>too</i> big? I bet even girls would have a hard time taking you, let alone a boy... And don't you feel bad emasculating other guys? You're crushing my self-esteem as a man, you know. Just for that all you get is rubbing, no cumming for you yet! 
+				sp player; Your self-esteem as a man was probably already gone when you got hot and bothered thinking about how you wanted my dick, nagatoroF. 
 				im imagebox/nagatoro/nagatoroBunny1-3.jpg
+				sp nagatoro; You think I'm crazy? Why in the world would I want something this massive inside me? I like being able to sit down, you know! <br>Besides, not every boy can get off from anal you know. Some people try and try training themselves almost every day, and can't get off that way no matter how long they hold off from jerking themselves. 
+				t But quickly his mock anger fades. 
+				sp nagatoro; Oh, hehe, I get it. You're projecting, huh? You think it's <i>my</i> heart beating quickly at our dicks rubbing together? You think <i>I'm</i> the one breathing harder feeling the difference in our sizes? 
 				im imagebox/nagatoro/nagatoroBunny1-4.jpg
+				sp nagatoro; Ah, eh...? Did I... Get a little carried away there and start going faster? <br>W-whatever, I meant to do that. A pervert like you is probably pent up after just a few hours, I was just being nice. Teasing you any longer could've hurt you, probably. You should be grateful. 
+				t You gently rub nagatoroF's head, but that just makes him pout harder. 
+				sp nagatoro; Geez! Now I've gotta clean this up... This fabric tears easily you know, I've gotta wash it carefully.<br>My favorite pantyhose is gonna smell like your sticky cum now, I hope you're happy! Pervert! 
+				t It's cute to see him get flustered. 
 			`);
 			break;
 		}
@@ -593,15 +604,19 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "nagatoroPrincess1-1": { //unfinished
+		case "nagatoroPrincess1-1": {
 			writeHTML(`
-				im imagebox/nagatoro/nagatoroPrincess1-1.jpg
 				sp nagatoro; Eheh, like the outfit? Soft pink with a design that shows off my body, a skirt the perfect length to show my naughty bits, stockings that feel <i>heavenly</i> on the skin... It's the perfect outfit for dealing with a pervert like you. Aren't you lucky? 
 				im imagebox/nagatoro/nagatoroPrincess1-2.jpg
+				sp nagatoro; Geez, I can feel your heartbeat through my soles. Aren't you a little <i>too</i> excited? Shouldn't you be getting this hard at the thought of impregnating a girl, not at rubbing your cock between my feet? 
 				im imagebox/nagatoro/nagatoroPrincess1-3.jpg
+				sp nagatoro; Honestly, you're... Mmmh, hopeless. If you make a mess on these socks... I'll throw them away, you know. I <i>am</i> flexible enough I could lick them clean, but why would I want to taste your gross, sticky load? <br>Just... Just smelling it would totally fog up my head, imagine how gross... It'd be if, ah, if I couldn't get the taste out of my mouth for hours...
 				im imagebox/nagatoro/nagatoroPrincess1-4.jpg
+				sp nagatoro; Ah, ahah~<br>That really set you off, huh~? Are you gonna cum?<br>I'll take... Take pity on you and cuuum too, so you don't feel bad about... About my cute feet being enough to get you off... P-pervert~! 
 				im imagebox/nagatoro/nagatoroPrincess1-5.jpg
+				sp nagatoro; Cumming~! 
 				im imagebox/nagatoro/nagatoroPrincess1-6.jpg
+				sp nagatoro; Haah~<br>I can feel it soaking through the fabric, it's so slimy... <br>Hehe, a proper degenerate like you isn't satisfied yet, right? <br>Well, these are totally ruined now, now way your scent is coming out of these. Cmon, let's go again. If I'm tossing these we may as well paint them totally white first~
 			`);
 			break;
 		}
@@ -627,12 +642,28 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "nagatoroSuccubus1-1": { //unfinished
+		case "nagatoroSuccubus1-1": {
 			writeHTML(`
 				im imagebox/nagatoro/nagatoroSuccubus1-1.jpg
+				sp player; Huh, that's a little... On the nose. 
+				sp nagatoro; What's that supposed to mean? <br>Actually, is this yours? I don't remember buying it. It's just my size though, so I thought I'd give it a shot.<br>Man this is comfy, I can't even tell what kind of fabric it is...
 				im imagebox/nagatoro/nagatoroSuccubus1-2.jpg
+				sp nagatoro; Honestly, it does look really good on me. 
+				sp player; It seems a little tight in the crotch though. 
+				sp nagatoro; Yeah, the way it rubs against me makes it hard to focus. If I had an erection it'd be really obvious in this thing.<br>Actually that hasn't been a problem for... For... 
+				t His words trail off as he stares into his own reflection. There's an odd glimmer in his eyes. 
+				sp nagatoro; I don't know why... This outfit just seems really... Special... 
+				t As you look at his reflection as well, you can't help but agree. Something succubusF said before is quietly echoing in the back of your mind, but you can't place exactly what... 
+				... 
 				im imagebox/nagatoro/nagatoroSuccubus1-3.jpg
+				sp nagatoro; Ah, fuck~! It feels so good today, harder~! 
+				t His usual demeanor has fallen away today, replaced with the total pervert beneath you. His flaccid dick wiggles with every thrust, it isn't hard yet every part of his body is clearly showing an absolute devotion to this pleasure. 
+				t The little buttslut just moans, pushing his ass back against you with each thrust to ensure you're hilting yourself as deep as possible. 
+				sp nagatoro; Come on, come on and <span style="color:pink">CUM~!</span>
 				im imagebox/nagatoro/nagatoroSuccubus1-4.jpg
+				sp nagatoro; Yes~! Fuhhhk... Yeah...
+				t His eyes flutter as his flaccid cock splurts into his thin leggings, then slowly starts to leak out the rest of his load at the sensation of being creamed. All the while his ass clenches around you to the rhythm of his heartbeat to thoroughly milk you.
+				t You pull out with a *plop*, and take a step backwards to watch the semi-aware buttslut giggle vapidly as the rest of his water cum leaks from the flaccid member between his legs. 
 			`);
 			break;
 		}
