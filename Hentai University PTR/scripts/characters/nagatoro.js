@@ -606,6 +606,7 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "nagatoroPrincess1-1": {
 			writeHTML(`
+				im imagebox/nagatoro/nagatoroPrincess1-1.jpg
 				sp nagatoro; Eheh, like the outfit? Soft pink with a design that shows off my body, a skirt the perfect length to show my naughty bits, stockings that feel <i>heavenly</i> on the skin... It's the perfect outfit for dealing with a pervert like you. Aren't you lucky? 
 				im imagebox/nagatoro/nagatoroPrincess1-2.jpg
 				sp nagatoro; Geez, I can feel your heartbeat through my soles. Aren't you a little <i>too</i> excited? Shouldn't you be getting this hard at the thought of impregnating a girl, not at rubbing your cock between my feet? 
