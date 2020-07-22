@@ -778,6 +778,21 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation('playerHouse')", "Finish");
 			break;
 		}
+		case "nagatoroCorruption": {
+			writeHTML(`
+				sp succubus; Damn, you really lucked out with this one.
+				t succubusF's voice shocks you out of your stupor. You set the bunnyboi down on a chair. He's completely lost conciousness, but cum is still leaking down between his thighs.
+				sp succubus; Leave him with me, I'll clean him up and make sure he won't freak out too much about his body undergoing some changes. <br>Huh, he did not have a lot of masculinity in him, that load was the absolute last of it. He'll probably never have an erection again, not that it matters, because... 
+				t succubusF gently touches the bulge of nagatoroF's flaccid, small bulge. nagatoroF's body twitches and he lets out a moan. His eyes flicker open for just a moment, but it's just reflexive, he's still out cold.
+				sp succubus; He's got some amazing potential as a succubus, I'm actually a little jealous. Although his tiny cock's sensitivity will be through the roof, geez. Even if he can't get hard it's gonna be a bitch to keep him from jerking it from the moment he wakes up...
+				sp player; But he'll be fine?
+				sp succubus; Yep! And I can turn him into a proper demon anytime. He might even have some special powers, some people fit into the succubus role so naturally they could turn a nun into a whore day one. <br>Anyways, out so I can lock the door. The place will be empty soon, yeah? <br>... Hey, would he mind if I swiped some of these outfits?
+				sp player; He would absolutely notice.
+				sp succubus; Fiiine~<br>Maybe if I traded one of them for one of my special ones so he can get a taste of the good life coming his way... Hmm... The schoolgirl one looks cute.
+			`);
+			writeFunction("changeLocation('playerHouse')", "Finish");
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;

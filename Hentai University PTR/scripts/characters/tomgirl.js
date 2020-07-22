@@ -690,14 +690,13 @@ var phoneArray = [//Lists the potential text events the player can receive at th
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "tomgirlReward": {
-			clearText('tomgirl');
 			writePhoneImage("images/tomgirl/9-5.jpg", "Art by Nagi Ichi");
 			writePhoneSpeech("tomgirl", "", "You've finished all the content for tomgirlF for this version!");
 			break;
 		}
 		case "tomgirlCorrupted": {
 			writePhoneImage("images/tomgirl/9-5.jpg", "Art by Nagi Ichi");
-			writePhoneSpeech("tomgirl", "", "You've transformed tomgirlF into a succubus (male)! More content will come along soon!");
+			writePhoneSpeech("tomgirl", "", "You've primed tomgirlF for transformation into a succubus (male)! More content will come along soon!");
 			break;
 		}
 		default: {
