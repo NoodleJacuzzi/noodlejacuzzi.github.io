@@ -102,7 +102,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She pauses for a moment, before nodding simply.");
 			writeSpeech("nikki","","Ah, okay - what did you want to know?");
 			writeText("You'll need to make her a bit more comfortable before you can hypnotize her, so you'll start out simple...");
-			writeText("You reach into your pocket, looping the pendant around you wrist as you speak.");
+			writeText("You reach into your pocket, looping the pendant around your wrist as you speak.");
 			writeSpeech("player","","I see that you've taken quite the variety of courses here. Your major is listed as...");
 			writeText("You reach for your files, but nikkiF shifts and replies,");
 			writeSpeech("nikki","","Ah, business management.");
@@ -122,7 +122,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("nikki","","Ah, a family friend showed me a Hitchcock film some time ago, and I thought it would be good to take a fun course alongside some of the more difficult ones that term.");
 			writeText("You bring your hand up from your pocket, the pendant glinting slightly in the light/");
 			writeSpeech("player","","And all the PE courses?");
-			writeSpeech("nikki","","A sounds mind resides within a sound body.");
+			writeSpeech("nikki","","A sound mind resides within a sound body.");
 			writeText("Her eyes move to the pendant for a moment... but she quickly refocuses.");
 			writeSpeech("player","","And you have plans for what you'll do after your associate's degree?");
 			writeSpeech("nikki","","I think I'll go for a bachelor's, or maybe get a job if I can.");
@@ -191,7 +191,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("nikki","","...Yes?");
 			writeText("You shake your head.");
 			writeSpeech("player","","Never mind. One last question:<br>Why did you want me to do it again?");
-			writeText("A look of genuine confusion goes across nikkF's face.");
+			writeText("A look of genuine confusion goes across nikkiF's face.");
 			writeSpeech("nikki","","Because... I liked it? Should there be another reason?");
 			writeSpeech("player","","And you liked it because...?");
 			writeSpeech("nikki","","...I don't understand the question.");
@@ -241,7 +241,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She pauses for a moment, before nodding simply.");
 			writeSpeech("nikki","","Ah, okay - what did you want to know?");
 			writeText("You'll need to make her a bit more comfortable before you can hypnotize her, so you'll start out simple...");
-			writeText("You reach into your pocket, looping the pendant around you wrist as you speak.");
+			writeText("You reach into your pocket, looping the pendant around your wrist as you speak.");
 			writeSpeech("player","","I see that you've taken quite the variety of courses here. Your major is listed as...");
 			writeText("You reach for your files, but nikkiF shifts and replies,");
 			writeSpeech("nikki","","Ah, business management.");
@@ -261,7 +261,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("nikki","","Ah, a family friend showed me a Hitchcock film some time ago, and I thought it would be good to take a fun course alongside some of the more difficult ones that term.");
 			writeText("You bring your hand up from your pocket, the pendant glinting slightly in the light/");
 			writeSpeech("player","","And all the PE courses?");
-			writeSpeech("nikki","","A sounds mind resides within a sound body.");
+			writeSpeech("nikki","","A sound mind resides within a sound body.");
 			writeText("Her eyes move to the pendant for a moment... but she quickly refocuses.");
 			writeSpeech("player","","And you have plans for what you'll do after your associate's degree?");
 			writeSpeech("nikki","","I think I'll go for a bachelor's, or maybe get a job if I can.");
@@ -330,7 +330,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("nikki","","...Yes?");
 			writeText("You shake your head.");
 			writeSpeech("player","","Never mind. One last question:<br>Why did you want me to do it again?");
-			writeText("A look of genuine confusion goes across nikkF's face.");
+			writeText("A look of genuine confusion goes across nikkiF's face.");
 			writeSpeech("nikki","","Because... I liked it? Should there be another reason?");
 			writeSpeech("player","","And you liked it because...?");
 			writeSpeech("nikki","","...I don't understand the question.");
@@ -386,7 +386,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She perks up slightly, her hands separating and sitting neatly on each thigh now.");
 			writeSpeech("nikki","","Ah, a family friend showed me a Hitchcock film some time ago, and I thought it would be good to take a fun course alongside some of the more difficult ones that term.");
 			writeSpeech("player","","And all the PE courses?");
-			writeSpeech("nikki","","A sounds mind resides within a sound body.");
+			writeSpeech("nikki","","A sound mind resides within a sound body.");
 			writeSpeech("player","","And you have plans for what you'll do after your associate's degree?");
 			writeSpeech("nikki","","I think I'll go for a bachelor's, or maybe get a job if I can.");
 			writeSpeech("player","","I see.");
@@ -461,7 +461,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("nikki","","...Yes?");
 				writeText("You shake your head.");
 				writeSpeech("player","","Never mind. One last question:<br>Why did you want me to do it again?");
-				writeText("A look of genuine confusion goes across nikkF's face.");
+				writeText("A look of genuine confusion goes across nikkiF's face.");
 				writeSpeech("nikki","","Because... I liked it? Should there be another reason?");
 				writeSpeech("player","","And you liked it because...?");
 				writeSpeech("nikki","","...I don't understand the question.");
@@ -586,7 +586,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("nikki","","...Yes?");
 			writeText("You shake your head.");
 			writeSpeech("player","","Never mind. One last question:<br>Why did you want me to do it again?");
-			writeText("A look of genuine confusion goes across nikkF's face.");
+			writeText("A look of genuine confusion goes across nikkiF's face.");
 			writeSpeech("nikki","","Because... I liked it? Should there be another reason?");
 			writeSpeech("player","","And you liked it because...?");
 			writeSpeech("nikki","","...I don't understand the question.");
@@ -655,8 +655,20 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("As you approach, nikkiF looks up at you again from her book. Psychology, this time.");
 			writeSpeech("nikki","","Well hello again, playerMister Counselor. How may I help you today?");
 			writeFunction("writeEncounter('nikkiEnc3A')", "Try to hypnotize her in your office");
-			writeFunction("writeEvent('nikki1repeat')", "Go to your office for another handjob");
+			writeFunction("writeEncounter('nikkiEnc3repeat')", "Go to your office for another handjob");
 			writeFunction("changeLocation(data.player.location)", "Never mind, nothing for today");
+			break;
+		}
+		case "nikkiEnc3repeat" : {
+			passTime();
+			writeSpeech("player","","How about we head to my office to go over the same material as last time?");
+			writeText("nikkiF nods once, the same playful spark in her eyes as before.");
+			writeSpeech("nikki","","Lead the way, playerMister Counselor.");
+			writeText("...");
+			writeText("When you arrive, nikkiF smoothly shuts and latches the door before turning to face you, licking her lips.");
+			writeSpeech("nikki","","Let's get right to it, hm?");
+			writeText("She saunters towards you before crouching down...");
+			writeFunction("writeEvent('nikki1repeat')", "Watch her kneel again");
 			break;
 		}
 		case "nikkiEnc3A" : {
@@ -740,7 +752,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("As you approach, nikkiF looks up at you again from her book. Medical terminology, this time.");
 			writeSpeech("nikki","","Hello again, playerMister Counselor. Did you need to speak with me again?");
 			writeFunction("writeEncounter('nikkiEnc4A')", "Try to take her deeper into trance and have some fun.");
-			writeFunction("writeEvent('nikki1repeat')", "Go to your office for another handjob");
+			writeFunction("writeEncounter('nikkiEnc3repeat')", "Go to your office for another handjob");
 			writeFunction("changeLocation(data.player.location)", "Never mind, nothing for today");
 			break;
 		}
@@ -787,7 +799,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Her hands knead at her chest as she shuts her eyes, grinding her body into yours, relishing every movement of her tits against your shaft, her fingers digging in as she groans deeply at even the slightest sensation.");
 			writeSpeech("player","","<b>Good girl.</b> You know... I think you might even deserve a reward.");
 			writeText("She gasps sharply again, half-hazed eyes focusing on yours now.");
-			writeSpeech("player","","With how sensitive you are right now, I bete nothing would feel as good as my cum on your-");
+			writeSpeech("player","","With how sensitive you are right now, I bet nothing would feel as good as my cum on your-");
 			writeSpeech("nikki","","<i><b>Yes!</b></i>");
 			writeText("Your words turn to a sharp moan of pleasure as she moves with all the energy she can, her spit and your pre mixing together as lube while she bounces her tits with abandon.");
 			writeText("No inhibitions, no reason... Just a desire for pleasure.");
@@ -821,7 +833,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("player","","No problem. And as for next time... Well, you can expect some more play of that sort.");
 				writeText("nikkiF lets out a small chuckle.");
 				writeSpeech("nikki","","I'll see you then.");
-				writeText("Pulling her jacket on, she stops out of the room smoothly, not a hair out of place as you get ready to attend to your own business...");
+				writeText("Pulling her jacket on, she steps out of the room smoothly, not a hair out of place as you get ready to attend to your own business...");
 			}
 			writeFunction("changeLocation(data.player.location)", "Finish (for now)");
 			break;
@@ -897,11 +909,22 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("nikki","","Hello again, playerMister Counselor. Thanks again for all the help lately - our sessions have been simply <i>wonderful.</i>");
 			writeText("The measured smile gives way to a teasing smirk for just a moment.");
 			writeSpeech("nikki","","Did you have time for another today, perhaps?");
-			if(galleryCheck('nikki1repeat') && galleryCheck('nikki2'))
+			if(galleryCheck('nikki1repeat') && galleryCheck('nikki2repeat'))
 				writeSpecial("You've finished all of nikkiF's content as of this update!")
-			writeFunction("writeEvent('nikki1repeat')", "Go to your office for another handjob");
-			//writeFunction("writeEvent('nikki2repeat')", "Have her give you a titjob again");
+			writeFunction("writeEncounter('nikkiEnc3repeat')", "Go to your office for another handjob");
+			writeFunction("writeEncounter('nikkiEnc5repeat')", "Have her give you a titjob again");
 			writeFunction("changeLocation(data.player.location)", "Never mind, nothing for today");
+			break;
+		}
+		case "nikkiEnc5repeat" : {
+			writeSpeech("player","","How about we head over to my office for a chat? You look like you have to get off your chest.");
+			writeText("There's a faint, bemused hum from nikkiF in response to your pun as she nods.");
+			writeSpeech("nikki","","I do, actually. Let's go, playerMister Counselor~");
+			writeText("...");
+			writeText("The amusement seems to quickly turn to excitement as she leans forward.");
+			writeBig("images/nikki/2-1.jpg","Art by [ARTIST]");
+			writeSpeech("nikki","","I can see that you're enjoying the view... But how about we get right down to it~?");
+			writeFunction("writeEvent('nikki2repeat')", "Take her to the couch");
 			break;
 		}
 		default: {
@@ -915,7 +938,7 @@ var eventArray = [
 	{index: "nikki1", name: "Handjob in the Backroom"},
 	{index: "nikki1repeat", name: "Another Handjob in the Backroom"},
 	{index: "nikki2", name: "Hypnotized Titjob"},
-	{index: "placeholder", name: "Event Name"},
+	{index: "nikki2repeat", name: "A Second Hypnotized Titjob"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -962,7 +985,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/nikki/1-3.jpg","Art by Enoshima Iki");
 			writeSpeech("nikki","","Ah...?");
 			writeText("Her hand keeps stroking you, a firm grasp milking each rope of cum from your cock as you shoot all over her.");
-			writeText("She doesn't seem too too focused on where it lands though, as she stares intently at your shaft until you finish, her tongue gently running over her lips again as she watches each twitch until you finally finish.");
+			writeText("She doesn't seem too focused on where it lands though, as she stares intently at your shaft until you finish, her tongue gently running over her lips again as she watches each twitch until you finally finish.");
 			if(data.player.location != 'gallery'){
 				writeSpeech("nikki","","...Ah.");
 				writeText("Shaking her head slightly, she refocuses and raises her clean hand to her hair now.");
@@ -998,7 +1021,6 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/nikki/1-3.jpg","Art by Enoshima Iki");
 			writeText("When you finish bucking your hips, your seed spraying across her again, she lets out a contented sigh.");
 			if(data.player.location != 'gallery'){
-				passTime();
 				if(checkTrust('nikki') < 45)
 					setTrust('nikki',45);
 				writeText("Then, pulling out a wet wipe and a small spray bottle, one almost like it's for perfume, she gives her hair a quick spritz.");
@@ -1038,7 +1060,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player","","Mm...");
 			writeText("Another content hum from her as she shifts and rolls her tits around your shaft, that same spark in her eyes even with the neutral expression.");
 			writeBig("images/nikki/2-3.jpg","Art by [ARTIST]");
-			writeText("She keeps rolling her chest against you, her breathing getting heavier as she does, her arousal growing more and more.");
+			writeText("She keeps rolling her chest against you, her breathing getting heavier as she does, her arousal growing even as she focuses on you and you alone.");
 			writeText("nikkiF's highly focused now... Aroused and pent-up and, most of all, <b>fixated.</b>");
 			writeText("She's a lot more likely to be receptive to an order now...");
 			writeFunction("writeEncounter('nikkiEvent2A')","Instruct her to act without inhibitions")
@@ -1046,8 +1068,18 @@ function writeEvent(name) { //Plays the actual event.
 			break;
 		}
 		case "nikki2repeat" : {
-			if(data.player.location != 'gallery')
-				writeFunction("changeLocation(data.player.location)", "Finish (for now)");
+			writeText("As you move to the couch, she quickly undoes the buttons on her shirt, stepping past the already-shed jacket as she smiles at the sight of you undressing.");
+			writeText("When you're both suitably unclothed, she slowly drops down to her knees, hefting her tits high, just above your cock...");
+			writeText("...before letting the drop down onto each thigh, the slap of skin-on-skin forcing a small moan of pleasure to spill from nikkiF.");
+			writeBig("images/nikki/2-2.jpg","Art by [ARTIST]");
+			writeSpeech("player","","Ooh, fuck...!");
+			writeText("She smiles at the sound of you, gently kneading her chest around your shaft as she drools down between her tits to lube you up.");
+			writeText("Each shift of her hands presses your cock from side to side, her chest sometimes even engulfing and stimulating your head as she goes.");
+			writeText("After a good few minutes of her kneading pleasure, nikkiF pauses with a focused expression.");
+			writeBig("images/nikki/2-3.jpg","Art by [ARTIST]");
+			writeText("She quickly resumes the pleasure but, just like last now, she seems like she'd be particularly open to the same orders as before right now...");
+			writeFunction("writeEncounter('nikkiEvent2A')","Instruct her to act without inhibitions")
+			writeFunction("writeEncounter('nikkiEvent2B')","Make her feel as though her pussy is getting fucked too")
 			break;
 		}
 		default: {
