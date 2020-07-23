@@ -529,12 +529,25 @@ function writeEvent(name) { //Plays the actual event.
 		case "nagatoroBunny2-1": { //unfinished
 			writeHTML(`
 				im imagebox/nagatoro/nagatoroBunny2-1.jpg
+				t The sound of tearing fabric fills the air as nagatoroF presents himself. 
+				sp nagatoro; Alright, these ones were made to tear. The designer probably had your kind of libido in mind. Lemme grab some lube and... <br>Hoo... Alright, I'm ready.
 				im imagebox/nagatoro/nagatoroBunny2-2.jpg
+				sp nagatoro; Whoa whoa, what're you doing?!
+				sp player; You said-
+				sp nagatoro; I know, but geez! You're a real brute, you know that? And what's with this position? It's totally-
 				im imagebox/nagatoro/nagatoroBunny2-3.jpg
+				sp nagatoro; Ah~! Stu... This was supposed to be romantiiiIC~! 
+				t Despite his protests at least one part of his body is honest. 
+
 				im imagebox/nagatoro/nagatoroBunny2-4.jpg
 				im imagebox/nagatoro/nagatoroBunny2-5.jpg
+
+				sp player; It's about time I got a little payback for all that teasing. I'm not stopping until you admit defeat. 
+				sp nagatoro; Ah, I'm sorry! I was just having a little fun! 
+				sp player; I had a different kind of defeat in mind... 
 				im imagebox/nagatoro/nagatoroBunny2-6.jpg
 				im imagebox/nagatoro/nagatoroBunny2-7.jpg
+				sp nagatoro; H-holy... Wow, I actually came from just my... 
 			`);
 			break;
 		}
