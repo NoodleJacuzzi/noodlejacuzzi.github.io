@@ -502,6 +502,9 @@ function lName(name) {
 function replaceCodenames(text) {
 	var codenameCheck = "";
 	for (geminiLoop = 0; geminiLoop < 5; geminiLoop++) {
+		if (data.player.nickname != null) {
+			text = text.replace('*Master', data.player.nickname);
+		}
 		text = text.replace('playerF', data.player.name);
 		text = text.replace('playerGender', data.player.gender);
 		text = text.replace('playerG', data.player.gender);
@@ -679,6 +682,13 @@ function renameEveryone() {
 	}
 	changeLocation("playerHouse");
 }
+
+function renameNickname() {
+	data.player.name = document.getElementById('nameSubmission').value;
+	data.player.nickname = document.getElementById('nicknameSubmission').value;
+	changeLocation(data.player.location);
+}
+
 
 function checkRequirements(string) {
 	var finalResult = true;
@@ -3092,6 +3102,14 @@ function diagnostic() {
 			data.player.counseling = 5;
 			updateMenu();
 			writeSpecial("All of your stats have been set to 3 or above. You can keep improving them past this point, but you shouldn't see any skill-related roadblocks from here on!");
+			break;
+		}
+		case "youwillcallme": {
+			loadEncounter('system', 'youwillcallme');
+			break;
+		}
+		case "you will call me": {
+			loadEncounter('system', 'youwillcallme');
 			break;
 		}
 		case "new name": {
