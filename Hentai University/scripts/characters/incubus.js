@@ -89,14 +89,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 							t As you walk into the shop, you see a familiar face handing incubusF a glass vial filled with a murky white fluid. 
 							sp succubus; That'll cover another month in advance, yeah? 
 							sp incubus; Yep, it-<br>Customer. Scram, squirt. 
-							sp succubus; I told you to stop calling me-<br>Master? 
+							sp succubus; I told you to stop calling me-<br>*Master? 
 							sp player; Yo, succubusF.I guess it makes sense the two of you know each other. 
 							t incubusF is surprised that you know succubusF, but quickly tries to hold back laughter. 
-							sp incubus; Pffft...<br>Master? That some kinda sex thing? He your mark too, succubusF? I know this isn't his energy you're handing off, it doesn't smell anywhere near as good as his.
-							sp succubus; Your nose is too strong for your own good, incubusF. And I'm his familiar. 
+							sp incubus; Pffft...<br>*Master? That some kinda sex thing? *He your mark too, succubusF? I know this isn't *his energy you're handing off, it doesn't smell anywhere near as good as *his.
+							sp succubus; Your nose is too strong for your own good, incubusF. And I'm *his familiar. 
 							sp incubus; Whoa~! That official? You go girl! 
 							t succubusF just sighs. 
-							sp succubus; We're done here anyways. See you tonight master. Have fun with this incub-
+							sp succubus; We're done here anyways. See you tonight *master. Have fun with this incub-
 							sp incubus; Finish that sentence and you die. Or better yet, I've got stuff behind this counter that'll make you wish you were dead. 
 							T The jovial atmosphere of the shop is squashed flat in an instant. incubusF glares daggers at succubusF, who doesn't seem to care. 
 							sp succubus; You really need to get over that. It's just a rank, it doesn't decide what's in your pants. <br>Err, skirt. Anyways, bye. Lemme know if you get any more outfits in stock. 
@@ -204,8 +204,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (data.player.gps != true) {
 				sale("findmii", 50, "scripts/gamefiles/items/map.jpg", "Find Mii<br>Can't find somebody? Instead of asking chaos or something, buy this and everybody will be a cinch to find wherever they are. Town map not included.");
 			}
-			if (data.player.counseling < 9) {
-				sale("counseling", 500, "scripts/gamefiles/profiles/principal.jpg", "Counseling++<br>You didn't become a counselor to actually do your job, right? Consider this a kind of lesser nuclear option. Watch out for the PTSA though.");
+			if (data.player.counseling < 5) {
+				sale("counseling", 200, "scripts/gamefiles/profiles/principal.jpg", "Counseling++<br>You didn't become a counselor to actually do your job, right? Consider this a kind of lesser nuclear option. Watch out for the PTSA though.");
 			}
 			writeFunction("writeEncounter('cancel')", "Leave");
 			if (checkTrust('incubus') == 4) {
@@ -252,7 +252,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 					t it doesn't burn, but it does have a strange smell. By the time your vision has cleared up...
 					im scripts/gamefiles/characters/basic.jpg
 					sp player; It's done?
-					sp incubus; There you go. Fully reversible too, for cash. I've got a thing that'll handle the cleanup too, nobody will notice the change. You're a new man. Congratulations...
+					sp incubus; There you go. Fully reversible too, for cash. I've got a thing that'll handle the cleanup too, nobody will notice the change. You're a new *man. Congratulations...
 				`);
 				writeText("<input type='text' id='nameSubmission' value='Thomas'>");
 				writeFunction("renamePlayerAlt()", "Finish");

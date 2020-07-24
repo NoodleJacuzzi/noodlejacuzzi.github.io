@@ -375,7 +375,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "potionFiller": {
 			writeText("Setting the baking soda and flower petal aside from the moment, you'll need to help nurseF with the first ingredient.");
 			writeSpeech("player", "", "Let's make that potion filler then.");
-			writeSpeech("nurse", "", "Indeed. It will dilute my work enough that effectively we'll have an unlimited amount of each potion we create, quite handy if I say so myself. We have everything we need already, aside from the listed 'four hours of hard labor'. That said, when I wrote this entry I was apparently quite the shut-in, I'm sure a big strong figure of dominance will have no trouble!");
+			writeSpeech("nurse", "", "Indeed. It will dilute my work enough that effectively we'll have an unlimited amount of each potion we create, quite handy if I say so myself. We have everything we need already, aside from the listed 'four hours of hard labor'. That said, when I wrote this entry I was apparently quite the shut-in, I'm sure a big strong source of 'masculine essence' will have no trouble!");
 			writeText("...");
 			writeText("The two of you spend a few hours preparing materials, measuring out solutions, and most of all constantly stirring and mixing fluids. By the end of it you're both tired and it's gotten a bit late.");
 			writeSpeech("nurse", "", "Mmm, I've worked up a sweat, and you have too.");

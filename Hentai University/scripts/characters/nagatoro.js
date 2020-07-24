@@ -20,8 +20,10 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "intro0", name: "A student still in class catches your eye through the window", requirements: "?trust nagatoro 0; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "setup1A", name: "nagatoro is here.", requirements: "?trust nagatoro 40; ?location eastHallway; ?time Evening;", altName: "", altImage: "",},
 	{index: "setup2A", name: "nagatoro is here.", requirements: "?trust nagatoro 41; ?location eastHallway;", altName: "", altImage: "",},
-	{index: "confrontation", name: "You can overhear nagatoro in the principal's office.", requirements: "?trust nagatoro 42; ?location northHallway;", altName: "", altImage: "",},
-	{index: "nagatoroComfort1", name: "You think you see nagatoro out the window.", requirements: "?trust nagatoro 99; ?location eastHallway;", altName: "", altImage: "",},
+	{index: "confrontation", name: "You can overhear nagatoro in the principal's office", requirements: "?trust nagatoro 42; ?location northHallway;", altName: "", altImage: "",},
+	{index: "nagatoroComfort1", name: "You think you see nagatoro out the window", requirements: "?trust nagatoro 99; ?location eastHallway;", altName: "", altImage: "",},
+	{index: "clubEntrance", name: "The clubroom is here", requirements: "?trust nagatoro 100; ?location eastHallway;", altName: "", altImage: "",},
+	{index: "clubQuo", name: "The clubroom is here", requirements: "?trustMin nagatoro 101; ?location eastHallway;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -251,6 +253,152 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
+		case "clubEntrance": {
+			writeHTML(`
+				t The clubroom door is closed, and when you try the knob it's locked. You're about to leave until you can hear someone whispering behind the door.
+				sp nagatoro; im images/none.png; HIDDENWhat's the password?
+			`);
+			writeCenteredText("<input type='text' id='cheatSubmission' value='Butterscotch'>");
+			writeFunction("writeEncounter('nagatoroClubSetup')", "Say the password");
+			break;
+		}
+		case "nagatoroClubSetup": {
+			writeEvent(name);
+			setTrust('nagatoro', 101);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "clubQuo": {
+			switch(checkTrust("nagatoro")) {
+				case 101: {
+					writeHTML(`
+						sp nagatoro; Oh, *mister perv~! Wow, you look out of breath. A little too excited for today, huh? Guess you aren't a young *man anymore. 
+						sp player; I'm not that old... 
+						sp nagatoro; Hehe, I'm just kidding around. I know you're young where it counts. How about I get dressed? I know there was an outfit you couldn't take your eyes off of~
+					`);
+					break;
+				}
+				case 102: {
+					writeHTML(`
+						sp nagatoro; *Mister messy is back~! I spent a while cleaning the bunny-boi outfit off. I bet you'd want to see me do it with my mouth next time, huh? Pervert~! Or maybe I should get out an outfit fitting for dealing with someone as dirty as you? 
+					`);
+					break;
+				}
+				case 103: {
+					writeHTML(`
+						sp nagatoro; Hehe, welcome back. <br>Eeegh, you've got a dirty look in your eye today. Like, a <i>seriously</i> depraved one. If you can't help yourself, at least gimme the chance to prepare... Down there. 
+					`);
+					break;
+				}
+				case 104: {
+					if (checkFlag("nagatoro", "princess") == true) {
+						writeHTML(`
+							sp nagatoro; Hmhm~<br>You've been around a lot lately. Such a devoted club advisor, always around to lend a hand. Or maybe you've been charmed by my cute body?
+						`);
+					}
+					else {
+						writeHTML(`
+							sp nagatoro; Man, prepwork for being a bottom is such a pain! Seriously, all you need to do is stuck your dick in and thrust. I've gotta clean myself, practice insertions, shave, keep myself in shape... <br>Geez, if it didn't feel so good I'd probably have time to be a model student. 
+						`);
+					}
+					break;
+				}
+				case 105: {
+					writeHTML(`
+						sp nagatoro; Hmhm~<br>You've been around a lot lately. Such a devoted club advisor, always around to lend a hand. Or maybe you've been charmed by my cute body?
+					`);
+					break;
+				}
+				case 666: {
+					writeHTML(`
+						sp nagatoro; Mmmgh... I feel restless. Lately my body's been a lot more sensitive, and I can't seem to get, uh... <br>It's a little embarassing, it's not a big deal. Oh, I found an outfit I didn't know I had, how about you distract me from all this weirdness?
+					`);
+					break;
+				}
+				default: {
+					
+				}
+			}
+			openWardrobe();
+			if (checkFlag('succubus', 'newCorruption')==true && checkTrust("nagatoro") == 104) {
+				writeFunction("writeEncounter('nagatoroCorruptionPrompt')", "Talk about corruption");
+			}
+			writeFunction("writeEncounter('cancel')", "Go back");
+			break;
+		}
+		case "nagatoroBunny1-1": {
+			writeEvent(name);
+			raiseTrust("nagatoro", 1);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "nagatoroBunny2-1": {
+			writeEvent(name);
+			raiseTrust("nagatoro", 1);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "nagatoroBunny3-1": {
+			writeEvent(name);
+			if (checkTrust("nagatoro") == 103) {
+				raiseTrust("nagatoro", 1);
+			}
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "nagatoroPrincess1-1": {
+			writeEvent(name);
+			addFlag("nagatoro", "princess");
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "nagatoroSchoolgirl1-1": {
+			writeEvent(name);
+			addFlag("nagatoro", "schoolgirl");
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "nagatoroSwimsuit1-1": {
+			writeEvent(name);
+			addFlag("nagatoro", "swimsuit");
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "nagatoroSuccubus1-1": {
+			writeEvent(name);
+			addFlag("nagatoro", "succubus");
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "nagatoroCorruptionPrompt": {
+			writeSpeech("player", "", "Before we get started I actually have something to talk to you about.");
+			writeSpeech("nagatoro", "", "Listen, if you wanna join in on this that's cool. Step out of that stuffy outfit and-");
+			writeSpeech("player", "", "No, that's not it. I was thinking about you, and-");
+			writeSpeech("nagatoro", "", "Hah! In the shower I bet!");
+			writeSpeech("player", "", "I want to know how you feel about getting older. If I had a way around that, would you be interested?");
+			writeHTML(`
+				sp nagatoro; Eh? You're acting weirder than normal. Listen, I'm not a girl, alright? I don't wanna be, so... <br>Ooh, I get it. You wanna do some more hypnosis play? Fine, fine. I'll indulge your perversion, I'm all yours. 
+				t It doesn't seem like he's taking this too seriously, but the intent is clear. If you want to go through with the corruption there's nothing stopping you. 
+			`);
+			writeFunction("writeEncounter('nagatoroCorruption')", "Corrupt nagatoroF");
+			writeFunction("writeEncounter('cancel')", "Change your mind");
+			break;
+		}
+		case "nagatoroCorruption": {
+			writeEvent(name);
+			setTrust("nagatoro", 666);
+			passTime();
+			writeFunction("loadEncounter('succubus', 'nagatoroCorruption')", "Continue");
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -260,15 +408,21 @@ function writeEncounter(name) { //Plays the actual encounter.
 
 var eventArray = [
 	{index: "nagatoroComfort", name: "Nymph Unleashed"},
+	{index: "nagatoroClubSetup", name: "Club Establishment"},
+	{index: "nagatoroCorruption", name: "Cosplayer's Corruption"},
+	{index: "nagatoroBunny1-1", name: "Bunnyboi Outfit 1"},
+	{index: "nagatoroBunny2-1", name: "Bunnyboi Outfit 2"},
+	{index: "nagatoroBunny3-1", name: "Bunnyboi Outfit 3"},
+	{index: "nagatoroSchoolgirl1-1", name: "Schoolgirl Outfit"},
+	{index: "nagatoroSwimsuit1-1", name: "Swimsuit Outfit"},
+	{index: "nagatoroPrincess1-1", name: "Princess Outfit"},
+	{index: "nagatoroSuccubus1-1", name: "Succubus Outfit"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
-			break;
-		}
 		case "nagatoroComfort": {
 			writeHTML(`
 				t nagatoroF sits slumped against the wall, barely concious as you work your magic. The concept of a crossdressing club actually isn't too bad, the idea is going nowhere fast at the moment. He needs confidence, less anxiety, and more to the point he needs the ability to take what he wants. 
@@ -312,6 +466,237 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
+		case "nagatoroClubSetup": {
+			writeHTML(`
+				t The door opens, revealing a snickering nagatoroF.
+				sp nagatoro; Pfft...<br>What kinda password was that? Eheh...
+				sp player; So, what's actually on the agenda now that the club is started?
+				sp nagatoro; Prepwork, of course! Think about it, what if you want to have some fun in a schoolgirl outfit? You'd wanna dive right in, now spend a half hour with some blue balls searching. And what if the outfits don't fit? And I wanna try out the makeup too, see what's good and what sucks dick harder than I can.
+				t nagatoroF scurries over to a closet and pulls out a small box.
+				sp nagatoro; Plus, since we aren't an official club or anything, I can wear whatever I want. I was hoping somebody like tomgirlF or mejiF would join in, but the last time I asked them about it...<br>Oh, check out this shade! With lipstick you want to be subtle, I've got great lips already. But my eyes are kinda plain, so...
+				t nagatoroF is quickly lost in explaining his extensive collection of makeup. He seems excited to have someone to talk about it with.
+				...
+				im images/nagatoro/121.jpg
+				im images/nagatoro/130.jpg
+				t Over the course of a half hour nagatoroF dolls himself up, meticulously trying out each brand. In the end he's settled on a few dozen sets and the rest take up more than a few trash bags.
+				sp nagatoro; Bored yet? Or are you so lost in my eyes-
+				sp player; Nah, it's actually pretty relaxing to watch. You do this with your friends? I can get why other guys might not be interested in trading tips, but you could always make friends with a girl. I saw a tanned girl the other day who looks like an expert at this kinda stuff.
+				sp nagatoro; Are you kidding? The girls here are way more judgy than the guys.<br>... I may have been laughed off a few times when I asked for advice, so I kinda just went along pretending I was joking.<br>I thought about doing this online, but it's hard to be anonymous when the whole act of putting on makeup puts your face in the spotlight.
+				t He snaps a makeup lid closed to emphasize his point before he carefully starts slipping off his shirt.
+				sp nagatoro; Now for the fun part~!
+				im images/nagatoro/138.jpg
+				t nagatoroF spends another good chunk of time trying out clothes, never shying away from letting you see every bit of his body. In fact he seems to be enjoying putting on a show for you.
+				im images/nagatoro/140.jpg
+				sp nagatoro; Ah, this one's great~! Good quality, and it feels nice too. It'll go great with my playboy...
+				im images/nagatoro/142.jpg
+				sp nagatoro; Hey, you're staring pretty hard. A boy will feel self conscious you know. You aren't planning anything lewd with little old me, are you?
+				sp player; You've put on a dozen strip shows at this point, don't pretend you aren't into this.
+				sp nagatoro; Hehe~<br>Well, keep it in your pants, alright? I wanna at least pretend we're a club instead of a pair of fuckbuddies, okay? You'll get your reward later if you behave.
+				...
+				im images/nagatoro/108.jpg
+				sp nagatoro; Haaah... We spent so long unpacking, we should really be leaving about now, huh?
+				t As the prepwork continues nagatoroF's teasing becomes more and more obvious. Despite his insistence that the lewd stuff can wait the amount of sextoys, lingerie, and fetishwear the two of you have unwrapped and organized is frankly ridiculous.
+				sp player; Some of this stuff is really obviously erotic, how were you expecting new club members to act when they find a stash of sex toys?
+				sp nagatoro; ... With excitement? I figure there's got to be a couple of other fans of buttstuff here. <br>I bet if you were cute like me you'd see the appeal.
+				im images/nagatoro/110.jpg
+				sp nagatoro; Hey, hey, you'll be coming by tomorrow, yeah? It'll be a lot more exciting now that everything's ready. Plus if we are gonna keep this hidden from principalF we might as well revel in the kind of things you like the most.
+				sp player; I wouldn't miss it.
+				sp nagatoro; Hehe, I thought so! Perv~!
+			`);
+			break;
+		}
+		case "nagatoroBunny1-1": {
+			writeHTML(`
+				im images/nagatoro/148.jpg
+				t You're treated to quite the show today as nagatoroF slowly puts on his favorite outfit. The leotard, the ears, the whole ensemble hugging his curves and presenting a proper bunnyboi package.
+				im images/nagatoro/nagatoroBunny1-1.jpg
+				t The smooth outfit must feel great on his skin, which he intends to show you first hand as he pushes you onto the bed. 
+				im images/nagatoro/nagatoroBunny1-2.jpg
+				sp nagatoro; Seriously, aren't you <i>too</i> big? I bet even girls would have a hard time taking you, let alone a boy... And don't you feel bad emasculating other guys? You're crushing my self-esteem as a man, you know. Just for that all you get is rubbing, no cumming for you yet! 
+				sp player; Your self-esteem as a man was probably already gone when you got hot and bothered thinking about how you wanted my dick, nagatoroF. 
+				im images/nagatoro/nagatoroBunny1-3.jpg
+				sp nagatoro; You think I'm crazy? Why in the world would I want something this massive inside me? I like being able to sit down, you know! <br>Besides, not every boy can get off from anal you know. Some people try and try training themselves almost every day, and can't get off that way no matter how long they hold off from jerking themselves. 
+				t But quickly his mock anger fades. 
+				sp nagatoro; Oh, hehe, I get it. You're projecting, huh? You think it's <i>my</i> heart beating quickly at our dicks rubbing together? You think <i>I'm</i> the one breathing harder feeling the difference in our sizes? 
+				im images/nagatoro/nagatoroBunny1-4.jpg
+				sp nagatoro; Ah, eh...? Did I... Get a little carried away there and start going faster? <br>W-whatever, I meant to do that. A pervert like you is probably pent up after just a few hours, I was just being nice. Teasing you any longer could've hurt you, probably. You should be grateful. 
+				t You gently rub nagatoroF's head, but that just makes him pout harder. 
+				sp nagatoro; Geez! Now I've gotta clean this up... This fabric tears easily you know, I've gotta wash it carefully.<br>My favorite pantyhose is gonna smell like your sticky cum now, I hope you're happy! Pervert! 
+				t It's cute to see him get flustered. 
+			`);
+			break;
+		}
+		case "nagatoroBunny2-1": { //unfinished
+			writeHTML(`
+				im imagebox/nagatoro/nagatoroBunny2-1.jpg
+				t The sound of tearing fabric fills the air as nagatoroF presents himself. 
+				sp nagatoro; Alright, these ones were made to tear. The designer probably had your kind of libido in mind. Lemme grab some lube and... <br>Hoo... Alright, I'm ready.
+				im imagebox/nagatoro/nagatoroBunny2-2.jpg
+				sp nagatoro; Whoa whoa, what're you doing?!
+				sp player; You said-
+				sp nagatoro; I know, but geez! You're a real brute, you know that? And what's with this position? It's totally-
+				im imagebox/nagatoro/nagatoroBunny2-4.jpg
+				sp nagatoro; Ah~! Stu... This was supposed to be romantiiiIC~! 
+				t Despite his protests at least one part of his body is honest. 
+				im imagebox/nagatoro/nagatoroBunny2-5.jpg
+				sp nagatoro; Oooh~! 
+				sp player; It's about time I got a little payback for all that teasing. I'm not stopping until you admit defeat. 
+				sp nagatoro; Ah, I'm sorry! I was just having a little fun! 
+				sp player; I had a different kind of defeat in mind...<br>I'll bet this feels a lot better than your toys, right? 
+				t You pull back and grip nagatoroF by the arms, bouncing him up and down on your lap until...
+				im imagebox/nagatoro/nagatoroBunny2-6.jpg
+				sp nagatoro; Cumming~!
+				t He lets out a girlish shriek as your 'punishment' becomes too much for him, and he unloads through the air at the same time as you fill him up.
+				im imagebox/nagatoro/nagatoroBunny2-7.jpg
+				sp nagatoro; H-holy... Wow, I actually came from just my... <br>Ah, what a mess... Are you gonna make me do this to all my clothes?<br>... You're lucky you're cute.
+			`);
+			break;
+		}
+		case "nagatoroBunny3-1": { //unfinished
+			writeHTML(`
+				im images/nagatoro/nagatoroBunny3-1.jpg
+				sp nagatoro; Honestly, you're insatiable.
+				sp player; You're the one still wearing those torn tights.
+				sp nagatoro; What can I say? These are already broken in, and...<i>I like matching clothes.</i>
+				im images/nagatoro/nagatoroBunny3-2.jpg
+				sp nagatoro; Mgh...
+				im images/nagatoro/nagatoroBunny3-3.jpg
+				sp nagatoro; Ah, it's so deep~<br>You can... You can go a little faster this time.
+				im images/nagatoro/nagatoroBunny3-4.jpg
+				sp nagatoro; Ah~!
+				sp player; You alright?
+				sp nagatoro; Y-yeah, I can take it~
+				im images/nagatoro/nagatoroBunny3-5.jpg
+				sp nagatoro; H-harder, just a little bit... Ghhhh~!
+				t He pushes his legs against you, wrapping you tight between them and forcing you as deep as you can go.
+				t And holding you there, until he sucks in a breath and lets out a lilting moan as thin splurts of cum begin to soak into his outfit.
+				im images/nagatoro/nagatoroBunny3-6.jpg
+				sp nagatoro; Ha~<br>It feels nice today, to...
+				sp player; You're not worried about it never coming out of your clothes?
+				sp nagatoro; Nah, not today. Just... Hey.
+				im images/nagatoro/nagatoroBunny3-7.jpg
+				sp nagatoro; Thanks for hanging out with me.
+			`);
+			break;
+		}
+		case "nagatoroSchoolgirl1-1": {
+			writeHTML(`
+				im images/nagatoro/nagatoroSchoolgirl1-1.jpg
+				sp nagatoro; Ah, dang. Gimme a sec, I won't fit like this. 
+				sp player; Got an erection, huh? Looks like the shoe's on the other foot, perv. 
+				sp nagatoro; It's a reflexive thing! Unlike you I don't spend my time jerking off. 
+				sp player; You don't, huh? 
+				im images/nagatoro/nagatoroSchoolgirl1-2.jpg
+				sp nagatoro; H-hey, what're you doing? 
+				sp player; Watching you squirm. You don't get off much, do you? Feeling pent up? 
+				sp nagatoro; N-no... I get off once a week like a normal... Ghh, maybe I've been a little more active since I met you, but...<br>I'm not a degenerate like you! 
+				im images/nagatoro/nagatoroSchoolgirl1-3.jpg
+				sp player; Your body is telling a different story, pervert. 
+				t Each time you call him that he quivers, the idea that he's <i>just</i> as lustful as you clearly setting him off. 
+				sp nagatoro; S-stop~! I'm gonna~
+				im images/nagatoro/nagatoroSchoolgirl1-4.jpg
+				sp nagatoro; Oohh~! 
+				im images/nagatoro/nagatoroSchoolgirl1-5.jpg
+				sp nagatoro; Hah... Hah... H-happy now weirdo? You've got a cutie like me with a perfect mouth and a fantastic rear, and you're playing with my dick...
+				sp player; Sounds like you need some more punishment. 
+				sp nagatoro; N-no wait, I'm sorry! <br>Stop, it's still really sensitive~! 
+				... 
+				t His eyes are glazed over as he tries to catch his breath. He's not very resistant to stimulation to his little dicklette. 
+				t Still, he's careful on instinct to try and keep the clothes clean. You should look forward to what outfits he has prepared tomorrow. 
+			`);
+			break;
+		}
+		case "nagatoroSwimsuit1-1": {
+			writeHTML(`
+				im images/nagatoro/nagatoroSwimsuit1-1.jpg
+				sp nagatoro; Pretty cute, huh? Hey, how about a game this time? I'm wearing two pieces of clothing, if you can guess what they both are I'll take them off! 
+				sp player; The swimsuit, obviously. 
+				sp nagatoro; Correct! It's one piece, so what's the other? 
+				sp player; The wig? 
+				sp nagatoro; Bzzt, wrong! I don't count the wig as clothing, you give up? 
+				t You carefully look over the boy in the swimsuit before you, but there's no sign of any other bits of clothes. 
+				sp nagatoro; Geez, I can feel your leering through the suit. Fine, you got one right. I guess I can take off just one. 
+				im images/nagatoro/nagatoroSwimsuit1-2.jpg
+				sp nagatoro; You'd think with a brain like yours you would've guess it. 
+				sp player; That you're a buttslut? The thought never would have crossed my mind. 
+				sp nagatoro; Hey, I'm not a-
+				im images/nagatoro/nagatoroSwimsuit1-3.jpg
+				sp nagatoro; Aah~<br>W-wait, I wasn't ready yet! 
+				sp player; I think you've been ready from the moment you put these in. Now, let's see...
+				im images/nagatoro/nagatoroSwimsuit1-4.jpg
+				sp nagatoro; Oooh~! 
+				t His cock twitches as you pull the beads out of his ass. 
+				sp player; You seem ready to cum already. You really can't take pleasure as well as you give out sass, huh? 
+				im images/nagatoro/nagatoroSwimsuit1-5.jpg
+				sp nagatoro; Sh-shut up, I can take anything you dish out! 
+				t You just smile and press the first bead against his well-lubed asshole. He gulps, it's clear how you two are about to spend the day. 
+			`);
+			break;
+		}
+		case "nagatoroPrincess1-1": {
+			writeHTML(`
+				im images/nagatoro/nagatoroPrincess1-1.jpg
+				sp nagatoro; Eheh, like the outfit? Soft pink with a design that shows off my body, a skirt the perfect length to show my naughty bits, stockings that feel <i>heavenly</i> on the skin... It's the perfect outfit for dealing with a pervert like you. Aren't you lucky? 
+				im images/nagatoro/nagatoroPrincess1-2.jpg
+				sp nagatoro; Geez, I can feel your heartbeat through my soles. Aren't you a little <i>too</i> excited? Shouldn't you be getting this hard at the thought of impregnating a girl, not at rubbing your cock between my feet? 
+				im images/nagatoro/nagatoroPrincess1-3.jpg
+				sp nagatoro; Honestly, you're... Mmmh, hopeless. If you make a mess on these socks... I'll throw them away, you know. I <i>am</i> flexible enough I could lick them clean, but why would I want to taste your gross, sticky load? <br>Just... Just smelling it would totally fog up my head, imagine how gross... It'd be if, ah, if I couldn't get the taste out of my mouth for hours...
+				im images/nagatoro/nagatoroPrincess1-4.jpg
+				sp nagatoro; Ah, ahah~<br>That really set you off, huh~? Are you gonna cum?<br>I'll take... Take pity on you and cuuum too, so you don't feel bad about... About my cute feet being enough to get you off... P-pervert~! 
+				im images/nagatoro/nagatoroPrincess1-5.jpg
+				sp nagatoro; Cumming~! 
+				im images/nagatoro/nagatoroPrincess1-6.jpg
+				sp nagatoro; Haah~<br>I can feel it soaking through the fabric, it's so slimy... <br>Hehe, a proper degenerate like you isn't satisfied yet, right? <br>Well, these are totally ruined now, no way your scent is coming out of these. Cmon, let's go again. If I'm tossing these we may as well paint them totally white first~
+			`);
+			break;
+		}
+		case "nagatoroCorruption": {
+			writeHTML(`
+				t You take a deep breath and focus on the back of your hand as nagatoroF finishes getting dolled up in his bunny outfit. It really must be his favorite. 
+				t The back of your hand glows red for just a moment before fading. nagatoroF is getting dressed so he doesn't notice, but almost immediately his brow furrows and he licks his lips. He shakes it off though, the strange feeling is probably nothing. 
+				... 
+				im images/nagatoro/corruption1.jpg
+				sp nagatoro; G-geez, are you just gonna stare at me the whole time? Keep this up and I won't be joking when I call you a p... Perv...
+				t Cracks of nervousness form in his voice as he tries to relieve the tension by teasing you. His dick is surging to life, bulging out through his bunnyboi outfit harder than it ever has before. 
+				im images/nagatoro/corruption2.jpg
+				sp nagatoro; W-why am I feeling so hot? Did you mess with the thermo... Ghh... <br>I can't... It's building...
+				t There's a strange tint in his eyes as the energy from his body travels away from his muscles to one singular point.
+				sp player; Give in, let go nagatoroF.
+				t His knees buckle as he wordlessly answers your command.
+				im images/nagatoro/corruption3.jpg
+				t He squeals as his already small cock begins to leak what little masculinity he had away. His normal orgasms are usually just a few spurts, but this time is enough to soak the inside of his clothes.
+				im images/nagatoro/corruption4.jpg
+				sp nagatoro; Ah... Ah can't... Not hard, but still...
+				t You support him by the shoulder as he continues to splurt. The toll of the inhuman orgasm is affecting his mind and body.
+				t Still leaning on you for support his eyes cross as one last splurt soaks his clothes thoroughly enough that his last load as a man splatters on the ground in a puddle. He collapses in your arms as his eyes roll back and close.
+			`);
+			break;
+		}
+		case "nagatoroSuccubus1-1": {
+			writeHTML(`
+				im images/nagatoro/nagatoroSuccubus1-1.jpg
+				sp player; Huh, that's a little... On the nose. 
+				sp nagatoro; What's that supposed to mean? <br>Actually, is this yours? I don't remember buying it. It's just my size though, so I thought I'd give it a shot.<br>Man this is comfy, I can't even tell what kind of fabric it is...
+				im images/nagatoro/nagatoroSuccubus1-2.jpg
+				sp nagatoro; Honestly, it does look really good on me. 
+				sp player; It seems a little tight in the crotch though. 
+				sp nagatoro; Yeah, the way it rubs against me makes it hard to focus. If I had an erection it'd be really obvious in this thing.<br>Actually that hasn't been a problem for... For... 
+				t His words trail off as he stares into his own reflection. There's an odd glimmer in his eyes. 
+				sp nagatoro; I don't know why... This outfit just seems really... Special... 
+				t As you look at his reflection as well, you can't help but agree. Something succubusF said before is quietly echoing in the back of your mind, but you can't place exactly what... 
+				... 
+				im images/nagatoro/nagatoroSuccubus1-3.jpg
+				sp nagatoro; Ah, fuck~! It feels so good today, harder~! 
+				t His usual demeanor has fallen away today, replaced with the total pervert beneath you. His flaccid dick wiggles with every thrust, it isn't hard yet every part of his body is clearly showing an absolute devotion to this pleasure. 
+				t The little buttslut just moans, pushing his ass back against you with each thrust to ensure you're hilting yourself as deep as possible. 
+				sp nagatoro; Come on, come on and <span style="color:pink">CUM~!</span>
+				im images/nagatoro/nagatoroSuccubus1-4.jpg
+				sp nagatoro; Yes~! Fuhhhk... Yeah...
+				t His eyes flutter as his flaccid cock splurts into his thin leggings, then slowly starts to leak out the rest of his load at the sensation of being creamed. All the while his ass clenches around you to the rhythm of his heartbeat to thoroughly milk you.
+				t You pull out with a *plop*, and take a step backwards to watch the semi-aware buttslut giggle vapidly as the rest of his water cum leaks from the flaccid member between his legs. 
+			`);
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong event. Error code: Failed to write event ("+name+") in "+character.index+".js");
 			break;
@@ -334,7 +719,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "nagatoroReward", requirements: "?trust nagatoro 100;"},
+	{index: "nagatoroCorrupted", requirements: "?trust nagatoro 666;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
@@ -345,7 +730,9 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			writePhoneSpeech("nagatoro", "", "You've finished all of nagatoroF's content for this version, what would you like to see next? I bet it's something lewd!");
 			break;
 		}
-		case "placeholder": {
+		case "nagatoroCorrupted": {
+			writePhoneImage("images/nagatoro/succubusPic.jpg", "Art by Kinta no Mousou");
+			writePhoneSpeech("nagatoro", "", "You've primed nagatoroF for transformation into a succubus (male)! More content will come along soon!");
 			//Write the event's text here using writePhoneSpeech, writePhoneImage, and writePhoneChoices
 			break;
 		}
@@ -355,6 +742,80 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			break;
 		}
 	}
+}
+
+function openWardrobe() {
+	document.getElementById('output').innerHTML += `
+	<div id="wardrobeGrid" style="display:grid; grid-template-columns:auto auto auto auto;">
+	</div>
+	`;
+	switch(checkTrust("nagatoro")) {
+		case 101:
+			writeWardrobeOption("nagatoroBunny1-1");
+			writeWardrobeOption("nagatoroSchoolgirlLocked");
+			writeWardrobeOption("nagatoroSwimsuitLocked");
+			writeWardrobeOption("nagatoroPrincessLocked");
+		break;
+		case 102:
+			writeWardrobeOption("nagatoroBunny2-1");
+			writeWardrobeOption("nagatoroSchoolgirl1-1");
+			writeWardrobeOption("nagatoroSwimsuitLocked");
+			writeWardrobeOption("nagatoroPrincessLocked");
+		break;
+		case 103:
+			writeWardrobeOption("nagatoroBunny3-1");
+			writeWardrobeOption("nagatoroSchoolgirl1-1");
+			writeWardrobeOption("nagatoroSwimsuit1-1");
+			writeWardrobeOption("nagatoroPrincessLocked");
+		break;
+		case 104:
+			writeWardrobeOption("nagatoroBunny3-1");
+			writeWardrobeOption("nagatoroSchoolgirl1-1");
+			writeWardrobeOption("nagatoroSwimsuit1-1");
+			writeWardrobeOption("nagatoroPrincess1-1");
+		break;
+		case 666:
+			writeWardrobeOption("nagatoroBunny3-1");
+			writeWardrobeOption("nagatoroSuccubus1-1");
+			writeWardrobeOption("nagatoroSwimsuit1-1");
+			writeWardrobeOption("nagatoroPrincess1-1");
+		break;
+		default:
+			//writeWardrobeOption("002");
+			//writeWardrobeOption("032");
+			//writeWardrobeOption("112");
+			//writeWardrobeOption("nagatoroPrincessLocked");
+	}
+}
+
+function writeWardrobeOption(wardrobeImage) {
+	if (wardrobeImage.includes("Locked")==false) {
+		document.getElementById('wardrobeGrid').innerHTML += `
+			<img class="bigPicture" id="`+wardrobeImage+`" src="images/nagatoro/`+wardrobeImage+`.jpg" title="Art by Kinta no Mousou"
+			onclick="writeEncounter('`+wardrobeImage+`')",
+			onmouseover="wardrobeMouseOver('`+wardrobeImage+`')"
+			onmouseout="wardrobeMouseOut('`+wardrobeImage+`')"
+			style="filter:brightness(50%);">
+		`;
+	}
+	else {
+		document.getElementById('wardrobeGrid').innerHTML += `
+			<img class="bigPicture" id="`+wardrobeImage+`" src="images/nagatoro/unknown.png" title="Tsk tsk, play with the outfits we have before you get greedy for more!"
+			onmouseover="wardrobeMouseOver('`+wardrobeImage+`')"
+			onmouseout="wardrobeMouseOut('`+wardrobeImage+`')"
+			style="filter:brightness(50%);">
+		`;
+	}
+}
+
+function wardrobeMouseOver(wardrobeImage) {
+	//console.log(document.getElementById(wardrobeImage).style.filter)
+	document.getElementById(wardrobeImage).style.filter = "brightness(100%)"
+}
+
+function wardrobeMouseOut(wardrobeImage) {
+	//console.log(document.getElementById(wardrobeImage).style.filter)
+	document.getElementById(wardrobeImage).style.filter = "brightness(50%)"
 }
 
 //Don't touch anything below this, or things will break.

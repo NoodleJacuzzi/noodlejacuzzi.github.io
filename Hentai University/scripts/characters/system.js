@@ -7,9 +7,9 @@ var newItems = [ //If price is 0 it isn't for sale
 	{name: "Butt", 				key: true, 		price: 0, 	image: "scripts/gamefiles/items/butt.jpg", description: ""},
 	{name: "Ghost AR", 			key: true, 		price: 0, 	image: "scripts/gamefiles/items/ghostAR.jpg", description: "The brand new mobile game Ghost AR! Track ghosts around the city, collect them all and save the world from their ghastly threat!"},
 	{name: "Town Map", 			key: true, 		price: 20, 	image: "scripts/gamefiles/items/map.jpg", description: "Allows you to navigate around town more easily."},
-	{name: "Hypnosis Textbook", key: false, 	price: 50, 	image: "scripts/gamefiles/items/hypnosisTextbook.jpg", description: "A textbook on hypnosis, you can read it at home to improve your skill."},
-	{name: "Hacking Textbook", 	key: false, 	price: 50, 	image: "scripts/gamefiles/items/hackingTextbook.jpg", description: "A textbook on hacking, you can read it at home to improve your skill."},
-	{name: "Counseling Textbook", key: false, 	price: 50, 	image: "scripts/gamefiles/items/counselingTextbook.jpg", description: "A textbook on counseling, you can read it at home to improve your skill."},
+	{name: "Hypnosis Textbook", key: true, 	price: 50, 	image: "scripts/gamefiles/items/hypnosisTextbook.jpg", description: "A textbook on hypnosis, you can read it at home to improve your skill."},
+	{name: "Hacking Textbook", 	key: true, 	price: 50, 	image: "scripts/gamefiles/items/hackingTextbook.jpg", description: "A textbook on hacking, you can read it at home to improve your skill."},
+	{name: "Counseling Textbook", key: true, 	price: 50, 	image: "scripts/gamefiles/items/counselingTextbook.jpg", description: "A textbook on counseling, you can read it at home to improve your skill."},
 	{name: "Lady", 				key: true, 		price: 0, 	image: "scripts/gamefiles/profiles/lady.jpg", description: "For if you'd like to play as a cute lady. Unlocks the Lady character portrait. Aesthetic change only, art by Nusumenaihxseki"},
 ];
 
@@ -47,6 +47,12 @@ function writeEncounter(scene) {
 			writeText("If you'd like to avoid any specific fetishes, each character's logbook page lists the fetishes their scenes cover. Keep in mind that, as you are a hypnotist, hypnosis/mind control is so common we won't list it in the tags.");
 			writeFunction("loadEncounter('system', 'prologue')", "Start the game as a man");
 			writeFunction("loadEncounter('system', 'prologueAlt')", "Start the game as a futanari");
+			if (data.player.vegetarian != true) {
+				writeFunction("loadEncounter('system', 'vegetarian')", "Enable Vegetarian mode, disabling male / trap / femboi characters from appearing.");
+			}
+			else {
+				writeSpecial("Vegetarian mode is active! Trap characters will no longer appear, restart the game to undo this effect.");
+			}
 			writeText("<hr>");
 			writeText("Other notes:");
 			writeText("Are <b>you</b> interested in getting your own character into Hentai University? Well, you're in luck! Hentai University v3 includes <b>Mod Support!</b> Hop over to the game's <a href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'>Modding Tutorial</a> if you're interested.");
@@ -54,7 +60,7 @@ function writeEncounter(scene) {
 			writeText("You can also send us a message directly. Noodlejacuzzi is on discord (NoodleJacuzzi#4120) or you can send an email at noodlejacuzzi@gmail.com");
 			writeText("Captain Cryptogreek can be messaged on his reddit account where he regularly posts captions. You can also shoot him an email if you'd like him to proofread or you'd like to commission his skills at cryptogreekcaptions@gmail.com");
 			// replace [\r\n]+ with , 
-			writeText("Thank you to: O Xy Enkin, Swallows999, Iron Alex, Joshua Ingram, Robbie, 4MinuteWarning, andres mejia, Badaxe, Carlos, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, Filament, G, Hi There, J_C_L, jack spencer, Jesse Greene, Jinouga, Keith, Macarga, Marco Wassmer, Negativatron, Ramsey Bisher, ryguy, Scal, Skyrim mod lvr, Taylor Trout, XxrobothacksxX, 林家豪 , Aegil, Alec8686, Angel, AnotherAccount333, Anthony Ewing, Anthony Munso, Ariados, Blaise Fenn, Bonelessunknown, brandon, Bryson, CaptainMontana, Carlos, Chaaaanon, Charles Morris, ChubbiestThread, Daekash, Daniel Vivette, Danny Nguyen, Darrell Goodman, DarthMalak, ddkre, Debarre Sonny, dhccpmc, Drashin, Dravenmd114, Dugelle, Emanuel  Garcia, fireballcreations, FrostyTB, Gavin Davis, Geoff Heimos, GirmusCz, greatred, Greg Torres, Grim2011, Gwen Yurick, Harry Brasch, henry grobins, ItsAllOgreNow, I'm a Mitch, Jane, John Lewis, john smith, Joshua Melzark, Kaliden, KH dg, Kieron Kow, Krose, Kudon, KVBismarc, l, l1monat, liam paterson, Limitless, Louis Hayes, Lucas, Magnus, Markus Hansen, mazterlith, murgatroid99, Muryu, Nils Maier, Noah, Nutburger, Phanes, ranchy sanchy, Reverberations, Riven Drasek, Roy, Scumstango, Sebastian Eckel, ShadowFalls, Simon Rencher, Slomberg, SmolFish, Snaked, stratum, Sveny13, Tanman, Taurus Travon Rashad Lemar Brackin, theoron, Trevor, Tyler Ross, Vincent Madaire-Cullen, Wei, Wild Bill, William Parker, William Richardson, XaiuX, yami, Your Husbando, and Z, for funding this work! The patreon funds are split as Captain Cryptogreek has taken over as lead writer for the game.");
+			writeText("Thank you to: Swallows999, Iron Diana, Robbie, Joshua Ingram, Elias Errati, ryguy, 4MinuteWarning, Hi There, Carlos, Macarga, 林家豪, Richard, dragoon48, Skyrim mod lvr, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, J_C_L, Filament, XxrobothacksxX, Dkells, Jinouga, Marco Wassmer, Taylor Trout, andres mejia, Colin E, Badaxe, Jesse Greene, Scal, ChronosEdge, 长平 鬣, Culton Niccum, thesingleguy, Kethis Immortalis, cabbage, colt, Anton Schmidt, Geoffrey Munoz, nicholas guerra, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Don, Vikteren, Dean, Sveny13, Kudon, theoron, AnotherAccount333, Gavin Davis, Lucas, Kaliden, Krose, Tyler Ross, greatred, FrostyTB, Riven Drasek, l, ranchy sanchy, TheRawToast, Limitless, Greg Torres, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, Reverberations, ShadowFalls, William Parker, Magnus, Emanuel  Garcia, XaiuX, l1monat, Kieron Kow, Slomberg, henry grobins, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Daekash, fireballcreations, Markus Hansen, Louis Hayes, Tanman, DarthMalak, Danny Nguyen, yami, Grim2011, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, CaptainMontana, Simon Rencher, dhccpmc, Chaaaanon, Charles Morris, Nutburger, Whynot, William Richardson, mazterlith, Anthony Munso, john smith, Your Husbando, Carlos, Joshua Melzark, Verillia tristari, ItsAllOgreNow, Gwen Yurick, Nils Maier, Blaise Fenn, stratum, Angel, Ariados, Jane, Snaked, Muryu, Debarre Sonny, Drashin, qwerty, murgatroid99, Roy, Wild Bill, and brandon, for funding this work! The patreon funds are split as Captain Cryptogreek has taken over as lead writer for the game.");
 			writeSpecial("Special thanks to stiggy752 for the game's CSS, Wild Bill/Master of Puppets for the game's save to file system, and to OrangeMaestro for his orange eyes helping find many of the typos that plagued this game.");
 			writeText("I've added the option to start as a futanari. This only changes your character's image and the pronouns used (so that you're ma'am instead of sir). Please let Noodle Jacuzzi know if anyone is still referring to you as 'sir' when inappropriate, thank you.");
 			writeText("The game is more freeform and slower paced than my previous works. If you get stuck, please let us know. There isn't currently a guide, but we can easily feature an FAQ here.");
@@ -65,6 +71,16 @@ function writeEncounter(scene) {
 			writeFunction("loadEncounter('system', 'oretekiTest')", "See an Oreteki18kin example <br>(LONG LABIA LIPS/FLAPS)");
 			writeFunction("loadEncounter('system', 'nagiTest')", "See a Nagi Ichi example <br>(AT LEAST 90% GAY)");
 			writeFunction("loadEncounter('system', 'gujiraTest')", "See a Gujira example <br>(AT LEAST 80% GAY)");
+			break;
+		}
+		case "vegetarian": {
+			data.player.vegetarian = true;
+			setTrust('tomgirl', -1);
+			setTrust('meji', -1);
+			setTrust('succubus', -1);
+			setTrust('housekeep', -1);
+			setTrust('nagatoro', -1);
+			loadEncounter('system', 'start');
 			break;
 		}
 		case "listTextbooks": {
@@ -261,6 +277,14 @@ function writeEncounter(scene) {
 			writeFunction("changeLocation('playerHouse')", "Cancel and leave");
 			break;
 		}
+		case "youwillcallme": {
+			writeBig("scripts/gamefiles/characters/"+data.player.character+".jpg", "Art by Ishimura");
+			writeText("You are <input type='text' id='nameSubmission' value='"+data.player.name+"'>");
+			writeText("Those you've hypnotized call you <input type='text' id='nicknameSubmission' value='*Master'>");
+			writeFunction("renameNickname()", "Continue");
+			writeFunction("changeLocation('playerHouse')", "Cancel and leave");
+			break;
+		}
 		case "paperwork": {
 			writeText("You can do paperwork here, earning some quick overtime cash based on your Counseling skill. Would you like to spend a few hours doing that?");
 			writeFunction("loadEncounter('system', 'filing')", "Yes");
@@ -268,7 +292,7 @@ function writeEncounter(scene) {
 			break;
 		}
 		case "filing": {
-			var moneyMade = 5 + data.player.counseling;
+			var moneyMade = 10 + data.player.counseling;
 			passTime();
 			data.player.money += moneyMade;
 			updateMenu();
@@ -298,7 +322,7 @@ function writeEncounter(scene) {
 		case "credits": {
 			writeText("Incredible! Outstanding! You've reached one of Hentai University's endings!");
 			writeText("This game was made by <a href='https://noodlejacuzzi.github.io/index.html'>Noodle Jacuzzi</a> and <a href='https://www.reddit.com/user/CaptainCryptogreek'>Captain Cryptogreek</a>. Hop on in to our <a href='https://discord.gg/pDht5BZ'>Discord</a> and let us know what you thought, we'd love to hear from you. You can also find a section dedicated to modding in there, maybe check that out? Be sure to show show your support for the members of the modding community of course if you do.");
-			writeText("Thank you to: O Xy Enkin, Swallows999, Iron Alex, Joshua Ingram, Robbie, 4MinuteWarning, andres mejia, Badaxe, Carlos, ChronosEdge, Colin E, Dkells, Dustin Leichsenring, Filament, G, Hi There, J_C_L, jack spencer, Jesse Greene, Jinouga, Keith, Macarga, Marco Wassmer, Negativatron, Ramsey Bisher, ryguy, Scal, Skyrim mod lvr, Taylor Trout, XxrobothacksxX, 林家豪 , Aegil, Alec8686, Angel, AnotherAccount333, Anthony Ewing, Anthony Munso, Ariados, Blaise Fenn, Bonelessunknown, brandon, Bryson, CaptainMontana, Carlos, Chaaaanon, Charles Morris, ChubbiestThread, Daekash, Daniel Vivette, Danny Nguyen, Darrell Goodman, DarthMalak, ddkre, Debarre Sonny, dhccpmc, Drashin, Dravenmd114, Dugelle, Emanuel  Garcia, fireballcreations, FrostyTB, Gavin Davis, Geoff Heimos, GirmusCz, greatred, Greg Torres, Grim2011, Gwen Yurick, Harry Brasch, henry grobins, ItsAllOgreNow, I'm a Mitch, Jane, John Lewis, john smith, Joshua Melzark, Kaliden, KH dg, Kieron Kow, Krose, Kudon, KVBismarc, l, l1monat, liam paterson, Limitless, Louis Hayes, Lucas, Magnus, Markus Hansen, mazterlith, murgatroid99, Muryu, Nils Maier, Noah, Nutburger, Phanes, ranchy sanchy, Reverberations, Riven Drasek, Roy, Scumstango, Sebastian Eckel, ShadowFalls, Simon Rencher, Slomberg, SmolFish, Snaked, stratum, Sveny13, Tanman, Taurus Travon Rashad Lemar Brackin, theoron, Trevor, Tyler Ross, Vincent Madaire-Cullen, Wei, Wild Bill, William Parker, William Richardson, XaiuX, yami, Your Husbando, and Z, for funding this work!");
+			writeText("Thank you to: Swallows999, Iron Diana, Robbie, Joshua Ingram, Elias Errati, ryguy, 4MinuteWarning, Hi There, Carlos, Macarga, 林家豪, Richard, dragoon48, Skyrim mod lvr, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, J_C_L, Filament, XxrobothacksxX, Dkells, Jinouga, Marco Wassmer, Taylor Trout, andres mejia, Colin E, Badaxe, Jesse Greene, Scal, ChronosEdge, 长平 鬣, Culton Niccum, thesingleguy, Kethis Immortalis, cabbage, colt, Anton Schmidt, Geoffrey Munoz, nicholas guerra, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Don, Vikteren, Dean, Sveny13, Kudon, theoron, AnotherAccount333, Gavin Davis, Lucas, Kaliden, Krose, Tyler Ross, greatred, FrostyTB, Riven Drasek, l, ranchy sanchy, TheRawToast, Limitless, Greg Torres, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, Reverberations, ShadowFalls, William Parker, Magnus, Emanuel  Garcia, XaiuX, l1monat, Kieron Kow, Slomberg, henry grobins, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Daekash, fireballcreations, Markus Hansen, Louis Hayes, Tanman, DarthMalak, Danny Nguyen, yami, Grim2011, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, CaptainMontana, Simon Rencher, dhccpmc, Chaaaanon, Charles Morris, Nutburger, Whynot, William Richardson, mazterlith, Anthony Munso, john smith, Your Husbando, Carlos, Joshua Melzark, Verillia tristari, ItsAllOgreNow, Gwen Yurick, Nils Maier, Blaise Fenn, stratum, Angel, Ariados, Jane, Snaked, Muryu, Debarre Sonny, Drashin, qwerty, murgatroid99, Roy, Wild Bill, and brandon, for funding this work!");
 			writeSpecial("Special thanks to stiggy752 for the game's CSS, Wild Bill/Master of Puppets for the game's save to file system, and to OrangeMaestro for his orange eyes helping find many of the typos that plagued this game.");
 			writeSpecial("Thanks for playing! We hope you'll be seeing more endings in the future!");
 			writeFunction("changeLocation('playerHouse')", "Keep playing");

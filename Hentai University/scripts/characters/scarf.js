@@ -111,7 +111,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("scarf", "", "Your tenacity is almost contagious. I'll make things quite simple, give me a moment.");
 			writeSpeech("green", "", "playerF! Hey, what'cha d-");
 			writeText("scarfF snaps her fingers and greenF freezes on the spot, her body relaxes and her eyes unfocus.");
-			writeSpeech("scarf", "", "Once I wake her back up all you'll need to do is to make greenF say the line 'he passed the test'.<br>I'm sure you'd like to start right away, but do remember what happened last time.");
+			writeSpeech("scarf", "", "Once I wake her back up all you'll need to do is to make greenF say the line '*he passed the test'.<br>I'm sure you'd like to start right away, but do remember what happened last time.");
 			writeSpeech("player", "", "I probably could've taken her, I'm no pushover.");
 			writeSpeech("scarf", "", "Child, her hypnotic state is strong enough to power her through broken bones.");
 			writeSpeech("player", "", "Damn, how deep did you put her?");
@@ -453,7 +453,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("You remain focused even under a barrage of sexual pleasure.");
 			writeSpeech("scarf", "bunny.jpg", "Can you hold out much lo...");
 			writeText("Her voice has a strange echo to it, so you try to tune it out and focus on a smaller voice, it feels distant.");
-			writeSpeech("scarf", "casual.jpg", "God, he's huge, I should take this off... I hope he didn't break greenF...");
+			writeSpeech("scarf", "casual.jpg", "God, *he's huge, I should take this off... I hope *he didn't break greenF...");
 			writeText("As you feel yourself rapidly approaching orgasm you hold tight to whatever reality you can latch onto.");
 			writeBig("images/scarf/casinoEnd3.jpg", "Art by Enoshima Iki");
 			writeBig("images/scarf/casinoEnd4.jpg", "Art by Enoshima Iki");

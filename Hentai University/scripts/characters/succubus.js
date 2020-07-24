@@ -600,7 +600,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "I'm barely conscious.");
 			writeSpeech("succubus", "demon.jpg", "Ta-daaah~");
 			writeText("succubusF holds up his phone to display his latest texts.");
-			writeSpeech("demon", "", "I need to see him again. I'll do anything.");
+			writeSpeech("demon", "", "I need to see *him again. I'll do anything.");
 			writeSpeech("demon", "", "Please");
 			writeSpeech("demon", "", "I can pay you");
 			writeSpeech("demon", "", "I'll suck you off");
@@ -725,7 +725,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			sp player; I was hoping to talk to you about the demonization process.
 			sp succubus; im demon.jpg; Oh yeah! You corrupt anybody yet?
 			sp player; I haven't. Honestly, turning people into whores who'll sleep around...
-			sp succubus; im demon.jpg; Ehehe, don't worry about that, master. With a direct line into demonF's vault, we're set for life! You could have a gaggle of girlyboys for a harem and you'd be... Well...
+			sp succubus; im demon.jpg; Ehehe, don't worry about that, *master. With a direct line into demonF's vault, we're set for life! You could have a gaggle of girlyboys for a harem and you'd be... Well...
 			sp player; Is there a problem?
 			sp succubus; im demon.jpg; Yeah, it's you actually. Listen, you're a stud, I won't deny it. But entertaining more than one demon a day is... Risky. Three? You're tempting fate. Four is a very enjoyable way to commit suicide.
 			t succubusF rubs his chin, deep in thought.
@@ -743,7 +743,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("succubus", "demon.jpg", "You're turning people who trust you, people you have control over, into semen demons.");
 			writeHTML(`
 				sp player; What, will they sleep around or something?
-				sp succubus; im demon.jpg; Ehehe, don't worry about that, master. With a direct line into demonF's vault, we're set for life! You could have a gaggle of girlyboys for a harem and you'd be... Well...
+				sp succubus; im demon.jpg; Ehehe, don't worry about that, *master. With a direct line into demonF's vault, we're set for life! You could have a gaggle of girlyboys for a harem and you'd be... Well...
 				sp player; Is there a problem?
 				sp succubus; im demon.jpg; Yeah, it's you actually. Listen, you're a stud, I won't deny it. But entertaining more than one demon a day is... Risky. Three? You're tempting fate. Four is a very enjoyable way to commit suicide.
 				t succubusF rubs his chin, deep in thought.
@@ -774,6 +774,21 @@ function writeEncounter(name) { //Plays the actual encounter.
 			sp succubus; Good work, I'll make sure nothing happens to him overnight, mess with his memories a little. He'll think that the shrinkage of his dick is a result of swearing loyalty to you. He, uh, won't really be able to get off with his hand anymore though. And sterility... Well, it doesn't really matter if it'll just splatter onto the floor while you pound his ass.
 			sp player; He should be his usual self tomorrow then?
 			sp succubus; Yep! And I can pull the trigger on his full transformation afterwards.<br>Let's see... No special powers, but I'm sure he has what it takes to make a good member of the harem.
+			`);
+			writeFunction("changeLocation('playerHouse')", "Finish");
+			break;
+		}
+		case "nagatoroCorruption": {
+			writeHTML(`
+				sp succubus; Damn, you really lucked out with this one.
+				t succubusF's voice shocks you out of your stupor. You set the bunnyboi down on a chair. He's completely lost conciousness, but cum is still leaking down between his thighs.
+				sp succubus; Leave him with me, I'll clean him up and make sure he won't freak out too much about his body undergoing some changes. <br>Huh, he did not have a lot of masculinity in him, that load was the absolute last of it. He'll probably never have an erection again, not that it matters, because... 
+				t succubusF gently touches the bulge of nagatoroF's flaccid, small bulge. nagatoroF's body twitches and he lets out a moan. His eyes flicker open for just a moment, but it's just reflexive, he's still out cold.
+				sp succubus; He's got some amazing potential as a succubus, I'm actually a little jealous. Although his tiny cock's sensitivity will be through the roof, geez. Even if he can't get hard it's gonna be a bitch to keep him from jerking it from the moment he wakes up...
+				sp player; But he'll be fine?
+				sp succubus; Yep! And I can turn him into a proper demon anytime. He might even have some special powers, some people fit into the succubus role so naturally they could turn a nun into a whore day one. <br>Anyways, out so I can lock the door. The place will be empty soon, yeah? <br>... Hey, would he mind if I swiped some of these outfits?
+				sp player; He would absolutely notice.
+				sp succubus; Fiiine~<br>Maybe if I traded one of them for one of my special ones so he can get a taste of the good life coming his way... Hmm... The schoolgirl one looks cute.
 			`);
 			writeFunction("changeLocation('playerHouse')", "Finish");
 			break;
@@ -1053,7 +1068,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/succubus/breakfast2.jpg");
 			writeSpeech("succubus", "demon.jpg", "Ah~!");
 			writeSpeech("player", "", "Because that's totally fine. It's not like I'm gonna use these souls myself.");
-			writeSpeech("succubus", "demon.jpg", "... Oh. You're really okay with that? I mean, you're not too bad a guy. Maybe I have less selfish a motivation than you think.");
+			writeSpeech("succubus", "demon.jpg", "... Oh. You're really okay with that? I mean, you're not too bad a *guy. Maybe I have less selfish a motivation than you think.");
 			writeSpeech("player", "", "Maybe. Anyways bend over.");
 			writeSpeech("succubus", "demon.jpg", "Wait! I might be fireproof, but you shouldn't mix stoves and sex!");
 			writeBig("images/succubus/breakfast3.jpg");
@@ -1138,7 +1153,12 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("succubus", "demon.jpg", "Sho full... Of you and me... ");
 			writeText("With a soft *pop* his ass releases your cockhead, and he takes a few wobbly steps backwards.");
 			writeText("After a moment of careful and diligent effort, he manages to get his clothes back on without splurting his load onto the tile floor.");
-			writeSpeech("succubus", "demon.jpg", "Let'sh... Let'sh go, mashter... Collection day ish tomorrow... Gotta hold on, I need to go.");
+			if (data.player.gender = "man") {
+				writeSpeech("succubus", "demon.jpg", "Let'sh... Let'sh go, mashter... Collection day ish tomorrow... Gotta hold on, I need to go.");
+			}
+			else {
+				writeSpeech("succubus", "demon.jpg", "Let'sh... Let'sh go, mishtress... Collection day ish tomorrow... Gotta hold on, I need to go.");
+			}
 			writeSpeech("player", "", "Stay safe, alright?");
 			writeSpeech("succubus", "demon.jpg", "Mhmm...");
 			writeText("The two of you leave the bathroom and go your separate ways as the sky darkens.");
@@ -1189,7 +1209,7 @@ function writeEvent(name) { //Plays the actual event.
 				sp player; ... I don't feel any different.
 				sp succubus; im demon.jpg; It might be slow-acting. Cmon, let's get ready for when they take effect.
 				...
-				sp succubus; im demon.jpg; M-master? I, um... I'm not sure it's working.
+				sp succubus; im demon.jpg; M-*master? I, um... I'm not sure it's working.
 				im images/succubus/067.jpg
 				sp succubus; im demon.jpg; M-maybe you could untie me, and we could try something different?<br>Ah, you can just untie me, I don't keep clippers in the box or anyth...
 				t You dig through the box of toys succubusF brought over and pull out some things that catch your eye.

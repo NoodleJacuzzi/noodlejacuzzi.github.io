@@ -605,7 +605,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "starletAlleyFetish1Y": {
 			data.player.studio.film1Fetish1 = true;
 			writeSpeech("player", "", "I'm fine with it.");
-			writeSpeech("starlet", "", "Yes! And he's pretty vanilla, pretty much our target demographic.");
+			writeSpeech("starlet", "", "Yes! And *he's pretty vanilla, pretty much our target demographic.");
 			writeSpeech("pornstar", "", "... Fine. We can fit it in towards the end of a scene.");
 			writeSpeech("starlet", "", "Okay, okay, so what's my character going to be? I feel like we'll be pretty limited if I'm unwilling.");
 			writeSpeech("pornstar", "", "I agree, it's hard to make a public scene believable without enthusiasm. Let's stick close to reality, a mother and a daughter enjoying a public fuck on camera. I'll go for a more reluctant role since we want to put emphasis on your pep.");
@@ -664,7 +664,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			}
 			writeSpeech("pornstar", "", "Great. There's still plenty to plan and ads to make. We'll start filming when we're all here and ready to shoot. We could even start tomorrow if that works out. Scenes do take all day though, so be sure to arrive early."); 
 			writeSpeech("starlet", "", "I'm free whenever. Don't keep a girl waiting too long, okay playerF?");
-			writeSpeech("pornstar", "", "Don't be a brat about schedules starletF, if he's needed at the school that takes priority. Same with you, how did your last test go?");
+			writeSpeech("pornstar", "", "Don't be a brat about schedules starletF, if *he's needed at the school that takes priority. Same with you, how did your last test go?");
 			writeSpeech("starlet", "", "Well, this has been productive butI'vegottagobyeloveyoumom!");
 			writeText("starletF quickly rushes away. You give a polite goodbye and leave as well.");
 			writeFunction("changeLocation(data.player.location)", "Finish");
@@ -1368,7 +1368,7 @@ function writeEvent(name) { //Plays the actual event.
 				writeSpeech("pornstar", "", "Fuck me~! Fuck me until my legs give out~!");
 				writeBig("images/starlet/A-3-2.jpg", "Art by Oreteki18kin");
 				writeSpeech("pornstar", "", "Nnngh~!");
-				writeSpeech("starlet", "", "Aww, why does mommy get to go first again? That's not fair, I wanna get fucked up by his fuckstick!");
+				writeSpeech("starlet", "", "Aww, why does mommy get to go first again? That's not fair, I wanna get fucked up by *his fuckstick!");
 				writeSpeech("pornstar", "", "Sh-shut up, slut, and let mommy get the dicking she needs. Fuck, ye-e-e-sss~");
 				writeSpeech("starlet", "", "Aww, she looks like she's having so much fun! Hurry up and pound her snatch into putty so that I can have my turn, okay? If mommy won't share turn her womb into a jizz balloon!");
 				writeSpeech("pornstar", "", "Yesss~! Fuck fuck fuck fuck FUCK ME~! CUMMING~!");

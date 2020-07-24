@@ -19,16 +19,16 @@ var newItems = [
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "nikkiEnc1", name: "It looks like one of the students is "+(data.player.time == "Morning" ? "taking a break between classes." : "finished with classes."), requirements: "?trustMax nikki 0; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "nikkiEnc1CA", name: "It looks like nikki is talking to another student.", requirements: "?trust nikki 20; ?location eastHallway;", altName: "", altImage: "",},
-	{index: "nikkiEnc2", name: "nikki seems to be reading a textbook alone nearby.", requirements: "?trust nikki 30; ?location northHallway; parity odd;", altName: "", altImage: "",},
-	{index: "nikkiEnc2", name: "nikki seems to be reading a textbook just down the hall from your office.", requirements: "?trust nikki 30; ?location eastHallway; parity even;", altName: "", altImage: "",},
-	{index: "nikkiEnc3", name: "nikki seems to be reading another textbook.", requirements: "?trustMin nikki 40; ?trustMax nikki 45; ?location northHallway; parity odd;", altName: "", altImage: "",},
-	{index: "nikkiEnc3", name: "nikki's writing in a notebook nearby.", requirements: "?trustMin nikki 40; ?trustMax nikki 45; ?location eastHallway; parity even;", altName: "", altImage: "",},
-	{index: "nikkiEnc4", name: "nikki seems to be studying just down the hall.", requirements: "?trust nikki 50; ?location northHallway; parity odd;", altName: "", altImage: "",},
-	{index: "nikkiEnc4", name: "nikki's reading a textbook diligently.", requirements: "?trust nikki 50; ?location eastHallway; parity even;", altName: "", altImage: "",},
-	{index: "nikkiEnc5", name: "nikki is leaning against the wall, reading yet another textbook.", requirements: "?trust nikki 55; ?location northHallway; parity odd;", altName: "", altImage: "",},
-	{index: "nikkiEnc5", name: "nikki, the ever-diligent student, seems to be reviewing her notes.", requirements: "?trust nikki 55; ?location eastHallway; parity even;", altName: "", altImage: "",},
-	{index: "nikkiEnc5", name: "nikki is leaning against the wall again, though this time she seems to have a lollipop in her mouth.", requirements: "?trust nikki 60; ?location northHallway; parity odd;", altName: "", altImage: "",},
-	{index: "nikkiEnc5", name: "nikki, the ever-diligent student, seems to be reviewing her notes again, though this time she seems to have a lollipop in her mouth", requirements: "?trust nikki 60; ?location eastHallway; parity even;", altName: "", altImage: "",},
+	{index: "nikkiEnc2", name: "nikki seems to be reading a textbook alone nearby.", requirements: "?trust nikki 30; ?location northHallway; ?parity odd;", altName: "", altImage: "",},
+	{index: "nikkiEnc2", name: "nikki seems to be reading a textbook just down the hall from your office.", requirements: "?trust nikki 30; ?location eastHallway; ?parity even;", altName: "", altImage: "",},
+	{index: "nikkiEnc3", name: "nikki seems to be reading another textbook.", requirements: "?trustMin nikki 40; ?trustMax nikki 45; ?location northHallway; ?parity odd;", altName: "", altImage: "",},
+	{index: "nikkiEnc3", name: "nikki's writing in a notebook nearby.", requirements: "?trustMin nikki 40; ?trustMax nikki 45; ?location eastHallway; ?parity even;", altName: "", altImage: "",},
+	{index: "nikkiEnc4", name: "nikki seems to be studying just down the hall.", requirements: "?trust nikki 50; ?location northHallway; ?parity odd;", altName: "", altImage: "",},
+	{index: "nikkiEnc4", name: "nikki's reading a textbook diligently.", requirements: "?trust nikki 50; ?location eastHallway; ?parity even;", altName: "", altImage: "",},
+	{index: "nikkiEnc5", name: "nikki is leaning against the wall, reading yet another textbook.", requirements: "?trust nikki 55; ?location northHallway; ?parity odd;", altName: "", altImage: "",},
+	{index: "nikkiEnc5", name: "nikki, the ever-diligent student, seems to be reviewing her notes.", requirements: "?trust nikki 55; ?location eastHallway; ?parity even;", altName: "", altImage: "",},
+	{index: "nikkiEnc5", name: "nikki is leaning against the wall again, though this time she seems to have a lollipop in her mouth.", requirements: "?trust nikki 60; ?location northHallway; ?parity odd;", altName: "", altImage: "",},
+	{index: "nikkiEnc5", name: "nikki, the ever-diligent student, seems to be reviewing her notes again, though this time she seems to have a lollipop in her mouth", requirements: "?trust nikki 60; ?location eastHallway; ?parity even;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -1323,9 +1323,9 @@ switch (requestType) {
 					}
 				}
 				else {
-					//console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
+					console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
 					var requirements = checkRequirements(encounterArray[number].requirements);
-					//console.log(requirements);
+					console.log(requirements);
 					if (requirements != true) {
 						finalResult = false;
 					}

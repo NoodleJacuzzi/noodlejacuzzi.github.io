@@ -227,15 +227,47 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "coldreward", trust: 50,},
+	{index: "coldreward", trust: 51,},
+	{index: "coldphone1", trust: 50,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
+		case "coldphone1": {
+			setTrust('cold', 51)
+			writePhoneSpeech("cold","","Hello? This is coldF coldL.");
+			writePhoneSpeech("player","","Hello, this is playerF. We exchanged numbers yesterday coldF. You didn't need to give me a full introduction.");
+			writePhoneSpeech("cold","","Oh. Yeah. Sorry. I just got nervous I had put in your number wrong and wanted to be sure. Sorry.");
+			writePhoneSpeech("player","","Two sorries in a single message? You doing okay?");
+			writePhoneSpeech("cold","","I was just nervous, okay? And I didn't want you to think I was being weird, but I seem to have screwed that up.");
+			writePhoneSpeech("player","","Release. No need to worry. We're both pretty weird. No reason to stress out over a little text.");
+			writePhoneSpeech("cold","","Right. No reason to worry about any little texts. I actually had another reason I wanted to text you.");
+			writePhoneSpeech("player","","What do you need, coldF?");
+			writePhoneSpeech("cold","","I was wondering if we could have another... Meeting? Session? What are these things called?");
+			writePhoneSpeech("player","","Session is fine. And yeah. That sounds great. I have a pretty good idea for one, actually. Can you meet me in the town center during the evening?");
+			writePhoneSpeech("cold","","Sure. It may be late, after volleyball practice. Is that okay?");
+			writePhoneSpeech("player","","That's perfectly fine. Oh, and one more thing. Do you remember how I touched you when you were at my office?");
+			writePhoneSpeech("cold","","I");
+			writePhoneSpeech("cold","","Mmm");
+			writePhoneSpeech("cold","","Yes.");
+			writePhoneSpeech("player","","I want you to prepare for our session today by doing that to yourself all day, whenever you manage to get some alone time. But for at least 30 minutes before you meet up with me. I don't mind how late it might make you. We'll have time.");
+			writePhoneSpeech("player","","If you can manage it, take pictures and send them to me. I'd like proof you're taking all this seriously.");
+			writePhoneSpeech("cold","","Okay.");
+			writePhoneSpeech("player","","You may cum at any time before the last 30 minutes, but for the last 30 minutes I want you to bring and keep yourself as close to the edge of cumming.");
+			writePhoneImage("images/cold/phone1.jpg", "Art by Himitsu Kessha Vanitas")
+			writePhoneSpeech("cold","","This is harder than I thought. Finding free time to do this can be kind of a hassle.");
+			writePhoneImage("images/cold/phone2.jpg", "Art by Himitsu Kessha Vanitas")
+			writePhoneSpeech("cold","","Frick! I was so close, but then my alarm went off and I had to go to class. Need to wash my hands before I get this all over my notebook.");
+			writePhoneImage("images/cold/phone3.jpg", "Art by Himitsu Kessha Vanitas")
+			writePhoneSpeech("cold","","Finally! Ahh! It's really hard to get a picture like that. I just had to set my phone to keep taking pictures, and sort through for the good ones.");
+			writePhoneImage("images/cold/phone4.jpg", "Art by Himitsu Kessha Vanitas")
+			writePhoneSpeech("cold","","Last thirty minutes. Really hard to think. Hard to type too. On my way.");
+			break;
+		}
 		case "coldreward": {
 			writePhoneImage("images/cold/phoneReward.jpg", "Art by Himitsu Kessha Vanitas")
-			writePhoneSpeech("SlackerSavior","","That's all for coldF for now! I'll be expanding on the students soonish.");
+			writePhoneSpeech("SlackerSavior","scripts\gamefiles\profiles\slacker.jpg","That's all for coldF for now! I'll be expanding on the students soonish.");
 			break;
 		}
 		default: {

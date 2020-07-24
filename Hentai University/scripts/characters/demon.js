@@ -161,7 +161,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 						sp player; <i>That's probably from when I first broke demonF... </i><br>Can't you just leave? 
 						sp Black-Haired Succubus; im images/demon/dark.jpg; Err, I'm afraid we're on different pages here, *sir. That's not the sort of freedom I'm talking about... 
 						t She guides you into the elevator, and presses the button.
-						sp Black-Haired Succubus; im images/demon/dark.jpg; A-aplogies sir, but I'm not quite in the best state to ride up with you.. Please be careful not to wander. Since the master hasn't seemed interested in hosting customers for the hotel lately. Most of the girls here are feeling... Antsy. 
+						sp Black-Haired Succubus; im images/demon/dark.jpg; A-aplogies *sir, but I'm not quite in the best state to ride up with you.. Please be careful not to wander. Since the master hasn't seemed interested in hosting customers for the hotel lately. Most of the girls here are feeling... Antsy. 
 						t You just nod and step in. As the elevator doors close behind you, you catch a glimpse of the facade fading from your guide. Their expression transforming into one of lustful desperation as their hands go to their crotch to move their kimono out of the way. Just before the doors shut completely, you see something pink and plastic between your guide's legs. 
 						...
 						t Before you even make it to demonF's room, he opens the door and rushes out to greet you already fully dressed for a night out.
@@ -282,7 +282,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/demon/meph12.jpg");
 			writeSpeech("demon", "", "You really are something beautiful. I can't understand why succubusF kept you to himself. Turning you in could have easily earned him the rank of Incubus or above, unless...<br>No, did that sappy, pathetic little ball of sunburnt scum actually fall in love? With <i>you</i>? Oh, that's pure gold~! I'll give him some energy alright, but I don't think I'll be letting you leave. You're a diamond, you deserve a ring. A lovely unbreakable cockring.");
 			writeSpeech("player", "", "Ghh... Fuc... k... You...");
-			writeSpeech("demon", "", "Ah, hey. Down, boy. I'm in control here, you and I will have plenty of time to play later.");
+			writeSpeech("demon", "", "Ah, hey. Down, *boy. I'm in control here, you and I will have plenty of time to play later.");
 			break;
 		}
 		case "demonIntro2": {
@@ -354,7 +354,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "I didn't come here just to get some jerk off fuel.");
 			writeSpeech("demon", "", "Yes~! Of course, please, would you like to use my mouth? I'd sure I could have a hands-free bitchgasm from sucking your cock. Oh, or maybe I could rub my pathetic member against yours, and-");
 			writeSpeech("player", "", "Hands on the machine and present yourself.");
-			writeSpeech("demon", "", "Yes sir~! C-can I call you *Master like your little bitch does?");
+			writeSpeech("demon", "", "Yes *sir~! C-can I call you *Master like your little bitch does?");
 			writeSpeech("player", "", "You don't get to talk about someone better than you that way!");
 			writeBig("images/demon/1-3.jpg");
 			writeSpeech("demon", "", "Ooough~! It's here~! The cock I need is here~! I'm sorry, please punish me~!");
@@ -455,9 +455,9 @@ function writeEvent(name) { //Plays the actual event.
 				im images/demon/aqua6.jpg
 				sp demon; Oooh~<br>That's it, that's what the dildo can't match...
 				t Just sliding your cock into the little brat has your vision start to swim a little. Little Ms. Anal Whore here might have shattered his bravado on your cock, but he's still got an ass that won't quit.
-				sp demon; G-good boy, thrust deeper...<br>Give my greedy hole the relief it needs, make me spurt like one of your common bitches~
+				sp demon; G-good *boy, thrust deeper...<br>Give my greedy hole the relief it needs, make me spurt like one of your common bitches~
 				sp player; You... Hrg... Are a common bitch, demonF...
-				sp demon; Some bite~! But I can hear from your voice you're barely holding on~!<br>Stop thinking, just turn off your brain and beat my ass into the ground, show my whimpy little nutsack how a <i>real</i> man-
+				sp demon; Some bite~! But I can hear from your voice you're barely holding on~!<br>Stop thinking, just turn off your brain and beat my ass into the ground, show my whimpy little nutsack how a <i>real</i> cock-
 				im images/demon/aqua7.jpg
 				t His voice and attitude are smashed flat as you become a primal, thrusting mess, but more importantly is when he can feel the first shot of the cum you intend to paint his asshole white with.
 				im images/demon/aqua8.jpg
