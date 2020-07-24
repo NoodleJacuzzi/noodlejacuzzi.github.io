@@ -543,21 +543,39 @@ function writeEvent(name) { //Plays the actual event.
 				sp player; It's about time I got a little payback for all that teasing. I'm not stopping until you admit defeat. 
 				sp nagatoro; Ah, I'm sorry! I was just having a little fun! 
 				sp player; I had a different kind of defeat in mind...<br>I'll bet this feels a lot better than your toys, right? 
+				t You pull back and grip nagatoroF by the arms, bouncing him up and down on your lap until...
 				im imagebox/nagatoro/nagatoroBunny2-6.jpg
+				sp nagatoro; Cumming~!
+				t He lets out a girlish shriek as your 'punishment' becomes too much for him, and he unloads through the air at the same time as you fill him up.
 				im imagebox/nagatoro/nagatoroBunny2-7.jpg
-				sp nagatoro; H-holy... Wow, I actually came from just my... 
+				sp nagatoro; H-holy... Wow, I actually came from just my... <br>Ah, what a mess... Are you gonna make me do this to all my clothes?<br>... You're lucky you're cute.
 			`);
 			break;
 		}
 		case "nagatoroBunny3-1": { //unfinished
 			writeHTML(`
 				im images/nagatoro/nagatoroBunny3-1.jpg
+				sp nagatoro; Honestly, you're insatiable.
+				sp player; You're the one still wearing those torn tights.
+				sp nagatoro; What can I say? These are already broken in, and...<i>I like matching clothes.</i>
 				im images/nagatoro/nagatoroBunny3-2.jpg
+				sp nagatoro; Mgh...
 				im images/nagatoro/nagatoroBunny3-3.jpg
+				sp nagatoro; Ah, it's so deep~<br>You can... You can go a little faster this time.
 				im images/nagatoro/nagatoroBunny3-4.jpg
+				sp nagatoro; Ah~!
+				sp player; You alright?
+				sp nagatoro; Y-yeah, I can take it~
 				im images/nagatoro/nagatoroBunny3-5.jpg
+				sp nagatoro; H-harder, just a little bit... Ghhhh~!
+				t He pushes his legs against you, wrapping you tight between them and forcing you as deep as you can go.
+				t And holding you there, until he sucks in a breath and lets out a lilting moan as thin splurts of cum begin to soak into his outfit.
 				im images/nagatoro/nagatoroBunny3-6.jpg
+				sp nagatoro; Ha~<br>It feels nice today, to...
+				sp player; You're not worried about it never coming out of your clothes?
+				sp nagatoro; Nah, not today. Just... Hey.
 				im images/nagatoro/nagatoroBunny3-7.jpg
+				sp nagatoro; Thanks for hanging out with me.
 			`);
 			break;
 		}
