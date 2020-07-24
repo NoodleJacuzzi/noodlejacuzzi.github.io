@@ -1842,13 +1842,19 @@ function listTextbooks() {
 		writeText("<p class='centeredText'>You don't have any textbooks to read.<span>");
 	}
 	if (checkItem("Hypnosis Textbook") == true) {
-		writeFunction("textbook('hypnosis')", "Read your hypnosis textbook");
+		if (checkFlag("mom", "hypnosis") != true) {
+			writeFunction("textbook('hypnosis')", "Read your hypnosis textbook");
+		}
 	}
 	if (checkItem("Hacking Textbook") == true) {
-		writeFunction("textbook('hacking')", "Read your hacking textbook");
+		if (checkFlag("mom", "hacking") != true) {
+			writeFunction("textbook('hacking')", "Read your hacking textbook");
+		}
 	}
 	if (checkItem("Counseling Textbook") == true) {
-		writeFunction("textbook('counseling')", "Read your counseling textbook");
+		if (checkFlag("mom", "counseling") != true) {
+			writeFunction("textbook('counseling')", "Read your counseling textbook");
+		}
 	}
 	writeFunction("changeLocation(data.player.location)", "Go back");
 }
@@ -1858,21 +1864,21 @@ function textbook(n) {
 	switch (n) {
 		case "hypnosis":
 			data.player.hypnosis += 1;
-			removeItem("Hypnosis Textbook");
+			addFlag("mom", "hypnosis");
 			passTime();
 			writeText("You read through the textbook. It's a bit mind-numbing, which is probably appropriate. The tricks in here help you see things in a new light, it's a different sort of feeling from being trained.");
 			writeSpecial("Your skill in hypnosis has improved!");
 		break;
 		case "hacking":
 			data.player.hacking += 1;
-			removeItem("Hacking Textbook");
+			addFlag("mom", "hacking");
 			passTime();
 			writeText("You read through the textbook. It's a bit mind-numbing, but still interesting. The tricks in here help you see things in a new light, it's a different sort of feeling from being trained.");
 			writeSpecial("Your skill in hacking has improved!");
 		break;
 		case "counseling":
 			data.player.counseling += 1;
-			removeItem("Counseling Textbook");
+			addFlag("mom", "counseling");
 			passTime();
 			writeText("You read through the textbook. It's a bit mind-numbing, but the pictures are interesting. The tricks in here help you see things in a new light, it's a different sort of feeling from being trained.");
 			writeSpecial("Your skill in counseling has improved!");
@@ -3030,12 +3036,13 @@ function diagnostic() {
 			break;
 		}
 		case "vegetarian": {
+			data.player.vegetarian = true;
 			setTrust('tomgirl', -1);
 			setTrust('meji', -1);
 			setTrust('succubus', -1);
 			setTrust('housekeep', -1);
 			setTrust('nagatoro', -1);
-			writeSpecial("Trap / male characters have been deactivated. You might need to use this code again in the future when more traps are added.");
+			writeSpecial("Trap / male characters have been deactivated. Restart the game to undo this.");
 			break;
 		}
 		case "lobotomy": {
@@ -3082,7 +3089,7 @@ function diagnostic() {
 		case "nuclear option": {
 			data.player.hypnosis = 3;
 			data.player.hacking = 3;
-			data.player.counseling = 9;
+			data.player.counseling = 5;
 			updateMenu();
 			writeSpecial("All of your stats have been set to 3 or above. You can keep improving them past this point, but you shouldn't see any skill-related roadblocks from here on!");
 			break;

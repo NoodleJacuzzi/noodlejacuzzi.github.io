@@ -20,9 +20,9 @@ var newItems = [//Lists the shop items unique to this character
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "introduction1", name: "Principal principal's Office is here. You should introduce yourself.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "caseSelect", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?trustMin principal 41; !counseling 9; !flag principal council;",},
-	{index: "councilStart", name: "principal wanted to see you", requirements: "?location northHallway; ?trustMin principal 41; ?counseling 9; !flag principal council;",},
-	{index: "caseSelect", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?trustMin principal 41; ?counseling 9; ?flag principal council;",},
+	{index: "caseSelect", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?trustMin principal 41; !counseling 5; !flag principal council;",},
+	{index: "councilStart", name: "principal wanted to see you", requirements: "?location northHallway; ?trustMin principal 41; ?counseling 5; !flag principal council;",},
+	{index: "caseSelect", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?trustMin principal 41; ?counseling 5; ?flag principal council;",},
 	{index: "principalBeach1", name: "principal is here with some other women.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 41, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
@@ -489,7 +489,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "council", requirements: "?counseling 9;"},
+	{index: "council", requirements: "?counseling 5; !flag principal council;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event

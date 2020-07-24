@@ -385,7 +385,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("nagatoro", "", "Hah! In the shower I bet!");
 			writeSpeech("player", "", "I want to know how you feel about getting older. If I had a way around that, would you be interested?");
 			writeHTML(`
-				sp nagatoro; Eh? You're acting weirder than normal. Listen, I'm not a girl, alright? I don't wanna be, so... <br>Ooh, I get it. You wanna some more hypnosis play? Fine, fine. I'll indulge your perversion, I'm all yours. 
+				sp nagatoro; Eh? You're acting weirder than normal. Listen, I'm not a girl, alright? I don't wanna be, so... <br>Ooh, I get it. You wanna do some more hypnosis play? Fine, fine. I'll indulge your perversion, I'm all yours. 
 				t It doesn't seem like he's taking this too seriously, but the intent is clear. If you want to go through with the corruption there's nothing stopping you. 
 			`);
 			writeFunction("writeEncounter('nagatoroCorruption')", "Corrupt nagatoroF");
@@ -630,7 +630,7 @@ function writeEvent(name) { //Plays the actual event.
 				im imagebox/nagatoro/nagatoroPrincess1-5.jpg
 				sp nagatoro; Cumming~! 
 				im imagebox/nagatoro/nagatoroPrincess1-6.jpg
-				sp nagatoro; Haah~<br>I can feel it soaking through the fabric, it's so slimy... <br>Hehe, a proper degenerate like you isn't satisfied yet, right? <br>Well, these are totally ruined now, now way your scent is coming out of these. Cmon, let's go again. If I'm tossing these we may as well paint them totally white first~
+				sp nagatoro; Haah~<br>I can feel it soaking through the fabric, it's so slimy... <br>Hehe, a proper degenerate like you isn't satisfied yet, right? <br>Well, these are totally ruined now, no way your scent is coming out of these. Cmon, let's go again. If I'm tossing these we may as well paint them totally white first~
 			`);
 			break;
 		}
@@ -652,7 +652,7 @@ function writeEvent(name) { //Plays the actual event.
 				im imagebox/nagatoro/corruption4.jpg
 				sp nagatoro; Ah... Ah can't... Not hard, but still...
 				t You support him by the shoulder as he continues to splurt. The toll of the inhuman orgasm is affecting his mind and body.
-				t Still leaning on your for support his eyes cross as one last splurt soaks his clothes thoroughly enough that his last load as a man splatters on the ground in a puddle. He collapses in your arms as his eyes roll back and close.
+				t Still leaning on you for support his eyes cross as one last splurt soaks his clothes thoroughly enough that his last load as a man splatters on the ground in a puddle. He collapses in your arms as his eyes roll back and close.
 			`);
 			break;
 		}

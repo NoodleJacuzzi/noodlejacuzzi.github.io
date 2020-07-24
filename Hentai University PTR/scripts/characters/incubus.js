@@ -204,8 +204,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (data.player.gps != true) {
 				sale("findmii", 50, "scripts/gamefiles/items/map.jpg", "Find Mii<br>Can't find somebody? Instead of asking chaos or something, buy this and everybody will be a cinch to find wherever they are. Town map not included.");
 			}
-			if (data.player.counseling < 9) {
-				sale("counseling", 500, "scripts/gamefiles/profiles/principal.jpg", "Counseling++<br>You didn't become a counselor to actually do your job, right? Consider this a kind of lesser nuclear option. Watch out for the PTSA though.");
+			if (data.player.counseling < 5) {
+				sale("counseling", 200, "scripts/gamefiles/profiles/principal.jpg", "Counseling++<br>You didn't become a counselor to actually do your job, right? Consider this a kind of lesser nuclear option. Watch out for the PTSA though.");
 			}
 			writeFunction("writeEncounter('cancel')", "Leave");
 			if (checkTrust('incubus') == 4) {

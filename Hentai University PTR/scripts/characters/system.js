@@ -7,9 +7,9 @@ var newItems = [ //If price is 0 it isn't for sale
 	{name: "Butt", 				key: true, 		price: 0, 	image: "scripts/gamefiles/items/butt.jpg", description: ""},
 	{name: "Ghost AR", 			key: true, 		price: 0, 	image: "scripts/gamefiles/items/ghostAR.jpg", description: "The brand new mobile game Ghost AR! Track ghosts around the city, collect them all and save the world from their ghastly threat!"},
 	{name: "Town Map", 			key: true, 		price: 20, 	image: "scripts/gamefiles/items/map.jpg", description: "Allows you to navigate around town more easily."},
-	{name: "Hypnosis Textbook", key: false, 	price: 50, 	image: "scripts/gamefiles/items/hypnosisTextbook.jpg", description: "A textbook on hypnosis, you can read it at home to improve your skill."},
-	{name: "Hacking Textbook", 	key: false, 	price: 50, 	image: "scripts/gamefiles/items/hackingTextbook.jpg", description: "A textbook on hacking, you can read it at home to improve your skill."},
-	{name: "Counseling Textbook", key: false, 	price: 50, 	image: "scripts/gamefiles/items/counselingTextbook.jpg", description: "A textbook on counseling, you can read it at home to improve your skill."},
+	{name: "Hypnosis Textbook", key: true, 	price: 50, 	image: "scripts/gamefiles/items/hypnosisTextbook.jpg", description: "A textbook on hypnosis, you can read it at home to improve your skill."},
+	{name: "Hacking Textbook", 	key: true, 	price: 50, 	image: "scripts/gamefiles/items/hackingTextbook.jpg", description: "A textbook on hacking, you can read it at home to improve your skill."},
+	{name: "Counseling Textbook", key: true, 	price: 50, 	image: "scripts/gamefiles/items/counselingTextbook.jpg", description: "A textbook on counseling, you can read it at home to improve your skill."},
 	{name: "Lady", 				key: true, 		price: 0, 	image: "scripts/gamefiles/profiles/lady.jpg", description: "For if you'd like to play as a cute lady. Unlocks the Lady character portrait. Aesthetic change only, art by Nusumenaihxseki"},
 ];
 
@@ -47,6 +47,12 @@ function writeEncounter(scene) {
 			writeText("If you'd like to avoid any specific fetishes, each character's logbook page lists the fetishes their scenes cover. Keep in mind that, as you are a hypnotist, hypnosis/mind control is so common we won't list it in the tags.");
 			writeFunction("loadEncounter('system', 'prologue')", "Start the game as a man");
 			writeFunction("loadEncounter('system', 'prologueAlt')", "Start the game as a futanari");
+			if (data.player.vegetarian != true) {
+				writeFunction("loadEncounter('system', 'vegetarian')", "Enable Vegetarian mode, disabling male / trap / femboi characters from appearing.");
+			}
+			else {
+				writeSpecial("Vegetarian mode is active! Trap characters will no longer appear, restart the game to undo this effect.");
+			}
 			writeText("<hr>");
 			writeText("Other notes:");
 			writeText("Are <b>you</b> interested in getting your own character into Hentai University? Well, you're in luck! Hentai University v3 includes <b>Mod Support!</b> Hop over to the game's <a href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'>Modding Tutorial</a> if you're interested.");
@@ -65,6 +71,16 @@ function writeEncounter(scene) {
 			writeFunction("loadEncounter('system', 'oretekiTest')", "See an Oreteki18kin example <br>(LONG LABIA LIPS/FLAPS)");
 			writeFunction("loadEncounter('system', 'nagiTest')", "See a Nagi Ichi example <br>(AT LEAST 90% GAY)");
 			writeFunction("loadEncounter('system', 'gujiraTest')", "See a Gujira example <br>(AT LEAST 80% GAY)");
+			break;
+		}
+		case "vegetarian": {
+			data.player.vegetarian = true;
+			setTrust('tomgirl', -1);
+			setTrust('meji', -1);
+			setTrust('succubus', -1);
+			setTrust('housekeep', -1);
+			setTrust('nagatoro', -1);
+			loadEncounter('system', 'start');
 			break;
 		}
 		case "listTextbooks": {

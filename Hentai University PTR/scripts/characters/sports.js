@@ -760,7 +760,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("sports", "class.jpg", "I... I already apologized, playerT playerF. What...");
 			writeSpeech("player", "", "Well, if I'm a pervert, why don't you apologize by doing something perverted for me? Lift up your shirt. So that next time you're on the court I don't have to sneak glances.");
 			writeSpeech("sports", "class.jpg", "That... doesn't...");
-			writeText("For a moment you're you may have overdone it, before her hands start to move. It seems like for all her mind struggles, her body seems to enjoy this treatment.");
+			writeText("For a moment you're worried you may have overdone it, before her hands start to move. It seems like for all her mind struggles, her body seems to enjoy this treatment.");
 			writeBig("images/sports/2b2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("sports", "class.jpg", "I was... Right about... You.");
 			writeSpeech("player", "", "<i>Relax</i> sportsF. You were right. But I was right about you too. You like this, don't you?");

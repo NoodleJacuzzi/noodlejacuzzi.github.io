@@ -1819,7 +1819,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("She nods, biting her lip.");
 			writeSpeech("maid","","M-Making you cum...! Feeling you fill my holes with your jizz, and <i>using</i> me like a <i><b>sex-toy...!</b></i>");
 			writeSpeech("player","","Very good. Now tell me, <i><b>slut...</b></i> When is the <i>only</i> time you can orgasm?");
-			writeSpeech("maid","","W-When I'm making"+(data.player.gender == "man" ? " Master or Mistress " : " one of my Mistresses ")+"cum...! When mistressF squeezes my head between my thighs and cums all over my face, or when you <i>pump me <b>full</b> of cum~!</i>");
+			writeSpeech("maid","","W-When I'm making"+(data.player.gender == "man" ? " Master or Mistress " : " one of my Mistresses ")+"cum...! When mistressF squeezes my head between her thighs and cums all over my face, or when you <i>pump me <b>full</b> of cum~!</i>");
 			writeSpeech("player","","That's right.");
 			writeText("You run a hand along her thigh, smirking up at her.");
 			writeSpeech("player","","<i><b>Good girl.</b></i>");

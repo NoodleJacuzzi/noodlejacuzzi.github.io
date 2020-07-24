@@ -796,7 +796,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","But you're <i>my</i> bitch, <b>puppy.</b>");
 			writeText("You press yourself against him, his whole body shuddering from the trigger as you undo your belt.");
 			writeSpeech("player","","And if you want to get fucked in the alley like a dog...");
-			writeText("You free your cock from your grab his hands by the wrists as you line up your quickly-freed cock to his hole.");
+			writeText("You free your cock from him and grab his hands by the wrists as you line up your quickly-freed cock to his hole.");
 			writeSpeech("player","","Then I'm happy to oblige.");
 			writeText("Pulling him with your arms, you slam into him forcefully, his slick walls opening up easily for you.");
 			writeBig("images/meji/9-3.jpg", "Art by Nagi Ichi");
