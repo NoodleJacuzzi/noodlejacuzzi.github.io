@@ -1097,3 +1097,4 @@ switch (requestType) {
 		writePhoneEvent(eventName);
 		break;
 	}
+}

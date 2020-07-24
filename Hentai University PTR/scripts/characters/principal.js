@@ -100,7 +100,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			else {
 				if (data.story[8].met.includes('purpleF') != true) {
 					writeSpeech("principal", "", "Have you had a chance to speak with Ms. "+lName('purple')+" yet?");
-					if(checkTrust('purple') > 80) {
+					if(checkTrust('purple') > 60) {
 						writeFunction("writeEncounter('purpleCaseEnd')", "Report on "+fName('purple')+"'s case.");
 					}
 				}
@@ -124,7 +124,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			else {
 				if (data.story[8].met.includes('starletF') != true) {
 					writeSpeech("principal", "", "Have you spoken with Miss starletL yet? Gotten her to change her mind?");
-					if(checkTrust('starlet') > 83) {
+					if(checkTrust('starlet') > 82) {
 						writeFunction("writeEncounter('starletCaseEnd')", "Report on starletL's case.");
 					}
 				}

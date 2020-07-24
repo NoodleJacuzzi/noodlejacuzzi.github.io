@@ -474,7 +474,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "You're mine now. You'll never have a normal life again.");
 			writeSpeech("tomgirl", "", "Y-yes "+data.player.honorific+"~!");
 			writeText("The two of you go for a few more rounds before you cum inside his ass. You let him fall onto the bed, twitching and broken.");
-			writeText("With him completely broken, he'll probably take a break from school for now. Once he comes back, he'll be a completely different 'man'.");
+			writeText("With him completely broken. The next time you see him, he'll be a completely different 'man'.");
 			break;
 		}
 		case "tomgirlFinish": {
