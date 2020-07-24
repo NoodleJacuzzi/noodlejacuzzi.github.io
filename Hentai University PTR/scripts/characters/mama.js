@@ -85,7 +85,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "mamaSonStart": {
 			writeHTML(`
-				t You take a deep breath and start applying what you gained from your helper. By the time you exhale, you're a new man.
+				t You take a deep breath and start applying what you gained from your helper. By the time you exhale, you're a new person now.
 				t You walk up to the door and give it a knock. You feel a lot shorter than you did this morning.
 				t After a moment the door opens in a flash, a shocked-looking mamaF staring at you.
 				sp mama; K-kenji!? What are you doing here? You're supposed to be-
@@ -209,7 +209,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "mamaBbcStart": {
 			writeHTML(`
-				t You take a deep breath and start applying what you gained from your helper. By the time you exhale, you're a new man.
+				t You take a deep breath and start applying what you gained from your helper. By the time you exhale, you're a new person now.
 				sp player; Well, here goes nothing.
 				t You walk up to the door and give it a knock. You feel... Strong. More muscular than before, mamaF must have some pretty specific tastes tucked deep away. You're too young-looking though to pose as someone like a plumber or a masseuse doing a house call. You'll just need to wing it.
 				t The door opens hesitantly.

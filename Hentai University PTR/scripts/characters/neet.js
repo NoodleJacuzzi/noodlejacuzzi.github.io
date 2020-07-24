@@ -652,7 +652,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("Playboy", "images/none.png", "Cmon girl, we just wanna be friends! You're so pale, you'll burn, so how about me and my friend get you into some shade.");
 			writeBig("images/scarf/beachNeet2.jpg");
 			writeSpeech("neet", "bikini.jpg", "Ah, *sir! Please, help!");
-			writeSpeech("Playboy", "images/none.png", "Cmon glasses, don't be like that. He's got places to be, so why don't we have some fun?");
+			writeSpeech("Playboy", "images/none.png", "Cmon glasses, don't be like that. *He's got places to be, so why don't we have some fun?");
 			writeFunction("writeEncounter('neetBeach2')", "Save her");
 			writeFunction("changeLocation(data.player.location)", "Ignore her, focus");
 			break;

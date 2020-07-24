@@ -719,7 +719,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("purpleF grins harder at her mother's abuse when you slide balls deep between the pair, getting off on the perversion of the situation of seeing her mother debased like this.");
 			writeText("chubbyF is cracking underneath the degeneracy, letting out a shuddering sigh as she watches each inch of cock disappear between her tits. If her leaking pussy is any indication, she's getting off on this too.");
 			writeText("Every few thrusts the head of your cock becomes visible for a moment, causing purpleF to giggle as chubbyF licks her lips.");
-			writeSpeech("purple", "", "You want it, right? You're gonna get off from him using your funbags for what they were made for, right?");
+			writeSpeech("purple", "", "You want it, right? You're gonna get off from *him using your funbags for what they were made for, right?");
 			writeSpeech("chubby", "", "Yes~! Please, I'll be your good little slut~! My daughter might be tighter, but I promise I'll let you use my breasts however you like~!");
 			writeBig("images/purple/AA4.jpg", "Art by Oreteki18kin");
 			writeSpeech("chubby", "", "Aaah~!");
@@ -778,7 +778,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("...");
 			writeText("chubbyF continues to crack farther and farther. Where purpleF seems to be sinking in as a defense mechanism, chubbyF is starting to awaken to some seriously fucked up fetishes.");
 			writeText("You watch chubbyF take the lead for once, and once you're finished having your fun you bid them farewell.");
-			writeSpeech("purple", "", "Come back soon, okay ma-phhh~");
+			writeSpeech("purple", "", "Come back soon, okay m-phhh~");
 			writeSpeech("chubby", "", "Shhh! Lick~! Lick more~! Cumming~!");
 			break;
 		}

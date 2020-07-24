@@ -391,7 +391,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("tomgirl", "", "Mmph *slurp* Mm-mm!");
 			writeSpeech("player", "", "Hey don't feel too bad. Tell you what, since you wore something nice, you can go ahead and play with yourself as you blow me. I know you want to.");
 			writeBig("images/tomgirl/4-2.jpg", "Art by Nagi Ichi");
-			writeSpeech("tomgirl", "", "Mmmph...<i><br>Ignore it "+fName('tomgirl')+", this is just a reflexive boner. Just keep him happy so he doesn't go any farther.<br>Any farther... With something like this...</i>");
+			writeSpeech("tomgirl", "", "Mmmph...<i><br>Ignore it "+fName('tomgirl')+", this is just a reflexive boner. Just keep *him happy so he doesn't go any farther.<br>Any farther... With something like this...</i>");
 			writeBig("images/tomgirl/4-3.jpg", "Art by Nagi Ichi");
 			writeSpeech("player", "", "Oh wow! Now that's the energy I like!");
 			writeText("He doesn't even seem to hear you, completely lost in trying to thrust you down his throat as far as he can manage. Which isn't that far, but points of enthusiasm.");

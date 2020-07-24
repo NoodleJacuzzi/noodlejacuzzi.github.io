@@ -693,7 +693,7 @@ function writeEvent(name) { //Plays the actual event.
 				im images/president/artRoom2.jpg
 				sp president; Ah~! Ah~!
 				t As you're balls-deep in the student council president you suddenly hear the door open and quickly shut behind you.
-				sp treasurer; presidentF?! What are you doing?! What is <i>he</i> doing to you?!
+				sp treasurer; presidentF?! What are you doing?! What is <i>*he</i> doing to you?!
 				t You'd expected her to watch through the keyhole for a while first, but apparently treasurerF is a bit more proactive than you gave her credit for.
 				sp president; im images/president/presidentP.jpg; Ghh~! treasurerF~! Y-you're... Here~!
 				im images/president/artRoom3.jpg
@@ -706,7 +706,7 @@ function writeEvent(name) { //Plays the actual event.
 				sp president; Does this <i>feel</i> fake to you?
 				sp treasurer; Th-that's not... What I...
 				sp president; I had a whole speech prepared but I'm afraid you've arrived just as my train of thought derailed.<br>So, treasurerF, you've found us. What will you do?
-				sp treasurer; I'll get him arrested, and I'll get you-
+				sp treasurer; I'll get him *arrested, and I'll get you-
 				sp president; Expelled? Arrested as well? He and I are together now, treasurerF.<br>I understand you're frightened, shocked, but I sent you that text for a reason. I want to make you a deal.
 				t This is beginning to spiral out of your control, you didn't instruct presidentF to do any of this. This charisma is probably what got her elected though, she'll make a good president once you've taken over the school.
 				sp treasurer; ... What is it?
@@ -720,7 +720,7 @@ function writeEvent(name) { //Plays the actual event.
 				sp president; Oh? Am I abnormal? You say it so negatively. I remember when you joined the council, you said I was "extraordinary".
 				sp treasurer; You are! I-I mean-
 				sp president; Just relax. Come, sit on my lap.
-				sp treasurer; A-and you meant what you said, right? He's so slimy I bet he uses uncooked bacon as a hand towel, why would I trust him? 
+				sp treasurer; A-and you meant what you said, right? *He's so slimy I bet he uses uncooked bacon as a hand towel, why would I trust him? 
 				sp president; You joined this council because you trusted me, that's all I'm asking you to do. Have faith in what I see is a better future for the school.<br>Besides, I think you'll find this path is a lot more fun than the straight and narrow.
 				sp treasurer; Just this once... Just this once, and he can't say anything? And you'll be here the whole time? If I can make it through this and still-
 				im images/president/treasurerCorruption1.jpg

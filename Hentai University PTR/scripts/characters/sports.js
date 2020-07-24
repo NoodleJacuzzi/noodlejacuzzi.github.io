@@ -154,7 +154,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "sports5": {//Blowjob start? (y/n)
 			writeText("As you walk in the room, sportsF jumps to her feet.");
 			writeBig("images/sports/2a1.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "class.jpg", "Master! You were so late, you had me worried you wouldn't show up.");
+			writeSpeech("sports", "class.jpg", "*Master! You were so late, you had me worried you wouldn't show up.");
 			writeFunction("loadEncounter('sports', 'sports5a')", "I had to be sure that everyone else cleared out. You wouldn't want to be caught, now would you?");
 			writeFunction("changeLocation(data.player.location)", "You training will have to wait, sportsF. I'm afraid I have other things to do tonight.");
 			break;
@@ -164,22 +164,22 @@ function writeEncounter(name) { //Plays the actual encounter.
 			passTime();
 			writeText("You see her breathing pick up and her face start to turn bright red.");
 			writeBig("images/sports/2b1.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "class.jpg", "Master, before we start, I have to tell you something. I... I've never done this before.");
+			writeSpeech("sports", "class.jpg", "*Master, before we start, I have to tell you something. I... I've never done this before.");
 			writeText("You give her a quizzical look as you get closer.");
 			writeSpeech("player", "", "Really, sportsF?  You weren't a virgin, were you?");
 			writeSpeech("sports", "class.jpg", "No playerH. I'm sorry, if I had known about you I would have saved myself, but I-");
 			writeSpeech("player", "", "<i>Relax</i> slave.  I'm not bothered by that. You should see some of the other slaves I've collected. Some of the students at this school are real pieces of work...");
 			writeText("She looks down, dejected by the knowledge you have others in your harem.");
-			writeSpeech("sports", "class.jpg", "You have other... No, Master, I'm sorry. That makes sense. You are my Master, but you're definitely still a pervert. I should have expected you to have more women under control.");
+			writeSpeech("sports", "class.jpg", "You have other... No, *Master, I'm sorry. That makes sense. You are my *Master, but you're definitely still a pervert. I should have expected you to have more women under control.");
 			writeSpeech("player", "", "Oh, not just women. Do you know Reese? I've been working on him recently.");
 			writeBig("images/sports/2a1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("She looks you in the eyes, apparently flabberghasted by your bold admission.");
-			writeSpeech("sports", "class.jpg", "You... Damn, Master, you really are a pervert.");
+			writeSpeech("sports", "class.jpg", "You... Damn, *Master, you really are a pervert.");
 			writeSpeech("player", "", "... Does that really surprise you at this point? I plan to bring this whole school- Hell, maybe even this whole town- under my control, eventually. One person at a time if need be. And I expect you to help me, slave.");
 			writeText("The confusion in her eyes is immediately gone as you give her the order.");
-			writeSpeech("sports", "class.jpg", "If that's what you want from me, my perverted Master, I'll do my best to bring everyone I know under your control. Just...");
+			writeSpeech("sports", "class.jpg", "If that's what you want from me, my perverted *Master, I'll do my best to bring everyone I know under your control. Just...");
 			writeText("She shuffles her feet, hands reaching below her skirt to touch her cunt. Looking down her leg, you see she must have been dripping during this whole conversation, a small puddle has formed around her feet as she starts to touch herself in earnest. She leans in and whispers in your ear, breathy and lust filled.");
-			writeSpeech("sports", "class.jpg", "Just don't forget Master, you're not the only pervert here.");
+			writeSpeech("sports", "class.jpg", "Just don't forget *Master, you're not the only pervert here.");
 			writeFunction("writeEvent('sports5b')", "Get on your knees, slave. I'm going to teach you how to properly serve me with your mouth.");
 			break;
 		}
@@ -242,7 +242,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She's packing up her bag and starts to move towards you.");
 			writeSpeech("sports", "class.jpg", "Oh yeah! I aced the last test, and the professor even complimented me on my improvement.")
 			writeText("She closes the last distance between you and puts her lips up to your ear, whispering softly as she leans in.");
-			writeSpeech("sports", "class.jpg", "So, since I don't have anymore work to do, why don't I repay my Master for everything he's done for me?")
+			writeSpeech("sports", "class.jpg", "So, since I don't have anymore work to do, why don't I repay my **Master for everything he's done for me?")
 			writeText("She leans back, still smiling that tricky little smile as you hear the students in the corner laughing about something or another.");
 			writeFunction("loadEncounter('sports', 'sports7a')", "You smile back. Tonight is going to be good.");
 			writeFunction("changeLocation(data.player.location)", "As much as you'd like to, you have other things to do tonight. Rain check?");
@@ -276,13 +276,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("A few students see you, but they're also regulars. They know that you and sportsF had been working hard to get her grades up, and a little gift at the end of a lot of work seems like a nice touch from the staff.");
 			writeText("What they don't see or hear is you leaning in and whispering to sportsF.");
 			writeSpeech("player", "", "I expect you at my home tonight, pet.");
-			writeSpeech("sports", "class.jpg", "Thank you Master. Your pet won't disappoint you.");
+			writeSpeech("sports", "class.jpg", "Thank you *Master. Your pet won't disappoint you.");
 			writeFunction("writeEvent('sports8b')", "You shake her hand and make a big show of praising her work as an improving student before going home and waiting for your pet to arrive.");
 			break;
 		}
 		case "sportsfinalclass": {//How do you want her - Class
 			writeText("sportsF is working on homework, but as you approach she starts to put things away. The rest of the class has shuffled out, and you made sure to lock the door on your way in.");
-			writeSpeech("sports", "class.jpg", "Hello, Master, is there something you want from me?")
+			writeSpeech("sports", "class.jpg", "Hello, *Master, is there something you want from me?")
 			writeFunction("loadEncounter('sports', 'sportsfinalclass1')", "Whip those tits out, slave.");
 			writeFunction("loadEncounter('sports', 'sportsfinalclass2')", "Get on your knees and open your mouth.");
 			writeFunction("loadEncounter('sports', 'sportsfinalclass3')", "You sit down on a desk chair and pat your lap.");
@@ -304,20 +304,20 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeBig("images/sports/3b3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/3b4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("sportsF hungrily licks up as much cum as she can from your cock and her own tits before getting to work cleaning up.");
-			writeSpeech("sports", "class.jpg", "Thank you for using me, Master. Don't hesitate to come by anytime you need help relaxing!")
+			writeSpeech("sports", "class.jpg", "Thank you for using me, *Master. Don't hesitate to come by anytime you need help relaxing!")
 			writeFunction("changeLocation(data.player.location)", "Time to head home.");
 			break;
 		}
 		case "sportsfinalclass2": {//Blowjob
 			passTime();
 			writeText("sportsF drops to her knees and licks her lips as you pull your cock out.");
-			writeSpeech("sports", "class.jpg", "I could live off your cum, if you let me, Master. It's the best treat in the world.")
+			writeSpeech("sports", "class.jpg", "I could live off your cum, if you let me, *Master. It's the best treat in the world.")
 			writeBig("images/sports/5b1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/5b2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/5b3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/5b4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("She works quickly, using all the tricks you taught her to make you cum.");
-			writeSpeech("sports", "class.jpg", "No better meal in the world. Thank you so much Master! Don't hesitate to come by anytime you need help relaxing!")
+			writeSpeech("sports", "class.jpg", "No better meal in the world. Thank you so much *Master! Don't hesitate to come by anytime you need help relaxing!")
 			writeFunction("changeLocation(data.player.location)", "Time to head home.");
 			break;
 		}
@@ -329,7 +329,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeBig("images/sports/7b3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/7b4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("sportsF slowly rises off of you and begins to clean up.");
-			writeSpeech("sports", "class.jpg", "Thank you for using me, Master. Don't hesitate to come by anytime you need help relaxing!")
+			writeSpeech("sports", "class.jpg", "Thank you for using me, *Master. Don't hesitate to come by anytime you need help relaxing!")
 			writeFunction("changeLocation(data.player.location)", "Time to head home.");
 			break;
 		}
@@ -341,13 +341,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeBig("images/sports/doggyclass3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/doggyclass4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("She feels you cum, and starts to move and clean up, before you grab both of her arms and pull her back into you. Once she's off the desk, you grab her tits and pull yourself out of her pussy... Before lining yourself up with her tight little asshole.");
-			writeSpeech("sports", "class.jpg", "Ah! Yes Master! Fill my ass! I'm begging you, it's been too long since I've been your personal butt slut.")
+			writeSpeech("sports", "class.jpg", "Ah! Yes *Master! Fill my ass! I'm begging you, it's been too long since I've been your personal butt slut.")
 			writeText("sportsF spreads her cheeks as much as she can, and that's all the invitation you need before you push your way in.");
 			writeBig("images/sports/doggyclass5.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/doggyclass6.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/doggyclass7.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You pull yourself out after you've cum, and sportsF falls to her knees and catches her breath before finding the strength to start cleaning up.");
-			writeSpeech("sports", "class.jpg", "Oh, Master, we should do that more often. Thank you for using your butt slut. Don't hesitate to come by anytime you need help relaxing!")
+			writeSpeech("sports", "class.jpg", "Oh, *Master, we should do that more often. Thank you for using your butt slut. Don't hesitate to come by anytime you need help relaxing!")
 			writeFunction("changeLocation(data.player.location)", "Time to head home.");
 			break;
 		}
@@ -365,7 +365,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeBig("images/sports/4-1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/4-2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("sportsF is making sure she's wet and ready as you join her.");
-			writeSpeech("sports", "", "Ah! Master! I'm all ready for anything, so how did you want to use me today?")
+			writeSpeech("sports", "", "Ah! *Master! I'm all ready for anything, so how did you want to use me today?")
 			writeText("You move in and kiss her before making your decision.");
 			writeBig("images/sports/4-3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/4-4.jpg", "Art by Himitsu Kessha Vanitas");
@@ -380,7 +380,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("The more she tries to squirm, the rougher you act with her, finally, you reach a breaking point.");
 			writeBig("images/sports/gympress3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("As you pull out, sportsF lies there, between her practice and the rough treatment she just got, you don't think she'll be cleaning for a bit. Between ragged breaths, she speaks up.");
-			writeSpeech("sports", "", "Thank you for using me Master. I'll clena up soon. I just need a moment. My body aches, in all the best ways right now.")
+			writeSpeech("sports", "", "Thank you for using me *Master. I'll clena up soon. I just need a moment. My body aches, in all the best ways right now.")
 			writeFunction("changeLocation(data.player.location)", "Well, if she says so. You give her a quick pat on the head as you leave her in the afterglow and head home.");
 			break;
 		}
@@ -393,13 +393,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeBig("images/sports/4a4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("Eventually, you reach your limit and cum deep inside her, as she throws her head back and cums with you.");
 			writeText("You pull yourself out, leaving her lying on the floor as you clean yourself enough to get home. sportsF slowly stands and begins to clean as you leave.");
-			writeSpeech("sports", "", "Ah, thank you Master. Thank you for reminding me that I belong to you.")
+			writeSpeech("sports", "", "Ah, thank you *Master. Thank you for reminding me that I belong to you.")
 			writeFunction("changeLocation(data.player.location)", "You chuckle and give her a small spank as you leave.");
 			break;
 		}
 		case "sportsfinalgymswimsuit": {//Swimsuit sex
 			writeText("When you finally get to the locker room, sportsF is already up against the wall, holding her dripping cunt open as she waits for you.");
-			writeSpeech("sports", "", "Master! Please hurry! I can't wait any longer!")
+			writeSpeech("sports", "", "*Master! Please hurry! I can't wait any longer!")
 			writeText("Who are you to refuse that kind of invitation.");
 			writeBig("images/sports/6c1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/6c2.jpg", "Art by Himitsu Kessha Vanitas");
@@ -407,13 +407,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She turns to putty in your hands as you cum inside her.");
 			writeBig("images/sports/6c4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("Pulling out, you notice some cum on her suit. You wonder if you'll be able to spot the stains the next time she wears it in class.");
-			writeSpeech("sports", "", "Thank you Master, for using your perverted slave.")
+			writeSpeech("sports", "", "Thank you *Master, for using your perverted slave.")
 			writeFunction("changeLocation(data.player.location)", "You leave her to clean up, and spot her licking up the cum on her suit as you leave the locker room.");
 			break;
 		}
 		case "sportsfinalgymswimsuit": {//Swimsuit sex
 			writeText("When you finally get to the locker room, sportsF is already up against the wall, holding her dripping cunt open as she waits for you.");
-			writeSpeech("sports", "", "Master! Please hurry! I can't wait any longer!.")
+			writeSpeech("sports", "", "*Master! Please hurry! I can't wait any longer!.")
 			writeText("Who are you to refuse that kind of invitation.");
 			writeBig("images/sports/6c1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/6c2.jpg", "Art by Himitsu Kessha Vanitas");
@@ -421,7 +421,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She turns to putty in your hands as you cum inside her.");
 			writeBig("images/sports/6c4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("Pulling out, you notice some cum on her suit. You wonder if you'll be able to spot the stains the next time she wears it in class.");
-			writeSpeech("sports", "", "Thank you Master, for using your perverted slave.")
+			writeSpeech("sports", "", "Thank you *Master, for using your perverted slave.")
 			writeFunction("changeLocation(data.player.location)", "You leave her to clean up, and spot her licking up the cum on her suit as you leave the locker room.");
 			break;
 		}
@@ -430,7 +430,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("An hour later, sportsF is in your arms at your home.");
 			writeBig("images/sports/7c1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/7c2.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "class.jpg", "Now, Master, how did you want your slave to pleasure you today?")
+			writeSpeech("sports", "class.jpg", "Now, *Master, how did you want your slave to pleasure you today?")
 			writeFunction("loadEncounter('sports', 'sportsfinalhome1')", "On your knees, slave, use your mouth and tits to make me cum.");
 			writeFunction("loadEncounter('sports', 'sportsfinalhome2')", "You push her down onto your bed.");
 			writeFunction("loadEncounter('sports', 'sportsfinalhome3')", "You grab her arms and turn her away from you, on her hands and knees on the bed.");
@@ -441,12 +441,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("sportsF slowly slinks to her knees in front of you, licking her lips before lubing your cock with her spit. Once you're covered, she gets to work squeezing her tits around you.");
 			writeBig("images/sports/7d1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/7d2.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "class.jpg", "Mmm... I love the feeling of your dick between my breasts, Master.")
+			writeSpeech("sports", "class.jpg", "Mmm... I love the feeling of your dick between my breasts, *Master.")
 			writeText("sportsF keeps moving, occasionally putting your cock head in her mouth, and swirling her tongue over your sensitive spots. Finally, you pop.");
 			writeBig("images/sports/7d3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/7d4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("Your cum covers her face and tits. When you've finally stopped spurting, sportsF gets to work licking you and herself clean, making a show of swallowing every bit of cum she can lick up, gathering the last of it on her fingers before sucking it clean.");
-			writeSpeech("sports", "class.jpg", "Mmm!~ Thank you Master. Is there anything else you need from your lowly slave?")
+			writeSpeech("sports", "class.jpg", "Mmm!~ Thank you *Master. Is there anything else you need from your lowly slave?")
 			writeFunction("changeLocation(data.player.location)", "You spend the night with her, making sure to use your slave to the fullest before sending her off to school in the morning.");
 			break;
 		}
@@ -454,12 +454,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You force her down firmly, getting a firm grasp on her breasts as you line up with her waiting cunt.");
 			writeBig("images/sports/missionhome1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/missionhome2.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "class.jpg", "Ahh!~ Yes, Master, I'm so full.~")
+			writeSpeech("sports", "class.jpg", "Ahh!~ Yes, *Master, I'm so full.~")
 			writeText("You feel sportsF relax herself as you bottom out inside her. Once you're all the way in, you squeeze her breasts, and every time you do you feel her cunt tighten up around you, varying the pressure and feeling as you thrust in and out, before letting your load fill her.");
 			writeBig("images/sports/missionhome3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/missionhome4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("Her moans reach a crescendo as your cum paints her insides. Both of you are breathing hard as she looks into your eyes and speaks.");
-			writeSpeech("sports", "class.jpg", "So how do you want me next, Master?")
+			writeSpeech("sports", "class.jpg", "So how do you want me next, *Master?")
 			writeFunction("changeLocation(data.player.location)", "You spend the night with her, making sure to use your slave to the fullest before sending her off to school in the morning.");
 			break;
 		}
@@ -468,7 +468,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeBig("images/sports/7c3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/7c4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You don't even give her time to breathe as you thrust in and out. With how roughly you handle her, you know it has to hurt, but as you move you hear her groans of pain give way to moans of pleasure.");
-			writeSpeech("sports", "class.jpg", "Ahh!~ Master!~ Don't hold back! I'm your toy, feel free to use me, any way you want. Even if I break, keep using me! Please, just don't stop!")
+			writeSpeech("sports", "class.jpg", "Ahh!~ *Master!~ Don't hold back! I'm your toy, feel free to use me, any way you want. Even if I break, keep using me! Please, just don't stop!")
 			writeText("You rear back your hand and give her a spank, right across the ass. She screams out as you keep moving. At this pace, it's not long before you cum.");
 			writeBig("images/sports/homedoggy3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/homedoggy4.jpg", "Art by Himitsu Kessha Vanitas");
@@ -476,13 +476,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeBig("images/sports/7c3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/7c4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("player", "", "You don't have to tell me how to treat you, slave. You belong to me, and I do what I want with you. Now scream for me, slut. Beg for more.");
-			writeSpeech("sports", "class.jpg", "Yes Master! Please, use me! Fuck me ass! Fuck my cunt! Turn me into a quivering mess! Stuff your cock down my throat until I stop breathing! Make me lick your ass, drink your piss, treat me like the worthless whore slave I am! Please Master!")
+			writeSpeech("sports", "class.jpg", "Yes *Master! Please, use me! Fuck me ass! Fuck my cunt! Turn me into a quivering mess! Stuff your cock down my throat until I stop breathing! Make me lick your ass, drink your piss, treat me like the worthless whore slave I am! Please *Master!")
 			writeFunction("changeLocation(data.player.location)", "You spend the rest of the night doing just that, using your toy in every way you can think of before sending her home, covered in cum beneath her clothes.");
 			break;
 		}
 		case "sportsfinalcat": {//How do you want her - Cat outfit
 			writeBig("images/sports/profileP.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "sportsP.jpg", "Your pet is here, Master. How do you want to use her tonight?")
+			writeSpeech("sports", "sportsP.jpg", "Your pet is here, *Master. How do you want to use her tonight?")
 			writeBig("images/sports/8b2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You pull her in, kissing her and making sure she's wet enough for however you choose to use her next..");
 			writeBig("images/sports/8b3.jpg", "Art by Himitsu Kessha Vanitas");
@@ -494,7 +494,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "sportsfinalcat1": {//Cat outfit - Ride
-			writeSpeech("sports", "sportsP.jpg", "Purr~ yes Master. Just lie back, your pet will do all the work tonight.")
+			writeSpeech("sports", "sportsP.jpg", "Purr~ yes *Master. Just lie back, your pet will do all the work tonight.")
 			writeText("You lie back, and sportsF moves on top of you, giving your cock a few rubs against her pussy before slowly moving herself down. Taking it slowly, moving herself lower and lower.");
 			writeBig("images/sports/8c1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/8c2.jpg", "Art by Himitsu Kessha Vanitas");
@@ -507,9 +507,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "sportsfinalcat2": {//Cat outfit - Doggy
-			writeSpeech("sports", "sportsP.jpg", "Of course, Master. Your pet is here for your pleasure.")
+			writeSpeech("sports", "sportsP.jpg", "Of course, *Master. Your pet is here for your pleasure.")
 			writeText("She keels on the bed, ass up, and head down.");
-			writeSpeech("sports", "sportsP.jpg", "Please, Master, fill me up. Your pet needs it soo badly.")
+			writeSpeech("sports", "sportsP.jpg", "Please, *Master, fill me up. Your pet needs it soo badly.")
 			writeText("You line yourself up behind sportsF, brabbing onto her shoulders and pushing her forcefully onto your cock. The motion is awkward, but does a lot to reinforce her position as a toy for you tonight.");
 			writeBig("images/sports/catdoggy1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/catdoggy2.jpg", "Art by Himitsu Kessha Vanitas");
@@ -518,15 +518,15 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You fill her, deep as you can manage, before pulling out and letting your cum spill out of her now empty cunt.");
 			writeBig("images/sports/phoneReward.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("The only thing keeping her up at this point is you holding her shoulders, but even weak as she is like this, shaking in your hands, you hear her plead for more.");
-			writeSpeech("sports", "sportsP.jpg", "How would you like to use your pet next, Master?");
+			writeSpeech("sports", "sportsP.jpg", "How would you like to use your pet next, *Master?");
 			writeFunction("changeLocation(data.player.location)", "You give her a spank, moving her into the next position. It's a long time before you send her home, soaked in cum beneath her clothes.");
 			break;
 		}
 		case "sportsfinalcat3": {//Cat outfit - missionary
-			writeSpeech("sports", "sportsP.jpg", "Ah, Master! Thank you. I love looking into your eyes as you use me.")
+			writeSpeech("sports", "sportsP.jpg", "Ah, *Master! Thank you. I love looking into your eyes as you use me.")
 			writeText("You enter her gently. Working your way in slowly as she wiggles and tries to help you push in deeper and deeper.");
 			writeBig("images/sports/missioncat1.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "sportsP.jpg", "Ooooh~, Master! Thanks you, thank you, thank you.");
+			writeSpeech("sports", "sportsP.jpg", "Ooooh~, *Master! Thanks you, thank you, thank you.");
 			writeText("Now that she's loosened up, she's ready to go faster. You thrust in harder now, pushing her to her limit.");
 			writeBig("images/sports/missioncat2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You keep at it, and as you get close, you lean in and whisper to your pet.");
@@ -536,7 +536,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("As you cum, sportsF throws her head back and lets loose a scream. She's loud enough you get a little worried, but you know this place is well soundproofed. While she screams, you can feel her squirting and twitching on your cock, wetting your stomach, your thighs, and the sheets of the bed. When her twitching finally subsides, you look into her eyes. Unfocused and lost in the afterglow.");
 			writeBig("images/sports/missioncat4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You pull yourself out and take a moment to admire your handiwork before putting a cover over your pet. You can hear her muttering quietly as you do.");
-			writeSpeech("sports", "sportsP.jpg", "Thank you Master... I love you Master...")
+			writeSpeech("sports", "sportsP.jpg", "Thank you *Master... I love you *Master...")
 			writeFunction("changeLocation(data.player.location)", "You let her rest for a bit, and do the cleaning yourself this time. Once she's gathered her wits, you send her home.");
 			break;
 		}
@@ -641,90 +641,90 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			break;
 		}
 		case "sportsphone2": {
-			writePhoneSpeech("sports","","Master! I did it. I walked home the entire way with your cum dripping from me.");
+			writePhoneSpeech("sports","","*Master! I did it. I walked home the entire way with your cum dripping from me.");
 			writePhoneImage("images/sports/phone2.jpg", "Art by Himitsu Kessha Vanitas")
-			writePhoneSpeech("sports","","I don't know which felt better, Master, it moving inside me, or the feeling of it coming out.");
+			writePhoneSpeech("sports","","I don't know which felt better, *Master, it moving inside me, or the feeling of it coming out.");
 			writePhoneSpeech("player","","Good slave. Did you do anything else when you got home?");
-			writePhoneSpeech("sports","","I touched myself as your cum leaked out of me. I almost came again, but I didn't think it would have been right without your permission Master.");
+			writePhoneSpeech("sports","","I touched myself as your cum leaked out of me. I almost came again, but I didn't think it would have been right without your permission *Master.");
 			writePhoneSpeech("player","","Very good, slave.");
 			writePhoneSpeech("sports","","I also... Oh, this is embarassing!");
-			writePhoneSpeech("sports","","Master, I also licked some of your cum off my fingers when I was done. It tasted so good. Master... Can we train my mouth next time? I want to taste you so bad.");
+			writePhoneSpeech("sports","","*Master, I also licked some of your cum off my fingers when I was done. It tasted so good. *Master... Can we train my mouth next time? I want to taste you so bad.");
 			writePhoneSpeech("player","","Of course, slave. We'll meet up in the classroom for our next session.");
 			setTrust('sports',105);
 			break;
 		}
 		case "sportsphone3": {
-			writePhoneSpeech("sports","","I'm still practicing my deepthroat skills, Master. Are there any other things you want me to practice or do?");
+			writePhoneSpeech("sports","","I'm still practicing my deepthroat skills, *Master. Are there any other things you want me to practice or do?");
 			writePhoneSpeech("player","","You know what my goals are, slave. I want you to introduce me to any others you think I can bring under my control.");
-			writePhoneSpeech("sports","","Yes Master! I think I may have someone in mind, but I'll need some time to figure things out. Have you met the campus sports director?");
+			writePhoneSpeech("sports","","Yes *Master! I think I may have someone in mind, but I'll need some time to figure things out. Have you met the campus sports director?");
 			writePhoneImage("images/coach/profile.jpg", "Art by Himitsu Kessha Vanitas")
 			writePhoneSpeech("player","","I haven't.");
-			writePhoneSpeech("sports","","To be honest, Master, she's a controlling bitch. If you gave her an 'attitude adjustment' you'd have the whole campus thanking you.");
+			writePhoneSpeech("sports","","To be honest, *Master, she's a controlling bitch. If you gave her an 'attitude adjustment' you'd have the whole campus thanking you.");
 			writePhoneSpeech("player","","Try to get me a meeting with her. I'll see what I can do.");
-			writePhoneSpeech("sports","","Thank you Master! Oh, I can't wait to see that bitch knocked down a peg. Just thinking about it has me wet.");
+			writePhoneSpeech("sports","","Thank you *Master! Oh, I can't wait to see that bitch knocked down a peg. Just thinking about it has me wet.");
 			writePhoneImage("images/sports/phone3.jpg", "Art by Himitsu Kessha Vanitas");
-			writePhoneSpeech("sports","","Is there anything else you want from me Master?");
+			writePhoneSpeech("sports","","Is there anything else you want from me *Master?");
 			writePhoneSpeech("player","","I still want to see you in that swimsuit, slave. I'll meet you in the locker room after your next practice.");
 			writePhoneSpeech("sports","","Yes, master! I'll make sure I'm wet and ready for you!");
 			setTrust('sports',112);
 			break;
 		}
 		case "sportsphone4": {
-			writePhoneSpeech("sports","","Master! What is it you need from me?");
+			writePhoneSpeech("sports","","*Master! What is it you need from me?");
 			writePhoneSpeech("player","","I think it's time to start expanding my influence. Can you get me a meeting with the sports director? Preferably alone.");
-			writePhoneSpeech("sports","","I... Master, are you sure?");
+			writePhoneSpeech("sports","","I... *Master, are you sure?");
 			writePhoneSpeech("player","","Do you not think I can manage breaking her?");
-			writePhoneSpeech("sports","","To be honest, Master, I'm nervous about it. I don't want anything to go wrong...");
+			writePhoneSpeech("sports","","To be honest, *Master, I'm nervous about it. I don't want anything to go wrong...");
 			writePhoneSpeech("player","","Relax, sportsF. I can do this. But, do be safe, I'll have you do something to make my job easier.");
-			writePhoneSpeech("sports","","That sounds good, Master. What is it you need me to do?");
+			writePhoneSpeech("sports","","That sounds good, *Master. What is it you need me to do?");
 			writePhoneSpeech("player","","Get me a compromising picture of her. It doesn't need to be anything incredibly damning, but it has to be something I can work into blackmail material.");
-			writePhoneSpeech("sports","","That's... devious, Master. I'll try to get something. It'll probably take me a while, though.");
+			writePhoneSpeech("sports","","That's... devious, *Master. I'll try to get something. It'll probably take me a while, though.");
 			writePhoneSpeech("player","","That's perfectly fine, slave. Just be sure not to get caught first. There are always more chances to get a picture as long as you're not caught. Do this for me, and I'll be sure to reward you properly.");
-			writePhoneSpeech("sports","","I'll be careful Master. I'll let you know what I find when I can.");
+			writePhoneSpeech("sports","","I'll be careful *Master. I'll let you know what I find when I can.");
 			setTrust('sports',121);
 			break;
 		}
 		case "sportsphone5": {
-			writePhoneSpeech("sports","","I think I may be onto something Master!");
+			writePhoneSpeech("sports","","I think I may be onto something *Master!");
 			writePhoneSpeech("player","","What is it?");
 			writePhoneImage("images/coach/sportsphone1.jpg", "Art by Himitsu Kessha Vanitas");
 			writePhoneSpeech("sports","","coachF and her boyfriend were out at the beach today. She was wearing a skimpy suit and everything.");
 			writePhoneSpeech("player","","Promising, slave, but not enough. She wore that out in public herself. I don't think she would be too embarassed with this.");
-			writePhoneSpeech("sports","","I know Master, but I think they went off to have sex at some point during their date. I lost track of them at the beach and the next time I saw them was coming out of a little alcove hidden from the rest of the beach. I'm going to try and see if I can get a picture of them together soon.");
+			writePhoneSpeech("sports","","I know *Master, but I think they went off to have sex at some point during their date. I lost track of them at the beach and the next time I saw them was coming out of a little alcove hidden from the rest of the beach. I'm going to try and see if I can get a picture of them together soon.");
 			writePhoneSpeech("player","","That seems like a good call. Remember, don't get caught.");
-			writePhoneSpeech("sports","","I won't Master!");
+			writePhoneSpeech("sports","","I won't *Master!");
 			setTrust('sports',122);
 			break;
 		}
 		case "sportsphone6": {
-			writePhoneSpeech("sports","","I think you're going to like this, Master...");
+			writePhoneSpeech("sports","","I think you're going to like this, *Master...");
 			writePhoneSpeech("player","","Hmm?");
 			writePhoneSpeech("sports","","You wanted something compromising, and I got something I know she'll never want people to see.");
 			writePhoneSpeech("player","","And that something is...?");
 			writePhoneImage("images/coach/sportsphone2.jpg", "Art by Himitsu Kessha Vanitas");
-			writePhoneSpeech("sports","","She's a little ass licking slut, Master! She acts like such a bitch, but...");
+			writePhoneSpeech("sports","","She's a little ass licking slut, *Master! She acts like such a bitch, but...");
 			writePhoneSpeech("player","","Holy shit, sportsF. That's more than enough.");
 			writePhoneSpeech("sports","","They went to the beach again, and I managed to follow them into the alcove without getting caught. I <i>heard</i> her beg to stick her tongue in there. Miss coachL is a freak!");
 			writePhoneSpeech("sports","","It did make me think about doing that to you, and I can't say the idea didn't make me super horny... But we both already knew I'm a pervert.");
 			writePhoneSpeech("player","","You did very well, slave. Meet me next chance you get for a tutoring session. I'll reward you properly.");
-			writePhoneSpeech("sports","","Master! Don't tease me... I'm never going to be able to focus on classes now.");
+			writePhoneSpeech("sports","","*Master! Don't tease me... I'm never going to be able to focus on classes now.");
 			setTrust('sports',125);
 			if (checkTrust('coach') == 0) {setTrust('coach',1)};
 			break;
 		}
 		case "sportsphone7": {
-			writePhoneSpeech("sports","","Master! I have a favor to ask for. I promise to make it worth your while...");
+			writePhoneSpeech("sports","","*Master! I have a favor to ask for. I promise to make it worth your while...");
 			writePhoneSpeech("player","","That makes me worried. What is it slave?");
 			writePhoneSpeech("sports","","I found something at the shopping center and I think we'd both really enjoy it.");
 			writePhoneSpeech("player","","Something?");
 			writePhoneImage("images/sports/profileP.jpg", "Art by Himitsu Kessha Vanitas");
 			writePhoneSpeech("sports","","It's a lingerie set with an adorable pair of cat ears. I tried it on in the dressing room, but I didn't have enough to buy it.");
 			writePhoneSpeech("player","","So you wanted me to...");
-			writePhoneSpeech("sports","","If you can buy it Master, you know I'll make it worth your while! It even comes with a little white leather choker, like a collar. Mmm. Just wearing it in the dressing room made me feel hot.");
+			writePhoneSpeech("sports","","If you can buy it *Master, you know I'll make it worth your while! It even comes with a little white leather choker, like a collar. Mmm. Just wearing it in the dressing room made me feel hot.");
 			writePhoneSpeech("sports","","Thinking about you putting a leash on me, and walking me around, like your personal pet.");
-			writePhoneSpeech("sports","","Pleeease Master?~");
+			writePhoneSpeech("sports","","Pleeease *Master?~");
 			writePhoneSpeech("player","","I'll take a look, slave, but I can't promise anything.");
-			writePhoneSpeech("sports","","Thank you Master! If you do get it, meet me in the classroom!");
+			writePhoneSpeech("sports","","Thank you *Master! If you do get it, meet me in the classroom!");
 			setTrust('sports',131);
 			break;
 		}
@@ -933,12 +933,12 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("sports", "", "Slaves need to be trained...");
 			writeSpeech("player", "", "That's right.");
 			writeSpeech("sports", "", "So.. then... If I'm your slave... You're...");
-			writeSpeech("player", "", "I'm your Master. And you should address me as such when we're alone. Keep behaving like normal when we're not together, otherwise we may get caught. And if we get caught, I'll never be able to help you <i>relax</i> again.");
+			writeSpeech("player", "", "I'm your *Master. And you should address me as such when we're alone. Keep behaving like normal when we're not together, otherwise we may get caught. And if we get caught, I'll never be able to help you <i>relax</i> again.");
 			writeText("The idea of not being able to relax forces a small protesting mewl out of her mouth, as she speaks up.");
-			writeSpeech("sports", "", "I understand Master! Just... Please don't make me wait long for our next training session.");
+			writeSpeech("sports", "", "I understand *Master! Just... Please don't make me wait long for our next training session.");
 			writeSpeech("player", "", "Of course not. Clean up here, slave. But leave my cum in you. I want you to walk all the way home with it sloshing inside you.");
 			writeText("She smiles. The fire back in her eyes, but now you know that fire is dedication to you.");
-			writeSpeech("sports", "", "Right away Master!");
+			writeSpeech("sports", "", "Right away *Master!");
 			writeText("You hear her cleaning behind you as you clear the room. Looking back, you see her doing it one handed. The other hand attempting to hold as much cum as she can inside her for her walk home.");	
 			writeFunction("changeLocation(data.player.location)", "Time to go home and clean yourself, too.");
 			updateMenu();
@@ -949,14 +949,14 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("sports", "class.jpg", "Yes, playerH! Please teach me to be a good cocksucker!");
 			writeText("Her eagerness falters as you pull out your cock. Replaced by a mixture of fear, desire, and nervousness.");
 			writeSpeech("player", "", "So you really haven't done this before?");
-			writeSpeech("sports", "class.jpg", "No Master, my old boyfriend always wanted to try but I never liked the idea of having him in my mouth, it just seemed... Gross.");
+			writeSpeech("sports", "class.jpg", "No *Master, my old boyfriend always wanted to try but I never liked the idea of having him in my mouth, it just seemed... Gross.");
 			writeText("As she speaks, you notice she seems to be slurring her words. Looking down, you see drool flowing freely from her mouth as she stares at your cock.");
 			writeSpeech("sports", "class.jpg", "But after I tasted your cum I couldn't think of anything other than tasting your cock. Having it in my mouth. Licking you up and down, rubbing it all over my face as I put your balls in my mouth.");
 			writeText("Oh, this is a treat. You keep letting her speak. She's lost in her own fantasies right now, and it would be a shame to snap her out of them just yet. As she keeps going, you start to rub your cock on her face. Slowly teasing all over, every touch of your cock on her body sending small shockwaves of pleasure as she drools all over herself and spills her desires to you.");
-			writeSpeech("sports", "class.jpg", "After licking your balls, teasing all up and down your cock. Then pushing myself lower, and getting my tongue all over your taint as your balls twitch on my forehead. I thought about how it would feel and taste to stick my tongue in your ass. Making sure you were clean all over. Doing everything I could to please my Master.");
-			writeSpeech("sports", "class.jpg", "I watched a bunch of blowjob porn last night. Tried to practice deepthroating with my fingers. Pretending my fingers were your massive cock. But nothing could prepare me for how good this would feel. On my knees. Where I should be. In front of my Master.");
+			writeSpeech("sports", "class.jpg", "After licking your balls, teasing all up and down your cock. Then pushing myself lower, and getting my tongue all over your taint as your balls twitch on my forehead. I thought about how it would feel and taste to stick my tongue in your ass. Making sure you were clean all over. Doing everything I could to please my *Master.");
+			writeSpeech("sports", "class.jpg", "I watched a bunch of blowjob porn last night. Tried to practice deepthroating with my fingers. Pretending my fingers were your massive cock. But nothing could prepare me for how good this would feel. On my knees. Where I should be. In front of my *Master.");
 			writeText("She looks directly into your eyes now. Looking up with her cock on her face, precum leaking onto her forehead, and drool all over her face, still trailing down and staining her blouse. Looking down, you see her skirt is soaked, as she sits in her own juices.");
-			writeSpeech("sports", "class.jpg", "Thank you so much Master, for making me your slave.");
+			writeSpeech("sports", "class.jpg", "Thank you so much *Master, for making me your slave.");
 			writeSpeech("player", "", "Open your mouth, slave. And get ready to have your fantasies come true.");
 			writeText("She immediately stops speaking and opens her mouth as wide as possible. Her hands jump. No longer touching herself, instead solely focused on guiding you into her mouth and pleasuring you.");
 			writeBig("images/sports/5b1.jpg", "Art by Himitsu Kessha Vanitas");
@@ -964,7 +964,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "Wait, slave! Slow down. Don't push yourself too much at the beginning, or you'll end up with a sore jaw halfway through.");
 			writeText("She seems confused, but stops. As she pulls off your cock, she gives a last suck and you hear the satisfying <b>POP</b> as your cock comes free.");
 			writeSpeech("sports", "class.jpg", "Ah! <i>cough cough</i>");
-			writeSpeech("sports", "class.jpg", "I'm sorry Master, I just needed you in me so badly... Ahh, that felt sooo good.");
+			writeSpeech("sports", "class.jpg", "I'm sorry *Master, I just needed you in me so badly... Ahh, that felt sooo good.");
 			writeSpeech("player", "", "Your enthusiasm is noted, and appreciated, sportsF. But start slowly. Take your tongue and run it up and down my cock. Take my balls in your mouth. Lick up as much precum as you can from my cock, and savor it's taste.");
 			writeText("You keep speaking as she gets started, following your instructions to the letter. She never takes her tongue or her hands off of your cock, worshiping it like it was the only thing in the world that mattered to her. She's a very good student.");
 			writeSpeech("player", "", "Once you've properly covered my cock in your drool and spit, take the head in. And slowly work your way down until you meet resistance.");
@@ -972,7 +972,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("She starts to work her way down your cock, slowly moving her head up and down, each time going deeper and deeper. It's all you can do to not blow your load now, but you do want to make sure that she gets some proper practice in. As she moves deeper, you can feel and hear her moaning around your cock, vibrations up and down your shaft as those moans are muffled by your cock.");
 			writeSpeech("player", "", "I know it feels good, slave, but don't forget to come up for air every once in a while. When you do, use your hands to keep things going. ");
 			writeText("She pulls herself off reluctantly. Catching her breath for a moment before speaking as she works her hands around your shaft and balls.");
-			writeSpeech("sports", "class.jpg", "Master, I don't need air. I just need your cock in my mouth. I want to choke on it. This is how I want to die.");
+			writeSpeech("sports", "class.jpg", "*Master, I don't need air. I just need your cock in my mouth. I want to choke on it. This is how I want to die.");
 			writeText("Sometimes you scare yourself with how good you are at this.");
 			writeSpeech("player", "", "Again, your enthusiasm is noted, but I'd prefer we do this again, and you dying on my cock won't help that. Though maybe one day I can hold you down until you run out of air, and then keep using you as you're passed out.");
 			writeText("You can see her shudder at the idea. <i>Damn</i> you're good.");
@@ -985,15 +985,15 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/sports/5b3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("The sight of her blue eyes, desperately looking up to you for her reward is too much for you to take. You finally let go, cumming into your new toy's mouth. sportsF struggles to keep herself from flinching as the torrent of cum streams into her mouth. You even see a little cum has managed to shoot out of her nose. When you finally feel the orgasm subside, you feel as she sucks air in, pulling that glob straight back into her nose, so she can swallow every bit of your load. <i>That</i> is dedication.");
 			writeSpeech("player", "", "That's all, slave. Swallow everything, and when you've finished with what's in your mouth, be sure to lick me clean.");
-			writeText("You hear her try to say 'Yes Master' with your cock in her mouth. She doesn't waste a moment.");
+			writeText("You hear her try to say 'Yes *Master' with your cock in her mouth. She doesn't waste a moment.");
 			writeBig("images/sports/5b4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("She closes her eyes, and you feel her tongue swirl in her mouth, trying to gather up as much cum as she can while tasting it with every section of her taste buds. You feel her moan as she explores every inch of your cock with her tongue, to make sure she's gathered all the cum she can before she swallows. As she does, you hear the unmistakable sound of another orgasm gushing onto the floor.");
 			writeText("Slowly, making sure she licks up any leftover cum as she rises off your cock, she gives one last <b>POP</b> before looking up into your eyes with an open mouth, showing the last remnant of cum in her mouth before she does a theatrical swallow. Opening her mouth again for you to see that she swallowed all of your massive load.");
-			writeSpeech("sports", "class.jpg", "Thank you Master, for teaching your slave how to be a proper toy for you! I'll make sure to practice so that I can properly serve you in the future.");
+			writeSpeech("sports", "class.jpg", "Thank you *Master, for teaching your slave how to be a proper toy for you! I'll make sure to practice so that I can properly serve you in the future.");
 			writeText("This girl is a natural. You want nothing more than to bend her over the desk and fuck her senseless, but you'd never finish up and clean before the janitors came in the morning considering the time, so that will have to wait.");
 			writeSpeech("player", "", "You did very well, slave. We need to get this place cleaned up, get started while I go get some supplies from the janitor's closet. We made a bit of a mess.");
 			writeText("sportsF looks around, for the first time since you started remembering where she is, probably.");
-			writeSpeech("sports", "class.jpg", "Oh, shit. Yes, Master. I'll get right to work.");
+			writeSpeech("sports", "class.jpg", "Oh, shit. Yes, *Master. I'll get right to work.");
 			writeFunction("changeLocation(data.player.location)", "You spend the next hour cleaning before heading home for the night.");
 			updateMenu();
 			break;
@@ -1004,23 +1004,23 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("You start to move quicker, cock hardening as you move towards the shower and spot sportsF. You quickly strip and call out.");
 			writeSpeech("player", "", "Slave, I told you to be ready for me. I wanted to see you in your swimsuit, why are you still naked?");
 			writeText("sportsF flinches, apparently she thought she had more time.");
-			writeSpeech("sports", "", "Ah! I'm sorry, Master! I wanted to be sure I was clean for you. Last time I hadn't gotten a chance to shower before... I'll change right away!");
+			writeSpeech("sports", "", "Ah! I'm sorry, *Master! I wanted to be sure I was clean for you. Last time I hadn't gotten a chance to shower before... I'll change right away!");
 			writeSpeech("player", "", "Quiet. Work quickly, slave.");
 			writeText("She nods frantically. You don't really care that she wasn't changed yet, but it's always nice to see her flustered. She quickly moves to her locker and fiddles with the lock, cursing as in her haste she screws up the combination.");
 			writeText("Once she's finally opened her locker, she begins to get dressed. Once again, moving a little too quickly for her own good. She's too wrapped up in her own head to hear you get up and move behind her. You pounce as soon as she's snapped her shoulder straps on, grabbing her tits, and shoving yourself into her already wet snatch.");
 			writeBig("images/sports/6c1.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "", "Ahh!~ Master!~");
+			writeSpeech("sports", "", "Ahh!~ *Master!~");
 			writeText("She tightens up like mad as you force your way in. You don't know whether she came, she's trying to milk you, or she was just too surprised to let herself relax. Either way, the tightness as you wiggle your way deeper and deeper into her cunt is heavenly. As you fuck her, you fondle her tits, each squeeze causing more desperate cries to escape her lips. Something about the swimsuit strikes you as off, though...");
 			writeSpeech("player", "", "You wear this in class, slave? Or did you do something special just for me? This swimsuit seems tighter than the ones I usually see the students wear.");
-			writeSpeech("sports", "", "I... Master! I switched swimsuits the first time you asked me about it! When you said that you wanted to see me in my swimsuit, the idea made me so hot!");
+			writeSpeech("sports", "", "I... *Master! I switched swimsuits the first time you asked me about it! When you said that you wanted to see me in my swimsuit, the idea made me so hot!");
 			writeText("You slow your thrusts and start to tease her with your movements, giving her time to breathe and answer your questions.");
 			writeSpeech("player", "", "So, you swapped to a tighter swimsuit so that...");
 			writeSpeech("sports", "", "So that if you did come and see me you'd see <i>all</i> of me. And so that the entire time I'd have my cunt rubbed, my nipples teased. This material clings so well to me, and it feels so good when it moves, and rubs my sensitive spots.");
 			writeText("You stop. That timeline doesn't quite add up...");
 			writeSpeech("player", "", "Damn, even back then, when you weren't fully under my control?");
 			writeText("She looks you in the eyes, your cock bottomed out in her, your hands squeezing her tit, frozen in place as she confesses to you from the bottom of her heart.");
-			writeSpeech("sports", "", "Master, I've been under your control since the first time I saw you in the gym. I just didn't know it until far too late.");
-			writeSpeech("sports", "", "Now, Master. Use. My. Cunt. Fuck me senseless. And make me whole.");
+			writeSpeech("sports", "", "*Master, I've been under your control since the first time I saw you in the gym. I just didn't know it until far too late.");
+			writeSpeech("sports", "", "Now, *Master. Use. My. Cunt. Fuck me senseless. And make me whole.");
 			writeText("No need to tell you twice. It's time to pick up the pace.");
 			writeBig("images/sports/6c2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You move faster and faster, and you feel her respond in kind. You can feel her moving as you hold her up, moving her hips back and forth as much as she can while she's held like this. When you squeeze her tit, you feel her cunt clench, bringing you closer and closer to the edge.");
@@ -1029,10 +1029,10 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/sports/6c3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("As you cum, you squeeze her breast as hard as you can, and pull her back into you. She screams in pleasure and you feel her own orgasm as she twitches and tries desperately to hold herself up.");
 			writeBig("images/sports/6c4.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "", "Aah~. Hah~. Thank you for using me, Master. I hope your fuck toy did a good job today.");
+			writeSpeech("sports", "", "Aah~. Hah~. Thank you for using me, *Master. I hope your fuck toy did a good job today.");
 			writeText("You grab her hair and turn her head, planting a quick kiss on her forehead.");
 			writeSpeech("player", "", "You did very well slave. Get yourself cleaned up. I'm going to leave now. Send me a text in the morning, I'll have tasks for you.");
-			writeSpeech("sports", "", "Yes Master. I'll be sure to text you as soon as I'm awake.");
+			writeSpeech("sports", "", "Yes *Master. I'll be sure to text you as soon as I'm awake.");
 			writeFunction("changeLocation(data.player.location)", "You move toward the door, planning your next move..");
 			updateMenu();
 			break;
@@ -1041,27 +1041,27 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("A few hours, and a little bit of cleaning later, you hear a knock at the door.");
 			writeText("As fun as it would be to make her wait... You probably shouldn't have a desperate and horny student hanging outside your door unsupervised if you want to stay unnoticed.");
 			writeText("You move quickly to the door and let sportsF in. The moment the door closes, she latches onto you, pushing you into a nearby chair.");
-			writeSpeech("sports", "class.jpg", "Master!~ Ahh!~ I was looking forward to this so much.");
+			writeSpeech("sports", "class.jpg", "*Master!~ Ahh!~ I was looking forward to this so much.");
 			writeText("You cut her off with a kiss, when you pull back, lifting her shirt and pulling up her skirt as you do it.");
 			writeBig("images/sports/7b1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("player", "", "No panties?");
 			writeSpeech("sports", "class.jpg", "Why wear clothes I only know will get ruined?");
 			writeText("You get back to kissing her. As you do, you feel her rubbing her wet snatch against your cock, though your pants, which are already soaked.");
 			writeBig("images/sports/7b2.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "class.jpg", "Master!~ I can't wait.~");
+			writeSpeech("sports", "class.jpg", "*Master!~ I can't wait.~");
 			writeText("She reaches down desperately. Unzipping your pants and ripping your cock out, before rubbing it against her wet pussy. Teasing both of you, and lubing your cock up for entry before slowly lining you up to her entrance and sliding you in.");
 			writeBig("images/sports/7b3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("sports", "class.jpg", "Yeeesss!~");
-			writeSpeech("sports", "class.jpg", "Master, thank you!");
+			writeSpeech("sports", "class.jpg", "*Master, thank you!");
 			writeText("She's too far gone in her own lust to stop at this point, so you just let her go- wildly bucking up and down on your cock, pleading for you to fill her. She's not the only one who couldn't wait for this, after all. May as well enjoy her doing most of the work.");
 			writeText("She starts moving more erratically, and you feel yourself ready to cum. You give her one last push, and feel her go limp in your arms as your cock twitches and spurts inside her.");
 			writeBig("images/sports/7b4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("A few minutes pass like this as you both catch your breath. She moves first, slowly pulling herself off of your cock before getting down on her knees and bowing her head low.");
-			writeSpeech("sports", "class.jpg", "I'm sorry for that, Master, I just... I needed you. Please forgive your lowly slave.");
+			writeSpeech("sports", "class.jpg", "I'm sorry for that, *Master, I just... I needed you. Please forgive your lowly slave.");
 			writeText("Seeing her prostrate her in front of you, you know there won't be a problem finding a round two. Or three. Or four, tonight.");
 			writeSpeech("player", "", "I forgive you, slave, but remember, I plan to fill all your holes today. I hope you came prepared.");
 			writeText("She looks up from her bow, eyes resolute.");
-			writeSpeech("sports", "class.jpg", "I've never been more ready for anything in my life, Master.");
+			writeSpeech("sports", "class.jpg", "I've never been more ready for anything in my life, *Master.");
 			writeText("You smile, and pet her head, before grabbing a fistfull of hair and pulling her up to her feet. You hear a moan of pleasure as you drag her back to your mouth for a kiss.");
 			writeFunction("writeEvent('sports7c')", "Then get me hard again, slave. We have work to do tonight.");
 			updateMenu();
@@ -1071,7 +1071,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/sports/7c1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("Her hand rubs along the length of your shaft as you kiss. Lightly touching up and down, making sure the whole thing is still coated and lubed with her own sex's juices as she begins to jerk you off, getting you ready to use her again.");
 			writeBig("images/sports/7c2.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "class.jpg", "Master! Ahh~ How do you want to use your slave?");
+			writeSpeech("sports", "class.jpg", "*Master! Ahh~ How do you want to use your slave?");
 			writeText("She keeps moving her hand, and your cock quickly finds itself ready for round two.");
 			writeSpeech("player", "", "Get onto the bed. On all fours, head down, ass up, like when you were begging forgiveness. I'm going to use your ass.");
 			writeText("You push her down to her knees, and she looks up at you in understanding before crawling to your bed. Making a show, moving slowly, swinging her shapely ass as she moves to your bed.");
@@ -1090,11 +1090,11 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/sports/7c4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("She tries to speak, before you pick up the pace again, cutting off any words she had and replacing them with screams and moans.");
 			writeSpeech("player", "", "I'm getting close, slave. Are you ready to have your ass filled?");
-			writeSpeech("sports", "class.jpg", "Yeeesh!~ Fill me Master!~");
+			writeSpeech("sports", "class.jpg", "Yeeesh!~ Fill me *Master!~");
 			writeBig("images/sports/7c4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You push in as deep as you can, and let go. Her ass twitching and squeezing your cock of every last drop of cum.");
 			writeText("When you finally feel your orgasm subside, you start moving yourself out slowly. Giving her ass one last smack as you pop your cock out and admire her gaping hole.");
-			writeSpeech("sports", "class.jpg", "Thank you Master... I never thought anal would feel so good. Ahh.");
+			writeSpeech("sports", "class.jpg", "Thank you *Master... I never thought anal would feel so good. Ahh.");
 			writeFunction("writeEvent('sports7d')", "We're not done yet. I did say I'd fill ALL your holes.");
 			updateMenu();
 			break;
@@ -1103,7 +1103,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("She moves slowly at first, still shaky from her first ass fucking, but she knows what it is you want.");
 			writeText("You sit on the edge of the bed, and she crawls down, kneeling in front of you. As she settles in, you can see a small puddle of cum forming below her as she leaks onto the floor.");
 			writeBig("images/sports/7d1.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "class.jpg", "Of course, Master. After all, all of my holes, all of my being, belongs to you. I'd be honored to clean your cock with my body.");
+			writeSpeech("sports", "class.jpg", "Of course, *Master. After all, all of my holes, all of my being, belongs to you. I'd be honored to clean your cock with my body.");
 			writeText("And once again, your cock which had been softening, begins to harden as she plays with your cock. First, with her hands, making sure you're hard again, before wrapping her tits around your shaft.");
 			writeSpeech("sports", "class.jpg", "And the only proper tool I have to clean you are my breasts.. And my mouth.");
 			writeText("She slowly rubs your cock between her breasts, before pulling back. Once your cock is free, she moves her mouth down to your balls. Taking each one into her mouth individually, and swirling her tongue around them. Slowly working her way up, before she licks from the base of your cock all the way to your head. She takes your cock head into her mouth moving her tongue in small circles as you feel her play with your urethra. She pulls back briefly and looks up at you. With a wink, she slowly works her head all the way down, nearly taking you to the base, filling her mouth and throat with her cock. She holds there for a moment, before pulling back up, and getting her tits around your cock once again.");
@@ -1111,14 +1111,14 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("You grunt your approval as she gets back to work. She moves her tits around your cock faster and faster, occasionally giving you a break before shifting from her breasts to her mouth, and back again.");
 			writeBig("images/sports/7d2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("It takes a long while and a lot of work on sportsF's part, but you finally come close to orgasm number three as she gets back to her titjob.");
-			writeSpeech("sports", "class.jpg", "Please, Master. Cum on me. Mark me as yours.");
+			writeSpeech("sports", "class.jpg", "Please, *Master. Cum on me. Mark me as yours.");
 			writeText("She sticks out her tongue, licking your cock as she keeps jerking you off with her tits. The whole thing is finally too much as you cum again.");
 			writeBig("images/sports/7d3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("The first spurt catches you both by surprise, but sportsF quickly gets her mouth around your cock head and starts to swallow. You feel her tongue playing with yout tip, and she keeps moving her tits around your cock until you've finally stopped. Doing one last pass with her tongue, she pulls her mouth off of you, and gives a final theatrical gulp.");
 			writeBig("images/sports/7d4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("sports", "class.jpg", "Delicious!~");
 			writeText("A few deep breaths, and sportsF looks up to you again.");
-			writeSpeech("sports", "class.jpg", "So how do you want me next, Master?");
+			writeSpeech("sports", "class.jpg", "So how do you want me next, *Master?");
 			writeFunction("changeLocation(data.player.location)", "You spend all night using your fucktoy. Damn, this girl has endless energy.");
 			updateMenu();
 			break;
@@ -1127,12 +1127,12 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("You're not home for long before sportsF knocks on the door, and you let her in.");
 			writeText("She looks around briefly before seeing the camera you've set up near the bed.");
 			writeText("She moves in front of it before asking.");
-			writeSpeech("sports", "sportsP.jpg", "You want to record this, Master?");
+			writeSpeech("sports", "sportsP.jpg", "You want to record this, *Master?");
 			writeText("You smile and nod.");
 			writeSpeech("player", "", "So be sure to put on a show, pet.");
 			writeText("She nods her head once, before taking a deep breath and putting on a smile. Then, she begins stripping, sensually letting her uniform fall to the ground every time she removes a piece. Seems like she wore the lingerie under her uniform on the way over to meet you.");
 			writeBig("images/sports/profileP.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "sportsP.jpg", "Your pet is here to serve you, Master.");
+			writeSpeech("sports", "sportsP.jpg", "Your pet is here to serve you, *Master.");
 			writeBig("images/sports/8b2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("player", "", "Then it's time to get to work, little kitty.");
 			writeText("She sinks to her knees and crawls to you. You pat her head, and lead her into the bedroom, sitting on the bed before calling her into your lap.");
@@ -1142,7 +1142,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("You pull back for a moment and enjoy your pet's look of ecstacy before continuing.");
 			writeBig("images/sports/8b5.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You begin to push her onto her back, but she stops you.");
-			writeSpeech("sports", "sportsP.jpg", "No, Master, today I'm showing you my appreciation. Please, lie back, and let your pet do all the work.");
+			writeSpeech("sports", "sportsP.jpg", "No, *Master, today I'm showing you my appreciation. Please, lie back, and let your pet do all the work.");
 			writeFunction("writeEvent('sports8c')", "You lay back as your pet starts to straddle you.");
 			updateMenu();
 			break;
@@ -1156,13 +1156,13 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "That's it, kitty. Keep it up");
 			writeText("sportsF is an athletic girl, and you've never been disappointed by her stamina. She picks up the pace as you speak, bouncing up and down with her whole body, making sure to never let you slip out of her tight cunt.");
 			writeBig("images/sports/8c3.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "sportsP.jpg", "Mmm!~ Master!~ I'm going to cum! Please, cum with me! Cum inside your slutty kitty!~");
+			writeSpeech("sports", "sportsP.jpg", "Mmm!~ *Master!~ I'm going to cum! Please, cum with me! Cum inside your slutty kitty!~");
 			writeText("Her pace and cries are too much. With a cry, you let loose into her, feeling her own orgasm triggered by the first spray of cum filling her.");
 			writeBig("images/sports/8c4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("sports", "sportsP.jpg", "Ahh!~");
-			writeText("Her face contorts, and her eyes lose focus as she loses herself in the pleasure of being used by her Master.");
+			writeText("Her face contorts, and her eyes lose focus as she loses herself in the pleasure of being used by her *Master.");
 			writeBig("images/sports/8c5.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "sportsP.jpg", "Thank you for using me Master. Is there anything else my Master desires from me?");
+			writeSpeech("sports", "sportsP.jpg", "Thank you for using me *Master. Is there anything else my *Master desires from me?");
 			writeFunction("changeLocation(data.player.location)", "Looks like you have another long night ahead of you.");
 			updateMenu();
 			break;

@@ -158,7 +158,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Hey, greenF, mind if I walk you home today? There's something I wanted to ask you about.");
 			writeSpeech("green", "", "Yeah, sure. Heh, hey scarfF, looks like I'll be home before you this time!");
 			writeSpeech("scarf", "", "Oh, should I find somewhere else to be tonight?");
-			writeSpeech("green", "", "Yeah! Maybe you'll go hit on the neighbor kid again. I got a real man tonight!");
+			writeSpeech("green", "", "Yeah! Maybe you'll go hit on the neighbor kid again. I got a real *man tonight!");
 			writeText("...");
 			writeText("Hopefully a more casual environment will let you bypass scarfF's protection.");
 			writeSpeech("green", "", "Ah, don't mind any of her stuff. She's into those Chinese cartoons.");
@@ -229,7 +229,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "You sure that isn't just your brain making excuses?");
 			writeSpeech("green", "", "Oh? And why would I be doing that?");
 			writeSpeech("player", "", "... No reason. Nothing. Hey, this kid did pretty well. tomgirlF seems like he got full marks.");
-			writeSpeech("green", "", "Yeah, he passed the test.");
+			writeSpeech("green", "", "Yeah, *he passed the test.");
 			writeSpeech("player", "", "What was that?<i><br>No way this'll be that easy...</i>");
 			writeSpeech("green", "", "I said he passed. Why?");
 			writeSpeech("player", "", "Sorry, got distracted for a sec. Anyways, let's just focus. If we figure this all out we should be done before it gets dark.");
@@ -267,7 +267,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Really quick, that psychology exam, how did tomgirlF do again?");
 			writeSpeech("green", "", "He passed.");
 			writeSpeech("player", "", "What did he pass, exactly?");
-			writeSpeech("green", "", "He passed the test, why? What's up?");
+			writeSpeech("green", "", "*He passed the test, why? What's up?");
 			writeText("*SNAP*");
 			writeText("greenF goes slack as scarfF cuts her out of the conversation.");
 			writeSpeech("scarf", "", "Not bad. A creative decision, a very bold one in fact.");
@@ -289,14 +289,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("*SNAP*");
 			writeText("There's a specific technique to how scarfF snaps her fingers to give it a slightly different sound, not just any snapping noise would work. Luckily you're observant and a skilled hypnotist.");
 			writeText("And it works! greenF's eyes unfocus and her body slumps a little. You tell greenF what to say, and she repeats.");
-			writeSpeech("green", "", "He passed the test.");
+			writeSpeech("green", "", "*He passed the test.");
 			writeText("scarfF breaks greenF's daze with applause. As she snaps out of it, she starts clapping too with a tired, confused look.");
 			writeSpeech("green", "", "Wha? Huh? Woohoo! Why are we clapping?");
 			writeSpeech("scarf", "", "playerF here has done a marvelous job. Well done.");
 			writeSpeech("green", "", "Oh, nice! Great job playerF!<br>... What'd you do?");
 			writeSpeech("player", "", "More to the point, what do I win?");
 			writeText("The room feels you a little warmer as scarfF gives you a familiar wistful smile.");
-			writeSpeech("scarf", "", "Greedy boy. You want a reward just for snapping your fingers?");
+			writeSpeech("scarf", "", "Greedy *boy. You want a reward just for snapping your fingers?");
 			writeSpeech("player", "", "You gave me a challenge, I won. I entertained you, don't I deserve something?");
 			setTrust('scarf', 60);
 			setTrust('green', 43);
@@ -374,7 +374,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("With greenF turned into a lump on a barstool, you take your opportunity to walk her a block to her place, and to attack.");
 			writeText("Hey, check this out.");
 			writeText("Her place is pretty dark, so you set her down and turn on the lights. Strange that scarfF isn't home. Her drunken mind is a lot less guarded than when she's fully alert, so she doesn't try to punch you in the face this time as she quickly falls into a hypnotic trance.");
-			writeSpeech("player", "", "Alright. You're going to listen carefully. The next time you hear me say the phrase 'glorious victory', you're going to respond with 'he passed the test'. Got it?");
+			writeSpeech("player", "", "Alright. You're going to listen carefully. The next time you hear me say the phrase 'glorious victory', you're going to respond with '*he passed the test'. Got it?");
 			writeSpeech("green", "", "He pashed the tesht...");
 			writeText("...");
 			writeText("After some practice, you've managed to get her to repeat the phrase on command, although she's still very out of sorts.");
