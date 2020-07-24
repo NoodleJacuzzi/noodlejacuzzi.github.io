@@ -398,7 +398,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("maid","","Mm. I might just do that... <i>playerT Counselor.</i>");
 				writeText("She smirks teasingly, leaning forward a bit herself... only for you both to hear footsteps approaching.");
 
-				if(checkFlag('cafedark','Start')){
+				if(checkFlag('cafedark','Visited')){
 					writeSpeech("cafedark","","maidF!");
 					writeText("You see cafedarkF bound over with a grin as maidF sits up a bit straighter. cafedarkF pauses slightly when she sees you at the table before her grin turns to a wry smirk.");
 					writeSpeech("cafedark","","Sorry about that, I missed you two coming in.");
@@ -413,7 +413,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("maid","","Two coffees.");
 				writeText("The waitress nods, looking over the both of you.");
 
-				if(checkFlag('cafedark','Start')){
+				if(checkFlag('cafedark','Visited')){
 					writeSpeech("cafedark","","I'll be back with that in just a minute - sorry to interrupt you two~!");
 					writeText("maidF blushes for a second as the woman bounces off, her skirt going almost indecently high with each step.");
 					writeSpeech("player","","She seems nice.");
@@ -454,20 +454,20 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeSpeech("player","","...Huh. I mean, not what I was expecting, but I'd have to be an idiot to turn that down.");
 					writeText("Her expression brightens.");
 					writeSpeech("maid","","Wonderful! I'll talk to her about it tomorrow. Believe me, you will absolutely <i>adore</i> what she can do with her-");
-					if(checkFlag('cafedark','Start'))
+					if(checkFlag('cafedark','Visited'))
 						writeSpeech("cafedark","","Two coffees-!");
 					else
 						writeSpeech("???","images/cafedark/cafedark.jpg","Two coffees-!");
 					writeText("There's a loud bang as maidF jumps enough for her hips to hit the table, her eyes going wide as the waitress steps towards you both.");
 					writeText("A thick silence reigns for a moment as maidF bites her lip gently.");
-					if(checkFlag('cafedark','Start'))
+					if(checkFlag('cafedark','Visited'))
 						writeSpeech("cafedark","","...Are you okay?");
 					else
 						writeSpeech("???","images/cafedark/cafedark.jpg","...Are you okay?");
 					writeSpeech("maid","","<i><b>Fine, thank you.</b></i>");
 					writeText("Taking a slow, deep breath, maidF collects herself and smiles gently.");
 					writeSpeech("maid","","It's fine, just a bit of bad timing. Not your fault at all.");
-					if(checkFlag('cafedark','Start'))
+					if(checkFlag('cafedark','Visited'))
 						writeSpeech("???","images/cafedark/cafedark.jpg","...Okay. I'll just leave you to it.");
 					else
 						writeSpeech("cafedark","","...Okay. I'll just leave you to it.");
@@ -519,20 +519,20 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeSpeech("player","","...Huh. I mean, not what I was expecting, but I'd have to be an idiot to turn that down.");
 					writeText("Her expression brightens.");
 					writeSpeech("maid","","Wonderful! I'll talk to her about it tomorrow. Believe me, you will absolutely <i>adore</i> what she can do with her-");
-					if(checkFlag('cafedark','Start'))
+					if(checkFlag('cafedark','Visited'))
 						writeSpeech("cafedark","","Two coffees-!");
 					else
 						writeSpeech("???","images/cafedark/cafedark.jpg","Two coffees-!");
 					writeText("There's a loud bang as maidF jumps enough for her hips to hit the table, her eyes going wide as the waitress steps towards you both.");
 					writeText("A thick silence reigns for a moment as maidF bites her lip gently.");
-					if(checkFlag('cafedark','Start'))
+					if(checkFlag('cafedark','Visited'))
 						writeSpeech("cafedark","","...Are you okay?");
 					else
 						writeSpeech("???","images/cafedark/cafedark.jpg","...Are you okay?");
 					writeSpeech("maid","","<i><b>Fine, thank you.</b></i>");
 					writeText("Taking a slow, deep breath, maidF collects herself and smiles gently.");
 					writeSpeech("maid","","It's fine, just a bit of bad timing. Not your fault at all.");
-					if(checkFlag('cafedark','Start'))
+					if(checkFlag('cafedark','Visited'))
 						writeSpeech("???","images/cafedark/cafedark.jpg","...Okay. I'll just leave you to it.");
 					else
 						writeSpeech("cafedark","","...Okay. I'll just leave you to it.");
@@ -563,20 +563,20 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeSpeech("player","","...Huh. I mean, not what I was expecting, but I'd have to be an idiot to turn that down.");
 					writeText("Her expression brightens.");
 					writeSpeech("maid","","Wonderful! I'll talk to her about it tomorrow. Believe me, you will absolutely <i>adore</i> what she can do with her-");
-					if(checkFlag('cafedark','Start'))
+					if(checkFlag('cafedark','Visited'))
 						writeSpeech("cafedark","","Two coffees-!");
 					else
 						writeSpeech("???","images/cafedark/cafedark.jpg","Two coffees-!");
 					writeText("There's a loud bang as maidF jumps enough for her hips to hit the table, her eyes going wide as the waitress steps towards you both.");
 					writeText("A thick silence reigns for a moment as maidF bites her lip gently.");
-					if(checkFlag('cafedark','Start'))
+					if(checkFlag('cafedark','Visited'))
 						writeSpeech("cafedark","","...Are you okay?");
 					else
 						writeSpeech("???","images/cafedark/cafedark.jpg","...Are you okay?");
 					writeSpeech("maid","","<i><b>Fine, thank you.</b></i>");
 					writeText("Taking a slow, deep breath, maidF collects herself and smiles gently.");
 					writeSpeech("maid","","It's fine, just a bit of bad timing. Not your fault at all.");
-					if(checkFlag('cafedark','Start'))
+					if(checkFlag('cafedark','Visited'))
 						writeSpeech("???","images/cafedark/cafedark.jpg","...Okay. I'll just leave you to it.");
 					else
 						writeSpeech("cafedark","","...Okay. I'll just leave you to it.");
@@ -1109,7 +1109,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("...");
 			writeText("You and maidF talk for some time while shopping, maidF gradually relaxing a bit more around you, though she seemed pretty exasperated by mistressF's public antics and even apologized on mistressF's behalf.");
 			writeText("It was obviously unnecessary, but she seemed happier for it.");
-			writeText("After that, you simply discussed minor things - how you're a counselor, how she works as a contracted housekeep, and a few other mundane things.");
+			writeText("After that, you simply discussed minor things - how you're a counselor, how she works as a contracted housekeeper, and a few other mundane things.");
 			writeText("Of course, when the subject of your... <b>unique</b> methods came up, you decided to be fairly upfront about it.");
 			writeSpeech("maid","","Hypnosis?");
 			writeText("She shakes her head, looking amused.");
@@ -1179,7 +1179,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("maidF's eyes are unfocused, but she nods.");
 			writeSpeech("maid","","I am very close to Mistress.");
 			writeSpeech("player","","...Huh. Neat.");
-			writeText("Driven by scientific curiousity, you ask,");
+			writeText("Driven by scientific curiosity, you ask,");
 			writeSpeech("player","","Just how close do you mean?");
 			writeSpeech("maid","","I love being used. Mistress likes it when I eat her out, and I love pleasing Mistress.");
 			writeSpeech("player","","Well, there go my doubts... You're completely under, aren't you?");
@@ -1241,8 +1241,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("maid","","I did... and I was hoping to also invite you to my place again afterwards, if you were interested.");
 			writeSpeech("player","","I would be more than happy to. Lead the way.");
 			writeText("...");
-			if(!checkFlag('cafedark','Start')) {
-				if(!checkFlag('maid','cafeDark'))
+			if(checkFlag('cafedark','Start')) {
+				if(checkFlag('maid','cafeDark'))
 					addFlag('maid','cafeDark');
 				writeText("You two get seated at the cafe pretty quickly, given that cafedarkF is currently handling customers.");
 				writeText("Being the proprietor has its perks.");
@@ -1277,7 +1277,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("maid","","Well, you can imagine the rest. mistressF was very casual about things, which was nice back then. It's still nice, actually, though she's mellowed out quite a bit since then. She used to play matchmaker with half the campus, which was... interesting, to say the least.");
 			writeSpeech("player","","Sounds like you two are really close.");
 			writeText("She smiles fondly, nodding.");
-			writeSpeech("maid","","We are. It can be a bit of challenge with her sometimes, but she's always been more than worth it.");
+			writeSpeech("maid","","We are. It can be a bit of a challenge with her sometimes, but she's always been more than worth it.");
 			writeSpeech("maid","","...Ah, I got a bit sappy there, didn't I? Was there anything else you wanted to ask about?");
 			if(!checkFlag('maid','Chat2'))
 				writeFunction("writeEncounter('maidA2b')", "\"How long have you been working as a maid?\"");
@@ -1625,7 +1625,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("You slide all the way forward, your cockhead sliding against her stomach as your weight presses the base of your shaft against her.");
 			writeText("You hold that position for a few seconds, slowly shifting your hips as you feel her clit rubbing against your shaft as she moans, desperately trying to hold still.");
 			writeSpeech("player","","...Two...");
-			writeText("You slowly draw yourself back, using your hand to press your shaft down against her pussy as you do, the slick sensation feeling incredible you pull all the way back.");
+			writeText("You slowly draw yourself back, using your hand to press your shaft down against her pussy as you do, the slick sensation feeling incredible as you pull all the way back.");
 			writeText("When your head is finally lined up with her hole again, you can't help but pause and grin down at her as she tries, and fails, to keep from shifting her hips against you.");
 			writeText("The feeling of frustration mounts in her eyes as seconds go by, her movements getting more and more obvious as she rolls her hips.");
 			writeText("Finally, right when you see that she's about to snap-");
@@ -1666,7 +1666,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("maid","","<i><b>Y-Yesss...~!</b></i>");
 			writeSpeech("player","","And you want to <i>just keep cumming</i> as long as I'm inside of you, <i><b>right?</b></i>");
 			writeText("Rather than answering, she just throws her head back, her legs pressing hard against the bed as she keeps orgasming.");
-			writeText("So, you just fuck her even harder, her uncontrolled squeezing bringing you closer and close to the edge.");
+			writeText("So, you just fuck her even harder, her uncontrolled squeezing bringing you closer and closer to the edge.");
 			writeSpeech("player","","But you know what feels even better? What'll make you cum <i>even harder?</i>");
 			writeText("You squeeze down on her thighs tighter, <b>slamming</b> your cock into her with every thrust.");
 			writeSpeech("player","","You'll have the strongest, mind-numbing orgasm of your life when I <i>cum inside.</i>");
@@ -1819,7 +1819,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("She nods, biting her lip.");
 			writeSpeech("maid","","M-Making you cum...! Feeling you fill my holes with your jizz, and <i>using</i> me like a <i><b>sex-toy...!</b></i>");
 			writeSpeech("player","","Very good. Now tell me, <i><b>slut...</b></i> When is the <i>only</i> time you can orgasm?");
-			writeSpeech("maid","","W-When I'm making"+(data.player.gender == "man" ? " Master or Mistress " : " one of my Mistresses ")+"cum...! When mistressF squeezes my head between my thighs and cums all over my face, or when you <i>pump me <b>full</b> of cum~!</i>");
+			writeSpeech("maid","","W-When I'm making"+(data.player.gender == "man" ? " Master or Mistress " : " one of my Mistresses ")+"cum...! When mistressF squeezes my head between her thighs and cums all over my face, or when you <i>pump me <b>full</b> of cum~!</i>");
 			writeSpeech("player","","That's right.");
 			writeText("You run a hand along her thigh, smirking up at her.");
 			writeSpeech("player","","<i><b>Good girl.</b></i>");
@@ -1908,7 +1908,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Hearing you mutter that, you can see mistressF get visibly more excited.");
 			writeSpeech("mistress","","Yes, yes, yes...! Pump my slutty maid full~! You've got us both so horny, so blow your hot, sticky load inside your <i>sex-toy~!</i>");
 			writeSpeech("maid","","Inside...~! M-*Master, p-please~!"+(checkFlag('maid','OrgasmLock') ? " Make me cum with your jizz~!" : ""));
-			writeText("maidF's sqeezing gets even more sporadic as her breathing speeds up, mistressF's hands spreading maidF again as she stares down at your cock, almost enchanted by the sight.");
+			writeText("maidF's squeezing gets even more sporadic as her breathing speeds up, mistressF's hands spreading maidF again as she stares down at your cock, almost enchanted by the sight.");
 			writeSpeech("player","","Cumming!");
 			writeBig("images/mistress/threesome2.jpg","Art by Oreteki18kin");
 			writeSpeech("maid","","<i><b>YES~!</b></i>");
@@ -1918,7 +1918,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("mistress","","Waah~!?");
 			writeText("She gives a small shout as you pull completely out, your cock mere inches from her face as you buck your hips again and spurt cum all over her.");
 			writeText("mistressF's shock wears off quickly, at which point she lets out a happy giggle.");
-			writeSpeech("mistress","","I must;'ve done good to get a reward, *Master~");
+			writeSpeech("mistress","","I must've done good to get a reward, *Master~");
 			writeText("Her face half-covered in cum, mistressF looks back down at maidF's pussy, letting out a small coo as she sees how much cum is spilling out.");
 			writeBig("images/mistress/threesome3.jpg","Art by Oreteki18kin");
 			writeText("mistressF's hand goes down a bit, pooling a bit of the cum in her hand for a second before letting it drip down again, teasing maidF a bit in the process.");
@@ -1949,10 +1949,10 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("She lets out a laugh, enjoying every second as you push deeper and deeper into her, before slowly pulling back out.");
 			writeText("maidF's face is getting spattered with every thrust, each drop on her skin making her squirm and moan more.");
 			writeText("She's getting off on this <b>hard.</b>");
-			writeText("Notcing this, mistressF smirks.");
+			writeText("Noticing this, mistressF smirks.");
 			writeSpeech("mistress","","Oh, and maidF?");
 			writeSpeech("maid","","Hah~?");
-			writeSpeech("mistress","","I want a nice, <i>fat</i> load, and you went a drained so much... You know what to do, don't you?");
+			writeSpeech("mistress","","I want a nice, <i>fat</i> load, and you went and drained so much... You know what to do, don't you?");
 			writeText("You can feel maidF's breathing speed up beneath you.");
 			writeSpeech("mistress","","<i><b>Lick.</b></i>");
 			writeText("There's no hesitation as maidF's mouth goes to your balls, hungrily teasing them with her lips and tongue.");
@@ -1965,13 +1965,13 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("You bring her face to yours, making her look you in the eyes as you speak.");
 			writeSpeech("player","","Are you that desperate for discipline, <i><b>bitch?</b></i>");
 			writeText("She shudders as you degrade her, but she keeps smirking despite it.");
-			writeSpeech("mistress","","It's been years since I was anything but a dom. If you want me to submit in front of my fucktoy, <i>*Master,</i> then you'll need to <i>earn it~</i>");
+			writeSpeech("mistress","","It's been years since I was anything but a domme. If you want me to submit in front of my fucktoy, <i>*Master,</i> then you'll need to <i>earn it~</i>");
 			writeText("She's willful...");
 			writeText("But that's only going to make things more fun.");
 			writeText("You maintain eye contact, focusing on her as you time your thrusts.");
 			writeSpeech("player","","You're enjoying this, aren't you?");
 			writeSpeech("mistress","","Oh, so much~");
-			writeText("The rhythmic slapping your your hips against hers rings out like a metronome, the only interruption to it being mistressF's moans and maidF's ball-worshipping.");
+			writeText("The rhythmic slapping of your hips against hers rings out like a metronome, the only interruption to it being mistressF's moans and maidF's ball-worshipping.");
 			writeSpeech("player","","I bet you think you can outlast me, don't you? That I'll cum while going <b>deeper</b> and <b>deeper.</b>");
 			writeText("She blinks once, her focus shifting briefly before she laughs again.");
 			writeSpeech("mistress","","Your words, not mine~");
@@ -1981,15 +1981,15 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("She swallows sharply, her eyes continuing to unfocus.");
 			writeSpeech("player","","There's nothing you want more than to be dominated, and reduced to a cum-drinking <i>cum-dump <b>breeding-bitch.</b></i>");
 			writeText("her body tenses up sharply, another throaty hum of pleasure coming from her throat.");
-			writeSpeech("mistress","","I... I feels...?");
+			writeSpeech("mistress","","I... I feel...?");
 			writeSpeech("player","","You feel <b>sensitive,</b> don't you?");
 			writeText("She doesn't even realize she's been put under, her pleasure growing as you release her chin and keep fucking her.");
 			writeSpeech("mistress","","Y-Yes...");
 			writeSpeech("player","","You feel <b>empty</b> when I pull out, don't you?");
 			writeSpeech("mistress","","H-Hn...!");
-			writeSpeech("player","","But you feel so <b>full</b> when I'm inside... Right, <b>bitch></b>");
+			writeSpeech("player","","But you feel so <b>full</b> when I'm inside... Right, <b>bitch?</b>");
 			writeText("mistressF bites her lip, failing to keep in a groan of pleasure.");
-			writeSpeech("player","","And every single thrust just makes you feel more and more like you belong, like the only thing you <i>deserve</i> to be used by me.");
+			writeSpeech("player","","And every single thrust just makes you feel more and more like you belong, like the only thing you <i>deserve</i> is to be used by me.");
 			writeText("You give her cheek a light slap, her cunt squeezing tightly as you do.");
 			writeSpeech("player","","You might be maidF's mistress, mistressF...");
 			writeSpeech("player","","But you're <i><b>my <font size='+1'>bitch.</font></b></i>");

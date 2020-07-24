@@ -740,7 +740,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Your hands go to her hips as you grasp them firmly, no words coming from her as she takes your head into her mouth excitedly.");
 			writeBig("images/kuro/8-1.jpg","Art by Enoshima Iki");
 			writeText("She bobs up and down pretty deep to start, her tongue flicking against your head whenever she reaches the top, before flattening it and letting your cock drag against it as she takes you more than half-way down with each movement.");
-			writeText("Her hand also moves fairly quickling, alternating pressure around your shaft - squeezing tight at the bottom, then relaxing a little as reaches the top and comes back down.");
+			writeText("Her hand also moves fairly quickly, alternating pressure around your shaft - squeezing tight at the bottom, then relaxing a little as reaches the top and comes back down.");
 			writeSpeech("player","","You seem pretty determined to cum.");
 			writeText("She just hums in reply, the vibrations making your cock twitch in response for a moment... at which point she starts humming more.");
 			writeText("Still, you're not in this position so that you can use your mouth for talking...");
@@ -753,13 +753,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("The feeling of her mouth around you gets a bit tighter as she focuses on taking you deeper with each bob, barely taking any time at all to start pressing her lips against your balls every second as the wet sound of cock-choked moans fills the air.");
 			writeText("Her hand stops focusing on your shaft at all, her throat taking you balls-deep with every thrust, instead focusing on gently toying with your sack, gently rolling it around as her breathing gets more and more labored.");
 			writeText("You're not focused on holding out at all, letting her push you closer and closer to the edge... and really, trying to get off quickly yourself. She deserves her reward, after all.");
-			writeText("Switching up technique on a girl right before she finishes is generally not the best plan, so you just focus on the long, slow, forceful drags across her pussy as just barely spread her lips as kuroF works for that orgasm.");
+			writeText("Switching up technique on a girl right before she finishes is generally not the best plan, so you just focus on the long, slow, forceful drags across her pussy as you spread her lips while kuroF works for that orgasm.");
 			writeText("It isn't much longer before you hit the edge, your hips bucking just a bit as you let out the first rope into her mouth, and she cums.");
 			writeSpeech("kuro","","<i><b><font size='+1'>MMMU~!</font></b></i>");
 			writeText("Her body shudders on top of you, her thighs coming together and squeezing around your head as her throaty moans milk every drop she can get out of you.");
 			writeText("It only takes a few seconds for you to finish, but she keeps shuddering on top of you for a good half-minute before finally coming to a stop, her breathing becoming gentle as she recovers, pulling her head up a bit until only your tip remains in her mouth.");
 			writeBig("images/kuro/8-2.jpg","Art by Enoshima Iki");
-			writeText("She stays like for a few more seconds before finally lifting her head all the way up. A bit of the jizz spilled out while she was cumming, but most of it ended up in her mouth.");
+			writeText("She stays like that for a few more seconds before finally lifting her head all the way up. A bit of the jizz spilled out while she was cumming, but most of it ended up in her mouth.");
 			writeSpeech("kuro","","T-That was... amazing.");
 			writeText("And given that she's speaking clearly, she swallowed.");
 			writeText("Running your hand along her ass, you gently move her to the side a bit as she lays back on the bed.");
@@ -777,7 +777,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("...");
 			writeText("One hand teases her chest roughly, her moans spilling out uncontrollably as you gently pinch at her nipple.");
 			writeSpeech("kuro","","N-Nuohfuckfuckfuck...!");
-			writeText("Her legs squeeze you tightly against her, your cock as deep as it can go as her eyes shut tightly.");
+			writeText("Her legs squeeze your body tightly against her, your cock as deep as it can go as her eyes shut tightly.");
 			writeText("You tighten your other hand's grasp on her thigh, a sharp gasp coming from her.");
 			writeSpeech("player","","How many?");
 			writeSpeech("kuro","","T-Three...!");
@@ -894,7 +894,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Leaning back fully, your head going against the bed, you feel your cock twitch as she works vigorously to make you cum, and it's working.");
 			writeText("She throats your cock, swallowing around your length as you get closer to the edge, every part of your cock being played with by her mouth, and you don't last much longer.");
 			writeText("When you thrust your hips up, your cock twitching rapidly, she takes you as deep as she can.");
-			writeText("Each rope spurts down her throat, the head massaged again and again as she swallows around you, milking every drop she get from your cock.");
+			writeText("Each rope spurts down her throat, the head massaged again and again as she swallows around you, milking every drop she can get from your cock.");
 			writeText("But it's not quite enough, as you can feel her pull away a bit, her lips dragging across your shaft as she inhales sharply through her nose.");
 			writeBig("images/kuro/8-2.jpg","Art by Enoshima Iki");
 			writeText("When you're finished, she raises her mouth away from your shaft, still breathing heavily a bit.");
@@ -979,7 +979,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeBig("images/kuro/8-4.jpg","Art by Enoshima Iki");
 			writeText("You're pretty sure you're out of juice at this point, but from the way kuroF's eyes roll up and her mouth lolls open in pleasure, you don't think she cares.");
 			writeText("She just lays there, a half-conscious and <b>thoroughly</b>-fucked mess, as you pull your cock out.");
-			writeText("Her pussy tries to keep squeezing around you, but it just makes your cum spill out as you get a good luck at how you stretched her out.");
+			writeText("Her pussy tries to keep squeezing around you, but it just makes your cum spill out as you get a good look at how you stretched her out.");
 			writeText("You have half a mind to head out and let her recover as-is, but...");
 			writeSpeech("player","","...Can you hear me?");
 			writeText("She just responds with a little bit of twitching and panting.");
@@ -1019,7 +1019,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("While she presses her lips against yours, you can feel her pushing her hips against you too, her skirt falling to the floor as she presses her ass against your cock through your clothes.");
 			writeSpeech("kuro","","How about we take this to the bed, stud~? I've got a nice classic position you might like~");
 			writeSpeech("player","","Gladly.");
-			writeText("You pull of your pants as she steps towards the bed. Sitting back on it, she gently presses your chest back until you're laying down, before getting on the bed herself.");
+			writeText("You pull off your pants as she steps towards the bed. Sitting back on it, she gently presses your chest back until you're laying down, before getting on the bed herself.");
 			writeText("Placing her legs on either side of your head, she lays her body against yours, her tits pressing against your chest, as you hear her give another satisfied hum.");
 			writeSpeech("kuro","","God, you look wonderful from this angle too, playerTitle Counselor~ Absolutely <i>delicious~!</i>");
 			writeBig("images/kuro/8-1.jpg","Art by Enoshima Iki");
@@ -1034,9 +1034,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She moans around your cock, her breathing getting a little labored as she tries to focus on your cock again.");
 			writeText("You have half a mind to try increasing her sensitivity, but this is fine for now...");
 			writeText("Her hand carefully strokes your shaft whenever she raises her head, her lips and fingers just barely apart as she twists her wrist just enough to change up the pressure.");
-			writeText("She pauses near the top this time, her hand continue to stroke you, but her mouth just barely below your tip...");
+			writeText("She pauses near the top this time, her hand continuing to stroke you, but her mouth just barely below your tip...");
 			writeSpeech("kuro","","Hm~!");
-			writeText("With a satisfied hum, she traces along the bottom of your head with her tongue, lapping at roughly as she keeps jerking you off faster and faster.");
+			writeText("With a satisfied hum, she traces along the bottom of your head with her tongue, lapping at you roughly as she keeps jerking you off faster and faster.");
 			writeText("Of course, neither of you plan on stopping with just a bit of oral...");
 			writeText("Slowly bringing her mouth all the way up, you feel a bit of her spit dribble onto your head, her hand smearing it around sloppily as she looks back at you.");
 			writeSpeech("kuro","","Ready for the next part, lover~?");
@@ -1086,7 +1086,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("...");
 			writeText("Laying on her back, her head over the side of the bed, kuroF keeps uselessly fingering herself while you thrust into her throat.");
 			writeText("The wet, sloppy sounds of you using her mouth like a sextoy fill the room as she tries to moan around your shaft.");
-			writeSpeech("player","","That throat of yours feel better than your cunt, doesn't it?");
+			writeSpeech("player","","That throat of yours feels better than your cunt, doesn't it?");
 			writeText("Even half-choked by cock, you can still recognize her attempt to say 'Yes', her body quivering a bit.");
 			writeText("Drawing your body back a bit, you pull your cock out of her mouth as she gasps sharply, taking deep breaths.");
 			writeText("You give her a few seconds, before asking,");
@@ -1424,7 +1424,7 @@ function writeEvent(name) { //Plays the actual event.
 				writeSpeech("kuro","","He's... a new guy at school. And he's not a bad size...");
 			}
 			if (data.player.gender == "woman") {
-				writeSpeech("kuro","","She's... a new counselor at school. And she's not a bad size...");
+				writeSpeech("kuro","","She's... a new girl at school. And she's not a bad size...");
 			}
 			writeText("Her eyes drift down as she says that, her lollipop rolling around in her mouth for a second.");
 			writeText("She changes her grip again, the sound of her jacking you off getting even louder.");
@@ -1715,8 +1715,8 @@ function writeEvent(name) { //Plays the actual event.
 					writeText("That's for another day, though. For now, a shower and back to work...");
 				}
 				data.player.location = "vintageStreet";
-				writeFunction("changeLocation(data.player.location)", "Finish");
 			}
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "kuro4" : {//hypno into mindbreak sex
@@ -1884,7 +1884,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("kuro","","Mm, someone feels excited~");
 			writeText("Sliding down your underwear too, her breathing hitches slightly as your cock springs out, making her grin widely.");
 			writeSpeech("kuro","","Beautiful as always, hun~ You take a seat, and I'll get right to <i>servicing you~</i>");
-			writeText("Kneeling down in front of you, she grins up up at you from beside your cock.");
+			writeText("Kneeling down in front of you, she grins up at you from beside your cock.");
 			writeBig("images/kuro/5-1.jpg","Art by Enoshima Iki");
 			writeText("With a wink and a smile, she brings her mouth down around your head, teasing at it gently as her tongue dances around the tip.");
 			writeText("Bobbing down, she moans deeply as her hand strokes you, enjoying every moment of blowing you.");
@@ -1901,7 +1901,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Given how one of her hands seems to be between her legs, she's even getting off on taking you into her mouth.");
 			writeText("Again and again, she takes you deep, bringing you closer and closer to the edge...");
 			writeText("Reaching forward, you grab the back of her head and, for a moment, pause.");
-			writeText("She she gives a slight nod up at you, you grasp her hair in your fist and <b>pull.</b>");
+			writeText("She gives a slight nod up at you, you grasp her hair in your fist and <b>pull.</b>");
 			writeSpeech("kuro","","<i><b>MMF~!</b></i>");
 			writeText("Bouncing her forward and back, you let out a throaty groan as you rapidly throatfuck her, using her mouth like a cocksleeve.");
 			writeText("The rapid, controlled rate is what finally puts you over, your cum spurting into her mouth before you pull out a bit.");
@@ -2076,7 +2076,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				if(checkTrust('kuro') < 21){
 					setTrust('kuro', 21);
 				}
-				writePhoneSpeech("kuro","","Gmorning mister counciler!! Howya doin?");
+				writePhoneSpeech("kuro","","Gmorning playerMister counciler!! Howya doin?");
 				writePhoneChoices("Good morning to you too","Morning kuroF","What's the hizzity-hizzaps, kuroF-dawg?");
 				break;
 			}
@@ -3009,7 +3009,7 @@ switch (requestType) {
 				var finalResult = true;
 				if (encounterArray[number].location != null) {
 					var finalLocation = encounterArray[number].location;
-					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map" && data.player.gps == true) { //check the location
+					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map") { //check the location
 						if (encounterArray[number].time.includes(data.player.time)) { //check the time
 							if (encounterArray[number].trustMin <= checkTrust(character.index) && encounterArray[number].trustMax >= checkTrust(character.index)) { //check the trust requirements
 								if (encounterArray[number].day == "even" && data.player.day%2 == 1) {
@@ -3083,24 +3083,24 @@ switch (requestType) {
 			if (newItems[item].price != 0) {
 				if (newItems[item].key == false) {
 					document.getElementById('output').innerHTML += `
-						<div class = "shopItem" onclick = "purchase('`+newItems[item].name+`','`+newItems[item].image+`','`+newItems[item].price+`','`+newItems[item].key+`')">
-							<p class = "shopName">`+newItems[item].name+`</p>
-							<p class = "shopDesc">`+newItems[item].description+`</p>
-							<p class = "shopPrice">$`+newItems[item].price+`</p>
-							<img class ="shopImage" src="`+newItems[item].image+`">
-						</div>
-						<br>
+					<div class = "shopItem" onclick = "purchase('`+newItems[item].name+`','`+newItems[item].image+`','`+newItems[item].price+`','`+newItems[item].key+`')">
+					<p class = "shopName">`+newItems[item].name+`</p>
+					<p class = "shopDesc">`+newItems[item].description+`</p>
+					<p class = "shopPrice">$`+newItems[item].price+`</p>
+					<img class ="shopImage" src="`+newItems[item].image+`">
+					</div>
+					<br>
 					`;
 				}
 				else {
 					if (checkItem(newItems[item].name) == false) {
 						document.getElementById('output').innerHTML += `
 						<div class = "shopItem" onclick = "purchase('`+newItems[item].name+`','`+newItems[item].image+`','`+newItems[item].price+`','`+newItems[item].key+`')">
-								<p class = "shopName">`+newItems[item].name+`</p>
-								<p class = "shopDesc">`+newItems[item].description+`</p>
-								<p class = "shopPrice">$`+newItems[item].price+`</p>
-								<img class ="shopImage" src="`+newItems[item].image+`">
-							</div>
+						<p class = "shopName">`+newItems[item].name+`</p>
+						<p class = "shopDesc">`+newItems[item].description+`</p>
+						<p class = "shopPrice">$`+newItems[item].price+`</p>
+						<img class ="shopImage" src="`+newItems[item].image+`">
+						</div>
 						<br>
 						`;
 					}
@@ -3123,13 +3123,13 @@ switch (requestType) {
 					//If the character has no unread texts
 					//If the character does not have this text in their text history
 					if (
-					data.story[phoneHistoryCheck].unreadText != true &&
-					data.story[phoneHistoryCheck].textHistory.includes(phoneArray[number].index) != true &&
-					data.story[phoneHistoryCheck].textEvent != phoneArray[number].index
-					) {
+						data.story[phoneHistoryCheck].unreadText != true &&
+						data.story[phoneHistoryCheck].textHistory.includes(phoneArray[number].index) != true &&
+						data.story[phoneHistoryCheck].textEvent != phoneArray[number].index
+						) {
 						//If the phone record is using the old system...
-						if (phoneArray[number].trust != null) {
-							var finalResult = false;
+					if (phoneArray[number].trust != null) {
+						var finalResult = false;
 							if (checkTrust(character.index) == phoneArray[number].trust) { //if the player's trust with the character meets the text requirement
 								for (phoneEventCheck = 0; phoneEventCheck < data.story.length; phoneEventCheck++) { //go through the characters
 									if (data.story[phoneEventCheck].index == character.index) { //check what text is currently assigned to the character
