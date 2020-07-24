@@ -292,7 +292,7 @@ function writeEncounter(scene) {
 			break;
 		}
 		case "filing": {
-			var moneyMade = 5 + data.player.counseling;
+			var moneyMade = 10 + data.player.counseling;
 			passTime();
 			data.player.money += moneyMade;
 			updateMenu();
