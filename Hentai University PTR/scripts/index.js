@@ -504,6 +504,7 @@ function replaceCodenames(text) {
 	for (geminiLoop = 0; geminiLoop < 5; geminiLoop++) {
 		if (data.player.nickname != null) {
 			text = text.replace('*Master', data.player.nickname);
+			text = text.replace('*master', data.player.nickname);
 		}
 		text = text.replace('playerF', data.player.name);
 		text = text.replace('playerGender', data.player.gender);
