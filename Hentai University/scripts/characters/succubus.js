@@ -328,7 +328,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "Why? Is it a front for another succubus or something?");
 			writeSpeech("succubus", "demon.jpg", "No.<br>Because I got a papercut on the flier.");
 			writeSpeech("player", "", "... I'm sorry?");
-			writeSpeech("succubus", "demon.jpg", "Listen master, I'm a demon. I don't experience most of the inconveniences of modern life. I get a bad omen, I stay away.");
+			writeSpeech("succubus", "demon.jpg", "Listen *master, I'm a demon. I don't experience most of the inconveniences of modern life. I get a bad omen, I stay away.");
 			writeSpeech("player", "", "I'll be sure to be careful around the dangerous edges of the paper then, and keep an eye out.");
 			writeSpeech("succubus", "demon.jpg", "Hah hah, very funny. Lemme know if the maid stuff pans out, I can help you dirty up whatever they clean.");
 			writeText("succubusF gives you a sly wink.");

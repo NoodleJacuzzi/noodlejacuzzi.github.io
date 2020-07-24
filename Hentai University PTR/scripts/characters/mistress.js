@@ -1640,7 +1640,7 @@ switch (requestType) {
 				var finalResult = true;
 				if (encounterArray[number].location != null) {
 					var finalLocation = encounterArray[number].location;
-					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map") { //check the location
+					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map" && data.player.gps == true) { //check the location
 						if (encounterArray[number].time.includes(data.player.time)) { //check the time
 							if (encounterArray[number].trustMin <= checkTrust(character.index) && encounterArray[number].trustMax >= checkTrust(character.index)) { //check the trust requirements
 								if (encounterArray[number].day == "even" && data.player.day%2 == 1) {
@@ -1672,9 +1672,9 @@ switch (requestType) {
 					}
 				}
 				else {
-					//console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
+					console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
 					var requirements = checkRequirements(encounterArray[number].requirements);
-					//console.log(requirements);
+					console.log(requirements);
 					if (requirements != true) {
 						finalResult = false;
 					}
@@ -1714,24 +1714,24 @@ switch (requestType) {
 			if (newItems[item].price != 0) {
 				if (newItems[item].key == false) {
 					document.getElementById('output').innerHTML += `
-					<div class = "shopItem" onclick = "purchase('`+newItems[item].name+`','`+newItems[item].image+`','`+newItems[item].price+`','`+newItems[item].key+`')">
-					<p class = "shopName">`+newItems[item].name+`</p>
-					<p class = "shopDesc">`+newItems[item].description+`</p>
-					<p class = "shopPrice">$`+newItems[item].price+`</p>
-					<img class ="shopImage" src="`+newItems[item].image+`">
-					</div>
-					<br>
+						<div class = "shopItem" onclick = "purchase('`+newItems[item].name+`','`+newItems[item].image+`','`+newItems[item].price+`','`+newItems[item].key+`')">
+							<p class = "shopName">`+newItems[item].name+`</p>
+							<p class = "shopDesc">`+newItems[item].description+`</p>
+							<p class = "shopPrice">$`+newItems[item].price+`</p>
+							<img class ="shopImage" src="`+newItems[item].image+`">
+						</div>
+						<br>
 					`;
 				}
 				else {
 					if (checkItem(newItems[item].name) == false) {
 						document.getElementById('output').innerHTML += `
 						<div class = "shopItem" onclick = "purchase('`+newItems[item].name+`','`+newItems[item].image+`','`+newItems[item].price+`','`+newItems[item].key+`')">
-						<p class = "shopName">`+newItems[item].name+`</p>
-						<p class = "shopDesc">`+newItems[item].description+`</p>
-						<p class = "shopPrice">$`+newItems[item].price+`</p>
-						<img class ="shopImage" src="`+newItems[item].image+`">
-						</div>
+								<p class = "shopName">`+newItems[item].name+`</p>
+								<p class = "shopDesc">`+newItems[item].description+`</p>
+								<p class = "shopPrice">$`+newItems[item].price+`</p>
+								<img class ="shopImage" src="`+newItems[item].image+`">
+							</div>
 						<br>
 						`;
 					}
@@ -1754,13 +1754,13 @@ switch (requestType) {
 					//If the character has no unread texts
 					//If the character does not have this text in their text history
 					if (
-						data.story[phoneHistoryCheck].unreadText != true &&
-						data.story[phoneHistoryCheck].textHistory.includes(phoneArray[number].index) != true &&
-						data.story[phoneHistoryCheck].textEvent != phoneArray[number].index
-						) {
+					data.story[phoneHistoryCheck].unreadText != true &&
+					data.story[phoneHistoryCheck].textHistory.includes(phoneArray[number].index) != true &&
+					data.story[phoneHistoryCheck].textEvent != phoneArray[number].index
+					) {
 						//If the phone record is using the old system...
-					if (phoneArray[number].trust != null) {
-						var finalResult = false;
+						if (phoneArray[number].trust != null) {
+							var finalResult = false;
 							if (checkTrust(character.index) == phoneArray[number].trust) { //if the player's trust with the character meets the text requirement
 								for (phoneEventCheck = 0; phoneEventCheck < data.story.length; phoneEventCheck++) { //go through the characters
 									if (data.story[phoneEventCheck].index == character.index) { //check what text is currently assigned to the character

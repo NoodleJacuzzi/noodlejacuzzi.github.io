@@ -375,7 +375,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "potionFiller": {
 			writeText("Setting the baking soda and flower petal aside from the moment, you'll need to help nurseF with the first ingredient.");
 			writeSpeech("player", "", "Let's make that potion filler then.");
-			writeSpeech("nurse", "", "Indeed. It will dilute my work enough that effectively we'll have an unlimited amount of each potion we create, quite handy if I say so myself. We have everything we need already, aside from the listed 'four hours of hard labor'. That said, when I wrote this entry I was apparently quite the shut-in, I'm sure a big strong figure of masculinity will have no trouble!");
+			writeSpeech("nurse", "", "Indeed. It will dilute my work enough that effectively we'll have an unlimited amount of each potion we create, quite handy if I say so myself. We have everything we need already, aside from the listed 'four hours of hard labor'. That said, when I wrote this entry I was apparently quite the shut-in, I'm sure a big strong figure of dominance will have no trouble!");
 			writeText("...");
 			writeText("The two of you spend a few hours preparing materials, measuring out solutions, and most of all constantly stirring and mixing fluids. By the end of it you're both tired and it's gotten a bit late.");
 			writeSpeech("nurse", "", "Mmm, I've worked up a sweat, and you have too.");
@@ -617,7 +617,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("She's positively giddy with anticipation, urging you to hurry until she goes quiet you finally fish out what she's been waiting for.");
 			writeSpeech("nurse", "", "... It's here...");
 			writeSpeech("player", "", "Needy little slut. You know, maybe you should do some checking first? Maybe one of the ingredients-");
-			writeSpeech("nurse", "", "Nooo~! They're fine, I'm sure, you're a very good boy, I trust you~!  Now please, no more hesitation~!");
+			writeSpeech("nurse", "", "Nooo~! They're fine, I'm sure, you're a very good *boy, I trust you~!  Now please, no more hesitation~!");
 			writeBig("images/nurse/reward1-3.jpg", "Art by Oreteki18kin");
 			writeSpeech("nurse", "", "Aaaah~!<br>So eager, have you been feeling pent up~?<br>It's so... So large...<br>It's not healthy to abstain from pleasure, you know... Make sure to let loose regularly, aaannnnDDD~ OOOH~!<br>... *huff* T-that wasn't me cumming, you know... <br>I'm not so... So perverted I'd cum from you filling my insides.");
 			writeBig("images/nurse/reward1-4.jpg", "Art by Oreteki18kin");
