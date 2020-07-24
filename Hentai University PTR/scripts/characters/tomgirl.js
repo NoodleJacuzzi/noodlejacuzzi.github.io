@@ -19,7 +19,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "tomgirl3", name: "tomgirl is here", location: 'classroomA', time: "MorningEvening", itemReq: "", trustMin: 2, trustMax: 5, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "tomgirl4", name: "tomgirl is here", location: 'classroomA', time: "MorningEvening", itemReq: "", trustMin: 6, trustMax: 6, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "tomgirlReturn", name: "tomgirl is here", location: 'classroomA', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "newQuo", name: "tomgirl is here", location: 'classroomA', time: "MorningEvening", itemReq: "", trustMin: 101, trustMax: 102, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "newQuo", name: "tomgirl is here", location: 'classroomA', time: "MorningEvening", itemReq: "", trustMin: 101, trustMax: 666, type: "tab", top: 0, left: 0, day: "both",},
 ]
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -223,7 +223,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			}
 			writeSpeech("tomgirl", "new.jpg", "I also had something Important I wanted to ask you. It's a little embarrassing.");
 			writeFunction("writeEncounter('tomgirlnew3a')", "Ask about what's up");
-			if (checkFlag('succubus', 'newCorruption')==true) {
+			if (checkFlag('succubus', 'newCorruption')==true && checkTrust('tomgirl') != 666) {
 				writeSpeech("player", "", "<i>At this point there's no question, I could use the corruption ability I learned from succubusF on him. </i>");
 				writeFunction("writeEncounter('tomgirlnew4a')", "Talk about corruption");
 			}
