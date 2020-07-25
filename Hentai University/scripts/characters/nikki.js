@@ -122,7 +122,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","Well, it might just be me, but film study seems to be a bit disconnected. Was that just a personal-interest thing? I know I took a few classes like that myself.");
 			writeText("She perks up slightly, her hands separating and sitting neatly on each thigh now.");
 			writeSpeech("nikki","","Ah, a family friend showed me a Hitchcock film some time ago, and I thought it would be good to take a fun course alongside some of the more difficult ones that term.");
-			writeText("You bring your hand up from your pocket, the pendant glinting slightly in the light/");
+			writeText("You bring your hand up from your pocket, the pendant glinting slightly in the light.");
 			writeSpeech("player","","And all the PE courses?");
 			writeSpeech("nikki","","A sound mind resides within a sound body.");
 			writeText("Her eyes move to the pendant for a moment... but she quickly refocuses.");

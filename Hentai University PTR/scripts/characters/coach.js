@@ -1025,7 +1025,7 @@ function writeEvent(name) { //Plays the actual event.
 			updateMenu();
 			break;
 		}
-			case "coach6c": {
+		case "coach6c": {
 			writeText("You practically rip her panties off, as you move to fuck her.");
 			writeBig("images/coach/6c1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("coach", "", "Fuck me, *Master. I've been a good slut for you, right? So please... Please fuck me!");

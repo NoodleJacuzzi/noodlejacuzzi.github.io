@@ -528,26 +528,26 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "nagatoroBunny2-1": { //unfinished
 			writeHTML(`
-				im imagebox/nagatoro/nagatoroBunny2-1.jpg
+				im images/nagatoro/nagatoroBunny2-1.jpg
 				t The sound of tearing fabric fills the air as nagatoroF presents himself. 
 				sp nagatoro; Alright, these ones were made to tear. The designer probably had your kind of libido in mind. Lemme grab some lube and... <br>Hoo... Alright, I'm ready.
-				im imagebox/nagatoro/nagatoroBunny2-2.jpg
+				im images/nagatoro/nagatoroBunny2-2.jpg
 				sp nagatoro; Whoa whoa, what're you doing?!
 				sp player; You said-
 				sp nagatoro; I know, but geez! You're a real brute, you know that? And what's with this position? It's totally-
-				im imagebox/nagatoro/nagatoroBunny2-4.jpg
+				im images/nagatoro/nagatoroBunny2-4.jpg
 				sp nagatoro; Ah~! Stu... This was supposed to be romantiiiIC~! 
 				t Despite his protests at least one part of his body is honest. 
-				im imagebox/nagatoro/nagatoroBunny2-5.jpg
+				im images/nagatoro/nagatoroBunny2-5.jpg
 				sp nagatoro; Oooh~! 
 				sp player; It's about time I got a little payback for all that teasing. I'm not stopping until you admit defeat. 
 				sp nagatoro; Ah, I'm sorry! I was just having a little fun! 
 				sp player; I had a different kind of defeat in mind...<br>I'll bet this feels a lot better than your toys, right? 
 				t You pull back and grip nagatoroF by the arms, bouncing him up and down on your lap until...
-				im imagebox/nagatoro/nagatoroBunny2-6.jpg
+				im images/nagatoro/nagatoroBunny2-6.jpg
 				sp nagatoro; Cumming~!
 				t He lets out a girlish shriek as your 'punishment' becomes too much for him, and he unloads through the air at the same time as you fill him up.
-				im imagebox/nagatoro/nagatoroBunny2-7.jpg
+				im images/nagatoro/nagatoroBunny2-7.jpg
 				sp nagatoro; H-holy... Wow, I actually came from just my... <br>Ah, what a mess... Are you gonna make me do this to all my clothes?<br>... You're lucky you're cute.
 			`);
 			break;
