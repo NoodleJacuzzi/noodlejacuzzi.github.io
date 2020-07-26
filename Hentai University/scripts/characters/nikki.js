@@ -624,7 +624,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("nikki","","Lead the way.");
 			writeText("...");
 			writeText("Shutting the door behind you, you once again wrap the pendant's cord around your wrist as you turn.");
-			writeText("Sure enough, you can hear her breathing hitch slightly when you turn around and it catches");
+			writeText("Sure enough, you can hear her breathing hitch slightly when you turn around and it catches.");
 			writeText("You jostle your wrist slightly, the pendant swaying from it as nikkiF seems to relax a bit, the measured smile going back to a more natural, neutral expression.");
 			writeSpeech("player","","What got you into doing this sort of thing, if you don't mind my asking?");
 			writeSpeech("nikki","","It's stress relief. Constantly focusing on grades and exams, on forming relations with businesses and exploiting familial connections... It's tiresome.");
@@ -1072,7 +1072,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player","","Eyes forward.");
 			writeText("nikkiF looks ahead, meeting your gaze with a minute smile.");
 			writeBig("images/nikki/2-1.jpg","Art by Enoshima Iki");
-			writeSpeech("player","","No bra, hm? Do you usually wear go around campus without one?");
+			writeSpeech("player","","No bra, hm? Do you usually go around campus without one?");
 			writeSpeech("nikki","","Given that I usually wear my jacket with it... Yes~");
 			writeSpeech("player","","Good girl. In that case...");
 			writeText("Stepping toward her, you watch as her eyes follow with the pendant again, the light drumming audible as you sit down on the small couch.");
