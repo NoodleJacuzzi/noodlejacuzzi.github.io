@@ -108,7 +108,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "orange2b": {
 			writeSpeech("player", "", "How are you feeling now, orangeF? Anything bothering you?");
-			writeText("You've spent the last half an hour slowly working orangeF down into trance. Simple guided meditation stuff, but she was willing and ready, so it wasn't nearly as much of an issue as you had feared.");
+			writeText("You've spent the last half an hour slowly working orangeF down into a trance. Simple guided meditation stuff, but she was willing and ready, so it wasn't nearly as much of an issue as you had feared.");
 			writeSpeech("orange", "", "I mean... Yes. Lots of things.");
 			writeText("Huh. At this point you'd think that she'd be pretty past anything bugging her. Whatever the issues are must run pretty deep.");
 			writeSpeech("player", "", "Alright then. Why don't you let me know what's up then. You can trust me. I'm here to help, right? Just like I helped sportsF.");

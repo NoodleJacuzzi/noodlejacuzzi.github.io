@@ -380,7 +380,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("The more she tries to squirm, the rougher you act with her, finally, you reach a breaking point.");
 			writeBig("images/sports/gympress3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("As you pull out, sportsF lies there, between her practice and the rough treatment she just got, you don't think she'll be cleaning for a bit. Between ragged breaths, she speaks up.");
-			writeSpeech("sports", "", "Thank you for using me *Master. I'll clena up soon. I just need a moment. My body aches, in all the best ways right now.")
+			writeSpeech("sports", "", "Thank you for using me *Master. I'll clean up soon. I just need a moment. My body aches, in all the best ways right now.")
 			writeFunction("changeLocation(data.player.location)", "Well, if she says so. You give her a quick pat on the head as you leave her in the afterglow and head home.");
 			break;
 		}
@@ -438,7 +438,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "sportsfinalhome1": {//Titjob Home
-			writeText("sportsF slowly slinks to her knees in front of you, licking her lips before lubing your cock with her spit. Once you're covered, she gets to work squeezing her tits around you.");
+			writeText("sportsF slowly sinks to her knees in front of you, licking her lips before lubing your cock with her spit. Once you're covered, she gets to work squeezing her tits around you.");
 			writeBig("images/sports/7d1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/7d2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("sports", "class.jpg", "Mmm... I love the feeling of your dick between my breasts, *Master.")
@@ -510,10 +510,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("sports", "sportsP.jpg", "Of course, *Master. Your pet is here for your pleasure.")
 			writeText("She keels on the bed, ass up, and head down.");
 			writeSpeech("sports", "sportsP.jpg", "Please, *Master, fill me up. Your pet needs it soo badly.")
-			writeText("You line yourself up behind sportsF, brabbing onto her shoulders and pushing her forcefully onto your cock. The motion is awkward, but does a lot to reinforce her position as a toy for you tonight.");
+			writeText("You line yourself up behind sportsF, grabbing onto her shoulders and pushing her forcefully onto your cock. The motion is awkward, but does a lot to reinforce her position as a toy for you tonight.");
 			writeBig("images/sports/catdoggy1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeBig("images/sports/catdoggy2.jpg", "Art by Himitsu Kessha Vanitas");
-			writeText("You match your thrusts with psuhing and pulling sportsF back and forth in the opposite directions of your movement, making the sex more violent, and making a nice SMACK everytime you bottom out, and her ass smacks against your hips. She screams out in pleasure as you tense up, ready to cum.");
+			writeText("You match your thrusts with pushing and pulling sportsF back and forth in the opposite directions of your movement, making the sex more violent, and making a nice SMACK everytime you bottom out, and her ass smacks against your hips. She screams out in pleasure as you tense up, ready to cum.");
 			writeBig("images/sports/catdoggy3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You fill her, deep as you can manage, before pulling out and letting your cum spill out of her now empty cunt.");
 			writeBig("images/sports/phoneReward.jpg", "Art by Himitsu Kessha Vanitas");
@@ -526,7 +526,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("sports", "sportsP.jpg", "Ah, *Master! Thank you. I love looking into your eyes as you use me.")
 			writeText("You enter her gently. Working your way in slowly as she wiggles and tries to help you push in deeper and deeper.");
 			writeBig("images/sports/missioncat1.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("sports", "sportsP.jpg", "Ooooh~, *Master! Thanks you, thank you, thank you.");
+			writeSpeech("sports", "sportsP.jpg", "Ooooh~, *Master! Thank you, thank you, thank you.");
 			writeText("Now that she's loosened up, she's ready to go faster. You thrust in harder now, pushing her to her limit.");
 			writeBig("images/sports/missioncat2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You keep at it, and as you get close, you lean in and whisper to your pet.");
@@ -675,7 +675,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			writePhoneSpeech("sports","","I... *Master, are you sure?");
 			writePhoneSpeech("player","","Do you not think I can manage breaking her?");
 			writePhoneSpeech("sports","","To be honest, *Master, I'm nervous about it. I don't want anything to go wrong...");
-			writePhoneSpeech("player","","Relax, sportsF. I can do this. But, do be safe, I'll have you do something to make my job easier.");
+			writePhoneSpeech("player","","Relax, sportsF. I can do this. But be safe, I'll have you do something to make my job easier.");
 			writePhoneSpeech("sports","","That sounds good, *Master. What is it you need me to do?");
 			writePhoneSpeech("player","","Get me a compromising picture of her. It doesn't need to be anything incredibly damning, but it has to be something I can work into blackmail material.");
 			writePhoneSpeech("sports","","That's... devious, *Master. I'll try to get something. It'll probably take me a while, though.");
@@ -730,7 +730,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 		}
 		case "sportsphoneReward": {
 			writePhoneImage("images/sports/phoneReward.jpg", "Art by Himitsu Kessha Vanitas")
-			writePhoneSpeech("SlackerSavior","","Congrats! You've finished all of sportsF's content! She's done! Feel free to meet her in the gym and class for some repeat sex scenes. Hope you enjoyed.");
+			writePhoneSpeech("SlackerSavior","scripts\gamefiles\characters\slacker.jpg","Congrats! You've finished all of sportsF's content! She's done! Feel free to meet her in the gym and class for some repeat sex scenes. Hope you enjoyed.");
 			break;
 		}
 		default: {
@@ -773,7 +773,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/sports/2b3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("player", "", "Quiet, sportsF. Just <i>relax</i>.");
 			writeSpeech("sports", "class.jpg", "You... Ahh... playerT playerF.");
-			writeText("She squirms under your fingers. Whatever fight she had left in her giving way to pleasure as you fondle her breasts.");
+			writeText("She squirms under your fingers. Whatever fight she has left giving way to pleasure as you fondle her breasts.");
 			writeSpeech("player", "", "See, that's more like it. Doesn't that feel good?");
 			writeSpeech("sports", "class.jpg", "Please... I can't...");
 			writeText("The right reaction, but not enough... Maybe...");
@@ -920,7 +920,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Her words are no louder than a gasp as you pull out of her and admire your handiwork. God, you love this job.");
 			writeSpeech("player", "", "Take a breath and <i>relax</i>, sportsF. Tell me how you feel.");
 			writeText("Nearly two full minutes pass as she catches her breath before she speaks again. Just as you were afraid you had taken it too far and broken her for good, you hear her start to whisper between ragged pants.");
-			writeSpeech("sports", "", "Felt. So. Good. Feel. So. Full. Thanks you, playerH. I'm sorry I ever doubted your methods. Please keep tutoring me.");
+			writeSpeech("sports", "", "Felt. So. Good. Feel. So. Full. Thank you, playerH. I'm sorry I ever doubted your methods. Please keep tutoring me.");
 			writeSpeech("player", "", "Good girl. But there's something wrong.");
 			writeText("A brief look of panic crosses her face, as she sits upright and looks at you in the eyes.");
 			writeSpeech("sports", "", "What? What's wrong, playerH? I promise, I'll fix it. Please. If I don't have you, I don't know if I can ever relax again!");
@@ -955,7 +955,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Oh, this is a treat. You keep letting her speak. She's lost in her own fantasies right now, and it would be a shame to snap her out of them just yet. As she keeps going, you start to rub your cock on her face. Slowly teasing all over, every touch of your cock on her body sending small shockwaves of pleasure as she drools all over herself and spills her desires to you.");
 			writeSpeech("sports", "class.jpg", "After licking your balls, teasing all up and down your cock. Then pushing myself lower, and getting my tongue all over your taint as your balls twitch on my forehead. I thought about how it would feel and taste to stick my tongue in your ass. Making sure you were clean all over. Doing everything I could to please my *Master.");
 			writeSpeech("sports", "class.jpg", "I watched a bunch of blowjob porn last night. Tried to practice deepthroating with my fingers. Pretending my fingers were your massive cock. But nothing could prepare me for how good this would feel. On my knees. Where I should be. In front of my *Master.");
-			writeText("She looks directly into your eyes now. Looking up with her cock on her face, precum leaking onto her forehead, and drool all over her face, still trailing down and staining her blouse. Looking down, you see her skirt is soaked, as she sits in her own juices.");
+			writeText("She looks directly into your eyes now. Looking up with your cock on her face, precum leaking onto her forehead, and drool all over her face, still trailing down and staining her blouse. Looking down, you see her skirt is soaked, as she sits in her own juices.");
 			writeSpeech("sports", "class.jpg", "Thank you so much *Master, for making me your slave.");
 			writeSpeech("player", "", "Open your mouth, slave. And get ready to have your fantasies come true.");
 			writeText("She immediately stops speaking and opens her mouth as wide as possible. Her hands jump. No longer touching herself, instead solely focused on guiding you into her mouth and pleasuring you.");
@@ -976,7 +976,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Sometimes you scare yourself with how good you are at this.");
 			writeSpeech("player", "", "Again, your enthusiasm is noted, but I'd prefer we do this again, and you dying on my cock won't help that. Though maybe one day I can hold you down until you run out of air, and then keep using you as you're passed out.");
 			writeText("You can see her shudder at the idea. <i>Damn</i> you're good.");
-			writeSpeech("player", "", "Do another run of your tongue from the bottom of my balls to the tip of my cock before you get back to it. It gives you time to rest, and varies the pleasure I feel. While you have my cock in you mouth, use your hands to either stroke the parts of my cock you can't get into your mouth, play with my balls, or, if you really want to push yourself, grab my ass and try to pull yourself in as far as you can. Just be sure not to overdo it. Just like on the court, we don't want you to hurt yourself. Because then you'd need rest before we could do this again.");
+			writeSpeech("player", "", "Do another run of your tongue from the bottom of my balls to the tip of my cock before you get back to it. It gives you time to rest, and varies the pleasure I feel. While you have my cock in your mouth, use your hands to either stroke the parts of my cock you can't get into your mouth, play with my balls, or, if you really want to push yourself, grab my ass and try to pull yourself in as far as you can. Just be sure not to overdo it. Just like on the court, we don't want you to hurt yourself. Because then you'd need rest before we could do this again.");
 			writeText("She gets her mouth back onto your cock. Working her way deeper down, before she hits a limit. When she does, she takes her hands off your cock and grips your ass, trying to pull her way down to your base. To her credit, for a first timer, she made a lot of progress.");
 			writeText("You start to get worried she's over done it, but just when you're about to force her off, she slowly pulls herself off with another satisfying <b>POP</b>.");
 			writeSpeech("sports", "class.jpg", "I didn't think I'd ever find training that felt better than volleyball, but this feels so much better than a workout.");
@@ -1025,7 +1025,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/sports/6c2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You move faster and faster, and you feel her respond in kind. You can feel her moving as you hold her up, moving her hips back and forth as much as she can while she's held like this. When you squeeze her tit, you feel her cunt clench, bringing you closer and closer to the edge.");
 			writeSpeech("player", "", "Get ready, slave. I'm going to fill you up.");
-			writeText("There aren't any words, she's too focused on pleasuring you too form a coherent thought, but you feel her lean forward and redouble her efforts. She gives up any real control she had, and turns into a pliable toy in your hand, doing everything she can to move with your desires and milk your cock for all it's worth.");
+			writeText("There aren't any words, she's too focused on pleasuring you to form a coherent thought, but you feel her lean forward and redouble her efforts. She gives up any real control she had, and turns into a pliable toy in your hand, doing everything she can to move with your desires and milk your cock for all it's worth.");
 			writeBig("images/sports/6c3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("As you cum, you squeeze her breast as hard as you can, and pull her back into you. She screams in pleasure and you feel her own orgasm as she twitches and tries desperately to hold herself up.");
 			writeBig("images/sports/6c4.jpg", "Art by Himitsu Kessha Vanitas");
@@ -1106,7 +1106,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("sports", "class.jpg", "Of course, *Master. After all, all of my holes, all of my being, belongs to you. I'd be honored to clean your cock with my body.");
 			writeText("And once again, your cock which had been softening, begins to harden as she plays with your cock. First, with her hands, making sure you're hard again, before wrapping her tits around your shaft.");
 			writeSpeech("sports", "class.jpg", "And the only proper tool I have to clean you are my breasts.. And my mouth.");
-			writeText("She slowly rubs your cock between her breasts, before pulling back. Once your cock is free, she moves her mouth down to your balls. Taking each one into her mouth individually, and swirling her tongue around them. Slowly working her way up, before she licks from the base of your cock all the way to your head. She takes your cock head into her mouth moving her tongue in small circles as you feel her play with your urethra. She pulls back briefly and looks up at you. With a wink, she slowly works her head all the way down, nearly taking you to the base, filling her mouth and throat with her cock. She holds there for a moment, before pulling back up, and getting her tits around your cock once again.");
+			writeText("She slowly rubs your cock between her breasts, before pulling back. Once your cock is free, she moves her mouth down to your balls. Taking each one into her mouth individually, and swirling her tongue around them. Slowly working her way up, before she licks from the base of your cock all the way to your head. She takes your cock head into her mouth moving her tongue in small circles as you feel her play with your urethra. She pulls back briefly and looks up at you. With a wink, she slowly works her head all the way down, nearly taking you to the base, filling her mouth and throat with your cock. She holds there for a moment, before pulling back up, and getting her tits around your cock once again.");
 			writeSpeech("sports", "class.jpg", "I've been practicing.");
 			writeText("You grunt your approval as she gets back to work. She moves her tits around your cock faster and faster, occasionally giving you a break before shifting from her breasts to her mouth, and back again.");
 			writeBig("images/sports/7d2.jpg", "Art by Himitsu Kessha Vanitas");
@@ -1114,7 +1114,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("sports", "class.jpg", "Please, *Master. Cum on me. Mark me as yours.");
 			writeText("She sticks out her tongue, licking your cock as she keeps jerking you off with her tits. The whole thing is finally too much as you cum again.");
 			writeBig("images/sports/7d3.jpg", "Art by Himitsu Kessha Vanitas");
-			writeText("The first spurt catches you both by surprise, but sportsF quickly gets her mouth around your cock head and starts to swallow. You feel her tongue playing with yout tip, and she keeps moving her tits around your cock until you've finally stopped. Doing one last pass with her tongue, she pulls her mouth off of you, and gives a final theatrical gulp.");
+			writeText("The first spurt catches you both by surprise, but sportsF quickly gets her mouth around your cock head and starts to swallow. You feel her tongue playing with your tip, and she keeps moving her tits around your cock until you've finally stopped. Doing one last pass with her tongue, she pulls her mouth off of you, and gives a final theatrical gulp.");
 			writeBig("images/sports/7d4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("sports", "class.jpg", "Delicious!~");
 			writeText("A few deep breaths, and sportsF looks up to you again.");
@@ -1139,7 +1139,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/sports/8b3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You work your tongue into her mouth as she grinds on your cock.");
 			writeBig("images/sports/8b4.jpg", "Art by Himitsu Kessha Vanitas");
-			writeText("You pull back for a moment and enjoy your pet's look of ecstacy before continuing.");
+			writeText("You pull back for a moment and enjoy your pet's look of ecstasy before continuing.");
 			writeBig("images/sports/8b5.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You begin to push her onto her back, but she stops you.");
 			writeSpeech("sports", "sportsP.jpg", "No, *Master, today I'm showing you my appreciation. Please, lie back, and let your pet do all the work.");

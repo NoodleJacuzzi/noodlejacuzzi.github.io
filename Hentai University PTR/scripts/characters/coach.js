@@ -304,7 +304,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "coach10": {
 			writeText("coachF smiles at you as you come near.");
-			writeSpeech("coach", "", "Hey, playerF! Is the student wellness program is seeing results? I hope they're not giving you too much trouble.");
+			writeSpeech("coach", "", "Hey, playerF! Is the student wellness program seeing results? I hope they're not giving you too much trouble.");
 			writeSpeech("player", "", "Not at all, coachF.");
 			writeText("You sit down across the desk from her, leaning in.");
 			writeFunction("loadEncounter('coach', 'coach10a')", "In fact, I think we should celebrate our success tonight.");
@@ -470,7 +470,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("coach", "", "First, *Master, let me show you something...");
 			writeText("coachF gets the lube again, applying a generous amount to the dildo before rubbing it as if it was your cock. You see her use some of the same techniques she used to get you hard to make sure the thing is slick over every inch.");
 			writeSpeech("coach", "", "And now...");
-			writeText("coachF puts the dildo up to her lips, and opens her mouth wide. As she does, you see her other hand move down to her own ass, fingers probing, and again making sure everything is properly lubricated. coachF takes the dildo slowly into her mouth, pushing in and in, trying to take it all the way to the base. Her eyes bugle before she closes them, trying to suppress her gag reflex as she works the fake cock in, inch by inch. With every bit of progress she makes, you see her fingers working her asshole more and more open, probing deeper and deeper as well. Finally, without ever pulling out, she manages to get the dildo in her throat, all the way to its fake balls, and she opens her eyes in triumph.");
+			writeText("coachF puts the dildo up to her lips, and opens her mouth wide. As she does, you see her other hand move down to her own ass, fingers probing, and again making sure everything is properly lubricated. coachF takes the dildo slowly into her mouth, pushing in and in, trying to take it all the way to the base. Her eyes bulge before she closes them, trying to suppress her gag reflex as she works the fake cock in, inch by inch. With every bit of progress she makes, you see her fingers working her asshole more and more open, probing deeper and deeper as well. Finally, without ever pulling out, she manages to get the dildo in her throat, all the way to its fake balls, and she opens her eyes in triumph.");
 			writeText("Just as slowly as she worked the dildo in, she pulls the dildo out. Now that her ass is properly warmed up, her other hand comes back up. coachF places it against her throat, and you see the bulge in her throat work its way up, her fingers tracing the faint bulge of the fake cock head as it moves up her neck. When she finally pulls the dildo out, she holds it up beside her head, drool and spit trailing from her mouth to the dildo as she grins, wide as she can and coughs as she speaks up.");
 			writeSpeech("coach", "", "I've <i>cough</i> been taking tips from sportsF. She suggested practicing like this, and loaned me one of her training dildos. Now, sorry to keep you waiting, let me just...");
 			writeText("coachF places the dildo on the ground, attaching it by the bottom suction cup so that she can ride it as she works. There's just a moment of prep before she quickly sits, letting herself worm her way down as she settles back in place for the titjob she started.");
@@ -503,7 +503,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("coach", "", "Aaah!~ *Master!~ I'm still raw!~ Please...");
 			writeText("She bites the pillow as you push yourself further in. Her pleas are betrayed by the feeling of her ass around your cock, relaxing itself and allowing you further and further, before you quickly bottom out inside her.");
 			writeSpeech("player", "", "Please <i>what</i>, slut? Tell me what you need and I'll do it. If you <i>really</i> think you can't take it, if you really don't want me to fuck you into a mindless stupor, just tell me. I'll stop. If you can't take it, if you don't want this, I can always...");
-			writeText("You begin to pull out, slowly working your cock back out of her cock. Your cock head just barely begins to pass her rim when she screams.");
+			writeText("You begin to pull out, slowly working your cock back out of her cunt. Your cock head just barely begins to pass her rim when she screams.");
 			writeSpeech("coach", "", "<b>FUCK! NO PLEASE! FUCK ME MASTER! USE MY ASS! GIVE IT TO ME! FUCK ME LIKE THE STUPID SLUT I AM!</b>");
 			writeBig("images/coach/final1ab.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("And with that you shove yourself back in. Hilting your cock in her prepared ass immediately. There are times where you're loving, where you take your time. This isn't that. She wants to be used like a toy, and that's what you give her. As you thrust yourself in and out, hard and fast, the bed rocks, headboard slamming into the wall as you pound her like a cheap onahole. Underneath you, coachF is screaming your name, screaming for more. This pace is grueling, your thighs burn, and your hips hurt from how hard you're slamming into coachF's ass. You wouldn't be surprised if her ass is bruised. Luckily, at this pace, you don't last long at all, especially not with how well your slut's trained ass works itself to drain your balls. coachF is locked in a near perpetual orgasm, muscles in her ass seemingly twitching at random as she loses control. Those spasms send you over the edge in a matter of minutes.");
@@ -546,7 +546,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("coach", "", "Let me take care of you, *Master.");
 			writeBig("images/coach/6b2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("She practically dives back onto your cock, pushing herself deeper and deeper. She doesn't quite make it to your base, before pulling herself off and licking your balls.");
-			writeSpeech("coach", "", "I forgot how good it feels when your cock twitches in my throat. I can barely breathe, and all i can smell id your musk. <i>Fuck</i> it's so hot...");
+			writeSpeech("coach", "", "I forgot how good it feels when your cock twitches in my throat. I can barely breathe, and all i can smell is your musk. <i>Fuck</i> it's so hot...");
 			writeText("Taking a breath and admiring your now slobber covered cock, she starts to say something else when you reel your hand back and slap her.");
 			writeSpeech("player", "", "I didn't come here to hear your whore mouth babbling. Now get onto my cock, slut. If I hear anything other than gagging, I'll be taking this perfect cock to one of the other girls...");
 			writeText("At the suggestion you'd stop fucking her, she whimpers, and redoubles her efforts. Before getting back onto your cock, she gets to work licking. She starts at the head, and works her way down, taking your balls slowly into her mouth and pumping your cock with her free hand. Then, back up, just as slowly, until she gets back to your head, taking a moment to steel herself.");
@@ -576,7 +576,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You buck your hips wildly and grip her hips tight. At this point, you've stopped doing anything for her. You bring your cock in and out hard and fast as you can. You can feel her cunt gushing against your thighs, and hear her screaming as you use her like a toy, but none of it really registers. The only things you care about are the feeling of bottoming out in your personal slut's ass, her own body trying desperately to milk you of your cum and get her reward.");
 			writeSpeech("player", "", "Take it, you whore!");
 			writeBig("images/coach/6c8.jpg", "Art by Himitsu Kessha Vanitas");
-			writeText("You thrust in as deeps as you can before letting go. Filling her ass with your cum, and feeling her own orgasm as she loses control. You spend a few moments gasping and getting your breath back, and then pull out.");
+			writeText("You thrust in as deep as you can before letting go. Filling her ass with your cum, and feeling her own orgasm as she loses control. You spend a few moments gasping and getting your breath back, and then pull out.");
 			writeSpeech("player", "", "Good work, slut. Maybe I should use you like that more often.");
 			writeText("coachF, pleasure drunk from her orgasm, answers you in barely a whisper.");
 			writeSpeech("coach", "", "Please do, *Master.");
@@ -685,7 +685,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("You don't give her a chance to react before you're already moving down to her soaked cunt.");
 			writeBig("images/coach/finalcow1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("coach", "", "Maaaster!~");
-			writeText("You debate, just for a moment, covering her mouth to silence her moans and screams of pleasure. But the noises are just to good to stop. You take your time, coachF's cries and the feeling of her aching cunt trying its best to squeeze you dry not something you want to cut short. But all good things come to an end, and you finally reach the point of no return.");
+			writeText("You debate, just for a moment, covering her mouth to silence her moans and screams of pleasure. But the noises are just to good to stop. You take your time, coachF's cries and the feeling of her aching cunt trying its best to squeeze you dry is not something you want to cut short. But all good things come to an end, and you finally reach the point of no return.");
 			writeBig("images/coach/finalcow2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("coachF lets loose one final scream as you fill her to the brim.");
 			writeSpeech("coach", "", "<b>FUCK YES! MOO-STER! THANK YOU!~</b>");
@@ -707,7 +707,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She leans in as she tells you.");
 			writeSpeech("coach", "", "It's because I love showing off my slutty body to everyone. Knowing that only my *Master gets to use me. Teasing them, while thinking of all the ways you'd treat me that they would <i>never</i> think of. And that's why they don't deserve me. And why you do.")
 			writeSpeech("coach", "", "So, *Master... Did sportsF ever tell you where my hiding spot was?")
-			writeText("She leads you by the hand to a small alcove, hidden from the rest of the beach. Once there, she turns you you.");
+			writeText("She leads you by the hand to a small alcove, hidden from the rest of the beach. Once there, she turns to you.");
 			writeSpeech("coach", "", "How would you like to use your fuck toy, *Master?")
 			writeSpeech("player", "", "Well, I seem to remember getting a picture once, of a certain ass licking slut. I think maybe it's time to let her loose.")
 			writeText("You see her eyes light up at the thought, but she tries to play coy.");
@@ -782,7 +782,7 @@ function writeEvent(name) { //Plays the actual event.
 		case "coach2b": {
 			writeText("She doesn't look happy about it, but she stands up.");
 			writeSpeech("coach", "", "Couldn't just let me sleep... Uggh.");
-			writeSpeech("player", "", "You can sleep more in a bit, but first I need to see what from the training took.");
+			writeSpeech("player", "", "You can sleep more in a bit, but first I need to see what from the training you took.");
 			writeSpeech("player", "", "How do you feel, coachF?");
 			writeSpeech("coach", "", "Tired, playerH.");
 			writeSpeech("player", "", "That's normal. What did you think of the video?");
@@ -1044,7 +1044,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("coach", "", "If you're not done, *Master, then your slut is here to please.");
 			writeSpeech("player", "", "Then please me, slut. Get my cock in your ass.");
 			writeSpeech("coach", "", "I've... Never.. But, yes. I will *Master. Just let me...");
-			writeText("She slowly pushes herself backwards. You cock meeting resistance as it presses up against her tight, puckered hole. Slowly, she relaxes and starts to take you in.");
+			writeText("She slowly pushes herself backwards. Your cock meeting resistance as it presses up against her tight, puckered hole. Slowly, she relaxes and starts to take you in.");
 			writeBig("images/coach/6c7.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("coach", "", "Fuck, fuck fuck, fuck, fuck...");
 			writeText("Her curses are no louder than a whisper as she slowly inches your cock into herself. Bit by bit, she moves herself back and forth, trying to go a little deeper each time, and making good progress.");
@@ -1120,20 +1120,19 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("coach", "", "But the truth is... Deep down, I still <i>do</i> just want the simple things. I still do want to do my job, even if that means something a little different now. I still do want to get drunk, and enjoy my time off, even if that getting drunk is now in the company of good friends, not just alone on my couch.");
 			writeSpeech("coach", "", "And more than anything else, I still want to get laid. But now, that means I want my perfect *Master's cock to fill every part of me. Not just forcing lesser men to do their best, but having the best treat me like I deserve to be treated.");
 			writeText("coachF lets go of your collar and strips quickly. When she's finally naked, she turns to you and looks into your eyes, before letting her gaze fall to the floor and her head dip down. More in embarrassment than submission, but still.");
-			writeBig("images/coach/10c3.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("coach", "", "So, *Master. From the bottom of my heart. Thank you for what you've done to me.");
 			writeText("You stand there in a minute of stunned silence before making your next move.");
 			writeBig("images/coach/10c4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You pull her in and kiss her hard. The look of surprise on her face quickly melts into pleasure as you worm your tongue into her mouth.");
 			writeBig("images/coach/10c5.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("Finally, you pull back, coachF tries for a moment to push forward, keeping the kiss going before you hold her back and she shies back.");
-			writeSpeech("coach", "", "Thank you, *Master. Now... give me a minute. I have a something I think you'll enjoy.");
+			writeSpeech("coach", "", "Thank you, *Master. Now... give me a minute. I have something I think you'll enjoy.");
 			writeFunction("writeEvent('coach10d')", "You nod, and relax in her bed while she steals away to the closet.");
 			updateMenu();
 			break;
 		}
 		case "coach10d": {
-			writeText("Just a few minutes later, and coachF strides out of the closet.");
+			writeText("Just a few minutes later and coachF strides out of the closet.");
 			writeBig("images/coach/selfiecow.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("coach", "", "So, *Master... How do you want to use your lowly slut tonight?");
 			writeText("As she speaks, she pulls on her tits, teasing you with the sight of her nipples beneath her small, thin bikini.");
@@ -1155,7 +1154,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("coach", "", "There *Master, your slut is ready.");
 			writeBig("images/coach/10d4.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You reach down and get a rough grip on coachF's tits again, before moving your cock against her cleavage. As you press in, you feel the warmth of her breasts, and the slick feeling of the lube as you slide your cock in underneath her bikini.");
-			writeText("You begin to thrust, and as you do, you pull her tits up and down with your movements, using them as a tool to jerk yourself, even as you fuck them. coachF keeps her hands above her head, and underneath you you can feel her twisting and turning her hips and legs. She may have her hands under control, but she's obviously turned on, and feeling that bikini bottom rubbing against her as you pull and push her around must be driving her wild.");
+			writeText("You begin to thrust, and as you do, you pull her tits up and down with your movements, using them as a tool to jerk yourself, even as you fuck them. coachF keeps her hands above her head, and underneath you can feel her twisting and turning her hips and legs. She may have her hands under control, but she's obviously turned on, and feeling that bikini bottom rubbing against her as you pull and push her around must be driving her wild.");
 			writeSpeech("coach", "", "So rough, *Master.~ Ah!~ I take it my tits please you, then?~");
 			writeBig("images/coach/10d5.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You grunt an affirmation as you pick up the pace. The lube has done wonders for this. It's not as personally satisfying as having your slaves lube you up with their own spit, but the feeling is much smoother. Almost silky.");
@@ -1168,7 +1167,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/coach/phonereward.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("You're still idly using her tits to play with yourself as she licks her lips, trying to swallow any of your cum she can without moving.");
 			writeSpeech("coach", "", "Damn, *Master! Even after all those girls I sent you you <i>still</i> have this much cum to give your slut? I really don't deserve you, playerH.");
-			writeText("You pull yourself back, and take a moment to breathe before getting up and moving to the nightstand. coachF takes the moment to clean herself with her fingers, wiping herself off, then licking fingers clean, one at a time. She turns for a moment, and you grab the lube and double up on yourself, making sure your cock is slick everywhere as you get back onto the bed and surprise coachF by pushing her onto her stomach.");
+			writeText("You pull yourself back, and take a moment to breathe before getting up and moving to the nightstand. coachF takes the moment to clean herself with her fingers, wiping herself off, then licking her fingers clean, one at a time. She turns for a moment, and you grab the lube and double up on yourself, making sure your cock is slick everywhere as you get back onto the bed and surprise coachF by pushing her onto her stomach.");
 			writeSpeech("coach", "", "*Master! What are you-");
 			writeText("Her question is cut short as you place your cock up against her asshole.");
 			writeBig("images/coach/10d7.jpg", "Art by Himitsu Kessha Vanitas");
@@ -1317,7 +1316,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 		}
 		case "coachreward": {
 			writePhoneImage("images/coach/phonereward.jpg", "Art by Himitsu Kessha Vanitas")
-			writePhoneSpeech("SlackerSavior","","That's all for coldF for now! I'll be finishing her up soonish.");
+			writePhoneSpeech("SlackerSavior","","That's all for coachF for now! I'll be finishing her up soonish.");
 			break;
 		}
 	}

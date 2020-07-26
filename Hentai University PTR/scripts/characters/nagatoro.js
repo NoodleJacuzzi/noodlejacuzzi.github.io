@@ -526,7 +526,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "nagatoroBunny2-1": { //unfinished
+		case "nagatoroBunny2-1": {
 			writeHTML(`
 				im images/nagatoro/nagatoroBunny2-1.jpg
 				t The sound of tearing fabric fills the air as nagatoroF presents himself. 
@@ -552,7 +552,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "nagatoroBunny3-1": { //unfinished
+		case "nagatoroBunny3-1": {
 			writeHTML(`
 				im images/nagatoro/nagatoroBunny3-1.jpg
 				sp nagatoro; Honestly, you're insatiable.
