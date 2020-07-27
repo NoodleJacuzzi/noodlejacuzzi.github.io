@@ -830,7 +830,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("She wipes off most of the cum from her chest, using a small spray-bottle to help clean off most of the jizz in your hair.");
 				writeText("You're not sure what's in it, but it smells vaguely of lavender.");
 				writeText("It isn't long before you're both clean, nikkiF smiling contentedly back at you.");
-				writeSpeech("nikki","","Thank you for that, by the way. Feeling the titfuck in my pussy was... new. I look forward to all of the other things you'll be doing to me~ Unfortunately, I have some business I ought to attend to, so if you'll forgive the abruptness...");
+				writeSpeech("nikki","","Thank you for that, by the way. Feeling my inhibitions sliding away was... new. I look forward to all of the other things you'll be doing to me~ Unfortunately, I have some business I ought to attend to, so if you'll forgive the abruptness...");
 				writeText("She grabs her button-up, swiftly pulling it on.");
 				writeSpeech("player","","No problem. And as for next time... Well, you can expect some more play of that sort.");
 				writeText("nikkiF lets out a small chuckle.");
