@@ -14,10 +14,6 @@ function writeScene(scene) {
 				</div>
 				<div class="gridNotGames" id="NotGames">
 					<div class="nonGameContainer" id="newsFeed">
-						<p style="font-size: 120%">Important Links:</p>
-						<a href="https://www.patreon.com/noodlejacuzzi">Support me on Patreon (if you want)!</a>
-						<br><br>
-						<a href="https://discord.gg/B3AszYM">Come join the Noodle's Jacuzzi discord server!</a>
 						<p style="font-size: 120%">Latest News:</p>
 					</div>
 					<div class="nonGameContainer" id="patronList">
