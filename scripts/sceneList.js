@@ -192,6 +192,7 @@ function writeScene(scene) {
 				"images/HU3.JPG",
 				"images/HU4.JPG",
 				"images/HU5.JPG",
+				"images/HU6.jpg",
 			];
 			writeSlideshow("images/HU.png");
 			writeText("Hentai University v12");
