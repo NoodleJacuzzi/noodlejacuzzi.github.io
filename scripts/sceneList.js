@@ -162,7 +162,7 @@ function writeScene(scene) {
 		}
 		case "PQ": {
 			slideShow = [
-				"images/PrincessQuest.jpg",
+				"images/princessQuest.jpg",
 				"images/PQ1.JPG",
 				"images/PQ2.JPG",
 				"images/PQ3.JPG",
