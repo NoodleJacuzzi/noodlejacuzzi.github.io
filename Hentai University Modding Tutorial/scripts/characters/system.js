@@ -18,7 +18,7 @@ function writeEncounter(scene) {
 			writeText("Captain Cryptogreek can be messaged on his reddit account where he regularly posts captions. You can also shoot him an email if you'd like him to proofread or you'd like to commission his skills at cryptogreekcaptions@gmail.com");
 			writeSpecial("And special thanks to Stiggy752 for the CSS!");
 			writeFunction("writeEncounter('gettingStarted')", "Get started writing a mod");
-			writeFunction("writeEncounter('installation')", "How to isntall mods");
+			writeFunction("writeEncounter('installation')", "How to install mods");
 			break;
 		}
 		case "gettingStarted": {

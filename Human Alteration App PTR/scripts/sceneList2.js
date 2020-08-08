@@ -1416,7 +1416,7 @@ function writeScene(scene) {
 			break;
 		}
 		//Sister encounters
-		case "sister0Fail": {
+		case "sister0": {
 			writeSpeech("sister", "", "Fuck off  dweeb, I'm working. <br>... Nah, just messing with you *bro. Hey, have you noticed what's up with mom?");
 			writeText("You can't trigger an event right now. You'll need to put your plan into action by going to sleep if you want to do anything with sisterF.");
 			writeFunction("changeLocation(data.player.location)", "Go back");

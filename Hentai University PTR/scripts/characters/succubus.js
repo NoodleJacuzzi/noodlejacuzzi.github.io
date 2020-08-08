@@ -665,11 +665,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 				`);
 				writeFunction("writeEncounter('dominancePrompt')", "Have some dom/sub play fun");
 			}
-			if (checkFlag('succubus', 'mephF') != true) {
-				if (checkFlag('succubus', 'mission') == true) {
-					writeSpeech("succubus", "demon.jpg", "Hey, you play with demonF yet? He wasn't at his hotel, so I was able to swipe some stuff off him.");
-					if (galleryCheck('demon1') == true) {
-						writeFunction("writeEncounter('mephEnd')", "Talk about demonF");
+			if (checkTrust('demon') > 0) {
+				if (checkFlag('succubus', 'mephF') != true) {
+					if (checkFlag('succubus', 'mission') == true) {
+						writeSpeech("succubus", "demon.jpg", "Hey, you play with demonF yet? He wasn't at his hotel, so I was able to swipe some stuff off him.");
+						if (galleryCheck('demon1') == true) {
+							writeFunction("writeEncounter('mephEnd')", "Talk about demonF");
+						}
 					}
 				}
 			}

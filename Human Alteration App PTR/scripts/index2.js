@@ -640,7 +640,7 @@ var menuArray = [
 	{ID: "mobButton", name:"MOBILE VERSION", func: "mobileButton()", div: "buttonMenu"},
 ];
 
-var encounterArray = [
+var encounterDomArray = [
 	//character: "mom", index: "", text: "momF trust 0", requirements: "?trust mom 0;", altName: "", altImage: "", altColor: "", type: "button", top: 0, left: 0,},
 	{character: "mom", index: "sleep", text: "Go to sleep", requirements: "?location homePlayerRoom;", altName: "", altImage: "", altColor: "", type: "button", top: 55, left: 60,},
 	{character: "mom", index: "", text: "You can hear your mother in her room, schlicking sounds and wanton moans easily audible through her door. You should head to bed and fix this soon.", requirements: "?location homeFoyer; !flag mom ready; ?trust mom  0;", altName: "", altImage: "", altColor: "", type: "message", top: 55, left: 60,},
@@ -650,7 +650,60 @@ var encounterArray = [
 	{character: "mom", index: "mom4", text: "momF is here. You can enjoy the results of your alteration", requirements: "?location homeFoyer; ?flag mom ready; ?trust mom  3;", altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,},
 	{character: "mom", index: "mom4Fail", text: "momF is here.", requirements: "?location homeFoyer; !flag mom ready; ?trust mom 3;", altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,},
 	
-	{character: "sister", index: "sister2NeedItem", text: "You don't have what you need right now. Maybe you should head to the exotic shop?", requirements: "?location homeSisterRoom; ?flag sister ready; ?trust sister 2;", altName: "", altImage: "", altColor: "", type: "message", top: 55, left: 60,},
+	{character: "sister", index: "sister0", text: "sisterF is here", 
+	requirements: "?location homeSisterRoom; ?trust sister 0;", 
+	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
+	{character: "sister", index: "sister1", text: "sisterF is here", 
+	requirements: "?location homeSisterRoom; ?trust sister 1; ?flag sister ready;", 
+	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
+	{character: "sister", index: "sister1Fail", text: "sisterF is here", 
+	requirements: "?location homeSisterRoom; ?trust sister 1; !flag sister ready;", 
+	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
+	
+	{character: "sister", index: "sister2", text: "sisterF is here", 
+	requirements: "?location homeSisterRoom; ?trust sister 2; ?flag sister ready; ?item adultToy;", 
+	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
+	{character: "sister", index: "sister2NoItem", text: "You don't have what you need right now.", 
+	requirements: "?location homeSisterRoom; ?trust sister 2; ?flag sister ready; !item adultToy;", 
+	altName: "", altImage: "", altColor: "", type: "message", top: 0, left: 0,},
+	{character: "sister", index: "sister2Fail", text: "sisterF is here", 
+	requirements: "?location homeSisterRoom; ?trust sister 2; !flag sister ready;", 
+	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
+	{character: "sister", index: "sister2Fail", text: "sisterF is here", 
+	requirements: "?location homeSisterRoom; ?trust sister 2; !flag sister ready;", 
+	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
+	
+	{character: "sister", index: "sister3", text: "sisterF is here", 
+	requirements: "?location homeSisterRoom; ?trust sister 3; ?flag sister ready;", 
+	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
+	{character: "sister", index: "sister3Fail", text: "sisterF is here", 
+	requirements: "?location homeSisterRoom; ?trust sister 3; !flag sister ready;", 
+	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
+	
+	{character: "sister", index: "sister4", text: "sisterF is here", 
+	requirements: "?location homeSisterRoom; ?trust sister 4; ?flag sister ready; ?item plugPop; !flag sister sister4;", 
+	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
+	{character: "sister", index: "sister4NoItem", text: "sisterF is here", 
+	requirements: "?location homeSisterRoom; ?trust sister 4; ?flag sister ready; !item plugPop; !flag sister sister4;", 
+	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
+	{character: "sister", index: "sister5", text: "sisterF is here", 
+	requirements: "?location homeSisterRoom; ?trust sister 4; ?flag sister ready; ?item horseToy; ?item stretchTaffy; ?flag sister sister4;", 
+	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
+	{character: "sister", index: "sister5NoItem", text: "You don't have what you need right now.", 
+	requirements: "?location homeSisterRoom; ?trust sister 4; ?flag sister ready; !item horseToy; ?item stretchTaffy; ?flag sister sister4;", 
+	altName: "", altImage: "", altColor: "", type: "message", top: 0, left: 0,},
+	{character: "sister", index: "sister5NoItem", text: "You don't have what you need right now.", 
+	requirements: "?location homeSisterRoom; ?trust sister 4; ?flag sister ready; ?item horseToy; !item stretchTaffy; ?flag sister sister4;", 
+	altName: "", altImage: "", altColor: "", type: "message", top: 0, left: 0,},
+	{character: "sister", index: "sister5NoItem", text: "You don't have what you need right now.", 
+	requirements: "?location homeSisterRoom; ?trust sister 4; ?flag sister ready; !item horseToy; !item stretchTaffy; ?flag sister sister4;", 
+	altName: "", altImage: "", altColor: "", type: "message", top: 0, left: 0,},
+	{character: "sister", index: "sister5Fail", text: "sisterF is here", 
+	requirements: "?location homeSisterRoom; ?trust sister 4; !flag sister ready;", 
+	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
+	{character: "sister", index: "sisterQuo", text: "sisterF is here", 
+	requirements: "?location homeSisterRoom; ?trust sister 5;", 
+	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
 ];
 
 var locationArray = [
@@ -1730,35 +1783,72 @@ function printFunctionButton(type, name, top, left, target) {
 }
 
 function checkForEncounters() {
-	for (encounterIndex = 0; encounterIndex < encounterArray.length; encounterIndex++) {
-		console.log(encounterArray[encounterIndex].requirements);
-		var requirements = checkRequirements(encounterArray[encounterIndex].requirements);
-		if (requirements != false) {
-			console.log(requirements);
-			switch (encounterArray[encounterIndex].type) {
-				case "button": {
-					printFunctionButton(
-					"encounter",
-					encounterArray[encounterIndex].text, 
-					encounterArray[encounterIndex].top, 
-					encounterArray[encounterIndex].left, 
-					encounterArray[encounterIndex].index
-					);
-					break;
+	if (data.player.route == "dom") {
+		for (encounterIndex = 0; encounterIndex < encounterDomArray.length; encounterIndex++) {
+			console.log(encounterDomArray[encounterIndex].requirements);
+			var requirements = checkRequirements(encounterDomArray[encounterIndex].requirements);
+			if (requirements != false) {
+				console.log(requirements);
+				switch (encounterDomArray[encounterIndex].type) {
+					case "button": {
+						printFunctionButton(
+						"encounter",
+						encounterDomArray[encounterIndex].text, 
+						encounterDomArray[encounterIndex].top, 
+						encounterDomArray[encounterIndex].left, 
+						encounterDomArray[encounterIndex].index
+						);
+						break;
+					}
+					case "message": {
+						writeText(encounterDomArray[encounterIndex].text);
+						break;
+					}
+					default: {
+						printEncounterTab(
+						encounterDomArray[encounterIndex].character, 
+						encounterDomArray[encounterIndex].index,
+						encounterDomArray[encounterIndex].text,
+						encounterDomArray[encounterIndex].altName,
+						encounterDomArray[encounterIndex].altImage,
+						encounterDomArray[encounterIndex].altColor
+						);
+					}
 				}
-				case "message": {
-					writeText(encounterArray[encounterIndex].text);
-					break;
-				}
-				default: {
-					printEncounterTab(
-					encounterArray[encounterIndex].character, 
-					encounterArray[encounterIndex].index,
-					encounterArray[encounterIndex].text,
-					encounterArray[encounterIndex].altName,
-					encounterArray[encounterIndex].altImage,
-					encounterArray[encounterIndex].altColor
-					);
+			}
+		}
+	}
+	else {
+		for (encounterIndex = 0; encounterIndex < encounterSubArray.length; encounterIndex++) {
+			console.log(encounterSubArray[encounterIndex].requirements);
+			var requirements = checkRequirements(encounterSubArray[encounterIndex].requirements);
+			if (requirements != false) {
+				console.log(requirements);
+				switch (encounterSubArray[encounterIndex].type) {
+					case "button": {
+						printFunctionButton(
+						"encounter",
+						encounterSubArray[encounterIndex].text, 
+						encounterSubArray[encounterIndex].top, 
+						encounterSubArray[encounterIndex].left, 
+						encounterSubArray[encounterIndex].index
+						);
+						break;
+					}
+					case "message": {
+						writeText(encounterSubArray[encounterIndex].text);
+						break;
+					}
+					default: {
+						printEncounterTab(
+						encounterSubArray[encounterIndex].character, 
+						encounterSubArray[encounterIndex].index,
+						encounterSubArray[encounterIndex].text,
+						encounterSubArray[encounterIndex].altName,
+						encounterSubArray[encounterIndex].altImage,
+						encounterSubArray[encounterIndex].altColor
+						);
+					}
 				}
 			}
 		}

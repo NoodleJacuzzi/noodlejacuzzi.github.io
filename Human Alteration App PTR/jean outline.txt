@@ -1,0 +1,105 @@
+writeMessage(n) {
+	switch (n) {
+		case "sister0Fail": {
+			writeHTML(`
+				sp sister; Fuck off dweeb, I'm working. <br>... Nah, just messing with you *bro. Hey, have you noticed what's up with mom?
+				t You can't trigger anything right now. You'll need to put your plan into action by going to sleep if you want to do anything with sisterF.
+			`);
+		}
+		case "sister1Fail": {
+			writeSpeech("sister", "", "Fuck off. Working.");
+			writeText("She's obviously still sexually frustrated. You'll need to fine-tune her with the app to fix that. A purchase from the exotic shop should also help.");
+		}
+		case "sister2Fail": {
+			writeSpeech("sister", "", "Oh, hey bro. Listen, you haven't been hearing anything weird, have you?");
+			writeSpeech("player", "", "Nope. Why, you looking at weird anime porn?");
+			writeText("She's still way too reserved for you to pull anything directly. You'll need to fix that the with the app tonight.");
+		}
+		case "sister2Fail": {
+			writeText("Once your sister notices you, she closes her eyes and opens her mouth invitingly.");
+			writeSpeech("player", "", "Good girl.");
+			writeText("You can have some fun with her, but if you want to trigger another event you'll need to use the app.");
+		}
+	}
+}
+
+encounters
+	sister
+		sister0
+			tab
+			trust 0
+			sister's room
+		sister1
+			tab
+			trust 1
+			ready
+			sister's room
+		sister1Fail
+			message
+			trust 1
+			!ready
+			sister's room
+		sister2
+			tab
+			trust 2
+			ready
+			dildo
+			sister's room
+		sister2NoItem
+			message
+			trust 2
+			ready
+			!dildo
+			sister's room
+		sister2Fail
+			message
+			trust 2
+			!ready
+			sister's room
+		sister3
+			tab
+			trust 3
+			ready
+			sister's room
+		sister3Fail
+			message
+			trust 3
+			!ready
+			sister's room
+		sister4
+			tab
+			trust 4
+			ready
+			plug pops
+			!sister4 unlocked
+			sister's room
+		sister4NoItem
+			message
+			trust 4
+			ready
+			!plug pops
+			!sister4 unlocked
+			sister's room
+		sister5
+			tab
+			trust 4
+			ready
+			horse toy & taffy
+			sister4 unlocked
+			sister's room
+		sister5NoItem
+			message
+			trust 4
+			ready
+			!horse toy & taffy
+			sister4 unlocked
+			sister's room
+		sister5Fail
+			message
+			trust 4
+			!ready
+			sister's room
+		sister6Quo
+			tab
+			trust 5
+			sister's room

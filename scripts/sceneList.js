@@ -1,5 +1,234 @@
 function writeScene(scene) {
+	slideShowCounter = 0;
 	switch(scene) {
+		case "start": {
+			gamesAlreadyListed = "";
+			document.getElementById('output').innerHTML +=`
+				<div class="disclaimer">
+					<p class = "centeredText" style="font-size: 150%;">Welcome to NoodleJacuzzi's Master Index!</p>
+					<p class = "centeredText">Disclaimer:<br>These games feature erotic material depicting strong sexual themes. The content in these games is not appropriate for minors, please enjoy responsibly. If you are not of legal age, please head to a place like coolmathgames or abcya for content you can legally enjoy.</p>
+					<p class = "centeredText">If you'd like to discuss the games here, or want to hang out with people like me or Cryptogreek, consider popping into the <a href="https://discord.gg/B3AszYM">discord server</a>. You can opt into release notifications and it's the easiest way to voice feedback about the games.</p>
+					<p class = "centeredText"><b>August's release Schedule:</b></p>
+					<p class = "centeredText">Hentai University v13 - 8/14</p>
+					<p class = "centeredText">Anomaly Vault v8</p>
+				</div>
+				<div class="gridNotGames" id="NotGames">
+					<div class="nonGameContainer" id="newsFeed">
+						<p style="font-size: 120%">Important Links:</p>
+						<a href="https://www.patreon.com/noodlejacuzzi">Support me on Patreon (if you want)!</a>
+						<br><br>
+						<a href="https://discord.gg/B3AszYM">Come join the Noodle's Jacuzzi discord server!</a>
+						<p style="font-size: 120%">Latest News:</p>
+					</div>
+					<div class="nonGameContainer" id="patronList">
+						<p style="font-size: 120%">Patrons:</p>
+						<p>Swallows999</p>
+						<p>O Xy Enkin</p>
+						<p>Joshua Ingram</p>
+						<a style="cursor:pointer;"onclick="sceneTransition('patrons')">And many more, come see the whole list of supporters!</a>
+					</div>
+				</div>
+				<hr>
+				<div class="grid" id="noodleGames">
+				</div>
+				<p class = "centeredText">If you enjoy my work please consider supporting me on <a href="https://www.patreon.com/noodlejacuzzi">Patreon</a>. I do multiple releases but only charge once each month. Aside from supporting me financially you can review the games or recommend them to a friend, those help out a great deal as well!</p>
+				<hr>
+				<p class = "centeredText" style="font-size: 150%;">Other games by authors I like:</p>
+				<div class="grid" id="otherGames">
+					<div class="gameContainer" onclick="openLink('https://tfgames.site/index.php?module=viewgame&id=2189')">
+						<img class="bigPicture" src="images/DTC.png">
+						<div class="gameTitle">
+							<p class="gameTitleText">Dared to Change</p>
+						</div>
+					</div>
+					<div class="gameContainer" onclick="openLink('https://4minutewarning.itch.io/ravager')">
+						<img class="bigPicture" src="images/RAV.png">
+						<div class="gameTitle">
+							<p class="gameTitleText">Ravager</p>
+						</div>
+					</div>
+					<div class="gameContainer" onclick="openLink('https://www.dlsite.com/maniax/work/=/product_id/RJ291293.html')">
+						<img class="bigPicture" src="images/OBA.png">
+						<div class="gameTitle">
+							<p class="gameTitleText">Untranslated game by Enoshima Iki</p>
+						</div>
+					</div>
+				</div>
+			`;
+			generateNews();
+			break;
+		}
+		case "HAA": {
+			slideShow = [
+				"images/HAA.png",
+				"images/HAA1.jpg",
+				"images/HAA2.jpg",
+				"images/HAA3.gif",
+				"images/HAA4.jpg",
+				"images/HAA5.jpg",
+			];
+			writeSlideshow("images/HAA.png");
+			writeText("Human Alteration App v1.0");
+			writeText("You find yourself with a phone app that can alter people's minds and bodies. Choose between one of two routes where either you're in control of the world or the app is stolen from you. There's a clear sense of progression throughout and no focus on grinding.");
+			writeText("Dom route tags: Incest (optionally non blood-related), Mind Control, Sluttification, Degradation, Exhibitionism, Watersports (optional, not yet implemented)");
+			writeText("Sub route tags: 2D Art, Incest (optionally non blood-related), Sissification, Female-to-Shemale Transformation, Cum Eating, Sounding, NTR (mild & optional), Smothering, Watersports");
+			document.getElementById('output').innerHTML +=`
+			<div class="choiceGrid">
+				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App.html">Play the game online</a>
+				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App%20Mobile.html">Play the mobile version</a>
+				<a class="choiceGridText" href="https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12458">View the TFGame entry</a>
+				<a class="choiceGridText" href="https://f95zone.to/threads/human-alteration-app-v0-6-5-noodlejacuzzi.28823/">View the F95Zone thread</a>
+				<a class="choiceGridText" href="https://www.patreon.com/posts/27965721">Download the game</a>
+				<a class="choiceGridText" href="http://freesuggestionbox.com/pub/sjqumcl">Anonymous Suggestion Box</a>
+				
+			</div>
+			`;
+			writeTransition("start", "Go Back");
+			break;
+		}
+		case "RDZ": {
+			slideShow = [
+				"images/RDZ.jpg",
+				"images/RDZ1.jpg",
+				"images/RDZ2.jpg",
+				"images/RDZ3.gif",
+			];
+			writeSlideshow("images/RDZ.jpg");
+			writeText("Rainy DayZ v3");
+			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry dickgirls, you play as a young woman searching for supplies to survive.");
+			writeText("Navigate a town and city deliberately working to sabotage yourself and throw yourself into the clutches of the zombie hordes, the goal of the game here is to be defeated and attacked to collect and unlock all of the game's scenes. Now features two additional campaigns as well!");
+			writeText("Tags: Real Porn, Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Rimming (can be disabled), Bestiality (can be disabled), Parasites (can be disabled), Watersports (can be disabled)");
+			document.getElementById('output').innerHTML +=`
+			<div class="choiceGrid">
+				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html">Play the game online</a>
+				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ%20Mobile.html">Play the mobile version</a>
+				<a class="choiceGridText" href="https://tfgames.site/index.php?module=viewgame&id=2039">View the TFGame entry</a>
+				<a class="choiceGridText" href="https://f95zone.to/threads/rainy-dayz-v3-0-noodlejacuzzi.42457/">View the F95Zone thread</a>
+				<a class="choiceGridText" href="https://www.patreon.com/posts/39193031">Download the game</a>
+				<a class="choiceGridText" href="http://freesuggestionbox.com/pub/atouyqk">Anonymous Suggestion Box</a>
+				
+			</div>
+			`;
+			writeTransition("start", "Go Back");
+			break;
+		}
+		case "AV": {
+			slideShow = [
+				"images/AV.png",
+				"images/AV1.jpg",
+				"images/AV2.jpg",
+				"images/AV3.jpg",
+				"images/AV4.jpg",
+				"images/AV5.jpg",
+			];
+			writeSlideshow("images/AV.png");
+			writeText("Anomaly Vault v7");
+			writeText("<b>Currently sponsored by Swallows999!</b>");
+			writeText("You play as a researcher performing experiments on various reality warping artifacts, currently including a presence-erasing bracelet and a crate that converts anything inside into a hypersexualized version of itself.");
+			writeText("The game uses real porn gifs, and is similar in tone to Human Alteration App's dom route. The themes and fetishes of the game are governed by what artifacts you interact with, hopefully as time passes you'll find and artifact you really connect with. Let me know if you have any artifact / scene ideas!");
+			writeText("Nonoptional Tags: Unpercieved Sex, Ignored Sex, Dubious Consent, Seduction of Women in Committed Relationships. All the rest of the tags depend on what you interact with.");
+			document.getElementById('output').innerHTML +=`
+			<div class="choiceGrid">
+				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault.html">Play the game online</a>
+				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault%20Mobile.html">Play the mobile version</a>
+				<a class="choiceGridText" href="https://tfgames.site/index.php?module=viewgame&id=2110">View the TFGame entry</a>
+				<a class="choiceGridText" href="https://f95zone.to/threads/anomaly-vault-v7-noodlejacuzzi.34746/">View the F95Zone thread</a>
+				<a class="choiceGridText" href="https://www.patreon.com/posts/37422705">Download the game</a>
+				<a class="choiceGridText" href="http://freesuggestionbox.com/pub/axblnfu">Anonymous Suggestion Box</a>
+			</div>
+				<a class="choiceGridText" href="https://www.patreon.com/posts/33013457">View the cheat and prisoner codes</a>
+				<p class="choiceGridText" onclick="sceneTransition('artifactList')">View a roadmap of upcoming/inplemented artifacts</p>
+			`;
+			writeTransition("start", "Go Back");
+			break;
+		}
+		case "BM": {
+			slideShow = [
+				"images/BM.png",
+				"images/BM1.jpg",
+				"images/BM2.jpg",
+				"images/BM3.jpg",
+			];
+			writeSlideshow("images/BM.png");
+			writeText("Bitch Medicenter Demo");
+			writeText("In a near future where body and mind alteration are the latest fad, customers of Bitch Medicenter often have very specific needs. Liz the physician and a nameless technician are here to fulfill those needs in the most depraved way possible.");
+			writeText("This game is still lacking content. Please feel free to offer suggestions!");
+			writeText("Tags are on a case-by-case basis. View each patient's file and avoid whatever you aren't into. The most common fetish is body / mind alteration.");
+			document.getElementById('output').innerHTML +=`
+			<div class="choiceGrid">
+				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter.html">Play the game online</a>
+				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter%20Mobile.html">Play the mobile version</a>
+			</div>
+				<a class="choiceGridText" href="http://www.hentai-foundry.com/stories/user/NoodleJacuzzi">Read some related short stories</a>
+			`;
+			writeTransition("start", "Go Back");
+			break;
+		}
+		case "PQ": {
+			slideShow = [
+				"images/princessQuest.jpg",
+				"images/PQ1.jpg",
+				"images/PQ2.jpg",
+				"images/PQ3.jpg",
+			];
+			writeSlideshow("images/princessQuest.jpg");
+			writeText("Princess Quest");
+			writeText("Play as Princess Elizabeth as she navigates caves and castle dungeons to rid her people of a demon's foul curse, unaware that she's playing right into the demon's hands.");
+			writeText("Uses art done by Neromashin. It's all from a game named 'Oujo & Onna Kishi W Do Gehin Roshutsu ~Chijoku no Misemono Dorei~' published by PinPoint. You can find the official website of the game at http://www.pin-point.biz/27_wdgr/index.html, but it's in Japanese. There is an English version coming to steam, but I've heard negative things about the translation's quality.");
+			writeText("As a note, I really do not recommend playing this on mobile. There have also been a few issues with playing it online. As it's only 4 megs, downloading it is the reccomended way to play.");
+			writeText("Tags: Moral Degradation, Corruption, Tentacles, Cum Inflation, Exhibitionism");
+			document.getElementById('output').innerHTML +=`
+			<div class="choiceGrid">
+				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Princess%20Quest/Princess%20Quest.html">Play the game online</a>
+				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Princess%20Quest/Princess%20Quest%20Mobile.html">Play the mobile version</a>
+				<a class="choiceGridText" href="https://mega.nz/#!Gl9whSBL!S0FswXAxehzhP3cMGOPa5-mp-CjFRtTHQ4-3BjCITX8">Download the game</a>
+				<a class="choiceGridText" href="https://tfgames.site/phpbb3/viewtopic.php?f=60&t=12578">TFGames discussion thread</a>
+			</div>
+			`;
+			writeTransition("start", "Go Back");
+			break;
+		}
+		case "HU": {
+			slideShow = [
+				"images/HU.png",
+				"images/HU1.jpg",
+				"images/HU2.jpg",
+				"images/HU3.jpg",
+				"images/HU4.jpg",
+				"images/HU5.jpg",
+			];
+			writeSlideshow("images/HU.png");
+			writeText("Hentai University v12");
+			writeText("Formerly sponsored by: O Xy Enkin");
+			writeText("A game made in cooperation with author Captain Cryptogreek, who works as the game's lead writer. You play as a young man with a strong grasp on hypnotic magic, and have embedded yourself as a counselor in a school with a fantastically attractive student body. The faculty and your neighbors in town look pretty good too.");
+			writeText("The game features multiple male characters with a femboi/twink bodytype. These are entirely optional and you can enable a vegetarian mode to avoid encountering them. On the opposite end if you aren't interested in the girls none of the bois require you to engage with female characters to unlock all their content.");
+			writeText("This game uses art by Enoshima Iki, Nagi Ichi, Oreteki18kin, Gujira 4 Gou, and Kinta no Mousou and is meant to be similar in feel to Hentai High School, but without the focus on school management, more emphasis on wandering / corruption, and a much higher quality body of images. The end goal here is a town packed with dozens of characters using a framework I can continually add more content to.");
+			writeText("Tags: Hypnosis, features many other tags entirely avoidable tags based on characters such as incest, dubcon, and gay content");
+			document.getElementById('output').innerHTML +=`
+			<div class="choiceGrid">
+				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html">Play the game online</a>
+				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html">Play the mobile version</a>
+				<a class="choiceGridText" href="https://f95zone.to/threads/hentai-university-v12-noodlejacuzzi.37312/">View the F95Zone thread</a>
+				<a class="choiceGridText" href="https://hypnopics-collective.net/smf_forum/index.php?topic=23881.0">View the Hypnopics thread</a>
+				<a class="choiceGridText" href="https://www.patreon.com/posts/39683865">Download the game</a>
+				<a class="choiceGridText" href="http://freesuggestionbox.com/pub/oakihbd">Anonymous Suggestion Box</a>
+			</div>
+			<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'">Interested in writing your own characters? Check out this modding tutorial!</p>
+			<p class="choiceText" onclick="window.location.href='https://www.patreon.com/posts/30871183'">View the list of cheat codes</p>
+			`;
+			writeTransition("start", "Go Back");
+			break;
+		}
+		case "patrons": {
+			document.getElementById('output').innerHTML +=`
+				<p class = "centeredText" style="font-size: 150%;">An incredibly huge thank you to:</p>
+				<p style="column-count:3;">Swallows999<br>O Xy Enkin<br>Joshua Ingram<br>Robbie<br>Lasse B<br>MrManPerson<br>ChronosEdge<br>CaptainMontana<br>Madgunner<br>Scal<br>Badaxe<br>andres mejia<br>Colin E<br>Dkells<br>Jinouga<br>Marco Wassmer<br>XxrobothacksxX<br>Jesse Greene<br>Dustin Leichsenring<br>Filament<br>G<br>J_C_L<br>jack spencer<br>Ramsey Bisher<br>Taylor Trout<br>brandon<br>Skyrim mod lvr<br>Negativatron<br>Roy<br>Wild Bill<br>Ben Dover<br>Iron Diana<br>长平 鬣<br>Carlos<br>Debarre Sonny<br>Drashin<br>Keith<br>Macarga<br>murgatroid99<br>Richard<br>Angel<br>Ariados<br>Blaise Fenn<br>Gwen Yurick<br>Jane<br>Muryu<br>Nils Maier<br>Snaked<br>stratum<br>Carlos<br>ItsAllOgreNow<br>Joshua Melzark<br>qwerty<br>Verillia tristari<br>4MinuteWarning<br>Aegil<br>Aminaros<br>Andy Amundy<br>Anthony Munso<br>Bonelessunknown<br>Chaaaanon<br>Charles Morris<br>dhccpmc<br>dragoon48<br>Dugelle<br>FearlessViper26<br>Hi There<br>john smith<br>Marc Maldon<br>mazterlith<br>Nutburger<br>Phanes<br>ryguy<br>Scumstango<br>Simon Rencher<br>StormSight<br>Wei<br>Whynot<br>William Richardson<br>Your Husbando<br>Daniel Vivette<br>Danny Nguyen<br>Darrell Goodman<br>Grim2011<br>joe<br>John Lewis<br>KH dg<br>lm Carma<br>Trevor<br>yami<br>Z<br>Alec8686<br>DarthMalak<br>Louis Hayes<br>Prodigal211<br>sky<br>Tanman<br>Alex<br>Andy<br>Anthony Ewing<br>Ark555<br>Colin Valente<br>Daekash<br>ddkre<br>fireballcreations<br>GirmusCz<br>Harry Brasch<br>I'm a Mitch<br>Justifiable Gaming<br>Lunarghost<br>Markus Hansen<br>michael patrick murphy<br>Monkey<br>SmolFish<br>Tyberius Kirk<br>Wayne culbert<br>andy<br>AxiosMIles<br>ChubbiestThread<br>David Lange<br>Emanuel  Garcia<br>FrostyTB<br>Geoff Heimos<br>greatred<br>Greg Torres<br>Guy68691<br>henry grobins<br>joe mulhall<br>Joseph Gibbs<br>Kieron Kow<br>KVBismarc<br>l<br>l1monat<br>liam paterson<br>Limitless<br>Magnus<br>Nisi<br>Oliver Jones<br>ranchy sanchy<br>Reverberations<br>Riven Drasek<br>ShadowFalls<br>Slomberg<br>TheRawToast<br>Tyler Ross<br>William Parker<br>XaiuX<br>AnotherAccount333<br>Bawornnan samart<br>Dean<br>Dravenmd114<br>Ed<br>Erin Trippet<br>Gavin Davis<br>joel larsen<br>Kaliden<br>Karan Raj Gupta<br>Krose<br>Kudon<br>Lucas<br>MagicMajestic<br>Mars<br>Nha<br>PR0 x THUNDER<br>ptw1985<br>Shirofang<br>sluttyboi<br>Sveny13<br>theoron<br>waazzzup14<br>wolfboom<br>zoobot5<br>adyflorin<br>Alfonso<br>Andrew Lynn<br>Anton Schmidt<br>Arkhalis<br>Auckard<br>Bleed1ngthunder<br>Bobby Hamilton<br>bono<br>cabbage<br>Cameron S<br>colt<br>Culton Niccum<br>Curtis Vidulich<br>Damion Moore<br>Daniel Harris<br>david thompson<br>dennis trappen<br>Dewr<br>Don<br>Dr. Awesome<br>Профессор Преображенский<br>林家豪<br>Elias Errati<br>Eric Hslew<br>Frederto<br>Geoffrey Munoz<br>GlockerSpaniel<br>Har Boi<br>Hunter XZ<br>iNoH8+<br>Jack Cummings<br>Jacob Cannon<br>Jayesonn leleaux<br>jdktjk205<br>joe<br>Johnathan Thornburg<br>Jordan Ballinger<br>Joshua Curtis<br>Judavarius<br>Julia Ferro<br>Kethis Immortalis<br>Kurosuki<br>LaCrazy<br>LordTenry<br>Lucas Molski<br>lucidwillow116<br>Luke<br>Martin Touralack<br>marvin diaz<br>Me You<br>N3on<br>nathan<br>Nathan Martin<br>nicholas guerra<br>paul silvis<br>Philipp<br>pipok<br>Q Q<br>Qrow<br>Ragoth<br>ryan<br>Ryan Linn<br>Shawn<br>Slipokk<br>Smiley Green<br>Sossedov<br>Steam Screw<br>Theodrian<br>thesingleguy<br>Ungy Bungy<br>Vikteren<br>Yongdian Guo</p>
+				<p class = "centeredText" style="font-size: 150%;">For supporting my work!</p>
+				<p>This is a single massive list of all patrons who've ever supported me, I update this list with each release. I wouldn't be making games today without their support.</p>
+			`;
+			writeTransition("start", "Go Back");
+			break;
+		}
 		case "start" : {
 			document.getElementById('output').innerHTML +=`
 				<p class = "centeredText">Lastest News 7/22/2020</p>
@@ -12,10 +241,7 @@ function writeScene(scene) {
 			document.getElementById('output').innerHTML +=`
 				<p class="choiceText" onclick="window.location.href='https://discord.gg/B3AszYM'">Visit my discord server</p>
 			`;
-			writeText("<br>");
-			writeTransition("commissions", "Commissioned scenes (Currently none)");
 			//writeTransition("recommendations", "Recommendations");
-			writeText("<br><br>");
 			writeBig("images/AnomalyVault.png");
 			writeText("Anomaly Vault v7");
 			writeText("You play as a researcher performing experiments on various reality warping artifacts, currently including a presence-erasing bracelet and a crate that converts anything inside into a hypersexualized version of itself.");
@@ -74,16 +300,6 @@ function writeScene(scene) {
 			writeTransition("HAAD", "Dom Route Preview");
 			writeTransition("HAAS", "Sub Route Preview");
 			writeTransition("downloadHAA", "Download Human Alteration App");
-			document.getElementById('output').innerHTML +=`
-				<p class="choiceText" onclick="window.location.href='https://tfgames.site/phpbb3/viewtopic.php?f=6&t=12458'">TFGames Discussion thread</p>
-				<p class="choiceText" onclick="window.location.href='https://f95zone.to/threads/human-alteration-app-v0-6-5-noodlejacuzzi.28823/'">F95Zone Discussion thread</p>
-				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App.html'">Play the game online</p>
-				<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App%20Mobile.html'">Play the mobile version</p>
-			`;
-			writeText("Human Alteration App v1.0");
-			writeText("You find yourself with a phone app that can alter people's minds and bodies. Choose between one of two routes where either you're in control of the world or the app is stolen from you. There's a clear sense of progression throughout and no focus on grinding.");
-			writeText("Dom route tags: Incest (optionally non blood-related), Mind Control, Sluttification, Degradation, Exhibitionism, Watersports (optional, not yet implemented)");
-			writeText("Sub route tags: 2D Art, Incest (optionally non blood-related), Sissification, Female-to-Shemale Transformation, Cum Eating, Sounding, NTR (mild & optional), Smothering (not yet implemented), Watersports (optional, not yet implemented)");
 			writeBig("images/PrincessQuest.jpg");
 			writeText("Princess Quest v1.0");
 			writeText("Play as Princess Elizabeth as she navigates caves and castle dungeons to rid her people of a demon's foul curse, unaware that she's playing right into the demon's hands.");
@@ -301,7 +517,7 @@ function writeScene(scene) {
 				//<br>EXTRA NOTE: The player (male), would eat this. It'd make you look like a youthful teenager and the women of the cast would go full cougar over you.
 				//<br>Tags: Ara Ara~, De-aging, Male Domination, Female Degradation
 			//`);
-			writeTransition("start", "Go Back");
+			writeTransition("AV", "Go Back");
 			break;
 		}
 		case "commissions": {

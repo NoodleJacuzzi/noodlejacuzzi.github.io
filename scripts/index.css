@@ -1,86 +1,103 @@
 /*Misc*/
 html, body {
+	font-family: railway, times new roman, sans-serif;
 	width: 100%;
 	height: 100%;
 	padding: 0px;
 	margin: 0px;	
 }
-a {
-	color: white;
+html {
+    border-color: #cccccc; /* defined Root border-color: Off-white */
+    overflow: hidden;
+    /* preventing overflows like dimmed background-layer to generate scrollbars
+		Scrollbars are getting used on the individual containers like #output instead anyways
+     */
+    font-family: arial, sans-serif;
+    font-size: 1rem; /* defined Root font-size */    
+    color: #cccccc; /* defined Root font-color: Off-white */
+    line-height: 1.5em;
+}
+body{
+    display: flex;
+    /* Makes sure #output always fills the rest of the available space */
+}
+*{
+	box-sizing: border-box;
+	/*when specifying dimensions, it takes padding and borders into account*/
+}
+a, a:visited {
+	text-decoration: none;
+	color:#509cea;
+}
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+hr {
+	border: 2px dashed white;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /*Menu*/
-.menu {
-	box-sizing: border-box;
-	width: 20%;
-	min-width: 130px;
-	height: 100%;
-	text-align: center;
-	font-size: 125%;
-	float:left;
-	z-index:1;
-	color: white;
-  	background-color: #111111;
-	overflow: scroll;
-	overflow-x: hidden;
-}
-.corruptionList {
-	width: 48%;
-	float:left;
-	text-align:right;
-}
-.corruptionScore {
-	width: 48%;
-	float:right;
-	text-align:left;
-}
-.playerImage {
-	display: block;
-    margin: auto;
-    width: 95%;
-  	border: 3px solid white;
-  	border-radius: 5px;
-}
-.switch {
-	color: #7777EE;
-	cursor: pointer;
-}
-.switch:hover {
-	color: #9999EE;
-	cursor: pointer;
-}
-
 /*Output Zone*/
 .wrapper {
-	width: 80%;
+    background: none; /*To ensure WrapperBG shows, in case browser-native forces white background as default*/
+    width: 100%;
 	height: 100%;
-	float: right;
-  	background-color: #221111;
-	overflow: scroll;
+	overflow-y: auto; /*only shows a scroll-bar, if necessary*/
 	overflow-x: hidden;
 }
 .output {
 	color: white;
-	padding-left: 4%;
-	padding-right: 4%;
+	margin: auto;
+	width: 60%;
 	padding-top: 4%;
 	font-size: 135%;
 }
+div#wrapperBG {
+	/*Box covering entire canvas, used to add background-image via JS*/
+    height: calc(100% + 20px);
+    width: calc(100% + 20px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(20px);
+    z-index: -2;
+}
+div#wrapperBG::after {
+	/*dims the background */
+    background: rgba(0,0,0,0.75);
+    content: "";
+    position: absolute;
+    height: calc(100% + 20px);
+    width: calc(100% + 20px);
+    z-index: -1;
+}
+.backgroundPicture{
+		display: block;
+		margin: auto;
+		width: 100%;
+		max-height: 70vh;
+		padding: 20px, 1px;
+		border: 3px solid white;
+        border-radius: 15px;
+}
 .bigPicture {
 	display: block;
+    max-height: 90vh;
+    max-width: 100%;
     margin: auto;
-	max-width: 90%;
-  	padding: 20px, 1px;
-  	border: 3px solid white;
-  	border-radius: 5px;
-}
-.medPicture {
-	display: block;
-    margin: auto;
-    width: 25%;
-  	padding: 20px, 1px;
-  	border: 3px solid white;
-  	border-radius: 5px;
+    border: 5px solid #85bbc3;
+    border-radius: 30px;
 }
 .choiceText {
 	color: #7777EE;
@@ -113,347 +130,112 @@ a {
 	font-weight: bold;
 }
 
-/*Dialogue*/
-.textBox {
-	position: relative;
-	display: block;
-	width: 98%;
-  	min-height: 92px;
-	padding: 5px;
-	overflow: hidden;
-  	background-color: #111122;
-  	border: 3px solid white;
-  	border-radius: 5px;
+
+.gridNotGames{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
-.textBox p {
-	margin: 0px;
-	padding: 0px;
+#newsFeed{
+	grid-row: span 2;
 }
-.textThumb {
-	position: relative;
-  	display: block;
-    margin: auto;
-  	padding: 1px;
- 	height: 84px;
-	width: 84px;
-  	float: left;
-	overflow: hidden;
-  	margin: 0px 10px 0px 0px;
-  	border: 3px solid white;
-  	border-radius: 5px;
+
+.button, .pictureButton, .choiceText{
+    background: rgba(0,0,0,0.75);
+    padding: 15px;
+    margin: 15px;
+    border: none;
+    border-bottom: 3px solid;
+    border-radius: 5px;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
 }
-.textName {
-	color: white;
-	margin: 0px;
-	padding: 0px;
+.button:hover, .choiceText:hover{
+    background: rgba(50,50,50,0.75);
+    color: #ffffff;
+        border: none;
+    border-bottom: 3px solid #FFFFFF;
+}
+.pictureButton, .choiceText{
+	font-size:1.25rem;
 	font-weight: bold;
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
 }
 
-/*Windows*/
-.windowTitle {
+.disclaimer{
+    border: 5px solid #85bbc3;
+    border-radius: 30px;
+}
+.grid{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.gameContainer{
+	position: relative;
+	text-align: center;
+	cursor: pointer;
+	margin: 10px;
+}
+.nonGameContainer{
+    border: 5px solid #85bbc3;
+    border-radius: 30px;
+	position: relative;
+	text-align: center;
+	margin: 10px;
+	height: 30vh;
+	overflow-y: scroll;
+	padding: 2px;
+}
+.sponsor{
+	position: absolute;
+	top: 0; 
+	right:15px;
+	width:15%;
+}
+.gameTitle{
+	position: absolute;
+	bottom: 0; 
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.5); /* Black see-through */
+	color: #f1f1f1; 
 	width: 100%;
-	height: 60px;
-	text-align: center;
-	color: white;
-	font-size: 30px;
-	border-bottom: 3px solid white;
-	cursor: pointer;
-}
-.windowLeft {
-	position:absolute;
-	box-sizing: border-box;
-	position: block;
-	height: 80%;
-	width: 50%;
-}
-.windowRight {
-	position:absolute;
-	box-sizing: border-box;
-	left:50%;
-	position: block;
-	height: 80%;
-	width: 50%;
-}
-
-/*Save Menu*/
-.save {
-	position: absolute;
-	top: 10%;
-	left:30%; 
-	width: 60%;
-	height: 80%;
-	background-color: #000000;
-  	border: 3px solid white;
-  	border-radius: 5px;
-	z-index: 1;
-	padding: 0px;
-	overflow: scroll;
-	overflow-x: hidden;
-}
-.saveSlot {
-	position: block;
-	width: 100%;
-	height: 60px;
-	background-color: #333333;
-}
-
-.saveName {
-	position: absolute;
-	color: white;
-	left: 150px;
-	margin:1%;
-	font-size: 22px;
-}
-
-.saveButton {
-	color: white;
-	padding: 1%;
-	margin-left: 1%;
-	font-size: 26px;
-	text-align: center;
-	width: 90px;
-  	border: 3px solid white;
-  	border-radius: 5px;
-	cursor: pointer;
-}
-
-.saveFileButton {
-	color: white;
-	padding: 1%;
-	margin-left: 1%;
-	font-size: 26px;
-	text-align: center;
-	width: 200px;
-  	border: 3px solid white;
-  	border-radius: 5px;
-	cursor: pointer;
-}
-
-.loadButton {
-	position: absolute;
-	color: white;
-	left: 250px;
-	margin:1%;
-	font-size: 22px;
-	cursor: pointer;
-}
-
-.loadFileButton {
-	position: absolute;
-	color: white;
-	left: 250px;
-	margin:1%;
-	font-size: 22px;
-	width: 250px;
-	cursor: pointer;
-}
-
-.deleteButton {
-	position: absolute;
-	color: white;
-	left: 350px;
-	margin:1%;
-	font-size: 22px;
-	cursor: pointer;
-}
-
-.saveDate {
-	position: absolute;
-	color: white;
-	right: 4%;
-	margin:1%;
-	font-size: 22px;
-}
-
-/*Inventory Menu*/
-.inventory {
-	position: absolute;
-	top: 10%;
-	left:30%; 
-	width: 60%;
-	height: 80%;
-	background-color: #000000;
-  	border: 3px solid white;
-  	border-radius: 5px;
-	z-index: 1;
-	overflow: scroll;
-	overflow-x: hidden;
-}
-.item {
-	position: block;
-	height: 75px;
-	width: 90%;
-	background-color: #333333;
-	margin-bottom: 10px;
-}
-.itemName {
-	position:absolute;
-	color:white;
-	left: 150px;
-	font-size: 22px;
-}
-.itemImage {
-	position:absolute;
-	height: 69px;
-	width: 69px;
-	left: 30px;
-  	border: 3px solid white;
-  	border-radius: 5px;
-}
-.itemQuantity {
-	position:absolute;
-	color:white;
-	left: 330px;
-	font-size: 22px;
-}
-
-/*Logbook*/
-.logbookLeft {
-	position:absolute;
-	box-sizing: border-box;
-	position: block;
-	top: 90px;
-	height: 80%;
-	width: 20%;
-}
-.logbookRight {
-	position:absolute;
-	box-sizing: border-box;
-	left:20%;
-	position: block;
-	height: 80%;
-	width: 80%;
-}
-.logbookSwitch {
-	text-align: center;
-	color: #7777EE;
-	cursor: pointer;
-	font-size: 22px;
-  	border: 3px solid white;
-  	border-radius: 5px;
-	width: 90%;
-	margin-left: 2.5%;
-	line-height: 2;
-}
-.logbookSwitch:hover {
-	text-align: center;
-	color: #9999EE;
-	cursor: pointer;
-	font-size: 22px;
-  	border: 3px solid white;
-  	border-radius: 5px;
-	line-height: 2;
-}
-.self {
-	position: absolute;
-	top: 10%;
-	left:30%; 
-	width: 60%;
-	height: 80%;
-	background-color: #000000;
-  	border: 3px solid white;
-  	border-radius: 5px;
-	z-index: 1;
-	padding: 0px;
-	overflow: scroll;
-	overflow-x: hidden;
-}
-.selfImage {
-	margin-left: 10px;
-	margin-right: 10px;
-	float: right;
-	width: 40%;
-  	border: 2px solid white;
-  	border-radius: 5px;
-}
-.selfDesc {
-	display: inline;
+	transition: .5s ease;
+	opacity:0;
 	color: white;
 	font-size: 20px;
-	line-height: 1.2;
+	pointer-events:none;
+        border-radius: 30px;
 }
-
-.selfSwitch {
-	display: inline;
+.gameContainer:hover .gameTitle{
+	opacity:1;
+}
+.choiceGrid{
+	display: grid;
+	grid-template-columns: auto auto;
+}
+.choiceGridText{
 	color: #7777EE;
 	cursor: pointer;
-}
-
-.selfSwitch:hover {
-	display: inline;
-	color: #9999EE;
+    background: rgba(0,0,0,0.75);
+    padding: 15px;
+    border: none;
+    border-bottom: 3px solid;
+    border-radius: 5px;
+    transition: 0.25s;
+    text-align: center;
 	cursor: pointer;
+	font-size:1.25rem;
+	font-weight: bold;
+    display: block;
+    margin: 15px auto;
 }
-
-/*Shop*/
-.shopItem {
-	cursor: pointer;
-	position: block;
-	width: 100%;
-	height: 80px;
-	background-color: #333333;
-}
-.shopName {
-	pointer-events: none;
-	width: 200px;
-	float: left;
-	margin-left: 15px;
-	color: white;
-	left: 30%;
-	font-size: 22px;
-}
-.shopDesc {
-	pointer-events: none;
-	float: left;
-	margin-left: 15px;
-	color: white;
-	padding-top: 10px;
-	width: 50%;
-	left: 40%;
-	font-size: 16px;
-}
-.shopPrice {
-	pointer-events: none;
-	float: left;
-	margin-left: 15px;
-	color: white;
-	left: 90%;
-	font-size: 22px;
-}
-.shopImage {
-	pointer-events: none;
-	float: right;
-	margin-right: 15px;
-	height: 69px;
-	width: 69px;
-  	border: 3px solid white;
-  	border-radius: 5px;
-}
-
-/*Wardrobe*/
-.wardrobeItem {
-	cursor: pointer;
-	position: block;
-	height: 75px;
-	width: 90%;
-	background-color: #333333;
-	margin-bottom: 10px;
-	z-index: 2;
-}
-.wardrobeLeft {
-	position:absolute;
-	box-sizing: border-box;
-	position: block;
-	height: 80%;
-	width: 50%;
-}
-.wardrobeRight {
-	position:absolute;
-	box-sizing: border-box;
-	left:50%;
-	position: block;
-	height: 80%;
-	width: 50%;
+.choiceGridText:hover{
+    background: rgba(50,50,50,0.75);
+    color: #ffffff;
+	border: none;
+    border-bottom: 3px solid #FFFFFF;
 }
 
 /*Footer*/
