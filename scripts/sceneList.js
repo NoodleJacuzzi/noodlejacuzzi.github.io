@@ -57,11 +57,11 @@ function writeScene(scene) {
 		case "HAA": {
 			slideShow = [
 				"images/HAA.png",
-				"images/HAA1.jpg",
-				"images/HAA2.jpg",
+				"images/HAA1.JPG",
+				"images/HAA2.JPG",
 				"images/HAA3.gif",
-				"images/HAA4.jpg",
-				"images/HAA5.jpg",
+				"images/HAA4.JPG",
+				"images/HAA5.JPG",
 			];
 			writeSlideshow("images/HAA.png");
 			writeText("Human Alteration App v1.0");
@@ -85,8 +85,8 @@ function writeScene(scene) {
 		case "RDZ": {
 			slideShow = [
 				"images/RDZ.jpg",
-				"images/RDZ1.jpg",
-				"images/RDZ2.jpg",
+				"images/RDZ1.JPG",
+				"images/RDZ2.JPG",
 				"images/RDZ3.gif",
 			];
 			writeSlideshow("images/RDZ.jpg");
@@ -111,11 +111,11 @@ function writeScene(scene) {
 		case "AV": {
 			slideShow = [
 				"images/AV.png",
-				"images/AV1.jpg",
-				"images/AV2.jpg",
-				"images/AV3.jpg",
-				"images/AV4.jpg",
-				"images/AV5.jpg",
+				"images/AV1.JPG",
+				"images/AV2.JPG",
+				"images/AV3.JPG",
+				"images/AV4.JPG",
+				"images/AV5.JPG",
 			];
 			writeSlideshow("images/AV.png");
 			writeText("Anomaly Vault v7");
@@ -141,9 +141,9 @@ function writeScene(scene) {
 		case "BM": {
 			slideShow = [
 				"images/BM.png",
-				"images/BM1.jpg",
-				"images/BM2.jpg",
-				"images/BM3.jpg",
+				"images/BM1.JPG",
+				"images/BM2.JPG",
+				"images/BM3.JPG",
 			];
 			writeSlideshow("images/BM.png");
 			writeText("Bitch Medicenter Demo");
@@ -163,9 +163,9 @@ function writeScene(scene) {
 		case "PQ": {
 			slideShow = [
 				"images/princessQuest.jpg",
-				"images/PQ1.jpg",
-				"images/PQ2.jpg",
-				"images/PQ3.jpg",
+				"images/PQ1.JPG",
+				"images/PQ2.JPG",
+				"images/PQ3.JPG",
 			];
 			writeSlideshow("images/princessQuest.jpg");
 			writeText("Princess Quest");
@@ -187,11 +187,11 @@ function writeScene(scene) {
 		case "HU": {
 			slideShow = [
 				"images/HU.png",
-				"images/HU1.jpg",
-				"images/HU2.jpg",
-				"images/HU3.jpg",
-				"images/HU4.jpg",
-				"images/HU5.jpg",
+				"images/HU1.JPG",
+				"images/HU2.JPG",
+				"images/HU3.JPG",
+				"images/HU4.JPG",
+				"images/HU5.JPG",
 			];
 			writeSlideshow("images/HU.png");
 			writeText("Hentai University v12");
