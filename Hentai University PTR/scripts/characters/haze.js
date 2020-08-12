@@ -22,7 +22,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "haze0B", name: "You're feeling a bit tired again. If you went back to sleep, you might have that dream about haze again...", location: 'playerHouse', time: "Morning", itemReq: "", trustMin: 20, trustMax: 20, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 	//{index: "haze2", name: "TEST: If you laid back down in bed, you could probably visit haze again.", location: 'playerHouse', time: "Morning", itemReq: "", trustMin: 40, trustMax: 40, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 	{index: "haze2", name: "Despite there being nothing here, you can sense that if you focused on haze in your mind, a door would appear...", location: 'playerHouse', time: "Morning", itemReq: "", trustMin: 40, trustMax: 40, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
-	{index: "haze3", name: "You could focus on going under and speaking with haze if you wanted...", location: 'playerHouse', time: "Morning", itemReq: "", trustMin: 60, trustMax: 60, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	{index: "haze3", name: "You could focus on going under and speaking with haze if you wanted...", location: 'playerHouse', time: "Morning", itemReq: "", trustMin: 60, trustMax: 70, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -433,7 +433,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("haze","","Maybe you're looking for a bit of fun~?");
 				writeFunction("writeEvent('haze1A')", "Use her as she is");
 			}
-			//writeFunction("writeEncounter('hazeChange1')", "Take a look at her other forms [1 available]");
+			writeFunction("writeEncounter('hazeChange1')", "Take a look at her other forms [1 available]");
 			writeFunction("writeEncounter('hazeStory')", "You came to chat, actually");
 			break;
 		}
@@ -508,7 +508,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("There is absolutely no subtlety to her movements as one of her hands caresses the outside of her panties.");
 				writeSpeech("haze","","So, did you come here looking for a quickie? I'd be absolutely <i>thrilled</i> to get another taste of you~ Though if you're interested, I could try on another 'look' for you~");
 				writeFunction("writeEvent('haze1C')", "Use her as she is");
-				//writeFunction("writeEncounter('hazeChange1')", "Take a look at her other forms [1 available]");
+				writeFunction("writeEncounter('hazeChange1')", "Take a look at her other forms [1 available]");
 				writeFunction("writeEncounter('hazeStory')", "You came to chat, actually");
 				break;
 			}
@@ -535,7 +535,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("At that, her grin quickly returns, a faint shimmer surrounding her body.");
 				writeSpeech("haze","","Speaking of, if you're here looking for a quickie, I'd be <i>thrilled</i> to get another taste of you~ Though if you're interested, I could try on another 'look' for you~");
 				writeFunction("writeEvent('haze1C')", "Use her as she is");
-				//writeFunction("writeEncounter('hazeChange1')", "Take a look at her other forms [1 available]");
+				writeFunction("writeEncounter('hazeChange1')", "Take a look at her other forms [1 available]");
 				writeFunction("writeEncounter('hazeStory')", "You came to chat, actually");
 				break;
 			}
@@ -635,11 +635,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 		// 	break;
 		// }
 		case "hazeChange1" : {
-			writeSpecial("There should be no way to access this scene at this current time. Please post what you were doing when it happened in #bug-reporting on the Discord so that CryptoGreek can figure out how to fix this. Thanks!");
-			// writeText("hazeF grins and waves her hand, a shimmering light spreading across her body for a few moments before images flash through your mind.");
+			//writeSpecial("There should be no way to access this scene at this current time. Please post what you were doing when it happened in #bug-reporting on the Discord so that CryptoGreek can figure out how to fix this. Thanks!");
+			writeText("hazeF grins and waves her hand, a shimmering light spreading across her body for a few moments before images flash through your mind.");
 			// writeBig("images/haze/profileYoru.jpg","Art by Purple Haze");
-			// writeSpeech("haze","","This is the only one I have prepared right now, but I <i>really</i> like the body on this Yoruichi girl~");
+			writeSpeech("haze","","This is the only one I have prepared right now, but I <i>really</i> like the body on this girl~");
 			// writeFunction("writeEvent('haze2A')", "Fuck Sporty Yoruichi");
+			openWardrobe();
 			writeFunction("writeEncounter('hazeTalkReturn')", "Never mind");
 			break;
 		}
@@ -649,7 +650,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeFunction("writeEvent('haze1A')", "Fuck her");
 			else
 				writeFunction("writeEvent('haze1C')", "Fuck her as she is again");
-			//writeFunction("writeEncounter('hazeChange1')", "Take a look at her other forms [1 available]");
+			if(checkTrust('haze' >= 60))
+				writeFunction("writeEncounter('hazeChange1')", "Take a look at her other forms [1 available]");
 			writeFunction("writeEncounter('hazeStory')", "Chat with her");
 			writeFunction("changeLocation(data.player.location)", "Leave");
 			break;
@@ -750,11 +752,25 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "haze3" : {
 			writeText("As you focus, your mind lingers fixates for a few seconds on the idea of the door, the sensation of your body getting heavier weighing you down...");
 			writeText("And when you 'open' your eyes, it's to the familiar sight of the pink void and the just-as-pink dream demon.");
-			writeSpeech("haze","","Heya. You here for a bit of fun, hun~? I don't have another form quite ready for you yet, but I'm up for a bit of play like this~!");
-			writeSpecial("You've finished all content for hazeF for this version.");
+			writeSpeech("haze","","Heya. You here for a bit of fun, hun~? I don't have another form quite ready for you yet, but I'm up for a bit of play with what I have already~!");
+			if(galleryCheck('haze2A') && galleryCheck('haze2B'))
+				writeSpecial("You've finished all content for hazeF for this version.");
 			writeFunction("writeEvent('haze1C')", "Fuck her as she is again");
+			writeFunction("writeEncounter('hazeChange1')", "Take a look at her other forms [1 available]");
 			writeFunction("writeEncounter('hazeStory')", "Chat with her");
 			writeFunction("changeLocation(data.player.location)", "Leave");
+			break;
+		}
+		case "profileYoru" : {
+			writeText("A haze seems to settle over hazeF for a moment before she gives a gentle flick of her wrist, her form shifting sharply to match the image.");
+			writeText("Smiling, she runs her hands through her purple hair, before cupping her breasts with a smirk.");
+			writeSpeech("haze","hazeYoru.jpg","So, what'll it be? How do you want to have fun with this body here~?");
+			writeText("A few vauge thoughts filter into your head as she toys with her chest in front of you...");
+			writeFunction("writeEvent('haze2A')", "Get a handjob on the beach");
+			writeFunction("writeEvent('haze2B')", "Get a blowjob on the sand");
+			//writeFunction("writeEvent('haze2C')", "Fuck her against the volleyball net");
+			//writeFunction("writeEvent('haze2D')", "Fuck her doggy-style on the sand");
+			writeFunction("writeEncounter('hazeTalkReturn')", "Go back");
 			break;
 		}
 		default: {
@@ -768,7 +784,8 @@ var eventArray = [
 	{index: "haze1A", name: "Meeting - Getting Handsy with hazeF"},
 	{index: "haze1B", name: "Meeting Alt - Impatient and Handsy"},
 	{index: "haze1C", name: "More Fun with the Pink-Haired Succubus"},
-	//{index: "haze2A", name: "Yoruichi - Feeling Sporty"},
+	{index: "haze2A", name: "Sporty Handjob on the Sand"},
+	{index: "haze2B", name: "Getting Blown on the Beach"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -854,6 +871,116 @@ function writeEvent(name) { //Plays the actual event.
 			//writeFunction("writeEncounter('hazeEvent1RepC')", "Tell her to turn around and show herself off");
 			break;
 		}
+		case "haze2A" : {
+			if(data.player.location != 'gallery'){
+				if(data.player.time == "Morning")
+					passTime();
+				if(galleryCheck('haze2B') && checkTrust('haze') < 70){
+					setTrust('haze',70)
+				}
+				else{
+					setTrust('haze',65)
+				}
+			}
+			document.getElementById('output').innerHTML = '';
+			writeText("hazeF steps calmly towards you, the area around you shifting to match that of a beach. The sun feels pleasantly warm as she reaches her arms up, stretching out with a comfy mewl.");
+			writeText("When she gets close to you, though, she pauses, her lips pulling into a smile.");
+			writeText("Her hand calmly reaches down, gently rubbing against you through your pants as she lets out a joyful hum.");
+			writeSpeech("haze","hazeYoru.jpg","Well now, I think I can tell how much you like the look~!");
+			writeBig("images/haze/2-1.jpg","Art by Purple Haze");
+			writeSpeech("haze","hazeYoru.jpg","Mm, but... how about we get rid of this annoying pair of pants~");
+			writeText("Leaning in, the hand on your shoulder shifts for a moment before there's a resonant, echoing <b>snap.</b> Looking down, you can see your pants are already gone, her fingers already tracing along your exposed length.");
+			writeSpeech("haze","hazeYoru.jpg","Mm, that's much better, isn't it~?");
+			writeText("Her breath is warm and heavy on your neck,as the pleasure in your body seems to build more and more... Her fingers feel incredible gliding up and down your shaft, sliding from the base to the tip.");
+			writeText("Her palm gently rubs against the tip, smearing your pre all over her hand before going back down, getting your cock nice and slick as she picks up speed, her grip shifting quickly to vary up the pressure as the pleasure grows.");
+			writeSpeech("player","","N-Nn...!");
+			writeSpeech("haze","hazeYoru.jpg","Mm, there we go...");
+			writeText("Her tongue drags along your neck as she smiles.");
+			writeSpeech("haze","hazeYoru.jpg","Just focus on your cock, on the bliss of my hand stroking you <i><b>up...</b></i> and <i><b>down...</b></i>");
+			writeText("Her lips keep teasing at your neck, each gentle press sending sparks of pleasure up and down your body, your hips bucking unconsciously.");
+			writeSpeech("player","","C-Crap, you're...");
+			writeSpeech("haze","hazeYoru.jpg","Making it feel <i>way</i> better than it should~?");
+			writeText("Her lips pull at your ear for a moment, a soft giggle ringing out.");
+			writeSpeech("haze","hazeYoru.jpg","That's because I want to give you a little test drive~ A taste of what sorts of things we can do here...");
+			writeText("hazeF's hand picks up speed, the pleasure spiking sharply as you hear her coo gently.");
+			writeSpeech("haze","hazeYoru.jpg","Come on, cum for me~ I know you want to~");
+			writeText("She bites her lip gently, giving a soft laugh.");
+			writeSpeech("haze","hazeYoru.jpg","This beautiful tan stomach would look lovely with a nice load of cum on it, don't you think~? So go ahead...");
+			writeText("She smiles widely, getting even faster with her strokes now as you start groaning deeply.");
+			writeText("You can feel yourself rapidly approaching the edge, as she throatily says,");
+			writeSpeech("haze","hazeYoru.jpg","<b>Cum for me, playerF~</b>");
+			writeBig("images/haze/2-2.jpg","Art by Purple Haze");
+			writeSpeech("haze","hazeYoru.jpg","Oh~!");
+			writeText("Her body shudders slightly as your cum spurts out, spattering against her skin as she lets out a heavy breath.");
+			writeText("Biting her lip, she keeps stroking, milking out more and more as your orgasm drags on, the pleasure unabating.");
+			writeText("It feels like you're cumming for minutes before she finally lets her hand come to a stop, a content sigh coming from her as she does.");
+			writeBig("images/haze/2-3.jpg","Art by Purple Haze");
+			writeSpeech("haze","hazeYoru.jpg","Mm, nice and thick I see~ Just the way I like it~");
+			writeText("She brings her hand up to her mouth, dragging her tongue seductively along her fingers before winking.");
+			writeSpeech("haze","hazeYoru.jpg","Hope it's just as thick next time, playerF~");
+			writeText("She leans forward again, her breath hot against your ear as everything gets a bit brighter, your body starting to wake up.");
+			writeSpeech("haze","hazeYoru.jpg","I'll be looking forward to it~");
+			if(data.player.location != 'gallery')
+				writeFunction("changeLocation(data.player.location)", "Wake up");
+			break;
+		}
+		case "haze2B" : {
+			if(data.player.location != 'gallery'){
+				if(data.player.time == "Morning")
+					passTime();
+				if(galleryCheck('haze2A') && checkTrust('haze') < 70){
+					setTrust('haze',70)
+				}
+				else{
+					setTrust('haze',65)
+				}
+			}
+			document.getElementById('output').innerHTML = '';
+			writeText("You're thinking for only a few moments before a sea breeze seems to brush across your skin, the Dreamscape shifting around you gently.");
+			writeText("hazeF looks around for a moment before licking her lips, looking you up and down.");
+			writeSpeech("haze","hazeYoru.jpg","Mm, nice locale - and the outfit's not bad either...");
+			writeText("You're wearing trunks now, though all the way up for much longer, as hazeF's hand teases the elastic down.");
+			writeSpeech("player","","You know what I want, then?");
+			writeSpeech("haze","hazeYoru.jpg","One of the perks of owning the dream, playerF...");
+			writeText("She kneels down, your trunks going down with her as she deftly extends her tongue to your tip, guiding it into her mouth even as you can still somehow hear,");
+			writeSpeech("haze","hazeYoru.jpg","...is ignoring some of the dumber rules of the outside reality~");
+			writeText("She gently swirls her tongue around your head, letting out an aroused hum as she looks up at you.");
+			writeBig("images/haze/2-4.jpg","Art by Purple Haze");
+			writeText("She takes your shaft deeper as she goes, the underside of your shaft dragging against her tongue.");
+			writeText("Bobbing up and down, you can feel the sensation of your head pressing against the entrance to her throat for a second... before she pulls back.");
+			writeSpeech("haze","","Hm... Let's try this~");
+			writeSpeech("player","","Try wh-<i><b>NN~</b></i>");
+			writeText("Your cockhead slides against the inside of her cheek as she gives you a mischievious look, her fingers rubbing against her cheek to swirl faintly against your cock.");
+			writeSpeech("player","","Ohhh fuck...!");
+			writeText("Her tongue doesn't stop its continuous teasing of your shaft, teasing along its length as she uses her full palm now to tease at your cock through her cheek.");
+			writeText("A few moments later, though, the sensation disappears as she pulls your head away for a moment...");
+			writeText("Before she swings her entire head forward, her nose pressing to your abdomen in a second.");
+			writeSpeech("haze","","<i><b>GHUK~!</b></i>");
+			writeText("You hear her let out a deep, wet grunt around your shaft as she starts using your cock to fuck her throat.");
+			writeSpeech("player","","S-Shit, it's so <i>tight</i>...!");
+			writeText("She lets out several excited, almost proud giggles around your cock, the vibrations stimulating you further.");
+			writeText("But as she stops suddenly, her lips to your base and her chin to your balls, you're not quite ready when she starts to <b>swallow.</b>");
+			writeText("The sensation of her entire throat squeezing and massaging at your shaft is incredible, your head held deep in and being teased by her throat.");
+			writeSpeech("player","","I'm...!");
+			writeText("You feel the pleasure beginning to reach its peak as she turning her head just a bit, gliding just the smallest bit back and forth as she swallows again and again.");
+			writeText("Her voice seems to hover in your head as she looks up at you hungrily.");
+			writeSpeech("haze","","<i>Cum for me~</i>");
+			writeText("You buck your hips forward, unable to resist the urge to cum as you swing forwward.");
+			writeText("Rope after rope spurts into her stomach at first, before she draws herself away a bit even as you cum.");
+			writeText("Her mouth fills up with more than a few spurts as she shuts her eyes, her body shuddering gently in pleasure as you finish.");
+			writeBig("images/haze/2-5.jpg","Art by Purple Haze");
+			writeText("She holds that position for several seconds, your throbbing cock still resting on her slick tongue as she hums in contentment.");
+			writeText("hazeF opens her eyes a moment later, looking up to you and maintaining eye-contact as she pulls herself off your cock, a bit of cum still connecting your cock to her lips.");
+			writeSpeech("haze","","Mm~!");
+			writeText("She swallows heavily, looking up at your still-dribbling cock with a smile.");
+			writeBig("images/haze/2-6.jpg","Art by Purple Haze");
+			writeSpeech("haze","","Hah~... Such a wonderful flavor~");
+			writeText("She slowly starts to stand up, her mouth going to your tip just long enough to pick up the last of the cum as the lights around you start to get brighter again.");
+			writeSpeech("haze","","Time's up again... but seems to me we both had fun~ See you next time, playerF~");
+			if(data.player.location != 'gallery')
+				writeFunction("changeLocation(data.player.location)", "Wake up");
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong event. Error code: Failed to write event ("+name+") in "+character.index+".js");
 			break;
@@ -876,7 +1003,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "hazeReward", trust: 60,},
+	{index: "hazeReward", trust: 70,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
@@ -884,7 +1011,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "hazeReward": {
 			writePhoneImage("images/haze/fin.jpg", "Art by Purple Haze");
-			writePhoneSpeech("haze", "", "You've finished all of hazeF's content for this version, congratulations! You can return to hazeF to see the other option for the sex scene.");
+			writePhoneSpeech("haze", "", "You've finished all of hazeF's content for this version, congratulations!");
 			break;
 		}
 		default: {
@@ -892,6 +1019,83 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			break;
 		}
 	}
+}
+
+function openWardrobe() {
+	document.getElementById('output').innerHTML += `
+	<div id="wardrobeGrid" style="display:grid; grid-template-columns:auto auto auto auto;">
+	</div>
+	`;
+	writeWardrobeOption("profileYoru");
+	/*
+	switch(checkTrust("nagatoro")) {
+		case 101:
+			writeWardrobeOption("nagatoroBunny1-1");
+			writeWardrobeOption("nagatoroSchoolgirlLocked");
+			writeWardrobeOption("nagatoroSwimsuitLocked");
+			writeWardrobeOption("nagatoroPrincessLocked");
+		break;
+		case 102:
+			writeWardrobeOption("nagatoroBunny2-1");
+			writeWardrobeOption("nagatoroSchoolgirl1-1");
+			writeWardrobeOption("nagatoroSwimsuitLocked");
+			writeWardrobeOption("nagatoroPrincessLocked");
+		break;
+		case 103:
+			writeWardrobeOption("nagatoroBunny3-1");
+			writeWardrobeOption("nagatoroSchoolgirl1-1");
+			writeWardrobeOption("nagatoroSwimsuit1-1");
+			writeWardrobeOption("nagatoroPrincessLocked");
+		break;
+		case 104:
+			writeWardrobeOption("nagatoroBunny3-1");
+			writeWardrobeOption("nagatoroSchoolgirl1-1");
+			writeWardrobeOption("nagatoroSwimsuit1-1");
+			writeWardrobeOption("nagatoroPrincess1-1");
+		break;
+		case 666:
+			writeWardrobeOption("nagatoroBunny3-1");
+			writeWardrobeOption("nagatoroSuccubus1-1");
+			writeWardrobeOption("nagatoroSwimsuit1-1");
+			writeWardrobeOption("nagatoroPrincess1-1");
+		break;
+		default:
+			//writeWardrobeOption("002");
+			//writeWardrobeOption("032");
+			//writeWardrobeOption("112");
+			//writeWardrobeOption("nagatoroPrincessLocked");
+
+	}*/
+}
+
+function writeWardrobeOption(wardrobeImage) {
+	if (wardrobeImage.includes("Locked")==false) {
+		document.getElementById('wardrobeGrid').innerHTML += `
+			<img class="bigPicture" id="`+wardrobeImage+`" src="images/haze/`+wardrobeImage+`.jpg" title="Art by Purple Haze"
+			onclick="writeEncounter('`+wardrobeImage+`')",
+			onmouseover="wardrobeMouseOver('`+wardrobeImage+`')"
+			onmouseout="wardrobeMouseOut('`+wardrobeImage+`')"
+			style="filter:brightness(50%);">
+		`;
+	}
+	else {
+		document.getElementById('wardrobeGrid').innerHTML += `
+			<img class="bigPicture" id="`+wardrobeImage+`" src="images/nagatoro/unknown.png" title="Sorry, but I can't go sharing everything at once you know~!"
+			onmouseover="wardrobeMouseOver('`+wardrobeImage+`')"
+			onmouseout="wardrobeMouseOut('`+wardrobeImage+`')"
+			style="filter:brightness(50%);">
+		`;
+	}
+}
+
+function wardrobeMouseOver(wardrobeImage) {
+	//console.log(document.getElementById(wardrobeImage).style.filter)
+	document.getElementById(wardrobeImage).style.filter = "brightness(100%)"
+}
+
+function wardrobeMouseOut(wardrobeImage) {
+	//console.log(document.getElementById(wardrobeImage).style.filter)
+	document.getElementById(wardrobeImage).style.filter = "brightness(50%)"
 }
 
 //Don't touch anything below this, or things will break.

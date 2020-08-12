@@ -35,6 +35,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeHTML(`
 				
 			`);
+			raiseTrust('shyboi', 20);
 			break;
 		}
 		case "stage1Quo": {
@@ -44,6 +45,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "stage1Choices": {
+			writeHTML(`
+				
+			`);
+			writeFunction("fetishToggle('sissyPorn')", "");
+			writeFunction("fetishToggle('cantJerk')", "");
+			break;
+		}
+		case "stage1Result": {
 			writeHTML(`
 				
 			`);
