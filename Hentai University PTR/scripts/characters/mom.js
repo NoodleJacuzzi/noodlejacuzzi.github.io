@@ -388,10 +388,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "momEnding": {
 			writeEvent(name);
 			writeFunction("writeEncounter('momEndingCont')", "Months later");
+			break;
 		}
 		case "momEndingCont": {
 			writeEvent(name);
 			writeFunction("loadEncounter('system', 'credits')", "The End");
+			break;
 		}
 	}
 }
@@ -667,36 +669,37 @@ function writeEvent(name) { //Plays the actual event.
 				sp mom; But I'm a woman with needs, got it? Don't think I'll take your work as an excuse either, okay? You and I aren't leaving this house until we're both exhausted, sweaty wrecks!
 			`);
 			break;
-			case "momEndingCont": {
-				writeHTML(`
-					t You push open the door and walk inside. Another day's work behind you.
-					sp player; I'm hoooome~
-					sp mom; Bedroom, honey~!
-					im e-1.jpg
-					sp mom; Suprise~! They're getting even bigger~!
-					t You're greeted with a pair of tits. A lovely way to start the end of your day.
-					im e-2.jpg
-					sp mom; Ooh, that feels nice. It feels like they're more full of milk every day...<br>Hey, you in the mood?
-					sp player; Always, dear. But it's been every day, aren't you getting tired?
-					sp mom; Hehe, some women get cravings around this time you know.
-					sp player; Yeah. You're the only one I've heard about who gets them for dick though.
-					sp mom; Hah~! You keep telling me I'm special!<br>Cmon... I need it~
-					im e-3.jpg
-					sp mom; Ah~! Ah~!
-					t Each spank causes her to tighten around you. Part of you wants to be gentle with her, but her expression shows she's clearly hungry for more.
-					im e-4.jpg
-					sp mom; Ohhh...
-					t A thin line of drool escapes her lips as her eyes narrow and roll back.
-					t You pull out, having cum inside so deeply not a drop leaks out. You relax and lay back on the bed, content to let momF rest in the aftergl-
-					t But you're interrupted as momF takes your cock in her hand and starts stroking it up and down, even leaning down to lick the head.
-					sp player; You're insatiable, darling.
-					sp mom; You're addictive, honey.
-					im e-5.jpg
-					sp mom; Hoo~
-					t The night passes in a blurred frenzy, as most of them do these days.
-					im e-7.jpg
-				`);
-			}
+		}
+		case "momEndingCont": {
+			writeHTML(`
+				t You push open the door and walk inside. Another day's work behind you.
+				sp player; I'm hoooome~
+				sp mom; Bedroom, honey~!
+				im e-1.jpg
+				sp mom; Suprise~! They're getting even bigger~!
+				t You're greeted with a pair of tits. A lovely way to start the end of your day.
+				im e-2.jpg
+				sp mom; Ooh, that feels nice. It feels like they're more full of milk every day...<br>Hey, you in the mood?
+				sp player; Always, dear. But it's been every day, aren't you getting tired?
+				sp mom; Hehe, some women get cravings around this time you know.
+				sp player; Yeah. You're the only one I've heard about who gets them for dick though.
+				sp mom; Hah~! You keep telling me I'm special!<br>Cmon... I need it~
+				im e-3.jpg
+				sp mom; Ah~! Ah~!
+				t Each spank causes her to tighten around you. Part of you wants to be gentle with her, but her expression shows she's clearly hungry for more.
+				im e-4.jpg
+				sp mom; Ohhh...
+				t A thin line of drool escapes her lips as her eyes narrow and roll back.
+				t You pull out, having cum inside so deeply not a drop leaks out. You relax and lay back on the bed, content to let momF rest in the aftergl-
+				t But you're interrupted as momF takes your cock in her hand and starts stroking it up and down, even leaning down to lick the head.
+				sp player; You're insatiable, darling.
+				sp mom; You're addictive, honey.
+				im e-5.jpg
+				sp mom; Hoo~
+				t The night passes in a blurred frenzy, as most of them do these days.
+				im e-7.jpg
+			`);
+		break;
 		}
 	}
 	var unlockedScene = "";
