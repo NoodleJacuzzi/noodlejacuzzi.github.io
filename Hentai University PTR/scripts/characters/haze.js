@@ -650,7 +650,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeFunction("writeEvent('haze1A')", "Fuck her");
 			else
 				writeFunction("writeEvent('haze1C')", "Fuck her as she is again");
-			if(checkTrust('haze' >= 60))
+			if(checkTrust('haze') >= 60)
 				writeFunction("writeEncounter('hazeChange1')", "Take a look at her other forms [1 available]");
 			writeFunction("writeEncounter('hazeStory')", "Chat with her");
 			writeFunction("changeLocation(data.player.location)", "Leave");
@@ -948,14 +948,14 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/haze/2-4.jpg","Art by Purple Haze");
 			writeText("She takes your shaft deeper as she goes, the underside of your shaft dragging against her tongue.");
 			writeText("Bobbing up and down, you can feel the sensation of your head pressing against the entrance to her throat for a second... before she pulls back.");
-			writeSpeech("haze","","Hm... Let's try this~");
+			writeSpeech("haze","hazeYoru.jpg","Hm... Let's try this~");
 			writeSpeech("player","","Try wh-<i><b>NN~</b></i>");
 			writeText("Your cockhead slides against the inside of her cheek as she gives you a mischievious look, her fingers rubbing against her cheek to swirl faintly against your cock.");
 			writeSpeech("player","","Ohhh fuck...!");
 			writeText("Her tongue doesn't stop its continuous teasing of your shaft, teasing along its length as she uses her full palm now to tease at your cock through her cheek.");
 			writeText("A few moments later, though, the sensation disappears as she pulls your head away for a moment...");
 			writeText("Before she swings her entire head forward, her nose pressing to your abdomen in a second.");
-			writeSpeech("haze","","<i><b>GHUK~!</b></i>");
+			writeSpeech("haze","hazeYoru.jpg","<i><b>GHUK~!</b></i>");
 			writeText("You hear her let out a deep, wet grunt around your shaft as she starts using your cock to fuck her throat.");
 			writeSpeech("player","","S-Shit, it's so <i>tight</i>...!");
 			writeText("She lets out several excited, almost proud giggles around your cock, the vibrations stimulating you further.");
@@ -964,19 +964,19 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player","","I'm...!");
 			writeText("You feel the pleasure beginning to reach its peak as she turning her head just a bit, gliding just the smallest bit back and forth as she swallows again and again.");
 			writeText("Her voice seems to hover in your head as she looks up at you hungrily.");
-			writeSpeech("haze","","<i>Cum for me~</i>");
+			writeSpeech("haze","hazeYoru.jpg","<i>Cum for me~</i>");
 			writeText("You buck your hips forward, unable to resist the urge to cum as you swing forwward.");
 			writeText("Rope after rope spurts into her stomach at first, before she draws herself away a bit even as you cum.");
 			writeText("Her mouth fills up with more than a few spurts as she shuts her eyes, her body shuddering gently in pleasure as you finish.");
 			writeBig("images/haze/2-5.jpg","Art by Purple Haze");
 			writeText("She holds that position for several seconds, your throbbing cock still resting on her slick tongue as she hums in contentment.");
 			writeText("hazeF opens her eyes a moment later, looking up to you and maintaining eye-contact as she pulls herself off your cock, a bit of cum still connecting your cock to her lips.");
-			writeSpeech("haze","","Mm~!");
+			writeSpeech("haze","hazeYoru.jpg","Mm~!");
 			writeText("She swallows heavily, looking up at your still-dribbling cock with a smile.");
 			writeBig("images/haze/2-6.jpg","Art by Purple Haze");
-			writeSpeech("haze","","Hah~... Such a wonderful flavor~");
+			writeSpeech("haze","hazeYoru.jpg","Hah~... Such a wonderful flavor~");
 			writeText("She slowly starts to stand up, her mouth going to your tip just long enough to pick up the last of the cum as the lights around you start to get brighter again.");
-			writeSpeech("haze","","Time's up again... but seems to me we both had fun~ See you next time, playerF~");
+			writeSpeech("haze","hazeYoru.jpg","Time's up again... but seems to me we both had fun~ See you next time, playerF~");
 			if(data.player.location != 'gallery')
 				writeFunction("changeLocation(data.player.location)", "Wake up");
 			break;
