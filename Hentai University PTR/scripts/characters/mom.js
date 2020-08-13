@@ -387,6 +387,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "momEnding": {
 			writeEvent(name);
+			writeFunction("writeEncounter('momEndingCont')", "Months later");
+		}
+		case "momEndingCont": {
+			writeEvent(name);
 			writeFunction("loadEncounter('system', 'credits')", "The End");
 		}
 	}
@@ -632,15 +636,65 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "momEnding": {
 			writeHTML(`
-				im e-1.jpg
-				im e-2.jpg
-				im e-3.jpg
-				im e-4.jpg
-				im e-5.jpg
-				im e-6.jpg
-				im e-7.jpg
+				t You sigh, deep in thought. It's hard to imagine going legit for anyone, even momF.
+				sp mom; Hellooo~? You got a headache or something? I have some-
+				sp player; momF, I want these dates to be a regular thing.
+				sp mom; Uh... They already are, though?<br>Oh I get it, you want the happy endings more regularly? Hah! You're practically still a kid!
+				sp player; Not just that... I like spending time with you. I want more.
+				sp mom; ... You're acting pretty weird today. Yeah, I'll hang out with you as much as you want, okay? Cmon in, I'll grab us some drinks. You can sleep over if you want, you live nextdoor anyways.
+				sp player; Yeah... Just not sure what else to say... It's not like I've got a ring or anything.
+				t She does a double take.
+				sp mom; Wha-? Wait, that's what you meant?! You asshole!
+				t She gives you a hard jab in the shoulder, and pouts for a little, then sighs.
+				sp mom; God damn, that was a trash way to ask... But... <br>My answer's still yes.
+				sp player; Let's drink to it then.
+				sp mom; Hah~! Gonna try and get me hammered so I forget that awful proposal? Fat chance!<br>Hehe... I guess a little would be fine though. Drunk sex is more fun, right?
+				...
+				im 2-1.jpg
+				t You spend the night in good company, despite her earlier claim she's pretty comfortable getting pretty drunk with you.
+				t As things reach a fever pitch she sits up so she can start slipping her comfortable pajamas off.
+				im 140.jpg
+				t She waves her ass, trying to seduce you as best as a middle-aged drunk woman can.
+				sp mom; Eheh... Y'know... I was confused why somebody like you'd hang out with somebody like me...<br>I bet it's cause of this, huh?
+				sp player; You are tempting. But there's more to you too.
+				sp mom; Hah~! I'm old, not blind. I can see you stealing glances whenever you can tear your eyes away from my chest!
+				...
+				im 114.jpg
+				sp mom; Hah... You're still here, huh? So I guess that means you were serious?
+				sp player; I meant every word.
+				sp mom; Mmmgh... Fine. But if you want me to be yours... You're gonna need to keep up with me, alright? You may be cute, and you might pay good lip service...
+				im 115.jpg
+				sp mom; But I'm a woman with needs, got it? Don't think I'll take your work as an excuse either, okay? You and I aren't leaving this house until we're both exhausted, sweaty wrecks!
 			`);
 			break;
+			case "momEndingCont": {
+				writeHTML(`
+					t You push open the door and walk inside. Another day's work behind you.
+					sp player; I'm hoooome~
+					sp mom; Bedroom, honey~!
+					im e-1.jpg
+					sp mom; Suprise~! They're getting even bigger~!
+					t You're greeted with a pair of tits. A lovely way to start the end of your day.
+					im e-2.jpg
+					sp mom; Ooh, that feels nice. It feels like they're more full of milk every day...<br>Hey, you in the mood?
+					sp player; Always, dear. But it's been every day, aren't you getting tired?
+					sp mom; Hehe, some women get cravings around this time you know.
+					sp player; Yeah. You're the only one I've heard about who gets them for dick though.
+					sp mom; Hah~! You keep telling me I'm special!
+					im e-3.jpg
+					
+					im e-4.jpg
+					sp mom; Ohhh...
+					t A thin line of drool escapes her lips as her eyes narrow and roll back.
+					t You pull out, having cum inside so deeply not a drop leaks out. You relax and lay back on the bed, content to let momF rest in the aftergl-
+					t But you're interrupted as momF takes your cock in her hand and starts stroking it up and down, even leaning down to lick the head.
+					sp player; You're insatiable, darling.
+					sp mom; You're addictive, honey.
+					im e-5.jpg
+					im e-6.jpg
+					im e-7.jpg
+				`);
+			}
 		}
 	}
 	var unlockedScene = "";
