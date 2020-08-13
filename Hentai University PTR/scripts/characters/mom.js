@@ -680,9 +680,10 @@ function writeEvent(name) { //Plays the actual event.
 					sp player; Always, dear. But it's been every day, aren't you getting tired?
 					sp mom; Hehe, some women get cravings around this time you know.
 					sp player; Yeah. You're the only one I've heard about who gets them for dick though.
-					sp mom; Hah~! You keep telling me I'm special!
+					sp mom; Hah~! You keep telling me I'm special!<br>Cmon... I need it~
 					im e-3.jpg
-					
+					sp mom; Ah~! Ah~!
+					t Each spank causes her to tighten around you. Part of you wants to be gentle with her, but her expression shows she's clearly hungry for more.
 					im e-4.jpg
 					sp mom; Ohhh...
 					t A thin line of drool escapes her lips as her eyes narrow and roll back.
@@ -691,7 +692,8 @@ function writeEvent(name) { //Plays the actual event.
 					sp player; You're insatiable, darling.
 					sp mom; You're addictive, honey.
 					im e-5.jpg
-					im e-6.jpg
+					sp mom; Hoo~
+					t The night passes in a blurred frenzy, as most of them do these days.
 					im e-7.jpg
 				`);
 			}
