@@ -1605,6 +1605,9 @@ function writeBig (img, cap) {
 			console.log(img);
 		}
 	}
+	if (img.includes("images") == false && img.includes("imagebox") == false && img.includes("scripts") == false) {
+		img = "images/"+character.index+"/"+img;
+	}
 	if (imagesDisabled != true) {
 		switch (data.player.style) {
 			case "lobotomy": {
