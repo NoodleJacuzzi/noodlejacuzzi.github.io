@@ -804,7 +804,7 @@ function writeEncounter(name) { //Plays the actual encounter.
                 sp succubus; Not that some of those changes will change much for him, seeing as he's already getting off with just his ass already.
                 sp player; And he'll be acting like his usual self tomorrow?
                 sp succubus; Yup. I can set off his full transformation later.<br>Let's see... No unique powers I can detect, but it's not like you wanted him for that. I'll just mess with his memories real quick...
-           `);
+            `);
             writeFunction("changeLocation('playerHouse')", "Leave succubusF to it");
         }
 		default: {
