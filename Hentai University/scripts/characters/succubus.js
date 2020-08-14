@@ -806,6 +806,7 @@ function writeEncounter(name) { //Plays the actual encounter.
                 sp succubus; Yup. I can set off his full transformation later.<br>Let's see... No unique powers I can detect, but it's not like you wanted him for that. I'll just mess with his memories real quick...
             `);
             writeFunction("changeLocation('playerHouse')", "Leave succubusF to it");
+			break;
         }
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
