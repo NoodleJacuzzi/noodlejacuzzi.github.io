@@ -795,6 +795,18 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation('playerHouse')", "Finish");
 			break;
 		}
+		case "mejiCorruption" : {
+            writeHTML(`
+                sp succubus; Looks like you two had some fun... Digging his outfit by the way.
+                t succubusF's voice catches you a bit off-guard as you look back, seeing him leaning against the wall casually.
+                sp succubus; He's got some good potential - definitely not to <i>my</i> level of course, but it's respectable. I'll make sure the changes to his body are a bit on the gradual side.
+                t succubusF chuckles slightly, shaking his head.
+                sp succubus; Not that some of those changes will change much for him, seeing as he's already getting off with just his ass already.
+                sp player; And he'll be acting like his usual self tomorrow?
+                sp succubus; Yup. I can set off his full transformation later.<br>Let's see... No unique powers I can detect, but it's not like you wanted him for that. I'll just mess with his memories real quick...
+           `);
+            writeFunction("changeLocation('playerHouse')", "Leave succubusF to it");
+        }
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
