@@ -25,6 +25,7 @@ var data = {
 		characterArtist: "Art by Ishimura",
 		currentScene: "start",
 		time: "Morning",
+		blacklist: [],
 		day: 1,
 		money: 30,
 		hypnosis: 1,
@@ -32,7 +33,7 @@ var data = {
 		counseling: 0,
 		lastText: 100,
 		dayID: 1,
-		version: 7,
+		version: 8,
 		location: "",
 		pervert: false,
 		color: "#86b4dc",
@@ -69,7 +70,7 @@ var data = {
 		{index: "swimmer", 		met: false, fName: "Naomi", lName: "Greens", 		trust: 0, encountered: false, textEvent: "", color: "#8DB7D0", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
 		{index: "orange", 		met: false, fName: "Vanessa", lName: "Lions", 		trust: 0, encountered: false, textEvent: "", color: "#BA5B17", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
 		{index: "cold", 		met: false, fName: "Kelsey", lName: "Lowe", 		trust: 0, encountered: false, textEvent: "", color: "#FCFFFA", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
-		{index: "coach", 		met: false, fName: "Amy", lName: "Silver", 			trust: 0, encountered: false, textEvent: "", color: "#D7BB2E", author: "Slackersavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
+		{index: "coach", 		met: false, fName: "Amy", lName: "Silver", 			trust: 0, encountered: false, textEvent: "", color: "#D7BB2E", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
 	],
 	gallery: [
 	],
@@ -253,6 +254,41 @@ var ghostArray = [
 	{name: "Yorihime", 				difficulty: 1, rarity: "01", time:"MorningEvening", top: 70, left: 85, requirement: 0, location: "playerOffice", 
 	description: "A being from another world, a place of shrines and fairies."},
 ];
+
+var quickAuthorArray = [
+	{index: "mom", author: "NoodleJacuzzi",},
+	{index: "tomgirl", author: "NoodleJacuzzi",},
+	{index: "purple", author: "NoodleJacuzzi",},
+	{index: "chubby", author: "NoodleJacuzzi",},
+	{index: "principal", author: "NoodleJacuzzi",},
+	{index: "secretary", author: "NoodleJacuzzi",},
+	{index: "neet", author: "NoodleJacuzzi",},
+	{index: "scarf", author: "NoodleJacuzzi",},
+	{index: "green", author: "NoodleJacuzzi",},
+	{index: "succubus", author: "NoodleJacuzzi",},
+	{index: "nurse", author: "NoodleJacuzzi",},
+	{index: "incubus", author: "NoodleJacuzzi",},
+	{index: "president", author: "NoodleJacuzzi",},
+	{index: "treasurer", author: "NoodleJacuzzi",},
+	{index: "ojou", author: "NoodleJacuzzi",},
+	{index: "mama", author: "NoodleJacuzzi",},
+	{index: "pinstripe", author: "NoodleJacuzzi",},
+	{index: "instructor", author: "NoodleJacuzzi",},
+	{index: "nagatoro", author: "NoodleJacuzzi",},
+	{index: "kuro", author: "CryptoGreek",},
+	{index: "maid", author: "CryptoGreek",},
+	{index: "mistress", author: "CryptoGreek",},
+	{index: "meji", author: "CryptoGreek",},
+	{index: "housekeep", author: "CryptoGreek",},
+	{index: "haze", author: "CryptoGreek",},
+	{index: "nikki", author: "CryptoGreek",},
+	{index: "cafedark", author: "CryptoGreek",},
+	{index: "sports", author: "SlackerSavior",},
+	{index: "swimmer", author: "SlackerSavior",},
+	{index: "orange", author: "SlackerSavior",},
+	{index: "cold", author: "SlackerSavior",},
+	{index: "coach", author: "SlackerSavior",},
+]
 
 //Startup & Systems config
 function startup() {
@@ -521,6 +557,9 @@ function replaceCodenames(text) {
 				text = text.replace("*he", "he");
 				text = text.replace("*He", "He");
 				text = text.replace("*HE", "HE");
+				text = text.replace("*bastard", "bastard");
+				text = text.replace("*Bastard", "Bastard");
+				text = text.replace("*BASTARD", "BASTARD");
 				text = text.replace("*his", "his");
 				text = text.replace("*His", "His");
 				text = text.replace("*HIS", "HIS");
@@ -557,6 +596,9 @@ function replaceCodenames(text) {
 				text = text.replace("*he", "she");
 				text = text.replace("*He", "She");
 				text = text.replace("*HE", "SHE");
+				text = text.replace("*bastard", "bitch");
+				text = text.replace("*Bastard", "Bitch");
+				text = text.replace("*BASTARD", "BITCH");
 				text = text.replace("*his", "her");
 				text = text.replace("*His", "Her");
 				text = text.replace("*HIS", "HER");
@@ -1005,6 +1047,7 @@ function loadEncounter(js, name) {
 		if (data.story[i].index == js) {
 			data.story[i].encountered = true;
 			targetFile = data.story[i].index;
+			document.getElementById('sceneAuthor').innerHTML = 'Author of this scene: <br>'+data.story[i].author;
 		}
 	}
 	var filename = "scripts/characters/"+targetFile+".js";
@@ -1029,6 +1072,7 @@ function loadEvent(js, name) {
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].index == js) {
 			targetFile = data.story[i].index;
+			document.getElementById('sceneAuthor').innerHTML = 'Author of this scene: <br>'+data.story[i].author;
 		}
 	}
 	var filename = "scripts/characters/"+targetFile+".js";
@@ -1279,6 +1323,9 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 					cancelTab = true;
 				}
 			}
+		}
+		if (checkTrust(name) == 0 && data.player.location == "map") {
+			cancelTab = true;
 		}
 		if (data.story[tabIndex].trust == 0) {
 			//text += "HIDDEN";
@@ -1588,61 +1635,87 @@ function writeSpeech (name, img, text, altName, altColor) {
 }
 
 function writeBig (img, cap) {
-	if (cap == "") {
-		if (character.artist != null) {
-			cap = character.artist;
-		}
+	var writeBigAbort = false;
+	if (data.player.blacklist.includes(img) == true) {
+			writeBigAbort = true;
 	}
-	if (img.includes('profile') == true) {
-		if (data.player.pervert != true) {
-			var checkForError = "";
-			var pervertImage = img;
+	if (writeBigAbort == false) {
+		if (cap == "") {
+			if (character.artist != null) {
+				cap = character.artist;
+			}
 		}
-		else {
-			var backupImage = img;
-			var checkForError = `onerror ="javascript:this.src='`+backupImage+`'"`;
-			img = img.replace('profile', 'profileP');
-			console.log(img);
+		if (img.includes('profile') == true) {
+			if (data.player.pervert != true) {
+				var checkForError = "";
+				var pervertImage = img;
+			}
+			else {
+				var backupImage = img;
+				var checkForError = `onerror ="javascript:this.src='`+backupImage+`'"`;
+				img = img.replace('profile', 'profileP');
+				console.log(img);
+			}
 		}
-	}
-	if (imagesDisabled != true) {
-		switch (data.player.style) {
-			case "lobotomy": {
-				var cssColor = "#CCCCCC";
-				for (i = 0; i < data.story.length; i++) {
-					if (img.includes(data.story[i].index) == true) {
-						cssColor = data.story[i].color;
-						break;
+		if (img.includes("images") == false && img.includes("imagebox") == false && img.includes("scripts") == false) {
+			img = "images/"+character.index+"/"+img;
+		}
+		if (imagesDisabled != true) {
+			switch (data.player.style) {
+				case "lobotomy": {
+					var cssColor = "#CCCCCC";
+					for (i = 0; i < data.story.length; i++) {
+						if (img.includes(data.story[i].index) == true) {
+							cssColor = data.story[i].color;
+							break;
+						}
 					}
+					document.getElementById('output').innerHTML += `
+							<img class="bigPicture" style="border-color:`+cssColor+`; border-radius: 5px;"  id = "` + img + `" src="` + img + `"`+checkForError+` title="` + cap + `">
+						<br>
+					`;
+					break;
 				}
-				document.getElementById('output').innerHTML += `
-						<img class="bigPicture" style="border-color:`+cssColor+`; border-radius: 5px;" src="` + img + `"`+checkForError+` title="` + cap + `">
-					<br>
-				`;
-				break;
-			}
-			case "persona": {
-				var cssColor = "#CCCCCC";
-				for (i = 0; i < data.story.length; i++) {
-					if (img.includes(data.story[i].index) == true) {
-						cssColor = data.story[i].color;
-						break;
+				case "persona": {
+					var cssColor = "#CCCCCC";
+					for (i = 0; i < data.story.length; i++) {
+						if (img.includes(data.story[i].index) == true) {
+							cssColor = data.story[i].color;
+							break;
+						}
 					}
+					document.getElementById('output').innerHTML += `
+							<img class="bigPicture" style="border-color:`+cssColor+`; border-radius: 5px;"  id = "` + img + `" src="` + img + `"`+checkForError+` title="` + cap + `">
+						<br>
+					`;
+					break;
 				}
-				document.getElementById('output').innerHTML += `
-						<img class="bigPicture" style="border-color:`+cssColor+`; border-radius: 5px;" src="` + img + `"`+checkForError+` title="` + cap + `">
-					<br>
-				`;
-				break;
+				default: {
+					document.getElementById('output').innerHTML += `
+						<img class="bigPicture" id = "` + img + `" src="` + img + `"`+checkForError+` title="` + cap + `">
+						<br>
+					`;
+				}
 			}
-			default: {
+			if (data.player.blacklistMode == true) {
 				document.getElementById('output').innerHTML += `
-					<img class="bigPicture" src="` + img + `"`+checkForError+` title="` + cap + `">
-					<br>
+					<p class="choiceText" id = "` + img + `Button" onclick="blacklistImage('` + img + `')">
+						Blacklist this image
+					</p>
 				`;
 			}
 		}
 	}
+}
+
+function blacklistImage(image) {
+	console.log(image+" has been added to the blacklist+");
+	console.log(document.getElementById(image));
+	data.player.blacklist.push(image);
+	var blacklistedImage = document.getElementById(image);
+	blacklistedImage.remove();
+	var blacklistedImage = document.getElementById(image+"Button");
+	blacklistedImage.remove();
 }
 
 function writeMed (img, cap) {
@@ -2477,6 +2550,20 @@ function updateSave() {
 		}
 		console.log(data.story);
 	}
+	if (data.player.version == 7) {
+		console.log('version 7 detected, updating save');
+		data.player.version = 8;
+		if (data.player.blacklist == null) {
+			data.player.blacklist = [];
+		}
+		for (x = 0; x < data.story.length; x++) {
+			for (y = 0; y < quickAuthorArray.length; y++) {
+				if (data.story[x].index == quickAuthorArray[y].index) {
+					data.story[x].author = quickAuthorArray[y].author;
+				}
+			}
+		}
+	}
 	saveSlot(110);
 }
 
@@ -2604,6 +2691,7 @@ function fileLoaded(){
 	}
 	else {
 		data = fakedata;
+		updateSave();
 		changeLocation(data.player.location);
 	}
 	document.getElementById('loadFile').value = '';
@@ -3115,6 +3203,30 @@ function diagnostic() {
 		}
 		case "new name": {
 			loadEncounter('system', 'renamingRoom');
+			break;
+		}
+		case "export blacklist": {
+			document.getElementById('output').innerHTML += JSON.stringify(data.player.blacklist);
+			break;
+		}
+		case "import blacklist": {
+			var blacklist = prompt("Please paste the blacklist", "");
+			blacklist = JSON.parse(blacklist);
+			for (i = 0; i < blacklist.length; i++) {
+				data.player.blacklist.push(blacklist[i]);
+			}
+			writeText("Blacklist imported! Now adding the following:"+ JSON.stringify(blacklist));
+			break;
+		}
+		case "blacklist": {
+			if (data.player.blacklistMode != true) {
+				data.player.blacklistMode = true;
+				writeSpecial("Blacklist mode activated. Click the button beneath an image to prevent it from appearing again.");
+			}
+			else {
+				data.player.blacklistMode = false;
+				writeSpecial("Blacklist mode has been deactivated.");
+			}
 			break;
 		}
 		case "oowoo": {

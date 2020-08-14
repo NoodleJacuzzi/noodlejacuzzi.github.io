@@ -23,6 +23,10 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "mom3", name: "mom is drunkenly stumbling home", location: 'apartmentOutside', time: "Evening", itemReq: "", trustMin: 60, trustMax: 60, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "mom4", name: "mom is walking down the street", location: 'vintageStreet', time: "Evening", itemReq: "Beer", trustMin: 79, trustMax: 89, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "mom5", name: "Knock on mom's door", location: 'apartmentOutside', time: "MorningEvening", itemReq: "", trustMin: 90, trustMax: 90, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "momreturn", name: "You see a familiar face next door", location: 'apartmentOutside', time: "Evening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "statusQuo", name: "Knock on mom's door", location: 'apartmentOutside', time: "MorningEvening", itemReq: "", trustMin: 101, trustMax: 102, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "endingPrompt", name: "mom is here", location: 'apartmentOutside', time: "MorningEvening", itemReq: "", trustMin: 103, trustMax: 103, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "statusQuo", name: "Knock on mom's door", location: 'apartmentOutside', time: "MorningEvening", itemReq: "", trustMin: 104, trustMax: 900, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "momCasino1", name: "mom is here", location: 'casino', time: "MorningEvening", itemReq: "", trustMin: 90, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
 ]
 
@@ -205,7 +209,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("...");
 			writeText("You two spend the next few hours enjoying each other's company, before finally the two of you begin to get dressed.");
 			writeSpeech("player", "", "This was nice. Wanna do it again sometime?");
-			writeSpeech("mom", "", "Sure. I'll be out of town for a few days, but I'll be back soon. We can, well, have some fun once I'm back.");
+			writeSpeech("mom", "", "Sure. I'll be out of town for most of tomorrow, but I'll be back soon. We can, well, have some fun once I'm back.");
 			writeSpeech("player", "", "It's a date.");
 			passTime();
 			setTrust('mom', 100);
@@ -240,12 +244,170 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("loadEncounter('scarf', 'failure')", "The End");
 			break;
 		}
+		case "momreturn": {
+			writeEvent(name);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			passTime();
+			setTrust('mom', 101);
+			break;
+		}
+		case "statusQuo": {
+			switch(checkTrust('mom')) {
+				case 101:
+					writeHTML(`
+						im profile.jpg;
+						sp mom; playerF! How's it going? Everything going great? Not much on my agenda for today, I was thinking about staying in. Maybe seeing if you wanted to hang out, actually.
+						sp player; Sure. I was thinking...
+					`);
+				break;
+				case 102:
+					writeHTML(`
+						sp mom; playerF! `+data.player.time+`! Hope you aren't overworking yourself at that school of yours.
+					`);
+				break;
+				case 104:
+					writeHTML(`
+						t It seems like she isn't home today, so you're about to leave until you feel a tap on your shoulder.
+						im 6-2.jpg
+						sp mom; Hah, did I scare ya? Come in, come in! Take a breather, you wanna go out again tonight?
+					`);
+					writeFunction("writeEncounter('momEnding')", "Maybe it's time to settle down");
+				break;
+				case 105:
+					writeHTML(`
+						sp mom; Oh, hey playerF. If you wanna go out tonight I can, just a little weirded out.
+						sp player; Something happen?
+						sp mom; Yeah... I was at the store and there was some guy in pajamas... He was with this other guy, and he kept making weird noises. He would be all 'ooh woo', and talking about musk.<br>I know I shouldn't judge, but... Whatever. Could you take my mind off it?
+					`);
+					writeFunction("writeEncounter('momEnding')", "Maybe it's time to settle down");
+				break;
+				case 106:
+					writeHTML(`
+						sp mom; Heeey~! There's my playerF! Hey, I read that giraffes are the only animals born with horns. Bullshit, right? But I checked it out, it seems legit!
+					`);
+					writeFunction("writeEncounter('momEnding')", "Maybe it's time to settle down");
+				break;
+				default:
+					writeHTML(`
+						sp mom; Oof, it feels like the groceries get heavier every week. Hey, why aren't I getting you to do it?<br>Just kidding, hah!<br>... Unless?
+					`);
+					writeFunction("writeEncounter('momEnding')", "Maybe it's time to settle down");
+			}
+			writeFunction("writeEncounter('momdateDrinking')", "Go out drinking");
+			writeFunction("writeEncounter('momdateRestaurant')", "Go to a restaurant");
+			//writeFunction("writeEncounter('momdateBeach')", "Go to the beach");
+			//writeFunction("writeEncounter('momdateStayIn')", "Stay in with momF");
+			writeFunction("changeLocation(data.player.location)", "Go back");
+			break;
+		}
+		case "momdateDrinking": {
+			writeEvent(name);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			data.player.time = "Night";
+			raiseTrust('mom', 1);
+			break;
+		}
+		case "momdateRestaurant": {
+			writeEvent(name);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			passTime();
+			raiseTrust('mom', 1);
+			break;
+		}
+		case "momdateBeach": {
+			if (galleryCheck(name) == false) {
+				writeEvent(name);
+			}
+			else {
+				writeHTML(`
+					im 7-1.jpg
+					im 7-2.jpg
+					im 7-3.jpg
+					im 7-5.jpg
+					im 7-6.jpg
+				`);
+			}
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			passTime();
+			raiseTrust('mom', 1);
+			break;
+		}
+		case "momdateNight": {
+			if (galleryCheck(name) == false) {
+				writeEvent(name);
+			}
+			else {
+				writeHTML(`
+					im 021.jpg
+					im 022.jpg
+					im 023.jpg
+					im 024.jpg
+					im 026.jpg
+				`);
+			}
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "momdateStayIn": {
+			if (galleryCheck(name) == false) {
+				writeEvent(name);
+			}
+			else {
+				writeHTML(`
+					im return2.jpg
+					im 114.jpg
+					im 115.jpg
+					im 6-3.jpg
+					im 6-4.jpg
+				`);
+			}
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			passTime();
+			raiseTrust('mom', 1);
+			break;
+		}
+		case "endingPrompt": {
+			writeHTML(`
+				im 1-1.jpg
+				t You see her walking by, she looks as good as ever, although her expression seems a little downcast.
+				t You call out to her and she lights up quickly.
+				sp mom; playerF~! Good to see you, I was just out picking up some things. You wanna go out again tonight?
+				sp player; Maybe. Why, you gonna start playing hard to get?
+				sp mom; Hah! It's tough to play hard to get when you're hard to...<br>*Ahem*<br>Nevermind, not as funny as it was in my head. Give me a minute.
+				t As she starts sorting through her bag it's nice to see how bright her expression becomes around you. Just being around her is... Nice. It's good to know that outside your daily life of hypnotism and paranoia over being caught, you can always come home to someone who just enjoys being around you.
+			`);
+			raiseTrust('mom', 1);
+			writeFunction("writeEncounter('momEnding')", "Maybe it's time to settle down?");
+			writeSpeech("mom", "", "Alright, that should do it. So, what's up?");
+			writeFunction("writeEncounter('dateDrinking')", "Go out drinking");
+			writeFunction("writeEncounter('dateRestaurant')", "Go to a restaurant");
+			//writeFunction("writeEncounter('dateBeach')", "Go to the beach");
+			//writeFunction("writeEncounter('dateStayIn')", "Stay in with momF");
+			writeFunction("changeLocation(data.player.location)", "Go back");
+			break;
+		}
+		case "momEnding": {
+			writeEvent(name);
+			writeFunction("writeEncounter('momEndingCont')", "Months later");
+			break;
+		}
+		case "momEndingCont": {
+			writeEvent(name);
+			writeFunction("loadEncounter('system', 'credits')", "The End");
+			break;
+		}
 	}
 }
 
 var eventArray = [ //Lists the events of the character for unlocking and replaying in the gallery.
 	{index: "mom1", name: "Drinking Buddy",},
 	{index: "mom2", name: "Breaking Tensions",},
+	{index: "momreturn", name: "Return",},
+	{index: "momdateDrinking", name: "Date - A Mug of Booze",},
+	{index: "momdateRestaurant", name: "Date - A Lovely Meal",},
+	{index: "momdateBeach", name: "Date - A Day on the Beach",},
+	{index: "momdateNight", name: "Date - Midnight Meeting",},
+	{index: "momdateStayIn", name: "Date - Lazy Weekend",},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -339,7 +501,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "Shh.");
 			writeBig("images/mom/3-7.jpg", "Art by Enoshima Iki");
 			writeSpeech("player", "", "You're really wet.");
-			writeSpeech("mom", "", "Don't say stuff like that out loud, I'll get self-conscious.<br>And I don't want to see any of that 'pump and dump' stuff I hear about, alright? IF you feel like you're going to pop early, sto-");
+			writeSpeech("mom", "", "Don't say stuff like that out loud, I'll get self-conscious.<br>And I don't want to see any of that 'pump and dump' stuff I hear about, alright? If you feel like you're going to pop early, sto-");
 			writeBig("images/mom/3-8.jpg", "Art by Enoshima Iki");
 			writeSpeech("mom", "", "Aaaaa~!!<br>S-stop~! I wasn't... Nnn...");
 			writeSpeech("player", "", "You're more than ready. Don't hold back. A beautiful woman like you deserves to get lost in the sensation.");
@@ -349,6 +511,196 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("mom", "", "Aaaah~!");
 			writeText("Her legs shaking, you ride through an orgasm, filling the first condom of many tonight.");
 			break;
+		}
+		case "momreturn": {
+			writeHTML(`
+				t You spy a familiar face, so you greet her with a smile and a wave and she smiles back at you.
+				im profile.jpg
+				sp mom; playerF! Hah, you miss me?
+				sp player; Of course. It's good to see you again momF.
+				sp mom; Cmon in! Make yourself at home. <br>Ah, it's good to see you again too.
+				t You follow her inside and take a seat. She's unpacking a few things like some shirts and other odds and ends.
+				im return1.jpg
+				sp mom; Hey, I can feel you staring, you know. I haven't been gone that long... I really need a shower. Be right back.
+				t You take a breather and relax while momF cleans herself off.
+				...
+				sp mom; Hey, wake up. I'm finished, you need one?
+				im return2.jpg
+				sp mom; Geez, you really missed me, huh? It's obvious from your face. Honestly, I could really use some sleep, but...
+				im return3.jpg
+				sp mom; I'd be lying if I said I didn't think of you while I was out... I could go for something quick, if you're up for it.
+				...
+				im return4.jpg
+				sp mom; How on earth do you manage to control yourself? It's so energetic it feels like it should've burst through your pants earlier...
+				t momF lets out a squeak as you thrust, slapping your hips against the bottoms of her breasts as you enjoy the pillowy sensation between them.
+				sp mom; It's so... Big... When it's up this close, it's actually intimidating. 
+				im return5.jpg
+				t She doesn't say anything, just smiling as your balls contract and you blow your load over her face.
+				im return6.jpg
+				sp mom; Ah~... You really do make a mess, don't you? My face is coated... I'll need another shower.
+				sp player; Well, while you're already dirty...
+				sp mom; Another?! Where are you getting this energy?! 
+			`);
+			break;
+		}
+		case "momdateDrinking": {
+			writeHTML(`
+				sp player; How about the two of us grab something to drink?
+				sp mom; Sure! I've got a few cases of beer. It's cheap, but it should get us-
+				sp player; Actually, I was thinking we could go out for a drink. Maybe head somewhere with a nice ambiance.
+				sp mom; O-oh, well, I guess that's fine. I don't really go out much, so I can't recommend anywhere in particular.
+				...
+				t The two of you go out to a bar and grab something to drink. Though she seemed hesitant at first, after a few drinks she started to get into the spirit of things.
+				sp mom; A-and then, and then, she looked at me like I wash fucking hammer'd~! I can remember that night, so I guess I washn't that fucking drunk, wush I?!
+				sp player; I guess not.
+				t For a while she was prety self concious about being out, talking in a pretty hushed tone. Alcohol can have some strong effects on the right people.
+				t ... Speaking of which, you should probably cut her off if you want to walk home tonight.
+				...
+				im 1-1.jpg
+				sp mom; Hoo... Warmer tonight than I thought.
+				sp player; Really? It's pretty chilly, actually.
+				sp mom; Mmm... Still kinda wobbly, don't usually go out to drink.
+				t As you reach her door, you split off for a moment to-
+				sp mom; Hey, where the hell do you think you're going?
+				sp player; Just needed to grab something real quick.
+				sp mom; Well hurry up, fuckin' tease. I got cut off before getting smashed, so I'll be pissed if I fall asleep tonight without getting laid.
+				...
+				im 5-1.jpg
+				sp mom; Ahh~! Ahah~!
+				t The sounds of drunken sex fill the room, less verbose but much louder than usual fucking.
+				sp mom; There~! Right~ There~!
+				im 5-2.jpg
+				sp mom; Haaah~!
+				im 5-3.jpg
+				sp mom; Oooohg~!
+				t As the climax winds down the day of a lovely date, the sound of sex will fill the air for a while more. The sun has set, the streetlights are lit, and the two of you are satisfied.
+				t ... For now.
+			`);
+			break;
+		}
+		case "momdateRestaurant": {
+			writeHTML(`
+				sp player; How about the two of us grab a bite to eat?
+				sp mom; Oh, sure. I mostly got cheap stuff anyways, I could go for a quick bite. I at least know a few fast food places in the area.
+				sp player; Actually...
+				...
+				im 3-4.jpg
+				sp mom; Haahh~... That was a dirty trick. <br>I was expecting something quick, and you take me to a place so fancy they charge for water... How'd you get your meal for free anyways?
+				sp player; I have my ways. You seemed out of your element. Did you not have a good time?
+				sp mom; I did, I just could've used some warning though. I don't usually go out to places like that. I felt way out of place.
+				sp player; You look fantastic, you fit right in back there.
+				sp mom; ... Flirt.<br>Mmm... Honestly, I'd kill for a massage right now. These babies aren't light, and <i>somebody</i> keeps getting me all riled up. You'll take responsibility for that, right?<br>Don't answer that yet. I'll rinse off, you should too. I'll leave the door unlocked for you, alright?
+				t As you arrive at your place the two of you split up for a bit. 
+				...
+				t You push open momF's front door and shut it behind you. The place is dark and you don't hear her, so you turn on the light and are greeted with...
+				im 070.jpg
+				sp mom; Took you long enough. I know we just ate...
+				im 071.jpg
+				sp mom; But I hope you're still hungry.
+				...
+				im 094.jpg
+				t The sound of her panting is barely audible against the sound of your hips slapping against her ass. She shudders, her toes clench and relax in a rhythm, she's enjoying the sensation of raw sex just as much as you are.
+				sp mom; Nnn-ooo~<br>Inside... Ghhh~!
+				im 095.jpg
+				t She lets out a long sigh, slightly hitching each time she feels your cock spurts inside her.
+				sp mom; It's... It's fine... It's okay for today, just... Just take a breather so we can go again, okay?
+			`);
+			break;
+		}
+		case "momdateBeach": {
+			writeHTML(`
+				im 7-1.jpg
+				im 7-2.jpg
+				im 7-3.jpg
+				im 7-5.jpg
+				im 7-6.jpg
+			`);
+			break;
+		}
+		case "momdateNight": {
+			writeHTML(`
+				im 021.jpg
+				im 022.jpg
+				im 023.jpg
+				im 024.jpg
+				im 026.jpg
+			`);
+			break;
+		}
+		case "momdateStayIn": {
+			writeHTML(`
+				im return2.jpg
+				im 114.jpg
+				im 115.jpg
+				im 6-3.jpg
+				im 6-4.jpg
+			`);
+			break;
+		}
+		case "momEnding": {
+			writeHTML(`
+				t You sigh, deep in thought. It's hard to imagine going legit for anyone, even momF.
+				sp mom; Hellooo~? You got a headache or something? I have some-
+				sp player; momF, I want these dates to be a regular thing.
+				sp mom; Uh... They already are, though?<br>Oh I get it, you want the happy endings more regularly? Hah! You're practically still a kid!
+				sp player; Not just that... I like spending time with you. I want more.
+				sp mom; ... You're acting pretty weird today. Yeah, I'll hang out with you as much as you want, okay? Cmon in, I'll grab us some drinks. You can sleep over if you want, you live nextdoor anyways.
+				sp player; Yeah... Just not sure what else to say... It's not like I've got a ring or anything.
+				t She does a double take.
+				sp mom; Wha-? Wait, that's what you meant?! You asshole!
+				t She gives you a hard jab in the shoulder, and pouts for a little, then sighs.
+				sp mom; God damn, that was a trash way to ask... But... <br>My answer's still yes.
+				sp player; Let's drink to it then.
+				sp mom; Hah~! Gonna try and get me hammered so I forget that awful proposal? Fat chance!<br>Hehe... I guess a little would be fine though. Drunk sex is more fun, right?
+				...
+				im 2-1.jpg
+				t You spend the night in good company, despite her earlier claim she's pretty comfortable getting pretty drunk with you.
+				t As things reach a fever pitch she sits up so she can start slipping her comfortable pajamas off.
+				im 140.jpg
+				t She waves her ass, trying to seduce you as best as a middle-aged drunk woman can.
+				sp mom; Eheh... Y'know... I was confused why somebody like you'd hang out with somebody like me...<br>I bet it's cause of this, huh?
+				sp player; You are tempting. But there's more to you too.
+				sp mom; Hah~! I'm old, not blind. I can see you stealing glances whenever you can tear your eyes away from my chest!
+				...
+				im 114.jpg
+				sp mom; Hah... You're still here, huh? So I guess that means you were serious?
+				sp player; I meant every word.
+				sp mom; Mmmgh... Fine. But if you want me to be yours... You're gonna need to keep up with me, alright? You may be cute, and you might pay good lip service...
+				im 115.jpg
+				sp mom; But I'm a woman with needs, got it? Don't think I'll take your work as an excuse either, okay? You and I aren't leaving this house until we're both exhausted, sweaty wrecks!
+			`);
+			break;
+		}
+		case "momEndingCont": {
+			writeHTML(`
+				t You push open the door and walk inside. Another day's work behind you.
+				sp player; I'm hoooome~
+				sp mom; Bedroom, honey~!
+				im e-1.jpg
+				sp mom; Suprise~! They're getting even bigger~!
+				t You're greeted with a pair of tits. A lovely way to start the end of your day.
+				im e-2.jpg
+				sp mom; Ooh, that feels nice. It feels like they're more full of milk every day...<br>Hey, you in the mood?
+				sp player; Always, dear. But it's been every day, aren't you getting tired?
+				sp mom; Hehe, some women get cravings around this time you know.
+				sp player; Yeah. You're the only one I've heard about who gets them for dick though.
+				sp mom; Hah~! You keep telling me I'm special!<br>Cmon... I need it~
+				im e-3.jpg
+				sp mom; Ah~! Ah~!
+				t Each spank causes her to tighten around you. Part of you wants to be gentle with her, but her expression shows she's clearly hungry for more.
+				im e-4.jpg
+				sp mom; Ohhh...
+				t A thin line of drool escapes her lips as her eyes narrow and roll back.
+				t You pull out, having cum inside so deeply not a drop leaks out. You relax and lay back on the bed, content to let momF rest in the aftergl-
+				t But you're interrupted as momF takes your cock in her hand and starts stroking it up and down, even leaning down to lick the head.
+				sp player; You're insatiable, darling.
+				sp mom; You're addictive, honey.
+				im e-5.jpg
+				sp mom; Hoo~
+				t The night passes in a blurred frenzy, as most of them do these days.
+				im e-7.jpg
+			`);
+		break;
 		}
 	}
 	var unlockedScene = "";
@@ -372,7 +724,7 @@ var phoneArray = [//Lists the potential text events the player can receive at th
 	{index: "momPhone3", trust: 82,},
 	{index: "momPhone4", trust: 83,},
 	{index: "momPhone5", trust: 84,},
-	{index: "momReward", trust: 100,},
+	//{index: "momReward", trust: 100,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event

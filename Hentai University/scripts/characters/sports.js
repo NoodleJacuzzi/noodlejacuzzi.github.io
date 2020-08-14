@@ -118,7 +118,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "sports3": {//Tutor time 2 - Electric Boogaloo. Titjob
-			writeSpeech("sports", "class.jpg", "What do you want, you bastard?");
+			writeSpeech("sports", "class.jpg", "What do you want, you *bastard?");
 			writeText("Her eyes cut daggers into yours, but you know you have the upper hand here.");
 			writeSpeech("player", "", "Exactly what I told you last time, sportsF. I want to make sure you're a happy and well rounded student here at our University. And I'm just worried that your busy schedule and class load makes it hard for you to <i>relax</i>.");
 			writeText("There it is. Her gaze softens as you say the word, and her focus drifts. Just a bit, but enough.");
@@ -171,7 +171,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player", "", "<i>Relax</i> slave.  I'm not bothered by that. You should see some of the other slaves I've collected. Some of the students at this school are real pieces of work...");
 			writeText("She looks down, dejected by the knowledge you have others in your harem.");
 			writeSpeech("sports", "class.jpg", "You have other... No, *Master, I'm sorry. That makes sense. You are my *Master, but you're definitely still a pervert. I should have expected you to have more women under control.");
-			writeSpeech("player", "", "Oh, not just women. Do you know Reese? I've been working on him recently.");
+			if (checkTrust('meji') > 0) {
+				writeSpeech("player", "", "Oh, not just women. Do you know mejiF? I've been working on him recently.");
+			}
+			else {
+				//Sorry about writing something here Slacker! I'll change it back it you want.
+				writeSpeech("player", "", "Oh, not just women. I have bigger plans for everyone here.");
+			}
 			writeBig("images/sports/2a1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("She looks you in the eyes, apparently flabberghasted by your bold admission.");
 			writeSpeech("sports", "class.jpg", "You... Damn, *Master, you really are a pervert.");
@@ -601,7 +607,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			writePhoneSpeech("player","","So I have something else you may think is fun...");
 			writePhoneSpeech("sports","","... What is it?");
 			writePhoneSpeech("player","","First thing's first, I've seen you topless, but I want to see all of you. Send me a picture of your pussy.");
-			writePhoneSpeech("sports","","... Fine. But you'll never get this, damnit. I'll never have sex with you, you bastard.");
+			writePhoneSpeech("sports","","... Fine. But you'll never get this, damnit. I'll never have sex with you, you *bastard.");
 			writePhoneSpeech("player","","Be sure to smile.");
 			writePhoneImage("images/sports/phone1.jpg", "Art by Himitsu Kessha Vanitas")
 			writePhoneSpeech("sports","","Asshole.");
@@ -630,7 +636,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			writePhoneSpeech("player","","So I have something else you may think is fun...");
 			writePhoneSpeech("sports","","... What is it?");
 			writePhoneSpeech("player","","First thing's first, I've seen you topless, but I want to see all of you. Send me a picture of your pussy.");
-			writePhoneSpeech("sports","","... Fine. But you'll never get this, damnit. I'll never have sex with you, you bastard.");
+			writePhoneSpeech("sports","","... Fine. But you'll never get this, damnit. I'll never have sex with you, you *bastard.");
 			writePhoneSpeech("player","","Be sure to smile.");
 			writePhoneImage("images/sports/phone1.jpg", "Art by Himitsu Kessha Vanitas")
 			writePhoneSpeech("sports","","Asshole.");
@@ -809,7 +815,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("She lifts her shirt slowly. You can see her breathing pick up, and the slightest moan escapes her mouth as the fabric brushes against her nipples.");
 			writeBig("images/sports/2b2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("player", "", "Your breasts are really sensitive, then.");
-			writeSpeech("sports", "class.jpg", "Shut up, you bastard. Don't talk to me like that.");
+			writeSpeech("sports", "class.jpg", "Shut up, you *bastard. Don't talk to me like that.");
 			writeSpeech("player", "", "You really shouldn't be speaking like that to your teacher. I'm just trying to teach you how to make yourself happy and <i>relaxed</i>. The best way to <i>relax</i> is to let go of all that tension you have built up.");
 			writeBig("images/sports/3a1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("sports", "class.jpg", "Please... Please...");
@@ -818,7 +824,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Whatever fight left in her gives away. Only for a second, but long enough for her to speak.");
 			writeSpeech("sports", "class.jpg", "Please teach me how to relax, playerH.");
 			writeText("Just a moment of weakness, but that's how you open the door. She's already snapped back a bit, but the desire is there, and now it's real.");
-			writeSpeech("sports", "class.jpg", "How did you make me say that, you bastard?");
+			writeSpeech("sports", "class.jpg", "How did you make me say that, you *bastard?");
 			writeSpeech("player", "", "I didn't make you do anything. This is what you want, right?");
 			writeText("She looks down. She's still angry at you, but she's more angry at herself. But that's fine by you.");
 			writeSpeech("sports", "class.jpg", "... Yes playerH. It's what I want.");
@@ -832,7 +838,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("sports", "class.jpg", "And how is being on my knees supposed to make me relax, you ass?");
 			writeSpeech("player", "", "Like this.");
 			writeText("As you speak, you lower your pants, pulling out your already hard cock. The look on her face flashes briefly between shock, anger, and just a hint of desire.");
-			writeSpeech("sports", "class.jpg", "Holy shit. Why does such an evil bastard have a cock like that?");
+			writeSpeech("sports", "class.jpg", "Holy shit. Why does such an evil *bastard have a cock like that?");
 			writeSpeech("player", "", "Put it between your tits, sportsF.");
 			writeText("You see her shuffle, legs rubbing against each other, and under her uniform you can see her nipples hardening.");
 			writeBig("images/sports/3b1.jpg", "Art by Himitsu Kessha Vanitas");
@@ -840,7 +846,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("sports", "class.jpg", "<i>Ahh... Mmm. Fuck, me. Why...</i>");
 			writeBig("images/sports/3b2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("player", "", "Damn, your breasts are <i>very</i> sensitive. I shouldn't be surprised, considering you came earlier using only your tits, but still. How does that feel, sportsF? Be honest with me.");
-			writeSpeech("sports", "class.jpg", "<i>Fuck!</i> It feels good, okay? Your cock feels like an electric current on my skin, you dumb bastard!");
+			writeSpeech("sports", "class.jpg", "<i>Fuck!</i> It feels good, okay? Your cock feels like an electric current on my skin, you dumb *bastard!");
 			writeText("Well, you asked for honesty. Your own breathing is starting to pick up now, as she moves faster and her breathing warms your cock as you thrust in and out with her rhythmic movements.");
 			writeSpeech("player", "", "I'm getting close, sportsF. Get ready for it.");
 			writeText("She barely even hears you, too caught up in her own pleasure. Her movement no longer rhythmic, and now just spasms. Her breathing heavy and irregular, as she fondles her own breasts around your cock, and yanks on her own nipples.");

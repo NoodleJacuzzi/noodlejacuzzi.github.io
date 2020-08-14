@@ -70,7 +70,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeBig("images/coach/sportsphone2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeText("Her face drops, before twisting into a scowl.");
 			writeSpeech("player", "", "How do you think the University would react to this picture being made public?");
-			writeSpeech("coach", "", "You goddamned bastard.");
+			writeSpeech("coach", "", "You goddamned *bastard.");
 			writeSpeech("coach", "", "... What do you want?");
 			writeText("That... Honestly went smoother than expected. You had a hand on your pendant in your pocket and the other ready to swing if things had gotten violent, but it seems she's willing to play ball, at least for now.");
 			writeSpeech("player", "", "It's simple, coachF. I don't really care about what you're doing with your boyfriend, but I do care about this school. I want you to start taking this job seriously. I'm going to give you a series of training and orientation videos, and I want you to watch them and take them to heart. The students and faculty here deserve to be treated better than how you've been acting.");

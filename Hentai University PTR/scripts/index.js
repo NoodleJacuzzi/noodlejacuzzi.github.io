@@ -2691,6 +2691,7 @@ function fileLoaded(){
 	}
 	else {
 		data = fakedata;
+		updateSave();
 		changeLocation(data.player.location);
 	}
 	document.getElementById('loadFile').value = '';

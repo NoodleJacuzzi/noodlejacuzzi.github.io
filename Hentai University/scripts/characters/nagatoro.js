@@ -93,7 +93,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp player; You're certainly having fun with this, aren't you?
 				t Without any kind of evidence getting mad or standoff-ish would just make you look bad. And he's right, anyone could be watching. It's best to stay professional until you can get into a situation alone with him.
 				im images/nagatoro/042.jpg
-				sp nagatoro; Hehe, but really, thanks a ton! Don't worry, I'll handle every little bit of forming the club. Gimme you're number so I can keep you up to speed. <br>Setting up the room, finding members, getting permission from principalF-
+				sp nagatoro; Hehe, but really, thanks a ton! Don't worry, I'll handle every little bit of forming the club. Gimme your number so I can keep you up to speed. <br>Setting up the room, finding members, getting permission from principalF-
 				sp player; You don't already have any of that ready? What kind of club are you?
 				sp nagatoro; A new one! You and I are the only ones involved for now, don't you feel special?<br>Anyways, don't worry about a thing. But if you see my poor little self running around the school, totally run ragged trying to get everything done, don't feel bad about stopping me to say hi, kay?
 				t With that he doesn't wait for a response and runs off, shooting you a wink as he does.
@@ -229,7 +229,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp player; Why not tell her that? 
 				sp nagatoro; Eh? Sure, tell the principal she wears too much makeup, great idea. <br>Also, uh, personal space? Ever heard of it? 
 				sp player; I mean that you wanna just be cute. You didn't stand up for yourself in there at all. 
-				sp nagatoro; Listen, teasing you is fun, but you're some nobody counselor. No offense, but I don't think you're sticking around. Male faculty never do here. Messing with you compared to messing with her or anybody else, it's a whole different thing. 
+				sp nagatoro; ?gender man; Listen, teasing you is fun, but you're some nobody counselor. No offense, but I don't think you're sticking around. Male faculty never do here. Messing with you compared to messing with her or anybody else, it's a whole different thing. 
+				sp player; What if I could help you with that? What if I could help you be your real self whenever you wanted? 
+				sp nagatoro; ?gender woman; Listen, teasing you is fun, but you're some nobody counselor. No offense, but I don't think you're sticking around. Messing with you compared to messing with her or anybody else, it's a whole different thing. 
 				sp player; What if I could help you with that? What if I could help you be your real self whenever you wanted? 
 				t He seems genuinely interested for a moment as you reach into your pocket, until he's barely holding back laughter as you pull out your pendant. 
 				sp nagatoro; Pfft... Is that like, a metronome thing? Like for hypnosis? You're gonna make me act like a chicken? <br>Oh, I think I get it. Big ol' pervert is gonna hypnotize me. Make me into his cute-as-a-button slave? 

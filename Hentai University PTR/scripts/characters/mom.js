@@ -271,6 +271,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 						im 6-2.jpg
 						sp mom; Hah, did I scare ya? Come in, come in! Take a breather, you wanna go out again tonight?
 					`);
+					writeFunction("writeEncounter('momEnding')", "Maybe it's time to settle down");
 				break;
 				case 105:
 					writeHTML(`

@@ -665,11 +665,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 				`);
 				writeFunction("writeEncounter('dominancePrompt')", "Have some dom/sub play fun");
 			}
-			if (checkFlag('succubus', 'mephF') != true) {
-				if (checkFlag('succubus', 'mission') == true) {
-					writeSpeech("succubus", "demon.jpg", "Hey, you play with demonF yet? He wasn't at his hotel, so I was able to swipe some stuff off him.");
-					if (galleryCheck('demon1') == true) {
-						writeFunction("writeEncounter('mephEnd')", "Talk about demonF");
+			if (checkTrust('demon') > 0) {
+				if (checkFlag('succubus', 'mephF') != true) {
+					if (checkFlag('succubus', 'mission') == true) {
+						writeSpeech("succubus", "demon.jpg", "Hey, you play with demonF yet? He wasn't at his hotel, so I was able to swipe some stuff off him.");
+						if (galleryCheck('demon1') == true) {
+							writeFunction("writeEncounter('mephEnd')", "Talk about demonF");
+						}
 					}
 				}
 			}
@@ -1243,7 +1245,8 @@ function writeEvent(name) { //Plays the actual event.
 				...
 				t Finally you feel the potion's effects starting to wear off, and the exhaustion is starting to set in. You're back to your senses.
 				im images/succubus/070.jpg
-				sp succubus; im demon.jpg; Maaa... Mathter...
+				sp succubus; im demon.jpg; ?gender man; Maaa... Mathter...
+				sp succubus; im demon.jpg; ?gender woman; Miii... Mithtreth...
 				t He's soaked to the bone in cum, every vibe in the box still noisily buzzing as they pleasure his cocklette and nipples.
 				t Two large vibrators and several beads in his ass keep his bitch hole satisfied, and a little clamp over his tongue keeps him from pulling it back in making it harder to swallow.
 				t These potions are really effective. The least you can do is untie him so he can get a shower while you pass out.
