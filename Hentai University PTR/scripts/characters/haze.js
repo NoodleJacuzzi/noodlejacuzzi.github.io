@@ -773,6 +773,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("writeEncounter('hazeTalkReturn')", "Go back");
 			break;
 		}
+		case "profileMidnight" : {
+			writeText("hazeF's form seems to shift and haze over for a few moments before she snaps her fingers once - the sound echoes out as her form stabilizes.");
+			writeText("She trails a finger along her body stocking with a smile before looking at you, cocking her hip.");
+			writeSpeech("haze","hazeMidnight.jpg","Fits like a glove~ What kind of fun are you looking to have, playerF~?");
+			writeFunction("writeEncounter('hazeTalkReturn')", "Go back");
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -962,7 +969,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("But as she stops suddenly, her lips to your base and her chin to your balls, you're not quite ready when she starts to <b>swallow.</b>");
 			writeText("The sensation of her entire throat squeezing and massaging at your shaft is incredible, your head held deep in and being teased by her throat.");
 			writeSpeech("player","","I'm...!");
-			writeText("You feel the pleasure beginning to reach its peak as she turning her head just a bit, gliding just the smallest bit back and forth as she swallows again and again.");
+			writeText("You feel the pleasure beginning to reach its peak as she turns her head just a bit, gliding just the smallest bit back and forth as she swallows again and again.");
 			writeText("Her voice seems to hover in your head as she looks up at you hungrily.");
 			writeSpeech("haze","hazeYoru.jpg","<i>Cum for me~</i>");
 			writeText("You buck your hips forward, unable to resist the urge to cum as you swing forwward.");
