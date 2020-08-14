@@ -1966,7 +1966,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("Calmly, you pull your pendant out from your shirt, letting it sway for just a few moments.");
 			writeText("Despite the fact that it's been a while since you've pulled it out for him, he still seems to go under pretty quick, stopping in place.");
 			writeSpeech("player","","Listen close, now.");
-			writeText("You bring your other hand down to his head, running it through his hair for a moment as shifts slightly, reacting to the sensation.");
+			writeText("You bring your other hand down to his head, running it through his hair for a moment as he shifts slightly, reacting to the sensation.");
 			writeSpeech("player","","You're eager to make me feel good, aren't you?");
 			writeText("He gives a slow, hazy nod.");
 			writeSpeech("player","","Very good. And pleasing me makes you feel good, doesn't it? You enjoy it?");
@@ -1986,7 +1986,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("He's practically just teasing himself into frustration.");
 			writeText("It isn't long at all before he brings his mouth up, his tongue no longer lapping at your length as he takes your head into his mouth.");
 			writeBig("images/meji/11-2.jpg","Art by Nagi Ichi");
-			writeText("He bobs his mouth down a bit, his lips pressing against his fingers as he goes down, his hand stroking you each with each bob.");
+			writeText("He bobs his mouth down a bit, his lips pressing against his fingers as he goes down, his hand stroking you with each bob.");
 			writeText("He turns his head a bit, the sliding sensation of his lips on your cock feeling pleasant as he continues gliding up and down your shaft.");
 			writeText("mejiF's eyes go up to meet yours for a moment as he takes you into his mouth deeper and deeper, until his hand basically has no room to hold on with each bob down.");
 			writeText("His lips press against your base as he pauses and holds there for a moment, before he slides back up and picks up the pace, only going halfway down again but moving quickly and using his hand to stroke the rest.");
@@ -2006,14 +2006,14 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("When you finish, it's with just a low groan of contentment as your cock twitches in his mouth, and you feel his entire body begin to gently shake.");
 			writeText("You feel the condom expand a bit in his mouth as his head goes up, his gasping causing your dick to slide out of his mouth as unfocused eyes stay focused solely on your tip.");
 			writeBig("images/meji/11-4.jpg","Art by Nagi Ichi");
-			writeText("His body shudders gently as your twitches a few more times, the weight of the filled condom causing it to drift as his unfocused eyes follow along.");
+			writeText("His body shudders gently as your cock twitches a few more times, the weight of the filled condom causing it to drift as his unfocused eyes follow along.");
 			writeText("Shifting a bit, you can see from the state of his pantyhose that he finished as well, a small damp spot soaking through the hose and the panties beneath them.");
 			writeText("You sit like that until he seems to recover his mind a bit, refocusing on you and swallowing hard.");
 			writeSpeech("meji","","A-Ah... That felt amazing, *Sir~");
 			writeText("You pull off the condom, watching his eyes follow it for a moment... and you decide to toy with him just a bit more.");
 			writeSpeech("player","","Stick out your tongue.");
 			writeText("mejiF doesn't hesitate, his mouth opening wide as his eyes follow the condom as you empty it into his mouth.");
-			writeText("When it's all dribbled out, he closes mouth for a moment, before swallowing firmly and smiling.");
+			writeText("When it's all dribbled out, he closes his mouth for a moment, before swallowing firmly and smiling.");
 			writeSpeech("meji","","Thank you, *Sir~");
 			writeText("He's still a bit drowsy getting up, but with a bit of time he's completely back to normal with a smile.");
 			if(data.player.location != 'gallery'){
