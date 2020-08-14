@@ -43,6 +43,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
+		case "cancel": {
+			unencounter(character.index);
+			changeLocation(data.player.location);
+			break;
+		}
 		case "meji1a" : {
 			//encountering him in the school during morning
 			//call him to the office and you can get him to out himself
@@ -934,7 +939,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","One.");
 			writeText("You reach towards his chest, pinches his nipples almost roughly and pulling.");
 			writeSpeech("meji","","Oh holy <i>FUCK~</i>");
-			writeBig("images/meji/10-4.jpg","[ARTIST]");
+			writeBig("images/meji/10-4.jpg","Art by Nagi Ichi");
 			writeText("His eyes roll up as you carefully twist and pinch, his hips bucking sharply forward as he starts to spurt, pushed over the edge as you pull.");
 			writeText("He keeps cumming for several seconds before leaning back against you, slumping gently with a contented sound.");
 			if(checkFlag('meji','willful')){
@@ -1006,13 +1011,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("mejiF can hardly seem to speak as you pound into him, his voice reduced to mewling your name, God's, and several expletives as he keeps dribbling more and more cum.");
 			writeSpeech("player","","I'm...!");
 			writeText("His moans reach their peak as you speed up for one final burst, finishing with you slamming your cock into him and cumming.");
-			writeBig("images/meji/10-6.jpg","[ARTIST]");
+			writeBig("images/meji/10-6.jpg","Art by Nagi Ichi");
 			writeText("As you fill him up, your thrusting finally coming to a halt, he takes gasping breaths and shivers against you.");
 			writeSpeech("meji","","Thank you...");
 			writeText("Honestly, a part of you wants to thank <b>him,</b> but...");
 			writeSpeech("player","","You're welcome. You did good.");
 			writeText("There's a momentary tightening around your shaft, your cock popping out as mejiF's hips buck one more time.");
-			writeBig("images/meji/10-7.jpg","[ARTIST]");
+			writeBig("images/meji/10-7.jpg","Art by Nagi Ichi");
 			writeText("You stay there hazily for a few seconds before your bodies go a bit limp, relaxing on the ground. You're like that for a minute or so before you feel at least energized enough to get up.");
 			writeText("Cum's not gonna clean itself up, and it is your job on the line, technically speaking...");
 			writeText("But as you start to shift, you feel mejiF's hand on your wrist.");
@@ -1193,7 +1198,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("meji","","Pretty good... aside from upcoming exams anyway. I've got some studying scheduled up for later today so I don't bomb.");
 				writeSpeech("player","","Ah, makes sense. Good luck with your exams - you've got this.");
 				writeText("mejiF "+(checkFlag('meji','willful') ? "grins a bit " : "blushes slightly ")+"and nods before heading off to another class.");
-				writeSpecial("You've finished all content for mejiF for this version!");
+				if(checkFlag('succubus', 'newCorruption') && !checkFlag('meji','corrupt')){
+					writeText("Though, you could speak with him about the corruption...");
+					writeFunction("writeEncounter('mejiCorruptionPrompt')", "Talk to mejiF about corruption");
+				}
+				else
+					writeSpecial("You've finished all content for mejiF for this version!");
 				writeFunction("changeLocation(data.player.location)", "Go back");
 				break;
 			}
@@ -1237,6 +1247,26 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("writeEvent('mejiAlt2')", "\"Start by bending over.\"");
 			break;
 		}
+		case "mejiCorruptionPrompt" : {
+			writeSpeech("player","","Actually, there's something I wanted to talk to you about.");
+			writeText("mejiF shifts in place, his head tilting slightly.");
+			writeSpeech("meji","","What's up? Something serious?");
+			writeSpeech("player","","More that... things tend to change. The clock ticks on, and people get older. If I told you I had a way to change that, what would you say?");
+			writeText("There's a momentary pause, before he narrows his eyes a bit.");
+			writeSpeech("meji","","I'd... probably say you're trying to sell me something? But that's doesn't really seem like your thing, so...");
+			writeText("He shrugs.");
+			writeSpeech("meji","","I'd say go for it. I mean, hypnosis is weird, but you're able to do that, so while I don't really get what you're talking about, I say go for it.");
+			writeFunction("writeEncounter('mejiCorruption')", "Corrupt mejiF");
+			writeFunction("writeEncounter('cancel')", "Change your mind");
+			break;
+		}
+		case "mejiCorruption" : {
+			writeEvent('mejiCorruption');
+			addFlag('meji','corrupt');
+			passTime();
+			writeFunction("loadEncounter('succubus', 'mejiCorruption')", "Continue");
+			break;
+		}
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -1256,6 +1286,7 @@ var eventArray = [ //Lists the events of the character for unlocking and replayi
 {index: "meji9", name: "Women's Shorts Fuck"},
 {index: "mejiAlt1", name: "Pantyhose Blowjob"},
 {index: "mejiAlt2", name: "Taping the Pantyhose Fuck"},
+{index: "mejiCorruption", name: "Corrupted Rider"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -1937,7 +1968,7 @@ function writeEvent(name) { //Plays the actual event.
 			}
 			writeText("He feels far more relaxed now as you run your hands along his now-bare chest, his erection plainly obvious as you look over his shoulder.");
 			writeText("His breathing gets heavier, small mewls of pleasure coming out as you start to tease his nipples.");
-			writeBig("images/meji/10-2.jpg","[ARTIST]");
+			writeBig("images/meji/10-2.jpg","Art by Nagi Ichi");
 			writeSpeech("player","","And what about this, mejiF?");
 			writeText("A soft moan spills out of his mouth before he gently bites his lip.");
 			writeSpeech("meji","","It's... <i>good,</i> *Sir~");
@@ -1945,7 +1976,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("meji","","Y-Yes *Sir...!");
 			writeText("He starts grinding his ass against you more, pressing against your bulge as he inhales sharply.");
 			writeSpeech("player","","You know... I was really expecting this to take a bit more <i>effort,</i> mejiF. I wonder...");
-			writeBig("images/meji/10-3.jpg","[ARTIST]");
+			writeBig("images/meji/10-3.jpg","Art by Nagi Ichi");
 			writeSpeech("meji","","<i><b>N-Nn~!</b></i>");
 			writeSpeech("player","","...just how much of a slut are you, that <i>this</i> is how fast you're falling in love with having your nipples teased?");
 			writeText("Over his shoulder, you can see his cock twitch in the shorts as you say that.");
@@ -2077,6 +2108,40 @@ function writeEvent(name) { //Plays the actual event.
 				data.player.location = 'playerHouse';
 				writeFunction("changeLocation(data.player.location)", "Wash the sheets and finish (for now).");
 			}
+			break;
+		}
+		case "mejiCorruption" : {
+			document.getElementById('output').innerHTML = '';
+			writeText("There's a brief moment where you hand starts to glow a faint red, something that makes mejiF's eyebrow raise for just a moment.");
+			writeSpeech("meji","","Huh... How're you doing tha-");
+			writeText("He stops suddenly, a small shudder going through him for a moment, his face flushing red.");
+			writeSpeech("meji","","That's... different? Definitely different, like it's... <i><b>building...</b></i>");
+			writeSpeech("player","","Let's get somewhere a bit more private real quick...");
+			writeSpeech("meji","","Y-Yeah... Let's go, I actually was planning an outfit at home...");
+			writeText("...");
+			writeBig('images/meji/succ1-1.jpg',"Art by Nagi Ichi");
+			writeSpeech("meji","","F-Fuck, I hope it looks good, 'cause I'm not sure I can hold back much longer~");
+			writeText("His hands quickly move to your chest, biting his lip as his breathing goes wild.");
+			writeText("You quickly take him to the bed, where you feel him guide you down onto your back. A moment later, you're back in a familiar position, with him getting ready to ride you.");
+			writeSpeech("player","","Just take it s<i><b>LOW!</b></i>");
+			writeBig("images/meji/succ1-2.jpg","Art by Nagi Ichi");
+			writeSpeech("meji","","O-Ohhhh <i><b>fuuuck...!</b></i>");
+			writeText("He lowers his head slightly, his cock clearly covered in his pre-cum, yet still soft... for now, at least. As he takes you balls-deep into his ass, you can see it swell up.");
+			writeText("His breathing is ragged as he starts to slowly bounce up and down, his cock bouncing with him as he moans luridly.");
+			writeBig("images/meji/succ1-3.jpg","Art by Nagi Ichi");
+			writeSpeech("meji","","F-Fuck, why does this~...!?");
+			writeText("His hands grasp your thighs tightly as he lets out a mewling moan, your cock sliding over his prostate harder with each bounce.");
+			writeSpeech("meji","","I-It feels great, better than before...!");
+			writeSpeech("player","","Just... focus on the pleasure, mejiF.");
+			writeText("You let out a low groan as he does exactly that, picking up speed.");
+			writeText("Just from looking at him, you can tell that he's already getting close.");
+			writeBig("images/meji/succ1-4.jpg","Art by Nagi Ichi");
+			writeText("A faint pulse of corrupting influence seems to surge through him as he arches his back harder, his moans turning into desperate gasps as you feel yourself getting pushed to the edge yourself.");
+			writeSpeech("meji","","I-I'm about to...! I'm about to <i><b>cum~</b></i>");
+			writeText("His dick starts to bob as he picks up the pace, twitching strongly as you feel as ass tighten around you tighly and you go over the edge yourself.");
+			writeBig("images/meji/succ1-5.jpg","Art by Nagi Ichi");
+			writeText("His ass tenses tight around your cock, his body gently shaking in the bliss of orgasm as his cocks spurts again and again, before his eyes seem to roll up a bit.");
+			writeText("When he's finally finished cumming, he seems to relax into you, his body pitching against you as his eyes gently shut.");
 			break;
 		}
 		default: {
