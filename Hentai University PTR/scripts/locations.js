@@ -110,6 +110,7 @@ var locationArray = [
 
 function changeLocation(n) {
 	document.getElementById('output').innerHTML = '';
+	document.getElementById('sceneAuthor').innerHTML = '';
 	var locationTarget = 'failed';
 	for (i = 0; i < locationArray.length; i++) { //find the location target
 		if (n == locationArray[i].index) {

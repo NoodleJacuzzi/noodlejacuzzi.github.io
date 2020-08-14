@@ -60,6 +60,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("principal", "", "It's not an issue. This meeting isn't mandatory, your supervisor should have filled you in on your responsibilities already. Correct? We've never had a dedicated counselor here, so I'm afraid there's not much framework for you.");
 			}
 			writeText("She takes a seat at her desk. Despite it being the middle of the day, the desk is spotless except for a few papers, her computer, and a bottle of hand sanitizer.");
+			if (checkItem("Town Map") == false) {
+				writeSpeech("principal", "", "I do at least have a map of the town. There are a number of districts outside the school, it might be worth it to do infrequent housecalls. I apologize I couldn't find one in time to include with your letter.");
+				addItem("Town Map", true, "scripts/gamefiles/items/map.jpg")
+				writeSpecial("You obtained a town map!");
+			}
 			writeSpeech("player", "", "It's not a problem. So, should I get right to work then?");
 			writeSpeech("principal", "", "Did you have a particular student in mind? I'm quite proud of the fact that our students are remarkably well-adjusted.");
 			writeSpeech("player", "", "From the pact you made for eternal youth, and the school's success, of course.");
