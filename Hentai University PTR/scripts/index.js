@@ -2480,6 +2480,9 @@ function updateSave() {
 		}
 		console.log(data.story);
 	}
+	if (data.player.blacklist == null) {
+		data.player.blacklist = [];
+	}
 	saveSlot(110);
 }
 
@@ -3118,6 +3121,17 @@ function diagnostic() {
 		}
 		case "new name": {
 			loadEncounter('system', 'renamingRoom');
+			break;
+		}
+		case "blacklist": {
+			if (data.player.blacklistMode != true) {
+				data.player.blacklistMode = true;
+				writeSpecial("Blacklist mode activated. Click the button beneath an image to prevent it from appearing again.");
+			}
+			else {
+				data.player.blacklistMode = false;
+				writeSpecial("Blacklist mode has been deactivated.");
+			}
 			break;
 		}
 		case "oowoo": {
