@@ -1588,64 +1588,87 @@ function writeSpeech (name, img, text, altName, altColor) {
 }
 
 function writeBig (img, cap) {
-	if (cap == "") {
-		if (character.artist != null) {
-			cap = character.artist;
-		}
+	var writeBigAbort = false;
+	if (data.player.blacklist.includes(img) == true) {
+			writeBigAbort = true;
 	}
-	if (img.includes('profile') == true) {
-		if (data.player.pervert != true) {
-			var checkForError = "";
-			var pervertImage = img;
+	if (writeBigAbort == false) {
+		if (cap == "") {
+			if (character.artist != null) {
+				cap = character.artist;
+			}
 		}
-		else {
-			var backupImage = img;
-			var checkForError = `onerror ="javascript:this.src='`+backupImage+`'"`;
-			img = img.replace('profile', 'profileP');
-			console.log(img);
+		if (img.includes('profile') == true) {
+			if (data.player.pervert != true) {
+				var checkForError = "";
+				var pervertImage = img;
+			}
+			else {
+				var backupImage = img;
+				var checkForError = `onerror ="javascript:this.src='`+backupImage+`'"`;
+				img = img.replace('profile', 'profileP');
+				console.log(img);
+			}
 		}
-	}
-	if (img.includes("images") == false && img.includes("imagebox") == false && img.includes("scripts") == false) {
-		img = "images/"+character.index+"/"+img;
-	}
-	if (imagesDisabled != true) {
-		switch (data.player.style) {
-			case "lobotomy": {
-				var cssColor = "#CCCCCC";
-				for (i = 0; i < data.story.length; i++) {
-					if (img.includes(data.story[i].index) == true) {
-						cssColor = data.story[i].color;
-						break;
+		if (img.includes("images") == false && img.includes("imagebox") == false && img.includes("scripts") == false) {
+			img = "images/"+character.index+"/"+img;
+		}
+		if (imagesDisabled != true) {
+			switch (data.player.style) {
+				case "lobotomy": {
+					var cssColor = "#CCCCCC";
+					for (i = 0; i < data.story.length; i++) {
+						if (img.includes(data.story[i].index) == true) {
+							cssColor = data.story[i].color;
+							break;
+						}
 					}
+					document.getElementById('output').innerHTML += `
+							<img class="bigPicture" style="border-color:`+cssColor+`; border-radius: 5px;"  id = "` + img + `" src="` + img + `"`+checkForError+` title="` + cap + `">
+						<br>
+					`;
+					break;
 				}
-				document.getElementById('output').innerHTML += `
-						<img class="bigPicture" style="border-color:`+cssColor+`; border-radius: 5px;" src="` + img + `"`+checkForError+` title="` + cap + `">
-					<br>
-				`;
-				break;
-			}
-			case "persona": {
-				var cssColor = "#CCCCCC";
-				for (i = 0; i < data.story.length; i++) {
-					if (img.includes(data.story[i].index) == true) {
-						cssColor = data.story[i].color;
-						break;
+				case "persona": {
+					var cssColor = "#CCCCCC";
+					for (i = 0; i < data.story.length; i++) {
+						if (img.includes(data.story[i].index) == true) {
+							cssColor = data.story[i].color;
+							break;
+						}
 					}
+					document.getElementById('output').innerHTML += `
+							<img class="bigPicture" style="border-color:`+cssColor+`; border-radius: 5px;"  id = "` + img + `" src="` + img + `"`+checkForError+` title="` + cap + `">
+						<br>
+					`;
+					break;
 				}
-				document.getElementById('output').innerHTML += `
-						<img class="bigPicture" style="border-color:`+cssColor+`; border-radius: 5px;" src="` + img + `"`+checkForError+` title="` + cap + `">
-					<br>
-				`;
-				break;
+				default: {
+					document.getElementById('output').innerHTML += `
+						<img class="bigPicture" id = "` + img + `" src="` + img + `"`+checkForError+` title="` + cap + `">
+						<br>
+					`;
+				}
 			}
-			default: {
+			if (data.player.blacklistMode == true) {
 				document.getElementById('output').innerHTML += `
-					<img class="bigPicture" src="` + img + `"`+checkForError+` title="` + cap + `">
-					<br>
+					<p class="choiceText" id = "` + img + `Button" onclick="blacklistImage('` + img + `')">
+						Blacklist this image
+					</p>
 				`;
 			}
 		}
 	}
+}
+
+function blacklistImage(image) {
+	console.log(image+" has been added to the blacklist+");
+	console.log(document.getElementById(image));
+	data.player.blacklist.push(image);
+	var blacklistedImage = document.getElementById(image);
+	blacklistedImage.remove();
+	var blacklistedImage = document.getElementById(image+"Button");
+	blacklistedImage.remove();
 }
 
 function writeMed (img, cap) {
@@ -3121,6 +3144,19 @@ function diagnostic() {
 		}
 		case "new name": {
 			loadEncounter('system', 'renamingRoom');
+			break;
+		}
+		case "export blacklist": {
+			document.getElementById('output').innerHTML += JSON.stringify(data.player.blacklist);
+			break;
+		}
+		case "import blacklist": {
+			var blacklist = prompt("Please paste the blacklist", "");
+			blacklist = JSON.parse(blacklist);
+			for (i = 0; i < blacklist.length; i++) {
+				data.player.blacklist.push(blacklist[i]);
+			}
+			writeText("Blacklist imported! Now adding the following:"+ JSON.stringify(blacklist));
 			break;
 		}
 		case "blacklist": {
