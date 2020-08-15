@@ -496,17 +496,49 @@ function writeSpeech (name, img, text) {
 	if (name == "Peta") {
 		name = "Mrs. " + lName;
 	}
-	document.getElementById('output').innerHTML +=`
-	<div class = "textBox" style="border-color: `+color+`">
-		<img class = "textThumb" style="box-shadow: -5px 5px `+color+`" src = "
-			`+ img +`
-		">
-		<div class="textBoxContent">
-		<p class = "textName" style="color:`+color+`">`+ name + `</p>
-		<p>` + replaceCodenames(text) + `</p>
-	</div>
-	<br>
-	`;
+	//Check if a transparent shot should be used
+	if (data.player.style == "persona" || data.player.style == "royalty") {
+		var checkForError = `onerror ="javascript:this.src='`+img+`'"`;
+		img = img.replace('P.jpg', '.jpg');
+		img = img.replace('.jpg', '.png');
+	}
+	switch (data.player.style) {
+		case "persona": {
+			document.getElementById('output').innerHTML += `
+			<div class="textBoxPersona">
+				<div class = "personaThumb">
+					<img class = "textThumbPersona" src = "`+img+`"`+checkForError+`>
+				</div>
+				<div class="textBoxContentPersona">
+					<div class="nameBoxPersona">
+						<p class = "textNamePersona" style = "color:`+color+`">`+ name + `</p>
+						<div class="textNamePersonaWhite" style = "border-color:`+color+`"></div>
+						<div class="textNamePersonaBlack"></div>
+						<div class="personaNameArrow"></div>
+						<div class="personaNameArrowShadow" style = "border-right-color:`+color+`"></div>
+					</div>
+					<div class="dialogueBoxPersona" style = "border-color:`+color+`">
+						<p>` + replaceCodenames(text) + `</p>
+					</div>
+				</div>
+			<br>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML +=`
+			<div class = "textBox" style="border-color: `+color+`">
+				<img class = "textThumb" style="box-shadow: -5px 5px `+color+`" src = "
+					`+ img +`
+				">
+				<div class="textBoxContent">
+				<p class = "textName" style="color:`+color+`">`+ name + `</p>
+				<p>` + replaceCodenames(text) + `</p>
+			</div>
+			<br>
+			`;
+		}
+	}
 }
 
 function writeTab(character, text) {
