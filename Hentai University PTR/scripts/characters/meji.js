@@ -1100,7 +1100,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				if(checkFlag('principal','council')){
 					writeSpeech("player","","Right, that... Yeah, that's a whole ongoing thing.");
 					writeText("mejiF nods.");
-					writeSpeech("mejiF","","I can ask if the other students know anything about it, if that helps?");
+					writeSpeech("meji","","I can ask if the other students know anything about it, if that helps?");
 					writeSpeech("player","","Sure. If you could do that, I'd be greatful.");
 					writeSpeech("meji","","So... does that make me your intern?");
 				}
@@ -1146,7 +1146,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				if(checkFlag('principal','council')){
 					writeSpeech("player","","Right, that... Yeah, that's a whole ongoing thing.");
 					writeText("mejiF nods.");
-					writeSpeech("mejiF","","I can ask if the other students know anything about it, if that helps?");
+					writeSpeech("meji","","I can ask if the other students know anything about it, if that helps?");
 					writeSpeech("player","","Sure. If you could do that, I'd be greatful.");
 					writeSpeech("meji","","So... does that make me your intern?");
 				}
@@ -1253,7 +1253,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("meji","","What's up? Something serious?");
 			writeSpeech("player","","More that... things tend to change. The clock ticks on, and people get older. If I told you I had a way to change that, what would you say?");
 			writeText("There's a momentary pause, before he narrows his eyes a bit.");
-			writeSpeech("meji","","I'd... probably say you're trying to sell me something? But that's doesn't really seem like your thing, so...");
+			writeSpeech("meji","","I'd... probably say you're trying to sell me something? But that doesn't really seem like your thing, so...");
 			writeText("He shrugs.");
 			writeSpeech("meji","","I'd say go for it. I mean, hypnosis is weird, but you're able to do that, so while I don't really get what you're talking about, I say go for it.");
 			writeFunction("writeEncounter('mejiCorruption')", "Corrupt mejiF");
@@ -1264,9 +1264,22 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeEvent('mejiCorruption');
 			addFlag('meji','corrupt');
 			passTime();
-			writeFunction("loadEncounter('succubus', 'mejiCorruption')", "Continue");
+			writeFunction("writeEncounter('mejiCorruption2')", "Continue");
 			break;
 		}
+		case "mejiCorruption2" : {
+			writeHTML(`
+				sp succubus; Looks like you two had some fun... Digging his outfit by the way.
+				t succubusF's voice catches you a bit off-guard as you look back, seeing him leaning against the wall casually.
+				sp succubus; He's got some good potential - definitely not to <i>my</i> level of course, but it's respectable. I'll make sure the changes to his body are a bit on the gradual side.
+				t succubusF chuckles slightly, shaking his head.
+				sp succubus; Not that some of those changes will change much for him, seeing as he's already getting off with just his ass already.
+				sp player; And he'll be acting like his usual self tomorrow?
+				sp succubus; Yup. I can set off his full transformation later.<br>Let's see... No unique powers I can detect, but it's not like you wanted him for that. I'll just mess with his memories real quick...
+				`);
+            writeFunction("changeLocation('playerHouse')", "Leave succubusF to it");
+            break;
+        }
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -2112,7 +2125,7 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "mejiCorruption" : {
 			document.getElementById('output').innerHTML = '';
-			writeText("There's a brief moment where you hand starts to glow a faint red, something that makes mejiF's eyebrow raise for just a moment.");
+			writeText("There's a brief moment where your hand starts to glow a faint red, something that makes mejiF's eyebrow raise for just a moment.");
 			writeSpeech("meji","","Huh... How're you doing tha-");
 			writeText("He stops suddenly, a small shudder going through him for a moment, his face flushing red.");
 			writeSpeech("meji","","That's... different? Definitely different, like it's... <i><b>building...</b></i>");
@@ -2138,7 +2151,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/meji/succ1-4.jpg","Art by Nagi Ichi");
 			writeText("A faint pulse of corrupting influence seems to surge through him as he arches his back harder, his moans turning into desperate gasps as you feel yourself getting pushed to the edge yourself.");
 			writeSpeech("meji","","I-I'm about to...! I'm about to <i><b>cum~</b></i>");
-			writeText("His dick starts to bob as he picks up the pace, twitching strongly as you feel as ass tighten around you tighly and you go over the edge yourself.");
+			writeText("His dick starts to bob as he picks up the pace, twitching strongly as you feel his ass tighten around you tighly and you go over the edge yourself.");
 			writeBig("images/meji/succ1-5.jpg","Art by Nagi Ichi");
 			writeText("His ass tenses tight around your cock, his body gently shaking in the bliss of orgasm as his cocks spurts again and again, before his eyes seem to roll up a bit.");
 			writeText("When he's finally finished cumming, he seems to relax into you, his body pitching against you as his eyes gently shut.");
