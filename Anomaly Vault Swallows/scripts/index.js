@@ -444,13 +444,31 @@ function showSelf() {
 //Scene creation
 function writeSpeech (name, img, text) {
 	var color = "#858585"
-	if (img == "") {
-		for (logbookIndex = 0; logbookIndex < logbookArray.length; logbookIndex++) {
-			if (logbookArray[logbookIndex].index == name) {
-				color = logbookArray[logbookIndex].color;
+	for (logbookIndex = 0; logbookIndex < logbookArray.length; logbookIndex++) {
+		if (logbookArray[logbookIndex].index == name) {
+			switch (data.player.pervertLevel) {
+				case 0: {
+					img = "scripts/gamefiles/profiles/"+name+".jpg";
+					break;
+				}
+				case 1: {
+					img = "scripts/gamefiles/profiles/"+name+"P.jpg";
+					break;
+				}
+				case 2: {
+					img = "scripts/gamefiles/profiles/"+name+"D.jpg";
+					break;
+				}
+				case 3: {
+					img = "scripts/gamefiles/profiles/"+name+".jpg";
+					break;
+				}
+				default: {
+					img = "scripts/gamefiles/profiles/"+name+".jpg";
+				}
 			}
+			color = logbookArray[logbookIndex].color;
 		}
-		img = "scripts/gamefiles/profiles/"+name+".jpg";
 	}
 	if (img == "none") {
 		img = "scripts/gamefiles/none.png";
@@ -497,12 +515,56 @@ function writeSpeech (name, img, text) {
 		name = "Mrs. " + lName;
 	}
 	//Check if a transparent shot should be used
-	if (data.player.style == "persona" || data.player.style == "royalty") {
+	if (data.player.style == "persona" || data.player.style == "royalty"|| data.player.style == "lobotomy") {
 		var checkForError = `onerror ="javascript:this.src='`+img+`'"`;
-		img = img.replace('P.jpg', '.jpg');
 		img = img.replace('.jpg', '.png');
 	}
 	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementById('output').innerHTML += `
+			<div class="textBoxLobotomy" style="border-color: `+color+`;">
+				<div class = "lobotomyThumb" style="background-color: `+color+`">
+					<div class = "lobotomyThumbBorder">
+						<img class = "textThumbLobotomy" src = "
+							`+ img +`
+						"`+checkForError+`>
+					</div>
+				</div>
+				<div class="textBoxContentLobotomy">
+				<p class = "textNameLobotomy" style = "color:`+color+`">`+ name + `</p>
+				<p>` + replaceCodenames(text) + `</p>
+			</div>
+			<br>
+			`;
+			break;
+		}
+		case "royalty": {
+			document.getElementById('output').innerHTML += `
+			<div class="textBoxRoyalty">
+				<div class = "royaltyThumb">
+					<div class = "royaltyImageHolder">
+						<img class = "textThumbRoyalty" style="
+							position:absolute;
+							-webkit-filter: drop-shadow(2px 2px 0 `+color+`)
+							drop-shadow(-2px -2px 0 `+color+`);
+							filter: drop-shadow(2px 2px 0 `+color+`)
+							drop-shadow(-2px -2px 0 `+color+`);"
+						src = "`+img+`"`+checkForError+`>
+						<img class = "textThumbRoyalty" src = "`+img+`"`+checkForError+`>
+					</div>
+					<div class="nameBoxRoyalty" style = "border-color:`+color+`;">
+						<p class = "textNameRoyalty" style = "color:`+color+`;">`+name+`</p>
+					</div>
+				</div>
+				<div class="textBoxContentRoyalty">
+					<div class="dialogueBoxRoyalty" style = "border-color:`+color+`; color:`+color+`;">
+						<p>` + replaceCodenames(text) + `</p>
+					</div>
+				</div>
+			<br>
+			`;
+			break;
+		}
 		case "persona": {
 			document.getElementById('output').innerHTML += `
 			<div class="textBoxPersona">

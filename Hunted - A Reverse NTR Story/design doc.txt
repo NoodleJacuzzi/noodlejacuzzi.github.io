@@ -1,0 +1,80 @@
+To-do
+
+
+
+--- Intro
+MATE CHOICE COPYING
+A phenomenon wherein a man is perceived to be more attractive if he is observed to have been chosen by another mate first. In layman's terms, this means that women are more likely to rate male targets as more desirable when presented as "taken".
+
+Springer Link image
+
+Nature.com image
+
+Neurosciencenews image
+
+While your student's paper, titled "Why I can't get a girlfriend" comes off as unprofessional in many places, at least he seems to have cited legitimate sources.
+
+???: Honey~! Weren't we going to be volunteering at the park today?
+
+A sing-song voice pulls you out of your funk. She's right, it's about time to shut the computer down. As the monitor blinks off...
+
+You catch a glimpse of your reflection
+
+--- Character creation
+
+A man who left his upper-crust family to try and live a humble life.
+
+After you've finished admiring yourself, you should...
+
+Head downstairs
+
+--- Fiance creation
+
+A well-meaning and kind woman who has trouble saying no.
+
+As you descend the stairs, you're greeted by the familiar warm smile of your fiance.
+
+Continue
+
+--- Park Volunteering
+
+
+--- Park volunteering 2
+t You wipe the sweat from your brow, a hard day's work finished. 
+sp fiance; So, what were you up to earlier?
+sp player; I was just... Oh! I completely forgot! I need to return the paper...
+sp fiance; Then go ahead, you've done most of the work here anyways. I can finish up here.
+t She gives you a wink as she continues to clean up the park, and waves as you leave.
+t You'll need to head back home to pick up the paper, and head to the school to drop it off.
+
+--- --- Stats
+Money
+Stamina
+Willpower
+Lust
+Suspicion
+
+--- --- Locations
+--- Home
+Gallery
+Cheat Entry
+Sleep the day away
+--- Residential Area
+Cafe
+Convenience Store
+Tutoring Job
+Drug Dealer
+--- Lively Neighborhood
+Pool
+Hospital
+Livestreamer's House
+Library
+--- Busy District
+Bar
+Nightclub
+Masseuse
+Sister's Hotel
+Clothing Store
+--- College
+Bondage Club room
+Gym

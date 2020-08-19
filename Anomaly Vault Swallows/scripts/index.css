@@ -6,7 +6,7 @@ html, body {
 	margin: 0px;
 }
 p {
-	line-height: 1.6;
+	/*There's nothing here*/
 }
 .playerRoom {
 	position: relative;
@@ -1032,6 +1032,119 @@ position: absolute;
 	visibility: hidden;
 }
 
+/*Lobotomy Schema*/
+.textBoxLobotomy {
+	position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: rgba(0,0,0,0.5);
+	border: solid 5px;
+    margin: 15px 0;
+    padding: 0px;
+    width: 100%;
+	overflow: hidden;
+	-moz-transform: skew(-5deg, 0deg);
+	-webkit-transform: skew(-5deg, 0deg);
+	-o-transform: skew(-5deg, 0deg);
+	-ms-transform: skew(-5deg, 0deg);
+	transform: skew(-5deg, 0deg);
+}
+.textNameLobotomy {
+    font-size: 1.5em;
+	width: 150px;
+	font-weight: bold;
+    text-align: center;
+	font-family: norwester, times new roman, sans-serif;
+	-moz-transform: skew(5deg, 0deg);
+	-webkit-transform: skew(5deg, 0deg);
+	-o-transform: skew(5deg, 0deg);
+	-ms-transform: skew(5deg, 0deg);
+	transform: skew(5deg, 0deg);
+	margin-bottom: 0px;
+	color: black;
+}
+img.textThumbLobotomy {
+    height: 135px;
+    width: 135px;
+    /*box-shadow: -5px 5px var( --character-color);*/
+    flex: none;
+	-moz-transform: scale(0.9) skew(5deg, 0deg);
+	-webkit-transform: scale(0.9) skew(5deg, 0deg);
+	-o-transform: scale(0.9) skew(5deg, 0deg);
+	-ms-transform: scale(0.9) skew(5deg, 0deg);
+	transform: scale(0.9) skew(5deg, 0deg);
+	margin-top: -1px;
+}
+.textBoxContentLobotomy {
+	font-size: 1.4em;
+	font-family: railway, times new roman, sans-serif;
+	font-style: normal;
+	-moz-transform: skew(5deg, 0deg);
+	-webkit-transform: skew(5deg, 0deg);
+	-o-transform: skew(5deg, 0deg);
+	-ms-transform: skew(5deg, 0deg);
+	transform: skew(5deg, 0deg);
+}
+.lobotomyThumb {
+    display: inline-block;
+    width: 160px;
+	margin-right: 40px;
+	margin-left: 30px;
+}
+.lobotomyThumbBorder {
+    height: 127px;
+    width: 135px;
+	background-color: #000000;
+    margin-right: 30px;
+    margin-left: 10px;
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+}
+.choiceTextLobotomy {
+	padding: 0px;
+	margin: 0px;
+	font-family: railway, times new roman, sans-serif;
+	font-size: 1.3em;
+	font-weight: normal;
+}
+.choiceTextLobotomy:hover{
+}
+.choiceFrameLobotomy{
+    background: rgba(0,0,0,0.75);
+    padding: 15px;
+    margin: 15px;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+	font-size:1.25rem;
+	font-weight: bold;
+    display: block;
+    width: fit-content;
+    max-width: 30vw;
+    margin: 15px auto;
+	border: solid 5px;
+}
+
+.choiceFrameLobotomy:hover{
+    background: rgba(50,50,50,0.75);
+    color: #ffffff;
+	border-color: rgba(50,50,50,0.75);
+}
+
+.textBoxLobotomy p.switch {
+    color: #5fe6ec;
+	cursor: pointer;
+}
+.textBoxLobotomy p.switch::before {
+    content: '\027A4';
+    padding-right: 5px;
+	cursor: pointer;
+}
+
 /*Persona Schema*/
 .textBoxPersona {
 	position: relative;
@@ -1206,6 +1319,155 @@ img.textThumbPersona {
 	transform: skew(3deg, 0deg);
 }
 .pictureButtonPersona:hover {
+    padding: 15px;
+    background: #ffffff;
+    color: #000000;
+	border: solid 3px #000000;
+}
+
+
+#buttonMenu {
+	display:inline-block;
+}
+/*Royalty Schema*/
+.textBoxRoyalty {
+	position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 5px 0;
+    padding: 0px;
+    width: 100%;
+	overflow: hidden;
+}
+img.textThumbRoyalty {
+    height: 180px;
+    width: 180px;
+    /*box-shadow: -5px 5px var( --character-color);*/
+    flex: none;  
+	-webkit-filter:grayscale(0.9);
+	filter: grayscale(0.9);
+}
+.textBoxContentRoyalty {
+	font-size: 1.4em;
+	font-family: railway, times new roman, sans-serif;
+	font-style: normal;
+	margin-left: 40px;
+	margin-top: 5px;
+	width: 90%;
+}
+.royaltyThumb {
+    display: inline-block;
+    width: 160px;
+}
+.nameBoxRoyalty {
+	width:180px;
+	background-color: #000;
+	margin-top: -29px;
+	border: 3px solid;
+	border-radius: 5px;
+	z-index:1;
+	position: absolute;
+}
+.textNameRoyalty {
+    font-size: 1.5em;
+	font-family: marker, norwester, times new roman, sans-serif;
+	z-index: 1;
+	margin: auto;
+	text-align: center;
+}
+.dialogueBoxRoyalty {
+    width: 100%;
+	border: 3px solid white;
+	border-radius: 5px;
+	background-color: #000;
+	padding: 0px 15px;
+	height: 180px;
+}
+
+.choiceTextRoyalty {
+	padding: 0px;
+	margin: 0px;
+	font-family: railway, times new roman, sans-serif;
+	font-size: 1.3em;
+	font-weight: normal;
+}
+.choiceTextRoyalty:hover{
+}
+.choiceFrameRoyalty{
+    background: #000000;
+    color: #ffffff;
+    padding: 15px;
+    margin: 15px;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+	font-size:1.25rem;
+	font-weight: bold;
+    display: block;
+    width: fit-content;
+    max-width: 30vw;
+    margin: 15px auto;
+	border: solid 5px;
+}
+
+.choiceFrameRoyalty:hover{
+    background: #ffffff;
+    color: #000000;
+	border-color: #000000;
+}
+
+.textBoxRoyalty p.switch {
+    color: #5fe6ec;
+	cursor: pointer;
+}
+.textBoxRoyalty p.switch::before {
+    content: '\027A4';
+    padding-right: 5px;
+	cursor: pointer;
+}
+
+.royaltyMenuButton {
+    background: #000000;
+    color: #ffffff;
+	border: solid 3px #ffffff;
+    padding: 15px;
+    margin: 15px;
+	border: solid 3px #ffffff;
+	border-radius: 0px;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+}
+.royaltyMenuButton:hover{
+    background: #ffffff;
+    color: #000000;
+	border: solid 3px #000000;
+}
+.pictureButtonRoyalty{
+	display: block;
+	position: absolute;
+    background: #000000;
+    color: #ffffff;
+	border: solid 3px #ffffff;
+	font-size:1.25rem;
+	font-weight: bold;
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
+    padding: 15px;
+    margin: 15px;
+    border: 3px solid;
+    transition: 0.25s;
+    text-align: center;
+	cursor: pointer;
+	-moz-transform: skew(3deg, 0deg);
+	-webkit-transform: skew(3deg, 0deg);
+	-o-transform: skew(3deg, 0deg);
+	-ms-transform: skew(3deg, 0deg);
+	transform: skew(3deg, 0deg);
+}
+.pictureButtonRoyalty:hover {
     padding: 15px;
     background: #ffffff;
     color: #000000;
