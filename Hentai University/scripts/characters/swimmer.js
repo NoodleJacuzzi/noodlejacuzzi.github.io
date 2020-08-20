@@ -1,4 +1,4 @@
-var character = {index: "swimmer", fName: "Naomi", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#8DB7D0", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas"};
+var character = {index: "swimmer", fName: "Naomi", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#8DB7D0", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
 
 var logbook = {
 	index: "swimmer", 
@@ -18,8 +18,8 @@ var newItems = [
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "swimmer2", name: "Your door suddenly explodes into a rapid series of knocks.", location: 'playerOffice', time: "MorningEvening", itemReq: "", trustMin: 20, trustMax: 35, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
-	{index: "swimmer3", name: "You wander the park somewhat aimlessly. She really should have told you where in the park to meet her. On your third lap, your phone finally starts ringing.", location: 'parkDistrict', time: "MorningEvening", itemReq: "", trustMin: 40, trustMax: 49, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
-	{index: "swimmer4", name: "You head to the pool late. You have to hop a fence to get there, but you've for sure got privacy and time for your meetup.", location: 'parkDistrict', time: "Evening", itemReq: "", trustMin: 90, trustMax: 90, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	{index: "swimmer3", name: "You wander the park somewhat aimlessly. She really should have told you where in the park to meet her. On your third lap, your phone finally starts ringing.", location: 'parkDistrict', time: "MorningEvening", itemReq: "", trustMin: 51, trustMax: 52, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	{index: "placeholder", name: "", location: '', time: "", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -113,8 +113,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "swimmer3a": {
 			passTime();
-			setTrust('swimmer', 50)
-			writeText("You work your way to the pool and quietly try and get to the family changing room. Luckily, no one seems to take notice of you, even with your completely inappropriate pool attire. You text swimmerF as you approach and manage to worm your way to the door when some kids start making a commotion in the pool which required the lifeguard to intervene.");
+			setTrust('swimmer', 61)
+			writeText("You work your way to the pool and quietly try and get to the famuly changing room. Luckily, no one seems to take notice of you, even with your completely inappropriate pool attire. You text swimmerF as you approach and manage to worm your way to the door when some kids start making a commotion in the pool which required the lifegaurd to intervene.");
 			writeSpeech("player", "", "Next time could you tell me where you want to meet <i>before</i> we meet up?");
 			writeBig("images/swimmer/3a.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("swimmer", "", "I thought I... Uhh. Oops. Sorry. Oh! Uh, sorry, *Master?");
@@ -133,43 +133,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("writeEvent('swimmer3b')", "Maybe a different approach this time...");
 			break;
 		}
-		case "swimmer4": {
-			writeText("As you move towards the locker room, you can hear swimmerF behind the door.");
-			writeSpeech("swimmer", "", "Gotta cum. Please, I need it. Where is *Master? He'll make me cum, I know he will. I hope he will. Please make me cum, *Master.");
-			writeSpeech("player", "", "It's a miracle she's gotten through this week without raising any alarms.");
-			writeText("Your mumbling causes her voice to stop on the other side of the door.");
-			writeSpeech("swimmer", "", "... *Master? Are you there?");
-			writeFunction("loadEncounter('swimmer', 'swimmer4a')", "No time like the present.");
-			writeFunction("changeLocation(data.player.location)", "She can wait a day... or two... Maybe.");
-			break;
-		}
-		case "swimmer3a": {
-			passTime();
-			setTrust('swimmer', 61)
-			writeText("You push the door open.");
-			writeBig("images/swimmer/4a1.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("swimmer", "", "*Master! Thank God! I need-");
-			writeText("You let loose a loud, clear snap.");
-			writeSpeech("player", "", "Spank.");
-			writeText("swimmerF cries in pain and flinches. coachF must have done some rough conditioning when working that trigger in. But despite the apparent hypno pain, you hear the moan of pleasure that follows up the sharp cry of pain. Surprisingly good work, for an amateur.");
-			writeSpeech("swimmer", "", "Th-thank you *Master! Sorry, I just- I...");
-			writeText("Her face twists as she tries to find the right words. She's afraid of saying the wrong thing, but she knows she needs to say something. It takes her a few seconds of focus, as she slowly finds the words she thinks you want to hear.");
-			writeSpeech("swimmer", "", "I... I get it now, *Master. I get what you meant last time we were here. I... Didn't know what it really meant when I came into your office. I didn't... I didn't know what it meant when you told me I belonged to you. I saw what you did to sportsF, and I thought... I thought it would be exciting.");
-			writeText("She's speaking faster now, since you haven't stopped her, she's pretty sure she's on the right track.");
-			writeSpeech("swimmer", "", "And... And it was. It <i>really</i> was. And it still <i>is</i>. And I want more. So much more. sportsF and Mistress coachL did a lot to show me that I was... Wrong about some things, though.");
-			writeText("At this point, it's far better for you to just let her speak. THe more she talks, the more these feelings will work their way down. It's a lot easier when you don't have to implant or change people's thoughts, you just kinda... Twist them a bit and let them run wild.");
-			writeSpeech("swimmer", "", "When... When I was first with sportsF, I only really wanted to get off. I wasn't doing anything <i>for</i> her. Which wasn't right. She was helping me out. So the next time, I really did <i>try</i> but, it was so hard to focus on sportsF when I was so horny... Until she took control and gave me directions. And that felt <b>good</b>.");
-			writeText("swimmerF starts to shuffle, nipples erect in her swimsuit, and the crotch of the suit obviously digging into her slit.");
-			writeSpeech("swimmer", "", "But at the end of the day, I was <i>still</i> only really focused on myself. I just wanted... Needed... To cum. Then you sent me to coachF. And... She taught me that was wrong. I shouldn't focus on myself. And after she heard about how I treated sportsF the first few nights, she made sure I was punished, and told me my mistake. I'm your <i>slave</i> she said. <i>My</i> pleasure, my desires always come second to who I'm serving.");
-			writeText("You can see her hands twitching at her side, occasionally half moving to her pussy before snapping back. She's trying her hardest to make sure she can focus and tell you what she's learned.");
-			writeSpeech("swimmer", "", "Then, the last night... She showed me how to find pleasure in serving others. And... And I loved it. And I know now. I... I earn my pleasure by serving others. Serving <i>you</i>. And whoever else you'd have me serve, but I'd... I'd rather it was just you and the other girls.");
-			writeText("She finally looks up, and stops twitching for a moment as she finishes.");
-			writeSpeech("swimmer", "", "You were my first, and I want you to be the only cock I ever have in me *Master. Is... Is that too selfish?");
-			writeText("Whenever you take over this school, you're giving coachF a massive raise.");
-			writeSpeech("swimmer", "", "That seems fair, swimmerF. And I'm very glad to see you've learned. See what happens when you <b>focus</b>?");
-			writeFunction("writeEvent('swimmer4b')", "Her eyes snap to yours, and she's waiting for your command");
-			break;
-		}
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -180,8 +143,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 var eventArray = [
 	{index: "swimmer2b", name: "Surprise!"},
 	{index: "swimmer3b", name: "Pool Party"},
-	{index: "swimmer4b", name: "Devotion"},
-	{index: "placeholder", name: "Event Name"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -198,7 +159,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/swimmer/2b2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("swimmer", "", "You really were blessed with a gift here.");
 			writeSpeech("player", "", "Goddamn it! Listen to me. This is all kinds of inappropriate, so please-");
-			writeSpeech("swimmer", "", "Oh come <i>oooonn</i> playerT playerL! You fucked sportsF! I saw it. I could go and tell the principal... Or... Well, this sounds way more fun, right?");
+			writeSpeech("swimmer", "", "Oh come <i>oooonn</i> playerT playerF! You fucked sportsF! I saw it. I could go and tell the principal... Or... Well, this sounds way more fun, right?");
 			writeText("She starts to lick as you try to keep your voice level. You can make this work. Just gotta think on your feet.");
 			writeSpeech("player", "", "Fuck it! Fine!");
 			writeSpeech("swimmer", "", "Fuck yes!");
@@ -349,7 +310,8 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "This isn't about things being <i>fair</i>. When you saw me <b>break</b> sportsF, do you think she thought it was <b>fair</b>? No. I made her mine, and now I'll do the same for you. A week without cumming will probably be enough to break a weak willed nympho like you, don't you think?");
 			writeSpeech("swimmer", "", "A whole week? I don't think I can-");
 			writeSpeech("player", "", "I don't think so either, which is why I'm <b>ordering you. Focus, swimmerF.</b>");
-			writeSpeech("swimmer", "", "Y-yes, *Master. I'll... I can do it.");
+			writeSpeech("swimmer", "", "Y-yes, *Master. I'll do whatever you demand.");
+			writeText("That felt... Weirdly specific. You'll have to ask about that, but for now, it seems to be helping.");
 			writeSpeech("player", "", "You will not cum until I fill you with my cock. Touch yourself as much as you like. Use whatever toys you want. Ask swimmerF or coachF to help you. <i>No matter how much you try, you'll never cross that edge without your *Master's cock.</i> And when I finally decide to fill you, I'll teach you exactly what it means to belong to me, and why it's so much better to be a <i>good, obedient girl</i> as opposed to the bratty nympho you are now.");
 			writeSpeech("swimmer", "", "I... I can do that *Master. I promise.");
 			writeSpeech("player", "", "Good. We'll make a good girl of you yet. Now, get dressed. Keep your swimsuit on underneath your clothes, and leave after me when it seems clear. As you get dressed, and as you become more clear, let these last few commands just... <i>Slip</i> right out of you mind. You can spend all week trying to remember what you'll need to do to cum again. I'll be checking in on you throughout the week. Be sure to read and answer my texts.");
@@ -379,14 +341,15 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
+	{index: "swimmerreward", trust: 67},
 	{index: "swimmerphone1", trust: 40,},
-	{index: "swimmerday1", trust: 50,},
-	{index: "swimmerday2", trust: 51,},
-	{index: "swimmerday3", trust: 52,},
-	{index: "swimmerday4", trust: 53,},
-	{index: "swimmerday5", trust: 54,},
-	{index: "swimmerday6", trust: 55,},
-	{index: "swimmerreward", trust: 60},
+	{index: "swimmerday1", trust: 61,},
+	{index: "swimmerday2", trust: 62,},
+	{index: "swimmerday3", trust: 63,},
+	{index: "swimmerday4", trust: 64,},
+	{index: "swimmerday5", trust: 65,},
+	{index: "swimmerday6", trust: 66,},
+	{index: "swimmerfix", trust: 56,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
@@ -398,7 +361,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			break;
 		}
 		case "swimmerphone1": {
-			setTrust('swimmer', 41)
+			setTrust('swimmer', 51)
 			writePhoneSpeech("swimmer","","sportsF said she switched to a smaller swimsuit size, so I thought I'd change things up too!");
 			writePhoneSpeech("swimmer","","It rubs some really sensitive spots. I'm surprised you can't see my nipples, they're rock hard in this thing.");
 			writePhoneSpeech("player","","You already talked to sportsF about this stuff?");
@@ -415,8 +378,8 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			break;
 		}
 		case "swimmerday1": {
-			if (checkTrust('swimmer') == 50) {
-				setTrust('swimmer', 51);
+			if (checkTrust('swimmer') == 61) {
+				setTrust('swimmer', 62);
 			}
 			writePhoneSpeech("swimmer","","Did something weird happen at the pool yesterday?");
 			writePhoneSpeech("swimmer","","I remember you touching me, and I think I came, but something's weird now.");
@@ -435,8 +398,8 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			break;
 		}
 		case "swimmerday2": {
-			if (checkTrust('swimmer') == 51) {
-				setTrust('swimmer', 52);
+			if (checkTrust('swimmer') == 62) {
+				setTrust('swimmer', 63);
 			}
 			writePhoneSpeech("swimmer","","I don't know what to dooo!");
 			writePhoneSpeech("player","","Still having problems?");
@@ -453,8 +416,8 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			break;
 		}
 		case "swimmerday3": {
-			if (checkTrust('swimmer') == 52) {
-				setTrust('swimmer', 53);
+			if (checkTrust('swimmer') == 63) {
+				setTrust('swimmer', 64);
 			}
 			writePhoneSpeech("swimmer","","STILL NOT WORKING");
 			writePhoneSpeech("sports","","Sorry, swimmerF. I tried.");
@@ -468,14 +431,14 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			writePhoneSpeech("swimmer","","if you tell me how I can cum, I'll give her the best videos I've found she'll be an expert lesbian I just NEEEED release PLEEEASE");
 			writePhoneSpeech("player","","Like you wouldn't show her regardless. Anyways, continue, sportsF");
 			writePhoneSpeech("sports","","Well, after we got started, I got to work on her. I didn't really know what I should be doing so I just tried doing things that I know I like. I ate her out, I played with her tits, gave her lots of kisses. I fingered her and had her suck on them while I ran my hands all over her. I even played with her asshole, but...");
-			writePhoneSpeech("swimmer","","I JUST DON'T LIKE THINGS UP MY BUTT, OKAY?");
+			writePhoneSpeech("swimmer","","I JUST DON'T LIKE THINGS UP MY BUTT MUCH, OKAY?");
 			writePhoneSpeech("sports","","I mean... Don't knock it 'till you've tried it. If you just relax and let it go deep it hits all the right spots. Trust me.");
 			writePhoneSpeech("swimmer","","and people call me a pervert...");
 			writePhoneSpeech("sports","","Well, you are. But yeah, sorry *Master. I tried everything I could think of, but no matter how close she got I could never make her cum. I even licked her all over. Like, top to bottom. She squirmed and loved it when I stuck my tongue in her belly button, and I thought she was going to squirt there and then, but that's the closest I got.");
 			writePhoneSpeech("swimmer","","... I like how it felt, okay?");
 			writePhoneSpeech("player","","Don't worry about it, sportsF. It's not your fault. You did the best you could. but tell me something, did swimmerF do anything for you during that whole time?");
 			writePhoneSpeech("swimmer","","I was a little busy");
-			writePhoneSpeech("sports","","Uhh. No, not really, I guess. She kissed me back when I kissed her, and sometimes would run her hands over me or lick me when I did the same to her, but other than that...");
+			writePhoneSpeech("sports","","Uhh. No, not really, I guess. She kissed me back when I kissed her, and sometimes would run her hands over me or lick me when I did the smae to her, but other than that...");
 			writePhoneSpeech("swimmer","","WELL IT'S NOT LIKE I'VE DONE THIS BEFORE EITHER");
 			writePhoneSpeech("player","","That's very selfish of you, swimmerF. Maybe you should return the favor tonight, and make sportsF feel good too. And did you use any of your toys with her sportsF?");
 			writePhoneSpeech("sports","","We used some little vibrators, but she thought all of my dildos were 'too big and scary' for much else.");
@@ -488,8 +451,8 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			break;
 		}
 		case "swimmerday4": {
-			if (checkTrust('swimmer') == 53) {
-				setTrust('swimmer', 54);
+			if (checkTrust('swimmer') == 64) {
+				setTrust('swimmer', 65);
 			}
 			writePhoneSpeech("swimmer","","I STILL HAVEN'T CUM YOU ASS");
 			writePhoneSpeech("sports","","Well I did. A few times...");
@@ -513,7 +476,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			writePhoneSpeech("swimmer","","I HAD TO PULL IT OUT IN THE SHOWER, I HAD FORGOTTEN ABOUT THE PLUG");
 			writePhoneSpeech("player","","And so, swimmerF, what do you think?");
 			writePhoneSpeech("swimmer","","TOO HORNY TO THINK");
-			writePhoneSpeech("sports","","I mean, it seemd like we were getting close. Maybe you can give her another hint, *Master?");
+			writePhoneSpeech("sports","","I mean, it seeemd like we were getting close. Maybe you can give her another hint, *Master?");
 			writePhoneSpeech("swimmer","","I DON'T WANT A HINT, I WANT TO CUUUM");
 			writePhoneSpeech("player","","Well, it doesn't seem like your fellow students are the answer. But being filled certainly seemed to do some good for you. Can you think of anything else I'd want from you?");
 			writePhoneSpeech("swimmer","","ME TO LOSE MY MIND");
@@ -526,8 +489,8 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			break;
 		}
 		case "swimmerday5": {
-			if (checkTrust('swimmer') == 54) {
-				setTrust('swimmer', 55);
+			if (checkTrust('swimmer') == 65) {
+				setTrust('swimmer', 66);
 			}
 			writePhoneSpeech("swimmer","","I will do literally anything. Please just let me cum.");
 			writePhoneSpeech("player","","How did it go.");
@@ -565,8 +528,8 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			break;
 		}
 		case "swimmerday6": {
-			if (checkTrust('swimmer') == 55) {
-				setTrust('swimmer', 56);
+			if (checkTrust('swimmer') == 66) {
+				setTrust('swimmer', 67);
 			}
 			writePhoneSpeech("swimmer","","please tell me what i need to do i cant keep going on like this");
 			writePhoneSpeech("coach","","Oh, I don't know about that, swimmerF, you did plenty well yesterday. I'm sure you could have a wonderful life as a desperate little tongue bath for the volleyball team.");
@@ -592,6 +555,11 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			writePhoneSpeech("coach","","Fuu~uck that's so hot. Mm, I cannot wait to do this with more girls. Seeing her lick sportsF's asshole clean was the hardest I've cum since... Well, when did you last fuck me? I guess not that long all things considered, but damn if it wasn't good.");
 			break;
 		}
+		case "swimmerfix": {
+			setTrust('swimmer', 40)
+			writePhoneSpeech("SlackerSavior","scripts\gamefiles\characters\slacker.jpg","Whoops. Sorry, I broke something. Here's a quick reset to get you back on track and show you the scene you missed.");
+			break;
+		}
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong event. Error code: Failed to write phone event("+name+") in "+character.index+".js");
 			break;
@@ -600,11 +568,11 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 }
 
 //Don't touch anything below this, or things will break.
-console.log(character.index+'.js loaded correctly. request type is '+requestType)
+//console.log(character.index+'.js loaded correctly. request type is '+requestType)
 
 switch (requestType) {
 	case "load": {
-		data.story.push(character);
+		//data.story.push(character);
 		console.log(character);
 		console.log(data.story);
 		writeSpecial(character.fName+" has been added to the game!");
@@ -617,6 +585,9 @@ switch (requestType) {
 	}
 	case "event": {
 		writeEvent(eventName);
+		if (data.player.location == 'gallery' && eventName != 'gallery') {
+			writeFunction("loadEncounter('system', 'gallery')", "Finish");
+		}
 		break;
 	}
 	case "unlock": {
@@ -637,57 +608,73 @@ switch (requestType) {
 	}
 	case "check": {
 		if (encounteredCheck(character.index) != true) {
-			for (i = 0; i < encounterArray.length; i++) {
-				if (encounterArray[i].altImage == undefined) {
-					encounterArray[i].altImage == "";
-				}
-				if (encounterArray[i].altName == undefined) {
-					encounterArray[i].altName == "";
-				}
-				if (encounterArray[i].location.includes(data.player.location)) { //check the location
-					if (encounterArray[i].time.includes(data.player.time)) { //check the time
-						if (encounterArray[i].trustMin <= checkTrust(character.index) && encounterArray[i].trustMax >= checkTrust(character.index)) { //check the trust requirements
-							if (encounterArray[i].day == "even" && data.player.day%2 == 0) {
-								if (encounterArray[i].itemReq != "" && checkItem(encounterArray[i].reqItem) != true) {
-									console.log('event available, but you lack the appropriate item');
+			for (number = 0; number < encounterArray.length; number++) { //start going through encounter array
+				var finalLocation = "";
+				var finalResult = true;
+				if (encounterArray[number].location != null) {
+					var finalLocation = encounterArray[number].location;
+					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map" && data.player.gps == true) { //check the location
+						if (encounterArray[number].time.includes(data.player.time)) { //check the time
+							if (encounterArray[number].trustMin <= checkTrust(character.index) && encounterArray[number].trustMax >= checkTrust(character.index)) { //check the trust requirements
+								if (encounterArray[number].day == "even" && data.player.day%2 == 1) {
+									finalResult = false;
+									//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect parity");
 								}
-								else {
-									if (encounterArray[i].type == "tab") { //check the type of the encounter (tab / button)
-										printEncounterTab(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].altImage, encounterArray[i].altName);
-									}
-									else {
-										printEncounterButton(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].top, encounterArray[i].left);
-									}
+								if (encounterArray[number].day == "odd" && data.player.day%2 == 0) {
+									finalResult = false;
+									//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect parity");
+								}
+								if (encounterArray[number].itemReq != "" && checkItem(encounterArray[number].itemReq) != true) {
+									finalResult = false;
+									//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect item");
 								}
 							}
-							if (encounterArray[i].day == "odd" && data.player.day%2 == 1) {
-								if (encounterArray[i].itemReq != "" && checkItem(encounterArray[i].itemReq) != true) {
-									console.log('event available, but you lack the appropriate item');
-								}
-								else {
-									if (encounterArray[i].type == "tab") { //check the type of the encounter (tab / button)
-										printEncounterTab(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].altImage, encounterArray[i].altName);
-									}
-									else {
-										printEncounterButton(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].top, encounterArray[i].left);
-									}
-								}
-							}
-							if (encounterArray[i].day == "both") {
-								if (encounterArray[i].itemReq != "" && checkItem(encounterArray[i].itemReq) != true) {
-									console.log('event available, but you lack the appropriate item');
-								}
-								else {
-									if (encounterArray[i].type == "tab") { //check the type of the encounter (tab / button)
-										printEncounterTab(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].altImage, encounterArray[i].altName);
-									}
-									else {
-										printEncounterButton(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].top, encounterArray[i].left);
-									}
-								}
+							else {
+								//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect trust at "+checkTrust(character.index)+". Trustmin: "+encounterArray[number].trustMin);
+								finalResult = false;
 							}
 						}
+						else {
+							//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect time");
+							finalResult = false;
+						}
 					}
+					else {
+						//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect location");
+						finalResult = false;
+					}
+				}
+				else {
+					//console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
+					var requirements = checkRequirements(encounterArray[number].requirements);
+					//console.log(requirements);
+					if (requirements != true) {
+						finalResult = false;
+					}
+				}
+				if (finalResult == true) {
+					//console.log("Final result for "+encounterArray[number].index+" true, location is "+finalLocation);
+					if (data.player.location == "map" && finalLocation != "beach" && finalLocation != "casino") {
+						var textString = "";
+						for (locationIndex = 0; locationIndex < locationArray.length; locationIndex++) { //find the location target
+							if (locationArray[locationIndex].index == finalLocation) {
+								var textString = locationArray[locationIndex].name + " - ";
+							}
+						}
+						if (textString != "") {
+							printEncounterTab(character.index, encounterArray[number].index, textString + encounterArray[number].name, encounterArray[number].altImage, encounterArray[number].altName);
+						}
+						else {
+							printEncounterTab(character.index, encounterArray[number].index, encounterArray[number].name, encounterArray[number].altImage, encounterArray[number].altName);
+						}
+					}
+					else {
+						//console.log(number);
+						printEncounterTab(character.index, encounterArray[number].index, encounterArray[number].name, encounterArray[number].altImage, encounterArray[number].altName);
+					}
+				}
+				else {
+					//console.log("!!!!!!!!!!!!!!!!!!!!!!!!!final result for "+encounterArray[number].index+" false, location is "+finalLocation);
 				}
 			}
 		}
@@ -731,14 +718,47 @@ switch (requestType) {
 		break;
 	}
 	case "phoneCheck": {
+		var finalMessage = "";
+		var finalResult = true;
 		for (number = 0; number < phoneArray.length; number++) { //start going through phone array
-			if (checkTrust(character.index) == phoneArray[number].trust) { //if the player's trust with the character meets the text requirement
-				for (phoneEventCheck = 0; phoneEventCheck < data.story.length; phoneEventCheck++) { //go through the characters
-					if (data.story[phoneEventCheck].index == character.index) { //check what text is currently assigned to the character
-						if (data.story[phoneEventCheck].textEvent.includes(phoneArray[number].index)==false) {
-							notification(character.index)
-							data.story[phoneEventCheck].textEvent = phoneArray[number].index;
-							console.log(data.story[phoneEventCheck].textEvent);
+			//Start finding the data.story variable associated with the character
+			for (phoneHistoryCheck = 0; phoneHistoryCheck < data.story.length; phoneHistoryCheck++) {
+				if (data.story[phoneHistoryCheck].index == character.index) {
+					//If the character has no unread texts
+					//If the character does not have this text in their text history
+					if (
+					data.story[phoneHistoryCheck].unreadText != true &&
+					data.story[phoneHistoryCheck].textHistory.includes(phoneArray[number].index) != true &&
+					data.story[phoneHistoryCheck].textEvent != phoneArray[number].index
+					) {
+						//If the phone record is using the old system...
+						if (phoneArray[number].trust != null) {
+							var finalResult = false;
+							if (checkTrust(character.index) == phoneArray[number].trust) { //if the player's trust with the character meets the text requirement
+								for (phoneEventCheck = 0; phoneEventCheck < data.story.length; phoneEventCheck++) { //go through the characters
+									if (data.story[phoneEventCheck].index == character.index) { //check what text is currently assigned to the character
+										if (data.story[phoneEventCheck].textEvent.includes(phoneArray[number].index)==false) {
+											notification(character.index)
+											data.story[phoneEventCheck].textEvent = phoneArray[number].index;
+											console.log(data.story[phoneEventCheck].textEvent);
+										}
+									}
+								}
+							}
+						}
+						else {
+							if (phoneArray[number].requirements.includes("?time") == false) {
+								phoneArray[number].requirements += "?time Morning;";
+							}
+							//Check the requirements
+							var requirements = checkRequirements(phoneArray[number].requirements);
+							console.log("Now examining encounter entry "+phoneArray[number].index+phoneArray[number].requirements+", result is "+requirements);
+							if (requirements != false) {
+								notification(character.index)
+								data.story[phoneHistoryCheck].unreadText = true;
+								data.story[phoneHistoryCheck].textEvent = phoneArray[number].index;
+								data.story[phoneHistoryCheck].textHistory += phoneArray[number].index;
+							}
 						}
 					}
 				}
