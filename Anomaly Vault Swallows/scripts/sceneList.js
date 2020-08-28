@@ -3458,7 +3458,7 @@ function writeEvent(scene) {
 		}
 		case "erotiboxResearch13": { //PC
 			writeHTML(`
-				sp player; Now beginning test EB-0X, I've got a windows-based personal computer with several games installed.
+				sp player; Now beginning test EB-13, I've got a windows-based personal computer with several games installed.
 				sp assistant; Wonder which intern kicked the can and got his PC thrown in the research bin.<br>Huh, maybe playing games at work is what got him fired.
 				t You place the computer tower in the box, then shut the front gate. 
 				t Within seconds a bright purple light illuminates the room, before quickly dying down again.
@@ -3486,7 +3486,7 @@ function writeEvent(scene) {
 		}
 		case "erotiboxResearch14": { //wonder woman
 			writeHTML(`
-				sp player; Now beginning test EB-0X, I've got a DVD copy of the movie Wonder Woman.
+				sp player; Now beginning test EB-14, I've got a DVD copy of the movie Wonder Woman.
 				sp assistant; Couldn't you have picked Iron Man or something? I want some eye candy too.
 				t You place the disc in the box, then shut the front gate. 
 				t Within seconds a bright purple light illuminates the room, before quickly dying down again.
@@ -3507,7 +3507,7 @@ function writeEvent(scene) {
 		}
 		case "erotiboxResearch15": { //sleepmask
 			writeHTML(`
-				sp player; Now beginning test EB-0X, I've got an ordinary sleepmask, black.
+				sp player; Now beginning test EB-15, I've got an ordinary sleepmask, black.
 				sp assistant; Looks a lot like mine, actually.
 				t You place the mask in the box, then shut the front gate. 
 				t Within seconds a bright purple light illuminates the room, before quickly dying down again.
