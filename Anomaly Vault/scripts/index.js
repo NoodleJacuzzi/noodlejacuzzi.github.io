@@ -30,7 +30,7 @@ var data = {
 		{index: "girlfriend", image: "", met: false, fName: "Asa", lName: "Akira", desc:"Your roommate's girlfriend.",},
 		{index: "boss", image: "", met: false, fName: "Peta", lName: "Jensen", desc:"Your direct supervisor.",},
 		{index: "librarian", image: "", met: false, fName: "Mia", lName: "Malkova", desc:"Sexually frustrated librarian.",},
-		{index: "madame", image: "", met: false, fName: "Lovely Madame", lName: "Sunny Leone", desc:"Phantom who lives inside the perfume bottle.",},
+		{index: "madame", image: "", met: false, fName: "Sunny", lName: "Leone", desc:"Phantom who lives inside the perfume bottle.",},
 		{index: "gym", image: "", met: false, fName: "Karlee", lName: "Grey", desc:"Owner of the local gym.",},
 		{index: "lifeguard", image: "", met: false, fName: "Anissa", lName: "Kate", desc:"Lifeguard at the local beach.",},
 		{index: "chair", image: "", met: false, fName: "Priya", lName: "Rai", desc:"Chairwoman of Anomaly Vault.",},
@@ -61,8 +61,13 @@ var galleryArray = [
 	{index: "braceletOutdoor2", dark: false, girl: "gym", name: "Fitness Instructor's Home", hint: "Assistant event"},
 	{index: "braceletOutdoor4", dark: false, girl: "swallows", name: "Bar Room Fun", hint: "Assistant event"},
 	{index: "braceletLibrary1", dark: false, girl: "librarian", name: "Library Part 1", hint: "Assistant event"},
-	{index: "braceletLibrary2", dark: false, girl: "librarian", name: "Library Part 1", hint: "Assistant event"},
+	{index: "braceletLibrary2", dark: false, girl: "librarian", name: "Library Part 2", hint: "Assistant event"},
 	{index: "braceletDream1", dark: false, girl: "", name: "Fate of the Bracelet", hint: "Assistant event"},
+	//Reproachive Charm Events
+	{index: "charmResearch1", dark: false, girl: "assistant", name: "Reproachive Charm - First Research", hint: "Assistant event"},
+	{index: "charmResearch2", dark: false, girl: "assistant", name: "Reproachive Charm - Testing the Waters", hint: "Assistant event"},
+	{index: "charmResearch3", dark: false, girl: "boss", name: "Reproachive Charm - Memorable Meeting", hint: "Assistant event"},
+	{index: "charmOutdoor1", dark: false, girl: "", name: "Reproachive Charm - Shots", hint: "Assistant event"},
 	//Erotibox Events
 	{index: "erotiboxResearch1", dark: false, girl: "", name: "Demo Reel - Sex Tape", hint: ""},
 	{index: "erotiboxResearch2", dark: false, girl: "assistant", name: "Taser - Slut Shocker", hint: ""},
@@ -74,6 +79,10 @@ var galleryArray = [
 	{index: "erotiboxResearch7", dark: false, girl: "assistant", name: "Flower - Squirt Inducer", hint: ""},
 	{index: "erotiboxResearch9", dark: false, girl: "assistant", name: "Alcoholic Drink - 'Sex on the Bar'", hint: ""},
 	{index: "erotiboxResearch12", dark: false, girl: "assistant", name: "Ice Cream - I Scream", hint: ""},
+	{index: "erotiboxResearch13", dark: false, girl: "assistant", name: "Computer - Gaming? Computer", hint: ""},
+	{index: "erotiboxResearch14", dark: false, girl: "assistant", name: "Wonder Woman - Wonder Whore", hint: ""},
+	{index: "erotiboxResearch15", dark: false, girl: "assistant", name: "Sleepmask - Fuckmask", hint: ""},
+	{index: "erotiboxResearch20", dark: false, girl: "assistantcrypto", name: "Exercise Ball - Dildo-Ball Bouncing", hint: ""},
 	{index: "erotiboxResearch8", dark: false, girl: "assistant", name: "Assistant - Sex Fiend", hint: ""},
 	//Antique Mirror Events
 	{index: "mirrorResearch1-1", dark: false, girl: "", name: "Gender Dynamics - First Research", hint: ""},
@@ -134,6 +143,9 @@ var galleryArray = [
 	{index: "signHome3", dark: false, girl: "", name: "FREE BLOWJOBS", hint: "FREE BLOWJOBS"},
 	{index: "signHome4", dark: false, girl: "", name: "FREE SEX", hint: "FREE SEX"},
 	{index: "signHome6", dark: false, girl: "", name: "FREE ANAL", hint: "FREE ANAL"},
+	{index: "signHome8", dark: false, girl: "", name: "FREE ORGY", hint: "FREE ANAL"},
+	{index: "signHome8", dark: false, girl: "", name: "FREE ASSJOB", hint: "FREE ANAL"},
+	{index: "signHome10", dark: false, girl: "", name: "FREE TOILET", hint: "FREE ANAL"},
 	{index: "signOutdoor1", dark: false, girl: "", name: "FREE TITFUCK", hint: ""},
 	{index: "signDream1", dark: false, girl: "agent", name: "FREE DREAMS", hint: ""},
 	//Exchange Gas Events
@@ -151,6 +163,10 @@ var galleryArray = [
 	{index: "toolkitResearch1", dark: true, girl: "", name: "Sissy Toolkit - Personal Test", hint: ""},
 	{index: "toolkitResearch2", dark: true, girl: "", name: "Sissy Toolkit - Perfect Body", hint: ""},
 	{index: "toolkitResearch3", dark: true, girl: "", name: "Sissy Toolkit - The Squad Assembles", hint: ""},
+	//Doll Events
+	{index: "dollResearch1", dark: true, girl: "assistant", name: "Stiff Sexdoll - Assistant", hint: ""},
+	{index: "dollResearch2", dark: true, girl: "boss", name: "Stiff Sexdoll - Boss", hint: ""},
+	//index: "dollResearch3", dark: true, girl: "roommate", name: "Stiff Sexdoll - Roommate", hint: ""},
 	//Bimbo Dust Events
 	{index: "dustResearch1", dark: true, girl: "assistant", name: "Bimbo Dust - Practice Makes Perfect", hint: ""},
 	{index: "dustResearch2", dark: true, girl: "boss", name: "Bimbo Dust - Perfect Payoff", hint: ""},
@@ -236,6 +252,7 @@ var logbookArray = [
 
 var artifactArray = [
 	{index: "bracelet", dark: false, equipable: false, title: "Reprehensive Bracelet", desc: "A partially tarnished silver bracelet.", desc2: "When worn, the wearer can become imperceivable and erase memories of themselves & their actions.", glasses: "As you look at the bracelet on your arm, visions of an old, weary knight appear. He cares not for who or why he fights, only that he defends his charge until the end of days."},
+	{index: "charm", dark: false, equipable: true, title: "Reproachive Charm", desc: "A partially tarnished silver bracelet.", desc2: "When worn, the wearer can become imperceivable and erase memories of themselves & their actions.", glasses: "As you look at the bracelet on your arm, visions of an old, weary knight appear. He cares not for who or why he fights, only that he defends his charge until the end of days."},
 	{index: "erotibox", dark: false, equipable: false, title: "Erotibox", desc: "A shabby wooden crate large enough to fit a person inside. <br>Anything put inside the box will become an erotic version of itself.", desc2: "", glasses: "The box calls to mind a virus, small and microscopic. It spreads through bodies and minds to unaware passersby. Now, even under careful watch, all it hopes to do is spread endlessly."},
 	{index: "mirror", dark: false, equipable: false, title: "Antique Mirror", desc: "An antique mirror dating back to the Victorian era. If a person stares into the eyes of their own reflection long enough, they will 'switch places' with an alternate reality version of themselves.<br>In these alternate realities social norms and the physical body of the person switched with can all be completely different.", desc2: "", glasses: "As you look at the mirror through the glasses, you see a long hallway filled with doors. Each doorway is decorated differently, but many are smashed apart or vandalized. "},
 	{index: "stopwatch", dark: false, equipable: true, title: "Time Stopwatch", desc: "A bronze stopwatch which appears at first glance to be broken, as the second hand jumps backwards every second.", desc2: "When the button at the top is pressed, the clock begins to record the time as normal but time stops for everyone except person holding the watch.", glasses: "As you look at the watch an image of a shady businessman comes to mind. Though his customers think they're getting a great deal, the salesman is the one who truly comes out better in the long run."},
@@ -253,6 +270,7 @@ var artifactArray = [
 	{index: "nymph", dark: true, equipable: false, title: "Nymph Mirror", desc: "A mirror with a sculpture of a young woman on the side. The reflection shows a beautiful naked woman in the glass rather than the user, though the appearance of the woman changes between uses. Staring deeply into it for prolonged periods of time causes the viewer's body to change to match the reflection.", desc2: "", glasses: "An image comes to mind of a pushy friend who wants you to be as drunk as they are, uncaring if you actually want to drink or not."},
 	{index: "playlist", dark: true, equipable: false, title: "Domino PMV", desc: "A 'porn music video', a compilation of erotic scenes accompanied by sound and captions. Somehow, the material has a great deal more effect on a person's psyche than is normal. Videos from the series are to be reported immediately, as they are not safe for viewing by the general public.", desc2: "", glasses: "An image comes to mind as you look at the thumb-drive containing the files of a musician with a demonic muse on his shoulder. The musician is desperate to improve his craft, no matter what unnatural methods he uses."},
 	{index: "vhs", dark: true, equipable: false, title: "ErotiVHS Player", desc: "A VHS player retrieved alongside the Erotibox, only plays tapes with 2-dimensional pornographic material on them. Has the uncanny ability to pull the viewer into the world depicted in the tape, but not as the dominant party.", desc2: "", glasses: "An image comes to mind of a voyeur watching through a window as you help yourself to forbidden fruit."},
+	{index: "doll", dark: true, equipable: false, title: "Stiff Voodoo Doll", desc: "A small doll made from an unknown fabric, it's made in the style of a voodoo doll and is pierced by multiple pins.", desc2: "Wrapping a target's hair around one of the pins will cause that person to become 'immobile, pliant, and reconditioned', according to test logs.", glasses: "An image comes to mind of an old man, collecting... Something. His intentions are unknown."},
 ];
 
 var artifactMiniArray = [ //Used for smaller artifacts such as prison and toolbox department
@@ -266,7 +284,11 @@ var artifactMiniArray = [ //Used for smaller artifacts such as prison and toolbo
 	{index: "commercials", type: "artifact", title: "Alternate-Universe Commercials", desc: "A box of VHS tapes that materialized from another universe.", desc2: "Multiple security checks have been performed on them since one appears to be an advertisement for the Anomaly Vault, but research has found them to be harmless. Included is a note referencing a 'Master Index'."},
 	{index: "engine", type: "artifact", title: "Cheat(?) Engine", desc: "A bootleg version of a popular computer program for editing values.", desc2: "It's capable of rewriting reality, but it only responds to extremely specific phrases and ignores any other request. Unless you already know what to say, the program is useless. "},
 	{index: "glasses", type: "artifact", title: "Helsing's Glasses", desc: "A set of glasses obtained from an... <i>Eccentric</i> hobbyist created by unknown means. Formerly a researcher, she was retired due to an unhealthy fixation with imagining personalities for artifacts.", desc2: "When worn they anthropomorphize items with anomalous properties. They used to be taken on artifact retrieval missions until testing revealed they were not always accurate. In fact sometimes it would entirely fabricate details about otherwise mundane objects."},
+	{index: "radio", type: "artifact", title: "Pervert Radio", desc: "A radio in a partial state of disrepair, the system is janky and the volume knob catches easily. The notches are marked 'Off', 'Pervert', 'Degenerate', and 'Lunatic'.", desc2: "When active it causes the subject to experience erotic hallucinations when speaking with familiar "},
+	{index: "bar", type: "artifact", title: "Miniature Bar", desc: "A very small drink cabinet that can somehow fit hundreds of novelty cups. When fluids are drunk from the cups inside a minor hallucinogenic effect triggers.", desc2: ""},
+	
 	{index: "logbook", type: "artifact", title: "Artifact Retrieval Logs", desc: "A massive set of cabinets full of mission log files. Only artifact hunters are authorized to use it.", desc2: "Opening the cabinet with intent will allow for retrieval and re-living of specific file contents."},
+	
 	{index: "doctor", code:"scp", type: "prisoner", title: "'Plague' Doctor", desc: "A mysterious woman dressed in a skimpy version of a medieval plague doctor's uniform. Very dangerous.", desc2: ""},
 	{index: "talisman", code:"scp", type: "prisoner", title: "Talisman", desc: "A possessed talisman. There's a sticky note on it saying 'DO NOT TOUCH'", desc2: ""},
 	{index: "magical", code:"lobotomy", type: "prisoner", title: "Magical Girl", desc: "A woman proclaiming herself to be a champion of justice. You're pretty sure she was fished up from a river from some forest.", desc2: ""},
@@ -277,6 +299,47 @@ var artifactMiniArray = [ //Used for smaller artifacts such as prison and toolbo
 	{index: "silent", code:"silent", type: "prisoner", title: "Nurse's Room", desc: "A room full of strange creatures, which probably symbolize a really deep message about sexuality or something.", desc2: ""},
 	{index: "ethics", code:"ethics", type: "prisoner", title: "Ethics Rock", desc: "A rock that dispenses lines of  ethical ramblings. It's a rock though, so it probably doesn't know what its talking about.", desc2: ""},
 ];
+
+var radioImageList = [
+	"images/box/sleep2.gif",
+	"images/box/sleep3.gif",
+	"images/bracelet/dream1-1.gif",
+	"images/bracelet/home2-2.gif",
+	"images/bracelet/home2-3.gif",
+	"images/bracelet/home3-2.gif",
+	"images/bracelet/katya1-2.gif",
+	"images/bracelet/katyaGame5.gif",
+	"images/bracelet/library1-3.gif",
+	"images/bracelet/library2-2.gif",
+	"images/bracelet/research2-1.gif",
+	"images/bracelet/research3-2.gif",
+	"images/bracelet/outdoor2-2.gif",
+	"images/charm/research3-1.gif",
+	"images/coin/coinEnding1.gif",
+	"images/coin/publicCoin.gif",
+	"images/coin/dream1-1.gif",
+	"images/coin/research2-2.gif",
+	"images/doll/research1-1.gif",
+	"images/dust/dustResearch3-5.gif",
+	"images/erotibox/flower.gif",
+	"images/erotibox/icecream.gif",
+	"images/gas/research1-1.gif",
+	"images/gas/research3-2.gif",
+	"images/mirror/research1-3-1.gif",
+	"images/mirror/research1-3-2.gif",
+	"images/mirror/research1-4-1.gif",
+	"images/mirror/research2-4-2.gif",
+	"images/mirror/research2-4-4.gif",
+	"images/pass/home2-3.gif",
+	"images/serum/serumEnding2.gif",
+	"images/serum/serumHome1-1.gif",
+	"images/serum/serumHome1-3.gif",
+	"images/shades/home3-2.gif",
+	"images/shades/shadesHome1-4.gif",
+	"images/sign/groping.gif",
+	"images/stopwatch/home1-2.gif",
+	"images/prologue3.gif",
+]
 
 var roommateF = data.story[0].fName;
 var roommateL = data.story[0].lName;
@@ -443,22 +506,42 @@ function showSelf() {
 
 //Scene creation
 function writeSpeech (name, img, text) {
+	var nameBackup = name;
+	var imgBackup = img;
 	var color = "#858585"
-	if (img == "") {
-		for (logbookIndex = 0; logbookIndex < logbookArray.length; logbookIndex++) {
-			if (logbookArray[logbookIndex].index == name) {
-				color = logbookArray[logbookIndex].color;
+	for (logbookIndex = 0; logbookIndex < logbookArray.length; logbookIndex++) {
+		if (logbookArray[logbookIndex].index == name) {
+			var checkForError = `onerror ="javascript:this.src='scripts/gamefiles/profiles/`+nameBackup+`.jpg'"`;
+			switch (data.player.pervertLevel) {
+				case 0: {
+					img = "scripts/gamefiles/profiles/"+name+".jpg";
+					break;
+				}
+				case 1: {
+					img = "scripts/gamefiles/profiles/"+name+"P.jpg";
+					break;
+				}
+				case 2: {
+					img = "scripts/gamefiles/profiles/"+name+"D.jpg";
+					break;
+				}
+				case 3: {
+					img = "scripts/gamefiles/profiles/"+name+".jpg";
+					break;
+				}
+				default: {
+					img = "scripts/gamefiles/profiles/"+name+".jpg";
+				}
 			}
+			color = logbookArray[logbookIndex].color;
 		}
-		img = "scripts/gamefiles/profiles/"+name+".jpg";
 	}
 	if (img == "none") {
 		img = "scripts/gamefiles/none.png";
 	}
 	if (name == "player") {
-		if (img == "scripts/gamefiles/profiles/"+name+".jpg") {
-			img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
-		}
+		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
+		var checkForError = `onerror ="javascript:this.src='scripts/gamefiles/profiles/`+data.player.character+`.jpg'"`;
 		name = data.player.fName;
 		var color = "#c40909"
 		switch (data.player.character) {
@@ -496,17 +579,113 @@ function writeSpeech (name, img, text) {
 	if (name == "Peta") {
 		name = "Mrs. " + lName;
 	}
-	document.getElementById('output').innerHTML +=`
-	<div class = "textBox" style="border-color: `+color+`">
-		<img class = "textThumb" style="box-shadow: -5px 5px `+color+`" src = "
-			`+ img +`
-		">
-		<div class="textBoxContent">
-		<p class = "textName" style="color:`+color+`">`+ name + `</p>
-		<p>` + replaceCodenames(text) + `</p>
-	</div>
-	<br>
-	`;
+	if (name.includes("Lovely") || name == "Sunny") {
+		name = "Madame " + lName;
+	}
+	//Check if a transparent shot should be used
+	if (data.player.style == "persona" || data.player.style == "royalty"|| data.player.style == "lobotomy") {
+		if (checkForError == null) {
+			var checkForError = `onerror ="javascript:this.src='scripts/gamefiles/profiles/`+nameBackup+`.jpg'"`;
+		}
+		console.log(img);
+		console.log(checkForError);
+		if (data.player.pervertLevel != 2) {
+			img = img.replace('.jpg', '.png');
+		}
+	}
+	if (img.includes("commercials") || img.includes("items")) {
+		img = imgBackup;
+	}
+	if (data.player.pervertLevel == 3) {
+		img = getPervertImage();
+	}
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementById('output').innerHTML += `
+			<div class="textBoxLobotomy" style="border-color: `+color+`;">
+				<div class = "lobotomyThumb" style="background-color: `+color+`">
+					<div class = "lobotomyThumbBorder">
+						<img class = "textThumbLobotomy" src = "
+							`+ img +`
+						"`+checkForError+`>
+					</div>
+				</div>
+				<div class="textBoxContentLobotomy">
+				<p class = "textNameLobotomy" style = "color:`+color+`">`+ name + `</p>
+				<p>` + replaceCodenames(text) + `</p>
+			</div>
+			<br>
+			`;
+			break;
+		}
+		case "royalty": {
+			document.getElementById('output').innerHTML += `
+			<div class="textBoxRoyalty">
+				<div class = "royaltyThumb">
+					<div class = "royaltyImageHolder">
+						<img class = "textThumbRoyalty" style="
+							position:absolute;
+							-webkit-filter: drop-shadow(2px 2px 0 `+color+`)
+							drop-shadow(-2px -2px 0 `+color+`);
+							filter: drop-shadow(2px 2px 0 `+color+`)
+							drop-shadow(-2px -2px 0 `+color+`);"
+						src = "`+img+`"`+checkForError+`>
+						<img class = "textThumbRoyalty" src = "`+img+`"`+checkForError+`>
+					</div>
+					<div class="nameBoxRoyalty" style = "border-color:`+color+`;">
+						<p class = "textNameRoyalty" style = "color:`+color+`;">`+name+`</p>
+					</div>
+				</div>
+				<div class="textBoxContentRoyalty">
+					<div class="dialogueBoxRoyalty" style = "border-color:`+color+`; color:`+color+`;">
+						<p>` + replaceCodenames(text) + `</p>
+					</div>
+				</div>
+			<br>
+			`;
+			break;
+		}
+		case "persona": {
+			document.getElementById('output').innerHTML += `
+			<div class="textBoxPersona">
+				<div class = "personaThumb">
+					<img class = "textThumbPersona" src = "`+img+`"`+checkForError+`>
+				</div>
+				<div class="textBoxContentPersona">
+					<div class="nameBoxPersona">
+						<p class = "textNamePersona" style = "color:`+color+`">`+ name + `</p>
+						<div class="textNamePersonaWhite" style = "border-color:`+color+`"></div>
+						<div class="textNamePersonaBlack"></div>
+						<div class="personaNameArrow"></div>
+						<div class="personaNameArrowShadow" style = "border-right-color:`+color+`"></div>
+					</div>
+					<div class="dialogueBoxPersona" style = "border-color:`+color+`">
+						<p>` + replaceCodenames(text) + `</p>
+					</div>
+				</div>
+			<br>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML +=`
+			<div class = "textBox" style="border-color: `+color+`">
+				<img class = "textThumb" style="box-shadow: -5px 5px `+color+`" src = "
+					`+ img +`
+				">
+				<div class="textBoxContent">
+				<p class = "textName" style="color:`+color+`">`+ name + `</p>
+				<p>` + replaceCodenames(text) + `</p>
+			</div>
+			<br>
+			`;
+		}
+	}
+}
+
+function getPervertImage() {
+	data.player.pervertCounter += 1;
+	return radioImageList[Math.floor(Math.random() * radioImageList.length)];
 }
 
 function writeTab(character, text) {
@@ -680,6 +859,23 @@ function writeArtifactMini(name) {
 			break;
 		}
 	}
+	if (name == "radio") {
+		document.getElementById('output').innerHTML +=`
+		<div class = "textBox">
+			<img class = "textThumb" src = "scripts/gamefiles/items/`+ name +`.jpg">
+			<div class="textBoxContent">
+			<p class = "textName">`+ title + `</p>
+			<p>
+				<span class = "choiceText" onclick = "sceneTransition('`+name+`Research')">Turn the knob</span>
+				<span class = "choiceText" onclick = "sceneTransition('`+name+`Shutdown')">Press the shutoff button</span>
+			</p>
+			<p>`+ desc + `</p>
+			<p>`+ desc2 + `</p>
+		</div>
+		<br>
+		`;
+	}
+	else {
 	document.getElementById('output').innerHTML +=`
 	<div class = "textBox">
 		<img class = "textThumb" src = "scripts/gamefiles/items/`+ name +`.jpg">
@@ -693,6 +889,7 @@ function writeArtifactMini(name) {
 	</div>
 	<br>
 	`;
+	}
 }
 
 function writeBig (img, cap) {
@@ -722,19 +919,161 @@ function writeMed (img, cap) {
 }
 
 function writeTransition (name, scene) {
-	document.getElementById('output').innerHTML += `
-		<p class="choiceText" onclick="sceneTransition('` + name + `')">
-			` + replaceCodenames(scene) + `
-		</p>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			var skewNumber = getRandomInt(8);
+			skewNumber -= 4;
+			var borderNumber = getRandomInt(2) + 3;
+			var rotationNumber = getRandomInt(2) -1;
+			if (skewNumber >= 0) {
+				skewNumber += getRandomInt(3);
+			}
+			if (skewNumber <= 0) {
+				skewNumber -= getRandomInt(3);
+			}
+			var reverseSkew = skewNumber - skewNumber - skewNumber;
+			var rotationReverse = rotationNumber - rotationNumber - rotationNumber;
+			console.log('skewnumber is ' +skewNumber + ' rotationnumber is '+ rotationNumber);
+			document.getElementById('output').innerHTML += `
+			<div class="choiceFrameLobotomy" 
+			style ="
+				-moz-transform: skew(`+skewNumber+`deg, 0deg);
+				-webkit-transform: skew(`+skewNumber+`deg, 0deg);
+				-o-transform: skew(`+skewNumber+`deg, 0deg);
+				-ms-transform: skew(`+skewNumber+`deg, 0deg);
+				transform: skew(`+skewNumber+`deg, 0deg);
+				border: solid `+borderNumber+`px;
+			">
+			<p class="choiceTextLobotomy" 
+			style ="
+				-moz-transform: skew(`+reverseSkew+`deg, 0deg);
+				-webkit-transform: skew(`+reverseSkew+`deg, 0deg);
+				-o-transform: skew(`+reverseSkew+`deg, 0deg);
+				-ms-transform: skew(`+reverseSkew+`deg, 0deg);
+				transform: skew(`+reverseSkew+`deg, 0deg);
+			" 
+			onclick="sceneTransition('` + name + `')">
+				` + replaceCodenames(scene) + `
+			</p>
+			</div>
+			`;
+			break;
+		}
+		case "persona": {
+			var skewNumber = 5;
+			var reverseSkew = skewNumber - skewNumber - skewNumber;
+			console.log('skewnumber is ' +skewNumber + ' rotationnumber is '+ rotationNumber);
+			document.getElementById('output').innerHTML += `
+			<div class="choiceFramePersona" onclick="sceneTransition('` + name + `')"
+			style ="
+				-moz-transform: skew(`+skewNumber+`deg, 0deg);
+				-webkit-transform: skew(`+skewNumber+`deg, 0deg);
+				-o-transform: skew(`+skewNumber+`deg, 0deg);
+				-ms-transform: skew(`+skewNumber+`deg, 0deg);
+				transform: skew(`+skewNumber+`deg, 0deg);
+			">
+			<p class="choiceTextPersona" 
+			style ="
+				-moz-transform: skew(`+reverseSkew+`deg, 0deg);
+				-webkit-transform: skew(`+reverseSkew+`deg, 0deg);
+				-o-transform: skew(`+reverseSkew+`deg, 0deg);
+				-ms-transform: skew(`+reverseSkew+`deg, 0deg);
+				transform: skew(`+reverseSkew+`deg, 0deg);
+			" 
+			>
+				` + replaceCodenames(scene) + `
+			</p>
+			</div>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML += `
+				<p class="choiceText" onclick="sceneTransition('` + name + `')">
+					` + replaceCodenames(scene) + `
+				</p>
+			`;
+		}
+	}
 }
 
 function writeFunction (name, func) {
-	document.getElementById('output').innerHTML += `
-		<p class="choiceText" onclick="` + name + `">
-			` + replaceCodenames(func) + `
-		</p>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			var skewNumber = getRandomInt(8);
+			skewNumber -= 4;
+			var borderNumber = getRandomInt(2) + 3;
+			var rotationNumber = getRandomInt(2) -1;
+			if (skewNumber >= 0) {
+				skewNumber += getRandomInt(3);
+			}
+			if (skewNumber <= 0) {
+				skewNumber -= getRandomInt(3);
+			}
+			var reverseSkew = skewNumber - skewNumber - skewNumber;
+			var rotationReverse = rotationNumber - rotationNumber - rotationNumber;
+			console.log('skewnumber is ' +skewNumber + ' rotationnumber is '+ rotationNumber);
+			document.getElementById('output').innerHTML += `
+			<div class="choiceFrameLobotomy" 
+			style ="
+				-moz-transform: skew(`+skewNumber+`deg, 0deg);
+				-webkit-transform: skew(`+skewNumber+`deg, 0deg);
+				-o-transform: skew(`+skewNumber+`deg, 0deg);
+				-ms-transform: skew(`+skewNumber+`deg, 0deg);
+				transform: skew(`+skewNumber+`deg, 0deg);
+				border: solid `+borderNumber+`px;
+			">
+			<p class="choiceTextLobotomy" 
+			style ="
+				-moz-transform: skew(`+reverseSkew+`deg, 0deg);
+				-webkit-transform: skew(`+reverseSkew+`deg, 0deg);
+				-o-transform: skew(`+reverseSkew+`deg, 0deg);
+				-ms-transform: skew(`+reverseSkew+`deg, 0deg);
+				transform: skew(`+reverseSkew+`deg, 0deg);
+			" 
+			onclick="` + name + `">
+				` + replaceCodenames(func) + `
+			</p>
+			</div>
+			`;
+			break;
+		}
+		case "persona": {
+			var skewNumber = 5;
+			var reverseSkew = skewNumber - skewNumber - skewNumber;
+			console.log('skewnumber is ' +skewNumber + ' rotationnumber is '+ rotationNumber);
+			document.getElementById('output').innerHTML += `
+			<div class="choiceFramePersona" onclick="` + name + `"
+			style ="
+				-moz-transform: skew(`+skewNumber+`deg, 0deg);
+				-webkit-transform: skew(`+skewNumber+`deg, 0deg);
+				-o-transform: skew(`+skewNumber+`deg, 0deg);
+				-ms-transform: skew(`+skewNumber+`deg, 0deg);
+				transform: skew(`+skewNumber+`deg, 0deg);
+			">
+			<p class="choiceTextPersona" 
+			style ="
+				-moz-transform: skew(`+reverseSkew+`deg, 0deg);
+				-webkit-transform: skew(`+reverseSkew+`deg, 0deg);
+				-o-transform: skew(`+reverseSkew+`deg, 0deg);
+				-ms-transform: skew(`+reverseSkew+`deg, 0deg);
+				transform: skew(`+reverseSkew+`deg, 0deg);
+			" 
+			>
+				` + replaceCodenames(func) + `
+			</p>
+			</div>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML += `
+				<p class="choiceText" onclick="` + name + `">
+					` + replaceCodenames(func) + `
+				</p>
+			`;
+		}
+	}
 }
 
 function writeSpecial (text) {
@@ -744,9 +1083,43 @@ function writeSpecial (text) {
 }
 
 function writeText (text) {
-	document.getElementById('output').innerHTML += `
-		<p class='rawText'>` + replaceCodenames(text) + `</p>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText' style='
+				margin: 30px 0;
+				font-size: 1.3em;
+				font-family: railway, times new roman, sans-serif;
+				font-style: normal;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
+		case "royalty": {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText' style='
+				font-size: 1.3em;
+				font-family: arial, times new roman, sans-serif;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
+		case "persona": {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText' style='
+				margin: 30px 0;
+				font-size: 1.3em;
+				font-family: arial, times new roman, sans-serif;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText'>` + replaceCodenames(text) + `</p>
+			`;
+		}
+	}
 }
 	
 function sceneTransition(scene) {
@@ -935,25 +1308,25 @@ function signTrigger() {
 	if (wordlist.includes(goof) == true) {
 		desiredScene = "signFailureUnfinished";
 	}
-	wordlist = "footjobs / feet";
+	wordlist = "footjobs / feet / footsies";
 	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
+		desiredScene = "signHome7";
 	}
 	wordlist = "assjobs / hotdogging";
 	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
+		desiredScene = "signHome8";
 	}
-	wordlist = "toilet / pisswhore";
+	wordlist = "toilet / pisswhore / pisschugger";
 	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
+		desiredScene = "signHome10";
 	}
 	wordlist = "to a good home";
 	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
+		desiredScene = "signHome11";
 	}
 	wordlist = "orgy / group";
 	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
+		desiredScene = "signHome9";
 	}
 	wordlist = "girlfriend / slaves / wife / wives / servant";
 	if (wordlist.includes(goof) == true) {
@@ -1006,6 +1379,10 @@ function signTrigger() {
 	wordlist = "titfucks / titjobs / titfuckings / boobjobs / boobfucks / boobfuckings";
 	if (wordlist.includes(goof) == true) {
 		desiredScene = "signOutdoor1";
+	}
+	wordlist = "fuckings";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signHome4";
 	}
 	writeEvent(desiredScene);
 }
@@ -1190,6 +1567,23 @@ function updateMenu() {
 		document.getElementById("playerArtifact2").style.width = "0%";
 		document.getElementById("playerArtifact2").style.border = "none";
 		document.getElementById('artifact2Name').innerHTML = "";
+	}
+	switch (data.player.pervertLevel) {
+		case 1: {
+			document.getElementById('radioCounter').innerHTML = "Radio Level: Pervert";
+			break;
+		}
+		case 2: {
+			document.getElementById('radioCounter').innerHTML = "Radio Level: Degenerate";
+			break;
+		}
+		case 3: {
+			document.getElementById('radioCounter').innerHTML = "Radio Level: Lunatic";
+			break;
+		}
+		default: {
+			document.getElementById('radioCounter').innerHTML = "";
+		}
 	}
 }
 

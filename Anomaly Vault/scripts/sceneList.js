@@ -1,5 +1,11 @@
 function writeScene(scene) {
 	console.log("Now writing scene ID " + scene + ", the time is " + data.player.time);
+	if (data.player.pervertCounter == null) {
+		data.player.pervertCounter = 0;
+	}
+	if (data.player.pervertLevel == null) {
+		data.player.pervertLevel = 0;
+	}
 	switch(scene) {
 		//System Locations
 		case "start" : {
@@ -13,7 +19,7 @@ function writeScene(scene) {
 			writeTransition("startWardrobe", "Change your profile image");
 			writeText("Other notes:");
 			writeText("This game was commissioned via Patreon by <span class = 'switch' onclick='window.location.href=`https://www.patreon.com/swallows999`'>Swallows999</p>");
-			writeText("And I'm supported by my other patrons as well. Thank you to Swallows999, O Xy Enkin, Joshua Ingram, Robbie, CaptainMontana, andres mejia, Badaxe, Carlos, ChronosEdge, Colin E, Dkells, dragoon48, Dustin Leichsenring, Filament, G, Hi There, J_C_L, jack spencer, Jesse Greene, Jinouga, Keith, Macarga, Marc Maldon, Marco Wassmer, Negativatron, Ramsey Bisher, Richard, Scal, Skyrim mod lvr, StormSight, Taylor Trout, XxrobothacksxX, 林家豪, Aegil, Alec8686, Alfonso, Angel, Anthony Ewing, Anthony Munso, Ariados, Blaise Fenn, Bonelessunknown, brandon, Bryson, Carlos, Chaaaanon, Charles Morris, ChubbiestThread, Daekash, Daniel Vivette, Danny Nguyen, Darrell Goodman, DarthMalak, ddkre, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Emanuel  Garcia, fireballcreations, Geoff Heimos, GirmusCz, Greg Torres, Grim2011, Gwen Yurick, Harry Brasch, henry grobins, ItsAllOgreNow, I'm a Mitch, Jane, joel larsen, John Lewis, john smith, Johnathan Thornburg, Joshua Melzark, KH dg, Kieron Kow, KVBismarc, l, l1monat, liam paterson, Limitless, Louis Hayes, Magnus, Markus Hansen, Mars, mazterlith, murgatroid99, Muryu, Nathan Martin, Nils Maier, Noah, Nutburger, Phanes, PR0 x THUNDER, qwerty, ranchy sanchy, Reverberations, Riven Drasek, Roy, Scumstango, Sebastian Eckel, ShadowFalls, Simon Rencher, Slomberg, SmolFish, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, Vincent Madaire-Cullen, Wei, Wild Bill, William Parker, William Richardson, wolfboom, XaiuX, Your Husbando, Z, and 魏.");
+			writeText("And I'm supported by my other patrons as well. Thank you to Swallows999, Iron Diana, Robbie, Joshua Ingram, Liam M, that GUY, Godlebay, RatKnight, Elias Errati, ryguy, 4MinuteWarning, Hi There, Carlos, æž—å®¶è±ª, Richard, dragoon48, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, J_C_L, Filament, XxrobothacksxX, Dkells, Jinouga, Marco Wassmer, Taylor Trout, andres mejia, Colin E, Badaxe, Jesse Greene, Scal, ChronosEdge, Greatsage56 ., sb2017, Wysdom, Thane Reynolds, Me Notyou, Chris Rucker, john sparks, Darien Cordero, Ally Smith, Brandon Leary, scott, a1214672685, Elijah Hansen, Sergio Prichard, pablo perez, Sera, ggboomsky, CoolFlames, Emily Pajak, Royce, Bradley Herbert, gabriel, SomebodyElse, dante schraeder, Peter H, DutchJudgement, DifferoBiga, 林家豪, Culton Niccum, thesingleguy, Kethis Immortalis, cabbage, colt, Anton Schmidt, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Don, Vikteren, Dean, Kudon, theoron, AnotherAccount333, Gavin Davis, Lucas, Kaliden, Krose, Tyler Ross, greatred, FrostyTB, Riven Drasek, l, ranchy sanchy, TheRawToast, Limitless, Greg Torres, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, Reverberations, ShadowFalls, William Parker, Magnus, Emanuel  Garcia, XaiuX, Kieron Kow, Slomberg, henry grobins, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Daekash, fireballcreations, Markus Hansen, Louis Hayes, Tanman, DarthMalak, Danny Nguyen, yami, Grim2011, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, CaptainMontana, Simon Rencher, dhccpmc, Chaaaanon, Charles Morris, Nutburger, Whynot, mazterlith, Anthony Munso, john smith, Your Husbando, Carlos, Joshua Melzark, Verillia tristari, ItsAllOgreNow, Gwen Yurick, Nils Maier, Blaise Fenn, stratum, Angel, Ariados, Jane, Snaked, Debarre Sonny, Drashin, qwerty, murgatroid99, Roy, Wild Bill, and brandon for supporting my work!.");
 			writeText("Swallows actually wrote some content for the game, you can unlock his scenes like normal, and he has a special section in the gallery. If you'd like to put your scene in the game, feel free to send it to me.");
 			writeText("You can change your profile image in game by using the wardrobe in your room. You can also cheat in your room if you know a code.");
 			writeText("You can click on the title of a window to close it. For example, if you click 'LOGBOOK' on the left (or bottom on mobile), you can close the new window by clicking anywhere in the 'LOGBOOK' section at the top.");
@@ -483,6 +489,12 @@ function writeScene(scene) {
 					break;
 				}
 			}
+			if (data.player.pervertCounter > 20) {
+				writeText("The pervert radio is still blaring at maximum volume, it's a little distracting.");
+			}
+			if (data.player.pervertCounter > 40) {
+				writeEvent("pervertHomeEnd");
+			}
 			break;
 		}
 		case "office": {
@@ -587,6 +599,12 @@ function writeScene(scene) {
 					}
 				}
 			}
+			if (data.player.pervertCounter > 20) {
+				writeText("The pervert radio is still blaring at maximum volume, it's a little distracting.");
+			}
+			if (data.player.pervertCounter > 40) {
+				writeEvent("pervertWorkEnd");
+			}
 			break;
 		}
 		case "work": {
@@ -647,6 +665,12 @@ function writeScene(scene) {
 					break;
 				}
 			}
+			if (data.player.pervertCounter > 20) {
+				writeText("The pervert radio is still blaring at maximum volume, it's a little distracting.");
+			}
+			if (data.player.pervertCounter > 40) {
+				writeEvent("pervertEnding");
+			}
 			break;
 		}
 		case "vault": {
@@ -695,6 +719,7 @@ function writeScene(scene) {
 					writeArtifact("nymph");
 					writeArtifact("playlist");
 					writeArtifact("vhs");
+					writeArtifact("doll");
 					writeTransition("office", "Go back");
 				}
 			}
@@ -841,6 +866,8 @@ function writeScene(scene) {
 				writeArtifactMini('magazine');
 				writeArtifactMini('lamp');
 				writeArtifactMini('glasses');
+				writeArtifactMini('bar');
+				writeArtifactMini('radio');
 				//writeArtifactMini('preacher');
 				//writeArtifactMini('clock');
 				if (data.player.entryPoint == "room") {
@@ -1304,6 +1331,11 @@ function writeScene(scene) {
 			break;
 		}
 		case "mirrorResearch2": {
+			var testThing = false;
+			if (data.player.pervertLevel == 0) {
+				var testThing = true;
+				data.player.pervertLevel = 1;
+			}
 			tempScene = 'work';
 			if (galleryCheck('mirrorResearch2-1') == true) {
 				writeSpeech("assistant", "", "Alright babe, forms are filled. Get those clothes off and you're free to roam the city. Stay clean, and stay away from sharp stuff. You don't have the instincts that come with the nudist lifestyle.");
@@ -1339,6 +1371,9 @@ function writeScene(scene) {
 			}
 			else {
 				writeEvent('mirrorResearch2-1');
+			}
+			if (testThing == true) {
+				data.player.pervertLevel = 0;
 			}
 			break;
 		}
@@ -1378,6 +1413,18 @@ function writeScene(scene) {
 			writeTransition("work", "Go back");
 			break;
 		}
+		case "charmResearch": {
+			tempScene = 'work';
+			researchLevel('charm');
+			break;
+		}
+		case "charmFailed": {
+			writeText("Wracking your brain, you just don't have any more ideas for how to research the charm in a clinical setting.");
+			writeText("You've already finished researching this artifact, but there might be more to do with it if you bring it home, if you haven't already.");
+			writeText("Maybe you'll be hit with inspiration soon.");
+			writeTransition("work", "Go back");
+			break;
+		}
 		case "shadesResearch": {
 			tempScene = 'work';
 			researchLevel('shades');
@@ -1410,6 +1457,15 @@ function writeScene(scene) {
 			writeText("This sign is absolutely not fit for research here at the facility, you only need to cause a containment breach once before you learn your lesson.");
 			writeText("Still, with creativity you could have a lot of fun with this thing. Maybe you should bring it home?");
 			writeTransition("work", "Go back");
+			break;
+		}
+		case "signPrompt": {
+			tempScene = "home";
+			writeText("What will you write? There's only really space for one word.");
+			document.getElementById('output').innerHTML += `
+				<p class='centeredText'>FREE <input type="text" id="kettleSubmission" value="">!</p>
+				<p class='choiceText' onclick='signTrigger()'>Cap the marker</p>
+			`;
 			break;
 		}
 		case "coinResearch": {
@@ -1485,8 +1541,20 @@ function writeScene(scene) {
 			if (galleryCheck('erotiboxResearch6') != true) {
 				writeFunction("writeEvent('erotiboxResearch6')", "Test a water bottle");
 			}
-			if (galleryCheck('erotiboxResearch10') != true) {
+			if (galleryCheck('erotiboxResearch12') != true) {
 				writeFunction("writeEvent('erotiboxResearch12')", "Test an icecream cone");
+			}
+			if (galleryCheck('erotiboxResearch13') != true) {
+				writeFunction("writeEvent('erotiboxResearch13')", "Test a computer");
+			}
+			if (galleryCheck('erotiboxResearch14') != true) {
+				writeFunction("writeEvent('erotiboxResearch14')", "Test a superhero movie");
+			}
+			if (galleryCheck('erotiboxResearch15') != true) {
+				writeFunction("writeEvent('erotiboxResearch15')", "Test a sleepmask");
+			}
+			if (galleryCheck('erotiboxResearch20') != true) {
+				writeFunction("writeEvent('erotiboxResearch20')", "Test an exercise ball");
 			}
 			var erotiboxScenes = 0;
 			var erotiboxTotal = 0;
@@ -1594,6 +1662,16 @@ function writeScene(scene) {
 		case "gummyFailed": {
 			tempScene = "work";
 			writeEvent('gummyResearch2');
+			break;
+		}
+		case "dollResearch": {
+			tempScene = 'work';
+			researchLevel('doll');
+			break;
+		}
+		case "dollFailed": {
+			writeText("Sorry, I ran out of steam here! Come back in a future update for more!");
+			writeTransition("work", "Go back");
 			break;
 		}
 		case "playlistResearch": {
@@ -1884,6 +1962,130 @@ function writeScene(scene) {
 			writeTransition("toolbox", "Go back");
 			break;
 		}
+		case "barResearch": {
+			writeHTML(`
+				sp player; Alright, what am I thirsty for...
+			`);
+			writeTransition("styleStiggy", "Vanilla Tea");
+			writeTransition("stylePersona", "Masked Teacup");
+			writeTransition("styleLobotomy", "Lobotomy Mug");
+			writeTransition("styleVapor", "Vapor Cup");
+			writeTransition("toolbox", "Go back");
+			break;
+		}
+		case "styleStiggy": {
+			data.player.style = "";
+			writeHTML(`
+				t You take a swig, it tastes... Smooth.
+				sp player; Pretty good.
+			`);
+			writeTransition("styleStiggy", "Vanilla Tea");
+			writeTransition("stylePersona", "Masked Teacup");
+			writeTransition("styleLobotomy", "Lobotomy Mug");
+			writeTransition("styleVapor", "Vapor Cup");
+			writeTransition("toolbox", "Go back");
+			break;
+		}
+		case "stylePersona": {
+			data.player.style = "persona";
+			writeBig("scripts/gamefiles/items/persona.jpg");
+			writeHTML(`
+				t You take a swig, it tastes... Rebellious.
+				sp player; Taste kinda cuts off at the end.
+			`);
+			writeTransition("styleStiggy", "Vanilla Tea");
+			writeTransition("stylePersona", "Masked Teacup");
+			writeTransition("styleLobotomy", "Lobotomy Mug");
+			writeTransition("styleVapor", "Vapor Cup");
+			writeTransition("toolbox", "Go back");
+			break;
+		}
+		case "styleLobotomy": {
+			data.player.style = "lobotomy";
+			writeBig("scripts/gamefiles/items/lobotomy.jpg");
+			writeHTML(`
+				t You take a swig, it tastes... Sharp. Yet addictive.
+				sp player; Could use some work.
+			`);
+			writeTransition("styleStiggy", "Vanilla Tea");
+			writeTransition("stylePersona", "Masked Teacup");
+			writeTransition("styleLobotomy", "Lobotomy Mug");
+			writeTransition("styleVapor", "Vapor Cup");
+			writeTransition("toolbox", "Go back");
+			break;
+		}
+		case "styleVapor": {
+			data.player.style = "royalty";
+			writeBig("scripts/gamefiles/items/royalty.jpg");
+			writeHTML(`
+				t You take a swig, it tastes... Like a computer-generated sunset and a marble bust.
+				sp player; Doesn't taste finished, needs more mixing.
+			`);
+			writeTransition("styleStiggy", "Vanilla Tea");
+			writeTransition("stylePersona", "Masked Teacup");
+			writeTransition("styleLobotomy", "Lobotomy Mug");
+			writeTransition("styleVapor", "Vapor Cup");
+			writeTransition("toolbox", "Go back");
+			break;
+		}
+		case "radioResearch": {
+			switch (data.player.pervertLevel) {
+				case 1: {
+					data.player.pervertLevel = 2;
+					writeHTML(`
+						t As you click the button the volume raises and the tempo picks up, the sone now sounding like a frenetic dance number. Obvious moaning and obscene language can be heard in the background of the sound.
+					`);
+					break;
+				}
+				case 2: {
+					data.player.pervertLevel = 3;
+					writeHTML(`
+						t As you click the button the volume raises and the tempo picks up, the song now playing so fast and loud it sounds like white noise. At least a dozen distinct voices can be heard screaming in pleasure, as if trapped at the peak of climax.
+						t Keeping the volume this high will probably be detrimental to your ears, and who knows what else.
+						t <b>This is as far as the radio will go!</b>
+					`);
+					data.player.radioCounter = 0;
+					break;
+				}
+				case 3: {
+					data.player.pervertLevel = 0;
+					writeHTML(`
+						t You turn the knob, the volume hitting a fever pitch and then suddenly stutters and the knob forcibly clicks back. The music has stopped, and all anomalous synesthesia effects with it. You should be able to hold normal conversation now.
+					`);
+					data.player.radioCounter = 0;
+					break;
+				}
+				default: {
+					data.player.pervertLevel = 1;
+					writeHTML(`
+						t You turn the knob and a soft jazz song begins. Every so often in a gap between notes you can hear a soft moan.
+						t Not only that, but no matter how close you are to the radio you can hear it perfectly fine, like your mind is the speaker.
+						t Spooky.
+						t Supposedly the effects change how you view other people. You should socialize if you want to see it in action.
+					`);
+				}
+			}
+			writeTransition("radioResearch", "Turn it farther");
+			writeTransition("toolbox", "Go back");
+			break;
+		}
+		case "radioShutdown": {
+			if (data.player.pervertLevel == 0 || data.player.pervertLevel == null) {
+				writeHTML(`
+					t You press the shutoff button, but the radio was already off.
+				`);
+
+			}
+			else {
+				writeHTML(`
+					t You shut off the radio, the volume knob automatically resetting as well. The music has stopped, and all anomalous synesthesia effects with it. You should be able to hold normal conversation now.
+				`);
+			}
+			data.player.pervertLevel = 0;
+			data.player.radioCounter = 0;
+			writeTransition("toolbox", "Go back");
+			break;
+		}
 		case "engineResearch": {
 			document.getElementById('output').innerHTML += `
 				<p class='centeredText'>You can enter cheat codes here. For example, use the code 'new name' to rename all of the game's other characters.</p>
@@ -2004,7 +2206,7 @@ function writeScene(scene) {
 			writeSpeech("Victoria", "scripts/gamefiles/commercials/victoria.jpg", "Whether you're getting to know an exclusive crowd of your fellow students...");
 			writeBig("scripts/gamefiles/commercials/player.jpg");
 			writeSpeech("Victoria", "scripts/gamefiles/commercials/victoria.jpg", "Or improving with the help of our faculty, we-");
-			writeSpeech("You", "scripts/gamefiles/commercials/thomas.jpg", "Get this camera out of my face. <b>NOW.</b>");
+			writeSpeech("???", "scripts/gamefiles/commercials/thomas.jpg", "Get this camera out of my face. <b>NOW.</b>");
 			writeSpeech("Victoria", "scripts/gamefiles/commercials/victoria.jpg", "Y-yes master!");
 			writeText("<i>The playback ends here.</i>");
 			writeBig("scripts/gamefiles/commercials/hentaiUniversity.png");
@@ -2905,6 +3107,86 @@ function writeEvent(scene) {
 			writeText("Too late, you realize you'd been invisible to the world.");
 			break;
 		}
+		case "charmResearch1": {
+			writeHTML(`
+				sp assistant; Do... Do we really need to be doing this?
+				sp player; This is an artifact too. What's the codename?
+				t The charm is set upon a small cushion on a research table. Despite your insistence assistantF is giving it a wide berth and is very obviously trying not to look at it.
+				sp assistant; This is test log RC-01, but there's nothing here.
+				t assistantF's behavior is curious in its own right, but what also grabs your attention is the style of the charm. You're no charm maker, but it looks eerily similar in style to the bracelet you're wearing. Maybe they're from the same source?
+				sp player; assistantF, note down the patterns here, see if they match... assistantF?
+				t Still holding the charm you turn to assistantF and start to hear faint whispering. Her mouth isn't moving yet it's definitely her voice.
+				sp assistant; <i>Don't think about it, don't look at him... <br>How long is minimum test length? If I note down 'artifact vanished'- <br>No, no it'd notice me. I'll write 'no artifact found in test chamber.'
+				t She's avoiding looking at you now, trying to think of excuses to stare at the ceiling or floor. Once you set the charm back down her eyes meet with yours again.
+				sp assistant; S-so, we good for today boss? Plenty of oth-<br>Plenty of artifacts to research!
+				...
+				t Looking through the testing history of the charm before it came to the vault, you notice a trend. Logs of the item's weight and dimensions have been recorded by electronic systems, but research logs and acquisition details are left nearly blank. Most testing notes match what assistantF wrote, reading that there is no artifact.
+				t There's just one paper, all the data completely redacted. The name of the researcher matches one who disappeared recently, the date he vanished matches the day he submitted this document. 
+				sp notes; Findings:<br>Nearly every subject refuses to acknowledge the charm's existence, the only exception being someone wearing the reprehensive bracelet. This effect extends to the wearer of the charm as well, people around the wearer are aware of the wearer's existence but refuse to acknowledge them. <br>In addition subjects note that they can hear whispers while wearing the charm, suggesting that the whispers are the thoughts of the people ignoring them. Currently, no data exists on what would happen is someone were forced to acknowledge the charm's existence.
+			`);
+			break;
+		}
+		case "charmResearch2": {
+			writeHTML(`
+				sp player; Hey. Heeeey. 
+				t You poke assistantF's cheek over and over. At first she was worried, the voices from her head saying things like "just ignore him" and "keep calm, assistantF." Now she's just reciting pop song lyrics to herself while filing paperwork.
+				sp player; Fine, fine. I can see I'll need to take things up a notch. 
+				im images/charm/research2-1.gif
+				t You grab her shirt and tear it open in one smooth motion, but she remains silent.
+				sp player; Still nothing? Huh.
+				sp assistant; ...
+				sp player; You seriously aren't giving in? You realize someone could walk in at any moment. Oh, speaking of which-
+				t You look over to the side pretending like someone just walked in. assistantF's body goes rigid and you can hear her pencil snap in her hand.
+				sp player; Aw man, guess nobody's there.
+				t She's breathing pretty hard, but relaxes a little as you say that. It's not like she <i>can't</i> perceive you, she just <i>won't</i>.
+				sp assistant; A-ah, my shirt ripped...
+				t Coming up with an excuse she scurries off. 
+			`);
+			break;
+		}
+		case "charmResearch3": {
+			writeHTML(`
+				t You knock on the door to bossL's office. Empty. She must be off somewhere else, maybe doing something important, but you have an artifact to test. Science doesn't play by personal schedules.
+				...
+				t You find her giving a lecture to about a dozen agents and other faculty members, graphics are displayed on screen reminding employees to be vigilant in both mind and body.
+				t You walk right on in, and the reaction isn't exactly what you expected.
+				t It feels like the temperature of the room drops a few degrees, small murmurs go silent. Everyone who was paying half attention, goofing off, or letting their eyes wander now gives bossL their full attention so as not to accidentally even glance at you.
+				sp boss; And so, again, the order of operations when dealing with memetic infections is determining severity, identifying self-compromise, and isolation of potential vectors.
+				t It's the perfect kind of meeting to interrupt. One that needs to be done weekly, but where nothing new is stated. To her credit bossL never phones it in, the material really does need to be committed to memory.
+				t The least you can do is help her out with that.
+				...
+				im images/charm/research3-1.gif
+				t bossL grips her podium white knuckled, any pretense of continuation should be well out the window, but...
+				sp boss; And soOough, remember that... You'll encounter... Telltale signs offfckk...
+				t bossL grits her teeth and braces herself as her legs shake.
+				im images/charm/research3-2.gif
+				t 'I can't believe she came from that', 'I know she had to put up with him, but did she really need to cum?', 'Hurry up and leave so I can record her!', 'Serves you right, bitch.'
+				t Stray thoughts bounce around in your mind from the audience, but all that's coming from bossL is a mixture of hazy white noise, shame, and impotent rage.
+				im images/charm/research3-3.gif
+				sp boss; Fuh... Hu...
+				t Her hair matted with sweat and cum dripping from her snatch, she takes just a second to breath before going to the next slide and soldiering on with the presentation.
+			`);
+			break;
+		}
+		case "charmOutdoor1": {
+			writeHTML(`
+				t The normally busy bar quiets down as you walk in, although some conversation resumes as people try to distract themselves from your presence. Hopefully the great social lubricant will help somebody aknowledge you. 
+				t In fact there's a woman over at the bar who looks like the perfect test subject. She's got some shot glasses in front of her. You undo your belt and get ready to do some science.
+				...
+				im images/charm/outdoor1-1.gif
+				t The bar is quiet once more as people try to watch the bizzare show out of the corner of their eyes. The woman gulps dryly as her previously empty shotglass is full again.
+				t She takes a deep breath to steel her nerves and downs the glass like she would any shot. Unfortunately for her your cum is a little too sticky to go down like liquor. 
+				sp ???; im none; Oh god, it's so thick! No matter how much I swallow the taste won't go away! 
+				t She opens her mouth and starts panting, trying anything to get her mind off the taste. Unfortunately this just makes it even more obvious to everyone around that her breath smells like cum. 
+				t She reaches for something else to drink but you just push everything in reach away. Instead, you take the empty shotglass and start jerking yourself off again. 
+				... 
+				sp ???; im none; I can't... No more... 
+				t Her eyes flutter as she lays her head on the counter. After the first load you started adding liquor to the cum-shots. Mostly because you wanted to see if being drunk would speed things along, but she's still doing her best at ignoring you. 
+				t Her stomach gurgles a little, full of alcohol and semen. At this point the smell of cum is pretty overpowering, she'll be tasting you on everything she eats for the next few days. Plus she'll need a lot of breathmints if she doesn't want her first impression on others to be 'cum-gargling whore'. 
+				t Well, your efforts weren't enough this time. At least you had fun.
+			`);
+			break;
+		}
 		case "erotiboxResearch1": {
 			writeSpeech("player", "", "Now beginning test EB-01, I've got an interview recording with actress Emma Watson.");
 			writeText("You place the flash drive with the recordings in the box, then shut the front gate.");
@@ -3172,6 +3454,109 @@ function writeEvent(scene) {
 			t You gently place the icecream in a refrigerated box for future study as armed guards make sure the rest of the facility is safe.
 			sp notes; Findings:<br>The ice cream was replaced with a lewdly-shaped cone of the same strawberry flavor. When the frozen confection was licked, every woman within the vault and a two-mile radius outside felt a strong stimulation as though someone was performing cunnilingus on them.<br>The effects seem only to occur when a human is interacting with the treat; exposing it to freezing or hot temperatures did not produce the same effect. Future testing will be conducted at the arctic vault site.
 			`);
+			break;
+		}
+		case "erotiboxResearch13": { //PC
+			writeHTML(`
+				sp player; Now beginning test EB-13, I've got a windows-based personal computer with several games installed.
+				sp assistant; Wonder which intern kicked the can and got his PC thrown in the research bin.<br>Huh, maybe playing games at work is what got him fired.
+				t You place the computer tower in the box, then shut the front gate. 
+				t Within seconds a bright purple light illuminates the room, before quickly dying down again.
+				t Inside the box is... The same PC, untouched.
+				sp player; Nothing happened? Not even a crude paintjob?
+				sp assistant; Load it up, maybe the wallpaper is something kinky.
+				...
+				sp player; Wallpaper is normal... Operating system is the same as before... The files on here aren't even corrupted. Maybe the box doesn't get how a computer works?
+				sp assistant; Maybe. Hey, try that game.
+				sp player; I think that one's online only, but fine. This is that popular team shooter game, right? The one that looks like a pixar movie?
+				t As you click the icon the PC whirs a little, and instead of a login screen it enters you right into a game. 
+				sp assistant; Ooh, ooh, pick the cute one, with the goggles. My sister plays this on the internet actually.
+				sp player; Yeah yeah. Did it change the game's files? This character's ass is-
+				sp assistant; Nope, that's normal.
+				t As you are, of course, highly unskilled at video games you're taken down quickly, only for a bizzare cutscene to play of your character being...
+				im images/box/overwatch.gif
+				sp assistant; Whoa~! You suck at this!
+				sp player; That's what you're focused on? Alright, so the box changed the games. Note that down, I'll power it off.
+				sp assistant; Next game, next game! Ooh, what's "Dolphin Emulator"?
+				...
+				im images/box/metroid.gif
+				sp notes; Findings:<br>The PC itself was unchanged, but the games on the drives were radically altered to include material much more erotic in nature. Online-only games were altered to become playable offline. Notably the games were extremely reactive to player choices, much more so than a game usually is.<br>This experiment suggests the box is compatible even with materials that are very modern in nature.
+			`);
+			break;
+		}
+		case "erotiboxResearch14": { //wonder woman
+			writeHTML(`
+				sp player; Now beginning test EB-14, I've got a DVD copy of the movie Wonder Woman.
+				sp assistant; Couldn't you have picked Iron Man or something? I want some eye candy too.
+				t You place the disc in the box, then shut the front gate. 
+				t Within seconds a bright purple light illuminates the room, before quickly dying down again.
+				t Inside the box is...
+				sp player; ... A blank DVD case? An unmarked disc inside... assistantF, let's load this up.
+				...
+				im images/box/wonder.gif
+				t You and assistantF munch on some popcorn while you watch some Wonder Woman cosplayer choke down some dick. It's a pretty short flick, the usual plot of blackmailing a superhero into doing porn and them hesitantly talking dirty to the camera until they break.
+				sp assistant; Acting's not bad. She maybe could use more practice getting deeper though..
+				sp player; And you're an expert on giving head? Oh, credits.
+				sp assistant; Shut up, you don't need to gobble a ton of cocks to know she was-
+				t assistantF stops mid-word as the credits roll by, mostly because of one line.
+				t <i>Wonder Woman - Herself</i>
+				sp assistant; Did we... Just watch actual revenge blackmail porn? Staring a fictional superhero? How the hell...?
+				sp notes; Findings:<br> The movie was replaced by an amateur porno claiming to star the real Wonder Woman. Aside from the obvious, no anomalous properties were detected.
+			`);
+			break;
+		}
+		case "erotiboxResearch15": { //sleepmask
+			writeHTML(`
+				sp player; Now beginning test EB-15, I've got an ordinary sleepmask, black.
+				sp assistant; Looks a lot like mine, actually.
+				t You place the mask in the box, then shut the front gate. 
+				t Within seconds a bright purple light illuminates the room, before quickly dying down again.
+				t Inside the box is...
+				im images/box/sleep1.jpg
+				sp assistant; What the fuck.<br>Is this where all those stupid fucking hoodies came from? This box?
+				sp player; That's worth considering.<br>Now hold still for a second.
+				...
+				t Despite assistantF seeming awake and alert just earlier, she's out like a light and softly snoring now.
+				t She lets out a small, upset groan at something in her dream as she shifts, reaching down to rub at her crotch. Your heart is pounding in your chest just looking at her, a wave of desire clouding your eyes.
+				t The mask is probably affecting your sense of reason, but you might as well roll with it.
+				im images/box/sleep2.gif
+				t She softly sighs and her lips tremble. Her pussy is wet, either because of the mask or a particularly enjoyable dream.
+				...
+				im images/box/sleep3.gif
+				t You grunt, even with your rough fucking she's still asleep. It really feels like you could do as you please, completely defile her down to her core.
+				im images/box/sleep4.gif
+				t She shifts slightly to get a little more comfortable, your cum leaking from her snatch, and suddenly you feel a second wind of energy coursing through you. 
+				sp notes; Findings:<br>The mask was replaced with an "ahegao" print mask, depicting several 2d characters in a state of sexual euphoria.<br>When worn, the subject enters a deep sleep, and will instinctively remove clothing as a matter of comfort. People around the subject display a strong reaction of uncontrollable arousal. The subject will in all cases resist any attempt to be woken up regardless of sexual molestation or intercourse with her sleeping body.
+			`);
+			break;
+		}
+		case "erotiboxResearch20" : {
+			writeHTML(`
+				sp player; Now beginning test EB-013... We're about to put in an uninflated exercise ball.
+				t You place the loose, floppy plastic pile into the box before shutting the front gate.
+				t Within seconds a bright purple light illuminates the room, before quickly dying down again.
+				t Inside the box is...
+				im images/box/research20-0.jpg
+				sp assistant; I'm not riding it.
+				sp player; Come on, I'm sure it'll be fine.
+				t She gives you a frown and a roll of her eyes... before finally sighing.
+				sp assistant; If you weren't my boss, I'd order <i>you</i> to ride this thing...
+				...
+				im images/box/research20-1.gif
+				sp player; Huh... You've actually been going for quite a while, assistantF. I think it's about time for a break.
+				sp assistant; N-No, I can... I can keep going! Just another... another minute...!
+				...
+				im images/box/research20-2.gif
+				t Looking at your watch, it has now been about three more minutes since the last time you asked, and five since the first.
+				sp assistant; J-Just... 30 seconds...!
+				sp player; As impressive as this is to watch, I think it's obvious this thing has a memetic effect.
+				t Reaching over, you grasp her by the waist and pull her body, separating her from the ball.
+				t She seems to struggle for a second, before completely collapsing into your arms.
+				sp player; How're you feeling?
+				sp assistant; F-Fuckinnnn tired...
+				sp notes; Findings:<br>The exercise ball came out fully-inflated and with a phallic extension sticking out of the front. Based on preliminary testing, it seems like it drives the user to exercise their lower body by squatting onto the dildo, while simultaneously driving them to continue exercising despite their level of exhaustion.<br>Based on an examination of assistantL, it seems that the device somehow kept her hydrated despite the amount that she had sweat, and the muscle fatigue was far more short-lived than anticipated. The artifact seems largely beneficial; further research into its use as a potential tool for training Anomaly Hunters may be warranted.
+			`);
+			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.reddit.com/user/CaptainCryptogreek`'>Captain Cryptogreek</span>");
 			break;
 		}
 		case "erotiboxEnding": {
@@ -3666,6 +4051,11 @@ function writeEvent(scene) {
 			break;
 		}
 		case "mirrorResearch2-1": {
+			var testThing = false;
+			if (data.player.pervertLevel == 0) {
+				var testThing = true;
+				data.player.pervertLevel = 1;
+			}
 			writeText("As you're pulled through the mirror you suddenly feel very exposed. Looking down, you can see that your clothes have disappeared.");
 			writeText("On instinct, you move to cover yourself and feel more than a little panicked. That fades once a familiar face comes up to you.");
 			writeBig("images/mirror/research2-1-1.jpg");
@@ -3683,9 +4073,17 @@ function writeEvent(scene) {
 			writeText("...");
 			writeText("You spend the next few hours learning about this dimension. The robe is uncomfortable, but you haven't quite acclimated to total public nudity yet. You'll need to ditch the robe later though.");
 			writeSpeech("notes", "", "Findings:<br>In this dimension public nudity and sexuality are considered completely normal, with prudishness being comparable to your dimension's deviancy. Going naked whenever possible is the default, and clothes are typically only worn for the sake of safety or for teasing. A very common fetish is flashing, since wearing clothes giving most people an exotic feeling that makes nudity even more exciting.<br>Public sex is also considered normal. Since women have a lower refractory period, most public sex involves a man using a woman's mouth, pussy, or ass to relieve himself. Society as a whole has been built around the idea of sex being as accessible as asking for directions.");
+			if (testThing == true) {
+				data.player.pervertLevel = 0;
+			}
 			break;
 		}
 		case "mirrorResearch2-2": {
+			var testThing = false;
+			if (data.player.pervertLevel == 0) {
+				var testThing = true;
+				data.player.pervertLevel = 1;
+			}
 			writeSpeech("player", "", "Alright, time to do some actual research. My bracelet still works here, so... Uh...");
 			writeBig("images/mirror/research2-2-1.gif");
 			writeText("A woman walks by completely topless. In the distance a man is 'airing out' his junk in public mid-conversation with some women. A man drives by with a fleshlight built into his car.");
@@ -3709,9 +4107,17 @@ function writeEvent(scene) {
 			if (tempScene == 'work') {
 				tempScene = 'mirrorResearch';
 			}
+			if (testThing == true) {
+				data.player.pervertLevel = 0;
+			}
 			break;
 		}
 		case "mirrorResearch2-3": {
+			var testThing = false;
+			if (data.player.pervertLevel == 0) {
+				var testThing = true;
+				data.player.pervertLevel = 1;
+			}
 			writeText("The locals are interesting, but it might be worth it to get a good idea of what society is like here. You take some time to look into what the public utilities are, hoping that your double doesn't get cold feet and pull you back too quickly.");
 			writeText("...");
 			writeSpeech("player", "", "<i>What the fuck is a 'free use office'? Is it like some kind of restroom?</i>");
@@ -3724,9 +4130,17 @@ function writeEvent(scene) {
 			if (tempScene == 'work') {
 				tempScene = 'mirrorResearch';
 			}
+			if (testThing == true) {
+				data.player.pervertLevel = 0;
+			}
 			break;
 		}
 		case "mirrorResearch2-4": {
+			var testThing = false;
+			if (data.player.pervertLevel == 0) {
+				var testThing = true;
+				data.player.pervertLevel = 1;
+			}
 			writeText("The public transit in this dimension is pretty nice. There are dedicated school buses for university students in addition to a pretty comprehensive transit system overall.");
 			writeText("It makes sense. You'd need to keep alert while driving. But on a bus...");
 			writeBig("images/mirror/research2-4-1.gif");
@@ -3750,9 +4164,17 @@ function writeEvent(scene) {
 			if (tempScene == 'work') {
 				tempScene = 'mirrorResearch';
 			}
+			if (testThing == true) {
+				data.player.pervertLevel = 0;
+			}
 			break;
 		}
 		case "mirrorResearch2-5": {
+			var testThing = false;
+			if (data.player.pervertLevel == 0) {
+				var testThing = true;
+				data.player.pervertLevel = 1;
+			}
 			writeText("The gym has a very casual and open environment.");
 			writeBig("images/mirror/research2-5-1.gif");
 			writeText("One of the most commonly used devices is some kind of dildo-bike, it seems to be this dimension's replacement for the treadmill.");
@@ -3768,6 +4190,11 @@ function writeEvent(scene) {
 			break;
 		}
 		case "mirrorResearch2-6": {
+			var testThing = false;
+			if (data.player.pervertLevel == 0) {
+				var testThing = true;
+				data.player.pervertLevel = 1;
+			}
 			writeBig("images/mirror/research2-6-1.gif");
 			writeText("With a name like that, it's not a surprise that, when you arrive, it's to the sight of a more than a dozen people in bondage gear, chained down, or locked into stocks. Nearly all of them are women, but there are a few guys being teased by some ladies.");
 			writeText("There is a little sign-in station keeping track of who's being punished, what they did, and how rough you're supposed to be...");
@@ -3792,6 +4219,9 @@ function writeEvent(scene) {
 			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.reddit.com/user/CaptainCryptogreek`'>Captain Cryptogreek</span>");
 			if (tempScene == 'work') {
 				tempScene = 'mirrorResearch';
+			}
+			if (testThing == true) {
+				data.player.pervertLevel = 0;
 			}
 			break;
 		}
@@ -4479,14 +4909,6 @@ function writeEvent(scene) {
 			`);
 			break;
 		}
-		case "signPrompt": {
-			writeText("What will you write? There's only really space for one word.");
-			document.getElementById('output').innerHTML += `
-				<p class='centeredText'>FREE <input type="text" id="kettleSubmission" value="">!</p>
-				<p class='choiceText' onclick='signTrigger()'>Cap the marker</p>
-			`;
-			break;
-		}
 		case "signResearch1": {
 			writeBig("scripts/gamefiles/items/sign.jpg");
 			writeSpeech("player","","Now beginning research log A-74-01, the Free Blank Sign.");
@@ -4660,6 +5082,80 @@ function writeEvent(scene) {
 			writeText("You munch on a piece of cake as you walk back home. The guests were pretty nice, telling you not to rush yourself. Apparently the mom was totally fine getting her ass fucked with her head underwater it got her off harder.");
 			writeSpeech("player", "", "I'm hoooooome~");
 			writeText("The sign is right where you left it, marker at its side.");
+			break;
+		}
+		case "signHome7": { // Footjob
+			writeHTML(`
+				t You write the word onto the sign and in the blink of an eye the sign isn't where it just was. With the sign out in the world somewhere, you set off to find it.
+				t *KNOCK* *KNOCK*
+				t Only to be interrupted by a knock at the door. You open it, and a woman holding a familiar cardboard sign greets you.
+				sp girl; im scripts/gamefiles/profiles/daughter.jpg; Hello! Do you have a moment to talk about an important issue?
+				...
+				im images/sign/footjob1.gif
+				sp girl; im scripts/gamefiles/profiles/daughter.jpg; See? It's a method of bonding, of the two of us growing closer while relieving your sexual tension. 
+				sp player; Uh... Uhuh...
+				sp girl; im scripts/gamefiles/profiles/daughter.jpg; I just want to spread awareness, I really think this is my new calling! I've already talked to a friend about it, would you be willing to sign a petition on 'free the footjob' dot com? Imagine a society where this is the new handshake!
+				t You feel yourself building up to a climax.
+				sp girl; im scripts/gamefiles/profiles/daughter.jpg; Oh, you look so pent up! Listen, go ahead and cum. The way I see it, every load of cum I coat my feet in, the closer I get to a better society!
+				im images/sign/footjob2.gif
+				sp girl; im scripts/gamefiles/profiles/daughter.jpg; Thank you for your support!
+				...
+				t Afterwards the sign reappeared nearby. It seems like freethefootjob.com still hasn't been claimed, so maybe she came to her senses. 
+				t ... Or she's still out there trying to convince people that footjobs are the key to a better tomorrow.
+			`);
+			break;
+		}
+		case "signHome8": { // Assjob
+			writeHTML(`
+				t You write the word onto the sign and in the blink of an eye the sign isn't where it just was. With the sign out in the world somewhere, you set off to find it.
+				...
+				im images/sign/assjob.gif
+				t Apparently the woman who ended up with the sign is also a street vendor selling hotdogs. Wrapping a sausage between these buns is free though.
+				t ... She just kinda looked at you blankly when you made that joke.
+			`);
+			break;
+		}
+		case "signHome9": { // Orgy
+			writeHTML(`
+				t You write the word onto the sign and in the blink of an eye the sign isn't where it just was. With the sign out in the world somewhere, you set off to find it.
+				...
+				t The woman who ended up with the sign is on a street corner, desperately trying to convince others to start an orgy, but to no avail.
+				sp gym; Sir, sir please! This could be us!
+				im images/sign/orgy.gif
+				t She's been showing off her phone to anyone who will give her the time of day, each time loading up some hardcore porno. Nobody takes her up on the offer though, they all look kinda suspiciously at her, and are usually trying to avoid her like she's collecting petitions for outlawing cow therapy or something.
+				t She's overjoyed when you volunteered, but when nobody else joins in she slumps down defeated. Her phone is still blasting a porno at full volume.
+				t Suddenly the sign vanishes, unable to fulfill it's purpose. There's a moment of stunned silence from her, as if she realized what she was just doing, before she hurriedly stops her phone and runs off, covering her face.
+				t Once you get back, the sign seems... Down. As down as an inanimate object can look anyways.
+			`);
+			break;
+		}
+		case "signHome10": { // Toilet
+			writeHTML(`
+				t You write the word onto the sign and in the blink of an eye the sign isn't where it just was. With the sign out in the world somewhere, you set off to find it.
+				...
+				t So here you are, in a public men's bathroom in front of an undeniably giddy woman.
+				sp player; You seem enthusiastic.
+				sp lifeguard; Oh I am, sir. I don't know where it came from, but this sign is like a dream come true. My boyfriend gets queasy at the thought of doing this to me, but the feeling of being used like this...
+				t Her eyes go wide as you undo your pant, she sticks her tongue out and rubs her thighs together, all while proudly displaying the sign advertising her service.
+				sp lifeguard; God, yes. I wanna feel your piss fill my mouth... And can you pull out too? Swallowing it down while my face and hair are soaked...
+				im images/sign/toilet1.gif
+				t You press your cock against her lips, and she takes the head into her mouth. You softly groan as you let go and relieve yourself directly into her mouth.
+				t She squeals happily before she starts to swallow, but slowly enough that her cheeks are puffed out with her mouth full of piss. Her legs shake, her eyes roll back, she sputters and chokes for a moment but still keeps trying to drink it all down.
+				t You pull out and watch her keep swallowing, each gulp is a load of piss down her throat, and you start to unload onto her face and hair.
+				im images/sign/toilet2.gif
+				t Once her mouth is empty she sticks her tongue out and giggles happily as you coat her face. You don't see any towels or rags in here, she must intend on walking out of here letting everyone know just by looking at her that she's served as your urinal.
+				t Once your stream has stopped she's panting and gasping, unable to open her eyes. She runs a hand along her face, the sign has already dissapeared. She's totally willing, and is even go so far as to take her wet hand and lower it between her legs.
+				t You'll leave her to her fate, it doesn't seem like she'll want to leave anytime soon.
+			`);
+			break;
+		}
+		case "signHome11": { // To a good home
+			writeHTML(`
+				t You write the word onto the sign and in the blink of an eye the sign isn't where it just was. With the sign out in the world somewhere, you set off to find it.
+				...
+				t You find the sign next to an empty cardboard box on the street, small clawmarks on the inside. It seems like whatever was inside has already been taken.
+				t The sign seems... Proud. As proud as an inanimate object can look anyways, and then it disappears back home.
+			`);
 			break;
 		}
 		case "signFailureUnknown": {
@@ -4990,7 +5486,7 @@ function writeEvent(scene) {
 			writeSpeech("player", "", "I feel fantastic, thank you. I'll be back soon, stay bottomless until then, alright? If girlfriendF shows up could you two put on a show for me?");
 			writeSpeech("roommate", "", "Of course!");
 			writeText("...");
-			writeText("Leaving was a but unusual. Yohr neighbors you've never met came out to try and invite you to a barbecue in a week. Not really interested at the moment you ignore them as a familiar black car pulls up on your driveway.");
+			writeText("Leaving was a but unusual. Your neighbors you've never met came out to try and invite you to a barbecue in a week. Not really interested at the moment you ignore them as a familiar black car pulls up on your driveway.");
 			writeText("You head off to the Anomaly Vault, the radio chirping along the way playing your favorite song as the broadcaster dedicates it to you, although he doesn't even know your name, letting you know he hopes that whoever you are you'll have a good day.");
 			writeText("All the while a piece of cardboard lays on the floor of your room. Cardboard can't have feelings, but if this one could it would be feeling very accomplished and drained in equal parts right now. Like all it wanted to do was make someone happy. Now it's purpose is fulfilled and it can finally sleep.");
 			writeText("But it's just ordinary cardboard after all. Face-down it's impossible to tell, but written in a black marker are the words 'FREE ENDINGS'.");
@@ -5633,10 +6129,107 @@ function writeEvent(scene) {
 			}
 			break;
 		}
+		case "dollResearch1": {
+			tempScene = "vault";
+			writeHTML(`
+				t After a short trip to collect a hair, you wrap it around the doll. It vibrates slightly as you tie the knot, and starts to feel warm as though it's generating body heat.
+				t Meanwhile, just a few rooms away...
+				...
+				t It starts with a stiffness in her joints, and though she rolls her shoulders to try and relax her range of movement is smaller than usual. Her heart rate slows, the time between each breath grows longer.
+				t As she starts to notice something her mind panics, but her body is relaxing. A smile creeps across her face and her pen falls to her side, rolling along the ground.
+				sp assistant; <i>What... What's going on!?</i>
+				t Her pussy clenches, suddenly feeling warm. Her nipples are erect and her dry lips feel moistened, like her body is preparing for something... Someone.
+				t You walk in through the door and shut it behind you, assistantF is completely motionless in her chair.
+				sp assistant; <i>playerF? Thank god, help!<br>I can't talk, he can't hear me... Cmon, realize something's wrong!</i>
+				t You pick her up from her chair, she's actually quite easy to position. Any pose you put her into she holds like her joints are locked until you move her again. The process of stripping her goes by in a flash.
+				sp assistant; <i>Ghh... Stop posing me... Why am I leaking if my body can't move!?</i>
+				t While posing her around is quite fun, the real playtime is only just beginning.
+				sp player; I gotta say, you really are a fantastic toy.
+				sp assistant; <i>Stop! I'm a <s>human being</s> <b>sex doll</b>! I'm not... A...</i>
+				t Her thought process is interrupted as she realizes what went through her mind.
+				sp assistant; <i>I... I'm <s>not</s> <b>a</b> sex toy... I'm...</i>
+				t Her own inner voice repeats back the wrong words. All the while you're aligning yourself with her hole.
+				im images/doll/research1-1.gif
+				sp assistant; Nonono, please! Help <b>yourself</b>!
+				im images/doll/research1-2.gif
+				t Though the rest of her body doesn't move, you can feel her cunt rhythmically clench around you with better technique than assistantF should have. All the while the smile on her face never fades.
+				sp assistant; Ffffuck-! He's <s>assaulting</s> <b>masturbating with</b> me! This is <s>rape</s> <b>what I was made for</b>!
+				im images/doll/research1-3.gif
+				sp assistant; Can't think... Can't... <b>Don't deserve to</b> think anymore...
+				...
+				t Once the hair on the doll is cut the effect is broken, although the mental conditioning might lead to some interesting dreams for her tonight.
+			`);
+			break;
+		}
+		case "dollResearch2": {
+			tempScene = "vault";
+			writeHTML(`
+				t After a short trip to collect a hair, you wrap it around the doll. It vibrates slightly as you tie the know, and starts to feel warm as though it's generating body heat.
+				t You head out of the room to go find bossL...
+				...
+				im images/doll/research2-1.gif
+				t Only to find her already in use.
+				sp assistant; Ghh... Fucking... Take it, bitch...
+				t It seems like assistantF is taking out her frustrations on the very lifelike sex toy she found. Though she can't conciously move her body bossL's tongue moves to stimulate assistantF however she can. And all the while she has a willing smile on her face.
+				t assistantF pulls bossL by the hair to mash her cunt against her cunt boss's face, giving her a good hosing of squirt.
+				t Despite her vapid, smiling face covered in juices, it's absolutely obvious to you what must be going on in her head.
+				sp boss; <s>YOU GOD-DAMNED</s> <b>I am a</b> COCKSUCKER<s>S</s>! I WILL <s>BREAK YOUR FINGERS INTO DUST, BURY YOU ALIVE, AND LAUGH AS YOU TRY TO DIG YOUR WAY OUT WITH EVERY BONE IN YOUR HANDS A SPLINTER</s> <b>lay here and be used</b>!
+				t Whatever mental effects the artifact has must be working overdrive to try to break a will like hers.
+			`);
+			break;
+		}
+		case "pervertWorkEnd": {
+			writeHTML(`
+				t You sit down to try and work out some new fun for the day, but...
+				im `+getPervertImage()+`
+				t Background noises are starting to fade into each other. The frantic song is overpowering everything else.
+				t It's only once you're already on the ground that you realize you've fallen.
+				sp assistant; playerF? What the hell are you-<br>playerF!? Can you hear me? Shit! Security, security!
+				im `+getPervertImage()+`
+				t The hard floor became a soft bed at some point... It's hard to focus anymore. Every part of your vision is a depraved montage of smut.
+				sp boss; Christ, it's at full blast! How long has he been listening to this? playerF! We can't shut it down for you, snap out of this! You don't have much longer!
+				t You don't have much longer.
+				im `+getPervertImage()+`
+				t You're out of time.
+				im `+getPervertImage()+`
+				im `+getPervertImage()+`
+				im `+getPervertImage()+`
+				t BAD END
+				...
+			`);
+			writeText("But there's a ray of hope. You can go on, and awaken from this bad dream, if you like.");
+			data.player.pervertLevel = 0;
+			data.player.pervertCounter = 0;
+			break;
+		}
+		case "pervertHomeEnd": {
+			writeHTML(`
+				t You sit down to try and work out some new fun for the day, but...
+				im `+getPervertImage()+`
+				t Background noises are starting to fade into each other. The frantic song is overpowering everything else.
+				t It's only once you're already on the ground that you realize you've fallen.
+				sp roommate; playerF? What's... playerF?! Snap out of it!
+				im `+getPervertImage()+`
+				t The hard floor became a soft bed at some point... It's hard to focus anymore. Every part of your vision is a depraved montage of smut.
+				sp roommate; playerF, can you hear me?! The ambulance is on the way, just hold on!
+				t You don't have much longer.
+				im `+getPervertImage()+`
+				t You're out of time.
+				im `+getPervertImage()+`
+				im `+getPervertImage()+`
+				im `+getPervertImage()+`
+				t BAD END
+				...
+			`);
+			writeText("But there's a ray of hope. You can go on, and awaken from this bad dream, if you like.");
+			data.player.pervertLevel = 0;
+			data.player.pervertCounter = 0;
+			break;
+		}
 		case "credits": {
 			writeBig("scripts/gamefiles/logo.png");
 			writeText("The Anomaly Vault was built by the architect NoodleJacuzzi, also responsible for other works. Further foundation was laid by Swallows999 and Captain Cryptogreek, who pioneered the research of artifacts before you. However the funding  of the vault comes from a council veiled in shadow, ever aware of your efforts.");
-			writeText("Above chairwoman chairF, they decide the vault's purpose and fate. Bear these names close to your heart, for they are the ones who are truly in control here. Swallows999, O Xy Enkin, Joshua Ingram, Robbie, CaptainMontana, andres mejia, Badaxe, Carlos, ChronosEdge, Colin E, Dkells, dragoon48, Dustin Leichsenring, Filament, G, Hi There, J_C_L, jack spencer, Jesse Greene, Jinouga, Keith, Macarga, Marc Maldon, Marco Wassmer, Negativatron, Ramsey Bisher, Richard, Scal, Skyrim mod lvr, StormSight, Taylor Trout, XxrobothacksxX, 林家豪, Aegil, Alec8686, Alfonso, Angel, Anthony Ewing, Anthony Munso, Ariados, Blaise Fenn, Bonelessunknown, brandon, Bryson, Carlos, Chaaaanon, Charles Morris, ChubbiestThread, Daekash, Daniel Vivette, Danny Nguyen, Darrell Goodman, DarthMalak, ddkre, Debarre Sonny, Devin, dhccpmc, Drashin, Dugelle, Emanuel  Garcia, fireballcreations, Geoff Heimos, GirmusCz, Greg Torres, Grim2011, Gwen Yurick, Harry Brasch, henry grobins, ItsAllOgreNow, I'm a Mitch, Jane, joel larsen, John Lewis, john smith, Johnathan Thornburg, Joshua Melzark, KH dg, Kieron Kow, KVBismarc, l, l1monat, liam paterson, Limitless, Louis Hayes, Magnus, Markus Hansen, Mars, mazterlith, murgatroid99, Muryu, Nathan Martin, Nils Maier, Noah, Nutburger, Phanes, PR0 x THUNDER, qwerty, ranchy sanchy, Reverberations, Riven Drasek, Roy, Scumstango, Sebastian Eckel, ShadowFalls, Simon Rencher, Slomberg, SmolFish, Snaked, stratum, Tanman, Taurus Travon Rashad Lemar Brackin, Trevor, Vincent Madaire-Cullen, Wei, Wild Bill, William Parker, William Richardson, wolfboom, XaiuX, Your Husbando, Z, and 魏.");
+			writeText("Above chairwoman chairF, they decide the vault's purpose and fate. Bear these names close to your heart, for they are the ones who are truly in control here. Swallows999, Iron Diana, Robbie, Joshua Ingram, Liam M, that GUY, Godlebay, RatKnight, Elias Errati, ryguy, 4MinuteWarning, Hi There, Carlos, æž—å®¶è±ª, Richard, dragoon48, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, J_C_L, Filament, XxrobothacksxX, Dkells, Jinouga, Marco Wassmer, Taylor Trout, andres mejia, Colin E, Badaxe, Jesse Greene, Scal, ChronosEdge, Greatsage56 ., sb2017, Wysdom, Thane Reynolds, Me Notyou, Chris Rucker, john sparks, Darien Cordero, Ally Smith, Brandon Leary, scott, a1214672685, Elijah Hansen, Sergio Prichard, pablo perez, Sera, ggboomsky, CoolFlames, Emily Pajak, Royce, Bradley Herbert, gabriel, SomebodyElse, dante schraeder, Peter H, DutchJudgement, DifferoBiga, 林家豪, Culton Niccum, thesingleguy, Kethis Immortalis, cabbage, colt, Anton Schmidt, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Don, Vikteren, Dean, Kudon, theoron, AnotherAccount333, Gavin Davis, Lucas, Kaliden, Krose, Tyler Ross, greatred, FrostyTB, Riven Drasek, l, ranchy sanchy, TheRawToast, Limitless, Greg Torres, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, Reverberations, ShadowFalls, William Parker, Magnus, Emanuel  Garcia, XaiuX, Kieron Kow, Slomberg, henry grobins, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Daekash, fireballcreations, Markus Hansen, Louis Hayes, Tanman, DarthMalak, Danny Nguyen, yami, Grim2011, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, CaptainMontana, Simon Rencher, dhccpmc, Chaaaanon, Charles Morris, Nutburger, Whynot, mazterlith, Anthony Munso, john smith, Your Husbando, Carlos, Joshua Melzark, Verillia tristari, ItsAllOgreNow, Gwen Yurick, Nils Maier, Blaise Fenn, stratum, Angel, Ariados, Jane, Snaked, Debarre Sonny, Drashin, qwerty, murgatroid99, Roy, Wild Bill, and brandon.");
 			writeText("Their continued support gives aid to the vault. Should they lend their voices, you will hear them here. Their assistance is why you, playerF, are here. Why you found the bracelet. Count your blessings, and...");
 			writeTransition("room", "Awaken, saved from repercussion");
 			writeSpecial("Stepping out from behind the fourth wall for a moment, this is one of the game's endings! Thank you so much for player, I hope you enjoyed! For the next version I'd really like to replace the names above with a set of messages, so if you're a member of the shadow council above, please contact me if you'd like to write a message to the player here! Otherwise, I hope you enjoy the rest of the game as well. Have you checked the cheat post for prison codes? You can find them on my patreon page (it isn't behind a paywall), with a link to it on the game's IGDB entry, the first page fo the F95zone thread, and in the master index.");
@@ -5733,6 +6326,17 @@ function checkForEvents() {
 								writeArtifact("sign");
 								if (data.player.color.includes('pass') == true) {
 									writeArtifact("pass");
+									if (data.player.color.includes('charm') == true) {
+										writeArtifact("charm");
+									}
+									else {
+										if (timeSince != 1) {
+											writeSpeech("assistant", "", "Nothing on the agenda today boss!");
+											writeArtifact("charm");
+											data.player.color += 'charm';
+											timeSince = 1;
+										}
+									}
 								}
 								else {
 									if (timeSince != 1) {
@@ -5869,6 +6473,12 @@ function checkForEvents() {
 					}
 					break;
 				}
+				case "charm": {
+					if (galleryCheck('charmOutdoor1') == false) {
+						writeFunction("writeEvent('charmOutdoor1')", "Test the charm at a local bar");
+					}
+					break;
+				}
 				case "coin": {
 					if (galleryCheck('coinHome1') == false) {
 						writeFunction("writeEvent('coinHome1')", "Flaunt your new 'wealth' in public");
@@ -5912,7 +6522,7 @@ function checkForEvents() {
 					break;
 				}
 				case "sign": {
-					writeFunction("writeEvent('signPrompt')", "Write a word on the sign.");
+					writeFunction("sceneTransition('signPrompt')", "Write a word on the sign.");
 					break;
 				}
 			}
