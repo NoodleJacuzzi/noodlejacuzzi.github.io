@@ -3122,7 +3122,7 @@ function writeEvent(scene) {
 				...
 				t Looking through the testing history of the charm before it came to the vault, you notice a trend. Logs of the item's weight and dimensions have been recorded by electronic systems, but research logs and acquisition details are left nearly blank. Most testing notes match what assistantF wrote, reading that there is no artifact.
 				t There's just one paper, all the data completely redacted. The name of the researcher matches one who disappeared recently, the date he vanished matches the day he submitted this document. 
-				sp notes; Findings:<br>Nearly every subject refuses to acknowledge the charm's existence, the only exception being someone wearing the reprehensive bracelet. This affect extends to the wearer of the charm as well, people around the wearer are aware of the wearer's existence but refuse to acknowledge them. <br>In addition subjects note that they can hear whispers while wearing the charm, suggesting that the whispers are the thoughts of the people ignoring them. Currently, no data exists on what would happen is someone were forced to acknowledge the charm's existence.
+				sp notes; Findings:<br>Nearly every subject refuses to acknowledge the charm's existence, the only exception being someone wearing the reprehensive bracelet. This effect extends to the wearer of the charm as well, people around the wearer are aware of the wearer's existence but refuse to acknowledge them. <br>In addition subjects note that they can hear whispers while wearing the charm, suggesting that the whispers are the thoughts of the people ignoring them. Currently, no data exists on what would happen is someone were forced to acknowledge the charm's existence.
 			`);
 			break;
 		}
@@ -3521,10 +3521,12 @@ function writeEvent(scene) {
 				t The mask is probably affecting your sense of reason, but you might as well roll with it.
 				im images/box/sleep2.gif
 				t She softly sighs and her lips tremble. Her pussy is wet, either because of the mask or a particularly enjoyable dream.
-				
+				...
 				im images/box/sleep3.gif
+				t You grunt, even with your rough fucking she's still asleep. It really feels like you could do as you please, completely defile her down to her core.
 				im images/box/sleep4.gif
-				
+				t She shifts slightly to get a little more comfortable, your cum leaking from her snatch, and suddenly you feel a second wind of energy coursing through you. 
+				sp notes; Findings:<br>The mask was replaced with an "ahegao" print mask, depicting several 2d characters in a state of sexual euphoria.<br>When worn, the subject enters a deep sleep, and will instinctively remove clothing as a matter of comfort. People around the subject display a strong reaction of uncontrollable arousal. The subject will in all cases resist any attempt to be woken up regardless of sexual molestation or intercourse with her sleeping body.
 			`);
 			break;
 		}
@@ -5109,7 +5111,7 @@ function writeEvent(scene) {
 				...
 				im images/sign/assjob.gif
 				t Apparently the woman who ended up with the sign is also a street vendor selling hotdogs. Wrapping a sausage between these buns is free though.
-				t ... She just kinda looked at you blankly when you made that joke though.
+				t ... She just kinda looked at you blankly when you made that joke.
 			`);
 			break;
 		}
@@ -5484,7 +5486,7 @@ function writeEvent(scene) {
 			writeSpeech("player", "", "I feel fantastic, thank you. I'll be back soon, stay bottomless until then, alright? If girlfriendF shows up could you two put on a show for me?");
 			writeSpeech("roommate", "", "Of course!");
 			writeText("...");
-			writeText("Leaving was a but unusual. Yohr neighbors you've never met came out to try and invite you to a barbecue in a week. Not really interested at the moment you ignore them as a familiar black car pulls up on your driveway.");
+			writeText("Leaving was a but unusual. Your neighbors you've never met came out to try and invite you to a barbecue in a week. Not really interested at the moment you ignore them as a familiar black car pulls up on your driveway.");
 			writeText("You head off to the Anomaly Vault, the radio chirping along the way playing your favorite song as the broadcaster dedicates it to you, although he doesn't even know your name, letting you know he hopes that whoever you are you'll have a good day.");
 			writeText("All the while a piece of cardboard lays on the floor of your room. Cardboard can't have feelings, but if this one could it would be feeling very accomplished and drained in equal parts right now. Like all it wanted to do was make someone happy. Now it's purpose is fulfilled and it can finally sleep.");
 			writeText("But it's just ordinary cardboard after all. Face-down it's impossible to tell, but written in a black marker are the words 'FREE ENDINGS'.");
