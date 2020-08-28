@@ -61,7 +61,7 @@ var galleryArray = [
 	{index: "braceletOutdoor2", dark: false, girl: "gym", name: "Fitness Instructor's Home", hint: "Assistant event"},
 	{index: "braceletOutdoor4", dark: false, girl: "swallows", name: "Bar Room Fun", hint: "Assistant event"},
 	{index: "braceletLibrary1", dark: false, girl: "librarian", name: "Library Part 1", hint: "Assistant event"},
-	{index: "braceletLibrary2", dark: false, girl: "librarian", name: "Library Part 1", hint: "Assistant event"},
+	{index: "braceletLibrary2", dark: false, girl: "librarian", name: "Library Part 2", hint: "Assistant event"},
 	{index: "braceletDream1", dark: false, girl: "", name: "Fate of the Bracelet", hint: "Assistant event"},
 	//Reproachive Charm Events
 	{index: "charmResearch1", dark: false, girl: "assistant", name: "Reproachive Charm - First Research", hint: "Assistant event"},
@@ -142,7 +142,7 @@ var galleryArray = [
 	{index: "signHome3", dark: false, girl: "", name: "FREE BLOWJOBS", hint: "FREE BLOWJOBS"},
 	{index: "signHome4", dark: false, girl: "", name: "FREE SEX", hint: "FREE SEX"},
 	{index: "signHome6", dark: false, girl: "", name: "FREE ANAL", hint: "FREE ANAL"},
-	{index: "signHome7", dark: false, girl: "", name: "FREE FOOTJOB", hint: "FREE ANAL"},
+	{index: "signHome8", dark: false, girl: "", name: "FREE ORGY", hint: "FREE ANAL"},
 	{index: "signHome8", dark: false, girl: "", name: "FREE ASSJOB", hint: "FREE ANAL"},
 	{index: "signHome10", dark: false, girl: "", name: "FREE TOILET", hint: "FREE ANAL"},
 	{index: "signOutdoor1", dark: false, girl: "", name: "FREE TITFUCK", hint: ""},

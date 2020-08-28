@@ -4843,7 +4843,7 @@ function writeEvent(scene) {
 				sp player; Uh... Uhuh...
 				sp girl; im scripts/gamefiles/profiles/daughter.jpg; I just want to spread awareness, I really think this is my new calling! I've already talked to a friend about it, would you be willing to sign a petition on 'free the footjob' dot com? Imagine a society where this is the new handshake!
 				t You feel yourself building up to a climax.
-				sp girl; Oh, you look so pent up! Listen, go ahead and cum. The way I see it, every load of cum I coat my feet in, the closer I get to a better society!
+				sp girl; im scripts/gamefiles/profiles/daughter.jpg; Oh, you look so pent up! Listen, go ahead and cum. The way I see it, every load of cum I coat my feet in, the closer I get to a better society!
 				im imagebox/sign/footjob2.gif
 				sp girl; im scripts/gamefiles/profiles/daughter.jpg; Thank you for your support!
 				...
