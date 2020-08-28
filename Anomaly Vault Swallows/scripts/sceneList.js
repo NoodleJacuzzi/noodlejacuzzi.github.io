@@ -1,5 +1,8 @@
 function writeScene(scene) {
 	console.log("Now writing scene ID " + scene + ", the time is " + data.player.time);
+	if (data.player.pervertCounter == null) {
+		data.player.pervertCounter = 0;
+	}
 	switch(scene) {
 		//System Locations
 		case "start" : {
@@ -483,6 +486,12 @@ function writeScene(scene) {
 					break;
 				}
 			}
+			if (data.player.pervertCounter > 20) {
+				writeText("The pervert radio is still blaring at maximum volume, it's a little distracting.");
+			}
+			if (data.player.pervertCounter > 40) {
+				writeEvent("pervertHomeEnd");
+			}
 			break;
 		}
 		case "office": {
@@ -587,6 +596,12 @@ function writeScene(scene) {
 					}
 				}
 			}
+			if (data.player.pervertCounter > 20) {
+				writeText("The pervert radio is still blaring at maximum volume, it's a little distracting.");
+			}
+			if (data.player.pervertCounter > 40) {
+				writeEvent("pervertWorkEnd");
+			}
 			break;
 		}
 		case "work": {
@@ -646,6 +661,12 @@ function writeScene(scene) {
 					}
 					break;
 				}
+			}
+			if (data.player.pervertCounter > 20) {
+				writeText("The pervert radio is still blaring at maximum volume, it's a little distracting.");
+			}
+			if (data.player.pervertCounter > 40) {
+				writeEvent("pervertEnding");
 			}
 			break;
 		}
@@ -6097,6 +6118,54 @@ function writeEvent(scene) {
 				sp boss; <s>YOU GOD-DAMNED</s> <b>I am a</b> COCKSUCKER<s>S</s>! I WILL <s>BREAK YOUR FINGERS INTO DUST, BURY YOU ALIVE, AND LAUGH AS YOU TRY TO DIG YOUR WAY OUT WITH EVERY BONE IN YOUR HANDS A SPLINTER</s> <b>lay here and be used</b>!
 				t Whatever mental effects the artifact has must be working overdrive to try to break a will like hers.
 			`);
+			break;
+		}
+		case "pervertWorkEnd": {
+			writeHTML(`
+				t You sit down to try and work out some new fun for the day, but...
+				im `+getPervertImage()+`
+				t Background noises are starting to fade into each other. The frantic song is overpowering everything else.
+				t It's only once you're already on the ground that you realize you've fallen.
+				sp assistant; playerF? What the hell are you-<br>playerF!? Can you hear me? Shit! Security, security!
+				im `+getPervertImage()+`
+				t The hard floor became a soft bed at some point... It's hard to focus anymore. Every part of your vision is a depraved montage of smut.
+				sp boss; Christ, it's at full blast! How long has he been listening to this? playerF! We can't shut it down for you, snap out of this! You don't have much longer!
+				t You don't have much longer.
+				im `+getPervertImage()+`
+				t You're out of time.
+				im `+getPervertImage()+`
+				im `+getPervertImage()+`
+				im `+getPervertImage()+`
+				t BAD END
+				...
+			`);
+			writeText("But there's a ray of hope. You can go on, and awaken from this bad dream, if you like.");
+			data.player.pervertLevel = 0;
+			data.player.pervertCounter = 0;
+			break;
+		}
+		case "pervertHomeEnd": {
+			writeHTML(`
+				t You sit down to try and work out some new fun for the day, but...
+				im `+getPervertImage()+`
+				t Background noises are starting to fade into each other. The frantic song is overpowering everything else.
+				t It's only once you're already on the ground that you realize you've fallen.
+				sp roommate; playerF? What's... playerF?! Snap out of it!
+				im `+getPervertImage()+`
+				t The hard floor became a soft bed at some point... It's hard to focus anymore. Every part of your vision is a depraved montage of smut.
+				sp roommate; playerF, can you hear me?! The ambulance is on the way, just hold on!
+				t You don't have much longer.
+				im `+getPervertImage()+`
+				t You're out of time.
+				im `+getPervertImage()+`
+				im `+getPervertImage()+`
+				im `+getPervertImage()+`
+				t BAD END
+				...
+			`);
+			writeText("But there's a ray of hope. You can go on, and awaken from this bad dream, if you like.");
+			data.player.pervertLevel = 0;
+			data.player.pervertCounter = 0;
 			break;
 		}
 		case "credits": {

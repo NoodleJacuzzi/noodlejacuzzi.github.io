@@ -684,6 +684,7 @@ function writeSpeech (name, img, text) {
 }
 
 function getPervertImage() {
+	data.player.pervertCounter += 1;
 	return radioImageList[Math.floor(Math.random() * radioImageList.length)];
 }
 
