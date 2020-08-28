@@ -21,6 +21,11 @@ function writeScene(scene) {
 			writeText("I'm always open to comments or criticism. If you have an idea for an artist or scene or you'd like to suggest content of your own, you can shoot me a message at anytime on TFgames, F95zone, or my Patreon page at https://www.patreon.com/noodlejacuzzi");
 			writeText("You can also send me a message on discord (I'm NoodleJacuzzi#4120) or an email at noodlejacuzzi@gmail.com");
 			writeTransition("contentList", "See a breakdown of each artifact's content");
+			data.player.style = "";
+			data.player.pervertLevel = 0;
+			for (x = 0; x < logbookArray.length; x++) {
+				writeSpeech(logbookArray[x].index, "", "What the fuck tho?!");
+			}
 			break;
 		}
 		case "startWardrobe": {
@@ -1378,6 +1383,18 @@ function writeScene(scene) {
 			writeTransition("work", "Go back");
 			break;
 		}
+		case "charmResearch": {
+			tempScene = 'work';
+			researchLevel('charm');
+			break;
+		}
+		case "charmFailed": {
+			writeText("Wracking your brain, you just don't have any more ideas for how to research the charm in a clinical setting.");
+			writeText("You've already finished researching this artifact, but there might be more to do with it if you bring it home, if you haven't already.");
+			writeText("Maybe you'll be hit with inspiration soon.");
+			writeTransition("work", "Go back");
+			break;
+		}
 		case "shadesResearch": {
 			tempScene = 'work';
 			researchLevel('shades');
@@ -1485,7 +1502,7 @@ function writeScene(scene) {
 			if (galleryCheck('erotiboxResearch6') != true) {
 				writeFunction("writeEvent('erotiboxResearch6')", "Test a water bottle");
 			}
-			if (galleryCheck('erotiboxResearch10') != true) {
+			if (galleryCheck('erotiboxResearch12') != true) {
 				writeFunction("writeEvent('erotiboxResearch12')", "Test an icecream cone");
 			}
 			var erotiboxScenes = 0;
@@ -2004,7 +2021,7 @@ function writeScene(scene) {
 			writeSpeech("Victoria", "scripts/gamefiles/commercials/victoria.jpg", "Whether you're getting to know an exclusive crowd of your fellow students...");
 			writeBig("scripts/gamefiles/commercials/player.jpg");
 			writeSpeech("Victoria", "scripts/gamefiles/commercials/victoria.jpg", "Or improving with the help of our faculty, we-");
-			writeSpeech("You", "scripts/gamefiles/commercials/thomas.jpg", "Get this camera out of my face. <b>NOW.</b>");
+			writeSpeech("???", "scripts/gamefiles/commercials/thomas.jpg", "Get this camera out of my face. <b>NOW.</b>");
 			writeSpeech("Victoria", "scripts/gamefiles/commercials/victoria.jpg", "Y-yes master!");
 			writeText("<i>The playback ends here.</i>");
 			writeBig("scripts/gamefiles/commercials/hentaiUniversity.png");
@@ -2905,6 +2922,86 @@ function writeEvent(scene) {
 			writeText("Too late, you realize you'd been invisible to the world.");
 			break;
 		}
+		case "charmResearch1": {
+			writeHTML(`
+				sp assistant; Do... Do we really need to be doing this?
+				sp player; This is an artifact too. What's the codename?
+				t The charm is set upon a small cushion on a research table. Despite your insistence assistantF is giving it a wide berth and is very obviously trying not to look at it.
+				sp assistant; This is test log RC-01, but there's nothing here.
+				t assistantF's behavior is curious in its own right, but what also grabs your attention is the style of the charm. You're no charmmaker, but it looks eerily similar in style to the bracelet you're wearing. Maybe they're from the same source?
+				sp player; assistantF, note down the patterns here, see if they match... assistantF?
+				t Still holding the charm you turn to assistantF and start to hear faint whispering. Her mouth isn't moving yet it's definitely her voice.
+				sp assistant; <i>Don't think about it, don't look at him... <br>How long is minimum test length? If I note down 'artifact vanished'- <br>No, no it'd notice me. I'll write 'no artifact found in test chamber.'
+				t She's avoiding looking at you now, trying to think of excuses to stare at the ceiling or floor. Once you set the charm back down her eyes meet with yours again.
+				sp assistant; S-so, we good for today boss? Plenty of oth-<br>Plenty of artifacts to research!
+				...
+				t Looking through the testing history of the charm before it came to the vault, you notice a trend. Logs of the item's weight and dimensions have been recorded by electronic systems, but research logs and acquisition details are left nearly blank. Most testing notes match what assistantF wrote, reading that there is no artifact.
+				t There's just one paper, all the data completely redacted. The name of the researcher matches one who disappeared recently, the date he vanished matches the day he submitted this document. 
+				sp notes; Findings:<br>Nearly every subject refuses to acknowledge the charm's existence, the only exception being someone wearing the reprehensive bracelet. This affect extends to the wearer of the charm as well, people around the wearer are aware of the wearer's existence but refuse to acknowledge them. <br>In addition subjects note that they can hear whispers while wearing the charm, suggesting that the whispers are the thoughts of the people ignoring them. Currently, no data exists on what would happen is someone were forced to acknowledge the charm's existence.
+			`);
+			break;
+		}
+		case "charmResearch2": {
+			writeHTML(`
+				sp player; Hey. Heeeey. 
+				t You poke assistantF's cheek over and over. At first she was worried, the voices from her head saying things like "just ignore him" and "keep calm, assistantF." Now she's just reciting pop song lyrics to herself while filing paperwork.
+				sp player; Fine, fine. I can see I'll need to take things up a notch. 
+				im imagebox/charm/research2-1.gif
+				t You grab her shirt and tear it open in one smooth motion, but she remains silent.
+				sp player; Still nothing? Huh.
+				sp assistant; ...
+				sp player; You seriously aren't giving in? You realize someone could walk in at any moment. Oh, speaking of which-
+				t You look over to the side pretending like someone just walked in. assistantF's body goes rigid and you can hear her pencil snap in her hand.
+				sp player; Aw man, guess nobody's there.
+				t She's breathing pretty hard, but relaxes a little as you say that. It's not like she <i>can't</i> perceive you, she just <i>won't</i>.
+				sp assistant; A-ah, my shirt ripped...
+				t Coming up with an excuse she scurries off. 
+			`);
+			break;
+		}
+		case "charmResearch3": {
+			writeHTML(`
+				t You knock on the door to bossL's office. Empty. She must be off somewhere else, maybe doing something important, but you have an artifact to test. Science doesn't play by personal schedules.
+				...
+				t You find her giving a lecture to about a dozen agents and other faculty members, graphics are displayed on screen reminding employees to be vigilant in both mind and body.
+				t You walk right on in, and the reaction isn't exactly what you expected.
+				t It feels like the temperature of the room drop a few degrees, small murmurs go silent. Everyone who was paying half attention, goofing off, or letting their eyes wander now gives bossL their full attention so as not to accidentally even glance at you.
+				sp boss; And so, again, the order of operations when dealing with memetic infections is determining severity, identifying self-compromise, and isolation of potential vectors.
+				t It's the perfect kind of meeting to interrupt. One that needs to be done weekly, but where nothing new is stated. To her credit bossL never phones it in, the material really does need to be committed to memory.
+				t The least you can do is help her out with that.
+				...
+				im imagebox/charm/research3-1.gif
+				t bossL grips her podium white knuckled, any pretense of continuation should be well out the window, but...
+				sp boss; And soOough, remember that... You'll encounter... Telltale signs offfckk...
+				t bossL grits her teeth and braces herself as her legs shake.
+				im imagebox/charm/research3-2.gif
+				t 'I can't believe she came from that', 'I know she had to put up with him, but did she really need to cum?', 'Hurry up and leave so I can record her!', 'Serves you right, bitch.'
+				t Stray thoughts bounce around in your mind from the audience, but all that's coming from bossL is a mixture of hazy white noise, shame, and impotent rage.
+				im imagebox/charm/research3-3.gif
+				sp boss; Fuh... Hu...
+				t Her hair matted with sweat and cuk dripping from her snatch, she takes just a second to breath before going to the next slide and soldiering on with the presentation.
+			`);
+			break;
+		}
+		case "charmOutdoor1": {
+			writeHTML(`
+				t The normally busy bar quiets down as you walk in, although some conversation resumes as people try to distract themselves from your presence. Hopefully the great social lubricant will help somebody aknowledge you. 
+				t In fact there's a woman over at the bar who looks like the perfect test subject. She's got some shot glasses in front of her. You undo your belt and get ready to do some science.
+				...
+				im imagebox/charm/outdoor1-1.gif
+				t The bar is quiet once more as people try to watch the bizzare show out of the corner of their eyes. The woman gulps dryly as her previously empty shotglass is full again.
+				t She takes a deep breath to steel her nerves and downs the glass like she would any shot. Unfortunately for her your cum is a little too sticky to go down like liquor. 
+				sp ???; im none; Oh god, it's so thick! No matter how much I swallow the taste won't go away! 
+				t She opens her mouth and starts panting, trying anything to get her mind off the taste. Unfortunately this just makes it even more obvious to everyone around that her breath smells like cum. 
+				t She reaches for something else to drink but you just push everything in reach away. Instead, you take the empty shotglass and start jerking yourself off again. 
+				... 
+				sp ???; im none; I can't... No more... 
+				t Her eyes flutter as she lays her head on the counter. After the first load you started adding liquor to the cum-shots. Mostly because you wanted to see if being drunk would speed things along, but she's still doing her best at ignoring you. 
+				t Her stomach gurgles a little, full of alcohol and semen. At this point the smell of cum is pretty overpowering, she'll be tasting you on everything she eats for the next few days. Plus she'll need a lot of breathmints if she she doesn't want her first impression on others to be 'cum-gargling whore'. 
+				t Well, your efforts weren't enough this time. At least you had fun.
+			`);
+			break;
+		}
 		case "erotiboxResearch1": {
 			writeSpeech("player", "", "Now beginning test EB-01, I've got an interview recording with actress Emma Watson.");
 			writeText("You place the flash drive with the recordings in the box, then shut the front gate.");
@@ -3171,6 +3268,78 @@ function writeEvent(scene) {
 			...
 			t You gently place the icecream in a refrigerated box for future study as armed guards make sure the rest of the facility is safe.
 			sp notes; Findings:<br>The ice cream was replaced with a lewdly-shaped cone of the same strawberry flavor. When the frozen confection was licked, every woman within the vault and a two-mile radius outside felt a strong stimulation as though someone was performing cunnilingus on them.<br>The effects seem only to occur when a human is interacting with the treat; exposing it to freezing or hot temperatures did not produce the same effect. Future testing will be conducted at the arctic vault site.
+			`);
+			break;
+		}
+		case "erotiboxResearch13": { //PC
+			writeHTML(`
+				sp player; Now beginning test EB-0X, I've got a windows-based personal computer with several games installed.
+				sp assistant; Wonder which intern kicked the can and got his PC thrown in the research bin.<br>Huh, maybe playing games at work is what got him fired.
+				t You place the computer tower in the box, then shut the front gate. 
+				t Within seconds a bright purple light illuminates the room, before quickly dying down again.
+				t Inside the box is... The same PC, untouched.
+				sp player; Nothing happened? Not even a crude paintjob?
+				sp assistant; Load it up, maybe the wallpaper is something kinky.
+				...
+				sp player; Wallpaper is normal... Operating system is the same as before... The files on here aren't even corrupted. Maybe the box doesn't get how a computer works?
+				sp assistant; Maybe. Hey, try that game.
+				sp player; I think that one's online only, but fine. This is that popular team shooter game, right? The one that looks like a pixar movie?
+				t As you click the icon the PC whirs a little, and instead of a login screen it enters you right into a game. 
+				sp assistant; Ooh, ooh, pick the cute one, with the goggles. My sister plays this on the internet actually.
+				sp player; Yeah yeah. Did it change the game's files? This character's ass is-
+				sp assistant; Nope, that's normal.
+				t As you are, of course, highly unskilled at video games you're taken down quickly, only for a bizzare cutscene to play of your character being...
+				im imagebox/box/overwatch.gif
+				sp assistant; Whoa~! You suck at this!
+				sp player; That's what you're focused on? Alright, so the box changed the games. Note that down, I'll power it off.
+				sp assistant; Next game, next game! Ooh, what's "Dolphin Emulator"?
+				...
+				im imagebox/box/metroid.gif
+				sp notes; Findings:<br>The PC itself was unchanged, but the games on the drives were radically altered to include material much more erotic in nature. Online-only games were altered to become playable offline. Notably the games were extremely reactive to player choices, much more so than a game usually is.<br>This experiment suggests the box is compatible even with materials that are very modern in nature.
+			`);
+			break;
+		}
+		case "erotiboxResearch14": { //wonder woman
+			writeHTML(`
+				sp player; Now beginning test EB-0X, I've got a DVD copy of the movie Wonder Woman.
+				sp assistant; Couldn't you have picked Iron Man or something? I want some eye candy too.
+				t You place the disc in the box, then shut the front gate. 
+				t Within seconds a bright purple light illuminates the room, before quickly dying down again.
+				t Inside the box is...
+				sp player; ... A blank DVD case? An unmarked disc inside... assistantF, let's load this up.
+				...
+				im imagebox/box/wonder.gif
+				t You and assistantF munch on some popcorn while you watch some Wonder Woman cosplayer choke down some dick. It's a pretty short flick, the usual plot of blackmailing a superhero into doing porn and them hesitantly talking dirty to the camera until they break.
+				sp assistant; Acting's not bad. She maybe could use more practice getting deeper though..
+				sp player; And you're an expert on giving head? Oh, credits.
+				sp assistant; Shut up, you don't need to gobble a ton of cocks to know she was-
+				t assistantF stops mid-word as the credits roll by, mostly because of one line.
+				t <i>Wonder Woman - Herself</i>
+				sp assistant; Did we... Just watch actual revenge blackmail porn? Staring a fictional superhero? How the hell...?
+				sp notes; Findings:<br> The movie was replaced by an amateur porno claiming to star the real Wonder Woman. Aside from the obvious, no anomalous properties were detected.
+			`);
+			break;
+		}
+		case "erotiboxResearch15": { //sleepmask
+			writeHTML(`
+				sp player; Now beginning test EB-0X, I've got an ordinary sleepmask, black.
+				sp assistant; Looks a lot like mine, actually.
+				t You place the mask in the box, then shut the front gate. 
+				t Within seconds a bright purple light illuminates the room, before quickly dying down again.
+				t Inside the box is...
+				im imagebox/box/sleep1.jpg
+				sp assistant; What the fuck.<br>Is this where all those stupid fucking hoodies came from? This box?
+				sp player; That's worth considering.<br>Now hold still for a second.
+				...
+				t Despite assistantF seeming awake and alert just earlier, she's out like a light and softly snoring now.
+				t She lets out a small, upset groan at something in her dream as she shifts, reaching down to rub at her crotch. Your heart is pounding in your chest just looking at her, a wave of desire clouding your eyes.
+				t The mask is probably affecting your sense of reason, but you might as well roll with it.
+				im imagebox/box/sleep2.gif
+				t She softly sighs and her lips tremble. Her pussy is wet, either because of the mask or a particularly enjoyable dream.
+				
+				im imagebox/box/sleep3.gif
+				im imagebox/box/sleep4.gif
+				
 			`);
 			break;
 		}
@@ -4662,6 +4831,80 @@ function writeEvent(scene) {
 			writeText("The sign is right where you left it, marker at its side.");
 			break;
 		}
+		case "signHome7": { // Footjob
+			writeHTML(`
+				t You write the word onto the sign and in the blink of an eye the sign isn't where it just was. With the sign out in the world somewhere, you set off to find it.
+				t *KNOCK* *KNOCK*
+				t Only to be interrupted by a knock at the door. You open it, and a woman holding a familiar cardboard sign greets you.
+				sp girl; im scripts/gamefiles/profiles/daughter.jpg; Hello! Do you have a moment to talk about an important issue?
+				...
+				im imagebox/sign/footjob1.gif
+				sp girl; im scripts/gamefiles/profiles/daughter.jpg; See? It's a method of bonding, of the two of us growing closer while relieving your sexual tension. 
+				sp player; Uh... Uhuh...
+				sp girl; im scripts/gamefiles/profiles/daughter.jpg; I just want to spread awareness, I really think this is my new calling! I've already talked to a friend about it, would you be willing to sign a petition on 'free the footjob' dot com? Imagine a society where this is the new handshake!
+				t You feel yourself building up to a climax.
+				sp girl; Oh, you look so pent up! Listen, go ahead and cum. The way I see it, every load of cum I coat my feet in, the closer I get to a better society!
+				im imagebox/sign/footjob2.gif
+				sp girl; im scripts/gamefiles/profiles/daughter.jpg; Thank you for your support!
+				...
+				t Afterwards the sign reappeared nearby. It seems like freethefootjob.com still hasn't been claimed, so maybe she came to her senses. 
+				t ... Or she's still out there trying to convince people that footjobs are the key to a better tomorrow.
+			`);
+			break;
+		}
+		case "signHome8": { // Assjob
+			writeHTML(`
+				t You write the word onto the sign and in the blink of an eye the sign isn't where it just was. With the sign out in the world somewhere, you set off to find it.
+				...
+				im imagebox/sign/assjob.gif
+				t Apparently the woman who ended up with the sign is also a street vendor selling hotdogs. Wrapping a sausage between these buns is free though.
+				t ... She just kinda looked at you blankly when you made that joke though.
+			`);
+			break;
+		}
+		case "signHome9": { // Orgy
+			writeHTML(`
+				t You write the word onto the sign and in the blink of an eye the sign isn't where it just was. With the sign out in the world somewhere, you set off to find it.
+				...
+				t The woman who ended up with the sign is on a street corner, desperately trying to convince others to start an orgy, but to no avail.
+				sp gym; Sir, sir please! This could be us!
+				im imagebox/sign/orgy.gif
+				t She's been showing off her phone to anyone who will give her the time of day, each time loading up some hardcore porno. Nobody takes her up on the offer though, they all look kinda suspiciously at her, and are usually trying to avoid her like she's collecting petitions for outlawing cow therapy or something.
+				t She's overjoyed when you volunteered, but when nobody else joins in she slumps down defeated. Her phone is still blasting a porno at full volume.
+				t Suddenly the sign vanishes, unable to fulfill it's purpose. There's a moment of stunned silence from her, as if she realized what she was just doing, before she hurriedly stops her phone and runs off, covering her face.
+				t Once you get back, the sign seems... Down. As down as an inanimate object can look anyways.
+			`);
+			break;
+		}
+		case "signHome10": { // Toilet
+			writeHTML(`
+				t You write the word onto the sign and in the blink of an eye the sign isn't where it just was. With the sign out in the world somewhere, you set off to find it.
+				...
+				t So here you are, in a public men's bathroom in front of an undeniably giddy woman.
+				sp player; You seem enthusiastic.
+				sp lifeguard; Oh I am, sir. I don't know where it came from, but this sign is like a dream come true. My boyfriend gets queasy at the though of doing this to me, but the feeling of being used like this...
+				t Her eyes go wide as you undo your pant, she sticks her tongue out and rubs her thighs together, all while proudly displaying the sign advertising her service.
+				sp lifeguard; God, yes. I wanna feel your piss fill my mouth... And can you pull out too? Swallowing it down while my face and hair are soaked...
+				im imagebox/sign/toilet1.gif
+				t You press your cock against her lips, and the takes the head into her mouth. You softly groan as you let go and relieve yourself directly into her mouth.
+				t She squeals happily before she starts to swallow, but slowly enough that her cheeks are puffed out with her mouth full of piss. Her legs shake, her eyes roll back, she sputters and chokes for a moment but still keeps trying to drink it all down.
+				t You pull out and watch her keep swallowing, each gulp is a load of piss down her throat, and you start to unload onto her face and hair.
+				im imagebox/sign/toilet2.gif
+				t Once her mouth is empty she sticks her tongue out and giggles happily as you coat her face. You don't see any towels or rags in here, she must intend on walking out of here letting everyone know just by looking at her that she's served as your urinal.
+				t Once your stream has stopped she's panting and gasping, unable to open her eyes. She runs a hand along her face, the sign has already dissapeared. She's totally willing, and is even go so far as to take her wet hand and lower it between her legs.
+				t You'll leave her to her fate, it doesn't seem like she'll want to leave anytime soon.
+			`);
+			break;
+		}
+		case "signHome11": { // To a good home
+			writeHTML(`
+				t You write the word onto the sign and in the blink of an eye the sign isn't where it just was. With the sign out in the world somewhere, you set off to find it.
+				...
+				t You find the sign next to an empty cardboard box on the street, small clawmarks on the inside. It seems like whatever was inside has already been taken.
+				t The sign seems... Proud. As proud as an inanimate object can look anyways, and then it disappears back home.
+			`);
+			break;
+		}
 		case "signFailureUnknown": {
 			writeText("You've written on the cardboard, but as you put the cap back on the marker what you've written vanishes from the cardboard in a puff of steam.");
 			writeText("Confusion fills your mind for a moment, an unnatural one. Like it's coming from the sign itself, lost as to what you mean.");
@@ -5633,6 +5876,53 @@ function writeEvent(scene) {
 			}
 			break;
 		}
+		case "dollResearch1": {
+			writeHTML(`
+				t After a short trip to collect a hair, you wrap it around the doll. It vibrates slightly as you tie the know, and starts to feel warm as though it's generating body heat.
+				t Meanwhile, just a few rooms away...
+				...
+				t It starts with a stiffness in her joints, and though she rolls her shoulders to try and relax her range of movement is smaller than usual. Her heart rate slows, the time between each breath grows longer.
+				t As she starts to notice something her mind panics, but her body is relaxing. A smile creeps across her face and her pen falls to her side, rolling along the ground.
+				sp assistant; <i>What... What's going on!?</i>
+				t Her pussy clenches, suddenly feeling warm. Her nipples are erect and her dry lips feel moistened, like her body is preparing for something... Someone.
+				t You walk in through the door and shut it behind you, assistantF is completely motionless in her chair.
+				sp assistant; <i>playerF? Thank god, help!<br>I can't talk, he can't hear me... Cmon, realize something's wrong!</i>
+				t You pick her up from her chair, she's actually quite easy to position. Any pose you put her into she holds like her joints are locked until you move her again. The process of stripping her goes by in a flash.
+				sp assistant; <i>Ghh... Stop posing me... Why am I leaking if my body can't move!?</i>
+				t While posing her around is quite fun, the real playtime is only just beginning.
+				sp player; I gotta say, you really are a fantastic toy.
+				sp assistant; <i>Stop! I'm a <s>human being</s> <b>sex doll</b>! I'm not... A...</i>
+				t Her thought process is interrupted as she realizes what went through her mind.
+				sp assistant; <i>I... I'm <s>not</s> <b>a</b> sex toy... I'm...</i>
+				t Her own inner voice repeats back the wrong words. All the while you're aligning yourself with her hole.
+				im imagebox/doll/research1-1.gif
+				sp assistant; Nonono, please! Help <b>yourself</b>!
+				im imagebox/doll/research1-2.gif
+				t Though the rest of her body doesn't move, you can feel her cunt rhythmically clench around you with better technique than assistantF should have. All the while the smile on her face never fades.
+				sp assistant; Ffffuck-! He's <s>assaulting</s> <b>masturbating with</b> me! This is <s>rape</s> <b>what I was made for</b>!
+				im imagebox/doll/research1-3.gif
+				sp assistant; Can't think... Can't... <b>Don't deserve to</b> think anymore...
+				...
+				t Once the hair on the doll is cut the effect is broken, although the mental conditioning might lead to some interesting dreams for her tonight.
+			`);
+			break;
+		}
+		case "dollResearch2": {
+			writeHTML(`
+				t After a short trip to collect a hair, you wrap it around the doll. It vibrates slightly as you tie the know, and starts to feel warm as though it's generating body heat.
+				t You head out of the room to go find bossL...
+				...
+				im imagebox/doll/research2-1.gif
+				t Only to find her already in use.
+				sp assistant; Ghh... Fucking... Take it, bitch...
+				t It seems like assistantF is taking out her frustrations on the very lifelike sex toy she found. Though she can't conciously move her body bossL's tongue moves to stimulate assistantF however she can. And all the while she has a willing smile on her face.
+				t assistantF pulls bossL by the hair to mash her cunt against her cunt boss's face, giving her a good hosing of squirt.
+				t Despite her vapid, smiling face covered in juices, it's absolutely obvious to you what must be going on in her head.
+				sp boss; <s>YOU GOD-DAMNED</s> <b>I am a</b> COCKSUCKER<s>S</s>! I WILL <s>BREAK YOUR FINGERS INTO DUST, BURY YOU ALIVE, AND LAUGH AS YOU TRY TO DIG YOUR WAY OUT WITH EVERY BONE IN YOUR HANDS A SPLINTER</s> <b>lay here and be used</b>!
+				t Whatever mental effects the artifact has must be working overdrive to try to break a will like hers.
+			`);
+			break;
+		}
 		case "credits": {
 			writeBig("scripts/gamefiles/logo.png");
 			writeText("The Anomaly Vault was built by the architect NoodleJacuzzi, also responsible for other works. Further foundation was laid by Swallows999 and Captain Cryptogreek, who pioneered the research of artifacts before you. However the funding  of the vault comes from a council veiled in shadow, ever aware of your efforts.");
@@ -5733,6 +6023,17 @@ function checkForEvents() {
 								writeArtifact("sign");
 								if (data.player.color.includes('pass') == true) {
 									writeArtifact("pass");
+									if (data.player.color.includes('charm') == true) {
+										writeArtifact("charm");
+									}
+									else {
+										if (timeSince != 1) {
+											writeSpeech("assistant", "", "Nothing on the agenda today boss!");
+											writeArtifact("charm");
+											data.player.color += 'charm';
+											timeSince = 1;
+										}
+									}
 								}
 								else {
 									if (timeSince != 1) {

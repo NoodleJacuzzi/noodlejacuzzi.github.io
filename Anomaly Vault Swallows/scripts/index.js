@@ -30,7 +30,7 @@ var data = {
 		{index: "girlfriend", image: "", met: false, fName: "Asa", lName: "Akira", desc:"Your roommate's girlfriend.",},
 		{index: "boss", image: "", met: false, fName: "Peta", lName: "Jensen", desc:"Your direct supervisor.",},
 		{index: "librarian", image: "", met: false, fName: "Mia", lName: "Malkova", desc:"Sexually frustrated librarian.",},
-		{index: "madame", image: "", met: false, fName: "Lovely Madame", lName: "Sunny Leone", desc:"Phantom who lives inside the perfume bottle.",},
+		{index: "madame", image: "", met: false, fName: "Sunny", lName: "Leone", desc:"Phantom who lives inside the perfume bottle.",},
 		{index: "gym", image: "", met: false, fName: "Karlee", lName: "Grey", desc:"Owner of the local gym.",},
 		{index: "lifeguard", image: "", met: false, fName: "Anissa", lName: "Kate", desc:"Lifeguard at the local beach.",},
 		{index: "chair", image: "", met: false, fName: "Priya", lName: "Rai", desc:"Chairwoman of Anomaly Vault.",},
@@ -63,6 +63,11 @@ var galleryArray = [
 	{index: "braceletLibrary1", dark: false, girl: "librarian", name: "Library Part 1", hint: "Assistant event"},
 	{index: "braceletLibrary2", dark: false, girl: "librarian", name: "Library Part 1", hint: "Assistant event"},
 	{index: "braceletDream1", dark: false, girl: "", name: "Fate of the Bracelet", hint: "Assistant event"},
+	//Reproachive Charm Events
+	{index: "charmResearch1", dark: false, girl: "assistant", name: "Reproachive Charm - First Research", hint: "Assistant event"},
+	{index: "charmResearch2", dark: false, girl: "assistant", name: "Reproachive Charm - Testing the Waters", hint: "Assistant event"},
+	{index: "charmResearch3", dark: false, girl: "boss", name: "Reproachive Charm - Memorable Meeting", hint: "Assistant event"},
+	{index: "charmOutdoor1", dark: false, girl: "", name: "Reproachive Charm - Shots", hint: "Assistant event"},
 	//Erotibox Events
 	{index: "erotiboxResearch1", dark: false, girl: "", name: "Demo Reel - Sex Tape", hint: ""},
 	{index: "erotiboxResearch2", dark: false, girl: "assistant", name: "Taser - Slut Shocker", hint: ""},
@@ -74,6 +79,9 @@ var galleryArray = [
 	{index: "erotiboxResearch7", dark: false, girl: "assistant", name: "Flower - Squirt Inducer", hint: ""},
 	{index: "erotiboxResearch9", dark: false, girl: "assistant", name: "Alcoholic Drink - 'Sex on the Bar'", hint: ""},
 	{index: "erotiboxResearch12", dark: false, girl: "assistant", name: "Ice Cream - I Scream", hint: ""},
+	{index: "erotiboxResearch13", dark: false, girl: "assistant", name: "Computer - Gaming? Computer", hint: ""},
+	{index: "erotiboxResearch14", dark: false, girl: "assistant", name: "Wonder Woman - Wonder Whore", hint: ""},
+	{index: "erotiboxResearch15", dark: false, girl: "assistant", name: "Sleepmask - Fuckmask", hint: ""},
 	{index: "erotiboxResearch8", dark: false, girl: "assistant", name: "Assistant - Sex Fiend", hint: ""},
 	//Antique Mirror Events
 	{index: "mirrorResearch1-1", dark: false, girl: "", name: "Gender Dynamics - First Research", hint: ""},
@@ -134,6 +142,9 @@ var galleryArray = [
 	{index: "signHome3", dark: false, girl: "", name: "FREE BLOWJOBS", hint: "FREE BLOWJOBS"},
 	{index: "signHome4", dark: false, girl: "", name: "FREE SEX", hint: "FREE SEX"},
 	{index: "signHome6", dark: false, girl: "", name: "FREE ANAL", hint: "FREE ANAL"},
+	{index: "signHome7", dark: false, girl: "", name: "FREE FOOTJOB", hint: "FREE ANAL"},
+	{index: "signHome8", dark: false, girl: "", name: "FREE ASSJOB", hint: "FREE ANAL"},
+	{index: "signHome10", dark: false, girl: "", name: "FREE TOILET", hint: "FREE ANAL"},
 	{index: "signOutdoor1", dark: false, girl: "", name: "FREE TITFUCK", hint: ""},
 	{index: "signDream1", dark: false, girl: "agent", name: "FREE DREAMS", hint: ""},
 	//Exchange Gas Events
@@ -151,6 +162,10 @@ var galleryArray = [
 	{index: "toolkitResearch1", dark: true, girl: "", name: "Sissy Toolkit - Personal Test", hint: ""},
 	{index: "toolkitResearch2", dark: true, girl: "", name: "Sissy Toolkit - Perfect Body", hint: ""},
 	{index: "toolkitResearch3", dark: true, girl: "", name: "Sissy Toolkit - The Squad Assembles", hint: ""},
+	//Doll Events
+	{index: "dollResearch1", dark: true, girl: "assistant", name: "Stiff Sexdoll - Assistant", hint: ""},
+	{index: "dollResearch2", dark: true, girl: "boss", name: "Stiff Sexdoll - Boss", hint: ""},
+	{index: "dollResearch3", dark: true, girl: "roommate", name: "Stiff Sexdoll - Roommate", hint: ""},
 	//Bimbo Dust Events
 	{index: "dustResearch1", dark: true, girl: "assistant", name: "Bimbo Dust - Practice Makes Perfect", hint: ""},
 	{index: "dustResearch2", dark: true, girl: "boss", name: "Bimbo Dust - Perfect Payoff", hint: ""},
@@ -236,6 +251,7 @@ var logbookArray = [
 
 var artifactArray = [
 	{index: "bracelet", dark: false, equipable: false, title: "Reprehensive Bracelet", desc: "A partially tarnished silver bracelet.", desc2: "When worn, the wearer can become imperceivable and erase memories of themselves & their actions.", glasses: "As you look at the bracelet on your arm, visions of an old, weary knight appear. He cares not for who or why he fights, only that he defends his charge until the end of days."},
+	{index: "charm", dark: false, equipable: true, title: "Reproachive Charm", desc: "A partially tarnished silver bracelet.", desc2: "When worn, the wearer can become imperceivable and erase memories of themselves & their actions.", glasses: "As you look at the bracelet on your arm, visions of an old, weary knight appear. He cares not for who or why he fights, only that he defends his charge until the end of days."},
 	{index: "erotibox", dark: false, equipable: false, title: "Erotibox", desc: "A shabby wooden crate large enough to fit a person inside. <br>Anything put inside the box will become an erotic version of itself.", desc2: "", glasses: "The box calls to mind a virus, small and microscopic. It spreads through bodies and minds to unaware passersby. Now, even under careful watch, all it hopes to do is spread endlessly."},
 	{index: "mirror", dark: false, equipable: false, title: "Antique Mirror", desc: "An antique mirror dating back to the Victorian era. If a person stares into the eyes of their own reflection long enough, they will 'switch places' with an alternate reality version of themselves.<br>In these alternate realities social norms and the physical body of the person switched with can all be completely different.", desc2: "", glasses: "As you look at the mirror through the glasses, you see a long hallway filled with doors. Each doorway is decorated differently, but many are smashed apart or vandalized. "},
 	{index: "stopwatch", dark: false, equipable: true, title: "Time Stopwatch", desc: "A bronze stopwatch which appears at first glance to be broken, as the second hand jumps backwards every second.", desc2: "When the button at the top is pressed, the clock begins to record the time as normal but time stops for everyone except person holding the watch.", glasses: "As you look at the watch an image of a shady businessman comes to mind. Though his customers think they're getting a great deal, the salesman is the one who truly comes out better in the long run."},
@@ -443,9 +459,12 @@ function showSelf() {
 
 //Scene creation
 function writeSpeech (name, img, text) {
+	var nameBackup = name;
+	var imgBackup = img;
 	var color = "#858585"
 	for (logbookIndex = 0; logbookIndex < logbookArray.length; logbookIndex++) {
 		if (logbookArray[logbookIndex].index == name) {
+			var checkForError = `onerror ="javascript:this.src='scripts/gamefiles/profiles/`+nameBackup+`.jpg'"`;
 			switch (data.player.pervertLevel) {
 				case 0: {
 					img = "scripts/gamefiles/profiles/"+name+".jpg";
@@ -474,9 +493,8 @@ function writeSpeech (name, img, text) {
 		img = "scripts/gamefiles/none.png";
 	}
 	if (name == "player") {
-		if (img == "scripts/gamefiles/profiles/"+name+".jpg") {
-			img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
-		}
+		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
+		var checkForError = `onerror ="javascript:this.src='scripts/gamefiles/profiles/`+data.player.character+`.jpg'"`;
 		name = data.player.fName;
 		var color = "#c40909"
 		switch (data.player.character) {
@@ -514,10 +532,22 @@ function writeSpeech (name, img, text) {
 	if (name == "Peta") {
 		name = "Mrs. " + lName;
 	}
+	if (name.includes("Lovely") || name == "Sunny") {
+		name = "Madame " + lName;
+	}
 	//Check if a transparent shot should be used
 	if (data.player.style == "persona" || data.player.style == "royalty"|| data.player.style == "lobotomy") {
-		var checkForError = `onerror ="javascript:this.src='`+img+`'"`;
-		img = img.replace('.jpg', '.png');
+		if (checkForError == null) {
+			var checkForError = `onerror ="javascript:this.src='scripts/gamefiles/profiles/`+nameBackup+`.jpg'"`;
+		}
+		console.log(img);
+		console.log(checkForError);
+		if (data.player.pervertLevel != 2) {
+			img = img.replace('.jpg', '.png');
+		}
+	}
+	if (img.includes("commercials") || img.includes("items")) {
+		img = imgBackup;
 	}
 	switch (data.player.style) {
 		case "lobotomy": {
@@ -1029,25 +1059,25 @@ function signTrigger() {
 	if (wordlist.includes(goof) == true) {
 		desiredScene = "signFailureUnfinished";
 	}
-	wordlist = "footjobs / feet";
+	wordlist = "footjobs / feet / footsies";
 	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
+		desiredScene = "signHome7";
 	}
 	wordlist = "assjobs / hotdogging";
 	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
+		desiredScene = "signHome8";
 	}
-	wordlist = "toilet / pisswhore";
+	wordlist = "toilet / pisswhore / pisschugger";
 	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
+		desiredScene = "signHome10";
 	}
 	wordlist = "to a good home";
 	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
+		desiredScene = "signHome11";
 	}
 	wordlist = "orgy / group";
 	if (wordlist.includes(goof) == true) {
-		desiredScene = "signFailureUnfinished";
+		desiredScene = "signHome9";
 	}
 	wordlist = "girlfriend / slaves / wife / wives / servant";
 	if (wordlist.includes(goof) == true) {
@@ -1100,6 +1130,10 @@ function signTrigger() {
 	wordlist = "titfucks / titjobs / titfuckings / boobjobs / boobfucks / boobfuckings";
 	if (wordlist.includes(goof) == true) {
 		desiredScene = "signOutdoor1";
+	}
+	wordlist = "fuckings";
+	if (wordlist.includes(goof) == true) {
+		desiredScene = "signHome4";
 	}
 	writeEvent(desiredScene);
 }
