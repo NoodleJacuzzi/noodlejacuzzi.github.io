@@ -3,6 +3,9 @@ function writeScene(scene) {
 	if (data.player.pervertCounter == null) {
 		data.player.pervertCounter = 0;
 	}
+	if (data.player.pervertLevel == null) {
+		data.player.pervertLevel = 0;
+	}
 	switch(scene) {
 		//System Locations
 		case "start" : {
@@ -1328,6 +1331,11 @@ function writeScene(scene) {
 			break;
 		}
 		case "mirrorResearch2": {
+			var testThing = false;
+			if (data.player.pervertLevel == 0) {
+				var testThing = true;
+				data.player.pervertLevel = 1;
+			}
 			tempScene = 'work';
 			if (galleryCheck('mirrorResearch2-1') == true) {
 				writeSpeech("assistant", "", "Alright babe, forms are filled. Get those clothes off and you're free to roam the city. Stay clean, and stay away from sharp stuff. You don't have the instincts that come with the nudist lifestyle.");
@@ -1363,6 +1371,9 @@ function writeScene(scene) {
 			}
 			else {
 				writeEvent('mirrorResearch2-1');
+			}
+			if (testThing == true) {
+				data.player.pervertLevel = 0;
 			}
 			break;
 		}
@@ -4038,6 +4049,11 @@ function writeEvent(scene) {
 			break;
 		}
 		case "mirrorResearch2-1": {
+			var testThing = false;
+			if (data.player.pervertLevel == 0) {
+				var testThing = true;
+				data.player.pervertLevel = 1;
+			}
 			writeText("As you're pulled through the mirror you suddenly feel very exposed. Looking down, you can see that your clothes have disappeared.");
 			writeText("On instinct, you move to cover yourself and feel more than a little panicked. That fades once a familiar face comes up to you.");
 			writeBig("images/mirror/research2-1-1.jpg");
@@ -4055,9 +4071,17 @@ function writeEvent(scene) {
 			writeText("...");
 			writeText("You spend the next few hours learning about this dimension. The robe is uncomfortable, but you haven't quite acclimated to total public nudity yet. You'll need to ditch the robe later though.");
 			writeSpeech("notes", "", "Findings:<br>In this dimension public nudity and sexuality are considered completely normal, with prudishness being comparable to your dimension's deviancy. Going naked whenever possible is the default, and clothes are typically only worn for the sake of safety or for teasing. A very common fetish is flashing, since wearing clothes giving most people an exotic feeling that makes nudity even more exciting.<br>Public sex is also considered normal. Since women have a lower refractory period, most public sex involves a man using a woman's mouth, pussy, or ass to relieve himself. Society as a whole has been built around the idea of sex being as accessible as asking for directions.");
+			if (testThing == true) {
+				data.player.pervertLevel = 0;
+			}
 			break;
 		}
 		case "mirrorResearch2-2": {
+			var testThing = false;
+			if (data.player.pervertLevel == 0) {
+				var testThing = true;
+				data.player.pervertLevel = 1;
+			}
 			writeSpeech("player", "", "Alright, time to do some actual research. My bracelet still works here, so... Uh...");
 			writeBig("images/mirror/research2-2-1.gif");
 			writeText("A woman walks by completely topless. In the distance a man is 'airing out' his junk in public mid-conversation with some women. A man drives by with a fleshlight built into his car.");
@@ -4081,9 +4105,17 @@ function writeEvent(scene) {
 			if (tempScene == 'work') {
 				tempScene = 'mirrorResearch';
 			}
+			if (testThing == true) {
+				data.player.pervertLevel = 0;
+			}
 			break;
 		}
 		case "mirrorResearch2-3": {
+			var testThing = false;
+			if (data.player.pervertLevel == 0) {
+				var testThing = true;
+				data.player.pervertLevel = 1;
+			}
 			writeText("The locals are interesting, but it might be worth it to get a good idea of what society is like here. You take some time to look into what the public utilities are, hoping that your double doesn't get cold feet and pull you back too quickly.");
 			writeText("...");
 			writeSpeech("player", "", "<i>What the fuck is a 'free use office'? Is it like some kind of restroom?</i>");
@@ -4096,9 +4128,17 @@ function writeEvent(scene) {
 			if (tempScene == 'work') {
 				tempScene = 'mirrorResearch';
 			}
+			if (testThing == true) {
+				data.player.pervertLevel = 0;
+			}
 			break;
 		}
 		case "mirrorResearch2-4": {
+			var testThing = false;
+			if (data.player.pervertLevel == 0) {
+				var testThing = true;
+				data.player.pervertLevel = 1;
+			}
 			writeText("The public transit in this dimension is pretty nice. There are dedicated school buses for university students in addition to a pretty comprehensive transit system overall.");
 			writeText("It makes sense. You'd need to keep alert while driving. But on a bus...");
 			writeBig("images/mirror/research2-4-1.gif");
@@ -4122,9 +4162,17 @@ function writeEvent(scene) {
 			if (tempScene == 'work') {
 				tempScene = 'mirrorResearch';
 			}
+			if (testThing == true) {
+				data.player.pervertLevel = 0;
+			}
 			break;
 		}
 		case "mirrorResearch2-5": {
+			var testThing = false;
+			if (data.player.pervertLevel == 0) {
+				var testThing = true;
+				data.player.pervertLevel = 1;
+			}
 			writeText("The gym has a very casual and open environment.");
 			writeBig("images/mirror/research2-5-1.gif");
 			writeText("One of the most commonly used devices is some kind of dildo-bike, it seems to be this dimension's replacement for the treadmill.");
@@ -4140,6 +4188,11 @@ function writeEvent(scene) {
 			break;
 		}
 		case "mirrorResearch2-6": {
+			var testThing = false;
+			if (data.player.pervertLevel == 0) {
+				var testThing = true;
+				data.player.pervertLevel = 1;
+			}
 			writeBig("images/mirror/research2-6-1.gif");
 			writeText("With a name like that, it's not a surprise that, when you arrive, it's to the sight of a more than a dozen people in bondage gear, chained down, or locked into stocks. Nearly all of them are women, but there are a few guys being teased by some ladies.");
 			writeText("There is a little sign-in station keeping track of who's being punished, what they did, and how rough you're supposed to be...");
@@ -4164,6 +4217,9 @@ function writeEvent(scene) {
 			writeSpecial("This scene was written by <span class = 'switch' onclick='window.location.href=`https://www.reddit.com/user/CaptainCryptogreek`'>Captain Cryptogreek</span>");
 			if (tempScene == 'work') {
 				tempScene = 'mirrorResearch';
+			}
+			if (testThing == true) {
+				data.player.pervertLevel = 0;
 			}
 			break;
 		}
