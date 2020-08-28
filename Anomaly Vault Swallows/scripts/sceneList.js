@@ -1990,7 +1990,7 @@ function writeScene(scene) {
 			data.player.style = "persona";
 			writeBig("scripts/gamefiles/items/persona.jpg");
 			writeHTML(`
-				t You take a swig, it tastes... Rebelious.
+				t You take a swig, it tastes... Rebellious.
 				sp player; Taste kinda cuts off at the end.
 			`);
 			writeTransition("styleStiggy", "Vanilla Tea");
@@ -3530,7 +3530,7 @@ function writeEvent(scene) {
 		}
 		case "erotiboxResearch20" : {
 			writeHTML(`
-				sp player; Now beginning test EB-013... We're about to put in uninflated exercise ball.
+				sp player; Now beginning test EB-013... We're about to put in an uninflated exercise ball.
 				t You place the loose, floppy plastic pile into the box before shutting the front gate.
 				t Within seconds a bright purple light illuminates the room, before quickly dying down again.
 				t Inside the box is...

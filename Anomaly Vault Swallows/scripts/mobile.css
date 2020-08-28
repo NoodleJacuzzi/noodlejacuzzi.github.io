@@ -981,8 +981,8 @@ position: absolute;
 	color: black;
 }
 img.textThumbLobotomy {
-    height: 135px;
-    width: 135px;
+    height: 115px;
+    width: 115px;
     /*box-shadow: -5px 5px var( --character-color);*/
     flex: none;
 	-moz-transform: scale(0.9) skew(5deg, 0deg);
@@ -1073,8 +1073,8 @@ img.textThumbLobotomy {
 	overflow: hidden;
 }
 img.textThumbPersona {
-    height: 180px;
-    width: 180px;
+    height: 115px;
+    width: 115px;
     /*box-shadow: -5px 5px var( --character-color);*/
     flex: none;
 }
@@ -1257,8 +1257,8 @@ img.textThumbPersona {
 	overflow: hidden;
 }
 img.textThumbRoyalty {
-    height: 180px;
-    width: 180px;
+    height: 115px;
+    width: 115px;
     /*box-shadow: -5px 5px var( --character-color);*/
     flex: none;  
 	-webkit-filter:grayscale(0.9);
@@ -1268,7 +1268,7 @@ img.textThumbRoyalty {
 	font-size: 1.4em;
 	font-family: railway, times new roman, sans-serif;
 	font-style: normal;
-	margin-left: 40px;
+	margin-left: 20px;
 	margin-top: 5px;
 	width: 90%;
 }
@@ -1277,7 +1277,7 @@ img.textThumbRoyalty {
     width: 160px;
 }
 .nameBoxRoyalty {
-	width:180px;
+	width:115px;
 	background-color: #000;
 	margin-top: -29px;
 	border: 3px solid;
