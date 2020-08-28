@@ -156,6 +156,7 @@ p {
 	padding: 5px;
 	overflow: hidden;
   	border-radius: 5px;
+	line-height: 1.5;
 }
 .textBox p {
 	margin: 0px;

@@ -1519,7 +1519,7 @@ function writeScene(scene) {
 				writeFunction("writeEvent('erotiboxResearch13')", "Test a computer");
 			}
 			if (galleryCheck('erotiboxResearch14') != true) {
-				writeFunction("writeEvent('erotiboxResearch14')", "Test an superhero movie");
+				writeFunction("writeEvent('erotiboxResearch14')", "Test a superhero movie");
 			}
 			if (galleryCheck('erotiboxResearch15') != true) {
 				writeFunction("writeEvent('erotiboxResearch15')", "Test a sleepmask");
@@ -2960,7 +2960,7 @@ function writeEvent(scene) {
 				sp player; This is an artifact too. What's the codename?
 				t The charm is set upon a small cushion on a research table. Despite your insistence assistantF is giving it a wide berth and is very obviously trying not to look at it.
 				sp assistant; This is test log RC-01, but there's nothing here.
-				t assistantF's behavior is curious in its own right, but what also grabs your attention is the style of the charm. You're no charmmaker, but it looks eerily similar in style to the bracelet you're wearing. Maybe they're from the same source?
+				t assistantF's behavior is curious in its own right, but what also grabs your attention is the style of the charm. You're no charm maker, but it looks eerily similar in style to the bracelet you're wearing. Maybe they're from the same source?
 				sp player; assistantF, note down the patterns here, see if they match... assistantF?
 				t Still holding the charm you turn to assistantF and start to hear faint whispering. Her mouth isn't moving yet it's definitely her voice.
 				sp assistant; <i>Don't think about it, don't look at him... <br>How long is minimum test length? If I note down 'artifact vanished'- <br>No, no it'd notice me. I'll write 'no artifact found in test chamber.'
@@ -2997,7 +2997,7 @@ function writeEvent(scene) {
 				...
 				t You find her giving a lecture to about a dozen agents and other faculty members, graphics are displayed on screen reminding employees to be vigilant in both mind and body.
 				t You walk right on in, and the reaction isn't exactly what you expected.
-				t It feels like the temperature of the room drop a few degrees, small murmurs go silent. Everyone who was paying half attention, goofing off, or letting their eyes wander now gives bossL their full attention so as not to accidentally even glance at you.
+				t It feels like the temperature of the room drops a few degrees, small murmurs go silent. Everyone who was paying half attention, goofing off, or letting their eyes wander now gives bossL their full attention so as not to accidentally even glance at you.
 				sp boss; And so, again, the order of operations when dealing with memetic infections is determining severity, identifying self-compromise, and isolation of potential vectors.
 				t It's the perfect kind of meeting to interrupt. One that needs to be done weekly, but where nothing new is stated. To her credit bossL never phones it in, the material really does need to be committed to memory.
 				t The least you can do is help her out with that.
@@ -3011,7 +3011,7 @@ function writeEvent(scene) {
 				t Stray thoughts bounce around in your mind from the audience, but all that's coming from bossL is a mixture of hazy white noise, shame, and impotent rage.
 				im images/charm/research3-3.gif
 				sp boss; Fuh... Hu...
-				t Her hair matted with sweat and cuk dripping from her snatch, she takes just a second to breath before going to the next slide and soldiering on with the presentation.
+				t Her hair matted with sweat and cum dripping from her snatch, she takes just a second to breath before going to the next slide and soldiering on with the presentation.
 			`);
 			break;
 		}
@@ -3029,7 +3029,7 @@ function writeEvent(scene) {
 				... 
 				sp ???; im none; I can't... No more... 
 				t Her eyes flutter as she lays her head on the counter. After the first load you started adding liquor to the cum-shots. Mostly because you wanted to see if being drunk would speed things along, but she's still doing her best at ignoring you. 
-				t Her stomach gurgles a little, full of alcohol and semen. At this point the smell of cum is pretty overpowering, she'll be tasting you on everything she eats for the next few days. Plus she'll need a lot of breathmints if she she doesn't want her first impression on others to be 'cum-gargling whore'. 
+				t Her stomach gurgles a little, full of alcohol and semen. At this point the smell of cum is pretty overpowering, she'll be tasting you on everything she eats for the next few days. Plus she'll need a lot of breathmints if she doesn't want her first impression on others to be 'cum-gargling whore'. 
 				t Well, your efforts weren't enough this time. At least you had fun.
 			`);
 			break;
@@ -3377,7 +3377,7 @@ function writeEvent(scene) {
 		}
 		case "erotiboxResearch20" : {
 			writeHTML(`
-				sp player; Now beginning test EB-013... We've about to put in uninflated exercise ball.
+				sp player; Now beginning test EB-013... We're about to put in uninflated exercise ball.
 				t You place the loose, floppy plastic pile into the box before shutting the front gate.
 				t Within seconds a bright purple light illuminates the room, before quickly dying down again.
 				t Inside the box is...
@@ -3395,7 +3395,7 @@ function writeEvent(scene) {
 				t Looking at your watch, it has now been about three more minutes since the last time you asked, and five since the first.
 				sp assistant; J-Just... 30 seconds...!
 				sp player; As impressive as this is to watch, I think it's obvious this thing has a memetic effect.
-				t Reaching over, you grasp her by the waist and pull her bodily, separating her from the ball.
+				t Reaching over, you grasp her by the waist and pull her body, separating her from the ball.
 				t She seems to struggle for a second, before completely collapsing into your arms.
 				sp player; How're you feeling?
 				sp assistant; F-Fuckinnnn tired...
@@ -4935,11 +4935,11 @@ function writeEvent(scene) {
 				...
 				t So here you are, in a public men's bathroom in front of an undeniably giddy woman.
 				sp player; You seem enthusiastic.
-				sp lifeguard; Oh I am, sir. I don't know where it came from, but this sign is like a dream come true. My boyfriend gets queasy at the though of doing this to me, but the feeling of being used like this...
+				sp lifeguard; Oh I am, sir. I don't know where it came from, but this sign is like a dream come true. My boyfriend gets queasy at the thought of doing this to me, but the feeling of being used like this...
 				t Her eyes go wide as you undo your pant, she sticks her tongue out and rubs her thighs together, all while proudly displaying the sign advertising her service.
 				sp lifeguard; God, yes. I wanna feel your piss fill my mouth... And can you pull out too? Swallowing it down while my face and hair are soaked...
 				im images/sign/toilet1.gif
-				t You press your cock against her lips, and the takes the head into her mouth. You softly groan as you let go and relieve yourself directly into her mouth.
+				t You press your cock against her lips, and she takes the head into her mouth. You softly groan as you let go and relieve yourself directly into her mouth.
 				t She squeals happily before she starts to swallow, but slowly enough that her cheeks are puffed out with her mouth full of piss. Her legs shake, her eyes roll back, she sputters and chokes for a moment but still keeps trying to drink it all down.
 				t You pull out and watch her keep swallowing, each gulp is a load of piss down her throat, and you start to unload onto her face and hair.
 				im images/sign/toilet2.gif
@@ -5932,7 +5932,7 @@ function writeEvent(scene) {
 		case "dollResearch1": {
 			tempScene = "vault";
 			writeHTML(`
-				t After a short trip to collect a hair, you wrap it around the doll. It vibrates slightly as you tie the know, and starts to feel warm as though it's generating body heat.
+				t After a short trip to collect a hair, you wrap it around the doll. It vibrates slightly as you tie the knot, and starts to feel warm as though it's generating body heat.
 				t Meanwhile, just a few rooms away...
 				...
 				t It starts with a stiffness in her joints, and though she rolls her shoulders to try and relax her range of movement is smaller than usual. Her heart rate slows, the time between each breath grows longer.
