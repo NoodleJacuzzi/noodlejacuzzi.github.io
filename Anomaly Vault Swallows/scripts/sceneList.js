@@ -21,11 +21,6 @@ function writeScene(scene) {
 			writeText("I'm always open to comments or criticism. If you have an idea for an artist or scene or you'd like to suggest content of your own, you can shoot me a message at anytime on TFgames, F95zone, or my Patreon page at https://www.patreon.com/noodlejacuzzi");
 			writeText("You can also send me a message on discord (I'm NoodleJacuzzi#4120) or an email at noodlejacuzzi@gmail.com");
 			writeTransition("contentList", "See a breakdown of each artifact's content");
-			data.player.style = "";
-			data.player.pervertLevel = 0;
-			for (x = 0; x < logbookArray.length; x++) {
-				writeSpeech(logbookArray[x].index, "", "What the fuck tho?!");
-			}
 			break;
 		}
 		case "startWardrobe": {
@@ -847,6 +842,8 @@ function writeScene(scene) {
 				writeArtifactMini('magazine');
 				writeArtifactMini('lamp');
 				writeArtifactMini('glasses');
+				writeArtifactMini('bar');
+				writeArtifactMini('radio');
 				//writeArtifactMini('preacher');
 				//writeArtifactMini('clock');
 				if (data.player.entryPoint == "room") {
@@ -1930,6 +1927,130 @@ function writeScene(scene) {
 			writeTransition("medicenter", "Bitch Medicenter Marketing Campaign");
 			writeText("There are also some that are in a different packaging than the others. The tapes look like they were made by a different manufacturer.");
 			writeTransition("DTC", "Dare(d) to Change Commercial");
+			writeTransition("toolbox", "Go back");
+			break;
+		}
+		case "barResearch": {
+			writeHTML(`
+				sp player; Alright, what am I thirsty for...
+			`);
+			writeTransition("styleStiggy", "Vanilla Tea");
+			writeTransition("stylePersona", "Masked Teacup");
+			writeTransition("styleLobotomy", "Lobotomy Mug");
+			writeTransition("styleVapor", "Vapor Cup");
+			writeTransition("toolbox", "Go back");
+			break;
+		}
+		case "styleStiggy": {
+			data.player.style = "";
+			writeHTML(`
+				t You take a swig, it tastes... Smooth.
+				sp player; Pretty good.
+			`);
+			writeTransition("styleStiggy", "Vanilla Tea");
+			writeTransition("stylePersona", "Masked Teacup");
+			writeTransition("styleLobotomy", "Lobotomy Mug");
+			writeTransition("styleVapor", "Vapor Cup");
+			writeTransition("toolbox", "Go back");
+			break;
+		}
+		case "stylePersona": {
+			data.player.style = "persona";
+			writeBig("scripts/gamefiles/items/persona.jpg");
+			writeHTML(`
+				t You take a swig, it tastes... Rebelious.
+				sp player; Taste kinda cuts off at the end.
+			`);
+			writeTransition("styleStiggy", "Vanilla Tea");
+			writeTransition("stylePersona", "Masked Teacup");
+			writeTransition("styleLobotomy", "Lobotomy Mug");
+			writeTransition("styleVapor", "Vapor Cup");
+			writeTransition("toolbox", "Go back");
+			break;
+		}
+		case "styleLobotomy": {
+			data.player.style = "lobotomy";
+			writeBig("scripts/gamefiles/items/lobotomy.jpg");
+			writeHTML(`
+				t You take a swig, it tastes... Sharp. Yet addictive.
+				sp player; Could use some work.
+			`);
+			writeTransition("styleStiggy", "Vanilla Tea");
+			writeTransition("stylePersona", "Masked Teacup");
+			writeTransition("styleLobotomy", "Lobotomy Mug");
+			writeTransition("styleVapor", "Vapor Cup");
+			writeTransition("toolbox", "Go back");
+			break;
+		}
+		case "styleVapor": {
+			data.player.style = "royalty";
+			writeBig("scripts/gamefiles/items/royalty.jpg");
+			writeHTML(`
+				t You take a swig, it tastes... Like a computer-generated sunset and a marble bust.
+				sp player; Doesn't taste finished, needs more mixing.
+			`);
+			writeTransition("styleStiggy", "Vanilla Tea");
+			writeTransition("stylePersona", "Masked Teacup");
+			writeTransition("styleLobotomy", "Lobotomy Mug");
+			writeTransition("styleVapor", "Vapor Cup");
+			writeTransition("toolbox", "Go back");
+			break;
+		}
+		case "radioResearch": {
+			switch (data.player.pervertLevel) {
+				case 1: {
+					data.player.pervertLevel = 2;
+					writeHTML(`
+						t As you click the button the volume raises and the tempo picks up, the sone now sounding like a frenetic dance number. Obvious moaning and obscene language can be heard in the background of the sound.
+					`);
+					break;
+				}
+				case 2: {
+					data.player.pervertLevel = 3;
+					writeHTML(`
+						t As you click the button the volume raises and the tempo picks up, the song now playing so fast and loud it sounds like white noise. At least a dozen distinct voices can be heard screaming in pleasure, as if trapped at the peak of climax.
+						t Keeping the volume this high will probably be detrimental to your ears, and who knows what else.
+						t <b>This is as far as the radio will go!</b>
+					`);
+					data.player.radioCounter = 0;
+					break;
+				}
+				case 3: {
+					data.player.pervertLevel = 0;
+					writeHTML(`
+						t You turn the knob, the volume hitting a fever pitch and then suddenly stutters and the knob forcibly clicks back. The music has stopped, and all anomalous synesthesia effects with it. You should be able to hold normal conversation now.
+					`);
+					data.player.radioCounter = 0;
+					break;
+				}
+				default: {
+					data.player.pervertLevel = 1;
+					writeHTML(`
+						t You turn the knob and a soft jazz song begins. Every so often in a gap between notes you can hear a soft moan.
+						t Not only that, but no matter how close you are to the radio you can hear it perfectly fine, like your mind is the speaker.
+						t Spooky.
+						t Supposedly the effects change how you view other people. You should socialize if you want to see it in action.
+					`);
+				}
+			}
+			writeTransition("radioResearch", "Turn it farther");
+			writeTransition("toolbox", "Go back");
+			break;
+		}
+		case "radioShutdown": {
+			if (data.player.pervertLevel == 0 || data.player.pervertLevel == null) {
+				writeHTML(`
+					t You press the shutoff button, but the radio was already off.
+				`);
+
+			}
+			else {
+				writeHTML(`
+					t You shut off the radio, the volume knob automatically resetting as well. The music has stopped, and all anomalous synesthesia effects with it. You should be able to hold normal conversation now.
+				`);
+			}
+			data.player.pervertLevel = 0;
+			data.player.radioCounter = 0;
 			writeTransition("toolbox", "Go back");
 			break;
 		}

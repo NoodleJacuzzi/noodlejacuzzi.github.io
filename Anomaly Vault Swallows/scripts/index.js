@@ -284,7 +284,11 @@ var artifactMiniArray = [ //Used for smaller artifacts such as prison and toolbo
 	{index: "commercials", type: "artifact", title: "Alternate-Universe Commercials", desc: "A box of VHS tapes that materialized from another universe.", desc2: "Multiple security checks have been performed on them since one appears to be an advertisement for the Anomaly Vault, but research has found them to be harmless. Included is a note referencing a 'Master Index'."},
 	{index: "engine", type: "artifact", title: "Cheat(?) Engine", desc: "A bootleg version of a popular computer program for editing values.", desc2: "It's capable of rewriting reality, but it only responds to extremely specific phrases and ignores any other request. Unless you already know what to say, the program is useless. "},
 	{index: "glasses", type: "artifact", title: "Helsing's Glasses", desc: "A set of glasses obtained from an... <i>Eccentric</i> hobbyist created by unknown means. Formerly a researcher, she was retired due to an unhealthy fixation with imagining personalities for artifacts.", desc2: "When worn they anthropomorphize items with anomalous properties. They used to be taken on artifact retrieval missions until testing revealed they were not always accurate. In fact sometimes it would entirely fabricate details about otherwise mundane objects."},
+	{index: "radio", type: "artifact", title: "Pervert Radio", desc: "A radio in a partial state of disrepair, the system is janky and the volume knob catches easily. The notches are marked 'Off', 'Pervert', 'Degenerate', and 'Lunatic'.", desc2: "When activate it causes the subject to experience erotic hallucinations when speaking with familiar "},
+	{index: "bar", type: "artifact", title: "Miniature Bar", desc: "A very small drink cabinet that can somehow fit hundreds of novelty cups. When fluids are drunk from the cups inside a minor hallucinogenic effect triggers.", desc2: ""},
+	
 	{index: "logbook", type: "artifact", title: "Artifact Retrieval Logs", desc: "A massive set of cabinets full of mission log files. Only artifact hunters are authorized to use it.", desc2: "Opening the cabinet with intent will allow for retrieval and re-living of specific file contents."},
+	
 	{index: "doctor", code:"scp", type: "prisoner", title: "'Plague' Doctor", desc: "A mysterious woman dressed in a skimpy version of a medieval plague doctor's uniform. Very dangerous.", desc2: ""},
 	{index: "talisman", code:"scp", type: "prisoner", title: "Talisman", desc: "A possessed talisman. There's a sticky note on it saying 'DO NOT TOUCH'", desc2: ""},
 	{index: "magical", code:"lobotomy", type: "prisoner", title: "Magical Girl", desc: "A woman proclaiming herself to be a champion of justice. You're pretty sure she was fished up from a river from some forest.", desc2: ""},
@@ -295,6 +299,47 @@ var artifactMiniArray = [ //Used for smaller artifacts such as prison and toolbo
 	{index: "silent", code:"silent", type: "prisoner", title: "Nurse's Room", desc: "A room full of strange creatures, which probably symbolize a really deep message about sexuality or something.", desc2: ""},
 	{index: "ethics", code:"ethics", type: "prisoner", title: "Ethics Rock", desc: "A rock that dispenses lines of  ethical ramblings. It's a rock though, so it probably doesn't know what its talking about.", desc2: ""},
 ];
+
+var radioImageList = [
+	"images/box/sleep2.gif",
+	"images/box/sleep3.gif",
+	"images/bracelet/dream1-1.gif",
+	"images/bracelet/home2-2.gif",
+	"images/bracelet/home2-3.gif",
+	"images/bracelet/home3-2.gif",
+	"images/bracelet/katya1-2.gif",
+	"images/bracelet/katyaGame5.gif",
+	"images/bracelet/library1-3.gif",
+	"images/bracelet/library2-2.gif",
+	"images/bracelet/research2-1.gif",
+	"images/bracelet/research3-2.gif",
+	"images/bracelet/outdoor2-2.gif",
+	"images/charm/research3-1.gif",
+	"images/coin/coinEnding1.gif",
+	"images/coin/publicCoin.gif",
+	"images/coin/dream1-1.gif",
+	"images/coin/research2-2.gif",
+	"images/doll/research1-1.gif",
+	"images/dust/dustResearch3-5.gif",
+	"images/erotibox/flower.gif",
+	"images/erotibox/icecream.gif",
+	"images/gas/research1-1.gif",
+	"images/gas/research3-2.gif",
+	"images/mirror/research1-3-1.gif",
+	"images/mirror/research1-3-2.gif",
+	"images/mirror/research1-4-1.gif",
+	"images/mirror/research2-4-2.gif",
+	"images/mirror/research2-4-4.gif",
+	"images/pass/home2-3.gif",
+	"images/serum/serumEnding2.gif",
+	"images/serum/serumHome1-1.gif",
+	"images/serum/serumHome1-3.gif",
+	"images/shades/home3-2.gif",
+	"images/shades/shadesHome1-4.gif",
+	"images/sign/groping.gif",
+	"images/stopwatch/home1-2.gif",
+	"images/prologue3.gif",
+]
 
 var roommateF = data.story[0].fName;
 var roommateL = data.story[0].lName;
@@ -551,6 +596,9 @@ function writeSpeech (name, img, text) {
 	if (img.includes("commercials") || img.includes("items")) {
 		img = imgBackup;
 	}
+	if (data.player.pervertLevel == 3) {
+		img = getPervertImage();
+	}
 	switch (data.player.style) {
 		case "lobotomy": {
 			document.getElementById('output').innerHTML += `
@@ -633,6 +681,10 @@ function writeSpeech (name, img, text) {
 			`;
 		}
 	}
+}
+
+function getPervertImage() {
+	return radioImageList[Math.floor(Math.random() * radioImageList.length)];
 }
 
 function writeTab(character, text) {
@@ -806,6 +858,23 @@ function writeArtifactMini(name) {
 			break;
 		}
 	}
+	if (name == "radio") {
+		document.getElementById('output').innerHTML +=`
+		<div class = "textBox">
+			<img class = "textThumb" src = "scripts/gamefiles/items/`+ name +`.jpg">
+			<div class="textBoxContent">
+			<p class = "textName">`+ title + `</p>
+			<p>
+				<span class = "choiceText" onclick = "sceneTransition('`+name+`Research')">Turn the knob</span>
+				<span class = "choiceText" onclick = "sceneTransition('`+name+`Shutdown')">Press the shutoff button</span>
+			</p>
+			<p>`+ desc + `</p>
+			<p>`+ desc2 + `</p>
+		</div>
+		<br>
+		`;
+	}
+	else {
 	document.getElementById('output').innerHTML +=`
 	<div class = "textBox">
 		<img class = "textThumb" src = "scripts/gamefiles/items/`+ name +`.jpg">
@@ -819,6 +888,7 @@ function writeArtifactMini(name) {
 	</div>
 	<br>
 	`;
+	}
 }
 
 function writeBig (img, cap) {
@@ -848,19 +918,161 @@ function writeMed (img, cap) {
 }
 
 function writeTransition (name, scene) {
-	document.getElementById('output').innerHTML += `
-		<p class="choiceText" onclick="sceneTransition('` + name + `')">
-			` + replaceCodenames(scene) + `
-		</p>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			var skewNumber = getRandomInt(8);
+			skewNumber -= 4;
+			var borderNumber = getRandomInt(2) + 3;
+			var rotationNumber = getRandomInt(2) -1;
+			if (skewNumber >= 0) {
+				skewNumber += getRandomInt(3);
+			}
+			if (skewNumber <= 0) {
+				skewNumber -= getRandomInt(3);
+			}
+			var reverseSkew = skewNumber - skewNumber - skewNumber;
+			var rotationReverse = rotationNumber - rotationNumber - rotationNumber;
+			console.log('skewnumber is ' +skewNumber + ' rotationnumber is '+ rotationNumber);
+			document.getElementById('output').innerHTML += `
+			<div class="choiceFrameLobotomy" 
+			style ="
+				-moz-transform: skew(`+skewNumber+`deg, 0deg);
+				-webkit-transform: skew(`+skewNumber+`deg, 0deg);
+				-o-transform: skew(`+skewNumber+`deg, 0deg);
+				-ms-transform: skew(`+skewNumber+`deg, 0deg);
+				transform: skew(`+skewNumber+`deg, 0deg);
+				border: solid `+borderNumber+`px;
+			">
+			<p class="choiceTextLobotomy" 
+			style ="
+				-moz-transform: skew(`+reverseSkew+`deg, 0deg);
+				-webkit-transform: skew(`+reverseSkew+`deg, 0deg);
+				-o-transform: skew(`+reverseSkew+`deg, 0deg);
+				-ms-transform: skew(`+reverseSkew+`deg, 0deg);
+				transform: skew(`+reverseSkew+`deg, 0deg);
+			" 
+			onclick="sceneTransition('` + name + `')">
+				` + replaceCodenames(scene) + `
+			</p>
+			</div>
+			`;
+			break;
+		}
+		case "persona": {
+			var skewNumber = 5;
+			var reverseSkew = skewNumber - skewNumber - skewNumber;
+			console.log('skewnumber is ' +skewNumber + ' rotationnumber is '+ rotationNumber);
+			document.getElementById('output').innerHTML += `
+			<div class="choiceFramePersona" onclick="sceneTransition('` + name + `')"
+			style ="
+				-moz-transform: skew(`+skewNumber+`deg, 0deg);
+				-webkit-transform: skew(`+skewNumber+`deg, 0deg);
+				-o-transform: skew(`+skewNumber+`deg, 0deg);
+				-ms-transform: skew(`+skewNumber+`deg, 0deg);
+				transform: skew(`+skewNumber+`deg, 0deg);
+			">
+			<p class="choiceTextPersona" 
+			style ="
+				-moz-transform: skew(`+reverseSkew+`deg, 0deg);
+				-webkit-transform: skew(`+reverseSkew+`deg, 0deg);
+				-o-transform: skew(`+reverseSkew+`deg, 0deg);
+				-ms-transform: skew(`+reverseSkew+`deg, 0deg);
+				transform: skew(`+reverseSkew+`deg, 0deg);
+			" 
+			>
+				` + replaceCodenames(scene) + `
+			</p>
+			</div>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML += `
+				<p class="choiceText" onclick="sceneTransition('` + name + `')">
+					` + replaceCodenames(scene) + `
+				</p>
+			`;
+		}
+	}
 }
 
 function writeFunction (name, func) {
-	document.getElementById('output').innerHTML += `
-		<p class="choiceText" onclick="` + name + `">
-			` + replaceCodenames(func) + `
-		</p>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			var skewNumber = getRandomInt(8);
+			skewNumber -= 4;
+			var borderNumber = getRandomInt(2) + 3;
+			var rotationNumber = getRandomInt(2) -1;
+			if (skewNumber >= 0) {
+				skewNumber += getRandomInt(3);
+			}
+			if (skewNumber <= 0) {
+				skewNumber -= getRandomInt(3);
+			}
+			var reverseSkew = skewNumber - skewNumber - skewNumber;
+			var rotationReverse = rotationNumber - rotationNumber - rotationNumber;
+			console.log('skewnumber is ' +skewNumber + ' rotationnumber is '+ rotationNumber);
+			document.getElementById('output').innerHTML += `
+			<div class="choiceFrameLobotomy" 
+			style ="
+				-moz-transform: skew(`+skewNumber+`deg, 0deg);
+				-webkit-transform: skew(`+skewNumber+`deg, 0deg);
+				-o-transform: skew(`+skewNumber+`deg, 0deg);
+				-ms-transform: skew(`+skewNumber+`deg, 0deg);
+				transform: skew(`+skewNumber+`deg, 0deg);
+				border: solid `+borderNumber+`px;
+			">
+			<p class="choiceTextLobotomy" 
+			style ="
+				-moz-transform: skew(`+reverseSkew+`deg, 0deg);
+				-webkit-transform: skew(`+reverseSkew+`deg, 0deg);
+				-o-transform: skew(`+reverseSkew+`deg, 0deg);
+				-ms-transform: skew(`+reverseSkew+`deg, 0deg);
+				transform: skew(`+reverseSkew+`deg, 0deg);
+			" 
+			onclick="` + name + `">
+				` + replaceCodenames(func) + `
+			</p>
+			</div>
+			`;
+			break;
+		}
+		case "persona": {
+			var skewNumber = 5;
+			var reverseSkew = skewNumber - skewNumber - skewNumber;
+			console.log('skewnumber is ' +skewNumber + ' rotationnumber is '+ rotationNumber);
+			document.getElementById('output').innerHTML += `
+			<div class="choiceFramePersona" onclick="` + name + `"
+			style ="
+				-moz-transform: skew(`+skewNumber+`deg, 0deg);
+				-webkit-transform: skew(`+skewNumber+`deg, 0deg);
+				-o-transform: skew(`+skewNumber+`deg, 0deg);
+				-ms-transform: skew(`+skewNumber+`deg, 0deg);
+				transform: skew(`+skewNumber+`deg, 0deg);
+			">
+			<p class="choiceTextPersona" 
+			style ="
+				-moz-transform: skew(`+reverseSkew+`deg, 0deg);
+				-webkit-transform: skew(`+reverseSkew+`deg, 0deg);
+				-o-transform: skew(`+reverseSkew+`deg, 0deg);
+				-ms-transform: skew(`+reverseSkew+`deg, 0deg);
+				transform: skew(`+reverseSkew+`deg, 0deg);
+			" 
+			>
+				` + replaceCodenames(func) + `
+			</p>
+			</div>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML += `
+				<p class="choiceText" onclick="` + name + `">
+					` + replaceCodenames(func) + `
+				</p>
+			`;
+		}
+	}
 }
 
 function writeSpecial (text) {
@@ -870,9 +1082,43 @@ function writeSpecial (text) {
 }
 
 function writeText (text) {
-	document.getElementById('output').innerHTML += `
-		<p class='rawText'>` + replaceCodenames(text) + `</p>
-	`;
+	switch (data.player.style) {
+		case "lobotomy": {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText' style='
+				margin: 30px 0;
+				font-size: 1.3em;
+				font-family: railway, times new roman, sans-serif;
+				font-style: normal;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
+		case "royalty": {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText' style='
+				font-size: 1.3em;
+				font-family: arial, times new roman, sans-serif;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
+		case "persona": {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText' style='
+				margin: 30px 0;
+				font-size: 1.3em;
+				font-family: arial, times new roman, sans-serif;
+				'>` + replaceCodenames(text) + `</p>
+			`;
+			break;
+		}
+		default: {
+			document.getElementById('output').innerHTML += `
+				<p class='rawText'>` + replaceCodenames(text) + `</p>
+			`;
+		}
+	}
 }
 	
 function sceneTransition(scene) {
@@ -1320,6 +1566,23 @@ function updateMenu() {
 		document.getElementById("playerArtifact2").style.width = "0%";
 		document.getElementById("playerArtifact2").style.border = "none";
 		document.getElementById('artifact2Name').innerHTML = "";
+	}
+	switch (data.player.pervertLevel) {
+		case 1: {
+			document.getElementById('radioCounter').innerHTML = "Radio Level: Pervert";
+			break;
+		}
+		case 2: {
+			document.getElementById('radioCounter').innerHTML = "Radio Level: Degenerate";
+			break;
+		}
+		case 3: {
+			document.getElementById('radioCounter').innerHTML = "Radio Level: Lunatic";
+			break;
+		}
+		default: {
+			document.getElementById('radioCounter').innerHTML = "";
+		}
 	}
 }
 
