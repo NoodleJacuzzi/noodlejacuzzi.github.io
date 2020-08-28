@@ -82,6 +82,7 @@ var galleryArray = [
 	{index: "erotiboxResearch13", dark: false, girl: "assistant", name: "Computer - Gaming? Computer", hint: ""},
 	{index: "erotiboxResearch14", dark: false, girl: "assistant", name: "Wonder Woman - Wonder Whore", hint: ""},
 	{index: "erotiboxResearch15", dark: false, girl: "assistant", name: "Sleepmask - Fuckmask", hint: ""},
+	{index: "erotiboxResearch20", dark: false, girl: "assistantcrypto", name: "Exercise Ball - Dildo-Ball Bouncing", hint: ""},
 	{index: "erotiboxResearch8", dark: false, girl: "assistant", name: "Assistant - Sex Fiend", hint: ""},
 	//Antique Mirror Events
 	{index: "mirrorResearch1-1", dark: false, girl: "", name: "Gender Dynamics - First Research", hint: ""},
@@ -165,7 +166,7 @@ var galleryArray = [
 	//Doll Events
 	{index: "dollResearch1", dark: true, girl: "assistant", name: "Stiff Sexdoll - Assistant", hint: ""},
 	{index: "dollResearch2", dark: true, girl: "boss", name: "Stiff Sexdoll - Boss", hint: ""},
-	{index: "dollResearch3", dark: true, girl: "roommate", name: "Stiff Sexdoll - Roommate", hint: ""},
+	//index: "dollResearch3", dark: true, girl: "roommate", name: "Stiff Sexdoll - Roommate", hint: ""},
 	//Bimbo Dust Events
 	{index: "dustResearch1", dark: true, girl: "assistant", name: "Bimbo Dust - Practice Makes Perfect", hint: ""},
 	{index: "dustResearch2", dark: true, girl: "boss", name: "Bimbo Dust - Perfect Payoff", hint: ""},
@@ -269,6 +270,7 @@ var artifactArray = [
 	{index: "nymph", dark: true, equipable: false, title: "Nymph Mirror", desc: "A mirror with a sculpture of a young woman on the side. The reflection shows a beautiful naked woman in the glass rather than the user, though the appearance of the woman changes between uses. Staring deeply into it for prolonged periods of time causes the viewer's body to change to match the reflection.", desc2: "", glasses: "An image comes to mind of a pushy friend who wants you to be as drunk as they are, uncaring if you actually want to drink or not."},
 	{index: "playlist", dark: true, equipable: false, title: "Domino PMV", desc: "A 'porn music video', a compilation of erotic scenes accompanied by sound and captions. Somehow, the material has a great deal more effect on a person's psyche than is normal. Videos from the series are to be reported immediately, as they are not safe for viewing by the general public.", desc2: "", glasses: "An image comes to mind as you look at the thumb-drive containing the files of a musician with a demonic muse on his shoulder. The musician is desperate to improve his craft, no matter what unnatural methods he uses."},
 	{index: "vhs", dark: true, equipable: false, title: "ErotiVHS Player", desc: "A VHS player retrieved alongside the Erotibox, only plays tapes with 2-dimensional pornographic material on them. Has the uncanny ability to pull the viewer into the world depicted in the tape, but not as the dominant party.", desc2: "", glasses: "An image comes to mind of a voyeur watching through a window as you help yourself to forbidden fruit."},
+	{index: "doll", dark: true, equipable: false, title: "Stiff Voodoo Doll", desc: "A small doll made from an unknown fabric, it's made in the style of a voodoo doll and is pierced by multiple pins.", desc2: "Wrapping a target's hair around one of the pins will cause that person to become 'immobile, pliant, and reconditioned', according to test logs.", glasses: "An image comes to mind of an old man, collecting... Something. His intentions are unknown."},
 ];
 
 var artifactMiniArray = [ //Used for smaller artifacts such as prison and toolbox department
