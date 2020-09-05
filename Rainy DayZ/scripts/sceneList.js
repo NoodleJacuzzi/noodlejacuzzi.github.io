@@ -3459,6 +3459,62 @@ function writeEvent(n) {
 			}
 			break;
 		}
+		//Typhoid Mary
+		case "drinkPrologue": { //Temporary, remove me
+			data.player.scenario = "Typhoid Mary";
+			writeHTML(`
+				sp Amy; im images/Typhoid Mary/lookout.jpg; Hah, hey! Look who's better! You were lookin' kinda awful when you got back, Jefferson was seriously worried.<br>I knew you'd be fine though.
+				t Amy's got lookout duty tonight, turning her will make the horde's assault a lot easier.
+				t You've got a event[nice drink for her|drink] from the canteen that you prepared earlier.
+				t Otherwise you should get moving, your time is running out.
+			`);
+			break;
+		}
+		case "drink": {
+			writeHTML(`
+				sp Amy; im images/Typhoid Mary/lookout.jpg; Aww, thanks! You know hiding stuff you find while scavenging is against the rules... But what the hell.<br>Jeez, the bottle is really warm, huh? I miss my fridge.
+				t She takes the bottle and unscrews the cap.
+				sp Amy; im images/Typhoid Mary/lookout.jpg; Jesus that smell, one sniff and my nose is fried to hell. What is this?
+				sp player; Some kind of health drink probably.
+				t She takes a swig and there's a look of shock on her face as she almost spits it back out, but holds back and swallows.
+				t <b>Gulp</b>
+				sp Amy; im images/Typhoid Mary/lookout.jpg; Ga-haad fucking damn, that tasted like it smelt! What's in this stuff?
+				t She shakes the bottle curiously, a few droplets landing in her shirt.
+				sp player; Tastes bad? The bottle was sealed a while ago, so you're basically drinking straight from the tap.
+				sp Amy; im images/Typhoid Mary/lookout.jpg; I mean I drink whiskey, I'm no pussy. Maybe I'll use it to keep me awake during my shift tonight.
+				t She places the bottle down next to her and the two of you have a bit of smalltalk. It doesn't really go anywhere as AmyF's mind is clearly still focused on the drink. Despite her claim she picks it back up and takes another swig.
+				t <b>Gulp</b>
+				sp Amy; im images/Typhoid Mary/lookout.jpg; Gah, it's like treating my tongue to an acid bath.
+				sp player; So why do you keep drinking it?
+				sp Amy; im images/Typhoid Mary/lookout.jpg; Hah! Good point. Guess I'm thirstier than... Than I thought.
+				t She keeps licking the inside of her mouth, her focus on the conversation keeps lapsing and she brings the bottle back to her lips.
+				t <b>Glug glug glug glug</b>
+				t She breaks the seal she made with her lips to take a breath, panting like a dog, but quickly brings it back to drink more.
+				t <b>Glug glug glug glug</b>
+				t The bottle emptied she sucks in hard enough to cave in the plastic a little and runs her tongue along the rim to collect the last drops.
+				sp player; Damn, you were seriously thirsty.
+				sp Amy; im images/Typhoid Mary/lookout.jpg; Y-yeah, guess I was...
+				t She lifts her shirt and actually begins trying to suck out the few drops she spilt earlier.
+				sp player; You know, I could get you some more.
+				t His has her attention, she dryly swallows clearly wanting as much as she can get.
+				sp player; Hey watch out for me, I need to take a piss.
+				sp Amy; im images/Typhoid Mary/lookout.jpg; B-but you said you'd get me more...
+				sp player; I am.
+				t Instead of a more private position you strip down and whip out your dick right in front of AmyF and aim yourself right at the dining table.
+				t If there was ever any proof that the drink fried AmyF's brain, it's the fact that instead of realizing you infected her, or calling for help...
+				im drink1.gif
+				t She takes one whiff and crawls towards you for another taste.
+				...
+				sp player; Now, show me.
+				im drink2.gif
+				t The infected formerly known as amy lets out a small whine as she relieves herself.
+				sp player; Huh, you're an infected who pisses, fitting. Head back to your room and stay quiet, when I give the signal we attack, got it? I'm sure there will be others who are as thirsty as you.
+			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('typhoidMary', 'Finish');
+			}
+			break;
+		}
 		//Scarlet Mansion
 		case "scarletChastityTorture": {
 			writeText("You pick up the device, it's like some kind of remote. The woman is still struggling against her bonds. There's also a small condom on her caged dick.");

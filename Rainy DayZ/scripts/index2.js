@@ -1161,6 +1161,18 @@ function diagnostic() {
 			}
 			break;
 		}
+		case "hentai-chan-goon": {
+			writeEvent("drinkPrologue");
+			writeText("...");
+			writeText("This is a comissioned scene, a smaller part of a soon-to-be large whole! It'll be implemented proper when Typhoid Mary is released.");
+			break;
+		}
+		case "hentai": {
+			writeEvent("drinkPrologue");
+			writeText("...");
+			writeText("This is a comissioned scene, a smaller part of a soon-to-be large whole! It'll be implemented proper when Typhoid Mary is released.");
+			break;
+		}
 	}
 	if (goof == "null") {
 		writeText("You've already used this code before, or you entered a code that doesn't exist.");

@@ -3464,7 +3464,7 @@ function writeEvent(n) {
 			data.player.scenario = "Typhoid Mary";
 			writeHTML(`
 				sp Amy; im images/Typhoid Mary/lookout.jpg; Hah, hey! Look who's better! You were lookin' kinda awful when you got back, Jefferson was seriously worried.<br>I knew you'd be fine though.
-				t Amy's got Amy duty tonight, turning her will make the horde's assault a lot easier.
+				t Amy's got lookout duty tonight, turning her will make the horde's assault a lot easier.
 				t You've got a event[nice drink for her|drink] from the canteen that you prepared earlier.
 				t Otherwise you should get moving, your time is running out.
 			`);
@@ -3472,7 +3472,7 @@ function writeEvent(n) {
 		}
 		case "drink": {
 			writeHTML(`
-				sp Amy; im images/Typhoid Mary/lookout.jpg; Aww, thanks! You know hiding stuff you find while searching is against the rules... But what the hell.<br>Jeez, the bottle is really warm, huh? I miss my fridge.
+				sp Amy; im images/Typhoid Mary/lookout.jpg; Aww, thanks! You know hiding stuff you find while scavenging is against the rules... But what the hell.<br>Jeez, the bottle is really warm, huh? I miss my fridge.
 				t She takes the bottle and unscrews the cap.
 				sp Amy; im images/Typhoid Mary/lookout.jpg; Jesus that smell, one sniff and my nose is fried to hell. What is this?
 				sp player; Some kind of health drink probably.
