@@ -1162,8 +1162,15 @@ function diagnostic() {
 			break;
 		}
 		case "hentai-chan-goon": {
-			writeText("This is a comissioned scene, a smaller part of a soon-to-be large whole! It'll be implemented proper when Typhoid Mary is released.");
 			writeEvent("drinkPrologue");
+			writeText("...");
+			writeText("This is a comissioned scene, a smaller part of a soon-to-be large whole! It'll be implemented proper when Typhoid Mary is released.");
+			break;
+		}
+		case "hentai": {
+			writeEvent("drinkPrologue");
+			writeText("...");
+			writeText("This is a comissioned scene, a smaller part of a soon-to-be large whole! It'll be implemented proper when Typhoid Mary is released.");
 			break;
 		}
 	}
