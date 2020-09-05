@@ -1161,6 +1161,10 @@ function diagnostic() {
 			}
 			break;
 		}
+		case "hentai-chan-goon": {
+			writeEvent("drinkPrologue");
+			break;
+		}
 	}
 	if (goof == "null") {
 		writeText("You've already used this code before, or you entered a code that doesn't exist.");
