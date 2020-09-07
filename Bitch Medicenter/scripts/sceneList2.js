@@ -242,6 +242,73 @@ function writeScene(scene) {
 			blocks();
 			break;
 		}
+		
+		case "girlfriendInterview": {
+			writeHTML(`
+				
+			`);
+			break;
+		}
+		case "girlfriendB": {
+			blockGame = true;
+			blocks();
+			break;
+		}
+		case "wifeInterview": {
+			writeHTML(`
+				
+			`);
+			break;
+		}
+		case "wifeB": {
+			blockGame = true;
+			blocks();
+			break;
+		}
+		case "milfFile": {
+			writeHTML(`
+				
+			`);
+			break;
+		}
+		case "milfInterview": {
+			writeHTML(`
+				
+			`);
+			break;
+		}
+		case "milfA": {
+			blockGame = true;
+			blocks();
+			break;
+		}
+		case "milfB": {
+			blockGame = true;
+			blocks();
+			break;
+		}
+		case "jockFile": {
+			writeHTML(`
+				
+			`);
+			break;
+		}
+		case "jockInterview": {
+			writeHTML(`
+				
+			`);
+			break;
+		}
+		case "jockA": {
+			blockGame = true;
+			blocks();
+			break;
+		}
+		case "jockB": {
+			blockGame = true;
+			blocks();
+			break;
+		}
 		case "prologue": {
 			writeTransition("prologue1", "Bitch Medicenter Technician Job Advertisement");
 			writeTransition("prologue2", "Acceptance Letter");
@@ -441,6 +508,216 @@ function writeEvent(scene) {
 			writeText("And soon enough her modified cum begins to pump into his hole. The changes made to it have had some major effects on "+characterArray[6].fName+"'s brain. Just a drop is enough to send him into a sexual frenzy now, so when a pint of it floods his ass it sends powerful, almsot electric shocks up his spine.");
 			writeText("His body shaking and mouth hanging wordlessly open, he shows his appreciation the only way he knows how.");
 			writeBig("images/girlfriend/girlfriendA-7.gif");
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		
+		case "runnerA": {
+			writeHTML(`
+				sp liz; Gooood morning~! Rise and shine!
+				sp runner; Mmm... How long was I out? It feel like I slipped into a nap, did the op-<br>Whoa!
+				t runnerF hops out of bed and jumps in place.
+				sp runner; I feel so energized! I was never a morning person... Holy crap!
+				sp liz; Indeed! Energy was the primary focus. Morning fatigue takes the wind out of a lot of early-morning workout sails.<br>We've improved your metabolism too. Not too much, just make sure to get plenty to eat before or after you exercise.
+				sp runner; Heck yeah! I think I'll run home today!
+				sp liz; Great to hear, you're already paid in full. Be sure to have a good toy or partner ready for when the sexual heat hits you.
+				sp runner; ... Eh?<br>I didn't... What? Sexual heat?
+				sp liz; Yep! As a cap-off to a good workout, what better to burn calories that a nice round of frantic sex?<br>Your body has been altered a little to improve the normal heat response following a workout. Basically for every calorie burned through exercise you'll feel an intense burst of lust.
+				sp runner; I didn't ask for that!
+				sp liz; But you said you were hoping to attract a partner. Oh, you must mean pheromones. Don't worry, the sexual heat and attractive body should do that work for you.
+				sp runner; I... I don't... I wanted to find a buddy the normal way!
+				sp liz; Oh, well we could throw in an exhibitionism fetish, or I could recommend a good orgy-
+				sp runner; Stop! Stop. Just... Aaagh!
+				t runnerF runs out of the room.
+				sp liz; ... Huh. Did she come to a place called 'Bitch Medicenter'... Not expecting a sexualized treatment?<br>No, that's silly. It must've been something I said.
+				...
+				t By the time runnerF has made it home she's soaked with sweat. She unlocks the door and stumbles inside. 
+				sp runner; Hah... Hah... Fuck, shit, what... What do I do? Gotta... Gotta call...
+				t A blast of sensation causes her legs to buckle, her workout shorts are already damp with sweat, but suddenly they're wet with something else. She forces herself upright, and starts making phonecall.
+				sp runner; Ghh... Fucking... I can barely hold back...<br>Ashley! You bitch, that place you recommended-Ghhh!<br>Just... Just get over here! <b>NOW!</b>
+			`);
+			writeFunction("writeEvent('runnerAA')", "Later");
+			break;
+		}
+		case "runnerAA": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "streamerA": {
+			writeHTML(`
+				
+			`);
+			writeFunction("writeEvent('streamerAA')", "Later");
+			break;
+		}
+		case "streamerAA": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "schoolboyA": {
+			writeHTML(`
+				
+			`);
+			writeFunction("writeEvent('schoolboyAA')", "Later");
+			break;
+		}
+		case "schoolboyAA": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "schoolboyB": {
+			writeHTML(`
+				
+			`);
+			writeFunction("writeEvent('schoolboyBB')", "Later");
+			break;
+		}
+		case "schoolboyBB": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "jockA": {
+			writeHTML(`
+				
+			`);
+			writeFunction("writeEvent('jockAA')", "Later");
+			break;
+		}
+		case "jockAA": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "jockB": {
+			writeHTML(`
+				
+			`);
+			writeFunction("writeEvent('jockBB')", "Later");
+			break;
+		}
+		case "jockBB": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "milfA": {
+			writeHTML(`
+				
+			`);
+			writeFunction("writeEvent('milfAA')", "Later");
+			break;
+		}
+		case "milfAA": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "milfB": {
+			writeHTML(`
+				
+			`);
+			writeFunction("writeEvent('milfBB')", "Later");
+			break;
+		}
+		case "milfBB": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "junkieA": {
+			writeHTML(`
+				
+			`);
+			writeFunction("writeEvent('junkieAA')", "Later");
+			break;
+		}
+		case "junkieAA": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "junkieB": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "junkieC": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "junkieD": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "catgirlA": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "catgirlB": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "otherkinA": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "anomalyA": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "rainyA": {
+			writeHTML(`
+				
+			`);
+			writeTransition("caseSelect", "Finish");
+			break;
+		}
+		case "alterationA": {
+			writeHTML(`
+				
+			`);
 			writeTransition("caseSelect", "Finish");
 			break;
 		}
