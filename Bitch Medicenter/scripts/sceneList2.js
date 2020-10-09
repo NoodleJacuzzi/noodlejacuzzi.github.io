@@ -509,7 +509,7 @@ function writeScene(scene) {
 				t Playback begins, a woman is sitting on the patient bed. She's gorgeous, the only things more attention grabbing than her thick hips is her incredible bust barely contained by her dress. She's obviously distressed, playback has begun mid-argument.
 				milf - and so he keeps coming back with bruises, and even a black eye! I just don't know what to do!
 				liz I see. I've just started recording so our technical staff can be kept up to date. Could you say your name and reason for coming? 
-				milf Yes. My name is milfF. I'm here because my son, sonF, is getting bullied, I actually thought that... Well... 
+				milf Yes. My name is milfF. I'm here because my son, James, is getting bullied, I actually thought that... Well... 
 				liz Right, that this was a center for 'little bitches', I remember.
 				milf Just so you know I'd never call my son that! I jus-
 				liz I see. And how old is he?
@@ -1323,7 +1323,7 @@ function writeEvent(scene) {
 				liz With your husband, specifically. Or any other person will do actually. As one of the things you came in for was marital stress, we've set up some mental blocks to prevent you from cumming unless you're with another person.
 				wife What?! But what if... If...<br>Fuck, what's wrong with my head?
 				liz Hard to focus? The more pent-up you are the harder it'll be to think rationally. Basically when you're in this state you turn off some of the thinky bits to focus on amplifying various sensations across your body.
-				t Her brain filling up with fuzz by the second, wife F pushes herself off the table and tries to leave.
+				t Her brain filling up with fuzz by the second, Adriana pushes herself off the table and tries to leave.
 				liz Ah, wait!
 				wife F-fuck you!
 				liz Not during office hours, but if you really need me to-
@@ -1425,7 +1425,7 @@ function writeEvent(scene) {
 				liz You didn't pay enough for an absolute, ma'am. Success online is more than just your body, it's also personality and luck, and creativity helps too. 
 				streamer But what actually changed?
 				liz Performance anxiety tends to lead to symptoms of panic. We've changed the way you think to replace that panic with excitement instead. They're actually quite similar, you know.
-				streamer So like, I'll get really hype when I'm scared?
+				streamer So like, I'll get really hyped when I'm scared?
 				liz "Hyped"? That might be the word for it. In any case, if you still find yourself unable to perform make another appointment and we'll see what else we can do.
 				streamer I see, thanks! I'll let you guys know how it goes!
 				t Mandy leaves and Liz waves her off, before Liz takes a seat at the room's computer to search something.
@@ -1450,7 +1450,7 @@ function writeEvent(scene) {
 			writeFunction("writeEvent('streamerAAA')", "Later");
 			break;
 		}
-		case "streamerAA": {
+		case "streamerAAA": {
 			writeHTML(`
 				t On a much more explicit site, an experienced camgirl has started her stream once again. Hundreds, then thousands flood in to view the show.
 				streamer Heeey everybody~! Ooh, welcome back~<br>Nggh, I love that burst of excitement from starting up. Thanks for cumming~!
@@ -1564,11 +1564,11 @@ function writeEvent(scene) {
 				jock I'm... I'm really short now... 
 				liz It's a lot more than that. Mental changes first. What's your name? 
 				jock Jenny... Wait-
-				liz No, that's correct. The mental rewiring causes some people to shift their self identity. Basically you're a whole new you, and every step of the way you'll find out sonething new about yourself. Tastes, sense of style, even orientation in some people. Tell me, how do you feel when I do this? 
+				liz No, that's correct. The mental rewiring causes some people to shift their self identity. Basically you're a whole new you, and every step of the way you'll find out something new about yourself. Tastes, sense of style, even orientation in some people. Tell me, how do you feel when I do this? 
 				t Liz leans forwards to show off her cleavage, and Jenny sits straight up and swallows hard. 
 				liz Sexual excitement is up, pansexual at least. Feel free to experiment of course. 
 				jock I, um... 
-				t Jenny's little cock is standing up straight as well, visibly hard as jenny tries to cover herself up.
+				t Jenny's little cock is standing up straight as well, visibly hard as Jenny tries to cover herself up.
 				liz Ah, I wouldn't do-
 				im
 				jock Aah~! 
@@ -1610,14 +1610,14 @@ function writeEvent(scene) {
 				t The feeling of her skin, the softness of her hair, everything seems different. Even the lungs she breaths with seem changed, having become a little smaller.
 				t So she closes her eyes again, pushing the idea of her changed body aside as a dream. She almost dozes off again until a human typhoon bursts into the room.
 				liz Gooood morning Jenny~! Ah, did I wake you? Sorry! The monitor said you were already...
-				sp jockGirl; It's... Fine.<br>Did you say "Jenny"?
+				jock It's... Fine.<br>Did you say "Jenny"?
 				liz Yep! It's medicenter policy to give a twist on the patient's name when they wake up from this treatment. It helps set in the mental changes before we talk about the physical ones.<br>It can be made permanent, there's a courthouse downtown we point so many people to that they gave us a referral code.<br>In any case, have a look!
 				im images/jock/b1.gif
-				sp jockGirl; I...
+				jock I...
 				liz It's technically temporary. You produce the chemicals needed to sustain the body via orgasm, and once you're dry you'll turn back to your previous self. I'd say the exchange rate would be about seven days per orgasm.
-				sp jockGirl; I'm... Gorgeous...
-				liz You are. There's no downside ro staying like this, but if you want to turn back all you need to do is abstain from cumming.<br>So, you're all paid up. Be sure to let us know if any complications arise, alright? I'm sure you want to get acquainted with your new self. Here's a pamphlet, I recommend the documentary "Ex-change", it covers a similar procedure.
-				sp jockGirl; I... I'll check it out. Thank you!
+				jock I'm... Gorgeous...
+				liz You are. There's no downside to staying like this, but if you want to turn back all you need to do is abstain from cumming.<br>So, you're all paid up. Be sure to let us know if any complications arise, alright? I'm sure you want to get acquainted with your new self. Here's a pamphlet, I recommend the documentary "Ex-change", it covers a similar procedure.
+				jock I... I'll check it out. Thank you!
 			`);
 			writeFunction("writeEvent('jockBB')", "Later");
 			break;
@@ -1650,7 +1650,7 @@ function writeEvent(scene) {
 				milf He's sleeping so peacefully... Oof! You've gotten a lot heavier too! I remember when I could... Hmmrg... Hold you in my... Arms! 
 				t Lisa manages to carry her son out of the car. Curiously despite not being particularly close to any of them, some of the other moms in the neighborhood offer to help carry the weight. Each of them in their own slightly unsettling way lets Lisa know they'd love to come by and offer their well wishes to her son once he's awake. 
 				milf <i>Strange... I didn't know any of them cared about me or my son...</i>
-				t Once she's inside the group of mothers set down sonF on the bed. A few of them seem hesitant to leave, but reluctantly do so once Lisa promises to keep them updated. 
+				t Once she's inside the group of mothers set down James on the bed. A few of them seem hesitant to leave, but reluctantly do so once Lisa promises to keep them updated. 
 				t Exhausted, Lisa strips down and falls asleep in her own bed. 
 			`);
 			writeFunction("writeEvent('milfAA')", "Later");
@@ -1664,14 +1664,14 @@ function writeEvent(scene) {
 				t He looks almost the same. He's the same weight, still as scrawny as before, but in some ways he looks completely different. His hair and face are clean, he's showered and groomed, and he looks happy just to be alive and in the moment. His voice has an energetic buzz to it, like is day is better just because he gets to see his mother. 
 				milf I... I don't... 
 				son It's almost ready. I started cooking the more fragrant foods last. You sure came out in a hurry though, you must be as starving as I am! 
-				t sonF turns around holding a full plate of food. The eggs are a bit messy and some of the bacon js a bit overcooked, but it looks delicious nonetheless. 
+				t James turns around holding a full plate of food. The eggs are a bit messy and some of the bacon js a bit overcooked, but it looks delicious nonetheless. 
 				milf You... You're smiling... 
 				son Yep! For a long time it didn't seem like there was a point, but I get it now. I wanna smile because it makes me happy, not the other way around. It makes other people happy too, so-<br>You're crying? What's wrong? 
 				milf N-nothing! Sorry honey, it's nothing. 
 				t Lisa pulls out a chair and takes a seat, but jumps a little in shock as she sits down.
 				t In her haste she'd forgotten to put on anything, she's still in her lingerie. 
 				milf Oh! I'm really sorry, I'll be-
-				t sonF looks at her confused as he sets her plate down. 
+				t James looks at her confused as he sets her plate down. 
 				son What's wrong? 
 				milf I... I just... 
 				t There's no leering or indecency in his gaze, she can feel her heartbeat quicken as their eyes meet. 
@@ -1685,7 +1685,7 @@ function writeEvent(scene) {
 				son I followed instructions online, it turns out they're a lot easier to follow if you study them a lot first. 
 				t He keeps going on, but eventually Lisa starts to tune him out. His enthusiasm is infectious and she's happy he's improving, but there's something unmistakably wrong about the feeling in her chest whenever she looks at him. 
 				t A slip of her hand and her fork drops beneath the table. She stops him from getting up and goes beneath herself. 
-				t And yet she stops herself from going back up. Something about being down on her knees feels... Right. sonF's legs shift, and she finds herself hungrily eyeing the crotch of his pants. She moves in closer. 
+				t And yet she stops herself from going back up. Something about being down on her knees feels... Right. James's legs shift, and she finds herself hungrily eyeing the crotch of his pants. She moves in closer. 
 				milf <i>The physician wasn't very specific about what she changed... I... Really should... </i>
 				t But before she can get any closer her son stands up and steps away from the table.
 				son Mom? What the hell is going on with you? 
@@ -1715,7 +1715,7 @@ function writeEvent(scene) {
 				son This really is what you want? 
 				milf Yes~! I'll do anything! 
 				t Rationality had long since vanished from her mind. He didn't seem like he was leaving, now she just needed to <b>really</b> convince him to stay. The thought of disappointing him felt like a stabbing pain. 
-				t sonF places his hand on his mother's cheek. She holds her breath as he pulls down the zipper of her jeans. 
+				t James places his hand on his mother's cheek. She holds her breath as he pulls down the zipper of her jeans. 
 				t His cock flops out onto her face and she takes a deep breath. It seemed unchanged from the medicenter's procedure, but to her the cock was anything but average. To her, it was her entire world. 
 				im images/milf/aaa1.gif
 				t He seemed so different, looking down on her. So fearless and confident. He looked at her like she was a piece of meat ready to be <b>devoured</b>
@@ -2141,22 +2141,22 @@ function writeEvent(scene) {
 		case "otherkinA": {
 			writeHTML(`
 				define otherkin = sp Dakota; im scripts/gamefiles/profiles/otherkin.jpg;
-				t A wonderous sky above, freshly cut grass beneath her hooves, otherkinF joyfully gallops through the field. The wind in her hair, the strong feeling in her muscles, it's everything she's every dreamed of.
+				t A wonderous sky above, freshly cut grass beneath her hooves, Dakota joyfully gallops through the field. The wind in her hair, the strong feeling in her muscles, it's everything she's every dreamed of.
 				t Yet the fading reality soon makes it clear she <i>is</i> dreaming. Soon the lush green fields are replaced with a tiled floor, somehow nearly ten feet away.
 				t Her hands reach up and touch her face, still tragically human, yet inside of her she still feels that same power coursing through her.
 				liz i just want to say how much I appreciate you volunteering for this.
 				t She's shocked out of her haze by a voice behind her, and as she turns to face it she sees something wonderful.
 				t A horse's body. Her body. Though it clashes with her human torso, from the waist down she's every bit the magnificent creature she always knew she was.
 				liz It's incredible work, isn't it? Out technician honestly blows me away. The bonding is perfect, although I think an apology is in order.
-				t Suddenly that powerful feeling inside otherkinF spikes. That sensation of being strong, unbreakable, it just keeps building up. She can feel something beneath her, a pulsating bundle of nerves growing by the second. She can't think, can barely breath as unfamiliar sensations ravage her brain.
+				t Suddenly that powerful feeling inside Dakota spikes. That sensation of being strong, unbreakable, it just keeps building up. She can feel something beneath her, a pulsating bundle of nerves growing by the second. She can't think, can barely breath as unfamiliar sensations ravage her brain.
 				liz These days, there's no stock for mares, only stallions. As a result the fine specimen you've become is a little more... Studly that you probably expected to be.
-				t otherkinF can feel every movement, no matter how slight, of lizF's hands as she explores otherkinF's new body.
+				t Dakota can feel every movement, no matter how slight, of Liz's hands as she explores Dakota's new body.
 				liz Powerful muscles, a good show of your value as breeding stock. A beautiful donut-rim of an ass, that'll be a moneymaker, women and men alike will break the bank to seal their lips around yours. But the real prize...
 				t White lightning surges through oterkinF's mind and body as she feels a pair of hands grasp the beast between her legs. It must be massive, even for a stallion! Just picturing it in her mind makes the fog grow so strong she can't evej think anymore, yet too quickly the hands are gone.
 				liz Despite growing demand for horse sperm, animal rights activists have banned virility enhancements on animal subjects. The legal headaches and the pay required to make human milking studs is even worse. But, since the procedures were conducted while you were still regarded as a human, and you don't need to be paid a wage now that you're a horse...
-				t As lizF goes on about legal issues otherkinF grows increasingly more frantic. Down on her knees she rubs her massive horsecock against the smooth floor, coating the ground in thick musk, but growing no closer to release.
+				t As Liz goes on about legal issues Dakota grows increasingly more frantic. Down on her knees she rubs her massive horsecock against the smooth floor, coating the ground in thick musk, but growing no closer to release.
 				liz Ah, don't bother with that. You're in a state known as a 'rut', nothing short of a warm wet hole will get you off now. Your brain still being a woman's means it's also clashing with that, so you're technically in a state of heat as well. Not to worry though, simultaneous dick and anal stimulation will scratch those itches, temporarily.<br>We have a lovely ranch that'll pay very good money and quite a few royalties to take you in. You'd like that, wouldn't you? Teenagers, milfs, even some sissies between your legs worshipping you like a god while a desperate slut makes out with your asshole like it's her husband. And afterwards you'll be properly bred.
-				t otherkinF thrashes, too desperate for release from this overwhelming <b>need</b> to think rationally. Her throbbing horsecock and asshole both overtaking every bit of her mind.
+				t Dakota thrashes, too desperate for release from this overwhelming <b>need</b> to think rationally. Her throbbing horsecock and asshole both overtaking every bit of her mind.
 				liz Who's a good stallion? You are! Oh yes you are! Now, before you go to your new home give this good girl a little taste. Which part do you want satisfied first?
 			`);
 			writeTransition("caseSelect", "Finish");
