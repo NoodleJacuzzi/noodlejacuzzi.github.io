@@ -15,6 +15,17 @@ var wifeImages = [
 'url("./images/wife/wifeA-10.gif")', //256
 ]
 
+var wifeBImages = [
+'url("./images/wife/blocks/b1.gif")', //2
+'url("./images/wife/blocks/b2.gif")', //4
+'url("./images/wife/blocks/b3.gif")', //8
+'url("./images/wife/blocks/b4.gif")', //16
+'url("./images/wife/blocks/b5.gif")', //32
+'url("./images/wife/blocks/b6.gif")', //64
+'url("./images/wife/blocks/b7.gif")', //128
+'url("./images/wife/blocks/b8.gif")', //256
+]
+
 var girlfriendImages = [
 'url("./images/girlfriend/block2.gif")', //2
 'url("./images/girlfriend/block4.gif")', //4
@@ -24,6 +35,162 @@ var girlfriendImages = [
 'url("./images/girlfriend/block64.gif")', //64
 'url("./images/girlfriend/block128.gif")', //128
 'url("./images/girlfriend/girlfriendA-3.gif")', //256
+]
+
+var girlfriendImagesB = [
+'url("./images/girlfriend/blocks/2.gif")', //2
+'url("./images/girlfriend/blocks/4.gif")', //4
+'url("./images/girlfriend/blocks/8.gif")', //8
+'url("./images/girlfriend/blocks/16.gif")', //16
+'url("./images/girlfriend/blocks/32.gif")', //32
+'url("./images/girlfriend/blocks/64.gif")', //64
+'url("./images/girlfriend/blocks/128.gif")', //128
+'url("./images/girlfriend/bb1.gif")', //256
+'url("./images/girlfriend/block8.gif")', //512
+]
+
+var jockImagesA = [
+'url("./images/jock/blocks/a2.gif")', //2
+'url("./images/jock/blocks/a4.gif")', //4
+'url("./images/jock/blocks/a8.gif")', //8
+'url("./images/jock/blocks/a16.gif")', //16
+'url("./images/jock/blocks/a32.gif")', //32
+'url("./images/jock/blocks/a64.gif")', //64
+'url("./images/jock/blocks/a128.gif")', //128
+]
+var jockImagesB = [
+'url("./images/jock/blocks/b2.gif")', //2
+'url("./images/jock/blocks/b4.gif")', //4
+'url("./images/jock/blocks/b8.gif")', //8
+'url("./images/jock/blocks/b16.gif")', //16
+'url("./images/jock/blocks/b32.gif")', //32
+'url("./images/jock/blocks/b64.gif")', //64
+'url("./images/jock/blocks/b128.gif")', //128
+]
+
+var schoolboyImagesA = [
+'url("./images/schoolboy/blocks/a2.gif")', //2
+'url("./images/schoolboy/blocks/a4.gif")', //4
+'url("./images/schoolboy/blocks/a8.gif")', //8
+'url("./images/schoolboy/blocks/a16.gif")', //16
+'url("./images/schoolboy/blocks/a32.gif")', //32
+'url("./images/schoolboy/blocks/a64.gif")', //64
+'url("./images/schoolboy/blocks/b64.gif")', //128
+]
+var schoolboyImagesB = [
+'url("./images/schoolboy/blocks/b2.gif")', //2
+'url("./images/schoolboy/blocks/b4.gif")', //4
+'url("./images/schoolboy/blocks/b8.gif")', //8
+'url("./images/schoolboy/blocks/b16.gif")', //16
+'url("./images/schoolboy/blocks/b32.gif")', //32
+'url("./images/schoolboy/blocks/b64.gif")', //64
+'url("./images/schoolboy/blocks/b128.gif")', //128
+]
+var milfImagesA = [
+'url("./images/milf/blocks/a2.gif")', //2
+'url("./images/milf/blocks/a4.gif")', //4
+'url("./images/milf/blocks/a8.gif")', //8
+'url("./images/milf/blocks/a16.gif")', //16
+'url("./images/milf/blocks/a32.gif")', //32
+'url("./images/milf/blocks/a64.gif")', //64
+'url("./images/milf/blocks/a128.gif")', //128
+]
+var runnerImagesA = [
+'url("./images/runner/blocks/a2.gif")', //2
+'url("./images/runner/blocks/a4.gif")', //4
+'url("./images/runner/blocks/a8.gif")', //8
+'url("./images/runner/blocks/a16.gif")', //16
+'url("./images/runner/blocks/a32.gif")', //32
+'url("./images/runner/blocks/a64.gif")', //64
+'url("./images/runner/blocks/a128.gif")', //128
+]
+var streamerImagesA = [
+'url("./images/streamer/blocks/a2.gif")', //2
+'url("./images/streamer/blocks/a4.gif")', //4
+'url("./images/streamer/blocks/a8.gif")', //8
+'url("./images/streamer/blocks/a16.gif")', //16
+'url("./images/streamer/blocks/a32.gif")', //32
+'url("./images/streamer/blocks/a64.gif")', //64
+'url("./images/streamer/blocks/a128.gif")', //128
+]
+var anomalyImagesA = [
+'url("./images/anomaly/blocks/2.gif")', //2
+'url("./images/anomaly/blocks/4.gif")', //4
+'url("./images/anomaly/blocks/8.gif")', //8
+'url("./images/anomaly/blocks/16.gif")', //16
+'url("./images/anomaly/blocks/32.gif")', //32
+'url("./images/anomaly/blocks/64.gif")', //64
+'url("./images/anomaly/blocks/128.gif")', //128
+]
+var rainyImagesA = [
+'url("./images/rainy/blocks/2.gif")', //2
+'url("./images/rainy/blocks/4.gif")', //4
+'url("./images/rainy/blocks/8.gif")', //8
+'url("./images/rainy/blocks/16.gif")', //16
+'url("./images/rainy/blocks/32.gif")', //32
+'url("./images/rainy/blocks/64.gif")', //64
+'url("./images/rainy/blocks/128.gif")', //128
+]
+
+var junkieImagesA = [
+'url("./images/junkie/horsecock/bosshi.jpg")', //2
+'url("./images/junkie/horsecock/bosshi2.jpg")', //4
+'url("./images/junkie/horsecock/rozencruz.jpg")', //8
+'url("./images/junkie/horsecock/rozencruz2.jpg")', //16
+'url("./images/junkie/horsecock/faustsketcher.jpg")', //32
+'url("./images/junkie/horsecock/hidarikiki.jpg")', //64
+'url("./images/junkie/horsecock/sulcate.jpg")', //128
+]
+var junkieImagesB = [
+'url("./images/junkie/prostate/2.gif")', //2
+'url("./images/junkie/prostate/4.gif")', //4
+'url("./images/junkie/prostate/8.gif")', //8
+'url("./images/junkie/prostate/16.gif")', //16
+'url("./images/junkie/prostate/32.gif")', //32
+'url("./images/junkie/prostate/64.gif")', //64
+'url("./images/junkie/prostate/128.gif")', //128
+]
+var junkieImagesC = [
+'url("./images/junkie/cbt/space-jin.jpg")', //2
+'url("./images/junkie/cbt/space-jin2.jpg")', //4
+'url("./images/junkie/cbt/space-jin3.jpg")', //8
+'url("./images/junkie/cbt/space-jin4.jpg")', //16
+'url("./images/junkie/cbt/space-jin5.jpg")', //32
+'url("./images/junkie/cbt/space-jin6.jpg")', //64
+]
+var junkieImagesD = [
+'url("./images/junkie/bypass/aya.jpg")', //2
+'url("./images/junkie/bypass/aya2.jpg")', //4
+'url("./images/junkie/bypass/aya3.jpg")', //8
+'url("./images/junkie/bypass/aya4.jpg")', //16
+'url("./images/junkie/bypass/aya5.jpg")', //32
+'url("./images/junkie/bypass/aya6.jpg")', //64
+'url("./images/junkie/bypass/aya7.jpg")', //128
+]
+var catgirlImagesA = [
+'url("./images/catgirl/A/jlullaby3.jpg")', //2
+'url("./images/catgirl/A/gray-impact.jpg")', //4
+'url("./images/catgirl/A/jlullaby2.jpg")', //8
+'url("./images/catgirl/A/jlullaby.jpg")', //16
+'url("./images/catgirl/A/metal-owl.jpg")', //64
+'url("./images/catgirl/A/jlullaby4.jpg")', //32
+]
+var catgirlImagesB = [
+'url("./images/catgirl/B/magnetus.jpg")', //2
+'url("./images/catgirl/B/harry96.jpg")', //4
+'url("./images/catgirl/B/owl-nsfw-and-waru-geli.jpg")', //8
+'url("./images/catgirl/B/jlullaby.jpg")', //16
+'url("./images/catgirl/B/jlullaby2.jpg")', //32
+'url("./images/catgirl/B/jlullaby3.jpg")', //64
+'url("./images/catgirl/B/jlullaby4.jpg")', //128
+]
+var otherkinImagesA = [
+'url("./images/otherkin/minigun.jpg")', //2
+'url("./images/otherkin/jadf.png")', //4
+'url("./images/otherkin/omari.jpg")', //8
+'url("./images/otherkin/bonnie-bovine.jpg")', //16
+'url("./images/otherkin/anasheya.jpg")', //32
+'url("./images/otherkin/aka-ume.jpg")', //64
 ]
 
 function blocks() {
@@ -1364,6 +1531,33 @@ function setBoard() {
 			}
 			break;
 		}
+		case "wifeB": {
+			tileImages = wifeBImages;
+			switch (caseStage) {
+				case 0:
+					target = 252;
+					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
+				break;
+				case 1:
+					target = 96;
+					n = 2;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
+		}
 		case "girlfriendA": {
 			tileImages = girlfriendImages;
 			switch (caseStage) {
@@ -1397,93 +1591,416 @@ function setBoard() {
 			}
 			break;
 		}
-		case "jockA": {
-			tileImages = jockImages;
+		case "girlfriendB": {
+			tileImages = girlfriendImagesB;
 			switch (caseStage) {
 				case 0:
 					target = 16;
-					n = 8;
-					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing.";
+					n = 4;
+					document.getElementById("caseTotal").innerHTML = "4";
+					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Patients restrained. <br>Girlfriend identified as patient A, boyfriend identified as patient B.";
 				break;
-			break;
+				case 1:
+					target = 44;
+					n = 5;
+					document.getElementById("modificationStatus").innerHTML = "Patients injected with aphrodisiac<br>Altering Patient A's ovaries and dominant tendencies increased.<br>Altering Patient B's prostate and submissive tendencies increased.";
+				break;
+				case 2:
+					target = 280;
+					n = 6;
+					document.getElementById("modificationStatus").innerHTML = "Patient B's prostate now at 300% sensitivity and size increased by 200%.<br>Patient B's anal rim transformed into erogenous zone.<br>Patient B's penis now at 1% sensitivity and size reduced by 80%.<br>Now altering Patient B's appearance, 'Fat Bottomed Bitch' template selected.<br>Changing self-identity to suit template.";
+				break;
+				case 3:
+					target = 372;
+					n = 7;
+					document.getElementById("modificationStatus").innerHTML = "Patient A's genetalia is now fully functioning penis. Orgasm prevented.<br>Penis length 4 inches. Orgasm prevented.<br>Penis length 6 inches. Orgasm prevented.<br>Penis length 8 inches. Orgasm prevented.<br>Sperm cells converted into addictive aphrodisiac. Orgasm prevented.";
+				break;
+				case 4:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "<b>Modification Plan Complete</b>";
+				break;
 			}
+			break;
+		}
+		case "jockA": {
+			tileImages = jockImagesA;
+			switch (caseStage) {
+				case 0:
+					target = 252;
+					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
+				break;
+				case 1:
+					target = 96;
+					n = 2;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
+		}
+		case "jockB": {
+			tileImages = jockImagesB;
+			switch (caseStage) {
+				case 0:
+					target = 252;
+					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
+				break;
+				case 1:
+					target = 96;
+					n = 2;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
+		}
+		case "schoolboyA": {
+			tileImages = schoolboyImagesA;
+			switch (caseStage) {
+				case 0:
+					target = 252;
+					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
+				break;
+				case 1:
+					target = 96;
+					n = 2;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
+		}
+		case "schoolboyB": {
+			tileImages = schoolboyImagesB;
+			switch (caseStage) {
+				case 0:
+					target = 252;
+					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
+				break;
+				case 1:
+					target = 96;
+					n = 2;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
 		}
 		case "milfA": {
-			tileImages = milfImages;
+			tileImages = milfImagesA;
 			switch (caseStage) {
 				case 0:
-					target = 16;
-					n = 8;
-					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing.";
+					target = 252;
+					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
 				break;
-			break;
+				case 1:
+					target = 96;
+					n = 2;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+				break;
 			}
+			break;
+		}
+		case "runnerA": {
+			tileImages = runnerImagesA;
+			switch (caseStage) {
+				case 0:
+					target = 252;
+					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
+				break;
+				case 1:
+					target = 96;
+					n = 2;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
+		}
+		case "streamerA": {
+			tileImages = streamerImagesA;
+			switch (caseStage) {
+				case 0:
+					target = 252;
+					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
+				break;
+				case 1:
+					target = 96;
+					n = 2;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
+		}
+		case "otherkinA": {
+			tileImages = otherkinImagesA;
+			switch (caseStage) {
+				case 0:
+					target = 252;
+					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
+				break;
+				case 1:
+					target = 96;
+					n = 2;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
+		}
+		case "catgirlA": {
+			tileImages = catgirlImagesA;
+			switch (caseStage) {
+				case 0:
+					target = 252;
+					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
+				break;
+				case 1:
+					target = 96;
+					n = 2;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
+		}
+		case "catgirlB": {
+			tileImages = catgirlImagesB;
+			switch (caseStage) {
+				case 0:
+					target = 252;
+					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
+				break;
+				case 1:
+					target = 96;
+					n = 2;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
 		}
 		case "junkieA": {
-			tileImages = junkieAImages;
+			tileImages = junkieImagesA;
 			switch (caseStage) {
 				case 0:
-					target = 16;
-					n = 8;
-					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing.";
+					target = 252;
+					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
 				break;
 				case 1:
-					target = 16;
-					n = 8;
+					target = 96;
+					n = 2;
 					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
 				break;
 				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
 					n = 0;
 					blockGame = false;
 					gameDone = true;
-					document.getElementById("modificationStatus").innerHTML = "<b>Modification Plan Complete</b>";
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
 				break;
-			break;
 			}
+			break;
 		}
 		case "junkieB": {
-			tileImages = junkieBImages;
+			tileImages = junkieImagesB;
 			switch (caseStage) {
 				case 0:
-					target = 16;
-					n = 8;
-					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+					target = 252;
+					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
 				break;
 				case 1:
-					target = 16;
-					n = 8;
+					target = 96;
+					n = 2;
 					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
 				break;
 				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
 					n = 0;
 					blockGame = false;
 					gameDone = true;
-					document.getElementById("modificationStatus").innerHTML = "<b>Modification Plan Complete</b>";
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
 				break;
-			break;
 			}
+			break;
 		}
 		case "junkieC": {
-			tileImages = junkieCImages;
+			tileImages = junkieImagesC;
 			switch (caseStage) {
 				case 0:
-					target = 16;
-					n = 8;
-					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+					target = 252;
+					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
 				break;
 				case 1:
-					target = 16;
-					n = 8;
+					target = 96;
+					n = 2;
 					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
 				break;
 				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
 					n = 0;
 					blockGame = false;
 					gameDone = true;
-					document.getElementById("modificationStatus").innerHTML = "<b>Modification Plan Complete</b>";
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
 				break;
-			break;
 			}
+			break;
+		}
+		case "junkieD": {
+			tileImages = junkieImagesD;
+			switch (caseStage) {
+				case 0:
+					target = 252;
+					n = 1;
+					document.getElementById("caseTotal").innerHTML = "3";
+				break;
+				case 1:
+					target = 96;
+					n = 2;
+					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+				break;
+				case 2:
+					target = 252;
+					n = 3;
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+				break;
+				case 3:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
 		}
 	}
 	if (tempScene != "creation") {

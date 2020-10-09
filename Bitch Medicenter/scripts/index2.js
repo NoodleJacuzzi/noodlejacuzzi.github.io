@@ -9,6 +9,7 @@ var tempScene;
 var blockGame = false;
 var caseStage = 0;
 var target = 231;
+var definitionArray = [];
 
 var data = {
 	player: {
@@ -37,11 +38,30 @@ var data = {
 
 var galleryArray = [
 	{index: "wifeA", name: "Wife Treatment Plan A - Modification",},
+	{index: "wifeB", name: "Wife Treatment Plan A - Modification",},
 	{index: "girlfriendA", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "girlfriendB", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "jockA", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "jockB", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "schoolboyA", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "schoolboyB", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "milfA", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "streamerA", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "runnerA", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "anomalyA", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "rainyA", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "alterationA", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "junkieA", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "junkieB", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "junkieC", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "junkieD", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "catgirlA", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "catgirlB", name: "Girlfriend Treatment Plan A - Modification",},
+	{index: "otherkinA", name: "Girlfriend Treatment Plan A - Modification",},
 ]
 
 var characterArray = [
-	{index: "wife", fName: "Adrianna", lName: "Chechik", 
+	{index: "wife", fName: "Adriana", lName: "Chechik", 
 	desc: "Subject is a housewife of middle age who suffers from a near nonexistent libido, which has caused a great deal of marital stress.",},
 	{index: "jock", fName: "Derrick", lName: "Pierce", 
 	desc: "Subject states that he finds it difficult to become aroused when bedding women, citing a heavy reliance on viagra and other drugs. He claims it is a biological issue, but several in-depth screenings show signs of heavily repressed masochistic and homosexual leanings.",},
@@ -262,6 +282,25 @@ function eatSnack() {
 	dropItem("Snack");
 }
 
+function addFlag(n) {
+	if (checkFlag(n) == false) {
+		data.player.fName += n;
+	}
+}
+
+function removeFlag(n) {
+	data.player.fName = data.player.fName.replace(n, "");
+}
+
+function checkFlag(n) {
+	if (data.player.fName.includes(n) == true) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 //Case creation
 function generateCreationBoard() {
 	document.getElementById('output').innerHTML += `
@@ -335,31 +374,36 @@ function writeSpecial (text) {
 }
 
 function writeSpeech (name, img, text) {
-	var cssColor = "#CCCCCC";
-	if (img == "") {
-		img = "scripts/gamefiles/profiles/"+name+".jpg";
+	if (checkFlag("portraitsDisabled") == true) {
+		writeText(`"`+text+`"`);
 	}
-	if (img == "none") {
-		img = "scripts/gamefiles/none.png";
-	}
-	if (name == "player") {
-		name = data.player.fName;
-		img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
-	}
-	for (i = 0; i < characterArray.length; i++) {
-		if (characterArray[i].index == name) {
-			name = characterArray[i].fName;
+	else {
+		var cssColor = "#CCCCCC";
+		if (img == "") {
+			img = "scripts/gamefiles/profiles/"+name+".jpg";
 		}
+		if (img == "none") {
+			img = "scripts/gamefiles/none.png";
+		}
+		if (name == "player") {
+			name = data.player.fName;
+			img = "scripts/gamefiles/profiles/" + data.player.character + ".jpg";
+		}
+		for (i = 0; i < characterArray.length; i++) {
+			if (characterArray[i].index == name) {
+				name = characterArray[i].fName;
+			}
+		}
+		document.getElementById('output').innerHTML +=`
+		<div class="textBox" style="border-color: `+cssColor+`">
+			<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "`+ img +`">
+			<div class="textBoxContent">
+			<p class = "textName" style="color:`+cssColor+`">`+ name + `</p>
+			<p>` + replaceCodenames(text) + `</p>
+		</div>
+		<br>
+		`;
 	}
-	document.getElementById('output').innerHTML +=`
-	<div class="textBox" style="border-color: `+cssColor+`">
-		<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "`+ img +`">
-		<div class="textBoxContent">
-		<p class = "textName" style="color:`+cssColor+`">`+ name + `</p>
-		<p>` + replaceCodenames(text) + `</p>
-	</div>
-	<br>
-	`;
 }
 
 function writeBig (img) {
@@ -377,6 +421,137 @@ function writeMed (img) {
 		<img class="medPicture" src="` + img + `">
 		<br>
 	`;
+	}
+}
+
+function writeHTML(text) {
+	//Separate the text into lines
+	var lines = text.split('\n');
+	//For each of these lines
+	for(var lineCounter = 0;lineCounter < lines.length;lineCounter++){
+		//Remove all tabs from the line, in case we use tab spacing
+		while (lines[lineCounter].includes('\t') == true) {
+			lines[lineCounter] = lines[lineCounter].replace(`\t`, ``);
+		}
+		//If the line is not empty (we don't want to print empty lines)
+		if (lines[lineCounter] != "") {
+			//Grab the first word of the line to use as the command
+			var command = lines[lineCounter].replace(/ .*/,'');
+			//Depending on which command, execute different code. Convert the command to lowercase as well in case we used Sp instead of sp, as js is case-sensitive.
+			for (i = 0; i < definitionArray.length; i++) {
+				if (command.toLowerCase() == definitionArray[i].shortcut) {
+					lines[lineCounter] = lines[lineCounter].replace(definitionArray[i].shortcut, definitionArray[i].result);
+				}
+			}
+			var command = lines[lineCounter].replace(/ .*/,'');
+			switch (command.toLowerCase()) {
+				case "define": {
+					//Remove the command from the line we actually want to print.
+					var definitionShortcut = lines[lineCounter].split(`define `).pop().split(` = `)[0];
+					lines[lineCounter] = lines[lineCounter].replace(`define `+definitionShortcut+` = `, ``);
+					var definitionResult = lines[lineCounter];
+					var overWrite = false;
+					for (i = 0; i < definitionArray.length; i++) {
+						if (definitionArray[i].shortcut == definitionShortcut) {
+							overWrite = true;
+							definitionArray[i].shortcut = definitionShortcut;
+							definitionArray[i].result = definitionResult;
+						}
+					}
+					if (overWrite == false) {
+						var definition = {shortcut: definitionShortcut, result: definitionResult};
+						definitionArray.push(definition);
+					}
+					console.log("Now writing definition statement, using shortcut "+definitionShortcut+" for result "+definitionResult+", overwrite value is "+overWrite);
+					break;
+				}
+				//If the command is "t"
+				case "t": {
+					//Remove the command from the line we actually want to print.
+					lines[lineCounter] = lines[lineCounter].replace(command+` `, ``);
+					//Execute the writeText command to print everything left to the screen.
+					writeText(lines[lineCounter]);
+					//Don't execute any of the below switch cases.
+					break;
+				}
+				case "sp": {
+					//Get the name of our speaker
+					var name = lines[lineCounter].split(command+` `).pop().split(`;`)[0];
+					//If "; im" is in our code we want to specify a specific profile image, so use that. Otherwise set the image variable blank so it can be automatically found.
+					if (lines[lineCounter].includes("; img")) {
+						var image = lines[lineCounter].split(`img `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`img `+image+`; `, ``);
+					}
+					else {
+						var image = "";
+					}
+					//If "; altName" is in our code we want to use an alternate name for the character, so use that. Otherwise set the altName variable blank.
+					if (lines[lineCounter].includes("; altName")) {
+						var altName = lines[lineCounter].split(`altName `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`altName `+altName+`; `, ``);
+					}
+					else {
+						var altName = "";
+					}
+					//If "; altColor" is in our code we want to specify a specific color for the character, so use that. Otherwise set the altColor variable blank.
+					if (lines[lineCounter].includes("; altColor")) {
+						var altColor = lines[lineCounter].split(`altColor `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`altColor `+altColor+`; `, ``);
+					}
+					else {
+						var altColor = "";
+					}
+					//Remove the command from the line we actually want to print.
+					lines[lineCounter] = lines[lineCounter].replace(command+` `+name+`; `, ``);
+					//Execute the writeSpeech command to print everything we have left.
+					//TODO: Add custom colors and custom names
+					writeSpeech(name, image, lines[lineCounter], altName, altColor);
+					break;
+				}
+				case "img": {
+					
+				}
+				case "im": {
+					//Get the location of the image
+					var location = lines[lineCounter].split(command+` `).pop().split(`;`)[0];
+					//If "; cap" is in our code we want to attach a caption to our image. Otherwise leave the caption blank.
+					if (lines[lineCounter].includes("; cap")) {
+						var caption = lines[lineCounter].split(`cap `).pop().split(`;`)[0];
+					}
+					else {
+						var caption = "";
+					}
+					//Bring up the image on screen. Since we aren't printing the line itself we don't need to clean it by removing commands.
+					writeBig(location, caption);
+					break;
+				}
+				case "b": {
+					//Get the label of our button
+					var name = lines[lineCounter].split(`b `).pop().split(`;`)[0];
+					//Get the function we want our button to perform
+					var func = lines[lineCounter].split(`f `).pop().split(`;`)[0];
+					//If "; arg" is in our code we want the function to have a special argument. Otherwise leave the argument section blank.
+					if (lines[lineCounter].includes("; arg")) {
+						var argument = lines[lineCounter].split(`arg `).pop().split(`;`)[0];
+					}
+					else {
+						var argument = "";
+					}
+					//Write the button to the screen using the information we've collected.
+					writeFunction(func+"('"+argument+"')", cullRequirements(name))
+					break;
+				}
+				//This is for convenience. If the line is just an elipses, replace it with a horizontal line cutting across the screen.
+				case "...": {
+					writeText("<hr>");
+					break;
+				}
+				//If the command isn't found in the list above then the code can't be parsed (understood), print an error code in red.
+				default: {
+					console.log("Shortcut command? The line '"+lines[lineCounter]+"' could not be parsed.");
+				}
+			}
+		}
 	}
 }
 
@@ -423,7 +598,7 @@ function sceneTransition(scene) {
 	console.log(data);
 }
 
-function writeCase (name) {
+function writeCase (name, fname, text) {
 	for (i = 0; i < characterArray.length; i++) {
 		if (characterArray[i].index == name) {
 			character = characterArray[i];
@@ -433,12 +608,12 @@ function writeCase (name) {
 	document.getElementById('output').innerHTML +=`
 	<div class="textBox" style="border-color: `+cssColor+`">
 		<img class = "textThumb" style="box-shadow: -5px 5px `+cssColor+`" src = "
-			scripts/gamefiles/profiles/`+ character.index +`.jpg
+			scripts/gamefiles/profiles/`+ name +`.jpg
 		">
 		<div class="textBoxContent">
-		<p class = "textName" style="color:`+cssColor+`">`+ character.fName + `</p>
-		<p class = "switch"  onclick='sceneTransition("`+character.index+`File")'>Review treatment plans</p>
-		<p>` + character.desc + `</p>
+		<p class = "textName" style="color:`+cssColor+`">`+ fname + `</p>
+		<p class = "switch"  onclick='sceneTransition("`+name+`File")'>Review treatment plans</p>
+		<p>` + text + `</p>
 		</div>
 	</div>
 	<br>
@@ -640,7 +815,7 @@ function unlockScene(n) {
 	if (unlockedScene != "") {
 		if (galleryCheck(unlockedScene.index) != true) {
 			data.gallery.push(unlockedScene);
-			writeSpecial("You unlocked a new scene in the gallery!");
+			//writeSpecial("You unlocked a new scene in the gallery!");
 		}
 	}
 	else {
