@@ -1590,9 +1590,7 @@ function writeEvent(scene) {
 			writeHTML(`
 				define jock = sp Jenny; img scripts/gamefiles/profiles/jockTrap.jpg;
 				t jockF smacks her lips as he wakes up, noticing a peculiar taste on them. 
-				jock Mmm... W-whoa!
-				im
-				jock I'm... 
+				jock Mmm... W-whoa! I'm... 
 				t Suddenly the door opens and Liz steps inside. 
 				liz Ah, awake at last! You've been out for a few days, but that's to be expected. A full body alteration like this averages about 43 hours of rest time, you're right on the mark. 
 				jock I'm... I'm really short now... 
@@ -1604,7 +1602,7 @@ function writeEvent(scene) {
 				jock I, um... 
 				t Jenny's little cock is standing up straight as well, visibly hard as Jenny tries to cover herself up.
 				liz Ah, I wouldn't do-
-				im
+				im images/jock/a1.gif
 				jock Aah~! 
 				liz Too late. This is a transitory period, touching yourself can make you into even more of a quickshot than before. 
 				jock I came so quickly... 
