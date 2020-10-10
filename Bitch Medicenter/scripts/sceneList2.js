@@ -72,6 +72,8 @@ function writeScene(scene) {
 				t JamesSmith
 				t SlackerSavior
 				t and BenhaminBlue101
+				t Atomic Goblin
+				t Totalatomic
 				t Special thanks to them!
 			`);
 			writeTransition("mainMenu", "Go back");
