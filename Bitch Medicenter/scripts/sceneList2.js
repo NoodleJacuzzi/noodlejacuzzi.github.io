@@ -900,19 +900,19 @@ function writeScene(scene) {
 			writeText("The following are a collection of educational public service announcements .");
 			writeTransition("welcome", `"Welcome to the Medicenter"`);
 			writeTransition("dust", `"Bimbo Dust"`);
-			if (checkFlag("sissy" == true)) {
+			if (checkFlag("sissy") == true) {
 				writeTransition("bubble", `"Bubble and Dee"`);
 			}
-			if (checkFlag("woman" == true)) {
+			if (checkFlag("woman") == true) {
 				writeTransition("hypermeth", `"The Hypermeth Epidemic"`);
 			}
-			if (checkFlag("university" == true)) {
+			if (checkFlag("university") == true) {
 				writeTransition("university", `"Hypnosis in Action"`);
 			}
-			if (checkFlag("princess" == true)) {
+			if (checkFlag("princess") == true) {
 				writeTransition("princess", `"Princess Quest"`);
 			}
-			if (checkFlag("textOnly" == true)) {
+			if (checkFlag("textOnly") == true) {
 				writeTransition("living", `"What is a living dildo?"`);
 			}
 			writeTransition("mainMenu", "Go back");
