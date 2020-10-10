@@ -35,6 +35,7 @@ function writeScene(scene) {
 			writeTransition("psaList", "Public/Private Service Announcements");
 			writeText("...");
 			writeTransition("funding", "Medicenter Funding", "#91eba9");
+			writeTransition("bugchasers", "Medicenter Technical Staff", "#91eba9");
 			writeTransition("affiliates", "Affiliate & Medicenter Advertisement Log", "#91eba9");
 			writeTransition("settings", "Console Settings", "#91eba9");
 			writeTransition("creation", "Treatment Design Experiment", "#91eba9");
@@ -63,8 +64,16 @@ function writeScene(scene) {
 		}
 		case "funding": {
 			writeText("Bitch Medicenter funding is provided by private donors. Thanks to this support from good samaritans the medicenter can remain open to the general public, instead of blocking off much-needed medical care from the financially challenged.");
-			writeText("From the bottoms of the hearts of every staffmember here at Bitch Medicenter, Thank you to Swallows999, Ben Dover, CaptainMontana, Joshua Ingram, MrManPerson, Robbie, Lasse B, andres mejia, Arthorias28, Badaxe, ChronosEdge, Colin E, Judavarius, Lunarghost, Marco Wassmer, Q Q, Scal, Taylor Trout, Adonnak, andy, Andy, Andy Amundy, Angel, Anthony Munso, Ariados, Arkhalis, Arthur radcliffe, Auckard, Blaise Fenn, Bobby Hamilton, bono, brandon, Carlos, Chaaaanon, Charles Morris, David Lange, Debarre Sonny, Devin, Dewr, Drashin, Ed, Guy68691, Gwen Yurick, iNoH8+, ItsAllOgreNow, Jacob Cannon, Jane, jdktjk205, Jesse Greene, joe, joe, joe mulhall, john smith, Joseph Gibbs, Joshua Melzark, Julia Ferro, Karan Raj Gupta, LaCrazy, lm Carma, Lucas Molski, Luke, marvin diaz, mazterlith, Mirza Hasan, Monkey, murgatroid99, Nha, Nils Maier, Nisi, Noah, Nutburger, Oliver Jones, Philipp, Prodigal211, qwerty, Roy, Ryan Linn, sage, Sebastian Eckel, Shawn, sky, Skyrim mod lvr, Slipokk, Snaked, Steam Screw, stratum, surgE, Taurus Travon Rashad Lemar Brackin, Theodrian, Ungy Bungy, valdis, Vincent Madaire-Cullen, Wayne culbert, Wild Bill, Will Osboldstone, William Richardson, Yongdian Guo, Your Husbando, Профессор Преображенский, and 凱 陳 for supporting my work!");
+			writeText("From the bottoms of the hearts of every staffmember here at Bitch Medicenter, Thank you to Swallows999, Joseph, Robbie, Joshua Ingram, Liam M, that GUY, Elias Errati, Iron Diana, ryguy, 4MinuteWarning, Hi There, Carlos, 林家豪, Richard, dragoon48, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, maxime, J_C_L, Dkells, Jinouga, Marco Wassmer, Taylor Trout, andres mejia, Colin E, Badaxe, Jesse Greene, Scal, ChronosEdge, Donovan Korpa, Brandon, Noh Bhodie, Billymays, Genxin, Johnny Mind, Ethan Brian, Sean Morehead, Brent Roberts, poyo, Greatsage56 ., sb2017, Wysdom, Me Notyou, Chris Rucker, john sparks, Darien Cordero, Ally Smith, Brandon Leary, scott, Elijah Hansen, Sergio Prichard, pablo perez, Sera, ggboomsky, Emily Pajak, RatKnight, Bradley Herbert, gabriel, SomebodyElse, dante schraeder, Peter H, 长平 鬣, Culton Niccum, thesingleguy, Kethis Immortalis, colt, Anton Schmidt, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Don, Vikteren, Dean, Kudon, theoron, AnotherAccount333, Lucas, Kaliden, Tyler Ross, greatred, FrostyTB, l, ranchy sanchy, Johnathan Thornburg, Limitless, Greg Torres, nathan, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, Reverberations, ShadowFalls, William Parker, Magnus, XaiuX, l1monat, Kieron Kow, Slomberg, henry grobins, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Daekash, fireballcreations, Markus Hansen, Louis Hayes, Tanman, Erin Trippet, DarthMalak, Danny Nguyen, yami, Grim2011, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, Simon Rencher, dhccpmc, Chaaaanon, Charles Morris, Nutburger, Whynot, mazterlith, Anthony Munso, john smith, Your Husbando, Carlos, Firestar99255, Verillia tristari, CaptainMontana, ItsAllOgreNow, Gwen Yurick, Nils Maier, Blaise Fenn, Angel, Ariados, Jane, Snaked, Debarre Sonny, Drashin, qwerty, murgatroid99, Skyrim mod lvr, Roy, Wild Bill, brandon for supporting the medicenter!");
 			writeText("If you're interested in funding this clinic, head over to the medicenter's <a href='https://www.patreon.com/noodlejacuzzi'>Funding Page</a>. If you have any comments, criticisms, or suggestions for new medical procedures, direct them to the site manager's personal <a href='https://discord.gg/pDht5BZ'>Forum</a> where he'd love to hear what you think!");
+			writeHTML(`
+				t For technical support message the site administrator, but a number of volunteers have supported the medicenter in the past. These people are:
+				t OrangeMaestro
+				t JamesSmith
+				t SlackerSavior
+				t and BenhaminBlue101
+				t Special thanks to them!
+			`);
 			writeTransition("mainMenu", "Go back");
 			break;
 		}
