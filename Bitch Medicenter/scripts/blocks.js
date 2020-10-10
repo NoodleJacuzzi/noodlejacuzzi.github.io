@@ -105,13 +105,13 @@ var runnerImagesA = [
 'url("./images/runner/blocks/a128.gif")', //128
 ]
 var streamerImagesA = [
-'url("./images/streamer/blocks/a2.gif")', //2
-'url("./images/streamer/blocks/a4.gif")', //4
-'url("./images/streamer/blocks/a8.gif")', //8
-'url("./images/streamer/blocks/a16.gif")', //16
-'url("./images/streamer/blocks/a32.gif")', //32
-'url("./images/streamer/blocks/a64.gif")', //64
-'url("./images/streamer/blocks/a128.gif")', //128
+'url("./images/streamer/blocks/2.gif")', //2
+'url("./images/streamer/blocks/4.gif")', //4
+'url("./images/streamer/blocks/8.gif")', //8
+'url("./images/streamer/blocks/16.gif")', //16
+'url("./images/streamer/blocks/32.gif")', //32
+'url("./images/streamer/blocks/64.gif")', //64
+'url("./images/streamer/blocks/128.gif")', //128
 ]
 var anomalyImagesA = [
 'url("./images/anomaly/blocks/2.gif")', //2

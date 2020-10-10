@@ -363,8 +363,8 @@ function writeScene(scene) {
 		}
 		case "girlfriendInterview": {
 			writeHTML(`
-				define girlfriend = sp Kylie; img = scripts/gamefiles/profiles/girlfriend.jpg;
-				define boyfriend = sp Michael; img = scripts/gamefiles/profiles/boyfriend.jpg;
+				define girlfriend = sp Kylie; img scripts/gamefiles/profiles/girlfriend.jpg;
+				define boyfriend = sp Michael; img scripts/gamefiles/profiles/boyfriend.jpg;
 				t Playback begins, a man and a woman are sitting on the patient bed holding hands.
 				liz Could you both state your names and reasons for coming?
 				girlfriend Kylie, and this is my boyfriend-
@@ -462,11 +462,11 @@ function writeScene(scene) {
 			writeHTML(`
 				t TREATMENT PLAN A - MODIFICATION:<br>KEYWORDS: Watersports, Piss-Drinking, Pheromones<br>A modification plan that would encourage the subject (And others around him) to better accommodate and appreciate his condition.
 			`);
-			writeTransition("schoolboyA", "Begin treatment plan A");
+			writeTransition("schoolboyB", "Begin treatment plan A");
 			writeHTML(`
 				t TREATMENT PLAN B - MODIFICATION:<br>KEYWORDS: Watersports, Sissification, Anal<br>A modification plan that would allow for greater bladder storage with the side effect of greatly increasing anal sensitivity.
 			`);
-			writeTransition("schoolboyB", "Begin treatment plan B");
+			writeTransition("schoolboyA", "Begin treatment plan B");
 			writeTransition("caseSelect", "Go back to file selection");
 			break;
 		}
@@ -475,7 +475,7 @@ function writeScene(scene) {
 				define schoolboy = sp Danny; img scripts/gamefiles/profiles/schoolboy.jpg;
 				t Playback begins, a young man is sitting nervously on the patient bed fidgeting every so often. He looks very young, hopefully Liz was thorough in checking his ID. 
 				liz Could you say your name and your reason for coming here to the camera, please? 
-				schoolboy My name is schoolboyF. I... I don't know about this... 
+				schoolboy My name is Danny. I... I don't know about this... 
 				liz Please, don't be afraid. The only people who will se this are me and the technician working on your case. We deal with cases like this one all the time, there's nothing to be ashamed of. 
 				schoolboy Alright. Okay. I, uh... 
 				T The young man takes a deep breath. 
@@ -858,11 +858,6 @@ function writeScene(scene) {
 			blocks();
 			break;
 		}
-		case "schoolboyA": {
-			blockGame = true;
-			blocks();
-			break;
-		}
 		case "otherkinFile": {
 			writeHTML(`
 				t IDENTIFYING INFORMATION:<br>Subject is a young woman unwilling to give her medically accurate age, she believes that through reincarnation or some other means, she is a horse's soul trapped in a human body.
@@ -941,8 +936,8 @@ function writeScene(scene) {
 				doctor Then do it properly in one take, intern. Alright, rolling in three, two...<br>Here's Liz hard at work, but accidents can happen to everyone!
 				liz G-gee, I sure hope I don't accidently stab this bag of drugs and get it-<br>Fuck! Ow! Shitshitshit some got in me-
 				doctor Always remember that security is just a call away! 
-				t The camera cuts to the doctor standing over a bound, naked Liz.
-				im
+				t The camera cuts to the doctor standing over a naked, writhing Liz who's brain is quite frazzled.
+				im images/psas/welcome.gif
 				doctor We deal with sensitive substances-
 				liz Please...! Fuck my throat, spank my ass! I need to cum!
 				doctor We deal with sensitive substances-<br>Stop thrashing around! You're ruining the take!
@@ -989,9 +984,9 @@ function writeScene(scene) {
 				liz This right here is cocaine, and-<br>FUCK! Cut! Redo!
 				t Another quick rewind.
 				liz This right here is Bimbo Dust and it's seriously whack! Your parents may have told you about it. They may be serious lamoid fuddy-duddies, but they care about you! Y'know, I have a friend named Mary, let's go check up on her.
-				im
+				im images/psas/dust1.gif
 				liz Oh noooo! Mary took a hit of bimbo dust! She used to want to be a lawyer, but now she can't even spell the word law! Hold on, let's go check on my friend Margaret!
-				im
+				im images/psas/dust2.gif
 				liz Double un-radical! My two friends have both made the mistake of engaging in drug-use! What a perfect representation of how two-thirds of young adult women have experimented with dangerous drugs by the age of 27!<br>Listen girls, don't let anybody pressure you. Your brain is a beautiful thing, don't throw it away to get your rocks-off!
 				t The camera returns to Liz, now wearing an askew baseball cap with the word "NO" written on it.
 				liz Call the number below to show you won't be D.A.R.E.D. to do drugs, and you can get this Say No To Drugs cap! Wear it like me and any drug dealer who comes up to you at a 90 degree angle will know you're no customer of his!
@@ -1327,7 +1322,7 @@ function writeEvent(scene) {
 		}
 		case "girlfriendBB": {
 			writeHTML(`
-				define boyfriend = sp Michael; img = scripts/gamefiles/profiles/boyfriendTrap.jpg;
+				define boyfriend = sp Michael; img scripts/gamefiles/profiles/boyfriendTrap.jpg;
 				t Michael sighs and lays back on his bed. Every time he and Kylie go out shopping his room seems to get a little... Fluffier. His fashion sense, his style, even the way he looks has been changing pretty quick, and he's been weirdly receptive to it all.
 				t His phone at his ear, a woman is asking him questions.
 				boyfriend Well, it's just... She started small, you know? She brought in an onahole...
@@ -1500,7 +1495,7 @@ function writeEvent(scene) {
 			writeTransition("caseSelect", "Finish");
 			break;
 		}
-		case "schoolboyB": {
+		case "schoolboyA": {
 			writeHTML(`
 				define schoolboy = sp James; img scripts/gamefiles/profiles/schoolboy.jpg;
 				t The boy wakes up slowly, it's an unfamiliar sensation. Every morning before this the urge to piss before he wets the bed would have him violently run to the bathroom, he almost does this time on instinct.
@@ -1522,7 +1517,7 @@ function writeEvent(scene) {
 			writeFunction("writeEvent('schoolboyAA')", "Later");
 			break;
 		}
-		case "schoolboyBB": {
+		case "schoolboyAA": {
 			writeHTML(`
 				t Slowly.
 				t Danny's eyes flutter and he bites his lip.
@@ -1545,7 +1540,7 @@ function writeEvent(scene) {
 			writeTransition("caseSelect", "Finish");
 			break;
 		}
-		case "schoolboyA": {
+		case "schoolboyB": {
 			writeHTML(`
 				define schoolboy = sp Danny; img scripts/gamefiles/profiles/schoolboy.jpg;
 				t The boy suddenly jolts up, as if waking from a nightmare, crossing his legs on instinct as his need to piss rattles him awake once again.
@@ -1569,7 +1564,7 @@ function writeEvent(scene) {
 			writeFunction("writeEvent('schoolboyBB')", "Later");
 			break;
 		}
-		case "schoolboyAA": {
+		case "schoolboyBB": {
 			writeHTML(`
 				t A young woman stops suddenly at her bathroom door, her half-awake roommate is at the toilet, completely unaware he's forgotten to close the door.
 				t Her first instinct is to call out, embarrass him a little for his mistake, yet...
@@ -1589,7 +1584,7 @@ function writeEvent(scene) {
 		case "jockA": {
 			writeHTML(`
 				define jock = sp Jenny; img scripts/gamefiles/profiles/jockTrap.jpg;
-				t jockF smacks her lips as he wakes up, noticing a peculiar taste on them. 
+				t Jenny smacks her lips as he wakes up, noticing a peculiar taste on them. 
 				jock Mmm... W-whoa! I'm... 
 				t Suddenly the door opens and Liz steps inside. 
 				liz Ah, awake at last! You've been out for a few days, but that's to be expected. A full body alteration like this averages about 43 hours of rest time, you're right on the mark. 
