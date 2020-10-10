@@ -14,6 +14,7 @@ var games =[
 ];
 
 var news =[
+	{date: "10/10/20", game: "BM", headline: "Bitch Medicenter", link: "https://www.patreon.com/posts/42602906", text: "Bitch Medicenter's full, standalone release!"},
 	{date: "8/28/20", game: "AV", headline: "Anomaly Vault v8", link: "https://www.patreon.com/posts/40968054", text: "Anomaly Vault v8, featuring the new Reproachive Charm and Stiff Voodoo Doll, and more!"},
 	{date: "8/14/20", game: "HU", headline: "Hentai University v13", link: "https://www.patreon.com/posts/40445131", text: "Hentai University v13 has been released! Featuring content for Sienna, Reese, and Emily! Happy birthday to HU!"},
 	{date: "8/7/20", game: "", headline: "The Master Index Updated", link: "https://noodlejacuzzi.github.io/", text: "The master index has recieved a facelift! Lemme know what you think, or if anything's broken!<br>The discord now uses roles in the place of @here pings, so feel free to drop in and sign up!"},

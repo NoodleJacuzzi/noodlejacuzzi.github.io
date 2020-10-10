@@ -156,6 +156,7 @@ function writeScene(scene) {
 			<div class="choiceGrid">
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter.html">Play the game online</a>
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter%20Mobile.html">Play the mobile version</a>
+				<a class="choiceGridText" href="https://www.patreon.com/posts/42602906">Download the game</a>
 				<a class="choiceGridText" href="http://freesuggestionbox.com/pub/http://freesuggestionbox.com/pub/lckvepz">Anonymous Suggestion Box</a>
 				<a class="choiceGridText" href="http://www.hentai-foundry.com/stories/user/NoodleJacuzzi">Read some related short stories</a>
 			</div>
