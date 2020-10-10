@@ -35,7 +35,7 @@ function writeScene(scene) {
 			writeTransition("psaList", "Public/Private Service Announcements");
 			writeText("...");
 			writeTransition("funding", "Medicenter Funding", "#91eba9");
-			writeTransition("bugchasers", "Medicenter Technical Staff", "#91eba9");
+			//writeTransition("bugchasers", "Medicenter Technical Staff", "#91eba9");
 			writeTransition("affiliates", "Affiliate & Medicenter Advertisement Log", "#91eba9");
 			writeTransition("settings", "Console Settings", "#91eba9");
 			writeTransition("creation", "Treatment Design Experiment", "#91eba9");
