@@ -909,7 +909,7 @@ function diagnostic() {
 	console.log("Testing code " + goof);
 	sceneTransition('cheat');
 	//to-do: cut out spaces in cheat codes
-	//Hello there! If you're here looking for cheat codes, feel free to copypaste this handy link of all of them without repeats: haa, rainy dayz, hu, av, princess quest, dtc, slackersavior, thedreadfulmanticore, ravager, pool noodle
+	//If you're here looking for cheat codes, hiya! Did you enjoy the game?
 	switch (goof) {
 		case "human alteration app": {
 			addFlag("alteration");
@@ -947,6 +947,11 @@ function diagnostic() {
 			break;
 		}
 		case "princess quest": {
+			addFlag("princess");
+			writeText("Code entered! The Princess Quest PSA is available (if it wasn't already)!")
+			break;
+		}
+		case "neromashin": {
 			addFlag("princess");
 			writeText("Code entered! The Princess Quest PSA is available (if it wasn't already)!")
 			break;

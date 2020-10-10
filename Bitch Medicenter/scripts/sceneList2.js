@@ -733,9 +733,13 @@ function writeScene(scene) {
 			`);
 			writeTransition("catgirlInterview", "Review interview file");
 			writeHTML(`
-				t TREATMENT PLAN A - MODIFICATION:<br>KEYWORDS:<br>A modification plan 
+				t TREATMENT PLAN A - MODIFICATION:<br>KEYWORDS: Shortstack, All-the-way-through, Anal, Large insertion<br>A modification plan aiming for the popular 'shortstack' fad, wherein a girl is both short and stacked.
 			`);
 			writeTransition("catgirlA", "Begin treatment plan A");
+			writeHTML(`
+				t TREATMENT PLAN B - MODIFICATION:<br>KEYWORDS: Aural Sex, Ear-fuck<br>A modification plan that would allow the subject's ears to be used as sexual organs..
+			`);
+			writeTransition("catgirlB", "Begin treatment plan B");
 			writeTransition("caseSelect", "Go back to file selection");
 			break;
 		}
@@ -795,7 +799,7 @@ function writeScene(scene) {
 			writeHTML(`
 				t TREATMENT PLAN C - MODIFICATION:<br>KEYWORDS: CBT, Large Balls, Masochism, Dickgirl<br>A modification plan that would allow for testicular stimulation as a means of sperm evacuation.
 			`);
-			writeTransition("junkieB", "Begin treatment plan C");
+			writeTransition("junkieC", "Begin treatment plan C");
 			writeHTML(`
 				t TREATMENT PLAN D - MODIFICATION:<br>KEYWORDS: Spontaneous Orgasm, Addictive Cum<br>A modification plan that would allow for automatic sperm ejaculation without stimulation of genitals.
 			`);
@@ -907,10 +911,10 @@ function writeScene(scene) {
 				writeTransition("hypermeth", `"The Hypermeth Epidemic"`);
 			}
 			if (checkFlag("university") == true) {
-				writeTransition("university", `"Hypnosis in Action"`);
+				writeTransition("universityPSA", `"Hypnosis in Action"`);
 			}
 			if (checkFlag("princess") == true) {
-				writeTransition("princess", `"Princess Quest"`);
+				writeTransition("princessPSA", `"A Physician Plays a Japanese Adult Game"`);
 			}
 			if (checkFlag("textOnly") == true) {
 				writeTransition("living", `"What is a living dildo?"`);
@@ -1009,45 +1013,45 @@ function writeScene(scene) {
 			writeTransition("psaList", "Go back");
 			break;
 		}
-		case "university": {
+		case "universityPSA": {
 			writeHTML(`
 				define sec = sp Lisa; img scripts/gamefiles/profiles/secretary.jpg;
 				define prin = sp Victoria; img scripts/gamefiles/profiles/principal.jpg;
 				liz Hello everyone! It's time for a PSA, this time on human vs machine hypnotic conditioning.<br>Now today we have two volunteers. One has been personally conditioned by an anonymous hypnotist, and the other was reverted to a clean slate and then hypnotized by the commonplace machine used in clinics like the one here at Bitch Medicenter.
-				im
+				im images/psas/hu1.jpg
 				sec W-wha... What's going on? principalF? What are you-
 				prin Hello everyone! Welcome to the show, I hope you all splurt while watching me and this bitch get fucked!
 				liz Now the brunette has a much stronger will, making her resistant to most types of hypnotism. She was 'broken in' by our machines. This has the byproduct of completely dissolving the original person's willpower. <br>Whereas her partner was hypnotised by a human. She'll resist verbally, but physically she'll listen to whatever order we give her.
 				sec P-please, let us go! And please turn principalF back to normal! We are professional-
 				liz Bring in the studs, please.
-				im
+				im images/psas/hu2.jpg
 				prin Cocks! Fat, heavy cocks that'll make me squirt!
 				liz Notice that both of them are showing signs of extreme arousal. While practical human hypnosis does have limitations, it grants a much greater degree of freedom and plyability over how you control the subject. The woman, Victoria, possesed an extreme aversion to anyhing 'unclean', or 'filthy', so that has been brute-force overpowered into an addiction to debasing herself.
-				im
+				im images/psas/hu3.jpg
 				t The room is filled with wanton moaning as secretaryF's will is broken, and the two women give in to their rough treatment as little more than human onaholes.
-				im
+				im images/psas/hu4.jpg
 				liz I hope this difference was educational. Please only use professional hypnotists if you're interested in a human touch, unless you want your puppets snapping out of their trance mid-deepthroat. <br>I'd like to thank the donor of these two ladies, and wish them the best of luck running their educational institution.
 			`);
 			writeTransition("psaList", "Go back");
 			break;
 		}
-		case "princess": {
+		case "princessPSA": {
 			writeHTML(`
 				t This is a short film on the anatomical accuracy of a game's scenes, and how possible they are with modern technology. The video begins with Liz sitting in an office chair with a computer screen displaying a Japanese game.
 				liz Hello! I'm a physician at Bitch Medicenter, a human modification clinic specializing in sexual wellness. Today we'll be breaking down scenes from the Japanese Pin-Point release with art done by the artist Neromashin that's seen a sort of 'retro revival' ever since it's high-quality fan translation. We'll start with it's famous bell scene, roll the clip.
-				im
+				im images/psas/princess1.jpg
 				liz So rule number one of the clinic is to never use unsterilized equipment, and rule number two is to never do modifications in a less than private environment. Although this is clearly meant for the sexual gratification of the audience rather than a strictly profession modification job.
-				im
+				im images/psas/princess2.jpg
 				liz Now the character here is using magical needles which cause extreme sensitivity increase and spontaneous orgasming, assumedly to debase these lovely girls. While they aren't needles, the effects are quite similar to the drug known as hypermeth, which is a real problem on the streets these days.
-				im
+				im images/psas/princess3.jpg
 				liz The princess and her loyal knight here both have a very large network of future partners, which is good as hyper meth has many side-effects including total brain shutdown from pleasure overload. Please use the safer alternatives!<br>Not much left to say on this note. Alright, next scene.
-				im
+				im images/psas/princess4.jpg
 				liz Now, notice the sudden and extreme dick-growth. Typically this would be done with a rapid transformation of the ovaries, causing them to become fat testicles immediately capable of oozing out the woman's former eggs as an extremely gunky form of sperm. The process of "giving birth" to these nuts, splurting them from her pussy lips is extremely pleasurable.
-				im
+				im images/psas/princess5.jpg
 				liz But what you can't see from this angle is that the woman actually still has a fully functional vagina. It's likely that whatever nerves formed her G-spot have fused with a newly grown prostate gland as well. An extremely difficult procedure, but not impossible. I've never overseen such a procedure myself though. Let's take a look at another scene.
-				im
+				im images/psas/princess6.jpg
 				liz Now in this scene the princess Elizabeth is concealing a newly-birthed swarm of tentacles. While we actually do offer a very similar treatment involving heavily genetically modified leech-squid hybrids, it is illegal in most states to conceal the creatures like this. They must be at least partially visible and you should mark yourself as a designated breeder.
-				im
+				im images/psas/princess7.jpg
 				liz Now notice the generally oblivious nature of the king next to her. This is entirely unrealistic, it certainly shattered my immersion when it occurred.<br>In any case that's all we have time for today, please give feedback on more stories like this. With enough interest we could make another PSA, or even start offering themed treatments based on the games you suggest!
 			`);
 			writeTransition("psaList", "Go back");
@@ -1181,6 +1185,7 @@ function writeEvent(scene) {
 				wife I'll leave you to enjoy yourself for now, someone will come in when your ride arrives. I'm sure you'll have no problem living a satisfying life like this. 
 			`);
 			writeText("Her first orgasm in god knows how many years runs through her, taking her breath and rational thought away. She'll be politely escorted out by security to make room for new patients eventually.");
+			addflag("woman");
 			writeFunction("writeEvent('wifeAA')", "That night...");
 			break;
 		}
@@ -1251,6 +1256,7 @@ function writeEvent(scene) {
 			writeSpeech("boyfriendPost", "", "I... Fuck! Come on, we're leaving. And then we're suing this place to the god damn foundations!");
 			writeText(characterArray[4].fName+" just nods again as she's pulled out of the room. Dark, unfamiliar desires are pounding in her head. As her boyfriend's fat ass jiggles while they make their escape, she licks her lips.");
 			writeFunction("writeEvent('girlfriendAA')", "Later");
+			addflag("sissy");
 			break;
 		}
 		case "girlfriendAA": {
@@ -1318,6 +1324,7 @@ function writeEvent(scene) {
 				t Despite his tone Michael finds himself pulling over anyways.
 			`);
 			writeFunction("writeEvent('girlfriendBB')", "Weeks later...");
+			addflag("sissy");
 			break;
 		}
 		case "girlfriendBB": {
@@ -1359,6 +1366,7 @@ function writeEvent(scene) {
 				t Adriana pushes past Liz and makes her way out the door.
 				liz Call us if you have any questions! Be sure to achieve orgasm at least once a day, but not more than-<br>... Aaand she's gone. We were supposed to tweak the rate of lust buildup... Well, she paid in advance, so I suppose it's not my problem anymore.
 			`);
+			addflag("woman");
 			writeFunction("writeEvent('wifeBB')", "Later...");
 			break;
 		}
@@ -1420,6 +1428,7 @@ function writeEvent(scene) {
 				t A blast of sensation causes her legs to buckle, her workout shorts are already damp with sweat, but suddenly they're wet with something else. She forces herself upright, and starts making phonecall.
 				runner Ghh... Fucking... I can barely hold back...<br>Ashley! You bitch, that place you recommended-Ghhh!<br>Just... Just get over here! <b>NOW!</b>
 			`);
+			addflag("woman");
 			writeFunction("writeEvent('runnerAA')", "Later");
 			break;
 		}
@@ -1460,6 +1469,7 @@ function writeEvent(scene) {
 				t Mandy leaves and Liz waves her off, before Liz takes a seat at the room's computer to search something.
 				liz "Hyped"... "Hyped"... Oh my, that's not the right word at all. Oh well.
 			`);
+			addflag("woman");
 			writeFunction("writeEvent('streamerAA')", "Later");
 			break;
 		}
@@ -1578,6 +1588,7 @@ function writeEvent(scene) {
 				t She feels his urethra distend, a sign that a fresh blast is coming, and she pulls back so she can taste it as she swallows it down.
 				t In the coming months Danny will be finding himself quite popular as his roommate lets slip his condition, and it's all thanks to a successful treatment.
 			`);
+			addflag("sissy");
 			writeTransition("caseSelect", "Finish");
 			break;
 		}
@@ -1627,6 +1638,7 @@ function writeEvent(scene) {
 				jock Ah... I met someone and she's... She really likes me... She says I'm really cute and-Aah~! S-stop! I just came! <br>I'm sorry, I told her I'd be using the phone but she said she didn't care~! Ah~! I just wanted to say thank you, I feel really good~! <br>Ngh, yes, I'll keep you updated~! ByyyyiIIIEEE~!!! 
 				t Treatment complete! 
 			`);
+			addflag("sissy");
 			writeTransition("caseSelect", "Finish");
 			break;
 		}
@@ -1646,6 +1658,7 @@ function writeEvent(scene) {
 				liz You are. There's no downside to staying like this, but if you want to turn back all you need to do is abstain from cumming.<br>So, you're all paid up. Be sure to let us know if any complications arise, alright? I'm sure you want to get acquainted with your new self. Here's a pamphlet, I recommend the documentary "Ex-change", it covers a similar procedure.
 				jock I... I'll check it out. Thank you!
 			`);
+			addflag("woman");
 			writeFunction("writeEvent('jockBB')", "Later");
 			break;
 		}
@@ -1680,6 +1693,7 @@ function writeEvent(scene) {
 				t Once she's inside the group of mothers set down James on the bed. A few of them seem hesitant to leave, but reluctantly do so once Lisa promises to keep them updated. 
 				t Exhausted, Lisa strips down and falls asleep in her own bed. 
 			`);
+			addflag("woman");
 			writeFunction("writeEvent('milfAA')", "Later");
 			break;
 		}
@@ -1828,7 +1842,7 @@ function writeEvent(scene) {
 				t As Jen moans and her legs quiver, Liz gentle cradles one of her fat balls. 
 				liz Maybe the best solution is the cheapest. You say your friend likes teasing, yes? Why not bring her over? If she were right here, dutifully worshipping your stud nuts and gently coaxing out your magnificent swimmers, maybe even slurping this pair down to clean them of this lovely-looking sheen of sweat, you would have no trouble at all meeting your quota, right? 
 				t The thought pushes Jen over the edge, her balls tightening hard enough that the cradled nut is lifted from Liz's hand. She shatters her previous output record as a splortching sound fills the room louder than the whrrr of the extraction machine. 
-				sp Liz; That's... Four and a half liters, fantastic! See? With only a month of abstinence and a top of the line semen-slurper machine you had no trouble at all meeting your quota. Feel free to splurt as much as you like for the month, so long as you can make next month's quota of course. Ah, and if you do bring your friend please be sure to recommend our bodymod services as well. 
+				liz That's... Four and a half liters, fantastic! See? With only a month of abstinence and a top of the line semen-slurper machine you had no trouble at all meeting your quota. Feel free to splurt as much as you like for the month, so long as you can make next month's quota of course. Ah, and if you do bring your friend please be sure to recommend our bodymod services as well. 
 				t Jen just nods absentmindedly as she staggers back, her brain totally fried from six consecutive orgasms after holding back for so long. Despite her exhaustion though, it's clear having another session with the amazing machine is the only thing her mind. 
 			`);
 			writeTransition("caseSelect", "Finish");
@@ -1905,8 +1919,8 @@ function writeEvent(scene) {
 				t Liz gently places her palm over a bloat in Jen's midsection and draws back the dildo. In one smooth motion she thrusts back in and presses on the bulge, assaulting Jen's prostate from both sides. What Jen screams out as her wagging cock spurts even more cum can't be described as words, let alone anything resembling english.
 				liz If I'm correct then you shouldn't be at risk of bursting, rather you should actually be able to grow... My, almost indefintely.<br>Permanent prostate growth as a result of chastity, mind you your cum will likely just get even thicker. The smell would be so overpowering in a week that...<br>Would you be willing to stay here at the medical center to run some tests?
 			`);
-			break;
 			writeTransition("caseSelect", "Finish");
+			break;
 		}
 		case "junkieC": {
 			writeHTML(`
@@ -1971,8 +1985,8 @@ function writeEvent(scene) {
 				t Her beloved paddle sits next to her on the bed, but on days like this she enjoys the slowness of squeezing it all out herself.
 				t Sometimes a good life means enjoying a blissful day to yourself.
 			`);
-			break;
 			writeTransition("caseSelect", "Finish");
+			break;
 		}
 		case "junkieD": {
 			writeHTML(`
@@ -2030,6 +2044,7 @@ function writeEvent(scene) {
 		}
 		case "catgirlA": {
 			writeHTML(`
+				define cat = sp Daisy; img scripts/gamefiles/profiles/catgirl.jpg;
 				define catgirl = sp Daisy; img scripts/gamefiles/profiles/catgirl.jpg;
 				t With a jolt Daisy awakens from what was a deep sleep. Some kind of bizarre, musty smell filling her brain and sending her body into overdrive. One of the many factors of her catgirl treatment she couldn't decide between being an side-effect or a benefit. But the sudden jolt up causes her face to bop up against the source of the smell, something spongey and very, very large.
 				t Someone grunts as Daisy instinctively nuzzles against the meaty appendage, her brain working overdrive to identify it as an absolute beast of a horsecock before it focuses on less important matters, like where she is and how she got here. She's almost pulled out of her mental haze by the sound of a curtain drawing.
@@ -2102,6 +2117,7 @@ function writeEvent(scene) {
 		}
 		case "catgirlB": {
 			writeHTML(`
+				define cat = sp Daisy; img scripts/gamefiles/profiles/catgirl.jpg;
 				define catgirl = sp Daisy; img scripts/gamefiles/profiles/catgirl.jpg;
 				t The very soft whisper of someone saying 'good morning' is enough to get Daisy to jolt upright. The sounds of machines beeping and people taking rooms over playing in her head like loud white noise. She clutches her ears trying and failing to block out the noise.
 				liz The operation is almost finished. Aside from your hearing you shouldn't feel any different, that's normal. 
@@ -2138,8 +2154,8 @@ function writeEvent(scene) {
 				liz Good! Now, feel free to have fun passing the time, we've got sensors in the room to make sure you're safe. Don't worry about hygiene either, you've been well cleaned out and should stay that way. Feel free to push your limits, this is a safe... Place!
 				t Liz hefts out a solid, wobbling block of fake flesh in the form of a foot-long dildo onto the bed, and the catgirl's ears twitch as her pussy clenches.
 			`);
-			break;
 			writeFunction("writeEvent('catgirlBB')", "Later...");
+			break;
 		}
 		case "catgirlBB": {
 			writeHTML(`

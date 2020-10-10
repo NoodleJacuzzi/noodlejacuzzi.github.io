@@ -113,7 +113,7 @@ var streamerImagesA = [
 'url("./images/streamer/blocks/64.gif")', //64
 'url("./images/streamer/blocks/128.gif")', //128
 ]
-var anomalyImagesA = [
+var anomalyImages = [
 'url("./images/anomaly/blocks/2.gif")', //2
 'url("./images/anomaly/blocks/4.gif")', //4
 'url("./images/anomaly/blocks/8.gif")', //8
@@ -122,7 +122,7 @@ var anomalyImagesA = [
 'url("./images/anomaly/blocks/64.gif")', //64
 'url("./images/anomaly/blocks/128.gif")', //128
 ]
-var rainyImagesA = [
+var rainyImages = [
 'url("./images/rainy/blocks/2.gif")', //2
 'url("./images/rainy/blocks/4.gif")', //4
 'url("./images/rainy/blocks/8.gif")', //8
@@ -131,7 +131,15 @@ var rainyImagesA = [
 'url("./images/rainy/blocks/64.gif")', //64
 'url("./images/rainy/blocks/128.gif")', //128
 ]
-
+var alterationImages = [
+'url("./images/alteration/blocks/aya.jpg")', //2
+'url("./images/alteration/blocks/aya2.jpg")', //4
+'url("./images/alteration/blocks/aya3.jpg")', //8
+'url("./images/alteration/blocks/aya4.jpg")', //16
+'url("./images/alteration/blocks/aya5.jpg")', //32
+'url("./images/alteration/blocks/aya6.jpg")', //64
+'url("./images/alteration/blocks/aya7.jpg")', //128
+]
 var junkieImagesA = [
 'url("./images/junkie/horsecock/bosshi.jpg")', //2
 'url("./images/junkie/horsecock/bosshi2.jpg")', //4
@@ -160,8 +168,8 @@ var junkieImagesC = [
 ]
 var junkieImagesD = [
 'url("./images/junkie/bypass/aya.jpg")', //2
-'url("./images/junkie/bypass/aya2.jpg")', //4
-'url("./images/junkie/bypass/aya3.jpg")', //8
+'url("./images/junkie/bypass/aya2.png")', //4
+'url("./images/junkie/bypass/aya3.png")', //8
 'url("./images/junkie/bypass/aya4.jpg")', //16
 'url("./images/junkie/bypass/aya5.jpg")', //32
 'url("./images/junkie/bypass/aya6.jpg")', //64
@@ -1499,9 +1507,59 @@ var maps = [
 		16, 0, 0, 16,
 	],
 	//above is 10
-	[ 2, 2, 2, 2, 4, 0, 8, 0, 2, 2, 2, 2, 0, 0, 4, 0, ],
-	[ 2, 0, 16, 0, 0, 0, 0, 0, 0, 32, 8, 0, 0, 2, 4, 0, ],
-	[ 4, 2, 8, 4, 2, 2, 2, 2, 8, 2, 2, 8, 4, 8, 2, 4, ],
+	//jock A
+	[ 2, 2, 2, 2, 4, 0, 8, 0, 2, 2, 2, 2, 0, 0, 4, 0, ], //104
+	[ 2, 0, 16, 0, 0, 0, 0, 0, 0, 32, 8, 0, 0, 2, 4, 0, ], //124
+	[ 4, 2, 8, 4, 2, 2, 2, 2, 8, 2, 2, 8, 4, 8, 2, 4, ], //240
+	//jock B
+	[ 2, 0, 0, 4, 0, 2, 0, 0, 0, 0, 2, 0, 4, 0, 0, 2, ], 
+	[ 0, 2, 2, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, ], 
+	[ 2, 8, 4, 2, 0, 0, 8, 4, 0, 0, 0, 8, 0, 0, 0, 0, ], 
+	//milf A
+	[ 2, 0, 0, 4, 2, 0, 0, 0, 2, 0, 0, 0, 16, 2, 2, 2, ], //76
+	[ 2, 0, 0, 4, 4, 0, 0, 2, 2, 8, 0, 4, 4, 0, 0, 2, ], //96
+	[ 0, 2, 0, 128, 0, 0, 8, 0, 64, 16, 0, 2, 32, 4, 0, 0, ], //508
+	//below is 20
+	//schoolboy A
+	[ 0, 0, 0, 0, 2, 8, 2, 0, 0, 2, 8, 2, 16, 0, 0, 0, ], //64
+	[ 0, 0, 0, 0, 2, 0, 8, 2, 2, 4, 4, 2, 0, 8, 0, 0, ], //88 medium
+	[ 2, 2, 8, 0, 0, 8, 2, 0, 0, 2, 0, 8, 8, 0, 0, 2, ], //80
+	//schoolboy B
+	[ 8, 0, 0, 0, 2, 4, 2, 2, 2, 4, 2, 2, 8, 0, 0, 0, ], //92
+	[ 16, 0, 0, 2, 0, 16, 2, 0, 0, 2, 16, 0, 16, 0, 0, 2, ], //144
+	[ 2, 8, 16, 2, 8, 16, 0, 0, 16, 0, 0, 0, 2, 0, 2, 2, ], //160
+	//runner
+	[ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 4, 2, 2, ], //124
+	[ 4, 2, 2, 4, 2, 4, 4, 2, 2, 4, 4, 2, 4, 2, 2, 4, ], //144
+	[ 8, 2, 2, 8, 2, 8, 8, 2, 2, 8, 16, 2, 8, 2, 2, 8, ], //224
+	//streamer
+	[ 0, 0, 0, 0, 2, 2, 2, 0, 2, 4, 2, 0, 2, 2, 2, 0, ], //48
+	//below is 30
+	[ 0, 0, 0, 0, 2, 2, 2, 0, 2, 16, 2, 0, 2, 2, 2, 0, ], //80
+	[ 0, 0, 0, 0, 2, 16, 2, 0, 4, 32, 2, 0, 2, 2, 2, 0, ], //140
+	//junkie A
+	[ 16, 0, 4, 32, 8, 4, 2, 0, 0, 2, 4, 8, 128, 0, 32, 16, ], //628
+	[ 0, 2, 4, 2, 0, 0, 8, 4, 0, 0, 0, 2, 16, 0, 0, 0, ], //60
+	//junkie B
+	[ 0, 16, 0, 0, 0, 8, 16, 0, 0, 16, 4, 0, 0, 4, 2, 0, ], //152
+	[ 2, 0, 0, 2, 16, 4, 4, 16, 8, 4, 4, 8, 2, 0, 0, 2, ], //192
+	//junkie C
+	[ 8, 0, 0, 0, 0, 2, 2, 2, 0, 2, 8, 2, 0, 2, 2, 2, ], //96
+	[ 32, 4, 4, 16, 4, 0, 0, 4, 4, 2, 0, 4, 16, 4, 4, 32, ], //384
+	//junkie D
+	[ 0, 2, 0, 0, 8, 2, 8, 2, 2, 8, 2, 8, 0, 0, 0, 0, ], //80
+	[ 0, 8, 0, 0, 8, 2, 8, 2, 2, 8, 2, 8, 0, 0, 0, 0, ], //96
+	//catgirl A
+	//below is 40
+	[ 0, 2, 4, 8, 2, 4, 2, 0, 0, 2, 0, 0, 4, 0, 0, 4, ], //96
+	[ 64, 2, 4, 8, 2, 4, 8, 0, 4, 8, 0, 16, 8, 0, 0, 8, ], //324
+	//catgirl B
+	[ 0, 0, 4, 0, 0, 2, 16, 64, 64, 0, 8, 0, 0, 0, 0, 0, ], //128
+	[ 0, 4, 8, 2, 0, 16, 32, 16, 0, 2, 4, 8, 4, 0, 0, 0, ], //148
+	//otherkin
+	[ 2, 4, 2, 0, 8, 16, 0, 0, 0, 0, 32, 64, 0, 0, 0, 0, ], //252
+	[ 2, 0, 16, 0, 0, 4, 0, 0, 0, 0, 8, 2, 0, 32, 0, 2, ], //124
+	[ 0, 0, 0, 0, 2, 0, 0, 4, 8, 16, 32, 2, 64, 0, 0, 0, ], //252
 ];
 
 function generateBlocksBoard() {
@@ -1666,19 +1724,19 @@ function setBoard() {
 			tileImages = jockImagesB;
 			switch (caseStage) {
 				case 0:
-					target = 252;
-					n = 1;
+					target = 40;
+					n = 14;
 					document.getElementById("caseTotal").innerHTML = "3";
 					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Molecular sequence cataloged. Target DNA sequences identified. ";
 				break;
 				case 1:
-					target = 96;
-					n = 2;
+					target = 32;
+					n = 15;
 					document.getElementById("modificationStatus").innerHTML = "Chemical injection complete. Complete Y to X process underway.<br>Foreign alteration to genitals detected. Continued alteration will result in potential extreme oversensitivity in affected region.";
 				break;
 				case 2:
-					target = 252;
-					n = 3;
+					target = 76;
+					n = 16;
 					document.getElementById("modificationStatus").innerHTML = "Y to X process complete. Adjusting nervous system sensitivity...<br>Greater than normal levels detected. Adjusting brain's maximum feedback limit.";
 				break;
 				case 3:
@@ -1694,19 +1752,19 @@ function setBoard() {
 			tileImages = schoolboyImagesA;
 			switch (caseStage) {
 				case 0:
-					target = 252;
-					n = 1;
+					target = 64;
+					n = 20;
 					document.getElementById("caseTotal").innerHTML = "3";
 					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Genetic condition cataloged for future alteration use.";
 				break;
 				case 1:
-					target = 96;
-					n = 2;
+					target = 88;
+					n = 21;
 					document.getElementById("modificationStatus").innerHTML = "Introducing pheromone generation to bladder lining. 'Adonis-3', 'Cassanova-3', and 'Frenzy-2' pheromones selected.";
 				break;
 				case 2:
-					target = 252;
-					n = 3;
+					target = 80;
+					n = 22;
 					document.getElementById("modificationStatus").innerHTML = "Sense of Shame reduced.<br>Fetish added: Watersports<br>Fetish Added: Domination";
 				break;
 				case 3:
@@ -1722,19 +1780,19 @@ function setBoard() {
 			tileImages = schoolboyImagesB;
 			switch (caseStage) {
 				case 0:
-					target = 252;
-					n = 1;
+					target = 92;
+					n = 23;
 					document.getElementById("caseTotal").innerHTML = "3";
 					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Genetic condition cataloged for future alteration use.";
 				break;
 				case 1:
-					target = 96;
-					n = 2;
+					target = 144;
+					n = 24;
 					document.getElementById("modificationStatus").innerHTML = "Prostate stimulation applied. Injecting growth hormone. Injecting growth hormone. Warning; Repeated use of growth hormone will result in extreme sensitivity increase.<br>Injecting growth hormone.";
 				break;
 				case 2:
-					target = 252;
-					n = 3;
+					target = 160;
+					n = 25;
 					document.getElementById("modificationStatus").innerHTML = "Bladder expansion complete. Now adjusting positioning...<br>Patient orgasm achieved, extracting sexual fluids for storage.";
 				break;
 				case 3:
@@ -1750,19 +1808,19 @@ function setBoard() {
 			tileImages = milfImagesA;
 			switch (caseStage) {
 				case 0:
-					target = 252;
-					n = 1;
+					target = 76;
+					n = 17;
 					document.getElementById("caseTotal").innerHTML = "3";
 					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Body archetype matching 'Little Bitch' in found in archetype catalog. Adjusting to nearby archetype 'Young Adonis'.";
 				break;
 				case 1:
 					target = 96;
-					n = 2;
+					n = 18;
 					document.getElementById("modificationStatus").innerHTML = "Confidence improving hypnostream engaged.<br>Altering pores to generate 'Adonis-3' pheromone.<br>Applying growth hormone to genitals.";
 				break;
 				case 2:
-					target = 252;
-					n = 3;
+					target = 508;
+					n = 19;
 					document.getElementById("modificationStatus").innerHTML = "Body compatibility with new archetype at 74%.<br>Productivity-improving hypnostream engaged.<br>Empathy-improving hypnostream engaged.";
 				break;
 				case 3:
@@ -1778,19 +1836,19 @@ function setBoard() {
 			tileImages = runnerImagesA;
 			switch (caseStage) {
 				case 0:
-					target = 252;
-					n = 1;
+					target = 124;
+					n = 26;
 					document.getElementById("caseTotal").innerHTML = "3";
 					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing.";
 				break;
 				case 1:
-					target = 96;
-					n = 2;
+					target = 144;
+					n = 27;
 					document.getElementById("modificationStatus").innerHTML = "Genetic markers for 'runner's high' detected and marked. Improving...";
 				break;
 				case 2:
-					target = 252;
-					n = 3;
+					target = 224;
+					n = 28;
 					document.getElementById("modificationStatus").innerHTML = "Social-friendly hypnostream engaged. Engaging muscles and applying aphrodisiac reward.<br>Repeating.<br>Repeating. Patient Orgasm achieved.<br>Repeating.";
 				break;
 				case 3:
@@ -1806,19 +1864,19 @@ function setBoard() {
 			tileImages = streamerImagesA;
 			switch (caseStage) {
 				case 0:
-					target = 252;
-					n = 1;
+					target = 48;
+					n = 29;
 					document.getElementById("caseTotal").innerHTML = "3";
 					document.getElementById("modificationStatus").innerHTML = "Hypnosis plan commencing. Searching for appropriate stream for hypnostream.";
 				break;
 				case 1:
-					target = 96;
-					n = 2;
+					target = 80;
+					n = 30;
 					document.getElementById("modificationStatus").innerHTML = "'Sexual Goddess Worship', arousal peak at 15%. <br>'Public Use Whore Vol. 2', arousal peak at 15%. <br>'Public Squirt Sluts Compilation', arousal peak at 90%. Foundation found, now targeting patient's underlying squirting fetish.";
 				break;
 				case 2:
-					target = 252;
-					n = 3;
+					target = 140;
+					n = 31;
 					document.getElementById("modificationStatus").innerHTML = "Applying adrenaline... Panic response induced. Now applying aphrodisiac...<br>Repeating.<br>Repeating. Patient orgasm achieved.<br>Repeating...";
 				break;
 				case 3:
@@ -1835,18 +1893,18 @@ function setBoard() {
 			switch (caseStage) {
 				case 0:
 					target = 252;
-					n = 1;
+					n = 44;
 					document.getElementById("caseTotal").innerHTML = "3";
 					document.getElementById("modificationStatus").innerHTML = "Patient's legal rights signed away. Now deconstructing lower body.";
 				break;
 				case 1:
-					target = 96;
-					n = 2;
+					target = 124;
+					n = 45;
 					document.getElementById("modificationStatus").innerHTML = "Error. No mares available for operation. Stallion mass available. Fusing...";
 				break;
 				case 2:
 					target = 252;
-					n = 3;
+					n = 46;
 					document.getElementById("modificationStatus").innerHTML = "Warning. Mixing of female human and stallion will result in-<br>Warning disabled.<br>Adjusting maximum feedback limit on brain to account for new nervous system...<br>Error! Maximum feedback cannot be reached, patient will be in a constant state of rut!<br>Warning disabled.";
 				break;
 				case 3:
@@ -1862,22 +1920,17 @@ function setBoard() {
 			tileImages = catgirlImagesA;
 			switch (caseStage) {
 				case 0:
-					target = 252;
-					n = 1;
+					target = 96;
+					n = 40;
 					document.getElementById("caseTotal").innerHTML = "3";
 					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Accounting for previous modification history.";
 				break;
-				case 1:
-					target = 96;
+				case 41:
+					target = 324;
 					n = 2;
 					document.getElementById("modificationStatus").innerHTML = "Mass redistribution process underway. Assigning physical archetype. Introducing new physiology.";
 				break;
 				case 2:
-					target = 252;
-					n = 3;
-					document.getElementById("modificationStatus").innerHTML = "Altering and improving digestive tract. Efficiency at 2000%, excess mass directed to breast and ass tissue. Elasticity improved.";
-				break;
-				case 3:
 					n = 0;
 					blockGame = false;
 					gameDone = true;
@@ -1890,22 +1943,17 @@ function setBoard() {
 			tileImages = catgirlImagesB;
 			switch (caseStage) {
 				case 0:
-					target = 252;
-					n = 1;
+					target = 128;
+					n = 42;
 					document.getElementById("caseTotal").innerHTML = "3";
 					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Accounting for previous modification history.";
 				break;
 				case 1:
-					target = 96;
-					n = 2;
+					target = 148;
+					n = 43;
 					document.getElementById("modificationStatus").innerHTML = "Brain alteration underway, flexibility and restorative properties improved.";
 				break;
 				case 2:
-					target = 252;
-					n = 3;
-					document.getElementById("modificationStatus").innerHTML = "Ear canal alteration underway, elasticity improved and nerves rewired.";
-				break;
-				case 3:
 					n = 0;
 					blockGame = false;
 					gameDone = true;
@@ -1918,14 +1966,14 @@ function setBoard() {
 			tileImages = junkieImagesA;
 			switch (caseStage) {
 				case 0:
-					target = 252;
-					n = 1;
+					target = 628;
+					n = 32;
 					document.getElementById("caseTotal").innerHTML = "3";
 					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Heavy genetic damage from past modification accounted for, options limited.";
 				break;
 				case 1:
-					target = 96;
-					n = 2;
+					target = 60;
+					n = 33;
 					document.getElementById("modificationStatus").innerHTML = "Full replacement procedure with stallion member underway.";
 				break;
 				case 2:
@@ -1941,14 +1989,14 @@ function setBoard() {
 			tileImages = junkieImagesB;
 			switch (caseStage) {
 				case 0:
-					target = 252;
-					n = 1;
+					target = 152;
+					n = 34;
 					document.getElementById("caseTotal").innerHTML = "3";
 					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Heavy genetic damage from past modification accounted for, options limited.";
 				break;
 				case 1:
-					target = 96;
-					n = 2;
+					target = 192;
+					n = 35;
 					document.getElementById("modificationStatus").innerHTML = "Growth hormone applied to prostate. Rewriting bodily response to extreme pressure on prostate.";
 				break;
 				case 2:
@@ -1964,14 +2012,14 @@ function setBoard() {
 			tileImages = junkieImagesC;
 			switch (caseStage) {
 				case 0:
-					target = 252;
-					n = 1;
+					target = 96;
+					n = 36;
 					document.getElementById("caseTotal").innerHTML = "3";
 					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Heavy genetic damage from past modification accounted for, options limited.";
 				break;
 				case 1:
-					target = 96;
-					n = 2;
+					target = 384;
+					n = 37;
 					document.getElementById("modificationStatus").innerHTML = "Growth hormone applied to testicles. Rewriting bodily response to testicular pain.";
 				break;
 				case 2:
@@ -1987,15 +2035,78 @@ function setBoard() {
 			tileImages = junkieImagesD;
 			switch (caseStage) {
 				case 0:
-					target = 252;
-					n = 1;
+					target = 80;
+					n = 38;
 					document.getElementById("caseTotal").innerHTML = "3";
 					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Heavy genetic damage from past modification accounted for, options limited.";
 				break;
 				case 1:
 					target = 96;
-					n = 2;
+					n = 39;
 					document.getElementById("modificationStatus").innerHTML = "Penile sensitivity reduced, rewiring brain to receive constant buildup to orgasm. Removing natural blockades from spontaneous orgasm.";
+				break;
+				case 2:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "<b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
+		}
+		case "anomalyA": {
+			tileImages = anomalyImages;
+			switch (caseStage) {
+				case 0:
+					target = 104;
+					n = 11;
+					document.getElementById("caseTotal").innerHTML = "2";
+				break;
+				case 1:
+					target = 144;
+					n = 24;
+				break;
+				case 2:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "<b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
+		}
+		case "alterationA": {
+			tileImages = alterationImages;
+			switch (caseStage) {
+				case 0:
+					target = 80;
+					n = 30;
+					document.getElementById("caseTotal").innerHTML = "2";
+				break;
+				case 1:
+					target = 60;
+					n = 33;
+				break;
+				case 2:
+					n = 0;
+					blockGame = false;
+					gameDone = true;
+					document.getElementById("modificationStatus").innerHTML = "<b>Modification Plan Complete</b>";
+				break;
+			}
+			break;
+		}
+		case "rainyA": {
+			tileImages = rainyImages;
+			switch (caseStage) {
+				case 0:
+					target = 96;
+					n = 40;
+					document.getElementById("caseTotal").innerHTML = "2";
+				break;
+				case 1:
+					target = 240;
+					n = 13;
 				break;
 				case 2:
 					n = 0;
