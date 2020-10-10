@@ -775,9 +775,21 @@ function writeScene(scene) {
 			`);
 			writeTransition("junkieInterview", "Review interview file");
 			writeHTML(`
-				t TREATMENT PLAN A - MODIFICATION:<br>KEYWORDS:<br>A modification plan 
+				t TREATMENT PLAN A - MODIFICATION:<br>KEYWORDS: Horsecock, Dickgirl<br>A modification plan that would replace subject's genetalia completely with stored stallion penis.
 			`);
 			writeTransition("junkieA", "Begin treatment plan A");
+			writeHTML(`
+				t TREATMENT PLAN B - MODIFICATION:<br>KEYWORDS: Prostate Enhancement, Large Insertions, Anal, Dickgirl<br>A modification plan that would allow for prostate stimulation as a means of sperm evacuation.
+			`);
+			writeTransition("junkieB", "Begin treatment plan B");
+			writeHTML(`
+				t TREATMENT PLAN C - MODIFICATION:<br>KEYWORDS: CBT, Large Balls, Masochism, Dickgirl<br>A modification plan that would allow for testicular stimulation as a means of sperm evacuation.
+			`);
+			writeTransition("junkieB", "Begin treatment plan C");
+			writeHTML(`
+				t TREATMENT PLAN D - MODIFICATION:<br>KEYWORDS: Spontaneous Orgasm, Addictive Cum<br>A modification plan that would allow for automatic sperm ejaculation without stimulation of genitals.
+			`);
+			writeTransition("junkieD", "Begin treatment plan D");
 			writeTransition("caseSelect", "Go back to file selection");
 			break;
 		}
