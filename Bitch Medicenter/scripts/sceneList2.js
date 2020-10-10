@@ -1191,10 +1191,10 @@ function writeEvent(scene) {
 				liz You basically have a whole new body. I've taken the liberty of calling you a cab. I know you're itching to try it out, but take it slow for now. <br>Because your body is so sensitive, you might end up as what we in the professional world call a 'broken slut' if you dive right in to the new world of sexual pleasure available.
 				im images/wife/wifeA-0.gif
 				wife Nnn... Gotta... Cab... Cumming~!
-				wife I'll leave you to enjoy yourself for now, someone will come in when your ride arrives. I'm sure you'll have no problem living a satisfying life like this. 
+				liz I'll leave you to enjoy yourself for now, someone will come in when your ride arrives. I'm sure you'll have no problem living a satisfying life like this. 
 			`);
 			writeText("Her first orgasm in god knows how many years runs through her, taking her breath and rational thought away. She'll be politely escorted out by security to make room for new patients eventually.");
-			addflag("woman");
+			addFlag("woman");
 			writeFunction("writeEvent('wifeAA')", "That night...");
 			break;
 		}
@@ -1265,7 +1265,7 @@ function writeEvent(scene) {
 			writeSpeech("boyfriendPost", "", "I... Fuck! Come on, we're leaving. And then we're suing this place to the god damn foundations!");
 			writeText(characterArray[4].fName+" just nods again as she's pulled out of the room. Dark, unfamiliar desires are pounding in her head. As her boyfriend's fat ass jiggles while they make their escape, she licks her lips.");
 			writeFunction("writeEvent('girlfriendAA')", "Later");
-			addflag("sissy");
+			addFlag("sissy");
 			break;
 		}
 		case "girlfriendAA": {
@@ -1333,7 +1333,7 @@ function writeEvent(scene) {
 				t Despite his tone Michael finds himself pulling over anyways.
 			`);
 			writeFunction("writeEvent('girlfriendBB')", "Weeks later...");
-			addflag("sissy");
+			addFlag("sissy");
 			break;
 		}
 		case "girlfriendBB": {
@@ -1375,7 +1375,7 @@ function writeEvent(scene) {
 				t Adriana pushes past Liz and makes her way out the door.
 				liz Call us if you have any questions! Be sure to achieve orgasm at least once a day, but not more than-<br>... Aaand she's gone. We were supposed to tweak the rate of lust buildup... Well, she paid in advance, so I suppose it's not my problem anymore.
 			`);
-			addflag("woman");
+			addFlag("woman");
 			writeFunction("writeEvent('wifeBB')", "Later...");
 			break;
 		}
@@ -1437,7 +1437,7 @@ function writeEvent(scene) {
 				t A blast of sensation causes her legs to buckle, her workout shorts are already damp with sweat, but suddenly they're wet with something else. She forces herself upright, and starts making phonecall.
 				runner Ghh... Fucking... I can barely hold back...<br>Ashley! You bitch, that place you recommended-Ghhh!<br>Just... Just get over here! <b>NOW!</b>
 			`);
-			addflag("woman");
+			addFlag("woman");
 			writeFunction("writeEvent('runnerAA')", "Later");
 			break;
 		}
@@ -1478,7 +1478,7 @@ function writeEvent(scene) {
 				t Mandy leaves and Liz waves her off, before Liz takes a seat at the room's computer to search something.
 				liz "Hyped"... "Hyped"... Oh my, that's not the right word at all. Oh well.
 			`);
-			addflag("woman");
+			addFlag("woman");
 			writeFunction("writeEvent('streamerAA')", "Later");
 			break;
 		}
@@ -1597,7 +1597,7 @@ function writeEvent(scene) {
 				t She feels his urethra distend, a sign that a fresh blast is coming, and she pulls back so she can taste it as she swallows it down.
 				t In the coming months Danny will be finding himself quite popular as his roommate lets slip his condition, and it's all thanks to a successful treatment.
 			`);
-			addflag("sissy");
+			addFlag("sissy");
 			writeTransition("caseSelect", "Finish");
 			break;
 		}
@@ -1647,7 +1647,7 @@ function writeEvent(scene) {
 				jock Ah... I met someone and she's... She really likes me... She says I'm really cute and-Aah~! S-stop! I just came! <br>I'm sorry, I told her I'd be using the phone but she said she didn't care~! Ah~! I just wanted to say thank you, I feel really good~! <br>Ngh, yes, I'll keep you updated~! ByyyyiIIIEEE~!!! 
 				t Treatment complete! 
 			`);
-			addflag("sissy");
+			addFlag("sissy");
 			writeTransition("caseSelect", "Finish");
 			break;
 		}
@@ -1667,7 +1667,7 @@ function writeEvent(scene) {
 				liz You are. There's no downside to staying like this, but if you want to turn back all you need to do is abstain from cumming.<br>So, you're all paid up. Be sure to let us know if any complications arise, alright? I'm sure you want to get acquainted with your new self. Here's a pamphlet, I recommend the documentary "Ex-change", it covers a similar procedure.
 				jock I... I'll check it out. Thank you!
 			`);
-			addflag("woman");
+			addFlag("woman");
 			writeFunction("writeEvent('jockBB')", "Later");
 			break;
 		}
@@ -1702,7 +1702,7 @@ function writeEvent(scene) {
 				t Once she's inside the group of mothers set down James on the bed. A few of them seem hesitant to leave, but reluctantly do so once Lisa promises to keep them updated. 
 				t Exhausted, Lisa strips down and falls asleep in her own bed. 
 			`);
-			addflag("woman");
+			addFlag("woman");
 			writeFunction("writeEvent('milfAA')", "Later");
 			break;
 		}
