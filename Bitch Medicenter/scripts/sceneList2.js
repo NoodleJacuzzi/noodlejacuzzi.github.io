@@ -1492,7 +1492,7 @@ function writeEvent(scene) {
 				streamer So many more~<br> Cmon, all of you. Tell me what you'd do to me if you were here. I don't want a counter, I want to really feel like you're all here, staring at my totally soaked pussy~!
 				t The chatbox begins to fill in a frenzy, hundreds of depraved messages basically turning it into an orgy of text.
 				streamer "Any surgery?" No, this body is all natural. The confidence is from this body-mod place down the ways, Bitch Medicenter.
-				im images/aaa1.gif
+				im images/streamer/aaa1.gif
 				t For her the lewdness of the streaming is almost second nature, so in order to get her kicks off she has the camera zoomed in just before she squirts. She puts on quite the show for the audience, and for herself to enjoy later.
 				streamer Ghh... "Would I recommend them?" Of course! Actually, I was maybe thinking of dropping by again soon~<br>I wanna turn up whatever they did for me so that the meet & greet is extra fun!<br>"Chat's moving so fast nobody will know I'm gay"? Saw that! Ooh, another one's cumming!
 				t It turns out all she needed was a bit of confidence all along. The treatment was a success!
@@ -1500,7 +1500,7 @@ function writeEvent(scene) {
 			writeTransition("caseSelect", "Finish");
 			break;
 		}
-		case "schoolboyA": {
+		case "schoolboyB": {
 			writeHTML(`
 				define schoolboy = sp James; img scripts/gamefiles/profiles/schoolboy.jpg;
 				t The boy wakes up slowly, it's an unfamiliar sensation. Every morning before this the urge to piss before he wets the bed would have him violently run to the bathroom, he almost does this time on instinct.
@@ -1522,7 +1522,7 @@ function writeEvent(scene) {
 			writeFunction("writeEvent('schoolboyAA')", "Later");
 			break;
 		}
-		case "schoolboyAA": {
+		case "schoolboyBB": {
 			writeHTML(`
 				t Slowly.
 				t Danny's eyes flutter and he bites his lip.
@@ -1545,7 +1545,7 @@ function writeEvent(scene) {
 			writeTransition("caseSelect", "Finish");
 			break;
 		}
-		case "schoolboyB": {
+		case "schoolboyA": {
 			writeHTML(`
 				define schoolboy = sp Danny; img scripts/gamefiles/profiles/schoolboy.jpg;
 				t The boy suddenly jolts up, as if waking from a nightmare, crossing his legs on instinct as his need to piss rattles him awake once again.
@@ -1569,7 +1569,7 @@ function writeEvent(scene) {
 			writeFunction("writeEvent('schoolboyBB')", "Later");
 			break;
 		}
-		case "schoolboyBB": {
+		case "schoolboyAA": {
 			writeHTML(`
 				t A young woman stops suddenly at her bathroom door, her half-awake roommate is at the toilet, completely unaware he's forgotten to close the door.
 				t Her first instinct is to call out, embarrass him a little for his mistake, yet...
@@ -1577,7 +1577,7 @@ function writeEvent(scene) {
 				t The though crosses her mind as she nibbles on her lower lip. She's meant to be leaving by now, yet she's stuck staring at her roommate lets his foaming stream foam up the toilet.
 				t Her body moves on instinct, but not away.
 				schoolboy Haaah... It feels like it takes longer every-<br>Hannah!?
-				im bb1.gif
+				im images/schoolboy/bb1.gif
 				t The woman beneath him, her face soaked with piss, just gasps and sighs longingly, thirsty for more. She licks ber lips, enjoying the tingling sensation on her tongue, and then lunges forwards to take the flaccid dick, piss still dripping from the tip, into her mouth.
 				t She hollows out her cheeks to suck out as much more as she can, her thighs spread and her pussy leaking.
 				t She feels his urethra distend, a sign that a fresh blast is coming, and she pulls back so she can taste it as she swallows it down.

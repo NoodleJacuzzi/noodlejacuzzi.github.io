@@ -1861,22 +1861,23 @@ function setBoard() {
 					target = 252;
 					n = 1;
 					document.getElementById("caseTotal").innerHTML = "3";
+					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Accounting for previous modification history.";
 				break;
 				case 1:
 					target = 96;
 					n = 2;
-					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+					document.getElementById("modificationStatus").innerHTML = "Mass redistribution process underway. Assigning physical archetype. Introducing new physiology.";
 				break;
 				case 2:
 					target = 252;
 					n = 3;
-					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+					document.getElementById("modificationStatus").innerHTML = "Altering and improving digestive tract. Efficiency at 2000%, excess mass directed to breast and ass tissue. Elasticity improved.";
 				break;
 				case 3:
 					n = 0;
 					blockGame = false;
 					gameDone = true;
-					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+					document.getElementById("modificationStatus").innerHTML = "<b>Modification Plan Complete</b>";
 				break;
 			}
 			break;
@@ -1888,22 +1889,23 @@ function setBoard() {
 					target = 252;
 					n = 1;
 					document.getElementById("caseTotal").innerHTML = "3";
+					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Accounting for previous modification history.";
 				break;
 				case 1:
 					target = 96;
 					n = 2;
-					document.getElementById("modificationStatus").innerHTML = "Libido Increased 300%<br>Vaginal Sensitivity Increased 300%<br>Anal Sensitivity Increased 400%";
+					document.getElementById("modificationStatus").innerHTML = "Brain alteration underway, flexibility and restorative properties improved.";
 				break;
 				case 2:
 					target = 252;
 					n = 3;
-					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+					document.getElementById("modificationStatus").innerHTML = "Ear canal alteration underway, elasticity improved and nerves rewired.";
 				break;
 				case 3:
 					n = 0;
 					blockGame = false;
 					gameDone = true;
-					document.getElementById("modificationStatus").innerHTML = "Nervous system rewired according to 'Bitch in Heat' framework<br>Overall Sensitivity Increased 427%<br>Heat Status: Constant<br><b>Modification Plan Complete</b>";
+					document.getElementById("modificationStatus").innerHTML = "<b>Modification Plan Complete</b>";
 				break;
 			}
 			break;
