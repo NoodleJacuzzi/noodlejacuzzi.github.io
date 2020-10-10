@@ -196,6 +196,16 @@ function writeScene(scene) {
 			writeScene("settings");
 			break;
 		}
+		case "skipEnable": {
+			addFlag("skip");
+			writeScene("settings");
+			break;
+		}
+		case "skipDisable": {
+			removeFlag("skip");
+			writeScene("settings");
+			break;
+		}
 		case "portraitsEnable": {
 			removeFlag("portraitsDisabled");
 			writeScene("settings");
@@ -839,6 +849,11 @@ function writeScene(scene) {
 			break;
 		}
 		case "junkieC": {
+			blockGame = true;
+			blocks();
+			break;
+		}
+		case "junkieD": {
 			blockGame = true;
 			blocks();
 			break;
