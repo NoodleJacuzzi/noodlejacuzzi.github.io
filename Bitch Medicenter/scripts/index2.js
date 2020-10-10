@@ -908,53 +908,85 @@ function diagnostic() {
 	goof = goof.toLowerCase();
 	console.log("Testing code " + goof);
 	sceneTransition('cheat');
+	//to-do: cut out spaces in cheat codes
+	//Hello there! If you're here looking for cheat codes, feel free to copypaste this handy link of all of them without repeats: haa, rainy dayz, hu, av, princess quest, dtc, slackersavior, thedreadfulmanticore, ravager, pool noodle
 	switch (goof) {
-		case "pervert": {
-			if (data.player.pervert != true) {
-				data.player.pervert = true;
-				writeSpecial("Pervert mode activated!");
-				updateMenu();
-			}
-			else {
-				data.player.pervert = false;
-				writeSpecial("Pervert mode deactivated!");
-				updateMenu();
-			}
+		case "human alteration app": {
+			addFlag("alteration");
+			writeText("Code entered! The Human Alteration App short case is available (if it wasn't already)!")
 			break;
 		}
-		case "oowoo": {
-			if (data.player.oowoo != true) {
-				data.player.oowoo = true;
-				writeSpecial("OWO What's this?");
-			}
-			else {
-				data.player.oowoo = false;
-				writeText("Degenerate mode disabled.");
-			}
+		case "haa": {
+			addFlag("alteration");
+			writeText("Code entered! The Human Alteration App short case is available (if it wasn't already)!")
 			break;
 		}
-		case "hard rain": {
-			for (unlockIndex = 0; unlockIndex < galleryArray.length; unlockIndex++) {
-				if(galleryArray[unlockIndex].scenario == "Rainy DayZ") {
-					unlockScene(galleryArray[unlockIndex].index);
-				}
-			}
+		case "rainy dayz": {
+			addFlag("rainy");
+			writeText("Code entered! The Rainy DayZ short case is available (if it wasn't already)!")
 			break;
 		}
-		case "cold mile": {
-			writeSpecial("You unlocked all that were in version 1.0, thanks for playing the original! Check below for hints on how to get the 3 new scenes.");
-			for (unlockIndex = 0; unlockIndex < galleryArray.length; unlockIndex++) {
-				if(galleryArray[unlockIndex].scenario == "Rainy DayZ") {
-					if(galleryArray[unlockIndex].index == 'flower1' 
-					|| galleryArray[unlockIndex].index == 'flower2' 
-					|| galleryArray[unlockIndex].index == 'survivor2' ) {
-						writeText(galleryArray[unlockIndex].hint);
-					}
-					else {
-						unlockScene(galleryArray[unlockIndex].index);
-					}
-				}
-			}
+		case "anomaly vault": {
+			addFlag("anomaly");
+			writeText("Code entered! The Anomaly Vault short case is available (if it wasn't already)!")
+			break;
+		}
+		case "av": {
+			addFlag("anomaly");
+			writeText("Code entered! The Anomaly Vault short case is available (if it wasn't already)!")
+			break;
+		}
+		case "hentai university": {
+			addFlag("university");
+			writeText("Code entered! The Hentai University PSA is available (if it wasn't already)!")
+			break;
+		}
+		case "hu": {
+			addFlag("university");
+			writeText("Code entered! The Hentai University PSA is available (if it wasn't already)!")
+			break;
+		}
+		case "princess quest": {
+			addFlag("princess");
+			writeText("Code entered! The Princess Quest PSA is available (if it wasn't already)!")
+			break;
+		}
+		case "dared to change": {
+			writeText("Code rejected! Go play that game instead.")
+			break;
+		}
+		case "dtc": {
+			writeText("Code rejected! Go play that game instead.")
+			break;
+		}
+		case "cryptogreek": {
+			writeText("Code rejected! Go play Dared to Change instead.")
+			break;
+		}
+		case "slackersavior": {
+			writeText("Code rejected! He wrote for university, not medicenter. Hopefully his future projects can have a commercial here.")
+			break;
+		}
+		case "thedreadfulmanticore": {
+			writeText("Code rejected! His work isn't out yet. Maybe his game will have a commercial in the sequel?")
+			break;
+		}
+		case "ravager": {
+			writeText("Code rejected! Dragons and dragon-related modifications are banned in medicenter offices due to past building damages. Please go to a fantasy land to live out dragon fantasies, or head to https://4minutewarning.itch.io/ravager")
+			break;
+		}
+		case "4minutewarning": {
+			writeText("Code rejected! Dragons and dragon-related modifications are banned in medicenter offices due to past building damages. Please go to a fantasy land to live out dragon fantasies, or head to https://4minutewarning.itch.io/ravager")
+			break;
+		}
+		case "4 minute warning": {
+			writeText("Code rejected! Dragons and dragon-related modifications are banned in medicenter offices due to past building damages. Please go to a fantasy land to live out dragon fantasies, or head to https://4minutewarning.itch.io/ravager")
+			break;
+		}
+		case "pool noodle": {
+			addFlag("sissy");
+			addFlag("woman");
+			writeText("Code entered! Two unlockable PSAs are available (if they weren't already)!")
 			break;
 		}
 	}

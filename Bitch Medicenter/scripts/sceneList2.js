@@ -172,7 +172,14 @@ function writeScene(scene) {
 			else {
 				writeTransition("textOnlyDisable", "Disable text-only cases and PSAs", "#FF0000");
 			}
+			if (checkFlag("skip") == false) {
+				writeTransition("skipEnable", "Auto-skip operations");
+			}
+			else {
+				writeTransition("skipDisable", "Disable auto-skip");
+			}
 			writeTransition("lizSelection", "Change Liz's model");
+			writeTransition("cheat", "Enter cheat codes");
 			writeFunction("saveFile()", "Export save data to string");
 			writeFunction("loadFile()", "Import save data");
 			writeFunction("restartButton()", "Delete all save data", "#FF0000");
@@ -234,7 +241,7 @@ function writeScene(scene) {
 				<p class='centeredText'>Enter cheat code: <input type="text" id="cheatSubmission" value=""></p>
 				<p class='choiceText' onclick='diagnostic()'>Submit</p>
 			`;
-			writeTransition("mainMenu", "Go back");
+			writeTransition("settings", "Go back");
 			break;
 		}
 		case "caseSelect": {
@@ -2235,7 +2242,7 @@ function writeEvent(scene) {
 				liz These days, there's no stock for mares, only stallions. As a result the fine specimen you've become is a little more... Studly that you probably expected to be.
 				t Dakota can feel every movement, no matter how slight, of Liz's hands as she explores Dakota's new body.
 				liz Powerful muscles, a good show of your value as breeding stock. A beautiful donut-rim of an ass, that'll be a moneymaker, women and men alike will break the bank to seal their lips around yours. But the real prize...
-				t White lightning surges through oterkinF's mind and body as she feels a pair of hands grasp the beast between her legs. It must be massive, even for a stallion! Just picturing it in her mind makes the fog grow so strong she can't evej think anymore, yet too quickly the hands are gone.
+				t White lightning surges through otherkinF's mind and body as she feels a pair of hands grasp the beast between her legs. It must be massive, even for a stallion! Just picturing it in her mind makes the fog grow so strong she can't even think anymore, yet too quickly the hands are gone.
 				liz Despite growing demand for horse sperm, animal rights activists have banned virility enhancements on animal subjects. The legal headaches and the pay required to make human milking studs is even worse. But, since the procedures were conducted while you were still regarded as a human, and you don't need to be paid a wage now that you're a horse...
 				t As Liz goes on about legal issues Dakota grows increasingly more frantic. Down on her knees she rubs her massive horsecock against the smooth floor, coating the ground in thick musk, but growing no closer to release.
 				liz Ah, don't bother with that. You're in a state known as a 'rut', nothing short of a warm wet hole will get you off now. Your brain still being a woman's means it's also clashing with that, so you're technically in a state of heat as well. Not to worry though, simultaneous dick and anal stimulation will scratch those itches, temporarily.<br>We have a lovely ranch that'll pay very good money and quite a few royalties to take you in. You'd like that, wouldn't you? Teenagers, milfs, even some sissies between your legs worshipping you like a god while a desperate slut makes out with your asshole like it's her husband. And afterwards you'll be properly bred.
