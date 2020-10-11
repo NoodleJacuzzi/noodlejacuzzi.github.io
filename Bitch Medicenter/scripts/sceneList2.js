@@ -979,11 +979,11 @@ function writeScene(scene) {
 		case "bubble": {
 			writeHTML(`
 				t Bubble & Dee has been the #1 erotic candy shop in the nation for four years today, starting as a brand in a small city selling only to exclusive customers. Now, we're a mega brand but we're still in touch with the men and women walking the streets today. We thought we'd celebrate with something special. Now introducing the latest product in the Bubble & Dee family: Gummy Dicks classic! 
-				im
+				im images/psas/candy1.gif
 				t Jeremy here is enjoying the result of our latest batch. How's it feel?<br>Well, if he weren't screaming at the top of his lungs bouncing on that dildo, I'm sure he'd say "Taste's great"! Just like the modern citizen who gives our candy a taste!
-				im
+				im images/psas/candy2.gif
 				t Whoa, likes like Oliver here got a bite of the sour variation, perfect for pranks! Just one bite can shatter a masculinity in half, and it looks like he gobbled down a whole handful! Uh-oh! Keep cumming Oli, you'll be a man again soon!
-				im
+				im images/psas/candy3.gif
 				t Ronnie here is participating in our latest hashtag challenge, send a message on twatter with the hashtag #gummydickclassic for a chance to win a lifetime supply! You've seen what one bite can do!
 				liz Bitch Medicenter is a proud partner of Bubble & Dee Corporations, come on downtown for a sample today!
 			`);
@@ -1016,9 +1016,9 @@ function writeScene(scene) {
 				liz Hi. My name's Liz and if you're under the age of twenty-seven your generation is experiencing the biggest drug epidemic this century. And it's mostly because of this little bad boy right here.
 				t Liz holds up a hand holding a small blue crystal in her hand.
 				liz This... Is hypermeth. Your friends or classmates might tell you it's fine, that the symptoms clear up quickly, or that the addiction is entirely mental. They'll say the anti-hypermeth PSAs you see on video ads are overblow, and that's partially true. <br>We've all see the classic 'this is your dick, this is your dick on hypermeth.' No, hypermeth will not cause you to literally drown your local library or pawn shop in cum. <br>But you should always keep in mind what this little blue rock can do to you. Mind bending pleasure, but at what cost? Nosebleeds, literal brain scrambling, temporary to permanent perception of pain as pleasure. That last one sounds fun until the landlord catches you getting your 'slut shocks' with a metal fork in an outlet. The truth is that modern medicine has moved past this dangerous neurodrug. Take a look at Angelina here.
-				im
+				im images/psas/meth1.gif
 				liz Angelina is responsibly using a new, safer alternative to the dangerous drug. I get it, I understand where you're coming from if you feel that urge just to scramble up your brains and turn into the sluttiest thing since fast food. I myself suffered from a hypermeth addiction after I was exposed years ago.
-				im
+				im images/psas/meth2.gif
 				liz If you struggle with hypermeth addiction, the damage doesn't have to be permanent. Come on down to Bitch Medicenter and I'll see you through your treatment personally. 
 			`);
 			writeTransition("psaList", "Go back");
