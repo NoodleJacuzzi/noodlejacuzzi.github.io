@@ -150,8 +150,8 @@ function writeScene(scene) {
 			writeSlideshow("images/BM.png");
 			writeText("Bitch Medicenter Demo");
 			writeText("In a near future where body and mind alteration are the latest fad, customers of Bitch Medicenter often have very specific needs. Liz the physician and a nameless technician are here to fulfill those needs in the most depraved way possible.");
-			writeText("This game is still lacking content. Please feel free to offer suggestions!");
-			writeText("Tags are on a case-by-case basis. View each patient's file and avoid whatever you aren't into. The most common fetish is body / mind alteration.");
+			writeText("This game is standalone and complete, please feel free to offer suggestions for the sequel!");
+			writeText("Tags are on a case-by-case basis. View each patient's file and avoid whatever you aren't into. The most common fetish is body / mind alteration, but also included are very extreme fetishes like aural sex and a female-to-male-centaur transformation.");
 			document.getElementById('output').innerHTML +=`
 			<div class="choiceGrid">
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter.html">Play the game online</a>
@@ -159,6 +159,7 @@ function writeScene(scene) {
 				<a class="choiceGridText" href="https://www.patreon.com/posts/42602906">Download the game</a>
 				<a class="choiceGridText" href="https://tfgames.site/?module=viewgame&id=2362">View the TFGame entry</a>
 				<a class="choiceGridText" href="https://f95zone.to/threads/bitch-medicenter-v1-complete-noodlejacuzzi.64009/">View the F95Zone thread</a>
+				<a class="choiceGridText" href="https://www.reddit.com/r/lewdgames/comments/ja5rlp/bitch_medicenterhtmlcomplete/?">View the Reddit thread</a>
 				<a class="choiceGridText" href="http://freesuggestionbox.com/pub/http://freesuggestionbox.com/pub/lckvepz">Anonymous Suggestion Box</a>
 				
 			</div>
