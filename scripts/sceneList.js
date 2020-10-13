@@ -161,6 +161,7 @@ function writeScene(scene) {
 				<a class="choiceGridText" href="https://f95zone.to/threads/bitch-medicenter-v1-complete-noodlejacuzzi.64009/">View the F95Zone thread</a>
 				<a class="choiceGridText" href="https://www.reddit.com/r/lewdgames/comments/ja5rlp/bitch_medicenterhtmlcomplete/?">View the r/lewdgames thread</a>
 				<a class="choiceGridText" href="https://www.reddit.com/r/AndroidNSFWgaming/comments/ja5up4/bitch_medicenterhtmlcomplete/">View the r/lewdgames thread</a>
+				<a class="choiceGridText" href="https://www.futanaripalace.com/showthread.php?67159-Bitch-Medicenter&p=1323600#post1323600">View the Futanari Palace thread</a>
 				<a class="choiceGridText" href="http://freesuggestionbox.com/pub/http://freesuggestionbox.com/pub/lckvepz">Anonymous Suggestion Box</a>
 				
 			</div>
