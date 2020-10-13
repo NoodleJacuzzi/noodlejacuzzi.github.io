@@ -407,7 +407,7 @@ function writeSpeech (name, img, text) {
 }
 
 function writeBig (img) {
-	if (imagesDisabled != true) {
+	if (checkFlag("picturesDisabled") != true) {
 	document.getElementById('output').innerHTML += `
 		<img class="bigPicture" src="` + img + `">
 		<br>

@@ -80,13 +80,17 @@ function writeScene(scene) {
 			break;
 		}
 		case "affiliates": {
-			writeText("The following are a collection of other work collated by site manager NoodleJacuzzi. After extensive peer review and focus testing they will air on medicenter television as entertainment during waiting lounge period.");
+			writeText("The following are a collection of other work completed by site manager NoodleJacuzzi. After extensive peer review and focus testing they will air on medicenter television as entertainment during waiting lounge period.");
 			writeTransition("haa", "Human Alteration App Commercial");
 			writeTransition("princess", "Princess Quest Commercial");
 			writeTransition("rainyDayZ", "Rainy DayZ Commercial");
 			writeTransition("anomaly", "Anomaly Vault Commercial");
 			writeTransition("university", "Hentai University Commercial");
 			writeTransition("medicenter", "Bitch Medicenter Marketing Campaign");
+			writeText("...");
+			writeText("Additionally, other corporations / individuals may air their commercials on medicenter television on request, or if the site manager deems them as 'that good shit'. If you own the material and dislike it's inclusion here, please contact the site manager for its removal.");
+			writeTransition("dtc", "Dared to Change Commercial");
+			writeTransition("ravager", "Ravager Commercial");
 			writeTransition("mainMenu", "Go back");
 			break;
 		}
@@ -170,12 +174,54 @@ function writeScene(scene) {
 			writeTransition("affiliates", "Close file");
 			break;
 		}
+		case "dtc": {
+			writeText("A woman in a business suit approaches the camera, her stride and voice both steady.");
+			writeSpeech("Narrator","scripts/gamefiles/commercials/narrator.jpg","Suppose a woman walks into a forest. A fairy approaches, saying to either let herself be examined, or be cursed. The woman flees, but her body becomes more lithe as she goes. By the time she escapes the forest, she's no taller than four feet, her body slim, willowy, and around 300% more fuckable than when she first came.");
+			writeSpeech("Narrator","scripts/gamefiles/commercials/narrator.jpg","Does this sound realistic to you? The founder of D.T.C. Games answers,\"Absolutely,\" and I'm with her right now. Our viewers would love to know, Miss, just who exactly is the <i><b>real</b></i> you.");
+			writeSpeech("Conveniomancer","scripts/gamefiles/commercials/conveniomancer.jpg","I use magic to transform people. The board game is magical, and I am using the arcane arts to make the game fulfill peoples' desires.");
+			writeSpeech("Narrator","scripts/gamefiles/commercials/narrator.jpg","Even when interviewed on the street, she refuses to break character. An interesting marketing tactic that appears to be paying off.");
+			writeSpeech("Conveniomancer","scripts/gamefiles/commercials/conveniomancer.jpg","This isn't an interview, this is my <i>bedroom</i>, and I am <i>literally a <b>dick-wizard.</b></i> I went to Clocktower Academy for eight years, and I majored in-");
+			writeText("The woman raises a finger to silence the self-proclaimed wee-wee-wizard, who goes quiet for a short moment with a look of incredulity.");
+			writeSpeech("Conveniomancer","scripts/gamefiles/commercials/conveniomancer.jpg","...How the fuck did you even get a camera in my house!?");
+			writeSpeech("Narrator","scripts/gamefiles/commercials/narrator.jpg","And now, let's hear some testimonials about just how great D.T.C. can be.");
+			writeSpeech("Dudley Dudely","scripts/gamefiles/commercials/male.jpg","I am a simple man with a simple dream. Thanks to D.T.C. I got to live out that dream of having a big-tittied fox lady tell me I look handsome. We also had sex, which was nice too.");
+			writeSpeech("Sally Sassafrass","scripts/gamefiles/commercials/female.jpg","After six years of spelunking my sin-cavern to dickgirl porn, I thought I'd never get the chance to get fucked into a coma by a woman with a penis as thick around as my arm. Fortunately, not only was I wrong, but D.T.C. also provides complimentary lube.");
+			writeSpeech("Manic \"Gimme the Gobbo\" Mike","scripts/gamefiles/commercials/other.jpg","I took my wife to D.T.C. for a relaxing anniversary, and she turned herself into a shortstack goblin girl with a vagina deeper than the plot of Neon Genesis Evangelion. Ten out ten, would recommend.");
+			writeText("Slowly nodding, the woman turns to look soulfully into the camera as the Founder of D.T.C. fumes indignantly.");
+			writeSpeech("Narrator","scripts/gamefiles/commercials/narrator.jpg","The intense role-playing experience clearly knows no limits, with some players seeming convinced that it's real. If you're interested in an intensive role-playing experience, then D.T.C. may be right for you.");
+			writeBig("scripts/gamefiles/commercials/dtc.png");
+			writeText("D.T.C. - Games that Change Your Life! Learn more at Dare(d) to Change's <a href='https://tfgames.site/index.php?module=viewgame&id=2189'>IGDB entry at TFGames.</a><br>");
+			writeText("<i><font size='-2'>Dare(d) to Change is a subsidiary of CryptoGreekCreates - we Crypt-Do what Noo-Don't.</font></i>");
+			writeTransition("affiliates", "Close file");
+			break;
+		}
+		case "ravager": {
+			writeText("Your dungeon master has placed you in a dreadfully precarious position.");
+			writeText("<i><font size='-1'>You're playing as the most phenomenal creature ever created...</font></i>");
+			writeText("Their skin grows cold at the first glimpse at your enormous size.");
+			writeText("<i><font size='-1'>You're the product of an incredible lineage...</font></i>");
+			writeText("Survival depends on a quick, decisive move...");
+			writeText("<i><font size='-1'>The choice is yours...</font></i>");
+			writeText("Will you fight, or run?");
+			writeText("<i><font size='-1'>Use your sharp teeth!</font></i>");
+			writeBig("scripts/gamefiles/commercials/ravager.png");
+			writeText("Draconic transformation is banned on medicenter property due to potential fize hazards.");
+			writeText("<i><font size='-1'>But you can learn more about Ravager here: <a href = 'https://4minutewarning.itch.io/ravager'>https://4minutewarning.itch.io/ravager</a></font></i>");
+			writeTransition("affiliates", "Close file");
+			break;
+		}
 		case "settings": {
 			if (checkFlag("portraitsDisabled") == false) {
 				writeTransition("portraitsDisable", "Disable character thumbnail portraits in dialogue", "#FF0000");
 			}
 			else {
 				writeTransition("portraitsEnable", "Enable character thumbnail portraits in dialogue", "#91eba9");
+			}
+			if (checkFlag("picturesDisabled") == false) {
+				writeTransition("picturesDisable", "Disable all pictures/gifs in scenes", "#FF0000");
+			}
+			else {
+				writeTransition("picturesEnable", "Enable pictures/gifs in scenes", "#91eba9");
 			}
 			if (checkFlag("textOnly") == false) {
 				writeTransition("textOnlyEnable", "Enable text-only cases and PSAs", "#91eba9");
@@ -224,6 +270,16 @@ function writeScene(scene) {
 		}
 		case "portraitsDisable": {
 			addFlag("portraitsDisabled");
+			writeScene("settings");
+			break;
+		}
+		case "picturesEnable": {
+			removeFlag("picturesDisabled");
+			writeScene("settings");
+			break;
+		}
+		case "picturesDisable": {
+			addFlag("picturesDisabled");
 			writeScene("settings");
 			break;
 		}
