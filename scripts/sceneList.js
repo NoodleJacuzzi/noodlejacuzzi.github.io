@@ -8,8 +8,6 @@ function writeScene(scene) {
 					<p class = "centeredText" style="font-size: 150%;">Welcome to NoodleJacuzzi's Master Index!</p>
 					<p class = "centeredText">Disclaimer:<br>These games feature erotic material depicting strong sexual themes. The content in these games is not appropriate for minors, please enjoy responsibly. If you are not of legal age, please head to a place like coolmathgames or abcya for content you can legally enjoy.</p>
 					<p class = "centeredText">If you'd like to discuss the games here, or want to hang out with people like me or Cryptogreek, consider popping into the <a href="https://discord.gg/B3AszYM">discord server</a>. You can opt into release notifications and it's the easiest way to voice feedback about the games.</p>
-					<p class = "centeredText"><b>September's release Schedule:</b></p>
-					<p class = "centeredText">None, sorry, health issues mean I'm on vacation</p>
 					<p class = "centeredText"><b>October's release Schedule:</b></p>
 					<p class = "centeredText">Bitch Medicenter</p>
 					<p class = "centeredText">Hentai University v14</p>
@@ -70,6 +68,7 @@ function writeScene(scene) {
 			writeText("You find yourself with a phone app that can alter people's minds and bodies. Choose between one of two routes where either you're in control of the world or the app is stolen from you. There's a clear sense of progression throughout and no focus on grinding.");
 			writeText("Dom route tags: Incest (optionally non blood-related), Mind Control, Sluttification, Degradation, Exhibitionism, Watersports (optional, not yet implemented)");
 			writeText("Sub route tags: 2D Art, Incest (optionally non blood-related), Sissification, Female-to-Shemale Transformation, Cum Eating, Sounding, NTR (mild & optional), Smothering, Watersports");
+			writeText("Status: On hiatus until Hentai University's main story is complete.");
 			document.getElementById('output').innerHTML +=`
 			<div class="choiceGrid">
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Human%20Alteration%20App/Human%20Alteration%20App.html">Play the game online</a>
@@ -96,6 +95,7 @@ function writeScene(scene) {
 			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry dickgirls, you play as a young woman searching for supplies to survive.");
 			writeText("Navigate a town and city deliberately working to sabotage yourself and throw yourself into the clutches of the zombie hordes, the goal of the game here is to be defeated and attacked to collect and unlock all of the game's scenes. Now features two additional campaigns as well!");
 			writeText("Tags: Real Porn, Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Rimming (can be disabled), Bestiality (can be disabled), Parasites (can be disabled), Watersports (can be disabled)");
+			writeText("Status: On hiatus(?) until Hentai University's main story is complete.");
 			document.getElementById('output').innerHTML +=`
 			<div class="choiceGrid">
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html">Play the game online</a>
@@ -125,6 +125,7 @@ function writeScene(scene) {
 			writeText("You play as a researcher performing experiments on various reality warping artifacts, currently including a presence-erasing bracelet and a crate that converts anything inside into a hypersexualized version of itself.");
 			writeText("The game uses real porn gifs, and is similar in tone to Human Alteration App's dom route. The themes and fetishes of the game are governed by what artifacts you interact with, hopefully as time passes you'll find and artifact you really connect with. Let me know if you have any artifact / scene ideas!");
 			writeText("Nonoptional Tags: Unpercieved Sex, Ignored Sex, Dubious Consent, Seduction of Women in Committed Relationships. All the rest of the tags depend on what you interact with.");
+			writeText("Status: v9 Should be coming sometime soon, perhaps in November?");
 			document.getElementById('output').innerHTML +=`
 			<div class="choiceGrid">
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault.html">Play the game online</a>
@@ -152,6 +153,7 @@ function writeScene(scene) {
 			writeText("In a near future where body and mind alteration are the latest fad, customers of Bitch Medicenter often have very specific needs. Liz the physician and a nameless technician are here to fulfill those needs in the most depraved way possible.");
 			writeText("This game is standalone and complete, please feel free to offer suggestions for the sequel!");
 			writeText("Tags are on a case-by-case basis. View each patient's file and avoid whatever you aren't into. The most common fetish is body / mind alteration, but also included are very extreme fetishes like aural sex and a female-to-male-centaur transformation.");
+			writeText("Status: Collecting typos.");
 			document.getElementById('output').innerHTML +=`
 			<div class="choiceGrid">
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Bitch%20Medicenter/Bitch%20Medicenter.html">Play the game online</a>
@@ -181,6 +183,7 @@ function writeScene(scene) {
 			writeText("Uses art done by Neromashin. It's all from a game named 'Oujo & Onna Kishi W Do Gehin Roshutsu ~Chijoku no Misemono Dorei~' published by PinPoint. You can find the official website of the game at http://www.pin-point.biz/27_wdgr/index.html, but it's in Japanese. There is an English version coming to steam, but I've heard negative things about the translation's quality.");
 			writeText("As a note, I really do not recommend playing this on mobile. There have also been a few issues with playing it online. As it's only 4 megs, downloading it is the reccomended way to play.");
 			writeText("Tags: Moral Degradation, Corruption, Tentacles, Cum Inflation, Exhibitionism");
+			writeText("Status: Totally complete!");
 			document.getElementById('output').innerHTML +=`
 			<div class="choiceGrid">
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Princess%20Quest/Princess%20Quest.html">Play the game online</a>
@@ -209,6 +212,7 @@ function writeScene(scene) {
 			writeText("The game features multiple male characters with a femboi/twink bodytype. These are entirely optional and you can enable a vegetarian mode to avoid encountering them. On the opposite end if you aren't interested in the girls none of the bois require you to engage with female characters to unlock all their content.");
 			writeText("This game uses art by Enoshima Iki, Nagi Ichi, Oreteki18kin, Gujira 4 Gou, and Kinta no Mousou and is meant to be similar in feel to Hentai High School, but without the focus on school management, more emphasis on wandering / corruption, and a much higher quality body of images. The end goal here is a town packed with dozens of characters using a framework I can continually add more content to.");
 			writeText("Tags: Hypnosis, features many other tags entirely avoidable tags based on characters such as incest, dubcon, and gay content");
+			writeText("Status: v14 will be released on October 23rd");
 			document.getElementById('output').innerHTML +=`
 			<div class="choiceGrid">
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html">Play the game online</a>
