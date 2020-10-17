@@ -212,7 +212,7 @@ function writeScene(scene) {
 			writeText("The game features multiple male characters with a femboi/twink bodytype. These are entirely optional and you can enable a vegetarian mode to avoid encountering them. On the opposite end if you aren't interested in the girls none of the bois require you to engage with female characters to unlock all their content.");
 			writeText("This game uses art by Enoshima Iki, Nagi Ichi, Oreteki18kin, Gujira 4 Gou, and Kinta no Mousou and is meant to be similar in feel to Hentai High School, but without the focus on school management, more emphasis on wandering / corruption, and a much higher quality body of images. The end goal here is a town packed with dozens of characters using a framework I can continually add more content to.");
 			writeText("Tags: Hypnosis, features many other tags entirely avoidable tags based on characters such as incest, dubcon, and gay content");
-			writeText("Status: v14 will be released on October 23rd");
+			writeText("Status: v14 will be released on October 30th");
 			document.getElementById('output').innerHTML +=`
 			<div class="choiceGrid">
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html">Play the game online</a>
