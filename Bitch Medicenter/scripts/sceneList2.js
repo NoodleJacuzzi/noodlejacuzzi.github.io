@@ -80,7 +80,7 @@ function writeScene(scene) {
 			break;
 		}
 		case "affiliates": {
-			writeText("The following are a collection of other work completed by site manager NoodleJacuzzi. After extensive peer review and focus testing they will air on medicenter television as entertainment during waiting lounge period.");
+			writeText("The following are a collection of other works completed by site manager NoodleJacuzzi. After extensive peer review and focus testing they will air on medicenter television as entertainment during waiting lounge period.");
 			writeTransition("haa", "Human Alteration App Commercial");
 			writeTransition("princess", "Princess Quest Commercial");
 			writeTransition("rainyDayZ", "Rainy DayZ Commercial");
@@ -129,7 +129,7 @@ function writeScene(scene) {
 			writeSpeech("You", "scripts/gamefiles/commercials/rainy.jpg", "Barricade your homes.");
 			writeText("The screen cuts to a small-dicked woman singing naked in the rain, hypnotized-looking men stumbling after her.");
 			writeSpeech("You", "scripts/gamefiles/commercials/rainy.jpg", "Avoid all contact with infected individuals.");
-			writeText("The screen flashes to a dozen naked woman, all sporting dicks, chasing a red-hooded woman.");
+			writeText("The screen flashes to a dozen naked women, all sporting dicks, chasing a red-hooded woman.");
 			writeSpeech("You", "scripts/gamefiles/commercials/rainy.jpg", "Wait for official instructions. Ha!");
 			writeText("It cuts back to the young survivor crumpling up the notice.");
 			writeSpeech("You", "scripts/gamefiles/commercials/rainy.jpg", "Wait my ass. This used to be a nice nei-Aaah!?");
@@ -186,7 +186,7 @@ function writeScene(scene) {
 			writeSpeech("Narrator","scripts/gamefiles/commercials/narrator.jpg","And now, let's hear some testimonials about just how great D.T.C. can be.");
 			writeSpeech("Dudley Dudely","scripts/gamefiles/commercials/male.jpg","I am a simple man with a simple dream. Thanks to D.T.C. I got to live out that dream of having a big-tittied fox lady tell me I look handsome. We also had sex, which was nice too.");
 			writeSpeech("Sally Sassafrass","scripts/gamefiles/commercials/female.jpg","After six years of spelunking my sin-cavern to dickgirl porn, I thought I'd never get the chance to get fucked into a coma by a woman with a penis as thick around as my arm. Fortunately, not only was I wrong, but D.T.C. also provides complimentary lube.");
-			writeSpeech("Manic \"Gimme the Gobbo\" Mike","scripts/gamefiles/commercials/other.jpg","I took my wife to D.T.C. for a relaxing anniversary, and she turned herself into a shortstack goblin girl with a vagina deeper than the plot of Neon Genesis Evangelion. Ten out ten, would recommend.");
+			writeSpeech("Manic \"Gimme the Gobbo\" Mike","scripts/gamefiles/commercials/other.jpg","I took my wife to D.T.C. for a relaxing anniversary, and she turned herself into a shortstack goblin girl with a vagina deeper than the plot of Neon Genesis Evangelion. Ten out of ten, would recommend.");
 			writeText("Slowly nodding, the woman turns to look soulfully into the camera as the Founder of D.T.C. fumes indignantly.");
 			writeSpeech("Narrator","scripts/gamefiles/commercials/narrator.jpg","The intense role-playing experience clearly knows no limits, with some players seeming convinced that it's real. If you're interested in an intensive role-playing experience, then D.T.C. may be right for you.");
 			writeBig("scripts/gamefiles/commercials/dtc.png");
@@ -205,7 +205,7 @@ function writeScene(scene) {
 			writeText("Will you fight, or run?");
 			writeText("<i><font size='-1'>Use your sharp teeth!</font></i>");
 			writeBig("scripts/gamefiles/commercials/ravager.png");
-			writeText("Draconic transformation is banned on medicenter property due to potential fize hazards.");
+			writeText("Draconic transformation is banned on medicenter property due to potential fire hazards.");
 			writeText("<i><font size='-1'>But you can learn more about Ravager here: <a href = 'https://4minutewarning.itch.io/ravager'>https://4minutewarning.itch.io/ravager</a></font></i>");
 			writeTransition("affiliates", "Close file");
 			break;
@@ -418,7 +418,7 @@ function writeScene(scene) {
 			`);
 			writeTransition("girlfriendInterview", "Review interview file");
 			writeHTML(`
-				t TREATMENT PLAN A - MODIFICATION:<br>Female-to-Shemale, Male-to-Sissy, Prostate growth<br>A modification plan that cause the subject to grow a sizable penis, and alter her boyfriend to be more physically receptive to the idea.
+				t TREATMENT PLAN A - MODIFICATION:<br>Female-to-Shemale, Male-to-Sissy, Prostate growth<br>A modification plan that causes the subject to grow a sizable penis, and alter her boyfriend to be more physically receptive to the idea.
 			`);
 			writeTransition("girlfriendA", "Begin treatment plan A");
 			writeHTML(`
@@ -471,7 +471,7 @@ function writeScene(scene) {
 			writeHTML(`
 				img scripts/gamefiles/characters/jock.jpg
 				t IDENTIFYING INFORMATION:<br>The subject is a 34-year old former quarterback not currently in a relationship. Subject was admitted voluntarily and was compliant during interview.
-				t CHIEF COMPLAINT:<br> Subject seeks modification that can allow for an active sex life despite his former erotic drug use. Specific substances used resulted in shrinking of genetalia to an irreversible degree, and subject is willing to enhance other or change aspects of his body for a safer modification plan.
+				t CHIEF COMPLAINT:<br> Subject seeks modification that can allow for an active sex life despite his former erotic drug use. Specific substances used resulted in shrinking of genitalia to an irreversible degree, and subject is willing to enhance other or change aspects of his body for a safer modification plan.
 			`);
 			writeTransition("jockInterview", "Review interview file");
 			writeHTML(`
@@ -543,7 +543,7 @@ function writeScene(scene) {
 				t Playback begins, a young man is sitting nervously on the patient bed fidgeting every so often. He looks very young, hopefully Liz was thorough in checking his ID. 
 				liz Could you say your name and your reason for coming here to the camera, please? 
 				schoolboy My name is Danny. I... I don't know about this... 
-				liz Please, don't be afraid. The only people who will se this are me and the technician working on your case. We deal with cases like this one all the time, there's nothing to be ashamed of. 
+				liz Please, don't be afraid. The only people who will see this are me and the technician working on your case. We deal with cases like this one all the time, there's nothing to be ashamed of. 
 				schoolboy Alright. Okay. I, uh... 
 				T The young man takes a deep breath. 
 				schoolboy I pee a lot...
@@ -593,7 +593,7 @@ function writeScene(scene) {
 				t Playback begins, a woman is sitting on the patient bed. She's gorgeous, the only things more attention grabbing than her thick hips is her incredible bust barely contained by her dress. She's obviously distressed, playback has begun mid-argument.
 				milf - and so he keeps coming back with bruises, and even a black eye! I just don't know what to do!
 				liz I see. I've just started recording so our technical staff can be kept up to date. Could you say your name and reason for coming? 
-				milf Yes. My name is milfF. I'm here because my son, James, is getting bullied, I actually thought that... Well... 
+				milf Yes. My name is Lisa. I'm here because my son, James, is getting bullied, I actually thought that... Well... 
 				liz Right, that this was a center for 'little bitches', I remember.
 				milf Just so you know I'd never call my son that! I jus-
 				liz I see. And how old is he?
@@ -628,7 +628,7 @@ function writeScene(scene) {
 			`);
 			writeTransition("runnerInterview", "Review interview file");
 			writeHTML(`
-				t TREATMENT PLAN A - MODIFICATION:<br>KEYWORDS: Fitness, Lesbian, Lezdom<br>A modification plan that would improve and lengthen the state of "runner's high', specially modified to encourage social behavior after a workout.
+				t TREATMENT PLAN A - MODIFICATION:<br>KEYWORDS: Fitness, Lesbian, Lezdom<br>A modification plan that would improve and lengthen the state of 'runner's high', specially modified to encourage social behavior after a workout.
 			`);
 			writeTransition("runnerA", "Begin treatment plan A");
 			writeTransition("caseSelect", "Go back to file selection");
@@ -640,7 +640,7 @@ function writeScene(scene) {
 				t Playback begins, a very fit young woman in a sports bra and shorts is sitting on the patient bed.
 				liz Could you repeat that for the camera real quick? It wasn't recording.
 				runner I just wanna be fit, y'know? And I guess if you could touch up a few old scars while you're at it... I wouldn't mind looking good for a potential exercise buddy.
-				t runnerF shyly plays with her hair, Liz just smiles in response.
+				t Marie shyly plays with her hair, Liz just smiles in response.
 				liz That's absolutely no problem. a simple enhancement job should fix those up and give you a healthy burst of energy. As for pay it shouldn't come out to too much. What's your insurance like? Ah, that's all the relevant details for the technician. Let me just turn the camera off.
 			`);
 			writeTransition("runnerFile", "Finish review");
@@ -730,7 +730,7 @@ function writeScene(scene) {
 			writeHTML(`
 				img scripts/gamefiles/characters/parasol.jpg
 				t IDENTIFYING INFORMATION:<br>Subject is a representative of Parasol Medical Corporation, and brought with them multiple uncooperative patients along with appropriate paperwork to begin study of a potential new medical trial.
-				t CHIEF COMPLAINT:<br>Subject seeks to create a self-replicating virus capable of altering the human body in a multitude of ways, specifically the replacement of female genetalia with sizeable male organs, aphrodisiac bodily fluids, and lack of intellect or restraint.
+				t CHIEF COMPLAINT:<br>Subject seeks to create a self-replicating virus capable of altering the human body in a multitude of ways, specifically the replacement of female genitalia with sizeable male organs, aphrodisiac bodily fluids, and lack of intellect or restraint.
 			`);
 			writeTransition("rainyInterview", "Review interview file");
 			writeHTML(`
@@ -856,7 +856,7 @@ function writeScene(scene) {
 			`);
 			writeTransition("junkieInterview", "Review interview file");
 			writeHTML(`
-				t TREATMENT PLAN A - MODIFICATION:<br>KEYWORDS: Horsecock, Dickgirl<br>A modification plan that would replace subject's genetalia completely with stored stallion penis.
+				t TREATMENT PLAN A - MODIFICATION:<br>KEYWORDS: Horsecock, Dickgirl<br>A modification plan that would replace subject's genitalia completely with stored stallion penis.
 			`);
 			writeTransition("junkieA", "Begin treatment plan A");
 			writeHTML(`
@@ -1027,7 +1027,7 @@ function writeScene(scene) {
 				t This procedure was once highly illegal and only carried out in black-market 'chop-shops', but luckily a safer and reversible version was found. Now the procedure is quite popular as a multi-year contract position. Sell your body to someone else while you live purely as a sex toy for a few years. 
 				liz Yep! And you can volunteer for it too. Normally your brain limits incoming stimulation, or normalizes it so see a decline in the fun chemicals if you overload on something. As you can see here, Jerry doesn't have a brain right now!<br>Well, he does, you just can't see it. My point is that basically, every fiber of your being is all right here.<br>Not only that, but your now mindless body can also be rented out for menial or security work, giving you a double income!
 				t With article 15 of the Comfort Act passing, you can now live as a private sex object as well! Images and videos of proper human dildo and onahole often trend online so you can see what you're getting into. 
-		liz Sign up today! We now offer nonhuman genetalia options and fun colors!
+		liz Sign up today! We now offer nonhuman genitalia options and fun colors!
 			`);
 			writeTransition("psaList", "Go back");
 			break;
@@ -1164,7 +1164,7 @@ function writeScene(scene) {
 			writeText("The Body-Mod 3000(tm) is a state of the art body modification tool meant for use only by trained professionals or to be outsourced anonymously on the internet.");
 			writeText("Use the arrow keys or swipe on the device's touch screen to move each block on the screen at once. Whenever two blocks with the same number on the front would collide, they combine and add their numbers together.");
 			writeText("Each time blocks are combined, they increase your score. Get your score to equal or surpass the target score, and you move on to the next stage.");
-			writeText("Complete all three stages and you've finished modifying the subject. Keep an eye on the Modification Status boxfor an idea of exactly what's happening to the subject.");
+			writeText("Complete all three stages and you've finished modifying the subject. Keep an eye on the Modification Status box for an idea of exactly what's happening to the subject.");
 			writeTransition("prologue", "Go back to the introduction documents");
 			break;
 		}
@@ -1270,7 +1270,7 @@ function writeEvent(scene) {
 			writeSpeech("wife", "", "Shut up. Here's what's going to happen. I'm going to suck you off, then you're going to pound that fat dick into me until I can't think anymore, okay?.");
 			writeSpeech("Mr. "+characterArray[0].lName, "none", "Wait, your appointment. You didn't go to that modification-gah!");
 			writeBig("images/wife/wifeA-2.gif");
-			writeText("He doesn't have a chance to finish his sentence as "+characterArray[0].fName+"plants her pussy against his lips, showing more enthusiasm than she's ever shown before in all her years of marriage.");
+			writeText("He doesn't have a chance to finish his sentence as "+characterArray[0].fName+" plants her pussy against his lips, showing more enthusiasm than she's ever shown before in all her years of marriage.");
 			writeBig("images/wife/wifeA-3.gif");
 			writeSpeech("wife", "", "Mmm~ Mmm~ Mmmwah~!<br><i>Holy shit, I didn't know this could feel good... Do I even have a gag reflex anymore?</i>");
 			writeText("For as much fun as giving a blowjob is with her newly enhanced nerves, she knows she needs something deeper. She pulls the cock out of her mouth with a *POP* and maneuvers to press her husbands cock against the entrance to her pussy.");
@@ -1305,7 +1305,7 @@ function writeEvent(scene) {
 			break;
 		}
 		case "girlfriendA": {
-			writeText("Once the anasthesia has worn off, the pair  begin to grogilly come to their senses and find themselves in a soft bed.");
+			writeText("Once the anesthesia has worn off, the pair  begin to groggily come to their senses and find themselves in a soft bed.");
 			writeSpeech("<del>Michael</del> <ins>Michelle</ins>", "scripts/gamefiles/profiles/boyfriendPost.jpg", "Fuck... My head...");
 			writeSpeech("girlfriendPost", "", "Mmm...~ Is it over?");
 			writeBig("scripts/gamefiles/characters/boyfriendPost.jpg");
@@ -1347,20 +1347,20 @@ function writeEvent(scene) {
 			writeSpeech("girlfriendPost", "", "It's ringing... and... Ah! Hello! Is this Bitch Medicenter? I was calling about my recent alteration, my name is "+characterArray[4].fName+" "+characterArray[4].lName+".");
 			writeBig("images/girlfriend/girlfriendA-5.gif");
 			writeSpeech("boyfriendPost", "", "Ghh~! I can feel your cock slamming against my bitch-button!");
-			writeSpeech("girlfriendPost", "", "Mhmm. I just wanted to apologize for our behavior as we left. I'm here with him right now, and we really do enjoy... Oh? This is a common occurence?");
+			writeSpeech("girlfriendPost", "", "Mhmm. I just wanted to apologize for our behavior as we left. I'm here with him right now, and we really do enjoy... Oh? This is a common occurrence?");
 			writeSpeech("boyfriendPost", "", "Gonna cum! My clitty is leaking!");
-			writeSpeech("girlfriendPost", "", "Shut up, bitch!<br>Ah, sorry, I'm with him right now. He's insatiable, although I guess I am too. Anyways, thank you so much! We'll be leaving a positivie review for sure!<br>Alright, thank you.");
+			writeSpeech("girlfriendPost", "", "Shut up, bitch!<br>Ah, sorry, I'm with him right now. He's insatiable, although I guess I am too. Anyways, thank you so much! We'll be leaving a positive review for sure!<br>Alright, thank you.");
 			writeText("As she hangs up the phone "+characterArray[4].fName+" slows her rhythm and pulls her cock out of her boyfriend's ass.");
 			writeSpeech("boyfriendPost", "", "Noo~... Did I do something wrong?");
 			writeText(characterArray[4].fName+" responds by grabbing "+characterArray[6].fName+"'s leg and yanking him off the bed, causing him to land face-first in the puddle of boicum he made.");
 			writeText("As he obediently cleans up his mess, she lays back on the bed.");
 			writeSpeech("girlfriendPost", "", "You want my cum? Earn it.");
 			writeSpeech("boyfriendPost", "", "Yes mistress!");
-			writeText("He eagerly clims atop her, giggling absent-mindedly as his mistress's cock fills his ass again.");
+			writeText("He eagerly climbs atop her, giggling absent-mindedly as his mistress's cock fills his ass again.");
 			writeBig("images/girlfriend/girlfriendA-6.gif");
 			writeText("He bounces up and down. His clitty's sensitivity is way down, so the only time he even feels anything from it anymore is when it's slapping on his mistress's abdomen.");
 			writeSpeech("girlfriendPost", "", "Mmmm~... Good girl. Enjoy your reward.");
-			writeText("And soon enough her modified cum begins to pump into his hole. The changes made to it have had some major effects on "+characterArray[6].fName+"'s brain. Just a drop is enough to send him into a sexual frenzy now, so when a pint of it floods his ass it sends powerful, almsot electric shocks up his spine.");
+			writeText("And soon enough her modified cum begins to pump into his hole. The changes made to it have had some major effects on "+characterArray[6].fName+"'s brain. Just a drop is enough to send him into a sexual frenzy now, so when a pint of it floods his ass it sends powerful, almost electric shocks up his spine.");
 			writeText("His body shaking and mouth hanging wordlessly open, he shows his appreciation the only way he knows how.");
 			writeBig("images/girlfriend/girlfriendA-7.gif");
 			writeTransition("caseSelect", "Finish");
@@ -1462,7 +1462,7 @@ function writeEvent(scene) {
 				t Oh well.
 				...
 				im images/wife/bb6.gif
-				t In the aftermath of the dinner party, all but one person in attendance would agree that it was an incredible and wonderully memorable experience.
+				t In the aftermath of the dinner party, all but one person in attendance would agree that it was an incredible and wonderfully memorable experience.
 				t For that one person it was a living nightmare as he realized his wife was not only openly getting fucked by his coworkers, but also that she'd had her mind and body altered to allow her to slut it up like an enthusiastic whore.
 				im images/wife/bb7.gif
 				t But what really matters is Adriana's opinion, and if she weren't giggling vapidly at how nice sperm feels on her face, she'd give the medicenter a glowing recommendation, albeit with a limited vocabulary.
@@ -1474,7 +1474,7 @@ function writeEvent(scene) {
 			writeHTML(`
 				define runner = sp Marie; img scripts/gamefiles/profiles/runner.jpg;
 				liz Gooood morning~! Rise and shine!
-				runner Mmm... How long was I out? It feel like I slipped into a nap, did the op-<br>Whoa!
+				runner Mmm... How long was I out? It feels like I slipped into a nap, did the op-<br>Whoa!
 				t Marie hops out of bed and jumps in place.
 				runner I feel so energized! I was never a morning person... Holy crap!
 				liz Indeed! Energy was the primary focus. Morning fatigue takes the wind out of a lot of early-morning workout sails.<br>We've improved your metabolism too. Not too much, just make sure to get plenty to eat before or after you exercise.
@@ -1492,7 +1492,7 @@ function writeEvent(scene) {
 				...
 				t By the time Marie has made it home she's soaked with sweat. She unlocks the door and stumbles inside. 
 				runner Hah... Hah... Fuck, shit, what... What do I do? Gotta... Gotta call...
-				t A blast of sensation causes her legs to buckle, her workout shorts are already damp with sweat, but suddenly they're wet with something else. She forces herself upright, and starts making phonecall.
+				t A blast of sensation causes her legs to buckle, her workout shorts are already damp with sweat, but suddenly they're wet with something else. She forces herself upright, and starts making a phonecall.
 				runner Ghh... Fucking... I can barely hold back...<br>Ashley! You bitch, that place you recommended-Ghhh!<br>Just... Just get over here! <b>NOW!</b>
 			`);
 			addFlag("woman");
@@ -1501,10 +1501,10 @@ function writeEvent(scene) {
 		}
 		case "runnerAA": {
 			writeHTML(`
-				t A warm, average day in an unassuming is interrupted as a fit young woman strides through the room. Her body coated in sweat, she peels off her sports bra and throws it aside.
+				t A warm, average day in an unassuming home is interrupted as a fit young woman strides through the room. Her body coated in sweat, she peels off her sports bra and throws it aside.
 				runner Ashley! Get your ass downstairs!
 				t A tired woman walks down the stairs. She's not a morning person, but she's got a smug look on her face.
-				t Suddenly she's grabbed as Marie takes her by the hair, forcing her to down her knees.
+				t Suddenly she's grabbed as Marie takes her by the hair, forcing her down to her knees.
 				im images/runner/aa1.gif
 				runner Cmon! It's hitting me! 
 				t Ashley just mumbles an "Mhmm" as best she can, happy to enjoy the morning routine of her friend turned fuckbuddy even as her nose is mashed against Marie's clit.
@@ -1525,7 +1525,7 @@ function writeEvent(scene) {
 				streamer W-what!? Wha...? Is it over?
 				liz Yes, the hypnosis is complete and it seems to have been implanted successfully. Quite the modern marvel, isn't it?
 				streamer But-
-				liz You still feel the same, yes. You should. Feeling awkward is noticeable, you shouldn't notice anything in a conversation that goes smoothly.<br>You'll still have all the normal self-doubt that comes with a life on camera, but hopefully the work out technician has done will be enough.
+				liz You still feel the same, yes. You should. Feeling awkward is noticeable, you shouldn't notice anything in a conversation that goes smoothly.<br>You'll still have all the normal self-doubt that comes with a life on camera, but hopefully the work our technician has done will be enough.
 				streamer Hopefully?
 				liz You didn't pay enough for an absolute, ma'am. Success online is more than just your body, it's also personality and luck, and creativity helps too. 
 				streamer But what actually changed?
@@ -1579,15 +1579,15 @@ function writeEvent(scene) {
 				liz Good morning~! 
 				t Liz enthusiastically strides into the room.
 				schoolboy Did it work?
-				liz Of course! Well, we didn't actually reduce your buildup, but we've improved your capacity a great deal. It should not longer inconvenience you in daily life.
+				liz Of course! Well, we didn't actually reduce your buildup, but we've improved your capacity a great deal. It should no longer inconvenience you in daily life.
 				schoolboy That's great!
-				liz Now, as a side-effect your prostate will be even more sensitive than before. Any serious stimulation of the gland will cause an involuntary release, causing your to squirt.
+				liz Now, as a side-effect your prostate will be even more sensitive than before. Any serious stimulation of the gland will cause an involuntary release, causing you to squirt.
 				schoolboy L-like a girl!?
 				liz Exactly! It will feel absolutely euphoric. In fact the only difference between squirting and a traditional orgasm will be that you can squirt for minutes at a time. However!
 				t Fantasies of bouncing on a fat dildo to an emasculating squirtgasm are interrupted as Liz grabs his attention by waving a finger in his face. 
 				liz The human body isn't equipped to understand these sorts of orgasms. This is a very common treatment, and the documentary 'Squirting Away my Masculinity' covers a lot of the side effects. Every time you get off this way your brain will be overloaded by certain chemicals and hormones that go way past what it's meant to deal with. 
 				schoolboy W-what should I do?
-				liz You have two options. One, accept your new desires to wear cute dresses and have your asshole pounded until you become a squirting bitch, becoming more feminine and sensitive with every time your squirt like a girl... <br>Or two, don't do anal.
+				liz You have two options. One, accept your new desires to wear cute dresses and have your asshole pounded until you become a squirting bitch, becoming more feminine and sensitive with every time you squirt like a girl... <br>Or two, don't do anal.
 				t Danny gulps, shivering.
 				liz Well, what you do from now on is your own choice. Let us know if any complications arise.
 			`);
@@ -1633,7 +1633,7 @@ function writeEvent(scene) {
 				t Danny's legs shake.
 				liz And if you go farther, if you push yourself past their lower lips and pump hot piss into their womb, they'll squirt harder than in their entire lives, and it won't even come close to the force you're defiling them with. They'll stroke their bulging abdomens, proud not because they're waiting mothers, but because they're happy to be your human toilets.
 				t He gasps, barely holding on. Liz leans in close to whisper into his ear.
-				liz Let go, ando a half-dozen piss-whore volunteers will be drinking you down before the room's cleaning systems can even activate.
+				liz Let go, and a half-dozen piss-whore volunteers will be drinking you down before the room's cleaning systems can even activate.
 				t His piss-slit winks open again as a brutal, mind-striking scent fills the air as his urethra distends. A prelude to the flood about to be let loose upon the room.
 				t But instead Liz releases his member and stands up, collecting her clipboard and opening the door.
 				liz Alright, that should be everything.
@@ -1646,7 +1646,7 @@ function writeEvent(scene) {
 				t A young woman stops suddenly at her bathroom door, her half-awake roommate is at the toilet, completely unaware he's forgotten to close the door.
 				t Her first instinct is to call out, embarrass him a little for his mistake, yet...
 				t "My god... He's pissing like a racehorse..."
-				t The though crosses her mind as she nibbles on her lower lip. She's meant to be leaving by now, yet she's stuck staring at her roommate lets his foaming stream foam up the toilet.
+				t The thought crosses her mind as she nibbles on her lower lip. She's meant to be leaving by now, yet she's stuck staring at her roommate lets his stream foam up the toilet.
 				t Her body moves on instinct, but not away.
 				schoolboy Haaah... It feels like it takes longer every-<br>Hannah!?
 				im images/schoolboy/bb1.gif
@@ -1662,7 +1662,7 @@ function writeEvent(scene) {
 		case "jockA": {
 			writeHTML(`
 				define jock = sp Jenny; img scripts/gamefiles/profiles/jockTrap.jpg;
-				t Jenny smacks her lips as he wakes up, noticing a peculiar taste on them. 
+				t Jenny smacks <s>his</s><b>her</b> lips as <s>he</s><b>she</b> wakes up, noticing a peculiar taste on them. 
 				jock Mmm... W-whoa! I'm... 
 				t Suddenly the door opens and Liz steps inside. 
 				liz Ah, awake at last! You've been out for a few days, but that's to be expected. A full body alteration like this averages about 43 hours of rest time, you're right on the mark. 
@@ -1769,10 +1769,10 @@ function writeEvent(scene) {
 				t Lisa awakens to the smell of food. A real breakfast, not the five-minute cereal meal and bruised orange she usually makes. She smiles contentedly as the scent of bacon wakes her up, only for her to jerk up as she realizes her husband is gone and her son can't cook. 
 				t She sprints out of her room to the kitchen, almost tripping on the smooth floor, only to find her son standing at the stove frying up some grub. 
 				son Morning mom! I was thinking I should take over breakfast making from now on. I really should learn how to cook already, and, well, if I get any skinnier I might snap! 
-				t He looks almost the same. He's the same weight, still as scrawny as before, but in some ways he looks completely different. His hair and face are clean, he's showered and groomed, and he looks happy just to be alive and in the moment. His voice has an energetic buzz to it, like is day is better just because he gets to see his mother. 
+				t He looks almost the same. He's the same weight, still as scrawny as before, but in some ways he looks completely different. His hair and face are clean, he's showered and groomed, and he looks happy just to be alive and in the moment. His voice has an energetic buzz to it, like his day is better just because he gets to see his mother. 
 				milf I... I don't... 
 				son It's almost ready. I started cooking the more fragrant foods last. You sure came out in a hurry though, you must be as starving as I am! 
-				t James turns around holding a full plate of food. The eggs are a bit messy and some of the bacon js a bit overcooked, but it looks delicious nonetheless. 
+				t James turns around holding a full plate of food. The eggs are a bit messy and some of the bacon is a bit overcooked, but it looks delicious nonetheless. 
 				milf You... You're smiling... 
 				son Yep! For a long time it didn't seem like there was a point, but I get it now. I wanna smile because it makes me happy, not the other way around. It makes other people happy too, so-<br>You're crying? What's wrong? 
 				milf N-nothing! Sorry honey, it's nothing. 
@@ -1803,7 +1803,7 @@ function writeEvent(scene) {
 				son Is in my pants? Listen mom, I get what's going on. And it can't happen. 
 				t She's at a loss for words as she crawls out from beneath the table. 
 				son I've been thinking maybe it's time for me to get my own place. Strike out on my own, you know? I know you've been lonely without dad, maybe me moving out will give you the space you need to find someone else. 
-				t The voices in her head go quiet. Logic is fading and panic is setting in. She didn't want this, to be alone in an empty house. Guided by some bizarre desperate logic to make stay as he turns to face her, she does something unthinkable. 
+				t The voices in her head go quiet. Logic is fading and panic is setting in. She didn't want this, to be alone in an empty house. Guided by some bizarre desperate logic to make him stay as he turns to face her, she does something unthinkable. 
 				im images/milf/aa1.gif
 				t Tearing open her lingerie top, she exposes herself to her son. 
 				t As he walks towards her she can see it in his eyes. His idea of her as a strong respectable single mother being shattered. The only thing in front of him is a desperate pervert exposing her breasts to her own soon. 
@@ -1818,7 +1818,7 @@ function writeEvent(scene) {
 				milf Nnnhg~! 
 				son You bitch. You're so desperate for dick, <b>any</b> dick, that this is how you act? You get this is illegal, right? That you're throwing your life away to be some degenerate slut? 
 				milf I don't care! Please stay! I'll do anything, you can slap me again! 
-				t And he does, smacking her in the face hard enough to send her to the ground. She twitches and shakes jn a second orgasm. 
+				t And he does, smacking her in the face hard enough to send her to the ground. She twitches and shakes in a second orgasm. 
 				milf Fuck... You're treating me like a whore~! 
 				son This really is what you want? 
 				milf Yes~! I'll do anything! 
