@@ -67,13 +67,14 @@ function writeScene(scene) {
 			writeText("From the bottoms of the hearts of every staffmember here at Bitch Medicenter, Thank you to Swallows999, Joseph, Robbie, Joshua Ingram, Liam M, that GUY, Elias Errati, Iron Diana, ryguy, 4MinuteWarning, Hi There, Carlos, 林家豪, Richard, dragoon48, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, maxime, J_C_L, Dkells, Jinouga, Marco Wassmer, Taylor Trout, andres mejia, Colin E, Badaxe, Jesse Greene, Scal, ChronosEdge, Donovan Korpa, Brandon, Noh Bhodie, Billymays, Genxin, Johnny Mind, Ethan Brian, Sean Morehead, Brent Roberts, poyo, Greatsage56 ., sb2017, Wysdom, Me Notyou, Chris Rucker, john sparks, Darien Cordero, Ally Smith, Brandon Leary, scott, Elijah Hansen, Sergio Prichard, pablo perez, Sera, ggboomsky, Emily Pajak, RatKnight, Bradley Herbert, gabriel, SomebodyElse, dante schraeder, Peter H, 长平 鬣, Culton Niccum, thesingleguy, Kethis Immortalis, colt, Anton Schmidt, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Don, Vikteren, Dean, Kudon, theoron, AnotherAccount333, Lucas, Kaliden, Tyler Ross, greatred, FrostyTB, l, ranchy sanchy, Johnathan Thornburg, Limitless, Greg Torres, nathan, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, Reverberations, ShadowFalls, William Parker, Magnus, XaiuX, l1monat, Kieron Kow, Slomberg, henry grobins, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Daekash, fireballcreations, Markus Hansen, Louis Hayes, Tanman, Erin Trippet, DarthMalak, Danny Nguyen, yami, Grim2011, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, Simon Rencher, dhccpmc, Chaaaanon, Charles Morris, Nutburger, Whynot, mazterlith, Anthony Munso, john smith, Your Husbando, Carlos, Firestar99255, Verillia tristari, CaptainMontana, ItsAllOgreNow, Gwen Yurick, Nils Maier, Blaise Fenn, Angel, Ariados, Jane, Snaked, Debarre Sonny, Drashin, qwerty, murgatroid99, Skyrim mod lvr, Roy, Wild Bill, brandon for supporting the medicenter!");
 			writeText("If you're interested in funding this clinic, head over to the medicenter's <a href='https://www.patreon.com/noodlejacuzzi'>Funding Page</a>. If you have any comments, criticisms, or suggestions for new medical procedures, direct them to the site manager's personal <a href='https://discord.gg/pDht5BZ'>Forum</a> where he'd love to hear what you think!");
 			writeHTML(`
-				t For technical support message the site administrator, but a number of volunteers have supported the medicenter in the past. These people are:
+				t For technical support please message the site administrator, but a number of volunteers have supported the medicenter too by providing consultation and assistance. These people are:
 				t OrangeMaestro
 				t JamesSmith
 				t SlackerSavior
 				t and BenhaminBlue101
 				t Atomic Goblin
 				t Totalatomic
+				t Master of Puppets
 				t Special thanks to them!
 			`);
 			writeTransition("mainMenu", "Go back");
@@ -1806,7 +1807,7 @@ function writeEvent(scene) {
 				t The voices in her head go quiet. Logic is fading and panic is setting in. She didn't want this, to be alone in an empty house. Guided by some bizarre desperate logic to make him stay as he turns to face her, she does something unthinkable. 
 				im images/milf/aa1.gif
 				t Tearing open her lingerie top, she exposes herself to her son. 
-				t As he walks towards her she can see it in his eyes. His idea of her as a strong respectable single mother being shattered. The only thing in front of him is a desperate pervert exposing her breasts to her own soon. 
+				t As he walks towards her she can see it in his eyes. His idea of her as a strong respectable single mother being shattered. The only thing in front of him is a desperate pervert exposing her breasts to her own son. 
 				t Her body quivers and shakes, fluid drips through fabric onto the dining room floor, the look in his eyes in his eyes being enough to trigger an orgasm.
 			`);
 			writeFunction("writeEvent('milfAAA')", "Continue...");
@@ -2262,7 +2263,7 @@ function writeEvent(scene) {
 				liz These days, there's no stock for mares, only stallions. As a result the fine specimen you've become is a little more... Studly that you probably expected to be.
 				t Dakota can feel every movement, no matter how slight, of Liz's hands as she explores Dakota's new body.
 				liz Powerful muscles, a good show of your value as breeding stock. A beautiful donut-rim of an ass, that'll be a moneymaker, women and men alike will break the bank to seal their lips around yours. But the real prize...
-				t White lightning surges through oterkinF's mind and body as she feels a pair of hands grasp the beast between her legs. It must be massive, even for a stallion! Just picturing it in her mind makes the fog grow so strong she can't evej think anymore, yet too quickly the hands are gone.
+				t White lightning surges through oterkinF's mind and body as she feels a pair of hands grasp the beast between her legs. It must be massive, even for a stallion! Just picturing it in her mind makes the fog grow so strong she can't even think anymore, yet too quickly the hands are gone.
 				liz Despite growing demand for horse sperm, animal rights activists have banned virility enhancements on animal subjects. The legal headaches and the pay required to make human milking studs is even worse. But, since the procedures were conducted while you were still regarded as a human, and you don't need to be paid a wage now that you're a horse...
 				t As Liz goes on about legal issues Dakota grows increasingly more frantic. Down on her knees she rubs her massive horsecock against the smooth floor, coating the ground in thick musk, but growing no closer to release.
 				liz Ah, don't bother with that. You're in a state known as a 'rut', nothing short of a warm wet hole will get you off now. Your brain still being a woman's means it's also clashing with that, so you're technically in a state of heat as well. Not to worry though, simultaneous dick and anal stimulation will scratch those itches, temporarily.<br>We have a lovely ranch that'll pay very good money and quite a few royalties to take you in. You'd like that, wouldn't you? Teenagers, milfs, even some sissies between your legs worshipping you like a god while a desperate slut makes out with your asshole like it's her husband. And afterwards you'll be properly bred.
