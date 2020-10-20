@@ -1587,7 +1587,7 @@ function setBoard() {
 				case 2:
 					target = 252;
 					n = 3;
-					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish Added: Degradation";
+					document.getElementById("modificationStatus").innerHTML = "Sense of Shame removed<br>Fetish added: Creampie<br>Fetish added: Degradation";
 				break;
 				case 3:
 					n = 0;
@@ -1648,7 +1648,7 @@ function setBoard() {
 				case 3:
 					target = 372;
 					n = 7;
-					document.getElementById("modificationStatus").innerHTML = "Patient A's genetalia is now fully functioning penis. Orgasm prevented.<br>Penis length 4 inches. Orgasm prevented.<br>Penis length 6 inches. Orgasm prevented.<br>Penis length 8 inches. Orgasm prevented.<br>Sperm cells converted into addictive aphrodisiac. Orgasm prevented.";
+					document.getElementById("modificationStatus").innerHTML = "Patient A's genitalia is now fully functioning penis. Orgasm prevented.<br>Penis length 4 inches. Orgasm prevented.<br>Penis length 6 inches. Orgasm prevented.<br>Penis length 8 inches. Orgasm prevented.<br>Sperm cells converted into addictive aphrodisiac. Orgasm prevented.";
 				break;
 				case 4:
 					n = 0;
@@ -1676,7 +1676,7 @@ function setBoard() {
 				case 2:
 					target = 280;
 					n = 6;
-					document.getElementById("modificationStatus").innerHTML = "Patient B mental foundation degrading. Now implanting subconcious thoughts. Patient in state of waking-dream, now overwriting dream with stream of 'Fat Bottomed Male Bitches Volume 3'.";
+					document.getElementById("modificationStatus").innerHTML = "Patient B mental foundation degrading. Now implanting subconscious thoughts. Patient in state of waking-dream, now overwriting dream with stream of 'Fat Bottomed Male Bitches Volume 3'.";
 				break;
 				case 3:
 					target = 372;
@@ -1687,7 +1687,7 @@ function setBoard() {
 					n = 0;
 					blockGame = false;
 					gameDone = true;
-					document.getElementById("modificationStatus").innerHTML = "Patient B achiving broken status. Rebuilding previous personality with new foundation.<br>Streaming complete with patient at 100% arousal to video contents.<br><b>Modification Plan Complete</b>";
+					document.getElementById("modificationStatus").innerHTML = "Patient B achieving broken status. Rebuilding previous personality with new foundation.<br>Streaming complete with patient at 100% arousal to video contents.<br><b>Modification Plan Complete</b>";
 				break;
 			}
 			break;
@@ -1811,7 +1811,7 @@ function setBoard() {
 					target = 76;
 					n = 17;
 					document.getElementById("caseTotal").innerHTML = "3";
-					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Body archetype matching 'Little Bitch' in found in archetype catalog. Adjusting to nearby archetype 'Young Adonis'.";
+					document.getElementById("modificationStatus").innerHTML = "Modification plan commencing. Body archetype matching 'Little Bitch' found in archetype catalog. Adjusting to nearby archetype 'Young Adonis'.";
 				break;
 				case 1:
 					target = 96;
@@ -1827,7 +1827,7 @@ function setBoard() {
 					n = 0;
 					blockGame = false;
 					gameDone = true;
-					document.getElementById("modificationStatus").innerHTML = "Hypnostreams complete. Archetype transferal at 100% body compatibility<b>Modification Plan Complete</b>";
+					document.getElementById("modificationStatus").innerHTML = "Hypnostreams complete. Archetype transferal at 100% body compatibility.<br><b>Modification Plan Complete</b>";
 				break;
 			}
 			break;
