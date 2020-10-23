@@ -1,4 +1,4 @@
-var character = {index: "swimmer", fName: "Naomi", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#8DB7D0", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false};
+var character = {index: "swimmer", fName: "Naomi", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#8DB7D0", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas"};
 
 var logbook = {
 	index: "swimmer", 
@@ -18,8 +18,8 @@ var newItems = [
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "swimmer2", name: "Your door suddenly explodes into a rapid series of knocks.", location: 'playerOffice', time: "MorningEvening", itemReq: "", trustMin: 20, trustMax: 35, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
-	{index: "swimmer3", name: "You wander the park somewhat aimlessly. She really should have told you where in the park to meet her. On your third lap, your phone finally starts ringing.", location: 'parkDistrict', time: "MorningEvening", itemReq: "", trustMin: 51, trustMax: 52, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
-	{index: "placeholder", name: "", location: '', time: "", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	{index: "swimmer3", name: "You wander the park somewhat aimlessly. She really should have told you where in the park to meet her. On your third lap, your phone finally starts ringing.", location: 'parkDistrict', time: "MorningEvening", itemReq: "", trustMin: 40, trustMax: 51, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	{index: "swimmer4", name: "You head to the pool late. You have to hop a fence to get there, but you've for sure got privacy and time for your meetup.", location: 'parkDistrict', time: "Evening", itemReq: "", trustMin: 67, trustMax: 70, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -114,7 +114,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "swimmer3a": {
 			passTime();
 			setTrust('swimmer', 61)
-			writeText("You work your way to the pool and quietly try and get to the famuly changing room. Luckily, no one seems to take notice of you, even with your completely inappropriate pool attire. You text swimmerF as you approach and manage to worm your way to the door when some kids start making a commotion in the pool which required the lifegaurd to intervene.");
+			writeText("You work your way to the pool and quietly try and get to the family changing room. Luckily, no one seems to take notice of you, even with your completely inappropriate pool attire. You text swimmerF as you approach and manage to worm your way to the door when some kids start making a commotion in the pool which required the lifeguard to intervene.");
 			writeSpeech("player", "", "Next time could you tell me where you want to meet <i>before</i> we meet up?");
 			writeBig("images/swimmer/3a.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("swimmer", "", "I thought I... Uhh. Oops. Sorry. Oh! Uh, sorry, *Master?");
@@ -133,6 +133,43 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("writeEvent('swimmer3b')", "Maybe a different approach this time...");
 			break;
 		}
+		case "swimmer4": {
+			writeText("As you move towards the locker room, you can hear swimmerF behind the door.");
+			writeSpeech("swimmer", "", "Gotta cum. Please, I need it. Where is *Master? He'll make me cum, I know he will. I hope he will. Please make me cum, *Master.");
+			writeSpeech("player", "", "It's a miracle she's gotten through this week without raising any alarms.");
+			writeText("Your mumbling causes her voice to stop on the other side of the door.");
+			writeSpeech("swimmer", "", "... *Master? Are you there?");
+			writeFunction("loadEncounter('swimmer', 'swimmer4a')", "No time like the present.");
+			writeFunction("changeLocation(data.player.location)", "She can wait a day... or two... Maybe.");
+			break;
+		}
+		case "swimmer4a": {
+			passTime();
+			setTrust('swimmer', 71)
+			writeText("You push the door open.");
+			writeBig("images/swimmer/3a.jpg", "Art by Himitsu Kessha Vanitas");
+			writeSpeech("swimmer", "", "*Master! Thank God! I need-");
+			writeText("You let loose a loud, clear snap.");
+			writeSpeech("player", "", "Spank.");
+			writeText("swimmerF cries in pain and flinches. coachF must have done some rough conditioning when working that trigger in. But despite the apparent hypno pain, you hear the moan of pleasure that follows up the sharp cry of pain. Surprisingly good work, for an amateur.");
+			writeSpeech("swimmer", "", "Th-thank you *Master! Sorry, I just- I...");
+			writeText("Her face twists as she tries to find the right words. She's afraid of saying the wrong thing, but she knows she needs to say something. It takes her a few seconds of focus, as she slowly finds the words she thinks you want to hear.");
+			writeSpeech("swimmer", "", "I... I get it now, *Master. I get what you meant last time we were here. I... Didn't know what it really meant when I came into your office. I didn't... I didn't know what it meant when you told me I belonged to you. I saw what you did to sportsF, and I thought... I thought it would be exciting.");
+			writeText("She's speaking faster now, since you haven't stopped her, she's pretty sure she's on the right track.");
+			writeSpeech("swimmer", "", "And... And it was. It <i>really</i> was. And it still <i>is</i>. And I want more. So much more. sportsF and Mistress coachL did a lot to show me that I was... Wrong about some things, though.");
+			writeText("At this point, it's far better for you to just let her speak. The more she talks, the more these feelings will work their way down. It's a lot easier when you don't have to implant or change people's thoughts, you just kinda... Twist them a bit and let them run wild.");
+			writeSpeech("swimmer", "", "When... When I was first with sportsF, I only really wanted to get off. I wasn't doing anything <i>for</i> her. Which wasn't right. She was helping me out. So the next time, I really did <i>try</i> but, it was so hard to focus on sportsF when I was so horny... Until she took control and gave me directions. And that felt <b>good</b>.");
+			writeText("swimmerF starts to shuffle, nipples erect in her swimsuit, and the crotch of the suit obviously digging into her slit.");
+			writeSpeech("swimmer", "", "But at the end of the day, I was <i>still</i> only really focused on myself. I just wanted... Needed... To cum. Then you sent me to coachF. And... She taught me that was wrong. I shouldn't focus on myself. And after she heard about how I treated sportsF the first few nights, she made sure I was punished, and told me my mistake. I'm your <i>slave</i> she said. <i>My</i> pleasure, my desires always come second to who I'm serving.");
+			writeText("You can see her hands twitching at her side, occasionally half moving to her pussy before snapping back. She's trying her hardest to make sure she can focus and tell you what she's learned.");
+			writeSpeech("swimmer", "", "Then, the last night... She showed me how to find pleasure in serving others. And... And I loved it. And I know now. I... I earn my pleasure by serving others. Serving <i>you</i>. And whoever else you'd have me serve, but I'd... I'd rather it was just you and the other girls.");
+			writeText("She finally looks up, and stops twitching for a moment as she finishes.");
+			writeSpeech("swimmer", "", "You were my first, and I want you to be the only cock I ever have in me *Master. Is... Is that too selfish?");
+			writeText("Whenever you take over this school, you're giving coachF a massive raise.");
+			writeSpeech("swimmer", "", "That seems fair, swimmerF. And I'm very glad to see you've learned. See what happens when you <b>focus</b>?");
+			writeFunction("writeEvent('swimmer4b')", "Her eyes snap to yours, and she's waiting for your command");
+			break;
+		}
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -143,6 +180,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 var eventArray = [
 	{index: "swimmer2b", name: "Surprise!"},
 	{index: "swimmer3b", name: "Pool Party"},
+	{index: "swimmer4b", name: "Devotion"},
+	{index: "placeholder", name: "Event Name"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -159,7 +198,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeBig("images/swimmer/2b2.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("swimmer", "", "You really were blessed with a gift here.");
 			writeSpeech("player", "", "Goddamn it! Listen to me. This is all kinds of inappropriate, so please-");
-			writeSpeech("swimmer", "", "Oh come <i>oooonn</i> playerT playerF! You fucked sportsF! I saw it. I could go and tell the principal... Or... Well, this sounds way more fun, right?");
+			writeSpeech("swimmer", "", "Oh come <i>oooonn</i> playerT playerL! You fucked sportsF! I saw it. I could go and tell the principal... Or... Well, this sounds way more fun, right?");
 			writeText("She starts to lick as you try to keep your voice level. You can make this work. Just gotta think on your feet.");
 			writeSpeech("player", "", "Fuck it! Fine!");
 			writeSpeech("swimmer", "", "Fuck yes!");
@@ -240,7 +279,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("swimmer", "", "You're... swimmerF's... My? <i>mmm-maa...</i>");
 			writeText("You've got to finish this now. You can't hold on any longer, and she's right on the cusp. You let go, cumming as deep inside swimmerF as you can push, and you feel her own body cum in response. You keep up the thrusting as much as you can, feeling your legs and core <i>screaming</i> for respite.");
 			writeBig("images/swimmer/2c4.jpg", "Art by Himitsu Kessha Vanitas");
-			writeSpeech("swimmer", "", "<b>MAAASTER! YOU'RE OUR MASTER!</b>");
+			writeSpeech("swimmer", "", "<b>*MASTER! YOU'RE OUR *MASTER!</b>");
 			writeText("swimmerF screams as you keep moving. Keeping the assault up as long as possible, to try and make this stick.");
 			writeText("Finally, you can't keep it up any longer and you have to stop. You pull out slowly. swimmerF is a limp pile on your desk as you get your pants back on.");
 			writeSpeech("swimmer", "", "I can't believe that...");
@@ -310,8 +349,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "This isn't about things being <i>fair</i>. When you saw me <b>break</b> sportsF, do you think she thought it was <b>fair</b>? No. I made her mine, and now I'll do the same for you. A week without cumming will probably be enough to break a weak willed nympho like you, don't you think?");
 			writeSpeech("swimmer", "", "A whole week? I don't think I can-");
 			writeSpeech("player", "", "I don't think so either, which is why I'm <b>ordering you. Focus, swimmerF.</b>");
-			writeSpeech("swimmer", "", "Y-yes, *Master. I'll do whatever you demand.");
-			writeText("That felt... Weirdly specific. You'll have to ask about that, but for now, it seems to be helping.");
+			writeSpeech("swimmer", "", "Y-yes, *Master. I'll... I can do it.");
 			writeSpeech("player", "", "You will not cum until I fill you with my cock. Touch yourself as much as you like. Use whatever toys you want. Ask swimmerF or coachF to help you. <i>No matter how much you try, you'll never cross that edge without your *Master's cock.</i> And when I finally decide to fill you, I'll teach you exactly what it means to belong to me, and why it's so much better to be a <i>good, obedient girl</i> as opposed to the bratty nympho you are now.");
 			writeSpeech("swimmer", "", "I... I can do that *Master. I promise.");
 			writeSpeech("player", "", "Good. We'll make a good girl of you yet. Now, get dressed. Keep your swimsuit on underneath your clothes, and leave after me when it seems clear. As you get dressed, and as you become more clear, let these last few commands just... <i>Slip</i> right out of you mind. You can spend all week trying to remember what you'll need to do to cum again. I'll be checking in on you throughout the week. Be sure to read and answer my texts.");
@@ -319,6 +357,126 @@ function writeEvent(name) { //Plays the actual event.
 			updateMenu();
 			break;
 		}
+        case "swimmer4b": { //Finishing Touches 1
+			writeText("Yeah. coachF is good.");
+			writeText("All you need to do now is finish the job.");
+			writeSpeech("player", "", "So you've learned, then?");
+			writeText("She shudders as you cross your arms, making yourself sound like as much of a hardass as you can.");
+			writeSpeech("player", "", "... I think you need to make it up to me. The carefree attitude and the ");
+			writeSpeech("player", "", "If that's the case...");
+			writeText("You tease your words out slowly as you take off your pants, exposing your hardened cock. As you peel off your underwear you can see her eyes bulge at the sight, and her breathing gets hurried as you slowly run your hands over your own cock.");
+			writeSpeech("player", "", "You owe me. You've acted like a brat, using me for your own pleasure. You're going to make me cum. Again and again. Until <i>I</i> decide that you've made it up to me. And once you have... <i>If</i> you have, then I'll make you cum.");
+			writeText("She's shivering as you speak. Anticipation on her face. This is a far cry from where she started, she's hanging on every word out of your mouth, and despite being horny enough to leave a pool under herself before you've even started, her arms are locked at her sides. Not daring to bring herself pleasure before she's allowed. You stop speaking and wait for some acknowledgement, but she even seems reluctant to speak before given permission. So with a loud <b>SNAP</b>");
+			writeSpeech("player", "", "Spank. Got all that?");
+			writeText("Her body reacts like you prodded her with a cattle prod as she arches her back and lets loose a perverse moaning scream.");
+			writeSpeech("swimmer", "", "Y-Yes *Master! Thank you *Master!");
+			writeText("She starts to kneel, before you stop her.");
+			writeSpeech("player", "", "Ah, no. Not that. No loopholes. The command just defined my cock inside you, so you don't even get to taste it until you've proven that you deserve it.");
+			writeText("You see some panic in her eyes as she gets back to her feet.");
+			writeSpeech("swimmer", "", "Oh! Sorry, *Master! I didn't mean, I wasn't trying to...");
+			writeSpeech("player", "", "I honestly don't think you were. It's been a long week, and I doubt you remember the specifics of the last time we were together. Luckily for you, though, I pay attention.");
+			writeText("You get ready and...");
+			writeSpeech("player", "", "If you had cum before I thought you deserved it, coachF's training, and a few spanks...");
+			writeText("<b>SNAP,/b>");
+			writeSpeech("player", "", "Would have been the least of your punishment.");
+			writeSpeech("swimmer", "", "Thank you *Master! But... If I'm not going to use my mouth, or my tongue, or... How should I...?");
+			writeText("One day, this girl's practical experience will match her innate perversity, and that day will be glorious. But for now, she still needs coaching. You find yourself always forgetting just how inexperienced she actually is, even if she's one of the biggest perverts you've ever met. Well, who wasn't a mirror.");
+			writeSpeech("player", "", "There are plenty of ways you can make me cum without taking me in. Your hands, your breasts, your thighs... Don't worry, we'll get creative before we're done here. But for now, bring yourself over here, and point your ass towards me.");
+			writeText("She moves a little slowly at first, somewhat unsure what you mean before you grab ahold of her and push her down as if you're going to take her doggystyle. You tka ejust a moment to run your cock from her slit, pushing just the tiniest bit against her swimsuit and hearing her moan as you do, before you pull back and slip your member under her suit and against her ass. Once you do, she looks back disappoitment clear on her face.");
+            writeBig("images/swimmer/4b1.jpg", "Art by Himitsu Kessha Vanitas");
+			writeSpeech("swimmer", "", "That felt so good, *Master, can you...");
+			writeText("You wind back and quickly SPANK her ass <b>hard</b>. Again and again as you continue. Punctuating every sentence with a new slap, reddening her ass as you start to rub yourself in between her cheeks.");
+			writeSpeech("player", "", "I thought. You. Had learned. Your <i>place</i>!");
+			writeSpeech("swimmer", "", "Sorry *Master! Thank you *Master! I just- thank you *Master! It felt so good, and- Thank you *Master!");
+			writeText("You can feel her gush with heach new spank across her ass, and with each thrust of your cock against her skin. The feeling of her swimsuit against the top of your cock, pressing you tight against and into her ass as you move feels divine. All lubricated by the mess her cunt is making as you continue your onslaught.");
+			writeSpeech("player", "", "And what? As soon as you feel good, nothing else matters? You. Are. My. Slave.");
+            writeText("You don't stop. she thanks you with every spank, her words running together into messy mumbles as you pick up the pace, and clarifying and adding, reinforcing what you and coachF have worked at when you slow down.");
+			writeSpeech("swimmer", "", "Thank you *Master! I'm a toy. Use me for your pleasure. However you want. You come first. Focus on *Master. Don't- Thank you *Master!");
+            writeText("Now's the time.");
+			writeSpeech("player", "", "<i>There</i> it is. That's how a good girl should think. Focus on *Master, their desires come first. But pleasing *Master... That brings you pleasure, right? More than anything else.");
+			writeSpeech("player", "", "So every time I cum, let yourself fall more. Let that thought penetrate further and further. Focus on *Master. Pleasing *Master brings me pleasure. More than anything else. Say it, and let those words sink.");
+            writeText("You reel back with a last sharp SPANK. Putting her in that headspace as much as you can. Having her thank you, grateful and focused on you as much as she can as she repeats and lets those words form her new outlook.");
+            writeSpeech("swimmer", "", "Thank you *Master! Focus on *Master. Pleasing *Master brings me pleasure. More than anything else. Of course it would. Just like coachF. Just like sportsF. We're slaves. Toys. Whatever *Master wants. Because... More than anything else. Focus on *Master. Pleasing *Master brings me pleasure... Cum, please! *Master! Cum for me!");
+            writeBig("images/swimmer/4b2.jpg", "Art by Himitsu Kessha Vanitas");
+            writeText("You were close as she spoke, but her begging and the feeling of her finally taking the initiative and trying to twerk her ass against you finally causes you to lose control. You cum, hard, soacking the inside of her suit, making it even more slick, as the excess leaks, and some even shoots through the suit, splattering her ass and creating a nice contrast against her tan skin and dark suit.");
+            writeSpeech("swimmer", "", "Pleasing *Master brings me pleasure. More than anything else... Pleasing *Master brings me pleasure...");
+            writeText("No time to waste. You double down and grab her, forcing her into the next position. For the next few hours, you rub and thrust your cock over every inch of her body.");
+            writeBig("images/swimmer/4b3.jpg", "Art by Himitsu Kessha Vanitas");
+            writeText("It's not the <i>best</i> way to get off, but you cum again and again, forcing yourself to keep going, and reinforcing that new base level command. Her new mantra searing itself into her brain, and pushing you on past your limits as you hear her say it over and over again.");
+            writeBig("images/swimmer/4b4.jpg", "Art by Himitsu Kessha Vanitas");
+            writeText("Each time she says it again, she becomes more active, happier with how you treat her, even if she isn't getting off. Each time you cum, she becomes more and more willing to move, to put herself below you, and to bring you pleasure at the expense of her own comfort and limits.");
+            writeBig("images/swimmer/4b5.jpg", "Art by Himitsu Kessha Vanitas");
+            writeText("Again. And again.");
+            writeBig("images/swimmer/4b6.jpg", "Art by Himitsu Kessha Vanitas");
+            writeText("Finally, she kneels in front of you as you cum one last time. She's covered head to toe in your cum, as she smiles.");
+            writeBig("images/swimmer/4b7.jpg", "Art by Himitsu Kessha Vanitas");
+            writeSpeech("swimmer", "", "Is there anything else I can do to please you, *Master?");
+            writeBig("images/swimmer/phoneReward.jpg", "Art by Himitsu Kessha Vanitas");
+            writeText("Now... Time to see if this worked.");
+            writeSpeech("player", "", "No. Not now. You did well, but I'm still not convinced you know your place. Go shower and get cleaned off. We'll try again and you can stay on edge until you've proven yourself.");
+            writeText("And... Not even a hint of dissapointment. No hesitation, swimmerF stands, and starts to head towards the shower, scooping up cum from her body before liking her hands clean as she goes.");
+            writeSpeech("swimmer", "", "Thank you *Master! I'm sorry I couldn't convince you, but... But I'll try harder next time! I promise!");
+			writeFunction("writeEvent('swimmer4c')", "You let her go, and hear the shower as she cleans herself. You move to the door, open it, close it, and sneak back to her locker while she cleans.");
+			updateMenu();
+			break;
+		}
+        case "swimmer4c": { //Rewarding a changed Mindset
+			writeText("It takes her a good long while, and you keep an ear out the whole time. Listening for complaints, or for the sound of her trying to get herself off desperately as she goes. And... Nothing. Just a girl, humming in the shower as if nothing strange had happened. Content, and from the sounds of it, ecstatic for the whole experience.");
+			writeText("You hear the shower turn off, and you hear her walking toward her locker, as you strip, and find sportsF's locker to take what you'll need for this next part.");
+			writeSpeech("swimmer", "", "Ah! *Master, I thought you had...");
+			writeText("She looks down at your cock, hard and ready for another go, and her words are cut off.");
+			writeSpeech("swimmer", "", "Oh! I'm sorry, did you want to use me again? I can go get my suit, or...");
+			writeSpeech("player", "", "Bend over against the wall, swimmerF.");
+			writeText("She springs to it, putting her hands against the wall and sticking her ass out.");
+			writeSpeech("player", "", "You've surprised me, swimmerF. Today you did better than I ever thought you could have. It took a week of hard training, and...");
+			writeText("You make an exaggerated sigh, looking at your wrist for a watch that isn't there.");
+			writeSpeech("player", "", "Hours and hours of reinforcment. And what did you learn?");
+			writeText("Her reaction is instant. An ingrained reflex now.");
+			writeSpeech("swimmer", "", "Focus on *Master, pleasing *Master brings me pleasure, more than anything else.");
+            writeText("There's a brief moment of surprise on her face, before her face lights up with a massive smile.");
+			writeSpeech("swimmer", "", "Because I'm *Master's slave. Toy. Cocksleeve. Whatever *Master wants. And it. Feels. <i>great</i>");
+			writeText("She's practically dancing, shaking her ass proudly at what she's learned. Not taking her hands off of the wall.");
+			writeSpeech("player", "", "Correct.");
+            writeText("And you spank her again.");
+			writeSpeech("swimmer", "", "Thank you *Master!");
+			writeSpeech("player", "", "Don't get a big head about it, though. Your behavior <i>has</i> had consequences. Because your original attitude means you'll be the bottom bitch for every other slave I have. You caused me a lot of trouble, so in return for that, you'll devote yourself to me and all my slaves to make up for it.");
+            writeText("The dancing stops, and her smile fades a bit, before lighting up again.");
+			writeSpeech("swimmer", "", "I mean... If it means more nights like with Mistress coachL and sportsF...");
+			writeText("You can see her cunt glistening again as she thinks back.");
+			writeSpeech("player", "", "It probably will.");
+			writeSpeech("swimmer", "", "YEEESS! Thank you *Master! I'll be the best bottom bitch you've ever seen! I need to go and look up BDSM and hardcore roleplay, and...");
+			writeText("Another spank, and another thank you.");
+			writeSpeech("player", "", "That's for later. For now, you're going to be my... Well, 'bottom' bitch.");
+			writeText("You reach to a nearby bench and grab the lube you took from sportsF's locker. She may be a bit sad to see some of it gone, but once she knows what you used it for, you're sure she won't mind.");
+            writeSpeech("swimmer", "", "Wait. *Master, does that mean... Are you...");
+            writeSpeech("player", "", "I'm going to fuck your ass, yes. And you are going to get to cum. You earned it. Yes. Now, spread your ass, and relax.");
+            writeBig("images/swimmer/4c1.jpg", "Art by Himitsu Kessha Vanitas");
+			writeSpeech("swimmer", "", "FUCK YES! Just... I've never... Please be-");
+            writeBig("images/swimmer/4c2.jpg", "Art by Himitsu Kessha Vanitas");
+			writeText("You aren't gentle. You shove the head of your cock in hard, and the result is immediate. Like a switch was flipped, swimmerF's body convulses and her face melts as she <i>finally</i> cums after a week of desperately trying.");
+			writeSpeech("swimmer", "", "M~M~M~AHH! FUCK! MY! FUCK!");
+            writeText("Her orgasm continues. She's a spurting mess as you continue to thrust. You can't get in far, her whole body is shaking, and her ass is constantly tightening and loosening as you wildly try to fuck her.");
+			writeSpeech("swimmer", "", "Better! Than! I! FUCK! EVER! KEEP! DEEPER! DON'T! NEVER WANT TO BE EMPTY AGAIN! FILL ME UP *MASTER!");
+			writeText("As much as you would love to, this reckless approach limits how far in her ass you can get. But it does keep her orgasm going for full minutes as you work your way in as much as you can.");
+            writeBig("images/swimmer/4c3.jpg", "Art by Himitsu Kessha Vanitas");
+			writeText("Her face contorts as she tries to focus and relax herself as much as possible. You finally make some progress and work your way in slowly through her waves of orgasm. After what feels like an eternity, you bottom out, and as you do, she cums one last time. Riding the feeling of her orgasm against your cock, you let loose. Filling her ass with your cum.");
+            writeBig("images/swimmer/4c4.jpg", "Art by Himitsu Kessha Vanitas");
+            writeText("And finally, slowly, you pull out, and take a moment to admire your handiwork.");
+            writeBig("images/swimmer/4c5.jpg", "Art by Himitsu Kessha Vanitas");
+			writeSpeech("swimmer", "", "Best... Orgasm... Ever.");
+            writeText("You let loose a small laugh as she tries to catch her breath.");
+			writeSpeech("player", "", "Worth a week of denial?");
+			writeSpeech("swimmer", "", "This one time. Never again.");
+            writeText("Then she stops, and thinks.");
+            writeSpeech("swimmer", "", "Unless you order it, *Master. But, I'd rather just cum like that without the denial if possible?");
+            writeSpeech("player", "", "Eeeh. We'll see. If sportsF, or coachF, or I, or anyone else think you need a reminder of your place, though...");
+            writeText("She shudders slightly, remembering everything from the past week leading to this.");
+            writeSpeech("swimmer", "", "Then I'll accept my punishment like a good little bitch, and I'll keep in mind that if I behave myself, I have <i>this</i> to look forward to. And that's not so bad.");
+            writeSpeech("player", "", "Good. Now, it's far too late, and we need to rest for school tomorrow. Let's get going.");
+			writeFunction("changeLocation(data.player.location)", "She nods and starts to clean up. You're never going to get enough sleep for tomorrow, but it was worth it.");
+			updateMenu();
+			break;
+		}        
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong event. Error code: Failed to write event ("+name+") in "+character.index+".js");
 			break;
@@ -349,6 +507,7 @@ var phoneArray = [//Lists the potential text events the player can receive at th
 	{index: "swimmerday4", trust: 64,},
 	{index: "swimmerday5", trust: 65,},
 	{index: "swimmerday6", trust: 66,},
+	{index: "swimmerreward", trust: 71},
 	{index: "swimmerfix", trust: 56,},
 ]
 
@@ -431,14 +590,14 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			writePhoneSpeech("swimmer","","if you tell me how I can cum, I'll give her the best videos I've found she'll be an expert lesbian I just NEEEED release PLEEEASE");
 			writePhoneSpeech("player","","Like you wouldn't show her regardless. Anyways, continue, sportsF");
 			writePhoneSpeech("sports","","Well, after we got started, I got to work on her. I didn't really know what I should be doing so I just tried doing things that I know I like. I ate her out, I played with her tits, gave her lots of kisses. I fingered her and had her suck on them while I ran my hands all over her. I even played with her asshole, but...");
-			writePhoneSpeech("swimmer","","I JUST DON'T LIKE THINGS UP MY BUTT MUCH, OKAY?");
+			writePhoneSpeech("swimmer","","I JUST DON'T LIKE THINGS UP MY BUTT, OKAY?");
 			writePhoneSpeech("sports","","I mean... Don't knock it 'till you've tried it. If you just relax and let it go deep it hits all the right spots. Trust me.");
 			writePhoneSpeech("swimmer","","and people call me a pervert...");
 			writePhoneSpeech("sports","","Well, you are. But yeah, sorry *Master. I tried everything I could think of, but no matter how close she got I could never make her cum. I even licked her all over. Like, top to bottom. She squirmed and loved it when I stuck my tongue in her belly button, and I thought she was going to squirt there and then, but that's the closest I got.");
 			writePhoneSpeech("swimmer","","... I like how it felt, okay?");
 			writePhoneSpeech("player","","Don't worry about it, sportsF. It's not your fault. You did the best you could. but tell me something, did swimmerF do anything for you during that whole time?");
 			writePhoneSpeech("swimmer","","I was a little busy");
-			writePhoneSpeech("sports","","Uhh. No, not really, I guess. She kissed me back when I kissed her, and sometimes would run her hands over me or lick me when I did the smae to her, but other than that...");
+			writePhoneSpeech("sports","","Uhh. No, not really, I guess. She kissed me back when I kissed her, and sometimes would run her hands over me or lick me when I did the same to her, but other than that...");
 			writePhoneSpeech("swimmer","","WELL IT'S NOT LIKE I'VE DONE THIS BEFORE EITHER");
 			writePhoneSpeech("player","","That's very selfish of you, swimmerF. Maybe you should return the favor tonight, and make sportsF feel good too. And did you use any of your toys with her sportsF?");
 			writePhoneSpeech("sports","","We used some little vibrators, but she thought all of my dildos were 'too big and scary' for much else.");
@@ -476,7 +635,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			writePhoneSpeech("swimmer","","I HAD TO PULL IT OUT IN THE SHOWER, I HAD FORGOTTEN ABOUT THE PLUG");
 			writePhoneSpeech("player","","And so, swimmerF, what do you think?");
 			writePhoneSpeech("swimmer","","TOO HORNY TO THINK");
-			writePhoneSpeech("sports","","I mean, it seeemd like we were getting close. Maybe you can give her another hint, *Master?");
+			writePhoneSpeech("sports","","I mean, it seemd like we were getting close. Maybe you can give her another hint, *Master?");
 			writePhoneSpeech("swimmer","","I DON'T WANT A HINT, I WANT TO CUUUM");
 			writePhoneSpeech("player","","Well, it doesn't seem like your fellow students are the answer. But being filled certainly seemed to do some good for you. Can you think of anything else I'd want from you?");
 			writePhoneSpeech("swimmer","","ME TO LOSE MY MIND");
@@ -549,9 +708,9 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			writePhoneSpeech("swimmer","","will");
 			writePhoneSpeech("swimmer","","will master finally let me cum?");
 			writePhoneSpeech("player","","spank* if you've truly learned your lesson and behave like a good girl tonight, I'll make you cum harder than you've ever cum before in your life.");
-			writePhoneSpeech("swimmer","","THANK YOU MASTER THANKYOUTHANKYOU ILL BE THERE I PROMISE");
+			writePhoneSpeech("swimmer","","THANK YOU *MASTER THANKYOUTHANKYOU ILL BE THERE I PROMISE");
 			writePhoneSpeech("player","","spank* not yet. First you have classes. I'll be sure to tell sportsF to make sure you're there and paying attention.");
-			writePhoneSpeech("swimmer","","THANK YOU MASTER OF COURSE MASTER ILL SEE YOU TONIGHT!");
+			writePhoneSpeech("swimmer","","THANK YOU *MASTER OF COURSE *MASTER ILL SEE YOU TONIGHT!");
 			writePhoneSpeech("coach","","Fuu~uck that's so hot. Mm, I cannot wait to do this with more girls. Seeing her lick sportsF's asshole clean was the hardest I've cum since... Well, when did you last fuck me? I guess not that long all things considered, but damn if it wasn't good.");
 			break;
 		}
@@ -568,11 +727,11 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 }
 
 //Don't touch anything below this, or things will break.
-//console.log(character.index+'.js loaded correctly. request type is '+requestType)
+console.log(character.index+'.js loaded correctly. request type is '+requestType)
 
 switch (requestType) {
 	case "load": {
-		//data.story.push(character);
+		data.story.push(character);
 		console.log(character);
 		console.log(data.story);
 		writeSpecial(character.fName+" has been added to the game!");
@@ -585,9 +744,6 @@ switch (requestType) {
 	}
 	case "event": {
 		writeEvent(eventName);
-		if (data.player.location == 'gallery' && eventName != 'gallery') {
-			writeFunction("loadEncounter('system', 'gallery')", "Finish");
-		}
 		break;
 	}
 	case "unlock": {
@@ -608,73 +764,57 @@ switch (requestType) {
 	}
 	case "check": {
 		if (encounteredCheck(character.index) != true) {
-			for (number = 0; number < encounterArray.length; number++) { //start going through encounter array
-				var finalLocation = "";
-				var finalResult = true;
-				if (encounterArray[number].location != null) {
-					var finalLocation = encounterArray[number].location;
-					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map" && data.player.gps == true) { //check the location
-						if (encounterArray[number].time.includes(data.player.time)) { //check the time
-							if (encounterArray[number].trustMin <= checkTrust(character.index) && encounterArray[number].trustMax >= checkTrust(character.index)) { //check the trust requirements
-								if (encounterArray[number].day == "even" && data.player.day%2 == 1) {
-									finalResult = false;
-									//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect parity");
+			for (i = 0; i < encounterArray.length; i++) {
+				if (encounterArray[i].altImage == undefined) {
+					encounterArray[i].altImage == "";
+				}
+				if (encounterArray[i].altName == undefined) {
+					encounterArray[i].altName == "";
+				}
+				if (encounterArray[i].location.includes(data.player.location)) { //check the location
+					if (encounterArray[i].time.includes(data.player.time)) { //check the time
+						if (encounterArray[i].trustMin <= checkTrust(character.index) && encounterArray[i].trustMax >= checkTrust(character.index)) { //check the trust requirements
+							if (encounterArray[i].day == "even" && data.player.day%2 == 0) {
+								if (encounterArray[i].itemReq != "" && checkItem(encounterArray[i].reqItem) != true) {
+									console.log('event available, but you lack the appropriate item');
 								}
-								if (encounterArray[number].day == "odd" && data.player.day%2 == 0) {
-									finalResult = false;
-									//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect parity");
-								}
-								if (encounterArray[number].itemReq != "" && checkItem(encounterArray[number].itemReq) != true) {
-									finalResult = false;
-									//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect item");
+								else {
+									if (encounterArray[i].type == "tab") { //check the type of the encounter (tab / button)
+										printEncounterTab(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].altImage, encounterArray[i].altName);
+									}
+									else {
+										printEncounterButton(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].top, encounterArray[i].left);
+									}
 								}
 							}
-							else {
-								//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect trust at "+checkTrust(character.index)+". Trustmin: "+encounterArray[number].trustMin);
-								finalResult = false;
+							if (encounterArray[i].day == "odd" && data.player.day%2 == 1) {
+								if (encounterArray[i].itemReq != "" && checkItem(encounterArray[i].itemReq) != true) {
+									console.log('event available, but you lack the appropriate item');
+								}
+								else {
+									if (encounterArray[i].type == "tab") { //check the type of the encounter (tab / button)
+										printEncounterTab(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].altImage, encounterArray[i].altName);
+									}
+									else {
+										printEncounterButton(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].top, encounterArray[i].left);
+									}
+								}
+							}
+							if (encounterArray[i].day == "both") {
+								if (encounterArray[i].itemReq != "" && checkItem(encounterArray[i].itemReq) != true) {
+									console.log('event available, but you lack the appropriate item');
+								}
+								else {
+									if (encounterArray[i].type == "tab") { //check the type of the encounter (tab / button)
+										printEncounterTab(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].altImage, encounterArray[i].altName);
+									}
+									else {
+										printEncounterButton(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].top, encounterArray[i].left);
+									}
+								}
 							}
 						}
-						else {
-							//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect time");
-							finalResult = false;
-						}
 					}
-					else {
-						//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect location");
-						finalResult = false;
-					}
-				}
-				else {
-					//console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
-					var requirements = checkRequirements(encounterArray[number].requirements);
-					//console.log(requirements);
-					if (requirements != true) {
-						finalResult = false;
-					}
-				}
-				if (finalResult == true) {
-					//console.log("Final result for "+encounterArray[number].index+" true, location is "+finalLocation);
-					if (data.player.location == "map" && finalLocation != "beach" && finalLocation != "casino") {
-						var textString = "";
-						for (locationIndex = 0; locationIndex < locationArray.length; locationIndex++) { //find the location target
-							if (locationArray[locationIndex].index == finalLocation) {
-								var textString = locationArray[locationIndex].name + " - ";
-							}
-						}
-						if (textString != "") {
-							printEncounterTab(character.index, encounterArray[number].index, textString + encounterArray[number].name, encounterArray[number].altImage, encounterArray[number].altName);
-						}
-						else {
-							printEncounterTab(character.index, encounterArray[number].index, encounterArray[number].name, encounterArray[number].altImage, encounterArray[number].altName);
-						}
-					}
-					else {
-						//console.log(number);
-						printEncounterTab(character.index, encounterArray[number].index, encounterArray[number].name, encounterArray[number].altImage, encounterArray[number].altName);
-					}
-				}
-				else {
-					//console.log("!!!!!!!!!!!!!!!!!!!!!!!!!final result for "+encounterArray[number].index+" false, location is "+finalLocation);
 				}
 			}
 		}
@@ -718,47 +858,14 @@ switch (requestType) {
 		break;
 	}
 	case "phoneCheck": {
-		var finalMessage = "";
-		var finalResult = true;
 		for (number = 0; number < phoneArray.length; number++) { //start going through phone array
-			//Start finding the data.story variable associated with the character
-			for (phoneHistoryCheck = 0; phoneHistoryCheck < data.story.length; phoneHistoryCheck++) {
-				if (data.story[phoneHistoryCheck].index == character.index) {
-					//If the character has no unread texts
-					//If the character does not have this text in their text history
-					if (
-					data.story[phoneHistoryCheck].unreadText != true &&
-					data.story[phoneHistoryCheck].textHistory.includes(phoneArray[number].index) != true &&
-					data.story[phoneHistoryCheck].textEvent != phoneArray[number].index
-					) {
-						//If the phone record is using the old system...
-						if (phoneArray[number].trust != null) {
-							var finalResult = false;
-							if (checkTrust(character.index) == phoneArray[number].trust) { //if the player's trust with the character meets the text requirement
-								for (phoneEventCheck = 0; phoneEventCheck < data.story.length; phoneEventCheck++) { //go through the characters
-									if (data.story[phoneEventCheck].index == character.index) { //check what text is currently assigned to the character
-										if (data.story[phoneEventCheck].textEvent.includes(phoneArray[number].index)==false) {
-											notification(character.index)
-											data.story[phoneEventCheck].textEvent = phoneArray[number].index;
-											console.log(data.story[phoneEventCheck].textEvent);
-										}
-									}
-								}
-							}
-						}
-						else {
-							if (phoneArray[number].requirements.includes("?time") == false) {
-								phoneArray[number].requirements += "?time Morning;";
-							}
-							//Check the requirements
-							var requirements = checkRequirements(phoneArray[number].requirements);
-							console.log("Now examining encounter entry "+phoneArray[number].index+phoneArray[number].requirements+", result is "+requirements);
-							if (requirements != false) {
-								notification(character.index)
-								data.story[phoneHistoryCheck].unreadText = true;
-								data.story[phoneHistoryCheck].textEvent = phoneArray[number].index;
-								data.story[phoneHistoryCheck].textHistory += phoneArray[number].index;
-							}
+			if (checkTrust(character.index) == phoneArray[number].trust) { //if the player's trust with the character meets the text requirement
+				for (phoneEventCheck = 0; phoneEventCheck < data.story.length; phoneEventCheck++) { //go through the characters
+					if (data.story[phoneEventCheck].index == character.index) { //check what text is currently assigned to the character
+						if (data.story[phoneEventCheck].textEvent.includes(phoneArray[number].index)==false) {
+							notification(character.index)
+							data.story[phoneEventCheck].textEvent = phoneArray[number].index;
+							console.log(data.story[phoneEventCheck].textEvent);
 						}
 					}
 				}
