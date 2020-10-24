@@ -1862,6 +1862,15 @@ function writeHTML(text) {
 					console.log("Now writing definition statement, using shortcut "+definitionShortcut+" for result "+definitionResult+", overwrite value is "+overWrite);
 					break;
 				}
+				//If the command is "t"
+				case "t": {
+					//Remove the command from the line we actually want to print.
+					lines[lineCounter] = lines[lineCounter].replace(command+` `, ``);
+					//Execute the writeText command to print everything left to the screen.
+					writeText(lines[lineCounter]);
+					//Don't execute any of the below switch cases.
+					break;
+				}
 				case "sp": {
 					//Get the name of our speaker
 					var name = lines[lineCounter].split(command+` `).pop().split(`;`)[0];
