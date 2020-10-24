@@ -764,57 +764,73 @@ switch (requestType) {
 	}
 	case "check": {
 		if (encounteredCheck(character.index) != true) {
-			for (i = 0; i < encounterArray.length; i++) {
-				if (encounterArray[i].altImage == undefined) {
-					encounterArray[i].altImage == "";
-				}
-				if (encounterArray[i].altName == undefined) {
-					encounterArray[i].altName == "";
-				}
-				if (encounterArray[i].location.includes(data.player.location)) { //check the location
-					if (encounterArray[i].time.includes(data.player.time)) { //check the time
-						if (encounterArray[i].trustMin <= checkTrust(character.index) && encounterArray[i].trustMax >= checkTrust(character.index)) { //check the trust requirements
-							if (encounterArray[i].day == "even" && data.player.day%2 == 0) {
-								if (encounterArray[i].itemReq != "" && checkItem(encounterArray[i].reqItem) != true) {
-									console.log('event available, but you lack the appropriate item');
+			for (number = 0; number < encounterArray.length; number++) { //start going through encounter array
+				var finalLocation = "";
+				var finalResult = true;
+				if (encounterArray[number].location != null) {
+					var finalLocation = encounterArray[number].location;
+					if (encounterArray[number].location.includes(data.player.location) || data.player.location == "map" && data.player.gps == true) { //check the location
+						if (encounterArray[number].time.includes(data.player.time)) { //check the time
+							if (encounterArray[number].trustMin <= checkTrust(character.index) && encounterArray[number].trustMax >= checkTrust(character.index)) { //check the trust requirements
+								if (encounterArray[number].day == "even" && data.player.day%2 == 1) {
+									finalResult = false;
+									//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect parity");
 								}
-								else {
-									if (encounterArray[i].type == "tab") { //check the type of the encounter (tab / button)
-										printEncounterTab(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].altImage, encounterArray[i].altName);
-									}
-									else {
-										printEncounterButton(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].top, encounterArray[i].left);
-									}
+								if (encounterArray[number].day == "odd" && data.player.day%2 == 0) {
+									finalResult = false;
+									//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect parity");
+								}
+								if (encounterArray[number].itemReq != "" && checkItem(encounterArray[number].itemReq) != true) {
+									finalResult = false;
+									//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect item");
 								}
 							}
-							if (encounterArray[i].day == "odd" && data.player.day%2 == 1) {
-								if (encounterArray[i].itemReq != "" && checkItem(encounterArray[i].itemReq) != true) {
-									console.log('event available, but you lack the appropriate item');
-								}
-								else {
-									if (encounterArray[i].type == "tab") { //check the type of the encounter (tab / button)
-										printEncounterTab(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].altImage, encounterArray[i].altName);
-									}
-									else {
-										printEncounterButton(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].top, encounterArray[i].left);
-									}
-								}
-							}
-							if (encounterArray[i].day == "both") {
-								if (encounterArray[i].itemReq != "" && checkItem(encounterArray[i].itemReq) != true) {
-									console.log('event available, but you lack the appropriate item');
-								}
-								else {
-									if (encounterArray[i].type == "tab") { //check the type of the encounter (tab / button)
-										printEncounterTab(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].altImage, encounterArray[i].altName);
-									}
-									else {
-										printEncounterButton(character.index, encounterArray[i].index, encounterArray[i].name, encounterArray[i].top, encounterArray[i].left);
-									}
-								}
+							else {
+								//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect trust at "+checkTrust(character.index)+". Trustmin: "+encounterArray[number].trustMin);
+								finalResult = false;
 							}
 						}
+						else {
+							//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect time");
+							finalResult = false;
+						}
 					}
+					else {
+						//console.log("Failed event "+encounterArray[number].index+" for "+character.index+" due to incorrect location");
+						finalResult = false;
+					}
+				}
+				else {
+					//console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
+					var requirements = checkRequirements(encounterArray[number].requirements);
+					//console.log(requirements);
+					if (requirements != true) {
+						finalResult = false;
+					}
+				}
+				if (finalResult == true) {
+					//console.log("Final result for "+encounterArray[number].index+" true, location is "+finalLocation);
+					if (data.player.location == "map" && finalLocation != "beach" && finalLocation != "casino") {
+						var textString = "";
+						for (locationIndex = 0; locationIndex < locationArray.length; locationIndex++) { //find the location target
+							if (locationArray[locationIndex].index == finalLocation) {
+								var textString = locationArray[locationIndex].name + " - ";
+							}
+						}
+						if (textString != "") {
+							printEncounterTab(character.index, encounterArray[number].index, textString + encounterArray[number].name, encounterArray[number].altImage, encounterArray[number].altName);
+						}
+						else {
+							printEncounterTab(character.index, encounterArray[number].index, encounterArray[number].name, encounterArray[number].altImage, encounterArray[number].altName);
+						}
+					}
+					else {
+						//console.log(number);
+						printEncounterTab(character.index, encounterArray[number].index, encounterArray[number].name, encounterArray[number].altImage, encounterArray[number].altName);
+					}
+				}
+				else {
+					//console.log("!!!!!!!!!!!!!!!!!!!!!!!!!final result for "+encounterArray[number].index+" false, location is "+finalLocation);
 				}
 			}
 		}
