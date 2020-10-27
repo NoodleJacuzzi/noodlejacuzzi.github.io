@@ -25,6 +25,10 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+	writeHTML(`
+		define player = sp player;
+		define tomgirl = sp tomgirl;
+	`);
 	switch (name) {
 		case "tomgirl1": {
 			writeBig("images/tomgirl/1-2.jpg", "Art by Nagi Ichi");
@@ -227,7 +231,28 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeSpeech("player", "", "<i>At this point there's no question, I could use the corruption ability I learned from succubusF on him. </i>");
 				writeFunction("writeEncounter('tomgirlnew4a')", "Talk about corruption");
 			}
+			if (checkFlag('tomgirl', 'club')!=true && checkTrust('nagatoro') > 101) {
+				writeFunction("writeEncounter('tomgirlJoin')", "Take tomgirlF to nagatoroF's club");
+			}
 			writeFunction("changeLocation('playerOffice')", "Rain check. Let's meet tomorrow");
+			break;
+		}
+		case "tomgirlJoin": {
+			writeHTML(`
+				t You take tomgirlF to the crossdressing club.
+				...
+				nagatoro Well well well. If it isn't tomgirlF. Look who came around? Hehe~
+				tomgirl nagatoroF... Of course *he'd be interested in you. 
+				nagatoro I guess *he's got a type. Hmhm~<br>Soooo~? What kinda outfits should I put you in? Seeing you all nervous and stuttery would be so cute~! 
+				tomgirl I want the sluttiest you've got!
+				nagatoro ... Eh?
+				tomgirl Look at you, you're so cute! I'm not letting you steal *master away from me. I'll pick out something cute, and after that you gotta teach me how you make your eyes pop like that!
+				nagatoro S... Sure?
+				t It seems like the two will make quick friends.
+			`)
+			addFlag("tomgirl", "club");
+			writeFunction("loadEncounter('nagatoro', 'clubQuo')", "Continue");
+			loadEncounter("nagatoro", "tomgirlJoin")
 			break;
 		}
 		case "tomgirlnew2": {
@@ -295,6 +320,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			setTrust('tomgirl', 666);
 			passTime();
 			writeFunction("loadEncounter('succubus', 'tomgirlCorruption')", "Finish");
+			break;
+		}
+		case "tomgirlClub": {
+			writeEvent(name);
+			passTime();
+			unencounter("nagatoro");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 	}
@@ -665,6 +697,32 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("His cock at full hardness now is barely three inches long, and shrinking as it goes flaccid while his brain fogs over with post-orgasmic fuzz.");
 			writeText("His balls weren't above average before, but now they're not even the size of grapes.");
 			writeText("His eyes flutter, and close. His strength and stamina have left his body just to cake his chest.");
+			break;
+		}
+		case "tomgirlClub": {
+			writeHTML(`
+				t It doesn't take long for tomgirlF to find an outfit, or for him to prepare to ruin it either. 
+				t But you're taking your own sweet time, enjoying him slowly become more and more desperate for you to go all-out.
+				tomgirl Fuck me~
+				player I can't hear you, is that how you should beg?
+				tomgirl Fuck meeee~! Fuck me until I'm not jealous of nagatoroF for stealing you away~! Fuck me until I cream inside of this outfit! Fuck me fuck me puh-
+				im club1.jpg
+				tomgirl -Leeeeease~!
+				t The view is fantastic as your hips collide with his supple outfit. The bunny getup is tight, but his body does it's best to jiggle with each thrust.
+				tomgirl Noooo~! No more teasing!
+				player I thought I'd give you a taste to motivate you. Plus, in that outfit, doggystyle just doesn't fit. <br>Now come on, bounce.
+				im club2.jpg
+				t tomgirlF is absolutely not good at pacing himself, rapidly bouncing away to maximize the number of times he can bump his overworked p-spot. Maybe a nice buttplug would have him feeling on edge all day?
+				tomgirl Can't... Oooh~
+				player Be a good girl and hold back a little longer, we'll... tomgirlF?
+				im club3.jpg
+				tomgirl Ghhhhk~!
+				t Not the greatest endurance in bed either, he's a bit of a quick shot. Luckily when he cumes this way you can drag it out, and he's good for another assgasm right away.
+				t Well, if he's already satisfied then it's as good a time as any to scratch <b>your</b> itch.
+				tomgirl Guhunna ruin the outfiiiit~!<br>And...!
+				im club4.jpg
+				tomgirl RUIN ME TOOOO~!
+			`);
 			break;
 		}
 	}

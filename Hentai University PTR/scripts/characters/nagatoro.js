@@ -29,6 +29,10 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+	writeHTML(`
+		define player = sp player;
+		define nagatoro = sp nagatoro;
+	`);
 	switch (name) {
 		case "cancel": {
 			unencounter(character.index);
@@ -401,6 +405,63 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("loadEncounter('succubus', 'nagatoroCorruption')", "Continue");
 			break;
 		}
+		case "succubusClub": {
+			loadEncounter("succubus", name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "tomgirlClub": {
+			loadEncounter("tomgirl", name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "newMembers": {
+			writeHTML(`
+				player So, the club's growing. Pretty crazy, huh? How's it feel?
+				nagatoro It's... Pretty crazy. Pretty risky too. If principalF found out we'd be out on our butts in the cold, lonely world.
+				player ... There are other schools, you know.
+				nagatoro Sure, but they wouldn't have student bodies like this one.
+				t He slyly winks at you.
+				nagatoro Anyways, if you're sure they won't squeal feel free to invite anyone you want. I'll give you alone time too when you need it.<br>Ah, not that kind of squeal, you perv!
+			`);
+			addFlag("nagatoro", "newMembers");
+			writeFunction("writeEncounter('clubQuo')", "Continue");
+			break;
+		}
+		case "tomgirlJoin": {
+			writeHTML(`
+				t You take tomgirlF to the crossdressing club.
+				...
+				nagatoro Well well well. If it isn't tomgirlF. Look who came around? Hehe~
+				tomgirl nagatoroF... Of course *he'd be interested in you. 
+				nagatoro I guess *he's got a type. Hmhm~<br>Soooo~? What kinda outfits should I put you in? Seeing you all nervous and stuttery would be so cute~! 
+				tomgirl I want the sluttiest you've got!
+				nagatoro ... Eh?
+				tomgirl Look at you, you're so cute! I'm not letting you steal *master away from me. I'll pick out something cute, and after that you gotta teach me how you make your eyes pop like that!
+				nagatoro S... Sure?
+				t It seems like the two will make quick friends.
+			`);
+			addFlag("tomgirl", "club");
+			writeFunction("writeEncounter('clubQuo')", "Continue");
+			break;
+		}
+		case "succubusJoin": {
+			writeHTML(`
+				t You walk into the clubroom, and before you can close the door succubusF walks in behind you out of seemingly nowhere. He's scrolling through some website on his phone.
+				nagatoro Oh, hey this isn't-
+				player He's with me. He wants to join.
+				nagatoro Oh, wow! Hey, are you a student here, or-
+				succubus <span style="color:pink;">No questions.</span>
+				nagatoro O-okay...?
+				succubus Alright... Where was that... Ooh, this one's cute too. I don't wanna ruin any of it though... I can wear my own stuff here, right? Nevermind. Don't need permission.
+				t succubusF doesn't seem very social, but hopefully he'll be a fun part of the club.
+			`);
+			addFlag("nagatoro", "succubusIntro");
+			writeFunction("writeEncounter('clubQuo')", "Continue");
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -763,6 +824,9 @@ function openWardrobe() {
 			writeWardrobeOption("nagatoroSchoolgirl1-1");
 			writeWardrobeOption("nagatoroSwimsuitLocked");
 			writeWardrobeOption("nagatoroPrincessLocked");
+			if (checkFlag("nagatoro", "clubSearchBegins") != true) {
+				writeSpeech("nagatoro", "", "So, I know we're supposed to keep all this a secret, but... If you wanna, and you find somebody interested in joining the club.<br>... Maybe point them my way?")
+			}
 		break;
 		case 103:
 			writeWardrobeOption("nagatoroBunny3-1");
@@ -787,6 +851,18 @@ function openWardrobe() {
 			//writeWardrobeOption("032");
 			//writeWardrobeOption("112");
 			//writeWardrobeOption("nagatoroPrincessLocked");
+	}
+	if (checkFlag("tomgirl", "club") == true) {
+		writeWardrobeOption("tomgirlClub");
+		if (checkFlag("nagatoro", "newMembers") != true) {
+			writeEncounter("newMembers");
+		}
+	}
+	if (checkFlag("succubus", "club") == true) {
+		writeWardrobeOption("succubusClub");
+		if (checkFlag("nagatoro", "succubusIntro") != true) {
+			writeEncounter("succubusJoin");
+		}
 	}
 }
 
