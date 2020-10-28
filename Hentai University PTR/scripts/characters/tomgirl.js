@@ -341,6 +341,7 @@ var eventArray = [ //Lists the events of the character for unlocking and replayi
 	{index: "tomgirlnew1", name: "Fully Broken"},
 	{index: "tomgirlnew2", name: "Gym Quickie"},
 	{index: "tomgirlnew4", name: "Corruption"},
+	{index: "tomgirlClub", name: "Crossdressing Club"},
 ];
 
 function writeEvent(name) { //Plays the actual event.

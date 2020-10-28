@@ -32,6 +32,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 	writeHTML(`
 		define player = sp player;
 		define nagatoro = sp nagatoro;
+		define succubus = sp succubus;
+		define tomgirl = sp tomgirl;
+		define meji = sp meji;
 	`);
 	switch (name) {
 		case "cancel": {
@@ -287,7 +290,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				}
 				case 102: {
 					writeHTML(`
-						sp nagatoro; *Mister messy is back~! I spent a while cleaning the bunny-boi outfit off. I bet you'd want to see me do it with my mouth next time, huh? Pervert~! Or maybe I should get out an outfit fitting for dealing with someone as dirty as you? 
+						sp nagatoro; *Mister messy is back~! I spent a while cleaning the bunny-boi outfit off, we could do something different this time with it. I bet you'd want to see me do it with my mouth next time, huh? Pervert~! Or maybe I should get out an outfit fitting for dealing with someone as dirty as you? 
 					`);
 					break;
 				}
@@ -417,6 +420,18 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
+		case "mejiCC1": {
+			loadEncounter("meji", name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "mejiCC2": {
+			loadEncounter("meji", name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
 		case "newMembers": {
 			writeHTML(`
 				player So, the club's growing. Pretty crazy, huh? How's it feel?
@@ -459,6 +474,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t succubusF doesn't seem very social, but hopefully he'll be a fun part of the club.
 			`);
 			addFlag("nagatoro", "succubusIntro");
+			writeFunction("writeEncounter('clubQuo')", "Continue");
+			break;
+		}
+		case "mejiJoin": {
+			writeHTML(`
+			`);
+			addFlag("tomgirl", "club");
 			writeFunction("writeEncounter('clubQuo')", "Continue");
 			break;
 		}
@@ -858,6 +880,15 @@ function openWardrobe() {
 			writeEncounter("newMembers");
 		}
 	}
+	if (checkFlag("meji", "club") == true) {
+		writeWardrobeOption("mejiCC1");
+		if (checkFlag("meji", "club2") == true) {
+			writeWardrobeOption("mejiCC2");
+		}
+		if (checkFlag("nagatoro", "newMembers") != true) {
+			writeEncounter("newMembers");
+		}
+	}
 	if (checkFlag("succubus", "club") == true) {
 		writeWardrobeOption("succubusClub");
 		if (checkFlag("nagatoro", "succubusIntro") != true) {
@@ -869,7 +900,7 @@ function openWardrobe() {
 function writeWardrobeOption(wardrobeImage) {
 	if (wardrobeImage.includes("Locked")==false) {
 		document.getElementById('wardrobeGrid').innerHTML += `
-			<img class="bigPicture" id="`+wardrobeImage+`" src="images/nagatoro/`+wardrobeImage+`.jpg" title="Art by Kinta no Mousou"
+			<img class="bigPicture" id="`+wardrobeImage+`" src="images/nagatoro/`+wardrobeImage+`.jpg" 
 			onclick="writeEncounter('`+wardrobeImage+`')",
 			onmouseover="wardrobeMouseOver('`+wardrobeImage+`')"
 			onmouseout="wardrobeMouseOut('`+wardrobeImage+`')"

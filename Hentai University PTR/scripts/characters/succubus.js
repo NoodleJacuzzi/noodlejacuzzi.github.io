@@ -856,6 +856,7 @@ var eventArray = [
 	{index: "succubus4", name: "Paradise Found"},
 	{index: "succubusPlayerDom", name: "Ares Potion"},
 	{index: "succubusPlayerSub", name: "Virgo Potion"},
+	{index: "succubusClub", name: "Crossdressing Club"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
