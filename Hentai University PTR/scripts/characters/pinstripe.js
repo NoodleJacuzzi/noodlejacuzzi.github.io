@@ -18,12 +18,12 @@ var newItems = [
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "intro", name: "You're walking down the hall, when...", requirements: "?trust pinstripe 0; ?location eastHallway;", altName: "", altImage: "",},
-	{index: "office", name: "pinstripeF's office is here", requirements: "?trust pinstripe 1; ?location eastHallway;", altName: "", altImage: "",},
-	{index: "potionQuo", name: "pinstripeF's office is here", requirements: "?trustMin pinstripe 10; ?trustMax pinstripe 13; ?location eastHallway;", altName: "", altImage: "",},
-	{index: "potionFinishedQuo", name: "pinstripeF's office is here", requirements: "?trustMin pinstripe 80; ?trustMax pinstripe 81; ?location eastHallway;", altName: "", altImage: "",},
-	{index: "missing", name: "pinstripeF's office is here", requirements: "?trust pinstripe 60; ?location eastHallway;", altName: "", altImage: "",},
+	{index: "office", name: "pinstripe's office is here", requirements: "?trust pinstripe 1; ?location eastHallway;", altName: "", altImage: "",},
+	{index: "potionQuo", name: "pinstripe's office is here", requirements: "?trustMin pinstripe 10; ?trustMax pinstripe 13; ?location eastHallway;", altName: "", altImage: "",},
+	{index: "potionFinishedQuo", name: "pinstripe's office is here", requirements: "?trustMin pinstripe 80; ?trustMax pinstripe 81; ?location eastHallway;", altName: "", altImage: "",},
+	{index: "missing", name: "pinstripe's office is here", requirements: "?trust pinstripe 60; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "streetCatcall", name: "did you just see...?", requirements: "?trust pinstripe 60; ?location streets;", altName: "", altImage: "images/pinstripe/schoolgirl.jpg",},
-	{index: "dosedQuo", name: "You should be able to find pinstripeF here", requirements: "?trust pinstripe 61; ?location streets;", altName: "", altImage: "images/pinstripe/schoolgirl.jpg",},
+	{index: "dosedQuo", name: "You should be able to find pinstripe here", requirements: "?trust pinstripe 61; ?location streets;", altName: "", altImage: "images/pinstripe/schoolgirl.jpg",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -105,6 +105,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeFunction("writeEncounter('potionStart')", "Use the blonding potion");
 			}
 			writeFunction("writeEncounter('cancel')", "Go back");
+			break;
 		}
 		case "potionStart": {
 			writeHTML(`
@@ -219,6 +220,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 					break;
 				}
 			}
+			break;
 		}
 		case "pinstripeTitsuck": {
 			passTime();
@@ -375,7 +377,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "pinstripeMouth": {
 			writeEvent(name);
-			setTrust("pinstripe", 100);
+			setTrust("pinstripe", 61);
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}

@@ -189,7 +189,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust('mama') > 18) {
 				sale("mamaReset", 40, "images/mama/mama.jpg", "Chunky's Meal - mamaF<br>Erases mamaF's memories, allowing you to try something different with her.");
 			}
-			if (checkFlag('pinstripe') == 1 && checkFlag('pinstripe', 'potionFlag') != true) {
+			if (checkTrust('pinstripe') == 1 && checkFlag('pinstripe', 'potionFlag') != true) {
 				sale("incubusPinstripe", 40, "images/pinstripe/pinstripe.jpg", "Blonding Potion<br>Gives you a potion for pinstripeF without needing to corrupt nurseF.");
 			}
 			if (checkTrust('pinstripe') > 10) {

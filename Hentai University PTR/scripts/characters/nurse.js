@@ -313,7 +313,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust('mama') == 1) {
 				writeFunction("writeEncounter('nurseMama')", "Ask for help with mamaF");
 			}
-			if (checkFlag('pinstripe') == 1 && checkFlag('pinstripe', 'potionFlag') != true) {
+			if (checkTrust('pinstripe') == 1 && checkFlag('pinstripe', 'potionFlag') != true) {
 				writeFunction("writeEncounter('nursePinstripe')", "Ask for help with pinstripeF");
 			}
 			writeFunction("writeEncounter('chatHub')", "Chat");
