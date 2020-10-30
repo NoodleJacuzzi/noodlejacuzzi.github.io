@@ -153,7 +153,7 @@ function writeEncounter(scene) {
 		case "load": {
 			document.getElementById('output').innerHTML += `
 				<p class='centeredText'>Warning: Save before using. Enter the modded character's index EXACTLY or it will cause issues and you'll need to load the game.</p>
-				<p class='centeredText'>As of v8 March 27th 2020, The mod characters by SlackerSavior have been fully added into the game. Type in <b>coach</b> below to load them into the game. Please keep in mind though that only Zoe and Amy have content.</p>
+				<p class='centeredText'>The mod characters by SlackerSavior have been fully added into the game, no need to type anything to load them. If you're interested in writing your own character please let me know!</p>
 				<p class='centeredText'>Enter character's index: <input type="text" id="indexSubmission" value=""></p>
 				<p class='choiceText' onclick='modCharacter()'>Submit</p>
 			`;
