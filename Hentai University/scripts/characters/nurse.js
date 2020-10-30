@@ -313,6 +313,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust('mama') == 1) {
 				writeFunction("writeEncounter('nurseMama')", "Ask for help with mamaF");
 			}
+			if (checkTrust('pinstripe') == 1 && checkFlag('pinstripe', 'potionFlag') != true) {
+				writeFunction("writeEncounter('nursePinstripe')", "Ask for help with pinstripeF");
+			}
 			writeFunction("writeEncounter('chatHub')", "Chat");
 			writeFunction("changeLocation(data.player.location)", "Leave");
 			break;
@@ -488,6 +491,25 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "analPotion2": {
 			writeEvent('nurseAnal');
 			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "nursePinstripe": {
+			writeHTML(`
+				sp player; I could use your help. There's a member of the PTSA council, pinstripeF. She's...
+				...
+				t nurseF sits back up holding two spraybottles, she looks confused.
+				sp nurse; Hmm... One of these is my blonding potion, one of these is bleach. Lemme sniff...
+				sp player; Blonding? The same kind of potion that made you...
+				sp nurse; Ugh, that one's bleach.<br>The one that made me stupid? Yes, an arguably less permanent kind.
+				sp player; A temporary stupidity potion doesn't sound like-
+				sp nurse; Temporary, yes, but only by a certain definition. Her brain will enter a state similar to the formative one of her early years, anything you tell her will form the new foundation for the way she thinks.<br>Also, repeated use is a fantastic alternative to hair dye.
+				sp player; So I could stop after just one dose, but I could also keep going?
+				sp nurse; Absolutely! There should be enough to dose the entire town in that bottle, so be sure to use only a little at a time. Repeated uses may make the effects permanent. Just wear a little like perfume just before speaking with her, it won't affect you.<br>Also, as a personal request, I would appreciate it if you could record the effects of the potion... <i>Extensively</i>.
+				sp player; Gotcha. Any other notes?
+				sp nurse; If she's anything like me she'll be tired after her first exposure. Don't push her too fast all at once. 
+			`);
+			addFlag('pinstripe', "potionFlag");
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}

@@ -266,8 +266,8 @@ p{margin: 15px 0;}
 	/*added so in the case of ever having so much dialog that it would extend over the picture, it aligns neatly at the right to the picture as demosntrated in example1.jpg.*/
 }
 img.textThumb {
-    height: 150px;
-    width: 150px;
+    height: 140px;
+    width: 140px;
     border-radius: 15px;
     margin-right: 30px;
     /*box-shadow: -5px 5px var( --character-color);*/
@@ -990,8 +990,8 @@ img.textThumbLobotomy {
 	overflow: hidden;
 }
 img.textThumbPersona {
-    height: 180px;
-    width: 180px;
+    height: 140px;
+    width: 140px;
     /*box-shadow: -5px 5px var( --character-color);*/
     flex: none;
 }
@@ -1003,7 +1003,7 @@ img.textThumbPersona {
 }
 .personaThumb {
     display: inline-block;
-    width: 160px;
+    width: 120px;
 }
 .nameBoxPersona {
 	-moz-transform: skew(3deg, 0deg);
@@ -1083,7 +1083,7 @@ img.textThumbPersona {
 	font-weight: bold;
     display: block;
     width: fit-content;
-    max-width: 30vw;
+    max-width: 50vw;
     margin: 15px auto;
 	border: solid 5px;
 }
@@ -1111,7 +1111,7 @@ img.textThumbPersona {
     color: #ffffff;
 	border: solid 3px #ffffff;
     padding: 15px;
-    margin: 15px;
+    margin: 8px;
 	border: solid 3px #ffffff;
 	border-radius: 0px;
     transition: 0.25s;

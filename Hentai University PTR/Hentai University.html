@@ -22,7 +22,7 @@
 			<div id="titlePanel">
 				<p id = "title" class = "title">Hentai University</p>
 				<div id="closeButton" class="closeButton" onclick="closeButton()"><</div>
-				<p id = "version" class = "version">V13</p>
+				<p id = "version" class = "version">V14</p>
 				<!--<p id = "version" class = "version">Updates are in progress, will post this version soon</p>-->
 				<p id = "author">
 					<a href="https://noodlejacuzzi.github.io/index.html">Noodle Jacuzzi</a><br>
@@ -83,6 +83,26 @@
 
 				<div class="saveList">
 				<div class = "saveSlot">
+					<p id = "save109Name" class = "saveName">Manual</p>
+					<p id = "save109Date" class = "saveDate"></p>
+					<!-- <p id = "load109Button" class = "loadFileButton button" onclick = "loadFile()">Load from text string</p>
+					<!-- <p id = "delete109Button" class = "deleteButton button" onclick = "deleteSlot(9)"></p> -->
+					<!-- <p id = "save109Button" class = "saveFileButton button" onclick = "saveFile()">Save to text string</p> -->
+					<p id = "save109Button" class = "saveFileButton button" onclick = "saveTXT()">Save to .noodle file</p>
+					<input type="file" id="loadFile" onload="fileLoaded()" class = "loadFileButton button" onchange = "loadSave()"></input>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save109Name" class = "saveName">String</p>
+					<p id = "save109Date" class = "saveDate"></p>
+					<p id = "load109Button" class = "loadFileButton button" onclick = "loadFile()">Load from text string</p>
+					<!-- <p id = "delete109Button" class = "deleteButton button" onclick = "deleteSlot(9)"></p> -->
+					<p id = "save109Button" class = "saveFileButton button" onclick = "saveFile()">Save to text string</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save109Name" class = "saveName">Auto</p>
+					<p class = "loadFileButton button">The game autosaves regularly. Refresh the page to load the autosave anytime.</p>
+				</div>
+				<div class = "saveSlot">
 					<p id = "save101Name" class = "saveName">Slot 1</p>
 					<p id = "save101Date" class = "saveDate">Jan 9th, 8:31</p>
 					<p id = "load101Button" class = "loadButton button" onclick = "loadSlot(101)"></p>
@@ -137,26 +157,6 @@
 					<p id = "load108Button" class = "loadButton button" onclick = "loadSlot(108)"></p>
 					<p id = "delete108Button" class = "deleteButton button" onclick = "deleteSlot(108)"></p>
 					<p id = "save108Button" class = "saveButton button" onclick = "saveSlot(108)">SAVE</p>
-				</div>
-				<div class = "saveSlot">
-					<p id = "save109Name" class = "saveName">Manual</p>
-					<p id = "save109Date" class = "saveDate"></p>
-					<!-- <p id = "load109Button" class = "loadFileButton button" onclick = "loadFile()">Load from text string</p>
-					<!-- <p id = "delete109Button" class = "deleteButton button" onclick = "deleteSlot(9)"></p> -->
-					<!-- <p id = "save109Button" class = "saveFileButton button" onclick = "saveFile()">Save to text string</p> -->
-					<p id = "save109Button" class = "saveFileButton button" onclick = "saveTXT()">Save to .noodle file</p>
-					<input type="file" id="loadFile" onload="fileLoaded()" class = "loadFileButton button" onchange = "loadSave()"></input>
-				</div>
-				<div class = "saveSlot">
-					<p id = "save109Name" class = "saveName">String</p>
-					<p id = "save109Date" class = "saveDate"></p>
-					<p id = "load109Button" class = "loadFileButton button" onclick = "loadFile()">Load from text string</p>
-					<!-- <p id = "delete109Button" class = "deleteButton button" onclick = "deleteSlot(9)"></p> -->
-					<p id = "save109Button" class = "saveFileButton button" onclick = "saveFile()">Save to text string</p>
-				</div>
-				<div class = "saveSlot">
-					<p id = "save109Name" class = "saveName">Auto</p>
-					<p class = "loadFileButton button">The game autosaves regularly. Refresh the page to load the autosave anytime.</p>
 				</div>
 			</div>
 

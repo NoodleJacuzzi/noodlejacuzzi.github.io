@@ -27,6 +27,10 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+	writeHTML(`
+		define player = sp player;
+		define succubus = sp succubus;
+	`);
 	switch (name) {
 		case "introOffer": {
 			writeText("Normally you'd just walk past someone passing time on their phone, but something about him just seems... Off. Not quite in a bad way.");
@@ -389,6 +393,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("writeEncounter('chatDemons')", "Other kinds of demons");
 			writeFunction("writeEncounter('chatTransformation')", "Demonization process");
 			if (checkFlag('succubus', 'mission') == true) {
+				if (checkFlag('succubus', 'club') != true) {
+					if (checkTrust('nagatoro') > 101) {
+						writeFunction("writeEncounter('chatClub')", "Wanna join nagatoroF's club?");
+					}
+				}
 				if (checkFlag('succubus', 'newCorruption') != true) {
 					if (checkFlag('succubus', 'corruption') == true) {
 						writeFunction("writeEncounter('oldCorruption')", "Ask about how you can add more succubi to your harem");
@@ -457,6 +466,18 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("succubus", "demon.jpg", "Sorry, probably should've warned you, but you look like you aren't super good at dealing with pain.<br>Anyways it's super easy. Just focus on where the mark was and it'll come back, allowing you to corrupt people.<br>They need to be deep, and I mean balls-deep in love with you though. Only the most broken bois may apply.");
 			writeSpeech("player", "", "Neat, thanks.");
 			writeSpeech("succubus", "demon.jpg", "... You really are an oddball, *Master.");
+			writeFunction("writeEncounter('chatSelect')", "Back");
+			break;
+		}
+		case "chatClub": {
+			writeHTML(`
+				define succubus = sp succubus; im demon.jpg;
+				player Hey, you know that one boi I corrupted, nagatoroF?
+				succubus The one with the wardrobe, yeah.
+				player Well, I was thinking it'd be pretty fun if you joined his club. Might be nice for you to make some friends. At least before we turn him into a succubus (male).
+				succubus Friends? No. I've dealt with too many demons with betrayal fetishes.<br>But having an in at the school might not be so bad. Maybe I'll show up once or twice.
+			`);
+			addFlag("succubus", "club");
 			writeFunction("writeEncounter('chatSelect')", "Back");
 			break;
 		}
@@ -808,6 +829,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation('playerHouse')", "Leave succubusF to it");
 			break;
 		}
+		case "succubusClub": {
+			writeEvent(name);
+			passTime();
+			unencounter("nagatoro");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -828,6 +856,7 @@ var eventArray = [
 	{index: "succubus4", name: "Paradise Found"},
 	{index: "succubusPlayerDom", name: "Ares Potion"},
 	{index: "succubusPlayerSub", name: "Virgo Potion"},
+	{index: "succubusClub", name: "Crossdressing Club"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -1294,6 +1323,32 @@ function writeEvent(name) { //Plays the actual event.
 				t You take another sip of the sports drink he picked up for you. 
 				sp player; It's... Fine. We just need to be more careful about dehydration next time. 
 				t You rub the head of your bat-winged familiar to cheer him up. Now's a good a time as any to get some rest. 
+			`);
+			break;
+		}
+		case "succubusClub": {
+			writeHTML(`
+				im club1.jpg
+				succubus ... It's really hard to get into a groove with you staring like that.
+				player You certainly seem excited though. I thought you had to stay calm, or else you change?
+				succubus D'aww, you listened? Pussy.<br>Let's just say I'm getting better at this. Speaking of getting better...
+				im club2.jpg
+				succubus Mmm~ Mwah!<br>That smug look isn't gonna last much longer. Mmm...
+				player I think... You'll find I'm getting better myself... I won't break as quickly anymore...
+				succubus ...
+				im club3.jpg
+				succubus Eheheh~
+				im club4.jpg
+				t Taking that as a challenge succubusF smiles. Or as best he can with cock in his mouth. Your vision starts to wobble as you're treated to a full-course delight of a succubus's aphrodisiac saliva and incredible head skill.
+				t Hoping to throw him off his game, and also trying to let loose some of your rapidly building energy, you thrust.
+				im club5.jpg
+				t But the sensation of his inner cheek rubbing against your cocktip starts making certain neurons fire off in your brain like a christmas tree at a rave party.
+				im club6.jpg
+				t Your legs shake as succubusF earns his reward, neither of you interested in continuing your little game, both of you just interested in indulging in hedonistic bliss.
+				succubus Hah~<br>Mmm, you might be finished, but...
+				im club7.jpg
+				player Ghh!
+				t Between his cocksucking talent and inhumanly perfect body, you may be at this for a while.
 			`);
 			break;
 		}
