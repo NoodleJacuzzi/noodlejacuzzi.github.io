@@ -59,6 +59,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t She takes a step forwards to intimidate you, she's very tall.
 				sp pinstripe; So tell me, what exactly are you doing here?
 			`);
+			passTime();
 			writeFunction("writeEncounter('introB')", "I belong here.");
 			writeFunction("writeEncounter('introA')", "Going back to my office");
 			break;
@@ -73,7 +74,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp pinstripe; I'm not sure yet. The matter is pending investigation, I'll know after the next meeting I have with principalF.
 				t With that she leaves, her heels clacking as she goes. 
 			`);
-			setTrust("office", 1);
+			setTrust("pinstripe", 1);
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -85,7 +86,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp pinstripe; Searching for a new job. And I'll see to it that principalF won't be a favorable reference for you.
 				t With that she leaves, her heels clacking as she goes.
 			`);
-			setTrust("office", 1);
+			setTrust("pinstripe", 1);
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -131,6 +132,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t It seems the potion doesn't let you rewrite their common sense like hypnosis does, it just makes her really, really stupid.
 				t Still, this should be enough. With a stern voice you could command her to stay home from the next PTSA meeting, or you could play around to your heart's content.
 			`);
+			passTime();
 			writeFunction("writeEncounter('potionIntro')", "Enjoy yourself");
 			writeFunction("writeEncounter('potionCancel')", "Keep her out of the way");
 			break;
@@ -217,179 +219,187 @@ function writeEncounter(name) { //Plays the actual encounter.
 					break;
 				}
 			}
-			case "pinstripeTitsuck": {
-				writeEvent(name);
+		}
+		case "pinstripeTitsuck": {
+			passTime();
+			writeEvent(name);
+			raiseTrust("pinstripe", 1);
+			writeFunction("writeEncounter('pushYourLuck')", "Take her");
+			writeText("But maybe it might be smarter to be patient. You've given her so many <b>good ideas</b> today already, it might be best to let them sit.");
+			writeFunction("writeEncounter('backOff')", "Have patience");
+			break;
+		}
+		case "pushYourLuck": {
+			writeHTML(`
+				define pinstripe = sp pinstripe; im images/pinstripe/nude.jpg;
+				t You stand up and start freeing your member in front pinstripeF. Her eyes shoot open. Once they can focus again, that is.
+				pinstripe What the hell are you doing?
+				player Giving you what you need. It's a <b>goo-</b>
+				pinstripe Get the hell out of my...! Ghh... What am <i>I</i> doing...
+				t She stands up off her chair and starts trying to cover herself up. This could be bad...
+			`);
+			writeFunction("writeEncounter('gameOver')", "Excuse yourself");
+			writeFunction("writeEncounter('pinstripeSecondDose')", "Use the blonding potion again");
+			break;
+		}
+		case "backOff": {
+			writeHTML(`
+				define pinstripe = sp pinstripe; im images/pinstripe/nude.jpg;
+				player That will be the end of our massage today, alright pinstripeF?
+				pinstripe A-already?<br>Right... Right, I need to get back... Back to work.
+				t With a smile you leave her office as she attempts to get dresssed. A day of stewing should leave her much more open to future suggestions.
+			`);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "gameOver": {
+			writeHTML(`
+				t You file away another bit of paperwork and get ready to head back home as sky starts to grow darker. There's plenty to do. Corrupt each member of the PTSA and use them as a springboard to get a hold of principalF. A lot of work but with patience-
+				t You're startled out of your daydream by the sound of a siren. An ambulance? Was someone hurt? 
+				t You step out of your office only to see a group of officers walking up the stairway. From the moment the one in the lead spots you it's clear your fate is sealed.
+				t You're arrested, and it certainly seems like they've got solid evidence against you. principalF comes out of her office to see you getting cuffed, but makes no move to help you.
+				t Somewhere along the line you must've made a mistake, a miscalculation. Now you're going away for a long time.
+				t <b>GAME OVER</b>
+			`);
+			break;
+		}
+		case "pinstripeFuck": {
+			passTime();
+			writeEvent(name);
+			raiseTrust("pinstripe", 1);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "pinstripeCowgirl": {
+			passTime();
+			writeEvent(name);
+			raiseTrust("pinstripe", 1);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "potionFinishedQuo": {
+			if (checkTrust("pinstripe") == 80) {
+				writeHTML(`
+					pinstripe Ah, you're back. Is... Is that idea of not cumming alone a permanent thing? I was trying last night, and... Nevermind.
+					t She's totally broken to your whims at this point, but you could always do with a little more fun.
+				`);
 				raiseTrust("pinstripe", 1);
-				writeFunction("writeEncounter('pushYourLuck')", "Take her");
-				writeText("But maybe it might be smarter to be patient. You've given her so many <b>good ideas</b> today already, it might be best to let them sit.");
-				writeFunction("writeEncounter('backOff')", "Have patience");
-				break;
 			}
-			case "pushYourLuck": {
+			else {
 				writeHTML(`
-					define pinstripe = sp pinstripe; im images/pinstripe/nude.jpg;
-					t You stand up and start freeing your member in front pinstripeF. Her eyes shoot open. Once they can focus again, that is.
-					pinstripe What the hell are you doing?
-					player Giving you what you need. It's a <b>goo-</b>
-					pinstripe Get the hell out of my...! Ghh... What am <i>I</i> doing...
-					t She stands up off her chair and starts trying to cover herself up. This could be bad...
+					t As you walk into her office, pinstripeF sighs. It isn't clear if it's annoyance or relief, and she starts to unbutton her top.
 				`);
-				writeFunction("writeEncounter('gameOver')", "Excuse yourself");
-				writeFunction("writeEncounter('pinstripeSecondDose')", "Use the blonding potion again");
-				break;
 			}
-			case "backOff": {
-				writeHTML(`
-					define pinstripe = sp pinstripe; im images/pinstripe/nude.jpg;
-					player That will be the end of our massage today, alright pinstripeF?
-					pinstripe A-already?<br>Right... Right, I need to get back... Back to work.
-					t With a smile you leave her office as she attempts to get dresssed. A day of stewing should leave her much more open to future suggestions.
-				`);
-				writeFunction("changeLocation(data.player.location)", "Finish");
-				break;
-			}
-			case "gameOver": {
-				writeHTML(`
-					t You file away another bit of paperwork and get ready to head back home as sky starts to grow darker. There's plenty to do. Corrupt each member of the PTSA and use them as a springboard to get a hold of principalF. A lot of work but with patience-
-					t You're startled out of your daydream by the sound of a siren. An ambulance? Was someone hurt? 
-					t You step out of your office only to see a group of officers walking up the stairway. From the moment the one in the lead spots you it's clear your fate is sealed.
-					t You're arrested, and it certainly seems like they've got solid evidence against you. principalF comes out of her office to see you getting cuffed, but makes no move to help you.
-					t Somewhere along the line you must've made a mistake, a miscalculation. Now you're going away for a long time.
-					t <b>GAME OVER</b>
-				`);
-				break;
-			}
-			case "pinstripeFuck": {
-				writeEvent(name);
-				raiseTrust("pinstripe", 1);
-				writeFunction("changeLocation(data.player.location)", "Finish");
-				break;
-			}
-			case "pinstripeCowgirl": {
-				writeEvent(name);
-				raiseTrust("pinstripe", 1);
-				writeFunction("changeLocation(data.player.location)", "Finish");
-				break;
-			}
-			case "potionFinishedQuo": {
-				if (checkTrust("pinstripe") == 80) {
-					writeHTML(`
-						pinstripe Ah, you're back. Is... Is that idea of not cumming alone a permanent thing? I was trying last night, and... Nevermind.
-						t She's totally broken to your whims at this point, but you could always do with a little more fun.
-					`);
-					raiseTrust("pinstripe", 1);
-				}
-				else {
-					writeHTML(`
-						t As you walk into her office, pinstripeF sighs. It isn't clear if it's annoyance or relief, and she starts to unbutton her top.
-					`);
-				}
-				writeFunction("writeEncounter('pinstripeTitsuckRepeat')", "Enjoy her breasts again");
-				writeFunction("writeEncounter('pinstripeFuckRepeat')", "Fuck her again");
-				writeFunction("writeEncounter('cancel')", "Go back");
-				break;
-			}
-			case "pinstripeTitsuckRepeat": {
-				writeHTML(`
-					define pinstripe = sp pinstripe; im images/pinstripe/nude.jpg;
-					im tit1.jpg
-					pinstripe Again... I figured you were more about the thrill of the hunt, isn't this... Rather plain for you?
-					player Please, I know how desperate you are. Sometimes it's fun to relax and revel.
-					pinstripe I... I'm not-
-					im tit2.jpg
-					pinstripe Oooh~
-					t There it is again. The feeling of resistance cracking, then melting away. At this point it's a drug, an addiction.
-					t For normal women this is foreplay, but at this point it's clear to both of you...
-					im tit3.jpg
-					pinstripe Oooouhh~!
-					t pinstripeF is not normal anymore.
-				`);
-				writeFunction("changeLocation(data.player.location)", "Finish");
-				break;
-			}
-			case "pinstripeFuckRepeat": {
-				writeHTML(`
-					define pinstripe = sp pinstripe; im images/pinstripe/horny.jpg;
-					im fuck1.jpg
-					pinstripe Okay... We need to do this quickly...
-					player The way you look at me, you look like you're starving.
-					pinstripe I'm not! I'm not...
-					im fuck2.jpg
-					pinstripe Mmmh~! I can't wait anymore!
-					t Reservations, hesitance, shame?
-					t *<b>THRUST</b>*
-					t Gone.
-					t Willpower, critical thinking, common decency?
-					t *<b>THRUST</b>*
-					t Gone.
-					t Any last idea that she can resist cumming when you creampie her?
-					t *<b>THRUST</b>*
-					im fuck3.jpg
-					t Gone.
-				`);
-				writeFunction("changeLocation(data.player.location)", "Finish");
-				break;
-			}
-			case "pinstripeSecondDose": {
-				writeEvent(name);
-				setTrust("pinstripe", 60);
-				writeFunction("changeLocation(data.player.location)", "Finish");
-				break;
-			}
-			case "missing": {
-				writeHTML(`
-					t ... But pinstripeF isn't.
-					t You open the door to her office, but she's nowhere to be found. Curious. Maybe the potion had some unforeseen effects? You can't imagine it's left her bedridden.
-					t You should search around for her.
-				`);
-				writeFunction("writeEncounter('cancel')", "Go back");
-				break;
-			}
-			case "streetCatcall": {
-				writeHTML(`
-					define pinstripe = sp pinstripe; im images/pinstripe/schoolgirl.jpg;
-					t You make your way through the alley in disbelief. There's no way that could have been-
-					im schoolgirl.jpg
-					pinstripe You alright *mister? You seem out of breath.
-					player pinstripeF?! What happened to you?
-					pinstripe <i>That's</i> your first question? I thought for sure a *man like you'd cum right up and ask me "how much"!
-					t Is... Is it possible she took that "whore" thing seriously? Well, her disappearing from school won't necessarily be tied to you. Especially if nobody notices until the next meeting...
-					t You're pulled out of your thoughts when she approaches you.
-					pinstripe You know, I don't know why... But when I look at'cha I wanna give you a discount. How about this...
-					t She steps up to you to whisper into your ear.
-					pinstripe You can use my mouth...<br>For the price of one fat load inside me.
-					t She pulls you by the hand, it looks like she already has a destination in mind. Either her own home or a seedy motel.
-				`);
-				writeFunction("writeEncounter('pinstripeMouth')", "Let her lead");
-				break;
-			}
-			case "pinstripeMouth": {
-				writeEvent(name);
-				setTrust("pinstripe", 100);
-				writeFunction("changeLocation(data.player.location)", "Finish");
-				break;
-			}
-			case "dosedQuo": {
-				writeHTML(`
-					define pinstripe = sp pinstripe; im images/pinstripe/schoolgirl.jpg;
-					im service0.jpg
-					pinstripe Welcum back mister! Wanna play? You can use either of my mouths, free if you promise to treat me right~
-				`);
-				writeFunction("writeEncounter('pinstripeMouthRepeat')", "Use her mouth");
-				break;
-			}
-			case "pinstripeMouthRepeat": {
-				writeHTML(`
-					im service2-1.jpg
-					t At first you thought she'd be disappointed at buying her mouth instead of her snatch, but her enthusiasm shows she enjoys giving head plenty.
-					im service2-2.jpg
-					t Just like before she's a blur of impeccable technique and enthusiasm. You don't last long, no *man could, but with how frantically she rubs herself it's clear she's getting close too.
-					im service2-3.jpg
-					t And just as you reach your crescendo, so does the mouth maniac beneath you.
-				`);
-				writeFunction("changeLocation(data.player.location)", "Finish");
-				break;
-			}
+			writeFunction("writeEncounter('pinstripeTitsuckRepeat')", "Enjoy her breasts again");
+			writeFunction("writeEncounter('pinstripeFuckRepeat')", "Fuck her again");
+			writeFunction("writeEncounter('cancel')", "Go back");
+			break;
+		}
+		case "pinstripeTitsuckRepeat": {
+			passTime();
+			writeHTML(`
+				define pinstripe = sp pinstripe; im images/pinstripe/nude.jpg;
+				im tit1.jpg
+				pinstripe Again... I figured you were more about the thrill of the hunt, isn't this... Rather plain for you?
+				player Please, I know how desperate you are. Sometimes it's fun to relax and revel.
+				pinstripe I... I'm not-
+				im tit2.jpg
+				pinstripe Oooh~
+				t There it is again. The feeling of resistance cracking, then melting away. At this point it's a drug, an addiction.
+				t For normal women this is foreplay, but at this point it's clear to both of you...
+				im tit3.jpg
+				pinstripe Oooouhh~!
+				t pinstripeF is not normal anymore.
+			`);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "pinstripeFuckRepeat": {
+			passTime();
+			writeHTML(`
+				define pinstripe = sp pinstripe; im images/pinstripe/horny.jpg;
+				im fuck1.jpg
+				pinstripe Okay... We need to do this quickly...
+				player The way you look at me, you look like you're starving.
+				pinstripe I'm not! I'm not...
+				im fuck2.jpg
+				pinstripe Mmmh~! I can't wait anymore!
+				t Reservations, hesitance, shame?
+				t *<b>THRUST</b>*
+				t Gone.
+				t Willpower, critical thinking, common decency?
+				t *<b>THRUST</b>*
+				t Gone.
+				t Any last idea that she can resist cumming when you creampie her?
+				t *<b>THRUST</b>*
+				im fuck3.jpg
+				t Gone.
+			`);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "pinstripeSecondDose": {
+			passTime();
+			writeEvent(name);
+			setTrust("pinstripe", 60);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "missing": {
+			writeHTML(`
+				t ... But pinstripeF isn't.
+				t You open the door to her office, but she's nowhere to be found. Curious. Maybe the potion had some unforeseen effects? You can't imagine it's left her bedridden.
+				t You should search around for her.
+			`);
+			writeFunction("writeEncounter('cancel')", "Go back");
+			break;
+		}
+		case "streetCatcall": {
+			passTime();
+			writeHTML(`
+				define pinstripe = sp pinstripe; im images/pinstripe/schoolgirl.jpg;
+				t You make your way through the alley in disbelief. There's no way that could have been-
+				im schoolgirl.jpg
+				pinstripe You alright *mister? You seem out of breath.
+				player pinstripeF?! What happened to you?
+				pinstripe <i>That's</i> your first question? I thought for sure a *man like you'd cum right up and ask me "how much"!
+				t Is... Is it possible she took that "whore" thing seriously? Well, her disappearing from school won't necessarily be tied to you. Especially if nobody notices until the next meeting...
+				t You're pulled out of your thoughts when she approaches you.
+				pinstripe You know, I don't know why... But when I look at'cha I wanna give you a discount. How about this...
+				t She steps up to you to whisper into your ear.
+				pinstripe You can use my mouth...<br>For the price of one fat load inside me.
+				t She pulls you by the hand, it looks like she already has a destination in mind. Either her own home or a seedy motel.
+			`);
+			writeFunction("writeEncounter('pinstripeMouth')", "Let her lead");
+			break;
+		}
+		case "pinstripeMouth": {
+			writeEvent(name);
+			setTrust("pinstripe", 100);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "dosedQuo": {
+			writeHTML(`
+				define pinstripe = sp pinstripe; im images/pinstripe/schoolgirl.jpg;
+				im service0.jpg
+				pinstripe Welcum back mister! Wanna play? You can use either of my mouths, free if you promise to treat me right~
+			`);
+			writeFunction("writeEncounter('pinstripeMouthRepeat')", "Use her mouth");
+			break;
+		}
+		case "pinstripeMouthRepeat": {
+			passTime();
+			writeHTML(`
+				im service2-1.jpg
+				t At first you thought she'd be disappointed at buying her mouth instead of her snatch, but her enthusiasm shows she enjoys giving head plenty.
+				im service2-2.jpg
+				t Just like before she's a blur of impeccable technique and enthusiasm. You don't last long, no *man could, but with how frantically she rubs herself it's clear she's getting close too.
+				im service2-3.jpg
+				t And just as you reach your crescendo, so does the mouth maniac beneath you.
+			`);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
 		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
