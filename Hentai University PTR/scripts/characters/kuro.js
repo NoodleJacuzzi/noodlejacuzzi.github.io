@@ -2200,20 +2200,38 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				writePhoneSpeech("kuro","","If you go saying stuff like that ill get too turned on to stay at school all day lol");
 				writePhoneSpeech("kuro","","Still gotta look out for a sister tho, so here (~>^.^)~>");
 				writePhoneImage("images/kuro/nikki.jpg", "FriendAssUp, Art by Enoshima Iki");
-				writePhoneSpeech("kuro","","Even if you don't go spurting on your phone screen shell cum like CRAZY knowing some dude shes never met might be jerking it to her");
-				writePhoneSpeech("kuro","","The way she talked about bumping into people around campus with no idea if they blasted rope to her ass got ME crazy turned on");
-				writePhoneSpeech("kuro","","Maybe youll see her around the university if you ever decide one sexy bitch isnt enough for ya~");
+				if(checkTrust('nikki') >= 20){
+					writePhoneSpeech("player","","Huh, I actually know her.");
+					writePhoneSpeech("kuro","","Legit? That must make you the person she mentioned before");
+					writePhoneSpeech("player","","Oh? And what was she saying about me?");
+					writePhoneSpeech("kuro","","Lol that's a secret between girlfriends~ Tho I'll have to have a fun little chat with her about you now...");
+					writePhoneSpeech("kuro","","After class anyway. Toodles, cutie~!");
+				}
+				else{
+					writePhoneSpeech("kuro","","Even if you don't go spurting on your phone screen shell cum like CRAZY knowing some dude shes never met might be jerking it to her");
+					writePhoneSpeech("kuro","","The way she talked about bumping into people around campus with no idea if they blasted rope to her ass got ME crazy turned on");
+					writePhoneSpeech("kuro","","Maybe youll see her around the university if you ever decide one sexy bitch isnt enough for ya~");
+				}
 				break;
 			}
 			case "kuroPhone4B" : {
 				writePhoneSpeech("kuro","","Oof, shes gonna get so turned on hearing that");
 				writePhoneSpeech("kuro","","here");
 				writePhoneImage("images/kuro/nikki.jpg", "FriendAssUp, Art by Enoshima Iki");
-				writePhoneSpeech("kuro","","She wanted you to have a pic of her, she said shes gonna cum like CRAZY knowing some guy shes never met might be jerking it to her");
-				writePhoneSpeech("kuro","","She totally went on about not knowing which guy at school has been jerking it to a pic of her ass");
-				writePhoneSpeech("kuro","","If you see her around the university you could totally whisper that you enjoyed the pic");
-				writePhoneSpeech("kuro","","I bet that slut would totally cum on the spot~!");
-				writePhoneSpeech("kuro","","Fuck im runnign late gtg");
+				if(checkTrust('nikki') >= 20){
+					writePhoneSpeech("player","","Huh, I actually know her.");
+					writePhoneSpeech("kuro","","Legit? That must make you the person she mentioned before");
+					writePhoneSpeech("player","","Oh? And what was she saying about me?");
+					writePhoneSpeech("kuro","","Lol that's a secret between girlfriends~ Tho I'll have to have a fun little chat with her about you now...");
+					writePhoneSpeech("kuro","","After class anyway. Toodles, cutie~!");
+				}
+				else{
+					writePhoneSpeech("kuro","","She wanted you to have a pic of her, she said shes gonna cum like CRAZY knowing some guy shes never met might be jerking it to her");
+					writePhoneSpeech("kuro","","She totally went on about not knowing which guy at school has been jerking it to a pic of her ass");
+					writePhoneSpeech("kuro","","If you see her around the university you could totally whisper that you enjoyed the pic");
+					writePhoneSpeech("kuro","","I bet that slut would totally cum on the spot~!");
+					writePhoneSpeech("kuro","","Fuck im runnign late gtg");
+				}
 				break;
 			}
 			case "kuroPhone5" : {
