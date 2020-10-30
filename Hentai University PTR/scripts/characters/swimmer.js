@@ -414,7 +414,7 @@ function writeEvent(name) { //Plays the actual event.
             writeBig("images/swimmer/phoneReward.jpg", "Art by Himitsu Kessha Vanitas");
             writeText("Now... Time to see if this worked.");
             writeSpeech("player", "", "No. Not now. You did well, but I'm still not convinced you know your place. Go shower and get cleaned off. We'll try again and you can stay on edge until you've proven yourself.");
-            writeText("And... Not even a hint of dissapointment. No hesitation, swimmerF stands, and starts to head towards the shower, scooping up cum from her body before licking her hands clean as she goes.");
+            writeText("And... Not even a hint of disappointment. No hesitation, swimmerF stands, and starts to head towards the shower, scooping up cum from her body before licking her hands clean as she goes.");
             writeSpeech("swimmer", "", "Thank you *Master! I'm sorry I couldn't convince you, but... But I'll try harder next time! I promise!");
 			writeFunction("writeEvent('swimmer4c')", "You let her go, and hear the shower as she cleans herself. You move to the door, open it, close it, and sneak back to her locker while she cleans.");
 			updateMenu();
@@ -430,7 +430,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeText("She springs to it, putting her hands against the wall and sticking her ass out.");
 			writeSpeech("player", "", "You've surprised me, swimmerF. Today you did better than I ever thought you could have. It took a week of hard training, and...");
 			writeText("You make an exaggerated sigh, looking at your wrist for a watch that isn't there.");
-			writeSpeech("player", "", "Hours and hours of reinforcment. And what did you learn?");
+			writeSpeech("player", "", "Hours and hours of reinforcement. And what did you learn?");
 			writeText("Her reaction is instant. An ingrained reflex now.");
 			writeSpeech("swimmer", "", "Focus on *Master, pleasing *Master brings me pleasure, more than anything else.");
             writeText("There's a brief moment of surprise on her face, before her face lights up with a massive smile.");
