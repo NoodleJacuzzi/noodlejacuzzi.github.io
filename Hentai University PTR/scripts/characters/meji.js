@@ -1191,13 +1191,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 						//writeFunction("writeEncounter('mejiCC')","Talk to him about the crossdressing club")
 					}
 					else if(!galleryCheck("mejiCC2")) {
+						writeSpeech("meji","","Oh, and if you want to do some more stuff at the club, just give Ash a heads-up first and I'll be right over.");
 						//writeFunction("writeEncounter('mejiCC')","Take him to the crossdressing club again")
 					}
 					else {
 						//writeFunction("writeEncounter('mejiCC')","Have sex in the magical girl outfit again")
 					}
 				}
-				writeFunction("changeLocation(data.player.location)", "Tell him you're a bit busy today");
+				writeFunction("changeLocation(data.player.location)", "Never mind");
 				break;
 			}
 			else if(!galleryCheck('mejiAlt2')){
@@ -1213,6 +1214,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 						//writeFunction("writeEncounter('mejiCC')","Talk to him about the crossdressing club")
 					}
 					else if(!galleryCheck("mejiCC2")) {
+						writeSpeech("meji","","Oh, and if you want to do some more stuff at the club, just give Ash a heads-up first and I'll be right over.");
 						//writeFunction("writeEncounter('mejiCC')","Take him to the crossdressing club again")
 						}
 					else {
@@ -1263,6 +1265,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 					}
 					else if(!galleryCheck("mejiCC2")) {
 						//writeFunction("writeEncounter('mejiCC')","Take him to the crossdressing club again")
+						writeSpeech("meji","","Oh, and if you want to do some more stuff at the club, just give Ash a heads-up first and I'll be right over.");
 						}
 					else {
 						//writeFunction("writeEncounter('mejiCC')","Have sex in the magical girl outfit again")
@@ -1280,7 +1283,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("You could probably bring up the corruption...");
 				writeFunction("writeEncounter('mejiCorruptionPrompt')", "Talk to mejiF about corruption");
 			}
-			writeFunction("writeEncounter('mejiFinale1')", "Tell mejiF you want to train him as your assistant");
+			//writeFunction("writeEncounter('mejiFinale1')", "Tell mejiF you want to train him as your assistant");
 			writeFunction("changeLocation(data.player.location)", "Leave him to his own devices for now");
 			break;
 		}
@@ -2386,7 +2389,7 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "mejiCC2" : {
 			document.getElementById('output').innerHTML = '';
-			writeText("Leaning back, you spread your legs to give him easier access as he slides up onto the bed, flipping his skirt a bit as he does. And, given that you can see a bed of lube down there...");
+			writeText("Leaning back, you spread your legs to give him easier access as he slides up onto the bed, flipping his skirt a bit as he does. And, given that you can see a bead of lube down there...");
 			writeSpeech("player","","You prepped yourself while getting changed?");
 			writeSpeech("meji","","Of course~");
 			writeText("You feel your cock begin to press against his hole as he shifts his body against yours, only to slide up between his cheeks.");
@@ -2463,7 +2466,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-{index: "mejiReward", trust: 110,},
+{index: "mejiReward", trust: 120,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event

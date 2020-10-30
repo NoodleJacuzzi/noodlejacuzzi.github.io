@@ -865,7 +865,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Her whole body quivers at that, her eyes going back to yours as her panting gets heavier.");
 			writeText("She shifts and rolls her chest against you more, moving faster and sharper and kneading them more forcefully with her hands.");
 			writeSpeech("nikki","","Y-Yes...! Yes, yes, <i><b>yes...!</b></i>");
-			writeText("Her eyes, half-hazed over, keep glancing back and forth from your face to your cock, desperately focusing on pleasure - both yours, and hers.");
+			writeText("Her eyes, half-hazed over, keep glancing back and forth from your face to your cock, desperately focusing on pleasure - both yours, and her's.");
 			writeSpeech("player","","<b>Good girl.</b> You know... I think you might even deserve a reward.");
 			writeText("She looks back up again, panting from the phantom sensation of getting fucked.");
 			writeSpeech("player","","You want to feel it, don't you?");
@@ -1239,13 +1239,13 @@ function writeEvent(name) { //Plays the actual event.
 				t She barely nods, still muttering yes again and again, before you give her a firm slap on her ass.
 				t nikkiF moans sharply, the haze disappearing from her eyes for just a moment as you say,
 				sp player; You'd better be, since I'm about to finish too.
-				t A lustful, almost hungry appears in nikkiF's eyes at that as she squeezes tight around you, the spank just enough to clear her head to beg,
+				t A lustful, almost hungry look appears in nikkiF's eyes at that as she squeezes tight around you, the spank just enough to clear her head and get her to beg:
 				sp nikki; Fuck yes, please~! <i><b>Cum inside your little slut~!</b></i>
 				t Grinning, you throw yourself into each thrust, fucking her slick, wet pussy with abandon as you focus solely on going over the edge.
 				t When it happens, it's with a loud groan of pleasure from you, and a squealing moan of ecstasy from nikkiF.
 				im 4-4.jpg
 				sp nikki; <i><b>F-Fuckkk~!</b></i>
-				t You buck your hips into hers several more times as you cum, her eyes rolling up at the sensation of being filled as she shudders and quakes beneath your body.
+				t You buck your hips into her's several more times as you cum, her eyes rolling up at the sensation of being filled as she shudders and quakes beneath your body.
 				t Each pulse of your cock and jet of your cum cause her to moan thoatily, her mind still hazed-out as the pleasure keeps pushing aside any rational thoughts.
 				t She stays that way for a while after you finally pull out, your cum spilling out onto the sheets as she pants. When she finally collects herself, it's with a half-dopey smile.
 				sp nikki; H-Haah... That was amazing~ Thanks for the fun, *Mister Counselor~
