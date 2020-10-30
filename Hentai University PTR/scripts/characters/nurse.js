@@ -502,7 +502,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp nurse; Hmm... One of these is my blonding potion, one of these is bleach. Lemme sniff...
 				sp player; Blonding? The same kind of potion that made you...
 				sp nurse; Ugh, that one's bleach.<br>The one that made me stupid? Yes, an arguably less permanent kind.
-				sp player A temporary stupidity potion doesn't sound like-
+				sp player; A temporary stupidity potion doesn't sound like-
 				sp nurse; Temporary, yes, but only by a certain definition. Her brain will enter a state similar to the formative one of her early years, anything you tell her will form the new foundation for the way she thinks.<br>Also, repeated use is a fantastic alternative to hair dye.
 				sp player; So I could stop after just one dose, but I could also keep going?
 				sp nurse; Absolutely! There should be enough to dose the entire town in that bottle, so be sure to use only a little at a time. Repeated uses may make the effects permanent. Just wear a little like perfume just before speaking with her, it won't affect you.<br>Also, as a personal request, I would appreciate it if you could record the effects of the potion... <i>Extensively</i>.
