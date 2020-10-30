@@ -619,14 +619,21 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "empty", requirements: "?trust principal 10000;"},
+	{index: "reward1", requirements: "?trust pinstripe 81;"},
+	{index: "reward2", requirements: "?trust pinstripe 61;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
-			//Write the event's text here using writePhoneSpeech, writePhoneImage, and writePhoneChoices
+		case "reward1": {
+			writePhoneImage("images/pinstripe/reward1.jpg", "Art by Enoshima Iki");
+			writePhoneSpeech("pinstripe", "", "You've finished all of pinstripeF's content for this version, did you try blonding her again?");
+			break;
+		}
+		case "reward2": {
+			writePhoneImage("images/pinstripe/reward2.jpg", "Art by Enoshima Iki");
+			writePhoneSpeech("pinstripe", "", "You've finished all of pinstripeF's content for this version, did you try patience to get some extra scenes?");
 			break;
 		}
 		default: {
