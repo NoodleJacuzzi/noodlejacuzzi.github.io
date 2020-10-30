@@ -34,7 +34,7 @@ var data = {
 		counseling: 0,
 		lastText: 100,
 		dayID: 1,
-		version: 8,
+		version: 9,
 		location: "",
 		pervert: false,
 		color: "#86b4dc",
@@ -72,6 +72,7 @@ var data = {
 		{index: "orange", 		met: false, fName: "Vanessa", lName: "Lions", 		trust: 0, encountered: false, textEvent: "", color: "#BA5B17", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
 		{index: "cold", 		met: false, fName: "Kelsey", lName: "Lowe", 		trust: 0, encountered: false, textEvent: "", color: "#FCFFFA", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
 		{index: "coach", 		met: false, fName: "Amy", lName: "Silver", 			trust: 0, encountered: false, textEvent: "", color: "#D7BB2E", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
+		{index: "masseuse", fName: "Allison", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#F683C8", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
 	],
 	gallery: [
 	],
@@ -2592,7 +2593,14 @@ function updateSave() {
 			}
 		}
 	}
+	if (data.player.version == 8) {
+		console.log('version 8 detected, updating save');
+		data.player.version = 9;
+		var goof = {index: "masseuse", fName: "Allison", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#F683C8", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false,};
+		data.story.push(goof);
+	}
 	saveSlot(110);
+	//var goof = {index: "camboi", fName: "Charlie", lName: "Miller", trust: 0, encountered: false, textEvent: "", met: false, color: "#716559", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false,};
 }
 
 function saveSlot(slot) {

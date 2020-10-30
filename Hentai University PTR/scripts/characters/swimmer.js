@@ -835,8 +835,7 @@ switch (requestType) {
 			}
 		}
 		break;
-	}
-	case "shop": {
+	}case "shop": {
 		var shopItem = "";
 		for (item = 0; item < newItems.length; item++) {
 			console.log("generating item "+ item + ": " + newItems[item].name + newItems[item].description + newItems[item].image + newItems[item].price + newItems[item].key);
