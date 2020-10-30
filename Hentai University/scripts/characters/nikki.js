@@ -27,8 +27,8 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "nikkiEnc4", name: "nikki's reading a textbook diligently.", requirements: "?trust nikki 50; ?location eastHallway; ?parity even;", altName: "", altImage: "",},
 	{index: "nikkiEnc5", name: "nikki is leaning against the wall, reading yet another textbook.", requirements: "?trust nikki 55; ?location northHallway; ?parity odd;", altName: "", altImage: "",},
 	{index: "nikkiEnc5", name: "nikki, the ever-diligent student, seems to be reviewing her notes.", requirements: "?trust nikki 55; ?location eastHallway; ?parity even;", altName: "", altImage: "",},
-	{index: "nikkiEnc5", name: "nikki is leaning against the wall again, though this time she seems to have a lollipop in her mouth.", requirements: "?trust nikki 60; ?location northHallway; ?parity odd;", altName: "", altImage: "",},
-	{index: "nikkiEnc5", name: "nikki, the ever-diligent student, seems to be reviewing her notes again, though this time she seems to have a lollipop in her mouth", requirements: "?trust nikki 60; ?location eastHallway; ?parity even;", altName: "", altImage: "",},
+	{index: "nikkiEnc5", name: "nikki is leaning against the wall again, though this time she seems to have a lollipop in her mouth.", requirements: "?trustMin nikki 60; ?trustMax nikki 65; ?location northHallway; ?parity odd;", altName: "", altImage: "",},
+	{index: "nikkiEnc5", name: "nikki, the ever-diligent student, seems to be reviewing her notes again, though this time she seems to have a lollipop in her mouth", requirements: "?trustMin nikki 60; ?trustMax nikki 65; ?location eastHallway; ?parity even;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -865,7 +865,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("Her whole body quivers at that, her eyes going back to yours as her panting gets heavier.");
 			writeText("She shifts and rolls her chest against you more, moving faster and sharper and kneading them more forcefully with her hands.");
 			writeSpeech("nikki","","Y-Yes...! Yes, yes, <i><b>yes...!</b></i>");
-			writeText("Her eyes, half-hazed over, keep glancing back and forth from your face to your cock, desperately focusing on pleasure - both yours, and hers.");
+			writeText("Her eyes, half-hazed over, keep glancing back and forth from your face to your cock, desperately focusing on pleasure - both yours, and her's.");
 			writeSpeech("player","","<b>Good girl.</b> You know... I think you might even deserve a reward.");
 			writeText("She looks back up again, panting from the phantom sensation of getting fucked.");
 			writeSpeech("player","","You want to feel it, don't you?");
@@ -913,7 +913,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("nikki","","Did you have time for another today, perhaps?");
 			if(!galleryCheck('nikki3'))
 				writeFunction("writeEncounter('nikkiEnc5A')", "Take her back to your place");
-			else if(galleryCheck('nikki1repeat') && galleryCheck('nikki2repeat') && galleryCheck('nikki3'))
+			if(!galleryCheck('nikki4'))
+				writeFunction("writeEncounter('nikkiEnc5B')", "Take her home and hypnotize her");
+			else if(galleryCheck('nikki1repeat') && galleryCheck('nikki2repeat') && galleryCheck('nikki3') && galleryCheck('nikki4'))
 				writeSpecial("You've finished all of nikkiF's content as of this update! Thanks for playing!")
 			writeFunction("writeEncounter('nikkiEnc3repeat')", "Go to your office for another handjob");
 			writeFunction("writeEncounter('nikkiEnc5repeat')", "Have her give you a titjob again");
@@ -959,6 +961,20 @@ function writeEncounter(name) { //Plays the actual encounter.
 			}
 			break;
 		}
+		case "nikkiEnc5B" : {
+			setTrust("nikki",65);
+			writeSpeech("player","","Let's head back to my place, if you're interested.");
+			writeText("She gives a small smile, nodding.");
+			writeSpeech("nikki","","I'm <i>quite</i> interested.");
+			writeText("...");
+			writeText("When you get there, nikkiF wastes little time striding over to the bed and sitting down, her hands folded neatly in her lap.");
+			writeSpeech("nikki","","So, how do we want to start *Mister Counselor~?");
+			writeSpeech("player","","You'll start by taking off most of those clothes and getting on the bed.");
+			writeText("You smile slightly at her as her hands move without hesitation, her own smile beaming back.");
+			writeSpeech("player","","Now be a <b>good girl</b> and get face-down, ass-up...");
+			writeFunction("writeEvent('nikki4')", "Watch as she gets in position");
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -975,6 +991,7 @@ var eventArray = [
 	///{index: "nikki3Alter", name: "Phone a (Sex-)Friend"},
 	///{index: "nikki3repeat", name: "Plowed in Bed Again"},
 	///{index: "nikki3repeatAlter", name: "Phone a (Sex-)Friend Again"},
+	{index: "nikki4", name: "Face-Down, Ass-Up"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -1180,6 +1197,64 @@ function writeEvent(name) { //Plays the actual event.
 			}
 			break;
 		}
+		case "nikki4" : {
+			writeHTML(`
+				t Dropping her shirt and skirt to the ground, she pauses for a moment at the thigh-highs, before leaving them on as she kneels on the bed.
+				t She slowly bends down, her chest pressing into the sheets as she looks back at you teasingly, wiggling her ass as she relaxes just a bit.
+				im 4-1.jpg
+				t Getting onto the bed yourself, you slowly move your hand along her ass, your thumb teasing at her labia as she subtly shifts at your touch.
+				sp player; A smart girl knows when to say no, but you don't <i>want</i> to be a smart girl right now, do you?
+				t You rub your cockhead against her pussy, feeling her push her hips back a bit, but enough to get you to push into her.
+				sp player; All you want is to feel <i>good,</i> isn't that right?
+				sp nikki; Y-Yes...!
+				t You smile, your hand getting rougher as you grasp her ass.
+				sp player; Good...
+				t She shudders slightly in anticipation, waiting for the second word, but...
+				sp player; Very good.
+				t She pauses slightly, but stays mostly still.
+				sp player; You don't need to think right now, nikkiF... Right?
+				sp nikki; Yes...!
+				t Your hand pauses slightly.
+				sp player; Yes <i>what?</i>
+				t She bites her lip slightly, a shudder going down her back as she replies,
+				sp nikki; Yes <i><b>*Sir~</b></i>
+				sp player; <b>Good girl.</b>
+				im 4-2.jpg
+				sp nikki; <i><b>Ahnn~!</b></i>
+				t Her voice fills the room momentarily as you thrust into her, small pants and moans spilling out with each swing of your hips.
+				sp player; A <b>good girl</b> can stop thinking so hard. You can just keep focusing on nothing but <i><b>this.</b></i>
+				t You punctuate your words with a heavy thrust, fucking her into the bed roughly as her moans pick up.
+				sp player; All you need is to be <i>fucked stupid</i> like the <i>toy you are.</i>
+				t Her pussy squeezes around you as you say that, her back arching further as she gasps in pleasure.
+				sp player; Isn't that right, <b>slut?</b>
+				sp nikki; Y-Ye-
+				im 4-3.jpg
+				t You interrupt nikkiF with another forceful slam into her, her voice cutting out as she writhes in pleasure.
+				sp nikki; Yes yes <i>yes yes <b>YES~</b></i>
+				sp player; <b>Good girl.</b> Just keeping saying yes while I pump your slutty cunt full, and don't bother thinking about anything else. Just let every thrust fuck away all those annoying thoughts...
+				sp nikki; Y-Yes *Sir~...!
+				t Thrusting forward, you let your own throaty moans spill out as you slam into her, thrusting at a comfortable pace for a while as nikkiF's head goes blank with the pleasure.
+				t Her pussy just keeps squeezing around you, unconsciously trying to milk you as she shudders and squirms under you. When her pleasure slowly reaches the peak, her orgasm spreading through her entire body, you can feel it from the way she starts squeezing even tighter.
+				sp player; You're getting close, aren't you?
+				t She barely nods, still muttering yes again and again, before you give her a firm slap on her ass.
+				t nikkiF moans sharply, the haze disappearing from her eyes for just a moment as you say,
+				sp player; You'd better be, since I'm about to finish too.
+				t A lustful, almost hungry look appears in nikkiF's eyes at that as she squeezes tight around you, the spank just enough to clear her head and get her to beg:
+				sp nikki; Fuck yes, please~! <i><b>Cum inside your little slut~!</b></i>
+				t Grinning, you throw yourself into each thrust, fucking her slick, wet pussy with abandon as you focus solely on going over the edge.
+				t When it happens, it's with a loud groan of pleasure from you, and a squealing moan of ecstasy from nikkiF.
+				im 4-4.jpg
+				sp nikki; <i><b>F-Fuckkk~!</b></i>
+				t You buck your hips into her's several more times as you cum, her eyes rolling up at the sensation of being filled as she shudders and quakes beneath your body.
+				t Each pulse of your cock and jet of your cum cause her to moan thoatily, her mind still hazed-out as the pleasure keeps pushing aside any rational thoughts.
+				t She stays that way for a while after you finally pull out, your cum spilling out onto the sheets as she pants. When she finally collects herself, it's with a half-dopey smile.
+				sp nikki; H-Haah... That was amazing~ Thanks for the fun, *Mister Counselor~
+				sp player; Any time, nikkiF.
+				`);
+			if(data.player.location != 'gallery')
+				writeFunction("changeLocation(data.player.location)", "Clean and finish up");
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong event. Error code: Failed to write event ("+name+") in "+character.index+".js");
 			break;
@@ -1203,7 +1278,7 @@ function writeEvent(name) { //Plays the actual event.
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
 	{index: "nikkiText1", requirements: "?trust nikki 55;"},
-	{index: "nikkiReward", requirements: "?trust nikki 60;"},
+	{index: "nikkiReward", requirements: "?trust nikki 65;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
