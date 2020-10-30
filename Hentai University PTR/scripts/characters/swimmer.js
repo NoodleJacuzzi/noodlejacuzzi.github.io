@@ -166,7 +166,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She finally looks up, and stops twitching for a moment as she finishes.");
 			writeSpeech("swimmer", "", "You were my first, and I want you to be the only cock I ever have in me *Master. Is... Is that too selfish?");
 			writeText("Whenever you take over this school, you're giving coachF a massive raise.");
-			writeSpeech("swimmer", "", "That seems fair, swimmerF. And I'm very glad to see you've learned. See what happens when you <b>focus</b>?");
+			writeSpeech("player", "", "That seems fair, swimmerF. And I'm very glad to see you've learned. See what happens when you <b>focus</b>?");
 			writeFunction("writeEvent('swimmer4b')", "Her eyes snap to yours, and she's waiting for your command");
 			break;
 		}
@@ -366,7 +366,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "If that's the case...");
 			writeText("You tease your words out slowly as you take off your pants, exposing your hardened cock. As you peel off your underwear you can see her eyes bulge at the sight, and her breathing gets hurried as you slowly run your hands over your own cock.");
 			writeSpeech("player", "", "You owe me. You've acted like a brat, using me for your own pleasure. You're going to make me cum. Again and again. Until <i>I</i> decide that you've made it up to me. And once you have... <i>If</i> you have, then I'll make you cum.");
-			writeText("She's shivering as you speak. Anticipation on her face. This is a far cry from where she started, she's hanging on every word out of your mouth, and despite being horny enough to leave a pool under herself before you've even started, her arms are locked at her sides. Not daring to bring herself pleasure before she's allowed. You stop speaking and wait for some acknowledgement, but she even seems reluctant to speak before given permission. So with a loud <b>SNAP</b>");
+			writeText("She's shivering as you speak. Anticipation on her face. This is a far cry from where she started, she's hanging on every word out of your mouth, and despite being horny enough to leave a pool under herself before you've even started, her arms are locked at her sides. Not daring to bring herself pleasure before she's allowed. You stop speaking and wait for some acknowledgement, but she even seems reluctant to speak before given permission. So with a loud <b>SNAP-</b>");
 			writeSpeech("player", "", "Spank. Got all that?");
 			writeText("Her body reacts like you prodded her with a cattle prod as she arches her back and lets loose a perverse moaning scream.");
 			writeSpeech("swimmer", "", "Y-Yes *Master! Thank you *Master!");
@@ -377,18 +377,18 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "I honestly don't think you were. It's been a long week, and I doubt you remember the specifics of the last time we were together. Luckily for you, though, I pay attention.");
 			writeText("You get ready and...");
 			writeSpeech("player", "", "If you had cum before I thought you deserved it, coachF's training, and a few spanks...");
-			writeText("<b>SNAP,/b>");
+			writeText("<b>SNAP</b>");
 			writeSpeech("player", "", "Would have been the least of your punishment.");
 			writeSpeech("swimmer", "", "Thank you *Master! But... If I'm not going to use my mouth, or my tongue, or... How should I...?");
 			writeText("One day, this girl's practical experience will match her innate perversity, and that day will be glorious. But for now, she still needs coaching. You find yourself always forgetting just how inexperienced she actually is, even if she's one of the biggest perverts you've ever met. Well, who wasn't a mirror.");
 			writeSpeech("player", "", "There are plenty of ways you can make me cum without taking me in. Your hands, your breasts, your thighs... Don't worry, we'll get creative before we're done here. But for now, bring yourself over here, and point your ass towards me.");
-			writeText("She moves a little slowly at first, somewhat unsure what you mean before you grab ahold of her and push her down as if you're going to take her doggystyle. You tka ejust a moment to run your cock from her slit, pushing just the tiniest bit against her swimsuit and hearing her moan as you do, before you pull back and slip your member under her suit and against her ass. Once you do, she looks back disappoitment clear on her face.");
+			writeText("She moves a little slowly at first, somewhat unsure what you mean before you grab ahold of her and push her down as if you're going to take her doggystyle. You take just a moment to run your cock from her slit, pushing just the tiniest bit against her swimsuit and hearing her moan as you do, before you pull back and slip your member under her suit and against her ass. Once you do, she looks back disappoitment clear on her face.");
             writeBig("images/swimmer/4b1.jpg", "Art by Himitsu Kessha Vanitas");
 			writeSpeech("swimmer", "", "That felt so good, *Master, can you...");
 			writeText("You wind back and quickly SPANK her ass <b>hard</b>. Again and again as you continue. Punctuating every sentence with a new slap, reddening her ass as you start to rub yourself in between her cheeks.");
 			writeSpeech("player", "", "I thought. You. Had learned. Your <i>place</i>!");
 			writeSpeech("swimmer", "", "Sorry *Master! Thank you *Master! I just- thank you *Master! It felt so good, and- Thank you *Master!");
-			writeText("You can feel her gush with heach new spank across her ass, and with each thrust of your cock against her skin. The feeling of her swimsuit against the top of your cock, pressing you tight against and into her ass as you move feels divine. All lubricated by the mess her cunt is making as you continue your onslaught.");
+			writeText("You can feel her gush with reach new spank across her ass, and with each thrust of your cock against her skin. The feeling of her swimsuit against the tip of your cock, pressing you tight against and into her ass as you move feels divine. All lubricated by the mess her cunt is making as you continue your onslaught.");
 			writeSpeech("player", "", "And what? As soon as you feel good, nothing else matters? You. Are. My. Slave.");
             writeText("You don't stop. she thanks you with every spank, her words running together into messy mumbles as you pick up the pace, and clarifying and adding, reinforcing what you and coachF have worked at when you slow down.");
 			writeSpeech("swimmer", "", "Thank you *Master! I'm a toy. Use me for your pleasure. However you want. You come first. Focus on *Master. Don't- Thank you *Master!");
@@ -398,7 +398,7 @@ function writeEvent(name) { //Plays the actual event.
             writeText("You reel back with a last sharp SPANK. Putting her in that headspace as much as you can. Having her thank you, grateful and focused on you as much as she can as she repeats and lets those words form her new outlook.");
             writeSpeech("swimmer", "", "Thank you *Master! Focus on *Master. Pleasing *Master brings me pleasure. More than anything else. Of course it would. Just like coachF. Just like sportsF. We're slaves. Toys. Whatever *Master wants. Because... More than anything else. Focus on *Master. Pleasing *Master brings me pleasure... Cum, please! *Master! Cum for me!");
             writeBig("images/swimmer/4b2.jpg", "Art by Himitsu Kessha Vanitas");
-            writeText("You were close as she spoke, but her begging and the feeling of her finally taking the initiative and trying to twerk her ass against you finally causes you to lose control. You cum, hard, soacking the inside of her suit, making it even more slick, as the excess leaks, and some even shoots through the suit, splattering her ass and creating a nice contrast against her tan skin and dark suit.");
+            writeText("You were close as she spoke, but her begging and the feeling of her finally taking the initiative and trying to twerk her ass against you finally causes you to lose control. You cum, hard, soaking the inside of her suit, making it even more slick, as the excess leaks, and some even shoots through the suit, splattering her ass and creating a nice contrast against her tan skin and dark suit.");
             writeSpeech("swimmer", "", "Pleasing *Master brings me pleasure. More than anything else... Pleasing *Master brings me pleasure...");
             writeText("No time to waste. You double down and grab her, forcing her into the next position. For the next few hours, you rub and thrust your cock over every inch of her body.");
             writeBig("images/swimmer/4b3.jpg", "Art by Himitsu Kessha Vanitas");
@@ -414,7 +414,7 @@ function writeEvent(name) { //Plays the actual event.
             writeBig("images/swimmer/phoneReward.jpg", "Art by Himitsu Kessha Vanitas");
             writeText("Now... Time to see if this worked.");
             writeSpeech("player", "", "No. Not now. You did well, but I'm still not convinced you know your place. Go shower and get cleaned off. We'll try again and you can stay on edge until you've proven yourself.");
-            writeText("And... Not even a hint of dissapointment. No hesitation, swimmerF stands, and starts to head towards the shower, scooping up cum from her body before liking her hands clean as she goes.");
+            writeText("And... Not even a hint of dissapointment. No hesitation, swimmerF stands, and starts to head towards the shower, scooping up cum from her body before licking her hands clean as she goes.");
             writeSpeech("swimmer", "", "Thank you *Master! I'm sorry I couldn't convince you, but... But I'll try harder next time! I promise!");
 			writeFunction("writeEvent('swimmer4c')", "You let her go, and hear the shower as she cleans herself. You move to the door, open it, close it, and sneak back to her locker while she cleans.");
 			updateMenu();
