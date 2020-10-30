@@ -189,6 +189,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust('mama') > 18) {
 				sale("mamaReset", 40, "images/mama/mama.jpg", "Chunky's Meal - mamaF<br>Erases mamaF's memories, allowing you to try something different with her.");
 			}
+			if (checkFlag('pinstripe') == 1 && checkFlag('pinstripe', 'potionFlag') != true) {
+				sale("incubusPinstripe", 40, "images/pinstripe/pinstripe.jpg", "Blonding Potion<br>Gives you a potion for pinstripeF without needing to corrupt nurseF.");
+			}
+			if (checkTrust('pinstripe') > 10) {
+				sale("pinstripeReset", 50, "images/pinstripe/pinstripe.jpg", "Chunky's Meal - pinstripeF<br>Erases pinstripeF's memories, allowing you to try something different with her. Also removes potion effects");
+			}
 			if (checkTrust('president') == 2 || checkTrust('president') == 3) {
 				sale("incubusPresident", 50, "images/president/president.jpg", "Demonic Consultation<br>incubusF will come by and convince presidentF that she should trust hypnosis, without you needing to bring other students by to convince her.");
 			}
@@ -488,6 +494,31 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t mamaF's memories of you have been reset, you're now free to enjoy her however you please! 
 			`);
 			setTrust('mama', 2);
+			writeFunction("writeEncounter('cancel')", "Finish");
+			break;
+		}
+		case "incubusPinstripe": {
+			writeHTML(`
+				t You hand incubusF the money, and in exchange she hands you a spraybottle.
+				sp incubus; Don't ask how I got this, just use a little like perfume and you'll have her off guard. Spray a little more in her face and she's your putty to play with.
+				sp player; Seems easy enough. It won't affect me?
+				sp incubus; You'll be fine. Modify the potion a little and you'll have something to use on the whole town. Careful though, it has some side-effects that become a little more permanent each time you use it.
+				sp player; Such as...?
+				sp incubus; Use it yourself and find out, you baby.
+			`);
+			addFlag('pinstripe', "potionFlag");
+			writeFunction("writeEncounter('cancel')", "Finish");
+			break;
+		}
+		case "pinstripeReset": {
+			writeHTML(`
+				t incubusF snaps her fingers and a nearby lockbox opens. Something small and white scurries out in a flash and flies at you, dead set on your right ear.
+				...
+				t Groggily, you wake up in a disoriented heap. You feel... Violated.
+				sp incubus; Yo. Chunky already found her and got her memories, you're fine to fuck about. Lemme know if you want him to eat anything else. Sit outside if you need to take a breather.
+				t pinstripe's memories of you have been reset, you're now free to enjoy her however you please! 
+			`);
+			setTrust('pinstripe', 1);
 			writeFunction("writeEncounter('cancel')", "Finish");
 			break;
 		}
