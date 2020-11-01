@@ -412,13 +412,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 }
 
 var eventArray = [
-	{index: "pinstripeTitsuck", name: "Event Name"},
-	{index: "pinstripeFuck", name: "Event Name"},
-	{index: "pinstripeCowgirl", name: "Event Name"},
-	{index: "pinstripeBroken", name: "Event Name"},
-	{index: "pinstripeSecondDose", name: "Event Name"},
-	{index: "pinstripeMouth", name: "Event Name"},
-	{index: "pinstripePussy", name: "Event Name"},
+	{index: "pinstripeTitsuck", name: "Breast Massage"},
+	{index: "pinstripeFuck", name: "Relaxation Session 1"},
+	{index: "pinstripeCowgirl", name: "Relaxation Session 1"},
+	{index: "pinstripeBroken", name: "Broken-in"},
+	{index: "pinstripeSecondDose", name: "Second Blonding"},
+	{index: "pinstripeMouth", name: "Mouth Service"},
+	{index: "pinstripePussy", name: "Pussy Service"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
