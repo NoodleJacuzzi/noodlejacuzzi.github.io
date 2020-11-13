@@ -1889,17 +1889,19 @@ function writeScene(scene) {
 		case "scarletChambers": {
 			writeHTML(`
 				t You're in the containment room. There's a single computer here with a half-dozen monitors, most of them displaying a list of "ongoing projects", a series of notes and video feeds from an unauthorized user.
-				t event[Project 1 - Buttslut]
-				t event[Project 1 - Cumhole Whore]
-				t event[Project 1 - Good Sissy]
-				t event[Project 1 - Oral Trainrrrrrr]
-				
+				t event[Project 1 - Buttslut|labAnal]
+				t event[Project 2 - Cumhole Whore|labUrethra]
+				t event[Project 3 - Good Sissy|labSissy]
+				t event[Project 4 - Oral Trainrrrrrr|labOral]
+				t One is different, it's some kind of [record log from an authorized researcher|scarletDiary].
+				t If you're finished in here you can [head back into the basement hub|scarletBasement].
 			`);
 			break;
 		}
 		case "scarletSecurity": {
 			writeHTML(`
-				
+				t You're in the security room. t The room is directly adjacent to an extremely large testing chamger, although there's nobody inside and the door is wide open. According to the data chart on the front, the room should be containing a research subject.
+				t There's a [scrap of paper|scarletLetter5] in the trashcan. Other than that the place is empty, so you can head back out into the [basement|scarletBasement].
 			`);
 			break;
 		}
@@ -2352,7 +2354,6 @@ function writeScene(scene) {
 				t ... That's all it says, but the paper is torn suggesting there's more. You should probably [get back to exploring|scarletWardrobe].
 			`);
 			if (checkFlag("scarletLetter1") == true && checkFlag("scarletLetter2") == true && checkFlag("scarletLetter3") == true && checkFlag("scarletLetter4") == true && checkFlag("scarletLetter5") == true) {
-				writeText("This is another piece of the letter, or diary entry... In fact, the last part you needed. You should be able to piece together the parts now:");
 				writeEvent("scarletLetterFull");
 				writeText("[That's all that's written.|scarletWardrobe]");
 			}
@@ -2368,7 +2369,6 @@ function writeScene(scene) {
 				t ... That's all it says, but the paper is torn suggesting there's more. You should probably [get back to exploring|scarletTheater].
 			`);
 			if (checkFlag("scarletLetter1") == true && checkFlag("scarletLetter2") == true && checkFlag("scarletLetter3") == true && checkFlag("scarletLetter4") == true && checkFlag("scarletLetter5") == true) {
-				writeText("This is another piece of the letter, or diary entry... In fact, the last part you needed. You should be able to piece together the parts now:");
 				writeEvent("scarletLetterFull");
 				writeText("[That's all that's written.|scarletTheater]");
 			}
@@ -2387,7 +2387,6 @@ function writeScene(scene) {
 				t ... That's all it says, but the paper is torn suggesting there's more. You should probably [get back to exploring|scarletWestGuest].
 			`);
 			if (checkFlag("scarletLetter1") == true && checkFlag("scarletLetter2") == true && checkFlag("scarletLetter3") == true && checkFlag("scarletLetter4") == true && checkFlag("scarletLetter5") == true) {
-				writeText("This is another piece of the letter, or diary entry... In fact, the last part you needed. You should be able to piece together the parts now:");
 				writeEvent("scarletLetterFull");
 				writeText("[That's all that's written.|scarletWestGuest]");
 			}
@@ -2405,7 +2404,6 @@ function writeScene(scene) {
 				t ... That's all it says, but the paper is torn suggesting there's more. You should probably [get back to exploring|scarletEastGuest].
 			`);
 			if (checkFlag("scarletLetter1") == true && checkFlag("scarletLetter2") == true && checkFlag("scarletLetter3") == true && checkFlag("scarletLetter4") == true && checkFlag("scarletLetter5") == true) {
-				writeText("This is another piece of the letter, or diary entry... In fact, the last part you needed. You should be able to piece together the parts now:");
 				writeEvent("scarletLetterFull");
 				writeText("[That's all that's written.|scarletEastGuest]");
 			}
@@ -2427,7 +2425,6 @@ function writeScene(scene) {
 				t ... That's all it says, but the paper is torn suggesting there are previous parts. You should probably [get back to exploring|scarletSecurity].
 			`);
 			if (checkFlag("scarletLetter1") == true && checkFlag("scarletLetter2") == true && checkFlag("scarletLetter3") == true && checkFlag("scarletLetter4") == true && checkFlag("scarletLetter5") == true) {
-				writeText("This is another piece of the letter, or diary entry... In fact, the last part you needed. You should be able to piece together the parts now:");
 				writeEvent("scarletLetterFull");
 				writeText("[That's all that's written.|scarletSecurity]");
 			}
@@ -2518,6 +2515,11 @@ function writeScene(scene) {
 			writeText("With the show over, you should head back to the [mansion hallways|scarletMainHall].");
 			break;
 		}
+		case "scarletDiary": {
+			writeEvent("diary");
+			writeText("[Close the file|scarletChambers].");
+			break;
+		}
 		case "firstTurn": {
 			addFlag(scene);
 			writeScene("scarletDining");
@@ -2540,7 +2542,7 @@ function writeScene(scene) {
 				t You press on the upraised stone, but nothing happens. Pulling, hitting, nothing continues to happen. It isn't until you try twisting the stone that there's some give.
 				t After a good twist you can hear something go *click* and jump back as the mirror wall moves backwards, [revealing more of the room|scarletStorage].
 			`);
-			addFlag("name");
+			addFlag(scene);
 			break;
 		}
 		case "dogShock1": {
@@ -4147,6 +4149,7 @@ function writeEvent(n) {
 		}
 		//Scarlet Mansion
 		case "scarletLetterFull": {
+			writeText("This is another piece of the letter, or diary entry... In fact, the last part you needed. You should be able to piece together the parts now:");
 			writeHTML(`
 				t <i>"I think it's important to get these thoughts down. I've seen what can happen to people when they start to lose their minds. Even for people like us...
 				t <i>We spend all day on these projects, and i know what we all do at night after we finish. I know why we keep so many recordings and why they're available for us all to watch at any time. I can them through some of the walls.
@@ -4225,19 +4228,20 @@ function writeEvent(n) {
 				t <i>It was an ordinary day yesterday. I woke up here. It's not a dream, and so long as I recount what happens accurately, you'll give me the cure. Is that okay? How long will I be-
 				...
 				t <i>The drug they used on me. They said I was "naturally resistant", so then why do I have this... Thing?
-				t <i>And I have the hanging... Things... I have them too. They told me my womb is... In them. And if I cum I won't be able to have children.
+				t <i>And I have these hanging... Things... I have them too. They told me my womb is... In them. And if I cum I won't be able to have children. Why do I even need to repeat all this? You did this to me. You know how this works.
 				...
 				t <i>They... You, you're watching me right now, aren't you? I see how you look at me during my "checkups". You want to see me like this.
 				t <i>You keep saying "use proper language", but no doctor would say... What you're saying. So why? Just please, let me go...
 				t <i>Okay, I'll say the words. I have a cock. A dick. A pair of balls. Please, I've done everything you've asked, just-
 				...
-				t <i>It itched. So badly. I rubbed, and I kept rubbing. I stood, knock-kneed with a massive pair of balls between my legs and I was jerking off. I cracked, and although I managed to stop I leaked what must be a cup of sperm right onto the carpet. When they put me to sleep for the night it'll disappear, but t's still there now. Taunting me.
-				t <i>I remember what I was thinking before I finally tore my hand away. My own mind was lying, saying "maybe if I just squirt out a little", or "I'll just try extra hard to get pregnant".
+				t <i>It itched. So badly. I rubbed, and I kept rubbing. I stood, knock-kneed with a massive pair of balls between my legs and I was jerking off. I cracked, and although I managed to stop I leaked what must be a cup of sperm right onto the carpet. When they put me to sleep for the night the stain'll disappear, but it's still there now. Taunting me.
+				t <i>I remember what I was thinking before I finally tore my hand away. My own mind was lying, saying "maybe if I just squirt out a little it'll be okay", or "I'll just have to try extra hard to get pregnant".
 				t <i>I can't trust my own head.
 				...
 				t <i>I came in my sleep. I know it wasn't my fault, in a situation like this a wet dream was inevitable at some point.
 				t <i>But that doesn't excuse the fact that I was stroking myself when I woke up.
-				t <i>All that sperm on my hand... I felt so disgusting, like I was throwing away my chance at a happy family, and for what? I'll admit it felt good. Amazing even, but I never did drugs for a reason. I ate it, slurped up the load, but only because I didn't want to look at it anymore.
+				t <i>All that sperm on my hand... I felt so disgusting, like I was throwing away my chance at a happy family, and for what? I'll admit it felt good. Amazing even, but I avoided heroin for a reason. 
+				t <i>I ate it, slurped up the load, but only because I didn't want to look at it anymore.
 				t <i>At this point is it already over? My husband and I... We already had enough trouble concieving. At this point I'd...
 				t <i>I'd need a cock like this one to breed me.
 				...
@@ -4641,6 +4645,9 @@ function writeEvent(n) {
 				t I swear she's a lot happier like this. I wonder if she remembers selling out her comrades. She probably doesn't care.
 				t It's getting hard to focus on anything lately, except for when I'm thinking about how to train all my playthings here. Whenever I'm bored it feels like my conciousness slips a little further away. I should turn things up a notch."
 			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scarletChambers', "Finish");
+			}
 			break;
 		}
 		case "labUrethra": {
@@ -4649,6 +4656,9 @@ function writeEvent(n) {
 				t "I notice I've been giving out a lot of chastity cages lately, a sign that these girls are misbehaving more often. She will kept caged up to keep her desperate and horny at all times.
 				t Luckily for her I gave her a special toy to ensure she can achieve relief even while locked up. It took quite a bit of training to give her a masochistic streak large enough though."
 			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scarletChambers', "Finish");
+			}
 			break;
 		}
 		case "labSissy": {
@@ -4658,6 +4668,9 @@ function writeEvent(n) {
 				t Maybe this is my new dick talking, but I think I understand now. Taking the monsters who did this to me and my mind, fucking them so hard in the ass their brains and common sense melt, slapping cages on them so they're perfect for my cock.
 				t I get it."
 			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scarletChambers', "Finish");
+			}
 			break;
 		}
 		case "labOral": {
@@ -4673,6 +4686,9 @@ function writeEvent(n) {
 				t Have to let them know im okay
 				t And happy
 			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scarletChambers', "Finish");
+			}
 			break;
 		}
 		case "labCumbreather": {
