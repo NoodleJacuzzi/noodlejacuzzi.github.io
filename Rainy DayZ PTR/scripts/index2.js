@@ -5,6 +5,7 @@ var imagesDisabled = false;
 var footerVisibility = "";
 var footerHeight = "";	
 var footerOverflow = "";	
+var definitionArray = [];
 
 var data = {
 	player: {
@@ -234,7 +235,7 @@ function replaceCodenames(text) {
 					var locationTarget = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
 					var locationName = text.substring(text.lastIndexOf("|") + 1, text.lastIndexOf("]"));
 					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
-					text = text.replace("["+locationFull+"]", "<span onclick='sceneTransition(`"+locationTarget+"`)'>"+locationName+"</span>")
+					text = text.replace("secret["+locationFull+"]", "<span onclick='sceneTransition(`"+locationTarget+"`)'>"+locationName+"</span>")
 				}
 				if (text.includes('[') == true) {
 					var locationTarget = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
@@ -270,6 +271,12 @@ function replaceCodenames(text) {
 					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
 					console.log(locationFull);
 					text = text.replace("drop["+locationFull+"]", "<span class='blueText' onclick='dropItem(`"+locationTarget+"`)'>"+locationName+"</span>")
+				}
+				if (text.includes('secret[') == true) {
+					var locationName = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
+					var locationTarget = text.substring(text.lastIndexOf("|") + 1, text.lastIndexOf("]"));
+					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+					text = text.replace("secret["+locationFull+"]", "<span onclick='sceneTransition(`"+locationTarget+"`)'>"+locationName+"</span>")
 				}
 				if (text.includes('[') == true) {
 					var locationName = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
@@ -649,8 +656,34 @@ function writeHTML(text) {
 		if (lines[lineCounter] != "" && checkRequirements(lines[lineCounter]) == true) {
 			//Grab the first word of the line to use as the command
 			var command = lines[lineCounter].replace(/ .*/,'');
+			for (i = 0; i < definitionArray.length; i++) {
+				if (command.toLowerCase() == definitionArray[i].shortcut) {
+					lines[lineCounter] = lines[lineCounter].replace(definitionArray[i].shortcut, definitionArray[i].result);
+				}
+			}
+			var command = lines[lineCounter].replace(/ .*/,'');
 			//Depending on which command, execute different code. Convert the command to lowercase as well in case we used Sp instead of sp, as js is case-sensitive.
 			switch (command.toLowerCase()) {
+				case "define": {
+					//Remove the command from the line we actually want to print.
+					var definitionShortcut = lines[lineCounter].split(`define `).pop().split(` = `)[0];
+					lines[lineCounter] = lines[lineCounter].replace(`define `+definitionShortcut+` = `, ``);
+					var definitionResult = lines[lineCounter];
+					var overWrite = false;
+					for (i = 0; i < definitionArray.length; i++) {
+						if (definitionArray[i].shortcut == definitionShortcut) {
+							overWrite = true;
+							definitionArray[i].shortcut = definitionShortcut;
+							definitionArray[i].result = definitionResult;
+						}
+					}
+					if (overWrite == false) {
+						var definition = {shortcut: definitionShortcut, result: definitionResult};
+						definitionArray.push(definition);
+					}
+					console.log("Now writing definition statement, using shortcut "+definitionShortcut+" for result "+definitionResult+", overwrite value is "+overWrite);
+					break;
+				}
 				//If the command is "t"
 				case "t": {
 					//Remove the command from the line we actually want to print.

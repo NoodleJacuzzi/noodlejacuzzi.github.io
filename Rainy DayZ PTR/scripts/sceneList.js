@@ -22,8 +22,8 @@ function writeScene(scene) {
 			writeTransition("rainyDayZ", "Scenario 1 - RainyDayZ");
 			writeTransition("theFacility", "Scenario 2 - The Facility");
 			writeTransition("spreadIsland", "Scenario 3 - Spread Island");
+			writeTransition("scarletMansion", "Scenario 4 - Scarlet Mansion");
 			writeTransition("typhoidMary", "Preview - Typhoid Mary");
-			writeTransition("scarletMansion", "Preview - Scarlet Mansion");
 			//writeTransition("onTheRecord", "Preview - On the Record");
 			writeText("...");
 			writeTransition("settings", "Game Settings", "#91eba9");
@@ -1686,19 +1686,24 @@ function writeScene(scene) {
 		case "scarletFoyer": {
 			writeText("You're in the mansion foyer. It's very dark in here, and flipping the lightswitch doesn't seem to do anything. You can hear the sounds of scratching and barking from outside. The big wooden door stands sturdy though.");
 			if (checkFlag("dogMet") != true) {
-				writeText("There's a large staircase leading up to the second floor, with three doors. One [main door|scarletParlor], one to the [west wing|scarletWestWing], and one to the [east wing|scarletDogIntro]. Examining them closely there are very small lights on the doorknobs, both green.");
+				writeText("There's a large staircase leading up to the second floor, with three doors. One [center door|scarletParlor], one to the [west wing|scarletWestWing], and one to the [east wing|scarletDogIntro]. Examining them closely there are very small lights on the doorknobs, both green.");
 			}
 			else {
 				if (checkFlag("eastFloorGassed") != true) {
 					if (checkItem("remote") == true) {
-						writeText("There's a large staircase leading up to the second floor, with three doors. One [main door|scarletParlor], one to the [west wing|scarletWestWing], and one is guarded by the infected woman. It's risky, but you could try [using the remote you found on her|dogShock1]. Examining them closely there are very small lights on the doorknobs, both green.");
+						if (checkFlag("dogShock1") == true) {
+							writeText("There's a large staircase leading up to the second floor, with three doors. One [center door|scarletParlor], one to the [west wing|scarletWestWing], and one that leads to the [east wing|scarletEastWing]. Examining them closely there are very small lights on the doorknobs, both green.");
+						}
+						else {
+							writeText("There's a large staircase leading up to the second floor, with three doors. One [center door|scarletParlor], one to the [west wing|scarletWestWing], and one is guarded by the infected woman. It's risky, but you could try [using the remote you found on her|dogShock1]. Examining them closely there are very small lights on the doorknobs, both green.");
+						}
 					}
 					else {
-						writeText("There's a large staircase leading up to the second floor, with three doors. One [main door|scarletParlor], one to the [west wing|scarletWestWing], and the other is guarded by the infected woman. Examining them closely there are very small lights on the doorknobs, both green.");
+						writeText("There's a large staircase leading up to the second floor, with three doors. One [center door|scarletParlor], one to the [west wing|scarletWestWing], and the other is guarded by the infected woman. Examining them closely there are very small lights on the doorknobs, both green.");
 					}
 				}
 				else {
-					writeText("There's a large staircase leading up to the second floor, wwith three doors. One [main door|scarletParlor], one to the [west wing|scarletWestWing], and one that leads to the [east wing|scarletEastWing]. Examining them closely there are very small lights on the doorknobs, both green.");
+					writeText("There's a large staircase leading up to the second floor, with three doors. One [center door|scarletParlor], one to the [west wing|scarletWestWing], and one that leads to the [east wing|scarletEastWing]. Examining them closely there are very small lights on the doorknobs, both green.");
 				}
 			}
 			writeHTML(`
@@ -1714,7 +1719,7 @@ function writeScene(scene) {
 				t !item spade key; Atop the fireplace is a [single crooked candelabra|spadeKey], it stands out as it's the only thing atop the mantle that hasn't been thrown to the ground.
 				t ?item spade key; You've already aligned the candelabra and taken one of the spade keys. Who could've taken the other one?
 				t There are multiple ventilation shafts, too small for a person. They emit a vaguely citrus-esque scent. A clear sign someone's keeping this place powered somehow.
-				t You can go back to the [mansion foyer|scarletFoyer] from here, or head forwards through a [heavily damaged door|scarletWardrobe].
+				t You can head forwards through a [heavily damaged door|scarletWardrobe], or go back to the [mansion foyer|scarletFoyer] from here.
 			`);
 			break;
 		}
@@ -1726,7 +1731,7 @@ function writeScene(scene) {
 				t ?item Login Credentials; Nothing inside seems too useful, but there's [that other scrap of paper you found|scarletLetter1].
 				t !flag scientist; In addition as you search through the room you find a [small crawlspace|scientistIntro] you could climb into. It's a tight fit though.
 				t ?flag scientist; You can't progress through the crawlspace. Best not to risk getting stuck in there for nothing.
-				t You can return to the [parlor|scarletParlor] through a big wooden door, and there's a side-door here that leads to an [outdoor balcony|scarletBalcony].
+				t There's a side-door here that leads to an [outdoor balcony|scarletBalcony], and you can return to the [parlor|scarletParlor] through a big wooden door.
 			`);
 			break;
 		}
@@ -1741,7 +1746,7 @@ function writeScene(scene) {
 		case "scarletWestWing": {
 			writeHTML(`
 				t You're in the west wing, the door creaks behind you as you enter. The halls are lined with soft blue and white stripes.
-				t !item tape 2; The lights in here are dim, nut at least they work. secret[One is twisted to the side|hiddenTape2], making the room a little darker than you'd like.
+				t !item tape 2; The lights in here are dim, but at least they work. secret[One is twisted to the side|hiddenTape2], making the room a little darker than you'd like.
 				t ?item tape 2; The lamps are all correctly aligned, you already found the hidden compartment.
 				t !item spade key; Numerous doors line the hall. The first leads to the west wing bedroom, and another is marked as "Guest Bedroom" but they're both locked locked. There's a spade symbol above the locks.
 				t ?item spade key; Numerous doors line the hall. The first leads to the [west wing bedroom|scarletWestGuest], you can hear the faint sounds of moaning from inside, and another is marked as ["Guest Bedroom"|scarletWestBedroom].
@@ -1752,7 +1757,7 @@ function writeScene(scene) {
 		}
 		case "scarletWestBedroom": {
 			writeHTML(`
-				t You're in the west wing bedroom. The wallpaper is decorated sparsely by black spade icons. The room is pretty musty, and has a familiar scent.
+				t You're in the guest bedroom. Despite the 'guest' part of the name the room has clearly been in use for a while.
 				t !flag chastityInfected; Across from you is a large bed with white sheets, and chained onto the bed is a woman. She's completely naked excepted for a black blindfold and a chastity cage containing her flaccid dick. When you enter she shudders for a moment and thrusts her hips into the air as if begging for release.
 				t !flag chastityInfected; She groans, but there's no trace of intelligence in her voice. Talking to her is pointless, like she doesn't even register you are speaking. Not only that, but you have the feeling like setting her free would be a very bad idea.
 				t !flag chastityInfected; There's a device on a dresser near the bed, it's the same color as the woman's chastity cage. It looks mismashed together, like it was scrapped together by an amateur. There's a dial on the device, you could [toy around with it|chastityInfected].
@@ -1769,28 +1774,30 @@ function writeScene(scene) {
 				t !flag gaggedSiren; The whole deal is way too complex for you to free her from, but it doesn't seem like she wants to be freed. Next to the toilet is a [large button|gaggedSiren], you probably have a decent ability to guess what it does.
 				t ?flag gaggedSiren; The woman chained to the toilet is laying back as far as her bondage will allow, the machine she's hooked up to is probably out of juice, and so is she.
 				t ?flag gaggedSiren; Something bizzare is going on here. You're in a strange, dangerous place and you spent time doing that to her... And you don't seem to care how risky it was.
-				t It doesn't seem like there are any answers to be found in here, probably best to head [scarletWestWing|back out into the west wing hallway].
+				t It doesn't seem like there are any answers to be found in here, probably best to head [back out into the west wing hallway|scarletWestWing].
 			`);
 			break;
 		}
 		case "scarletWestGuest": {
 			writeHTML(`
-				t You're in the guest bedroom. Despite the 'guest' part of the name the room has clearly been in use for a while. The noise you heard is coming from a [computer|tapeVaccine] playing a video file on loop.
+				t You're in the west wing bedroom. The wallpaper is decorated sparsely by black spade icons. The room is pretty musty, and has a familiar scent. The noise you heard is coming from a [computer|tapeVaccine] playing a video file on loop.
 				t The bed and the sheets are damp, but stepping towards it you're hit by a strong smell that you can't identify. Near the bed you find a [scrap of paper|scarletLetter3].
-				t !item heartKey; Finally there's a small box, and inside are two different slots for keys. One is taken, but the item[other key, with a heart shape on it|heartKey], is still here.
-				t ?item heartKey; You already took the heart key from the lockbox, but there's no trace of the other key.
+				t !item heart key; Finally there's a small box, and inside are two different slots for keys. One is taken, but the item[other key, with a heart shape on it|heart key], is still here.
+				t ?item heart key; You already took the heart key from the lockbox, but there's no trace of the other key.
 				t If you're finished in here you can head [back out into the west wing hallway|scarletWestWing].
 			`);
 			break;
 		}
 		case "scarletMainHall": {
 			writeHTML(`
-				t You're in the main hall of the mansion, it's a maze of hallways down here.
-				t With some wandering you can find a number of other doors, luckily most of them have bronze nameplates to ease navigation. The first one you find is labeled ["Theater"].
-				t There's also ["Dining Room"], and ["Garage"].
-				t And there's a [bathroom] here too.
-				t Finally you find an unlabeled room, it appears to be some kind of [storage closet]. 
-				t Otherwise, you can head back to the [foyer].
+				t !item tape 4; You're in the main hall of the mansion, it's a maze of hallways down here. And if that weren't enough, secret[one of lights is out too|hiddenTape4].
+				t ?item tape 4; You're in the main hall of the mansion, it's a maze of hallways down here. At least you found that hidden tape.
+				t With some wandering you can find a number of other doors, luckily most of them have bronze nameplates to ease navigation. The first one you find is labeled ["Theater"|scarletTheater].
+				t There's also ["Dining Room"|scarletDining], and ["Garage"|scarletGarage].
+				t And there's a [bathroom|scarletMainBathroom] here too.
+				t !item diamond key; Finally you find an unlabeled room, it appears to be some kind of storage closet, but it's locked. There's a diamond over the lock. 
+				t ?item diamond key; Finally you find an unlabeled room, it appears to be some kind of [storage closet|scarletStorage]. There's a diamond over the lock, and you have the key.
+				t Otherwise, you can head back to the [foyer|scarletFoyer].
 			`);
 			break;
 		}
@@ -1800,7 +1807,7 @@ function writeScene(scene) {
 				t Inside the bathroom is an infected woman sitting where a toilet should be. Her cock and balls have been chained to the floor leaving her immobile, but instead of struggling and trying to attack you as you enter, she just closes her eyes and lifts her cuffed hands up to her mouth like a cup.
 				t !flag urinalInfected; She opens her mouth to let her tongue loll out, as if demonstrating that she knows her place. There doesn't seem to be anything else in here, you could carefully  [relieve yourself|urinalInfected] or leave.
 				t ?flag urinalInfected; She sputters a little, her face and hair still wet with your piss.
-				t If you're finished in here, you can return to the [mainHalls|main halls].
+				t If you're finished in here, you can return to the [main hall|scarletMainHall].
 			`);
 			break;
 		}
@@ -1810,13 +1817,13 @@ function writeScene(scene) {
 					writeText("The room is strange. You're in some kind of glass box in the corner of the garage with no way to actually explore the rest of the room. It isn't fragile stuff either, it's tempered glass, bulletproof.");
 					writeText("There's a figure in the darkness of the room, not moving. It looks vaguely human, like someone chained to the ground. It could also be some kind of a statue or something.");
 					writeText("There's a button in the box with you, it looks like the kind used to open garage doors. You could [press it|scarletHounds].");
-					writeText("If you're done in here, you can go back to the [mansion foyer|scarletFoyer].");
+					writeText("If you're done in here, you can go back to the [hall|scarletMainHall].");
 				}
 				else {
 					writeText("You're in the garage, or at least some blocked off section of it.");
 					writeText("The room is strange. You're in some kind of glass box in the corner of the garage with no way to actually explore the rest of the room. It isn't fragile stuff either, it's tempered glass, bulletproof.");
 					writeText("In the center of the room is an unconscious woman, coated in sexual fluids.");
-					writeText("If you're done in here, you can go back to the [mansion foyer|scarletFoyer].");
+					writeText("If you're done in here, you can go back to the [hall|scarletMainHall].");
 				}
 			break;
 		}
@@ -1828,13 +1835,14 @@ function writeScene(scene) {
 			writeText("You don't have the time to figure that out though, because it looks like the garage door is partially blocked off by a cage. There's a tunnel connecting the garage door to something outside, and soon enough you see why.");
 			writeText("A pair of hounds make their way inside, the whole contraption designed to allow access to the kennel when the button is pushed.");
 			writeText("The chained woman doesn't seem to care, and keeps trying to lunge at you as the dogs approach her.");
-			writeText("The tempered glass is way too strong for you to break, there's no way to save the woman. It's pretty clear what's about to happen, so you can either [get out of here|scarletFoyer] as soon as possible or stay and event[indulge your morbid curiosity|garageHounds].");
+			writeText("The tempered glass is way too strong for you to break, there's no way to save the woman. It's pretty clear what's about to happen, so you can either [get out of here|scarletMainHall] as soon as possible or stay and [indulge your morbid curiosity|garageHounds].");
 			addFlag("garageHounds");
+			break;
 		}
 		case "scarletTheater": {
 			writeHTML(`
 				t You're in what appears to be some kind of home theater room, though it's only meant for one person at a time for some reason.
-				t There's a large television, a chair, and a number of smaller devices meant for video playback. One of them is a tape player, and there's a tape already here ready for viewing, but there's no telling how recently someone's used the room.
+				t There's a large television, a chair, and a number of smaller devices meant for video playback. One of them is a tape player, and there's a tape already here ready for viewing, but there's no telling how recently someone's used the room. There is a [scrap of paper on the floor though|scarletLetter2].
 				t event[Play the tape labeled "TOY REVENGE".|tapeHound]
 				t ?item tape 1; event[Play the tape labelled "LICKER STUDY".|tapeLicker1]
 				t ?item tape 2; event[Play the tape labelled "CONGEALANT PROPERTIES".|tapeCongealant]
@@ -1849,16 +1857,22 @@ function writeScene(scene) {
 			writeHTML(`
 				t You're in the mansion's dining hall, the place is a mess.
 				t Multiple people must have been in here at least semi recently. The table is set with a number of half-eaten foods, certainly not fresh but nowhere near moldy. You aren't hungry at the moment, and even if you were, the thick white glaze covering most of the food is... Suspect.
-				t At first it seems like nothing's here, until you see one of the walls has a flaccid phallus sticking out. On closer inspection it's a gloryhole, someone's on the other side!
-				t !flag firstTurn; From what you've seen of the mansion so far it'd be risky to try and save them. There's a strange iron valve on the immediate left of the cock, [maybe you could try turning it?]
-				t ?flag firstTurn; !flag secondTurn; You turn the knob, it's suprisingly smooth, like it's recently installed. As you do you hear a sudden moan and the cock jerks, rapidly hardening and leaking precum onto the floor. 
+				t !item remote; Near one of the glazed plates is a remote with a item[single large button|remote].
+				t ?item remote; You already picked up the remote. If you had to guess you'd say it looks kinda like a dog's shock collar remote, but smaller. Pressing it causes a small light to flicker, the text under says "out of range".
+				t !flag firstTurn; At first it seems like nothing else's here, until you see one of the walls has a flaccid phallus sticking out. On closer inspection it's a gloryhole, someone's on the other side!
+				t !flag firstTurn; From what you've seen of the mansion so far it'd be risky to try and save them. There's a strange iron valve on the immediate left of the cock, [maybe you could try turning it|firstTurn]?
+				t ?flag firstTurn; The living cumtap is here.
+				t ?flag firstTurn; !flag secondTurn; You turn the knob, it's suprisingly smooth, like it's recently installed. As you do you hear a sudden moan and the cock jerks, rapidly hardening and leaking precum onto the floor. Do you want to [turn it again|cumtapInfected]?
+				t ?flag firstTurn; ?flag secondTurn; !flag thirdTurn; You can her her labored breathing through the wall as she helplessly tries to thrust, shake, anything to get off further. Will you [turn it again|cumtapInfectedRepeat]?
+				t ?flag firstTurn; ?flag secondTurn; ?flag thirdTurn; She's completely exhausted, the mess on the carpet is the only proof she ever had any virility.
+				t Nothing else here, it might be best to [head back into the hall|scarletMainHall].
 			`);
 			break;
 		}
 		case "scarletStorage": {
 			writeHTML(`
 				t You're in some kind of storage closet. It's very bare, and feels even larger than it is because the west wall is just one giant mirror. The mirror seems to be on wheels, suggesting the wall can be moved to make even more space.
-				t !flag storageOpen; The back wall is entirely made from brickwork, secret[one of the bricks seems a little much upraised than the others|storageOpen], but other than that the room is entirely unmentionable. With nothing in here, it's probably best to head [back into the main hall|scarletMainHall].
+				t !flag storageOpen; The back wall is entirely made from brickwork, secret[one of the bricks seems a little much upraised than the others|storageOpen], but other than that the room is entirely unmentionable. With nothing in here, it's probably best to head [back into the main hall|scarletMainHall]. This is what the diamond key opened?
 				t ?flag storageOpen; The mirror wall has been pushed back by the switch, revealing a [secret passage to the mansion's basement|scarletBasement]. There could be something dangerous down there, you could head [back to the main hallways|scarletMainHall].
 			`);
 			break;
@@ -1866,15 +1880,20 @@ function writeScene(scene) {
 		case "scarletBasement": {
 			writeHTML(`
 				t You're in the hidden basement of the mansion. It's pretty dark, but a great deal of obvious effort has been put into keeping the passageway clean and tidy. The walls are made of smooth stone, not fitting in with the spooky decor of the mansion at all.
-				t At the base of the stairs is a thick iron door, there's a keycard reader next to it but it isn't necessary. The reader has been smashed and the lock beneath the handle broken, so you can easily [enter and see what, or who, is inside].
-				t Aside from that there are a few other doors. One is labeled ['Server Room'], and the other is labeled ['Containment Cells'].
+				t There are a few doors on the way down. One is labeled ['Security Room'|scarletSecurity], and the other is labeled ['Containment Chambers'|scarletChambers].
+				t At the base of the stairs is a thick iron door, there's a keycard reader next to it but it isn't necessary. The reader has been smashed and the lock beneath the handle broken, so you can easily [enter and see what, or who, is inside|scarletControl]. But just looking at the door... You can tell whatever is in there isn't safe.
 				t You can head back up the [stairs to the storage room|scarletStorage] from here.
 			`);
 			break;
 		}
 		case "scarletChambers": {
 			writeHTML(`
-				t You're in the containment room. There's a single computer here with a half-dozen monitors, most of them displaying a current feed of "contained subjects". 
+				t You're in the containment room. There's a single computer here with a half-dozen monitors, most of them displaying a list of "ongoing projects", a series of notes and video feeds from an unauthorized user.
+				t event[Project 1 - Buttslut]
+				t event[Project 1 - Cumhole Whore]
+				t event[Project 1 - Good Sissy]
+				t event[Project 1 - Oral Trainrrrrrr]
+				
 			`);
 			break;
 		}
@@ -1891,16 +1910,15 @@ function writeScene(scene) {
 		case "scarletEastWing": {
 			writeHTML(`
 				t You're in the east wing, thankfully safe from the woman serving as a guard dog.
-				t !flag eastHallwayGassed; !flag dogShock2; She assumes her position the moment she sees you, it seems she's intelligent enough to register you have the remote to her little accessory, but not enough to be able to speak. Part of you worries she might try to get you from behind, [another application of the remote] could help with that...
-				t !flag eastHallwayGassed; ?flag dogShock2; !flag dogShock3; She's laying on the ground, twitching in pleasure. It <i>could</i> be an act, maybe [another shock]?
+				t !flag eastHallwayGassed; !flag dogShock2; She assumes her position the moment she sees you, it seems she's intelligent enough to register you have the remote to her little accessory, but not enough to be able to speak. Part of you worries she might try to get you from behind, [another application of the remote|dogShock2] could help with that...
+				t !flag eastHallwayGassed; ?flag dogShock2; !flag dogShock3; She's laying on the ground, twitching in pleasure. It <i>could</i> be an act, maybe [another shock|dogShock3]?
 				t !flag eastHallwayGassed; ?flag dogShock3; She's laying on the floor, still leaking. She's in no condition to do much of anything at the moment.
-				t ?flag eastHallwayGassed; !flag dogGassed; She's currently on her knees panting like the dog she's supposed to be. It seems like the gas made her a lot friendlier, and it made her dick a lot smaller. The device she was wearing has fallen off, although she doesn't seem hostile anymore. When she notices you she lays on her back as a sign of submission, as if to ask you to [pet her].
+				t ?flag eastHallwayGassed; !flag dogGassed; She's currently on her knees panting like the dog she's supposed to be. It seems like the gas made her a lot friendlier, and it made her dick a lot smaller. The device she was wearing has fallen off, although she doesn't seem hostile anymore. When she notices you she lays on her back as a sign of submission, as if to ask you to [pet her|dogGassed].
 				t ?flag eastHallwayGassed; ?flag dogGassed; She seems more content to rub herself on the carpet than pay attention to you.
 				t !item tape 3; secret[One of the lamps in this room is broken too|hiddenTape3], the same one actually, it's twisted in the same way.
 				t !flag analInfected; Numerous doors line the hall. The first leads to the [east wing bedroom|scarletEastBedroom]. You can hear someone inside.
 				t ?flag analInfected; Numerous doors line the hall. The first leads to the east wing bedroom, currently occupied by an infected woman undergoing some kind of training.
-				t Next is a smaller door, leading to the [east wing bathroom|scarletEastBathroom].
-				t Next is a door marked as an [administator bedroom|scarletEastGuest].
+				t Next is a door marked as an [administrator bedroom|scarletEastGuest], and finally is a smaller door, leading to the [east wing bathroom|scarletEastBathroom].
 				t Finally you can head [back out into the foyer|scarletFoyer].
 			`);
 			break;
@@ -1908,6 +1926,10 @@ function writeScene(scene) {
 		case "scarletEastBedroom": {
 			//Anal girl is here
 			writeEvent("analInfected");
+			addFlag("analInfected");
+			writeHTML(`
+				t [You should probably go.|scarletEastWing]
+			`);
 			break;
 		}
 		case "scarletEastBathroom": {
@@ -1922,11 +1944,12 @@ function writeScene(scene) {
 		}
 		case "scarletEastGuest": {
 			writeHTML(`
-				t You're in the administrator's bedroom.
-				//letter part 4
-				//some kind of tape
-				//memo about intellikill
+				t You're in the administrator's bedroom. It's noticably better furnished than the other rooms, but just like some of the others it looks like a tornado's gone through the place.
+				t There are a lot of torn up documents in here, some of them are... Unreadable, to say the least. What few scraps are unruined are mostly useless, [except one piece of a memo|scarletMemo] and a [piece of a letter|scarletLetter4]
+				t !item tape 5; Laying near the bed is item[a tape with a scratched-off label|tape 5].
+				t The smell makes you feel dizzy. You [should leave as soon as you can|scarletEastWing]
 			`);
+			//t Finally, there's a massive safe with no knob and no clear way to open it.
 			break;
 		}
 		//To remove or check
@@ -1938,8 +1961,7 @@ function writeScene(scene) {
 			writeText("You, a brother searching for his missing sister, must explore the mansion and live to find out what bizarre experiments are underway.");
 			data.player.scenario = "Scarlet Mansion";
 			updateMenu();
-			writeSpecial("This scenario is only a demo, so all that's available are a few short scenes that are made to convey the idea of what this route will contain. If you like it, please voice your opinion! Leave comments or a review on TFGames, voice what you like on Discord, or support me on Patreon.");
-			writeTransition("scarletStart", "Play the Preview");
+			writeTransition("scarletStart", "Begin");
 			writeTransition("scenarioSelect", "Go back");
 			break;
 		}
@@ -2006,10 +2028,6 @@ function writeScene(scene) {
 			if (data.player.flags.includes('scarletChastityTorture') == true && data.player.flags.includes('scarletHoundsTorture') == true) {
 				writeSpecial("You've already found both of the events of this scenario, it is a demo after all. Thanks for playing!");
 			}
-			break;
-		}
-		case "scarletGarage": {
-			
 			break;
 		}
 		case "scarletHoundsTorture": {
@@ -2227,10 +2245,10 @@ function writeScene(scene) {
 		}
 		case "scarletMemo": {
 			writeHTML(`
-				t <i>The memo is cut off at the top and bottom, this is all you could find amond mostly-intact pieces.</i>
-				t I think it has an incredible number of uses for security, but we'd need to train the employees on it. I hid some of the spade keys this way, but Smith was too dense to notice an askew candlestick. I've hidden some of the favorites among our research recordings, hopefully they're enough of an incentive. They're pretty obvious spots too.
-				t The hard part is that it blocks casual observation, you'll need to force yourself to consciously interact with things, even if it seems pointless, otherwise you miss them. There are still four left, one's in the West W-
-				t <i>[That's where it ends.|scarletEastGuest]</i>
+				t The memo is cut off at the top and bottom, this is all you could find amond mostly-intact pieces.
+				t <i>"I think it has an incredible number of uses for security, but we'd need to train the employees on it. I hid some of the spade keys this way, but Smith was too dense to notice an askew candlestick. I've hidden some of the favorites among our research recordings, hopefully they're enough of an incentive. They're pretty obvious spots too.</i>
+				t <i>The hard part is that it blocks casual observation, you'll need to force yourself to consciously interact with things, even if it seems pointless, otherwise you miss them. Obviously the best use is to hide the entrance in the storage closet, but there are still four left, one's in the West W-</i>
+				t [That's where it ends.|scarletEastGuest]
 			`);
 			break;
 		}
@@ -2263,124 +2281,156 @@ function writeScene(scene) {
 		}
 		case "scientistIntro": {
 			writeHTML(`
+				define scientist = sp Scientist; im none;
 				t You stretch a bit and climb into the crawlspace. It's dusty in here, and there's that same scent from before too. It's strange, strong smells usually make you feel dizzy, but for some reason you feel even more alert when you were getting chased by those dogs earlier.
 				t You only make it a few feet before you're blocked off. Steel bars block you from entering the bedroom the crawlspace leads to. But they do let you look inside.
 				im
 				t On a bed is a woman, very nearly naked, masturbating. All she's got are some kind of tank strapped to her back and a mask covering her face, both connected by a tube. The way she's loudly huffing she must be getting off on whatever she's breathing in.
 				t Her eyes catch yours, and you move backwards instinctively.
-				sp scientist; im none; Wait! Can you understand me!?
+				scientist Wait! Can you understand me!?
 				t She seems human, and a lot more interested in talking than playing with herself. She rolls off the bed and moves towards you, seemingly uncaring that she's nude.
-				sp scientist;  You're human? Completely?<br>... You're not a member of the science or security teams, that much is obvious. She must be asleep then, otherwise she would have seen you on the security cameras. Listen, help me get out of here before she wakes back up.
-				t She seems suspicious. What will you do? You could ask her about [scientistIdentify|who she is], [scientistQueen|who 'she' is that might be watching you], [scientistMask|about the mask she's wearing], or [scientistHelp|how to help her].
+				scientist  You're human? Completely?<br>... You're not a member of the science or security teams, that much is obvious. She must be asleep then, otherwise she would have seen you on the security cameras. Listen, help me get out of here before she wakes back up.
+				t She seems suspicious. What will you do? You could ask her about [who she is|scientistIdentify], [who 'she' is that might be watching you|scientistQueen], [about the mask she's wearing|scientistMask], or [how to help her|scientistHelp].
 			`);
 			break;
 		}
 		case "scientistIdentify": {
 			writeHTML(`
-				sp scientist; im none; I'm a scientist here. Our research is... Complicated. What have you seen?<br>... Actually, it doesn't matter. I've seen enough myself. <br>Listen, if you have a shred of humanity left, you know you need to get me out of here. I feel like this scent is fucking up my brain already, but if I get infected...
-				t [scientistQueen|Ask about who's keeping her here.]
-				t [scientistMask|Ask about her mask]
-				t [scientistHelp|Ask how to help her]
-				t [scientistLeave|Leave]
+				scientist I'm a scientist here. Our research is... Complicated. What have you seen?<br>... Actually, it doesn't matter. I've seen enough myself. <br>Listen, if you have a shred of humanity left, you know you need to get me out of here. I feel like this scent is fucking up my brain already, but if I get infected...
+				t [Ask about who's keeping her here.|scientistQueen]
+				t [Ask about her mask.|scientistMask]
+				t [Ask how to help her.|scientistHelp]
+				t [Leave|scientistLeave]
 			`);
 			break;
 		}
 		case "scientistQueen": {
 			writeHTML(`
-				sp scientist; im none; 'She' is the queen. It's hard to explain. We test things here, on people. One of the things we tested was a strain meant to break fortified lines from the inside, someone who could control other... Infected.<br>It's not important, what is important is that we figure a way out of this mess before the queen wakes back up.
-				t [scientistIdentify|Ask about who she is.]
-				t [scientistMask|Ask about her mask]
-				t [scientistHelp|Ask how to help her]
-				t [scientistLeave|Leave]
+				scientist 'She' is the queen. It's hard to explain. We test things here, on people. One of the things we tested was a strain meant to break fortified lines from the inside, someone who could control other... Infected.<br>It's not important, what is important is that we figure a way out of this mess before the queen wakes back up.
+				t [Ask about who she is.|scientistIdentify]
+				t [Ask about her mask.|scientistMask]
+				t [Ask how to help her.|scientistHelp]
+				t [Leave|scientistLeave]
 			`);
 			break;
 		}
 		case "scientistMask": {
 			writeHTML(`
-				sp scientist; im none; My mask? It's... Complicated. You've seen the women here, right? Well...<br>This mask is set up to turn me into one of them if I get out of line. The hose is hooked up to...<br>Well, it's fragrant, that's all I wanna say about it. I could take it off if I had the tools, so hurry and get me out of here.
-				t [scientistQueen|Ask about who's keeping her here.]
-				t [scientistIdentify|Ask about who she is.]
-				t [scientistHelp|Ask how to help her]
-				t [scientistLeave|Leave]
+				scientist My mask? It's... Complicated. You've seen the women here, right? Well...<br>This mask is set up to turn me into one of them if I get out of line. The hose is hooked up to...<br>Well, it's fragrant, that's all I wanna say about it. I could take it off if I had the tools, so hurry and get me out of here.
+				t [Ask about who's keeping her here.|scientistQueen]
+				t [Ask about who she is.|scientistIdentify]
+				t [Ask how to help her.|scientistHelp]
+				t [Leave|scientistLeave]
 			`);
 			break;
 		}
 		case "scientistHelp": {
 			writeHTML(`
-				sp scientist; im none; I've got no idea where the key to the room is. I know we keep a lot of backups though, just in case we need to hide or lock doors behind us if there's a containment breach. The queen is smart though, smart enough to use the keys herself. Keep an eye out around the house.
-				t [scientistQueen|Ask about who's keeping her here.]
-				t [scientistIdentify|Ask about who she is.]
-				t [scientistMask|Ask about her mask]
-				t [scientistLeave|Leave]
+				scientist I've got no idea where the key to the room is. I know we keep a lot of backups though, just in case we need to hide or lock doors behind us if there's a containment breach. The queen is smart though, smart enough to use the keys herself. Keep an eye out around the house.
+				t [Ask about who's keeping her here.|scientistQueen]
+				t [Ask about who she is.|scientistIdentify]
+				t [Ask about her mask.|scientistMask]
+				t [Leave|scientistLeave]
 			`);
 			break;
 		}
 		case "scientistLeave": {
+			addItem("diamond key");
 			writeHTML(`
-				sp scientist; im none; Wait! Before you go, I know a way to distract the hounds. If you can find me the key out of here we can escape together.<br> Here, this key will get you into the basement. There are multiple entrances, all hidden. She broke the only one I know during her escape, so you'll need to find your own way in.
-				t <b>You got the spade key!</b>
-				t Key in hand, you should [wardrobe|crawl back out and get moving].
+				scientist Wait! Before you go, I know a way to distract the hounds. If you can find me the key out of here we can escape together.<br> Here, this key will get you into the basement. There are multiple entrances, all hidden. She broke the only one I know during her escape, so you'll need to find your own way in.
+				t <b>You got the diamond key!</b>
+				t Key in hand, you should [crawl back out and get moving|scarletWardrobe].
 			`);
 			break;
 		}
 		case "scarletLetter1": {
+			addFlag(scene);
 			writeHTML(`
-				t "I think it's important to get these thoughts down. I've seen what can happen to people when they start to lose their minds. Even for people like us...
-				t We spend all day on these projects, and i know what we all do at night after we finish. I know why we keep so many recordings and why they're available for us all to watch at any time. I can them through some of the walls.
-				t The order came in, vaccination testing. There's some inoculations, but they're too expensive to have at the ready anywhere except the main labs. The top rungs won't even give us the ingredients. These are the alternative, but who are we testing them on?"
+				t <i>"I think it's important to get these thoughts down. I've seen what can happen to people when they start to lose their minds. Even for people like us...</i>
+				t <i>We spend all day on these projects, and i know what we all do at night after we finish. I know why we keep so many recordings and why they're available for us all to watch at any time. I can them through some of the walls.</i>
+				t <i>The order came in, vaccination testing. There's some inoculations, but they're too expensive to have at the ready anywhere except the main labs. The top rungs won't even give us the ingredients. These are the alternative, but who are we testing them on?"</i>
 				t ... That's all it says, but the paper is torn suggesting there's more. You should probably [get back to exploring|scarletWardrobe].
 			`);
+			if (checkFlag("scarletLetter1") == true && checkFlag("scarletLetter2") == true && checkFlag("scarletLetter3") == true && checkFlag("scarletLetter4") == true && checkFlag("scarletLetter5") == true) {
+				writeText("This is another piece of the letter, or diary entry... In fact, the last part you needed. You should be able to piece together the parts now:");
+				writeEvent("scarletLetterFull");
+				writeText("[That's all that's written.|scarletWardrobe]");
+			}
 			break;
 		}
 		case "scarletLetter2": {
+			addFlag(scene);
 			writeHTML(`
-				t "Vaccination testing means they shoot you up and drop you into a room with one of... Them. For hours. Then they pull you out, spray you down, and see if you're still human.
-				t We could have used some of the captives, but it's not like they'd patiently comply with our testing or answer a questionaire afterwards. There was some debate on if we should just draw straws... Until I volunteered.
-				t I don't know why I did it, it's like my mouth said the words on its own. Carlson looked at me with respect, but the rest of them...
-				t Surprise, disgust, jealousy. I think they knew why I was volunteering."
+				t <i>"Vaccination testing means they shoot you up and drop you into a room with one of... Them. For hours. Then they pull you out, spray you down, and see if you're still human.</i>
+				t <i>We could have used some of the captives, but it's not like they'd patiently comply with our testing or answer a questionaire afterwards. There was some debate on if we should just draw straws... Until I volunteered.</i>
+				t <i>I don't know why I did it, it's like my mouth said the words on its own. Carlson looked at me with respect, but the rest of them...</i>
+				t <i>Surprise, disgust, jealousy. I think they knew why I was volunteering."</i>
 				t ... That's all it says, but the paper is torn suggesting there's more. You should probably [get back to exploring|scarletTheater].
 			`);
+			if (checkFlag("scarletLetter1") == true && checkFlag("scarletLetter2") == true && checkFlag("scarletLetter3") == true && checkFlag("scarletLetter4") == true && checkFlag("scarletLetter5") == true) {
+				writeText("This is another piece of the letter, or diary entry... In fact, the last part you needed. You should be able to piece together the parts now:");
+				writeEvent("scarletLetterFull");
+				writeText("[That's all that's written.|scarletTheater]");
+			}
 			break;
 		}
 		case "scarletLetter3": {
+			addFlag(scene);
 			writeHTML(`
-				t "The trial was a success. The vaccination hurt like hell, but what came afterwards...
-				t It was worth every second.
-				t It's so much better than just watching. The captives scream that we're monsters, but if they could sill talk or think after being infected they'd thank us.
-				t I was nervous at first. Apparently even though the vaccine would turn me back to normal after a few hours, cumming after being infected would seriously reduce my fertility as a woman. I started having doubts, but...
-				t When you have a massive cock hanging between your legs, you realize stuff like that is less important than the feeling of a thick load of cum pumping out of your dick. My fertility? Eggs? Thy could have said cumming would kill my brain cells and I wouldn't have jerked off less.
-				t I passed the tests afterwards, I'm completely human, no more dick. But for three hours I was something better than human. I can't sleep unless I have the recordings playing on loop anymore. I'm hungry all the time now.
-				t But not for food."
-				t ... That's all it says, but the paper is torn suggesting there's more. You should probably [get back to exploring|scarletWestBedroom].
+				t <i>"The trial was a success. The vaccination hurt like hell, but what came afterwards...</i>
+				t <i>It was worth every second.</i>
+				t <i>It's so much better than just watching. The captives scream that we're monsters, but if they could sill talk or think after being infected they'd thank us.</i>
+				t <i>I was nervous at first. Apparently even though the vaccine would turn me back to normal after a few hours, cumming after being infected would seriously reduce my fertility as a woman. I started having doubts, but...</i>
+				t <i>When you have a massive cock hanging between your legs, you realize stuff like that is less important than the feeling of a thick load of cum pumping out of your dick. My fertility? Eggs? Thy could have said cumming would kill my brain cells and I wouldn't have jerked off less.</i>
+				t <i>I passed the tests afterwards, I'm completely human, no more dick. But for three hours I was something better than human. I can't sleep unless I have the recordings playing on loop anymore. I've been supervising a purposefully slow transformation, enjoying watching her break down, but it isn't enough. I'm hungry all the time now.</i>
+				t <i>But not for food."</i>
+				t ... That's all it says, but the paper is torn suggesting there's more. You should probably [get back to exploring|scarletWestGuest].
 			`);
+			if (checkFlag("scarletLetter1") == true && checkFlag("scarletLetter2") == true && checkFlag("scarletLetter3") == true && checkFlag("scarletLetter4") == true && checkFlag("scarletLetter5") == true) {
+				writeText("This is another piece of the letter, or diary entry... In fact, the last part you needed. You should be able to piece together the parts now:");
+				writeEvent("scarletLetterFull");
+				writeText("[That's all that's written.|scarletWestGuest]");
+			}
 			break;
 		}
 		case "scarletLetter4": {
+			addFlag(scene);
 			writeHTML(`
-				t "I'm not crazy. I know I'm not crazy.
-				t The new one, she's smart. I could see her muttering the code we set for her door after Charlie said it out loud. I know some infected still retain their minds, some even get smarter. But it's temporary. A month, a week, maybe even after a day she'll be like all the rest. I need to hold on.
-				t I've been cleared for work again. Thank god I didn't slip up in the medical interview. Every second that goes by I can feel my crotch throb. I just wanna tear off my clothes and jerk off, but I don't have a dick. I'm not infected.
-				t But she knows it's taking up every waking thought. She'll act brainless and stupid when the others are around, but when it's just me and her...
-				t I want to cum. I don't give a shit about my womb, about my mind. I don't want to squirt, I want to piss thick semen onto the floor as my balls clench up. I want to give in.
-				t I want her."
+				t <i>"I'm not crazy. I know I'm not crazy.</i>
+				t <i>The new one, she's smart. I could see her muttering the code we set for her door after Charlie said it out loud. I know some infected still retain their minds, some even get smarter. But it's temporary. A month, a week, maybe even after a day she'll be like all the rest. I need to hold on.</i>
+				t <i>I've been cleared for work again. Thank god I didn't slip up in the medical interview. Every second that goes by I can feel my crotch throb. I just wanna tear off my clothes and jerk off, but I don't have a dick. I'm just... Me.</i>
+				t <i>But she knows it's taking up every waking thought. She'll act brainless and stupid when the others are around, but when it's just me and her...</i>
+				t <i>I want to cum. I don't give a shit about my womb, about my mind. I don't want to squirt, I want to piss thick semen onto the floor as my balls clench up. I want to give in.
+				t <i>I want her."</i>
 				t ... That's all it says, but the paper is torn suggesting there's more. You should probably [get back to exploring|scarletEastGuest].
 			`);
+			if (checkFlag("scarletLetter1") == true && checkFlag("scarletLetter2") == true && checkFlag("scarletLetter3") == true && checkFlag("scarletLetter4") == true && checkFlag("scarletLetter5") == true) {
+				writeText("This is another piece of the letter, or diary entry... In fact, the last part you needed. You should be able to piece together the parts now:");
+				writeEvent("scarletLetterFull");
+				writeText("[That's all that's written.|scarletEastGuest]");
+			}
 			break;
 		}
 		case "scarletLetter5": {
+			addFlag(scene);
 			writeHTML(`
-				t "She's unique. We pump chemicals into the air in the mansion to make sure we're all willing to do what it takes. It makes us more sadistic, more creative. It shouldn't affect her...
-				t For her it just seems to make her hungry. More cruel, it makes her want to torment. That's what I see when I look in her eyes.
-				t Tests confirmed it, it's some genetic anomaly. Her children or other family could have it too. Even if she wasn't infected the chemicals would probably have the same effect. The others are convinced she's finished, and that her mind has finally faded. I'm the only one watching her now.
-				t I keep telling myself this is just for study, but I think I know why I keep such a close watch on her.
-				t I think she does too.
-				t I broke. She came onto the glass right in front of me and kept stroking herself. Rubbing her fat cock against the glass, I...
-				t I started licking the glass. I didn't care that she was watching me, that I was showing weakness. I knew there was a camera on me, but I didn't care. I started stroking my cunt, I'm so fucked up.
-				t It's only a matter of time before someone sees the recording. My life is over, isn't it?
-				t I know the code to her room. I know I shouldn't, but...
-				t If my life is over, why not?"
+				t <i>"She's unique. We pump chemicals into the air in the mansion to make sure we're all willing to do what it takes. It makes us more sadistic, more creative. It shouldn't affect her...</i>
+				t <i>For her it just seems to make her hungry. More cruel, it makes her want to torment. That's what I see when I look in her eyes.</i>
+				t <i>Tests confirmed it, it's some genetic anomaly. Her children or other family could have it too. Even if she wasn't infected the chemicals would probably have the same effect. The others are convinced she's finished, and that her mind has finally faded. I'm the only one watching her now.</i>
+				t <i>I keep telling myself this is just for study, but I think I know why I keep such a close watch on her.</i>
+				t <i>I think she does too.</i>
+				t <i>I broke. She came onto the glass right in front of me and kept stroking herself. Rubbing her fat cock against the glass, I...</i>
+				t <i>I started licking the glass. I didn't care that she was watching me, that I was showing weakness. I knew there was a camera on me, but I didn't care. I started stroking my cunt, I'm so fucked up.</i>
+				t <i>It's only a matter of time before someone sees the recording. My life is over, isn't it?</i>
+				t <i>I know the code to her room. I know I shouldn't, but...</i>
+				t <i>If my life is over, why not?"</i>
 				t ... That's all it says, but the paper is torn suggesting there are previous parts. You should probably [get back to exploring|scarletSecurity].
 			`);
+			if (checkFlag("scarletLetter1") == true && checkFlag("scarletLetter2") == true && checkFlag("scarletLetter3") == true && checkFlag("scarletLetter4") == true && checkFlag("scarletLetter5") == true) {
+				writeText("This is another piece of the letter, or diary entry... In fact, the last part you needed. You should be able to piece together the parts now:");
+				writeEvent("scarletLetterFull");
+				writeText("[That's all that's written.|scarletSecurity]");
+			}
 			break;
 		}
 		case "vacineTest": {
@@ -2408,30 +2458,112 @@ function writeScene(scene) {
 			break;
 		}
 		case "hiddenTape1": {
-			addItem("tapeLicker1");
+			addItem("tape 1");
 			writeHTML(`
-				
+				t Ignoring the rain you correct the lamp, suspecting something is fishy. Your instincts are dead on, and a hidden compartment with a tape inside is revealed!
+				t [Take it|scarletBalcony]
 			`);
 			break;
 		}
 		case "hiddenTape2": {
-			addItem("tapeCongealant");
+			addItem("tape 2");
 			writeHTML(`
-				
+				t As you turn the lamp it clicks into place, revealing a hidden compartment with a tape inside!
+				t [Take it|scarletWestWing]
 			`);
 			break;
 		}
 		case "hiddenTape3": {
-			addItem("tapeChastity");
+			addItem("tape 3");
 			writeHTML(`
-				
+				t As you turn the lamp it clicks into place, revealing a hidden compartment with a tape inside!
+				t [Take it|scarletEastWing]
 			`);
 			break;
 		}
 		case "hiddenTape4": {
-			addItem("tapeSubmission");
+			addItem("tape 4");
 			writeHTML(`
-				
+				t You jump up to reach the light, causing it to come clean off the wall. At first you think you broke it off, but there just so happens to be a hidden tape attached to the back!
+				t [Take it|scarletMainHall]
+			`);
+			break;
+		}
+		case "chastityInfected": {
+			writeEvent(scene);
+			addFlag(scene);
+			writeText("No matter how many times you push her, she never seems to be satisfied. The smell is getting too powerful for you now. You have no choice but to set down the device and [leave the room|scarletWestWing] as soon as you can.");
+			break;
+		}
+		case "gaggedSiren": {
+			writeEvent(scene);
+			addFlag(scene);
+			writeText("Finally winding down, it seems she's finished with her show. It seems the machine is finished as well, and the vibrations come to a stop. You should [finish up|scarletWestBathroom].");
+			break;
+		}
+		case "tapeVaccine": {
+			writeEvent(scene);
+			addFlag(scene);
+			writeText("There's no telling how long this has been playing on repeat. It makes for a decent noise to hide your footsteps though, so it might be best to [leave it on and keep searching the room|scarletWestGuest].");
+			break;
+		}
+		case "urinalInfected": {
+			writeEvent(scene);
+			addFlag(scene);
+			writeText("She seems satisfied, and if you are too you should [leave her be|scarletMainBathroom].");
+			break;
+		}
+		case "garageHounds": {
+			writeEvent(scene);
+			writeText("With the show over, you should head back to the [mansion hallways|scarletMainHall].");
+			break;
+		}
+		case "firstTurn": {
+			addFlag(scene);
+			writeScene("scarletDining");
+			break;
+		}
+		case "cumtapInfected": {
+			writeEvent(scene);
+			addFlag("secondTurn");
+			writeText("Despite how much she's already cum, her cock is still aching for more and leaking onto the floor. You could [stop here|scarletDining] or [go further|cumtapInfectedRepeat].");
+			break;
+		}
+		case "cumtapInfectedRepeat": {
+			writeEvent(scene);
+			addFlag("thirdTurn");
+			writeText("You're no expert, but you probably just broke the faucet. You should probably [get moving|scarletDining].");
+			break;
+		}
+		case "storageOpen": {
+			writeHTML(`
+				t You press on the upraised stone, but nothing happens. Pulling, hitting, nothing continues to happen. It isn't until you try twisting the stone that there's some give.
+				t After a good twist you can hear something go *click* and jump back as the mirror wall moves backwards, [revealing more of the room|scarletStorage].
+			`);
+			addFlag("name");
+			break;
+		}
+		case "dogShock1": {
+			addFlag("dogShock1");
+			writeEvent(scene);
+			writeHTML(`
+				t She has some kind of accessory on her now very hard dick, likely connected to your remote. It isn't clear if she's saying [you can go and she won't bother you anymore|scarletEastWing], or if she's [trying to entice you into more|dogShock2].
+			`);
+			break;
+		}
+		case "dogShock2": {
+			addFlag("dogShock2");
+			writeEvent(scene);
+			writeHTML(`
+				t As you release her from her sexual torment she still twitches a few times, her cock still leaking onto the floor. She looks dazed, but satisfied. [Perhaps you are too|scarletEastWing]?
+			`);
+			break;
+		}
+		case "dogShock3": {
+			addFlag("dogShock3");
+			writeEvent(scene);
+			writeHTML(`
+				t [If you're finished, you should go.|scarletEastWing]
 			`);
 			break;
 		}
@@ -4016,40 +4148,40 @@ function writeEvent(n) {
 		//Scarlet Mansion
 		case "scarletLetterFull": {
 			writeHTML(`
-				t "I think it's important to get these thoughts down. I've seen what can happen to people when they start to lose their minds. Even for people like us...
-				t We spend all day on these projects, and i know what we all do at night after we finish. I know why we keep so many recordings and why they're available for us all to watch at any time. I can them through some of the walls.
-				t The order came in, vaccination testing. There's some inoculations, but they're too expensive to have at the ready anywhere except the main labs. The top rungs won't even give us the ingredients. These are the alternative, but who are we testing them on?"
+				t <i>"I think it's important to get these thoughts down. I've seen what can happen to people when they start to lose their minds. Even for people like us...
+				t <i>We spend all day on these projects, and i know what we all do at night after we finish. I know why we keep so many recordings and why they're available for us all to watch at any time. I can them through some of the walls.
+				t <i>The order came in, vaccination testing. There's some inoculations, but they're too expensive to have at the ready anywhere except the main labs. The top rungs won't even give us the ingredients. These are the alternative, but who are we testing them on?"
 				...
-				t "Vaccination testing means they shoot you up and drop you into a room with one of... Them. For hours. Then they pull you out, spray you down, and see if you're still human.
-				t We could have used some of the captives, but it's not like they'd patiently comply with our testing or answer a questionaire afterwards. There was some debate on if we should just draw straws... Until I volunteered.
-				t I don't know why I did it, it's like my mouth said the words on its own. Carlson looked at me with respect, but the rest of them...
-				t Surprise, disgust, jealousy. I think they knew why I was volunteering."
+				t <i>"Vaccination testing means they shoot you up and drop you into a room with one of... Them. For hours. Then they pull you out, spray you down, and see if you're still human.
+				t <i>We could have used some of the captives, but it's not like they'd patiently comply with our testing or answer a questionaire afterwards. There was some debate on if we should just draw straws... Until I volunteered.
+				t <i>I don't know why I did it, it's like my mouth said the words on its own. Carlson looked at me with respect, but the rest of them...
+				t <i>Surprise, disgust, jealousy. I think they knew why I was volunteering."
 				...
-				t "The trial was a success. The vaccination hurt like hell, but what came afterwards...
-				t It was worth every second.
-				t It's so much better than just watching. The captives scream that we're monsters, but if they could sill talk or think after being infected they'd thank us.
-				t I was nervous at first. Apparently even though the vaccine would turn me back to normal after a few hours, cumming after being infected would seriously reduce my fertility as a woman. I started having doubts, but...
-				t When you have a massive cock hanging between your legs, you realize stuff like that is less important than the feeling of a thick load of cum pumping out of your dick. My fertility? Eggs? Thy could have said cumming would kill my brain cells and I wouldn't have jerked off less.
-				t I passed the tests afterwards, I'm completely human, no more dick. But for three hours I was something better than human. I can't sleep unless I have the recordings playing on loop anymore. I'm hungry all the time now.
-				t But not for food."
+				t <i>"The trial was a success. The vaccination hurt like hell, but what came afterwards...
+				t <i>It was worth every second.
+				t <i>It's so much better than just watching. The captives scream that we're monsters, but if they could sill talk or think after being infected they'd thank us.
+				t <i>I was nervous at first. Apparently even though the vaccine would turn me back to normal after a few hours, cumming after being infected would seriously reduce my fertility as a woman. I started having doubts, but...
+				t <i>When you have a massive cock hanging between your legs, you realize stuff like that is less important than the feeling of a thick load of cum pumping out of your dick. My fertility? Eggs? Thy could have said cumming would kill my brain cells and I wouldn't have jerked off less.
+				t <i>I passed the tests afterwards, I'm completely human, no more dick. But for three hours I was something better than human. I can't sleep unless I have the recordings playing on loop anymore. I've been supervising a purposefully slow transformation, enjoying watching her break down, but it isn't enough. I'm hungry all the time now.</i>
+				t <i>But not for food."
 				...
-				t "I'm not crazy. I know I'm not crazy.
-				t The new one, she's smart. I could see her muttering the code we set for her door after Charlie said it out loud. I know some infected still retain their minds, some even get smarter. But it's temporary. A month, a week, maybe even after a day she'll be like all the rest. I need to hold on.
-				t I've been cleared for work again. Thank god I didn't slip up in the medical interview. Every second that goes by I can feel my crotch throb. I just wanna tear off my clothes and jerk off, but I don't have a dick. I'm not infected.
-				t But she knows it's taking up every waking thought. She'll act brainless and stupid when the others are around, but when it's just me and her...
-				t I want to cum. I don't give a shit about my womb, about my mind. I don't want to squirt, I want to piss thick semen onto the floor as my balls clench up. I want to give in.
-				t I want her."
+				t <i>"I'm not crazy. I know I'm not crazy.
+				t <i>The new one, she's smart. I could see her muttering the code we set for her door after Charlie said it out loud. I know some infected still retain their minds, some even get smarter. But it's temporary. A month, a week, maybe even after a day she'll be like all the rest. I need to hold on.
+				t <i>I've been cleared for work again. Thank god I didn't slip up in the medical interview. Every second that goes by I can feel my crotch throb. I just wanna tear off my clothes and jerk off, but I don't have a dick. I'm just... Me.
+				t <i>But she knows it's taking up every waking thought. She'll act brainless and stupid when the others are around, but when it's just me and her...
+				t <i>I want to cum. I don't give a shit about my womb, about my mind. I don't want to squirt, I want to piss thick semen onto the floor as my balls clench up. I want to give in.
+				t <i>I want her."
 				...
-				t "She's unique. We pump chemicals into the air in the mansion to make sure we're all willing to do what it takes. It makes us more sadistic, more creative. It shouldn't affect her...
-				t For her it just seems to make her hungry. More cruel, it makes her want to torment. That's what I see when I look in her eyes.
-				t Tests confirmed it, it's some genetic anomaly. Her children or other family could have it too. Even if she wasn't infected the chemicals would probably have the same effect. The others are convinced she's finished, and that her mind has finally faded. I'm the only one watching her now.
-				t I keep telling myself this is just for study, but I think I know why I keep such a close watch on her.
-				t I think she does too.
-				t I broke. She came onto the glass right in front of me and kept stroking herself. Rubbing her fat cock against the glass, I...
-				t I started licking the glass. I didn't care that she was watching me, that I was showing weakness. I knew there was a camera on me, but I didn't care. I started stroking my cunt, I'm so fucked up.
-				t It's only a matter of time before someone sees the recording. My life is over, isn't it?
-				t I know the code to her room. I know I shouldn't, but...
-				t If my life is over, why not?"
+				t <i>"She's unique. We pump chemicals into the air in the mansion to make sure we're all willing to do what it takes. It makes us more sadistic, more creative. It shouldn't affect her...
+				t <i>For her it just seems to make her hungry. More cruel, it makes her want to torment. That's what I see when I look in her eyes.
+				t <i>Tests confirmed it, it's some genetic anomaly. Her children or other family could have it too. Even if she wasn't infected the chemicals would probably have the same effect. The others are convinced she's finished, and that her mind has finally faded. I'm the only one watching her now.
+				t <i>I keep telling myself this is just for study, but I think I know why I keep such a close watch on her.
+				t <i>I think she does too.
+				t <i>I broke. She came onto the glass right in front of me and kept stroking herself. Rubbing her fat cock against the glass, I...
+				t <i>I started licking the glass. I didn't care that she was watching me, that I was showing weakness. I knew there was a camera on me, but I didn't care. I started stroking my cunt, I'm so fucked up.
+				t <i>It's only a matter of time before someone sees the recording. My life is over, isn't it?
+				t <i>I know the code to her room. I know I shouldn't, but...
+				t <i>If my life is over, why not?"
 			`);
 			break;
 		}
@@ -4087,41 +4219,41 @@ function writeEvent(n) {
 		}
 		case "diary": {
 			writeHTML(`
-				t <i>The file appears to be a collection of synopsized diary entries, with an associated security camera footage file attached.</i>
+				t The file appears to be a collection of synopsized diary entries, with an associated security camera footage file attached.
 				...
-				t I have a penis.
-				t It was an ordinary day yesterday. I woke up here. It's not a dream, and so long as I recount what happens accurately, you'll give me the cure. Is that okay? How long will I be-
+				t <i>I have a penis.
+				t <i>It was an ordinary day yesterday. I woke up here. It's not a dream, and so long as I recount what happens accurately, you'll give me the cure. Is that okay? How long will I be-
 				...
-				t The drug they used on me. They said I was "naturally resistant", so then why do I have this... Thing?
-				t And I have the hanging... Things... I have them too. They told me my womb is... In them. And if I cum I won't be able to have children.
+				t <i>The drug they used on me. They said I was "naturally resistant", so then why do I have this... Thing?
+				t <i>And I have the hanging... Things... I have them too. They told me my womb is... In them. And if I cum I won't be able to have children.
 				...
-				t They... You, you're watching me right now, aren't you? I see how you look at me during my "checkups". You want to see me like this.
-				t You keep saying "use proper language", but no doctor would say... What you're saying. So why? Just please, let me go...
-				t Okay, I'll say the words. I have a cock. A dick. A pair of balls. Please, I've done everything you've asked, just-
+				t <i>They... You, you're watching me right now, aren't you? I see how you look at me during my "checkups". You want to see me like this.
+				t <i>You keep saying "use proper language", but no doctor would say... What you're saying. So why? Just please, let me go...
+				t <i>Okay, I'll say the words. I have a cock. A dick. A pair of balls. Please, I've done everything you've asked, just-
 				...
-				t It itched. So badly. I rubbed, and I kept rubbing. I stood, knock-kneed with a massive pair of balls between my legs and I was jerking off. I cracked, and although I managed to stop I leaked what must be a cup of sperm right onto the carpet. When they put me to sleep for the night it'll disappear, but t's still there now. Taunting me.
-				t I remember what I was thinking before I finally tore my hand away. My own mind was lying, saying "maybe if I just squirt out a little", or "I'll just try extra hard to get pregnant".
-				t I can't trust my own head.
+				t <i>It itched. So badly. I rubbed, and I kept rubbing. I stood, knock-kneed with a massive pair of balls between my legs and I was jerking off. I cracked, and although I managed to stop I leaked what must be a cup of sperm right onto the carpet. When they put me to sleep for the night it'll disappear, but t's still there now. Taunting me.
+				t <i>I remember what I was thinking before I finally tore my hand away. My own mind was lying, saying "maybe if I just squirt out a little", or "I'll just try extra hard to get pregnant".
+				t <i>I can't trust my own head.
 				...
-				t I came in my sleep. I know it wasn't my fault, in a situation like this a wet dream was inevitable at some point.
-				t But that doesn't excuse the fact that I was stroking myself when I woke up.
-				t All that sperm on my hand... I felt so disgusting, like I was throwing away my chance at a happy family, and for what? I'll admit it felt good. Amazing even, but I never did drugs for a reason. I ate it, slurped up the load, but only because I didn't want to look at it anymore.
-				t At this point is it already over? My husband and I... We already had enough trouble concieving. At this point I'd...
-				t I'd need a cock like this one to breed me.
+				t <i>I came in my sleep. I know it wasn't my fault, in a situation like this a wet dream was inevitable at some point.
+				t <i>But that doesn't excuse the fact that I was stroking myself when I woke up.
+				t <i>All that sperm on my hand... I felt so disgusting, like I was throwing away my chance at a happy family, and for what? I'll admit it felt good. Amazing even, but I never did drugs for a reason. I ate it, slurped up the load, but only because I didn't want to look at it anymore.
+				t <i>At this point is it already over? My husband and I... We already had enough trouble concieving. At this point I'd...
+				t <i>I'd need a cock like this one to breed me.
 				...
-				t I need to stay in control. I need to focus on what really matters. I can't even have sheets on the bed anymore <s>because I can't stop humping</s> helpmehelpmehelpmegetmeoutofhere
+				t <i>I need to stay in control. I need to focus on what really matters. I can't even have sheets on the bed anymore <s>because I can't stop humping</s> helpmehelpmehelpmegetmeoutofhere
 				...
-				t I'll adopt. That's what I'll do. I'll find someone and show them the love my kids deserve. Someone like the teenager next door, she was always so polite. I think she's in college now. I'd be supportive, I'd be there when she needs me. <s>I'd split her tight teenage pussy</s>
-				t A son. My husband talked about what he was like as a teenager, I think he was trying to make me scared of raising a boy. Teenage years, puberty, everything that comes with those years. I never felt scared. I wish I'd been there for him <s>Jerking off on his face until he's addicted to my cum and</s>
-				t I can't let go. I can feel it, bigger than any load so far. Honestly it gives me hope, maybe all I've done so far is just let out precum. But I feel it inside me, boiling. No stimulation, my mind is empty but I still feel the load building. Just one flex of the wrong muscle and it'll all come out I can't breath my husband would be ashamed I am in control I will not
-				t It would be so easy
+				t <i>I'll adopt. That's what I'll do. I'll find someone and show them the love my kids deserve. Someone like the teenager next door, she was always so polite. I think she's in college now. I'd be supportive, I'd be there when she needs me. <s>I'd split her tight teenage pussy</s>
+				t <i>A son. My husband talked about what he was like as a teenager, I think he was trying to make me scared of raising a boy. Teenage years, puberty, everything that comes with those years. I never felt scared. I wish I'd been there for him <s>Jerking off on his face until he's addicted to my cum and</s>
+				t <i>I can't let go. I can feel it, bigger than any load so far. Honestly it gives me hope, maybe all I've done so far is just let out precum. But I feel it inside me, boiling. No stimulation, my mind is empty but I still feel the load building. Just one flex of the wrong muscle and it'll all come out I can't breath my husband would be ashamed I am in control I will not
+				t <i>It would be so easy
 				...
-				t Honey... Honey I don't think they ever planned to let me out. I can't remember things now. I can't remember my name anymore. I can't remember yours either.
-				t Don't think of me as human anymore, okay? This isn't my fault, you wouldn't last here either. It's okay for me to cum now, okay? You should be proud of how long I lasted.
-				t I don't think you'll ever see this, but if you do, I love you. Stop watching now, please. Your wife was strong. She never gave in no matter how good stroking her cock felt. Goodbye.
+				t <i>Honey... Honey I don't think they ever planned to let me out. I can't remember things now. I can't remember my name anymore. I can't remember yours either.
+				t <i>Don't think of me as human anymore, okay? This isn't my fault, you wouldn't last here either. It's okay for me to cum now, okay? You should be proud of how long I lasted.
+				t <i>I don't think you'll ever see this, but if you do, I love you. Stop watching now, please. Your wife was strong. She never gave in no matter how good stroking her cock felt. Goodbye.
 				...
 				im diary.gif
-				t <i>Most of the video is pure masturbation. At some point she purposefully cums directly onto the camera, and the rest of the feed is a blank white.
+				t Most of the video is pure masturbation. At some point she purposefully cums directly onto the camera, and the rest of the feed is a blank white.
 			`);
 			break;
 		}
@@ -4244,7 +4376,24 @@ function writeEvent(n) {
 		}
 		case "cumtapInfected": {
 			writeHTML(`
-				
+				t Despite the resistance you get a firm grip on the handle and turn with all the force you can muster. The faint muffled moan behind he wall grows much louder and a load of cum splurts free from the cock-faucet. It splatters into the carpet, quickly followed by a second load.
+				im cumtapInfected.gif
+				t You hear something click in the knob and realize it can't turn any farther, and can't turn back either. The muffled voice grunts again as even though her overworked cock just came and is growing softer, another load is forced out.
+				t With the knob broken, or perhaps locked in place, her cock seems to be forced to leak out a stream of cum non-stop. Ignoring the sound of her jizz dripping onto the carpet, you can faintly hear the sound of fluid traveling through pipes. It seems despite her being trapped she's being at least somewhat taken care of.
+				t The cock-faucet shakes as the infected it's attached to struggles, using whatever parts of her body she can to thrust and wag her hanging, untouched dick, but to no avail.
+				t Frustrated sobbing gives way to a desperate muffled scream, then silence. The cock waves in the air again as if tempting, or begging you to give her some release.
+			`);
+			break;
+		}
+		case "cumtapInfectedRepeat": {
+			writeHTML(`
+				t Your hands on the knob again you give it a turn, and the muffled voice behind the wall gasps. Her cock quickly is at full mast again as she struggles to thrust it forwards ever so slightly, it's all she can manage.
+				t With all the strength you can muster you turn the knob, and while you only manage a small turn the effects are apparent immediately.
+				t Her balls have grown, as though they've physically expanded. They must be the size of baseballs at this point, and they're throbbing angrily.
+				t You hear the voice grunt, and then again and again, faster and faster as her cock pulses. Despite you not turning the knob something is about to happen. The wall shakes as the infected woman struggles, her cock pulses and is an angry shade of red, and suddenly...
+				t A clear stream of fluid leaks from her cock. The sound of struggling stops, replaced with a lust-drunk sobbing.
+				t Before your eyes her penis and balls begin to shrink as the fluid spills out non-stop. Her once impressive 11-inch dick is barely half that length now as her leak-gasm continues.
+				t The carpet is completely soaked now, and her penis reaches it's flaccid length and continues to shrink even further. Three, two, one inch, finally coming to stop shrinking at a length shorter than your pinky and barely as thick as your thumb. Her balls have shrunk too, now looking like tender grapes hanging down several inches.
 			`);
 			break;
 		}
@@ -4366,6 +4515,9 @@ function writeEvent(n) {
 				im tapeCongealant3.gif
 				sc The process triggers the usual endorphin rush of an orgasm the entire time while also heavily stimulating the urethral nerves. <br>While unquestionably a failure in terms of effectiveness, the continued testing of this strain should be useful for both education and entertainment purposes.
 			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scarletTheater', "Finish");
+			}
 			break;
 		}
 		case "tapeLicker1": {
@@ -4377,6 +4529,9 @@ function writeEvent(n) {
 				im tapeLicker12.gif
 				smith Though some have criticized it as being redundant when released alongside Siren strains, it is worth noting that the Licker has the potential to infect women as well. Any ability to draw potential human survivors out of hiding is valuable, and appealing to major fetishes is a viable pathway.<br>Still, the issue of infected fucking each other rather than the uninfected is a difficult problem to manage. I've yet to find a way to hold back the Licker from assaulting other strains. That's a priority for the fourteenth.
 			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scarletTheater', "Finish");
+			}
 			break;
 		}
 		case "tapeLicker2": {
@@ -4401,6 +4556,9 @@ function writeEvent(n) {
 				t Within moments the infected retracts her tongue with a wet pop, her tongue wrapped around a thick pair of balls. Her tongue gently squeezes and the researcher spreads her legs, revealing her newly-grown cock just as it splurts its first load onto the floor.
 				t Both women are heavily infected now, the recording goes on for another few minutes  wherein the two infected share a perverted kiss, their tongues able to reach so deep a bulge can be seen in their stomachs.
 			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scarletTheater', "Finish");
+			}
 			break;
 		}
 		case "tapeHound": {
@@ -4423,6 +4581,9 @@ function writeEvent(n) {
 				t With an audible pop the knot comes free, but the researcher's body has already passed the point of no return. With a leaking cock the fresh infected pulls and pushes the toy anew, not a trace of human intelligence in her eyes.
 				t The recording ends here.
 			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scarletTheater', "Finish");
+			}
 			break;
 		}
 		case "tapeSubmission": {
@@ -4434,6 +4595,9 @@ function writeEvent(n) {
 				im tapeSubmission2.gif
 				jones Originally, this was thought to be exclusive to hordes, but ever since the Alpha strain breakthrough further testing has found almost all infected can be dominated in some way.<br>Human domination is quite risky though. The effects of infected fluid by taste or smell, combined with heir heightened senses to notice even the smallest moment of weakness, means that human dominants do not tend to stay human for long.
 			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scarletTheater', "Finish");
+			}
 			break;
 		}
 		case "tapeVaccine": {
@@ -4445,8 +4609,10 @@ function writeEvent(n) {
 				t By the time she's back on camera, she's...
 				im vaccineTest3.gif
 				t And the video cuts another time, to her getting dressed and there's clearly no cock between her legs. She's intelligent enough to be listing off symptoms such as disorientation, extreme hunger and thirst, and phantom sensations. She's clearly distracted, and quietly asks when the next test will be before the video loops.
-				t There's no telling how long this has been playing on repeat. It makes for a decent noise to hide your footsteps though, so it might be best to [leave it on and keep searching the room].
 			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scarletTheater', "Finish");
+			}
 			break;
 		}
 		case "tapeChastity": {
@@ -4463,6 +4629,9 @@ function writeEvent(n) {
 			t Likewise, even though we are behind the main branch here, exploration of the version 3 strain and it's weaknesses could lead to a major breakthrough. Those found wasting resources because we are 'behind the times' or 'working with an obsolete strain' will be suitably punished. Any strain could lead to an Alpha with enough research. With time and patience even our research site could birth a god.
 			t In short, stop putting chastity cages on our infected test subjects because they look 'cute'. There will be no further warning on the subject.
 			`);
+			if (data.player.currentScene != "gallery") {
+				writeTransition('scarletTheater', "Finish");
+			}
 			break;
 		}
 		case "labAnal": {
@@ -4486,7 +4655,7 @@ function writeEvent(n) {
 			writeHTML(`
 				im labSissy.gif
 				t "I really didn't get this place, or the 'people' here. Honestly, just forget the dick growth. Just make it some kind of sex-frenzy std and a lot of people would sneak it through containment themselves.
-				t Maybe this is my new dick talking, but I think I understand now. Taking the monsters who did this to me, fucking them so hard in the ass their brains and common sense melt, slapping cages on them so they're perfect for my cock.
+				t Maybe this is my new dick talking, but I think I understand now. Taking the monsters who did this to me and my mind, fucking them so hard in the ass their brains and common sense melt, slapping cages on them so they're perfect for my cock.
 				t I get it."
 			`);
 			break;
