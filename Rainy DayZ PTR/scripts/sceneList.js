@@ -1938,8 +1938,8 @@ function writeScene(scene) {
 			writeHTML(`
 				t You're in the east wing bathroom. It's clean, but highly cluttered.
 				t Near the bathtub are a variety of cleaning supplies. Some conventional rubber gloves, some with strange textures on the fingertips like they're designed to stimulate flesh. These are atop a massive collection of shampoos and bodywashes for extremely hard to remove scents.
-				t ?flag tub; The bathtub is currently full, with a thick layer of soap covering the water. There's a chain coming out of it connected to a holder on the wall, designed to allow someone outside the tub to [tub|drain it].
-				t !flag tub; The infected woman is still laying in the tub, her sleeping form occasionally twitching. Her dick is at full mast, either a result of morning wood or just being out of water is stimulating her body.
+				t !flag tubInfected; The bathtub is currently full, with a thick layer of soap covering the water. There's a chain coming out of it connected to a holder on the wall, designed to allow someone outside the tub to [drain it|tubInfected].
+				t ?flag tubInfected; The infected woman is still laying in the tub, her sleeping form occasionally twitching. Her dick is at full mast, either a result of morning wood or just being out of water is stimulating her body.
 				t It doesn't seem like there's anything useful in here, you can [head back into the hallway|scarletEastWing] at any time.
 			`);
 			break;
@@ -2490,6 +2490,12 @@ function writeScene(scene) {
 			writeEvent(scene);
 			addFlag(scene);
 			writeText("No matter how many times you push her, she never seems to be satisfied. The smell is getting too powerful for you now. You have no choice but to set down the device and [leave the room|scarletWestWing] as soon as you can.");
+			break;
+		}
+		case "tubInfected": {
+			writeEvent(scene);
+			addFlag(scene);
+			writeText("[Nothing more you can do.|scarletEastBathroom]");
 			break;
 		}
 		case "gaggedSiren": {
@@ -4282,7 +4288,6 @@ function writeEvent(n) {
 				t The cleaning materials, the gloves, and the chain designed not to fall into the tub. It seems like this room was more designed for cleaning animals than humans. Or maybe just for washing uncooperative prisoners.
 				t She twitches at the feeling of fresh air on her skin, like he's highly sensitive. Perhaps she was being kept underwater while she underwent her transformation?
 				t There's nothing you can do for her, the clasps on her hands and her mask are extremely complex. Hopefully rescue will come for all the women trapped here, but until then...
-				t As the water finishes draining you hear a small *clack* sound, and notice a shape in the soap. 
 			`);
 			break;
 		}
@@ -4464,6 +4469,7 @@ function writeEvent(n) {
 			break;
 		}
 		case "dogShock3": {
+			if (data.player.wsDisabled == false) {
 			writeHTML(`
 				t The guard dog woman quickly assumes her submissive position as you point the remote at her again, but you push the button again anyways.
 				t She yelps and her hips shake back and forth, but she makes no move to stop you.
@@ -4475,6 +4481,10 @@ function writeEvent(n) {
 				t You give it one more push for good measure, the shock is enough for her to fall backwards, her body shaking and cock still leaking. The stream becomes stronger as her ability to hold back fades completely and she coats her own chest and face in piss.
 				t It seems like she's fainted now, pushing the button makes her twitch and leak a little more, but otherwise she's unresponsive. 
 			`);
+			}
+			else {
+				writeText("This scene has been disabled by your fetish settings. If for some reason want to watch it, you can still view it in the gallery after changing your settings.");
+			}
 			break;
 		}
 		case "dogGassed": {
@@ -4705,13 +4715,13 @@ function writeEvent(n) {
 				t She turns to you, and you recognize her. Lansley.
 				t Her 'chair' is actually a pair of infected, one with her mouth and an inhumanly-long tongue wrapped around her cock, and another clearly and very happily rimming Lansley's ass. Lansley clicks her tongue and the two infected let out a whine, but you can hear them begin to retract their tongues.
 				t Lansley steps forwards, dragging her pair of slaves with her before they can finish pleasuring their master.
-				 As she faces you her eyes are filled with shock and hatred, but those quickly fade away, replaced with surprise and... Sadness? Melancholy?
-				t But quickly she looks frustrated, and roughly grabs the infected choking down her baseball bat of a dick by the hair to shove her down even deeper. Her massive balls contract and you can somehow hear, despite the distance between you two, the sound of at least a pound of jizz filling and inflating the infected woman's stomach.
+				t As she faces you her eyes are filled with shock and hatred, but those quickly fade away, replaced with surprise and... Sadness? Melancholy? But quickly she looks frustrated, and roughly grabs the infected choking down her baseball bat of a dick by the hair to shove her down even deeper. Her massive balls contract and you can somehow hear, despite the distance between you two, the sound of at least a pound of jizz filling and inflating the infected woman's stomach.
 				t The two infected slaves squeal (or as best they can given their situation) with delight, as if knowing they've served properly as fleshlights with heartbeats is enough to grant them relief as well.
 				t ?fetish ws; As they finally retract their tongues and wait dutifully at their master's side, Lansley grunts and a thick stream of piss begins to splatter against the floor. The pair of infected women move quickly, one lapping it up from the floor and the other sealing her mouth around the piss-spigot, her stomach visibly bulging as her swalling can barely keep pace.
 				t !fetish ws; As they finally retract their tongues and wait dutifully at their master's side, Lansley grunts and a thick glob of precum, more than a normal man's load leaks from her cock. The two infected fight over it, hungrily licking it up and battling with their tongues passing it between them.
 				t This... This monster isn't your sister. She can't be. Even though there's a glimmer of sadness, regret in her eyes as the two of you stare at each other, every other part of her body is...
 				t Every instinct inside you is telling you to run. She takes a step forwards, arms outstretched as if asking you to come closer.
+				t What will it be? event[Stay|scarletEndingGood], or event[run|scarletEndingBad]?
 			`);
 			break;
 		}
