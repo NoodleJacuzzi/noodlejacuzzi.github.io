@@ -230,6 +230,12 @@ function replaceCodenames(text) {
 					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
 					text = text.replace("drop["+locationFull+"]", "<span class='blueText' onclick='dropItem(`"+locationTarget+"`)'>"+locationName+"</span>")
 				}
+				if (text.includes('secret[') == true) {
+					var locationTarget = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
+					var locationName = text.substring(text.lastIndexOf("|") + 1, text.lastIndexOf("]"));
+					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+					text = text.replace("["+locationFull+"]", "<span onclick='sceneTransition(`"+locationTarget+"`)'>"+locationName+"</span>")
+				}
 				if (text.includes('[') == true) {
 					var locationTarget = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
 					var locationName = text.substring(text.lastIndexOf("|") + 1, text.lastIndexOf("]"));
