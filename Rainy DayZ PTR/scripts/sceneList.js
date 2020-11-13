@@ -1683,6 +1683,72 @@ function writeScene(scene) {
 			break;
 		}
 		//Scarlet Mansion
+		case "scarletMansion": {
+			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/scarletMansion.jpg)";
+			writeMed("scripts/gamefiles/characters/Scarlet Mansion.jpg");
+			writeText("Scenario Preview - Scarlet Mansion");
+			writeText("In a forest bordering a quarantined city there's a scarlet mansion not listed on any map.");
+			writeText("You, a brother searching for his missing sister, must explore the mansion and live to find out what bizarre experiments are underway.");
+			data.player.scenario = "Scarlet Mansion";
+			updateMenu();
+			countScenes();
+			writeTransition("scarletStart", "Begin");
+			writeTransition("scenarioSelect", "Go back");
+			break;
+		}
+		case "scarletStart": {
+			data.items = [];
+			data.quicksave = null;
+			data.player.flags = "";
+			sceneTransition('scarletIntro');
+			break;
+		}
+		case "scarletIntro": {
+			writeSpeech("Lansing", "images/Scarlet Mansion/lansing.jpg", "This is Sergeant Lansing of Charlie Team, two days into the search and no sign of the missing civilians. We had an ATV searching the forest near the border of Mongoose City, but have since lost contact with them.");
+			writeText("We found signs of Franklin, member of Bravo Team, in a barricaded section of the forest three hours ago. Scraps of cloth, ID tags, and several samples of a unknown white substance with narcotic effects. We hope to see the results soon, but communication with the police station we sent the samples to has suddenly stopped.");
+			writeText("The team and I have stopped at a mansion in the forest, not present on any maps. Local wildlife is highly agitated, so we'll be taking shelter here until backup arrives.");
+			writeText("That was the last anyone heard of Charlie Team, it was more than a week ago. Backup never came, orders were sent to all local divisions to abandon the city and set up security checkpoints as roads leading in. Defying their blockade, you set out through the barricade lines with an unregistered vehicle. Your sister, Kelsey Lansing would hate to hear you've come to rescue her, but what kind of big brother would you be if you just left her out here?");
+			writeText("You come to a stop just off the road. According to the mission logs, the mansion should close. All you need to do now is [make your way through the forest|scarletForest].");
+			break;
+		}
+		case "scarletForest": {
+			writeText("The air is cold and dry, it's late autumn so the forest's floor is covered in leaves. The trees are too dense for your car, so you decide to hoof it. Unable to sneak in any powerful weaponry, all you've got is a stun-gun, your wilderness exploration gear, and a radio.");
+			writeText("Along the path is a [broken-down shed|scarletShed]. It looks like at one point it was heavily barricaded, meant to keep something out.");
+			writeText("In the distance, you can make out the sounds of dogs howling and barking. It doesn't seem to be getting louder, so they aren't getting any closer. Aside from that, the forest is pretty calm. You should be fine to [continue on|scarletMansionEntrance].");
+			break;
+		}
+		case "scarletShed": {
+			writeText("You decide to check out the shed. The door and windows are boarded up, but the west-facing wall has been smashed through.");
+			writeText("You can see scraps of clothes and some kind of fluid stains the walls and floor. You stick your head in through the broken wall for a better look.");
+			writeText("A smell hits you right away, kind of like fish and sweat. It's pretty awful, something about it is making you feel woozy. It'd be best to [keep moving|scarletForest].");
+			break;
+		}
+		case "scarletMansionEntrance": {
+			writeText("Not having anything in particular to go on, you follow the sound of the dogs. Soon enough the trees give way to a massive clearing with a looming mansion in the center.");
+			writeText("It's got red walls and all of the windows are covered by curtains. One of the lights is on, but the window is blocked off by iron bars.");
+			writeText("A pair of [sturdy wooden doors|scarletEntry] on the front, the mansion is pretty intimidating. This is something straight out a horror flick. Still, if Kelsey is alive, she's probably inside. You should try the door.");
+			writeText("Near the entrance is a [massive kennel|scarletKennel], several dogs wildly barking and throwing themselves against the cage walls to get at you.");
+			break;
+		}
+		case "scarletKennel": {
+			if (data.player.beastDisabled == false) {
+				writeText("The walls are study enough, so you should be fine to check it out. You get closer to the cage.");
+				writeText("The dogs are absolutely rabid. They're all Dobermen, but something is off about them. They gnaw and claw at their containment, probably eager to tear you apart. There's the some fluid splattered on the inside of the cage. They're all wearing studded leather collars with big... Batteries? They're some kind of shock collars probably, way stronger than anything you could get over the counter.");
+				writeText("After a minute, it hits you as to what's different about them. They're bigger than their breed should be, more muscular, and they're all erect. They've each got a second collar on, fastened around their dicks each also with a smaller battery on them. They don't seem happy about it, you should [get moving|scarletMansionEntrance].");
+			}
+			else {
+				writeText("The walls are study enough, so you should be fine to check it out. You get closer to the cage.");
+				writeText("The dogs are absolutely rabid. They're all Dobermen, but they're all partially decomposed, like they're straight out of a zombie movie. They gnaw and claw at their containment, probably eager to tear you apart. There's the some fluid splattered on the inside of the cage. They're all wearing studded leather collars with big... Batteries? They're some kind of shock collars probably, way stronger than anything you could get over the counter.");
+				writeText("They don't seem happy about their containment, you should [get moving|scarletMansionEntrance].");
+			}
+			break;
+		}
+		case "scarletEntry": {
+			writeText("You approach the door, it has multiple scratch marks on the front but otherwise it's pristine. You give a knock, but there's no response. Testing your luck you turn the knob, and the door opens. It wasn't locked.");
+			writeText("As you walk in you hear something metal snap behind you, and the barking from the kennel gets louder and closer. Thinking quickly you shut the door and feel something slam against it. Looks like you'll need to find someone, preferably their owner, to deal with the hounds if you want to leave.");
+			writeText("The windows are all guarded from the inside by thick metal, so there's no need to worry about the dogs getting in from that end. You should be able to safely [explore the mansion foyer|scarletFoyer].");
+			break;
+		}
 		case "scarletFoyer": {
 			writeText("You're in the mansion foyer. It's very dark in here, and flipping the lightswitch doesn't seem to do anything. You can hear the sounds of scratching and barking from outside. The big wooden door stands sturdy though.");
 			if (checkFlag("dogMet") != true) {
@@ -1727,8 +1793,8 @@ function writeScene(scene) {
 			writeHTML(`
 				t You're in the wardrobe room. The walls are lined with wardrobes and closets. Some fancier wardrobes hold elegant looking dresses or suits, there are also a few designated for casual clothing, and a few that are locked up tight.
 				t One of the wardrobes designed to be locked has been smashed open, and you can see it's filled with labcoats and hazard equipment.
-				t !item Login Credentials; You can see one labcoat has a [piece of paper inside|loginCredentials].
-				t ?item Login Credentials; Nothing inside seems too useful, but there's [that other scrap of paper you found|scarletLetter1].
+				t !item login credentials; You can see one labcoat has a [piece of paper inside|loginCredentials].
+				t ?item login credentials; Nothing inside seems too useful, but there's [that other scrap of paper you found|scarletLetter1].
 				t !flag scientist; In addition as you search through the room you find a [small crawlspace|scientistIntro] you could climb into. It's a tight fit though.
 				t ?flag scientist; You can't progress through the crawlspace. Best not to risk getting stuck in there for nothing.
 				t There's a side-door here that leads to an [outdoor balcony|scarletBalcony], and you can return to the [parlor|scarletParlor] through a big wooden door.
@@ -1806,7 +1872,6 @@ function writeScene(scene) {
 				t You're in the heart bathroom, the light in here glows a soft yellow.
 				t Inside the bathroom is an infected woman sitting where a toilet should be. Her cock and balls have been chained to the floor leaving her immobile, but instead of struggling and trying to attack you as you enter, she just closes her eyes and lifts her cuffed hands up to her mouth like a cup.
 				t !flag urinalInfected; She opens her mouth to let her tongue loll out, as if demonstrating that she knows her place. There doesn't seem to be anything else in here, you could carefully  [relieve yourself|urinalInfected] or leave.
-				t ?flag urinalInfected; She sputters a little, her face and hair still wet with your piss.
 				t If you're finished in here, you can return to the [main hall|scarletMainHall].
 			`);
 			break;
@@ -1893,7 +1958,8 @@ function writeScene(scene) {
 				t event[Project 2 - Cumhole Whore|labUrethra]
 				t event[Project 3 - Good Sissy|labSissy]
 				t event[Project 4 - Oral Trainrrrrrr|labOral]
-				t One is different, it's some kind of [record log from an authorized researcher|scarletDiary].
+				t ?item login credentials; There's a locked file too, not like the others. You don't have the authority to read it though.
+				t ?item login credentials; One is different, it's some kind of [record log from an authorized researcher|scarletDiary].
 				t If you're finished in here you can [head back into the basement hub|scarletBasement].
 			`);
 			break;
@@ -1901,12 +1967,13 @@ function writeScene(scene) {
 		case "scarletSecurity": {
 			writeHTML(`
 				t You're in the security room. t The room is directly adjacent to an extremely large testing chamger, although there's nobody inside and the door is wide open. According to the data chart on the front, the room should be containing a research subject.
+				t ?flag scientistGone; There's a secondary chamber with [someone inside|labCumbreather], and a timer next to the door. It's only been running for a few minutes...
 				t There's a [scrap of paper|scarletLetter5] in the trashcan. Other than that the place is empty, so you can head back out into the [basement|scarletBasement].
 			`);
 			break;
 		}
 		case "scarletControl": {
-			writeEvent("scarletEndingStart");
+			writeScene("scarletEndingStart");
 			break;
 		}
 		case "scarletEastWing": {
@@ -1918,11 +1985,22 @@ function writeScene(scene) {
 				t ?flag eastHallwayGassed; !flag dogGassed; She's currently on her knees panting like the dog she's supposed to be. It seems like the gas made her a lot friendlier, and it made her dick a lot smaller. The device she was wearing has fallen off, although she doesn't seem hostile anymore. When she notices you she lays on her back as a sign of submission, as if to ask you to [pet her|dogGassed].
 				t ?flag eastHallwayGassed; ?flag dogGassed; She seems more content to rub herself on the carpet than pay attention to you.
 				t !item tape 3; secret[One of the lamps in this room is broken too|hiddenTape3], the same one actually, it's twisted in the same way.
+				t !flag scientist; There's another door here, with a lock crudely affixed to it that has a heart shape above it. There's the sound of moaning from here as well, but... You have a bad feeling about this room.
+				t ?flag scientist; !flag scientistEscape; !item heart key; There's another door here, with a lock crudely affixed to it that has a heart shape above it. This must be the room the scientist is trapped in! Without the key you can't enter though, the doors in this mansion are extremely sturdy.
+				t ?flag scientist; !flag scientistEscape; ?item heart key; There's another door here, with a lock crudely affixed to it that has a heart shape above it. This must be the room the scientist is trapped in! With your heart key in hand, you can [free her|scientistEscape]!
+				t ?flag scientistEscape; !flag scientistVanish; You need to get moving, quick! The scientist is still here, but you shouldn't have too long before she turns!
 				t !flag analInfected; Numerous doors line the hall. The first leads to the [east wing bedroom|scarletEastBedroom]. You can hear someone inside.
 				t ?flag analInfected; Numerous doors line the hall. The first leads to the east wing bedroom, currently occupied by an infected woman undergoing some kind of training.
 				t Next is a door marked as an [administrator bedroom|scarletEastGuest], and finally is a smaller door, leading to the [east wing bathroom|scarletEastBathroom].
 				t Finally you can head [back out into the foyer|scarletFoyer].
 			`);
+			if (checkFlag("scientistVanish") == true && checkFlag("scientistGone") != true ) {
+				addFlag("scientistGone");
+				sceneTransition("scientistVanish");
+			}
+			if (checkFlag("scientistEscape") == true && checkFlag("scientistVanish") != true) {
+				addFlag("scientistVanish");
+			}
 			break;
 		}
 		case "scarletEastBedroom": {
@@ -1954,72 +2032,7 @@ function writeScene(scene) {
 			//t Finally, there's a massive safe with no knob and no clear way to open it.
 			break;
 		}
-		//To remove or check
-		case "scarletMansion": {
-			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/scarletMansion.jpg)";
-			writeMed("scripts/gamefiles/characters/Scarlet Mansion.jpg");
-			writeText("Scenario Preview - Scarlet Mansion");
-			writeText("In a forest bordering a quarantined city there's a scarlet mansion not listed on any map.");
-			writeText("You, a brother searching for his missing sister, must explore the mansion and live to find out what bizarre experiments are underway.");
-			data.player.scenario = "Scarlet Mansion";
-			updateMenu();
-			writeTransition("scarletStart", "Begin");
-			writeTransition("scenarioSelect", "Go back");
-			break;
-		}
-		case "scarletStart": {
-			data.items = [];
-			data.quicksave = null;
-			data.player.flags = "";
-			sceneTransition('scarletIntro');
-			break;
-		}
-		case "scarletIntro": {
-			writeSpeech("Lansing", "images/Scarlet Mansion/lansing.jpg", "This is Sergeant Lansing of Charlie Team, two days into the search and no sign of the missing civilians. We had an ATV searching the forest near the border of Mongoose City, but have since lost contact with them.");
-			writeText("We found signs of Franklin, member of Bravo Team, in a barricaded section of the forest three hours ago. Scraps of cloth, ID tags, and several samples of a unknown white substance with narcotic effects. We hope to see the results soon, but communication with the police station we sent the samples to has suddenly stopped.");
-			writeText("The team and I have stopped at a mansion in the forest, not present on any maps. Local wildlife is highly agitated, so we'll be taking shelter here until backup arrives.");
-			writeText("That was the last anyone heard of Charlie Team, it was more than a week ago. Backup never came, orders were sent to all local divisions to abandon the city and set up security checkpoints as roads leading in. Defying their blockade, you set out through the barricade lines with an unregistered vehicle. Your sister, Kelsey Lansing would hate to hear you've come to rescue her, but what kind of big brother would you be if you just left her out here?");
-			writeText("You come to a stop just off the road. According to the mission logs, the mansion should close. All you need to do now is [make your way through the forest|scarletForest].");
-			break;
-		}
-		case "scarletForest": {
-			writeText("The air is cold and dry, it's late autumn so the forest's floor is covered in leaves. The trees are too dense for your car, so you decide to hoof it. Unable to sneak in any powerful weaponry, all you've got is a stun-gun, your wilderness exploration gear, and a radio.");
-			writeText("Along the path is a [broken-down shed|scarletShed]. It looks like at one point it was heavily barricaded, meant to keep something out.");
-			writeText("In the distance, you can make out the sounds of dogs howling and barking. It doesn't seem to be getting louder, so they aren't getting any closer. Aside from that, the forest is pretty calm. You should be fine to [continue on|scarletMansionEntrance].");
-			break;
-		}
-		case "scarletShed": {
-			writeText("You decide to check out the shed. The door and windows are boarded up, but the west-facing wall has been smashed through.");
-			writeText("You can see scraps of clothes and some kind of fluid stains the walls and floor. You stick your head in through the broken wall for a better look.");
-			writeText("A smell hits you right away, kind of like fish and sweat. It's pretty awful, something about it is making you feel woozy. It'd be best to [keep moving|scarletForest].");
-			break;
-		}
-		case "scarletMansionEntrance": {
-			writeText("Not having anything in particular to go on, you follow the sound of the dogs. Soon enough the trees give way to a massive clearing with a looming mansion in the center.");
-			writeText("It's got red walls and all of the windows are covered by curtains. One of the lights is on, but the window is blocked off by iron bars.");
-			writeText("A pair of [sturdy wooden doors|scarletEntry] on the front, the mansion is pretty intimidating. This is something straight out a horror flick. Still, if Kelsey is alive, she's probably inside. You should try the door.");
-			writeText("Near the entrance is a [massive kennel|scarletKennel], several dogs wildly barking and throwing themselves against the cage walls to get at you.");
-			break;
-		}
-		case "scarletKennel": {
-			if (data.player.beastDisabled == false) {
-				writeText("The walls are study enough, so you should be fine to check it out. You get closer to the cage.");
-				writeText("The dogs are absolutely rabid. They're all Dobermen, but something is off about them. They gnaw and claw at their containment, probably eager to tear you apart. There's the some fluid splattered on the inside of the cage. They're all wearing studded leather collars with big... Batteries? They're some kind of shock collars probably, way stronger than anything you could get over the counter.");
-				writeText("After a minute, it hits you as to what's different about them. They're bigger than their breed should be, more muscular, and they're all erect. They've each got a second collar on, fastened around their dicks each also with a smaller battery on them. They don't seem happy about it, you should [get moving|scarletMansionEntrance].");
-			}
-			else {
-				writeText("The walls are study enough, so you should be fine to check it out. You get closer to the cage.");
-				writeText("The dogs are absolutely rabid. They're all Dobermen, but they're all partially decomposed, like they're straight out of a zombie movie. They gnaw and claw at their containment, probably eager to tear you apart. There's the some fluid splattered on the inside of the cage. They're all wearing studded leather collars with big... Batteries? They're some kind of shock collars probably, way stronger than anything you could get over the counter.");
-				writeText("They don't seem happy about their containment, you should [get moving|scarletMansionEntrance].");
-			}
-			break;
-		}
-		case "scarletEntry": {
-			writeText("You approach the door, it has multiple scratch marks on the front but otherwise it's pristine. You give a knock, but there's no response. Testing your luck you turn the knob, and the door opens. It wasn't locked.");
-			writeText("As you walk in you hear something metal snap behind you, and the barking from the kennel gets louder and closer. Thinking quickly you shut the door and feel something slam against it. Looks like you'll need to find someone, preferably their owner, to deal with the hounds if you want to leave.");
-			writeText("The windows are all guarded from the inside by thick metal, so there's no need to worry about the dogs getting in from that end. You should be able to safely [explore the mansion foyer|scarletFoyer].");
-			break;
-		}
+		//Old Demo Stuff
 		case "scarletFoyer": {
 			writeText("You're in the mansion foyer.");
 			writeText("It's very dark in here, and flipping the lightswitch doesn't seem to do anything.");
@@ -2030,11 +2043,6 @@ function writeScene(scene) {
 			if (data.player.flags.includes('scarletChastityTorture') == true && data.player.flags.includes('scarletHoundsTorture') == true) {
 				writeSpecial("You've already found both of the events of this scenario, it is a demo after all. Thanks for playing!");
 			}
-			break;
-		}
-		case "scarletHoundsTorture": {
-			
-			data.player.flags += 'scarletHoundsTorture';
 			break;
 		}
 		case "scarletWestWing": {
@@ -2227,6 +2235,7 @@ function writeScene(scene) {
 			break;
 		}
 		case "loginCredentials": {
+			addItem("login credentials");
 			writeHTML(`
 				t You fish through the exposed labcoat for a moment searching for anything useful. No key or keycard, or anything like that, but you do find a small piece of paper with what appears to be a username and password written on it.
 				t You got the login credentials!
@@ -2297,41 +2306,45 @@ function writeScene(scene) {
 			break;
 		}
 		case "scientistIdentify": {
+			addFlag(scene);
 			writeHTML(`
 				scientist I'm a scientist here. Our research is... Complicated. What have you seen?<br>... Actually, it doesn't matter. I've seen enough myself. <br>Listen, if you have a shred of humanity left, you know you need to get me out of here. I feel like this scent is fucking up my brain already, but if I get infected...
-				t [Ask about who's keeping her here.|scientistQueen]
-				t [Ask about her mask.|scientistMask]
-				t [Ask how to help her.|scientistHelp]
+				t !flag scientistQueen; [Ask about who's keeping her here.|scientistQueen]
+				t !flag scientistMask; [Ask about her mask.|scientistMask]
+				t !flag scientistHelp; [Ask how to help her.|scientistHelp]
 				t [Leave|scientistLeave]
 			`);
 			break;
 		}
 		case "scientistQueen": {
+			addFlag(scene);
 			writeHTML(`
 				scientist 'She' is the queen. It's hard to explain. We test things here, on people. One of the things we tested was a strain meant to break fortified lines from the inside, someone who could control other... Infected.<br>It's not important, what is important is that we figure a way out of this mess before the queen wakes back up.
-				t [Ask about who she is.|scientistIdentify]
-				t [Ask about her mask.|scientistMask]
-				t [Ask how to help her.|scientistHelp]
+				t !flag scientistIdentify; [Ask about who she is.|scientistIdentify]
+				t !flag scientistMask; [Ask about her mask.|scientistMask]
+				t !flag scientistHelp; [Ask how to help her.|scientistHelp]
 				t [Leave|scientistLeave]
 			`);
 			break;
 		}
 		case "scientistMask": {
+			addFlag(scene);
 			writeHTML(`
 				scientist My mask? It's... Complicated. You've seen the women here, right? Well...<br>This mask is set up to turn me into one of them if I get out of line. The hose is hooked up to...<br>Well, it's fragrant, that's all I wanna say about it. I could take it off if I had the tools, so hurry and get me out of here.
-				t [Ask about who's keeping her here.|scientistQueen]
-				t [Ask about who she is.|scientistIdentify]
-				t [Ask how to help her.|scientistHelp]
+				t !flag scientistQueen; [Ask about who's keeping her here.|scientistQueen]
+				t !flag scientistIdentify; [Ask about who she is.|scientistIdentify]
+				t !flag scientistHelp; [Ask how to help her.|scientistHelp]
 				t [Leave|scientistLeave]
 			`);
 			break;
 		}
 		case "scientistHelp": {
+			addFlag(scene);
 			writeHTML(`
-				scientist I've got no idea where the key to the room is. I know we keep a lot of backups though, just in case we need to hide or lock doors behind us if there's a containment breach. The queen is smart though, smart enough to use the keys herself. Keep an eye out around the house.
-				t [Ask about who's keeping her here.|scientistQueen]
-				t [Ask about who she is.|scientistIdentify]
-				t [Ask about her mask.|scientistMask]
+				scientist I've got no idea where the key to the room is, it's got a heart symbol on it. I know we keep some backups though, just in case we need to hide or lock doors behind us if there's a containment breach. The queen is smart though, smart enough to use the keys herself. Keep an eye out around the house.<br>There's a... Guard, at the door. She's got a remote somewhere that'll take her out of comission.
+				t !flag scientistQueen; [Ask about who's keeping her here.|scientistQueen]
+				t !flag scientistIdentify; [Ask about who she is.|scientistIdentify]
+				t !flag scientistMask; [Ask about her mask.|scientistMask]
 				t [Leave|scientistLeave]
 			`);
 			break;
@@ -2440,17 +2453,18 @@ function writeScene(scene) {
 			`);
 		}
 		case "scientistEscape": {
+			writeEvent(scene);
+			addFlag(scene);
 			writeHTML(`
-				t You slide the key into the lock and turn. You hear a soft *click* before the knob quickly turns and the scientist opens the door to freedom.
-				sc Thank god, finally. Thanks, let's get out of here, we might not have very long.
+				t There's no time to waste, you need to find some way to help her, if you still can. You should [get moving|scarletEastWing].
 			`);
 			break;
 		}
 		case "scientistVanish": {
 			writeHTML(`
-				t As you step into the hallway you're greeted with the sight of...
-				t Nothing.
-				t Specifically no scientist. You can still see the damp spot on the carpet where you left her. Where could she have gone?
+				t As you step into the hallway you think you can hear the sound of a door closing, but you don't know from where.
+				t As you look around you realize that the scientist you saved is gone. You were only gone for a moment, and she was in no condition to move, so...
+				t You feel a cold chill on the back of your neck. You feel like you're being watched. It was no coincidence her mask activated right after you saved her, or that she vanished so quickly afterwards. You already have someone else to search for, it'd be dangerous to get too attached to finding the woman. You need to [get moving|scarletEastWing].
 			`);
 			break;
 		}
@@ -2575,6 +2589,36 @@ function writeScene(scene) {
 			`);
 			break;
 		}
+		case "scarletEndingStart": {
+			writeEvent(scene);
+			writeHTML(`
+				t What will it be? [Stay|scarletEndingGood], or [run|scarletEndingBad]?
+			`);
+			break;
+		}
+		case "scarletEndingGood": {
+			writeEvent(scene);
+			writeText("...");
+			writeText("You've successfully found the secret of the Scarlet Mansion, congratulations!");
+			writeText("Check out the 'Author Information' section in the scenario selection menu for a more detailed set of credits, or play the game again to try and find every nook and cranny still to be spelunked.");
+			writeTransition("scarletMansion", "Thanks for playing!");
+			break;
+		}
+		case "scarletEndingBad": {
+			writeEvent(scene);
+			writeText("...");
+			writeText("For better or worse, you've escaped the Scarlet Mansion! What the main character does from here on is an unknown fate.");
+			writeText("Check out the 'Author Information' section in the scenario selection menu for a more detailed set of credits, or play the game again to try and find every nook and cranny still to be spelunked.");
+			writeTransition("scarletMansion", "Thanks for playing!");
+			break;
+		}
+		case "labCumbreather": {
+			writeEvent(scene);
+			writeHTML(`
+				t [There's nothing you can do for her now|scarletSecurity].
+			`);
+		}
+		break;
 		//Typhoid Mary
 		case "typhoidMary": {
 			document.getElementById('wrapperBG').style.backgroundImage = "url(scripts/gamefiles/locations/typhoidMary.jpg)";
@@ -4196,6 +4240,8 @@ function writeEvent(n) {
 		}
 		case "scientistEscape": {
 			writeHTML(`
+				t You slide the key into the lock and turn. You hear a soft *click* before the knob quickly turns and the scientist opens the door to freedom.
+				sc Thank god, finally. Thanks, let's get out of here, we might not have very long.
 				t The two of you make your way down the hall before the scientist taps you on the shoulder.
 				sc Okay, so the dogs shouldn't be too big of a deal. There's no outrunning them, but they've been conditioned not to attack certain members of staff. More importantly is the mask, there's some power tools-
 				t You hear a small beep, which catches you off guard for a second as you look around to see where it came from.
@@ -4212,7 +4258,6 @@ function writeEvent(n) {
 				im
 				t Her eyes open slightly but there's no sign of intelligence behind them as her pussy sprays onto the carpet, her lungs and stomach being filled with sperm somehow causing an extremely powerful orgasm.
 				t You curse your luck and your helplessness as the seizing stops just as soon as it started, leaving nothing but the scent of her juices to fill the hall. Yet as you look closely you can see her chest continue to rise and fall. Could she still be breathing somehow?
-				t There's no time to waste, you need to find some way to help her, if you still can.
 			`);
 			break;
 		}
@@ -4530,37 +4575,37 @@ function writeEvent(n) {
 				sc The process triggers the usual endorphin rush of an orgasm the entire time while also heavily stimulating the urethral nerves. <br>While unquestionably a failure in terms of effectiveness, the continued testing of this strain should be useful for both education and entertainment purposes.
 			`);
 			if (data.player.currentScene != "gallery") {
-				writeTransition('scarletTheater', "Finish");
+				writeText("[Finish|scarletTheater]");
 			}
 			break;
 		}
 		case "tapeLicker1": {
 			writeHTML(`
 				t Now beginning research log X-341 L-13 "LICKER STRAIN APRIL", authorized by researcher SMITH.
-				smith This marks the thirteenth test of the potential Licker strain, an oral-focused type of infected. To recap this infection type uses their elongated tongue as an infection vector.
+				t <i>"This marks the thirteenth test of the potential Licker strain, an oral-focused type of infected. To recap this infection type uses their elongated tongue as an infection vector.
 				im tapeLicker11.gif
-				smith New to this strain-mod is a predisposition towards oral sex and analingus, as mouth-to-mouth infection rates were suboptimal and took time. Previous victims would need to essentially lock tongues with the Licker for upwards of half and hour, and while euphoria means they rarely escaped on their own, the potential to rescue was too high.
+				t <i>New to this strain-mod is a predisposition towards oral sex and analingus, as mouth-to-mouth infection rates were suboptimal and took time. Previous victims would need to essentially lock tongues with the Licker for upwards of half and hour, and while euphoria means they rarely escaped on their own, the potential to rescue was too high.
 				im tapeLicker12.gif
-				smith Though some have criticized it as being redundant when released alongside Siren strains, it is worth noting that the Licker has the potential to infect women as well. Any ability to draw potential human survivors out of hiding is valuable, and appealing to major fetishes is a viable pathway.<br>Still, the issue of infected fucking each other rather than the uninfected is a difficult problem to manage. I've yet to find a way to hold back the Licker from assaulting other strains. That's a priority for the fourteenth.
+				t <i>Though some have criticized it as being redundant when released alongside Siren strains, it is worth noting that the Licker has the potential to infect women as well. Any ability to draw potential human survivors out of hiding is valuable, and appealing to major fetishes is a viable pathway.<br>Still, the issue of infected fucking each other rather than the uninfected is a difficult problem to manage. I've yet to find a way to hold back the Licker from assaulting other strains. That's a priority for the fourteenth."
 			`);
 			if (data.player.currentScene != "gallery") {
-				writeTransition('scarletTheater', "Finish");
+				writeText("[Finish|scarletTheater]");
 			}
 			break;
 		}
 		case "tapeLicker2": {
 			writeHTML(`
 				t Now beginning research log X-342 L-14 "FUCKER GETS WHAT SHE DESERVES", authorized by researcher SMITH.
-				smith Please, let me out! For the love of god, stop! I wasn't one of the staff on your project!
+				t <i>"Please, let me out! For the love of god, stop! I wasn't one of the staff on your project!"
 				t A naked researcher slams on the sealed door of the chamber, occasionally, screaming pleas to the camera, until a door in the back of the chamber hisses and opens. The researcher cowers when she notices this.
-				smith No, nonono please, I have a family!
-				??? You shouldn't lie about that, Smith. I'm looking at your file now, you have quite the history here.
+				t <i>"No, nonono please, I have a family!"
+				t <i><b>"You shouldn't lie about that, Smith. I'm looking at your file now, you have quite the history here."</b>
 				t From the open door comes the licker from the previous test, her elongated tongue lolling out of her mouth at the sight of the researcher's body.
-				smith It was just work! Please, I know you can stop her, I-<br>Mmmppph-!
+				t <i>"It was just work! Please, I know you can stop her, I-<br>Mmmppph-!"
 				im tapeLicker21.gif
 				t The researcher struggles as the infected pushes her long tongue down the researcher's throat, her hands flailing and slapping at the infected's body until they grow limp.
 				t The camera's view shifts to show the small bulge in the researcher's neck travelling downwards as her eyes roll back, a small puddle forming between her legs.
-				??? Now, the other side.
+				t <i><b>"Now, the other side.</b>
 				t The infected hesitates, before she slowly draws back her tongue from the researcher's mouth with a lengthy wet schlorp. Long strings of saliva splatter across the researcher's chest as she looks dazed to the point of looking drugged. She's easily turned over so that the infected woman has access to her rear.
 				im tapeLicker22.gif
 				t The researcher coos, her mind addled by the chemicals coating the licker's tongue as it pushes past her asshole to infect her from the other end.
@@ -4571,46 +4616,46 @@ function writeEvent(n) {
 				t Both women are heavily infected now, the recording goes on for another few minutes  wherein the two infected share a perverted kiss, their tongues able to reach so deep a bulge can be seen in their stomachs.
 			`);
 			if (data.player.currentScene != "gallery") {
-				writeTransition('scarletTheater', "Finish");
+				writeText("[Finish|scarletTheater]");
 			}
 			break;
 		}
 		case "tapeHound": {
 			writeHTML(`
-				? Wake up, Jameson. It's time to play a game.
+				t <i><b>"Wake up, Jameson. It's time to play a game."</b>
 				t A dark room is illuminated and a nude man jolts awake in surprise.
 				t The only other thing in the room is a large dildo in the shape of a canine penis, it's length glistening with an unknown fluid lubricant.
-				? It's very simple. You fuck yourself on that, or I open the doors to the kennels.
+				t <i><b>"It's very simple. You fuck yourself on that, or I open the doors to the kennels."</b>
 				t There's a buzzing sound before the researcher yelps as the lights illuminate a half dozen canine forms in the adjacent room, held back by soundproofed glass.
 				t After a short moment of hesitation the researcher complies. His body is smooth and hairless, it isn't clear what happened before the recording began.
-				? That's infected precum. Mine, to be precise. It should make this game a little easier for you, but I hope you have some strong willpower.
+				t <i><b>"That's infected precum. Mine, to be precise. It should make this game a little easier for you, but I hope you have some strong willpower."</b>
 				t His hands shaking the researcher takes a breath to steel himself.
 				im
 				t Despite it's size the researcher doesn't seem to struggle, suggesting this isn't the first game the faceless voice has played with Jameson.
 				t With some effort the researcher grits his teeth and pushes the fat knot past his rim, his dick flaccid, but still visibly leaking at the insertion.
 				t Suddenly a look of panic overtakes the researcher's face. It's clear now that his hair seems a little longer than it was at the start of the recording, and his chest looks puffier.
-				sp ?; Oh? Looks like you've realized it. This time the knot is filled with cum, and you're squeezing it out inside your ass!<br>Better hurry and pull it out!
+				t <i><b>"Oh? Looks like you've realized it. This time the knot is filled with cum, and you're squeezing it out inside your ass!<br>Better hurry and pull it out!"</b>
 				t Nearly hyperventilating the researcher struggles to pull the sex toy from his ass, his grunts growing higher in pitch as her only succeeds in emptying the sperm-filled knot inside of him until...
 				im
 				t With an audible pop the knot comes free, but the researcher's body has already passed the point of no return. With a leaking cock the fresh infected pulls and pushes the toy anew, not a trace of human intelligence in her eyes.
 				t The recording ends here.
 			`);
 			if (data.player.currentScene != "gallery") {
-				writeTransition('scarletTheater', "Finish");
+				writeText("[Finish|scarletTheater]");
 			}
 			break;
 		}
 		case "tapeSubmission": {
 			writeHTML(`
 				t Now beginning research log Y-25 "Submissive State", authorized by researcher JONES.
-				jones Although the situations where this can arise are rare on the field, if an infected is sexually dominated for an extended period of time, they experience bodily and behavioral changes to fit their position.
+				t <i>"Although the situations where this can arise are rare on the field, if an infected is sexually dominated for an extended period of time, they experience bodily and behavioral changes to fit their position.
 				im tapeSubmission1.gif
-				jones These changes can affect factors such as penis length, muscle mass, pleasure sensitivity, and spermcount. Submissive infected can even be trained for mundane tasks by sexually dominant humans or accept things like chastity cages, even if they should be strong enough to break through the cage themselves.
+				t <i>These changes can affect factors such as penis length, muscle mass, pleasure sensitivity, and spermcount. Submissive infected can even be trained for mundane tasks by sexually dominant humans or accept things like chastity cages, even if they should be strong enough to break through the cage themselves.
 				im tapeSubmission2.gif
-				jones Originally, this was thought to be exclusive to hordes, but ever since the Alpha strain breakthrough further testing has found almost all infected can be dominated in some way.<br>Human domination is quite risky though. The effects of infected fluid by taste or smell, combined with heir heightened senses to notice even the smallest moment of weakness, means that human dominants do not tend to stay human for long.
+				t <i>Originally, this was thought to be exclusive to hordes, but ever since the Alpha strain breakthrough further testing has found almost all infected can be dominated in some way.<br>Human domination is quite risky though. The effects of infected fluid by taste or smell, combined with heir heightened senses to notice even the smallest moment of weakness, means that human dominants do not tend to stay human for long."
 			`);
 			if (data.player.currentScene != "gallery") {
-				writeTransition('scarletTheater', "Finish");
+				writeText("[Finish|scarletTheater]");
 			}
 			break;
 		}
@@ -4624,36 +4669,33 @@ function writeEvent(n) {
 				im vaccineTest3.gif
 				t And the video cuts another time, to her getting dressed and there's clearly no cock between her legs. She's intelligent enough to be listing off symptoms such as disorientation, extreme hunger and thirst, and phantom sensations. She's clearly distracted, and quietly asks when the next test will be before the video loops.
 			`);
-			if (data.player.currentScene != "gallery") {
-				writeTransition('scarletTheater', "Finish");
-			}
 			break;
 		}
 		case "tapeChastity": {
 			writeHTML(`
-			t A major weakness of version 3 of the strain is that if an infected finds themselves unable to achieve release, they experience bodily changes that reduce their infective potency.
-			im tapeChastity1.gif
-			t Freedom after a single day leaves the infected in a high state of arousal, essentially putting them on a hair trigger. This is undesirable for our purposes, but temporary.
-			im tapeChastity2.gif
-			t After that point the changes are permanent. Genetalia shrinkage to fit the size of their cage and erectile dysfunction. While their sexual fluids are still infectious (multiple tests confirm this), they are unlikely to be able to overpower victims.
-			t It is worth noting that sensitivity only rises, but aside from propaganda or entertainment purposes this is not relevant to the goal of global infection.
-			im tapeChastity3.gif
-			t With the improvements made in the upcoming strain version 4 these weaknesses are not present. Extended chastity will lead to a pent-up state until the infected escapes containment.
-			t While the main branches will be moving on to the next generation with the strain version 4, our work here is still essential to the global effort. Even though parasites are no longer frequently used as common infection vectors, continued research led to the Mind Worm's creation.
-			t Likewise, even though we are behind the main branch here, exploration of the version 3 strain and it's weaknesses could lead to a major breakthrough. Those found wasting resources because we are 'behind the times' or 'working with an obsolete strain' will be suitably punished. Any strain could lead to an Alpha with enough research. With time and patience even our research site could birth a god.
-			t In short, stop putting chastity cages on our infected test subjects because they look 'cute'. There will be no further warning on the subject.
+				t <i>"A major weakness of version 3 of the strain is that if an infected finds themselves unable to achieve release, they experience bodily changes that reduce their infective potency.
+				im tapeChastity1.gif
+				t <i>Freedom after a single day leaves the infected in a high state of arousal, essentially putting them on a hair trigger. This is undesirable for our purposes, but temporary.
+				im tapeChastity2.gif
+				t <i>After that point the changes are permanent. Genetalia shrinkage to fit the size of their cage and erectile dysfunction. While their sexual fluids are still infectious (multiple tests confirm this), they are unlikely to be able to overpower victims.
+				t <i>It is worth noting that sensitivity only rises, but aside from propaganda or entertainment purposes this is not relevant to the goal of global infection.
+				im tapeChastity3.gif
+				t <i>With the improvements made in the upcoming strain version 4 these weaknesses are not present. Extended chastity will lead to a pent-up state until the infected escapes containment.
+				t <i>While the main branches will be moving on to the next generation with the strain version 4, our work here is still essential to the global effort. Even though parasites are no longer frequently used as common infection vectors, continued research led to the Mind Worm's creation.
+				t <i>Likewise, even though we are behind the main branch here, exploration of the version 3 strain and it's weaknesses could lead to a major breakthrough. Those found wasting resources because we are 'behind the times' or 'working with an obsolete strain' will be suitably punished. Any strain could lead to an Alpha with enough research. With time and patience even our research site could birth a god.
+				t <i>In short, stop putting chastity cages on our infected test subjects because they look 'cute'. There will be no further warning on the subject."
 			`);
 			if (data.player.currentScene != "gallery") {
-				writeTransition('scarletTheater', "Finish");
+				writeText("[Finish|scarletTheater]");
 			}
 			break;
 		}
 		case "labAnal": {
 			writeHTML(`
 				im labAnal.gif
-				t "Bounce bounce bounce
-				t I swear she's a lot happier like this. I wonder if she remembers selling out her comrades. She probably doesn't care.
-				t It's getting hard to focus on anything lately, except for when I'm thinking about how to train all my playthings here. Whenever I'm bored it feels like my conciousness slips a little further away. I should turn things up a notch."
+				t <i><b>"Bounce bounce bounce
+				t <i><b>I swear she's a lot happier like this. I wonder if she remembers selling out her comrades. She probably doesn't care.
+				t <i><b>It's getting hard to focus on anything lately, except for when I'm thinking about how to train all my playthings here. Whenever I'm bored it feels like my conciousness slips a little further away. I should turn things up a notch."
 			`);
 			if (data.player.currentScene != "gallery") {
 				writeTransition('scarletChambers', "Finish");
@@ -4663,8 +4705,8 @@ function writeEvent(n) {
 		case "labUrethra": {
 			writeHTML(`
 				im labUrethra.gif
-				t "I notice I've been giving out a lot of chastity cages lately, a sign that these girls are misbehaving more often. She will kept caged up to keep her desperate and horny at all times.
-				t Luckily for her I gave her a special toy to ensure she can achieve relief even while locked up. It took quite a bit of training to give her a masochistic streak large enough though."
+				t <i><b>"I notice I've been giving out a lot of chastity cages lately, a sign that these girls are misbehaving more often. She will kept caged up to keep her desperate and horny at all times.
+				t <i><b>Luckily for her I gave her a special toy to ensure she can achieve relief even while locked up. It took quite a bit of training to give her a masochistic streak large enough though."
 			`);
 			if (data.player.currentScene != "gallery") {
 				writeTransition('scarletChambers', "Finish");
@@ -4674,9 +4716,9 @@ function writeEvent(n) {
 		case "labSissy": {
 			writeHTML(`
 				im labSissy.gif
-				t "I really didn't get this place, or the 'people' here. Honestly, just forget the dick growth. Just make it some kind of sex-frenzy std and a lot of people would sneak it through containment themselves.
-				t Maybe this is my new dick talking, but I think I understand now. Taking the monsters who did this to me and my mind, fucking them so hard in the ass their brains and common sense melt, slapping cages on them so they're perfect for my cock.
-				t I get it."
+				t <i><b>"I really didn't get this place, or the 'people' here. Honestly, just forget the dick growth. Just make it some kind of sex-frenzy std and a lot of people would sneak it through containment themselves.
+				t <i><b>Maybe this is my new dick talking, but I think I understand now. Taking the monsters who did this to me and my mind, fucking them so hard in the ass their brains and common sense melt, slapping cages on them so they're perfect for my cock.
+				t <i><b>I get it."
 			`);
 			if (data.player.currentScene != "gallery") {
 				writeTransition('scarletChambers', "Finish");
@@ -4686,15 +4728,15 @@ function writeEvent(n) {
 		case "labOral": {
 			writeHTML(`
 				im labOral.gif
-				t "Felt so in control setting it all up
-				t Watching her choose between dildo and air
-				t Her eyes when the toy spurted my cum into her mouth
-				t The way she kept suckling for more
-				t But now its hard to think
-				t Have to go farther
-				t Cant lose myself here yet
-				t Have to let them know im okay
-				t And happy
+				t <i><b>"Felt so in control setting it all up
+				t <i><b>Watching her choose between dildo and air
+				t <i><b>Her eyes when the toy spurted my cum into her mouth
+				t <i><b>The way she kept suckling for more
+				t <i><b>But now its hard to think
+				t <i><b>Have to go farther
+				t <i><b>Cant lose myself here yet
+				t <i><b>Have to let them know im okay
+				t <i><b>And happy
 			`);
 			if (data.player.currentScene != "gallery") {
 				writeTransition('scarletChambers', "Finish");
@@ -4703,8 +4745,8 @@ function writeEvent(n) {
 		}
 		case "labCumbreather": {
 			writeHTML(`
-				t Her eyes barely open, she doesn't seem to recognize you. Or anything at all for that matter.
-				t Her mouth and nose are connected to a long tube extending beyond where you can see, giving her a constant feed of sticky white goo.
+				t Inside is the scientist you met earlier, floating naked in a tank of an unkown liquid. Her eyes are barely open, she doesn't seem to recognize you. Or anything at all for that matter.
+				t Her mouth and nose are connected to a long tube extending beyond where you can see, giving her a constant feed of white goo.
 				t The flow is steady, but slow. Slow enough that you can see she's actively moving her tongue and breathing deeply to draw the sperm in faster. How on earth is her body still functioning? What is this doing to her brain? Are you witnessing a new evolution to whatever's going on here?
 			`);
 			break;
@@ -4721,7 +4763,6 @@ function writeEvent(n) {
 				t !fetish ws; As they finally retract their tongues and wait dutifully at their master's side, Lansley grunts and a thick glob of precum, more than a normal man's load leaks from her cock. The two infected fight over it, hungrily licking it up and battling with their tongues passing it between them.
 				t This... This monster isn't your sister. She can't be. Even though there's a glimmer of sadness, regret in her eyes as the two of you stare at each other, every other part of her body is...
 				t Every instinct inside you is telling you to run. She takes a step forwards, arms outstretched as if asking you to come closer.
-				t What will it be? event[Stay|scarletEndingGood], or event[run|scarletEndingBad]?
 			`);
 			break;
 		}

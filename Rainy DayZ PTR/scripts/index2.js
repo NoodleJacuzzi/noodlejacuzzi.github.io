@@ -86,6 +86,28 @@ var galleryArray = [
 	//index: 'compoundHounds', name: "", scenario: "Spread Island",	hint: "Hide right behind a hound's cage in the compound."},
 	{index: 'compoundCage', name: "Uncaged", scenario: "Spread Island",	hint: "Rescue your chastity-caged wife from the compound."},
 	{index: 'compoundFailure', name: "Failure to Escape", scenario: "Spread Island",	hint: "Don't set a timer on either the kennels or the gas room at the computer console before escaping the compound."},
+	//scarlet mansion's scenes
+	{index: 'scarletLetterFull', name: "The Scarlet Letter", scenario: "Scarlet Mansion",	hint: "Find all the pieces of the torn letter strewn throughout the mansion."},
+	{index: 'diary', name: "Diary of the Broken", scenario: "Scarlet Mansion",	hint: "Find the diary log in the mansion's security room."},
+	{index: 'chastityInfected', name: "Chastity Punishment", scenario: "Scarlet Mansion",	hint: "In the west wing of the mansion find the infected in chastity"},
+	{index: 'gaggedSiren', name: "Gag Punishment", scenario: "Scarlet Mansion",	hint: "In the west wing of the mansion find the gagged siren"},
+	{index: 'tapeVaccine', name: "Vaccine Trials", scenario: "Scarlet Mansion",	hint: "In the west wing of the mansion view the computer playing on loop"},
+	{index: 'analInfected', name: "Anal Punishment", scenario: "Scarlet Mansion",	hint: "In the east wing of the mansion find the woman being conditioned in the bedroom"},
+	{index: 'tubInfected', name: "Submerged Punishment", scenario: "Scarlet Mansion",	hint: "In the east wing of the mansion find the infected in the bathtub"},
+	{index: 'scientistEscape', name: "Failed Escape", scenario: "Scarlet Mansion",	hint: "In the east wing of the mansion, 'save' the scientist using the heart key"},
+	{index: 'garageHounds', name: "Hound Punishment", scenario: "Scarlet Mansion",	hint: "In the garage in the main hall"},
+	{index: 'cumtapInfected', name: "Milking Punishment", scenario: "Scarlet Mansion",	hint: "In the mansion's dining room in the main hall, turn the knob"},
+	{index: 'cumtapInfectedRepeat', name: "More Milking Punishment", scenario: "Scarlet Mansion",	hint: "In the mansion's dining room in the main hall, turn the knob again"},
+	{index: 'urinalInfected', name: "Urinal Punishment", scenario: "Scarlet Mansion",	hint: "In the bathroom in the main hall"},
+	{index: 'dogShock2', name: "Shock Punishment", scenario: "Scarlet Mansion",	hint: "Find the remote in the theater, then use it on the infected in the east wing"},
+	{index: 'dogShock3', name: "More Shock Punishment", scenario: "Scarlet Mansion",	hint: "Use the remote on the woman another time"},
+	{index: 'tapeLicker1', name: "Licker Study Tape", scenario: "Scarlet Mansion",	hint: "An unhidden tape found in the east wing administrator bedroom"},
+	{index: 'tapeHound', name: "Knot Revenge Tape", scenario: "Scarlet Mansion",	hint: "An unhidden tape found in the theater room"},
+	{index: 'tapeCongealant', name: "Congealant Tape", scenario: "Scarlet Mansion",	hint: "One of the secret tapes hidden in the mansion"},
+	{index: 'tapeLicker2', name: "Licker Revenge Tape", scenario: "Scarlet Mansion",	hint: "One of the secret tapes hidden in the mansion"},
+	{index: 'tapeSubmission', name: "Submission Tape", scenario: "Scarlet Mansion",	hint: "One of the secret tapes hidden in the mansion"},
+	{index: 'tapeChastity', name: "Chastity Tape", scenario: "Scarlet Mansion",	hint: "One of the secret tapes hidden in the mansion"},
+	{index: 'scarletEndingGood', name: "Final Fate - Mansion Keeper", scenario: "Scarlet Mansion",	hint: "Make your way to the secret basement lab by interacting with the upraised brick in the storage closet, then don't run away"},
 ];
 
 //Startup & Systems config
