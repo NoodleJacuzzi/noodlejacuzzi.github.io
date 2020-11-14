@@ -5,6 +5,7 @@ var imagesDisabled = false;
 var footerVisibility = "";
 var footerHeight = "";	
 var footerOverflow = "";	
+var definitionArray = [];
 
 var data = {
 	player: {
@@ -85,6 +86,28 @@ var galleryArray = [
 	//index: 'compoundHounds', name: "", scenario: "Spread Island",	hint: "Hide right behind a hound's cage in the compound."},
 	{index: 'compoundCage', name: "Uncaged", scenario: "Spread Island",	hint: "Rescue your chastity-caged wife from the compound."},
 	{index: 'compoundFailure', name: "Failure to Escape", scenario: "Spread Island",	hint: "Don't set a timer on either the kennels or the gas room at the computer console before escaping the compound."},
+	//scarlet mansion's scenes
+	{index: 'scarletLetterFull', name: "The Scarlet Letter", scenario: "Scarlet Mansion",	hint: "Find all the pieces of the torn letter strewn throughout the mansion."},
+	{index: 'diary', name: "Diary of the Broken", scenario: "Scarlet Mansion",	hint: "Find the diary log in the mansion's security room."},
+	{index: 'chastityInfected', name: "Chastity Punishment", scenario: "Scarlet Mansion",	hint: "In the west wing of the mansion find the infected in chastity"},
+	{index: 'gaggedSiren', name: "Gag Punishment", scenario: "Scarlet Mansion",	hint: "In the west wing of the mansion find the gagged siren"},
+	{index: 'tapeVaccine', name: "Vaccine Trials", scenario: "Scarlet Mansion",	hint: "In the west wing of the mansion view the computer playing on loop"},
+	{index: 'analInfected', name: "Anal Punishment", scenario: "Scarlet Mansion",	hint: "In the east wing of the mansion find the woman being conditioned in the bedroom"},
+	{index: 'tubInfected', name: "Submerged Punishment", scenario: "Scarlet Mansion",	hint: "In the east wing of the mansion find the infected in the bathtub"},
+	{index: 'scientistEscape', name: "Failed Escape", scenario: "Scarlet Mansion",	hint: "In the east wing of the mansion, 'save' the scientist using the heart key"},
+	{index: 'garageHounds', name: "Hound Punishment", scenario: "Scarlet Mansion",	hint: "In the garage in the main hall"},
+	{index: 'cumtapInfected', name: "Milking Punishment", scenario: "Scarlet Mansion",	hint: "In the mansion's dining room in the main hall, turn the knob"},
+	{index: 'cumtapInfectedRepeat', name: "More Milking Punishment", scenario: "Scarlet Mansion",	hint: "In the mansion's dining room in the main hall, turn the knob again"},
+	{index: 'urinalInfected', name: "Urinal Punishment", scenario: "Scarlet Mansion",	hint: "In the bathroom in the main hall"},
+	{index: 'dogShock2', name: "Shock Punishment", scenario: "Scarlet Mansion",	hint: "Find the remote in the theater, then use it on the infected in the east wing"},
+	{index: 'dogShock3', name: "More Shock Punishment", scenario: "Scarlet Mansion",	hint: "Use the remote on the woman another time"},
+	{index: 'tapeLicker1', name: "Licker Study Tape", scenario: "Scarlet Mansion",	hint: "An unhidden tape found in the east wing administrator bedroom"},
+	{index: 'tapeHound', name: "Knot Revenge Tape", scenario: "Scarlet Mansion",	hint: "An unhidden tape found in the theater room"},
+	{index: 'tapeCongealant', name: "Congealant Tape", scenario: "Scarlet Mansion",	hint: "One of the secret tapes hidden in the mansion"},
+	{index: 'tapeLicker2', name: "Licker Revenge Tape", scenario: "Scarlet Mansion",	hint: "One of the secret tapes hidden in the mansion"},
+	{index: 'tapeSubmission', name: "Submission Tape", scenario: "Scarlet Mansion",	hint: "One of the secret tapes hidden in the mansion"},
+	{index: 'tapeChastity', name: "Chastity Tape", scenario: "Scarlet Mansion",	hint: "One of the secret tapes hidden in the mansion"},
+	{index: 'scarletEndingGood', name: "Final Fate - Mansion Keeper", scenario: "Scarlet Mansion",	hint: "Make your way to the secret basement lab by interacting with the upraised brick in the storage closet, then don't run away"},
 ];
 
 //Startup & Systems config
@@ -230,6 +253,12 @@ function replaceCodenames(text) {
 					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
 					text = text.replace("drop["+locationFull+"]", "<span class='blueText' onclick='dropItem(`"+locationTarget+"`)'>"+locationName+"</span>")
 				}
+				if (text.includes('secret[') == true) {
+					var locationTarget = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
+					var locationName = text.substring(text.lastIndexOf("|") + 1, text.lastIndexOf("]"));
+					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+					text = text.replace("secret["+locationFull+"]", "<span onclick='sceneTransition(`"+locationTarget+"`)'>"+locationName+"</span>")
+				}
 				if (text.includes('[') == true) {
 					var locationTarget = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
 					var locationName = text.substring(text.lastIndexOf("|") + 1, text.lastIndexOf("]"));
@@ -264,6 +293,12 @@ function replaceCodenames(text) {
 					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
 					console.log(locationFull);
 					text = text.replace("drop["+locationFull+"]", "<span class='blueText' onclick='dropItem(`"+locationTarget+"`)'>"+locationName+"</span>")
+				}
+				if (text.includes('secret[') == true) {
+					var locationName = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
+					var locationTarget = text.substring(text.lastIndexOf("|") + 1, text.lastIndexOf("]"));
+					var locationFull = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("]"));
+					text = text.replace("secret["+locationFull+"]", "<span onclick='sceneTransition(`"+locationTarget+"`)'>"+locationName+"</span>")
 				}
 				if (text.includes('[') == true) {
 					var locationName = text.substring(text.lastIndexOf("[") + 1, text.lastIndexOf("|"));
@@ -643,8 +678,34 @@ function writeHTML(text) {
 		if (lines[lineCounter] != "" && checkRequirements(lines[lineCounter]) == true) {
 			//Grab the first word of the line to use as the command
 			var command = lines[lineCounter].replace(/ .*/,'');
+			for (i = 0; i < definitionArray.length; i++) {
+				if (command.toLowerCase() == definitionArray[i].shortcut) {
+					lines[lineCounter] = lines[lineCounter].replace(definitionArray[i].shortcut, definitionArray[i].result);
+				}
+			}
+			var command = lines[lineCounter].replace(/ .*/,'');
 			//Depending on which command, execute different code. Convert the command to lowercase as well in case we used Sp instead of sp, as js is case-sensitive.
 			switch (command.toLowerCase()) {
+				case "define": {
+					//Remove the command from the line we actually want to print.
+					var definitionShortcut = lines[lineCounter].split(`define `).pop().split(` = `)[0];
+					lines[lineCounter] = lines[lineCounter].replace(`define `+definitionShortcut+` = `, ``);
+					var definitionResult = lines[lineCounter];
+					var overWrite = false;
+					for (i = 0; i < definitionArray.length; i++) {
+						if (definitionArray[i].shortcut == definitionShortcut) {
+							overWrite = true;
+							definitionArray[i].shortcut = definitionShortcut;
+							definitionArray[i].result = definitionResult;
+						}
+					}
+					if (overWrite == false) {
+						var definition = {shortcut: definitionShortcut, result: definitionResult};
+						definitionArray.push(definition);
+					}
+					console.log("Now writing definition statement, using shortcut "+definitionShortcut+" for result "+definitionResult+", overwrite value is "+overWrite);
+					break;
+				}
 				//If the command is "t"
 				case "t": {
 					//Remove the command from the line we actually want to print.
@@ -742,6 +803,36 @@ function checkRequirements(string) {
 		}
 		string = string.replace(`?fetish `+check+`;`, ``);
 	}
+	while (string.includes("!fetish ") == true) {
+		var check = string.split(`!fetish `).pop().split(`;`)[0];
+		switch(check) {
+			case "beast": {
+				if (data.player.beastDisabled == false) {
+					finalResult = false;
+				}
+				break;
+			}
+			case "rim": {
+				if (data.player.rimDisabled == false) {
+					finalResult = false;
+				}
+				break;
+			}
+			case "worm": {
+				if (data.player.wormDisabled == false) {
+					finalResult = false;
+				}
+				break;
+			}
+			case "ws": {
+				if (data.player.wsDisabled == false) {
+					finalResult = false;
+				}
+				break;
+			}
+		}
+		string = string.replace(`!fetish `+check+`;`, ``);
+	}
 	while (string.includes("?flag ") == true) {
 		var check = string.split(`?flag `).pop().split(`;`)[0];
 		if (data.player.flags.includes(check) != true) {
@@ -783,6 +874,10 @@ function cullRequirements(string) {
 	while (string.includes("?fetish ") == true) {
 		var check = string.split(`?fetish `).pop().split(`;`)[0];
 		string = string.replace(`?fetish `+check+`;`, ``);
+	}
+	while (string.includes("!fetish ") == true) {
+		var check = string.split(`!fetish `).pop().split(`;`)[0];
+		string = string.replace(`!fetish `+check+`;`, ``);
 	}
 	while (string.includes("?flag ") == true) {
 		var check = string.split(`?flag `).pop().split(`;`)[0];
@@ -949,6 +1044,7 @@ function generateGalleryNav() {
 	writeFunction("generateGalleryPage('Rainy DayZ')", "Rainy DayZ");
 	writeFunction("generateGalleryPage('The Facility')", "The Facility");
 	writeFunction("generateGalleryPage('Spread Island')", "Spread Island");
+	writeFunction("generateGalleryPage('Scarlet Mansion')", "Scarlet Mansion");
 	data.player.scenario = "";
 }
 
