@@ -4506,7 +4506,6 @@ function writeEvent(n) {
 			writeHTML(`
 				t You point the remote at the guard dog and push the largest button.
 				t Her growling stops and she lets out something between a yelp and a squeal, her body suddenly shivering. She leans back to stand on the balls of her feet, as if repeating a practiced pose, some kind of show of submission
-				im dogShock1.gif
 			`);
 			break;
 		}
