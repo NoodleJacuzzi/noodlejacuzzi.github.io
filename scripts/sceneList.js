@@ -101,6 +101,7 @@ function writeScene(scene) {
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ%20Mobile.html">Play the mobile version</a>
 				<a class="choiceGridText" href="https://tfgames.site/index.php?module=viewgame&id=2039">View the TFGame entry</a>
 				<a class="choiceGridText" href="https://f95zone.to/threads/rainy-dayz-v3-0-noodlejacuzzi.42457/">View the F95Zone thread</a>
+				<a class="choiceGridText" href="https://www.futanaripalace.com/showthread.php?67194-Rainy-DayZ-v3-5-HTML">View the Futanari Palace thread</a>
 				<a class="choiceGridText" href="https://www.patreon.com/posts/43881744">Download the game</a>
 				<a class="choiceGridText" href="http://freesuggestionbox.com/pub/atouyqk">Anonymous Suggestion Box</a>
 				
