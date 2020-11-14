@@ -1,4 +1,7 @@
 function writeScene(scene) {
+	writeHTML(`
+		define scientist = sp Scientist; im none;
+	`);
 	switch(scene) {
 		case "start": {
 			document.getElementById('output').innerHTML += `
@@ -4241,12 +4244,12 @@ function writeEvent(n) {
 		case "scientistEscape": {
 			writeHTML(`
 				t You slide the key into the lock and turn. You hear a soft *click* before the knob quickly turns and the scientist opens the door to freedom.
-				sc Thank god, finally. Thanks, let's get out of here, we might not have very long.
+				scientist Thank god, finally. Thanks, let's get out of here, we might not have very long.
 				t The two of you make your way down the hall before the scientist taps you on the shoulder.
-				sc Okay, so the dogs shouldn't be too big of a deal. There's no outrunning them, but they've been conditioned not to attack certain members of staff. More importantly is the mask, there's some power tools-
+				scientist Okay, so the dogs shouldn't be too big of a deal. There's no outrunning them, but they've been conditioned not to attack certain members of staff. More importantly is the mask, there's some power tools-
 				t You hear a small beep, which catches you off guard for a second as you look around to see where it came from.
 				t You turn back to see the scientist with a look of terror in her eyes, desperately clawing at her mask as the whir of machinery becomes audible.
-				sc No no no, help! Please! Get it off!
+				scientist No no no, help! Please! Get it off!
 				t A thick white fluid travels up the tubing of her mask, her hyperventilating means she's probably getting a massive overload of the scent, strong enough to make her eyes water. You try to help pull at the mask as she falls to her knees, and you can hear that the carpet beneath her is rapidly growing wetter.
 				t She takes a deep breath to try and hold it, one last desperate act to delay the inevitable. She can't hold it for long, coughing and sputtering as the white fluid is forced into her.
 				t You keep pulling without any luck as her clawing grows weaker and weaker. Her terrified eyes give way to a drug-induced stupor, not even tracking as you wave your hands in front of her face.
@@ -4255,7 +4258,6 @@ function writeEvent(n) {
 				t Her swallowing starts to slow and her eyes close, her body goes slack. 
 				t Even with adrenaline coursing through you and every bit of strength you can muster, there's not an inch of give to the mask. Who the hell were these things designed for? Superhumans?
 				t No longer able to keep pulling, you release the hose and stumble backwards. Catching your breath and trying to think clearly, you're interrupted as her body starts to convulse.
-				im
 				t Her eyes open slightly but there's no sign of intelligence behind them as her pussy sprays onto the carpet, her lungs and stomach being filled with sperm somehow causing an extremely powerful orgasm.
 				t You curse your luck and your helplessness as the seizing stops just as soon as it started, leaving nothing but the scent of her juices to fill the hall. Yet as you look closely you can see her chest continue to rise and fall. Could she still be breathing somehow?
 			`);
