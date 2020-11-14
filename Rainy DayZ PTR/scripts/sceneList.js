@@ -4567,12 +4567,12 @@ function writeEvent(n) {
 		}
 		case "tapeCongealant": {
 			writeHTML(`
+				t Now beginning research log X-341 L-13 "CONGEALANT SIDE-EFFECT NOTES", authorized by researcher JONES.
+				t "<i>Now commencing notes on defective strain-branch 32. All seems normal at first until subject achieves climax.</i>
 				im tapeCongealant1.gif
-				sc Now commencing notes on defective strain-branch 32. All seems normal at first until subject achieves climax.
+				t <i>As you can see the semen ejaculated is extremely thick, barely able to move through a porous material. <br>Because of the consistency ejaculations become extremely drawn-out affairs, often lasting multiple minutes as the subject's kegel muscles are pushed to the limit trying to force out the load.</i>
 				im tapeCongealant2.gif
-				sc As you can see the semen ejaculated is extremely thick, barely able to move through a porous material. <br>Because of the consistency ejaculations become extremely drawn-out affairs, often lasting multiple minutes as the subject's kegel muscles are pushed to the limit trying to force out the load. 
-				im tapeCongealant3.gif
-				sc The process triggers the usual endorphin rush of an orgasm the entire time while also heavily stimulating the urethral nerves. <br>While unquestionably a failure in terms of effectiveness, the continued testing of this strain should be useful for both education and entertainment purposes.
+				t <i>The process triggers the usual endorphin rush of an orgasm the entire time while also heavily stimulating the urethral nerves. <br>While unquestionably a failure in terms of effectiveness, the continued testing of this strain should be useful for both education and entertainment purposes."</i>
 			`);
 			if (data.player.currentScene != "gallery") {
 				writeText("[Finish|scarletTheater]");
@@ -4605,11 +4605,11 @@ function writeEvent(n) {
 				im tapeLicker21.gif
 				t The researcher struggles as the infected pushes her long tongue down the researcher's throat, her hands flailing and slapping at the infected's body until they grow limp.
 				t The camera's view shifts to show the small bulge in the researcher's neck travelling downwards as her eyes roll back, a small puddle forming between her legs.
-				t <i><b>"Now, the other side.</b>
-				t The infected hesitates, before she slowly draws back her tongue from the researcher's mouth with a lengthy wet schlorp. Long strings of saliva splatter across the researcher's chest as she looks dazed to the point of looking drugged. She's easily turned over so that the infected woman has access to her rear.
-				im tapeLicker22.gif
-				t The researcher coos, her mind addled by the chemicals coating the licker's tongue as it pushes past her asshole to infect her from the other end.
-				t The recording continues like this, only changing when the researcher approaches orgasm and squirts along the floor before slumping back down, until several minutes pass.
+				t ?fetish rim; <i><b>"Now, the other side.</b>
+				t ?fetish rim; The infected hesitates, before she slowly draws back her tongue from the researcher's mouth with a lengthy wet schlorp. Long strings of saliva splatter across the researcher's chest as she looks dazed to the point of looking drugged. She's easily turned over so that the infected woman has access to her rear.
+				im t ?fetish rim; tapeLicker22.gif
+				t t ?fetish rim; The researcher coos, her mind addled by the chemicals coating the licker's tongue as it pushes past her asshole to infect her from the other end.
+				t t ?fetish rim; The recording continues like this, only changing when the researcher approaches orgasm and squirts along the floor before slumping back down, until several minutes pass.
 				t The researcher's back arches and her legs go stiff once again, but instead of squirting on the floor she just shakes. There's a pair of small bulges at the base of her abdomen, where her womb should be, traveling downwards. The researcher grunts in exertion and the infected spends almost another minute slowly withdrawing her tongue before plunging it between the researcher's extremely plump pussy lips.
 				t The researcher screams, though it's muffled. Her lips have grown much thicker and are a vibrant shade of red, and as she screams her tongue rolls out of her mouth at least six inches long. 
 				t Within moments the infected retracts her tongue with a wet pop, her tongue wrapped around a thick pair of balls. Her tongue gently squeezes and the researcher spreads her legs, revealing her newly-grown cock just as it splurts its first load onto the floor.

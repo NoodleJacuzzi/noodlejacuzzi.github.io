@@ -1010,6 +1010,7 @@ function generateGalleryNav() {
 	writeFunction("generateGalleryPage('Rainy DayZ')", "Rainy DayZ");
 	writeFunction("generateGalleryPage('The Facility')", "The Facility");
 	writeFunction("generateGalleryPage('Spread Island')", "Spread Island");
+	writeFunction("generateGalleryPage('Scarlet Mansion')", "Scarlet Mansion");
 	data.player.scenario = "";
 }
 
