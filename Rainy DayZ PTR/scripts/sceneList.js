@@ -2298,7 +2298,7 @@ function writeScene(scene) {
 				define scientist = sp Scientist; im none;
 				t You stretch a bit and climb into the crawlspace. It's dusty in here, and there's that same scent from before too. It's strange, strong smells usually make you feel dizzy, but for some reason you feel even more alert when you were getting chased by those dogs earlier.
 				t You only make it a few feet before you're blocked off. Steel bars block you from entering the bedroom the crawlspace leads to. But they do let you look inside.
-				im
+				im scientistIntro.gif
 				t On a bed is a woman, very nearly naked, masturbating. All she's got are some kind of tank strapped to her back and a mask covering her face, both connected by a tube. The way she's loudly huffing she must be getting off on whatever she's breathing in.
 				t Her eyes catch yours, and you move backwards instinctively.
 				scientist Wait! Can you understand me!?
