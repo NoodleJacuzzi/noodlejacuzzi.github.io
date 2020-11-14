@@ -1736,7 +1736,7 @@ function writeScene(scene) {
 		case "scarletKennel": {
 			if (data.player.beastDisabled == false) {
 				writeText("The walls are study enough, so you should be fine to check it out. You get closer to the cage.");
-				writeText("The dogs are absolutely rabid. They're all Dobermen, but something is off about them. They gnaw and claw at their containment, probably eager to tear you apart. There's the some fluid splattered on the inside of the cage. They're all wearing studded leather collars with big... Batteries? They're some kind of shock collars probably, way stronger than anything you could get over the counter.");
+				writeText("The dogs are absolutely rabid. They're all Dobermen, but something is off about them. They gnaw and claw at their containment, probably eager to tear you apart. There's some fluid splattered on the inside of the cage. They're all wearing studded leather collars with big... Batteries? They're some kind of shock collars probably, way stronger than anything you could get over the counter.");
 				writeText("After a minute, it hits you as to what's different about them. They're bigger than their breed should be, more muscular, and they're all erect. They've each got a second collar on, fastened around their dicks each also with a smaller battery on them. They don't seem happy about it, you should [get moving|scarletMansionEntrance].");
 			}
 			else {
@@ -1755,24 +1755,24 @@ function writeScene(scene) {
 		case "scarletFoyer": {
 			writeText("You're in the mansion foyer. It's very dark in here, and flipping the lightswitch doesn't seem to do anything. You can hear the sounds of scratching and barking from outside. The big wooden door stands sturdy though.");
 			if (checkFlag("dogMet") != true) {
-				writeText("There's a large staircase leading up to the second floor, with three doors. One [center door|scarletParlor], one to the [west wing|scarletWestWing], and one to the [east wing|scarletDogIntro]. Examining them closely there are very small lights on the doorknobs, both green.");
+				writeText("There's a large staircase leading up to the second floor, with three doors. One [center door|scarletParlor], one to the [west wing|scarletWestWing], and one to the [east wing|scarletDogIntro].");
 			}
 			else {
 				if (checkFlag("eastFloorGassed") != true) {
 					if (checkItem("remote") == true) {
 						if (checkFlag("dogShock1") == true) {
-							writeText("There's a large staircase leading up to the second floor, with three doors. One [center door|scarletParlor], one to the [west wing|scarletWestWing], and one that leads to the [east wing|scarletEastWing]. Examining them closely there are very small lights on the doorknobs, both green.");
+							writeText("There's a large staircase leading up to the second floor, with three doors. One [center door|scarletParlor], one to the [west wing|scarletWestWing], and one that leads to the [east wing|scarletEastWing]. ");
 						}
 						else {
-							writeText("There's a large staircase leading up to the second floor, with three doors. One [center door|scarletParlor], one to the [west wing|scarletWestWing], and one is guarded by the infected woman. It's risky, but you could try [using the remote you found on her|dogShock1]. Examining them closely there are very small lights on the doorknobs, both green.");
+							writeText("There's a large staircase leading up to the second floor, with three doors. One [center door|scarletParlor], one to the [west wing|scarletWestWing], and one is guarded by the infected woman. It's risky, but you could try [using the remote you found on her|dogShock1]. ");
 						}
 					}
 					else {
-						writeText("There's a large staircase leading up to the second floor, with three doors. One [center door|scarletParlor], one to the [west wing|scarletWestWing], and the other is guarded by the infected woman. Examining them closely there are very small lights on the doorknobs, both green.");
+						writeText("There's a large staircase leading up to the second floor, with three doors. One [center door|scarletParlor], one to the [west wing|scarletWestWing], and the other is guarded by the infected woman. ");
 					}
 				}
 				else {
-					writeText("There's a large staircase leading up to the second floor, with three doors. One [center door|scarletParlor], one to the [west wing|scarletWestWing], and one that leads to the [east wing|scarletEastWing]. Examining them closely there are very small lights on the doorknobs, both green.");
+					writeText("There's a large staircase leading up to the second floor, with three doors. One [center door|scarletParlor], one to the [west wing|scarletWestWing], and one that leads to the [east wing|scarletEastWing]. ");
 				}
 			}
 			writeHTML(`
@@ -1859,7 +1859,7 @@ function writeScene(scene) {
 		}
 		case "scarletMainHall": {
 			writeHTML(`
-				t !item tape 4; You're in the main hall of the mansion, it's a maze of hallways down here. And if that weren't enough, secret[one of lights is out too|hiddenTape4].
+				t !item tape 4; You're in the main hall of the mansion, it's a maze of hallways down here. And if that weren't enough, secret[one of the lights is out too|hiddenTape4].
 				t ?item tape 4; You're in the main hall of the mansion, it's a maze of hallways down here. At least you found that hidden tape.
 				t With some wandering you can find a number of other doors, luckily most of them have bronze nameplates to ease navigation. The first one you find is labeled ["Theater"|scarletTheater].
 				t There's also ["Dining Room"|scarletDining], and ["Garage"|scarletGarage].
@@ -2365,7 +2365,7 @@ function writeScene(scene) {
 			addFlag(scene);
 			writeHTML(`
 				t <i>"I think it's important to get these thoughts down. I've seen what can happen to people when they start to lose their minds. Even for people like us...</i>
-				t <i>We spend all day on these projects, and i know what we all do at night after we finish. I know why we keep so many recordings and why they're available for us all to watch at any time. I can them through some of the walls.</i>
+				t <i>We spend all day on these projects, and i know what we all do at night after we finish. I know why we keep so many recordings and why they're available for us all to watch at any time. I hear can them through some of the walls.</i>
 				t <i>The order came in, vaccination testing. There's some inoculations, but they're too expensive to have at the ready anywhere except the main labs. The top rungs won't even give us the ingredients. These are the alternative, but who are we testing them on?"</i>
 				t ... That's all it says, but the paper is torn suggesting there's more. You should probably [get back to exploring|scarletWardrobe].
 			`);
@@ -2397,7 +2397,7 @@ function writeScene(scene) {
 				t <i>It was worth every second.</i>
 				t <i>It's so much better than just watching. The captives scream that we're monsters, but if they could sill talk or think after being infected they'd thank us.</i>
 				t <i>I was nervous at first. Apparently even though the vaccine would turn me back to normal after a few hours, cumming after being infected would seriously reduce my fertility as a woman. I started having doubts, but...</i>
-				t <i>When you have a massive cock hanging between your legs, you realize stuff like that is less important than the feeling of a thick load of cum pumping out of your dick. My fertility? Eggs? Thy could have said cumming would kill my brain cells and I wouldn't have jerked off less.</i>
+				t <i>When you have a massive cock hanging between your legs, you realize stuff like that is less important than the feeling of a thick load of cum pumping out of your dick. My fertility? Eggs? They could have said cumming would kill my brain cells and I wouldn't have jerked off less.</i>
 				t <i>I passed the tests afterwards, I'm completely human, no more dick. But for three hours I was something better than human. I can't sleep unless I have the recordings playing on loop anymore. I've been supervising a purposefully slow transformation, enjoying watching her break down, but it isn't enough. I'm hungry all the time now.</i>
 				t <i>But not for food."</i>
 				t ... That's all it says, but the paper is torn suggesting there's more. You should probably [get back to exploring|scarletWestGuest].
@@ -4613,7 +4613,7 @@ function writeEvent(n) {
 				t The researcher struggles as the infected pushes her long tongue down the researcher's throat, her hands flailing and slapping at the infected's body until they grow limp.
 				t The camera's view shifts to show the small bulge in the researcher's neck travelling downwards as her eyes roll back, a small puddle forming between her legs.
 				t <i><b>"Now, the other side.</b>
-				t he infected hesitates, before she slowly draws back her tongue from the researcher's mouth with a lengthy wet schlorp. Long strings of saliva splatter across the researcher's chest as she looks dazed to the point of looking drugged. She's easily turned over so that the infected woman has access to her rear.
+				t The infected hesitates, before she slowly draws back her tongue from the researcher's mouth with a lengthy wet schlorp. Long strings of saliva splatter across the researcher's chest as she looks dazed to the point of looking drugged. She's easily turned over so that the infected woman has access to her rear.
 				im tapeLicker22.gif
 				t The researcher coos, her mind addled by the chemicals coating the licker's tongue as it pushes past her asshole to infect her from the other end.
 				t The recording continues like this, only changing when the researcher approaches orgasm and squirts along the floor before slumping back down, until several minutes pass.
