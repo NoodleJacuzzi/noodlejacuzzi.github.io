@@ -2365,8 +2365,8 @@ function writeScene(scene) {
 			addFlag(scene);
 			writeHTML(`
 				t <i>"I think it's important to get these thoughts down. I've seen what can happen to people when they start to lose their minds. Even for people like us...</i>
-				t <i>We spend all day on these projects, and i know what we all do at night after we finish. I know why we keep so many recordings and why they're available for us all to watch at any time. I hear can them through some of the walls.</i>
-				t <i>The order came in, vaccination testing. There's some inoculations, but they're too expensive to have at the ready anywhere except the main labs. The top rungs won't even give us the ingredients. These are the alternative, but who are we testing them on?"</i>
+				t <i>We spend all day on these projects, and I know what we all do at night after we finish. I know why we keep so many recordings and why they're available for us all to watch at any time. I hear can them through some of the walls.</i>
+				t <i>The order came in, vaccination testing. There're some inoculations, but they're too expensive to have at the ready anywhere except the main labs. The top rungs won't even give us the ingredients. These are the alternative, but who are we testing them on?"</i>
 				t ... That's all it says, but the paper is torn suggesting there's more. You should probably [get back to exploring|scarletWardrobe].
 			`);
 			if (checkFlag("scarletLetter1") == true && checkFlag("scarletLetter2") == true && checkFlag("scarletLetter3") == true && checkFlag("scarletLetter4") == true && checkFlag("scarletLetter5") == true) {
@@ -2665,7 +2665,7 @@ function writeScene(scene) {
 			writeText("You stumble off all the way to the part of the compound your room is located. Luckily nobody is around, they're all celebrating the latest scavenging haul, otherwise they might've commented on how you've got a bowlegged gait.");
 			writeText("Just walking is getting harder, the pressure on your abdomen is getting more intense with every step.");
 			writeSpeech("player", "", "Not infected... Not infected... Not-");
-			writeText("Suddenly it hits you, the pressure reaches it's peak and your clit feels engorged. The room spins and the pressure releases by a very muffled *pop*.");
+			writeText("Suddenly it hits you, the pressure reaches its peak and your clit feels engorged. The room spins and the pressure releases by a very muffled *pop*.");
 			writeText("Gasping for air like you're a fish out of water, you still manage to barely stumble your way to your door and make it into the [privacy of your room|intro2].");
 			break;
 		}
@@ -4295,7 +4295,7 @@ function writeEvent(n) {
 				t <i>But that doesn't excuse the fact that I was stroking myself when I woke up.
 				t <i>All that sperm on my hand... I felt so disgusting, like I was throwing away my chance at a happy family, and for what? I'll admit it felt good. Amazing even, but I avoided heroin for a reason. 
 				t <i>I ate it, slurped up the load, but only because I didn't want to look at it anymore.
-				t <i>At this point is it already over? My husband and I... We already had enough trouble concieving. At this point I'd...
+				t <i>At this point is it already over? My husband and I... We already had enough trouble conceiving. At this point I'd...
 				t <i>I'd need a cock like this one to breed me.
 				...
 				t <i>I need to stay in control. I need to focus on what really matters. I can't even have sheets on the bed anymore <s>because I can't stop humping</s> helpmehelpmehelpmegetmeoutofhere
@@ -4449,7 +4449,7 @@ function writeEvent(n) {
 				t You hear the voice grunt, and then again and again, faster and faster as her cock pulses. Despite you not turning the knob something is about to happen. The wall shakes as the infected woman struggles, her cock pulses and is an angry shade of red, and suddenly...
 				t A clear stream of fluid leaks from her cock. The sound of struggling stops, replaced with a lust-drunk sobbing.
 				t Before your eyes her penis and balls begin to shrink as the fluid spills out non-stop. Her once impressive 11-inch dick is barely half that length now as her leak-gasm continues.
-				t The carpet is completely soaked now, and her penis reaches it's flaccid length and continues to shrink even further. Three, two, one inch, finally coming to stop shrinking at a length shorter than your pinky and barely as thick as your thumb. Her balls have shrunk too, now looking like tender grapes hanging down several inches.
+				t The carpet is completely soaked now, and her penis reaches its flaccid length and continues to shrink even further. Three, two, one inch, finally coming to stop shrinking at a length shorter than your pinky and barely as thick as your thumb. Her balls have shrunk too, now looking like tender grapes hanging down several inches.
 			`);
 			break;
 		}
