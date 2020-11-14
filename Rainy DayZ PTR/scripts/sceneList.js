@@ -4475,6 +4475,7 @@ function writeEvent(n) {
 			break;
 		}
 		case "urinalInfected": {
+			if (data.player.wsDisabled == false) {
 			writeHTML(`
 				t You sigh and reflexively look around, but your only audience is on her knees in front of you. You're careful not to get too close though, getting infected here would be an embarrassing way to go.
 				t You pull aside your clothes, the perverse situation has your heart pumping like crazy. Though even if you felt like apologizing, it's not like she could understand you.
@@ -4483,6 +4484,10 @@ function writeEvent(n) {
 				t Between gulps she lets out wet pants, she's like a dog drinking from a garden hose.
 				t Once you're finished she lifts her cupped hands up to drink down everything that pooled up, taking slow methodical gulps as if savoring the taste.
 			`);
+			}
+			else {
+				writeText("This scene has been disabled by your fetish settings. If for some reason want to watch it, you can still view it in the gallery after changing your settings.");
+			}
 			break;
 		}
 		case "urinalDark": {
@@ -4596,6 +4601,7 @@ function writeEvent(n) {
 			break;
 		}
 		case "tapeLicker2": {
+			if (data.player.rimDisabled == false) {
 			writeHTML(`
 				t Now beginning research log X-342 L-14 "FUCKER GETS WHAT SHE DESERVES", authorized by researcher SMITH.
 				t <i>"Please, let me out! For the love of god, stop! I wasn't one of the staff on your project!"
@@ -4607,16 +4613,20 @@ function writeEvent(n) {
 				im tapeLicker21.gif
 				t The researcher struggles as the infected pushes her long tongue down the researcher's throat, her hands flailing and slapping at the infected's body until they grow limp.
 				t The camera's view shifts to show the small bulge in the researcher's neck travelling downwards as her eyes roll back, a small puddle forming between her legs.
-				t ?fetish rim; <i><b>"Now, the other side.</b>
-				t ?fetish rim; The infected hesitates, before she slowly draws back her tongue from the researcher's mouth with a lengthy wet schlorp. Long strings of saliva splatter across the researcher's chest as she looks dazed to the point of looking drugged. She's easily turned over so that the infected woman has access to her rear.
-				im t ?fetish rim; tapeLicker22.gif
-				t t ?fetish rim; The researcher coos, her mind addled by the chemicals coating the licker's tongue as it pushes past her asshole to infect her from the other end.
-				t t ?fetish rim; The recording continues like this, only changing when the researcher approaches orgasm and squirts along the floor before slumping back down, until several minutes pass.
+				t <i><b>"Now, the other side.</b>
+				t he infected hesitates, before she slowly draws back her tongue from the researcher's mouth with a lengthy wet schlorp. Long strings of saliva splatter across the researcher's chest as she looks dazed to the point of looking drugged. She's easily turned over so that the infected woman has access to her rear.
+				im tapeLicker22.gif
+				t The researcher coos, her mind addled by the chemicals coating the licker's tongue as it pushes past her asshole to infect her from the other end.
+				t The recording continues like this, only changing when the researcher approaches orgasm and squirts along the floor before slumping back down, until several minutes pass.
 				t The researcher's back arches and her legs go stiff once again, but instead of squirting on the floor she just shakes. There's a pair of small bulges at the base of her abdomen, where her womb should be, traveling downwards. The researcher grunts in exertion and the infected spends almost another minute slowly withdrawing her tongue before plunging it between the researcher's extremely plump pussy lips.
 				t The researcher screams, though it's muffled. Her lips have grown much thicker and are a vibrant shade of red, and as she screams her tongue rolls out of her mouth at least six inches long. 
 				t Within moments the infected retracts her tongue with a wet pop, her tongue wrapped around a thick pair of balls. Her tongue gently squeezes and the researcher spreads her legs, revealing her newly-grown cock just as it splurts its first load onto the floor.
 				t Both women are heavily infected now, the recording goes on for another few minutes  wherein the two infected share a perverted kiss, their tongues able to reach so deep a bulge can be seen in their stomachs.
 			`);
+			}
+			else {
+				writeText("This scene has been disabled by your fetish settings. If for some reason want to watch it, you can still view it in the gallery after changing your settings.");
+			}
 			if (data.player.currentScene != "gallery") {
 				writeText("[Finish|scarletTheater]");
 			}
@@ -4768,7 +4778,7 @@ function writeEvent(n) {
 		}
 		case "scarletEndingGood": {
 			writeHTML(`
-				? -nd so perhaps it's possible that with enough sexual satisfaction, the infected could enter a docile, dormant state.
+				t <i>"-nd so perhaps it's possible that with enough sexual satisfaction, the infected could enter a docile, dormant state.</i>
 				t A familiar video is playing again in the background. In your first few weeks as the mansion's... 'Caretaker'... You obsessively searched for any trace of a cure, but without any luck. No method to reverse the infection was found, and trying to contact the outside world was fruitless.
 				t So you acclimated. You've become the mansion's keeper, handling the cleaning, organizing the extremely plentiful food stores, and most importantly...
 				im scarletEndingGood1.gif
