@@ -4661,12 +4661,12 @@ function writeEvent(n) {
 		}
 		case "tapeVaccine": {
 			writeHTML(`
-				im vaccineTest1.gif
+				im tapeVaccine1.gif
 				t The file is a recording, labelled VACCINE TEST, followed by a string of numbers. Moving through the video file it focuses on a woman being assaulted, though not unwillingly. She even speaks up a few times but is interrupted repeatedly when either a tongue or a penis is shoved into her mouth.
-				im vaccineTest2.gif
+				im tapeVaccine2.gif
 				t As the test progresses the pair devolve into a sexual frenzy, the woman doesn't seem capable of rational thought anymore. The video cuts to her alone, where she frantically rubs her pussy until she spasm out of the camera's view, and there's a faint wet popping noise.
 				t By the time she's back on camera, she's...
-				im vaccineTest3.gif
+				im tapeVaccine3.gif
 				t And after that the video cuts another time, to her getting dressed and there's clearly no cock between her legs. She's intelligent enough to be listing off symptoms such as disorientation, extreme hunger and thirst, and phantom sensations. She's clearly distracted, and quietly asks when the next test will be before the video loops.
 			`);
 			break;
