@@ -95,7 +95,6 @@ function writeScene(scene) {
 			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry dickgirls, you play as a young woman searching for supplies to survive.");
 			writeText("Navigate a town and city deliberately working to sabotage yourself and throw yourself into the clutches of the zombie hordes, the goal of the game here is to be defeated and attacked to collect and unlock all of the game's scenes. Now features two additional campaigns as well!");
 			writeText("Tags: Real Porn, Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Rimming (can be disabled), Bestiality (can be disabled), Parasites (can be disabled), Watersports (can be disabled)");
-			writeText("Status: On hiatus(?) until Hentai University's main story is complete.");
 			document.getElementById('output').innerHTML +=`
 			<div class="choiceGrid">
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ.html">Play the game online</a>
@@ -125,7 +124,6 @@ function writeScene(scene) {
 			writeText("You play as a researcher performing experiments on various reality warping artifacts, currently including a presence-erasing bracelet and a crate that converts anything inside into a hypersexualized version of itself.");
 			writeText("The game uses real porn gifs, and is similar in tone to Human Alteration App's dom route. The themes and fetishes of the game are governed by what artifacts you interact with, hopefully as time passes you'll find and artifact you really connect with. Let me know if you have any artifact / scene ideas!");
 			writeText("Nonoptional Tags: Unpercieved Sex, Ignored Sex, Dubious Consent, Seduction of Women in Committed Relationships. All the rest of the tags depend on what you interact with.");
-			writeText("Status: v9 Should be coming sometime soon, perhaps in November?");
 			document.getElementById('output').innerHTML +=`
 			<div class="choiceGrid">
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault.html">Play the game online</a>
