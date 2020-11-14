@@ -803,6 +803,36 @@ function checkRequirements(string) {
 		}
 		string = string.replace(`?fetish `+check+`;`, ``);
 	}
+	while (string.includes("!fetish ") == true) {
+		var check = string.split(`!fetish `).pop().split(`;`)[0];
+		switch(check) {
+			case "beast": {
+				if (data.player.beastDisabled == false) {
+					finalResult = false;
+				}
+				break;
+			}
+			case "rim": {
+				if (data.player.rimDisabled == false) {
+					finalResult = false;
+				}
+				break;
+			}
+			case "worm": {
+				if (data.player.wormDisabled == false) {
+					finalResult = false;
+				}
+				break;
+			}
+			case "ws": {
+				if (data.player.wsDisabled == false) {
+					finalResult = false;
+				}
+				break;
+			}
+		}
+		string = string.replace(`!fetish `+check+`;`, ``);
+	}
 	while (string.includes("?flag ") == true) {
 		var check = string.split(`?flag `).pop().split(`;`)[0];
 		if (data.player.flags.includes(check) != true) {
@@ -844,6 +874,10 @@ function cullRequirements(string) {
 	while (string.includes("?fetish ") == true) {
 		var check = string.split(`?fetish `).pop().split(`;`)[0];
 		string = string.replace(`?fetish `+check+`;`, ``);
+	}
+	while (string.includes("!fetish ") == true) {
+		var check = string.split(`!fetish `).pop().split(`;`)[0];
+		string = string.replace(`!fetish `+check+`;`, ``);
 	}
 	while (string.includes("?flag ") == true) {
 		var check = string.split(`?flag `).pop().split(`;`)[0];
