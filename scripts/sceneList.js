@@ -91,7 +91,7 @@ function writeScene(scene) {
 				"images/RDZ3.gif",
 			];
 			writeSlideshow("images/RDZ.jpg");
-			writeText("Rainy DayZ v3");
+			writeText("Rainy DayZ v3.5");
 			writeText("In a world where a zombie virus has spread, transforming people into voracious sex-hungry dickgirls, you play as a young woman searching for supplies to survive.");
 			writeText("Navigate a town and city deliberately working to sabotage yourself and throw yourself into the clutches of the zombie hordes, the goal of the game here is to be defeated and attacked to collect and unlock all of the game's scenes. Now features two additional campaigns as well!");
 			writeText("Tags: Real Porn, Shemale, Female-to-Shemale Transformation, Rape, Corruption, Zombification, Rimming (can be disabled), Bestiality (can be disabled), Parasites (can be disabled), Watersports (can be disabled)");
@@ -102,7 +102,7 @@ function writeScene(scene) {
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Rainy%20DayZ/Rainy%20DayZ%20Mobile.html">Play the mobile version</a>
 				<a class="choiceGridText" href="https://tfgames.site/index.php?module=viewgame&id=2039">View the TFGame entry</a>
 				<a class="choiceGridText" href="https://f95zone.to/threads/rainy-dayz-v3-0-noodlejacuzzi.42457/">View the F95Zone thread</a>
-				<a class="choiceGridText" href="https://www.patreon.com/posts/39193031">Download the game</a>
+				<a class="choiceGridText" href="https://www.patreon.com/posts/43881744">Download the game</a>
 				<a class="choiceGridText" href="http://freesuggestionbox.com/pub/atouyqk">Anonymous Suggestion Box</a>
 				
 			</div>
