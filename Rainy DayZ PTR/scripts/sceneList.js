@@ -1842,7 +1842,7 @@ function writeScene(scene) {
 				t She's got on iron clasps but they're nothing compared to the complex looking gag on her mouth. It seems to be designed to completely shut down her ability to make sounds aside from a muffled and it modulates any of the sounds she makes.
 				t !flag gaggedSiren; The whole deal is way too complex for you to free her from, but it doesn't seem like she wants to be freed. Next to the toilet is a [large button|gaggedSiren], you probably have a decent ability to guess what it does.
 				t ?flag gaggedSiren; The woman chained to the toilet is laying back as far as her bondage will allow, the machine she's hooked up to is probably out of juice, and so is she.
-				t ?flag gaggedSiren; Something bizzare is going on here. You're in a strange, dangerous place and you spent time doing that to her... And you don't seem to care how risky it was.
+				t ?flag gaggedSiren; Something bizarre is going on here. You're in a strange, dangerous place and you spent time doing that to her... And you don't seem to care how risky it was.
 				t It doesn't seem like there are any answers to be found in here, probably best to head [back out into the west wing hallway|scarletWestWing].
 			`);
 			break;
@@ -2259,7 +2259,7 @@ function writeScene(scene) {
 		}
 		case "scarletMemo": {
 			writeHTML(`
-				t The memo is cut off at the top and bottom, this is all you could find amond mostly-intact pieces.
+				t The memo is cut off at the top and bottom, this is all you could find among mostly-intact pieces.
 				t <i>"I think it has an incredible number of uses for security, but we'd need to train the employees on it. I hid some of the spade keys this way, but Smith was too dense to notice an askew candlestick. I've hidden some of the favorites among our research recordings, hopefully they're enough of an incentive. They're pretty obvious spots too.</i>
 				t <i>The hard part is that it blocks casual observation, you'll need to force yourself to consciously interact with things, even if it seems pointless, otherwise you miss them. Obviously the best use is to hide the entrance in the storage closet, but there are still four left, one's in the West W-</i>
 				t [That's where it ends.|scarletEastGuest]
@@ -4515,7 +4515,7 @@ function writeEvent(n) {
 				t Once you've let go she falls backwards, panting, only to twitch and squeal when you tap the button a few more times.
 				t She's a good dog, and doesn't seem to have much endurance for this kind of pleasure, so you press and hold the button down for her reward.
 				im dogShock2.gif
-				t Her squeals become a scream through grits teeth and it looks like she's having a seizure as her cock starts spurting freely through the air, soiling the carpet through her bizzare cock-shocker accessory.
+				t Her squeals become a scream through grits teeth and it looks like she's having a seizure as her cock starts spurting freely through the air, soiling the carpet through her bizarre cock-shocker accessory.
 			`);
 			break;
 		}
@@ -4541,7 +4541,7 @@ function writeEvent(n) {
 		case "dogGassed": {
 			writeHTML(`
 				t You kneel down next to the "guard dog" and begin to rub her belly. You can't go any farther without risking infection, but it can't hurt to enjoy something cute for the moment.
-				t She enjoys it, closing her eyes as you rub. Honestly this mansion is a bizzare place, but you haven't actually been in danger so far, have you?
+				t She enjoys it, closing her eyes as you rub. Honestly this mansion is a bizarre place, but you haven't actually been in danger so far, have you?
 				t Well, unless the virus is airborne. But if that were the case you would already have been infected by now. Probably.
 				t You're missing a lot of answers to exactly what-
 				im dogGassed.gif
