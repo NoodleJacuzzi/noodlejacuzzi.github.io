@@ -18,7 +18,8 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "housekeep0", name: "There's a flier hanging up near you.", location: 'street', time: "MorningEvening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both", altName: "Loose Flier", altImage: "images/housekeep/0-1.jpg",},
 	{index: "housekeep1", name: "Order some servicing", location: 'playerHouse', time: "Evening", itemReq: "Flier", trustMin: -5, trustMax: -5, type: "tab", top: 0, left: 0, day: "both", altName: "Maid Services", altImage: "images/housekeep/0-1.jpg",},
 	{index: "housekeep2", name: "Call on Anri for some service ($15)", location: 'playerHouse', time: "Evening", itemReq: "", trustMin: 40, trustMax: 42, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
-	{index: "housekeep2", name: "Call on Anri for some service", location: 'playerHouse', time: "Evening", itemReq: "", trustMin: 43, trustMax: 50, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	{index: "housekeep3", name: "Call on Anri for some service", location: 'playerHouse', time: "Evening", itemReq: "", trustMin: 43, trustMax: 50, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	//{index: "housekeep3", name: "Call on Anri for some service", location: 'playerHouse', time: "Evening", itemReq: "", trustMin: 45, trustMax: 50, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -163,12 +164,291 @@ function writeEncounter(name) { //Plays the actual encounter.
 			else
 				writeSpeech("housekeep","","Was there anything specific you wanted for me to do, Mistress?");
 			if(checkFlag("housekeep","Asked")){
-				if(checkFlag("housekeep","Asked2"))
-					console.log("check this real quick");
+				if(checkFlag("housekeep","Asked4"))
+					console.log("Player has the flag 'Asked4'");
+				if(checkFlag("housekeep","Asked3") && checkFlag("housekeep","bikini"))
+					writeFunction("writeEncounter('housekeepChat3')", "Ask him about the custom lube from before");
+				else if(checkFlag("housekeep","Asked2"))
+					writeFunction("writeEncounter('housekeepChat2')", "Ask him about Maid in Heaven");
 				else if(checkFlag("housekeep","Asked1"))
 					writeFunction("writeEncounter('housekeepChat1')", "Ask him about how he became a maid");
 			}
 			else
+				writeFunction("writeEncounter('housekeep1-1')", "Ask him about himself");
+
+			if(checkFlag("housekeep","Clean")){
+				if(checkFlag("housekeep","Clean2"))
+					console.log("check this real quick");
+				else if(checkFlag("housekeep","Clean1"))
+					writeFunction("writeEncounter('housekeepClean')", "Have him clean up again");
+			}
+			else
+				writeFunction("writeEncounter('housekeepClean')", "A maid's job is to clean");
+			if(checkFlag("housekeep","Blowjob") != true)
+				writeFunction("writeEncounter('housekeep1-2')", "Request <i>sexual</i> cleaning");
+			else
+				writeFunction("writeEncounter('housekeepSexMenu')", "Request some <i>service</i>");
+			break;
+		}
+		case "housekeep3" : {
+			writeText("You call up Maid in Heaven again, with housekeepF just as quick to answer as before.");
+			writeSpeech("housekeep","","I'll be over shortly, then~!");
+			if(checkFlag('housekeep','bikini') || checkFlag('housekeep','bunnyOutfit')){
+				if(checkFlag('housekeep','bunnyOutfit') && checkFlag('housekeep','bikini')){
+					// writeText("You could probably try hypnotizing him again, since he's had a bit of time to relax more around you.");
+					// writeFunction("writeEncounter('housekeep4')", "Call him over for another hypnosis session");
+				}
+				else{
+					writeText("Before he hangs up, though, you could request another one of those outfits housekeepF mentioned...");
+					if(!checkFlag('housekeep','bunnyOutfit'))
+						writeFunction("writeEncounter('housekeep3A')", "Request a bunny-girl outfit");
+					if(!checkFlag('housekeep','bikini'))
+						writeFunction("writeEncounter('housekeep3B')", "Request a skimpy swimsuit");
+				}
+			}
+			else{
+				writeText("Before he hangs up, though, you do have an opportunity to request one of those outfits housekeepF mentioned...");
+				writeFunction("writeEncounter('housekeep3A')", "Request a bunny-girl outfit");
+				writeFunction("writeEncounter('housekeep3B')", "Request a skimpy swimsuit");
+			}
+			writeFunction("writeEncounter('housekeep3C')", "Have him come over like normal");
+			break;
+		}
+		case "housekeep3A" : {
+			passTime();
+			if(checkTrust('housekeep') < 45)
+				raiseTrust('housekeep',1);
+			if(!checkFlag("housekeep","bunnyOutfit"))
+				addFlag('housekeep','bunnyOutfit');
+			writeSpeech("player","","Actually, I was thinking I might \"request\" an outfit. I think you mentioned a bunny-girl outfit before?");
+			writeSpeech("housekeep","","...!");
+			writeText("You can hear the soft, excited pick-up in his breathing.");
+			writeSpeech("housekeep","","...I'll be over with one in just ten minutes~");
+			writeText("...");
+			writeText("When housekeepF does arrive, it's wearing a rather nice-looking coat that covers up most of him... though you can see the color of his tights around his calves where the coat stops.");
+			writeText("Once the door is shut and locked, he wastes no time in opening and shrugging off the coat, revealing the full outfit to you as he does a little pose.");
+			writeBig("images/housekeep/bunny-1.jpg","Art by Kinta no Mousou");
+			writeSpeech("housekeep","","How does it look, *Master~?");
+			writeText("His hand gently traces his tights along his hips, the subtle movement only highlighting the fact that he clearly has no panties on underneath.");
+			writeSpeech("player","","I'll hold off from judging the service until we're all finished.<br>...But you've definitely got my expectations pretty high.");
+			writeText("housekeepF's expression brightens up more, his blush deepening.");
+			writeSpeech("housekeep","","Well, in that case, why don't we get right to it? How would you like to start~?");
+			writeFunction("writeEncounter('housekeep3A-1')", "Play with his chest first");
+			writeFunction("writeEncounter('housekeep3A-2')", "Get right to the sex");
+			break;
+		}
+		case "housekeep3A-1" : {
+			writeEvent("housekeep4");
+			document.getElementById('output').innerHTML = '';
+			writeHTML(`
+				sp player; How about we start with a bit of foreplay, and you expose that cute chest of yours?
+				sp housekeep; Gladly~
+				t Saying that, housekeepF slowly brings his hands to his shoulders with a soft smile, hooking the bands with his thumbs and teasingly pulling them along his arms.
+				t A few short moments later, his soft, barely-pink nipples are revealed as he shudders pleasurably under your gaze.
+				im bunny-2.jpg
+				sp housekeep; How is this, *Master?
+				sp player; It's exactly what I was looking to see.
+				t You take a step forward, bringing a finger forward to gently toy with his nipple, first drawing a small circle around it with the pad of your finger before softly squeezing it as it starts to harden a bit.
+				sp player; I can see that I'm not the only one looking forward to this.
+				t housekeepF nods excitedly, smiling wide.
+				sp housekeep; I've never worn an outfit like this before, so I'm quite excited to see how we both enjoy it~
+				sp player; Well, I'm enjoying it plenty thus far...
+				sp housekeep; That's wonder- <b><i>O-Oh~!</i></b>
+				im bunny-3.jpg
+				t His breathing hitches significantly as your tongue drags along his nipple, teasing the areola with the tip before lapping at his chest firmly.
+				t Each movement of your tongue seems to elicit a reaction from housekeepF, from a satisfied smile of pleasure, to balling his fists tightly at his sides, to gasping sharply in unrestrained ecstasy.
+				sp player; Sensitive, aren't you? Just like a good slutty maid should be.
+				t You can see his cock twitch under the cloth as you say that, housekeepF moaning from the praise alone.
+				sp housekeep; T-Thank you, *Master~!
+				t You gently bring your finger to the bulge in his outfit, teasingly making a small circle on the surface to see him squirm for a moment... before resuming your lustful attack on his chest.
+				im bunny-4.jpg
+				t His moans turn into sharp cries of bliss as you tease him more, your hands now grasping at his ass and kneading it between your fingers as you suckle on his chest, his body shuddering against you.
+				t housekeepF's bulge grows larger as he starts rolling his hips seemingly unconsciously, rubbing his cock against the inside of the outfit as the pleasure overtakes him.
+				t However, you don't exactly intend on letting him finish before you even get to the night's main event.
+				sp housekeep; H-Hah?
+				t There's a momentary confusion to housekeepF's voice as you pull away, stopping all stimulation at once... until you grab his hips and start leading him to the ground.
+				t A clear sparkle of excitement overtakes his expression as he brings his legs up for you, laying on his back.
+			`);
+			writeFunction("writeEncounter('housekeep3A-2')", "Move on to the sex");
+			break;
+		}
+		case "housekeep3A-2" : {
+			writeEvent("housekeep4");
+			document.getElementById('output').innerHTML = '';
+			writeHTML(`
+				t As housekeepF's legs go up, you slide the leotard-section of the bunny-outfit to the side, revealing both his cock and his hole. The tights have a big open seam along the center for easy access...
+				sp player; Going for a specialty outfit, I see.
+				sp housekeep; Of course~ Only the best for my *Master, after all!
+				t His face flushes slightly as he says that, which only gets deeper as you press your cockhead against his exposed hole.
+				sp player; A devoted maid like you deserves a reward, don't you think?
+				t You start gently pressing against him, but not pushing in completely yet.
+				sp player; Thankfully, I think I have the perfect reward for such a slutty little maid in mind right now...
+				t You use your hand to angle your shaft, just barely pushing in now.
+				sp player; ...Using your hole as a <i>toy</i> to get off with.
+				t housekeepF's excitement peaks as you say that, timed perfectly with thrusting your cock into him.
+				sp housekeep; Y-Yes please~ Use this slutty maid's hole to cum lots and lots~!
+				im bunny-5.jpg
+				sp player; There we go... Nice and tight, as always.
+				t housekeepF's ass squeezes around you, his dick bobbing slightly as the praise turns him on even more.
+				sp housekeep; T-Thank you~
+				sp player; You're welcome... Now let's see how this bunny-hole handles being used.
+				t Grasping his ankle tightly and holding it high, you start thrusting into him faster, each wet sound of your hips slapping against his ass ringing out amongst his moans.
+				sp housekeep; Y-Yes, use me more~
+				im bunny-6.jpg
+				t Even as you pick up the pace, the look of content satisfaction doesn't leave housekeepF's face, even as his throbbing dick betrays how good his body is feeling now.
+				t Moan after moan spills out of his mouth as you thrust in, shifting your hips a bit to grind against his prostate with each push and pull, beads of precum starting to dribble down from his cockhead.
+				t Your free hand moves to toy with his body as you thrust in, squeezing his thigh and watching him squirm as you do. Your hand goes up to his chest too, tweaking his sensitive nipples as you trace small lines across his exposed skin.
+				sp housekeep; H-Haah~!
+				t He shudders the most as your thumb slides underneath the outfit's little collar, gently tracing his collarbone before moving back to his chest.
+				t The sensation of your soft, gently fingers gliding across his skin, mixed with the rough, raw pleasure of getting fucked like a sextoy, has housekeep shuddering bodily beneath you, his cock bobbing faster and faster as his climax gets closer.
+				sp player; You're getting close, aren't you?
+				sp housekeep; Yes...! It just feels so good~!
+				t At that, you pull your hand back, instead using to grasp his other ankle.
+				sp player; I'm sure you won't mind, then, if I go ahead and speed up a bit. It'd be a shame if this slutty maid finished before his *Master, don't you think? 
+				t housekeepF nods sharply. With a bright, genuine smile, he grasps his thigh firmly and cheerfully begs,
+				sp housekeep; Please, use this maid's hole as <i>rough</i> and as <i><b>fast</b></i> as you like, and shoot all your cum deep inside~!
+				t At that, you speed up as much as you can, no longer focusing on pleasing housekeepF. Instead, you roughly grasp his calves and pull him into you with each thrust, heavy gasps of pleasure spilling out of your slutty maid as you <b>slam</b> your hips against his.
+				t You maintain that speed and roughness for some time, watching the joyous squirming beneath you as you pound into him and get closer to the edge with each thrust.
+				t It isn't much longer before you can feel it.
+				sp player; There we go... I'm getting close.
+				t That happy spark in housekeepF's eyes only grows.
+				sp housekeep; T-That's wonderful~ Please, f- <i><b>Hah~!</b></i> Fill me up, make me cum from <i>feeling you spurting inside me~!</i>
+				t With a deep, guttural growl, you slam your hips forward one more time as you start to cum. 
+				im bunny-7.jpg
+				t Both your cock and his start spurting at the same time, ropes of cum shooting into his ass as his quivers and spills out across his chest.
+				sp housekeep; Thank you so much, *Master~!
+				t That same blissful expression sits on housekeepF's face as you cum in his ass a bit more, before you've finally emptied out inside of him.
+				t When you're done, you pull yourself out slowly, relishing the gentle moan of pleasure that he lets out when you pop out of his cum-filled, well-fucked ass.
+				sp player; Thank you, housekeepF. I think I'll be rating <i>this</i> service quite highly.
+				t He smiles wide, nodding as he relaxes into the blanket.
+				sp housekeep; I'll keep the outfit with me, then, so it'll be available for you~
+				t After that, you two rested for a few minutes, before finally getting around to cleaning up the mess (housekeepF insisted on handling it, of course), and finishing up for the evening.
+			`);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "housekeep3A-1repeat" : {
+			document.getElementById('output').innerHTML = '';
+			writeHTML(`
+				t You gesture simply to his chest, which he quickly moves to undo the strap on. A few seconds later, and...
+				im bunny-2.jpg
+				t His hands gently grasp his chest, his thumbs brushing over his nipples gently as his breathing picks up.
+				sp housekeep; How's this~?
+				sp player; Perfect.
+				t Stepping in, you move his hands to his sides as you grasp and play with his chest yourself, listening to his gentle moans.
+				sp player; Sensitive as ever, hm?
+				sp housekeep; Y-Yes...!
+				im bunny-3.jpg
+				sp housekeep; H-Hah~!
+				t His voice gets gradually louder as you start teasing his nipple with your tongue, your hands moving to knead and tease his ass while you kiss his chest.
+				t He exhales sharply each time your tongue flicks out, and a moan each time you bring your lips around his nipple.
+				im bunny-4.jpg
+				t It isn't long before you can see he's clearly throbbing beneath the cloth covering his dick, and you shift your body a bit to help guide housekeepF down to the ground.
+			`);
+			writeFunction("writeEncounter('housekeep3A-2repeat')", "Move on to the sex");
+			break;
+		}
+		case "housekeep3A-2repeat" : {
+			document.getElementById('output').innerHTML = '';
+			writeHTML(`
+				t Once you have housekeepF on the ground, his hands pulling his legs up to teasingly give you full access, you don't hesitate before pushing your hips forward.
+				im bunny-5.jpg
+				sp housekeep; Mm~ I'm not the only one that's excited~!
+				sp player; How can I not be with a view like this?
+				t housekeepF shudders under the praise, tightening around you.
+				t You swing your hips forward even faster, the pleased look on housekeepF's face driving you to fuck him until you can bring him to the edge.
+				t And of course, given you know what his biggest weakness is...
+				sp player; Your hole is incredible, housekeepF.
+				t His dick bobs slightly as you praise him.
+				sp housekeep; O-Oh, thank you~
+				im bunny-6.jpg
+				t Your hands move to his wrists, pinning him down as you lean into him.
+				sp player; You're a truly great <i>slutty maid,</i> you know that~?
+				t His face flushes more as he bites his lip.
+				sp player; ...But you're an even better slutty little <i>fuck-bunny.</i>
+				t You accentuate your words with a heavy thrust, staying balls-deep for a moment as housekeepF lets out a shuddering gasp.
+				t Leaning forward even more, you bring your lips to his ear and toy with it, nibbling on his earlobe as you thrust into him.
+				sp player; But I bet you could put it even better, couldn't you?
+				t You lean back up, focusing on thrusting into him quickly now, aiming for his prostate with each push and pull.
+				sp player; Go ahead and tell me exactly what you are, and I'll <i>stop holding back.</i>
+				t He doesn't even hesitate.
+				sp housekeep; I'm your slutty maid~! A little fuck-bunny <i>bitch</i> for you to use to make you cum, and then <i>keep</i> using until you're completely satisfied~!
+				t You grin down at him.
+				sp player; That's a <i>good slutty maid...</i>
+				t True to your word, you start thrusting in quickly, focusing on getting you both off as your hands roam up and down his tights-clad legs, exploiting every sensitive inch of housekeepF's body that you can reach.
+				t After a fair while teasing his calves, tweaking his nipples, and toying with his balls, it isn't much longer before you can feel yourself approaching the edge.
+				sp player; I'm getting close...!
+				t Hearing that gets housekeepF even more riled up, his cock bobbing and twitching faster.
+				sp housekeep; Please, cum inside~!
+				im bunny-7.jpg
+				sp housekeep; A-Ah~! Thank you, *Master~!
+				t Your cock twitches and spurts several more ropes of cum inside of his ass, his own cock spurting out a bit before starting to dribble down gently.
+				t When you finally finish and pull out, it's to the sound of him gently moaning from the stimulation, and the sight of him picking up some of them cum from his chest with his fingers and lapping it up.
+				sp housekeep; Seems like we both enjoyed that service, *Master~
+			`);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "housekeep3B" : {
+			passTime();
+			if(checkTrust('housekeep') < 45)
+				raiseTrust('housekeep',1);
+			if(!checkFlag("housekeep","bikini"))
+				addFlag('housekeep','bikini');
+			writeSpeech("player","","Actually, I was thinking I might \"request\" an outfit. You wouldn't happen to have a swimsuit, by chance?");
+			writeSpeech("housekeep","","Ah...!");
+			writeText("There's the sound of something shifting on the other side of the phone, before:");
+			writeSpeech("housekeep","","I'll bring it over now~ See you in ten minutes, *Master~");
+			writeText("...");
+			writeText("When housekeepF does arrive, it's wearing a rather nice-looking coat that covers up most of him. Probably for the best, since you're fairly sure what he's wearing underneath would raise some eyebrows on the street.");
+			writeText("After you shut and lock the door behind him, he undoes the buttons of the coat before letting it fall to the ground, turning to face you.");
+			writeBig("images/housekeep/bikini-1.jpg","Art by Kinta no Mousou");
+			writeSpeech("housekeep","","Well, here we are~");
+			writeText("housekeepF toys with the strings for the bikini a bit, smiling.");
+			writeSpeech("housekeep","","How do I look, *Master?");
+			writeSpeech("player","","You look sexy as Hell. I like it.");
+			writeText("A glint of satisfaction plays in housekeepF's eyes at that.");
+			writeSpeech("housekeep","","In that case... How about we take this little outfit somewhere wetter? The bath, perhaps?");
+			writeSpeech("player","","I don't see why not. Go ahead and get it ready, housekeepF.");
+			writeText("...");
+			writeText("A few minutes later, you're stripped and ready as housekeepF finishes drawing the bath.");
+			writeSpeech("housekeep","","There~ Now just go ahead and get right in...");
+			writeText("He gently grasps your hand and leads you in. As you sit down in it, the warm water feels pleasant on your skin.");
+			writeText("He takes a moment to squirt something into his hand and reach behind him, before winking at you.");
+			writeSpeech("housekeep","","Don't worry, this lube works underwater~ How <i>is</i> the water, by the way?");
+			writeSpeech("player","","Temperature's good, but I can think of a way to improve the bath.");
+			writeText("He raises an eyebrow.");
+			writeSpeech("housekeep","","How do you mean?");
+			writeFunction("writeEvent('housekeep5')", "Pull him into the tub");
+			break;
+		}
+		case "housekeep3C" : {
+			writeText("Just like last time, he does arrive quickly, a relaxed smile across his face as he gives a small, polite curtsy again.");
+			if(checkTrust('succubus') >= 60 && checkFlag('housekeep','Demon') != true){
+				addFlag('housekeep','Demon');
+				writeText("His nose wrinkles for a moment as he straightens up, looking around.");
+				writeSpeech("housekeep","","I have a few people I can call if you need help with your... bat problem.");
+				writeSpeech("player","","My what?<br><i>Could he mean...?</i>");
+				writeText("housekeepF's expression relaxes.");
+				writeSpeech("housekeep","","So it isn't a problem. Ignore that, I merely misunderstood.");
+				writeText("He gives another small curtsy, smiling beautifically up at you as he does.");
+			}
+			if(data.player.gender == "man")
+				writeSpeech("housekeep","","Was there anything specific you wanted me to do, *Master?");
+			else
+				writeSpeech("housekeep","","Was there anything specific you wanted for me to do, Mistress?");
+			if(checkFlag("housekeep","Asked")){
+				if(checkFlag("housekeep","Asked4"))
+					console.log("Player has the flag 'Asked4'");
+				if(checkFlag("housekeep","Asked3") && checkFlag("housekeep","bikini"))
+					writeFunction("writeEncounter('housekeepChat3')", "Ask him about the custom lube from before");
+				else if(checkFlag("housekeep","Asked2"))
+					writeFunction("writeEncounter('housekeepChat2')", "Ask him about Maid in Heaven");
+				else if(checkFlag("housekeep","Asked1"))
+					writeFunction("writeEncounter('housekeepChat1')", "Ask him about how he became a maid");
+			}
+			else
+				writeFunction("writeEncounter('housekeep1-1')", "Ask him about himself");
 				writeFunction("writeEncounter('housekeep1-1')", "Ask him about himself");
 
 			if(checkFlag("housekeep","Clean")){
@@ -197,6 +477,20 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeFunction("writeEncounter('housekeepSink1')", "Have him bend over and put his hands on the kitchen counter");
 			else
 				writeFunction("writeEncounter('housekeepSink2')", "Bend him over in the kitchen again");
+
+
+
+
+
+			if(checkFlag("housekeep",'bunnyOutfit'))
+				writeFunction("writeEvent('housekeep4-1')", "Have him bring out the bunny-girl outfit again");
+			if(checkFlag("housekeep",'bikini'))
+				writeFunction("writeEvent('housekeep5-1')", "Have him bring out the bikini again");
+
+
+
+
+
 			// else
 			// 	writeFunction("writeEncounter('housekeepHypnoMenu')", "Ask him about the special services");
 			// if(galleryCheck('housekeep3') != true)
@@ -601,6 +895,71 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","Business not exactly booming?");
 			writeSpeech("housekeep","","...You could say that. Our business model is a bit odd, probably.");
 			writeText("Well, seeing as you only heard about the business from a loose flier, the issue might actually be getting the name out...");
+			if(data.player.gender == "man")
+				writeSpeech("housekeep","","Was there anything else you would like to request, *Master?");
+			else
+				writeSpeech("housekeep","","Was there anything else you would like to request, Mistress?");
+			if(checkFlag("housekeep","Blowjob") != true)
+				writeFunction("writeEncounter('housekeep1-2')", "Request <i>sexual</i> cleaning");
+			else
+				writeFunction("writeEncounter('housekeepSexMenu')", "Do sexual things");
+			break;
+		}
+		case "housekeepChat2" : {
+			if(checkFlag("housekeep","Asked2")){
+				removeFlag("housekeep","Asked2");
+				addFlag("housekeep","Asked3");
+			}
+			writeHTML(`
+				sp player; I'm curious - what sort of place is your business, Maid in Heaven?
+				t housekeepF pauses to think.
+				sp housekeep; Hm... Well, it's a pretty small business, really. I'm the only maid there, and a couple people I know handle the more business-y elements.
+				sp housekeep; We focus mostly on doing our jobs while maintaining a low profile, really. I'm... not sure how much else there is to say about it.
+				sp player; You seem to enjoy it, but does being the only maid cause any problems? Like overworking or anything.
+				t housekeepF seems to smile wistfully at that.
+				sp housekeep; No. Even if I had a bunch of clients, I'd work happily even then... but for now, you're the only person who's found the flier.
+				sp player; Really? It seemed like it was in a fairly obvious place.
+				t Now, a playful glint appears in his eyes.
+				sp housekeep; Obvious for <i>you,</i> yes. But then, I suppose not everyone is meant to find it, in a way - otherwise, they would have.
+				t He shrugs slightly.
+				sp housekeep; It's not as though I mind too much, though. I'd prefer to be working more, but having a single dedicated client is its own kind of pleasure.
+			`);
+			if(data.player.gender == "man")
+				writeSpeech("housekeep","","Was there anything else you would like to request, *Master?");
+			else
+				writeSpeech("housekeep","","Was there anything else you would like to request, Mistress?");
+			if(checkFlag("housekeep","Blowjob") != true)
+				writeFunction("writeEncounter('housekeep1-2')", "Request <i>sexual</i> cleaning");
+			else
+				writeFunction("writeEncounter('housekeepSexMenu')", "Do sexual things");
+			break;
+		}
+		case "housekeepChat3" : {
+			if(checkFlag("housekeep","Asked3")){
+				removeFlag("housekeep","Asked3");
+				addFlag("housekeep","Asked4");
+			}
+			writeHTML(`
+				sp player; That lube from before - you said a friend made it?
+				t housekeepF nods.
+				sp housekeep; He enjoys making things like that in his spare time. He actually teaches how to make things like it back home; he's got a club for that sort of thing.
+			`);
+			if(checkFlag('haze','heaven'))
+				writeSpeech("player","","<i>A club for learning that sort of thing...? Why does that sound familiar...?</i>");
+			writeHTML(`
+				sp housekeep; ...Ah, I did ask if I could have some to give to you, but he told me very explicitly that the only people he's okay with using it are the people he's personally taught on how to make it. Sorry.
+				sp player; Er... Is it dangerous?
+				sp housekeep; Not at all - it's more that he's worried someone might use a little too much, and overload some poor person with so much pleasure that they can't function for the rest of the day. Or week.
+				t ...That wouldn't really be too out of character for you, actually.
+				sp player; That's a shame, I was hoping to get my hands on some for a bit of fun.<br>...Wait. Does that mean he's trained you in how to make it?
+				sp housekeep; Of course. I had a bit of free time a while ago, so I joined his club for a little while and he taught me.
+				t housekeepF smiles proudly.
+				sp housekeep; I learned quite a few crafts during my time in the clubs, actually, including weaving and sewing. My work outfit is hand-made!
+				sp player; Really? That's quite impressive.
+				t He blushes slightly, sitting up straighter with a bigger smile.
+				sp housekeep; Thank you very much~
+				t With that, he shifts slightly in place.
+			`);
 			if(data.player.gender == "man")
 				writeSpeech("housekeep","","Was there anything else you would like to request, *Master?");
 			else
@@ -1213,6 +1572,10 @@ var eventArray = [
 	{index: "housekeep2-1", name: "In the Kitchen Again"},
 	{index: "housekeep3", name: "Giving a Blowjob"},
 	{index: "housekeep3-1", name: "Giving a Second Blowjob"},
+	{index: "housekeep4", name: "Bouncing Bunny Fun"},
+	//{index: "housekeep4-1", name: "Breeding Bunny Round 2"},
+	{index: "housekeep5", name: "Bikini Bathing Fun"},
+	//{index: "housekeep5-1", name: "Second-Time Swimsuit"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -1591,6 +1954,133 @@ function writeEvent(name) { //Plays the actual event.
 			writeFunction("writeEncounter('housekeepBlowjobOverload')","Give him the strongest orgasm of his life");
 			break;
 		}
+		case "housekeep4" : {
+			document.getElementById('output').innerHTML = '';
+			writeBig("images/housekeep/bunny-1.jpg","Art by Kinta no Mousou");
+			writeSpeech("housekeep","","How does it look, *Master~?");
+			writeText("His hand gently traces his tights along his hips, the sublte movement onto highlighting the fact that he clearly has no panties on underneath.");
+			writeSpeech("player","","I'll hold off from judging the service until we're all finished.<br>...But you've definitely got my expectations pretty high.");
+			writeText("housekeepF's expression brightens up more, his blush deepening.");
+			writeSpeech("housekeep","","Well, in that case, why don't we get right to it? How would you like to start~?");
+			writeFunction("writeEncounter('housekeep3A-1')", "Play with his chest first");
+			writeFunction("writeEncounter('housekeep3A-2')", "Get right to the sex");
+			break;
+		}
+		case "housekeep4-1" : {
+			document.getElementById('output').innerHTML = '';
+			writeHTML(`
+				sp player; How about you pull out that bunny-girl outfit again?
+				t housekeepF smiles wide, nodding.
+				sp housekeep; I'd be happy to~
+				...
+				im bunny-1.jpg
+				sp housekeep; How did you want to start this time, *Master~?
+			`);
+			writeFunction("writeEncounter('housekeep3A-1repeat')", "Play with his chest first");
+			writeFunction("writeEncounter('housekeep3A-2repeat')", "Get right to the sex");
+			break;
+		}
+		case "housekeep5" : {
+			document.getElementById('output').innerHTML = '';
+			writeHTML(`
+				t Pulling him into the water, you hear housekeepF laugh softly as he goes along with it. There's a bit of a splash as you steer him into your lap, your cock shaft pressing against his ass as you do.
+				sp housekeep; Haha~ You certainly seem excited~!
+				sp player; With an outfit like yours, it'd be hard not to be.
+				t Your hands grasp his thighs, pulling him against you as you line up your cock with his ass.
+				t Shifting your head, you press your lips to his as you grind against him, a small shudder of pleasure shooting through him as you do.
+				t You bring your lips away from his just as your head slides into his hole.
+				im bikini-3.jpg
+				sp housekeep; Mm~
+				t housekeepF's eyes open a bit as he smiles at you, starting to roll his hips a bit. Despite how small the movement is, the feeling of your cock inside him feels more pleasurable than usual...
+				t Given how flushed his face is already, it seems he's feeling the same.
+				sp player; That lube... Some kind of specialty thing?
+				sp housekeep; Maybe~
+				t He relaxes into your chest a bit, letting out a content sigh of pleasure.
+				sp housekeep; It helps to enhance sensitivity a little bit. A friend made it, and I thought you might enjoy it~
+				sp player; Proactive as always... my slutty maid.
+				t Your words make him shudder, his smile wider as he rolls his hips again. Every instant, your cock is shifting inside him as he bounces minutely in place, even before you start thrusting yourself.
+				t The sensitivity of your cock and the tightness of his ass feel incredible as you start bucking into him, your grunts mixing with housekeepF's moans as you start racing towards the edge quickly.
+				sp player; You feel incredible...!
+				t Another gasping moan from housekeepF, the praise making him squirm.
+				t Your hands toy with his soft, smooth thighs as you pull him into you, rocking your hips back and forth as you gently fuck him.
+				t Seconds bleed into minutes as you find yourself already approaching the edge.
+				sp player; Fuck...
+				t Your grip on his thighs tighten as you breathe out sharply.
+				sp player; Cumming...!
+				sp housekeep; Yes~ Cum inside, *Master~!
+				t housekeepF lets out a loud, low moan of ecstasy as his eyes shut tight, his cock twitching sharply as ropes of cum spurt out.
+				im bikini-4.jpg
+				t Your own cum spurts out inside of him, filling him up as your cock throbs inside his tight, slick hole.
+				t Despite cumming, though, you don't feel your erection flagging at all - in fact, it seems to get a little harder...
+				t housekeepF notices this, leaning against you with a smile.
+				sp housekeep; That's the lube, too~ It's a handy little tool, isn't it?
+				t Instead of replying, you buck your hips upward, the water shifting as housekeepF lets out a sharp, moaning gasp.
+				sp housekeep; W-Well, if you're that interested in a round two, I certainly won't complain~!
+				t You let out a sharp laugh in reply.
+				sp player; Who says I want just <i>two?</i>
+				t The playful spark flashes in housekeepF's eyes as he squeezes tightly around your cock for a moment.
+				sp housekeep; Then let's get right to it~
+				t You two might be at this for a little while...
+				...
+				sp housekeep; C-Cumming...!
+				t Another rope of cum spills out from housekeepF's cock, spilling into the water as he writhes against you and while you fill him up with yet another creampie.
+				t At this point, you're not even sure of how many rounds you've gone, but you are finally finished, the both of you breathing heavily as you relax in the tub.
+				t Smiling, housekeepF looks into your eyes.
+				im bikini-5.jpg
+				sp housekeep; W-Well... Did you enjoy that, *Master~?
+				t As your cock slides out of his ass, you let out a content sigh.
+				sp player; At some point, I'll want a bit of that lube for myself. It works <i>wonderfully.</i>
+				t He lets out a soft laugh, shaking his head a bit.
+				sp housekeep; I'll ask my friend then - they take pride in their work, so they'll be happy to hear the praise.<br>For now, though...
+				t housekeepF shifts slightly, looking over the bath.
+				sp housekeep; I think I'll draw another bath... Seems to me like it'll be a good idea to rinse the cum off of us.
+				sp player; Fair point.
+				t The both of you end up hopping out of the bath, taking turns cleaning off to avoid another round dirtying you both up, before you finish up for the night.
+			`);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "housekeep5-1" : {
+			document.getElementById('output').innerHTML = '';
+			if(data.player.location != 'gallery'){
+				writeHTML(`
+					sp player; Why don't you go ahead and grab that bikini again and draw a bath?
+					t housekeepF smiles excitedly, nodding.
+					sp housekeep; It'll be ready in just a moment~!
+					...
+					t You don't have to wait long to be in the same position as before, though this time you don't have to pull housekeepF into the water.
+					t Instead, he lowers himself down into it, your hands moving to his legs to help guide him onto your cock.
+				`);
+			}
+			writeHTML(`
+				im bikini-3.jpg
+				t You roll your hips into him, pulling him down onto your cock effortlessly as you press your lips to his, your tongues moving together as he moans gently.
+				t Your hand toys with his chest as you thrust into him, his nipple hard between your fingers as you squeeze it and run your fingers around his areolas.
+				sp housekeep; H-Hah...~!
+				t Each lift of his body causes his dick to come out of the water for a moment before coming back down, the cool air stimulating the tip before it gets warmed again.
+				t You don't need to move much to feel stimulated, your cock never entirely leaving his ass as you thrust back and forth.
+				t His own hand presses against the wall-tile as he shudders slightly, the water shifting as his voice starts getting louder.
+				sp housekeep; You feel so good inside me~
+				t He rolls his own hips in the water, gliding your cock around his insides as you feel him tighten and squeeze around you, stimulating your cock from the base to the head as his body shudders.
+				t You lose track of time as you gently fuck him in the water, the lube staying slick and making your cock feel pleasantly tingly and warm at all times.
+				sp housekeep; A-Ah, I'm...!
+				t You feel your own climax approaching, and you pull him tightly against you as you start to cum, his own cock spurting too.
+				im bikini-4.jpg
+				t He writhes against you for several more seconds before calming down a bit, smiling at you happily. His cock doesn't seem to have gone down, though... and neither has yours.
+				sp housekeep; Mmm... Sounds like you might need another round or three to be satisfied, *Master~
+				t Your cock only seems to get harder inside of him, his dick still twitching in the water.
+				sp player; Let's see if you can handle it, then.
+				...
+			`);
+			if(data.player.location != 'gallery'){
+				writeHTML(`
+					t It takes a fairly long while for you two to tire out, with several more orgasms than you expected tonight coming from each of you. Despite that, you honestly feel more relaxed than tired...
+					t Once you finally finish up, housekeepF drains the tub and sends you out so he can finish the cleanup, before heading out for the night.
+				`);
+			}
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong event. Error code: Failed to write event ("+name+") in "+character.index+".js");
 			break;
@@ -1613,7 +2103,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "housekeepReward", trust: 43,},
+	{index: "housekeepReward", trust: 45,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
@@ -1621,7 +2111,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "housekeepReward": {
 			writePhoneImage("images/housekeep/onahole-3.jpg","housekeepOnahole, art by Kinta no Mousou");
-			writePhoneSpeech("housekeep","","You've finished all of the non-repeatable content for housekeepF for the update! If you haven't seen them already, there are also slightly-different, repeatable versions of those sex scenes if you request the same service from housekeepF again.");
+			writePhoneSpeech("housekeep","","You've finished all of the non-repeatable content for housekeepF for the update! If you haven't seen them already, there are also slightly-different, repeatable versions of those sex scenes if you request the same service from housekeepF again, including another version of the bunny-suit and bikini scenes.");
 			break;
 		}
 		default: {
