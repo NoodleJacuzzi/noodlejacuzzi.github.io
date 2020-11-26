@@ -1,12 +1,12 @@
-var character = {index: "ojou", fName: "Olivia", lName: "Wright", trust: 0, encountered: false, textEvent: "", met: false, color: "#4EAAB5", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false};
+var character = {index: "ribbon", fName: "Ella", lName: "Bell", trust: 0, encountered: false, textEvent: "", met: false, color: "#8D528A", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false};
 
 var logbook = {
-	index: "ojou", 
-	desc: "The daughter of a major donor to the university, she attends Parent Teacher Student Association meetings in his stead. She actually has a small circle of friends as her haughty, bratty attitude only seems to extend to members of the faculty and authority figures.",
-	body: "She's quite petite, a little skinnier than your usual targets. She doesn't seem to sexually confident either, just a normal girl attending university, albeit one with a very refined air about her.",
-	clothes: "There's no chance that her outfit could even be considered close to what's assigned to students, most of the time she's at the university she's either wearing expensive-looking clothes. Probably not the sort of thing she'd wear at home.",
-	home: "If her outfit is anything to go by, her home might even be a rug above the higher-end houses on Vintage Street.",
-	tags: "Betrayal, mind break, corruption",
+	index: "ribbon", 
+	desc: "",
+	body: "",
+	clothes: "",
+	home: "",
+	tags: "",
 	artist: "Artist: Oreteki18kin",
 	author: "Author: NoodleJacuzzi",
 };
@@ -17,13 +17,14 @@ var newItems = [
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-	{index: "ojouIntro", name: "Someone in a fancy set of clothes is approaching you", requirements: "?trust ojou 0; ?flag principal council; ?location westHallway;", altName: "", altImage: "",},
-	{index: "ojouLevel1Quo", name: "ojou has come to pay you a visit as you requested", requirements: "?trust ojou 21; ?location playerOffice;", altName: "", altImage: "",},
-	{index: "ojouLevel2Quo", name: "ojou has come to pay you a visit as you requested", requirements: "?trust ojou 22; ?location playerOffice;", altName: "", altImage: "",},
-	{index: "ojouLevel3Quo", name: "ojou isn't here today, it seems like you'll have to pay her a visit instead", requirements: "?trust ojou 23; ?location playerOffice;", altName: "", altImage: "",},
-	{index: "ojouLevel4Quo", name: "ojou has come to pay you a visit", requirements: "?trust ojou 100; ?location playerOffice;", altName: "", altImage: "",},
-	{index: "brownHangout", name: "brown and ojou are walking together", requirements: "?trustMin brown 1; ?trust ojou 1; !flag ojou brownHangout; ?location street;", altName: "", altImage: "",},
-	{index: "ribbonHangout", name: "ribbon and ojou are walking together", requirements: "?trustMin ribbon 1; ?trust ojou 1; !flag ojou ribbonHangout; ?location westHallway;", altName: "", altImage: "",},
+	{index: "ribbonIntro", name: "", requirements: "?trust ribbon 0; ?location classroomA;", altName: "", altImage: "",},
+	{index: "ribbonLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin nurse 80; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
+	{index: "ribbonLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin brown 80; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
+	{index: "ribbonLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin president 80; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
+	{index: "ribbonLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin purple 90; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
+	{index: "ribbonLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin starlet 83; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
+	{index: "ribbonClub", name: "You can wait for the set time here", requirements: "?trust ribbon 2; ?location classroomA;", altName: "Unknown", altImage: "images/none.png",},
+	{index: "ribbonQuo", name: "You can wait for ribbon here", requirements: "?trust ribbon 80; ?location classroomA;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.

@@ -32,7 +32,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "maidA1", name: "You can see mistressF's friend, maid, standing near a cafe. Based on the bag she's carrying, she seems to be shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 30, trustMax: 30, type: "tab", top: 0, left: 0, day: "odd",},
 	{index: "maidA1", name: "You can see mistressF's friend, maid, standing near a cafe. Based on the bag she's carrying, she seems to be shopping.", requirements: "?trustMax maid 29; ?trust mistress 50; ?location shoppingDistrict;", altName: "", altImage: "",},
 	{index: "maidA2", name: "maid seems to be standing near a cafe. She doesn't have her baskets this time, so it doesn't seem like she's shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 110, type: "tab", top: 0, left: 0, day: "odd",},
-	{index: "maidA3", name: "maid seems to be standing near a cafe. She seems to have just finished shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 115, trustMax: 115, type: "tab", top: 0, left: 0, day: "odd",},
+	{index: "maidA3", name: "maid seems to be standing near a cafe. She seems to have just finished shopping.", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 115, trustMax: 200, type: "tab", top: 0, left: 0, day: "odd",},
 
 	];
 
@@ -1480,8 +1480,15 @@ function writeEncounter(name) { //Plays the actual encounter.
 			document.getElementById('output').innerHTML = '';
 			writeSpeech("maid","","Ah, playerF. How are you doing?");
 			writeSpeech("player","","I'm doing pretty good.");
-			writeText("She smiles, nodding.");
-			writeSpeech("maid","","Did you come to talk about something specific, or just to say hello?");
+			if(checkFlag('maid','endingA') || checkFlag('mistress','endingA')){
+				writeSpeech("maid","","Was there anything particular you wanted to talk about?");
+				writeFunction("writeEncounter('endingIntroRepeat')", "\"About that offer from before...\"");
+			}
+			else{
+				writeText("She smiles, nodding... before pausing for a second.");
+				writeSpeech("maid","","Actually, if you had some free time, mistressF and I did want to talk to you about something important. Nothing time-sensitive, of course, if there's something else you wanted to do.");
+				writeFunction("writeEncounter('maidEnding')", "Talk about the 'important' thing with her and mistressF");
+			}
 			writeFunction("writeEncounter('maidA3a')", "\"Let's go back to your place.\"");
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
@@ -1493,6 +1500,145 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("maid","","My car is parked just around the corner.");
 			writeText("...");
 			writeEncounter('maidASexSelect');
+			break;
+		}
+		case "endingIntroRepeat" : {
+			document.getElementById('output').innerHTML = '';
+			writeHTML(`
+				sp player; About that offer you and mistressF made before...
+				t maidF stands up a bit straighter.
+				sp maid; Ah, what about it? Did you think it over a bit more?
+			`);
+			writeFunction("writeEncounter('fullEndingRepeat')", "\"I want to go exclusive with you two\"");
+			writeFunction("writeEncounter('maidA3')", "\"Never mind\"");
+			break;
+		}
+		case "maidEnding" : {
+			if(!checkFlag('maid','endingA'))
+				addFlag('maid', 'endingA');
+			document.getElementById('output').innerHTML = '';
+			writeSpeech("player","","I have some free time. If it's important, then lead the way.");
+			writeSpeech("maid","","Let's head over to her place, then.");
+			writeHTML(`
+				...
+				t When you arrive at mistressF's house, she's sitting on the couch, her legs crosses a little as she hums. Noticing you two, she sits up straighter and smiles.
+				sp mistress; Heya! C'mere, it's more comfortable to sit.
+				t When you're all seated, there's a moment of silence before maidF speaks up.
+			`);
+			writeEncounter('fullEndingA');
+			break;
+		}
+		case "fullEndingA" : {
+			writeHTML(`
+				sp maid; I'll, um... I'll get right to the point. mistressF and I wanted to know how you feel about exclusivity, with the three of us being together.
+				t mistressF nods, her hands in her lap.
+				sp mistress; Honestly, we've gotten a little attached to you. If you're interested, we wanted to try taking it a little bit further.
+				sp maid; We can keep going with what we've been doing, of course, but mistressF and I discussed it a bit and thought we'd ask about it, in case you feel the same way.
+				t Well... You're not usually the type to go for actual dating, but you have been enjoying your time with them...
+			`);	
+			writeFunction("loadEncounter('maid','fullEndingB')", "I want it too, let's do it");
+			writeFunction("loadEncounter('maid','maidEndingReject')", "I don't do exclusivity");
+			break;
+		}
+		case "fullEndingB": {
+			document.getElementById('output').innerHTML = '';
+			writeHTML(`
+				t You take a moment to mull it over, before slowly nodding.
+				sp player; I think... Yeah. I want that too.
+				t Both mistressF and maidF smile brightly at that, with maidF leaning forward to gently grasp your hand.
+				sp maid; That's wonderful!
+				t mistressF nods.
+				sp mistress; Yeah, it really is! Trust me playerF, you're definitely in for some fun with the two of us~
+				t Reaching her hand over, you watch as maidF's face goes bright red as mistressF's hand squeezes her ass.
+				t Leaning forward, mistressF presses her lips to yours, before pulling back with a husky whisper in your ear:
+			`);
+			loadEvent('maid','maidEnding');
+			break;
+		}
+		case "fullEndingRepeat" : {
+			document.getElementById('output').innerHTML = '';
+			writeSpeech("player","","I thought about it... and I want to go exclusive with you two.");
+			writeText("maidF's face flushes red, but a beaming smile breaks out across her face.");
+			writeSpeech("maid","","That's wonderful! We need to tell mistressF immediately, she'll be positively ecstatic!");
+			writeText("She leans in, kissing you on the cheek before grasping your hand and moving happily.");
+			writeText("...");
+			writeText("It doesn't take long for you to get to mistressF's place, or to tell her.");
+			writeText("Her smile is just as bright as maidF's, though her kiss is remarkably less chaste as she presses her lips to yours.");
+			writeText("When she pulls back, it's with a husky whisper in your ear:");
+			loadEvent('maid','maidEnding');
+			break;
+		}
+		case "maidEndingReject" : {
+			document.getElementById('output').innerHTML = '';
+			passTime();
+			writeHTML(`
+				sp player; Sorry, but I don't really do exclusivity. It's just not what I'm looking for right now.
+				t mistressF and maidF look to each other for a moment, before nodding together.
+				sp mistress; Alright. We're obviously no strangers to the more casual side of things, so I'm definitely fine with what we have now.
+				sp maid; Same here. If you do ever change you're mind, we'll be open to it, but what we have is good too.
+				t mistressF nods again, smiling, as maidF stands up.
+				sp maid; Thank you for listening though, playerF. Let's talk again soon.
+				sp mistress; And then do a little more than talk, of course~
+				t mistressF gives you a wink as you both rise as well.
+			`);
+			writeFunction("changeLocation(data.player.location)", "Head out for now");
+			break;
+		}
+		case "finale" : {
+			document.getElementById('output').innerHTML = '';
+			setTrust('maid',200);
+			setTrust('mistress',200);
+			writeHTML(`
+				t It's been almost a year since you decided to go exclusive with mistressF and maidF, and it's been an enjoyable ride... One that's involved no small amount of 'riding', either.
+				t You've had more than a bit of fun with them, from hypnotizing mistressF into acting like a literal bitch in heat, to convincing maidF to try dominating mistressF.
+				t You hadn't really expected how into it mistressF would be, or that she would take to ordering maidF to dominate her on some nights, which is just hilariously ironic.
+				t Between being with them, and using your hypnotism to help mistressF with some of her more 'problematic' real estate deals, it's been a pretty good time.
+				t Your phone buzzes in your pocket - a notification about one of those same deals. Annoying, but whatever. A quick reply later, and you lean back on the couch... before thinking about something else on your phone.
+				t You have a picture that, of course, mistressF insisted on taking after a particularly racy evening. Feeling a bit nostalgic, you open the gallery and take a look at...
+			`);
+			writeFunction("writeEncounter('finalePregnant')","...a picture from the night you knocked them both up");
+			writeFunction("writeEncounter('finaleOther')","...a picture of them in their wedding-night lingerie");
+			break;
+		}
+		case "finalePregnant" : {
+			document.getElementById('output').innerHTML = '';
+			writeHTML(`
+				im epilogue-8.jpg
+				t You admire the image for a moment, before the wet sound of mistressF taking your cock out of her mouth rings out.
+				sp mistress; What'cha looking at?
+				t You just turn the phone around, showing her the image as she grins lewdly.
+				sp mistress; Mm, that was a fun night~ Feeling nostalgic, lover? I wouldn't mind grabbing that shirt if you wanna blow your load across it again~ And I'm sure maidF here wouldn't mind slipping into her uniform!
+				sp maid; Mm~!
+				t The sound of her reply is muffled by the fact that she's currently carressing your balls with her tongue, but it's obviously an affirmative.
+				t You just shake your head, bringing your hands to stroke their hair a bit.
+				t mistressF winks up at you as maidF moves her head enough to speak.
+				sp mistress; Love you, playerF~
+				sp maid; I love you, *Master~
+				...
+			`);
+			if(data.player.location != 'gallery')
+				writeFunction("loadEncounter('system', 'credits')", "The End");
+			break;
+		}
+		case "finaleOther" : {
+			document.getElementById('output').innerHTML = '';
+			writeHTML(`
+				im epilogue-10.jpg
+				t You admire the image for a moment, before the wet sound of mistressF taking your cock out of her mouth rings out.
+				sp mistress; What'cha looking at?
+				t You just turn the phone around, showing her the image as she grins lewdly.
+				sp mistress; Mm, that was a fun night~ Feeling nostalgic, lover? If you like, I'm sure maidF would be as happy as me to take a few pictures of that outfit again, though this time covered in cum~
+				sp maid; Mm~!
+				t The sound of her reply is muffled by the fact that she's currently carressing your balls with her tongue, but it's obviously an affirmative.
+				t You just shake your head, bringing your hands to stroke their hair a bit.
+				sp player; This is more than fine. Thanks, both of you.
+				t mistressF winks up at you as maidF moves her head enough to speak.
+				sp mistress; Love you, playerF~
+				sp maid; I love you, *Master~
+				...
+			`);
+			if(data.player.location != 'gallery')
+				writeFunction("loadEncounter('system', 'credits')", "The End");
 			break;
 		}
 		default: {
@@ -1509,6 +1655,7 @@ var eventArray = [ //Lists the events of the character for unlocking and replayi
 {index: "maid3", name: "A Girl In Uniform"},
 // {index: "maid3A", name: "Uniformed Again"},
 {index: "maid4", name: "Threesome with mistressF"},
+{index: "maidEnding", name: "maidF and mistressF Epilogue"}
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -2026,9 +2173,94 @@ function writeEvent(name) { //Plays the actual event.
 				writeText("...");
 				writeText("A while later, when mistressF is all cuddled out, you all get up to clean up, rinse off, and head out.");
 				writeText("It takes a while, particularly when mistressF tried to pull aside maidF for a little fingerbanging, but it was fun.");
-				writeText("Still, it's about time to get going - time waits for no man, and all that...");
+				writeText("Still, it's about time to get going - time waits for no one, and all that...");
 			}
 			writeFunction("changeLocation(data.player.location)", "Finish (for now)");
+			break;
+		}
+		case "maidEnding" : {
+			writeHTML(`
+				sp mistress; How about we celebrate by getting a little wild, <i>*Master~?</i>
+				t mistressF turns around and grasps maidF's ass firmly, winking back at you as she bends forward at the hip.
+				t maidF follows suit with barely any hesitation as they both flip their skirts up, exposing their holes to you and spreading themselves open for you.
+				im epilogue-1.jpg
+				sp mistress; These holes are all yours to play with now~ So go ahead and start <i>thrusting</i> into them, lover, and make us <i>squeal~</i>
+				sp maid; Yes, please fill us up and make us cum while you pump us full, *Master!
+				t Lowering your pants enough to pull out your cock, you think over who to fuck first for a moment... before approaching maidF.
+				sp player; Good job saying 'please', slut.
+				t You push yourself forcefully into her cunt, making her moan sharply as her hands shake.
+				t You don't hold back for a second, thrusting into her almost violently as you grab her uniform and pull her into each swing of your hips, mistressF biting her lip and bringing her hand to her own pussy as she watches you fuck maidF.
+				sp mistress; God, this is so fucking hot...~!
+				t You keep thrusting into maidF's pussy for a bit, before you start to notice her body shaking as her body gets close to the edge.
+				t So, to tease her, you pull out of her completely...
+				sp maid; A-Ah?
+				sp mistress; <i><b>NN~!</b></i>
+				t ...And thrust into mistressF, pushing in balls-deep and staying there for a moment as she shudders in pleasure.
+				sp player; That's a good girl... Patiently waiting your turn. It feels good, doesn't it?
+				sp mistress; Y-Yes~ It feels <i>amazing~!</i>
+				t You saw into her a bit longer, before again pulling out when you notice her body starting to shudder and quake as she gets near the edge.
+				t Teasing the both of them, you fuck them rough and switch between them as they get more and more riled up, your hands toying with whichever girl isn't wrapped around your cock.
+				t You keep up this pace for a while, making sure they're both well-fucked.
+				im epilogue-2.jpg
+				t The two of them shift from moaning in desperate pleasure to humming in excited anticipation, the off-and-on stimulation pushing them along.
+				t Meanwhile, you can't help but approach the edge yourself as you fuck them... though you don't intend to finish with just one round.
+				sp player; Get ready, you two...
+				...
+				sp maid; H-Haah~... Yesss...!
+				t maidF's head hangs down limply for a moment as you drop a load into her, pulling out with a soft gasp from the sensation of her still squeezing tight around you.
+				t You don't even feel close to done yet, and given the way mistressF is looking at you, you doubt she is either.
+				t Her fingers trace spread herself a bit more, before saying lustily:
+				sp mistress; I did say that our holes were all yours, and that doesn't just mean our tight little pussies~
+				t maidF, still shuddering slightly, nods as she spreads her ass even wider.
+				sp maid; Please use us even more, *Master~
+				...
+				im epilogue-3.jpg
+				sp mistress; F-Fuck...~!
+				t mistressF's hand goes to her gaping hole, toying with the cum that comes spilling out of it as she shudders bodily, and while maidF drops down to her knees.
+				t Given the number of times she came with you, you're not surprised it takes her a second to calm herself down.
+				sp mistress; Ah, right...
+				t Reaching to the nearby table, she gives you a playful smile and a bottle of water with a wink.
+				sp mistress; Gotta stay hydrated for round 2, lover~
+				t Her hand moves to roughly paw at maidF's chest, which causes her to let out another moan even as she gets handed a bottle herself.
+				sp mistress; I hope you're not entirely spent yet, because we still have a bit more in us ourselves~ Right, playerF?
+				t It only takes a glance at the look in maidF's eyes for you to know she's ready for another round if you are.
+				sp player; Ready or not, I intend on using my sexy maid-slut to cum a few more times at least.
+				t There's a hazy look to maidF's eyes for a moment as the post-orgasmic bliss fades a bit, before she nods with a smile.
+				sp maid; Y-Yeah~ Let's go until we can't any more~
+				...
+				sp mistress; Enjoying the view of our nice, big tits *Master~?
+				im epilogue-4.jpg
+				t The two of them toy with their chest teasingly in front of you, invitingly shifting them about.
+				t Thrusting into them feels as wonderful as you expect, the soft sensation of their breasts wrapping around your cock as mistressF groans softly, while maidF squirms in pleasure.
+				sp player; I'm gonna speed up...!
+				sp maid; Y-Yes, please do~!
+				...
+				sp mistress; Cum for us~
+				t Both women look up at you hungrily as they toy with their chests, shifting them up and down around your cock as you thrust in.
+				sp maid; Paint our tits with your cum, *Master~!
+				im epilogue-5.jpg
+				sp mistress; Mm, wonderful~
+				sp maid; Thank you, *Master~
+				...
+				im epilogue-6.jpg
+				t maidF licks her lips as mistressF lets out a soft, lust-filled laugh.
+				sp mistress; What a wonderful mess~
+				t Leaning forward, mistressF's tongue laps at some of the cum dripping from maidF's face, only for maidF to lean into it.
+				t Pressing their lips together, they make sure to thoroughly taste your jizz as their tongues press against one another, moans spilling out as their chests rub together.
+				sp maid; A-Ah...
+				t Pulling back a bit, maidF smiles at the two of you, looking to the clock for a moment.
+				t Following her gaze, you realize it's gotten a bit late... which, of course, means only one thing, and mistressF seems to know it too.
+				sp mistress; Sounds like we should clean up this little mess, then make a <i>new</i> one in our bedroom~
+				t mistressF stands up, her legs a little shaky, as she stretches out her back and winking at you.
+				sp mistress; When we wake up tomorrow, I'm sure I'll be too well-fucked to clean up in here, after all~
+				t maidF shifts slightly, before snarking back:
+				sp maid; As if you clean up much anyway~
+				t mistressF replies with a short laugh, before pinching her gently on her nipple, making maidF's voice spill out with another moan.
+				sp mistress; Hush up and clean, cutie~ I want to drag playerF here into the bed and watch him fuck you stupid already~
+				t You let out a short laugh, watching the teasing.
+				t At the very least, it seems like this relationship will be pretty fun as it goes on...
+			`);
+			writeFunction("loadEncounter('maid', 'finale')", "Flash forward");
 			break;
 		}
 		default: {
@@ -2056,7 +2288,7 @@ var phoneArray = [//Lists the potential text events the player can receive at th
 {index: "maidPhone1", trust: 22,},
 {index: "maidPhone1", trust: 23,},
 //{index: "maidPhone2", trust: 25,},
-{index: "maidReward", trust: 115,},
+//{index: "maidReward", trust: 115,},
 //{index: "maidRewardDuo", trust: 30,},
 ]
 
