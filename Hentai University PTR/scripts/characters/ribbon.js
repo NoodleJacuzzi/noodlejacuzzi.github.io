@@ -17,27 +17,134 @@ var newItems = [
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-	{index: "ribbonIntro", name: "", requirements: "?trust ribbon 0; ?location classroomA;", altName: "", altImage: "",},
+	{index: "ribbonIntro", name: "A wealthy-looking girl is here", requirements: "?trust ribbon 0; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "ribbonLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin nurse 80; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
 	{index: "ribbonLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin brown 80; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
 	{index: "ribbonLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin president 80; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
 	{index: "ribbonLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin purple 90; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
 	{index: "ribbonLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin starlet 83; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
-	{index: "ribbonClub", name: "You can wait for the set time here", requirements: "?trust ribbon 2; ?location classroomA;", altName: "Unknown", altImage: "images/none.png",},
-	{index: "ribbonQuo", name: "You can wait for ribbon here", requirements: "?trust ribbon 80; ?location classroomA;", altName: "", altImage: "",},
+	{index: "ribbonClub", name: "You can wait for the set time here", requirements: "?trust ribbon 2; ?location eastHallway;", altName: "Unknown", altImage: "images/none.png",},
+	{index: "ribbonQuo", name: "You can wait for ribbon here", requirements: "?trust ribbon 80; ?location eastHallway;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "neet1": {
-			writeText("You walk into the room.");
-			writeSpeech("player", "", "Hello, neetF.");
-			writeSpeech("neet", "", "And hello to you, playerMister playerF.");
-			writeSpecial("You made a new friend!");
-			writeFunction("changeLocation('playerHouse')", "Go home");
-			writeBig("images/neet/profile.jpg", "Art by Enoshima Iki");
+		case "cancel": {
+			unencounter(character.index);
+			changeLocation(data.player.location);
+			break;
+		}
+		case "ribbonIntro": {
+			writeHTML(`
+			`);
+			setTrust("ribbon", 1);
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "ribbonLetter": {
+			writeHTML(`
+				t You really should take better care not to be seen performing such deliciously vile acts upon women here. I'm not the type to snoop, but I already had my eye on one of your latest playtoys.
+				t I'm not jealous of course. Come to my club after classes end for the day, it's just outside classroom A. 
+				t A mask and outfit will be provided for you. You'll wear it unless you want your secret exposed to the entire school.
+				t XOXOXO~
+			`);
+			setTrust("ribbon", 2);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "ribbonClub": {
+			writeHTML(`
+			`);
+			writeFunction("writeEncounter('brownLewd')", "Continue");
+			writeFunction("changeLocation(data.player.location)", "Bow out");
+			break;
+		}
+		case "ribbonLewd": {
+			writeHTML(`
+			`);
+			writeEvent(name);
+			passTime();
+			setTrust("ribbon", 80);
+			if (checkTrust("ojou") == 1) {
+				writeFunction("writeEncounter('ribbonVoyeur')", "Meanwhile...");
+			}
+			else {
+				writeFunction("changeLocation(data.player.location)", "Finish");
+			}
+			break;
+		}
+		case "ribbonRepeat": {
+			writeHTML(`
+			`);
+			writeEvent(name);
+			passTime();
+			if (checkTrust("ojou") == 1) {
+				writeFunction("writeEncounter('ribbonVoyeur')", "Meanwhile...");
+			}
+			else {
+				writeFunction("changeLocation(data.player.location)", "Finish");
+			}
+			break;
+		}
+		case "ribbonInvite": {
+			writeHTML(`
+			`);
+			setTrust("ojou", 21);
+			addFlag("ojou", "ribbonInvite");
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "ribbonInviteRepeat": {
+			writeHTML(`
+			`);
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "ribbonVoyeur": {
+			writeHTML(`
+			`);
+			setTrust("ojou", 2);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "ribbonHangout": {
+			writeHTML(`
+			`);
+			addFlag("ojou", "ribbonHangout");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "ribbonQuo": {
+			writeHTML(`
+			`);
+			writeFunction("writeEncounter('ribbonRepeat')", "Let's start a meeting");
+			if (checkFlag("ojou", "ribbonInvite") == true) {
+				writeFunction("writeEncounter('ribbonInviteRepeat')", "Let's invite ojouF again");
+			}
+			writeFunction("writeEncounter('cancel')", "Go back");
+			break;
+		}
+		case "ribbonSpecialOffer": {
+			writeHTML(`
+				
+			`);
+			break;
+		}
+		case "ribbonSpecialLewd": {
+			writeHTML(`
+				
+			`);
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		default: {
@@ -56,7 +163,65 @@ function writeEvent(name) { //Plays the actual event.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
+		case "ribbonIntro": {
+			writeHTML(`
+				im ribbonIntro.jpg
+			`);
+			break;
+		}
+		case "ribbonLewd": {
+			writeHTML(`
+				im ribbonLewd1.jpg
+				im ribbonLewd2.jpg
+				im ribbonLewd4.jpg
+				im ribbonLewd5.jpg
+			`);
+			break;
+		}
+		case "ribbonRepeat": {
+			writeHTML(`
+				im ribbonLewd1.jpg
+				im ribbonLewd2.jpg
+				im ribbonLewd4.jpg
+				im ribbonLewd5.jpg
+			`);
+			break;
+		}
+		case "ribbonInvite": {
+			writeHTML(`
+				im ribbonInvite1.jpg
+				im ribbonInvite2.jpg
+				im ribbonInvite3.jpg
+				im ribbonInvite4.jpg
+				im ribbonInvite5.jpg
+				im ribbonInvite6.jpg
+				im ribbonInvite7.jpg
+				im ribbonInvite8.jpg
+			`);
+			break;
+		}
+		case "ribbonInviteRepeat": {
+			writeHTML(`
+				im ribbonInvite1.jpg
+				im ribbonInvite2.jpg
+				im ribbonInvite3.jpg
+				im ribbonInvite4.jpg
+				im ribbonInvite5.jpg
+				im ribbonInvite6.jpg
+				im ribbonInvite7.jpg
+				im ribbonInvite8.jpg
+			`);
+			break;
+		}
+		case "ribbonSpecialLewd": {
+			writeHTML(`
+				im ribbonSpecial1.jpg
+				im ribbonSpecial2.jpg
+				im ribbonSpecial3.jpg
+				im ribbonSpecial4.jpg
+				im ribbonSpecial5.jpg
+				im ribbonSpecial6.jpg
+			`);
 			break;
 		}
 		default: {

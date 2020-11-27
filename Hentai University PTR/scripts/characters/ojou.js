@@ -17,26 +17,104 @@ var newItems = [
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-	{index: "ojouIntro", name: "Someone in a fancy set of clothes is approaching you", requirements: "?trust ojou 0; ?flag principal council; ?location westHallway;", altName: "", altImage: "",},
+	{index: "ojouIntro", name: "Someone in a fancy set of clothes is approaching you", requirements: "?trust ojou 0; ?flag principal council; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "ojouLevel1Quo", name: "ojou has come to pay you a visit as you requested", requirements: "?trust ojou 21; ?location playerOffice;", altName: "", altImage: "",},
 	{index: "ojouLevel2Quo", name: "ojou has come to pay you a visit as you requested", requirements: "?trust ojou 22; ?location playerOffice;", altName: "", altImage: "",},
 	{index: "ojouLevel3Quo", name: "ojou isn't here today, it seems like you'll have to pay her a visit instead", requirements: "?trust ojou 23; ?location playerOffice;", altName: "", altImage: "",},
 	{index: "ojouLevel4Quo", name: "ojou has come to pay you a visit", requirements: "?trust ojou 100; ?location playerOffice;", altName: "", altImage: "",},
 	{index: "brownHangout", name: "brown and ojou are walking together", requirements: "?trustMin brown 1; ?trust ojou 1; !flag ojou brownHangout; ?location street;", altName: "", altImage: "",},
-	{index: "ribbonHangout", name: "ribbon and ojou are walking together", requirements: "?trustMin ribbon 1; ?trust ojou 1; !flag ojou ribbonHangout; ?location westHallway;", altName: "", altImage: "",},
+	{index: "ribbonHangout", name: "ribbon and ojou are walking together", requirements: "?trustMin ribbon 1; ?trust ojou 1; !flag ojou ribbonHangout; ?location eastHallway;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "neet1": {
-			writeText("You walk into the room.");
-			writeSpeech("player", "", "Hello, neetF.");
-			writeSpeech("neet", "", "And hello to you, playerMister playerF.");
-			writeSpecial("You made a new friend!");
-			writeFunction("changeLocation('playerHouse')", "Go home");
-			writeBig("images/neet/profile.jpg", "Art by Enoshima Iki");
+		case "cancel": {
+			unencounter(character.index);
+			changeLocation(data.player.location);
+			break;
+		}
+		case "ojouIntro": {
+			writeHTML(`
+			`);
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			setTrust("ojou", 1);
+			break;
+		}
+		case "ojouSolo1": {
+			writeHTML(`
+			`);
+			raiseTrust("ojou", 1);
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "ojouSolo2": {
+			writeHTML(`
+			`);
+			raiseTrust("ojou", 1);
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "ojouSolo3": {
+			writeHTML(`
+			`);
+			raiseTrust("ojou", 1);
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "ojouSolo1Repeat": {
+			writeHTML(`
+			`);
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "ojouSolo2Repeat": {
+			writeHTML(`
+			`);
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "ojouQuoLevel1": {
+			writeHTML(`
+			`);
+			writeFunction("writeEncounter('ojouSolo1')", "Let's go home for a quickie");
+			writeFunction("writeEncounter('cancel')", "Go back");
+			break;
+		}
+		case "ojouQuoLevel2": {
+			writeHTML(`
+			`);
+			writeFunction("writeEncounter('ojouSolo2')", "No, we're doing it here today");
+			writeFunction("writeEncounter('cancel')", "Go back");
+			break;
+		}
+		case "ojouQuoLevel3": {
+			writeHTML(`
+			`);
+			writeFunction("writeEncounter('ojouSolo3')", "Wake her up with a bang");
+			writeFunction("writeEncounter('cancel')", "Go back");
+			break;
+		}
+		case "ojouQuoLevel4": {
+			writeHTML(`
+				
+			`);
+			writeFunction("writeEncounter('ojouSolo1Repeat')", "Let's go home");
+			writeFunction("writeEncounter('ojouSolo2Repeat')", "Use your mouth here again");
+			writeFunction("writeEncounter('cancel')", "Go back");
 			break;
 		}
 		default: {
@@ -47,15 +125,85 @@ function writeEncounter(name) { //Plays the actual encounter.
 }
 
 var eventArray = [
-	{index: "placeholder", name: "Event Name"},
-	{index: "placeholder", name: "Event Name"},
+	{index: "ojouSolo1", name: "Event Name"},
+	{index: "ojouSolo2", name: "Event Name"},
+	{index: "ojouSolo3", name: "Event Name"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
+		case "ojouIntro": {
+			writeHTML(`
+				im ojouIntro.jpg
+			`);
+			break;
+		}
+		case "ojouSolo1": {
+			writeHTML(`
+				im ojouSolo1-1.jpg
+				im ojouSolo1-2.jpg
+				im ojouSolo1-3.jpg
+				im ojouSolo1-4.jpg
+				im ojouSolo1-5.jpg
+			`);
+			break;
+		}
+		case "ojouSolo2": {
+			writeHTML(`
+				im ojouSolo2-1.jpg
+				im ojouSolo2-2.jpg
+				im ojouSolo2-3.jpg
+				im ojouSolo2-4.jpg
+			`);
+			break;
+		}
+		case "ojouSolo3": {
+			writeHTML(`
+				im ojouSolo3-1.jpg
+				im ojouSolo3-2.jpg
+				im ojouSolo3-3.jpg
+				im ojouSolo3-4.jpg
+				im ojouSolo3-5.jpg
+				im ojouSolo3-6.jpg
+				im ojouSolo3-7.jpg
+				im ojouSolo3-8.jpg
+				im ojouSolo3-9.jpg
+			`);
+			break;
+		}
+		case "ojouSolo1Repeat": {
+			writeHTML(`
+				im ojouSolo1-1.jpg
+				im ojouSolo1-2.jpg
+				im ojouSolo1-3.jpg
+				im ojouSolo1-4.jpg
+				im ojouSolo1-5.jpg
+			`);
+			break;
+		}
+		case "ojouSolo2Repeat": {
+			writeHTML(`
+				im ojouSolo2-1.jpg
+				im ojouSolo2-2.jpg
+				im ojouSolo2-3.jpg
+				im ojouSolo2-4.jpg
+			`);
+			break;
+		}
+		case "ojouSolo3Repeat": {
+			writeHTML(`
+				im ojouSolo3-1.jpg
+				im ojouSolo3-2.jpg
+				im ojouSolo3-3.jpg
+				im ojouSolo3-4.jpg
+				im ojouSolo3-5.jpg
+				im ojouSolo3-6.jpg
+				im ojouSolo3-7.jpg
+				im ojouSolo3-8.jpg
+				im ojouSolo3-9.jpg
+			`);
 			break;
 		}
 		default: {

@@ -17,22 +17,117 @@ var newItems = [
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-	{index: "brownIntro", name: "A student is at her seat", requirements: "?trust brown 0; ?location classroomA;", altName: "", altImage: "",},
-	{index: "brownHypnosis", name: "brown is sitting at her seat", requirements: "?trust brown 1; ?location classroomA;", altName: "", altImage: "",},
-	{index: "brownQuo", name: "brown is at her seat", requirements: "?trust brown 80; ?location classroomA;", altName: "", altImage: "",},
+	{index: "brownIntro", name: "A student is at her seat", requirements: "?trust brown 0; ?location classroomB;", altName: "", altImage: "",},
+	{index: "brownHypnosis", name: "brown is sitting at her seat", requirements: "?trust brown 1; ?location classroomB;", altName: "", altImage: "",},
+	{index: "brownQuo", name: "brown is at her seat", requirements: "?trust brown 80; ?location classroomB;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "neet1": {
-			writeText("You walk into the room.");
-			writeSpeech("player", "", "Hello, neetF.");
-			writeSpeech("neet", "", "And hello to you, playerMister playerF.");
-			writeSpecial("You made a new friend!");
-			writeFunction("changeLocation('playerHouse')", "Go home");
-			writeBig("images/neet/profile.jpg", "Art by Enoshima Iki");
+		case "cancel": {
+			unencounter(character.index);
+			changeLocation(data.player.location);
+			break;
+		}
+		case "brownIntro": {
+			writeHTML(`
+			`);
+			setTrust("brown", 1);
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "brownHypnosis": {
+			writeHTML(`
+			`);
+			writeFunction("writeEncounter('brownLewd')", "Continue");
+			break;
+		}
+		case "brownLewd": {
+			writeHTML(`
+			`);
+			writeEvent(name);
+			passTime();
+			setTrust("brown", 80);
+			if (checkTrust("ojou") == 1) {
+				writeFunction("writeEncounter('brownVoyeur')", "Meanwhile...");
+			}
+			else {
+				writeFunction("changeLocation(data.player.location)", "Finish");
+			}
+			break;
+		}
+		case "brownLewdRepeat": {
+			writeHTML(`
+			`);
+			writeEvent(name);
+			passTime();
+			if (checkTrust("ojou") == 1) {
+				writeFunction("writeEncounter('brownVoyeur')", "Meanwhile...");
+			}
+			else {
+				writeFunction("changeLocation(data.player.location)", "Finish");
+			}
+			break;
+		}
+		case "brownInvite": {
+			writeHTML(`
+			`);
+			setTrust("ojou", 21);
+			addFlag("ojou", "brownInvite");
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "brownInviteRepeat": {
+			writeHTML(`
+			`);
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "brownVoyeur": {
+			writeHTML(`
+			`);
+			setTrust("ojou", 2);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "brownHangout": {
+			writeHTML(`
+			`);
+			addFlag("ojou", "brownHangout");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "brownQuo": {
+			writeHTML(`
+			`);
+			writeFunction("writeEncounter('brownRepeat')", "Let's use your mouth again");
+			if (checkFlag("ojou", "brownInvite") == true) {
+				writeFunction("writeEncounter('brownInviteRepeat')", "Let's invite ojouF again");
+			}
+			writeFunction("writeEncounter('cancel')", "Go back");
+			break;
+		}
+		case "brownSpecialOffer": {
+			writeHTML(`
+				im brownMother1.jpg
+			`);
+			break;
+		}
+		case "brownSpecialLewd": {
+			writeHTML(`
+				
+			`);
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		default: {
@@ -51,7 +146,65 @@ function writeEvent(name) { //Plays the actual event.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
+		case "brownIntro": {
+			writeHTML(`
+				im brownIntro.jpg
+			`);
+			break;
+		}
+		case "brownLewd": {
+			writeHTML(`
+				im brownLewd1.jpg
+				im brownLewd2.jpg
+				im brownLewd3.jpg
+				im brownLewd4.jpg
+			`);
+			break;
+		}
+		case "brownLewdRepeat": {
+			writeHTML(`
+				im brownLewd1.jpg
+				im brownLewd2.jpg
+				im brownLewd3.jpg
+				im brownLewd4.jpg
+			`);
+			break;
+		}
+		case "brownInvite": {
+			writeHTML(`
+				im brownInvite1.jpg
+				im brownInvite2.jpg
+				im brownInvite3.jpg
+				im brownInvite4.jpg
+				im brownInvite5.jpg
+				im brownInvite6.jpg
+				im brownInvite7.jpg
+				im brownInvite8.jpg
+				im brownInvite9.jpg
+				im brownInvite10.jpg
+			`);
+			break;
+		}
+		case "brownInviteRepeat": {
+			writeHTML(`
+				im brownInvite6.jpg
+				im brownInvite1.jpg
+				im brownInvite2.jpg
+				im brownInvite3.jpg
+				im brownInvite4.jpg
+				im brownInvite5.jpg
+			`);
+			break;
+		}
+		case "brownSpecialLewd": {
+			writeHTML(`
+				im brownMother2.jpg
+				im brownMother3.jpg
+				im brownMother4.jpg
+				im brownMother5.jpg
+				im brownMother6.jpg
+				im brownMother7.jpg
+			`);
 			break;
 		}
 		default: {
