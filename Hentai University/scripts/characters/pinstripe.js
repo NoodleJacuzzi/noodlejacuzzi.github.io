@@ -144,7 +144,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp pinstripe; Ahah, fssht! Fssht! Heehee!
 				sp player; You really are deteriorating fast. I'm your boss now, got it?
 				sp pinstripe; Dee-tee... Boss?
-				sp player; Don't think, just listen. All your smarts when poof, okay? All your good ideas melted right out of those ears, and-
+				sp player; Don't think, just listen. All your smarts went poof, okay? All your good ideas melted right out of those ears, and-
 				sp pinstripe; Aaaaah!
 				t She clasps her hands to her ears and looks distressed. It's quite adorable.
 				sp player; Calm down, it's okay. I'll have all the good ideas from now on, okay? You don't need to think, just remember this. If I say something is a <b>good idea</b>, you'll do it. Okay?
@@ -187,7 +187,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 						pinstripe ... Fine. I suppose we might as well keep our working relationship professional. Now, what did you need?
 					`);
 					writeFunction("writeEncounter('pinstripeTitsuck')", "Give her a massage");
-					writeFunction("writeEncounter('pinstripeSecondDose')", "Use the blonding potion again");
+					writeFunction("writeEncounter('pinstripeSecondDosea')", "Use the blonding potion again");
 					writeFunction("writeEncounter('cancel')", "Go back");
 					break;
 				}
@@ -241,7 +241,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t She stands up off her chair and starts trying to cover herself up. This could be bad...
 			`);
 			writeFunction("writeEncounter('gameOver')", "Excuse yourself");
-			writeFunction("writeEncounter('pinstripeSecondDose')", "Use the blonding potion again");
+			writeFunction("writeEncounter('pinstripeSecondDoseb')", "Use the blonding potion again");
 			break;
 		}
 		case "backOff": {
@@ -340,7 +340,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
-		case "pinstripeSecondDose": {
+		case "pinstripeSecondDosea": {
+			passTime();
+			writeEvent(name);
+			setTrust("pinstripe", 60);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "pinstripeSecondDoseb": {
 			passTime();
 			writeEvent(name);
 			setTrust("pinstripe", 60);
@@ -385,7 +392,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeHTML(`
 				define pinstripe = sp pinstripe; im images/pinstripe/schoolgirl.jpg;
 				im service0.jpg
-				pinstripe Welcum back mister! Wanna play? You can use either of my mouths, free if you promise to treat me right~
+				pinstripe Welcum back *mister! Wanna play? You can use either of my mouths, free if you promise to treat me right~
 			`);
 			writeFunction("writeEncounter('pinstripeMouthRepeat')", "Use her mouth");
 			break;
@@ -416,7 +423,8 @@ var eventArray = [
 	{index: "pinstripeFuck", name: "Relaxation Session 1"},
 	{index: "pinstripeCowgirl", name: "Relaxation Session 1"},
 	{index: "pinstripeBroken", name: "Broken-in"},
-	{index: "pinstripeSecondDose", name: "Second Blonding"},
+	{index: "pinstripeSecondDosea", name: "Second Blonding"},
+	{index: "pinstripeSecondDoseb", name: "Second Blonding"},
 	{index: "pinstripeMouth", name: "Mouth Service"},
 	{index: "pinstripePussy", name: "Pussy Service"},
 ];
@@ -528,7 +536,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "pinstripeSecondDose": {
+		case "pinstripeSecondDosea": {
 			writeHTML(`
 				t A quick application of your little friend ought to help. As you pull out the spraybottle pinstripeF's face lights up in recognition, only to be dulled when you actually spray her with the stuff. All those pesky concerns and inhibitions gone, shattered like glassware hitting concrete.
 				player Curious. You shouldn't recognize this. Oh well.<br>Now, you should know better than to-
@@ -544,6 +552,34 @@ function writeEvent(name) { //Plays the actual event.
 				t In a moment there's only one piece left. In a few smooth motions her overworked bra is tossed aside, leaving her completely bare.
 				im nude.jpg
 				define pinstripe = sp pinstripe; im images/pinstripe/nude.jpg;
+				sp pinstripe; Kay... Ooh, I feel tingly! It <i>was</i> a good idea!
+				player <i>I should really keep more of this stuff handy.</i><br>Hands up, let me see those tits.
+				im tit1.jpg
+				player Now, and make sure this one sticks, okay?<br>It's a really, really <b>good idea</b> for you to start acting like the whore...
+				im tit2.jpg
+				pinstripe Ah~!
+				player You <b>really are</b>!
+				t There are any number of women in the school you can take things slowly with. This time is different. With every tug on her fat nipples, which she enjoys greatly, you want to stamp out any resistance in the most direct fashion you can.
+				t Until she can take no more, squirting and spraying the carpet as her legs fail her. Panting for breath, you loom over her.
+				player No more resistance, got it? Your ability to be a threat to me is over, understand?
+				pinstripe Ye... Yesh...
+				t She wobbles, her eyes close as she falls down asleep. There's nothing more to be done today, it's for the best to leave. If she still has any resistance left tomorrow another application of the potion should fix that right up.
+			`);
+			break;
+		}
+		case "pinstripeSecondDoseb": {
+			writeHTML(`
+				define pinstripe = sp pinstripe; im images/pinstripe/nude.jpg;
+				t A quick application of your little friend ought to help. As you pull out the spraybottle pinstripeF's face lights up in recognition, only to be dulled when you actually spray her with the stuff. All those pesky concerns and inhibitions gone, shattered like glassware hitting concrete.
+				player Curious. You shouldn't recognize this. Oh well.<br>Now, you should know better than to-
+				pinstripe M-my head... Feels foggy...<br>What's this nice taste?
+				player That nice taste is your punishment, pinstripeF. Don't you like it?
+				pinstripe I do! N-no, I mean...<br>My head hurts...
+				player Do you remember what I told you last time?
+				pinstripe No... I'm sorry...
+				player I told you that you should listen to what I say. That when I say something is a <b>Good idea</b>, you'll treat it as an absolute fact. Right? Now, it's a <b>good idea</b> to pose for me.
+				t At first she seemed worried, but once she realizes obeying you is as simple as showing herself off she's all smiles.
+				im nude.jpg
 				sp pinstripe; Kay... Ooh, I feel tingly! It <i>was</i> a good idea!
 				player <i>I should really keep more of this stuff handy.</i><br>Hands up, let me see those tits.
 				im tit1.jpg

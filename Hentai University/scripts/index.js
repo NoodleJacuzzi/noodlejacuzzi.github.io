@@ -16,6 +16,7 @@ var galleryArray = [];
 var itemArray = [];
 var logbookArray = [];
 var definitionArray = [];
+var listOfPrintedEncounters = [];
 var data = {
 	player: {
 		name: "You",
@@ -34,7 +35,7 @@ var data = {
 		counseling: 0,
 		lastText: 100,
 		dayID: 1,
-		version: 9,
+		version: 10,
 		location: "",
 		pervert: false,
 		color: "#86b4dc",
@@ -73,6 +74,8 @@ var data = {
 		{index: "cold", 		met: false, fName: "Kelsey", lName: "Lowe", 		trust: 0, encountered: false, textEvent: "", color: "#FCFFFA", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
 		{index: "coach", 		met: false, fName: "Amy", lName: "Silver", 			trust: 0, encountered: false, textEvent: "", color: "#D7BB2E", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
 		{index: "masseuse", fName: "Allison", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#F683C8", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false},
+		{index: "brown", fName: "Daniela", lName: "Wright", trust: 0, encountered: false, textEvent: "", met: false, color: "#F9D4B7", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false},
+		{index: "ribbon", fName: "Ella", lName: "Bell", trust: 0, encountered: false, textEvent: "", met: false, color: "#8D528A", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false},
 	],
 	gallery: [
 	],
@@ -1311,6 +1314,13 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 	if (character != "system") {
 		var tabTrust;
 		var cancelTab = false;
+		for (encounterIndex = 0; encounterIndex < listOfPrintedEncounters.length; encounterIndex++) {
+			if (listOfPrintedEncounters[encounterIndex] == name) {
+				console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!Repeat offender detected! "+name+" has already been printed!!!!!!");
+				cancelTab = true;
+			}
+		}
+		listOfPrintedEncounters.push(name);
 		var cssName = name;
 		var img = name+".jpg";
 		for (z = 0; z < data.story.length; z++) {
@@ -2597,6 +2607,14 @@ function updateSave() {
 		console.log('version 8 detected, updating save');
 		data.player.version = 9;
 		var goof = {index: "masseuse", fName: "Allison", lName: "Greens", trust: 0, encountered: false, textEvent: "", met: false, color: "#F683C8", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false,};
+		data.story.push(goof);
+	}
+	if (data.player.version == 9) {
+		console.log('version 9 detected, updating save');
+		data.player.version = 10;
+		var goof = {index: "brown", fName: "Daniela", lName: "Wright", trust: 0, encountered: false, textEvent: "", met: false, color: "#F9D4B7", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false};
+		data.story.push(goof);
+		var goof = {index: "ribbon", fName: "Ella", lName: "Bell", trust: 0, encountered: false, textEvent: "", met: false, color: "#8D528A", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false};
 		data.story.push(goof);
 	}
 	saveSlot(110);

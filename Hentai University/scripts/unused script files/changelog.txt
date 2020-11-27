@@ -1,0 +1,51 @@
+Salutations counselors!
+
+Here's the link to download version 3 of Hentai University:
+https://mega.nz/#!OjIghCxS!FdX889-4heqi95kfXxQ_gWOFwKawxTF0WUl96-LqD-I
+Or play it online here:
+https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University.html
+Mobile version:
+https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html
+Keep in mind that there is now a significant difference between the two. The online version will receive bugfixes faster, while the offline version will only be updated for major releases and critical bugfixes. However, the offline version is the only one that can easily support modded characters.
+With this update, there's a lot here to cover. If you'd rather jump right in though, go ahead! Keep in mind that cheat codes are listed here:
+
+There's a new one down at the bottom, feel free to let me know what you think! Steph got the most attention, with Meji and Anna getting some more love by the game's writer cryptogreek.
+
+Aside from that, nothing major... Except MOD SUPPOOOOOOORT
+The entire engine was rebuilt for the sake of making it possible for people to add their own characters, more than 20 hours of time spent directly coding for the sake of this new and wonderful (citation needed) engine. Thanks a ton to cryptogreek. If he weren't writing content there would have been no new content because of how exhausting this engine rebuild was.
+
+https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html
+This is the modding tutorial! I'm self taught, but hopefully this guide should be in depth and detailed enough for you to create characters. Let me know if there's any way I can improve it to make reading smoother, or if there's something you'd like to do that the guide doesn't cover.
+If you do make a character and are looking for art, please avoid Enoshima Iki, Oreteki, and Nagi Ichi to avoid overlap with planned characters. I have quite a few suggestions if you need them, although all my links use the sad panda.
+
+Even if you aren't interested in adding a character yourself, this is an avenue for anonymously published mods to include content too risque for patreon's guidelines. Maybe some handsome coder will start writing characters with a little bit more spice? Wink wink?
+
+On the smaller side, there's now a town map in the general store. Buy it and it'll make navigating around town just that little bit faster.
+
+Hop on over to my discord server, where an exclusive club of the coolest of people hang out, and where cryptogreek and I post smaller preview snippets regularly.
+
+I hope to have another preview post detailing future plans, and a method for you to pay cryptogreek to work with him for a character, out before the end of the month. Hopefully I'll have many rad new features to show off then.
+
+Thank you everyone for playing! I hope you all enjoy yourself. I'll be working on Anomaly Vault now, I hope to talk with you all again soon!
+
+Here's the changelog:
+Version 3.0 - Engine Rebuilding
+New Scenes:
+- 3 new events for Steph
+- 1 new event for Reese
+- 1 new event for Anna
+- Tia is in the game, she lives(?) in the computer lab. She and Casandra now have scenes dedicated to them improving your skills, but have no erotic content yet.
+Hentai University has longer scenes and many more scenes that aren't explicitly erotic, so it seem smaller than an update for something like Anomaly Vault. All of the new encounters total up to about 1400 lines of code.
+
+Bugfixes / other changes:
+- Mod support! The entire engine was rebuilt to accomodate this. I probably fixed and created many bugs along the way. Scenes, logbook details, shop items, and etc are all kept in individual .js files now and are called as needed. 
+- The mobile version now uses the game's new CSS by Stiggy. Something is causing slowdown on the online mobile version on my phone, I'm looking into that.
+- Many more cheats, such as one disabling the appearance of trap characters like Sam and Reese. 
+- Working on a ghost hunting minigame for your phone. It's activated via a cheat for now, but will be purchasable in the shop in the next update and have a lot more polish.
+- The background now changes in the title screen instead of being a drab grey
+- Fixed a bug where Victoria would let you report on Steph and Mary without actually speaking to them.
+- Fixed a bug where Margaret would call you a man when you aren't.
+
+Known issues:
+- The game runs slowly online when played on mobile. I'd recommend downloading and playing. If anyone can point me to how to make an APK out of an html game for easier installation, I'd appreciate it.
+- The logbook doesn't properly display the total number of scenes for each character.

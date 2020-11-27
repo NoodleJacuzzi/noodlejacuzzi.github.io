@@ -205,7 +205,7 @@ function writeScene(scene) {
 				"images/HU6.jpg",
 			];
 			writeSlideshow("images/HU.png");
-			writeText("Hentai University v14");
+			writeText("Hentai University v15");
 			writeText("Formerly sponsored by: O Xy Enkin");
 			writeText("A game made in cooperation with author Captain Cryptogreek, who works as the game's lead writer. You play as a young man with a strong grasp on hypnotic magic, and have embedded yourself as a counselor in a school with a fantastically attractive student body. The faculty and your neighbors in town look pretty good too.");
 			writeText("The game features multiple male characters with a femboi/twink bodytype. These are entirely optional and you can enable a vegetarian mode to avoid encountering them. On the opposite end if you aren't interested in the girls none of the bois require you to engage with female characters to unlock all their content.");
@@ -217,7 +217,7 @@ function writeScene(scene) {
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html">Play the mobile version</a>
 				<a class="choiceGridText" href="https://f95zone.to/threads/hentai-university-v12-noodlejacuzzi.37312/">View the F95Zone thread</a>
 				<a class="choiceGridText" href="https://hypnopics-collective.net/smf_forum/index.php?topic=23881.0">View the Hypnopics thread</a>
-				<a class="choiceGridText" href="https://www.patreon.com/posts/43343194">Download the game</a>
+				<a class="choiceGridText" href="https://www.patreon.com/posts/44384083">Download the game</a>
 				<a class="choiceGridText" href="http://freesuggestionbox.com/pub/oakihbd">Anonymous Suggestion Box</a>
 			</div>
 			<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'">Interested in writing your own characters? Check out this modding tutorial!</p>

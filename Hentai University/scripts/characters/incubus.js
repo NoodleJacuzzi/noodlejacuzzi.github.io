@@ -189,6 +189,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust('mama') > 18) {
 				sale("mamaReset", 40, "images/mama/mama.jpg", "Chunky's Meal - mamaF<br>Erases mamaF's memories, allowing you to try something different with her.");
 			}
+			if (checkTrust('ojou') == 1 && checkFlag("ojou", "incubus") == false) {
+				sale("incubusOjou", 50, "images/ojou/ojou.jpg", "Distraction<br>Don't want to fuck brownF or join ribbonF's little club? I can take care of this little princess for you.");
+			}
+			if (checkTrust('ojou') > 20) {
+				sale("ojouReset", 50, "images/ojou/ojou.jpg", "Chunky's Meal - ojouF<br>Erases ojouF's memories, and whoever you had help you corrupt her. Good if you wanna see how the other girl handles the little princess.");
+			}
 			if (checkTrust('pinstripe') == 1 && checkFlag('pinstripe', 'potionFlag') != true) {
 				sale("incubusPinstripe", 40, "images/pinstripe/pinstripe.jpg", "Blonding Potion<br>Gives you a potion for pinstripeF without needing to corrupt nurseF.");
 			}
@@ -494,6 +500,32 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t mamaF's memories of you have been reset, you're now free to enjoy her however you please! 
 			`);
 			setTrust('mama', 2);
+			writeFunction("writeEncounter('cancel')", "Finish");
+			break;
+		}
+		case "incubusOjou": {
+			writeHTML(`
+				player Now, by "take care of", you mean-
+				incubus I mean on the night of the meeting I'll show up at her house, work my magic, and she'll be too busy letting me munch her rug to show up to school.<br>The best kind of way to take care of her, wouldn't you say?
+				player So she won't be there?
+				incubus So long as it's just one or two who are absent it should be fine, right? Be pretty fucking stupid if all of them didn't show, but you should be fine.<br>Don't worry, I won't screw up. Promise~
+			`);
+			addFlag("ojou", "incubus");
+			writeFunction("writeEncounter('cancel')", "Finish");
+			break;
+		}
+		case "ojouReset": {
+			writeHTML(`
+				t incubusF snaps her fingers and a nearby lockbox opens. Something small and white scurries out in a flash and flies at you, dead set on your right ear.
+				...
+				t Groggily, you wake up in a disoriented heap. You feel... Violated.
+				sp incubus; Yo. Chunky already found her and got her memories, go fuck the other one if you want her to spy on you and do the whole thing again, I don't care. Lemme know if you want him to eat anything else. Sit outside if you need to take a breather.
+				t ojouF's memories of you have been reset, you're now free to enjoy her however you please! 
+				sp incubus; Oh, she got the other one too. Can't remember her name though. Chunky probably got the right one. Maybe.
+			`);
+			setTrust('ojou', 1);
+			removeFlag("ojou", "brownInvite");
+			removeFlag("ojou", "ribbonInvite");
 			writeFunction("writeEncounter('cancel')", "Finish");
 			break;
 		}

@@ -1,4 +1,4 @@
-var character = {index: "brown", fName: "Alexa", lName: "Wright", trust: 0, encountered: false, textEvent: "", met: false, color: "#F9D4B7", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false};
+var character = {index: "brown", fName: "Daniela", lName: "Wright", trust: 0, encountered: false, textEvent: "", met: false, color: "#F9D4B7", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false};
 
 var logbook = {
 	index: "brown", 

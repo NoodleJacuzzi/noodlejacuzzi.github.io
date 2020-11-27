@@ -109,6 +109,7 @@ var locationArray = [
 ];
 
 function changeLocation(n) {
+	listOfPrintedEncounters = [];
 	document.getElementById('output').innerHTML = '';
 	document.getElementById('sceneAuthor').innerHTML = '';
 	var locationTarget = 'failed';

@@ -25,7 +25,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 {index: "mistress4", name: "mistress is at the same bench, but she seems to be stretching her legs.", location: 'parkDistrict', time: "MorningEvening", itemReq: "", trustMin: 42, trustMax: 44, type: "tab", top: 0, left: 0, day: "even",},
 {index: "mistress5", name: "You can see maidF's friend, mistress, sitting on the bench, swinging her legs playfully while humming.", requirements: "?trust mistress 55; ?location parkDistrict;", altName: "", altImage: "",},
 {index: "mistress6", name: "You can see mistress at the bench again, but she seems to be stretching her legs this time.", requirements: "?trust mistress 45; ?location parkDistrict;", altName: "", altImage: "",},
-{index: "mistress7", name: "You can see mistress at the bench again, humming a soft melody while kicking the dirt playfully.", requirements: "?trustMin mistress 100; ?trustMax mistress 115; ?location parkDistrict;", altName: "", altImage: "",},
+{index: "mistress7", name: "You can see mistress at the bench again, humming a soft melody while kicking the dirt playfully.", requirements: "?trustMin mistress 100; ?trustMax mistress 200; ?location parkDistrict;", altName: "", altImage: "",},
 ]
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -730,7 +730,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 				setTrust('mistress',100);
 			document.getElementById('output').innerHTML = '';
 			writeText("Spotting you, mistressF smiles at you with a wave.");
-			writeSpeech("mistress","","Hello again, playerF~ Did you come by for a bit of fun, or just to say hi?");
+			if(checkTrust('mistress') >= 115){
+				writeSpeech("mistress","","Hello again, playerF~ I was hoping to see you today, maidF and I were talking about asking you something. It's kinda important, but not time-sensitive or anything.");
+				writeText("She smiles wryly.");
+				writeSpeech("mistress","","You know... In case there's something <i>else</i> you want to do~");
+				writeFunction("writeEncounter('endingIntro')", "\"Let's talk about this 'important' thing\"");
+			}
+			else
+				writeSpeech("mistress","","Hello again, playerF~ Did you come by for a bit of fun, or just to say hi?");
 			writeFunction("writeEncounter('mistress7b')", "\"Let's head over to your place\"");
 			writeFunction("writeEncounter('mistress7c')", "\"Let's have some fun right here\"");
 			writeFunction("writeEncounter('mistress7a')", "\"Do you want to call maidF for some fun?\"");
@@ -782,6 +789,50 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("mistress","","It's a good thing I skipped the panties today, isn't it~?");
 			writeText("mistressF raises one arm to your shoulder, leaning back onto the bench and pulling you with her.");
 			writeFunction("writeEvent('mistress4-1')", "Roll with it");
+			break;
+		}
+		case "endingIntro" : {
+			document.getElementById('output').innerHTML = '';
+			if(!checkFlag('mistress','endingA'))
+				addFlag('mistress', 'endingA');
+			writeHTML(`
+				sp player; Something important, huh? I've got some free time, so we can talk about it together now, if you want.
+				t mistressF nods.
+				sp mistress; In that case, I'll text her to meet up with us at my place. Let's head over there now, stud~
+				...
+				t After arriving first, you end up making a bit of small talk until maidF arrives, the sound of the front door opening and shutting interrupting mistressF before she shouts:
+				sp mistress; In here!
+				t maidF steps into the room and smiles at you.
+				sp maid; Hello playerF, it's nice to see you again.
+				sp player; It's nice to see you too. You two wanted to talk to me about something important?
+				t maidF looks to mistressF for a moment, before clearing her throat.
+			`);
+			loadEncounter('maid','fullEndingA');
+			break;
+		}
+		case "endingIntroRepeat" : {
+			document.getElementById('output').innerHTML = '';
+			writeHTML(`
+				sp player; About that offer you and maidF made before...
+				t mistressF sits up a bit straighter, her head tilting a bit.
+				sp mistress; What's up? Did you think it over a bit more?
+			`);
+				writeFunction("loadEncounter('maid','fullEndingRepeat')", "I want it too, let's do it");
+				writeFunction("writeEncounter('mistress7')", "Never mind");
+			break;
+		}
+		case "fullEndingRepeat" : {
+			document.getElementById('output').innerHTML = '';
+			writeSpeech("player","","I thought about it... and I want to go exclusive with you two.");
+			writeText("maidF's face flushes red, but a beaming smile breaks out across her face.");
+			writeSpeech("mistress","","Perfect! I'll text maidF to meet us at my place immediately, she'll be on cloud nine~!");
+			writeText("She leans in, bringing her mouth to yours and kissing you deeply before pulling back, then leaning in to your ear.");
+			writeSpeech("mistress","","We are going to have a lot of fun together, lover~");
+			writeText("...");
+			writeText("It doesn't take long for you to get to mistressF's place, or for maidF to arrive just a minute later.");
+			writeText("Her smile is just as bright as mistressF's, though her kiss is a bit more chaste as she presses her lips to yours.");
+			writeText("When she pulls back, it's to the sound of a husky whisper in your ear from mistressF:");
+			loadEvent('maid','maidEnding');
 			break;
 		}
 	}
@@ -1349,7 +1400,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-{index: "mistressReward", trust: 115,},
+//{index: "mistressReward", trust: 115,},
 //{index: "mistressRewardDuo", trust: 55,},
 {index: "mistressMaid1", requirements: "?trustMin mistress 100; ?trustMax mistress 110; ?trustMin maid 100; ?trustMax maid 110;",},
 ]
