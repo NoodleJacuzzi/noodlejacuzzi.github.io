@@ -124,7 +124,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				define ojou = sp ojou; im images/ojou/casual.jpg;
 				player Actually, I'd like to just talk this time.<br>Maybe more than that afterwards, if you behave.
 				t she seemed dissapointed for a moment, but quickly perks back up.
-				player ojoyF, the name sound familiar?
+				player ojouF, the name sound familiar?
 				brown Sh-she's my sister...
 				player brownL, right. 
 				brown S-step sister actually... Y-you want her?
