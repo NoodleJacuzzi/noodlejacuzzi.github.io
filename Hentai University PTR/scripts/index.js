@@ -16,6 +16,7 @@ var galleryArray = [];
 var itemArray = [];
 var logbookArray = [];
 var definitionArray = [];
+var listOfPrintedEncounters = [];
 var data = {
 	player: {
 		name: "You",
@@ -1313,6 +1314,13 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 	if (character != "system") {
 		var tabTrust;
 		var cancelTab = false;
+		for (encounterIndex = 0; encounterIndex < listOfPrintedEncounters.length; encounterIndex++) {
+			if (listOfPrintedEncounters[encounterIndex] == name) {
+				console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!Repeat offender detected! "+name+" has already been printed!!!!!!");
+				cancelTab = true;
+			}
+		}
+		listOfPrintedEncounters.push(name);
 		var cssName = name;
 		var img = name+".jpg";
 		for (z = 0; z < data.story.length; z++) {
