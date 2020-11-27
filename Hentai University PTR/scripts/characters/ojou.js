@@ -32,6 +32,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 	wrapper.scrollTop = 0;
 	writeHTML(`
 		define ojou = sp ojou;
+		define player = sp player;
 	`);
 	switch (name) {
 		case "cancel": {

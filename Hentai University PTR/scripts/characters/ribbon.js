@@ -33,6 +33,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 	writeHTML(`
 		define ojou = sp ojou;
 		define ribbon = sp ribbon;
+		define player = sp player;
 	`);
 	switch (name) {
 		case "cancel": {
