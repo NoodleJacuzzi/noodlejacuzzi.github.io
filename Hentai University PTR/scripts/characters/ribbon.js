@@ -103,7 +103,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "ribbonRepeat": {
 			writeHTML(`
-				define ribbon = sp ojou; im images/ribbon/ribbonP.jpg;
+				define ribbon = sp ribbon; im images/ribbon/ribbonP.jpg;
 				t With a few phonecalls the once empty room is filled with a half-dozen people, all in your same mask and "uniform".
 				im ribbonLewd2.jpg
 				t And, more to the point, all of you are ready to serve her.
@@ -126,7 +126,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "ribbonInvite": {
 			writeHTML(`
-				define ribbon = sp ojou; im images/ribbon/ribbonP.jpg;
+				define ribbon = sp ribbon; im images/ribbon/ribbonP.jpg;
 				player I was wondering... Are you the only one this club who... Recieves?
 				ribbon Ara? Last time was just me. But I make it a point to invite girls I know I can trust once every so often.<br>Why, are you unsatisfied with just moi?
 				player I had my eye on someone. ojouF ojouL.
@@ -190,7 +190,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "ribbonQuo": {
 			writeHTML(`
-				define ribbon = sp ojou; im images/ribbon/ribbonP.jpg;
+				define ribbon = sp ribbon; im images/ribbon/ribbonP.jpg;
 				t You wait for the usual time, slip on your mask and outfit, and once you know she's already inside you enter the room.
 				im ribbonLewd1.jpg
 				ribbon Oh, you're an early one. I suppose I am too, and-<br>Oh my, I know this is meant to be anonymous, but I think I recognize that shape and size. Should I call a meeting proper? It's no major crowd, but you and a few others might satisfy my, at least for tonight.
@@ -208,7 +208,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "ribbonChat": {
 			writeHTML(`
-				define ribbon = sp ojou; im images/ribbon/ribbonP.jpg;
+				define ribbon = sp ribbon; im images/ribbon/ribbonP.jpg;
 				ribbon Oh? Quite bold of you to ask. Perhaps I'm wrong to assume I recognize you, fresh meat.
 				player You don't know for sure?
 				ribbon Of course not~<br>I have blackmail on every member. Only to ensure they don't reveal my indulgences of course.<br>I couldn't care less if any guests decide to stay or leave, so long as there remain enough to play with. I honestly don't remember your name.
@@ -258,7 +258,7 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "ribbonsLewd": {
 			writeHTML(`
-				define ribbon = sp ojou; im images/ribbon/ribbonP.jpg;
+				define ribbon = sp ribbon; im images/ribbon/ribbonP.jpg;
 				t You walk inside, keeping your head down. Everyone else, men and women of varying ages, are all wearing the same 'outfit'. Man or futa, nobody's here to chat. The tense atmosphere changes when the door opens again and shuts.
 				im ribbonLewd1.jpg
 				ribbon Welcome, everyone, to another gathering of the Black Mask club. I certainly hope you all had a lovely weekend. We have new members, so I'll make this simple. You're all here to indulge me. 
