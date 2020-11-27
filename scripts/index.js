@@ -14,7 +14,7 @@ var games =[
 ];
 
 var news =[
-	{date: "11/13/20", game: "HU", headline: "Hentai University v15", link: "https://www.patreon.com/posts/44384083", text: "Hentai University v15 is here! Featuring three new characters, Anna & Lena, and Anri!"},
+	{date: "11/27/20", game: "HU", headline: "Hentai University v15", link: "https://www.patreon.com/posts/44384083", text: "Hentai University v15 is here! Featuring three new characters, Anna & Lena, and Anri!"},
 	{date: "11/13/20", game: "RDZ", headline: "Rainy DayZ v3.5", link: "https://www.patreon.com/posts/43881744", text: "Rainy DayZ v3.5 is here! Featuring the new scenario; Scarlet Mansion"},
 	{date: "10/30/20", game: "HU", headline: "Hentai University v14", link: "https://www.patreon.com/posts/40445131", text: "Hentai University v14 has been released! Featuring Evelyn, Nikki, Naomi, and the Crossdressing Club!"},
 	{date: "10/10/20", game: "BM", headline: "Bitch Medicenter", link: "https://www.patreon.com/posts/42602906", text: "Bitch Medicenter's full, standalone release!"},
