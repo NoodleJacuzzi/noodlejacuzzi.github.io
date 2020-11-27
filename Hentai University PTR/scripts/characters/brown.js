@@ -2,11 +2,11 @@ var character = {index: "brown", fName: "Daniela", lName: "Wright", trust: 0, en
 
 var logbook = {
 	index: "brown", 
-	desc: "",
-	body: "",
-	clothes: "",
-	home: "",
-	tags: "",
+	desc: "An ordinary university student, if a bit on the shy side. She's got a rich step-sister, but aside from that and her purple hair she's as plain as they come.",
+	body: "She's quite petite, underneath her clothes is the archetypal university student who can't find the time to eat properly.",
+	clothes: "She doesn't wear the usual school uniform, instead going for something warmer with a puffy sweater and skirt.",
+	home: "She's almost always found in Classroom A, studying and preparing for upcoming tests and getting in some light reading. She always seems to choose the back row, though.",
+	tags: "Secretly perverse, step-sister incest, blowjob",
 	artist: "Artist: Oreteki18kin",
 	author: "Author: NoodleJacuzzi",
 };
@@ -25,6 +25,10 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+	writeHTML(`
+		define ojou = sp ojou;
+		define brown = sp brown;
+	`);
 	switch (name) {
 		case "cancel": {
 			unencounter(character.index);
@@ -33,22 +37,50 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "brownIntro": {
 			writeHTML(`
+				im brownIntro.jpg
+				t A schoolgirl, it seems she's noticed you.
+				t If your records are right she's brownF brownL, a pretty ordinary girl. Maybe on the lower end of the confidence spectrum. Usually girls like her make good hypnosis targets.
+				t Something about you has caught her attention, but you'll have to be the one to approach if you want to get to know her.
 			`);
-			setTrust("brown", 1);
-			writeEvent(name);
-			passTime();
-			writeFunction("changeLocation(data.player.location)", "Finish");
+			writeFunction("writeEncounter('brownHypnosisA')", "Go for it");
+			writeFunction("writeEncounter('cancel')", "Go back");
 			break;
 		}
-		case "brownHypnosis": {
+		case "brownHypnosisA": {
 			writeHTML(`
+				player Glad you could join me, brownF. Now-<br>You're staring. Is there something on my face?
+				brown ... Huh?<br>Oh! No, sorry *sir. No reason.
+				t It seems you were mostly right on the money about her personality. And whatever fixation she has with you will only make this easier.
+				player Alright. Well, since I have your undivided attention, I'd like you to take a look at something for me.
+				...
+				t As her eyes unfocus and her shoulders slump, you can't help but marvel at how quickly this has gone. She could probably be entranced by a set of windchimes if her resistance is this low.
+				player Alright, where to start with you? I guess the most important place is...
 			`);
-			writeFunction("writeEncounter('brownsLewd')", "Continue");
+			writeFunction("writeEncounter('brownHypnosisB')", "What's your fixation with me?");
+			break;
+		}
+		case "brownHypnosisB": {
+			writeHTML(`
+				player brownF?
+				brown Mhmm...
+				player You're going to be honest with yourself and with me from now on. Why were you staring at me?
+				brown You... You match the description of a character from stories I read. You're strong, confident...
+				player Right, I-
+				t Despite her trance her breathing starts to become unsteady.
+				brown Whenever I look at you I start remembering pieces. I shouldn't be reading that sort of stuff, but-
+				player I see-
+				brown I want to be taken... Molested. Teased. Assaulted. Played with. Abused. Bro-
+				player Okay. brownF, when I snap my fingers, you're going to wake up. and when you do you're going to remember in vivid detail everything you've just told me, and you'll believe you told it to me completely willingly.
+				t You snap your fingers, and almost immediately you can see brownF's expression turn from an empty daze to shock, panic, and blind terror in a rollercoaster of emotion before her eyes start to water.
+				t Dropping hypnosis without any commands is risky, but this pay off in a fun way.
+				brown I... I didn't-
+				player Stop.
+				t Her will was already pretty shaky. Even without giving her a command, now is as good a time as any to...
+			`);
+			writeFunction("writeEncounter('brownsLewd')", "Take advantage of the situation");
 			break;
 		}
 		case "brownsLewd": {
-			writeHTML(`
-			`);
 			writeEvent(name);
 			passTime();
 			setTrust("brown", 80);
@@ -62,6 +94,20 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "brownsLewdRepeat": {
 			writeHTML(`
+				brown S-so what are we going to do today?
+				player Guess.
+				brown ... W-will you use my mouth again?
+				im brownLewd1.jpg
+				player Any objections?
+				brown ...
+				im brownLewd2.jpg
+				player I'll take that as a no. You're getting better, at this though.
+				t While she is improving, she still can't take it down her throat. So...
+				im brownLewd3.jpg
+				brown Mmm... I learned this technique... From a story.<br>If it feels good, y-you can reward me... With...
+				im brownLewd4.jpg
+				brown Ah~!
+				t The little slut she is, she eagerly triest to catch as much of the load as she can on her tongue, before scooping the rest of her face and hair to swallow down.
 			`);
 			writeEvent(name);
 			passTime();
@@ -75,7 +121,31 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "brownInvite": {
 			writeHTML(`
+				define ojou = sp ojou; img images/ojou/casual.jpg;
+				player Actually, I'd like to just talk this time.<br>Maybe more than that afterwards, if you behave.
+				t she seemed dissapointed for a moment, but quickly perks back up.
+				player ojoyF, the name sound familiar?
+				brown Sh-she's my sister...
+				player brownL, right. 
+				brown S-step sister actually... Y-you want her?
+				t Rather than look disgusted or horrified, brownF just looks... Excited. Hesitant, but the way her hands twitch and she licks her lips...
+				player I want a lot more than just her. I've got big plans for the whole school. And if you help me, I'll give you...
+				t You lean in close to whisper, and she gasps.
+				...
+				ojou I'm hooome~! brownF? Mom?
+				t ojouF closes and locks the door behind her. The house is quiet... Too quiet.
+				ojou Hellooooo~?<br><i>Is she not home...? She left to go back to school earlier, but she wasn't in class, and *he wasn't around either...</i>
+				t She'd waited more than half an hour, telling herself she wanted to catch you red handed. There's no way a refined lady would want to watch... <i>That</i>...
+				ojou I guess not...<br>Wait, what if *he...
+				t She hesitates for a moment before throwing her bag aside and sprinting up the stairs. She rushes into her sister's room, panting and panicked.
+				brown ojouF?
+				ojou brownF! Thank god, I though *he'd kid-<br>Nevermind, sorry.
+				brown No, I'm sorry.
 			`);
+			writeFunction("writeEncounter('brownInviteLewd')", "Continue");
+			break;
+		}
+		case "brownInviteLewd": {
 			setTrust("ojou", 21);
 			addFlag("ojou", "brownInvite");
 			writeEvent(name);
@@ -85,6 +155,35 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "brownInviteRepeat": {
 			writeHTML(`
+				define ojou = sp ojou; img images/ojou/ojouP.jpg;
+				im brownInvite1.jpg
+				ojou St... No...
+				player brownF, you're sure?
+				brown Yes... Watching you defile her...
+				im brownInvite2.jpg
+				player Wow. You hear that? She's gotta hate you something fie-
+				brown N-no! I love you, ojouF! You're my sister!
+				im brownInvite3.jpg
+				ojou Ghh... Why-hy-hy...?
+				brown Because... I can't help it... Watching him...
+				im brownInvite4.jpg
+				brown Watching him defile someone so beautiful...
+				im brownInvite5.jpg
+				ojou Ghhh~!
+				brown Mmm... C-can we... Again-
+				player Yeah, hurry it up!
+				im brownInvite6.jpg
+				brown I really do love you ojouF... See?
+				define brown = sp brown; img images/brown/brownP.jpg;
+				im brownInvite9.jpg
+				brown P-please, playerF... I can't feel that good again unless you...
+				player Unless... Ghh... I what?
+				brown Please, make me cum, by covering me in my sister's creampie!
+				im brownInvite10.jpg
+				brown Ghh~! Cumming~!
+				player This family...
+				t You drop ojouF onto the bed.
+				brown Y-yes... I'll clean her up for you...<br>ojouF, spread your legs... Please...
 			`);
 			writeEvent(name);
 			passTime();
@@ -93,6 +192,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "brownVoyeur": {
 			writeHTML(`
+				t Peeking through a crack in the door, she doesn't know you've spotted her from the corner of your eye.
+				ojou <i>brownF... What on earth are you...<br>My own sister! I have to tell someone...</i>
+				t Yet as she gulps to try and keep her mouth from watering, she realizes she can't move an inch. Anyone walking by could see her peeping, but she still spreads her legs anyways...
+				t But when you say farewell to brownF she snaps out of it, carefully running away as fast as she can.
+				t You walk out of the classroom as brownF cleans herself up. No trace of her left but a few droplets on the floor.
+				t You'll have her soon.
 			`);
 			setTrust("ojou", 2);
 			writeFunction("changeLocation(data.player.location)", "Finish");
@@ -100,15 +205,34 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "brownQuo": {
 			writeHTML(`
+				t You wait for the other students to file out...
+				im brownIntro.jpg
+				brown Ah, *sir... Did you need another... Some relief?
 			`);
 			writeFunction("writeEncounter('brownsLewdRepeat')", "Let's use your mouth again");
 			if (checkFlag("ojou", "brownInvite") != true && checkTrust("ojou") == 2) {
-				writeFunction("writeEncounter('brownInvite')", "Let's invite ojouF");
+				writeFunction("writeEncounter('brownInvite')", "Talk about ojouF");
 			}
 			if (checkFlag("ojou", "brownInvite") == true) {
 				writeFunction("writeEncounter('brownInviteRepeat')", "Let's invite ojouF again");
 			}
+			writeFunction("writeEncounter('brownChat')", "Talk about her story");
 			writeFunction("writeEncounter('cancel')", "Go back");
+			break;
+		}
+		case "brownChat": {
+			writeHTML(`
+				player So what exactly does this character I resemble <i>do</i>?
+				brown They... *He wakes up the protagonist, and the people around her.
+				player Right, but how?
+				brown It isn't physical as much as... They start to be aware of how they're seen. How people talk about their bodies, and how powerless they'd be to...<br>They start having fantasies, and exploring darker places on the internet... A-and then <i>*he</i> arrives.
+				t She crosses her legs.
+				brown They feel small and weak, and every time they do their bodies tingle from their feet up their spine and a voice inside their head says "you're right"...
+				player Is that how you feel?
+				brown ... A little. C-can I... Can I pleasure you again today?
+			`);
+			writeFunction("writeEncounter('brownsLewdRepeat')", "Let's use your mouth again");
+			writeFunction("writeEncounter('cancel')", "Maybe another time");
 			break;
 		}
 		case "brownSpecialOffer": {
@@ -135,7 +259,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 
 var eventArray = [
 	{index: "brownsLewd", name: "Temptation"},
-	{index: "brownInvite", name: "Degeneracy"},
+	{index: "brownInviteLewd", name: "Degeneracy"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -150,10 +274,27 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "brownsLewd": {
 			writeHTML(`
+				t Since you've already gone from zero to sixty in a single meeting, you may as well go all the way to one hundred, right?
+				player brownF, I'm going to give you two options.<br>One; The two of us walk away and pretend this conversation never happened.
+				brown I think I'd like-<br>*Sir, w-why are you taking off your clothes?
+				player Option two: I give you everything you've ever wanted, and you become mine.
 				im brownLewd1.jpg
+				player What will it be?
+				brown ...
 				im brownLewd2.jpg
+				t She gulps before immediately leaning forwards to take in your cock.
+				t ... When you told her to be more honest, this wasn't <i>exactly</i> what you had in mind. But this works too. She must've been even more repressed than you'd assumed.
+				t Despite her enthusiasm she lacks technique and can't get very far down, so instead...
 				im brownLewd3.jpg
+				brown Hah... Aaah~
+				t Tongue out she strokes you with both hands while locking eyes with you. The pleading look is just unfair...
 				im brownLewd4.jpg
+				brown Ah~!
+				t As you paint her face white she keeps letting out small gasps, shivering with each line of cum hitting her face.
+				player Wow... You've really got some potential. 
+				t She just closes her eyes and nods.
+				player <i>Not much work to do on her... I guess I could visit her if I need relief. It might be worth it to have another student in my pocket at least.</i><br>Good work. I'll see you around.
+				t She nods again.
 			`);
 			break;
 		}
@@ -166,18 +307,52 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "brownInvite": {
+		case "brownInviteLewd": {
 			writeHTML(`
+				define ojou = sp ojou; img images/ojou/ojouP.jpg;
 				im brownInvite1.jpg
+				ojou Let me go! Let me go right now! brownF, help!
+				brown *He told me... About how you were watching us...
+				ojou N-no! No, *he's lying!
+				brown So *he made me a deal... *He said if I gave you to *him...
+				ojou Stop *him, please! It doesn't have to be you or me! Call the-
+				brown *He said I could watch...
 				im brownInvite2.jpg
+				ojou AAAAAAH!
+				brown Ah...
+				t She is unbelievably wet. Her panties were soaked when you peeled them off of her, and it's very clear how they got that way.
 				im brownInvite3.jpg
+				ojou GHHHhhg!
+				t She grunts as you let gravity aid your thrust, plunging as deep down her cunt as she can take.
+				t All the while brownF watches, unable to avert her eyes. It's like she can't even more.
 				im brownInvite4.jpg
+				t After only a few thrusts her legs are quivering, she's having an orgasm while her sister watchings this brutal fucking.
+				t As you begin to grunt yourself brownF's panting grows louder. She's clearly getting excited watching you get closer... Until...
 				im brownInvite5.jpg
+				ojou NOOOOO!
+				t For all her desperate resistance, she knows down to her core what this hot sensation filling her is. Again, she can't help but shake and quiver from her treatment.
+				player Ghh... brownF, stand up, lift your skirt.
 				im brownInvite6.jpg
-				im brownInvite7.jpg
+				brown O-okay...
+				t Her panties are soaked through too.
+				player Good... Strip! <b>Now</b>!
+				t You start thrusting again.
+				define brown = sp brown; img images/brown/brownP.jpg;
 				im brownInvite8.jpg
-				im brownInvite9.jpg
+				brown Okay... *Sir...
+				ojou N-no... Shtop...
+				player Gh... Hands away from you pussy! Get ready!
+				t With one big motion you lift ojouF to give brownF a proper reward, pulling your cock out of ojouF's creampied pussy as she hits an orgasm. As a result...
 				im brownInvite10.jpg
+				t Cum and pussy juice splatter over brownF's lower body. Despite not touching herself...
+				brown Aaahgggh~!
+				t She shakes in what is obviously her own orgasm. Her cunt even starts leaking from the sensation.
+				player How does it feel?
+				brown It...<br>I'm not even touching... But it feels even better than when I...<br>ojouF... I'm sorry...
+				player Don't be. She wanted this.<br>Now, wanna watch me work some magic?
+				t You drop ojouF onto the bed and reach into your heap of clothes to fish out your pendant.
+				brown Is... Is that...?<br> What are you going to do with her?
+				player Nothing too big, for now. Just a command to keep quiet about this with anyone but you and me. And a command to drop by my office soon.<br>After that... I have a little more fun planned.
 			`);
 			break;
 		}
