@@ -18,13 +18,13 @@ var newItems = [
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "ribbonIntro", name: "A wealthy-looking girl is here", requirements: "?trust ribbon 0; ?location eastHallway;", altName: "", altImage: "",},
-	{index: "ribbonLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin nurse 80; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
-	{index: "ribbonLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin brown 80; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
-	{index: "ribbonLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin president 80; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
-	{index: "ribbonLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin purple 90; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
-	{index: "ribbonLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin starlet 83; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
-	{index: "ribbonClub", name: "You can wait for the set time here", requirements: "?trust ribbon 2; ?location eastHallway;", altName: "Unknown", altImage: "images/none.png",},
-	{index: "ribbonQuo", name: "You can wait for ribbon here", requirements: "?trust ribbon 80; ?location eastHallway;", altName: "", altImage: "",},
+	{index: "ribbonsLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin nurse 80; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
+	{index: "ribbonsLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin brown 80; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
+	{index: "ribbonsLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin president 80; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
+	{index: "ribbonsLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin purple 90; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
+	{index: "ribbonsLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin starlet 83; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
+	{index: "ribbonClub", name: "You can wait for the set time here", requirements: "?trust ribbon 2; ?location eastHallway; ?time Evening;", altName: "Unknown", altImage: "images/none.png",},
+	{index: "ribbonQuo", name: "You can wait for ribbon here", requirements: "?trust ribbon 80; ?location eastHallway; ?time Evening;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -45,13 +45,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
-		case "ribbonLetter": {
+		case "ribbonsLetter": {
 			writeHTML(`
 				t You really should take better care not to be seen performing such deliciously vile acts upon women here. I'm not the type to snoop, but I already had my eye on one of your latest playtoys.
 				t I'm not jealous of course. Come to my club after classes end for the day, it's just outside classroom A. 
 				t A mask and outfit will be provided for you. You'll wear it unless you want your secret exposed to the entire school.
 				t XOXOXO~
 			`);
+			unencounter("ribbon");
 			setTrust("ribbon", 2);
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
@@ -59,11 +60,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "ribbonClub": {
 			writeHTML(`
 			`);
-			writeFunction("writeEncounter('brownLewd')", "Continue");
+			writeFunction("writeEncounter('ribbonsLewd')", "Continue");
 			writeFunction("changeLocation(data.player.location)", "Bow out");
 			break;
 		}
-		case "ribbonLewd": {
+		case "ribbonsLewd": {
 			writeHTML(`
 			`);
 			writeEvent(name);
@@ -115,17 +116,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
-		case "ribbonHangout": {
-			writeHTML(`
-			`);
-			addFlag("ojou", "ribbonHangout");
-			writeFunction("changeLocation(data.player.location)", "Finish");
-			break;
-		}
 		case "ribbonQuo": {
 			writeHTML(`
 			`);
-			writeFunction("writeEncounter('ribbonRepeat')", "Let's start a meeting");
+			writeFunction("writeEncounter('ribbonsLewdRepeat')", "Let's start a meeting");
+			if (checkFlag("ojou", "ribbonInvite") != true && checkTrust("ojou") == 2) {
+				writeFunction("writeEncounter('ribbonInvite')", "Let's invite ojouF");
+			}
 			if (checkFlag("ojou", "ribbonInvite") == true) {
 				writeFunction("writeEncounter('ribbonInviteRepeat')", "Let's invite ojouF again");
 			}
@@ -155,8 +152,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 }
 
 var eventArray = [
-	{index: "placeholder", name: "Event Name"},
-	{index: "placeholder", name: "Event Name"},
+	{index: "ribbonsLewd", name: "Black Mask Club"},
+	{index: "ribbonInvite", name: "A proper mouthfucking"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -169,7 +166,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "ribbonLewd": {
+		case "ribbonsLewd": {
 			writeHTML(`
 				im ribbonLewd1.jpg
 				im ribbonLewd2.jpg
@@ -246,14 +243,15 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "empty", requirements: "?trust principal 10000;"},
+	{index: "reward", requirements: "?trustMin ojou 20; ?flag ojou ribbonInvite;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
-			//Write the event's text here using writePhoneSpeech, writePhoneImage, and writePhoneChoices
+		case "reward": {
+			writePhoneImage("images/ribbon/reward.jpg", "Art by Oreteki18kin");
+			writePhoneSpeech("ribbon", "", "You've finished all of ribbonF's content for this version, great work!");
 			break;
 		}
 		default: {

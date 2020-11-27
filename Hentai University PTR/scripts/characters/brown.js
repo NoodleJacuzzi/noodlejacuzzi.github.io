@@ -43,10 +43,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "brownHypnosis": {
 			writeHTML(`
 			`);
-			writeFunction("writeEncounter('brownLewd')", "Continue");
+			writeFunction("writeEncounter('brownsLewd')", "Continue");
 			break;
 		}
-		case "brownLewd": {
+		case "brownsLewd": {
 			writeHTML(`
 			`);
 			writeEvent(name);
@@ -60,7 +60,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			}
 			break;
 		}
-		case "brownLewdRepeat": {
+		case "brownsLewdRepeat": {
 			writeHTML(`
 			`);
 			writeEvent(name);
@@ -98,17 +98,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
-		case "brownHangout": {
-			writeHTML(`
-			`);
-			addFlag("ojou", "brownHangout");
-			writeFunction("changeLocation(data.player.location)", "Finish");
-			break;
-		}
 		case "brownQuo": {
 			writeHTML(`
 			`);
-			writeFunction("writeEncounter('brownRepeat')", "Let's use your mouth again");
+			writeFunction("writeEncounter('brownsLewdRepeat')", "Let's use your mouth again");
+			if (checkFlag("ojou", "brownInvite") != true && checkTrust("ojou") == 2) {
+				writeFunction("writeEncounter('brownInvite')", "Let's invite ojouF");
+			}
 			if (checkFlag("ojou", "brownInvite") == true) {
 				writeFunction("writeEncounter('brownInviteRepeat')", "Let's invite ojouF again");
 			}
@@ -138,8 +134,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 }
 
 var eventArray = [
-	{index: "placeholder", name: "Event Name"},
-	{index: "placeholder", name: "Event Name"},
+	{index: "brownsLewd", name: "Temptation"},
+	{index: "brownInvite", name: "Degeneracy"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -152,7 +148,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "brownLewd": {
+		case "brownsLewd": {
 			writeHTML(`
 				im brownLewd1.jpg
 				im brownLewd2.jpg
@@ -161,7 +157,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "brownLewdRepeat": {
+		case "brownsLewdRepeat": {
 			writeHTML(`
 				im brownLewd1.jpg
 				im brownLewd2.jpg
@@ -229,14 +225,15 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "empty", requirements: "?trust principal 10000;"},
+	{index: "reward", requirements: "?trustMin ojou 20; ?flag ojou brownInvite;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
-			//Write the event's text here using writePhoneSpeech, writePhoneImage, and writePhoneChoices
+		case "reward": {
+			writePhoneImage("images/brown/reward.jpg", "Art by Oreteki18kin");
+			writePhoneSpeech("brown", "", "You've finished all of brownF's content for this version, great work!");
 			break;
 		}
 		default: {

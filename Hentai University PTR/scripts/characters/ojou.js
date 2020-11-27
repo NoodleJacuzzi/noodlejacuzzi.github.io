@@ -18,12 +18,13 @@ var newItems = [
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "ojouIntro", name: "Someone in a fancy set of clothes is approaching you", requirements: "?trust ojou 0; ?flag principal council; ?location eastHallway;", altName: "", altImage: "",},
-	{index: "ojouLevel1Quo", name: "ojou has come to pay you a visit as you requested", requirements: "?trust ojou 21; ?location playerOffice;", altName: "", altImage: "",},
-	{index: "ojouLevel2Quo", name: "ojou has come to pay you a visit as you requested", requirements: "?trust ojou 22; ?location playerOffice;", altName: "", altImage: "",},
-	{index: "ojouLevel3Quo", name: "ojou isn't here today, it seems like you'll have to pay her a visit instead", requirements: "?trust ojou 23; ?location playerOffice;", altName: "", altImage: "",},
-	{index: "ojouLevel4Quo", name: "ojou has come to pay you a visit", requirements: "?trust ojou 100; ?location playerOffice;", altName: "", altImage: "",},
-	{index: "brownHangout", name: "brown and ojou are walking together", requirements: "?trustMin brown 1; ?trust ojou 1; !flag ojou brownHangout; ?location street;", altName: "", altImage: "",},
-	{index: "ribbonHangout", name: "ribbon and ojou are walking together", requirements: "?trustMin ribbon 1; ?trust ojou 1; !flag ojou ribbonHangout; ?location eastHallway;", altName: "", altImage: "",},
+	{index: "ojouQuoLevel1", name: "ojou has come to pay you a visit as you requested", requirements: "?trust ojou 21; ?location playerOffice;", altName: "", altImage: "",},
+	{index: "ojouQuoLevel2", name: "ojou has come to pay you a visit as you requested", requirements: "?trust ojou 22; ?location playerOffice;", altName: "", altImage: "",},
+	{index: "ojouQuoLevel3", name: "ojou isn't here today, it seems like you'll have to pay her a visit instead", requirements: "?trust ojou 23; ?location playerOffice;", altName: "", altImage: "",},
+	{index: "ojouQuoLevel4", name: "ojou has come to pay you a visit", requirements: "?trust ojou 80; ?location playerOffice;", altName: "", altImage: "",},
+	{index: "brownHangout", name: "brownF and ojou are walking together", requirements: "?trustMin brown 1; ?trust ojou 1; !flag ojou brownHangout; ?location street;", altName: "", altImage: "",},
+	{index: "ribbonHangout", name: "ribbonF and ojou are walking together", requirements: "?trustMin ribbon 1; ?trust ojou 1; !flag ojou ribbonHangout; ?location eastHallway;", altName: "", altImage: "",},
+	{index: "ribbonHangout", name: "ribbonF and ojou are walking together", requirements: "?trustMin ribbon 1; ?trust ojou 1; !flag ojou ribbonHangout; ?location eastHallway;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -65,9 +66,23 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "ojouSolo3": {
 			writeHTML(`
 			`);
-			raiseTrust("ojou", 1);
+			setTrust("ojou", 80);
 			writeEvent(name);
 			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "brownHangout": {
+			writeHTML(`
+			`);
+			addFlag("ojou", "brownHangout");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "ribbonHangout": {
+			writeHTML(`
+			`);
+			addFlag("ojou", "ribbonHangout");
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -125,9 +140,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 }
 
 var eventArray = [
-	{index: "ojouSolo1", name: "Event Name"},
-	{index: "ojouSolo2", name: "Event Name"},
-	{index: "ojouSolo3", name: "Event Name"},
+	{index: "ojouSolo1", name: "Homebound blowing"},
+	{index: "ojouSolo2", name: "Risky gobjob"},
+	{index: "ojouSolo3", name: "Good morning world"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -228,14 +243,15 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "empty", requirements: "?trust principal 10000;"},
+	{index: "reward", requirements: "?trust ojou 80;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
-			//Write the event's text here using writePhoneSpeech, writePhoneImage, and writePhoneChoices
+		case "reward": {
+			writePhoneImage("images/ojou/reward.jpg", "Art by Oreteki18kin");
+			writePhoneSpeech("ojou", "", "You've finished all of ojouF's content for this version, great work!");
 			break;
 		}
 		default: {
