@@ -5,7 +5,7 @@ var logbook = {
 	desc: "An ordinary university student, if a bit on the shy side. She's got a rich step-sister, but aside from that and her purple hair she's as plain as they come.",
 	body: "She's quite petite, underneath her clothes is the archetypal university student who can't find the time to eat properly.",
 	clothes: "She doesn't wear the usual school uniform, instead going for something warmer with a puffy sweater and skirt.",
-	home: "She's almost always found in Classroom A, studying and preparing for upcoming tests and getting in some light reading. She always seems to choose the back row, though.",
+	home: "She's almost always found in Classroom B, studying and preparing for upcoming tests and getting in some light reading. She always seems to choose the back row, though.",
 	tags: "Secretly perverse, step-sister incest, blowjob",
 	artist: "Artist: Oreteki18kin",
 	author: "Author: NoodleJacuzzi",
@@ -110,7 +110,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 				brown Ah~!
 				t The little slut she is, she eagerly triest to catch as much of the load as she can on her tongue, before scooping the rest of her face and hair to swallow down.
 			`);
-			writeEvent(name);
 			passTime();
 			if (checkTrust("ojou") == 1) {
 				writeFunction("writeEncounter('brownVoyeur')", "Meanwhile...");
@@ -122,7 +121,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "brownInvite": {
 			writeHTML(`
-				define ojou = sp ojou; img images/ojou/casual.jpg;
+				define ojou = sp ojou; im images/ojou/casual.jpg;
 				player Actually, I'd like to just talk this time.<br>Maybe more than that afterwards, if you behave.
 				t she seemed dissapointed for a moment, but quickly perks back up.
 				player ojoyF, the name sound familiar?
@@ -156,7 +155,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "brownInviteRepeat": {
 			writeHTML(`
-				define ojou = sp ojou; img images/ojou/ojouP.jpg;
+				define ojou = sp ojou; im images/ojou/ojouP.jpg;
 				im brownInvite1.jpg
 				ojou St... No...
 				player brownF, you're sure?
@@ -175,7 +174,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				player Yeah, hurry it up!
 				im brownInvite6.jpg
 				brown I really do love you ojouF... See?
-				define brown = sp brown; img images/brown/brownP.jpg;
+				define brown = sp brown; im images/brown/brownP.jpg;
 				im brownInvite9.jpg
 				brown P-please, playerF... I can't feel that good again unless you...
 				player Unless... Ghh... I what?
@@ -310,7 +309,7 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "brownInviteLewd": {
 			writeHTML(`
-				define ojou = sp ojou; img images/ojou/ojouP.jpg;
+				define ojou = sp ojou; im images/ojou/ojouP.jpg;
 				im brownInvite1.jpg
 				ojou Let me go! Let me go right now! brownF, help!
 				brown *He told me... About how you were watching us...
@@ -338,7 +337,7 @@ function writeEvent(name) { //Plays the actual event.
 				t Her panties are soaked through too.
 				player Good... Strip! <b>Now</b>!
 				t You start thrusting again.
-				define brown = sp brown; img images/brown/brownP.jpg;
+				define brown = sp brown; im images/brown/brownP.jpg;
 				im brownInvite8.jpg
 				brown Okay... *Sir...
 				ojou N-no... Shtop...

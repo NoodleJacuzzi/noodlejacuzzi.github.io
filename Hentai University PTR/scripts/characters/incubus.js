@@ -514,7 +514,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("writeEncounter('cancel')", "Finish");
 			break;
 		}
-		case "mamaReset": {
+		case "ojouReset": {
 			writeHTML(`
 				t incubusF snaps her fingers and a nearby lockbox opens. Something small and white scurries out in a flash and flies at you, dead set on your right ear.
 				...

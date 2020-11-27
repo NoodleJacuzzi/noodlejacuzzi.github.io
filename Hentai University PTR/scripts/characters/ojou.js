@@ -33,6 +33,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 	writeHTML(`
 		define ojou = sp ojou;
 		define player = sp player;
+		define brown = sp brown;
+		define ribbon = sp ribbon;
 	`);
 	switch (name) {
 		case "cancel": {
@@ -114,7 +116,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "ojouSolo1Repeat": {
 			writeHTML(`
-				define ojou = sp ojou; img images/ojou/casual.jpg;
+				define ojou = sp ojou; im images/ojou/casual.jpg;
 				im ojouSolo1-3.jpg
 				ojou Mph...
 				player Honestly, your place is great. Maybe I should live here after taking over town.
@@ -146,12 +148,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "ojouQuoLevel1": {
 			writeHTML(`
 				im ojouIntro.jpg
-				oujo Y-you... You little...
+				ojou Y-you... You little...
 				player Ah, ojouF. Take a seat.
-				oujo What exactly are you planning, scum?
+				ojou What exactly are you planning, scum?
 				player I'm planning a lot of things. Mainly a way to break down that bitchy attitude of yours. Maybe an "every time I cum on or in you, you lose a little more of your fighting spirit"? A memory thing? Sky's the limit, really.
 				ojou If you think I'll break, then you-
-				play I <b>know</b> you'll break. The only question is what hole of yours I'm fucking when you do. Speaking of...
+				player I <b>know</b> you'll break. The only question is what hole of yours I'm fucking when you do. Speaking of...
 			`);
 			writeFunction("writeEncounter('ojouSolo1')", "Let's go home for a quickie");
 			writeFunction("writeEncounter('cancel')", "You're off the hook for today");
@@ -215,7 +217,7 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "ojouSolo1": {
 			writeHTML(`
-				define ojou = sp ojou; img images/ojou/casual.jpg;
+				define ojou = sp ojou; im images/ojou/casual.jpg;
 				ojou Listen... You don't need to do this. 
 				player Oh, I think I do.
 				ojou P-please... My sister's next door, and if my mom finds us...
@@ -275,7 +277,7 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "ojouSolo3": {
 			writeHTML(`
-				define ojou = sp ojou; img images/ojou/ojouP.jpg;
+				define ojou = sp ojou; im images/ojou/ojouP.jpg;
 				t You have yourself a little walk, and before you know it you're back at her house.
 				t The place is empty, it seems. Might as well do some snooping.
 				...

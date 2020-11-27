@@ -5,7 +5,7 @@ var logbook = {
 	desc: "A university student, although she seems like she belongs to a more prestigious university at first. Despite her popularity she doesn't seem to have many close friends, or anyone at all who could tell you how she spends her free time.",
 	body: "She has a body to die for, and the way she moves and talks is almost like she's on the prowl for something. Or someone.",
 	clothes: "Her clothes are made from the highest quality silk, she must have some seriously loaded parents. Or very rich friends.",
-	home: "She belongs to Classroom A, but spends a lot of time hovering around a particular clubroom in the East Hallway.",
+	home: "She belongs to Classroom B, but spends a lot of time hovering around a particular clubroom in the East Hallway.",
 	tags: "Gangbang, Forced Blowjob",
 	artist: "Artist: Oreteki18kin",
 	author: "Author: NoodleJacuzzi",
@@ -22,7 +22,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "ribbonsLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin brown 80; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
 	{index: "ribbonsLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin president 80; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
 	{index: "ribbonsLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin purple 90; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
-	{index: "ribbonsLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin starlet 83; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
+	{index: "ribbonsLetter", name: "A mysterious letter has been slid under the door", requirements: "?trust ribbon 1; ?trustMin kuro 21; ?location playerOffice;", altName: "Unknown", altImage: "images/none.png",},
 	{index: "ribbonClub", name: "You can wait for the set time here", requirements: "?trust ribbon 2; ?location eastHallway; ?time Evening;", altName: "Unknown", altImage: "images/none.png",},
 	{index: "ribbonQuo", name: "You can wait for ribbon here", requirements: "?trust ribbon 80; ?location eastHallway; ?time Evening;", altName: "", altImage: "",},
 ];
@@ -103,7 +103,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "ribbonRepeat": {
 			writeHTML(`
-				define ribbon = sp ojou; img images/ribbon/ribbonP.jpg;
+				define ribbon = sp ojou; im images/ribbon/ribbonP.jpg;
 				t With a few phonecalls the once empty room is filled with a half-dozen people, all in your same mask and "uniform".
 				im ribbonLewd2.jpg
 				t And, more to the point, all of you are ready to serve her.
@@ -115,7 +115,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 				ribbon Yes! More! I want to bathe in it!
 				t In a battle of endurance, she has all the cards.
 			`);
-			writeEvent(name);
 			passTime();
 			if (checkTrust("ojou") == 1) {
 				writeFunction("writeEncounter('ribbonVoyeur')", "Meanwhile...");
@@ -127,7 +126,15 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "ribbonInvite": {
 			writeHTML(`
-				
+				define ribbon = sp ojou; im images/ribbon/ribbonP.jpg;
+				player I was wondering... Are you the only one this club who... Recieves?
+				ribbon Ara? Last time was just me. But I make it a point to invite girls I know I can trust once every so often.<br>Why, are you unsatisfied with just moi?
+				player I had my eye on someone. ojouF ojouL.
+				t You explain your plan to ribbonF, who smiles in response.
+				...
+				ojou Oh my~<br>Well, I highly doubt whatever plan you have will convince principalF, but... Well, that sounds like paradise, and I am quite the idealist. I <i>suppose</i> I can help you... Educate, ojouF. Give me a moment.
+				t She flips out her phone and starts getting dressed.
+				ribbon ojouF? Ohoh no, this is about your little voyeuristic adventures. I-<br>Oh darling, of course I knew! And the rest of my friends will too, unless you come by to pay me and my latest catch a visit~!
 			`);
 			writeFunction("writeEncounter('ribbonInviteLewd')", "Continue");
 			break;
@@ -146,11 +153,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeHTML(`
 				im ribbonInvite2.jpg
 				ribbon My my, I can't tell if this is more than last time. Clearly you were excited the moment I called you~
-				oujo I... I don't...
+				ojou I... I don't...
 				ribbon Quiet, please~<br>Save that voice, alright? Now, me first, of course. I think your *master will want to actually be satisfied for one. Kneel.
 				im ribbonInvite4.jpg
 				ribbon Ah~! So disgusting! I can feel myself being ruined by the stench!
-				oujo Seeing it so close up...
+				ojou Seeing it so close up...
 				im ribbonInvite5.jpg
 				ribbon Mmpph~
 				ojou ribbonF... I looked up to you...
@@ -183,7 +190,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "ribbonQuo": {
 			writeHTML(`
-				define ribbon = sp ojou; img images/ribbon/ribbonP.jpg;
+				define ribbon = sp ojou; im images/ribbon/ribbonP.jpg;
 				t You wait for the usual time, slip on your mask and outfit, and once you know she's already inside you enter the room.
 				im ribbonLewd1.jpg
 				ribbon Oh, you're an early one. I suppose I am too, and-<br>Oh my, I know this is meant to be anonymous, but I think I recognize that shape and size. Should I call a meeting proper? It's no major crowd, but you and a few others might satisfy my, at least for tonight.
@@ -201,7 +208,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "ribbonChat": {
 			writeHTML(`
-				define ribbon = sp ojou; img images/ribbon/ribbonP.jpg;
+				define ribbon = sp ojou; im images/ribbon/ribbonP.jpg;
 				ribbon Oh? Quite bold of you to ask. Perhaps I'm wrong to assume I recognize you, fresh meat.
 				player You don't know for sure?
 				ribbon Of course not~<br>I have blackmail on every member. Only to ensure they don't reveal my indulgences of course.<br>I couldn't care less if any guests decide to stay or leave, so long as there remain enough to play with. I honestly don't remember your name.
@@ -251,7 +258,7 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "ribbonsLewd": {
 			writeHTML(`
-				define ribbon = sp ojou; img images/ribbon/ribbonP.jpg;
+				define ribbon = sp ojou; im images/ribbon/ribbonP.jpg;
 				t You walk inside, keeping your head down. Everyone else, men and women of varying ages, are all wearing the same 'outfit'. Man or futa, nobody's here to chat. The tense atmosphere changes when the door opens again and shuts.
 				im ribbonLewd1.jpg
 				ribbon Welcome, everyone, to another gathering of the Black Mask club. I certainly hope you all had a lovely weekend. We have new members, so I'll make this simple. You're all here to indulge me. 
@@ -286,23 +293,13 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "ribbonInvite": {
+		case "ribbonInviteLewd": {
 			writeHTML(`
-				define ribbon = sp ojou; img images/ribbon/ribbonP.jpg;
-				player I was wondering... Are you the only one this club who... Recieves?
-				ribbon Ara? Last time was just me. But I make it a point to invite girls I know I can trust once every so often.<br>Why, are you unsatisfied with just moi?
-				player I had my eye on someone. ojouF ojouL.
-				t You explain your plan to ribbonF, who smiles in response.
-				...
-				ojou Oh my~<br>Well, I highly doubt whatever plan you have will convince principalF, but... Well, that sounds like paradise, and I am quite the idealist. I <i>suppose</i> I can help you... Educate, ojouF. Give me a moment.
-				t She flips out her phone and starts getting dressed.
-				ribbon ojouF? Ohoh no, this is about your little voyeuristic adventures. I-<br>Oh darling, of course I knew! And the rest of my friends will too, unless you come by to pay me and my latest catch a visit~!
-				...
 				im ribbonInvite1.jpg
 				ojou S-stop this...
 				ribbon Oh? But you're clearly so wet right now?
 				ojou Th-that's because you've been messing with me! It's a normal response, I just get wet easily!<br>If you don't stop, I'll scream!
-				ojou Ohoh? I hope you're prepared for quite the uphill struggle then. I have friends in very high places, and more than a few of them have your daddy's ear.
+				ribbon Ohoh? I hope you're prepared for quite the uphill struggle then. I have friends in very high places, and more than a few of them have your daddy's ear.
 				ojou You're bluffing! Now stop, or I'll... I'll...
 				ribbon You'll what? Squirt on my hand? <i>Again</i>?
 				im ribbonInvite2.jpg
@@ -312,7 +309,7 @@ function writeEvent(name) { //Plays the actual event.
 				ojou I won't... It's not unhealthy! I'm a normal girl!
 				ribbon I've never been as wet as you are, ojouF, and I often take hours to finish. Honestly, you might have the "I need to get my cunt pounded immediately or I'll die" disease.
 				ojou That's... That's not a real thing!<br>... I'm sure!
-				ojou Ara ara~<br>Calm down little piglet! Here, on your knees. I'll show you how to enjoy yourself more than just watching through the door.
+				ribbon Ara ara~<br>Calm down little piglet! Here, on your knees. I'll show you how to enjoy yourself more than just watching through the door.
 				im ribbonInvite3.jpg
 				ojou You're disgusting... *He's disgusting! You can't seriously be excited about... About licking...
 				ribbon Sucking. Sucking his cock ojouF. <br>I mean, sperm isn't the greatest taste ever, sure. But it's more than just the taste. It's about thick jizz running down your face, about the feeling of cum going down your throat with every swallow, about knowing you did a good job and the creamy white goo is proof of that.<br>If you really think I'm lying or messing with you, watch closely, alright? You'll see for sure if I'm faking.
@@ -327,11 +324,11 @@ function writeEvent(name) { //Plays the actual event.
 				t But ribbonF isn't listening. Instead, she's completely enamoured with your cock. She was right, there's no faking enthusiasm like this. Not with every lick, every moan as she savors the taste and the depravity of it all.
 				im ribbonInvite6.jpg
 				t You cum powerfully, and true to her word she takes it all in her mouth. Each lance of cum spurting onto her tongue and puffing her cheeks.
-				t Without missing a beat on the last spurt, she pulls her mouth free. Coated in jizz and her saliva, she looks at oujoF.
+				t Without missing a beat on the last spurt, she pulls her mouth free. Coated in jizz and her saliva, she looks at ojouF.
 				ribbon Now.
-				oujo N-
+				ojou N-
 				im ribbonInvite7.jpg
-				oujo Ghhhk!
+				ojou Ghhhk!
 				ribbon "Help me"? Is that what you're trying to say? How? Push your head deeper? *He's already on that.<br>Oh, do you mean you want me to lick your pussy?
 				ojou Mmmgphh-!
 				ribbon Hmm... But then you might lose focus on your your *master's cock...<br>How about after? I know you'll be really horny, so-
@@ -493,7 +490,7 @@ switch (requestType) {
 					}
 				}
 				else {
-					console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
+					//console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
 					var requirements = checkRequirements(encounterArray[number].requirements);
 					//console.log(requirements);
 					if (requirements != true) {
