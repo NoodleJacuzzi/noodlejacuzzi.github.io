@@ -132,7 +132,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				player I had my eye on someone. ojouF ojouL.
 				t You explain your plan to ribbonF, who smiles in response.
 				...
-				ojou Oh my~<br>Well, I highly doubt whatever plan you have will convince principalF, but... Well, that sounds like paradise, and I am quite the idealist. I <i>suppose</i> I can help you... Educate, ojouF. Give me a moment.
+				ribbon Oh my~<br>Well, I highly doubt whatever plan you have will convince principalF, but... Well, that sounds like paradise, and I am quite the idealist. I <i>suppose</i> I can help you... Educate, ojouF. Give me a moment.
 				t She flips out her phone and starts getting dressed.
 				ribbon ojouF? Ohoh no, this is about your little voyeuristic adventures. I-<br>Oh darling, of course I knew! And the rest of my friends will too, unless you come by to pay me and my latest catch a visit~!
 			`);
@@ -278,7 +278,7 @@ function writeEvent(name) { //Plays the actual event.
 				t As you pull out the rest of her "pigs" begin to finish onto her, all of them having edged for this moment. Her manical glee fades from her face, replaced with a pure look of thirst...
 				t Somehow, despite leaking cum from her ass and pussy, despite being covered from head to toe in sperm...
 				ribbon Mhmm~! More! You swine can do better than that!
-				t She still has complete command over the room. Other fresh participants are ready, but t's very clear she may outlast the crowd.
+				t She still has complete command over the room. Other fresh participants are ready, but it's very clear she may outlast the crowd.
 				t Still, you have your own conquests. It'd be best not to get hooked on an unwinnable battle. If it were just you and her alone in here...
 				t You shudder. The night will last a lot longer for her, but you should get going.
 			`);

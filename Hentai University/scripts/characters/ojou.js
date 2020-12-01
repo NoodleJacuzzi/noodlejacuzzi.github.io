@@ -168,7 +168,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				player Well, I'm very busy today. Plenty to do, you understand, so...
 			`);
 			writeFunction("writeEncounter('ojouSolo2')", "I'll need to do it here, maybe in your classroom?");
-			writeFunction("writeEncounter('cancel')", "You'll must have to imagine for tonght. No cumming for you");
+			writeFunction("writeEncounter('cancel')", "You'll just have to imagine for tonight. No cumming for you");
 			break;
 		}
 		case "ojouQuoLevel3": {

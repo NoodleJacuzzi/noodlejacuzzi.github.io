@@ -1,4 +1,4 @@
-var character = {index: "brown", fName: "Daniela", lName: "Wright", trust: 0, encountered: false, textEvent: "", met: false, color: "#F9D4B7", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false};
+var character = {index: "brown", fName: "Alexa", lName: "Wright", trust: 0, encountered: false, textEvent: "", met: false, color: "#F9D4B7", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false};
 
 var logbook = {
 	index: "brown", 
@@ -73,7 +73,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				brown I want to be taken... Molested. Teased. Assaulted. Played with. Abused. Bro-
 				player Okay. brownF, when I snap my fingers, you're going to wake up. and when you do you're going to remember in vivid detail everything you've just told me, and you'll believe you told it to me completely willingly.
 				t You snap your fingers, and almost immediately you can see brownF's expression turn from an empty daze to shock, panic, and blind terror in a rollercoaster of emotion before her eyes start to water.
-				t Dropping hypnosis without any commands is risky, but this pay off in a fun way.
+				t Dropping hypnosis without any commands is risky, but this might pay off in a fun way.
 				brown I... I didn't-
 				player Stop.
 				t Her will was already pretty shaky. Even without giving her a command, now is as good a time as any to...
@@ -108,7 +108,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				brown Mmm... I learned this technique... From a story.<br>If it feels good, y-you can reward me... With...
 				im brownLewd4.jpg
 				brown Ah~!
-				t The little slut she is, she eagerly triest to catch as much of the load as she can on her tongue, before scooping the rest of her face and hair to swallow down.
+				t The little slut she is, she eagerly tries to catch as much of the load as she can on her tongue, before scooping the rest of her face and hair to swallow down.
 			`);
 			passTime();
 			if (checkTrust("ojou") == 1) {
@@ -341,7 +341,7 @@ function writeEvent(name) { //Plays the actual event.
 				im brownInvite8.jpg
 				brown Okay... *Sir...
 				ojou N-no... Shtop...
-				player Gh... Hands away from you pussy! Get ready!
+				player Gh... Hands away from your pussy! Get ready!
 				t With one big motion you lift ojouF to give brownF a proper reward, pulling your cock out of ojouF's creampied pussy as she hits an orgasm. As a result...
 				im brownInvite10.jpg
 				t Cum and pussy juice splatter over brownF's lower body. Despite not touching herself...

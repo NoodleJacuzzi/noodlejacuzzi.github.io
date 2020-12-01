@@ -338,9 +338,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("She flushes a deep scarlet, before smiling wider than you've seen before, a shine in her eyes as she leans forward.");
 				writeSpeech("maid","","If you enjoyed me talking about it, I'm sure you'd enjoy <i>watching</i> even more. The sight of me teasing open mistressF, using my tongue to get her <i>nice and-</i>");
 				if(checkFlag('cafedark','Visited'))
-					writeSpeech("???","images/cafedark/cafedark.jpg","maidF!");
-				else
 					writeSpeech("cafedark","","maidF!");
+				else
+					writeSpeech("???","images/cafedark/cafedark.jpg","maidF!");
 				writeText("There's a loud bang as she jumps enough for her hips to hit the table, her eyes going wide as a waitress steps towards you both.");
 				if(checkFlag('cafedark','Visited'))
 					writeSpeech("cafedark","images/cafedark/cafedark.jpg","Sorry, I totally missed you two here! Are you ordering the-");
@@ -397,7 +397,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("She nods thoughtfully.");
 				writeSpeech("maid","","Mm. I might just do that... <i>playerT Counselor.</i>");
 				writeText("She smirks teasingly, leaning forward a bit herself... only for you both to hear footsteps approaching.");
-
 				if(checkFlag('cafedark','Visited')){
 					writeSpeech("cafedark","","maidF!");
 					writeText("You see cafedarkF bound over with a grin as maidF sits up a bit straighter. cafedarkF pauses slightly when she sees you at the table before her grin turns to a wry smirk.");
@@ -412,7 +411,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("She looks at you for a moment, and you give a slight shrug and a nod.");
 				writeSpeech("maid","","Two coffees.");
 				writeText("The waitress nods, looking over the both of you.");
-
 				if(checkFlag('cafedark','Visited')){
 					writeSpeech("cafedark","","I'll be back with that in just a minute - sorry to interrupt you two~!");
 					writeText("maidF blushes for a second as the woman bounces off, her skirt going almost indecently high with each step.");
@@ -926,7 +924,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeText("She bites her lip as you push in, a moan spilling out as you reach halfway.");
 				writeBig("images/maid/5-1.jpg","Art by Oreteki18kin");
 				writeText("You start pistoning into her ass, maidF fingering her cum-filled pussy as you do.");
-				writeSpeech("maid","","G-God, you're stretching my ass so much more than Mistress's toys ever did...!");
+				writeSpeech("maid","","G-God, you're stretching my ass so much more than Mistress Anna's toys ever did...!");
 				writeText("Each deep, grunting thrust makes maidF moan louder, her chest heaving as she bites her lip.");
 				writeText("You lose track of how many times you bottom-out inside of her, your hips slapping against her ass as you fuck her, but you eventually feel yourself getting close.");
 				writeSpeech("player","","Fuck... Are you ready?");
@@ -2041,7 +2039,10 @@ function writeEvent(name) { //Plays the actual event.
 				t mistressF's tongue teases at maidF's clit, each flick of the tongue against it causing maidF to tighten around your cock sharply, which mistressF enjoys using to tease you both.
 				`);
 			writeText("As maidF squirms more and more beneath you, mistressF pushes her arms against maidF's thighs harder to keep her steady.");
-			writeSpeech("mistress","","Hold still, slut~ Your *Master's trying to use you to get off!");
+			if(data.player.gender == "man")
+				writeSpeech("mistress","","Hold still, slut~ Your *Master is trying to use you to get off!");
+			else
+				writeSpeech("mistress","","Hold still, slut~ Your other Mistress is trying to use you to get off!");
 			writeText("Looking up at you, she clearly mouths \"Go faster\" with a grin, before taking her tongue back to maidF's clit.");
 			writeText("You're more than happy to oblige, pulling your cock out of her hot, wet folds before thrusting harder and faster, every inch of your cock rapidly sliding in and out of her.");
 			writeSpeech("maid","","O-Oh <i><b>god</b></i> of f-fuh-<i><b>FUCK</b></i> p-please~!");
