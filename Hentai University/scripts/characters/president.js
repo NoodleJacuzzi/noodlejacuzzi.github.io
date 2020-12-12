@@ -514,6 +514,31 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
+		case "shadowCouncil": {
+			writeHTML(`
+				define president = sp president; im images/president/presidentP.jpg;
+				define treasurer = sp treasurer;
+				define ojou = sp ojou;
+				define pinstripe = sp pinstripe;
+				define instructor = sp instructor;
+				define nurse = sp nurse;
+				t At the door is a blushing treasurerF, seemingly standing guard.
+				treasurer ...
+				t She's pretending not to notice you. Through the door you can hear an argument, and as you open the door into the student council room, you're greeted by...
+				im profileP.jpg
+				president playerF! I'm glad you're here. 
+				ojou For God's sake, put some clothes on! You embarrass the whole school!
+				president You're the only one embarassing yourself here. This is to figure out how to topple principalF, logic says playerF already has everyone who will be in attendance in *his control.
+				ojou And how does that equate to being nude?!
+				
+				t Only for it to quickly open again as pinstripeF follows in, followed closely by an inquisitive nurseF.
+				pinstripe Please, stop with the questions, thinking about that day makes my head hurt. I don't-<br>Good lord, presidentF?!
+				nurse I understand, that actually does fall in line with the mixture's effects.<br>Ah, is this a nude meeting?
+				t And the door opens and shuts again, treasurerF looking more exhausted every time you catch a glimpse of her.
+				instructor What's this about nudity? Taking my suggestion to heart?<br>Oh wow, looking good! I knew you had a fantastic pair of thighs the moment I saw your painting, presidentF.
+			`);
+			break;
+		}
 		case "cancel": {
 			unencounter('president');
 			changeLocation(data.player.location);

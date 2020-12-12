@@ -696,6 +696,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 					}
 				}
 			}
+			if (checkTrust('instructor') > 80 && checkTrust('instructor') < 0 && checkFlag("succubus", "instructor") != true) {
+				writeFunction("writeEncounter('succubusInstructor')", "Talk about instructorF");
+			}
 			writeSpeech("succubus", "demon.jpg", "We could also just spend the night chatting, if you wanted. Anything on your mind?");
 			writeFunction("writeEncounter('chatSelect')", "Chat");
 			writeFunction("changeLocation('playerHouse')", "Finish");
@@ -833,6 +836,29 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeEvent(name);
 			passTime();
 			unencounter("nagatoro");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "succubusInstructor": {
+			writeHTML(`
+				player I'm close to having control of the school, but if you're free I could use some support.
+				succubus Oh?
+				player I need to be able to hypnotize a bunch of girls at once. Maybe you could help me out? Call a bunch of your demon friends or something.
+				succubus ... You think I have friends?
+				player ... Contacts?
+				succubus Nope.
+				player Acquaintances?
+				succubus Nobody but you, and people I hate. But fuck 'em! With what I've got from demonF's vault, a bunch of hormonal teenagers will be a cakewalk. Hehe...
+				t succubusF Goes to his bag and pulls out a glass... Something. It defies description, the only thing you can actually be sure of is that it looks like succubusF is holding upside-down.
+				succubus With this, and a little bit of energy, I can manipulate someone's common sense. Basically it inverts someone's normal morals or preferences, specifically desires someone wants to keep hidden.<br>Let's say you were into the oh-so forbidden act of hand-holding. I tilt like so while thinking of you...
+				t succubusF tilts the... Thing... And reality begins to wobble.
+				succubus And suddenly you'd hold hands in public, not caring how scandalous you look~<br>And back to normal. Temporary, but effective.
+				player How temporary?
+				succubus Well, you remember what happened, but the human mind is kind of a pushover. If you feel enough shame it breaks you, leaving you permanently in the manipulated state rather than accept what happened.<br>I think you know where I'm going with this~
+				player So I call you to the gym, you work your magic-
+				succubus And then you work yours! It'll be nice to see you in action, *master.<br>I'll head out and get ready, see you there~
+			`);
+			addFlag("succubus", "instructor");
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}

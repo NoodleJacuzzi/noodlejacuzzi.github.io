@@ -339,6 +339,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust('mama') == 1) {
 				writeFunction("writeEncounter('scarfMama')", "Ask for help with mamaF");
 			}
+			if (checkTrust('instructor') > 80 && checkTrust('instructor') < 0 && checkFlag("scarf", "instructor") != true) {
+				writeFunction("writeEncounter('scarfMama')", "Ask for help with instructorF");
+			}
 			writeFunction("writeEncounter('casinoRepeat')", "Return to the dream casino");
 			writeFunction("writeEncounter('beachRepeat')", "Return to the dream beach");
 			writeFunction("changeLocation(data.player.location)", "Go back");
@@ -421,6 +424,22 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp player; I'm more worried it'll backfire and I'll face the full ethical karma of disguising myself as a kid. Or for turning her potential rape fantasy into a rape reality.
 			`);
 			unencounter('scarf');
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "scarfInstructor": {
+			writeHTML(`
+				player So, the council. I've got my eye on instructorF-
+				scarf She's quite the eyeful. I've had half a mind to entertain myself with her for a while. I find I prefer the company of our current coach, though.
+				player She's always surrounded by her squad of would-be-medalists. Any suggestions?
+				scarf Of course, chi... *Master. I think it's past time I actually assisted you directly. I have quite the technique in mind. You still use a pendant, yes?
+				player Yeah. Never been one for scented candles.
+				scarf Hmhm~ Fine for a single target in a dark room, but in an open area you must overtake every sense at once. Do so subtly and your target may never even realize they're affected.
+				player So I call you to the gym and we work together?
+				scarf I do hope you'll put on a show.<br>Common sense manipulation, that'll be how I'll set the stage for you. Invert their hidden shames to make them proudly wear their fetishes openly.<br>An advantage is that if the shame is too great, they'd rather remain in a trance than snap back to reality. A permanent solution... If you can meet my expectations.
+				player I work well under pressure.
+			`);
+			addFlag("scarf", "instructor");
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
