@@ -159,7 +159,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			sceneSelect();
 			break;
 		}
-		case "completionQuo": {
+		case "completeQuo": {
 			sceneSelect();
 			break;
 		}
@@ -701,12 +701,12 @@ function writeEvent(name) { //Plays the actual event.
 				i It will if you're rough enough.
 				...
 				im 04.jpg
-				isf Fffuck, fuckfuckfuck~!
+				i Fffuck, fuckfuckfuck~!
 				track Ah, coach, it's been-
-				isf Fff... Another five~! Another five and we'll resume~!
+				i Fff... Another five~! Another five and we'll resume~!
 				...
 				im 06.jpg
-				isf Hah... Hah... A-another five... One more, and back to practice...
+				i Hah... Hah... A-another five... One more, and back to practice...
 			`);
 			passTime();
 			writeFunction("changeLocation(data.player.location)", "Finish");
@@ -746,6 +746,7 @@ function fuck(name) {
 		else {
 			writeFunction("writeEncounter('finale')", "Continue");
 		}
+		setTrust("instructor", 80);
 		removeFlag("instructor", "trackFuck");
 		removeFlag("instructor", "bikiniFuck");
 		removeFlag("instructor", "gymnastFuck");
