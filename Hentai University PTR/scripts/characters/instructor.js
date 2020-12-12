@@ -33,6 +33,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		define track = sp Casey; im images/instructor/track.jpg; altColor #227F2E;
 		define karate = sp Aiko; im images/instructor/karate.jpg; altColor #FAF9FE;
 		define gymnast = sp Lansley; im images/instructor/gymnast.jpg; altColor #D07E8D;
+		define principal = sp principal;
 		define player = sp player;
 		define i = sp instructor;
 		define instructor = sp instructor;
@@ -127,7 +128,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t The effects are indeed quick, your vision becomes... Wobbly, for a moment, but your assistant's hand on your shoulder snaps you out of it leaving you mostly unaffected.
 				succubus Relax, alright? I've got other tricks if this doesn't work. Project confidence. Go talk to her, once it's clear she's being manipulated, strip and get to work.
 				scarf Go ahead. You get her talking. She should fall under the subtle hypnosis quickly. And once she has, strip.
-				incubus You get naked. Cock out. She's probably already affected.
+				incubus Now you get naked. Cock out. She's probably already affected.
 				player Wait, strip? Right in front of all of them?
 				succubus Listen, no rush, but I maybe didn't store enough energy for a long session. I assumed you'd act like the *man who fucked me unconcious and not like the little bitch I stole this doodad from.<br>What was I saying? Right, you got this in the bag.
 				scarf Confidence, playerF. If they have time to think about the situation they may start to pick at the hypnosis. That would be far from ideal. Go ahead.
