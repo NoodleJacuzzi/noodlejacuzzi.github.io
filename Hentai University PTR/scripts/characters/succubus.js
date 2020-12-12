@@ -696,7 +696,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 					}
 				}
 			}
-			if (checkTrust('instructor') > 80 && checkTrust('instructor') < 0 && checkFlag("succubus", "instructor") != true) {
+			if (checkTrust('instructor') < 80 && checkTrust('instructor') > 0 && checkFlag("succubus", "instructor") != true) {
 				writeFunction("writeEncounter('succubusInstructor')", "Talk about instructorF");
 			}
 			writeSpeech("succubus", "demon.jpg", "We could also just spend the night chatting, if you wanted. Anything on your mind?");

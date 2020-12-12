@@ -738,6 +738,7 @@ function renameNickname() {
 }
 
 function checkRequirements(string) {
+	console.log("Now checking requirements of string "+string);
 	var finalResult = true;
 	while (string.includes("!location ") == true) {
 		var check = string.split(`!location `).pop().split(`;`)[0];
@@ -935,7 +936,7 @@ function checkRequirements(string) {
 			string = string.replace(`?flag `+corruptionTarget+` `+check+`;`, ``);
 		}
 	}
-	if (finalResult == true) {
+	if (finalResult == true || string.includes("define ") == true && string.includes("=") == true) {
 		return true;
 	}
 	else {
@@ -1850,6 +1851,7 @@ function writeHTML(text) {
 				if (command.toLowerCase() == definitionArray[i].shortcut) {
 					lines[lineCounter] = lines[lineCounter].replace(definitionArray[i].shortcut, definitionArray[i].result);
 				}
+				//console.log("Shortcut replaced, line is now "+lines[lineCounter]);
 			}
 			var command = lines[lineCounter].replace(/ .*/,'');
 			switch (command.toLowerCase()) {
@@ -1878,7 +1880,9 @@ function writeHTML(text) {
 					//Remove the command from the line we actually want to print.
 					lines[lineCounter] = lines[lineCounter].replace(command+` `, ``);
 					//Execute the writeText command to print everything left to the screen.
-					writeText(lines[lineCounter]);
+					if (checkRequirements(lines[lineCounter]) == true) {
+						writeText(lines[lineCounter]);
+					}
 					//Don't execute any of the below switch cases.
 					break;
 				}
@@ -1912,7 +1916,9 @@ function writeHTML(text) {
 					//Remove the command from the line we actually want to print.
 					lines[lineCounter] = lines[lineCounter].replace(command+` `+name+`; `, ``);
 					//Execute the writeSpeech command to print everything we have left.
-					writeSpeech(name, image, cullRequirements(lines[lineCounter]), altName, altColor);
+					if (checkRequirements(lines[lineCounter]) == true) {
+						writeSpeech(name, image, cullRequirements(lines[lineCounter]), altName, altColor);
+					}
 					break;
 				}
 				case "im": {

@@ -25,6 +25,22 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+	writeHTML(`
+		define scarf = sp scarf; ?flag instructor scarfSupport;
+		define succubus = sp succubus; ?flag instructor succubusSupport;
+		define incubus = sp incubus; ?flag instructor incubusSupport;
+		define bikini = sp Bianca; im images/instructor/bikini.jpg; altColor #D88A25;
+		define track = sp Casey; im images/instructor/track.jpg; altColor #227F2E;
+		define karate = sp Aiko; im images/instructor/karate.jpg; altColor #FAF9FE;
+		define gymnast = sp Lansley; im images/instructor/gymnast.jpg; altColor #D07E8D;
+		define player = sp player;
+		define i = sp instructor;
+		define instructor = sp instructor;
+		define is = sp instructor; !flag instructor instructorFuck;
+		define isf = sp instructor; ?flag instructor instructorFuck; im images/instructor/instructorP.jpg;
+		define it = t !flag instructor instructorFuck;
+		define itf = t ?flag instructor instructorFuck;
+	`);
 	switch (name) {
 		case "cancel": {
 			unencounter(character.index);
@@ -40,7 +56,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				im karateProfile.jpg
 				karate Hey, this is a private gathering.
 				player Right, I'm with the school, I just need to talk with instructorF.
-				i karateF! Back to practice!<br>Hey! You need something?
+				i Aiko! Back to practice!<br>Hey! You need something?
 				player Actually, principalF asked me to ask around with the students, get a general idea of-
 				instructor No need. Every single one of these girls is addicted and focused.
 				player I... Addicted?
@@ -186,13 +202,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "endingInstructor": {
 			writeHTML(`
 				t Life as a co-coach isn't all fun and games. Sure, on some days it's about supporting the girls as they struggle to overcome a big plateau. Or about helping instructorF teach them a new technique.
-				t Honestly, a surprising amount of time is spent actually seriously training. But on some days the routine is more your workout than theirs. These are the reward days, celebrating accomplishments like karateF making the news for her accomplishments...
+				t Honestly, a surprising amount of time is spent actually seriously training. But on some days the routine is more your workout than theirs. These are the reward days, celebrating accomplishments like Aiko making the news for her accomplishments...
 				im 153.jpg
-				t Or when bikiniF gets recognized by a major sports sponsor...
+				t Or when Bianca gets recognized by a major sports sponsor...
 				im 154.jpg
-				t Or when trackF beats her personal best...
+				t Or when Casey beats her personal best...
 				im 155.jpg
-				t Or when gymnastF masters a seemingly impossible move...
+				t Or when Lansley masters a seemingly impossible move...
 				im 156.jpg
 				t On days like those you're pushed to your limits. But today of all days, everyone's hard work pays off. Those gold medals are finally in sight.
 				im 135.jpg
@@ -214,8 +230,16 @@ function writeEncounter(name) { //Plays the actual encounter.
 }
 
 var eventArray = [
-	{index: "placeholder", name: "Event Name"},
-	{index: "placeholder", name: "Event Name"},
+	{index: "trackFuck", name: "Casey's Training"},
+	{index: "trackLast", name: "Casey's Awakening"},
+	{index: "bikiniFuck", name: "Bianca's Training"},
+	{index: "bikiniLast", name: "Bianca's Awakening"},
+	{index: "gymnastFuck", name: "Lansley's Training"},
+	{index: "gymnastLast", name: "Lansley's Awakening"},
+	{index: "karateFuck", name: "Aiko's Training"},
+	{index: "karateLast", name: "Aiko's Awakening"},
+	{index: "instructorFuck", name: "Going for Gold"},
+	{index: "instructorLast", name: "The Olympian Gauntlet"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -225,7 +249,7 @@ function writeEvent(name) { //Plays the actual event.
 		case "trackFuck": {
 			writeHTML(`
 				im 113a.jpg
-				t It seems like it didn't take long for the common sense manipulation to affect trackF, she's already casually going bottomless.
+				t It seems like it didn't take long for the common sense manipulation to affect Casey, she's already casually going bottomless.
 				player You certainly look comfortable.
 				track Eh? Oh, yeah, thanks! Streaking's pretty fun, not sure why I never gave it a shot at school before.
 				is You've been doing it on your days off? That's the spirit! Nothing gets your heart racing like wind on our naked body.
@@ -235,15 +259,15 @@ function writeEvent(name) { //Plays the actual event.
 				track ... Huh. I'm not sure why, actually. I was hoping somebody would see me, that I'd get pinned down and fucked on the street, but wouldn't it be better to streak during the day for that...?
 				succubus Psst, hey, maybe nip this line of thinking in the bud, before she logics her way out of the spell?
 				incubus Hey, sorry to interrupt, but you should probably crash her train of thought. This magic's got its limitations and critical thinking is ine of them.
-				scarf That's... Interesting. playerF, would you care to give some input before miss trackF thinks too hard about the situation she's in?
-				player Right, right. trackF, bend over. I'll give you what you're looking for.
+				scarf That's... Interesting. playerF, would you care to give some input before miss Casey thinks too hard about the situation she's in?
+				player Right, right. Casey, bend over. I'll give you what you're looking for.
 				track Ah, right! I've already got someone here to rape me. Or, I guess that's not the right word. Here.
 				im 114.jpg
 				track From behind, please. You're a lot hotter than my usual fantasies, by the way, mind being rough?
 				im 115.jpg
 				track Hey, coach, how's my form? I don't wanna pull anything.
 				is You look great as usual. Careful not to extend the knees, can't have those god-touched hamstrings getting pulled.
-				isf You look like a good bitch, trackF. I'm sure you'd get assaulted in a heartbeat going out like that.
+				isf You look like a good bitch, Casey. I'm sure you'd get assaulted in a heartbeat going out like that.
 				track Thanks! I've been practi-
 				im 116.jpg
 				track AAAAH-!
@@ -263,7 +287,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeHTML(`
 				im 113.jpg
 				track I... Huh.
-				t As you try to take a moment to breathe, preparing yourself for your final round trackF is wandering around with a dazed look to her, as if trying to fiure out why she thought going bottomless was a good idea.
+				t As you try to take a moment to breathe, preparing yourself for your final round Casey is wandering around with a dazed look to her, as if trying to fiure out why she thought going bottomless was a good idea.
 				succubus Shit, did the spell...?
 				scarf ... You may want to grab her.
 				incubus And that's time. See you around the shop. Or maybe I won't.
@@ -288,7 +312,7 @@ function writeEvent(name) { //Plays the actual event.
 				...
 				im 121.jpg
 				track My pussy is... Is for my *master... I behave, and all my fantasies will come true...
-				t As the rest of the girls shake off their post-fuck afterglow, you've finished off any hope of resistance in trackF's mind.
+				t As the rest of the girls shake off their post-fuck afterglow, you've finished off any hope of resistance in Casey's mind.
 			`);
 			break;
 		}
@@ -300,9 +324,11 @@ function writeEvent(name) { //Plays the actual event.
 				track AAAaaah-!<br>Fffuck, no, keep going! God, I'll neeeever get used to this feeling~!
 				...
 				im 117.jpg
-				t Though the rest of the team tries to hide their jealousy of trackF, they aren't that subtle about it. After you pull out of trackF's cunt they quickly shift around to hide the fact that they were just playing with themselves.
+				t Though the rest of the team tries to hide their jealousy of Casey, they aren't that subtle about it. After you pull out of Casey's cunt they quickly shift around to hide the fact that they were just playing with themselves.
 				t The tease you are, they'll just have to wait.
 			`);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "bikiniFuck": {
@@ -329,7 +355,7 @@ function writeEvent(name) { //Plays the actual event.
 				t You cum onto her face, painting her reddened cheeks a gooey white as her hand rubs beneath her bikini's bottoms. As you stand up and move to rip them off though, you're interrupted.
 				succubus Alright, she's good. We've still got more!
 				scarf Don't spend all your time on her, we should hurry before we have an un-tranced audience.
-				lily Yo! I know she's stacked, but the others still need dick if you want to avoid getting caught!
+				incubus Yo! I know she's stacked, but the others still need dick if you want to avoid getting caught!
 			`);
 			break;
 		}
@@ -378,22 +404,24 @@ function writeEvent(name) { //Plays the actual event.
 			writeHTML(`
 				im 087.jpg
 				bikini Aaah, i-it's too big! W-wouldn't you rather use my t... my tits?
-				instructor Deep breaths, bikiniF. Relax.
+				instructor Deep breaths, Bianca. Relax.
 				bikini Deep breaths. Right. Okay. Hoo-
 				im 088.jpg
 				bikini Haaah~
 				im 090.jpg
 				bikini Ah~ Ah~!
-				instructor Every other thrust, bikiniF. I know it <i>feels</i> like you're underwater, but you're doing great!
+				instructor Every other thrust, Bianca. I know it <i>feels</i> like you're underwater, but you're doing great!
 				im 091.jpg
 				bikini Cumming~!
 			`);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "karateFuck": {
 			writeHTML(`
 				im 101.jpg
-				t Seemingly uncaring that she's completely naked, karateF still looks at you with disdain.
+				t Seemingly uncaring that she's completely naked, Aiko still looks at you with disdain.
 				karate ... What are you looking at?
 				player At my next fuck. Bend over.
 				karate As if! Disgusting creep, back away!
@@ -401,9 +429,9 @@ function writeEvent(name) { //Plays the actual event.
 				succubus Hey, it rewrites common sense and reveals inner fetishes. I never said it'd make them loyal or anything.
 				scarf Don't look at me, I never said this was a foolproof method. Perhaps her darkest desire is to act catty?
 				incubus What? You get what you paid for. Her inner desires are awoken, and she wants to act like a bitch. Treat her like one.
-				is Hey, karateF! That's no way to act to someone trying to help us!
+				is Hey, Aiko! That's no way to act to someone trying to help us!
 				isf Bitch!
-				t The two of you are interrupted by instructorF grabbing karateF by the arms.
+				t The two of you are interrupted by instructorF grabbing Aiko by the arms.
 				karate You fucking whore! Let me go!
 				is Just... Relax! *He's here... To help! Girls, help me get her on top of playerF!
 				isf Cut the bullshit... This'll be good for you! playerF, get into position! Girls, help me hold her!
@@ -415,7 +443,7 @@ function writeEvent(name) { //Plays the actual event.
 				karate Ah! Braindead sluts, let me g-
 				im 104.jpg
 				karate Ooough~!
-				is Come on karateF, get into the rhythm!
+				is Come on Aiko, get into the rhythm!
 				isf Quit your bellyaching, and be a good little slut! He won't fuck you any harder for being a bitch!
 				karate Nnhooo~!
 				is I know that shaking, just... Enjoy yourself!
@@ -425,7 +453,7 @@ function writeEvent(name) { //Plays the actual event.
 				karate Cooock~! Cock~!
 				im 106.jpg
 				karate Hah... Hah... I-is that all you've got? I could... Could barely feel you inside me... And you barely shot a drop of cum inside me...
-				is Hah... karateF, I see you need some additional training. playerF, go ahead and help the next girl, I'll handle karateF's attitude.
+				is Hah... Aiko, I see you need some additional training. playerF, go ahead and help the next girl, I'll handle Aiko's attitude.
 				isf Greedy slut, I'll teach you some honesty myself!
 			`);
 			break;
@@ -433,25 +461,25 @@ function writeEvent(name) { //Plays the actual event.
 		case "karateLast": {
 			writeHTML(`
 				im 101.jpg
-				t Seemingly uncaring that she's completely naked, karateF still looks at you with disdain.
+				t Seemingly uncaring that she's completely naked, Aiko still looks at you with disdain.
 				karate ... You... What did you do to us?
 				succubus Uh, boss? I'm out.
 				scarf Oh my, it looks like she's free.
 				incubus And... Time. See you around, if you aren't in jail, I mean.
-				t You take a step towards karateF, who takes a step forwards in turn. She's sweating from her exercise, but she's probably got more left in the tank than you do. If she takes you down, or if she escapes...
-				t You're interrupted as she's tackled from behind, instructorF and trackF pinning her down.
+				t You take a step towards Aiko, who takes a step forwards in turn. She's sweating from her exercise, but she's probably got more left in the tank than you do. If she takes you down, or if she escapes...
+				t You're interrupted as she's tackled from behind, instructorF and Casey pinning her down.
 				karate No! Stop, let me go! He's in your heads! He needs to be stopped!
 				track We're not letting you hurt him!
-				isf Don't worry karateF, you aren't thinking rationally. You'll see clearly soon.
+				isf Don't worry Aiko, you aren't thinking rationally. You'll see clearly soon.
 				...
-				karate No, please, instructorF, trackF, snap out of it!
-				isf You'll see clearly soon, karateF. Just relax.
-				track Yeah! It feels super good! gymnastF is still playing with herself on the floor from when she throatfucked herself on him!
+				karate No, please, instructorF, Casey, snap out of it!
+				isf You'll see clearly soon, Aiko. Just relax.
+				track Yeah! It feels super good! Lansley is still playing with herself on the floor from when she throatfucked herself on him!
 				im 103a.jpg
 				karate AAAAH-!
 				isf There you go, let it all out. Nobody's around at this hour, just let it all out...
 				track Just think of it like exercise! One and two, one and two, one and two!
-				t Though unintentionally, trackF's chanting is helpful. Whispering into karateF's ear while maintaining a rhythm, you're able to lay the foundations for a trance against her crumbling psyche.
+				t Though unintentionally, Casey's chanting is helpful. Whispering into Aiko's ear while maintaining a rhythm, you're able to lay the foundations for a trance against her crumbling psyche.
 				...
 				im 104.jpg
 				karate Ooough~! Gonna... Gonna...!
@@ -462,9 +490,9 @@ function writeEvent(name) { //Plays the actual event.
 				karate Cumming~!
 				im106.jpg
 				karate Hah... Hah...
-				isf How do you feel, karateF?
+				isf How do you feel, Aiko?
 				karate Like... Like I want more...
-				t Her proper conditioning finished, her will to fight has vanished. It's a rush job but it seems to be sticking as karateF is lifted off of you.
+				t Her proper conditioning finished, her will to fight has vanished. It's a rush job but it seems to be sticking as Aiko is lifted off of you.
 			`);
 			break;
 		}
@@ -478,6 +506,8 @@ function writeEvent(name) { //Plays the actual event.
 				t She still won't drop the bitchy persona until you give her what she really needs, but at least her teammates are glad to volunteer to help out. Especially if they get to play with themselves as they do.
 				im 105a.jpg
 			`);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "gymnastFuck": {
@@ -490,8 +520,8 @@ function writeEvent(name) { //Plays the actual event.
 				gymnast And, and... Gaaaah! I just... Can't touch, keep exercising. No touching myself, gotta stay focused!
 				t She stretches forwards over and again, each time dipping lower than the last. The is revealing how frustrated she is on the inside, seemingly from a long abstinence period.
 				gymnast One, and two, and one and two and...<br>Cooooach!
-				is Yeah? gymnastF, if this is about the abstinence thing, you're not getting any leeway from me! Frustration leads to better gains, keep working!
-				isf Mmm...? gymnastF, you're not cumming, so shut up about it! I want your hormones racing for the competition, that means you do not touch your little teen twat until then! Am I clear?!
+				is Yeah? Lansley, if this is about the abstinence thing, you're not getting any leeway from me! Frustration leads to better gains, keep working!
+				isf Mmm...? Lansley, you're not cumming, so shut up about it! I want your hormones racing for the competition, that means you do not touch your little teen twat until then! Am I clear?!
 				gymnast Ghh... Yes coach!
 				t As frustration continues to build in her eyes, you decide to help. Obviously ruining her abstinence streak would be a horrible shame, so...
 				im 125.jpg
@@ -504,10 +534,10 @@ function writeEvent(name) { //Plays the actual event.
 				im 127.jpg
 				im 128.jpg
 				t She lets out a gasp for air as soon as you give her mouth a good stuffing. There's a small cough, but otherwise it's clear she's doing her best to swallow as she grinds her ass back and forth against the floor.
-				is gymnastF, what did I just say!
-				isf gymnastF, what did I just say!
-				t In response gymnastF just lets out a messy giggle, finally finding relief. It's pretty obvious given the growing wet spot on the floor beneath her.
-				is gymnastF... Fine, fine, we start again. This time an accelerated course. Gimme ten edges, now!
+				is Lansley, what did I just say!
+				isf Lansley, what did I just say!
+				t In response Lansley just lets out a messy giggle, finally finding relief. It's pretty obvious given the growing wet spot on the floor beneath her.
+				is Lansley... Fine, fine, we start again. This time an accelerated course. Gimme ten edges, now!
 				isf You little slut! Fine, you wanna cum? Let's see how how much you can cum, then! I'm not stopping until I've wrung every last drop of defiance out of you!
 				gymnast Ehe... Ehehe...
 				succubus Hey, boss, at the rate you're going... Nevermind, who's next?
@@ -543,7 +573,7 @@ function writeEvent(name) { //Plays the actual event.
 				t Delirious, it's time for you to finish and make sure this whole team is yours. You grab your pendant and start waving it at her unfocused face.
 				...
 				gymnast A dream... Life with *master is just a dream...
-				t As the rest of the girls shake off their post-fuck afterglow, you've finished off any hope of resistance in gymnastF's mind. You set her down.
+				t As the rest of the girls shake off their post-fuck afterglow, you've finished off any hope of resistance in Lansley's mind. You set her down.
 			`);
 			break;
 		}
@@ -558,6 +588,8 @@ function writeEvent(name) { //Plays the actual event.
 				gymnast Ehe... Ehehe... Cumming... Feels good...
 				instructor She's a real orgasm junkie at this point, but at least this way she can't get off on her own...<br>Thanks for helping out, playerF, maybe this time she'll focus on her practice instead of how the leotard feels on her bare clit.
 			`);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "instructorFuck": {
@@ -603,10 +635,10 @@ function writeEvent(name) { //Plays the actual event.
 		case "instructorLast": {
 			writeHTML(`
 				track Oof... Coach, running like this is making me... Is it alright if I take a break to cum again?
-				coach No dice! Work off that energy with another lap. If you're still horny, <i>then</i> you can ask our assistant for another.
-				bikini C-coach, gymnastF won't listen to me! She keeps rubbing-
-				coach Ignore her, she'll learn her lesson when I slap a belt on her. You head back to the water.
-				im 01.jpg
+				i No dice! Work off that energy with another lap. If you're still horny, <i>then</i> you can ask our assistant for another.
+				bikini C-coach, Lansley won't listen to me! She keeps rubbing-
+				i Ignore her, she'll learn her lesson when I slap a belt on her. You head back to the water.
+				im instructorProfile.jpg
 				t If it weren't for the fact that her latest idea for an education plan involved you dicking down her team, instructorF really would be giving off the vibe of a modern coach.
 				succubus Hey! Snap out of it. You got enough left in the tank for her?
 				incubus Oho? Is the old man throwing in the towel, or are you just taking in the sight of the meal before you eat it?
@@ -650,7 +682,7 @@ function writeEvent(name) { //Plays the actual event.
 				t As she looks back at you, right as you cum in her ass, it's clear there's no hesitation left.
 				isf M-more... I'll do whatever you want me to... I'll follow you to the ends of the earth, I'll be your slave if it means more of that...
 				t And your performance has drawn a crowd, too.
-				track Coach, don't hog him all to yourself...
+				track Coach, I thought *he was supposed to be helping us...
 				karate Pathetic, the both of you. I'd never break like a bitch on a dick like that. Just try me!
 				bikini Ah, coach, my nipples are getting harder, and my swimsuit keeps 'slipping'...
 				gymnast Ehe... Ehehe... Wanna cum...
@@ -675,6 +707,8 @@ function writeEvent(name) { //Plays the actual event.
 				im 06.jpg
 				isf Hah... Hah... A-another five... One more, and back to practice...
 			`);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		default: {
@@ -702,7 +736,7 @@ function fuck(name) {
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	addFlag("instructor", name+"Fuck");
-	if (checkFlag("instructor", "trackFuck") == true &&	checkFlag("instructor", "trackFuck") == true &&	checkFlag("instructor", "trackFuck") == true &&	checkFlag("instructor", "trackFuck") == true &&	checkFlag("instructor", "trackFuck") == true) {
+	if (checkFlag("instructor", "trackFuck") == true &&	checkFlag("instructor", "bikiniFuck") == true &&	checkFlag("instructor", "gymnastFuck") == true &&	checkFlag("instructor", "karateFuck") == true &&	checkFlag("instructor", "instructorFuck") == true) {
 		var lastFuck = true;
 		writeEvent(name+"Last");
 		if (name == "instructor") {
@@ -735,12 +769,12 @@ function sceneSelect() {
 	var characterArray = ["track", "bikini", "gymnast", "karate", "instructor"];
 	if (checkTrust("instructor") == 80) {
 		writeSpeech("instructor", "", "playerF! Here to volunteer again? I know my girls would be glad for the support.");
-		for (i = 0; i < characterArray.length; i++) {
+		for (instructorCount = 0; instructorCount < characterArray.length; instructorCount++) {
 			document.getElementById('wardrobeGrid').innerHTML += `
-				<img class="bigPicture" id="`+characterArray[i]+`Fuck" src="images/instructor/`+characterArray[i]+`Profile.jpg" 
-				onclick="writeEvent('`+characterArray[i]+`Repeat')",
-				onmouseover="wardrobeMouseOver('`+characterArray[i]+`Fuck')"
-				onmouseout="wardrobeMouseOut('`+characterArray[i]+`Fuck')"
+				<img class="bigPicture" id="`+characterArray[instructorCount]+`Fuck" src="images/instructor/`+characterArray[instructorCount]+`Profile.jpg" 
+				onclick="writeEvent('`+characterArray[instructorCount]+`Repeat')",
+				onmouseover="wardrobeMouseOver('`+characterArray[instructorCount]+`Fuck')"
+				onmouseout="wardrobeMouseOut('`+characterArray[instructorCount]+`Fuck')"
 				style="filter:brightness(50%);">
 			`;
 		}
@@ -748,68 +782,68 @@ function sceneSelect() {
 	}
 	else {
 		var characterCount = 0;
-		for (i = 0; i < characterArray.length; i++) {
-			if (checkFlag("instructor", characterArray[i]+"Fuck") != true) {
+		for (instructorCount = 0; instructorCount < characterArray.length; instructorCount++) {
+			if (checkFlag("instructor", characterArray[instructorCount]+"Fuck") != true) {
 				document.getElementById('wardrobeGrid').innerHTML += `
-					<img class="bigPicture" id="`+characterArray[i]+`Fuck" src="images/instructor/`+characterArray[i]+`Profile.jpg" 
-					onclick="writeEvent('`+characterArray[i]+`Fuck')",
-					onmouseover="wardrobeMouseOver('`+characterArray[i]+`Fuck')"
-					onmouseout="wardrobeMouseOut('`+characterArray[i]+`Fuck')"
+					<img class="bigPicture" id="`+characterArray[instructorCount]+`Fuck" src="images/instructor/`+characterArray[instructorCount]+`Profile.jpg" 
+					onclick="fuck('`+characterArray[instructorCount]+`')",
+					onmouseover="wardrobeMouseOver('`+characterArray[instructorCount]+`Fuck')"
+					onmouseout="wardrobeMouseOut('`+characterArray[instructorCount]+`Fuck')"
 					style="filter:brightness(50%);">
 				`;
 			}
 			else {
 				document.getElementById('wardrobeGrid').innerHTML += `
-					<img class="bigPicture" id="`+characterArray[i]+`Fuck" src="images/instructor/`+characterArray[i]+`Fucked.jpg" 
-					onmouseover="wardrobeMouseOver('`+characterArray[i]+`Fuck')"
-					onmouseout="wardrobeMouseOut('`+characterArray[i]+`Fuck')"
+					<img class="bigPicture" id="`+characterArray[instructorCount]+`Fuck" src="images/instructor/`+characterArray[instructorCount]+`Fucked.jpg" 
+					onmouseover="wardrobeMouseOver('`+characterArray[instructorCount]+`Fuck')"
+					onmouseout="wardrobeMouseOut('`+characterArray[instructorCount]+`Fuck')"
 					style="filter:brightness(50%);">
 				`;
 				characterCount += 1;
 			}
-			switch (characterCount) {
-				case 0:
+		}
+		switch (characterCount) {
+			case 0:
+				writeHTML(`
+					t instructorF and the girls resume their training as if you weren't there, none the wiser aside from slightly unfocused gazes as they go about their practice.
+					succubus Alright, go for it... I'll keep focused here, we should have enough to keep them long enough for you to enjoy yourself.
+					scarf A success? Well, the rest depends on you I suppose~
+					incubus That enough evidence for ya? Have at 'em.
+				`);
+			break;
+			case 1:
+				writeHTML(`
+					t Despite the defilement of their friend, the training continues as though nothing were wrong.
+				`);
+			break;
+			case 2:
+				writeHTML(`
+					t Two cumrags are well used, now for the rest.
+				`);
+			break;
+			case 3:
+				writeHTML(`
+					t The two remaining women continue as if nothing is amiss.
+				`);
+			break;
+			case 4:
+				if (checkFlag("instructor", "instructorFuck") == true) {
 					writeHTML(`
-						t instructorF and the girls resume their training as if you weren't there, none the wiser aside from slightly unfocused gazes as they go about their practice.
-						succubus Alright, go for it... I'll keep focused here, we should have enough to keep them long enough for you to enjoy yourself.
-						scarf A success? Well, the rest depends on you I suppose~
-						incubus That enough evidence for ya? Have at 'em.
+						t Only one left now.
+						succubus Hooph... Almost out of... playerF, no rush, but I'm just about out of energy...
+						scarf playerF, if I may, I wasn't quite expecting you to be so... <i>Thorough</i>. I'm not saying you should rush, but... Hrm...
+						incubus Alright, go get 'em and-<br>Ooh, an event...
 					`);
-				break;
-				case 1:
+				}
+				else {
 					writeHTML(`
-						t Despite the defilement of their friend, the training continues as though nothing were wrong.
+						t Only one left now.
+						succubus The final stretch!
+						scarf Hmhm~<br>I expect quite the show between you and instructorF~
+						incubus Alright, go get 'em and-<br>Ooh, an event...
 					`);
-				break;
-				case 2:
-					writeHTML(`
-						t Two cumrags are well used, now for the rest.
-					`);
-				break;
-				case 3:
-					writeHTML(`
-						t The two remaining women continue as if nothing is amiss.
-					`);
-				break;
-				case 4:
-					if (checkFlag("instructor", "instructorFuck") == true) {
-						writeHTML(`
-							t Only one left now.
-							succubus Hooph... Almost out of... playerF, no rush, but I'm just about out of energy...
-							scarf playerF, if I may, I wasn't quite expecting you to be so... <i>Thorough</i>. I'm not saying you should rush, but... Hrm...
-							incubus Alright, go get 'em and-<br>Ooh, an event...
-						`);
-					}
-					else {
-						writeHTML(`
-							t Only one left now.
-							succubus The final stretch!
-							scarf Hmhm~<br>I expect quite the show between you and instructorF~
-							incubus Alright, go get 'em and-<br>Ooh, an event...
-						`);
-					}
-				break;
-			}
+				}
+			break;
 		}
 	}
 }

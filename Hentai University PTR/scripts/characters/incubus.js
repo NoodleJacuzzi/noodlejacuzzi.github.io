@@ -24,6 +24,10 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+		writeHTML(`
+			define incubus = sp incubus;
+			define player = sp player;
+		`);
 	switch (name) {
 		case "cancel": {
 			unencounter('incubus');
@@ -204,7 +208,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust('president') == 2 || checkTrust('president') == 3) {
 				sale("incubusPresident", 50, "images/president/president.jpg", "Demonic Consultation<br>incubusF will come by and convince presidentF that she should trust hypnosis, without you needing to bring other students by to convince her.");
 			}
-			if (checkTrust('instructor') > 80 && checkTrust('instructor') < 0 && checkFlag("incubus", "instructor") != true) {
+			if (checkTrust('instructor') < 80 && checkTrust('instructor') > 0 && checkFlag("incubus", "instructor") != true) {
 				sale("incubusInstructor", 50, "images/instructor/instructor.jpg", "Turvey Top<br>Need to corrupt a bunch of brats all at once, all in public? Can't be bothered to best another hypnotist, and don't have a familiar? This is a deal for you.");
 			}
 			if (checkTrust('instructor') > 2) {

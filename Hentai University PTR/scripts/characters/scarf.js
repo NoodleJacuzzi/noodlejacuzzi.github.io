@@ -37,6 +37,10 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+		writeHTML(`
+			define scarf = sp scarf;
+			define player = sp player;
+		`);
 	switch (name) {
 		case "introduction1": {
 			writeText("You wave to her as she walks down the hallway.");
@@ -339,8 +343,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust('mama') == 1) {
 				writeFunction("writeEncounter('scarfMama')", "Ask for help with mamaF");
 			}
-			if (checkTrust('instructor') > 80 && checkTrust('instructor') < 0 && checkFlag("scarf", "instructor") != true) {
-				writeFunction("writeEncounter('scarfMama')", "Ask for help with instructorF");
+			if (checkTrust('instructor') < 80 && checkTrust('instructor') > 0 && checkFlag("scarf", "instructor") != true) {
+				writeFunction("writeEncounter('scarfInstructor')", "Ask for help with instructorF");
 			}
 			writeFunction("writeEncounter('casinoRepeat')", "Return to the dream casino");
 			writeFunction("writeEncounter('beachRepeat')", "Return to the dream beach");
