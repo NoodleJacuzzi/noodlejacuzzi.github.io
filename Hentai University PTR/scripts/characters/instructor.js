@@ -188,6 +188,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				i Heh, you've had quite a workout! No worries, I'll take the girls home. And if you need any support during the meeting, I've got your back!
 				t You've got instructorF's PTSA support!
 			`);
+			writeFunction("changeLocation('playerHouse')", "Finish");
 			break;
 		}
 		case "endingAccept": {
