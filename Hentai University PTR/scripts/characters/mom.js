@@ -387,6 +387,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "momEnding": {
+			addFlag("mom", "complete");
 			writeEvent(name);
 			writeFunction("writeEncounter('momEndingCont')", "Months later");
 			break;

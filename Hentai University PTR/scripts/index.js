@@ -17,6 +17,7 @@ var itemArray = [];
 var logbookArray = [];
 var definitionArray = [];
 var listOfPrintedEncounters = [];
+var completeMarker = true;
 var data = {
 	player: {
 		name: "You",
@@ -294,6 +295,15 @@ var quickAuthorArray = [
 	{index: "cold", author: "SlackerSavior",},
 	{index: "coach", author: "SlackerSavior",},
 ]
+
+var characterFinishCheckmarks = [
+	{index: "brown", check: "?trustMin ojou 20; ?flag ojou brownInvite;"},
+	{index: "chubby", check: "?flag purple complete;"},
+	{index: "coach", check: "?trust coach 200;"},
+	{index: "cold", check: "?trust cold 51;"},
+	{index: "green", check: "?trust green 100;"},
+	{index: "haze", check: "?trust haze 70;"},
+];
 
 //Startup & Systems config
 function startup() {
@@ -1312,6 +1322,7 @@ function printEncounterButton(character, scene, text, top, left, altName, altIma
 }
 
 function printEncounterTab(name, scene, text, altImage, altName) {
+	var crown = "";
 	if (character != "system") {
 		var tabTrust;
 		var cancelTab = false;
@@ -1331,6 +1342,22 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 					text = text.replace(name, data.story[z].fName);
 				}
 				var cssColor = data.story[z].color;
+				if (completeMarker == true) {
+					for (completei = 0; completei < characterFinishCheckmarks.length; completei++) {
+						if (characterFinishCheckmarks[completei].index == name) {
+							if (checkRequirements(characterFinishCheckmarks[completei].check) == true) {
+								cssColor = "#FFFFFF";
+								crown = "♔";
+								altName = crown + " " + data.story[z].fName + " " + data.story[z].lName + " " + crown;
+							}
+						}
+					}
+					if (checkFlag(data.story[z].index, "complete") == true) {
+						cssColor = "#FFFFFF";
+						crown = "♔";
+						altName = crown + " " + data.story[z].fName + " " + data.story[z].lName + " " + crown;
+					}
+				}
 				if (data.story[z].encounter == true) {
 					cancelTab = true;
 				}
@@ -1395,7 +1422,7 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 			writeSpeech(name, img, `
 				<p class="status"> Status: ` + tabTrust + `</p>	
 				<p class="switch" onclick="loadEncounter('`+data.story[tabIndex].index+`', '`+scene+`')">` + replaceCodenames(text) + `</p>
-			`, altName, ""
+			`, altName, cssColor
 			);
 		}
 	}
@@ -1751,7 +1778,21 @@ function writeMed (img, cap) {
 	}
 }
 
-function writeFunction (name, func) {
+function writeFunction (name, func, color) {
+	if (color == null) {
+		color = "#FFFFFF";
+	}
+	switch (color) {
+		case "blue":
+			color = "#B7BDFF"
+		break;
+		case "red":
+			color = "#FF0019"
+		break;
+		case "green":
+			color = "#00FF1D"
+		break;
+	}
 	switch (data.player.style) {
 		case "lobotomy": {
 			var skewNumber = getRandomInt(8);
@@ -1775,7 +1816,7 @@ function writeFunction (name, func) {
 				-o-transform: skew(`+skewNumber+`deg, 0deg);
 				-ms-transform: skew(`+skewNumber+`deg, 0deg);
 				transform: skew(`+skewNumber+`deg, 0deg);
-				border: solid `+borderNumber+`px;
+				border: solid `+borderNumber+`px `+color+`;
 			">
 			<p class="choiceTextLobotomy" 
 			style ="
@@ -1822,7 +1863,9 @@ function writeFunction (name, func) {
 		}
 		default: {
 			document.getElementById('output').innerHTML += `
-				<p class="choiceText" onclick="` + name + `">
+				<p class="choiceText" onclick="` + name + `"
+				style = "border-bottom: 3px solid `+color+`; color: `+color+`"
+				>
 					` + replaceCodenames(func) + `
 				</p>
 			`;
@@ -2041,7 +2084,7 @@ function writePorn() {
 
 function listArtists() {
 	writeSpecial("Here's a list of authors who's written for the game:");
-	writeSpeech("Noodle Jacuzzi", "scripts/gamefiles/characters/noodle.jpg", "<b>Author of momF, starletF, tomgirlF, succubusF, and others.</b><br>I almost named myself Dwayne 'The Guac' Johnson.");
+	writeSpeech("<a href = 'https://noodlejacuzzi.github.io/index.html'>Noodle Jacuzzi</a>", "scripts/gamefiles/characters/noodle.jpg", "<b>Author of momF, starletF, tomgirlF, succubusF, and others.</b><br>I almost named myself Dwayne 'The Guac' Johnson.<br>Click my name to play my other games if you want.");
 	writeSpeech("Cryptogreek", "scripts/gamefiles/characters/crypto.jpg", "<b>Author of kuroF, mistressF, maidF, mejiF, housekeepF, and others.</b><br>Thanks for enjoying the game my fellow degenerates!");
 	writeSpeech("SlackerSavior", "scripts/gamefiles/characters/slacker.jpg", "<b>Author of sportsF, coachF, coldF, swimmerF, and orangeF.</b><br>I wanted to write 'Don't ask me for shit' here, but it felt a little too rude.<br>So feel free to ask, but don't expect results anytime soon.");
 	writeSpecial("Here's a list of artists who's works are currently in the game:");
@@ -2838,10 +2881,18 @@ function generateNav() {
 		var select = document.getElementsByTagName("head")[0];
 		select.removeChild(select.lastChild);
 	}
+	var logbookList = [];
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].trust > 0) {
-			document.getElementById('logbookLeft').innerHTML += `<h3 class = "button" onclick = "switchDesc('`+data.story[i].index+`')">` + data.story[i].fName + `</h3>`;
+			var goof = {index: data.story[i].index, fName: data.story[i].fName, color: data.story[i].color,};
+			logbookList.push(goof);
 		}
+	}
+	console.log(logbookList);
+	logbookList = logbookList.sort(compare);
+	console.log(logbookList);
+	for (i = 0; i < logbookList.length; i++) {
+		document.getElementById('logbookLeft').innerHTML += `<h3 class = "button" style = "color: `+logbookList[i].color+`" onclick = "switchDesc('`+logbookList[i].index+`')">` + logbookList[i].fName + `</h3>`;
 	}
 	switchDesc('player');
 }
@@ -2957,6 +3008,16 @@ function switchDesc(n) {
 			`;
 		}
 	}
+}
+
+function compare(a, b) {
+	if ( a.fName < b.fName ){
+		return -1;
+	}
+	if ( a.fName > b.fName ){
+		return 1;
+	}
+	return 0;
 }
 
 //Inventory & shopping
@@ -3487,14 +3548,37 @@ function generateContacts() {
 	console.log("contacts generated");
 	data.player.lastText = 100;
 	document.getElementById('phoneLeft').innerHTML = ``;
+	
+	
+	var phoneList1 = [];
+	var phoneList2 = [];
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].textEvent!= "") {
-			document.getElementById('phoneLeft').innerHTML += `<h3 class = "button char_` + data.story[i].index + `" style = "color: `+data.story[i].color+`" onclick = "switchContact('`+i+`')">` + data.story[i].fName + `</h3 >`;
+			var goof = {
+				index: data.story[i].index, 
+				fName: data.story[i].fName, 
+				color: data.story[i].color, 
+				textEvent: data.story[i].textEvent, 
+				unreadText: data.story[i].unreadText,};
+			if (goof.textEvent.includes("reward") || goof.textEvent.includes("Reward")) {
+				phoneList2.push(goof);
+			}
+			else {
+				phoneList1.push(goof);
+			}
 		}
+	}
+	logbookList = phoneList1.sort(compare);
+	logbookList = phoneList2.sort(compare);
+	for (i = 0; i < phoneList1.length; i++) {
+		document.getElementById('phoneLeft').innerHTML += `<h3 class = "button char_` + phoneList1[i].index + `" style = "color: `+phoneList1[i].color+`" onclick = "switchContact('`+phoneList1[i].index+`')">` + phoneList1[i].fName + `</h3 >`;
+	}
+	for (i = 0; i < phoneList2.length; i++) {
+		document.getElementById('phoneLeft').innerHTML += `<h3 class = "button char_` + phoneList2[i].index + `" style = "color: #FFFFFF" onclick = "switchContact('`+phoneList2[i].index+`')">` + phoneList2[i].fName + `<br> ♔</h3 >`;
 	}
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].unreadText != false) {
-			data.player.lastText = i;
+			data.player.lastText = data.story[i].index;
 		}
 	}
 	if (data.player.lastText != 100) {
@@ -3512,12 +3596,19 @@ function generateContacts() {
 }
 
 function switchContact(n) {
+	console.log(n);
+	var finalResult = 0;
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].index == n) {
+			finalResult = i;
+		}
+	}
 	phoneRight.scrollTop = 0;
-	console.log("contact switched");
+	console.log("contact switched to index "+finalResult+", codename "+n);
 	document.getElementById('phoneRight').innerHTML = '';
-	document.getElementById('phoneWindow').innerHTML = data.story[n].fName;
-	data.story[n].unreadText = false;
-	data.player.lastText = n;
+	document.getElementById('phoneWindow').innerHTML = data.story[finalResult].fName;
+	data.story[finalResult].unreadText = false;
+	data.player.lastText = finalResult;
 	loadPhoneEvent(data.story[data.player.lastText].index, data.story[data.player.lastText].textEvent);
 }
 
