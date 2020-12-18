@@ -28,8 +28,7 @@ var locationArray = [
 	],},
 	{index: "westHallway", name: "West Hallway", buttons: [
 		{name: "Classroom A", top: 50, left: 70, type: "location", target: "classroomA", time: "MorningEvening",},
-		{name: "Library", top: 47, left: 50, type: "location", target: "library", time: "MorningEvening",},
-		{name: "Cafeteria", top: 60, left: 37, type: "location", target: "cafeteria", time: "MorningEvening",},
+		{name: "Library", top: 60, left: 37, type: "location", target: "library", time: "MorningEvening",},
 		{name: "School Entrance", top: 79, left: 35, type: "location", target: "schoolEntrance", time: "MorningEvening",},
 	],},
 	{index: "eastHallway", name: "East Hallway", buttons: [
@@ -95,7 +94,6 @@ var locationArray = [
 		{name: "School Entrance", 		top: 67, 	left: 40, 	type: "location", target: "schoolEntrance", time: "MorningEvening",},
 		{name: "West Hallway", 			top: 45, 	left: 25, 	type: "location", target: "westHallway", time: "MorningEvening",},
 		{name: "Classroom A", 			top: 25, 	left: 2, 	type: "location", target: "classroomA", time: "MorningEvening",},
-		{name: "Cafeteria", 			top: 45, 	left: 2, 	type: "location", target: "cafeteria", time: "MorningEvening",},
 		{name: "Library", 				top: 65, 	left: 2, 	type: "location", target: "library", time: "MorningEvening",},
 		{name: "East Hallway", 			top: 45, 	left: 55, 	type: "location", target: "eastHallway", time: "MorningEvening",},
 		{name: "Classroom B", 			top: 25, 	left: 70, 	type: "location", target: "classroomB", time: "MorningEvening",},

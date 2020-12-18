@@ -1447,7 +1447,6 @@ function writeText (text) {
 		case "royalty": {
 			document.getElementById('output').innerHTML += `
 				<p class='rawText' style='
-				margin: 20px 200px;
 				font-size: 1.3em;
 				font-family: arial, times new roman, sans-serif;
 				'>` + replaceCodenames(text) + `</p>
@@ -1519,7 +1518,7 @@ function writeSpecial (text) {
 function writeSpeech (name, img, text, altName, altColor) {
 	var finalName = name;
 	var finalImg = "";
-	var finalColor = "";
+	var finalColor = "#FFFFFF";
 	var checkForError = "";
 	//If the player is using a shortcut...
 	if (img == "") {
@@ -1539,7 +1538,7 @@ function writeSpeech (name, img, text, altName, altColor) {
 		finalImg = finalImg.replace('.jpg', 'P.jpg');
 	}
 	//Check if a transparent shot should be used
-	if (data.player.style == "persona" || data.player.style == "royalty") {
+	if (data.player.style == "persona" || data.player.style == "royalty" || data.player.style == "lobotomy") {
 		var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+name+`.jpg'"`;
 		finalImg = finalImg.replace('P.jpg', '.jpg');
 		finalImg = finalImg.replace('.jpg', 'T.png');
@@ -1586,29 +1585,26 @@ function writeSpeech (name, img, text, altName, altColor) {
 	//Output the speech in the assigned style.
 	switch (data.player.style) {
 		case "lobotomy": {
+			//old
 			document.getElementById('output').innerHTML += `
-			<div class="textBoxLobotomy" style="border-color: `+finalColor+`;
-			background: linear-gradient(90deg, 
-			#000000 10px, 
-			`+finalColor+` 10px, 
-			`+finalColor+` 210px, 
-			#000000 210px);">
+			<div class="textBoxLobotomy" style="border-color: `+finalColor+`;">
 				<div class = "lobotomyThumb" style="background-color: `+finalColor+`">
 					<div class = "lobotomyThumbBorder">
 						<img class = "textThumbLobotomy" src = "
 							`+ finalImg +`
 						"`+checkForError+`>
 					</div>
-					<p class = "textNameLobotomy">`+ finalName + `</p>
 				</div>
 				<div class="textBoxContentLobotomy">
-				<p>` + replaceCodenames(text) + `</p>
-			</div>
+					<p class = "textNameLobotomy" style = "color:`+finalColor+`">`+ finalName + `</p>
+					<p>` + replaceCodenames(text) + `</p>
+				</div>
 			<br>
 			`;
 			break;
 		}
 		case "royalty": {
+			//old
 			document.getElementById('output').innerHTML += `
 			<div class="textBoxRoyalty">
 				<div class = "royaltyThumb">

@@ -630,6 +630,17 @@ function writeEvent(name) { //Plays the actual event.
 		case "pinstripePussy": {
 			writeHTML(`
 				define pinstripe = sp pinstripe; im images/pinstripe/schoolgirl.jpg;
+				pinstripe Ooh, full service? Well...
+				im service 1-2.jpg
+				pinstripe How could I say no to somebody like you?
+				...
+				im service 3-1.jpg
+				pinstripe Ooh, that's the spot~<br>Something about you... You really wake up my inner cumslut~
+				t She bounces like a woman with a purpose, taking great care to squeeze you just right with each thrust.
+				t Sating her libido is quite the tall order, especially given her incredible body, but the look on her face is saying you meet her expectations.
+				t And soon enough, you surpass them.
+				im service 3-2.jpg
+				pinstripe Oooh~! Cumming~!
 			`);
 			break;
 		}

@@ -498,11 +498,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "stage3Quo": {
 			if (checkFlag("president", "treasurerCorrupted") != true) {
 				writeHTML(`
-					t You knock on the door to the student council, and after a moment presidentF opens the door.
+					t You knock on the door to the student council, and after a moment presidentF opens it.
 					sp president; What is-? Ah, hello *sir. treasurerF is away for a moment, so we have some privacy.
 				`);
 				writeFunction("writeEncounter('treasurerCorruption')", "Talk about treasurerF");
 			}
+			writeFunction("writeEncounter('presidentQuickie')", "In the mood for a quickie?");
+			writeFunction("writeEncounter('presidentAnal')", "In the mood for something different?");
 			writeFunction("writeEncounter('cancel')", "Go back");
 			break;
 		}
@@ -511,6 +513,70 @@ function writeEncounter(name) { //Plays the actual encounter.
 			setTrust('president', 101);
 			passTime();
 			addFlag('president', 'treasurerCorrupted');
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "stage4Quo": {
+			if (checkFlag("president", "treasurerAftermath") != true) {
+				writeHTML(`
+					t You knock on the door to the student council, and after a moment presidentF opens the it.
+					sp president; Yes? Ah, hello *sir. Feel free to come in. treasurerF is...
+					t treasurerF is busily trying to distract herself by shuffling around papers on her desk.
+					president Well, for all my efforts I couldn't quite seem to make her like you. What I <i>could</i> do however was make her quite vividly remember what happened that day whenever she sees you.
+					t treasurerF awkwardly tries to avoid your gaze, but can't help but stare from time to time.
+					president Try as she might to deny it, she belongs to the both of us now.<br>So, is there something you wanted?
+				`);
+				addFlag("president", "treasurerAftermath");
+			}
+			else {
+				writeHTML(`
+					t You knock on the door to the student council, and after a moment presidentF opens the it.
+					sp president; Yes? Ah, hello *sir. Feel free to come in.
+					t treasurerF awkwardly tries to avoid your gaze, but can't help but stare from time to time.
+				`);
+			}
+			writeFunction("writeEncounter('presidentQuickie')", "In the mood for a quickie?");
+			writeFunction("writeEncounter('presidentAnal')", "In the mood for something different?");
+			writeFunction("writeEncounter('cancel')", "Go back");
+			break;
+		}
+		case "presidentQuickie": {
+			if (checkFlag("president", "quickie") == false) {
+				writeEvent(name)
+				addFlag("president", "quickie");
+			}
+			else {
+				writeHTML(`
+					president Always. Here, I'll clear the desk.
+					t ?trustMin president 101; Heavily blushing, treasurerF stands up from her desk to 'keep watch', though it's certainly just an excuse to listen in.
+					...
+					im 036.jpg
+					president Yesss~! Harder, right there! Fuck me like an animal~!<br>Nggh, you'd better control the school soon, just the thought of you doing this in front of the entire school body, nggh~!
+					im 040.jpg
+					president Cumming~!
+				`);
+			}
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "presidentAnal": {
+			if (checkFlag("president", "anal") == false) {
+				writeEvent(name)
+				addFlag("president", "anal");
+			}
+			else {
+				writeHTML(`
+					president Another session of anal then? Well, I won't lie, our last session left quite an impact on me.
+					t ?trustMin president 101; Heavily blushing, treasurerF stands up from her desk to 'keep watch', though it's certainly just an excuse to listen in.
+					...
+					im anal1.jpg
+					president Hgg~<br>S-such a bizarre feeling~<br>The feeling of my ass stretching, of feeling <i>used</i>~! I'm~!
+					im anal2.jpg
+					president Cumming~!
+				`);
+			}
+			passTime();
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -579,7 +645,9 @@ var eventArray = [
 	{index: "presidentPortrait", name: "Rough Sketch"},
 	{index: "presidentCorruption2", name: "Construction"},
 	{index: "presidentHand", name: "Confident Strokes"},
-	{index: "presidentAnal", name: "Fill the Gaps"},
+	{index: "presidentQuickie", name: "A Quick Refresher"},
+	{index: "presidentAnal", name: "A New Technique"},
+	{index: "presidenttreasurerCorruption", name: "A Teaching Moment"},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -748,6 +816,52 @@ function writeEvent(name) { //Plays the actual event.
 				sp president; And you delivered. Now, I'll be spending the evening with treasurerF to make sure the work we did... <i>Sticks</i>. My goal is that when you and her are... Relaxing... That she'll see you as me. I'll see you again?
 				sp player; Sometimes you act like you're in charge, presidentF.
 				t presidentF merely smirks and goes back to amusing herself with treasurerF's shuddering body.
+			`);
+			break;
+		}
+		case "presidentQuickie": {
+			writeHTML(`
+				president Always. Here, I'll clear the desk.
+				t ?trustMin president 101; Heavily blushing, treasurerF stands up from her desk to 'keep watch', though it's certainly just an excuse to listen in.
+				im 032.jpg
+				president Mmm, it's quite the addictive sensation. The risk, the depravity...<br>I certainly do hope I'll have the chance to educate others on this lovely state of mind soon. I can hardly wait~
+				player I think I have something in mind that can help keep you distracted.
+				president Oh my, yes you do~
+				...
+				im 036.jpg
+				president Ghh, yes~! More, fuck me into a leaking mess~!
+				t Any attempt at rational dialogue is thrown away where it belongs, the only sounds coming out of her with every plunge into her sensitive folds are moans and comments of self-degradation, more for herself than your pleasure.
+				president Nggh, letting loose like this... It beats spending all day as an uptight bitch anyday!<br>Jus... Just the thought of you making complete whores of the other students... Of principalF...!
+				im 040.jpg
+				president Ffffuck!!!
+				t With every pump her walls clench around you, thoroughly milking out every cumshot.
+				president Hah... Fuh... N-now... You should...<br>You still have work to do, don't you? I have high hopes you'll make these fantasies of mine a reality?
+			`);
+			break;
+		}
+		case "presidentAnal": {
+			writeHTML(`
+				president Oh? Well, if it'll be anything like your previous lessons, I most certainly am interested.
+				t ?trustMin president 101; Heavily blushing, treasurerF stands up from her desk to 'keep watch', though it's certainly just an excuse to listen in.
+				...
+				im artRoom1.jpg
+				player You certainly have a variety of lubricants in here.
+				president What can I say? Your teachings left quite an impact on me, I've grown much more... <i>Liberal</i> with exploring myself.
+				player We'll be doing quite a bit of that today.
+				president Mhm, I can't wait~<br>Khh!
+				t She takes a hiss through clenched teeth as your head pushes against her puckered rim, but despite the automatic resistance your pushing and the will of your insatiable fuckslut win out.
+				im anal1.jpg
+				t Thrust.
+				president Khhh... It's... It's so...<br>Mmgh, a different sensation. Not qute pure pleasure, but... I like it~
+				t Thrust. Thrust.
+				t Her words start to become slurred, but quickly enough she stops trying to form words.
+				t Thrust. Thrust. Thrust.
+				t Her vision hazy and her untouched pussy pulsing, her body jerks as best it can as a completely alien kind of pleasure thrums inside her.
+				t No longer counting, your hips are a blur, the sounds of skin on skin are faster than the ticking of the clock.
+				t Her cunt throbs, winks, everything it can to try and process the phantom pleasure your ass-fucking is causing her body. All of it comes to a crashing finale.
+				im anal2.jpg
+				t Her asshole gaping open, her eyes crossed in pleasure, every inch of her body oozing 'sloppy slut' energy, she says nothing as you get pull out.
+				t She'll come to eventually, you get dressed. When she does snap back to reality she'll probably want to continue this new avenue of exploration at home.
 			`);
 			break;
 		}
