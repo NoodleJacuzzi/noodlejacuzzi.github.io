@@ -368,6 +368,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "escapeCasino": {
 			writeSpeech("scarf", "", "Bored already? Well, it's to be expected. The more interesting your own life, the more interesting these hypnotic palaces are. Oho~<br>Care to head back now?");
+			writeFunction("writeEncounter('bunnyRepeat')", "I'm here for you");
 			writeFunction("changeLocation('teacherLounge')", "Finish");
 			writeFunction("changeLocation(data.player.location)", "Change your mind");
 			unencounter('scarf');
@@ -375,9 +376,45 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "escapeBeach": {
 			writeSpeech("scarf", "", "Bored already? Well, it's to be expected. The more interesting your own life, the more interesting these hypnotic palaces are. Oho~<br>Care to head back now?");
+			writeFunction("writeEncounter('bikiniRepeat')", "You look good");
 			writeFunction("changeLocation('teacherLounge')", "Finish");
 			writeFunction("changeLocation(data.player.location)", "Change your mind");
 			unencounter('scarf');
+			break;
+		}
+		case "bunnyRepeat": {
+			writeHTML(`
+				scarf Oh? You decided to relive this little maze of mine... Just for another bit of playtime with me?<br>Why... I'm quite flattered~
+				...
+				scarf Tsk tsk~<br>You know, I don't do this for just anyone.
+				im casinoEnd1.jpg
+				scarf Aaaah~<br>Really, if not for that insatiable hunger for more, I think I'd have you wrapped around my little finger.<br>Now then, little *boy, just for tonight...
+				im casinoEnd2.jpg
+				scarf Be <i>mine</i>~
+				im casinoEnd3.jpg
+				scarf Hmhm~<br>Enjoying the view?
+			`);
+			writeFunction("changeLocation('teacherLounge')", "Finish");
+			break;
+		}
+		case "bikiniRepeat": {
+			writeHTML(`
+				im 181.jpg
+				scarf Hmhm~ You're quite the flirt~<br>You know, a girl could be fooled to think you're falling for her with how you keep coming back to me~
+				im scarfBeachSex1.jpg
+				scarf If you need an invitation...
+				im scarfBeachSex2.jpg
+				scarf Here I am, all for you~
+				im scarfBeachSex3.jpg
+				scarf Hoo~<br>That's quite a frenzy you've gone into. My, do you feel like you're losing yourself? Drifting away...
+				im scarfBeachSex4.jpg
+				scarf F-from reality... Losing touch with... What's real? Perhaps... Perhaps today's the day I'll have... You...
+				im scarfBeachSex5.jpg
+				scarf Hah, ffffuh...<br>Y-you win again, you're the *master here... N-now must you be so... <i>Fierce</i>?<br>It's not a competition... Not anymore at least~!
+				im scarfBeachSex6.jpg
+				scarf Ghhh~
+			`);
+			writeFunction("changeLocation('teacherLounge')", "Finish");
 			break;
 		}
 		case "scarfMama": {
