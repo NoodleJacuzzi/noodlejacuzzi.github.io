@@ -661,7 +661,7 @@ function writeEvent(name) { //Plays the actual event.
 				player Huh, did the hypnosis loop all the way around?
 				succubus Yeah. At this point her common sense is twisted into a pretzel. Just a little push and it'll snap~<br>Oh... I think I need a nap... You take it from here, alright? Hypnotize her with something thicker than a pendant, if you know what I mean~
 				scarf Indeed, a few helpful hypnotic suggestions from yours truly, and she's ready to be the easiest prey you've taken so far~
-				incubus Hehe, the human brain wasn't meant to be fucked up like this. I used the rest of your hypnosis time, but... Well, let's just say it'll be worth it. Satisfaction guarenteed~
+				incubus Hehe, the human brain wasn't meant to be fucked up like this. I used the rest of your hypnosis time, but... Well, let's just say it'll be worth it. Satisfaction guaranteed~
 				i You're in on this too? Hypnotized? Cut the bullshit! I'm gonna squeeze every drop of degenerate cum out of you until you're begging for mercy!
 				t You walk up behind instructorF, but she's undaunted.
 				player You won't last long. Having spent so long watching me fuck your girls, on the inside you must be begging for the first excuse for me to fuck that rebellious streak right out of you.
