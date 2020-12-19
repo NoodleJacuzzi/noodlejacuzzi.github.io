@@ -774,7 +774,7 @@ function writeEvent(name) { //Plays the actual event.
 				sp president; Does this <i>feel</i> fake to you?
 				sp treasurer; Th-that's not... What I...
 				sp president; I had a whole speech prepared but I'm afraid you've arrived just as my train of thought derailed.<br>So, treasurerF, you've found us. What will you do?
-				sp treasurer; I'll get him *arrested, and I'll get you-
+				sp treasurer; I'll get *him arrested, and I'll get you-
 				sp president; Expelled? Arrested as well? He and I are together now, treasurerF.<br>I understand you're frightened, shocked, but I sent you that text for a reason. I want to make you a deal.
 				t This is beginning to spiral out of your control, you didn't instruct presidentF to do any of this. This charisma is probably what got her elected though, she'll make a good president once you've taken over the school.
 				sp treasurer; ... What is it?

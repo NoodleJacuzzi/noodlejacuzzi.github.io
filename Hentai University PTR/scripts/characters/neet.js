@@ -28,6 +28,11 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "neetA-1-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 101, trustMax: 101, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "neetA-2-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 102, trustMax: 102, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "neetA-3-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 103, trustMax: 110, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetB-1-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetB-2-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 110, trustMax: 110, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetB-3-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 111, trustMax: 111, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetB-4-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 112, trustMax: 112, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetB-5-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 113, trustMax: 113, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "neetBeach1", name: "neet is here", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 60, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
@@ -130,7 +135,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "neet4": {
 			clearText('neet');
-			writeText("You take a seat, Tia sitting across from you. There's a cold tension in the air. With how experienced she is with tech, she likely has some kind of master plan involving backups. You'll need to keep on your toes to stay out of prison.");
+			writeText("You take a seat, neetF sitting across from you. There's a cold tension in the air. With how experienced she is with tech, she likely has some kind of master plan involving backups. You'll need to keep on your toes to stay out of prison.");
 			writeSpeech("player", "", "So. What did you want?");
 			writeSpeech("neet", "", "I would like you to hypnotize me.");
 			writeSpeech("player", "", "... I see. <br>Actually no, I don't see at all. What?");
@@ -476,8 +481,189 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation('street')", "Make your way home");
 			break;
 		}
+		case "neetB-1-1": {
+			writeSpeech("player", "", "Morning neetF, how're you feeling?");
+			writeSpeech("neet", "", "Ah!<br>O-oh, *sir. I'm alright. So... Today is the day?");
+			writeFunction("writeEncounter('neetB-1-2')", "Walk her home");
+			writeFunction("changeLocation(data.player.location)", "Maybe tomorrow");
+			break;
+		}
+		case "neetB-1-2": {
+			writeEvent(name);
+			setTrust("neet", 110);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "neetB-2-1": {
+			writeSpeech("player", "", "Morning neetF, how're you feeling?");
+			writeSpeech("neet", "", "Very well, *sir. Another lesson today?");
+			writeSpeech("player", "", "Hm...");
+			writeFunction("writeEncounter('neetB-2-2')", "Go for a run");
+			writeFunction("changeLocation(data.player.location)", "Maybe tomorrow");
+			break;
+		}
+		case "neetB-2-2": {
+			writeEvent(name);
+			setTrust("neet", 111);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "neetB-3-1": {
+			writeSpeech("player", "", "Morning neetF, how're you feeling?");
+			writeSpeech("neet", "", "Very good, I think our lessons have been making progress.");
+			writeFunction("writeEncounter('neetB-3-2')", "Go for a run");
+			writeFunction("changeLocation(data.player.location)", "Maybe tomorrow");
+			break;
+		}
+		case "neetB-3-2": {
+			writeEvent(name);
+			setTrust("neet", 112);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "neetB-4-1": {
+			writeHTML(`
+				neet Good evening *sir~<br>Another run today?
+				player Actually, it's pretty cold out right now, so...
+			`);
+			writeFunction("writeEncounter('neetB-4-2')", "Walk home");
+			writeFunction("changeLocation(data.player.location)", "Maybe tomorrow");
+			break;
+		}
+		case "neetB-4-2": {
+			writeHTML(`
+				t The two of you have a casual walk back to neetF's place, the atmosphere is relaxing.
+				player Go ahead and take a shower, I think we'll go a bit farther today.
+				neet R-right!
+				...
+				t You relax, even dozing off for a time until the sound of running water stops. 
+				t The door opens and neetF walks in wearing absolutely nothing..
+				neet S-so, how much farther will we-
+				t In one smooth motion you reach forwards and remove her glasses.
+				im 027.jpg
+				neet Ah! W-why did you-
+				player You don't need these right now, do you?
+				neet Y-yes I do! They're... They help me...
+				t Her body language is panicked and she stumbles over her words.
+				player You've been pushing yourself, haven't you? You've been trying to focus on your glasses to move past your comfort zone.
+				neet I... I think improvement is more important than my own limitations.
+				player Why? I'm in no rush.
+				neet It's obvious isn't it? I'm well aware of your... <i>Other conquests</i>...<br>A-and I support them, of course! Someone like you needs somebody extraordinary to keep satisfied.
+				t Without her glasses on it's like she somehow feels even more naked than when she first walked into the room. Despite how far the two of your have gone, she still tries to cover herself in her towel.
+				neet I'll do my best to be special, to stand out... I know there are a lot of amazing women in this school alone.<br>... I don't want to be a waste of your time...
+				t She cringes a little as you rub her head, but doesn't oull away.
+				neet There are a lot of things I'd like to ask for...<br>B-but I won't monopolize your time! I'll keep working hard, and I'll be a good girl to make the time you've spent with me worth it!
+				t She seems motivated, but also seems like she's carrying a large weight. She has a point, spending as much time as she needs overcoming her anxieties has already distracted from taking over the school, yet...
+				t Is that such a bad thing? What's the alternative?
+				t You gently pat her head to relax her, and think of the possibilities. On one hand you could continue as you are, and work towards your original goal while spending time with neetF as you please.
+				t On the other hand, spending your days with neetF by your side doesn't sound too bad...
+			`);
+			writeFunction("writeEncounter('neetBAccept')", "Let neetF monopolize you");
+			writeFunction("writeEncounter('neetBReject')", "Give her time to herself to work through her thoughts");
+			break;
+		}
+		case "neetBReject": {
+			writeHTML(`
+				player We'll keep moving forwards, there's no reason to rush. I have no intention of abandoning you, relax.
+				neet You're not mad?
+				t You keep rubbing her head and give her a smile that seems to relax her.
+				neet Thank you... T-to be honest, I'm not really... Ready... To go all the way.
+				player We'll take all the time you need. For tonight just relax and try to cool off, we'll continue tomorrow, alright?
+				neet Yes *sir.
+			`);
+			setTrust("neet", 113);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "neetBPostphoned": {
+			writeHTML(`
+				t The two of you arrive at neetF's place. You've been lost in thought on exactly what you have planned for the future between you two, so she takes a shower while you think things through.
+				t As she walks into the room, stillvisibly nervous, you realize you've already come to a decision...
+			`);
+		}
+		case "neetBAccept": {
+			writeHTML(`
+				player Alright.
+				neet Eh?
+				player You and I. Together.
+				neet Ah! R-right, tonight we can-
+				player No, not tonight. However long it takes.
+				neet ... Huh? I-I'm confused...
+				t You take neetF's hand.
+				player You're worried I'll leave you behind. Don't be, I'm not going anywhere.<br>You think you need to work hard to be special, that's not true. I'm helping you because you already are.
+				t She doesn't say anything, but her blush deepens.
+				neet S-so... You're staying over?
+				player Sure, if you'll have me.
+				neet Y-yes! I'll get some... Uh... We'll need some...
+				t In a flurry she quickly stands up to try and figure out the situation. You stand up to help her.
+				t Whatever happens from now on, you'll deal with it together.
+			`);
+			writeFunction("writeEncounter('neetBEnding1')", "Time passes...");
+			break;
+		}
+		case "neetBEnding1": {
+			writeHTML(`
+				t An ordinary day, like any other.
+				t Almost a year has passed since you made that first decision to stay in with neetF, and together the two of you have made leaps and bounds of progress.
+				im 111.jpg
+				t Physical contact became less of a discomfort for her, and she developed a habit of holding into you to relax.
+				im 117.jpg
+				t And as you two became closer, what were once barriers became milestones.
+				im 167.jpg
+				t And then those milestones became the norm. At this point the two have you have grown closer than ever, yet still your training sessions are her favorite part of the day.
+			`);
+			writeFunction("writeEncounter('neetBEnding1')", "Continue");
+			break;
+		}
+		case "neetBEnding2": {
+			writeHTML(`
+				neet So, what kind of training did you have in mind for today?
+				im 247.jpg
+				player You really still think you need <i>training</i>, huh?
+				neet playerF... Of course I do~<br>You wouldn't want these hormones getting the best of all our hard work~
+				player You're insatiable.
+				neet Oh, don't say that... You know, maybe just for tonight I think I <i>can</i> control myself. I think you'll be proud of exactly how much willpower I've developed these past few months.
+				...
+				im 253.jpg
+				neet M-more~
+				player What was that about willpower?
+				neet S-see? I really do need this after all~<br>G... Gonna...
+				im 257.jpg
+				neet Cumming...~
+				t The two of you finish together, and are left panting messes afterwards until she catches her breath.
+				neet Ah ah~<br>Now that training is done... Mph...
+				t With a smile on her face she pushes you backwards and clambers atop you.
+				im 261.jpg
+				neet Mhm... It's time for my reward...
+				player Always wanting more, huh?
+				neet Well, you taught me to believe in myself... That means... Ah~<br>Taking what I want~
+				im 265.jpg
+				neet Ah~! So warm~!
+				t If she has her way, this'll go on forever...
+				t Just like last time.
+			`);
+			break;
+		}
+		case "neetB-5-1": {
+			writeHTML(`
+				neet Ah, playerF. Shall we head home for more training? I brought my uniform again, and the temperature seems right for a run.
+				player Hmm...
+			`);
+			writeFunction("writeEncounter('neetBRepeat')", "Go for another run");
+			writeHTML(`
+				t The matter from before still weighs on you. Maybe after you arrive at her place you could entertain the idea more. What she said about 'monopolizing you' doesn't actually seem that bad.
+			`);
+			writeFunction("writeEncounter('neetBPostphoned')", "Devote yourself to neetF");
+			writeFunction("changeLocation(data.player.location)", "Maybe tomorrow");
+			break;
+		}
+		case "neetBRepeat": {
+			writeEvent(name);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
 		case "neetA-1-1": {
-			writeSpeech("player", "", "Morning Tia, how're you feeling?");
+			writeSpeech("player", "", "Morning neetF, how're you feeling?");
 			writeSpeech("neet", "", "I'm very well, *sir.");
 			writeText("She seems pretty relaxed, a good sign that she's still hypnotized.");
 			writeSpeech("neet", "", "Do you think you and I could walk home together again today? I'd like you to watch me-<br>... Wait... Something feels off...");
@@ -693,6 +879,10 @@ var eventArray = [ //Lists the events of the character for unlocking and replayi
 	{index: "neetA-2-2", name: "Relaxation",},
 	{index: "neetTitjobRepeat", name: "Titjob",},
 	{index: "neetSexRepeat", name: "Sex",},
+	{index: "neetB-1-2", name: "Careful Approach",},
+	{index: "neetB-2-2", name: "Gentle Handling",},
+	{index: "neetB-3-2", name: "Unconditional Love",},
+	{index: "neetRepeat", name: "Endless Running",},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -817,6 +1007,123 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("player", "", "I'll think about it. Good night, neetF.");
 			writeText("You get dressed and neetF waves you off. The sky has grown dark already, a lot of time has passed since neetF decided to experiment with how to satisfy you.");
 			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "neetB-1-2": {
+			writeHTML(`
+				neet I've had a few therapists over the years, although their conclusion was that conventional therapy was neither effective or necessary in my case.
+				player Well, I'm very unconventional.
+				neet I assume that means a type of training which matches your... Tastes?
+				player Of course! In fact, I have one in mind now. We'll take things at your speed, so no touching until you're ready.
+				neet Well... Okay, I suppose I am curious.
+				...
+				im 033.jpg
+				neet I... I was perhaps expecting a slower pace.
+				t A deep red blush covers her face as she takes in the sight of your bare member.
+				neet I-is is hot in here? I'm finding it difficult to... To think... Maybe I should...
+				t She almost moves to adjust the temperature, but finds herself glued to her spot. Her overly analytical brain can't find a starting point for a train of thought, especially whenever she takes in a breath.
+				t But when she does find the strength to move, it's in a surprising direction towards her dresser to grab something.
+				im 034.jpg
+				neet Ah, I see. You're trying to use immersion therapy, assuming I'll be more comfortable around you in a neutral state once I've been exposed to you in an extreme condition.
+				player ... Sure.
+				t Once her glasses are on she has something to focus herself. It's curious. Curious enough to warrant pushing boundaries.
+				player You feel comfortable in those?
+				neet I do.. 
+				player Great. Let's go a step farther.
+				...
+				im 052.jpg
+				neet So by focusing myself on these, I think I should be able to appropriately pace myself.
+				t As her chest rubs up and down your length she's begun to babble. Probably to try and hang on to whatever train of thought is still running.
+				t Even through her hoodie her soft body against yours is nice. Very nice.
+				neet And in this position the speed is dictated by me. Quite inspired, and the barrier between us, while thin, is still enough for me to... To...
+				im 054.jpg
+				neet I-it's leaking... 
+				player Ngh... Yeah, I do that.
+				neet N-not with... I don't know-
+				player Just relax.
+				t You gently pat her on the head, she shivers slightly at the touch and the blush comes back full force.
+				t Suddenly her mouth feels quite dry, and her talktative streak comes to a stuttering halt.
+				player We've made good progress tonight, I think.
+				neet ... Uh-huh.
+				t She pulls back, a single wet spot on her hoodie, her eyes focused on you as you clean yourself off.
+				neet Oh, it's... It's getting late isn't it, I'm quite tired suddenly. I'll... I'll see you at school tomorrow, right?
+				player Sounds good, we can keep moving forward next time.
+				t She nods absentmindedly, her focus darting between you and the wetness of her hoodie, back and forth.
+				t As you shut the door it's only a few seconds before you can hear the sound of clothes rustling from the other side.
+			`);
+			break;
+		}
+		case "neetB-2-2": {
+			writeHTML(`
+				player I think it'd be nice to go for a run today, actually.
+				neet ... I see.
+				player You interested?
+				neet Yes, I'm more confident in my physical abilities than I was before.<br>In addition this is clearly meant as a bonding exercise between us, yes?<br>Physical engagement to ensure I can better commit your presence to memory?
+				player ... Sure.
+				neet Not to mention it provides an outlet for my nervous energy... I'll prepare my uniform.
+				...
+				im date-x.jpg
+				t By the end of your jog you've arrived at neetF's house. She's winded, but in much better shape than the last time you and her went out.
+				player You're improving.
+				neet Thank you. I was worr... I suspected we might go for a run like this again, so I've been practicing a little on my own. Being around you has resulted in needing adjustments to my usual schedule. Normally I'm quite drowsy this late in the day... But lately I find myself becoming more energized when these late hours roll around.
+				t You give her a pat on the head, and she gives a small smile. When you bring up the subject of a reward, her cheeks go red.
+				...
+				im 140.jpg
+				neet O-okay, keep still, I understand... Training to ensure I'm at my most comfortable whenever you're around... Even if it means we make quite a mess...
+				t It's left unsaid whether she means the mess you'll leave on her clothes, or the mess she'll be making afterwards to calm herself down, and you continue regardless.
+				t It seems like her analytical rants keep her mind occupied, but you prefer her to focus on what's really important, and stay in the moment.
+				neet This position... It's quite... Quite <i>lewd</i>, isn't it? Ah, I suppose that's... That's the...
+				im 142.jpg
+				t Her speech trails off as she bites her lower lip and closes her eyes, her senses focused on the load you punped onto her clothed ass.
+				t Today's training complete, you bid her farewell, but she's so enraptured it's like she can't even hear you.
+				t Again, mere moments after you close the door you can hear the sounds of clothes rustling and heavy breathing.
+			`);
+			break;
+		}
+		case "neetB-3-2": {
+			writeHTML(`
+				player I think another run would do us some good, you're improving a lot already.
+				neet Okay, I'll grab my uniform then.
+				...
+				im date-x.jpg
+				t At the end of the run as you arrive at her home, neetF is far from exhausted. It seems her stamina has improved, and she's glad for your praise.
+				neet Ah, I suppose I have been improving in terms of physical conditioning... Perhaps the idea of a reward is serving as extrinsic motivation?
+				player Well, no point waiting then.
+				t The two of you head inside.
+				neet Ah... I was... I was hoping you...<br>I was hoping I could face you this time...
+				...
+				im 132.jpg
+				t Unlike her first session, where she looked on rooted to the floor with a mad blush overtaking her, this time her posture and attitude clearly show how she feels about the situation.
+				t The look of hunger in her eyes, and the increasingly heavy breaths she takes in rhythm with your strokes...
+				im 134.jpg
+				t She twitches slightly as your load begins to cover her face. Each deep breath clearly filling her brain with your scent.
+				t Her eyes are unfocused like her brain can't muster any thought. You reach for a tissue, but...
+				im 136.jpg
+				t She's already begun to clean herself off.
+				im 138.jpg
+				neet Ah... Hah... It's quite... Thick.<br>Will we continue again tomorrow?
+				player Yeah. You're making good progress.
+				t She nods, not making any move to wipe off the rest of your cum from her face.
+				t Again, after you close her door, you hear the sound of clothes rustling and neetF's heavy breathing.
+			`);
+			break;
+		}
+		case "neetRepeat": {
+			writeHTML(`
+				player Grab your uniform then, we'll jog back to your place.
+				neet A-and afterwards?
+				player Yes, more training.
+				t She gives a quiet 'yay' before running off to get changed.
+				...
+				im 128.jpg
+				t Progress marches ever onwards, today she can't contain herself just to watch.
+				t Her libido is growing to match yours. Someday she'll make a fine concubine.
+				im 130.jpg
+				t But today she'll make a happy slut.
+				im 136.jpg
+				im 138.jpg
+				neet Ah~<br>B-before you go, could I have another?
+			`);
 			break;
 		}
 		case "neetTitjobRepeat": {
