@@ -29,16 +29,20 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "neetA-2-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 102, trustMax: 102, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "neetA-3-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 103, trustMax: 110, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "neetB-1-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "neetB-2-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 110, trustMax: 110, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "neetB-3-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 111, trustMax: 111, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "neetB-4-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 112, trustMax: 112, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "neetB-5-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 113, trustMax: 113, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetB-2-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 111, trustMax: 111, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetB-3-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 112, trustMax: 112, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetB-4-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 113, trustMax: 113, type: "tab", top: 0, left: 0, day: "both",},
+	{index: "neetB-5-1", name: "neet is here", location: 'computerRoom', time: "Evening", itemReq: "", trustMin: 114, trustMax: 114, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "neetBeach1", name: "neet is here", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 60, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+	writeHTML(`
+		define neet = sp neet;
+		define player = sp player;
+	`);
 	switch (name) {
 		case "neet1": {
 			writeSpeech("player", "", "Are you allowed to be here when class isn't in session?");
@@ -490,7 +494,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "neetB-1-2": {
 			writeEvent(name);
-			setTrust("neet", 110);
+			setTrust("neet", 111);
+			passTime();
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -504,7 +509,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "neetB-2-2": {
 			writeEvent(name);
-			setTrust("neet", 111);
+			setTrust("neet", 112);
+			passTime();
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -517,7 +523,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "neetB-3-2": {
 			writeEvent(name);
-			setTrust("neet", 112);
+			setTrust("neet", 113);
+			passTime();
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -571,7 +578,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 				player We'll take all the time you need. For tonight just relax and try to cool off, we'll continue tomorrow, alright?
 				neet Yes *sir.
 			`);
-			setTrust("neet", 113);
+			passTime();
+			setTrust("neet", 114);
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -612,7 +620,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				im 167.jpg
 				t And then those milestones became the norm. At this point the two have you have grown closer than ever, yet still your training sessions are her favorite part of the day.
 			`);
-			writeFunction("writeEncounter('neetBEnding1')", "Continue");
+			writeFunction("writeEncounter('neetBEnding2')", "Continue");
 			break;
 		}
 		case "neetBEnding2": {
@@ -642,6 +650,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t If she has her way, this'll go on forever...
 				t Just like last time.
 			`);
+			writeFunction("loadEncounter('system', 'credits')", "The End");
 			break;
 		}
 		case "neetB-5-1": {
@@ -659,6 +668,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "neetBRepeat": {
 			writeEvent(name);
+			passTime();
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -882,7 +892,7 @@ var eventArray = [ //Lists the events of the character for unlocking and replayi
 	{index: "neetB-1-2", name: "Careful Approach",},
 	{index: "neetB-2-2", name: "Gentle Handling",},
 	{index: "neetB-3-2", name: "Unconditional Love",},
-	{index: "neetRepeat", name: "Endless Running",},
+	{index: "neetBRepeat", name: "Endless Running",},
 ];
 
 function writeEvent(name) { //Plays the actual event.
@@ -1011,6 +1021,7 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "neetB-1-2": {
 			writeHTML(`
+				t The two of you have a mostly quiet walk to neetF's place. It's only once you arrive at her home that she finally opens up.
 				neet I've had a few therapists over the years, although their conclusion was that conventional therapy was neither effective or necessary in my case.
 				player Well, I'm very unconventional.
 				neet I assume that means a type of training which matches your... Tastes?
@@ -1108,7 +1119,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "neetRepeat": {
+		case "neetBRepeat": {
 			writeHTML(`
 				player Grab your uniform then, we'll jog back to your place.
 				neet A-and afterwards?
