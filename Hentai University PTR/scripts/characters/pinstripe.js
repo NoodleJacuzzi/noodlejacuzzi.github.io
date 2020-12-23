@@ -395,6 +395,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 				pinstripe Welcum back *mister! Wanna play? You can use either of my mouths, free if you promise to treat me right~
 			`);
 			writeFunction("writeEncounter('pinstripeMouthRepeat')", "Use her mouth");
+			writeFunction("writeEncounter('pinstripePussy')", "Use her pussy");
+			writeFunction("writeEncounter('cancel')", "Go back");
+			break;
+		}
+		case "pinstripePussy": {
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "pinstripeMouthRepeat": {
@@ -631,15 +639,15 @@ function writeEvent(name) { //Plays the actual event.
 			writeHTML(`
 				define pinstripe = sp pinstripe; im images/pinstripe/schoolgirl.jpg;
 				pinstripe Ooh, full service? Well...
-				im service 1-2.jpg
+				im service1-2.jpg
 				pinstripe How could I say no to somebody like you?
 				...
-				im service 3-1.jpg
+				im service3-1.jpg
 				pinstripe Ooh, that's the spot~<br>Something about you... You really wake up my inner cumslut~
 				t She bounces like a woman with a purpose, taking great care to squeeze you just right with each thrust.
 				t Sating her libido is quite the tall order, especially given her incredible body, but the look on her face is saying you meet her expectations.
 				t And soon enough, you surpass them.
-				im service 3-2.jpg
+				im service3-2.jpg
 				pinstripe Oooh~! Cumming~!
 			`);
 			break;
