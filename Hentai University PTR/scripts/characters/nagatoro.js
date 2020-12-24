@@ -24,6 +24,8 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "nagatoroComfort1", name: "You think you see nagatoro out the window", requirements: "?trust nagatoro 99; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "clubEntrance", name: "The clubroom is here", requirements: "?trust nagatoro 100; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "clubQuo", name: "The clubroom is here", requirements: "?trustMin nagatoro 101; ?location eastHallway;", altName: "", altImage: "",},
+	{index: "nagatoroHotelBad", name: "Check on nagatoro", requirements: "?flag demon hotelBad;", altName: "", altImage: "",},
+	{index: "nagatoroHotelGood", name: "Search for nagatoro", requirements: "?flag succubus hotelGood;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -482,6 +484,33 @@ function writeEncounter(name) { //Plays the actual encounter.
 			`);
 			addFlag("tomgirl", "club");
 			writeFunction("writeEncounter('clubQuo')", "Continue");
+			break;
+		}
+		case "nagatoroHotelGood": {
+			writeHTML(`
+				im hotelAdmire.jpg
+				nagatoro Ah, I always come back to you~<br>This'll be the one... I...
+				t He trails off as he catches your eye.
+				nagatoro Whoa, you're awake! Have a nice beauty sleep?
+				player I'm doing alright, and you?
+				nagatoro Are you kidding? This is amazing! It's hard to explain but everything feels... Vivid. Touch, taste, sound. <br>I've already made a bunch of friends, apparently my talent for clothes and beauty gave me 'magic hands', if you catch my drift.<br>And just looking at some of the others here... I can see them, and what they'd look best in painted across the dark side of my eyelids when I close them...
+				t nagatoroF waves his hands for emphasis. succubusF did say he might awaken to a special power...
+				nagatoro Not for you though. Apparently I'll have a knack for helping others to... Relax <br>succubusF was a bit of a sourpuss at first, but I got him to open up a little. Turns out we both like the same areas of fashion.<br>I know you were supposed to be a little out-of-sorts after you woke up, but how about later tonight you, me, and this outfit get to know our new selves a little better?
+			`);
+			writeFunction("changeLocation(data.player.location)", "Continue Wandering");
+			break;
+		}
+		case "nagatoroHotelBad": {
+			writeHTML(`
+				im hotelBad.jpg
+				nagatoro You look so cute!
+				black The young man nagatoroF brought in off the street was the nervous type. They've never even met before, but he has this infectious charm to him.
+				nagatoro Tell me, how does it feel?
+				black He's got a unique trait, actually. Under his touch the body feels different. Softer, like you match your new outfit somehow. I've personally been fitted by him, and the experience is... Magical.  <br>This will be nagatoroF's fifth invitation to the hotel this month. The chance to draw in others, to corrupt them, turned out to be exactly his forte.
+				t nagatoroF looks to the camera and smiles as the boi in his grasp begins to shake, staining the crotch of the succubus outfit. His voice is getting higher pitched by the second.
+				black He was interested in creating a brand new club, I know he's hoping that his *master will appreciate his work.
+			`);
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		default: {
