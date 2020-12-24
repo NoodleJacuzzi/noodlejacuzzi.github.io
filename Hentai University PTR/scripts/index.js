@@ -3570,7 +3570,7 @@ function generateContacts() {
 		document.getElementById('phoneLeft').innerHTML += `<h3 class = "button char_` + phoneList1[i].index + `" style = "color: `+phoneList1[i].color+`" onclick = "switchContact('`+phoneList1[i].index+`')">` + phoneList1[i].fName + `</h3 >`;
 	}
 	for (i = 0; i < phoneList2.length; i++) {
-		document.getElementById('phoneLeft').innerHTML += `<h3 class = "button char_` + phoneList2[i].index + `" style = "color: #FFFFFF" onclick = "switchContact('`+phoneList2[i].index+`')">` + phoneList2[i].fName + `<br> ♔</h3 >`;
+		document.getElementById('phoneLeft').innerHTML += `<h3 class = "button char_` + phoneList2[i].index + `" style = "color: #FFFFFF" onclick = "switchContact('`+phoneList2[i].index+`')">` + phoneList2[i].fName + `<br>♔</h3 >`;
 	}
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].unreadText != false) {
