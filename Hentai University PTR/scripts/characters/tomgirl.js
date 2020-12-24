@@ -20,7 +20,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "tomgirl4", name: "tomgirl is here", location: 'classroomA', time: "MorningEvening", itemReq: "", trustMin: 6, trustMax: 6, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "tomgirlReturn", name: "tomgirl is here", location: 'classroomA', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both",},
 	{index: "newQuo", name: "tomgirl is here", location: 'classroomA', time: "MorningEvening", itemReq: "", trustMin: 101, trustMax: 666, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "tomgirlHotelBad", name: "Check on tomgirl", requirements: "?flag demon hotelBad;", altName: "", altImage: "",},
+	{index: "tomgirlHotelBad", name: "Ask about tomgirl", requirements: "?flag demon hotelBad;", altName: "", altImage: "",},
 	{index: "tomgirlHotelGood", name: "Search for tomgirl", requirements: "?flag succubus hotelGood;", altName: "", altImage: "",},
 ]
 
@@ -334,7 +334,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "tomgirlHotelGood": {
 			writeHTML(`
 				t You gently push open the door to tomgirlF's room...
-				im 077.jpg
+				im new3-1.jpg
 				tomgirl Eh? succubusF, if this is about last-
 				t He freezes as he sees you.
 				tomgirl playerF?

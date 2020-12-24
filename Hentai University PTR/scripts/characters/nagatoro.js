@@ -24,7 +24,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "nagatoroComfort1", name: "You think you see nagatoro out the window", requirements: "?trust nagatoro 99; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "clubEntrance", name: "The clubroom is here", requirements: "?trust nagatoro 100; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "clubQuo", name: "The clubroom is here", requirements: "?trustMin nagatoro 101; ?location eastHallway;", altName: "", altImage: "",},
-	{index: "nagatoroHotelBad", name: "Check on nagatoro", requirements: "?flag demon hotelBad;", altName: "", altImage: "",},
+	{index: "nagatoroHotelBad", name: "Ask about nagatoro", requirements: "?flag demon hotelBad;", altName: "", altImage: "",},
 	{index: "nagatoroHotelGood", name: "Search for nagatoro", requirements: "?flag succubus hotelGood;", altName: "", altImage: "",},
 ];
 

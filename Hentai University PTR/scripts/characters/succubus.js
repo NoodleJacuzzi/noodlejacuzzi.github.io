@@ -22,7 +22,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "caseSelect", name: "succubus is here again", location: 'playerHouse', time: "Night", itemReq: "", trustMin: 60, trustMax: 76, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "demon.jpg",},
 	{index: "date1", name: "succubus is here waiting for you", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 77, trustMax: 77, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 	{index: "postQuo", name: "succubus is here again", location: 'playerHouse', time: "Night", itemReq: "", trustMin: 78, trustMax: 99, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "demon.jpg",},
-	{index: "succubusHotelBad", name: "Check on succubus", requirements: "?flag demon hotelBad;", altName: "", altImage: "",},
+	{index: "succubusHotelBad", name: "Ask about succubus", requirements: "?flag demon hotelBad;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -701,6 +701,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 				writeFunction("writeEncounter('succubusInstructor')", "Talk about instructorF");
 			}
 			writeSpeech("succubus", "demon.jpg", "We could also just spend the night chatting, if you wanted. Anything on your mind?");
+			if (checkFlag("succubus", "excited") == true) {
+				writeFunction("writeEncounter('proposal')", "Ask what's got succubusF so excited");
+			}
 			writeFunction("writeEncounter('chatSelect')", "Chat");
 			writeFunction("changeLocation('playerHouse')", "Finish");
 			if (checkFlag('succubus', 'mission') == true) {
@@ -708,6 +711,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 					addFlag('succubus', 'missionF');
 					writeEncounter('missionF');
 				}
+			}
+			if (checkTrust("tomgirl") == 666 && checkFlag("succubus", "excited") == false) {
+				writeEncounter("excited");
+			}
+			if (checkTrust("nagatoro") == 666 && checkFlag("succubus", "excited") == false) {
+				writeEncounter("excited");
 			}
 			break;
 		}
@@ -865,16 +874,19 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "excited": {
 			writeHTML(`
+				define succubus = sp succubus; im demon.jpg;
 				im profileD.jpg
 				succubus Hello master~!
 				t Upon your windowsill is your bubbly chocolate companion, looking quite chipper.
 				succubus The others you've drained are doing pretty well! They'll slot in perfectly to their new lives, hopefully soon! And~<br>That might be coming soon~!<br>So, so, what will we be doing tonight?
 			`);
-			writeFunction("writeEncounter('proposal')", "Ask about his excitement");
+			addFlag("succubus", "excited");
+			writeFunction("writeEncounter('postQuo')", "Continue");
 			break;
 		}
 		case "proposal": {
 			writeHTML(`
+				define succubus = sp succubus; im demon.jpg;
 				player So, what's got you so excited tonight?
 				succubus Hehe, this~!
 				t He pulls out another bottle of cloudy fluid.
@@ -890,6 +902,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "accept": {
 			writeHTML(`
+				define succubus = sp succubus; im demon.jpg;
 				t You take a deep breath.
 				player Alright. Let's go through with the transformation.
 				succubus Really?! You're sure, like really sure?
@@ -923,12 +936,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 				player Why?
 				succubus It's a surprise! Listen, the other bois are here too, go hang out with them, let them know you're alright, and come back here and I'll be ready. Okay?<br>You'll know where they are, trust me.
 			`);
+			data.player.time = "Morning";
 			addFlag("succubus", "hotelGood");
 			writeFunction("changeLocation('hotel')", "Begin searching");
 			break;
 		}
 		case "refusal": {
 			writeHTML(`
+				define succubus = sp succubus; im demon.jpg;
 				player Maybe another time, alright?
 				succubus ...
 				player succubusF?
@@ -944,6 +959,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "hotelGoodFinish": {
 			writeHTML(`
+				define succubus = sp succubus; im demon.jpg;
 				succubus So, you finish catching up with your harem?
 				player Things are gonna change a lot, aren't they? No more worrying about taking over the town.
 				succubus Hey, perk up buttercup. There's plenty of men and women who'd give the world to be a part of this place with you. Speaking of, go ahead and come in.
@@ -987,12 +1003,16 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "hotelGoodEpilogue": {
 			writeHTML(`
+				define succubus = sp succubus; im demon.jpg;
+				define tomgirl = sp tomgirl;
+				define nagatoro = sp nagatoro;
+				define demon = sp demon;
 				t The days blend together in the following months, then years. No longer bound to your humanity your time in the hotel has become what feels like an endless vacation surrounded by your harem.
 			`);
 			if (checkTrust("tomgirl") == 666) {
 				writeHTML(`
 					...
-					im images/tomgirl/083.jpg
+					im images/tomgirl/8-2.jpg
 					t tomgirlF proved to be a loyal concubine, always eager to engage with you romantically. Easily pushed to jealousy, competitions between him and the other members of your harem spark often.
 					im images/tomgirl/8-6.jpg
 					t These competitions often end messily.
@@ -1007,7 +1027,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 					t Of course, whenever these excursions go on for a little too long, he takes some time to indulge his teasing habits by letting you know how the process is going.
 				`);
 			}
-			if (checkTrust("demon") == 666) {
+			if (checkTrust("demon") > 0) {
 				writeHTML(`
 					...
 					im images/demon/032.jpg

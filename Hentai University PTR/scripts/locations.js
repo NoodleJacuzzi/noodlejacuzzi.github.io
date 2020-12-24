@@ -104,6 +104,8 @@ var locationArray = [
 		{name: "Teacher's Lounge", 		top: 2, 	left: 62, 	type: "location", target: "teacherLounge", time: "MorningEvening",},
 		{name: "Roof", 					top: 0, 	left: 45, 	type: "location", target: "roof", time: "MorningEvening",},
 	],},
+	{index: "hotel", name: "Demon Hotel", buttons: [
+	],},
 ];
 
 function changeLocation(n) {
@@ -151,7 +153,12 @@ function changeLocation(n) {
 					);
 				}
 			}
-			if (data.player.time != "Night" && data.player.location != "map" && data.player.location != "casino" && data.player.location != "beach" && data.player.location != "schoolMap" && checkItem("Town Map") == true) {
+			if (data.player.time != "Night" && data.player.location != "map" 
+			&& data.player.location != "casino" 
+			&& data.player.location != "beach" 
+			&& data.player.location != "schoolMap" 
+			&& data.player.location != "hotel" 
+			&& checkItem("Town Map") == true) {
 				printLocationButton(
 					'Use Map', 
 					0, 

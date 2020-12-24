@@ -507,6 +507,7 @@ function checkFlag(character, flag) {
 			}
 		}
 	}
+	return false;
 }
 
 function encounteredCheck(name) {
@@ -945,6 +946,35 @@ function checkRequirements(string) {
 			}
 			string = string.replace(`?flag `+corruptionTarget+` `+check+`;`, ``);
 		}
+	}
+	//This garbage is here because I made a mistake late in development. starlet (Lana) and demon (Meph) aren't in the data.story variable by default because I was lazy. This code below is my punishment.
+	while (string.includes("!flag demon ") == true) {
+		var check = string.split(`!flag demon `).pop().split(`;`)[0];
+		if (checkFlag(corruptionTarget, check) == true) {
+			finalResult = false;
+		}
+		string = string.replace(`!flag demon `+check+`;`, ``);
+	}
+	while (string.includes("?flag demon ") == true) {
+		var check = string.split(`?flag demon `).pop().split(`;`)[0];
+		if (checkFlag(corruptionTarget, check) != true) {
+			finalResult = false;
+		}
+		string = string.replace(`?flag demon `+check+`;`, ``);
+	}
+	while (string.includes("!flag starlet ") == true) {
+		var check = string.split(`!flag starlet `).pop().split(`;`)[0];
+		if (checkFlag(corruptionTarget, check) == true) {
+			finalResult = false;
+		}
+		string = string.replace(`!flag starlet `+check+`;`, ``);
+	}
+	while (string.includes("?flag starlet ") == true) {
+		var check = string.split(`?flag starlet `).pop().split(`;`)[0];
+		if (checkFlag(corruptionTarget, check) != true) {
+			finalResult = false;
+		}
+		string = string.replace(`?flag starlet `+check+`;`, ``);
 	}
 	if (finalResult == true || string.includes("define ") == true && string.includes("=") == true) {
 		return true;

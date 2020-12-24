@@ -15,6 +15,7 @@ var newItems = [ //If price is 0 it isn't for sale
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default. Tab appears below the map, button appears on the map itself
 	{index: "paperwork", 	name: "File some Paperwork", 	location: 'playerOffice', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 65, day: "both",},
+	{index: "hotel", 	name: "Continue", 	location: 'hotel', 		time: "MorningEveningNight", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 40, day: "both",},
 	{index: "listTextbooks", name: "Read a Book", 			location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 20, left: 72, day: "both",},
 	{index: "listTextbooks", name: "Read a Book", 			location: 'playerOffice', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 20, left: 72, day: "both",},
 	{index: "gameConsole", 	name: "Game Console", 			location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 62, left: 72, day: "both",},
@@ -34,6 +35,15 @@ function writeEncounter(scene) {
 		document.getElementById('output').innerHTML = '';
 	}
 	switch (scene) {
+		case "hotel": {
+			if (checkFlag("demon", "hotelBad") == true) {
+				loadEncounter("demon", "hotelBadFinish");
+			}
+			if (checkFlag("succubus", "hotelGood") == true) {
+				loadEncounter("succubus", "hotelGoodFinish");
+			}
+			break;
+		}
 		case "start" : {
 			updateMenu();
 			document.getElementById('playerImage').src = "scripts/gamefiles/none.png";

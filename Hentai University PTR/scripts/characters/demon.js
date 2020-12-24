@@ -19,15 +19,21 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "demonShopping", name: "A familiar face is here", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 100, trustMax: 100, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 	{index: "demonPaint", name: "A familiar face is here again", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 101, trustMax: 101, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 	{index: "demonStart", name: "You should be able to find your way to demon's hotel from here.", location: 'streets', time: "MorningEvening", itemReq: "", trustMin: 102, trustMax: 102, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
-	{index: "demonQuo", name: "You should be able to find your way to demon's hotel from here.", location: 'streets', time: "MorningEvening", itemReq: "", trustMin: 103, trustMax: 104, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
-	{index: "demonHotelBad", name: "Check on demon", requirements: "?flag demon hotelBad; !flag demon bad", altName: "", altImage: "",},
-	{index: "demonHotelGood", name: "Search for demon", requirements: "?flag demon hotelGood;", altName: "", altImage: "",},
-	{index: "blackHotelBad", name: "Ask about the receptionist", requirements: "?flag demon hotelBad; !flag demon black", altName: "", altImage: "",},
+	{index: "demonQuo", name: "You should be able to find your way to demon's hotel from here.", location: 'streets', time: "MorningEvening", itemReq: "", trustMin: 103, trustMax: 106, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
+	{index: "demonHotelGood", name: "Search for demon", requirements: "?flag succubus hotelGood;", altName: "", altImage: "",},
+	{index: "demonHotelBad", name: "Ask about demon", requirements: "?flag demon hotelBad; !flag demon bad;", altName: "", altImage: "",},
+	{index: "blackHotelBad", name: "Ask about the receptionist", requirements: "?flag demon hotelBad; !flag demon black;", altName: "'Stupid Bitch'", altImage: "dark.jpg",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+	writeHTML(`
+		define player = sp player;
+		define demon = sp demon;
+		define black = sp Black Haired Succubus; im images/demon/dark.jpg;
+		define succubus = sp succubus; im demon.jpg;
+	`);
 	switch (name) {
 		case "intro1": {
 			writeSpeech("player", "", "Alright, so I just need to play along and fuck some cute demon girl-");
@@ -182,18 +188,28 @@ function writeEncounter(name) { //Plays the actual encounter.
 						t He's pretty presumptive. Still, he has a few suggestions that actually seem pretty appealing.
 					`);
 				break;
-				case 105:
+				case 106:
 					writeHTML(`
-						t You arrive at the hotel. The receptionist isn't at her desk, the entire lobby is empty. There's a strange sound coming from nearly every wall, but it'd be a bad idea to wander around right now.
+						black Oh, welcome back! The master told me to be expecting you.
 						...
-						t Before you even make it to demonF's room, he opens the door and rushes out to greet you already fully dressed for a night out.
-						sp demon; You have the wig, right? Cmon~! I've got some ideas for our date!
-						t He's pretty presumptive. Still, he has a few suggestions that actually seem pretty appealing.
+						t A short elevator ride later you're on the top floor. The black haired succubus waves you off as you leave, looking very relaxed and content as you go.
+						t You push open the door to demonF's room, it's the usual mess...
+						demon Mmm, welcome back. Here to abuse this little slab of fuckmeat on the town, or have you... Reconsidered?
 					`);
 				break;
 			}
 			writeFunction("writeEncounter('dateAqua')", "Go on a date to the local aquarium");
 			writeFunction("writeEncounter('dateForest')", "Go for a walk in the forest");
+			if (checkTrust("demon") == 106) {
+				writeFunction("writeEncounter('accept')", "Agree to demonF's deal");
+			}
+			writeFunction("writeEncounter('cancel')", "Go back");
+			if (checkTrust("demon") == 105) {
+				writeEncounter("emptyHotel");
+			}
+			if (checkTrust("demon") == 104) {
+				raiseTrust('demon', 1);
+			}
 			break;
 		}
 		case "dateAqua": {
@@ -258,9 +274,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 				black Ah, for context he wanted this to be a sort of video message, but...
 				im 142.jpg
 				demon Yes! Fuck, use me like the cumwhore I am! Mark me, I want to wake up feeling like worthless trash filled up with jizz more valuable than my life!
-				black He... Got a little ahead of himself. I was actually the cameraman for this one, please ignore the heavy breathing. This was meant as an attraction for the hotel, and it did work to an extent...<br>I was so sure here's use his energy to escape once the police arrived, but...
+				black He... Went a little beyond his limits. I was actually the cameraman for this one, please ignore the heavy breathing. This was meant as an attraction for the hotel, and it did work to an extent...<br>I was so sure here's use his energy to escape once the police arrived, but...
 				im 143.jpg
-				black A-as you can see, he wasted his escape attempt splurting it onto the ground as the stranger filled his ass. I'm a little ashamed to admit, but I came as well at this point...<br>He's currently indisposed... Arrested, actually. I spoke with him recently and he said he'd return to the hotel with a gaggle of whores from whatever prison he's sent to... Converting them from the inside seems to be his plan. He said that he wanted to be your first when you woke up, but...
+				black A-as you can see, he wasted his escape attempt splurting it onto the ground as the stranger filled his ass. I'm a little ashamed to admit, but I came as well at this point...<br>He's currently indisposed... Arrested, actually. I spoke with demonF recently and he said he'd return to the hotel with a gaggle of whores from whatever prison he's sent to... Converting them from the inside seems to be his plan. He said that he wanted to be your first when you woke up, but...
 				t Stupid Bitch closes the video.
 				black Well, that cum-sock doesn't give me orders any more. No rush on dragging his ass from prison, I'm sure he's enjoying his time in there.
 			`);
@@ -306,13 +322,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp demon; Oh! Oh little studdy, you don't seem to understand. This is the ideal environment. Your little familiar keeps planting these ideas in your head that he wants to reach for something greater, but that's not what these girls want. If you extend the smallest hand of kindness towards them, they will find the nearest dildo, fuck themselves silly, and splurt aaaaall over that hand. And if you slap them for it, they'll happily cum even harder. 
 				t demonF Leans forwards and pushes a button on a small console.  You can see on the screen a familiar face.
 				im black036.jpg
-				sp demonF; Stupid Bitch? <br>Ah, that's his name by the way, he came up with it himself. He can't remember her old one. <br>Stupid Bitch? 
+				sp demon; Stupid Bitch? <br>Ah, that's his name by the way, he came up with it himself. He can't remember her old one. <br>Stupid Bitch? 
 				t The succubus on screen doesn't seem to comprehend she's being spoken to. demonF sighs and pushes another button, the buzzing egg vibrators come to a stop and give the poor boi a moment or reprieve. 
 				t Which is pretty obviously not what they wanted. They look panicked at the camera, and arch their hips into the air to wave their little cocklette from side to side in a bizzare display of submissive begging. 
 				sp demon; Stupid Bitch, could you tell me what you did yesterday?
-				sp 'Stupid Bitch'; Ah... I couldn't get off on my dildo, my chastity cage was so tight! I tied up Fuckslut, I shoved a double-sided dildo down her throat, and I used her as a-
+				sp 'Stupid Bitch'; im images/demon/dark.jpg; Ah... I couldn't get off on my dildo, my chastity cage was so tight! I tied up Fuckslut, I shoved a double-sided dildo down her throat, and I used her as a-
 				sp demon; Thank you, now I'm going to make you an offer, okay? I can completely forgive everything you owe me. I'll set you free, I'll give you everything you need to start a new life for yourself. Or, I push this button and turn those vibrators back on. 
-				sp 'Stupid Bitch'; T-that's it? Just like that? <br>The button! PLEASE! I wanna cum! I'll go back in my cage like a good girl, I don't care how long it'll be before I cum again! I just want-OOOOOOUGH~! THANK YOUUUH~! 
+				sp 'Stupid Bitch'; im images/demon/dark.jpg; T-that's it? Just like that? <br>The button! PLEASE! I wanna cum! I'll go back in my cage like a good girl, I don't care how long it'll be before I cum again! I just want-OOOOOOUGH~! THANK YOUUUH~! 
 				t demonF pressed the button, and you watch as 'Stupid Bitch' is rewarded with everything they ever wanted in life, before the screen clicks off. 
 				sp demon; Do you remember when we first met? When I splurted out so much cum it soaked clean through the mattress, and nearly every one of my girls rushed in to help themselves? Do you know where they are now? They could have left, they could have gone anywhere, some did, but most are still here. They held freedom in their hands and they used it to cum so hard it rocked their brains forever, just like me. 
 				t A few more screens flick on and off, showing various feeds of demonF's succubi.
@@ -340,19 +356,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t You leave, eager to put this hellish place behind you.
 				demon Nothing ever changes, not here, not anywhere. Dump those fanciful notions of love into a tissue tonight and I'll be here waiting when you come back~!
 			`);
+			setTrust("demon", 106);
 			writeFunction("changeLocation(data.player.location)", "Finish");
-			break;
-		}
-		case "postRejectionQuo": {
-			writeHTML(`
-				black Oh, welcome back! The master told me to be expecting you.
-				...
-				t A short elevator ride later you're on the top floor. The black haired succubus waves you off as you leave, looking very relaxed and content as you go.
-				t You push open the door to demonF's room, it's the usual mess...
-				demon Mmm, welcome back. Here to abuse this little slab of fuckmeat on the town, or have you... Reconsidered?
-			`);
-			writeFunction("writeEncounter('')", "");
-			writeFunction("writeEncounter('')", "");
 			break;
 		}
 		case "accept": {
@@ -390,7 +395,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeHTML(`
 				t A tempest of emotion and sensation are halted as you jolt upright. The room you're in... One of demonF's hotel rooms...
 				t Confusion. It's all you can manage. It's like there's a sound all around you, and you can hear it seperately from all others. Like you've become aware of a new spectrum of color, and everything is bathed in it.
-				t But soon enough, you repress yhat confusion.
+				t But soon enough, you repress that confusion.
 				black How lovely, you're awake~! 
 				t The receptionist, 'Stupid Bitch', seems happy to see you.
 				black Welcome to your new world, *master. I see you're acclimating well.
@@ -401,9 +406,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 				player Even-
 				black Yes, including succubusF. While your new form isn't even close to ready for something as extreme as sex, demonF made absolutely sure that through recordings you'd be kept aware of what happened during your transformation.
 				t The room is spinning. How much could have happened? If demonF was in control...
-				black Ah, feel free to review. He said you might react in such a way, perhaps this will give you closure?<br>And, if it helps... When he stepped down, the rest of us greatly enjoyed venting our frustrations against him, and we're all eager to impress you.
+				black Ah, feel free to review. He said you might react in such a way, perhaps this will give you closure?<br>And, if it helps... When he stepped down, the rest of us greatly enjoyed venting our frustrations, and we're all eager to impress you.
 			`);
 			addFlag("demon", "hotelBad");
+			unencounter("demon");
 			writeFunction("changeLocation('hotel')", "Begin searching");
 			break;
 		}
@@ -423,7 +429,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t Stupid Bitch leans forwards to whisper something into succubusF's ear. It takes a while for him to comprehend it, but...
 				im images/succubus/047.jpg 
 				succubus Aha, ahaha~!
-				black I let him know you'd be using him later, once you've acclimated a little more. Now then, let's get back. succubusF will probably want to finish the rest of his reward time for good behavior.
+				black I said you'd be using his ass later, once you've acclimated a little more. Now then, let's get back. succubusF will probably want to finish the rest of his reward time for good behavior.
 			`);
 			removeFlag("demon", "bad");
 			removeFlag("demon", "black");
