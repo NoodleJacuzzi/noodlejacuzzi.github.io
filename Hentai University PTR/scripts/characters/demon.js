@@ -447,7 +447,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t But for now, this is...
 			`);
 			writeFunction("loadEncounter('system', 'credits')", "The End");
-			addFlag("succubus", "complete");
+			addFlag("demon", "complete");
 			break;
 		}
 		default: {
