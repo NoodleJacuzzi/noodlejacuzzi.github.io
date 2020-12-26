@@ -33,6 +33,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 		define demon = sp demon;
 		define black = sp Black Haired Succubus; im images/demon/dark.jpg;
 		define succubus = sp succubus; im demon.jpg;
+		define tomgirl = sp tomgirl;
+		define nagatoro = sp nagatoro;
 	`);
 	switch (name) {
 		case "intro1": {

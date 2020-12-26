@@ -30,6 +30,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 	writeHTML(`
 		define player = sp player;
 		define tomgirl = sp tomgirl;
+		define succubus = sp succubus;
 	`);
 	switch (name) {
 		case "tomgirl1": {

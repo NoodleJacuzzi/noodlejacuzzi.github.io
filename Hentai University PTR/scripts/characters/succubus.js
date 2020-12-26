@@ -31,6 +31,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 	writeHTML(`
 		define player = sp player;
 		define succubus = sp succubus;
+		define tomgirl = sp tomgirl;
+		define nagatoro = sp nagatoro;
 	`);
 	switch (name) {
 		case "introOffer": {
