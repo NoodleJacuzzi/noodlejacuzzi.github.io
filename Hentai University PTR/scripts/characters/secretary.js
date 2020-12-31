@@ -19,8 +19,8 @@ var newItems = [//Lists the shop items unique to this character
 ];
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
-	{index: "test", name: "", location: 'schoolEntrance', time: "Evening", itemReq: "", trustMin: 200, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
-]
+	{index: "secretaryQuo", name: "secretary is here", requirements: "?location northHallway; ?flag secretary help;",},
+];
 
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';

@@ -20,9 +20,13 @@ var newItems = [//Lists the shop items unique to this character
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "introduction1", name: "Principal principal's Office is here. You should introduce yourself.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "caseSelect", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?trustMin principal 41; !counseling 5; !flag principal council;",},
+	{index: "caseSelect", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?trustMin principal 41; !counseling 5; !flag principal council; !flag president shadowCouncil;",},
 	{index: "councilStart", name: "principal wanted to see you", requirements: "?location northHallway; ?trustMin principal 41; ?counseling 5; !flag principal council;",},
-	{index: "caseSelect", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?trustMin principal 41; ?counseling 5; ?flag principal council;",},
+	{index: "secretaryTrouble", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?flag president shadowCouncil; !flag secretary trouble;",},
+	{index: "councilQuo", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?flag president shadowCouncil; ?flag secretary trouble;",},
+	{index: "street", name: "You spot principal on the street.", requirements: "?location street; !flag principal street; ?trustMin principal 41;",},
+	{index: "sauna", name: "You spot principal walking into a building.", requirements: "?location shoppingDistrict; !flag principal sauna; ?trustMin principal 41;",},
+	{index: "presidentSubtle", name: "principal is staring at president's painting.", requirements: "?location schoolEntrance; ?trustMin president 81; ?trustMin principal 41; !flag principal subtlePresident;",},
 	{index: "principalBeach1", name: "principal is here with some other women.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 41, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
 ];
 

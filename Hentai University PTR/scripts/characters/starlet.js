@@ -1156,6 +1156,11 @@ function reshootFilm3() {
 	writeEncounter("starletMask1");
 }
 
+function nameFilm3() {
+	data.player.studio.filmXName = document.getElementById('nameSubmission').value;
+	writeEncounter("principalName");
+}
+
 var eventArray = [
 	{index: "starlet1a", name: "Newly Awoken Buttslut"},
 	{index: "starlet1b", name: "Masochistic Painal Virgin"},
