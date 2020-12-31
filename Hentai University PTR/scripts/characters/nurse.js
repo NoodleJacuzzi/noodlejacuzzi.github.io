@@ -545,6 +545,33 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
+		case "subtleChoice": {
+			writeHTML(`
+				player So, about your suggestion. When we were talking about the gaslighting idea...
+				nurse Ah, right. Well, I know you don't tend to loan us around, we are all yours here, of course. It just seemed like you'd need a truly shocking event to break down principalF's will.
+				player scarfF suggested a big orgy.
+				nurse Right. Now, that means a lot of... Well, penises. And you only have one.
+				player Yeah?
+				nurse Well, what if instead of men being the ones who were... You know... If it were the women? Who had the equipment we need?
+				player And you have a potion-
+				nurse I absolutely have the potion for that, yes. Many of them, in fact. If you just give the word I can have this school an equally balanced between sex-ers and sex-ees. Ww'll just have the male students stay home that day.
+				player I'm not sure...
+				nurse Well, it does increase musculature and folicle growth in some cases. I know it's still others doing the pitching, as they say, I just thought I'd offer my suggestion.
+			`);
+			writeFunction("writeEncounter('subtleAgree')", "Go ahead");
+			writeFunction("writeEncounter('cancel')", "No thanks");
+			break;
+		}
+		case "subtleAgree": {
+			writeHTML(`
+				player Alright. If I ever manage to get principalF to the verge of breaking, I'll call you with intructions.
+				nurse Wonderful! I'll begin mass production immediately. We already have enough, but more could never hurt. Now, I should be able to use the sprinklers to... Hm...
+				t She's off in her own little world. It won't make much of a difference, but if the big day comes, it'll be a dickgirl-on-girl fuckfest at the school, rather than a male-female orgy. That counts for something, probably.
+			`);
+			addFlag("nurse", "subtle");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;

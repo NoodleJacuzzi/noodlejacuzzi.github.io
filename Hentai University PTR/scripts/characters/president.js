@@ -585,6 +585,38 @@ function writeEncounter(name) { //Plays the actual encounter.
 			changeLocation(data.player.location);
 			break;
 		}
+		case "blackmailStart": {
+			writeHTML(`
+				player So, blackmail, where do we start?
+				president To be honest, I was hoping you'd have some ideas. Pardon the rudeness, but I assumed you'd have experience with this sort of affair.
+				player Rudeness not excused, I'll be punishing you later.<br>Still, we need a solution.
+				president Before my... Enlightenment, I had always respected this institution as being transparent, perfect even. This is one of the most prestigious locations in the country.
+				player Huh, then how do we have so many delinquents?<br>I guess there's only one option available. If there's a week link, it must be secretaryF.
+				president My aunt has a knack for being knackless. If you find a lead I'll be by your side to explore it. Until then I'll do some investigating of my own. Good luck, *sir.
+			`);
+			addFlag("president", "blackmail");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "blackmailInspect": {
+			writeHTML(`
+				player Alright, I've got access to everything, from building permits to budgetary reports on soap dispensers. Let's see what we can find.
+				...
+				t After a few hours of combing through records for any kind of pattern, nothing pops out.
+				president Let's see... Taxes in this year were... Oh, but she made a charitable donation...<br>These books are as clean as her desk, playerF.
+				player There must be something. Nobody gets this devoted to a cause like this school unless they've got some underlying motivation.
+				president Perhaps she's as magnanimous as her personality suggests?<br>Oh, hmm...
+				player Find something?
+				president Maybe... Perhaps not. It's just that the school's policy on requiring multiple photographs to be submitted along with your request for admission... She's the one who implemented it.
+				t presidentF starts going through a large trove of rejected and accepted  letters. The number of rejections is staggering, especially considering some potential students are from very wealthy families, are the children of previous graduates, or even have extremely respectable academic backgrounds.
+				t Meanwhile, accepted students, like kuroF kuroL, presidentF presidentL, even male students like reeseF reeseL. While their academic scores vary heavily, they all have the gift of being... Attractive. Sorting through the letters is pretty much just playing a game of hot vs not.
+				president It's entirely situational. We don't know the exact reason for why principalF chooses the way she does, but these decisions are explicitly hers, and hers alone.<br>It's a good lead, but as to how we go about following it...
+				player Seems like we should pay secretaryF another visit.
+			`);
+			addFlag("president", "inspect");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;

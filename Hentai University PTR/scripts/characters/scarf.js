@@ -484,6 +484,20 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
+		case "subtleStart": {
+			writeHTML(`
+				player So, I like the subtle gaslighting idea, where do we start?
+				scarf With secretaryF, of course. A light but if hypnosis should be enough, we just need for her not to be a voice of reason. Then, the rest is in everyone else's hands.
+				player Not me?
+				scarf No. If you're involved with every event she'd become suspicious. We need her to turn to you, not suspect you. <br>Of course, with all the friends you've made along the way, you shouldn't have too much trouble pointing her in the direction of somthing untoward.
+				player I see. secretaryF, then bring principalF around the school.
+				scarf And then something grand to have her running into your arms. Personally I'd have the school's males under hypnosis, and then have them and your loyal girls all perform a grand show.
+				player Hrm... Sharing isn't my strong point...
+				scarf Well, I think nurseF had some notes on that. Go speak to her if you really care about that sort of thing.<br>In any case, best of luck~
+			`);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
 		default: {
 			writePhoneSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
