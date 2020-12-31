@@ -207,21 +207,20 @@ function writeEncounter(scene) {
 					specialEvent = "mission"; 
 				}
 			}
+			var nurseReady = false;
+			if (checkTrust("nurse") > 79 || checkTrust("nurse") == 3) {
+				nurseReady = true;
+			}
+			var ojouReady = false
+			if (checkTrust("ojou") > 79 || checkFlag("ojou", "incubus") == true) {
+				ojouReady = true;
+			}
 			if (
-				//scarf corruption
 				checkTrust("scarf") > 99 &&
-				//nurse corruption
-				checkTrust("nurse") > 79 ||
-				checkTrust("nurse") == 3 &&
-				//president corruption
+				nurseReady == true &&
 				checkTrust("president") > 99 &&
-				//mama corruption
-				checkTrust("mama") == 100 ||
-				checkTrust("mama") == 20 &&
-				//ojou corruption
-				checkFlag("ojou", "incubus") == true ||
-				checkTrust("ojou") > 69 &&
-				//instructor corruption
+				checkTrust("mama") > 19 &&
+				ojouReady == true &&
 				checkTrust("instructor") > 1
 			) {
 				if (checkFlag('president', 'shadowCouncil') == false) {
