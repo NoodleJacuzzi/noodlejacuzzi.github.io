@@ -23,7 +23,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "caseSelect", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?trustMin principal 41; !counseling 5; !flag principal council; ?flag secretary trouble;",},
 	{index: "councilStart", name: "principal wanted to see you", requirements: "?location northHallway; ?trustMin principal 41; ?counseling 5; !flag principal council;",},
 	{index: "caseSelect", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?trustMin principal 41; ?flag principal council; ?flag secretary trouble;",},
-	{index: "secretaryTrouble", name: "Enter Principal principal's Office.", requirements: "?location northHallway; !flag secretary trouble;",},
+	{index: "secretaryTrouble", name: "Enter Principal principal's Office.", requirements: "?location northHallway; !flag secretary trouble; ?trustMin principal 41;",},
 	{index: "street", name: "You spot principal on the street.", requirements: "?location street; !flag principal street; ?trustMin principal 41;",},
 	{index: "sauna", name: "You spot principal walking into a building.", requirements: "?location shoppingDistrict; !flag principal sauna; ?trustMin principal 41;",},
 	{index: "subtlePresident", name: "principal is staring at president's painting here.", requirements: "?location schoolEntrance; ?trustMin president 81; ?trustMin principal 41; !flag principal subtlePresident;",},
