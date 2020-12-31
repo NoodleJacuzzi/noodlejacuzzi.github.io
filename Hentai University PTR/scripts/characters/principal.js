@@ -38,6 +38,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 		define principal = sp principal;
 		define secretary = sp secretary;
 		define player = sp player;
+		define president = sp president;
+		define pinstripe = sp pinstripe;
+		define instructor = sp instructor;
+		define scarf = sp scarf;
+		define ojou = sp ojou;
+		define nurse = sp nurse;
 	`);
 	switch (name) {
 		case "cancel": {
@@ -479,7 +485,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				}
 				//blackmail confrontation
 				if (checkFlag("secretary", "blackmail") == true) {
-					writeFunction("writeEncounter('subtleConfide')", "If you're absolutely confident, you could try blackmailing principalF");
+					writeFunction("writeEncounter('blackmailConfrontation')", "If you're absolutely confident, you could try blackmailing principalF");
 				}
 			}
 			writeFunction("changeLocation(data.player.location)", "Go back");
@@ -1236,6 +1242,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "subtleEpilogueFinale": {
+			updateMenu();
 			writeHTML(`
 				principal Almost there... Almost there...<br>But, what do I even expect to find? Why am I in such a hurry to get to... To...
 				im 093.jpg
@@ -1368,9 +1375,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 				...
 				im 069.jpg
 				t There's so much to do, there'll never be enough time. But you're the type to appreciate the journey <i>and</i> the destination.
-				t With her 
 				im 070.jpg
-				t While she's still in an almost-concious trance, you whisper the word that will dela her fate before giving her a good wake-up call.
+				t While she's still in an almost-concious trance, you whisper the words that will seal her fate before giving her a good wake-up call.
 				im 071.jpg
 				principal Haaah?!<br>Wh-what's going on?!
 				player Good morning!
@@ -1442,7 +1448,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				president You certainly know how to motivate a girl~<br>Speaking of, treasurerF has been quite well behaved lately. I should reward her myself...
 				im 009.jpg
 				principal Ooouh~! Cock~! Fuck me~!
-				president What else... instructorF' got a bevy of new exercise techniques she wanted to show off to the school, nurseF has a few new concotions and wanted to run some guinea pigs by you... scarfF wanted to thank you for 'reigniting her passions', whatever that means.
+				president What else... instructorF's got a bevy of new exercise techniques she wanted to show off to the school, nurseF has a few new concotions and wanted to run some guinea pigs by you... scarfF wanted to thank you for 'reigniting her passions', whatever that means.
 				im 010.jpg
 				principal Cumming~! Slutbunny principalF is cumming from her pussy!
 				president Haah~<br>You know, if you ever feel you need a variety, I'd <i>love</i> to handle her training myself some day~
