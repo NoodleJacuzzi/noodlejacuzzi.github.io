@@ -353,7 +353,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("coach", "", "So, *Master, what is it you wanted to... <i>talk</i> to me about here?")
 			writeFunction("loadEncounter('coach', 'coachfinaloffice1')", "You don't even wait for her to strip before you grab her tits.");
 			writeFunction("loadEncounter('coach', 'coachfinaloffice2')", "Bend over the desk, slut.");
-			writeFunction("loadEncounter('coach', 'coachfinaloffice3')", "You sit in your chair and pat your lab, as she strips down.");
+			writeFunction("loadEncounter('coach', 'coachfinaloffice3')", "You sit in your chair and pat your lap, as she strips down.");
 			writeFunction("changeLocation(data.player.location)", "Not today, you have other things to do.");
 			break;
 		}

@@ -833,7 +833,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "nagatoroCorrupted", requirements: "?trust nagatoro 666;"},
+	{index: "nagatoroCorrupted", requirements: "?trust nagatoro 104;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
@@ -841,7 +841,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "nagatoroReward": {
 			writePhoneImage("images/nagatoro/reward.jpg", "Art by Kinta no Mousou");
-			writePhoneSpeech("nagatoro", "", "You've finished all of nagatoroF's content for this version, what would you like to see next? I bet it's something lewd!");
+			writePhoneSpeech("nagatoro", "", "Not all characters have dedicated endings, nagatoroF is one of them. Still, you've completed nagatoroF as much as possible, however other characters intersect with him and the club. Continue with succubusF and tomgirlF to unlock more!");
 			break;
 		}
 		case "nagatoroCorrupted": {

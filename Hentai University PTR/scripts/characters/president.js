@@ -980,7 +980,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeHTML(`
 				t As you push your way through the bustling entrance, you can hear various students clamoring around you.
 				sp purple; Whoa, it's so realistic... But... What do you think?
-				sp starlet; It's incredible! You can really tell she's got a passion for the arts.
+				sp ribbon; It's incredible! You can really tell she's got a passion for the arts.
 				sp ojou; I think it's just that she's crazy...
 				t Even members of the faculty are discussing whatever's causing the commotion.
 				sp nurse; But is it really the sort of thing which should be in the school's entrance? Shouldn't it at least be kept in the art room?
@@ -1181,7 +1181,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "reward": {
 			writePhoneImage("images/president/reward.jpg", "Art by Oreteki18kin");
-			writePhoneSpeech("president", "", "You've finished all of presidentF's content for this version, more is on the way!");
+			writePhoneSpeech("president", "", "Not all characters have dedicated endings, presidentF is one of them. Still, you've completed presidentF as much as possible, she'll be a big help in corrupting the school!");
 			//Write the event's text here using writePhoneSpeech, writePhoneImage, and writePhoneChoices
 			break;
 		}

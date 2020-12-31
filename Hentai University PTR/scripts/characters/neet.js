@@ -624,6 +624,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "neetBEnding2": {
+			addFlag("neet", "complete");
 			writeHTML(`
 				neet So, what kind of training did you have in mind for today?
 				im 247.jpg
@@ -770,6 +771,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "neetEnding1": {
+			addFlag("neet", "complete");
 			writeSpeech("player", "", "Were you serious about what you said before? You're willing to let me hypnotize you, and we'll begin your training for real?");
 			writeText("She puffs up her chest, doing her best to look serious.");
 			writeSpeech("neet", "", "Absolutely.");
@@ -1195,8 +1197,6 @@ function writeEvent(name) { //Plays the actual event.
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
 	{index: "neetNotification", trust: 3,},
-	{index: "neetReward", trust: 100,},
-	{index: "neetReward", trust: 301,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event

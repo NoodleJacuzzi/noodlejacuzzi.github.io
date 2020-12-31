@@ -1004,6 +1004,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "hotelGoodEpilogue": {
+			addFlag("succubus", "complete");
 			writeHTML(`
 				define succubus = sp succubus; im demon.jpg;
 				define tomgirl = sp tomgirl;
@@ -1611,7 +1612,6 @@ function writeEvent(name) { //Plays the actual event.
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
 	{index: "succubusReminder", trust: 77,},
-	{index: "succubusNewReward", trust: 83,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event

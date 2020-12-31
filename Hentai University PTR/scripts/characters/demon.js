@@ -416,6 +416,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "hotelBadFinish": {
+			addFlag("demon", "complete");
 			writeHTML(`
 				black Where do you think you're going?
 				player I want to see... To-
@@ -769,7 +770,6 @@ function writeEvent(name) { //Plays the actual event.
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
 	//{index: "demonNewReward", trust: 102,},
-	{index: "demonReward", requirements: "?flag demon aqua; ?flag demon forest;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event

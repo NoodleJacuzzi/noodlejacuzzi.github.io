@@ -599,7 +599,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "scarfReward": {
 			writePhoneImage("images/scarf/reward.jpg", "Art by Enoshima Iki");
-			writePhoneSpeech("scarf", "", "You've finished all of scarfF's content for this version, great work!");
+			writePhoneSpeech("scarf", "", "Not all characters have dedicated endings, scarfF is one of them. Still, you've completed scarfF as much as possible, she'll be a big help in corrupting the school!");
 			break;
 		}
 		case "scarfChallenge": {

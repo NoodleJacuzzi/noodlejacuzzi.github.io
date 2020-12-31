@@ -285,7 +285,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "tomgirlnew3b": {
 			writeEvent('tomgirlnew3');
-			addFlag('tomgirl', 'endingA');
+			addFlag('tomgirl', 'complete');
 			writeFunction("loadEncounter('system', 'credits')", "The End");
 			break;
 		}
@@ -779,7 +779,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "tomgirlCorrupted", trust: 666,},
+	{index: "tomgirlComplete", requirements: "?flag tomgirl complete;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
@@ -792,6 +792,11 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 		case "tomgirlCorrupted": {
 			writePhoneImage("images/tomgirl/9-5.jpg", "Art by Nagi Ichi");
 			writePhoneSpeech("tomgirl", "", "You've primed tomgirlF for transformation into a succubus (male)! More content will come along soon!");
+			break;
+		}
+		case "tomgirlComplete": {
+			writePhoneImage("images/tomgirl/9-5.jpg", "Art by Nagi Ichi");
+			writePhoneSpeech("tomgirl", "", "You've finished tomgirlF's route, but while his tab will denote him being complete, keep in mind other characters intersect with him. Continue with succubusF and nagatoroF to unlock more!");
 			break;
 		}
 		default: {

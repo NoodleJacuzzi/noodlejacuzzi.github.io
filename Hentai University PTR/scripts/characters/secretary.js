@@ -333,15 +333,14 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "testPhone", trust: 200,},
+	{index: "reward", requirements: "?flag secretary manipulation; ?flag secretary blackmail;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
-		case "testPhone": {
-			//Write the event's text here using writePhoneSpeech, writePhoneImage for images, and writePhoneChoices
-			writePhoneSpeech("mom", "", "Hello. This is "+fName('mom')+".");
-			writePhoneChoices("Sleep well?", "Who?");
+		case "reward": {
+			writePhoneImage("images/secretary/reward.jpg", "Art by Oreteki18kin");
+			writePhoneSpeech("secretary", "", "Not all characters have dedicated endings, secretaryF is one of them. Still, you've completed as much of secretaryF as possible. Good work!");
 			break;
 		}
 		case "momPhone1A": {

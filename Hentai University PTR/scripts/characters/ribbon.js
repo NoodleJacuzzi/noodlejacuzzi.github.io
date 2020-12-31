@@ -401,7 +401,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "reward": {
 			writePhoneImage("images/ribbon/reward.jpg", "Art by Oreteki18kin");
-			writePhoneSpeech("ribbon", "", "You've finished all of ribbonF's content for this version, great work!");
+			writePhoneSpeech("ribbon", "", "Not all characters have dedicated endings, ribbonF is one of them. Still, you've completed as much of ribbonF as possible. Good work!");
 			break;
 		}
 		default: {

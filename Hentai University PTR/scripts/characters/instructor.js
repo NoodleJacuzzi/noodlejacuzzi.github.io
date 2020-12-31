@@ -192,6 +192,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "endingAccept": {
+			addFlag("instructor", "ending");
 			writeHTML(`
 				player You know... I think I'll take you up on that offer. I'll need some help convincing principalF to let me on permanently though.
 				i Hah! She and I are practically sisters at this point. And besides, once she sees our results she won't even think of turning you down!

@@ -21,8 +21,8 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "office", name: "pinstripe's office is here", requirements: "?trust pinstripe 1; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "potionQuo", name: "pinstripe's office is here", requirements: "?trustMin pinstripe 10; ?trustMax pinstripe 13; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "potionFinishedQuo", name: "pinstripe's office is here", requirements: "?trustMin pinstripe 80; ?trustMax pinstripe 81; ?location eastHallway;", altName: "", altImage: "",},
-	{index: "missing", name: "pinstripe's office is here", requirements: "?trust pinstripe 60; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "streetCatcall", name: "did you just see...?", requirements: "?trust pinstripe 60; ?location streets;", altName: "", altImage: "images/pinstripe/schoolgirl.jpg",},
+	{index: "missing", name: "pinstripe's office is here", requirements: "?trust pinstripe 60; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "dosedQuo", name: "You should be able to find pinstripe here", requirements: "?trust pinstripe 61; ?location streets;", altName: "", altImage: "images/pinstripe/schoolgirl.jpg",},
 ];
 
@@ -216,6 +216,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				case 13: {
 					writeEvent("pinstripeBroken");
 					setTrust("pinstripe", 80);
+					passTime();
 					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
@@ -683,12 +684,12 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "reward1": {
 			writePhoneImage("images/pinstripe/reward1.jpg", "Art by Enoshima Iki");
-			writePhoneSpeech("pinstripe", "", "You've finished all of pinstripeF's content for this version, did you try blonding her again?");
+			writePhoneSpeech("pinstripe", "", "Not all characters have dedicated endings, pinstripeF is one of them. Still, you've completed as much of pinstripeF as possible on this route. Did you try blonding her again?");
 			break;
 		}
 		case "reward2": {
 			writePhoneImage("images/pinstripe/reward2.jpg", "Art by Enoshima Iki");
-			writePhoneSpeech("pinstripe", "", "You've finished all of pinstripeF's content for this version, did you try patience to get some extra scenes?");
+			writePhoneSpeech("pinstripe", "", "YNot all characters have dedicated endings, pinstripeF is one of them. Still, you've completed as much of pinstripeF as possible on this route. Did you try patience to get some extra scenes?");
 			break;
 		}
 		default: {

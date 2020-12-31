@@ -18,6 +18,7 @@ var logbookArray = [];
 var definitionArray = [];
 var listOfPrintedEncounters = [];
 var completeMarker = true;
+var reminderFontSize = 100;
 var data = {
 	player: {
 		name: "You",
@@ -36,7 +37,7 @@ var data = {
 		counseling: 0,
 		lastText: 100,
 		dayID: 1,
-		version: 10,
+		version: 11,
 		location: "",
 		pervert: false,
 		color: "#86b4dc",
@@ -1006,7 +1007,6 @@ function cullRequirements(string) {
 		string = string.replace(`!hypnosis `+check+`;`, ``);
 	}
 	while (string.includes("?hypnosis ") == true) {
-		console.error("!!!!!!!!!!!!!!TEST");
 		var check = string.split(`?hypnosis `).pop().split(`;`)[0];
 		string = string.replace(`?hypnosis `+check+`;`, ``);
 	}
@@ -1374,14 +1374,10 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 				}
 				var cssColor = data.story[z].color;
 				if (completeMarker == true) {
-					for (completei = 0; completei < characterFinishCheckmarks.length; completei++) {
-						if (characterFinishCheckmarks[completei].index == name) {
-							if (checkRequirements(characterFinishCheckmarks[completei].check) == true) {
-								cssColor = "#FFFFFF";
-								crown = "♔";
-								altName = crown + " " + data.story[z].fName + " " + data.story[z].lName + " " + crown;
-							}
-						}
+					if (data.story[z].textEvent.includes("reward") || data.story[z].textEvent.includes("Reward")) {
+						cssColor = "#FFFFFF";
+						crown = "♔";
+						altName = crown + " " + data.story[z].fName + " " + data.story[z].lName + " " + crown;
 					}
 					if (checkFlag(data.story[z].index, "complete") == true) {
 						cssColor = "#FFFFFF";
@@ -1394,7 +1390,7 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 				}
 			}
 		}
-		if (checkTrust(name) == 0 && data.player.location == "map") {
+		if (checkTrust(name) == 0 && data.player.location == "map" && checkFlag("mom", "megaEasy") == false) {
 			cancelTab = true;
 		}
 		if (data.story[tabIndex].trust == 0) {
@@ -1425,6 +1421,9 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 				tabTrust = "<span class='unkown'>Unknown";
 				break;
 			}
+		}
+		if (crown == "♔") {
+			tabTrust = "<span class='love'>Complete!</span>";
 		}
 		var checkForError = "";
 		if (altImage == undefined) {
@@ -2693,6 +2692,16 @@ function updateSave() {
 		var goof = {index: "ribbon", fName: "Ella", lName: "Bell", trust: 0, encountered: false, textEvent: "", met: false, color: "#8D528A", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false};
 		data.story.push(goof);
 	}
+	if (data.player.version == 10) {
+		console.log('version 10 detected, updating save');
+		data.player.version = 11;
+		for (x = 0; x < data.story.length; x++) {
+			if (data.story[x].textEvent.includes("reward") || data.story[x].textEvent.includes("Reward")) {
+				data.story[x].textEvent = "";
+			}
+		}
+		writeText("Updating an older save, you might get repeats of reward texts for some characters you've already completed.");
+	}
 	saveSlot(110);
 	//var goof = {index: "camboi", fName: "Charlie", lName: "Miller", trust: 0, encountered: false, textEvent: "", met: false, color: "#716559", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false,};
 }
@@ -2976,6 +2985,12 @@ function switchDesc(n) {
 				tabTrust = "Unknown";
 				break;
 			}
+		}
+		if (data.story[characterCounter].textEvent.includes("reward") || data.story[characterCounter].textEvent.includes("Reward")) {
+			tabTrust = "♔ <b>Complete</b> ♔";
+		}
+		if (checkFlag(data.story[characterCounter].index, "complete") == true) {
+			tabTrust = "♔ <b>Complete</b> ♔";
 		}
 		if (data.player.pervert != true) {
 			if (imagesDisabled != true) {
@@ -3396,6 +3411,24 @@ function diagnostic() {
 			else {
 				data.player.gps = false;
 				writeSpecial("GPS mode deactivated.");
+			}
+			break;
+		}
+		case "mega easy": {
+			if (checkFlag("mom", "megaEasy") != true) {
+				data.player.gps = true;
+				addFlag("mom", "megaEasy");
+				data.player.hypnosis = 3;
+				data.player.hacking = 3;
+				data.player.counseling = 5;
+				data.player.money += 1000;
+				updateMenu();
+				writeSpecial("Mega easy mode activated! NPC encounters will appear on the map, you will now start on the town map, stats have been adjusted, and you have a lot of money");
+			}
+			else {
+				data.player.gps = false;
+				removeFlag("mom", "megaEasy");
+				writeSpecial("Mega easy mode deactivated, GPS mode deactivated.");
 			}
 			break;
 		}

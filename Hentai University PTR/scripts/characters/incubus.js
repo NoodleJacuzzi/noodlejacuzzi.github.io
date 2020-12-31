@@ -187,6 +187,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 				}
 			}
 			//Generate nonlewd services, such as skipping character progression.
+			if (checkTrust('neet') > 99) {
+				sale("neetReset", 40, "images/neet/neet.jpg", "Chunky's Meal - neetF<br>Erases neetF's memories, allowing you to try something different with her.");
+			}
+			if (checkTrust('nurse') == 3) {
+				sale("neetReset", 100, "images/neet/neet.jpg", "Chunky's Meal - nurseF<br>Erases nurseF's memories, allowing you to retry and get nurseF on your side.");
+			}
 			if (checkTrust('mama') == 1) {
 				sale("incubusMama", 50, "images/mama/mama.jpg", "Mystic Perfume<br>Gives you a disguise to corrupt mamaF without needing to corrupt scarfF or nurseF.");
 			}
@@ -510,6 +516,32 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t mamaF's memories of you have been reset, you're now free to enjoy her however you please! 
 			`);
 			setTrust('mama', 2);
+			removeFlag("mama", "complete");
+			writeFunction("writeEncounter('cancel')", "Finish");
+			break;
+		}
+		case "nurseReset": {
+			writeHTML(`
+				t incubusF snaps her fingers and a nearby lockbox opens. Something small and white scurries out in a flash and flies at you, dead set on your right ear.
+				...
+				t Groggily, you wake up in a disoriented heap. You feel... Violated.
+				sp incubus; Yo. Chunky already found her and got her memories, you're fine to fuck about. Lemme know if you want him to eat anything else. Sit outside if you need to take a breather.
+				t nurseF's memories of you have been reset, you're now free to enjoy her however you please! 
+			`);
+			setTrust('nurse', 2);
+			writeFunction("writeEncounter('cancel')", "Finish");
+			break;
+		}
+		case "neetReset": {
+			writeHTML(`
+				t incubusF snaps her fingers and a nearby lockbox opens. Something small and white scurries out in a flash and flies at you, dead set on your right ear.
+				...
+				t Groggily, you wake up in a disoriented heap. You feel... Violated.
+				sp incubus; Yo. Chunky already found her and got some of her memories, you're fine to fuck about. Lemme know if you want him to eat anything else. Sit outside if you need to take a breather.
+				t neetF's memories of you have been reset, you're now free to enjoy her however you please! 
+			`);
+			setTrust('neet', 99);
+			removeFlag("neet", "complete");
 			writeFunction("writeEncounter('cancel')", "Finish");
 			break;
 		}
@@ -538,6 +570,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t instructorF's memories of you have been reset, you're now free to enjoy her however you please! Feel free to hire incubusF's services, or find another helper to take down the team with.
 			`);
 			setTrust('mama', 2);
+			removeFlag("instructor", "complete");
 			writeFunction("writeEncounter('cancel')", "Finish");
 			break;
 		}
@@ -751,7 +784,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "reward": {
 			writePhoneImage("images/incubus/reward.jpg", "Art by Gujira");
-			writePhoneSpeech("incubus", "", "You've finished all of incubusF's content for this version, how would you like it to end?");
+			writePhoneSpeech("incubus", "", "Not all characters have dedicated endings, incubusF is one of them. Still, you've completed as much of incubusF as possible. Thanks for the gacha funds~");
 			break;
 		}
 		default: {

@@ -1808,6 +1808,7 @@ function writeEvent(name) { //Plays the actual event.
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
 	{index: "council", requirements: "?counseling 5; !flag principal council;"},
+	{index: "reward", requirements: "?flag principal endingBlackmail; ?flag principal endingSubtle; ?flag principal endingPorno;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
@@ -1815,6 +1816,11 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 		case "council": {
 			//Write the event's text here using writePhoneSpeech, writePhoneImage for images, and writePhoneChoices
 			writePhoneSpeech("principal", "", "If you aren't busy, I'd like to see you in my office later today. There's a matter coming up you could use a briefing on.");
+			break;
+		}
+		case "reward": {
+			writePhoneImage("images/president/reward.jpg", "Art by Oreteki18kin");
+			writePhoneSpeech("president", "", "Congratulations, you've gotten all three of principalF's endings, and beaten Hentai University! I hope you enjoyed!");
 			break;
 		}
 		default: {

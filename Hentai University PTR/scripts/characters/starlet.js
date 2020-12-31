@@ -234,6 +234,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			setTrust('starlet', 1);
 			updateMenu();
 			writeSpecial("Thanks to her positivity and future energy, starletF has cause your public image to improve! Your counseling skill and Victoria's trust in you has gone up!");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "studioIntro": {
@@ -556,6 +557,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "starletEnding1": {
+			addFlag("starlet", "complete");
+			addFlag("pornstar", "complete");
 			writeSpeech("player", "", "Yes. Yes I will. We can even shoot a marriage scene if you'd like.");
 			writeText("She gives you a big smile, tears of joy in her eyes, as she snickers.");
 			writeSpeech("starlet", "", "You... *sniff*<br>You dummy! Marriage scenes are super unpopular! Don't worry though, me and mom are gonna have a lot of time to teach you everything you need to know.");
