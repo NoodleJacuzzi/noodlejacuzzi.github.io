@@ -424,10 +424,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 					if (checkFlag("starlet", "principal") == true) {
 						if (data.player.studio.filmXFetish1 == true) {
 							if (data.player.studio.filmXFetish2 == true) {
-								writeFunction("writeEncounter('streetNoWater')", "Use CSM and film "+data.player.studio.filmXName);
+								writeFunction("writeEncounter('streetWater')", "Use CSM and film "+data.player.studio.filmXName);
 							}
 							else {
-								writeFunction("writeEncounter('streetWater')", "Use CSM and film "+data.player.studio.filmXName);
+								writeFunction("writeEncounter('streetNoWater')", "Use CSM and film "+data.player.studio.filmXName);
 							}
 						}
 						else {
@@ -443,31 +443,39 @@ function writeEncounter(name) { //Plays the actual encounter.
 					subtleCounter += 1;
 				}
 				if (checkFlag("secretary", "hypnosis") == true) {
-					//subtle instructor
-					if (checkFlag("principal", "subtleInstructor") != true;) {
-						writeFunction("writeEncounter('subtleInstructor')", "Bring principalF to instructorF");
+					if (data.player.counseling > 3) {
+						//subtle instructor
+						if (checkFlag("principal", "subtleInstructor") != true) {
+							writeFunction("writeEncounter('subtleInstructor')", "Bring principalF to instructorF");
+						}
+						else {
+							subtleCounter += 1;
+						}
+						//subtle scarf
+						if (checkFlag("principal", "subtleScarf") != true) {
+							writeFunction("writeEncounter('subtleScarf')", "Bring scarfF to principalF");
+						}
+						else {
+							subtleCounter += 1;
+						}
+						//subtle starlet
+						if (checkFlag("principal", "subtleStarlet") != true) {
+							writeFunction("writeEncounter('subtleStarlet')", "Subtly direct principalF to starletF's debut");
+						}
+						else {
+							subtleCounter += 1;
+						}
+						//subtle confidence
+						if (subtleCounter > 2) {
+							writeFunction("writeEncounter('subtleConfide')", "principalF seems unnerved. It seems like your efforts are about to pay off!");
+						}
 					}
 					else {
-						subtleCounter += 1;
+						writeText("principalF doesn't trust you enough for you to gaslight her!");
 					}
-					//subtle scarf
-					if (checkFlag("principal", "subtleScarf") != true;) {
-						writeFunction("writeEncounter('subtleScarf')", "Bring scarfF to principalF");
-					}
-					else {
-						subtleCounter += 1;
-					}
-					//subtle starlet
-					if (checkFlag("principal", "subtleStarlet") != true;) {
-						writeFunction("writeEncounter('subtleStarlet')", "Subtly direct principalF to starletF's debut");
-					}
-					else {
-						subtleCounter += 1;
-					}
-					//subtle confidence
-					if (subtleCounter > 2) {
-						writeFunction("writeEncounter('subtleConfide')", "principalF seems unnerved. It seems like your efforts are about to pay off!");
-					}
+				}
+				else {
+					writeText("You'll need to hypnotize secretaryF if you want to gaslight principalF. You can't her being the voice of reason.");
 				}
 				//blackmail confrontation
 				if (checkFlag("secretary", "blackmail") == true) {
@@ -926,7 +934,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "sauna": {
 			writeHTML(`
-				Folowing pricipalF and secretaryF inside may not be the most honest move, but social people do this all the time, right? Catching up with friends, they call it.
+				t Following pricipalF and secretaryF inside may not be the most honest move, but social people do this all the time, right? Catching up with friends, they call it.
 				t In any case...
 				im 109.jpg
 				principal playerF! My, you certainly get around. Already found this lovely place, so soon after moving into town?
@@ -1008,7 +1016,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				define instructor = sp instructor;
 				player Are you alright? You look a little off today. And I mean that in the most professional way I can, of course.
 				principal Actually... I suppose I have been having this bizarre feelings around the school. Like I hear voices from classrooms after everyone has left. Strange things like that.
-				player. I think some fresh air could do you good.
+				player I think some fresh air could do you good.
 				...
 				t The two of you walk towards the gym. You meant to subtly nudge her here, but...
 				principal You simply must see them. Our star athletes, coached by an actual olympian! I'm certain we'l have a flourishing set of sporting scholarships flowing in. I've constructed a track and field, a pool, even a judo arena, and-
@@ -1088,18 +1096,17 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "subtleScarf": {
 			writeHTML(`
 				define scarf = sp scarf;
-				Using her dream world ability, scarf makes it seem like they're on a beach. Though she seems unpreturbed, small glances and a slight blush suggest she's seeing the same things as you. Afterwards she freaks out.
 				player I think scarfF was willing to talk to you, you know, about the desk thing?
-				president Eh? Really? You managed to do that? She doesn't even show up to some of her own staff review sessions! This is fantastic. Please, if you could get her, I'd appreciate it.
+				principal Eh? Really? You managed to do that? She doesn't even show up to some of her own staff review sessions! This is fantastic. Please, if you could get her, I'd appreciate it.
 				...
 				scarf principalF.
 				principal Oh, this is wonderful. Thank you for-
 				scarf Is it hot in here?
 				principal Um, I don't think the heater is even on, but I can-
-				im casinoStart2.jpg
+				im images/scarf/casinoStart2.jpg
 				scarf No need.
 				principal W-wait, what are you-?!
-				im scarfBeach1.jpg
+				im images/scarf/scarfBeach1.jpg
 				scarf You were saying, principalF? I believe it was something about my desk habits?
 				principal I... I, I, I...<br>Please keep it cleaner. Thank you! Good meeting! Well, this has been lovely, but-
 				t As she stands up to wave scarfF out, the environment around her is undeniably not her office. She's at the beach. scarfF is wearing a bikini. And she...
@@ -1110,7 +1117,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				scarf You're acting odd today. I suppose I'll see you around then, at the council meeting? Maybe?
 				principal ...
 				t scarfF leaves, principalF is starstruck, and can't form the words she's looking for.
-				t Taking your cue, you leave. proncipalF's trust in you is clearly shaken, but her trust in reality probably is too. So long as she still believes in you when all is said and done, your plan should still work.
+				t Taking your cue, you leave. principalF's trust in you is clearly shaken, but her trust in reality probably is too. So long as she still believes in you when all is said and done, your plan should still work.
 			`);
 			passTime();
 			data.player.counseling -= 1;
@@ -1120,7 +1127,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "subtleConfide": {
 			writeHTML(`
-				Obviously at the edge of her sanity, she confides she's been hallucinating to you. You offer a hypnosis treatment, setting up the foundation for if she were to crack.
 				player ... You alright?
 				principal I'm... Fine. Everything's normal.
 				t She does not look it. She keeps touching things, as if to confirm they're real. Of course she's quick with the sanitizer afterwards.
@@ -1162,6 +1168,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "subtleEpilogueStart": {
 			writeHTML(`
+				define blonde = sp Blonde; im images/principal/blondeP.jpg;
 				t What started as an ordinary morning for principalF quickly takes a dive into the unusual.
 				im 039.jpg
 				blonde Fuck, ah, good morning sis! One of your students came by earlier, she-

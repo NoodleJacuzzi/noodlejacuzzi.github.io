@@ -26,6 +26,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "nudePainting1", name: "There's a commotion in the hall", requirements: "?trust president 81;?location schoolEntrance;", altName: "", altImage: "",},
 	{index: "presidentArtRoom1", name: "Someone is in the art room", requirements: "?trust president 82;?location westHallway;", altName: "", altImage: "",},
 	{index: "stage3Quo", name: "The Student Council room is here", requirements: "?trust president 100;?location northHallway;", altName: "", altImage: "",},
+	{index: "stage4Quo", name: "The Student Council room is here", requirements: "?trust president 101;?location northHallway;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
