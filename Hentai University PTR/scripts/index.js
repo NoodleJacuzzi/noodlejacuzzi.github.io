@@ -1006,6 +1006,7 @@ function cullRequirements(string) {
 		string = string.replace(`!hypnosis `+check+`;`, ``);
 	}
 	while (string.includes("?hypnosis ") == true) {
+		console.error("!!!!!!!!!!!!!!TEST");
 		var check = string.split(`?hypnosis `).pop().split(`;`)[0];
 		string = string.replace(`?hypnosis `+check+`;`, ``);
 	}

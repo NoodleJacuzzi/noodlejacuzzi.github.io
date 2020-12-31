@@ -31,7 +31,17 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+	writeHTML(`
+		define player = sp player;
+		define president = sp president;
+		define treasurer = sp treasurer;
+	`);
 	switch (name) {
+		case "cancel": {
+			unencounter(character.index);
+			changeLocation(data.player.location);
+			break;
+		}
 		case "intro": {
 			writeHTML(`
 				im images/treasurer/profile.jpg
@@ -537,6 +547,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 			}
 			writeFunction("writeEncounter('presidentQuickie')", "In the mood for a quickie?");
 			writeFunction("writeEncounter('presidentAnal')", "In the mood for something different?");
+			if (checkFlag("president", "shadowCouncil") == true && checkFlag("president", "blackmail") != true) {
+				writeFunction("writeEncounter('blackmailStart')", "What's the strategy for principalF?");
+			}
+			if (checkFlag("president", "blackmail") == true && checkFlag("president", "inspect") != true && checkFlag("secretary", "hacking") == true) {
+				writeFunction("writeEncounter('blackmailInspect')", "Lets look through the data I've taken");
+			}
 			writeFunction("writeEncounter('cancel')", "Go back");
 			break;
 		}
@@ -615,6 +631,243 @@ function writeEncounter(name) { //Plays the actual encounter.
 			`);
 			addFlag("president", "inspect");
 			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "shadowCouncilA": {
+			writeHTML(`
+				define player = sp player;
+				define secretary = sp secretary;
+				t You wake up a little earlier than normal to a buzzing phone.
+				secretary Hello! The PTSA meeting should be coming up soon. Some of the members are acting weird... Weirder than normal in some cases.<br>I meant to call sooner, I'm really sorry! The actual time will be, uh... Oh no! S-sorry, I'll need to call you back. That time's no good. Gotta...<br>Oh, another call! I'll have to put you on-
+				t *click*
+				t It seems like secretaryF meant to schedule the meeting soon, but a snafu is giving you a little more leeway.
+				t Every member you know of is already on your side. The time has come to put your plan into motion.
+				t ... That is, if you actually had a plan besides "hypnotize the council into supporting you and overpower principalF". Given that you haven't cracked principalF at all yet, that plan might not pan out...
+				t Well, you aren't alone at least. 
+				player <i>I'll call everyone and set up a meeting. The student council room should work for my purposes.</i>
+			`);
+			addFlag("president", "shadowCouncil");
+			writeFunction("writeEncounter('shadowCouncilB')", "Head to the school");
+			break;
+		}
+		case "shadowCouncilB": {
+			var ojouStatus = "";
+			if (checkFlag("ojou", "incubus") == true) {
+				ojouStatus = "absent";
+			}
+			if (checkTrust("ojou") > 79) {
+				ojouStatus = "corrupt";
+			}
+			if (ojouStatus == "corrupt") {
+				addFlag("ojou", "corrupt");
+			}
+			else {
+				addFlag("ojou", "absent");
+			}
+			if (checkTrust("nurse") == 3) {
+				addFlag("nurse", "absent");
+			}
+			if (checkTrust("nurse") > 79) {
+				addFlag("nurse", "corrupt");
+			}
+			if (checkTrust("pinstripe") == 80) {
+				addFlag("pinstripe", "corrupt");
+			}
+			if (checkTrust("pinstripe") == 60) {
+				addFlag("pinstripe", "dosed");
+			}
+			if (checkTrust("mama") == 100) {
+				addFlag("mama", "son");
+			}
+			if (checkTrust("mama") == 20) {
+				addFlag("mama", "bull");
+			}
+			writeHTML(`
+				define treasurer = sp treasurer;
+				define president = sp president; im presidentP.jpg;
+				define scarf = sp scarf;
+				define instructor = sp instructor;
+				define nurse = sp nurse; ?flag nurse corrupt;
+				define pinstripe = sp pinstripe; ?flag pinstripe corrupt;
+				define ojou = sp ojou; ?flag ojou corrupt;
+				define mama = sp mama;
+				t At the door is a blushing secretaryF, seemingly standing guard.
+				treasurer ...
+			`);
+			if (checkFlag("ojou", "corrupt") == true) {
+				//ojou intro
+				writeHTML(`
+					t She's pretending not to notice you. Through the door you can hear an argument, and as you open the door into the student council room, you're greeted by...
+					im images/president/profileP.jpg
+					president playerF! I'm glad you're here. 
+					ojou For God's sake, put some clothes on! You embarrass the whole school!
+					president You're the only one embarassing yourself here. This is to figure out how to topple principalF, logic says playerF already has everyone who will be in attendance in *his control.
+					ojou And how does that equate to being nude?!
+				`);
+			}
+			else {
+				//no ojou
+				writeHTML(`
+					t She's pretending not to notice you. As you open the door into the student council room, you're greeted by...
+					im images/president/profileP.jpg
+					president playerF! I'm glad you're here. 
+					player ... You're naked again.
+					president Of course, I do my best thinking like this. This is to figure out how to topple principalF, logic says you already have everyone who will be in attendance under your control.
+				`);
+			}
+			//scarf intro
+			writeHTML(`
+				scarf ... Am I interrupting something?
+				t The ever mysterious scarfF files in behind you. You catch a glimpse of secretaryF hurridley closing the door.
+			`);
+			if (checkFlag("nurse", "corrupt") == true) {
+				//nurse intro
+				if (checkFlag("pinstripe", "corrupt") == true) {
+					//pinstripe present
+					writeHTML(`
+						t Only for it to quickly open again as pinstripeF follows in, followed closely by an inquisitive nurseF.
+						pinstripe Please, stop with the questions, thinking about that day makes my head hurt. I don't-<br>Good lord, presidentF?!
+						nurse I understand, that actually does fall in line with the mixture's effects.<br>Ah, is this a nude meeting?
+					`);
+				}
+				else {
+					//pinstripe absent
+					writeHTML(`
+						t Only for it to quickly open again as nurseF files in, looking over a number of papers.
+						nurse So, this compound likely... Hrm, but why the schoolgirl persona?<br>Ah, playerF, I was looking over pinstripeF's changes. Would you describe her as "voraciously horny" or "full bimbo"?<br>Oh, hello presidentF. Should I strip as well?
+					`);
+				}
+			}
+			else {
+				//nurse absent
+				if (checkFlag("pinstripe", "corrupt") == true) {
+					//pinstripe present
+					writeHTML(`
+						t Only for it to quickly open again as pinstripeF follows in.
+						pinstripe Please, let this be over with soon, thinking too hard makes my head hurt. I don't-<br>Good lord, presidentF? Why are you nude?!
+					`);
+				}
+			}
+			//instructor intro
+			writeHTML(`
+				t The door opens and shuts again, secretaryF looking more exhausted every time you catch a glimpse of her.
+				instructor What's this about nudity? Taking my suggestion to heart?<br>Oh wow, looking good! I knew you had a fantastic pair of thighs the moment I saw your painting, presidentF.
+			`);
+			if (checkFlag("mama", "son") == true) {
+				//mana son intro
+				writeHTML(`
+					mama Oh my darling baby-
+					t And the final member of your little shadow council arrives.
+					mama Ara ara~<br>Are all these women your friends? I always knew if you just opened up a little more that you'd... Finally...<br>That's quite the body...
+				`);
+			}
+			else {
+				//mama bull intro
+				writeHTML(`
+					mama H-hello?
+					t And the final member of your little shadow council arrives.
+					mama scarfF? nurseF? You know-<br>O-oh my... I suppose I should've expected the rest of you to be interested in him as well...
+				`);
+			}
+			//Wrap-up
+			writeHTML(`
+				t She gulps as she takes in the sight of presidentF, confidently standing in her birthday suit.
+				president Alright people, we're here to plan. Let's start coming up with ideas, although playerF will be the final judge.
+				mama Um... Should I...?
+				president Nudity here is entirely voluntary.
+			`);
+			writeFunction("writeEncounter('shadowCouncilC')", "Continue");
+			break;
+		}
+		case "shadowCouncilC": {
+			writeHTML(`
+				define president = sp president; im presidentP.jpg;
+				player Alright, it's time to get serious. principalF is the catch of the day, but regular hypnosis isn't going to be enough. Ideas?
+				scarf Have you considered shattering her will first? You could simply overpower her.
+				instructor Hah! That woman has an iron will, trust me. Even if playerF had my stamina he wouldn't be able to take her down.
+				scarf Hmm. There must be some weakness we can exploit that would leave her vulnerable...<br>She's quite attached to this school, and it's image. Perhaps a classic bit of blackmail?
+				mama That seems... Very direct.
+				player Yeah, a direct attack might not phase her. Maybe something more subtle? Maybe we break her will down more slowly?
+				president I agree. Plus, unless we made some blackmail material ourselves, who's to say any even exists? She keeps her desk spotless, perhaps her books are spotless as well.
+				scarf So then we'll need another approach...
+				nurse I don't know anything about blackmail, or hypnosis. But if you need potions I have a few ideas.
+				president Like what? Memory erasure? Personality alteration?
+				nurse No, principalF isn't compatible with any of those. I was thinking we would all grow dicks and assault her together.
+				t A sudden quiet passes over the room.
+				nurse O-or not! Haha...
+				president It's up to you to ultimately decide, playerF. Any idea so far sound promising?
+			`);
+			writeFunction("writeEncounter('shadowCouncilBlackmail')", "Blackmail and will-shattering");
+			writeFunction("writeEncounter('shadowCouncilSubtle')", "A more subtle approach");
+			writeFunction("writeEncounter('shadowCouncilPorno')", "Making blackmail material ourselves");
+			break;
+		}
+		case "shadowCouncilBlackmail": {
+			writeHTML(`
+				define president = sp president; im presidentP.jpg;
+				player Let's assume she has a dirty secret. 
+				president We'd just need to find it and confront her with it. My aunt is in charge of filing and organizing paperwork.
+				scarf Plus, secretaryF's will is much weaker than principalF's. 
+				player Wait, secretaryF is your aunt?
+				mama I can certainly see the resemblance...
+				president Indeed. If you need help turning her over to our side, I've found that I'm becoming quite adept at... <i>Convincing</i> people.
+				scarf My, you think yourself talented? Let's give that a test sometime later.
+				president Gladly. But before that, playerF, let me know if you want my help with her after all.
+			`);
+			writeFunction("writeEncounter('shadowCouncilSubtle')", "A more subtle approach");
+			writeFunction("writeEncounter('shadowCouncilPorno')", "Making blackmail material ourselves");
+			writeFunction("writeEncounter('shadowCouncilConclusion')", "Wrap up the meeting");
+			break;
+		}
+		case "shadowCouncilSubtle": {
+			writeHTML(`
+				define president = sp president; im presidentP.jpg;
+				player What would a more subtle approach look like?
+				president Gaslighting. A cruel torture, but if it leads to a better school it'll all be worth it.
+				mama Ara ara~<br>You mean... Convincing her she's going crazy?
+				scarf It could work, so long as playerF has enough volunteers to play along.
+				nurse And of course our lovely counselor would be perfectly willing to help out our growingly erratic principal.
+				president But that won't actually push her over the edge. She needs to believe she's having a full-blown breakdown to rely on playerF's instructions. Perhaps a schoolwide orgy?
+				instructor None of us really have the equipment to put on a show like that. I suppose the schoolboys here wouldn't mind volunteering.
+				nurse That's only if playerF wants to share us. B-but you know, my suggestion still stands if we need extra performers...
+				player We can burn that bridge when we come to it. At least the subtle approach shows some promise.
+				scarf The first step would be secretaryF. We can't have her being a voice of reason. See me afterwards and I'll come up with a solution to her potential meddling.
+			`);
+			writeFunction("writeEncounter('shadowCouncilBlackmail')", "Blackmail and will-shattering");
+			writeFunction("writeEncounter('shadowCouncilPorno')", "Making blackmail material ourselves");
+			writeFunction("writeEncounter('shadowCouncilConclusion')", "Wrap up the meeting");
+			break;
+		}
+		case "shadowCouncilPorno": {
+			writeHTML(`
+				define president = sp president; im presidentP.jpg;
+				player So how would we actually go about making proper blackmail material?
+				scarf Common sense manipulation. instructorF can attest to its effectiveness.
+				instructor I can?
+				scarf But principalF has a stronger will than most. We need the shame to stick, but her personality tells me she'd rather go into denial. We need to create hard, undeniable proof.
+				president More than just an amateur video recording. Anybody here have the resources to make something professional like that?
+				t Silence.
+				player I'll look into it myself afterwards. 
+				scarf I'll plant the seed myself. If you can find a studio that'll help us we can create something that'll drag principalF down forever. Only for us to offer a helping hand back up.
+			`);
+			writeFunction("writeEncounter('shadowCouncilBlackmail')", "Blackmail and will-shattering");
+			writeFunction("writeEncounter('shadowCouncilSubtle')", "A more subtle approach");
+			writeFunction("writeEncounter('shadowCouncilConclusion')", "Wrap up the meeting");
+			break;
+		}
+		case "shadowCouncilConclusion": {
+			writeHTML(`
+				define president = sp president; im presidentP.jpg;
+				player Alright, I think I'm set.
+				president You don't need to decide right now, but you should hopefully choose soon. 
+				scarf Hmhm, indeed. See me later if the gaslighting idea strikes your fancy, or call me if you need someone to rewrite some common sense.
+				nurse I'll be in my office if you want to talk about my plan further.
+				instructor I'll head back to training.
+				mama Best of luck with... Whatever you have planned.
+				pinstripe I don't really have any plans, but if you need to relieve yourself to think clearly, then I'm available.
+				ojou Don't drag us down with you when it all comes crashing down.
+			`);
+			writeFunction("changeLocation('northHallway')", "Finish");
 			break;
 		}
 		default: {

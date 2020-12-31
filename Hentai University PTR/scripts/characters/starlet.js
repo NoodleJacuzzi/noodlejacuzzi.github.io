@@ -414,6 +414,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeFunction("writeEncounter('starletReshoot')", "Reshoot a finished porno");
 				}
 			}
+			if (checkFlag("", "") == true && checkFlag("", "") != true) {
+				writeText("The idea that came up during the shadow council meeting, of using common sense manipulation on principalF and making it stick... It's a longshot, but you could bring it up to starletF and pornstarF.");
+				writeFunction("writeEncounter('pornoStart')", "Talk about filming with principalF and principalL");
+			}
 			writeFunction("changeLocation(data.player.location)", "Leave early");
 			break;
 		}

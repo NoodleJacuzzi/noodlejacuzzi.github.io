@@ -346,6 +346,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust('instructor') < 80 && checkTrust('instructor') > 0 && checkFlag("scarf", "instructor") != true) {
 				writeFunction("writeEncounter('scarfInstructor')", "Ask for help with instructorF");
 			}
+			if (checkFlag("president", "shadowCouncil") == true) {
+				writeFunction("writeEncounter('subtleStart')", "Ask about her plan for principalF");
+			}
 			writeFunction("writeEncounter('casinoRepeat')", "Return to the dream casino");
 			writeFunction("writeEncounter('beachRepeat')", "Return to the dream beach");
 			writeFunction("changeLocation(data.player.location)", "Go back");
@@ -493,7 +496,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				player I see. secretaryF, then bring principalF around the school.
 				scarf And then something grand to have her running into your arms. Personally I'd have the school's males under hypnosis, and then have them and your loyal girls all perform a grand show.
 				player Hrm... Sharing isn't my strong point...
-				scarf Well, I think nurseF had some notes on that. Go speak to her if you really care about that sort of thing.<br>In any case, best of luck~
+				scarf Well, I think our school nurse might be able to help with that. Go speak to her if you really care about that sort of thing.<br>In any case, best of luck~
 			`);
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;

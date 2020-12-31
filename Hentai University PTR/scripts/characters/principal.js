@@ -20,13 +20,13 @@ var newItems = [//Lists the shop items unique to this character
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "introduction1", name: "Principal principal's Office is here. You should introduce yourself.", location: 'northHallway', time: "MorningEvening", itemReq: "", trustMin: 0, trustMax: 0, type: "tab", top: 0, left: 0, day: "both",},
-	{index: "caseSelect", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?trustMin principal 41; !counseling 5; !flag principal council; !flag president shadowCouncil;",},
+	{index: "caseSelect", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?trustMin principal 41; !counseling 5; !flag principal council; ?flag secretary trouble;",},
 	{index: "councilStart", name: "principal wanted to see you", requirements: "?location northHallway; ?trustMin principal 41; ?counseling 5; !flag principal council;",},
-	{index: "secretaryTrouble", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?flag president shadowCouncil; !flag secretary trouble;",},
-	{index: "councilQuo", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?flag president shadowCouncil; ?flag secretary trouble;",},
+	{index: "caseSelect", name: "Enter Principal principal's Office.", requirements: "?location northHallway; ?trustMin principal 41; ?flag principal council; ?flag secretary trouble;",},
+	{index: "secretaryTrouble", name: "Enter Principal principal's Office.", requirements: "?location northHallway; !flag secretary trouble;",},
 	{index: "street", name: "You spot principal on the street.", requirements: "?location street; !flag principal street; ?trustMin principal 41;",},
 	{index: "sauna", name: "You spot principal walking into a building.", requirements: "?location shoppingDistrict; !flag principal sauna; ?trustMin principal 41;",},
-	{index: "presidentSubtle", name: "principal is staring at president's painting.", requirements: "?location schoolEntrance; ?trustMin president 81; ?trustMin principal 41; !flag principal subtlePresident;",},
+	{index: "subtlePresident", name: "principal is staring at president's painting here.", requirements: "?location schoolEntrance; ?trustMin president 81; ?trustMin principal 41; !flag principal subtlePresident;",},
 	{index: "principalBeach1", name: "principal is here with some other women.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 41, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
@@ -34,7 +34,17 @@ function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	console.log('now running encounter '+name);
+	writeHTML(`
+		define principal = sp principal;
+		define secretary = sp secretary;
+		define player = sp player;
+	`);
 	switch (name) {
+		case "cancel": {
+			unencounter(character.index);
+			changeLocation(data.player.location);
+			break;
+		}
 		case "introduction1": {
 			writeText("The door to "+fName('principal')+"'s office is closed and her secretary is away from her desk. There's a little nameplate reading "+fName('secretary')+" "+lName('secretary')+". Otherwise, the desk is really messy.");
 			writeText("You consider knocking on the door, but quickly, someone rushes in past you and starts looking through the desk.");
@@ -161,6 +171,249 @@ function writeEncounter(name) { //Plays the actual encounter.
 						writeFunction("writeEncounter('nurseCaseEnd')", "Report on nurseF's case.");
 					}
 				}
+			}
+			if (checkFlag("principal", "council") == true) {
+				var presidentStatus = "";
+				if (checkTrust("president") > 0) {
+					presidentStatus = "met";
+				}
+				if (checkTrust("president") > 99) {
+					presidentStatus = "corrupt";
+				}
+				switch (presidentStatus) {
+					case "met": {
+						writeHTML(`
+							principal I've heard you and presidentF have already met. I do hope she comes around to you.<br>She's quite set on learning the results of your secondary investigation as soon as possible.
+						`);
+						break;
+					}
+					case "corrupt": {
+						writeHTML(`
+							principal I spoke with presidentF the other day, she wasn't asking about your investigation like she normally does. I'm glad she's warming up to you.
+							t presidentF has been corrupted.
+						`);
+						break;
+					}
+					default: {
+						writeHTML(`
+							principal Have you spoken with our student council yet? They meet in the room just outside this office, although only two are present outside of special meetings.
+						`);
+					}
+				}
+				var nurseStatus = "";
+				if (checkTrust("nurse") > 0) {
+					nurseStatus = "met";
+				}
+				if (checkTrust("nurse") == 3) {
+					nurseStatus = "absent";
+				}
+				if (checkTrust("nurse") > 79) {
+					nurseStatus = "corrupt";
+				}
+				switch (nurseStatus) {
+					case "absent": {
+						writeHTML(`
+							principal I haven't seen nurseF around the school lately... It seems like she might not be coming to the PTSA meeting at the very least.
+							t nurseF will not be attending the meeting.
+						`);
+						break;
+					}
+					case "met": {
+						writeHTML(`
+							principal nurseF was asking about you, she's actually a PTSA member. You should visit her if you have the chance.
+						`);
+						break;
+					}
+					case "corrupt": {
+						writeHTML(`
+							principal Has nurseF seemed out of the ordinary to you? She was quite excited about the upcoming meeting last time we spoke, but normally she's quite withdrawn...
+							t nurseF has been corrupted.
+						`);
+						break;
+					}
+					default: {
+						writeHTML(`
+							principal Ah, by the way, you should see our nurse if you find the time. Her office is in the west hallway.
+						`);
+					}
+				}
+				var scarfStatus = "";
+				if (checkTrust("scarf") > 0) {
+					scarfStatus = "met";
+				}
+				if (checkTrust("scarf") > 41) {
+					scarfStatus = "challenging";
+				}
+				if (checkTrust("scarf") > 99) {
+					scarfStatus = "corrupt";
+				}
+				switch (scarfStatus) {
+					case "challenging": {
+						writeHTML(`
+							principal Are you and scarfF playing some kind of game? You should wrap it up before the meeting.
+						`);
+						break;
+					}
+					case "met": {
+						writeHTML(`
+							principal scarfF still won't get back to me about the meeting. I hope she'll attend.
+						`);
+						break;
+					}
+					case "corrupt": {
+						writeHTML(`
+							principal scarfF seems more open lately. I'm glad she'll be attending the meeting, but when I brought it up she started chuckling... Menacingly...
+							t scarfF is on your side.
+						`);
+						break;
+					}
+					default: {
+						writeHTML(`
+							principal I know there's at least one teacher attending the PTSA meeting. She's... Difficult to get a hold of at times.
+						`);
+					}
+				}
+				var mamaStatus = "";
+				if (checkTrust("scarf") > 0) {
+					mamaStatus = "met";
+				}
+				if (checkTrust("scarf") == 20) {
+					mamaStatus = "son";
+				}
+				if (checkTrust("scarf") == 100) {
+					mamaStatus = "bull";
+				}
+				switch (mamaStatus) {
+					case "son": {
+						writeHTML(`
+							principal I received the strangest call from mamaF. She's under the impression her son will be attending the PTSA meeting. I though he wasn't even in the country yet...
+							t mamaF has been corrupted.
+						`);
+						break;
+					}
+					case "met": {
+						writeHTML(`
+							principal Ugh, mamaF has called me three times today... Goodness, if I need to hear about her son again, I may have a breakdown.
+						`);
+						break;
+					}
+					case "bull": {
+						writeHTML(`
+							principal mamaF hasn't called today... Strange. The last time we spoke she was quite excited for the PTSA meeting...
+							t mamaF has been corrupted.
+						`);
+						break;
+					}
+					default: {
+						writeHTML(`
+							principal Alright, I'm making a personal request. There's a woman named mamaF mamaL, I'll try to introduce you. Please, make her stop calling about her son. He doesn't even attend this school yet!
+						`);
+					}
+				}
+				var ojouStatus = "";
+				if (checkTrust("ojou") > 0) {
+					ojouStatus = "met";
+				}
+				if (checkFlag("ojou", "incubus") == true) {
+					ojouStatus = "absent";
+				}
+				if (checkTrust("ojou") > 79) {
+					ojouStatus = "corrupt";
+				}
+				switch (ojouStatus) {
+					case "corrupt": {
+						writeHTML(`
+							principal I say you and ojouF in the hallway earlier, I noticed she didn't fly off the handle at you. Progress, I suppose.
+							t ojouF has been corrupted.
+						`);
+						break;
+					}
+					case "absent": {
+						writeHTML(`
+							principal I received a call the other day letting me know ojouF wouldn't be attending the PTSA meeting. I didn't recognize the voice though...
+							t ojouF will not be attending the meeting.
+						`);
+						break;
+					}
+					case "met": {
+						writeHTML(`
+							principal ojouF stormed in here the other day, she had a few choice remarks about several members of the staff, including you. I'm sorry you had to be caught in her little tirade...
+						`);
+						break;
+					}
+					default: {
+						writeHTML(`
+							principal One of the attendees of the PTSA will be a major donor's daughter. If you could talk to her about her behavior I'd appreciate it, but please tread carefully. Her class is on the east side of the school.
+						`);
+					}
+				}
+				var pinstripeStatus = "";
+				if (checkTrust("pinstripe") > 0) {
+					pinstripeStatus = "met";
+				}
+				if (checkTrust("pinstripe") > 59) {
+					pinstripeStatus = "corrupt";
+				}
+				if (checkTrust("pinstripe") > 69) {
+					pinstripeStatus = "absent";
+				}
+				switch (pinstripeStatus) {
+					case "corrupt": {
+						writeHTML(`
+							principal pinstripeF seems to have stopped her own bit of investigations about you. PErhaps she's finally satisfied? I'll have to ask ehr about it at the meeting.
+							t pinstripeF has been corrupted.
+						`);
+						break;
+					}
+					case "absent": {
+						writeHTML(`
+							principal I haven't seen pinstripeF around, and someone texted me this image of... No, it couldn't be...
+							t pinstripeF will not be attending the meeting.
+						`);
+						break;
+					}
+					case "met": {
+						writeHTML(`
+							principal Hmm... pinstripeF is in a mood today, I wonder if I could cheer her up...
+						`);
+						break;
+					}
+					default: {
+						writeHTML(`
+							principal Ah, I don't think you've met, but one of the attendees of the PTSA meeting will be our resident lawyer. Her office is just down the hall.
+						`);
+					}
+				}
+				var instructorStatus = "";
+				if (checkTrust("instructor") > 0) {
+					instructorStatus = "met";
+				}
+				if (checkTrust("instructor") > 1) {
+					instructorStatus = "corrupt";
+				}
+				switch (instructorStatus) {
+					case "corrupt": {
+						writeHTML(`
+							principal instructorF has been acting oddly... She says she likes your 'vision for the school'. I'm not sure what that means, maybe she isn't the perfect replacement for coachF I was hoping for...
+							t instructorF has been corrupted.
+						`);
+						break;
+					}
+					case "met": {
+						writeHTML(`
+							principal instructorF's training is going well! She actually asked about you, of course I let her know you were safe to speak with her athletes.
+						`);
+						break;
+					}
+					default: {
+						writeHTML(`
+							principal Hmhm, I've received word that my friend instructorF has arrived. She'll be training a few potential athletes in our gym area.<br>She hasn't formally come on to replace our current coach, but I may have my fingers crossed~
+						`);
+					}
+				}
+			}
+			if (checkFlag("secretary", "trouble") == true && checkFlag("secretary", "help") != true) {
+				writeFunction("writeEncounter('secretaryDiscussion')", "Talk about secretaryF");
 			}
 			writeFunction("changeLocation(data.player.location)", "Go back");
 			break;
@@ -475,7 +728,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t She doesn't respond, looking at nothing with a thousand-yard stare.
 			`);
 			addFlag("secretary", "trouble");
-			writeFunction("writeEncounter('councilQuo')", "Continue");
+			writeFunction("writeEncounter('caseSelect')", "Continue");
 			break;
 		}
 		case "secretaryDiscussion": {
@@ -499,9 +752,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeHTML(`
 				principal Ah, playerF. What can I do for you? The council meeting still doesn't have a set date, I'm afraid.
 			`);
-			if (checkFlag("secretary", "help") != true) {
-				writeFunction("writeEncounter('secretaryDiscussion')", "Talk about secretaryF");
-			}
 			if (data.story[8].met.includes('kuroS') != true) {
 				writeSpeech("principal", "", "I've got the file of a very unconventional young woman. She's been... Soliciting... The school's security, the teachers, anyone in any position of authority. If you could straighten her out, that would be very helpful.");
 				writeFunction("writeEncounter('kuroCaseStart')", fName('kuro')+" "+lName('kuro')+"'s file");
@@ -573,6 +823,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 						writeFunction("writeEncounter('nurseCaseEnd')", "Report on nurseF's case.");
 					}
 				}
+			}
+			if (checkFlag("secretary", "trouble") == true && checkFlag("secretary", "help") != true) {
+				writeFunction("writeEncounter('secretaryDiscussion')", "Talk about secretaryF");
 			}
 			//Manipulation
 			//Manipulation aftermath
@@ -994,10 +1247,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t You've played and it didn't work out this time. The only thing left to do is to accept defeat gracefully, and leave.
 			`);
 			if (
-				//shadow council
-				//evelyn not dosed twice
-				//olivia actually corrupted
-				//justine actually corrupted
+				checkTrust('oujo') > 79 &&
+				checkTrust('nurse') > 79 &&
+				checkTrust('pinstripe') == 60 &&
+				checkFlag("president", "shadowCouncil") == true
 			) {
 				writeFunction("writeEncounter('blackmailFailure')", "Continue");
 			}
@@ -1319,6 +1572,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			`);
 			if (
 				//principal
+				data.player.studio.filmXFetish2 == true
 			) {
 				writeFunction("writeEncounter('interviewPrincipal')", "Continue");
 			}

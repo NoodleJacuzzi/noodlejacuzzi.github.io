@@ -316,6 +316,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust('pinstripe') == 1 && checkFlag('pinstripe', 'potionFlag') != true) {
 				writeFunction("writeEncounter('nursePinstripe')", "Ask for help with pinstripeF");
 			}
+			if (checkFlag('nurse', 'subtle') != true && checkFlag('president', 'shadowCouncil') == true) {
+				writeFunction("writeEncounter('subtleChoice')", "Ask about her plan for principalF");
+			}
 			writeFunction("writeEncounter('chatHub')", "Chat");
 			writeFunction("changeLocation(data.player.location)", "Leave");
 			break;

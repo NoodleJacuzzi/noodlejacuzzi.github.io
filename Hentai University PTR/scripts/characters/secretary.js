@@ -25,7 +25,17 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+	writeHTML(`
+		define principal = sp principal;
+		define secretary = sp secretary;
+		define player = sp player;
+	`);
 	switch (name) {
+		case "cancel": {
+			unencounter(character.index);
+			changeLocation(data.player.location);
+			break;
+		}
 		case "secretaryQuo": {
 			writeHTML(`
 				player Hey secretaryF, how's it going? Need any help?
@@ -145,18 +155,23 @@ function writeEncounter(name) { //Plays the actual encounter.
 				secretary Thank you so much! Oh, my whole day is cleared!
 				player No problem. Honestly, if it weren't for these freak accidents you'd be working more effectively than ten secretaries.
 				secretary Hehe, I guess... Only so many times you can use the 'act of god' excuse in a week though. Anything else that needs doing?
-				t !skill hacking 3 While you have ample oppprtunity to use her workstation, you don't have the time to make any kind of backdoor for yourself.
-				t ?skill hacking 3 While working, you occasionally have access to secretaryF's workstation. With some serious computer skills you could make a backdoor to access later.
-				t !skill hypnosis 3 Naturally you're in close contact with secretaryF a lot. However, without more skill in the craft you don't have a chance to actually work your magic on her.
-				t ?skill hypnosis 3 Naturally you're in close contact with secretaryF a lot. Despite the people coming in and out, a master hypnotist like you should be able to plant a simple suggestion in her mind.
 			`);
+			if (data.player.hypnosis < 3) {
+				writeText("Naturally you're in close contact with secretaryF a lot. However, without more skill in the craft you don't have a chance to actually work your magic on her.");
+			}
 			if (data.player.hypnosis > 2 && checkFlag("secretary", "hypnosis") == false) {
+				writeText("Naturally you're in close contact with secretaryF a lot. Despite the people coming in and out, a master hypnotist like you should be able to plant a simple suggestion in her mind.");
 				writeFunction("writeEncounter('secretaryHypnosis')", "Hypnotize secretaryF");
 			}
+			if (data.player.hacking < 3) {
+				writeText("While you have ample opportunity to use her workstation, you don't have the time or skill to make any kind of backdoor for yourself.");
+			}
 			if (data.player.hacking > 2 && checkFlag("secretary", "hacking") == false) {
+				writeText("While working, you occasionally have access to secretaryF's workstation. With some serious computer skills you could make a backdoor to access later.");
 				writeFunction("writeEncounter('secretaryHacking')", "Install a backdoor in the system");
 			}
-			if (checkFlag("secretary", "manipulation") == false) {
+			if (checkFlag("secretary", "manipulation") == false && checkTrust("instructor") > 1) {
+				writeText("This could be the perfect opportunity to use common sense manipulation on secretaryF, just like you did to instructorF.");
 				writeFunction("writeEncounter('secretaryManipulation')", "Use common sense manipulation on secretaryF");
 			}
 			passTime();
@@ -228,6 +243,11 @@ var eventArray = [ //Lists the events of the character for unlocking and replayi
 function writeEvent(name) { //Plays the actual event.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+	writeHTML(`
+		define player = sp player;
+		define secretary = sp secretary;
+		define president = sp president;
+	`);
 	switch (name) {
 		case "secretaryManipulation": {
 			writeHTML(`

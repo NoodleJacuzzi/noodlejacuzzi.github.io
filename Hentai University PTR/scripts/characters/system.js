@@ -207,12 +207,36 @@ function writeEncounter(scene) {
 					specialEvent = "mission"; 
 				}
 			}
+			if (
+				//scarf corruption
+				checkTrust("scarf") > 99 &&
+				//nurse corruption
+				checkTrust("nurse") > 79 ||
+				checkTrust("nurse") == 3 &&
+				//president corruption
+				checkTrust("president") > 99 &&
+				//mama corruption
+				checkTrust("mama") == 100 ||
+				checkTrust("mama") == 20 &&
+				//ojou corruption
+				checkFlag("ojou", "incubus") == true ||
+				checkTrust("ojou") > 69 &&
+				//instructor corruption
+				checkTrust("instructor") > 1
+			) {
+				if (checkFlag('president', 'shadowCouncil') == false) {
+					specialEvent = "shadowCouncil"; 
+				}
+			}
 			switch (specialEvent) {
 				case "breakfast": 
 					loadEncounter('succubus', 'breakfast');
 				break;
 				case "mission": 
 					loadEncounter('succubus', 'missionStart');
+				break;
+				case "shadowCouncil": 
+					loadEncounter('president', 'shadowCouncilA');
 				break;
 				default: {
 					console.log("No events found");
