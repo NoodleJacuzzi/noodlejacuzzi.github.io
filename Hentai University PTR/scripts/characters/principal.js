@@ -415,6 +415,65 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkFlag("secretary", "trouble") == true && checkFlag("secretary", "help") != true) {
 				writeFunction("writeEncounter('secretaryDiscussion')", "Talk about secretaryF");
 			}
+			//Manipulation
+			if (checkFlag("president", "shadowCouncil") == true) {
+				if (checkFlag("principal", "manipulation") == false) {
+					writeFunction("writeEncounter('principalManipulation')", "Use common sense manipulation on principalF");
+				}
+				else {
+					if (checkFlag("starlet", "principal") == true) {
+						if (data.player.studio.filmXFetish1 == true) {
+							if (data.player.studio.filmXFetish2 == true) {
+								writeFunction("writeEncounter('streetNoWater')", "Use CSM and film "+data.player.studio.filmXName);
+							}
+							else {
+								writeFunction("writeEncounter('streetWater')", "Use CSM and film "+data.player.studio.filmXName);
+							}
+						}
+						else {
+							writeFunction("writeEncounter('interviewStart')", "Use CSM and film "+data.player.studio.filmXName);
+						}
+					}
+					else {
+						writeFunction("writeEncounter('principalManipulationFollowup')", "Check if the common sense manipulation stuck");
+					}
+				}
+				var subtleCounter = 0;
+				if (checkFlag("principal", "subtlePresident") == true) {
+					subtleCounter += 1;
+				}
+				if (checkFlag("secretary", "hypnosis") == true) {
+					//subtle instructor
+					if (checkFlag("principal", "subtleInstructor") != true;) {
+						writeFunction("writeEncounter('subtleInstructor')", "Bring principalF to instructorF");
+					}
+					else {
+						subtleCounter += 1;
+					}
+					//subtle scarf
+					if (checkFlag("principal", "subtleScarf") != true;) {
+						writeFunction("writeEncounter('subtleScarf')", "Bring scarfF to principalF");
+					}
+					else {
+						subtleCounter += 1;
+					}
+					//subtle starlet
+					if (checkFlag("principal", "subtleStarlet") != true;) {
+						writeFunction("writeEncounter('subtleStarlet')", "Subtly direct principalF to starletF's debut");
+					}
+					else {
+						subtleCounter += 1;
+					}
+					//subtle confidence
+					if (subtleCounter > 2) {
+						writeFunction("writeEncounter('subtleConfide')", "principalF seems unnerved. It seems like your efforts are about to pay off!");
+					}
+				}
+				//blackmail confrontation
+				if (checkFlag("secretary", "blackmail") == true) {
+					writeFunction("writeEncounter('subtleConfide')", "If you're absolutely confident, you could try blackmailing principalF");
+				}
+			}
 			writeFunction("changeLocation(data.player.location)", "Go back");
 			break;
 		}
@@ -827,14 +886,6 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkFlag("secretary", "trouble") == true && checkFlag("secretary", "help") != true) {
 				writeFunction("writeEncounter('secretaryDiscussion')", "Talk about secretaryF");
 			}
-			//Manipulation
-			//Manipulation aftermath
-			//bring to porn studio
-			//porn studio failure message
-			//subtle instructor
-			//subtle scarf
-			//subtle confidence
-			//blackmail confrontation
 			writeFunction("changeLocation(data.player.location)", "Go back");
 			break;
 		}
@@ -912,6 +963,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "principalManipulation": {
+			addFlag("principal", "manipulation");
 			writeEvent(name);
 			passTime();
 			writeFunction("changeLocation(data.player.location)", "Finish");
