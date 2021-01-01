@@ -208,7 +208,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust('pinstripe') == 1 && checkFlag('pinstripe', 'potionFlag') != true) {
 				sale("incubusPinstripe", 40, "images/pinstripe/pinstripe.jpg", "Blonding Potion<br>Gives you a potion for pinstripeF without needing to corrupt nurseF.");
 			}
-			if (checkTrust('pinstripe') > 10) {
+			if (checkTrust('pinstripe') > 10 || checkTrust('pinstripe') == 2) {
 				sale("pinstripeReset", 50, "images/pinstripe/pinstripe.jpg", "Chunky's Meal - pinstripeF<br>Erases pinstripeF's memories, allowing you to try something different with her. Also removes potion effects");
 			}
 			if (checkTrust('president') == 2 || checkTrust('president') == 3) {
