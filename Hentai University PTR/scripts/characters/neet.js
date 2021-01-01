@@ -1036,6 +1036,7 @@ function writeEvent(name) { //Plays the actual event.
 				neet I-is is hot in here? I'm finding it difficult to... To think... Maybe I should...
 				t She almost moves to adjust the temperature, but finds herself glued to her spot. Her overly analytical brain can't find a starting point for a train of thought, especially whenever she takes in a breath.
 				t But when she does find the strength to move, it's in a surprising direction towards her dresser to grab something.
+				t And with her glasses on her composure returns.
 				neet Ah, I see. You're trying to use immersion therapy, assuming I'll be more comfortable around you in a neutral state once I've been exposed to you in an extreme condition.
 				player ... Sure.
 				t Once her glasses are on she has something to focus herself. It's curious. Curious enough to warrant pushing boundaries.
