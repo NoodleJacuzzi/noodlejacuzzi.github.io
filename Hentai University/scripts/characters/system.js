@@ -15,13 +15,18 @@ var newItems = [ //If price is 0 it isn't for sale
 
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default. Tab appears below the map, button appears on the map itself
 	{index: "paperwork", 	name: "File some Paperwork", 	location: 'playerOffice', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 65, day: "both",},
+	{index: "hotel", 	name: "Continue", 	location: 'hotel', 		time: "MorningEveningNight", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 40, day: "both",},
 	{index: "listTextbooks", name: "Read a Book", 			location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 20, left: 72, day: "both",},
 	{index: "listTextbooks", name: "Read a Book", 			location: 'playerOffice', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 20, left: 72, day: "both",},
 	{index: "gameConsole", 	name: "Game Console", 			location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 62, left: 72, day: "both",},
 	{index: "wardrobe", 	name: "Wardrobe", 				location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 62, left: 1, day: "both",},
 	{index: "laptop", 		name: "Use the Computer", 		location: 'playerHouse', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 5, day: "both",},
+	{index: "skillBooks", 		name: "Read up on self-help", 		location: 'library', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 25, left: 25, day: "both",},
+	{index: "styleBooks", 		name: "Read up on artistic styles", 		location: 'library', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 45, left: 45, day: "both",},
+	//{index: "gameBooks", 		name: "Read up on the latest trends", 		location: 'library', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 45, day: "both",},
 	{index: "nap", 			name: "Take a Nap", 			location: 'playerHouse', 		time: "MorningEvening", 			itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
 	{index: "nap", 			name: "Take a Nap", 			location: 'playerOffice', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
+	{index: "nap", 			name: "Wait", 			location: 'map', 		time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 0, left: 0, day: "both",},
 	{index: "newDay", 		name: "Go to Bed", 				location: 'playerHouse', 		time: "Night", 		itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 52, left: 35, day: "both",},
 	{index: "shop", 		name: "General Store", 			location: 'shoppingDistrict', 	time: "MorningEvening", 	itemReq: "", trustMin: 0, trustMax: 0, type: "button", top: 40, left: 60, day: "both",},
 ];
@@ -34,6 +39,15 @@ function writeEncounter(scene) {
 		document.getElementById('output').innerHTML = '';
 	}
 	switch (scene) {
+		case "hotel": {
+			if (checkFlag("demon", "hotelBad") == true) {
+				loadEncounter("demon", "hotelBadFinish");
+			}
+			if (checkFlag("succubus", "hotelGood") == true) {
+				loadEncounter("succubus", "hotelGoodFinish");
+			}
+			break;
+		}
 		case "start" : {
 			updateMenu();
 			document.getElementById('playerImage').src = "scripts/gamefiles/none.png";
@@ -60,8 +74,8 @@ function writeEncounter(scene) {
 			writeText("You can also send us a message directly. Noodlejacuzzi is on discord (NoodleJacuzzi#4120) or you can send an email at noodlejacuzzi@gmail.com");
 			writeText("Captain Cryptogreek can be messaged on his reddit account where he regularly posts captions. You can also shoot him an email if you'd like him to proofread or you'd like to commission his skills at cryptogreekcaptions@gmail.com");
 			// replace [\r\n]+ with , 
-			writeText("Thank you to: Swallows999, Joseph, Robbie, Joshua Ingram, xdrake100, Holden Martin, Matthew Landin, Liam M, that GUY, Elias Errati, Iron Diana, ryguy, 4MinuteWarning, Hi There, Carlos, 林家豪, Richard, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, maxime, J_C_L, Dkells, Jinouga, Marco Wassmer, Taylor Trout, Colin E, Badaxe, Scal, ChronosEdge, mitchellwolbert, Nikolai Kochukov, luke perrey, Wells Wells, NocteAngelus, undead270, Him, Ashwinder, Bryan Pasternack, robert zeuke, omb, Hello Darkness, Christopher R. Taylor, Storyteller, Regulus, Funnykitty, Sam Schneck, Patrick, Seamus Porter, Sub Lyminal, iokknardnerus, BINKS, ShadowDragon, Richard Pryor, Marvis, Zane regel, HolyDurandal, John Nixon, mpop, Donovan Korpa, Noh Bhodie, Billymays, Genxin, Ethan Brian, Brent Roberts, poyo, Greatsage56 ., sb2017, Wysdom, Me Notyou, Chris Rucker, john sparks, Darien Cordero, Ally Smith, Brandon Leary, scott, Sergio Prichard, Sera, ggboomsky, Emily Pajak, RatKnight, Bradley Herbert, gabriel, SomebodyElse, Peter H, 长平 鬣, Culton Niccum, thesingleguy, Kethis Immortalis, colt, Anton Schmidt, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Vikteren, Dean, Kudon, theoron, AnotherAccount333, Kaliden, greatred, l, ranchy sanchy, Johnathan Thornburg, Limitless, nathan, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, William Parker, XaiuX, l1monat, Kieron Kow, Slomberg, henry grobins, ddkre, SmolFish, Iâ€™m a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Markus Hansen, Leanerbike1363, Tanman, DarthMalak, Danny Nguyen, yami, Grim2011, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, Simon Rencher, dhccpmc, Chaaaanon, Nutburger, Whynot, mazterlith, Anthony Munso, john smith, Your Husbando, Carlos, Firestar99255, Verillia tristari, CaptainMontana, ItsAllOgreNow, Jesse Greene, Nils Maier, Blaise Fenn, Angel, Ariados, Jane, Snaked, Drashin, qwerty, murgatroid99, Roy, Wild Bill, and brandon, for funding this work! The patreon funds are split as Captain Cryptogreek has taken over as lead writer for the game.");
-			writeSpecial("Special thanks to stiggy752 for the game's CSS, Wild Bill/Master of Puppets for the game's save to file system, and to OrangeMaestro for his orange eyes helping find many of the typos that plagued this game.");
+			writeText("Thank you to: Swallows999, Adrian Vasquez, Cheryl Weinkauf, Joseph, Robbie, SlackerSavior, ArtemisAisu, Onii-sama, xdrake100, Matthew Landin, ShadowFox, that GUY, Elias Errati, Iron Diana, ryguy, 4MinuteWarning, Hi There, Carlos, 林家豪, Richard, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, maxime, J_C_L, Dkells, Jinouga, Marco Wassmer, Taylor Trout, Colin E, Badaxe, Scal, troll1023, randol javier, Rafa Smith, Andrew Lolzaror, Tobias Blake, pest, Zach allen, Ezekiel Rojas, Lance, Stan Manson, Evan Gao, TheLazyCactus, Carson Goodwin, Roland Deschain, david bradley, Roman Guinazzo, Random One, Sanguinius1701, Dragoon22, Isaac Renaud, mitchellwolbert, luke perrey, Wells Wells, NocteAngelus, undead270, Him, Ashwinder, Bryan Pasternack, robert zeuke, omb, Hello Darkness, Christopher R. Taylor, Regulus, Funnykitty, Sam Schneck, Patrick, Seamus Porter, Sub Lyminal, BINKS, ShadowDragon, Richard Pryor, Zane regel, HolyDurandal, John Nixon, Donovan Korpa, Noh Bhodie, Billymays, Genxin, Ethan Brian, poyo, Greatsage56 ., sb2017, Wysdom, Me Notyou, Chris Rucker, john sparks, Darien Cordero, Brandon Leary, Sergio Prichard, Sera, ggboomsky, RatKnight, Bradley Herbert, gabriel, SomebodyElse, Peter H, é•¿å¹³ é¬£, Culton Niccum, thesingleguy, Kethis Immortalis, colt, Anton Schmidt, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Vikteren, Dean, Kudon, theoron, AnotherAccount333, Kaliden, greatred, Riven Drasek, l, Johnathan Thornburg, Limitless, nathan, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, XaiuX, l1monat, Kieron Kow, Slomberg, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Markus Hansen, Leanerbike1363, Tanman, DarthMalak, Danny Nguyen, yami, Grim2011, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, Simon Rencher, dhccpmc, Chaaaanon, Nutburger, Whynot, mazterlith, Anthony Munso, john smith, Your Husbando, Carlos, Firestar99255, Verillia tristari, CaptainMontana, ItsAllOgreNow, Jesse Greene, Nils Maier, Blaise Fenn, Angel, Ariados, Jane, Snaked, Drashin, qwerty, murgatroid99, Roy, Wild Bill, and brandon, for funding this work! The patreon funds are split as Captain Cryptogreek has taken over as lead writer for the game.");
+			writeSpecial("Special thanks to stiggy752 for the game's CSS, Wild Bill/Master of Puppets for the game's save to file system, and to OrangeMaestro for his orange eyes helping find many of the typos that plagued this game. Other typo/bug-hunters I'd like to shout out are Atomic Goblin, Chomp, crnicu, Dowee, Goblin Boy, Master of Puppets, MustafaSerkan, Nico Fox, PancakeLoverAkechi, Papa Primus, Shbers, SlackerSavior, and all anonymous posters who posted bugs via the suggestion box. Thanks!");
 			writeText("I've added the option to start as a futanari. This only changes your character's image and the pronouns used (so that you're ma'am instead of sir). Please let Noodle Jacuzzi know if anyone is still referring to you as 'sir' when inappropriate, thank you.");
 			writeText("The game is more freeform and slower paced than my previous works. If you get stuck, please let us know. There isn't currently a guide, but we can easily feature an FAQ here.");
 			writeText("You can click on the title of a window to close it. For example, if you click 'LOGBOOK' on the left (or bottom on mobile), you can close the new window by clicking anywhere in the 'LOGBOOK' section at the top.");
@@ -197,12 +211,35 @@ function writeEncounter(scene) {
 					specialEvent = "mission"; 
 				}
 			}
+			var nurseReady = false;
+			if (checkTrust("nurse") > 79 || checkTrust("nurse") == 3) {
+				nurseReady = true;
+			}
+			var ojouReady = false
+			if (checkTrust("ojou") > 79 || checkFlag("ojou", "incubus") == true) {
+				ojouReady = true;
+			}
+			if (
+				checkTrust("scarf") > 99 &&
+				nurseReady == true &&
+				checkTrust("president") > 99 &&
+				checkTrust("mama") > 19 &&
+				ojouReady == true &&
+				checkTrust("instructor") > 1
+			) {
+				if (checkFlag('president', 'shadowCouncil') == false) {
+					specialEvent = "shadowCouncil"; 
+				}
+			}
 			switch (specialEvent) {
 				case "breakfast": 
 					loadEncounter('succubus', 'breakfast');
 				break;
 				case "mission": 
 					loadEncounter('succubus', 'missionStart');
+				break;
+				case "shadowCouncil": 
+					loadEncounter('president', 'shadowCouncilA');
 				break;
 				default: {
 					console.log("No events found");
@@ -212,12 +249,22 @@ function writeEncounter(scene) {
 							<img class="backgroundPicture" src="images/locations/newDayMorning.jpg" usemap="#roomMap">
 						</div>
 					`;
-					printLocationButton(
-						"Get out of bed", 
-						40, 
-						40, 
-						"playerHouse", 
-					);
+					if (checkFlag("mom", "megaEasy") == true) {
+						printLocationButton(
+							"Get out of bed", 
+							40, 
+							40, 
+							"map", 
+						);
+					}
+					else {
+						printLocationButton(
+							"Get out of bed", 
+							40, 
+							40, 
+							"playerHouse", 
+						);
+					}
 				}
 			}
 			if (data.player.day % 5 === 0) {
@@ -229,6 +276,21 @@ function writeEncounter(scene) {
 				data.player.money += paybaby;
 			}
 			if (checkTrust('principal') == 40) {raiseTrust('principal', 1);}
+			var failureToRead = false;
+			for (z = 0; z < data.story.length; z++) {
+				if (data.story[z].unreadText ==true) {
+					if (data.story[z].textEvent.includes("eward") != true) {
+						failureToRead = true;
+					}
+				}
+			}
+			if (failureToRead == true) {
+				reminderFontSize += 50;
+				writeText("<span style='font-size: "+reminderFontSize+"%'>You have one or more unread text messages!</span>");
+			}
+			else {
+				reminderFontSize = 100;
+			}
 			break;
 		}
 		case "laptop": {
@@ -292,11 +354,11 @@ function writeEncounter(scene) {
 			break;
 		}
 		case "filing": {
-			var moneyMade = 10 + data.player.counseling;
+			var moneyMade = 10 + data.player.counseling + data.player.counseling;
 			passTime();
 			data.player.money += moneyMade;
 			updateMenu();
-			writeText("You spent some time doing paperwork. It's a slow and boring job, but money is money after all.");
+			writeText("You spent some time doing paperwork. It's a slow and boring job, but money is money after all. As a hypnotist aren't there better things to be doing though?");
 			writeSpecial("You earned $" + moneyMade + "!");
 			if (data.player.time != "Night") {
 				writeFunction("changeLocation('playerOffice')", "Finish up");
@@ -319,12 +381,102 @@ function writeEncounter(scene) {
 			changeLocation(data.player.location);
 			break;
 		}
+		case "skillBooks": {
+			updateMenu();
+			writeHTML(`
+				t It's not the most impressive of libraries, but it fits the school's atmosphere. There are a number of textbooks of all different types, but three catch your eye...
+			`);
+			if (checkFlag("mom", "lHypno") != true) {
+				writeFunction("loadEncounter('system', 'lHypno')", "Read up on hypnosis");
+			}
+			if (checkFlag("mom", "lHack") != true) {
+				writeFunction("loadEncounter('system', 'lHack')", "Read up on computer hacking");
+			}
+			if (checkFlag("mom", "lCoun") != true) {
+				writeFunction("loadEncounter('system', 'lCoun')", "Read up on modern counseling techniques");
+			}
+			writeFunction("changeLocation('library')", "Finish");
+			break;
+		}
+		case "lHypno": {
+			writeHTML(`
+				t You thoroughly read through the book on hypnosis. It's an older script, but the techniques are still useful. A section on 'sensitivity enhancement' is particularly interesting.
+			`);
+			writeSpecial("Your hypnosis skill has increased!");
+			data.player.hacking += 1;
+			updateMenu();
+			addFlag("mom", name);
+			passTime();
+			writeFunction("changeLocation('library')", "Finish");
+			break;
+		}
+		case "lHack": {
+			writeHTML(`
+				t You thoroughly read through the book on hacking. It's an older script, but the techniques are still useful. A section on how to install system backdoors is particularly interesting.
+			`);
+			writeSpecial("Your hacking skill has increased!");
+			data.player.hacking += 1;
+			updateMenu();
+			addFlag("mom", name);
+			passTime();
+			writeFunction("changeLocation('library')", "Finish");
+			break;
+		}
+		case "lCoun": {
+			writeHTML(`
+				t You thoroughly read through the book on counseling. It's an older script, but the techniques are still useful. A section on how improve your relationship with your employer is quite interesting.
+			`);
+			writeSpecial("Your counseling skill has increased! Since you're more talented, that obviously equates to a pay bump!");
+			data.player.counseling += 1;
+			updateMenu();
+			addFlag("mom", name);
+			passTime();
+			writeFunction("changeLocation('library')", "Finish");
+			break;
+		}
+		case "styleBooks": {
+			writeHTML(`
+				t The books here each have a different kind of visual flair, the selection is very chaotic.
+				sp player; Interesting...
+			`);
+			writeFunction("loadEncounter('system', 'basicStyle')", "'The Basics - Written by Stiggy 752.'");
+			writeFunction("loadEncounter('system', 'personaStyle')", "'Rebellion Against Rotten Adults - NoodleJacuzzi'");
+			writeFunction("loadEncounter('system', 'royaltyStyle')", "'Chill Vaporwave Flows - NoodleJacuzzi'");
+			writeFunction("loadEncounter('system', 'lobotomyStyle')", "'Lobotomization For Dummies - NoodleJacuzzi'");
+			writeFunction("changeLocation('library')", "Finish");
+			break;
+		}
+		case "basicStyle": {
+			data.player.style = "basic";
+			writeSpecial("Visual style 'Basic' applied! Very special thank you to stiggy 752!");
+			writeEncounter("styleBooks");
+			break;
+		}
+		case "personaStyle": {
+			data.player.style = "persona";
+			writeSpecial("Visual style 'Persona' applied! This one doesn't play too nicely on mobile screens, sorry!");
+			writeEncounter("styleBooks");
+			break;
+		}
+		case "royaltyStyle": {
+			data.player.style = "royalty";
+			writeSpecial("Visual style 'Royalty' applied!");
+			writeEncounter("styleBooks");
+			break;
+		}
+		case "lobotomyStyle": {
+			data.player.style = "lobotomy";
+			writeSpecial("Visual style 'Lobotomy' applied!");
+			writeEncounter("styleBooks");
+			break;
+		}
 		case "credits": {
 			writeText("Incredible! Outstanding! You've reached one of Hentai University's endings!");
 			writeText("This game was made by <a href='https://noodlejacuzzi.github.io/index.html'>Noodle Jacuzzi</a> and <a href='https://www.reddit.com/user/CaptainCryptogreek'>Captain Cryptogreek</a>. Hop on in to our <a href='https://discord.gg/pDht5BZ'>Discord</a> and let us know what you thought, we'd love to hear from you. You can also find a section dedicated to modding in there, maybe check that out? Be sure to show show your support for the members of the modding community of course if you do.");
-			writeText("Thank you to: Swallows999, Joseph, Robbie, Joshua Ingram, xdrake100, Holden Martin, Matthew Landin, Liam M, that GUY, Elias Errati, Iron Diana, ryguy, 4MinuteWarning, Hi There, Carlos, 林家豪, Richard, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, maxime, J_C_L, Dkells, Jinouga, Marco Wassmer, Taylor Trout, Colin E, Badaxe, Scal, ChronosEdge, mitchellwolbert, Nikolai Kochukov, luke perrey, Wells Wells, NocteAngelus, undead270, Him, Ashwinder, Bryan Pasternack, robert zeuke, omb, Hello Darkness, Christopher R. Taylor, Storyteller, Regulus, Funnykitty, Sam Schneck, Patrick, Seamus Porter, Sub Lyminal, iokknardnerus, BINKS, ShadowDragon, Richard Pryor, Marvis, Zane regel, HolyDurandal, John Nixon, mpop, Donovan Korpa, Noh Bhodie, Billymays, Genxin, Ethan Brian, Brent Roberts, poyo, Greatsage56 ., sb2017, Wysdom, Me Notyou, Chris Rucker, john sparks, Darien Cordero, Ally Smith, Brandon Leary, scott, Sergio Prichard, Sera, ggboomsky, Emily Pajak, RatKnight, Bradley Herbert, gabriel, SomebodyElse, Peter H, 长平 鬣, Culton Niccum, thesingleguy, Kethis Immortalis, colt, Anton Schmidt, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Vikteren, Dean, Kudon, theoron, AnotherAccount333, Kaliden, greatred, l, ranchy sanchy, Johnathan Thornburg, Limitless, nathan, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, William Parker, XaiuX, l1monat, Kieron Kow, Slomberg, henry grobins, ddkre, SmolFish, Iâ€™m a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Markus Hansen, Leanerbike1363, Tanman, DarthMalak, Danny Nguyen, yami, Grim2011, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, Simon Rencher, dhccpmc, Chaaaanon, Nutburger, Whynot, mazterlith, Anthony Munso, john smith, Your Husbando, Carlos, Firestar99255, Verillia tristari, CaptainMontana, ItsAllOgreNow, Jesse Greene, Nils Maier, Blaise Fenn, Angel, Ariados, Jane, Snaked, Drashin, qwerty, murgatroid99, Roy, Wild Bill, and brandon for funding this work!");
-			writeSpecial("Special thanks to stiggy752 for the game's CSS, Wild Bill/Master of Puppets for the game's save to file system, and to OrangeMaestro for his orange eyes helping find many of the typos that plagued this game.");
-			writeSpecial("Thanks for playing! We hope you'll be seeing more endings in the future!");
+			writeText("Thank you to: Swallows999, Adrian Vasquez, Cheryl Weinkauf, Joseph, Robbie, SlackerSavior, ArtemisAisu, Onii-sama, xdrake100, Matthew Landin, ShadowFox, that GUY, Elias Errati, Iron Diana, ryguy, 4MinuteWarning, Hi There, Carlos, 林家豪, Richard, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, maxime, J_C_L, Dkells, Jinouga, Marco Wassmer, Taylor Trout, Colin E, Badaxe, Scal, troll1023, randol javier, Rafa Smith, Andrew Lolzaror, Tobias Blake, pest, Zach allen, Ezekiel Rojas, Lance, Stan Manson, Evan Gao, TheLazyCactus, Carson Goodwin, Roland Deschain, david bradley, Roman Guinazzo, Random One, Sanguinius1701, Dragoon22, Isaac Renaud, mitchellwolbert, luke perrey, Wells Wells, NocteAngelus, undead270, Him, Ashwinder, Bryan Pasternack, robert zeuke, omb, Hello Darkness, Christopher R. Taylor, Regulus, Funnykitty, Sam Schneck, Patrick, Seamus Porter, Sub Lyminal, BINKS, ShadowDragon, Richard Pryor, Zane regel, HolyDurandal, John Nixon, Donovan Korpa, Noh Bhodie, Billymays, Genxin, Ethan Brian, poyo, Greatsage56 ., sb2017, Wysdom, Me Notyou, Chris Rucker, john sparks, Darien Cordero, Brandon Leary, Sergio Prichard, Sera, ggboomsky, RatKnight, Bradley Herbert, gabriel, SomebodyElse, Peter H, é•¿å¹³ é¬£, Culton Niccum, thesingleguy, Kethis Immortalis, colt, Anton Schmidt, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Vikteren, Dean, Kudon, theoron, AnotherAccount333, Kaliden, greatred, Riven Drasek, l, Johnathan Thornburg, Limitless, nathan, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, XaiuX, l1monat, Kieron Kow, Slomberg, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Markus Hansen, Leanerbike1363, Tanman, DarthMalak, Danny Nguyen, yami, Grim2011, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, Simon Rencher, dhccpmc, Chaaaanon, Nutburger, Whynot, mazterlith, Anthony Munso, john smith, Your Husbando, Carlos, Firestar99255, Verillia tristari, CaptainMontana, ItsAllOgreNow, Jesse Greene, Nils Maier, Blaise Fenn, Angel, Ariados, Jane, Snaked, Drashin, qwerty, murgatroid99, Roy, Wild Bill, and brandon for funding this work!");
+			writeSpecial("Special thanks to stiggy752 for the game's CSS, Wild Bill/Master of Puppets for the game's save to file system, and to OrangeMaestro for his orange eyes helping find many of the typos that plagued this game. Other typo/bug-hunters I'd like to shout out are Atomic Goblin, Chomp, crnicu, Dowee, Goblin Boy, Master of Puppets, MustafaSerkan, Nico Fox, PancakeLoverAkechi, Papa Primus, Shbers, SlackerSavior, and all anonymous posters who posted bugs via the suggestion box. Thanks!");
+			writeText("Thanks for playing! It'd really help to give feedback anywhere you can, either through a review or letting us know what you think. The game has an F95Zone thread <a href='https://f95zone.to/threads/hentai-university-v15-noodlejacuzzi.37312/'>HERE</a> and a hypnopics thread <a href='https://hypnopics-collective.net/smf_forum/index.php?topic=23881.0'>HERE</a>, and we also check the reddit threads posted for each release.");
+			writeText("If you're shy though you can use this anonymous suggestion box <a href='http://freesuggestionbox.com/pub/oakihbd'>HERE</a> to voice your thoughts!");
 			writeFunction("changeLocation('playerHouse')", "Keep playing");
 			listArtists();
 			break;

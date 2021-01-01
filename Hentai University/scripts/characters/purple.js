@@ -461,6 +461,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "routeAEnding1": {
+			addFlag("purple", "complete");
+			addFlag("chubby", "complete");
 			writeSpeech("player", "", "<i>There's a lot to consider, I wonder how far I can really push this...</i>");
 			writeSpeech("purple", "", "What's up? You seem distracted, want me to suck you off?");
 			writeSpeech("player", "", "Hey, purpleF. Focus, I wanna check something out.<br>When I snap my fingers, all of the hypnosis will fade away, you'll be right back to your normal self aware of everything that's happened thus far.");

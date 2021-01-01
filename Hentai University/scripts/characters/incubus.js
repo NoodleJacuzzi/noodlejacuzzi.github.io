@@ -24,6 +24,10 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+		writeHTML(`
+			define incubus = sp incubus;
+			define player = sp player;
+		`);
 	switch (name) {
 		case "cancel": {
 			unencounter('incubus');
@@ -183,6 +187,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 				}
 			}
 			//Generate nonlewd services, such as skipping character progression.
+			if (checkTrust('neet') > 99) {
+				sale("neetReset", 40, "images/neet/neet.jpg", "Chunky's Meal - neetF<br>Erases neetF's memories, allowing you to try something different with her.");
+			}
+			if (checkTrust('nurse') == 3) {
+				sale("neetReset", 100, "images/neet/neet.jpg", "Chunky's Meal - nurseF<br>Erases nurseF's memories, allowing you to retry and get nurseF on your side.");
+			}
 			if (checkTrust('mama') == 1) {
 				sale("incubusMama", 50, "images/mama/mama.jpg", "Mystic Perfume<br>Gives you a disguise to corrupt mamaF without needing to corrupt scarfF or nurseF.");
 			}
@@ -203,6 +213,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 			}
 			if (checkTrust('president') == 2 || checkTrust('president') == 3) {
 				sale("incubusPresident", 50, "images/president/president.jpg", "Demonic Consultation<br>incubusF will come by and convince presidentF that she should trust hypnosis, without you needing to bring other students by to convince her.");
+			}
+			if (checkTrust('instructor') < 80 && checkTrust('instructor') > 0 && checkFlag("incubus", "instructor") != true) {
+				sale("incubusInstructor", 50, "images/instructor/instructor.jpg", "Turvey Top<br>Need to corrupt a bunch of brats all at once, all in public? Can't be bothered to best another hypnotist, and don't have a familiar? This is a deal for you.");
+			}
+			if (checkTrust('instructor') > 2) {
+				sale("instructorReset", 40, "images/instructor/instructor.jpg", "Chunky's Meal - instructorF<br>Erases instructorF's memories, allowing you to try something different with her and her posse of athletic sluts.");
 			}
 			if (data.player.gender == "man") {
 				sale("genderswap", 50, "scripts/gamefiles/profiles/basil.jpg", "Genderswap<br>Don't worry, you'll still have a dick. But if you want to look a little softer, be a little more feminine, I got you.<br>Comes with a free name change too.");
@@ -500,6 +516,61 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t mamaF's memories of you have been reset, you're now free to enjoy her however you please! 
 			`);
 			setTrust('mama', 2);
+			removeFlag("mama", "complete");
+			writeFunction("writeEncounter('cancel')", "Finish");
+			break;
+		}
+		case "nurseReset": {
+			writeHTML(`
+				t incubusF snaps her fingers and a nearby lockbox opens. Something small and white scurries out in a flash and flies at you, dead set on your right ear.
+				...
+				t Groggily, you wake up in a disoriented heap. You feel... Violated.
+				sp incubus; Yo. Chunky already found her and got her memories, you're fine to fuck about. Lemme know if you want him to eat anything else. Sit outside if you need to take a breather.
+				t nurseF's memories of you have been reset, you're now free to enjoy her however you please! 
+			`);
+			setTrust('nurse', 2);
+			writeFunction("writeEncounter('cancel')", "Finish");
+			break;
+		}
+		case "neetReset": {
+			writeHTML(`
+				t incubusF snaps her fingers and a nearby lockbox opens. Something small and white scurries out in a flash and flies at you, dead set on your right ear.
+				...
+				t Groggily, you wake up in a disoriented heap. You feel... Violated.
+				sp incubus; Yo. Chunky already found her and got some of her memories, you're fine to fuck about. Lemme know if you want him to eat anything else. Sit outside if you need to take a breather.
+				t neetF's memories of you have been reset, you're now free to enjoy her however you please! 
+			`);
+			setTrust('neet', 99);
+			removeFlag("neet", "complete");
+			writeFunction("writeEncounter('cancel')", "Finish");
+			break;
+		}
+		case "incubusInstructor": {
+			writeHTML(`
+				t incubusF pulls out a glass... Thing. It defies description, and there are only two things you can identify about it. First is that it looks cheap, like a knock-off souvenir.
+				t Second, despite you not being able to understand it's structure, you somehow strongly feel like it's upside-down. You reach out but incubusF pulls it back suddenly.
+				incubus Whoa there hotshot. This thing is worth a lot more than your soul. You didn't buy this, you bought a one-time use.
+				player What is it, how can it help me, and why does it make my brain hurt to look at.
+				incubus This is a common sense manipulator. A cheap one, anyways. Coppied it from a rich demon's collection. Energy goes in, I tip it, and it... Well, inverts morality and shame.<br>Hidden fetishes, how you feel about sex, it flips a lot of things. Nobody'll bat an eye if you raw dog a stranger on the street.
+				t As she gently turns it, reality wobbles until she turns it back.
+				incubus You retain full memory afterwards. Buuuut if you did something really awful, something that'd shame you to your core, in most cases you brain would rather pretend it's still affected than accept reality. Something like... Whoring out a bunch of girls who trust you to make them olimpians. Or begging a stranger for his dick in front of everyone you respect. <br>You get where I'm going with this?
+				player So if I can't have it, then-
+				incubus I know where you'll need it. I'll be there ready to flip it. Your bill is paid, head on back to the gym. Don't expect me to be supportive though.
+			`);
+			addFlag('incubus', "instructor");
+			writeFunction("writeEncounter('cancel')", "Finish");
+			break;
+		}
+		case "instructorReset": {
+			writeHTML(`
+				t incubusF snaps her fingers and a nearby lockbox opens. Something small and white scurries out in a flash and flies at you, dead set on your right ear.
+				...
+				t Groggily, you wake up in a disoriented heap. You feel... Violated.
+				sp incubus; Yo. Chunky already found her and got her memories, you're fine to fuck about. Lemme know if you want him to eat anything else. Sit outside if you need to take a breather.<br>Honestly, having him hit an entire team at once... Guess I should've named him 'Chonky'.
+				t instructorF's memories of you have been reset, you're now free to enjoy her however you please! Feel free to hire incubusF's services, or find another helper to take down the team with.
+			`);
+			setTrust('mama', 2);
+			removeFlag("instructor", "complete");
 			writeFunction("writeEncounter('cancel')", "Finish");
 			break;
 		}
@@ -713,7 +784,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "reward": {
 			writePhoneImage("images/incubus/reward.jpg", "Art by Gujira");
-			writePhoneSpeech("incubus", "", "You've finished all of incubusF's content for this version, how would you like it to end?");
+			writePhoneSpeech("incubus", "", "Not all characters have dedicated endings, incubusF is one of them. Still, you've completed as much of incubusF as possible. Thanks for the gacha funds~");
 			break;
 		}
 		default: {

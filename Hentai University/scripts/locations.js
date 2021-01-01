@@ -28,8 +28,7 @@ var locationArray = [
 	],},
 	{index: "westHallway", name: "West Hallway", buttons: [
 		{name: "Classroom A", top: 50, left: 70, type: "location", target: "classroomA", time: "MorningEvening",},
-		{name: "Library", top: 47, left: 50, type: "location", target: "library", time: "MorningEvening",},
-		{name: "Cafeteria", top: 60, left: 37, type: "location", target: "cafeteria", time: "MorningEvening",},
+		{name: "Library", top: 60, left: 37, type: "location", target: "library", time: "MorningEvening",},
 		{name: "School Entrance", top: 79, left: 35, type: "location", target: "schoolEntrance", time: "MorningEvening",},
 	],},
 	{index: "eastHallway", name: "East Hallway", buttons: [
@@ -83,11 +82,12 @@ var locationArray = [
 	{index: "beach", name: "Dream Beach", buttons: [
 	],},
 	{index: "map", name: "Town Map", buttons: [
-		{name: "University", top: 35, left: 23, type: "location", target: "schoolMap", time: "MorningEvening",},
+		{name: "University 1F", top: 35, left: 23, type: "location", target: "schoolEntrance", time: "MorningEvening",},
+		{name: "University 2F", top: 20, left: 23, type: "location", target: "northHallway", time: "MorningEvening",},
 		{name: "Streets", top: 55, left: 40, type: "location", target: "street", time: "MorningEvening",},
 		{name: "Your Home", top: 45, left: 70, type: "location", target: "playerHouse", time: "MorningEvening",},
 		{name: "Shopping District", top: 20, left: 60, type: "location", target: "shoppingDistrict", time: "MorningEvening",},
-		{name: "Vintage Street", top: 10, left: 30, type: "location", target: "vintageStreet", time: "MorningEvening",},
+		{name: "Vintage Street", top: 2, left: 35, type: "location", target: "vintageStreet", time: "MorningEvening",},
 		{name: "Park District", top: 65, left: 10, type: "location", target: "parkDistrict", time: "MorningEvening",},
 	],},
 	{index: "schoolMap", name: "School Map", buttons: [
@@ -95,7 +95,6 @@ var locationArray = [
 		{name: "School Entrance", 		top: 67, 	left: 40, 	type: "location", target: "schoolEntrance", time: "MorningEvening",},
 		{name: "West Hallway", 			top: 45, 	left: 25, 	type: "location", target: "westHallway", time: "MorningEvening",},
 		{name: "Classroom A", 			top: 25, 	left: 2, 	type: "location", target: "classroomA", time: "MorningEvening",},
-		{name: "Cafeteria", 			top: 45, 	left: 2, 	type: "location", target: "cafeteria", time: "MorningEvening",},
 		{name: "Library", 				top: 65, 	left: 2, 	type: "location", target: "library", time: "MorningEvening",},
 		{name: "East Hallway", 			top: 45, 	left: 55, 	type: "location", target: "eastHallway", time: "MorningEvening",},
 		{name: "Classroom B", 			top: 25, 	left: 70, 	type: "location", target: "classroomB", time: "MorningEvening",},
@@ -105,6 +104,8 @@ var locationArray = [
 		{name: "Your Office",			top: 2, 	left: 13, 	type: "location", target: "playerOffice", time: "MorningEvening",},
 		{name: "Teacher's Lounge", 		top: 2, 	left: 62, 	type: "location", target: "teacherLounge", time: "MorningEvening",},
 		{name: "Roof", 					top: 0, 	left: 45, 	type: "location", target: "roof", time: "MorningEvening",},
+	],},
+	{index: "hotel", name: "Demon Hotel", buttons: [
 	],},
 ];
 
@@ -129,11 +130,18 @@ function changeLocation(n) {
 		var bg = "images/locations/" + locationArray[locationTarget].index + data.player.time + ".jpg";
 		changeBG(locationArray[locationTarget].bg);
 		if (data.player.time == "Night" && data.player.location != "playerHouse") {
-			console.log(data.player.location);
-			n = 'playerHouse';
-			data.player.location = "playerHouse";
-			writeText("The sun has set and the streetlights fizzle on. It'd be best to head home now, otherwise you'll have trouble getting up on time tomorrow.");
-			writeFunction("changeLocation('playerHouse')", "Go Back Home");
+			if (checkFlag("mom", "megaEasy") == true) {
+				n = 'playerHouse';
+				data.player.location = "playerHouse";
+				changeLocation("playerHouse");
+			}
+			else {
+				console.log(data.player.location);
+				n = 'playerHouse';
+				data.player.location = "playerHouse";
+				writeText("The sun has set and the streetlights fizzle on. It'd be best to head home now, otherwise you'll have trouble getting up on time tomorrow.");
+				writeFunction("changeLocation('playerHouse')", "Go Back Home");
+			}
 		}
 		else {
 			document.getElementById('output').innerHTML += `
@@ -153,7 +161,12 @@ function changeLocation(n) {
 					);
 				}
 			}
-			if (data.player.time != "Night" && data.player.location != "map" && data.player.location != "casino" && data.player.location != "beach" && data.player.location != "schoolMap" && checkItem("Town Map") == true) {
+			if (data.player.time != "Night" && data.player.location != "map" 
+			&& data.player.location != "casino" 
+			&& data.player.location != "beach" 
+			&& data.player.location != "schoolMap" 
+			&& data.player.location != "hotel" 
+			&& checkItem("Town Map") == true) {
 				printLocationButton(
 					'Use Map', 
 					0, 

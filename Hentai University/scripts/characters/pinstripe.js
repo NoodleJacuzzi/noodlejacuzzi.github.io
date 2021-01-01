@@ -21,8 +21,8 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "office", name: "pinstripe's office is here", requirements: "?trust pinstripe 1; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "potionQuo", name: "pinstripe's office is here", requirements: "?trustMin pinstripe 10; ?trustMax pinstripe 13; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "potionFinishedQuo", name: "pinstripe's office is here", requirements: "?trustMin pinstripe 80; ?trustMax pinstripe 81; ?location eastHallway;", altName: "", altImage: "",},
-	{index: "missing", name: "pinstripe's office is here", requirements: "?trust pinstripe 60; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "streetCatcall", name: "did you just see...?", requirements: "?trust pinstripe 60; ?location streets;", altName: "", altImage: "images/pinstripe/schoolgirl.jpg",},
+	{index: "missing", name: "pinstripe's office is here", requirements: "?trust pinstripe 60; ?location eastHallway;", altName: "", altImage: "",},
 	{index: "dosedQuo", name: "You should be able to find pinstripe here", requirements: "?trust pinstripe 61; ?location streets;", altName: "", altImage: "images/pinstripe/schoolgirl.jpg",},
 ];
 
@@ -216,6 +216,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				case 13: {
 					writeEvent("pinstripeBroken");
 					setTrust("pinstripe", 80);
+					passTime();
 					writeFunction("changeLocation(data.player.location)", "Finish");
 					break;
 				}
@@ -395,6 +396,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 				pinstripe Welcum back *mister! Wanna play? You can use either of my mouths, free if you promise to treat me right~
 			`);
 			writeFunction("writeEncounter('pinstripeMouthRepeat')", "Use her mouth");
+			writeFunction("writeEncounter('pinstripePussy')", "Use her pussy");
+			writeFunction("writeEncounter('cancel')", "Go back");
+			break;
+		}
+		case "pinstripePussy": {
+			writeEvent(name);
+			passTime();
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "pinstripeMouthRepeat": {
@@ -630,6 +639,17 @@ function writeEvent(name) { //Plays the actual event.
 		case "pinstripePussy": {
 			writeHTML(`
 				define pinstripe = sp pinstripe; im images/pinstripe/schoolgirl.jpg;
+				pinstripe Ooh, full service? Well...
+				im service1-2.jpg
+				pinstripe How could I say no to somebody like you?
+				...
+				im service3-1.jpg
+				pinstripe Ooh, that's the spot~<br>Something about you... You really wake up my inner cumslut~
+				t She bounces like a woman with a purpose, taking great care to squeeze you just right with each thrust.
+				t Sating her libido is quite the tall order, especially given her incredible body, but the look on her face is saying you meet her expectations.
+				t And soon enough, you surpass them.
+				im service3-2.jpg
+				pinstripe Oooh~! Cumming~!
 			`);
 			break;
 		}
@@ -664,12 +684,12 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "reward1": {
 			writePhoneImage("images/pinstripe/reward1.jpg", "Art by Enoshima Iki");
-			writePhoneSpeech("pinstripe", "", "You've finished all of pinstripeF's content for this version, did you try blonding her again?");
+			writePhoneSpeech("pinstripe", "", "Not all characters have dedicated endings, pinstripeF is one of them. Still, you've completed as much of pinstripeF as possible on this route. Did you try blonding her again?");
 			break;
 		}
 		case "reward2": {
 			writePhoneImage("images/pinstripe/reward2.jpg", "Art by Enoshima Iki");
-			writePhoneSpeech("pinstripe", "", "You've finished all of pinstripeF's content for this version, did you try patience to get some extra scenes?");
+			writePhoneSpeech("pinstripe", "", "YNot all characters have dedicated endings, pinstripeF is one of them. Still, you've completed as much of pinstripeF as possible on this route. Did you try patience to get some extra scenes?");
 			break;
 		}
 		default: {

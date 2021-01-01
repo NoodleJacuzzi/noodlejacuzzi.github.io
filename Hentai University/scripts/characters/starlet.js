@@ -28,6 +28,11 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+	writeHTML(`
+		define starlet = sp starlet;
+		define pornstar = sp pornstar;
+		define player = sp player;
+	`);
 	switch (name) {
 		case "starlet1": {
 			writeSpeech("starlet", "", "Hiya~!");
@@ -229,6 +234,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			setTrust('starlet', 1);
 			updateMenu();
 			writeSpecial("Thanks to her positivity and future energy, starletF has cause your public image to improve! Your counseling skill and Victoria's trust in you has gone up!");
+			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "studioIntro": {
@@ -414,6 +420,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeFunction("writeEncounter('starletReshoot')", "Reshoot a finished porno");
 				}
 			}
+			if (checkFlag("president", "shadowCouncil") == true && checkFlag("starlet", "principal") != true) {
+				writeText("The idea that came up during the shadow council meeting, of using common sense manipulation on principalF and making it stick... It's a longshot, but you could bring it up to starletF and pornstarF.");
+				writeFunction("writeEncounter('pornoStart')", "Talk about filming with principalF and principalL");
+			}
 			writeFunction("changeLocation(data.player.location)", "Leave early");
 			break;
 		}
@@ -547,6 +557,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "starletEnding1": {
+			addFlag("starlet", "complete");
+			addFlag("pornstar", "complete");
 			writeSpeech("player", "", "Yes. Yes I will. We can even shoot a marriage scene if you'd like.");
 			writeText("She gives you a big smile, tears of joy in her eyes, as she snickers.");
 			writeSpeech("starlet", "", "You... *sniff*<br>You dummy! Marriage scenes are super unpopular! Don't worry though, me and mom are gonna have a lot of time to teach you everything you need to know.");
@@ -1078,6 +1090,163 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeFunction("reshootFilm3()", "Continue");
 			break;
 		}
+		case "pornoStart": {
+			writeHTML(`
+				player So, I had an idea for a shoot.
+				starlet Oh nice!
+				pornstar Actually, we're mostly full up on concept work. All of our studios are full up at the-
+				player I think I can get principalF principalL to star in a porno.
+				t Somewhere on the other side of a building you hear a pin drop.
+				pornstar ... The principal of my daughter's school?
+				starlet Are you saying you can get the woman who'll sign my degree to get railed on camera?
+				player I think so.
+				...
+				t You give a brief overview of your plan, fabricating where you need to in order to hide any mention of hypnosis.
+				pornstar ... I mean, in an economy like this one I'm surprised she hasn't already done porn. Well, it's a crazy idea, but let's entertain it.
+				starlet Where would we even start? An actress like that needs some top-notch material. Public gangbang? Fuck her harder in the ass than the student loans her shool gives out?
+				pornstar If what playerF's saying is true, and we can take this beacon of virtue and make her do <i>anything</i>, we could have an interview type video, probably one where she proclaims important personal details before the fucking starts.
+				starlet But the street angle is way more depraved! We get a few actors, or dickgirl actresses, maybe dress 'em up a little, and bam! Algorithmically proven to be a surefire hit.
+				pornstar Trends don't always work out. Remember that ASMR fad?
+				starlet I though bringing in a chainsaw was novel!
+				pornstar In any case, a more personal video will be more believable. Just playerF and principalF.
+				player Maybe her secretary too.
+				starlet Wha-<br>Alright, now I know you're fucking with us. Fine, you pick.
+			`);
+			addFlag("starlet", "principal");
+			data.player.studio.filmXName = "";
+			data.player.studio.filmXFetish1 = false;
+			data.player.studio.filmXFetish2 = false;
+			writeFunction("writeEncounter('principalBrainstormA')", "Street gangbang");
+			writeFunction("writeEncounter('principalBrainstormB')", "Interview");
+			break;
+		}
+		case "principalBrainstormA": {
+			writeHTML(`
+				starlet See? *He's got some refined taste.
+				pornstar Refined might not be the right word here, but I guess *he is the target audience.
+				player We really need to hit that depraved angle. No denying what's going on, or living it down.
+				t starletF shoots you a beaming look.
+				starlet Watersports! A public golden shower!
+				pornstar And risk turning off many viewers? We'd want as many eyes on this as possible.
+				starlet And what, <i>not</i> awaken a new fetish in thousands? I know that's your fetish, mom.
+				pornstar Business before pleasure. 
+				starlet That saying doesn't work in porn!
+			`);
+			data.player.studio.filmXFetish1 = true;
+			writeFunction("writeEncounter('principalBrainstormAA')", "Yes Watersports");
+			writeFunction("writeEncounter('principalBrainstormAB')", "No Watersports");
+			break;
+		}
+		case "principalBrainstormAA": {
+			writeHTML(`
+				starlet Well, you know the golden rule. 'Do unto others what gets you clicks'. I guess in this case it's more golden shower than rule though.
+				pornstar Alright, alright. Well, if playerF is deciding everything, we may as well let *him pick the name.
+				starlet Alright, but consider this: 'Principal pissy pussy ploughing, public!'
+				pornstar That's a mouthful.
+				starlet It will be!
+			`);
+			data.player.studio.filmXFetish2 = true;
+			data.player.studio.filmXName = "Principal pissy pussy ploughing, public!";
+			writeText("The title of the film is <input type='text' id='nameSubmission' value='"+data.player.studio.filmXName+"'>.");
+			writeFunction("nameFilmX()", "Continue");
+			break;
+		}
+		case "principalBrainstormAB": {
+			writeHTML(`
+				starlet Uuuuugh fine. I had an alliterative title in mind though...
+				pornstar Restrictions breed creativity. 
+				starlet Uh... Oh, what about 'Secret street whore principal needs cock, anywhere anytime!'
+				pornstar I don't dislike it. What about you, playerF?
+			`);
+			data.player.studio.filmXName = "Secret street whore principal needs cock, anywhere anytime!";
+			writeText("The title of the film is <input type='text' id='nameSubmission' value='"+data.player.studio.filmXName+"'>.");
+			writeFunction("nameFilmX()", "Continue");
+			break;
+		}
+		case "principalBrainstormB": {
+			writeHTML(`
+				pornstar I'm glad you see reason here. We can always lend her out to the homeless community afterwards.
+				starlet They're surprisingly gentle. That's what my grandma always said at least.
+				pornstar But her secretary? Are they close?
+				starlet As conjoined twins. I've never seen them apart.
+				pornstar Hm... Maybe we should come at this from another angle.
+				starlet Ha!
+				pornstar Yes yes. What if we have her whore out her close friend? Happily watch as her subordinate is ordered to sell her body?
+				starlet That is a pretty different angle. Buuut I wanna see <i>her</i> get fucked. Not her librarian-looking secretary.
+				pornstar Well, neither of us will actually be doing the fucking. playerF, your thoughts?
+			`);
+			writeFunction("writeEncounter('principalBrainstormBA')", "Fuck principalF");
+			writeFunction("writeEncounter('principalBrainstormBB')", "Fuck secretaryF");
+			break;
+		}
+		case "principalBrainstormBA": {
+			writeHTML(`
+				starlet See? Oh, we can go for the 'I never knew my boss was such a needy slut' angle!
+				pornstar I'm glad to know this studio will be left in good hands someday. Now, the name.
+				starlet 'Principal loans out her own secretary and friend (GONE SEXUAL)'?
+				pornstar A name like that might age poorly. Your suggestion, playerF?
+			`);
+			data.player.studio.filmXFetish2 = true;
+			data.player.studio.filmXName = "Principal loans out her own secretary and friend (GONE SEXUAL)";
+			writeText("The title of the film is <input type='text' id='nameSubmission' value='"+data.player.studio.filmXName+"'>.");
+			writeFunction("nameFilmX()", "Continue");
+			break;
+		}
+		case "principalBrainstormBB": {
+			writeHTML(`
+				starlet Wow, turning down an option to bone your boss on camera... You've got some serious willpower.
+				pornstar Or he's fucked her in an alternate timeline.
+				t They both suddenly laugh.
+				starlet Ha... Aha... S-sorry, that's the plot of one of mom and dad's shoots. 'She came from a femdom reality'. Oh man, your face when dad came prematurely just from you describing your world's society... Ha!
+				pornstar That was genuine on both parts. Something about a world where all men were in chastity really-<br>Ah, focus. So, she whores out her friend, probably gets jealous. What would this be called?
+				starlet 'Principal dark side: Her debt payment method is also her secret fetish'
+				pornstar How long have you been sitting on that one.
+				starlet Years. Hehe, beat that, playerF.
+			`);
+			data.player.studio.filmXName = "Principal dark side: Her debt payment method is also her secret fetish";
+			writeText("The title of the film is <input type='text' id='nameSubmission' value='"+data.player.studio.filmXName+"'>.");
+			writeFunction("nameFilmX()", "Continue");
+			break;
+		}
+		case "principalName": {
+			if (data.player.studio.filmXName == "Principal pissy pussy ploughing, public!"
+			|| data.player.studio.filmXName == "Secret street whore principal needs cock, anywhere anytime!"
+			|| data.player.studio.filmXName == "Principal loans out her own secretary and friend (GONE SEXUAL)"
+			|| data.player.studio.filmXName == "Principal dark side: Her debt payment method is also her secret fetish"
+			) {
+				writeHTML(`
+					starlet I knew you'd agree. Ah, the life of a genius.
+					pornstar You've been doing too many femdom audio readings. It's strictly degradation content for you until this cocky streak is over with.
+					starlet Ehe... Sorry mommy...
+					pornstar ... Remind me to record you saying that later.
+					starlet This is all seeming like it has some potential, but are you really going to be able to get principalF to play along?
+					pornstar I suppose we just need to have confidence in playerF's abilities. I'll keep the staff on call, bring her here whenever you're able.
+				`);
+			}
+			else {
+				if (data.player.studio.filmXName == "She came from a femdom reality") {
+					writeHTML(`
+						pornstar Oh ha ha ha.
+						starlet No wait, think about it! It was a popular flcik, lost in the great purge. all those people still searching for the title...
+						pornstar I see... A risky gambit.
+						starlet This is all seeming like it has some potential, but are you really going to be able to get principalF to play along?
+						pornstar I suppose we just need to have confidence in playerF's abilities. I'll keep the staff on call, bring her here whenever you're able.
+					`);
+				}
+				else {
+					writeHTML(`
+						starlet I... What? That's a terrible-
+						pornstar Yes, but it'll be one extra level of shame.
+						starlet Oh! I hadn't considered that. I've gotten railed in the ass in my debut, but staring in a porno with that name? I'd never be able to show my face!
+						pornstar You certainly have a talent for these things, playerF.
+						starlet This is all seeming like it has some potential, but are you really going to be able to get principalF to play along?
+						pornstar I suppose we just need to have confidence in playerF's abilities. I'll keep the staff on call, bring her here whenever you're able.
+					`);
+				}
+			}
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
 		default: {
 			writeSpeech("player", "", "Error! You must've called the wrong encounter. Error code: Failed to write encounter ("+name+") in "+character.index+".js");
 			break;
@@ -1154,6 +1323,11 @@ function nameFilm3() {
 function reshootFilm3() {
 	data.player.studio.film3Name = document.getElementById('nameSubmission').value;
 	writeEncounter("starletMask1");
+}
+
+function nameFilmX() {
+	data.player.studio.filmXName = document.getElementById('nameSubmission').value;
+	writeEncounter("principalName");
 }
 
 var eventArray = [

@@ -372,7 +372,7 @@ function writeEvent(name) { //Plays the actual event.
 		}
 		case "greenBar": {
 			writeText("With greenF turned into a lump on a barstool, you take your opportunity to walk her a block to her place, and to attack.");
-			writeText("Hey, check this out.");
+			writeSpeech("player", "", "Hey, check this out.");
 			writeText("Her place is pretty dark, so you set her down and turn on the lights. Strange that scarfF isn't home. Her drunken mind is a lot less guarded than when she's fully alert, so she doesn't try to punch you in the face this time as she quickly falls into a hypnotic trance.");
 			writeSpeech("player", "", "Alright. You're going to listen carefully. The next time you hear me say the phrase 'glorious victory', you're going to respond with '*he passed the test'. Got it?");
 			writeSpeech("green", "", "He pashed the tesht...");
@@ -477,7 +477,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "greenReward": {
 			writePhoneImage("images/green/reward.jpg", "Art by Enoshima Iki");
-			writePhoneSpeech("green", "", "You've finished all of greenF's content for this version, great work!");
+			writePhoneSpeech("green", "", "Not all characters have dedicated endings, greenF is one of them. Still, you've completed greenF as much as possible, great work!");
 			break;
 		}
 		default: {

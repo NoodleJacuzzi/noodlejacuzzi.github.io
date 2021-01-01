@@ -37,6 +37,10 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 function writeEncounter(name) { //Plays the actual encounter.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+		writeHTML(`
+			define scarf = sp scarf;
+			define player = sp player;
+		`);
 	switch (name) {
 		case "introduction1": {
 			writeText("You wave to her as she walks down the hallway.");
@@ -339,6 +343,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust('mama') == 1) {
 				writeFunction("writeEncounter('scarfMama')", "Ask for help with mamaF");
 			}
+			if (checkTrust('instructor') < 80 && checkTrust('instructor') > 0 && checkFlag("scarf", "instructor") != true) {
+				writeFunction("writeEncounter('scarfInstructor')", "Ask for help with instructorF");
+			}
+			if (checkFlag("president", "shadowCouncil") == true) {
+				writeFunction("writeEncounter('subtleStart')", "Ask about her plan for principalF");
+			}
 			writeFunction("writeEncounter('casinoRepeat')", "Return to the dream casino");
 			writeFunction("writeEncounter('beachRepeat')", "Return to the dream beach");
 			writeFunction("changeLocation(data.player.location)", "Go back");
@@ -361,6 +371,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "escapeCasino": {
 			writeSpeech("scarf", "", "Bored already? Well, it's to be expected. The more interesting your own life, the more interesting these hypnotic palaces are. Oho~<br>Care to head back now?");
+			writeFunction("writeEncounter('bunnyRepeat')", "I'm here for you");
 			writeFunction("changeLocation('teacherLounge')", "Finish");
 			writeFunction("changeLocation(data.player.location)", "Change your mind");
 			unencounter('scarf');
@@ -368,9 +379,45 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "escapeBeach": {
 			writeSpeech("scarf", "", "Bored already? Well, it's to be expected. The more interesting your own life, the more interesting these hypnotic palaces are. Oho~<br>Care to head back now?");
+			writeFunction("writeEncounter('bikiniRepeat')", "You look good");
 			writeFunction("changeLocation('teacherLounge')", "Finish");
 			writeFunction("changeLocation(data.player.location)", "Change your mind");
 			unencounter('scarf');
+			break;
+		}
+		case "bunnyRepeat": {
+			writeHTML(`
+				scarf Oh? You decided to relive this little maze of mine... Just for another bit of playtime with me?<br>Why... I'm quite flattered~
+				...
+				scarf Tsk tsk~<br>You know, I don't do this for just anyone.
+				im casinoEnd1.jpg
+				scarf Aaaah~<br>Really, if not for that insatiable hunger for more, I think I'd have you wrapped around my little finger.<br>Now then, little *boy, just for tonight...
+				im casinoEnd2.jpg
+				scarf Be <i>mine</i>~
+				im casinoEnd3.jpg
+				scarf Hmhm~<br>Enjoying the view?
+			`);
+			writeFunction("changeLocation('teacherLounge')", "Finish");
+			break;
+		}
+		case "bikiniRepeat": {
+			writeHTML(`
+				im 181.jpg
+				scarf Hmhm~ You're quite the flirt~<br>You know, a girl could be fooled to think you're falling for her with how you keep coming back to me~
+				im scarfBeachSex1.jpg
+				scarf If you need an invitation...
+				im scarfBeachSex2.jpg
+				scarf Here I am, all for you~
+				im scarfBeachSex3.jpg
+				scarf Hoo~<br>That's quite a frenzy you've gone into. My, do you feel like you're losing yourself? Drifting away...
+				im scarfBeachSex4.jpg
+				scarf F-from reality... Losing touch with... What's real? Perhaps... Perhaps today's the day I'll have... You...
+				im scarfBeachSex5.jpg
+				scarf Hah, ffffuh...<br>Y-you win again, you're the *master here... N-now must you be so... <i>Fierce</i>?<br>It's not a competition... Not anymore at least~!
+				im scarfBeachSex6.jpg
+				scarf Ghhh~
+			`);
+			writeFunction("changeLocation('teacherLounge')", "Finish");
 			break;
 		}
 		case "scarfMama": {
@@ -421,6 +468,36 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp player; I'm more worried it'll backfire and I'll face the full ethical karma of disguising myself as a kid. Or for turning her potential rape fantasy into a rape reality.
 			`);
 			unencounter('scarf');
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "scarfInstructor": {
+			writeHTML(`
+				player So, the council. I've got my eye on instructorF-
+				scarf She's quite the eyeful. I've had half a mind to entertain myself with her for a while. I find I prefer the company of our current coach, though.
+				player She's always surrounded by her squad of would-be-medalists. Any suggestions?
+				scarf Of course, chi... *Master. I think it's past time I actually assisted you directly. I have quite the technique in mind. You still use a pendant, yes?
+				player Yeah. Never been one for scented candles.
+				scarf Hmhm~ Fine for a single target in a dark room, but in an open area you must overtake every sense at once. Do so subtly and your target may never even realize they're affected.
+				player So I call you to the gym and we work together?
+				scarf I do hope you'll put on a show.<br>Common sense manipulation, that'll be how I'll set the stage for you. Invert their hidden shames to make them proudly wear their fetishes openly.<br>An advantage is that if the shame is too great, they'd rather remain in a trance than snap back to reality. A permanent solution... If you can meet my expectations.
+				player I work well under pressure.
+			`);
+			addFlag("scarf", "instructor");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "subtleStart": {
+			writeHTML(`
+				player So, I like the subtle gaslighting idea, where do we start?
+				scarf With secretaryF, of course. A light but if hypnosis should be enough, we just need for her not to be a voice of reason. Then, the rest is in everyone else's hands.
+				player Not me?
+				scarf No. If you're involved with every event she'd become suspicious. We need her to turn to you, not suspect you. <br>Of course, with all the friends you've made along the way, you shouldn't have too much trouble pointing her in the direction of somthing untoward.
+				player I see. secretaryF, then bring principalF around the school.
+				scarf And then something grand to have her running into your arms. Personally I'd have the school's males under hypnosis, and then have them and your loyal girls all perform a grand show.
+				player Hrm... Sharing isn't my strong point...
+				scarf Well, I think our school nurse might be able to help with that. Go speak to her if you really care about that sort of thing.<br>In any case, best of luck~
+			`);
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -522,7 +599,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "scarfReward": {
 			writePhoneImage("images/scarf/reward.jpg", "Art by Enoshima Iki");
-			writePhoneSpeech("scarf", "", "You've finished all of scarfF's content for this version, great work!");
+			writePhoneSpeech("scarf", "", "Not all characters have dedicated endings, scarfF is one of them. Still, you've completed scarfF as much as possible, she'll be a big help in corrupting the school!");
 			break;
 		}
 		case "scarfChallenge": {

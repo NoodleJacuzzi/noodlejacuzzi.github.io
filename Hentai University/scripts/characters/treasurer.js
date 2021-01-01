@@ -95,13 +95,15 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "empty", requirements: "?trust principal 10000;"},
+	{index: "reward", requirements: "?trust president 101;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
-		case "placeholder": {
+		case "reward": {
+			writePhoneImage("images/treasurer/reward.jpg", "Art by Oreteki18kin");
+			writePhoneSpeech("treasurer", "", "Not all characters have dedicated endings, treasurerF is one of them. Still, you've completed treasurerF as much as possible, great work!");
 			//Write the event's text here using writePhoneSpeech, writePhoneImage, and writePhoneChoices
 			break;
 		}

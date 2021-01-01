@@ -216,7 +216,7 @@ function writeScene(scene) {
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Hentai%20University/Hentai%20University%20Mobile.html">Play the mobile version</a>
 				<a class="choiceGridText" href="https://f95zone.to/threads/hentai-university-v12-noodlejacuzzi.37312/">View the F95Zone thread</a>
 				<a class="choiceGridText" href="https://hypnopics-collective.net/smf_forum/index.php?topic=23881.0">View the Hypnopics thread</a>
-				<a class="choiceGridText" href="https://www.patreon.com/posts/44384083">Download the game</a>
+				<a class="choiceGridText" href="https://www.patreon.com/posts/45656713">Download the game</a>
 				<a class="choiceGridText" href="http://freesuggestionbox.com/pub/oakihbd">Anonymous Suggestion Box</a>
 			</div>
 			<p class="choiceText" onclick="window.location.href='https://noodlejacuzzi.github.io/Hentai%20University%20Modding%20Tutorial/Tutorial.html'">Interested in writing your own characters? Check out this modding tutorial!</p>

@@ -17,6 +17,8 @@ var itemArray = [];
 var logbookArray = [];
 var definitionArray = [];
 var listOfPrintedEncounters = [];
+var completeMarker = true;
+var reminderFontSize = 100;
 var data = {
 	player: {
 		name: "You",
@@ -35,7 +37,7 @@ var data = {
 		counseling: 0,
 		lastText: 100,
 		dayID: 1,
-		version: 10,
+		version: 11,
 		location: "",
 		pervert: false,
 		color: "#86b4dc",
@@ -295,6 +297,15 @@ var quickAuthorArray = [
 	{index: "coach", author: "SlackerSavior",},
 ]
 
+var characterFinishCheckmarks = [
+	{index: "brown", check: "?trustMin ojou 20; ?flag ojou brownInvite;"},
+	{index: "chubby", check: "?flag purple complete;"},
+	{index: "coach", check: "?trust coach 200;"},
+	{index: "cold", check: "?trust cold 51;"},
+	{index: "green", check: "?trust green 100;"},
+	{index: "haze", check: "?trust haze 70;"},
+];
+
 //Startup & Systems config
 function startup() {
 	saveSlot(111);
@@ -497,6 +508,7 @@ function checkFlag(character, flag) {
 			}
 		}
 	}
+	return false;
 }
 
 function encounteredCheck(name) {
@@ -738,6 +750,7 @@ function renameNickname() {
 }
 
 function checkRequirements(string) {
+	console.log("Now checking requirements of string "+string);
 	var finalResult = true;
 	while (string.includes("!location ") == true) {
 		var check = string.split(`!location `).pop().split(`;`)[0];
@@ -935,7 +948,36 @@ function checkRequirements(string) {
 			string = string.replace(`?flag `+corruptionTarget+` `+check+`;`, ``);
 		}
 	}
-	if (finalResult == true) {
+	//This garbage is here because I made a mistake late in development. starlet (Lana) and demon (Meph) aren't in the data.story variable by default because I was lazy. This code below is my punishment.
+	while (string.includes("!flag demon ") == true) {
+		var check = string.split(`!flag demon `).pop().split(`;`)[0];
+		if (checkFlag(corruptionTarget, check) == true) {
+			finalResult = false;
+		}
+		string = string.replace(`!flag demon `+check+`;`, ``);
+	}
+	while (string.includes("?flag demon ") == true) {
+		var check = string.split(`?flag demon `).pop().split(`;`)[0];
+		if (checkFlag(corruptionTarget, check) != true) {
+			finalResult = false;
+		}
+		string = string.replace(`?flag demon `+check+`;`, ``);
+	}
+	while (string.includes("!flag starlet ") == true) {
+		var check = string.split(`!flag starlet `).pop().split(`;`)[0];
+		if (checkFlag(corruptionTarget, check) == true) {
+			finalResult = false;
+		}
+		string = string.replace(`!flag starlet `+check+`;`, ``);
+	}
+	while (string.includes("?flag starlet ") == true) {
+		var check = string.split(`?flag starlet `).pop().split(`;`)[0];
+		if (checkFlag(corruptionTarget, check) != true) {
+			finalResult = false;
+		}
+		string = string.replace(`?flag starlet `+check+`;`, ``);
+	}
+	if (finalResult == true || string.includes("define ") == true && string.includes("=") == true) {
 		return true;
 	}
 	else {
@@ -1311,6 +1353,7 @@ function printEncounterButton(character, scene, text, top, left, altName, altIma
 }
 
 function printEncounterTab(name, scene, text, altImage, altName) {
+	var crown = "";
 	if (character != "system") {
 		var tabTrust;
 		var cancelTab = false;
@@ -1330,12 +1373,24 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 					text = text.replace(name, data.story[z].fName);
 				}
 				var cssColor = data.story[z].color;
+				if (completeMarker == true) {
+					if (data.story[z].textEvent.includes("reward") || data.story[z].textEvent.includes("Reward")) {
+						cssColor = "#FFFFFF";
+						crown = "♔";
+						altName = crown + " " + data.story[z].fName + " " + data.story[z].lName + " " + crown;
+					}
+					if (checkFlag(data.story[z].index, "complete") == true) {
+						cssColor = "#FFFFFF";
+						crown = "♔";
+						altName = crown + " " + data.story[z].fName + " " + data.story[z].lName + " " + crown;
+					}
+				}
 				if (data.story[z].encounter == true) {
 					cancelTab = true;
 				}
 			}
 		}
-		if (checkTrust(name) == 0 && data.player.location == "map") {
+		if (checkTrust(name) == 0 && data.player.location == "map" && checkFlag("mom", "megaEasy") == false) {
 			cancelTab = true;
 		}
 		if (data.story[tabIndex].trust == 0) {
@@ -1367,6 +1422,9 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 				break;
 			}
 		}
+		if (crown == "♔") {
+			tabTrust = "<span class='love'>Complete!</span>";
+		}
 		var checkForError = "";
 		if (altImage == undefined) {
 			altImage = "";
@@ -1394,7 +1452,7 @@ function printEncounterTab(name, scene, text, altImage, altName) {
 			writeSpeech(name, img, `
 				<p class="status"> Status: ` + tabTrust + `</p>	
 				<p class="switch" onclick="loadEncounter('`+data.story[tabIndex].index+`', '`+scene+`')">` + replaceCodenames(text) + `</p>
-			`, altName, ""
+			`, altName, cssColor
 			);
 		}
 	}
@@ -1419,7 +1477,6 @@ function writeText (text) {
 		case "royalty": {
 			document.getElementById('output').innerHTML += `
 				<p class='rawText' style='
-				margin: 20px 200px;
 				font-size: 1.3em;
 				font-family: arial, times new roman, sans-serif;
 				'>` + replaceCodenames(text) + `</p>
@@ -1491,7 +1548,7 @@ function writeSpecial (text) {
 function writeSpeech (name, img, text, altName, altColor) {
 	var finalName = name;
 	var finalImg = "";
-	var finalColor = "";
+	var finalColor = "#FFFFFF";
 	var checkForError = "";
 	//If the player is using a shortcut...
 	if (img == "") {
@@ -1511,7 +1568,7 @@ function writeSpeech (name, img, text, altName, altColor) {
 		finalImg = finalImg.replace('.jpg', 'P.jpg');
 	}
 	//Check if a transparent shot should be used
-	if (data.player.style == "persona" || data.player.style == "royalty") {
+	if (data.player.style == "persona" || data.player.style == "royalty" || data.player.style == "lobotomy") {
 		var checkForError = `onerror ="javascript:this.src='images/`+name+`/`+name+`.jpg'"`;
 		finalImg = finalImg.replace('P.jpg', '.jpg');
 		finalImg = finalImg.replace('.jpg', 'T.png');
@@ -1558,29 +1615,26 @@ function writeSpeech (name, img, text, altName, altColor) {
 	//Output the speech in the assigned style.
 	switch (data.player.style) {
 		case "lobotomy": {
+			//old
 			document.getElementById('output').innerHTML += `
-			<div class="textBoxLobotomy" style="border-color: `+finalColor+`;
-			background: linear-gradient(90deg, 
-			#000000 10px, 
-			`+finalColor+` 10px, 
-			`+finalColor+` 210px, 
-			#000000 210px);">
+			<div class="textBoxLobotomy" style="border-color: `+finalColor+`;">
 				<div class = "lobotomyThumb" style="background-color: `+finalColor+`">
 					<div class = "lobotomyThumbBorder">
 						<img class = "textThumbLobotomy" src = "
 							`+ finalImg +`
 						"`+checkForError+`>
 					</div>
-					<p class = "textNameLobotomy">`+ finalName + `</p>
 				</div>
 				<div class="textBoxContentLobotomy">
-				<p>` + replaceCodenames(text) + `</p>
-			</div>
+					<p class = "textNameLobotomy" style = "color:`+finalColor+`">`+ finalName + `</p>
+					<p>` + replaceCodenames(text) + `</p>
+				</div>
 			<br>
 			`;
 			break;
 		}
 		case "royalty": {
+			//old
 			document.getElementById('output').innerHTML += `
 			<div class="textBoxRoyalty">
 				<div class = "royaltyThumb">
@@ -1750,7 +1804,21 @@ function writeMed (img, cap) {
 	}
 }
 
-function writeFunction (name, func) {
+function writeFunction (name, func, color) {
+	if (color == null) {
+		color = "#FFFFFF";
+	}
+	switch (color) {
+		case "blue":
+			color = "#B7BDFF"
+		break;
+		case "red":
+			color = "#FF0019"
+		break;
+		case "green":
+			color = "#00FF1D"
+		break;
+	}
 	switch (data.player.style) {
 		case "lobotomy": {
 			var skewNumber = getRandomInt(8);
@@ -1774,7 +1842,7 @@ function writeFunction (name, func) {
 				-o-transform: skew(`+skewNumber+`deg, 0deg);
 				-ms-transform: skew(`+skewNumber+`deg, 0deg);
 				transform: skew(`+skewNumber+`deg, 0deg);
-				border: solid `+borderNumber+`px;
+				border: solid `+borderNumber+`px `+color+`;
 			">
 			<p class="choiceTextLobotomy" 
 			style ="
@@ -1821,7 +1889,9 @@ function writeFunction (name, func) {
 		}
 		default: {
 			document.getElementById('output').innerHTML += `
-				<p class="choiceText" onclick="` + name + `">
+				<p class="choiceText" onclick="` + name + `"
+				style = "border-bottom: 3px solid `+color+`; color: `+color+`"
+				>
 					` + replaceCodenames(func) + `
 				</p>
 			`;
@@ -1850,6 +1920,7 @@ function writeHTML(text) {
 				if (command.toLowerCase() == definitionArray[i].shortcut) {
 					lines[lineCounter] = lines[lineCounter].replace(definitionArray[i].shortcut, definitionArray[i].result);
 				}
+				//console.log("Shortcut replaced, line is now "+lines[lineCounter]);
 			}
 			var command = lines[lineCounter].replace(/ .*/,'');
 			switch (command.toLowerCase()) {
@@ -1878,7 +1949,9 @@ function writeHTML(text) {
 					//Remove the command from the line we actually want to print.
 					lines[lineCounter] = lines[lineCounter].replace(command+` `, ``);
 					//Execute the writeText command to print everything left to the screen.
-					writeText(lines[lineCounter]);
+					if (checkRequirements(lines[lineCounter]) == true) {
+						writeText(lines[lineCounter]);
+					}
 					//Don't execute any of the below switch cases.
 					break;
 				}
@@ -1912,7 +1985,9 @@ function writeHTML(text) {
 					//Remove the command from the line we actually want to print.
 					lines[lineCounter] = lines[lineCounter].replace(command+` `+name+`; `, ``);
 					//Execute the writeSpeech command to print everything we have left.
-					writeSpeech(name, image, cullRequirements(lines[lineCounter]), altName, altColor);
+					if (checkRequirements(lines[lineCounter]) == true) {
+						writeSpeech(name, image, cullRequirements(lines[lineCounter]), altName, altColor);
+					}
 					break;
 				}
 				case "im": {
@@ -2035,7 +2110,7 @@ function writePorn() {
 
 function listArtists() {
 	writeSpecial("Here's a list of authors who's written for the game:");
-	writeSpeech("Noodle Jacuzzi", "scripts/gamefiles/characters/noodle.jpg", "<b>Author of momF, starletF, tomgirlF, succubusF, and others.</b><br>I almost named myself Dwayne 'The Guac' Johnson.");
+	writeSpeech("<a href = 'https://noodlejacuzzi.github.io/index.html'>Noodle Jacuzzi</a>", "scripts/gamefiles/characters/noodle.jpg", "<b>Author of momF, starletF, tomgirlF, succubusF, and others.</b><br>I almost named myself Dwayne 'The Guac' Johnson.<br>Click my name to play my other games if you want.");
 	writeSpeech("Cryptogreek", "scripts/gamefiles/characters/crypto.jpg", "<b>Author of kuroF, mistressF, maidF, mejiF, housekeepF, and others.</b><br>Thanks for enjoying the game my fellow degenerates!");
 	writeSpeech("SlackerSavior", "scripts/gamefiles/characters/slacker.jpg", "<b>Author of sportsF, coachF, coldF, swimmerF, and orangeF.</b><br>I wanted to write 'Don't ask me for shit' here, but it felt a little too rude.<br>So feel free to ask, but don't expect results anytime soon.");
 	writeSpecial("Here's a list of artists who's works are currently in the game:");
@@ -2617,6 +2692,16 @@ function updateSave() {
 		var goof = {index: "ribbon", fName: "Ella", lName: "Bell", trust: 0, encountered: false, textEvent: "", met: false, color: "#8D528A", author: "NoodleJacuzzi", artist: "Oreteki18kin", textHistory: "", unreadText: false};
 		data.story.push(goof);
 	}
+	if (data.player.version == 10) {
+		console.log('version 10 detected, updating save');
+		data.player.version = 11;
+		for (x = 0; x < data.story.length; x++) {
+			if (data.story[x].textEvent.includes("reward") || data.story[x].textEvent.includes("Reward")) {
+				data.story[x].textEvent = "";
+			}
+		}
+		writeText("Updating an older save, you might get repeats of reward texts for some characters you've already completed.");
+	}
 	saveSlot(110);
 	//var goof = {index: "camboi", fName: "Charlie", lName: "Miller", trust: 0, encountered: false, textEvent: "", met: false, color: "#716559", author: "SlackerSavior", artist: "Himitsu Kessha Vanitas", textHistory: "", unreadText: false,};
 }
@@ -2832,10 +2917,18 @@ function generateNav() {
 		var select = document.getElementsByTagName("head")[0];
 		select.removeChild(select.lastChild);
 	}
+	var logbookList = [];
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].trust > 0) {
-			document.getElementById('logbookLeft').innerHTML += `<h3 class = "button" onclick = "switchDesc('`+data.story[i].index+`')">` + data.story[i].fName + `</h3>`;
+			var goof = {index: data.story[i].index, fName: data.story[i].fName, color: data.story[i].color,};
+			logbookList.push(goof);
 		}
+	}
+	console.log(logbookList);
+	logbookList = logbookList.sort(compare);
+	console.log(logbookList);
+	for (i = 0; i < logbookList.length; i++) {
+		document.getElementById('logbookLeft').innerHTML += `<h3 class = "button" style = "color: `+logbookList[i].color+`" onclick = "switchDesc('`+logbookList[i].index+`')">` + logbookList[i].fName + `</h3>`;
 	}
 	switchDesc('player');
 }
@@ -2892,6 +2985,12 @@ function switchDesc(n) {
 				tabTrust = "Unknown";
 				break;
 			}
+		}
+		if (data.story[characterCounter].textEvent.includes("reward") || data.story[characterCounter].textEvent.includes("Reward")) {
+			tabTrust = "♔ <b>Complete</b> ♔";
+		}
+		if (checkFlag(data.story[characterCounter].index, "complete") == true) {
+			tabTrust = "♔ <b>Complete</b> ♔";
 		}
 		if (data.player.pervert != true) {
 			if (imagesDisabled != true) {
@@ -2951,6 +3050,16 @@ function switchDesc(n) {
 			`;
 		}
 	}
+}
+
+function compare(a, b) {
+	if ( a.fName < b.fName ){
+		return -1;
+	}
+	if ( a.fName > b.fName ){
+		return 1;
+	}
+	return 0;
 }
 
 //Inventory & shopping
@@ -3305,6 +3414,24 @@ function diagnostic() {
 			}
 			break;
 		}
+		case "mega easy": {
+			if (checkFlag("mom", "megaEasy") != true) {
+				data.player.gps = true;
+				addFlag("mom", "megaEasy");
+				data.player.hypnosis = 3;
+				data.player.hacking = 3;
+				data.player.counseling = 5;
+				data.player.money += 1000;
+				updateMenu();
+				writeSpecial("Mega easy mode activated! NPC encounters will appear on the map, you will now start on the town map, stats have been adjusted, and you have a lot of money");
+			}
+			else {
+				data.player.gps = false;
+				removeFlag("mom", "megaEasy");
+				writeSpecial("Mega easy mode deactivated, GPS mode deactivated.");
+			}
+			break;
+		}
 		case "spookwave": {
 			if (checkItem('Ghost AR') != true) {
 				addItem('Ghost AR', true, 'scripts/gamefiles/items/ghostAR.jpg');
@@ -3481,14 +3608,37 @@ function generateContacts() {
 	console.log("contacts generated");
 	data.player.lastText = 100;
 	document.getElementById('phoneLeft').innerHTML = ``;
+	
+	
+	var phoneList1 = [];
+	var phoneList2 = [];
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].textEvent!= "") {
-			document.getElementById('phoneLeft').innerHTML += `<h3 class = "button char_` + data.story[i].index + `" style = "color: `+data.story[i].color+`" onclick = "switchContact('`+i+`')">` + data.story[i].fName + `</h3 >`;
+			var goof = {
+				index: data.story[i].index, 
+				fName: data.story[i].fName, 
+				color: data.story[i].color, 
+				textEvent: data.story[i].textEvent, 
+				unreadText: data.story[i].unreadText,};
+			if (goof.textEvent.includes("reward") || goof.textEvent.includes("Reward")) {
+				phoneList2.push(goof);
+			}
+			else {
+				phoneList1.push(goof);
+			}
 		}
+	}
+	logbookList = phoneList1.sort(compare);
+	logbookList = phoneList2.sort(compare);
+	for (i = 0; i < phoneList1.length; i++) {
+		document.getElementById('phoneLeft').innerHTML += `<h3 class = "button char_` + phoneList1[i].index + `" style = "color: `+phoneList1[i].color+`" onclick = "switchContact('`+phoneList1[i].index+`')">` + phoneList1[i].fName + `</h3 >`;
+	}
+	for (i = 0; i < phoneList2.length; i++) {
+		document.getElementById('phoneLeft').innerHTML += `<h3 class = "button char_` + phoneList2[i].index + `" style = "color: #FFFFFF" onclick = "switchContact('`+phoneList2[i].index+`')">` + phoneList2[i].fName + `<br>♔</h3 >`;
 	}
 	for (i = 0; i < data.story.length; i++) {
 		if (data.story[i].unreadText != false) {
-			data.player.lastText = i;
+			data.player.lastText = data.story[i].index;
 		}
 	}
 	if (data.player.lastText != 100) {
@@ -3506,12 +3656,19 @@ function generateContacts() {
 }
 
 function switchContact(n) {
+	console.log(n);
+	var finalResult = 0;
+	for (i = 0; i < data.story.length; i++) {
+		if (data.story[i].index == n) {
+			finalResult = i;
+		}
+	}
 	phoneRight.scrollTop = 0;
-	console.log("contact switched");
+	console.log("contact switched to index "+finalResult+", codename "+n);
 	document.getElementById('phoneRight').innerHTML = '';
-	document.getElementById('phoneWindow').innerHTML = data.story[n].fName;
-	data.story[n].unreadText = false;
-	data.player.lastText = n;
+	document.getElementById('phoneWindow').innerHTML = data.story[finalResult].fName;
+	data.story[finalResult].unreadText = false;
+	data.player.lastText = finalResult;
 	loadPhoneEvent(data.story[data.player.lastText].index, data.story[data.player.lastText].textEvent);
 }
 

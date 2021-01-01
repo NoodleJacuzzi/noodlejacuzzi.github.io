@@ -22,6 +22,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "caseSelect", name: "succubus is here again", location: 'playerHouse', time: "Night", itemReq: "", trustMin: 60, trustMax: 76, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "demon.jpg",},
 	{index: "date1", name: "succubus is here waiting for you", location: 'shoppingDistrict', time: "MorningEvening", itemReq: "", trustMin: 77, trustMax: 77, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "",},
 	{index: "postQuo", name: "succubus is here again", location: 'playerHouse', time: "Night", itemReq: "", trustMin: 78, trustMax: 99, type: "tab", top: 0, left: 0, day: "both", altName: "", altImage: "demon.jpg",},
+	{index: "succubusHotelBad", name: "Ask about succubus", requirements: "?flag demon hotelBad;", altName: "", altImage: "",},
 ];
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -30,6 +31,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 	writeHTML(`
 		define player = sp player;
 		define succubus = sp succubus;
+		define tomgirl = sp tomgirl;
+		define nagatoro = sp nagatoro;
 	`);
 	switch (name) {
 		case "introOffer": {
@@ -696,7 +699,13 @@ function writeEncounter(name) { //Plays the actual encounter.
 					}
 				}
 			}
+			if (checkTrust('instructor') < 80 && checkTrust('instructor') > 0 && checkFlag("succubus", "instructor") != true) {
+				writeFunction("writeEncounter('succubusInstructor')", "Talk about instructorF");
+			}
 			writeSpeech("succubus", "demon.jpg", "We could also just spend the night chatting, if you wanted. Anything on your mind?");
+			if (checkFlag("succubus", "excited") == true) {
+				writeFunction("writeEncounter('proposal')", "Ask what's got succubusF so excited");
+			}
 			writeFunction("writeEncounter('chatSelect')", "Chat");
 			writeFunction("changeLocation('playerHouse')", "Finish");
 			if (checkFlag('succubus', 'mission') == true) {
@@ -704,6 +713,12 @@ function writeEncounter(name) { //Plays the actual encounter.
 					addFlag('succubus', 'missionF');
 					writeEncounter('missionF');
 				}
+			}
+			if (checkTrust("tomgirl") == 666 && checkFlag("succubus", "excited") == false) {
+				writeEncounter("excited");
+			}
+			if (checkTrust("nagatoro") == 666 && checkFlag("succubus", "excited") == false) {
+				writeEncounter("excited");
 			}
 			break;
 		}
@@ -833,6 +848,225 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeEvent(name);
 			passTime();
 			unencounter("nagatoro");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "succubusInstructor": {
+			writeHTML(`
+				player I'm close to having control of the school, but if you're free I could use some support.
+				succubus Oh?
+				player I need to be able to hypnotize a bunch of girls at once. Maybe you could help me out? Call a bunch of your demon friends or something.
+				succubus ... You think I have friends?
+				player ... Contacts?
+				succubus Nope.
+				player Acquaintances?
+				succubus Nobody but you, and people I hate. But fuck 'em! With what I've got from demonF's vault, a bunch of hormonal teenagers will be a cakewalk. Hehe...
+				t succubusF Goes to his bag and pulls out a glass... Something. It defies description, the only thing you can actually be sure of is that it looks like succubusF is holding upside-down.
+				succubus With this, and a little bit of energy, I can manipulate someone's common sense. Basically it inverts someone's normal morals or preferences, specifically desires someone wants to keep hidden.<br>Let's say you were into the oh-so forbidden act of hand-holding. I tilt like so while thinking of you...
+				t succubusF tilts the... Thing... And reality begins to wobble.
+				succubus And suddenly you'd hold hands in public, not caring how scandalous you look~<br>And back to normal. Temporary, but effective.
+				player How temporary?
+				succubus Well, you remember what happened, but the human mind is kind of a pushover. If you feel enough shame it breaks you, leaving you permanently in the manipulated state rather than accept what happened.<br>I think you know where I'm going with this~
+				player So I call you to the gym, you work your magic-
+				succubus And then you work yours! It'll be nice to see you in action, *master.<br>I'll head out and get ready, see you there~
+			`);
+			addFlag("succubus", "instructor");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "excited": {
+			writeHTML(`
+				define succubus = sp succubus; im demon.jpg;
+				im profileD.jpg
+				succubus Hello master~!
+				t Upon your windowsill is your bubbly chocolate companion, looking quite chipper.
+				succubus The others you've drained are doing pretty well! They'll slot in perfectly to their new lives, hopefully soon! And~<br>That might be coming soon~!<br>So, so, what will we be doing tonight?
+			`);
+			addFlag("succubus", "excited");
+			writeFunction("writeEncounter('postQuo')", "Continue");
+			break;
+		}
+		case "proposal": {
+			writeHTML(`
+				define succubus = sp succubus; im demon.jpg;
+				player So, what's got you so excited tonight?
+				succubus Hehe, this~!
+				t He pulls out another bottle of cloudy fluid.
+				succubus This right here is the crown jewel, or at least the pearl necklace, of demonF's collection. Enough of the stuff that just drinking a sip would boost me up to at least the rank of incubus, maybe even higher.<br>And if you drank this after being transformed, well... You wouldn't have to go through a period with my bodytype on your way to being a prince of hell~
+				player So there's nothing left to wait for...
+				succubus That's right~!<br>Well, nothing I can't handle myself. Finding a place for you to relax and adjust to your new body, and actually making the plunge on the others you've corrupted...
+				player Adjust?
+				succubus Yeah, you'll be out of commission for a while. I couldn't walk for a week after, and that's also on top of the month-long coma.<br>Ah! But I had a pretty shit overseer, it'll be way easier for you.
+			`);
+			writeFunction("writeEncounter('accept')", "Alright");
+			writeFunction("writeEncounter('refuse')", "Maybe another night");
+			break;
+		}
+		case "accept": {
+			writeHTML(`
+				define succubus = sp succubus; im demon.jpg;
+				t You take a deep breath.
+				player Alright. Let's go through with the transformation.
+				succubus Really?! You're sure, like really sure?
+				player Yeah, will it hurt?
+				succubus Not at all. Well, it might, depending on how you define 'hurt', but don't worry. It'll all be worth it.<br>Don't worry *master, I'll take care of everything. You just relax, okay?
+				t Looking into succubusF's eyes you suddenly feel weak at the knees.
+				succubus Don't worry. Relax.<br>I need to draw it all out, but you'll only be empty for a moment.
+				t There's a growing burning sensation coursing through your veins, but quickly you realize it isn't pain, but an overloading pleasure.
+				succubus You helped me, now it's my turn.
+				t Darkness swallows your vision, and you feel empty. Lights flash into existence as phantom sensations assault your fading consciousness, soon the empty black void is replaced with colors and scents beyond description.
+				t You feel something leave your body, something important, but letting it go opens your mind to an overwhelming euphoria.
+				t And then you feel as though you are drowning, and the sensations grow as your lungs, your very soul, take in whatever floods you.
+				...
+				t Every few moments the assault on your being fades for just a moment. The briefest flicker of alertness as your mind rejoins the waking world.
+				t Only to fade away yet again as you feel a gentle hand on yours, and then another.
+				...
+				succubus Y... ke and s...
+				t Time must be passing... Yet without any kind of way to tell, it's like you were dropped from an airplane with a blindfold on.
+				succubus Wake up... To a new world... Yours...
+				...
+				t You open your eyes, feeling like you've just finished a quick nap, a small blip of consciousness. 
+				t But the fact that you're in an unfamiliar room suggests otherwise. It's one of demonF's hotel rooms. And across from you is a dozing succubusF.
+				succubus ... Hm? Mmm, you awake? For real this time, or just dreaming with your eyes open again?
+				player I-
+				t At the very first syllable you utter succubusF shoots to full awakeness.
+				succubus You are! You're awake! Good morning!
+				t Across from you is a mirror, so you can at least see you look the same. But you feel... Different.
+				succubus You've been out for weeks. I mean, you did jump right up the ranks at least.<br>Ah, don't freak out about the room. demonF okayed us staying here. Since most of his reserves are inside you now, he's pretty much just the owner of this place in name now. Oh, there's so much to do... Gotta get the outfit, and...<br>Hey, hey, can you walk?
+				player I think... Yeah, I feel fine, actually.
+				succubus You'd better. All that time and energy spent on you, you should have the stamina of a racehorse-turned stud.<br>Alright, out of the room with you.
+				player Why?
+				succubus It's a surprise! Listen, the other bois are here too, go hang out with them, let them know you're alright, and come back here and I'll be ready. Okay?<br>You'll know where they are, trust me.
+			`);
+			data.player.time = "Morning";
+			addFlag("succubus", "hotelGood");
+			writeFunction("changeLocation('hotel')", "Begin searching");
+			break;
+		}
+		case "refusal": {
+			writeHTML(`
+				define succubus = sp succubus; im demon.jpg;
+				player Maybe another time, alright?
+				succubus ...
+				player succubusF?
+				succubus Ah, yeah, sorry! Of course, there's still way more to do before you make the plunge. Another time, just not right now.<br>Patience is a virture, right?
+				player Yeah. How about we-
+				succubus Actually, I, uh... I need to go.
+				t His voice is a little shaky. You pat his head, but he turns away from you.
+				succubus More fun tomorrow night, alright? I need some fresh air.
+				t He leaves through the window, and suddenly you're alone in your room.
+			`);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "hotelGoodFinish": {
+			writeHTML(`
+				define succubus = sp succubus; im demon.jpg;
+				succubus So, you finish catching up with your harem?
+				player Things are gonna change a lot, aren't they? No more worrying about taking over the town.
+				succubus Hey, perk up buttercup. There's plenty of men and women who'd give the world to be a part of this place with you. Speaking of, go ahead and come in.
+				t You push open the door.
+				im choc (26).jpg
+				succubus Welcome home~!<br>Hehe, I've always wanted to say that~
+				t succubusF quickly embraces you in a hug.
+				succubus You know, a *guy like you could've had anything *he wanted. I mean, you probably will, but I'm glad that for now you're here with me.<br>I can be a little rough around the edges, and hell's bells when I get my fix out of you I'll be swearing up a storm, but just for now... I love you.
+				player I l-
+				succubus Ah ah ah~<br>I wanna hear it with your actions tonight. I watched over your body every night since we made the plunge, let's just say...<br>No, I'll be direct. succubusF's hungry for some honeymoon fucking. 
+				...
+				im choc (23).jpg
+				succubus Hah, fffuck, you've gotten bigger, haven't you?
+				t You offered to take the lead, but succubusF insisted on this position.
+				im choc (24).jpg
+				succubus Ggghh.... Fucking hell, it's stronger than before... At least-
+				player I'm still feeling fresh, let's go for another.
+				succubus Holy... Alright, that's what I wanna hear! Let's... Let's get cleaned off, alright?<br>It's so weird for you to be outlasting me by so much... I maybe made a mess over here already... I might need a break.
+				...
+				im choc (29).jpg
+				succubus Ah~! Rougher~!
+				player I thought you needed a break?
+				succubus Yesh~! Shtarting the shower wash long enough~!
+				im choc (31).jpg
+				succubus CummiiiIIING~! M-more~! Love you~!
+				...
+				im choc (32).jpg
+				succubus Hah... Aah~<br>It'sh sho thick...
+				t You've absolutely plastered succubusF's face, yet... You still feel energized. Empowered beyond all reason.
+				succubus M-more?
+				...
+				im choc (7).jpg
+				t succubusF gurgles intermittently, his nonsensical babble reaching t's peak whenever his overwork cock twitches, unable to still even another drop but still causing succubusF's body to twitch with pleasure.
+				t But somehow, you're still going strong. This was the plan, after all. This hotel has undergone a shift while you were changing, and it's all for you.
+				succubus Haaaaghf~
+				t This one's exhausted, but your harem isn't for show. Maybe that receptionist, maybe demonF, maybe more. You pick up succubusF, ideas racing through your mind. No longer bound by mortal limitations, the city, the world is your oyster.
+				t And you have no doubt succubusF will be by your side all the way.
+			`);
+			writeFunction("writeEncounter('hotelGoodEpilogue')", "Continue");
+			break;
+		}
+		case "hotelGoodEpilogue": {
+			addFlag("succubus", "complete");
+			writeHTML(`
+				define succubus = sp succubus; im demon.jpg;
+				define tomgirl = sp tomgirl;
+				define nagatoro = sp nagatoro;
+				define demon = sp demon;
+				t The days blend together in the following months, then years. No longer bound to your humanity your time in the hotel has become what feels like an endless vacation surrounded by your harem.
+			`);
+			if (checkTrust("tomgirl") == 666) {
+				writeHTML(`
+					...
+					im images/tomgirl/8-2.jpg
+					t tomgirlF proved to be a loyal concubine, always eager to engage with you romantically. Easily pushed to jealousy, competitions between him and the other members of your harem spark often.
+					im images/tomgirl/8-6.jpg
+					t These competitions often end messily.
+				`);
+			}
+			if (checkTrust("nagatoro") == 666) {
+				writeHTML(`
+					...
+					im images/nagatoro/016.jpg
+					t nagatoroF's seductive skills and talents only improved with his corruption. Every so often he'll vanish from the hotel, only to bring back a group of excited bois eager to transform themselves.
+					im images/nagatoro/hotelGood.jpg
+					t Of course, whenever these excursions go on for a little too long, he takes some time to indulge his teasing habits by letting you know how the process is going.
+				`);
+			}
+			if (checkTrust("demon") > 0) {
+				writeHTML(`
+					...
+					im images/demon/032.jpg
+					t demonF's participation in your harem was spotty at first, he'd regularly claim you'd gone soft as a result of all your harem's pampering. It took a while, but eventually you found his weak point.
+					im images/demon/039.jpg
+					t Always trying to goad you into roughness, your new form has given you ample ability to resist his taunting. It turns out that a slow-burn, patient fuck leaves him completely on edge. Your time with him often lasts entire nights as you slowly chip away at his attitude problem.
+				`);
+			}
+			writeHTML(`
+				...
+				im images/succubus/choc (12).jpg
+				t succubusF has been by your side nearly every moment of every day. Though he still harbors worries that something will break apart your idyllic life, you've found some fun in pushing him to step outside his comfort zone. Getting him to go out in his true form was quite the big moment for him.
+				im images/succubus/choc (3).jpg
+				t And of course you're always eager to reward him for good behavior.
+				...
+				t There's no telling what the future holds, but daily life right now is a carnival of indulgence.
+				t But for now, this is...
+			`);
+			writeFunction("loadEncounter('system', 'credits')", "The End");
+			removeFlag("succubus", "hotelGood");
+			addFlag("succubus", "complete");
+			break;
+		}
+		case "succubusHotelBad": {
+			writeHTML(`
+				im 008.jpg
+				black succubusF's adjustment has been... Strained. At first they refused to participate, sure you'd wake up to set this matter right. Like all the whores here he's certainly got the charm to draw in men, and his naivety is useful to ensure his targets fall for him.
+				im 011.jpg
+				black I suppose that's the advantage of being experienced... Still, of all our newest batches of girls, succubusF is by far the least efficient. Only four targets corrupted since you began your change.<br>I, on the other hand, have personally drawn in sixteen.
+				im 021.jpg
+				black His prey eventually do fall, their masculinity draining away and they find their sessions growing shorter and shorter, until they've been completely drained.<br>Callously, succubusF will usually dump them, and then leave other whores to do the dirty work of the actual corruption.<br>Let's just say... He hasn't made any friends here. His former targets in particular were quite eager to join in his retraining.
+				t Stupid Bitch suddenly realizes something, and closes the feed to bring up another file.
+				black See, eventually we got tired of his attitude. Always so sure you'd wake up, pick him as your favorite, and he'd never have to work another day. Well...
+				im choc (20).jpg
+				black After that day, well, after those days, it took quite a while, he's certainly lost his former attitude. We've delved into the hotel's drug collection a few times to really ensure his rebellious streak is gone for good.
+			`);
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
@@ -1378,7 +1612,6 @@ function writeEvent(name) { //Plays the actual event.
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
 	{index: "succubusReminder", trust: 77,},
-	{index: "succubusNewReward", trust: 83,},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event

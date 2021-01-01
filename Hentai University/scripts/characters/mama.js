@@ -203,6 +203,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "mamaSonEnding": {
+			addFlag("mama", "complete");
 			writeEvent(name);
 			writeFunction("loadEncounter('system', 'credits')", "The End");
 			break;
@@ -370,6 +371,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			break;
 		}
 		case "mamaBbcEnding": {
+			addFlag("mama", "complete");
 			writeEvent(name);
 			writeFunction("loadEncounter('system', 'credits')", "The End");
 			break;
