@@ -37,6 +37,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 		define nagatoro = sp nagatoro;
 	`);
 	switch (name) {
+		case "cancel": {
+			unencounter(character.index);
+			changeLocation(data.player.location);
+			break;
+		}
 		case "intro1": {
 			writeSpeech("player", "", "Alright, so I just need to play along and fuck some cute demon girl-");
 			writeSpeech("succubus", "demon.jpg", "(male) ");
