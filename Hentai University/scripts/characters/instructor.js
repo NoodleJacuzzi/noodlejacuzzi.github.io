@@ -321,7 +321,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "instructortrackRepeat": {
+		case "trackRepeat": {
 			writeHTML(`
 				im 115.jpg
 				track Ah, you picked me this time? Mmm, I promise I won't let you down. I'll make sure my teen pussy satisfies your-
@@ -405,7 +405,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "instructorbikiniRepeat": {
+		case "bikiniRepeat": {
 			writeHTML(`
 				im 087.jpg
 				bikini Aaah, i-it's too big! W-wouldn't you rather use my t... my tits?
@@ -501,7 +501,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "instructorkarateRepeat": {
+		case "karateRepeat": {
 			writeHTML(`
 				im 100.jpg
 				karate Hmph! What do you think I am, your personal whore? If you're thinking I'll bend over on command, you've got another thing coming!
@@ -582,7 +582,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "instructorgymnastRepeat": {
+		case "gymnastRepeat": {
 			writeHTML(`
 				im 129.jpg
 				gymnast P-please sir, I need it... I don't know what's wrong with me, ever since you last <i>used</i> me, I haven't been able to-

@@ -190,6 +190,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 					case "met": {
 						writeHTML(`
 							principal I've heard you and presidentF have already met. I do hope she comes around to you.<br>She's quite set on learning the results of your secondary investigation as soon as possible.
+							t You haven't finished corrupting presidentF.
 						`);
 						break;
 					}
@@ -227,6 +228,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 					case "met": {
 						writeHTML(`
 							principal nurseF was asking about you, she's actually a PTSA member. You should visit her if you have the chance.
+							t You haven't finished corrupting nurseF.
 						`);
 						break;
 					}
@@ -257,12 +259,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 					case "challenging": {
 						writeHTML(`
 							principal Are you and scarfF playing some kind of game? You should wrap it up before the meeting.
+							t scarfF isn't on your side yet.
 						`);
 						break;
 					}
 					case "met": {
 						writeHTML(`
 							principal scarfF still won't get back to me about the meeting. I hope she'll attend.
+							t You haven't fully corrupted scarfF.
 						`);
 						break;
 					}
@@ -280,26 +284,27 @@ function writeEncounter(name) { //Plays the actual encounter.
 					}
 				}
 				var mamaStatus = "";
-				if (checkTrust("scarf") > 0) {
+				if (checkTrust("mama") > 0) {
 					mamaStatus = "met";
 				}
-				if (checkTrust("scarf") == 20) {
-					mamaStatus = "son";
-				}
-				if (checkTrust("scarf") == 100) {
+				if (checkTrust("mama") == 20) {
 					mamaStatus = "bull";
 				}
+				if (checkTrust("mama") == 100) {
+					mamaStatus = "son";
+				}
 				switch (mamaStatus) {
+					case "met": {
+						writeHTML(`
+							principal Ugh, mamaF has called me three times today... Goodness, if I need to hear about her son again, I may have a breakdown.
+							t You haven't fully corrupted mamaF.
+						`);
+						break;
+					}
 					case "son": {
 						writeHTML(`
 							principal I received the strangest call from mamaF. She's under the impression her son will be attending the PTSA meeting. I though he wasn't even in the country yet...
 							t mamaF has been corrupted.
-						`);
-						break;
-					}
-					case "met": {
-						writeHTML(`
-							principal Ugh, mamaF has called me three times today... Goodness, if I need to hear about her son again, I may have a breakdown.
 						`);
 						break;
 					}
@@ -343,7 +348,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 					}
 					case "met": {
 						writeHTML(`
-							principal ojouF stormed in here the other day, she had a few choice remarks about several members of the staff, including you. I'm sorry you had to be caught in her little tirade...
+							principal ojouF stormed in here the other day, she had a few choice remarks about several members of the staff, including you. I'm sorry you had to be caught in her little tirade... I hoped her friends could cool her down, but no dice...
+							t You haven't fully corrupted ojouF.
 						`);
 						break;
 					}
@@ -360,7 +366,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				if (checkTrust("pinstripe") > 59) {
 					pinstripeStatus = "corrupt";
 				}
-				if (checkTrust("pinstripe") > 69) {
+				if (checkTrust("pinstripe") > 89) {
 					pinstripeStatus = "absent";
 				}
 				switch (pinstripeStatus) {
@@ -381,6 +387,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 					case "met": {
 						writeHTML(`
 							principal Hmm... pinstripeF is in a mood today, I wonder if I could cheer her up...
+							t You haven't fully corrupted pinstripeF.
 						`);
 						break;
 					}
