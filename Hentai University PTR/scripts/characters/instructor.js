@@ -19,6 +19,7 @@ var newItems = [
 var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatable, only one per day per character by default.
 	{index: "intro", name: "Someone is moving through the PE areas", requirements: "?trust instructor 0; ?flag principal council; ?location gym;", altName: "", altImage: "",},
 	{index: "statusQuo", name: "instructor is somewhere around here", requirements: "?trust instructor 1; ?location gym;", altName: "", altImage: "",},
+	{index: "statusQuo", name: "instructor is somewhere around here", requirements: "?trust instructor 2; ?location gym;", altName: "", altImage: "",},
 	{index: "completeQuo", name: "instructor is somewhere around here", requirements: "?trust instructor 80; ?location gym;", altName: "", altImage: "",},
 ];
 
@@ -233,14 +234,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 }
 
 var eventArray = [
-	{index: "trackFuck", name: "Casey's Training"},
-	{index: "trackLast", name: "Casey's Awakening"},
-	{index: "bikiniFuck", name: "Bianca's Training"},
-	{index: "bikiniLast", name: "Bianca's Awakening"},
-	{index: "gymnastFuck", name: "Lansley's Training"},
-	{index: "gymnastLast", name: "Lansley's Awakening"},
-	{index: "karateFuck", name: "Aiko's Training"},
-	{index: "karateLast", name: "Aiko's Awakening"},
+	{index: "instructortrackFuck", name: "Casey's Training"},
+	{index: "instructortrackLast", name: "Casey's Awakening"},
+	{index: "instructorbikiniFuck", name: "Bianca's Training"},
+	{index: "instructorbikiniLast", name: "Bianca's Awakening"},
+	{index: "instructorgymnastFuck", name: "Lansley's Training"},
+	{index: "instructorgymnastLast", name: "Lansley's Awakening"},
+	{index: "instructorkarateFuck", name: "Aiko's Training"},
+	{index: "instructorkarateLast", name: "Aiko's Awakening"},
 	{index: "instructorFuck", name: "Going for Gold"},
 	{index: "instructorLast", name: "The Olympian Gauntlet"},
 ];
@@ -249,7 +250,7 @@ function writeEvent(name) { //Plays the actual event.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
 	switch (name) {
-		case "trackFuck": {
+		case "instructortrackFuck": {
 			writeHTML(`
 				im 113a.jpg
 				t It seems like it didn't take long for the common sense manipulation to affect Casey, she's already casually going bottomless.
@@ -278,7 +279,8 @@ function writeEvent(name) { //Plays the actual event.
 				t Her eyes water, and sweat running down her face is quickly mixed with drool from her mouth as she starts living out her deepest fantasy.
 				t You treat her as she asked you to; roughly. And the fluid dripping down her thighs shows her appreciation.
 				track Aah~ Fuck! I'm gonna...
-				im Cumming~!
+				im 117.jpg
+				track Cumming~!
 				t You pull out to the sound of a wet splortch as a mixture of cum and her fluids leak onto the ground below. She pants, sweaty from her workouts, but she takes a deep breath and in one motion stands up and pulls off her top.
 				track Fuck... Hey, coach?
 				im 121.jpg
@@ -286,7 +288,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "trackLast": {
+		case "instructortrackLast": {
 			writeHTML(`
 				im 113.jpg
 				track I... Huh.
@@ -319,7 +321,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "trackRepeat": {
+		case "instructortrackRepeat": {
 			writeHTML(`
 				im 115.jpg
 				track Ah, you picked me this time? Mmm, I promise I won't let you down. I'll make sure my teen pussy satisfies your-
@@ -334,7 +336,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
-		case "bikiniFuck": {
+		case "instructorbikiniFuck": {
 			writeHTML(`
 				im 084.jpg
 				bikini A-ah! Coach, this outfit barely even covers me!
@@ -362,7 +364,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "bikiniLast": {
+		case "instructorbikiniLast": {
 			writeHTML(`
 				im 084.jpg
 				t Still dripping from her finished laps, and maybe from enjoying the show, the girl in the bikini approaches your conquests like she's stumbling onto the battlefield.
@@ -403,7 +405,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "bikiniRepeat": {
+		case "instructorbikiniRepeat": {
 			writeHTML(`
 				im 087.jpg
 				bikini Aaah, i-it's too big! W-wouldn't you rather use my t... my tits?
@@ -421,7 +423,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
-		case "karateFuck": {
+		case "instructorkarateFuck": {
 			writeHTML(`
 				im 101.jpg
 				t Seemingly uncaring that she's completely naked, Aiko still looks at you with disdain.
@@ -461,7 +463,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "karateLast": {
+		case "instructorkarateLast": {
 			writeHTML(`
 				im 101.jpg
 				t Seemingly uncaring that she's completely naked, Aiko still looks at you with disdain.
@@ -499,7 +501,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "karateRepeat": {
+		case "instructorkarateRepeat": {
 			writeHTML(`
 				im 100.jpg
 				karate Hmph! What do you think I am, your personal whore? If you're thinking I'll bend over on command, you've got another thing coming!
@@ -513,7 +515,7 @@ function writeEvent(name) { //Plays the actual event.
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
-		case "gymnastFuck": {
+		case "instructorgymnastFuck": {
 			writeHTML(`
 				im 123.jpg
 				gymnast Hah... Hah...<br>Ah, hello *sir! Just trying to cool down...<br>Hey, do you know if you can get off from exercise?
@@ -549,7 +551,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "gymnastLast": {
+		case "instructorgymnastLast": {
 			writeHTML(`
 				im 124.jpg 
 				gymnast And... That's... Wait, how many? Coach, I-<br>... Coach?
@@ -580,7 +582,7 @@ function writeEvent(name) { //Plays the actual event.
 			`);
 			break;
 		}
-		case "gymnastRepeat": {
+		case "instructorgymnastRepeat": {
 			writeHTML(`
 				im 129.jpg
 				gymnast P-please sir, I need it... I don't know what's wrong with me, ever since you last <i>used</i> me, I haven't been able to-
@@ -741,11 +743,12 @@ function fuck(name) {
 	addFlag("instructor", name+"Fuck");
 	if (checkFlag("instructor", "trackFuck") == true &&	checkFlag("instructor", "bikiniFuck") == true &&	checkFlag("instructor", "gymnastFuck") == true &&	checkFlag("instructor", "karateFuck") == true &&	checkFlag("instructor", "instructorFuck") == true) {
 		var lastFuck = true;
-		writeEvent(name+"Last");
 		if (name == "instructor") {
+			writeEvent(name+"Last");
 			writeFunction("changeLocation('playerHouse')", "Finish");
 		}
 		else {
+			writeEvent("instructor"+name+"Last");
 			writeFunction("writeEncounter('finale')", "Continue");
 		}
 		setTrust("instructor", 80);
@@ -760,7 +763,12 @@ function fuck(name) {
 	}
 	else {
 		var lastFuck = false
-		writeEvent(name+"Fuck");
+		if (name == "instructor") {
+			writeEvent(name+"Fuck");
+		}
+		else {
+			writeEvent("instructor"+name+"Fuck");
+		}
 		writeFunction("writeEncounter('sceneSelect')", "Continue");
 	}
 }

@@ -569,7 +569,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				sp incubus; Yo. Chunky already found her and got her memories, you're fine to fuck about. Lemme know if you want him to eat anything else. Sit outside if you need to take a breather.<br>Honestly, having him hit an entire team at once... Guess I should've named him 'Chonky'.
 				t instructorF's memories of you have been reset, you're now free to enjoy her however you please! Feel free to hire incubusF's services, or find another helper to take down the team with.
 			`);
-			setTrust('instructor', 2);
+			setTrust('instructor', 1);
 			removeFlag("instructor", "complete");
 			writeFunction("writeEncounter('cancel')", "Finish");
 			break;
