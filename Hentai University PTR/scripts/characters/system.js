@@ -386,7 +386,7 @@ function writeEncounter(scene) {
 			writeHTML(`
 				t It's not the most impressive of libraries, but it fits the school's atmosphere. There are a number of textbooks of all different types, but three catch your eye...
 			`);
-			if (checkFlag("mom", "lHypno") != true) {
+			if (checkFlag("mom", "lHypnos") != true) {
 				writeFunction("loadEncounter('system', 'lHypno')", "Read up on hypnosis");
 			}
 			if (checkFlag("mom", "lHack") != true) {
@@ -398,7 +398,7 @@ function writeEncounter(scene) {
 			writeFunction("changeLocation('library')", "Finish");
 			break;
 		}
-		case "lHypno": {
+		case "lHypnos": {
 			writeHTML(`
 				t You thoroughly read through the book on hypnosis. It's an older script, but the techniques are still useful. A section on 'sensitivity enhancement' is particularly interesting.
 			`);
