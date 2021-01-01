@@ -403,7 +403,7 @@ function writeEncounter(scene) {
 				t You thoroughly read through the book on hypnosis. It's an older script, but the techniques are still useful. A section on 'sensitivity enhancement' is particularly interesting.
 			`);
 			writeSpecial("Your hypnosis skill has increased!");
-			data.player.hacking += 1;
+			data.player.hypnosis += 1;
 			updateMenu();
 			addFlag("mom", name);
 			passTime();

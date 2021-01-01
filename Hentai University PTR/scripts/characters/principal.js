@@ -44,6 +44,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 		define scarf = sp scarf;
 		define ojou = sp ojou;
 		define nurse = sp nurse;
+		define starlet = sp starlet;
+		define pornstar = sp pornstar;
 	`);
 	switch (name) {
 		case "cancel": {
@@ -1669,10 +1671,10 @@ function writeEncounter(name) { //Plays the actual encounter.
 				im 095.jpg
 				principal Ah~! Of course~<br>Something like this... Is nothing...<br>Especially compared to my nightly punishment sessions...<br>R-remember... lustful thoughts... A-are... Impure...
 				im 096.jpg
-				principle Ccckkk~!<br>Nnnot... Cumming...
+				principal Ccckkk~!<br>Nnnot... Cumming...
 				...
 				im 097.jpg
-				president A... and so you all see, I am incorruptible~<br>No matter if this cock is big or thick, or even as my closest friend turned-whore scum watches as my pussy... Pussy...
+				principal A... and so you all see, I am incorruptible~<br>No matter if this cock is big or thick, or even as my closest friend turned-whore scum watches as my pussy... Pussy...
 				starlet Uh, principalF? You alright?
 				principal More... More! I can take it any more~!
 				t Her stoic demeanor finally giving way she wantonly bounces atop you eager to race to her next orgasm. The cameras, secretaryF's face inches from her gushing cunt, none of it matters any more.

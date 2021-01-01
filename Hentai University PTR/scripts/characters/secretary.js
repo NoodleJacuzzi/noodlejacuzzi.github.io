@@ -301,7 +301,7 @@ function writeEvent(name) { //Plays the actual event.
 				im 046.jpg
 				secretary Aaaah~! N-no, I'll scream! 
 				president No, you won't~! You can't move, and you can't call for help~!<br>Don't worry, even you can't screw this up. Just lay back and get your cunt pumped, until your cracked will completely shatters.
-				secretay Ghh!
+				secretary Ghh!
 				president Aha, it's incredible! I can't get enough of this feeling of betrayal, of power! Aunty, ooh, it must be feeling even better for you!
 				im 048.jpg
 				president Ehe, I remember this sensation... It's unlike anything else, right? *He awoke feelings I've never felt before inside for me, and I know it's happening to you too~
