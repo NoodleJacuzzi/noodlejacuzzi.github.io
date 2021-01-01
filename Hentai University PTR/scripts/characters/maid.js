@@ -276,8 +276,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "maid4" : {
 			document.getElementById('output').innerHTML = '';
-			if(!checkFlag('cafedark','Visited'))
-				addFlag('cafedark','Visited');
+			// if(!checkFlag('cafedark','Visited'))
+			// 	addFlag('cafedark','Visited');
 			passTime();
 			setTrust('maid',25);
 			writeText("You approach her, waving casually as she spots you.");
@@ -405,7 +405,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				else{
 					writeSpeech("???","images/cafedark/cafedark.jpg","maidF!");
 					writeText("A waitress bounds over with a grin as maidF sits up a bit straighter. The dark-haired girl looks you over for a moment, before smirking wryly.");
-					writeSpeech("???","images/cafedark/cafedark.jpg","orry about that, I missed you two coming in.");
+					writeSpeech("???","images/cafedark/cafedark.jpg","Sorry about that, I missed you two coming in.");
 				}
 				writeSpeech("maid","","It's fine - we weren't waiting long. For now, just two coffees...?");
 				writeText("She looks at you for a moment, and you give a slight shrug and a nod.");
@@ -423,14 +423,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeSpeech("player","","You two seem to get along.");
 				}
 				writeSpeech("maid","","Quite. A bit energetic, and I think she's a jogger in her free time. I've run into her on more than one occasion.");
-				writeSpeech("maid","","...Though, to be frank, there's actually someone else I wanted to talk to you about. Specifically, my best friend and employer.");
-				writeText("She takes a moment to fish out her wallet, pulling out a picture and handing it to you.");
-				writeBig("images/mistress/profile.jpg", "Art by Oreteki18kin");
 				if(checkTrust('mistress') == 40){
 					if(!checkFlag('maid','first'))
 						addFlag('maid','first');
 					if(!checkFlag('maid','mistress40'))
 						addFlag('maid','mistress40');
+					writeSpeech("maid","","...Though, to be frank, there's actually someone else I wanted to talk to you about. Specifically, my best friend and employer.");
+					writeText("She takes a moment to fish out her wallet, pulling out a picture and handing it to you.");
+					writeBig("images/mistress/profile.jpg", "Art by Oreteki18kin");
 					writeSpeech("player","","...Anna?");
 					writeText("maidF pauses.");
 					writeSpeech("maid","","You know her?");
@@ -484,6 +484,9 @@ function writeEncounter(name) { //Plays the actual encounter.
 					setTrust('mistress',45);
 					if(!checkFlag('maid','first'))
 						addFlag('maid','first');
+					writeSpeech("maid","","...Though, to be frank, there's actually someone else I wanted to talk to you about. Specifically, my best friend and employer.");
+					writeText("She takes a moment to fish out her wallet, pulling out a picture and handing it to you.");
+					writeBig("images/mistress/profile.jpg", "Art by Oreteki18kin");
 					writeSpeech("player","","...Anna?");
 					writeText("maidF pauses.");
 					writeSpeech("maid","","You know her?");
@@ -546,10 +549,66 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeFunction("changeLocation(data.player.location)", "Finish up and leave");
 					writeFunction("writeEncounter('maid4a')", "Admire her a little bit");
 				}
+				else if(checkTrust('mistress') >= 100){
+					writeHTML(`
+						sp maid; ...Anyway, back to the main subject at hand. mistressF messaged me saying that you two had discussed the idea?
+						t You nod.
+						sp player; We touched on it, yeah. She seemed pretty excited about the idea, and made it sound like you're similarly enthused.
+						sp maid; Ah...
+						t Her face flushes a bit as she nods.
+						sp maid; Enthused is a good word, yes. The idea of being with you both at once is an exciting thought.
+						t She shifts slightly, a bit embarrassed to say it aloud.
+						sp maid; She did mention that you seemed positive towards the idea, but honestly, I did want to speak with you in-person just to be sure.
+						t You laugh, leaning forward a bit.
+						sp player; Sure about what? That I'd enjoy the idea of being with <i>two</i> beautiful women?
+						sp maid; Well, when you put it like that~...
+						t She shifts in place a bit, smiling a bit wider now.
+						sp maid; Still, what few concerns I had are gone now; if you're as enthused about the idea as us, then there's no problem.
+						t a playful smirk goes across maidF's face.
+						sp maid; And I imagine you'll be <i>particularly</i> enthusiastic about what she can do with her-
+						`);
+					if(checkFlag('cafedark','Visited'))
+						writeSpeech("cafedark","","Two coffees-!");
+					else
+						writeSpeech("???","images/cafedark/cafedark.jpg","Two coffees-!");
+					writeText("There's a loud bang as maidF jumps enough for her hips to hit the table, her eyes going wide as the waitress steps towards you both.");
+					writeText("A thick silence reigns for a moment as maidF bites her lip gently.");
+					if(checkFlag('cafedark','Visited'))
+						writeSpeech("cafedark","","...Are you okay?");
+					else
+						writeSpeech("???","images/cafedark/cafedark.jpg","...Are you okay?");
+					writeSpeech("maid","","<i><b>Fine, thank you.</b></i>");
+					writeText("Taking a slow, deep breath, maidF collects herself and smiles gently.");
+					writeSpeech("maid","","It's fine, just a bit of bad timing. Not your fault at all.");
+					if(checkFlag('cafedark','Visited'))
+						writeSpeech("???","images/cafedark/cafedark.jpg","...Okay. I'll just leave you to it.");
+					else
+						writeSpeech("cafedark","","...Okay. I'll just leave you to it.");
+					writeText("She moves to help some of the customers closer to the entrance as maidF slowly sighs.");
+					writeSpeech("maid","","...I have no idea what part of almost getting caught seems to be a turn on for mistressF, but it is <i>not</i> for me.");
+					writeSpeech("player","","Ah. Well, everyone's a little different, I guess.");
+					writeHTML(`
+						t maidF nods, her smile returning now.
+						sp maid; And, with all that figured out, I look forward to doing it. If I had a bit more free time, I'd suggest we do it today, but my schedule isn't quite <i>that</i> clear.
+						t She takes a sip of her coffee, relaxing a bit more in the seat.
+						sp maid; Plus, it's been a while since I had time to relax here.
+						sp player; Understandable. When I find the time myself, I'll give either you or mistressF a heads-up and we can get together for it.
+						sp maid; Perfect. In the meantime, why don't we chat a bit?
+						sp player; Sure, sounds good.
+					`);
+					writeText("...");
+					writeText("When you finish talking and drinking, with maidF brooking exactly no argument on who was paying, you lean back a bit.");
+					writeText("Everything seems fine, though your eyes do drift a bit to the waitress...");
+					writeFunction("changeLocation(data.player.location)", "Finish up and leave");
+					writeFunction("writeEncounter('maid4a')", "Admire the waitress a little bit");
+				}
 				else{
 					setTrust('mistress',55);
 					if(!checkFlag('maid','first'))
 						addFlag('maid','first');
+					writeSpeech("maid","","...Though, to be frank, there's actually someone else I wanted to talk to you about. Specifically, my best friend and employer.");
+					writeText("She takes a moment to fish out her wallet, pulling out a picture and handing it to you.");
+					writeBig("images/mistress/profile.jpg", "Art by Oreteki18kin");
 					writeSpeech("maid","","This is mistressF mistressL. We've been friends since college, and... to be frank, we're not exactly <i>unfamiliar</i> with each other.");
 					writeSpeech("player","","...I feel like you're implying something, but I also feel like it would be rude to assume.");
 					writeSpeech("maid","","We've been friends with benefits for years. However, we've been talking recently about certain... <i>things.</i>");
