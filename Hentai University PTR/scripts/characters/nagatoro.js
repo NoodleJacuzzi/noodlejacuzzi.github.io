@@ -833,7 +833,7 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "nagatoroCorrupted", requirements: "?trust nagatoro 104;"},
+	{index: "nagatoroReward", requirements: "?trust nagatoro 104;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event

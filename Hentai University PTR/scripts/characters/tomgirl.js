@@ -351,16 +351,17 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "tomgirlHotelBad": {
 			writeHTML(`
+				define black = sp Black Haired Succubus; im images/demon/dark.jpg;
 				black Ah, the tomgirl. He was... Certainly full of spunk when we first brought him in. He was resistant at first to fucking anyone but you, but... Well... demonF was very clear that all new whores get a proper training period. Here.
 				im 056.jpg
 				tomgirl This is just business, alright? If you get ahead of-
-				black Ah, that was one of the first of his prey. He had a hard time making targets fall in love with him at first. Here.
+				black Ah, that was one of the first of his prey. He had a hard time making targets fall in love at first. Here.
 				im 078.jpg
 				tomgirl Ah... God, feeling your cock on my little dicklette... I know I'm a quickshot, but... You feel it too, right?
 				im 080.jpg
-				black It doesn't take log these days for him to hook a sucker. They feel so comfortable as their stamina and masculinity decrease, totally confortable to become just like him.<br>Ah... Seeing him like this... L-let me jump to my favorite part...
+				black It doesn't take long these days to hook a sucker. They feel so comfortable as their stamina and masculinity decrease, totally confortable to become just like tomgirlF.<br>Ah... Seeing them like this... L-let me jump to my favorite part...
 				im 090.jpg
-				black Ngh... There it is... Seeing him splurt like that, feeding that addiction of his...<br>S-sorry, I'm a bit scatterbrained. demonF said I wasn't allowed to relieve myself until you awoke. I've broken that promise a few times, once on his face, but I'm still professional enough to hold back a little... For now.
+				black Ngh... There it is... Seeing them splurt like that, feeding that addiction of his...<br>S-sorry, I'm a bit scatterbrained. demonF said I wasn't allowed to relieve myself until you awoke. I've broken that promise a few times, once on his face, but I'm still professional enough to hold back a little... For now.
 			`);
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
@@ -779,14 +780,14 @@ function writeEvent(name) { //Plays the actual event.
 }
 
 var phoneArray = [//Lists the potential text events the player can receive at the start of the day, depending on their trust.
-	{index: "tomgirlComplete", requirements: "?flag tomgirl complete;"},
+	{index: "tomgirlReward", requirements: "?flag tomgirl complete;"},
 ]
 
 function writePhoneEvent(name) { //Plays the relevant phone event
 	switch (name) {
 		case "tomgirlReward": {
 			writePhoneImage("images/tomgirl/9-5.jpg", "Art by Nagi Ichi");
-			writePhoneSpeech("tomgirl", "", "You've finished all the content for tomgirlF for this version!");
+			writePhoneSpeech("tomgirl", "", "You've finished tomgirlF's route, but while his tab will denote him being complete, keep in mind other characters intersect with him. Continue with succubusF and nagatoroF to unlock more!");
 			break;
 		}
 		case "tomgirlCorrupted": {

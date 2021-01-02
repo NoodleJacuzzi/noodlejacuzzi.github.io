@@ -289,7 +289,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				if (checkTrust("mama") > 0) {
 					mamaStatus = "met";
 				}
-				if (checkTrust("mama") == 20) {
+				if (checkTrust("mama") > 20) {
 					mamaStatus = "bull";
 				}
 				if (checkTrust("mama") == 100) {
@@ -305,7 +305,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 					}
 					case "son": {
 						writeHTML(`
-							principal I received the strangest call from mamaF. She's under the impression her son will be attending the PTSA meeting. I though he wasn't even in the country yet...
+							principal I received the strangest call from mamaF. She's under the impression her son will be attending the PTSA meeting. I thought he wasn't even in the country yet...
 							t mamaF has been corrupted.
 						`);
 						break;
@@ -1092,7 +1092,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				principal Even my own sister doesn't... I don't...
 				secretary Are you alright? Should I get you another coffee?
 				principal N-no... I just... I think I just need some fresh air.<br>I apologize, I'm... I'm not sure...
-				t As principalD steps away from her desk, she does so on shaky legs.
+				t As principalF steps away from her desk, she does so on shaky legs.
 				secretary Oh, I really hope this isn't my fault...
 				t You leave as well. principalF's trust in you is a little shaken, but so is her trust in reality itself. So long as it's strong enough that she trusts you when everything else falls around her, you're in the clear.
 				...

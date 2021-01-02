@@ -1462,6 +1462,7 @@ function writeText (text) {
 	if (text == "...") {
 		text = "<hr>";
 	}
+	text = cullRequirements(text);
 	switch (data.player.style) {
 		case "lobotomy": {
 			document.getElementById('output').innerHTML += `
