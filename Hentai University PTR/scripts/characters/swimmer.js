@@ -705,7 +705,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 	phoneRight.scrollTop = 0;
 	switch (name) {
 		case "swimmerreward": {
-			writePhoneImage("images/swimmer/phoneReward.jpg", "Art by Himitsu Kessha Vanitas")
+			writePhoneImage("images/swimmer/phoneReward", "Art by Himitsu Kessha Vanitas")
 			writePhoneSpeech("SlackerSavior","scripts\gamefiles\characters\slacker.jpg","swimmerF's plot is over. Repeat scenes to come soon, and then, onto orangef!");
 			break;
 		}
