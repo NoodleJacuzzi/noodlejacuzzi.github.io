@@ -405,7 +405,7 @@ function writeEncounter(scene) {
 			writeSpecial("Your hypnosis skill has increased!");
 			data.player.hypnosis += 1;
 			updateMenu();
-			addFlag("mom", name);
+			addFlag("mom", scene);
 			passTime();
 			writeFunction("changeLocation('library')", "Finish");
 			break;
@@ -417,7 +417,7 @@ function writeEncounter(scene) {
 			writeSpecial("Your hacking skill has increased!");
 			data.player.hacking += 1;
 			updateMenu();
-			addFlag("mom", name);
+			addFlag("mom", scene);
 			passTime();
 			writeFunction("changeLocation('library')", "Finish");
 			break;
@@ -429,7 +429,7 @@ function writeEncounter(scene) {
 			writeSpecial("Your counseling skill has increased! Since you're more talented, that obviously equates to a pay bump!");
 			data.player.counseling += 1;
 			updateMenu();
-			addFlag("mom", name);
+			addFlag("mom", scene);
 			passTime();
 			writeFunction("changeLocation('library')", "Finish");
 			break;
