@@ -193,9 +193,9 @@ switch (requestType) {
 					}
 				}
 				else {
-					console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
+					//console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
 					var requirements = checkRequirements(encounterArray[number].requirements);
-					console.log(requirements);
+					//console.log(requirements);
 					if (requirements != true) {
 						finalResult = false;
 					}
