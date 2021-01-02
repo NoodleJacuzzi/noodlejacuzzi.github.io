@@ -270,7 +270,7 @@ function writeEvent(name) { //Plays the actual event.
 				secretary Hah~! Punish me~! I've been a bad girl principalF~! Notice me, just once~!<br>You could bend me over your knee, or tie me up, or put a special belt on this disgusting, incompetent, fuck-up!
 				t To her it's like you don't exist.
 				...
-				t Barely conciousness she continues to rub at herself. It's been at least an hour now, at first you were curious as to how long this'd go on, but when she stopped before her first orgasm you decided to see how strong her resolve is.
+				t Barely concious she continues to rub at herself. It's been at least an hour now, at first you were curious as to how long this'd go on, but when she stopped before her first orgasm you decided to see how strong her resolve is.
 				secretary principalF...
 				t She's just been edging herself, over and over, completely unaware, or uncaring, of her surroundings.
 				t There's not much you could actually do with this information though, it doesn't actually get you closer to corrupting principalF, and the common sense manipulation probably won't stick.

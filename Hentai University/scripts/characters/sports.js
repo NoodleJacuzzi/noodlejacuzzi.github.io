@@ -736,7 +736,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 		}
 		case "sportsphoneReward": {
 			writePhoneImage("images/sports/phoneReward.jpg", "Art by Himitsu Kessha Vanitas")
-			writePhoneSpeech("SlackerSavior","scripts\gamefiles\characters\slacker.jpg","Congrats! You've finished all of sportsF's content! She's done! Feel free to meet her in the gym and class for some repeat sex scenes. Hope you enjoyed.");
+			writePhoneSpeech("SlackerSavior","scripts/gamefiles/characters/slacker","Congrats! You've finished all of sportsF's content! She's done! Feel free to meet her in the gym and class for some repeat sex scenes. Hope you enjoyed.");
 			break;
 		}
 		default: {

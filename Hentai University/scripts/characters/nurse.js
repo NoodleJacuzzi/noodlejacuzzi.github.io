@@ -557,7 +557,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				player Yeah?
 				nurse Well, what if instead of men being the ones who were... You know... If it were the women? Who had the equipment we need?
 				player And you have a potion-
-				nurse I absolutely have the potion for that, yes. Many of them, in fact. If you just give the word I can have this school an equally balanced between sex-ers and sex-ees. Ww'll just have the male students stay home that day.
+				nurse I absolutely have the potion for that, yes. Many of them, in fact. If you just give the word I can have this school an equally balanced between sex-ers and sex-ees. We'll just have the male students stay home that day.
 				player I'm not sure...
 				nurse Well, it does increase musculature and folicle growth in some cases. I know it's still others doing the pitching, as they say, I just thought I'd offer my suggestion.
 			`);
@@ -864,9 +864,9 @@ switch (requestType) {
 					}
 				}
 				else {
-					console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
+					//console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
 					var requirements = checkRequirements(encounterArray[number].requirements);
-					console.log(requirements);
+					//console.log(requirements);
 					if (requirements != true) {
 						finalResult = false;
 					}

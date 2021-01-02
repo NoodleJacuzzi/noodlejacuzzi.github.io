@@ -671,11 +671,11 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if (checkTrust("nurse") > 79) {
 				addFlag("nurse", "corrupt");
 			}
-			if (checkTrust("pinstripe") == 80) {
-				addFlag("pinstripe", "corrupt");
-			}
-			if (checkTrust("pinstripe") == 60) {
+			if (checkTrust("pinstripe") > 60) {
 				addFlag("pinstripe", "dosed");
+			}
+			if (checkTrust("pinstripe") > 79) {
+				addFlag("pinstripe", "corrupt");
 			}
 			if (checkTrust("mama") == 100) {
 				addFlag("mama", "son");
@@ -1271,9 +1271,9 @@ switch (requestType) {
 					}
 				}
 				else {
-					console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
+					//console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
 					var requirements = checkRequirements(encounterArray[number].requirements);
-					console.log(requirements);
+					//console.log(requirements);
 					if (requirements != true) {
 						finalResult = false;
 					}

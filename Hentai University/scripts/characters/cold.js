@@ -267,7 +267,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 		}
 		case "coldreward": {
 			writePhoneImage("images/cold/phoneReward.jpg", "Art by Himitsu Kessha Vanitas")
-			writePhoneSpeech("SlackerSavior","scripts\gamefiles\profiles\slacker.jpg","That's all for coldF for now! I'll be expanding on the students soonish.");
+			writePhoneSpeech("SlackerSavior","scripts/gamefiles/profiles/slacker","That's all for coldF for now! I'll be expanding on the students soonish.");
 			break;
 		}
 		default: {

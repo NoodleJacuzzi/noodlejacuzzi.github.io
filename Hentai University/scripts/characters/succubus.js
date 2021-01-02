@@ -899,7 +899,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				succubus Yeah, you'll be out of commission for a while. I couldn't walk for a week after, and that's also on top of the month-long coma.<br>Ah! But I had a pretty shit overseer, it'll be way easier for you.
 			`);
 			writeFunction("writeEncounter('accept')", "Alright");
-			writeFunction("writeEncounter('refuse')", "Maybe another night");
+			writeFunction("writeEncounter('refusal')", "Maybe another night");
 			break;
 		}
 		case "accept": {

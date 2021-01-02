@@ -269,7 +269,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "demonHotelBad": {
 			writeHTML(`
-				black Ooh, the former master... Well, he doesn't let anyone call him that anymore. When he made it clear how he wanted to be treated, well...
+				black Ooh, the former master... Well, he doesn't let anyone say 'former master' anymore. When he made it clear how he wanted to be treated, well...
 				t Stupid Bitch shudders, but composes himself.
 				black Ahem. Whether I'm penetrating someone even more pathetic than me, being fucked by a <i>real</i> cock that shames my puny clit, or being denied completely, my body has been conditioned to enjoy the treatment.<br>Here, let me show you what he's been up to.
 				im 130.jpg
