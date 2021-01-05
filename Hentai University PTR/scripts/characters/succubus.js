@@ -878,7 +878,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeHTML(`
 				define succubus = sp succubus; im demon.jpg;
 				im profileD.jpg
-				succubus Hello master~!
+				succubus Hello *master~!
 				t Upon your windowsill is your bubbly chocolate companion, looking quite chipper.
 				succubus The others you've drained are doing pretty well! They'll slot in perfectly to their new lives, hopefully soon! And~<br>That might be coming soon~!<br>So, so, what will we be doing tonight?
 			`);

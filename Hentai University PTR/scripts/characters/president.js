@@ -626,7 +626,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				player Find something?
 				president Maybe... Perhaps not. It's just that the school's policy on requiring multiple photographs to be submitted along with your request for admission... She's the one who implemented it.
 				t presidentF starts going through a large trove of rejected and accepted  letters. The number of rejections is staggering, especially considering some potential students are from very wealthy families, are the children of previous graduates, or even have extremely respectable academic backgrounds.
-				t Meanwhile, accepted students, like kuroF kuroL, presidentF presidentL, even male students like reeseF reeseL. While their academic scores vary heavily, they all have the gift of being... Attractive. Sorting through the letters is pretty much just playing a game of hot vs not.
+				t Meanwhile, accepted students, like kuroF kuroL, presidentF presidentL, even male students like tomgirlF tomgirlL. While their academic scores vary heavily, they all have the gift of being... Attractive. Sorting through the letters is pretty much just playing a game of hot vs not.
 				president It's entirely situational. We don't know the exact reason for why principalF chooses the way she does, but these decisions are explicitly hers, and hers alone.<br>It's a good lead, but as to how we go about following it...
 				player Seems like we should pay secretaryF another visit.
 			`);

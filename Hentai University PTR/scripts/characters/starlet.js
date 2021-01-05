@@ -422,7 +422,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			}
 			if (checkFlag("president", "shadowCouncil") == true && checkFlag("starlet", "principal") != true) {
 				writeText("The idea that came up during the shadow council meeting, of using common sense manipulation on principalF and making it stick... It's a longshot, but you could bring it up to starletF and pornstarF.");
-				writeFunction("writeEncounter('pornoStart')", "Talk about filming with principalF and principalL");
+				writeFunction("writeEncounter('pornoStart')", "Talk about filming with principalF and secretaryF");
 			}
 			writeFunction("changeLocation(data.player.location)", "Leave early");
 			break;
@@ -1195,7 +1195,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "principalBrainstormBB": {
 			writeHTML(`
 				starlet Wow, turning down an option to bone your boss on camera... You've got some serious willpower.
-				pornstar Or he's fucked her in an alternate timeline.
+				pornstar Or *he's fucked her in an alternate timeline.
 				t They both suddenly laugh.
 				starlet Ha... Aha... S-sorry, that's the plot of one of mom and dad's shoots. 'She came from a femdom reality'. Oh man, your face when dad came prematurely just from you describing your world's society... Ha!
 				pornstar That was genuine on both parts. Something about a world where all men were in chastity really-<br>Ah, focus. So, she whores out her friend, probably gets jealous. What would this be called?
@@ -1237,7 +1237,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeHTML(`
 						starlet I... What? That's a terrible-
 						pornstar Yes, but it'll be one extra level of shame.
-						starlet Oh! I hadn't considered that. I've gotten railed in the ass in my debut, but staring in a porno with that name? I'd never be able to show my face!
+						starlet Oh! I hadn't considered that. I've gotten railed in the ass in my debut, but starring in a porno with that name? I'd never be able to show my face!
 						pornstar You certainly have a talent for these things, playerF.
 						starlet This is all seeming like it has some potential, but are you really going to be able to get principalF to play along?
 						pornstar I suppose we just need to have confidence in playerF's abilities. I'll keep the staff on call, bring her here whenever you're able.

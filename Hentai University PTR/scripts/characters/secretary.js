@@ -284,7 +284,7 @@ function writeEvent(name) { //Plays the actual event.
 				president That's not important today. We-
 				secretary Oh no! Did I miss the deadline? Hold on, I can call-
 				t secretaryF is interrupted as presidentF slams her hands on the table.
-				president Listen. Quietly. We were looking through admissions, and we've noticed a trend. We'd like a little insight into how exactly principalF decides who enrolls her.
+				president Listen. Quietly. We were looking through admissions, and we've noticed a trend. We'd like a little insight into how exactly principalF decides who enrolls here.
 				secretary What?! I don't know anything, I swear! presidentF, you're scaring me!
 				president Oh, auntie... That's really not the answer we wanted to hear. I see we'll need to do things the hard way. Come with me. <b>Now</b>.
 				secretary Eep! W-why, where are we going?

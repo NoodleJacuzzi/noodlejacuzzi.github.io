@@ -72,7 +72,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				i Are you hard of hearing? I said remove, not replace. Clothes hold-
 				im bikiniProfile.jpg
 				bikini Coach, do I really need to wear this?
-				i Chelsea you're god-damn beautiful in the water, but you need to lose that shy streak! Less fabric, less resistance!<br>Whatever, I'll attend. Somebody needs to defend the position that athletes should be allowed to train naked, and it probably has to be a competent athlete, not... You. <br>No offense.
+				i Bianca you're god-damn beautiful in the water, but you need to lose that shy streak! Less fabric, less resistance!<br>Whatever, I'll attend. Somebody needs to defend the position that athletes should be allowed to train naked, and it probably has to be a competent athlete, not... You. <br>No offense.
 				player None taken. Thanks, I'll be going now.
 				i Yeah yeah. <br>Lansley! You're doing incredible girl! You've been abstinent for at least a week now, right? It's paying off! 
 				im 124.jpg
@@ -138,7 +138,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				player So... Quite the variety in your team, huh? You need a lot of different areas to train in.
 				instructor Ugh, it's bad enough we need to work around that bimbo and her team of... <i>Volleyball players</i>. Honestly, it's just dodgeball with more jumping.
 				player Isn't volleyball part of the olympics? 
-				instructor It shouldn't be. Any sport where your performance relies on orhers, especially an incompetent bunch of idiots, should be dropped.
+				instructor It shouldn't be. Any sport where your performance relies on others, especially an incompetent bunch of idiots, should be dropped.
 				player I-
 				instructor 'Oh, you shouldn't take it so seriously. You already scored one gold.' Fuck 'em. The audience should've rushed in and choked them out on a mountain of fat dicks!
 				t ... That's probably your que. You turn back to your partner for confirmation, and they nod.
@@ -391,7 +391,7 @@ function writeEvent(name) { //Plays the actual event.
 				i What, you gonna blame this on the pool? I don't think so. Now just relax!
 				t As you begin thrusting again the girl's panicked gasps start getting higher.
 				track Gh... Cmon Bianca, relax!
-				gymnast Mmm... I wonder how he'll taste afterwardss...
+				gymnast Mmm... I wonder how *he'll taste afterwardss...
 				karate Eheh... Ehehehe...
 				t Her head must be spinning at this point, with her coach, and each of her teammates, those who are still able to speak coherently, all clearly supporting the *man who's pumping into her. She's cracking by the second, and good thing to, because...
 				im 091.jpg
@@ -449,7 +449,7 @@ function writeEvent(name) { //Plays the actual event.
 				im 104.jpg
 				karate Ooough~!
 				is Come on Aiko, get into the rhythm!
-				isf Quit your bellyaching, and be a good little slut! He won't fuck you any harder for being a bitch!
+				isf Quit your bellyaching, and be a good little slut! *He won't fuck you any harder for being a bitch!
 				karate Nnhooo~!
 				is I know that shaking, just... Enjoy yourself!
 				isf Drop the act! I can see you cumming!
@@ -473,13 +473,13 @@ function writeEvent(name) { //Plays the actual event.
 				incubus And... Time. See you around, if you aren't in jail, I mean.
 				t You take a step towards Aiko, who takes a step forwards in turn. She's sweating from her exercise, but she's probably got more left in the tank than you do. If she takes you down, or if she escapes...
 				t You're interrupted as she's tackled from behind, instructorF and Casey pinning her down.
-				karate No! Stop, let me go! He's in your heads! He needs to be stopped!
-				track We're not letting you hurt him!
+				karate No! Stop, let me go! *He's in your heads! *He needs to be stopped!
+				track We're not letting you hurt *him!
 				isf Don't worry Aiko, you aren't thinking rationally. You'll see clearly soon.
 				...
 				karate No, please, instructorF, Casey, snap out of it!
 				isf You'll see clearly soon, Aiko. Just relax.
-				track Yeah! It feels super good! Lansley is still playing with herself on the floor from when she throatfucked herself on him!
+				track Yeah! It feels super good! Lansley is still playing with herself on the floor from when she throatfucked herself on *him!
 				im 103a.jpg
 				karate AAAAH-!
 				isf There you go, let it all out. Nobody's around at this hour, just let it all out...
@@ -493,7 +493,7 @@ function writeEvent(name) { //Plays the actual event.
 				track Just a little more, I can see it on *his face!
 				im 105a.jpg
 				karate Cumming~!
-				im106.jpg
+				im 106.jpg
 				karate Hah... Hah...
 				isf How do you feel, Aiko?
 				karate Like... Like I want more...
@@ -562,7 +562,7 @@ function writeEvent(name) { //Plays the actual event.
 				im 129.jpg
 				gymnast Ah, hey! What are you-<br>Coach! He-<br>Coach!?
 				isf Hey, relax. I know you've been pent up lately, you've been doing a good job.
-				gymant Coach, *he's gonna-
+				gymnast Coach, *he's gonna-
 				isf You seem stressed. Relax, you can get off today.
 				t Her struggling slowly begins to die down.
 				gymnast I don't-<br>Why are you-<br>O-oh! This is a dream! Ahah, ahaha-
@@ -585,7 +585,7 @@ function writeEvent(name) { //Plays the actual event.
 		case "gymnastRepeat": {
 			writeHTML(`
 				im 129.jpg
-				gymnast P-please sir, I need it... I don't know what's wrong with me, ever since you last <i>used</i> me, I haven't been able to-
+				gymnast P-please *sir, I need it... I don't know what's wrong with me, ever since you last <i>used</i> me, I haven't been able to-
 				im 130.jpg
 				gymnast Mmm~!
 				...
@@ -678,7 +678,7 @@ function writeEvent(name) { //Plays the actual event.
 				incubus One last freebie before I head back to the shop. You know what demon saliva does to a *man, right?
 				scarf You don't mind if I indulge myself for a moment with a little hypnosis, do you? Just something to make this nice moment last a little longer~
 				...
-				t The following momwnts blur together.
+				t The following moments blur together.
 				im 05.jpg
 				i Ooooh fuck~! Cum in my ass, please, PLEASE! I wanna be your little bitch!
 				t Her transformation from a respectable coach into a broken, cum-covered mess is well past complete. All this aftermath is just icing on the cake.

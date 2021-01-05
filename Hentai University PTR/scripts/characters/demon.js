@@ -260,7 +260,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				demon Oh? You're one bold piece of shit, aren't you? You chose your love-whore over me, yet here I am offering you home and security. Yet this is the respect I get?
 				player Thank you, demonF.
 				im 081.jpg
-				demon You tongue-fuck your mother with that mouth? I prefer the disrespect. Language like that is unnaceptable. I'm to be abused, I'm not one of your... <i>lovers</i>, ugh. If you really want to thank me, there's an alleyway over there.
+				demon You tongue-fuck your mother with that mouth? I prefer the disrespect. Language like that is unacceptable. I'm to be abused, I'm not one of your... <i>lovers</i>, ugh. If you really want to thank me, there's an alleyway over there.
 				player There's also a hotel with private rooms, that you own, behind us.
 				demon And? Oh well, I see you really have gone soft. I suppose we'll have to see how you develop from here.
 			`);
@@ -300,7 +300,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				t He shudders in synchronization with himself on screen.
 				black demonF didn't record much for me, as he felt you wouldn't have much lingering attachment to me. Well, compared to your other whores.
 				t He sighs, lowing his hand but only rubbing the hard plastic cage that currently contains him.
-				black This one was special though, the one that converted you to demonF's way of thinking.<br>Ah, and of course since I was overseeing the hotel while you were unable, I was sure to sentence myself to a few sessions inside. To purge myself of... Innapropriate thoughts.<br>demonF ensured the staff here that you wouldn't be boring, so I'm sure whatever course of action you ultimately take will please the hotel's whore staff.
+				black This one was special though, the one that converted you to demonF's way of thinking.<br>Ah, and of course since I was overseeing the hotel while you were unable, I was sure to sentence myself to a few sessions inside. To purge myself of... Inappropriate thoughts.<br>demonF ensured the staff here that you wouldn't be boring, so I'm sure whatever course of action you ultimately take will please the hotel's whore staff.
 			`);
 			unencounter("demon");
 			addFlag("demon", "black");

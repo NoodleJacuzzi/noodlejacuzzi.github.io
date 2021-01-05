@@ -26,7 +26,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 	{index: "secretaryTrouble", name: "Enter Principal principal's Office.", requirements: "?location northHallway; !flag secretary trouble; ?trustMin principal 41;",},
 	{index: "street", name: "You spot principal on the street.", requirements: "?location street; !flag principal street; ?trustMin principal 41;",},
 	{index: "sauna", name: "You spot principal walking into a building.", requirements: "?location shoppingDistrict; !flag principal sauna; ?trustMin principal 41;",},
-	{index: "subtlePresident", name: "principal is staring at president's painting here.", requirements: "?location schoolEntrance; ?trustMin president 81; ?trustMin principal 41; !flag principal subtlePresident;",},
+	{index: "subtlePresident", name: "principal is staring at presidentF's painting here.", requirements: "?location schoolEntrance; ?trustMin president 81; ?trustMin principal 41; !flag principal subtlePresident;",},
 	{index: "principalBeach1", name: "principal is here with some other women.", location: 'beach', time: "MorningEvening", itemReq: "", trustMin: 41, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
 ];
 
@@ -374,7 +374,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				switch (pinstripeStatus) {
 					case "corrupt": {
 						writeHTML(`
-							principal pinstripeF seems to have stopped her own bit of investigations about you. PErhaps she's finally satisfied? I'll have to ask ehr about it at the meeting.
+							principal pinstripeF seems to have stopped her own bit of investigations about you. Perhaps she's finally satisfied? I'll have to ask her about it at the meeting.
 							t pinstripeF has been corrupted.
 						`);
 						break;
@@ -1088,7 +1088,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				secretary I'm not sure what you're talking about.
 				player Me either.
 				principal You... I don't...<br>I didn't want to have to do this, but... I can't be going crazy...
-				t Hesitating, she forwards the link to someone else, quickly recieving the reply that the video seems completely innoculus.
+				t Hesitating, she forwards the link to someone else, quickly recieving the reply that the video seems completely innocuous.
 				principal Even my own sister doesn't... I don't...
 				secretary Are you alright? Should I get you another coffee?
 				principal N-no... I just... I think I just need some fresh air.<br>I apologize, I'm... I'm not sure...
@@ -1439,7 +1439,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				player Not at all. Come on, I can talk and train principalF at the same time.
 				president Oh, I suppose I am a little curious as to how our dear principal has turned out.
 				im 005.jpg
-				principal Ah, good morning master~!
+				principal Ah, good morning *master~!
 				player Good morning. Finally learning your place?
 				principal Will my training stop if I do?
 				president There are a lot of women vying for playerF's attention.
@@ -1457,7 +1457,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				president You certainly know how to motivate a girl~<br>Speaking of, treasurerF has been quite well behaved lately. I should reward her myself...
 				im 009.jpg
 				principal Ooouh~! Cock~! Fuck me~!
-				president What else... instructorF's got a bevy of new exercise techniques she wanted to show off to the school, nurseF has a few new concotions and wanted to run some guinea pigs by you... scarfF wanted to thank you for 'reigniting her passions', whatever that means.
+				president What else... instructorF's got a bevy of new exercise techniques she wanted to show off to the school, nurseF has a few new concoctions and wanted to run some guinea pigs by you... scarfF wanted to thank you for 'reigniting her passions', whatever that means.
 				im 010.jpg
 				principal Cumming~! Slutbunny principalF is cumming from her pussy!
 				president Haah~<br>You know, if you ever feel you need a variety, I'd <i>love</i> to handle her training myself some day~
@@ -1579,7 +1579,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				im 106.jpg
 				principal AAAAH~!<br>My pussy! I'm squirting from a fat dick in my asshooooole~!
 				secretary principalF~! I love you~!
-				principal Aaah~! S-stop looking at me! Stop watching! I'm pure! I'd never... Never SUBIIIIT~!
+				principal Aaah~! S-stop looking at me! Stop watching! I'm pure! I'd never... Never SUBMIIIIT~!
 				secretary They're ruining me~!
 				...
 				im 107.jpg
@@ -1616,7 +1616,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				pornstar Don't you backtalk to me! And I'm the buttplug? You're literally wearing-
 				secretary H-hello!<br>I'm so sorry I'm late. principalF will be right behind me. There was a baby seal on the street, not a real one I mean. Anyways, I gave her the wrong directions-
 				pornstar Who the hell are you?
-				secretary I'm secretaryF, I'm principalF's secretary. Again, I'm so sorry... She really will be bere shortly!
+				secretary I'm secretaryF, I'm principalF's secretary. Again, I'm so sorry... She really will be here shortly!
 				pornstar ... Fine. Take a seat. We start rolling in three.
 				...
 				im 091.jpg
@@ -1719,7 +1719,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				...
 				t Hours have passed, though you've put principalF through the ringer more than a dozen times she's still stuck in her delusions.
 				principal Dream... Dreaming...
-				starlet This isn't a dream! You and your friend just got creampied on camera! Dace the music already!
+				starlet This isn't a dream! You and your friend just got creampied on camera! Face the music already!
 				t Even a slap across the face isn't enough. principalF just keeps mumbling to herself, every so often looking at secretaryF's cum-covered body and finding herself unable to look away.
 				t Meanwhile pornstarF grabs you by the hand and pulls you aside.
 			`);
@@ -1746,7 +1746,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeHTML(`
 				t Though the possibilities of hypnotically-enhanced pornos are endless, the world changed by them will have to remain a mystery for now.
 				im 111.jpg
-				t Unable to face the truth, principalF sumply decends into depravity. The desire for a perfect school is eventually replaced by the desire for a cum-drunk afterglow.
+				t Unable to face the truth, principalF simply decends into depravity. The desire for a perfect school is eventually replaced by the desire for a cum-drunk afterglow.
 				im 126.jpg
 				t secretaryF follows, the manipulation effect has long since faded but her devotion to principalF is unbreakable.
 				t A changed world is on the horizon, once decided by your talents and cunning, and pornstarF's ambitions to redefine reality's norms wih porn.

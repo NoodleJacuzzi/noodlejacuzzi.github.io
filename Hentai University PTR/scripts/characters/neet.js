@@ -544,7 +544,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				neet R-right!
 				...
 				t You relax, even dozing off for a time until the sound of running water stops. 
-				t The door opens and neetF walks in wearing absolutely nothing..
+				t The door opens and neetF walks in.
 				neet S-so, how much farther will we-
 				t In one smooth motion you reach forwards and remove her glasses.
 				im 027.jpg
@@ -558,7 +558,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 				neet It's obvious isn't it? I'm well aware of your... <i>Other conquests</i>...<br>A-and I support them, of course! Someone like you needs somebody extraordinary to keep satisfied.
 				t Without her glasses on it's like she somehow feels even more naked than when she first walked into the room. Despite how far the two of your have gone, she still tries to cover herself in her towel.
 				neet I'll do my best to be special, to stand out... I know there are a lot of amazing women in this school alone.<br>... I don't want to be a waste of your time...
-				t She cringes a little as you rub her head, but doesn't oull away.
+				t She cringes a little as you rub her head, but doesn't pull away.
 				neet There are a lot of things I'd like to ask for...<br>B-but I won't monopolize your time! I'll keep working hard, and I'll be a good girl to make the time you've spent with me worth it!
 				t She seems motivated, but also seems like she's carrying a large weight. She has a point, spending as much time as she needs overcoming her anxieties has already distracted from taking over the school, yet...
 				t Is that such a bad thing? What's the alternative?
@@ -1087,7 +1087,7 @@ function writeEvent(name) { //Plays the actual event.
 				t It seems like her analytical rants keep her mind occupied, but you prefer her to focus on what's really important, and stay in the moment.
 				neet This position... It's quite... Quite <i>lewd</i>, isn't it? Ah, I suppose that's... That's the...
 				im 142.jpg
-				t Her speech trails off as she bites her lower lip and closes her eyes, her senses focused on the load you punped onto her clothed ass.
+				t Her speech trails off as she bites her lower lip and closes her eyes, her senses focused on the load you pumped onto her clothed ass.
 				t Today's training complete, you bid her farewell, but she's so enraptured it's like she can't even hear you.
 				t Again, mere moments after you close the door you can hear the sounds of clothes rustling and heavy breathing.
 			`);
