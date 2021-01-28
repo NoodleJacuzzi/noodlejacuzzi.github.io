@@ -3323,14 +3323,14 @@ function writeEvent(scene) {
 				im images/charm/charmLibrary1-1.gif
 				t So you grab her by the ass.
 				sp librarian; Ah! *Ahem*<br><i>Alright, this is it! I'll finally have him caught red-handed... O-or maybe a little further...? But why-</i>
-				im images/charm/charmLibrary1-2.gif
+				t *SPANK*!
 				t She draws in a sharp breath, but otherwise continues to pretend to sort books.
 				...
-				im images/charm/charmLibrary1-3.gif
+				im images/charm/charmLibrary1-2.gif
 				sp librarian; Ffffhuuu...<br><i>This is it, this is it! Something's happening, something I can't explain, and it's happening on camera!</i>
-				im images/charm/charmLibrary1-4.gif
+				im images/charm/charmLibrary1-3.gif
 				sp librarian; <i>Stay... In control... Don't black out...</i>
-				im images/charm/charmLibrary1-5.gif
+				im images/charm/charmLibrary1-4.gif
 				sp librarian; <i>Cum... Ing...</i>
 				...
 				sp librarian; No... No, this is all wrong! Why do I look like I want him to... No, I was just excited to have proof, but...
@@ -3693,14 +3693,14 @@ function writeEvent(scene) {
 				t You place the wand in the box, then shut the front gate. 
 				t Within seconds a bright purple light illuminates the room, before quickly dying down again.
 				t Inside the box is...
-				im images/box/erotiboxResearch16-1.jpg
+				t ... An unchanged magician's wand?
 				sp assistant; ... It's the same?
 				sp player; Seems to be.<br>Actually...
 				t As you closely inspect the want, almost invisibly small writing can be found on the top and bottom.
 				sp player; Huh... The top and bottom rotate like dials. "TARGET", and "AUDIENCE". They can be set to "AWARE" and "UNAWARE".<br>Both on unaware... Nothing seems to happen when I turn them.
 				sp assistant; Maybe you need to cast a spell?
 				sp player; What, with a swish and flick? This isn't-
-				im images/box/erotiboxResearch16-1.jpg
+				im images/mirror/research2-1-1.jpg
 				sp assistant; What's up? You figure it out?
 				sp player; ... I think so. You feel a draft?
 				t You get an eyeful of assistantF's body as you turn the 'TARGET' knob to 'AWARE'.
@@ -4118,12 +4118,11 @@ function writeEvent(scene) {
 				t You were nervous about chairL at first, worried she'd use some bullshit power with her rings to resume time, but nope. You freely fucked, creampied, and then used her as a footstool for good measure while relaxing in her desk.
 				...
 				im images/stopwatch/stopwatchEnding-2.gif
-				t Day 13. No longer in the vault you've wandered around town looking for familiar asses. You left roommateF and girlfriendF liplocked with a cumload in their mouths, it should be quite the sight when time resumes.
+				t Day 13. No longer in the vault you've wandered around town looking for familiar asses. You left roommateF and girlfriendF together, roommateF's tongue muff-deep in her creamed girlfriend. It should be quite the sight when time resumes.
 				...
 				im images/stopwatch/stopwatchEnding-3.gif
 				t Day 24. Random people on the street now. The ticking hitched for a while today, seemingly stuck in place as if trying to break through a barrier. Weirdly, you felt your bracelet crack before the ticking resumed. Hopefully it was just a coincidence?
 				...
-				im images/stopwatch/stopwatchEnding-4.gif
 				t Day... Unknown.
 				t No breeze has blown through the city in what are effectively years. Everyone who's ever caught your fancy stands perfectly still, their clothes removed or displaced and their bodies showing clear signs of defilement.
 				t You recline onto some lawnchair. You've had your fun with nearly the entire city. A normal individual would probably have gotten bored by now, but with access to food, water, and an endless supply of holes to fuck you're pretty satisfied.
@@ -4239,7 +4238,7 @@ function writeEvent(scene) {
 				t *CLICK*
 				...
 				im images/stopwatch/stopwatchLibrary1-2.gif
-				t It's fun posing her in the periods where time is stopped, with any luck the recording of this event should look more like a heavily-editted porno than proof of the supernatural.
+				t With any luck the recording of this event should look more like a heavily-editted porno than proof of the supernatural.
 				t *CLICK*
 				sp librarian; -Ther-
 				t She freezes as a buzz of pleasure strikes her pussy. Her eyes cross for a moment as her body takes in the sudden rush of sensation equivalent to getting tazed, but experiencing incomprehensible pleasure instead of pain.
@@ -4959,9 +4958,9 @@ function writeEvent(scene) {
 				sp librarian; Gllrrrk-!
 				sp player; You almost look like you're struggling, weird. I mean, <g>the taste of jizz is amazing to you</g>, so <g>it'd be totally normal for you to get off on this.</g>
 				t Suddenly, her expression changes, softening and her eyes are filled with visible excitement.
-				sp player; In fact, <g>you're about to have the largest orgasm of your life from swallowing my cum</g>, it's obvious just from looking at you.
+				sp player; In fact, <g>you're about to have the largest orgasm of your life from getting a facial</g>, it's obvious just from looking at you.
 				im images/serum/serumLibrary-2.gif
-				sp librarian; Gllllhrrrggg~!
+				sp librarian; Hhhhaaaaa~!
 				...
 				sp ???; im none; I don't get it. You're just doing your job.
 				sp librarian; See?! That's the thing! I thought so too, but if you just watch it six or seven more times you realize-
@@ -5177,7 +5176,7 @@ function writeEvent(scene) {
 				sp librarian; <i>Maybe I was wrong... There's nothing special about a guy like this...</i><br>I'll have you know I've taken self defense classes. Take a step back, sir, or else.
 				...
 				im images/shades/shadesLibrary-1.gif
-				sp librarian; Where... What did...
+				sp librarian; Ugh, where... What did...
 				t As she rubs her head to try and jog her memory, reality gradually comes back into focus. She was speaking with someone... And then...
 				sp librarian; The security footage!
 				t Uncaring of her state of undress, she makes a dash towards the security room. Multiple cameras, along with ones of her own installing, should provide enough angles to undeniably prove the supernatural!
@@ -5192,7 +5191,7 @@ function writeEvent(scene) {
 				t And to make matters worse, even if this were evidence of the paranormal...
 				im images/shades/shadesLibrary-3.gif
 				sp librarian; Yes~! Pump my cunt full of your hot jizz~!
-				t Her reputation would be ruined if this ever got out.
+				t Her reputation would be ruined if this highly graphic video ever got out.
 				t <b>librarianF has acquired evidence of the supernatural</b>!
 				t ... Even though she can't watch it without cumming herself stupid.
 			`);
@@ -6664,7 +6663,7 @@ function writeEvent(scene) {
 				...
 				im images/doll/dollResearch3-1.gif
 				sp boss; I'll <s>kill you</s> <b>learn to behave like a good girl</b>! Fuck <s>you, I'm in control</s> <b>me harder</b>!
-				t A fierce battle rages on inside bossL's mind, one that doesn't show at all on her vapidly smiling face.
+				t A fierce battle rages on inside bossL's mind, one that doesn't show at all on her vapidly smiling face. Her movements, the ones caused by the doll's control, are methodical and mechanical, and without a trace of any pent-up rage.
 				sp boss; Focus, focus... Remember your training... Block out the mental assault. Isolate the foreign voice... Feel the rhythm... Of...
 				im images/doll/dollResearch3-2.gif
 				sp boss; No, I'm <s>not</s> cumming, I am <s>above this</s> <b>beneath men</b>!
@@ -6697,9 +6696,7 @@ function writeEvent(scene) {
 				t Not one of them views roommateF as a human being though, of course. But one of them does find the courage to drag her away.
 				...
 				im images/doll/dollResearch4-1.gif
-				sp roommate; No... Nonono, this is <s>wrong</s> <b>just practice for when he meets a real girl</b>. He can<s>'t</s> treat a <s>human being</s> <b>worthless sex toy</b>.
-				im images/doll/dollResearch4-2.gif
-				sp roommate; I'm <s>having sex with</s> <b>being used as a sex toy by</s> a student! <b>And I love it!</b><br>I... I love it?<br>N-no... girlfriendF... I have to be <s>faithful</s> <b>a good toy for her too</b>...
+				sp roommate; No... Nonono, this is <s>wrong</s> <b>just practice for when he meets a real girl</b>. He can<s>'t</s> treat a <s>human being</s> <b>worthless sex toy</b>.<br>I'm <s>having sex with</s> <b>being used as a sex toy by</s> a student! <b>And I love it!</b><br>I... I love it?<br>N-no... girlfriendF... I have to be <s>faithful</s> <b>a good toy for her too</b>...
 				...
 				t Once the first student was finished, more students find the sex-toy left behind. Normally they'd pass her by and just ignore the disgusting thing, but...
 				...
@@ -6735,9 +6732,8 @@ function writeEvent(scene) {
 				im images/doll/dollResearch5-1.gif
 				t Pleasure. You need to <s>resist</s> <b>embrace your new purpose</b>.
 				sp assistant; Hah... Fffuck, so lifelike... Can I pose you? Oooh...
-				im images/doll/dollResearch5-2.gif
 				t <s>Bide your</s> <b>Lose track of</b> time, <s>find an opportunity to</s> <b>no</b> escape!
-				im images/doll/dollResearch5-3.gif
+				im images/doll/dollResearch5-2.gif
 				sp assistant; Fuck yes! Ooh, I wish I could take you home~! Sleeping with a toy like you... I guess that wouldn't be fair to the rest of the department...
 			`);
 			writeText("BAD END");
