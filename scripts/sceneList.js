@@ -119,7 +119,7 @@ function writeScene(scene) {
 				"images/AV5.JPG",
 			];
 			writeSlideshow("images/AV.png");
-			writeText("Anomaly Vault v8");
+			writeText("Anomaly Vault v9");
 			writeText("<b>Currently sponsored by Swallows999!</b>");
 			writeText("You play as a researcher performing experiments on various reality warping artifacts, currently including a presence-erasing bracelet and a crate that converts anything inside into a hypersexualized version of itself.");
 			writeText("The game uses real porn gifs, and is similar in tone to Human Alteration App's dom route. The themes and fetishes of the game are governed by what artifacts you interact with, hopefully as time passes you'll find and artifact you really connect with. Let me know if you have any artifact / scene ideas!");
@@ -130,7 +130,7 @@ function writeScene(scene) {
 				<a class="choiceGridText" href="https://noodlejacuzzi.github.io/Anomaly%20Vault/Anomaly%20Vault%20Mobile.html">Play the mobile version</a>
 				<a class="choiceGridText" href="https://tfgames.site/index.php?module=viewgame&id=2110">View the TFGame entry</a>
 				<a class="choiceGridText" href="https://f95zone.to/threads/anomaly-vault-v7-noodlejacuzzi.34746/">View the F95Zone thread</a>
-				<a class="choiceGridText" href="https://www.patreon.com/posts/40968054">Download the game</a>
+				<a class="choiceGridText" href="https://www.patreon.com/posts/46799464">Download the game</a>
 				<a class="choiceGridText" href="http://freesuggestionbox.com/pub/axblnfu">Anonymous Suggestion Box</a>
 			</div>
 				<a class="choiceGridText" href="https://www.patreon.com/posts/33013457">View the cheat and prisoner codes</a>

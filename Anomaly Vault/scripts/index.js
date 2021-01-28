@@ -62,26 +62,34 @@ var galleryArray = [
 	{index: "braceletOutdoor4", dark: false, girl: "swallows", name: "Bar Room Fun", hint: "Assistant event"},
 	{index: "braceletLibrary1", dark: false, girl: "librarian", name: "Library Part 1", hint: "Assistant event"},
 	{index: "braceletLibrary2", dark: false, girl: "librarian", name: "Library Part 2", hint: "Assistant event"},
+	{index: "braceletLibrary3", dark: false, girl: "librarian", name: "Library Part 3", hint: "Assistant event"},
 	{index: "braceletDream1", dark: false, girl: "", name: "Fate of the Bracelet", hint: "Assistant event"},
 	//Reproachive Charm Events
 	{index: "charmResearch1", dark: false, girl: "assistant", name: "Reproachive Charm - First Research", hint: "Assistant event"},
 	{index: "charmResearch2", dark: false, girl: "assistant", name: "Reproachive Charm - Testing the Waters", hint: "Assistant event"},
 	{index: "charmResearch3", dark: false, girl: "boss", name: "Reproachive Charm - Memorable Meeting", hint: "Assistant event"},
 	{index: "charmOutdoor1", dark: false, girl: "", name: "Reproachive Charm - Shots", hint: "Assistant event"},
+	{index: "charmLibrary1", dark: false, girl: "librarian", name: "Reproachive Charm - Library Visit", hint: "Assistant event"},
 	//Erotibox Events
 	{index: "erotiboxResearch1", dark: false, girl: "", name: "Demo Reel - Sex Tape", hint: ""},
 	{index: "erotiboxResearch2", dark: false, girl: "assistant", name: "Taser - Slut Shocker", hint: ""},
+	{index: "erotiboxMiscTaser1", dark: false, girl: "sister", name: "Slut Shocker Extra 1", hint: ""},
 	{index: "erotiboxResearch3", dark: false, girl: "", name: "Mona Lisa - Work of Art", hint: ""},
 	{index: "erotiboxResearch11", dark: false, girl: "assistant", name: "Mona Lisa - Second Painting", hint: ""},
 	{index: "erotiboxResearch4", dark: false, girl: "", name: "Chessboard - Curseboard", hint: ""},
 	{index: "erotiboxResearch5", dark: false, girl: "", name: "$20 - Stripper Money", hint: ""},
 	{index: "erotiboxResearch6", dark: false, girl: "", name: "Water Bottle - Aphrodisiac Drink", hint: ""},
+	{index: "erotiboxMiscWater1", dark: false, girl: "roommate", name: "Aphrodisiac Drink Extra 1", hint: ""},
 	{index: "erotiboxResearch7", dark: false, girl: "assistant", name: "Flower - Squirt Inducer", hint: ""},
 	{index: "erotiboxResearch9", dark: false, girl: "assistant", name: "Alcoholic Drink - 'Sex on the Bar'", hint: ""},
 	{index: "erotiboxResearch12", dark: false, girl: "assistant", name: "Ice Cream - I Scream", hint: ""},
 	{index: "erotiboxResearch13", dark: false, girl: "assistant", name: "Computer - Gaming? Computer", hint: ""},
 	{index: "erotiboxResearch14", dark: false, girl: "assistant", name: "Wonder Woman - Wonder Whore", hint: ""},
 	{index: "erotiboxResearch15", dark: false, girl: "assistant", name: "Sleepmask - Fuckmask", hint: ""},
+	{index: "erotiboxResearch16", dark: false, girl: "assistant", name: "Magic Wand - Vanishing Stick", hint: ""},
+	{index: "erotiboxMiscWand1", dark: false, girl: "boss", name: "Vanishing Stick Extra 1", hint: ""},
+	{index: "erotiboxMiscWand2", dark: false, girl: "roommate", name: "Vanishing Stick Extra 2", hint: ""},
+	{index: "erotiboxMiscWand3", dark: false, girl: "sister", name: "Vanishing Stick Extra 3", hint: ""},
 	{index: "erotiboxResearch20", dark: false, girl: "assistantcrypto", name: "Exercise Ball - Dildo-Ball Bouncing", hint: ""},
 	{index: "erotiboxResearch8", dark: false, girl: "assistant", name: "Assistant - Sex Fiend", hint: ""},
 	//Antique Mirror Events
@@ -104,6 +112,7 @@ var galleryArray = [
 	{index: "stopwatchHome2", dark: false, girl: "roommate", name: "Time Stopwatch - In-Class Fun", hint: ""},
 	{index: "stopwatchOutdoor1", dark: false, girl: "", name: "Time Stopwatch - Strip Show", hint: ""},
 	{index: "stopwatchDream1", dark: false, girl: "", name: "Stopwatch's fate", hint: ""},
+	{index: "stopwatchLibrary1", dark: false, girl: "librarian", name: "Time Stopwatch - Library Visit", hint: "Assistant event"},
 	//Midas Coin Events
 	{index: "coinResearch1", dark: false, girl: "", name: "Midas Coin - First Research", hint: ""},
 	{index: "coinResearch2", dark: false, girl: "assistant", name: "Midas Coin - Trading for a Soda", hint: ""},
@@ -119,6 +128,7 @@ var galleryArray = [
 	{index: "serumHome1", dark: false, girl: "roommategirlfriend", name: "Truth Serum - Dating Advice", hint: ""},
 	{index: "serumHome2", dark: false, girl: "sister", name: "Truth Serum - Social Media Strategy", hint: ""},
 	{index: "serumDream1", dark: false, girl: "chair", name: "Serum's Fate", hint: ""},
+	{index: "serumLibrary1", dark: false, girl: "librarian", name: "Truth Serum - Library Visit", hint: "Assistant event"},
 	//index: "serumOutdoor1", dark: false, girl: "", name: "Truth Serum - Public Train", hint: ""},
 	//index: "serumOutdoor2", dark: false, girl: "", name: "Truth Serum - Dubious Consent", hint: ""},
 	//index: "serumOutdoor3", dark: false, girl: "", name: "Truth Serum - Beach Body", hint: ""},
@@ -129,6 +139,7 @@ var galleryArray = [
 	{index: "shadesHome1", dark: false, girl: "roommategirlfriend", name: "Chaddicus Shades - Two For One", hint: ""},
 	{index: "shadesHome3", dark: false, girl: "sister", name: "Chaddicus Shades - Vlogg'd", hint: ""},
 	{index: "shadesDream1", dark: false, girl: "", name: "Chaddicus Shades - Shades' Fate", hint: ""},
+	{index: "shadesLibrary1", dark: false, girl: "librarian", name: "Chaddicus Shades - Library Visit", hint: "Assistant event"},
 	//CEO Pass Events
 	{index: "passResearch1", dark: false, girl: "", name: "CEO Pass - First Research", hint: ""},
 	{index: "passResearch2", dark: false, girl: "assistant", name: "CEO Pass - The Assistant", hint: ""},
@@ -142,6 +153,7 @@ var galleryArray = [
 	{index: "signHome2", dark: false, girl: "", name: "FREE CREAMPIES", hint: "FREE CREAMPIES"},
 	{index: "signHome3", dark: false, girl: "", name: "FREE BLOWJOBS", hint: "FREE BLOWJOBS"},
 	{index: "signHome4", dark: false, girl: "", name: "FREE SEX", hint: "FREE SEX"},
+	{index: "signHome5", dark: false, girl: "", name: "FREE TITS", hint: "FREE TITS"},
 	{index: "signHome6", dark: false, girl: "", name: "FREE ANAL", hint: "FREE ANAL"},
 	{index: "signHome8", dark: false, girl: "", name: "FREE ORGY", hint: "FREE ANAL"},
 	{index: "signHome8", dark: false, girl: "", name: "FREE ASSJOB", hint: "FREE ANAL"},
@@ -166,6 +178,9 @@ var galleryArray = [
 	//Doll Events
 	{index: "dollResearch1", dark: true, girl: "assistant", name: "Stiff Sexdoll - Assistant", hint: ""},
 	{index: "dollResearch2", dark: true, girl: "boss", name: "Stiff Sexdoll - Boss", hint: ""},
+	{index: "dollResearch3", dark: true, girl: "boss", name: "Stiff Sexdoll - Boss Second Attempt", hint: ""},
+	{index: "dollResearch4", dark: true, girl: "roommate", name: "Stiff Sexdoll - Roommate", hint: ""},
+	{index: "dollResearch5", dark: true, girl: "assistantchair", name: "Stiff Sexdoll - Flipped", hint: ""},
 	//index: "dollResearch3", dark: true, girl: "roommate", name: "Stiff Sexdoll - Roommate", hint: ""},
 	//Bimbo Dust Events
 	{index: "dustResearch1", dark: true, girl: "assistant", name: "Bimbo Dust - Practice Makes Perfect", hint: ""},
@@ -454,6 +469,77 @@ function nameUpdate() {
 	chairL = data.story[7].lName;
 }
 
+function countScenes(target) {
+	var researchStatus = 0;
+	var researchTotal = 0;
+	if (target == "") {
+		for (i = 0; i < galleryArray.length; i++) {
+			if (galleryArray[i].dark != true && galleryArray[i].index.includes("sign") != true) {
+				var countMe = true;
+				//Check for requirements with certain scenes
+				if (galleryArray[i].girl.includes("sister")) {
+					if (data.player.color.includes("katyaIntro") != true) {
+						countMe = false;
+					}
+				}
+				var libraryScenes = "charmLibrary, shadesLibrary, stopwatchLibrary, serumLibrary";
+				if (libraryScenes.includes(galleryArray[i].index) == true) {
+					if (data.player.color.includes("library") != true) {
+						countMe = false;
+					}
+				}
+				if (galleryArray[i].index.includes("erotiboxMisc") == true) {
+					if (data.player.color.includes("miscbox") != true) {
+						countMe = false;
+					}
+				}
+				if (countMe == true) {
+					researchTotal += 1;
+					if (galleryCheck(galleryArray[i].index) == true) {
+						researchStatus += 1;
+					}
+				}
+			}
+		}
+	}
+	else {
+		for (i = 0; i < galleryArray.length; i++) {
+			var countMe = true;
+			//Check for requirements with certain scenes
+			if (galleryArray[i].girl.includes("sister")) {
+				if (data.player.color.includes("katya") != true) {
+					countMe = false;
+				}
+			}
+			var libraryScenes = "charmLibrary, shadesLibrary, stopwatchLibrary, serumLibrary";
+			if (libraryScenes.includes(galleryArray[i].index) == true) {
+				if (data.player.color.includes("library") != true) {
+					countMe = false;
+				}
+			}
+			if (galleryArray[i].index.includes("erotiboxMisc") == true) {
+				if (data.player.color.includes("miscbox") != true) {
+					countMe = false;
+				}
+			}
+			if (countMe == true) {
+				if (galleryArray[i].index.includes(target)) {
+					researchTotal += 1;
+					if (galleryCheck(galleryArray[i].index) == true) {
+						researchStatus += 1;
+					}
+				}
+			}
+		}
+	}
+	return [researchStatus, researchTotal];
+	//Syntax for using these is:
+	//var scenes = countScenes("artifact")
+	//if (scenes[0] == N) for unlocked
+	//if (scenes[1] == N) for total
+	//if (scenes[1] == scenes[0]) for complete unlocked
+}
+
 //Showing & hiding windows
 function hideStuff() {
 	//console.log("hideStuff start");
@@ -585,7 +671,12 @@ function writeSpeech (name, img, text) {
 	//Check if a transparent shot should be used
 	if (data.player.style == "persona" || data.player.style == "royalty"|| data.player.style == "lobotomy") {
 		if (checkForError == null) {
-			var checkForError = `onerror ="javascript:this.src='scripts/gamefiles/profiles/`+nameBackup+`.jpg'"`;
+			if (imgBackup.includes(".jpg") == true) {
+				var checkForError = `onerror ="javascript:this.src='`+imgBackup+`'"`;
+			}
+			else {
+				var checkForError = `onerror ="javascript:this.src='scripts/gamefiles/profiles/`+nameBackup+`.jpg'"`;
+			}
 		}
 		console.log(img);
 		console.log(checkForError);
@@ -736,6 +827,11 @@ function listArtifact(name) {
 			var title = artifactArray[i].title;
 			var desc = artifactArray[i].desc;
 			var artifactResearchCheck = name + "Research1";
+			if (name == "erotibox") {
+				if (data.player.color.includes("miscbox") == true) {
+					artifactArray[i].equipable = true
+				}
+			}
 			if (artifactArray[i].equipable == true) {
 				console.log("artifact is equippable");
 				if (galleryCheck(artifactResearchCheck) == true) {
@@ -785,21 +881,15 @@ function listArtifact(name) {
 		}
 	}
 	//console.log('now checking number of scenes');
-	for (i = 0; i < galleryArray.length; i++) {
-		if (galleryArray[i].index.includes(name)) {
-			researchTotal += 1;
-			if (galleryCheck(galleryArray[i].index) == true) {
-				researchStatus += 1;
-			}
-		}
-	}
+	//Actual Scene counter
+	var scenes = countScenes(name);
 	if (name == "sign") {
-		researchTotal = "???";
+		scenes[1] = "???";
 	}
 	if (tempScene == "vault") {
 		store = "";
 	}
-	console.log('Scenes found, current progress is ' + researchStatus + ' of ' + researchTotal);
+	console.log('Scenes found, current progress is ' + scenes[0] + ' of ' + scenes[1]);
 	//console.log('now determining appropriate research level');
 	if (equip != "") {
 		document.getElementById('output').innerHTML +=`
@@ -807,7 +897,7 @@ function listArtifact(name) {
 			<img class = "textThumb" src = "scripts/gamefiles/items/`+ name +`.jpg">
 			<div class="textBoxContent">
 			<p class = "textName">`+ title + `</p>
-			<p>Research Status: `+researchStatus+` of `+researchTotal+` scenes unlocked</p>
+			<p>Research Status: `+scenes[0]+` of `+scenes[1]+` scenes unlocked</p>
 			<p>
 				<span class = "blueText" onclick = "sceneTransition('`+name+`Research')">Research</span>   
 				<span class = "blueText" onclick = "equip('`+name+`')">`+equip+`</span>
@@ -826,7 +916,7 @@ function listArtifact(name) {
 			<img class = "textThumb" src = "scripts/gamefiles/items/`+ name +`.jpg">
 			<div class="textBoxContent">
 			<p class = "textName">`+ title + `</p>
-			<p>Research Status: `+researchStatus+` of `+researchTotal+` scenes unlocked</p>
+			<p>Research Status: `+scenes[0]+` of `+scenes[1]+` scenes unlocked</p>
 			<p>
 				<span class = "blueText" onclick = "sceneTransition('`+name+`Research')">Research</span>
 				<span class = "blueText" onclick = "store('`+name+`')">`+store+`</span>
@@ -1501,17 +1591,8 @@ function updateMenu() {
 		document.getElementById('day').innerHTML = "Day " + data.player.day + " - " + data.player.time + " (Frozen)";
 	}
 	document.getElementById('playerImage').src = "scripts/gamefiles/characters/"+data.player.character+".jpg";
-	for (i = 0; i < galleryArray.length; i++) {
-		if (galleryArray[i].dark != true && galleryArray[i].index.includes("sign") != true) {
-			researchTotal += 1;
-			if (galleryCheck(galleryArray[i].index) == true) {
-				researchStatus += 1;
-			}
-		}
-	}
-	document.getElementById('scenesTotal').innerHTML = researchStatus + ' of ' + researchTotal + ' total scenes unlocked';
-	researchStatus = 0;
-	researchTotal = 0;
+	var scenes = countScenes("");
+	document.getElementById('scenesTotal').innerHTML = scenes[0] + ' of ' + scenes[1] + ' total scenes unlocked';
 	if (data.player.artifact1 != "") {
 		document.getElementById('playerArtifact1').src = "scripts/gamefiles/items/"+data.player.artifact1+".jpg";
 		document.getElementById('playerArtifact1Mobile').innerHTML = data.player.artifact1;
@@ -1521,16 +1602,9 @@ function updateMenu() {
 				title = artifactArray[i].title;
 			}
 		}
-		for (i = 0; i < galleryArray.length; i++) {
-			if (galleryArray[i].index.includes(name)) {
-				researchTotal += 1;
-				if (galleryCheck(galleryArray[i].index) == true) {
-					researchStatus += 1;
-				}
-			}
-		}
 		document.getElementById('artifact1Name').innerHTML = title;
-		document.getElementById('artifact1Total').innerHTML = researchStatus + ' of ' + researchTotal + ' scenes unlocked';
+		var scenes = countScenes(name);
+		document.getElementById('artifact1Total').innerHTML = scenes[0] + ' of ' + scenes[1] + ' scenes unlocked';
 		document.getElementById("playerArtifact1").style.border = "3px solid white";
 		document.getElementById("playerArtifact1").style.width = "42%";
 	}
@@ -1550,16 +1624,14 @@ function updateMenu() {
 				title = artifactArray[i].title;
 			}
 		}
-		for (i = 0; i < galleryArray.length; i++) {
-			if (galleryArray[i].index.includes(name)) {
-				researchTotal += 1;
-				if (galleryCheck(galleryArray[i].index) == true) {
-					researchStatus += 1;
-				}
-			}
-		}
+		var scenes = countScenes(data.player.artifact2);
 		document.getElementById('artifact2Name').innerHTML = title;
-		document.getElementById('artifact2Total').innerHTML = researchStatus + ' of ' + researchTotal + ' scenes unlocked';
+		if (data.player.artifact2 == "sign") {
+			document.getElementById('artifact2Total').innerHTML = scenes[0]  + ' of ??? scenes unlocked';
+		}
+		else {
+			document.getElementById('artifact2Total').innerHTML = scenes[0] + ' of ' + scenes[1] + ' scenes unlocked';
+		}
 		document.getElementById("playerArtifact2").style.border = "3px solid white";
 		document.getElementById("playerArtifact2").style.width = "42%";
 	}
