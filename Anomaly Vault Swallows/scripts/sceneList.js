@@ -19,7 +19,7 @@ function writeScene(scene) {
 			writeTransition("startWardrobe", "Change your profile image");
 			writeText("Other notes:");
 			writeText("This game was commissioned via Patreon by <span class = 'switch' onclick='window.location.href=`https://www.patreon.com/swallows999`'>Swallows999</p>");
-			writeText("And I'm supported by my other patrons as well. Thank you to Swallows999, Iron Diana, Robbie, Joshua Ingram, Liam M, that GUY, Godlebay, RatKnight, Elias Errati, ryguy, 4MinuteWarning, Hi There, Carlos, æž—å®¶è±ª, Richard, dragoon48, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, J_C_L, Filament, XxrobothacksxX, Dkells, Jinouga, Marco Wassmer, Taylor Trout, andres mejia, Colin E, Badaxe, Jesse Greene, Scal, ChronosEdge, Greatsage56 ., sb2017, Wysdom, Thane Reynolds, Me Notyou, Chris Rucker, john sparks, Darien Cordero, Ally Smith, Brandon Leary, scott, a1214672685, Elijah Hansen, Sergio Prichard, pablo perez, Sera, ggboomsky, CoolFlames, Emily Pajak, Royce, Bradley Herbert, gabriel, SomebodyElse, dante schraeder, Peter H, DutchJudgement, DifferoBiga, 林家豪, Culton Niccum, thesingleguy, Kethis Immortalis, cabbage, colt, Anton Schmidt, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Don, Vikteren, Dean, Kudon, theoron, AnotherAccount333, Gavin Davis, Lucas, Kaliden, Krose, Tyler Ross, greatred, FrostyTB, Riven Drasek, l, ranchy sanchy, TheRawToast, Limitless, Greg Torres, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, Reverberations, ShadowFalls, William Parker, Magnus, Emanuel  Garcia, XaiuX, Kieron Kow, Slomberg, henry grobins, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Daekash, fireballcreations, Markus Hansen, Louis Hayes, Tanman, DarthMalak, Danny Nguyen, yami, Grim2011, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, CaptainMontana, Simon Rencher, dhccpmc, Chaaaanon, Charles Morris, Nutburger, Whynot, mazterlith, Anthony Munso, john smith, Your Husbando, Carlos, Joshua Melzark, Verillia tristari, ItsAllOgreNow, Gwen Yurick, Nils Maier, Blaise Fenn, stratum, Angel, Ariados, Jane, Snaked, Debarre Sonny, Drashin, qwerty, murgatroid99, Roy, Wild Bill, and brandon for supporting my work!.");
+			writeText("And I'm supported by my other patrons as well. Thank you to Swallows999, Robbie, SlackerSavior, Dylan, mike boehi, sylvester mckay, Thuur van der Borcht, ArtemisAisu, Onii-sama, xdrake100, Holden Martin, Matthew Landin, that GUY, Elias Errati, Iron Diana, ryguy, 4MinuteWarning, Hi There, Carlos, 林家豪, Richard, Negativatron, Dustin Leichsenring, Ramsey Bisher, jack spencer, maxime, J_C_L, Dkells, Jinouga, Marco Wassmer, Taylor Trout, Colin E, Badaxe, Scal, Leandro Nakamura, Kient Wong, Harry Foster-major, Steven Everitt, nicholas chen, Robert Bennett, Ozinthesand, Victor Saganoff, JuanDa295, Aaron Brown, Harlocco, Ash mash, Calla Smith, Bastl, Tsuki, randol javier, Rafa Smith, Andrew Lolzaror, Tobias Blake, pest, Zach allen, Ezekiel Rojas, Stan Manson, Evan Gao, TheLazyCactus, Carson Goodwin, david bradley, Roman Guinazzo, Random One, Sanguinius1701, Dragoon22, mitchellwolbert, luke perrey, Wells Wells, NocteAngelus, undead270, Him, Ashwinder, Bryan Pasternack, omb, Hello Darkness, Christopher R. Taylor, Regulus, Funnykitty, Patrick, Seamus Porter, Sub Lyminal, BINKS, Richard Pryor, Zane regel, HolyDurandal, John Nixon, Donovan Korpa, Noh Bhodie, Billymays, Genxin, Sean Morehead, poyo, Greatsage56 ., sb2017, Wysdom, Me Notyou, Chris Rucker, john sparks, Darien Cordero, Brandon Leary, Sera, RatKnight, Bradley Herbert, gabriel, SomebodyElse, Peter H, 长平 鬣, Culton Niccum, thesingleguy, Kethis Immortalis, colt, Anton Schmidt, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Vikteren, Dean, Kudon, theoron, AnotherAccount333, Kaliden, Krose, greatred, Riven Drasek, Johnathan Thornburg, Limitless, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, XaiuX, l1monat, Kieron Kow, Slomberg, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Markus Hansen, Leanerbike1363, Tanman, DarthMalak, Danny Nguyen, yami, Grim2011, Darrell Goodman, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, Simon Rencher, dhccpmc, Chaaaanon, Nutburger, Whynot, mazterlith, Anthony Munso, john smith, Your Husbando, Carlos, Firestar99255, Verillia tristari, CaptainMontana, ItsAllOgreNow, Jesse Greene, Nils Maier, Angel, Ariados, Jane, Snaked, qwerty, murgatroid99, Roy, Wild Bill, ChronosEdge, and brandon for supporting my work!.");
 			writeText("Swallows actually wrote some content for the game, you can unlock his scenes like normal, and he has a special section in the gallery. If you'd like to put your scene in the game, feel free to send it to me.");
 			writeText("You can change your profile image in game by using the wardrobe in your room. You can also cheat in your room if you know a code.");
 			writeText("You can click on the title of a window to close it. For example, if you click 'LOGBOOK' on the left (or bottom on mobile), you can close the new window by clicking anywhere in the 'LOGBOOK' section at the top.");
@@ -1279,21 +1279,47 @@ function writeScene(scene) {
 			switch (data.player.libraryStage) {
 				case 1: {
 					writeHTML(`
-					
+						sp librarian; It's just... They're embarrassing...
+						t A message, "But the world deserves to know."
+						sp librarian; But does it have to be through me? And how do I even know if I can trust you? You're the only one who's believed me so far, but you could be some creep for all I know.
+						t "I know about what's happening to you, and I can help. I can prove it! When you're alone sometimes, you can feel hands on your body, even though nobody's around, right?"
+						sp librarian; That doesn't prove anything...
+						t "Not just that, but there are other paranormal events happening in other places too. A man with sunglasses who seems to get away with sexual assault, women going from normal life to suddenly being naked and cumming on the street."
+						sp librarian; Okay, okay! Alright, so you aren't some random looking for porn, okay. I guess the strange email should've tipped me off... But still!
+						t There's a soft knock at her door.
+						sp librarian; Alright, we'll continue this discussion later. Just... Just sit tight.
 					`);
 					break;
 				}
 				case 2: {
 					writeHTML(`
-					
+						t librarianF hesitates. So many bizzare occurences, all on camera...
+						t "Just send it to me. I've been researching paranormal phenomenon for years, this might finally crack the case."
+						t Her finger hovers over the send button. An indecision she can't put into words makes her hesitate.
+						t "I'm certain these paranormal events will stop once we've exposed exactly what's happening."
+						t And suddenly she realizes exactly why she's been holding back.
+						sp librarian; ... I'm sorry, I can't.
+						t "Why not?"
+						t A good question. One librarianF can't answer. For some reason the thought of these events stopping is... Disgusting. Horrifying. Something she can't accept.
+						sp librarian; ... It's not enough. The stuff I have is entirely normal, mostly. I need to do more research.<br>Yeah, that's it... More research... Goodbye...
+						t "Wait, don't leave"
+						t "I can help"
+						t "We can prove what's happening is abnormal together"
+						t She closes the window, resolving not to open it again.
+						sp librarian; More... More research. I need better footage, a-and more time to review it all...
+						t She smiles as the imagines what gathering more footage might mean. And although she has no intention to share any of it, just the thought is enough to make her shiver.
 					`);
 					break;
 				}
 				default: {
 					writeHTML(`
-					
+						sp librarian; Hahhh... I guess I never actually thought about what I'd do afterwards. Nobody will believe this, and even if I made national news...
+						t She swallows dryly at the thought of the evidence she's collected being broadcast to the entire world. For some reason it seems almost embarassing to post these.
+						sp librarian; ... I really need to see a doctor about these libido spikes... Oh, an email? From an unknown address? How does that even..
+						t Against her better judgement she opens the mysterious message.
+						sp librarian; Dear Ms. librarianL... Fellow seeker of truth... I've come to belive strange things are happening in town, and that you might be involved.<br>I'd be interested in any evidence you can collect? How did they... 
+						t Though her shift will end soon, librarianF will be at her desk for the next few hours getting into contact with this unknown entity.
 					`);
-					data.player.libraryStage = 1;
 				}
 			}
 			data.player.libraryStage += 1;
@@ -3183,11 +3209,11 @@ function writeEvent(scene) {
 				t You arrive to find librarianF researching security footage. Although it seems more like they're her personal cameras than official surveillance equipment.
 				t Still, it's quite the sight to see her noting down small movements of dust, when the main focus of the frame is her ass being pounded. It's the kind of sight that makes you want to tease her.
 				...
-				im braceletLibrary3-1.gif
+				im images/bracelet/braceletLibrary3-1.gif
 				sp librarian; I know... I know something's there...
 				t Her face is just inches away from the screen, her vision dominated by the sight of herself getting fucked on camera. The desk shakes every time you slam into her but she's sill none the wiser.
 				sp librarian; I'll f-find you... Then... Then I'll...
-				im braceletLibrary3-2.gif
+				im images/bracelet/braceletLibrary3-2.gif
 				sp librarian; I'll fucking cum all over... Over your...<br>W-what am I saying?! W-why am I so wet?!
 				t She stumbles, unable to comprehend that she's just had an orgasm. Once she's able to get her bearings she moves to another desk, leaving what is essentially porn playing on a loop on her security screen.
 				t She's got a mess of emails open, which you catch an eyeful of. Chains of people she's spoken with, skeptical that she's actually found hard evidence of the paranormal. Even if she could prove it though this isn't the sort of evidence that could appear on the news, an advantage of being a horndog.
@@ -3195,6 +3221,7 @@ function writeEvent(scene) {
 			`);
 			if (data.player.color.includes("library") != true) {
 				data.player.color += "library";
+				data.player.libraryStage = 0;
 				writeSpecial("Additional scenes with some artifacts have been unlocked!");
 			}
 			break;
@@ -3293,17 +3320,17 @@ function writeEvent(scene) {
 				t Once you arrive you find the librarian again, organizing a shelf and sneaking glances when you aren't looking.
 				sp librarian; <i>He's here again! This is it, all I need to do is confront him!</i>
 				t At this point she's just pretending to work, but can't seem to build up the nerve to confront you.
-				im UNSET IMG
+				im images/charm/charmLibrary1-1.gif
 				t So you grab her by the ass.
 				sp librarian; Ah! *Ahem*<br><i>Alright, this is it! I'll finally have him caught red-handed... O-or maybe a little further...? But why-</i>
-				im UNSET IMG
+				im images/charm/charmLibrary1-2.gif
 				t She draws in a sharp breath, but otherwise continues to pretend to sort books.
 				...
-				im UNSET IMG
+				im images/charm/charmLibrary1-3.gif
 				sp librarian; Ffffhuuu...<br><i>This is it, this is it! Something's happening, something I can't explain, and it's happening on camera!</i>
-				im UNSET IMG
+				im images/charm/charmLibrary1-4.gif
 				sp librarian; <i>Stay... In control... Don't black out...</i>
-				im UNSET IMG
+				im images/charm/charmLibrary1-5.gif
 				sp librarian; <i>Cum... Ing...</i>
 				...
 				sp librarian; No... No, this is all wrong! Why do I look like I want him to... No, I was just excited to have proof, but...
@@ -3666,14 +3693,14 @@ function writeEvent(scene) {
 				t You place the wand in the box, then shut the front gate. 
 				t Within seconds a bright purple light illuminates the room, before quickly dying down again.
 				t Inside the box is...
-				im UNSET IMG
+				im images/box/erotiboxResearch16-1.jpg
 				sp assistant; ... It's the same?
 				sp player; Seems to be.<br>Actually...
 				t As you closely inspect the want, almost invisibly small writing can be found on the top and bottom.
 				sp player; Huh... The top and bottom rotate like dials. "TARGET", and "AUDIENCE". They can be set to "AWARE" and "UNAWARE".<br>Both on unaware... Nothing seems to happen when I turn them.
 				sp assistant; Maybe you need to cast a spell?
 				sp player; What, with a swish and flick? This isn't-
-				im UNSET IMG
+				im images/box/erotiboxResearch16-1.jpg
 				sp assistant; What's up? You figure it out?
 				sp player; ... I think so. You feel a draft?
 				t You get an eyeful of assistantF's body as you turn the 'TARGET' knob to 'AWARE'.
@@ -3758,7 +3785,7 @@ function writeEvent(scene) {
 			writeHTML(`
 				t Trying to find an opportunity to use the wand doesn't take long. You leave the target and audience settings on 'AWARE' and peer into a meeting room.
 				sp boss; They may be the lowest risk types of artifacts, but Zeth-types should still be treated carefully if you value your lives. The Punification Cage doesn't force you to wear it, it's safe to handle, but if you even think about wearing it-
-				im UNSET IMG
+				im images/box/erotiboxMiscWand1-1.jpg
 				t And with the flick of a wrist bossL is standing in the nude in the middle of a staff meeting.
 				t There's a momentary pause as everyone takes in exactly what just happened, before the room is a rush of movement.
 				t Formerly lax and bored employees are moving like a well-oiled machine, guns are checked and helmet filters activated to scramble any kind of visual hypnotism. Within seconds the room goes from a tedious meeting to a naked bossL barking orders at a military force ready to sweep the vault, and to make matters worse she isn't even phased by her nudity...
@@ -3775,7 +3802,7 @@ function writeEvent(scene) {
 			writeHTML(`
 				t Following roommateF to the school, you spy an opportunity for some fun and decide to take it.
 				t You click the target setting to 'AWARE' and the audience setting to 'UNAWARE' and give the wand a swish.
-				im UNSET IMG
+				im images/box/erotiboxMiscWand2-1.jpg
 				t And after a moment of roommateF's brain trying to comprehend what just happened, a shrill shriek fills the room.
 				sp roommate; <i>I'm naked?! What? How?!</i>
 				t But as the students start trying to calm her down, asking what's the matter, her confusion only grows.
@@ -3784,7 +3811,7 @@ function writeEvent(scene) {
 				sp roommate; S-sorry, back to what... What I was saying...
 				t A few tepid steps back to her desk, she shivers. And not just because of the sudden chill.
 				...
-				im UNSET IMG
+				im images/box/erotiboxMiscWand2-2.gif
 				sp roommate; <i>No, no. I'm scared, I'm not excited...<br>This is just... Something weird. Tomorrow will be back to normal, and I'll be just fine. Nothing's awakening in me.</i>
 				t She continues to delude herself as her ass sways with every step. Her nipples erect and her pussy slowly growing wetter, she looks more frazzled every second as she tries to supress what's running wild in her mind right now.
 				t <b>Shame</b>
@@ -3808,14 +3835,14 @@ function writeEvent(scene) {
 			writeHTML(`
 				t The loud base of music is almost enough to rattle the floor, what exactly is she listening to?
 				t Using the bracelet you sneak into sisterF's room.
-				im erotiboxMiscWand3-1.gif
+				im images/box/erotiboxMiscWand3-1.gif
 				t Some kind of dance for social media it seems. Well, thus ought to be a dun use of the wand. You set the target setting to 'UNAWARE' and leave the audience setting on 'AWARE'.
 				t And as sisterF is mid-jump during her dance...
-				im erotiboxMiscWand3-2.gif
+				im images/box/erotiboxMiscWand3-2.gif
 				t Without missing a beat, she continues to dance. All the while the chatbox spikes in activity. Clearly, her performance has become at least 15% lewder.
 				...
 				sp sister; Hehe, 'that body', 'killer ass'. You guys like me that much? How about... This!
-				im erotiboxMiscWand3-3.gif
+				im images/box/erotiboxMiscWand3-3.gif
 				t Misunderstanding exactly why that last show was such a success, sisterF turns around and spreads herself, it seems like the wand is making her think this is innocent? Or at least just risque, and not an incredibly erotic and very public showing of her most intimate places.
 				t You click the target setting to 'AWARE' and hit the button again, and struggle to hold back laughter as sisterF's eyes shoot open as she sees herself as her audience sees her her.
 				sp sister; I... I...
@@ -3827,7 +3854,7 @@ function writeEvent(scene) {
 				sp sister; Hah... Fuck...
 				t She lays back on her bed, exhausted. She's been banned from yet another online platform and there'll probably be a call from assistantF any minute now. Not to mention her little show has been clipped and started appearing on porn websites.
 				sp sister; Ughh... This isn't fair...<br>Ah, at least they're getting a lot of views...<br>Well, I guess I could...
-				im erotiboxMiscWand3-4.gif
+				im images/box/erotiboxMiscWand3-4.gif
 				t You decide to leave the attention whore as she is, for now.
 			`);
 			break;
@@ -3837,7 +3864,7 @@ function writeEvent(scene) {
 				t The taser isn't too complex, although there seems to be a small click-wheel on the bottom. Given the way it spins it seems like there are more than a few higher levels of power to this thing.
 				t Well, science is a matter of experimentation. sisterF passes by loudly talking on the phone as she goes. 
 				...
-				im erotiboxMiscTaser1-1.gif
+				im images/box/erotiboxMiscTaser1-1.gif
 				sp sister; And so h-aaaAAAAH~!
 				t Thanks to the bracelet you were able to walk in without her being aware, strip off her top and find a good place for your first test shock.
 				t At level two she nearly crushes her phone as every muscle in her body courses with an unnaturally pleasurable electric stimulation.
@@ -3847,7 +3874,7 @@ function writeEvent(scene) {
 				t She's gripping her sheets so hard you hear them suddenly and violently tear. Her eyes are rolled so far back they'd be useless even if she weren't whiting out.
 				t Each scream adds to the orgasmic chorus slowly devolving into nonsensical babbling as her voice and brainpower give out.
 				t With the highest level tested you take a step back to see if there are any further side effects.
-				im erotiboxMiscTaser1-2.gif
+				im images/box/erotiboxMiscTaser1-2.gif
 				sp sister; Bchzzt... Ch...
 				t Her brain is having a hard time resetting, it could be that her brain's 'normal' state has been overwritten to try and compensate for the pleasure-shocks.
 				t Regardless the result is that she's a squirming mess as her pussy spasms and sprays, and muscles across her body twitch and contract uncontrollably. Only time will tell if she can reset back to normal, and if the bracelet will be able to completely erase her memory or if she winds up with a massive unexplained electro-stim fetish.
@@ -3866,7 +3893,7 @@ function writeEvent(scene) {
 				t It's like something's battering down her door, a warmth flowing through her in preperation for something.
 				sp roommate; So... So good...
 				t She sighs in delight as her resistance finally cracks. It's just for a moment, but when she catches herself it's too late.
-				im erotiboxMiscWater1-1.gif
+				im images/box/erotiboxMiscWater1-1.gif
 				sp roommate; Ghhhh~!
 				t She tries to hide it, but it's undeniable she's having a toe-curling squirtgasm for all to see. Panic and shame mixing together in a potent cocktail along with drug-fuelled arousal.
 				t And as a result her legs are shaking, hips raised and pelvis jutting forwards as if to put her shame on full display, but really she's just riding a wave so powerful it's dizzying.
@@ -4085,18 +4112,18 @@ function writeEvent(scene) {
 				t There's no denying that the hands are making progress towards... Something. Finding out exactly what ought to be worth your time.
 				t ... You make a mental note never to make a time-based pun again.
 				...
-				im UNSET IMG
+				im images/stopwatch/stopwatchEnding-1.gif
 				t Day 1. The vault is a good a place as any to start. With time frozen you may as well enjoy yourself while you wait for the watch to progress.
 				t If you had to rate the women, assistantL would have to rank above bossL's pussy. But bossL's arrogant face is a lot more fun to fuck.
 				t You were nervous about chairL at first, worried she'd use some bullshit power with her rings to resume time, but nope. You freely fucked, creampied, and then used her as a footstool for good measure while relaxing in her desk.
 				...
-				im UNSET IMG
+				im images/stopwatch/stopwatchEnding-2.gif
 				t Day 13. No longer in the vault you've wandered around town looking for familiar asses. You left roommateF and girlfriendF liplocked with a cumload in their mouths, it should be quite the sight when time resumes.
 				...
-				im UNSET IMG
+				im images/stopwatch/stopwatchEnding-3.gif
 				t Day 24. Random people on the street now. The ticking hitched for a while today, seemingly stuck in place as if trying to break through a barrier. Weirdly, you felt your bracelet crack before the ticking resumed. Hopefully it was just a coincidence?
 				...
-				im UNSET IMG
+				im images/stopwatch/stopwatchEnding-4.gif
 				t Day... Unknown.
 				t No breeze has blown through the city in what are effectively years. Everyone who's ever caught your fancy stands perfectly still, their clothes removed or displaced and their bodies showing clear signs of defilement.
 				t You recline onto some lawnchair. You've had your fun with nearly the entire city. A normal individual would probably have gotten bored by now, but with access to food, water, and an endless supply of holes to fuck you're pretty satisfied.
@@ -4203,7 +4230,7 @@ function writeEvent(scene) {
 				t *CLICK*
 				t Time is frozen again, and she's left in open-mouth shock.
 				...
-				im UNSET IMG
+				im images/stopwatch/stopwatchLibrary1-1.gif
 				t No gag reflex, not even a trace of resistance as you pummel her throat. Again, you take a few steps back and...
 				t *CLICK*
 				sp librarian; -aah-GLRFFF!
@@ -4211,7 +4238,7 @@ function writeEvent(scene) {
 				sp librarian; *COUGH*!<br>I-is... Someone-
 				t *CLICK*
 				...
-				im UNSET IMG
+				im images/stopwatch/stopwatchLibrary1-2.gif
 				t It's fun posing her in the periods where time is stopped, with any luck the recording of this event should look more like a heavily-editted porno than proof of the supernatural.
 				t *CLICK*
 				sp librarian; -Ther-
@@ -4928,19 +4955,19 @@ function writeEvent(scene) {
 				sp player; No problem, just get those lips on my cock and all is forgiven.
 				sp librarian; Hehe, right away sir.
 				...
-				im
+				im images/serum/serumLibrary-1.gif
 				sp librarian; Gllrrrk-!
 				sp player; You almost look like you're struggling, weird. I mean, <g>the taste of jizz is amazing to you</g>, so <g>it'd be totally normal for you to get off on this.</g>
 				t Suddenly, her expression changes, softening and her eyes are filled with visible excitement.
 				sp player; In fact, <g>you're about to have the largest orgasm of your life from swallowing my cum</g>, it's obvious just from looking at you.
-				im
+				im images/serum/serumLibrary-2.gif
 				sp librarian; Gllllhrrrggg~!
 				...
-				? I don't get it. You're just doing your job.
+				sp ???; im none; I don't get it. You're just doing your job.
 				sp librarian; See?! That's the thing! I thought so too, but if you just watch it six or seven more times you realize-
-				? You seriously want me to watch you getting fucked over and over, and then somehow I'll notice something paranormal?
+				sp ???; im none;  You seriously want me to watch you getting fucked over and over, and then somehow I'll notice something paranormal?
 				sp librarian; Well-
-				? Look, I get you love your job, but that's honestly kind of weird. It's just work, librarianF. Don't develop any weird fetishes on the clock, alright?<br>Anyways, I saw some guy loitering in the real crime section, I'm gonna give him a suckjob real quick before my lunchbreak. You try to keep your head out of the clouds.
+				sp ???; im none;  Look, I get you love your job, but that's honestly kind of weird. It's just work, librarianF. Don't develop any weird fetishes on the clock, alright?<br>Anyways, I saw some guy loitering in the real crime section, I'm gonna give them a suckjob real quick before my lunchbreak. You try to keep your head out of the clouds.
 				sp librarian; B-but...!<br>Hah... Another bust. I wonder why it feels so strange to me? There's something wrong here...<br>Ah, my lips still taste like sperm.
 				t <b>librarianF has acquired evidence of the supernatural</b>!
 				t ... But nobody seems to notice anything unusual about it.
@@ -5149,7 +5176,7 @@ function writeEvent(scene) {
 				t You take a step forwards
 				sp librarian; <i>Maybe I was wrong... There's nothing special about a guy like this...</i><br>I'll have you know I've taken self defense classes. Take a step back, sir, or else.
 				...
-				im shadesLibrary-1.gif
+				im images/shades/shadesLibrary-1.gif
 				sp librarian; Where... What did...
 				t As she rubs her head to try and jog her memory, reality gradually comes back into focus. She was speaking with someone... And then...
 				sp librarian; The security footage!
@@ -5159,11 +5186,11 @@ function writeEvent(scene) {
 				sp librarian; How did he do it... Maybe he's got supernatural powers?
 				t Her breathing is stilted as she takes in every frame. Unknowingly, one of her hands goes between her legs, one of them grasps her neck. Both hands squeeze softly as you take a step forwards.
 				...
-				im shadesLibrary-2.gif
+				im images/shades/shadesLibrary-2.gif
 				t Her cunt spasms and fluids arc through the air. Her eyes have rolled back, taking her gaze away from the screen, but the memory of her assault is playing so vividly in her mind it doesn't matter.
 				t The audio of the recording is loud enough that a few passersby must surely be able to hear the sounds of rough pornography, but nothing short of a bomb will interupt her self-pleasure session at this point.
 				t And to make matters worse, even if this were evidence of the paranormal...
-				im shadesLibrary-3.gif
+				im images/shades/shadesLibrary-3.gif
 				sp librarian; Yes~! Pump my cunt full of your hot jizz~!
 				t Her reputation would be ruined if this ever got out.
 				t <b>librarianF has acquired evidence of the supernatural</b>!
@@ -5186,12 +5213,12 @@ function writeEvent(scene) {
 				sp chair; Honestly you're making this difficult, It's going to take <i>hours</i> to find a replacement researcher the artifacts are this compatible with.<br>Oh well, good bye. Send a postcard from whatever void after death awaits you.
 				t She makes a show of lifting her hand to snap her fingers and erase yor existence.
 				...
-				im shadesEnding-1.gif
+				im images/shades/shadesEnding-1.gif
 				sp chair; Ffuuuuck~! You're fucking me like I'm some common whore~!
 				t Her words are more breath and scream than they are rational thought. Her eyes roll back as you grab her by the hair and show her where her place is.
 				t You push her head down to the floor, rubbing her face in a mess of her juices, all the while admiring how her rings look on your fingers.
 				sp chair; Ouuugh~! You won't get away with this~! If you think I'll let you treat me like some stupid, mouthy bitch, I'll-
-				im shadesEnding-2.gif
+				im images/shades/shadesEnding-2.gif
 				sp chair; CUM~!
 				t The sound of flesh on flesh fills the room even more as you slap the fuck out of her ass, effectively bitch-smacking any last trace of defiance out of mind. Her position as a chairwoman of the vault, as one of the most powerful women in the world, are replaced by feelings of... Fate. Destiny. A life here, beneath a man's heel as something even less than a sex-toy.
 				t Beneath you, feeling every thrust rub her face into the floor, feeling powerless and pathetic...
@@ -6635,18 +6662,18 @@ function writeEvent(scene) {
 				t You walk into the room, and are greeted by an outwardly silent, smiling bossL. On the inside though...
 				sp boss; You mother fucker! You're playing with things you don't understand! I'll <s>rip off</s> <b>be used by</b> your-<br>No! Shut the hell up, no haunted toy crosses wires in my brain and gets away with it!
 				...
-				im dollResearch3-1.gif
+				im images/doll/dollResearch3-1.gif
 				sp boss; I'll <s>kill you</s> <b>learn to behave like a good girl</b>! Fuck <s>you, I'm in control</s> <b>me harder</b>!
 				t A fierce battle rages on inside bossL's mind, one that doesn't show at all on her vapidly smiling face.
 				sp boss; Focus, focus... Remember your training... Block out the mental assault. Isolate the foreign voice... Feel the rhythm... Of...
-				im dollResearch3-2.gif
+				im images/doll/dollResearch3-2.gif
 				sp boss; No, I'm <s>not</s> cumming, I am <s>above this</s> <b>beneath men</b>!
 				t There's a twitch to her smile. A trick of the light, or resistance showing through?
 				sp boss; One... One more try... <s>Block out</s> accept the mental assault... Isolate <s>the foreign</s> <b>MY</b> voice... <b>Ignore the thirsty bitch resisting what's good for her. I am a toy, and nobody can take that away from me!</b>
-				im dollResearch3-3.gif
+				im images/doll/dollResearch3-3.gif
 				sp boss; <s>I have to fight</s><b>I'll shut you up for good! No artifact is taking away my right to be a fucktoy! I am bossL, and I am in control!</b>
 				t Though it's entirely invisible to you, it seems as though the doll has successfully rewired bossL's mind, at least for the moment.
-				im dollResearch3-4.gif
+				im images/doll/dollResearch3-4.gif
 				t At least, that's what you assume as her pussy clenches around you in a whorish orgasm.
 			`);
 			break;
@@ -6669,17 +6696,17 @@ function writeEvent(scene) {
 				t Some of them stop and gawk, some of them sneer at the audacity of someone bringing a sex doll to college, some of them jokingly kicking her to test her material or even taking a selfie.
 				t Not one of them views roommateF as a human being though, of course. But one of them does find the courage to drag her away.
 				...
-				im dollResearch4-1.gif
+				im images/doll/dollResearch4-1.gif
 				sp roommate; No... Nonono, this is <s>wrong</s> <b>just practice for when he meets a real girl</b>. He can<s>'t</s> treat a <s>human being</s> <b>worthless sex toy</b>.
-				im dollResearch4-2.gif
+				im images/doll/dollResearch4-2.gif
 				sp roommate; I'm <s>having sex with</s> <b>being used as a sex toy by</s> a student! <b>And I love it!</b><br>I... I love it?<br>N-no... girlfriendF... I have to be <s>faithful</s> <b>a good toy for her too</b>...
 				...
 				t Once the first student was finished, more students find the sex-toy left behind. Normally they'd pass her by and just ignore the disgusting thing, but...
 				...
-				im dollResearch4-3.gif
+				im images/doll/dollResearch4-3.gif
 				sp roommate; Nggh, <b>yes,</b> two at once! I'll break<b>~</b>! If they go any harder... <b>I'll do absolutely nothing about it and learn my fucking place already</b>!
 				...
-				im dollResearch4-4.gif
+				im images/doll/dollResearch4-4.gif
 				sp roommate; Someone... Please... help <b>fuck me up even more</b>...
 				t By the time you arrive at the school roommateF is a smiling, statue-esque doll on the floor. Her etched grin is <i>almost</i> not visible beneath a thick layer of cum.
 				t You free her from the doll's control, but once she's free...
@@ -6705,12 +6732,12 @@ function writeEvent(scene) {
 				sp boss; Eh, I'll pass for now. I guess I could use a new tool later when I need a workout.
 				sp assistant; Huh, I guess it's just me and you... Hah, I probably look really dumb talking to a sex doll...
 				...
-				im dollResearch5-1.gif
+				im images/doll/dollResearch5-1.gif
 				t Pleasure. You need to <s>resist</s> <b>embrace your new purpose</b>.
 				sp assistant; Hah... Fffuck, so lifelike... Can I pose you? Oooh...
-				im dollResearch5-2.gif
+				im images/doll/dollResearch5-2.gif
 				t <s>Bide your</s> <b>Lose track of</b> time, <s>find an opportunity to</s> <b>no</b> escape!
-				im dollResearch5-3.gif
+				im images/doll/dollResearch5-3.gif
 				sp assistant; Fuck yes! Ooh, I wish I could take you home~! Sleeping with a toy like you... I guess that wouldn't be fair to the rest of the department...
 			`);
 			writeText("BAD END");
@@ -6769,7 +6796,7 @@ function writeEvent(scene) {
 		case "credits": {
 			writeBig("scripts/gamefiles/logo.png");
 			writeText("The Anomaly Vault was built by the architect NoodleJacuzzi, also responsible for other works. Further foundation was laid by Swallows999 and Captain Cryptogreek, who pioneered the research of artifacts before you. However the funding  of the vault comes from a council veiled in shadow, ever aware of your efforts.");
-			writeText("Above chairwoman chairF, they decide the vault's purpose and fate. Bear these names close to your heart, for they are the ones who are truly in control here. Swallows999, Iron Diana, Robbie, Joshua Ingram, Liam M, that GUY, Godlebay, RatKnight, Elias Errati, ryguy, 4MinuteWarning, Hi There, Carlos, æž—å®¶è±ª, Richard, dragoon48, Negativatron, Dustin Leichsenring, G, Ramsey Bisher, jack spencer, J_C_L, Filament, XxrobothacksxX, Dkells, Jinouga, Marco Wassmer, Taylor Trout, andres mejia, Colin E, Badaxe, Jesse Greene, Scal, ChronosEdge, Greatsage56 ., sb2017, Wysdom, Thane Reynolds, Me Notyou, Chris Rucker, john sparks, Darien Cordero, Ally Smith, Brandon Leary, scott, a1214672685, Elijah Hansen, Sergio Prichard, pablo perez, Sera, ggboomsky, CoolFlames, Emily Pajak, Royce, Bradley Herbert, gabriel, SomebodyElse, dante schraeder, Peter H, DutchJudgement, DifferoBiga, 林家豪, Culton Niccum, thesingleguy, Kethis Immortalis, cabbage, colt, Anton Schmidt, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Don, Vikteren, Dean, Kudon, theoron, AnotherAccount333, Gavin Davis, Lucas, Kaliden, Krose, Tyler Ross, greatred, FrostyTB, Riven Drasek, l, ranchy sanchy, TheRawToast, Limitless, Greg Torres, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, Reverberations, ShadowFalls, William Parker, Magnus, Emanuel  Garcia, XaiuX, Kieron Kow, Slomberg, henry grobins, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Daekash, fireballcreations, Markus Hansen, Louis Hayes, Tanman, DarthMalak, Danny Nguyen, yami, Grim2011, Darrell Goodman, Z, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, CaptainMontana, Simon Rencher, dhccpmc, Chaaaanon, Charles Morris, Nutburger, Whynot, mazterlith, Anthony Munso, john smith, Your Husbando, Carlos, Joshua Melzark, Verillia tristari, ItsAllOgreNow, Gwen Yurick, Nils Maier, Blaise Fenn, stratum, Angel, Ariados, Jane, Snaked, Debarre Sonny, Drashin, qwerty, murgatroid99, Roy, Wild Bill, and brandon.");
+			writeText("Above chairwoman chairF, they decide the vault's purpose and fate. Bear these names close to your heart, for they are the ones who are truly in control here. Swallows999, Robbie, SlackerSavior, Dylan, mike boehi, sylvester mckay, Thuur van der Borcht, ArtemisAisu, Onii-sama, xdrake100, Holden Martin, Matthew Landin, that GUY, Elias Errati, Iron Diana, ryguy, 4MinuteWarning, Hi There, Carlos, 林家豪, Richard, Negativatron, Dustin Leichsenring, Ramsey Bisher, jack spencer, maxime, J_C_L, Dkells, Jinouga, Marco Wassmer, Taylor Trout, Colin E, Badaxe, Scal, Leandro Nakamura, Kient Wong, Harry Foster-major, Steven Everitt, nicholas chen, Robert Bennett, Ozinthesand, Victor Saganoff, JuanDa295, Aaron Brown, Harlocco, Ash mash, Calla Smith, Bastl, Tsuki, randol javier, Rafa Smith, Andrew Lolzaror, Tobias Blake, pest, Zach allen, Ezekiel Rojas, Stan Manson, Evan Gao, TheLazyCactus, Carson Goodwin, david bradley, Roman Guinazzo, Random One, Sanguinius1701, Dragoon22, mitchellwolbert, luke perrey, Wells Wells, NocteAngelus, undead270, Him, Ashwinder, Bryan Pasternack, omb, Hello Darkness, Christopher R. Taylor, Regulus, Funnykitty, Patrick, Seamus Porter, Sub Lyminal, BINKS, Richard Pryor, Zane regel, HolyDurandal, John Nixon, Donovan Korpa, Noh Bhodie, Billymays, Genxin, Sean Morehead, poyo, Greatsage56 ., sb2017, Wysdom, Me Notyou, Chris Rucker, john sparks, Darien Cordero, Brandon Leary, Sera, RatKnight, Bradley Herbert, gabriel, SomebodyElse, Peter H, 长平 鬣, Culton Niccum, thesingleguy, Kethis Immortalis, colt, Anton Schmidt, david thompson, Jayesonn leleaux, Bleed1ngthunder, Eric Hslew, Vikteren, Dean, Kudon, theoron, AnotherAccount333, Kaliden, Krose, greatred, Riven Drasek, Johnathan Thornburg, Limitless, KVBismarc, Geoff Heimos, liam paterson, ChubbiestThread, XaiuX, l1monat, Kieron Kow, Slomberg, ddkre, SmolFish, I'm a Mitch, GirmusCz, Anthony Ewing, Daniel Vivette, Harry Brasch, Markus Hansen, Leanerbike1363, Tanman, DarthMalak, Danny Nguyen, yami, Grim2011, Darrell Goodman, John Lewis, Bonelessunknown, Phanes, Scumstango, Aegil, Wei, Dugelle, Simon Rencher, dhccpmc, Chaaaanon, Nutburger, Whynot, mazterlith, Anthony Munso, john smith, Your Husbando, Carlos, Firestar99255, Verillia tristari, CaptainMontana, ItsAllOgreNow, Jesse Greene, Nils Maier, Angel, Ariados, Jane, Snaked, qwerty, murgatroid99, Roy, Wild Bill, ChronosEdge, and brandon.");
 			writeText("Their continued support gives aid to the vault. Should they lend their voices, you will hear them here. Their assistance is why you, playerF, are here. Why you found the bracelet. Count your blessings, and...");
 			writeTransition("room", "Awaken, saved from repercussion");
 			writeSpecial("Stepping out from behind the fourth wall for a moment, this is one of the game's endings! Thank you so much for player, I hope you enjoyed! For the next version I'd really like to replace the names above with a set of messages, so if you're a member of the shadow council above, please contact me if you'd like to write a message to the player here! Otherwise, I hope you enjoy the rest of the game as well. Have you checked the cheat post for prison codes? You can find them on my patreon page (it isn't behind a paywall), with a link to it on the game's IGDB entry, the first page fo the F95zone thread, and in the master index.");
@@ -6798,7 +6825,6 @@ function writeEvent(scene) {
 				data.story[i].met = true;
 			}
 		}
-		
 	}
 	if (galleryCheck(scene) != true) {
 		unlockScene(scene);
@@ -6814,11 +6840,21 @@ function writeEvent(scene) {
 			data.player.time = "Morning";
 		}
 		else {
-			if (data.player.currentScene == "gallery") {
-				writeTransition("gallery", "Finish");
+			if (data.player.currentScene == "notebookResearch") {
+				writeTransition("notebookResearch", "Finish");
 			}
 			else {
-				writeTransition(tempScene, "Finish");
+				if (scene.includes("Library1") == true && scene.includes("bracelet") != true && data.player.color.includes("library") == true) {
+					if (data.player.libraryStage < 3) {
+						writeTransition("library", "Afterwards...");
+					}
+					else {
+						writeTransition(tempScene, "Finish");
+					}
+				}
+				else {
+					writeTransition(tempScene, "Finish");
+				}
 			}
 		}
 	}
