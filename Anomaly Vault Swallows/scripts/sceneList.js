@@ -3562,7 +3562,7 @@ function writeEvent(scene) {
 			writeSpeech("assistant", "", "Yep. Maybe it's cherries? Those are the most erotic of fruit after peaches. What was this stuff again? Mouthwash?");
 			writeText("You pick up the glass vial, the bright red contents start to swirl inside before a green foam starts fizzing at the top.");
 			writeSpeech("player", "", "It was an artifact. Still is, I guess.");
-			writeText("You hear the lead of assistantF's pencil snaps.");
+			writeText("You hear the lead of assistantF's pencil snap.");
 			writeSpeech("player", "", "<span style='color:red'>It's fine, the serum is inert.</span>");
 			writeText("The look of panic on her face vanishes, replaced with a dull stupor as she nods her head. There's a conflicting taste on your breath, like cherries mixed with mint.");
 			writeSpeech("player", "", "Whoa... I haven't even drunken it yet...");
