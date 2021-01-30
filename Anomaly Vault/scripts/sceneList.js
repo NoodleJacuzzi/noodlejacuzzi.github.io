@@ -675,7 +675,7 @@ function writeScene(scene) {
 				writeText("The pervert radio is still blaring at maximum volume, it's a little distracting.");
 			}
 			if (data.player.pervertCounter > 40) {
-				writeEvent("pervertEnding");
+				writeEvent("pervertWorkEnding");
 			}
 			break;
 		}
