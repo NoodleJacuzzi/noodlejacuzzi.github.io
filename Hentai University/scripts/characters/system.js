@@ -387,7 +387,7 @@ function writeEncounter(scene) {
 				t It's not the most impressive of libraries, but it fits the school's atmosphere. There are a number of textbooks of all different types, but three catch your eye...
 			`);
 			if (checkFlag("mom", "lHypnos") != true) {
-				writeFunction("loadEncounter('system', 'lHypno')", "Read up on hypnosis");
+				writeFunction("loadEncounter('system', 'lHypnos')", "Read up on hypnosis");
 			}
 			if (checkFlag("mom", "lHack") != true) {
 				writeFunction("loadEncounter('system', 'lHack')", "Read up on computer hacking");
