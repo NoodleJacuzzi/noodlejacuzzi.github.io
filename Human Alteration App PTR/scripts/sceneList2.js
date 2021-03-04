@@ -525,7 +525,7 @@ function writeScene(scene) {
 		}
 		case "mom2": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -540,7 +540,7 @@ function writeScene(scene) {
 		}
 		case "mom3": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -561,14 +561,14 @@ function writeScene(scene) {
 				writeText("With how much your relationship has changed over these last few days, it seems like she's a totally different person. Thanks to the app, it seems like this is how daily life is going to be from now on.");
 				writeText("She's swallowing dryly as she eyes your crotch. At this point, you can't think of any way you could corrupt her farther.");
 			}
-			if (checkItem("plug pops") == true) {
+			if (checkItem("plugPop") == true) {
 				if (checkFlag("player", "mom4A") != true) {
 					writeText("A plug pop is sitting in your pocket, but there's no real reason to use it on mom. You can get anal elsewhere.");
 					writeText("The idea of keeping yourself clean at all times is an appealing one though. And with her latest changes, you can imaging mom would get a kick out of pleasing you in a new way.");
 					writeTransition("mom4A", "Use a Plug Pop");
 				}							
 			}
-			if (checkItem("fruit gushers") == true) {
+			if (checkItem("fruitGushers") == true) {
 				if (checkFlag("player", "mom4B") != true) {
 					writeText("But you kinda do need to take a piss. You're about to tell her to wait outside, before an idea strikes you.");
 					writeTransition("mom4B", "Eat your Fruit Gushers");
@@ -579,13 +579,13 @@ function writeScene(scene) {
 		}
 		case "mom4A": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
 		case "mom4B": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -696,7 +696,7 @@ function writeScene(scene) {
 		}
 		case "sister1": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -708,7 +708,7 @@ function writeScene(scene) {
 		}
 		case "sister2": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -721,7 +721,7 @@ function writeScene(scene) {
 		}
 		case "sister3": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -734,13 +734,13 @@ function writeScene(scene) {
 		}
 		case "sister4A": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
 		case "sister4B": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -781,7 +781,7 @@ function writeScene(scene) {
 			writeText("As she responds, she rubs a small bulge in her abdomen.");
 			writeSpeech("sister", "", "Just testin' out one of mom's new toys~<br>What's up?");
 			if (checkTrust('mom') > 3) {
-				if (checkItem("pop rocks") == true) {
+				if (checkItem("popRocks") == true) {
 					if (checkFlag("player", "sister5A") == false) {
 						writeText("She and mom have both been reveling in being your fuckpuppets, but the pop rocks in your pocket are giving you an idea for a new kind of playtime.");
 						writeTransition("sister5A", "I got some neat candy~");
@@ -889,7 +889,7 @@ function writeScene(scene) {
 			writeSpecial("You've become much closer with friendF!");
 			writeText("You really feel like you have a shot with her, but if you want to seriously get any closer and form a real relationship you'll need to introduce her to the app. You'll need to be skilled enough to stop her from being physically able to take it from you, but otherwise you want to leave her unaltered.");
 			addFlag("player", "friend1");
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -903,13 +903,13 @@ function writeScene(scene) {
 		}
 		case "friend2A": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
 		case "friend2B": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -923,7 +923,7 @@ function writeScene(scene) {
 		}
 		case "friend3": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -937,7 +937,7 @@ function writeScene(scene) {
 		}
 		case "friend4": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -979,7 +979,7 @@ function writeScene(scene) {
 			writeText("Shannon is unconscious on the bed, her cute little dicklette resting in a pool of her wasted cum. Her gaping, cum-coated ass twitches, but can't close fully.");
 			writeSpeech("player", "", "So what will you do with her?");
 			writeSpeech("friend", "", "Well, everyone in the crew hated Sean, but I think they'll have a change of heart once they see the new him. Throwing in a dedicated fucksleeve and pussylicker could get me some brownie points with the captain. <br>And if things don't work out, I can always use him to motivate the football team.");
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -1007,7 +1007,7 @@ function writeScene(scene) {
 			writeText("Shannon is unconscious on the bed, her cute little dicklette resting in a pool of her wasted cum. Her gaping, cum-coated ass twitches, but can't close fully.");
 			writeSpeech("player", "", "So what will you do with her?");
 			writeSpeech("friend", "", "Well, everyone in the crew hated Sean, but I think they'll have a change of heart once they see the new him. Throwing in a dedicated fucksleeve and pussylicker could get me some brownie points with the captain. <br>And if things don't work out, I can always use him to motivate the football team.");
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -1083,7 +1083,7 @@ function writeScene(scene) {
 		}
 		case "teacher1": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -1097,7 +1097,7 @@ function writeScene(scene) {
 		}
 		case "teacher2": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -1118,7 +1118,7 @@ function writeScene(scene) {
 		}
 		case "teacher3": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -1139,7 +1139,7 @@ function writeScene(scene) {
 		}
 		case "teacher4": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -1163,7 +1163,7 @@ function writeScene(scene) {
 		}
 		case "teacher5": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -1227,7 +1227,7 @@ function writeScene(scene) {
 		case "chef1": {
 			data.story.money += 15;
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -1245,7 +1245,7 @@ function writeScene(scene) {
 		}
 		case "chef2": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -1257,7 +1257,7 @@ function writeScene(scene) {
 		}
 		case "chef3": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -1356,7 +1356,7 @@ function writeScene(scene) {
 		}
 		case "office1": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -1375,13 +1375,13 @@ function writeScene(scene) {
 		}
 		case "office2A": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
 		case "office2B": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -1397,7 +1397,7 @@ function writeScene(scene) {
 		}
 		case "office3": {
 			writeEvent(scene);
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}
@@ -2137,7 +2137,7 @@ function writeScene(scene) {
 			break;
 		}
 		//Dom route clothing store stuff
-		case "clothingCorruptionHub": {
+		case "clothesCorruptionHub": {
 			checkForCorruptions("clothing");
 			writeTransition("morning", "Just go to sleep");
 			writeTransition("sleep", "Alter someone else");
@@ -2216,7 +2216,7 @@ function writeScene(scene) {
 		case "skill1": {
 			writeEvent(scene);
 			data.player.skill += 1;
-			data.story.time = "Night";
+			data.player.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
 		}

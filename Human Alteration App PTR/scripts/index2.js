@@ -1309,7 +1309,7 @@ var encounterDomArray = [
 		requirements: `
 			?location streets;
 			?flag player clothes1;
-		`, altName: "Danny", altImage: "", altColor: "", type: "", top: 55, left: 60,
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 	{character: "candy", 
 		index: "candyShopIntro", 
@@ -2626,7 +2626,7 @@ function changeLocation(n) {
 	var locationTarget = 'failed';
 	for (i = 0; i < locationArray.length; i++) { //find the location target
 		if (n == locationArray[i].index) {
-			console.log('Location target found. Now loading location '+locationArray[i].index)
+			//console.log('Location target found. Now loading location '+locationArray[i].index)
 			locationTarget = i;
 		}
 	}
@@ -4700,10 +4700,10 @@ function removeItem(n) {
 }
 
 function checkItem(n) {
-	console.log("Checking for item ID " + n);
+	//console.log("Checking for item ID " + n);
 	for (x = 0; x < data.inventory.length; x++) {
 		if (data.inventory[x].index.includes(n)) {
-			console.log("Item id " + data.inventory[x].name + " is owned");
+			//console.log("Item id " + data.inventory[x].name + " is owned");
 			return true;
 			break;
 		}
