@@ -18,7 +18,7 @@ function writeScene(scene) {
 			writeFunction("sceneTransition('prologue')", "Start the game");
 			writeFunction("sceneTransition('altStart')", "Alternate intro without actual incest");
 			writeFunction("sceneTransition('prologueSkip')", "Skip the prologue, go straight to the dom/sub branching point");
-			writeText("As of version 1.1 I've come back to polish the game's content, update the engine, and add content where I feel the earlier versions of the game could be improved. Please head on over to my patreon for more details on all that I ever intend to add to this game. Unlike my other works like Anomaly Vault and Hentai University, Human Alteration App is made to be finished.");
+			writeText("As of version 1.1 I've come back to polish the game's content, update the engine, and add content where I feel the earlier versions of the game could be improved. Please head on over to my patreon for more details on all that I ever intend to add to this game. Unlike my other works like Anomaly Vault and Hentai University, Human Alteration App is made to be finished. I hope you'll be impressed with the complete product!");
 			break;
 		}
 		case "averyTest": {
@@ -433,6 +433,9 @@ function writeScene(scene) {
 							addButtonToGrid(data.story[corruptionIndex].index, data.story[corruptionIndex].index+"CorruptionHub");
 						}
 					}
+					if (checkTrust('mom') > 1 && checkTrust('sister') > 1 && checkTrust('friend') > 1 && checkTrust('teacher') > 1 && checkTrust('chef') > 1 && checkTrust('office') > 0) {
+						writeTransition("ending", "It's time to end this");
+					}
 					writeTransition("morning", "Just go to sleep");
 				}
 			}
@@ -444,7 +447,15 @@ function writeScene(scene) {
 		case "gallery": {
 			break;
 		}
-		
+		case "credits": {
+			writeText("This has been a game by Noodle Jacuzzi, congratulations on reaching one of the endings!");
+			writeText("Hopefully, you had a good time. Feel free to drop by my Master Index to see my other work, or check out my Patreon if you'd like to support future content and keep totally up to date.");
+			writeText("As I said in the intro, I appreciate comments and criticisms. If you have any, or have some suggestions for HAA or future titles, please let me know by messaging me on Patreon, Discord, TFgames, or on F95Zone.");
+			writeText("Thank you to Brandon, Chronos Edge, and Lasse Bannow who've supported me on Patreon up to the release of version 1.0");
+			writeSpecial("And thank you for playing!");
+			writeTransition("morning", "Awaken, and pursue a different outcome");
+			break;
+		}
 		////----****DOM ROUTE****----\\\\
 		//Lisa Corruption
 		case "momCorruptionHub": {
@@ -942,6 +953,60 @@ function writeScene(scene) {
 		}
 		case "friend5": {
 			writeEvent(scene);
+			break;
+		}
+		case "friend5A": {
+			writeSpeech("player", "", "You go ahead and enjoy yourself.");
+			writeText("friendF smiles and licks her lips as she starts disrobing. Sean wants to start shouting questions, but stops mid-word as he sees friendF's dick.");
+			writeSpeech("Sean", "none", "<i>W-what the hell? Why does she have a dick? And why it so... Whoa, back up. I'm not gay or any shit like that...</i>");
+			writeSpeech("friend", "", "Turn around, lemme see the goods.");
+			writeText("He wants to argue, to storm out, or even to start throwing punches to try and salvage some pride. But he can't bring himself to disobey for some reason, and the thought of breaking one of his nails punching somebody just sounds awful.");
+			writeText("He turns around, showing off his huge new bubble butt, a result of the app in the hands of a master.");
+			writeSpeech("Sean", "none", "<i>Fucking...why the fuck am I showing them my asshole? Why do I want them to see it? Am I getting off on this?</i>");
+			writeText("His conflicted thoughts are sent flying as friendF slaps his ass, causing his booty to jiggle and leaving a bright red handprint.");
+			writeSpeech("Sean", "none", "Ngh...");
+			writeText("friendF was close to all the cheerleaders at school, there's no way she wouldn't blab about this. The rumor would spread like wildfire about his now puny dick, how he bent over and lost his anal virginity without any resistance.");
+			writeText("He can feel a bead of precum form at the tip of his clitty as he imagines being known as the school's new buttslut.");
+			writeText("...");
+			writeBig("images/real/general/friend5-1.gif");
+			writeSpeech("Shannon", "none", "More! Fuck me harder! God, being a girl is so much better!");
+			writeText("There's no resistance, no crying out in pain. Sean, now Shannon, took to the first minutes of the rest of her life with glee.");
+			writeText("A hyper sensitive prostate probably helped smooth things along, especially since she started spurting like a bitch from the very first moment she had friendF's cock inside her.");
+			writeText("You grunt as you fire off rope of semen onto Shanon's face. Shanon worshipfully takes it, trying to catch whatever she can on her tongue.");
+			writeText("Grabbing onto Shanon's hips, friendF pulls them back and slams herself into Shannon as they both start moaning. ");
+			writeText("With every clench of friendF's balls, Shannon is following suit with a much smaller, more pathetic spurt of her own onto the bedsheets.");
+			writeText("...");
+			writeText("Shannon is unconscious on the bed, her cute little dicklette resting in a pool of her wasted cum. Her gaping, cum-coated ass twitches, but can't close fully.");
+			writeSpeech("player", "", "So what will you do with her?");
+			writeSpeech("friend", "", "Well, everyone in the crew hated Sean, but I think they'll have a change of heart once they see the new him. Throwing in a dedicated fucksleeve and pussylicker could get me some brownie points with the captain. <br>And if things don't work out, I can always use him to motivate the football team.");
+			data.story.time = "Night";
+			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
+			break;
+		}
+		case "friend5B": {
+			writeSpeech("player", "", "I'll take you up on that.");
+			writeText("You start taking of your clothes. Sean wants to keep arguing, but stops mid-word once he sees you dick.");
+			writeSpeech("Sean", "none", "W-what the hell? Why is it so... Whoa, back up. I'm not gay or any shit like that...");
+			writeSpeech("friend", "", "Turn around Sean, show him the goods.");
+			writeText("He wants to argue, to storm out, or even to start throwing punches to try and salvage some pride. But he can't bring himself to disobey for some reason, and the thought of breaking one of his nails throwing a punch just sounds awful.");
+			writeText("He turns around, showing off his huge new bubble butt, a result of the app in the hands of a master.");
+			writeSpeech("Sean", "none", "Fucking...why the fuck am I showing them my asshole? Why do I want them to see it? Am I getting off on this?");
+			writeText("His conflicted thoughts are sent flying as friendF slaps his ass, causing his booty to jiggle and leaving a bright red handprint.");
+			writeSpeech("Sean", "none", "Ngh...");
+			writeText("friendF was close to all the cheerleaders at school, there's no way she wouldn't blab about this. The rumor would spread like wildfire about his now puny dick, how he bent over and lost his anal virginity without any resistance.");
+			writeText("He can feel a bead of precum form at the tip of his clitty as he imagines being known as the school's new buttslut.");
+			writeText("...");
+			writeBig("images/real/general/friend5-1.gif");
+			writeSpeech("Shannon", "none", "More! Fuck me harder! God, being a girl is so much better!");
+			writeText("There's no resistance, no crying out in pain. Sean, now Shannon, took to the first minutes of the rest of her life with glee.");
+			writeText("A hyper sensitive prostate probably helped smooth things along, especially since she started spurting like a bitch from the very first moment she had your cock inside her.");
+			writeText("friendF grunts as she fires a rope of semen onto Shanon's face. Shanon worshipfully takes it, trying to catch whatever she can on her tongue.");
+			writeText("Grabbing onto Shanon's hips, you pull them back and slam yourself into her as you start to fill her ass.");
+			writeText("With every rope of jizz you fire off, she's following suit with a much smaller, more pathetic spurt of her own onto the bedsheets.");
+			writeText("...");
+			writeText("Shannon is unconscious on the bed, her cute little dicklette resting in a pool of her wasted cum. Her gaping, cum-coated ass twitches, but can't close fully.");
+			writeSpeech("player", "", "So what will you do with her?");
+			writeSpeech("friend", "", "Well, everyone in the crew hated Sean, but I think they'll have a change of heart once they see the new him. Throwing in a dedicated fucksleeve and pussylicker could get me some brownie points with the captain. <br>And if things don't work out, I can always use him to motivate the football team.");
 			data.story.time = "Night";
 			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 			break;
@@ -953,6 +1018,20 @@ function writeScene(scene) {
 			writeSpeech("player", "", "'Friendship points'?");
 			writeSpeech("friend", "", "Yeah, you know. Carry needs a ride to the laundromat, Charlie needs a cock to torment sometimes. Friends help friends. Hey, you should meet them. I won't tell them about the app, you could just make some more friends.");
 			writeText("The two of you chat for awhile, it's nice. It doesn't seem like you or friendF need the app anymore to help your relationship.");
+			writeFunction("changeLocation(data.player.location)", "Go back");
+			break;
+		}
+		case "friend5MissingItems": {
+			writeSpeech("friend", "", "Hey, you got the...<br>the goods?");
+			writeSpeech("player", "", "The taffy? No. You make it sound like a drug deal by the way.");
+			writeSpeech("friend", "", "If it's as good as that caramel, then it might as well be.");
+			writeSpeech("player", "", "Well anyways I haven't picked it up yet. You sure about this plan?");
+			writeSpeech("friend", "", "Yeah. You bring the taffy, you get to watch me turn Chadsworth into a harem member.");
+			writeSpeech("player", "", "I dunno...");
+			writeSpeech("friend", "", "Hey, you don't wanna ruin his life, then we don't have to. But don't you already have like, five other side chicks?");
+			writeSpeech("player", "", "No no, it isn't that. It's just that... He's a dude. I feel conflicted about being part of a lewd dude plan.");
+			writeSpeech("friend", "", "Well, if you change your mind just bring the taffy. Oh, hey, did you get the new Smash?");
+			writeText("You don't have what you need right now, but the two of you talk about video games for awhile.");
 			writeFunction("changeLocation(data.player.location)", "Go back");
 			break;
 		}
@@ -1158,6 +1237,12 @@ function writeScene(scene) {
 			writeFunction("changeLocation(data.player.location)", "Go back");
 			break;
 		}
+		case "chef1MissingItems": {
+			writeText("You can't trigger an event right now. You'll need to corrupt her with the app by going to sleep if you want to do anything with chefF.");
+			writeTransition("volunteering", "Help chefF out");
+			writeFunction("changeLocation(data.player.location)", "Go back");
+			break;
+		}
 		case "chef2": {
 			writeEvent(scene);
 			data.story.time = "Night";
@@ -1185,46 +1270,46 @@ function writeScene(scene) {
 		case "volunteering": {
 			switch (checkTrust('chef')) {
 				case 0:
-					writeText("You help out at the coffee shop for a little bit, and are given $10 for your troubles.");
+					writeText("You help out at the coffee shop for a little bit, and are given $20 for your troubles.");
 					writeSpeech("chef", "", "Thank you so much for your help, playerF. I wish I could give you more, but I still need to pay this month's electric bills.");
-					data.story.time = "night";
-					data.story.money +=10;
+					data.player.money +=20;
 					updateMenu();
-					writeTransition("homePlayerRoom", "Finish for the day");
+					data.player.time = "Night";
+					writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 				break;
 				case 1:
-					writeText("You help out at the coffee shop for a little bit, and are given $10 for your troubles.");
+					writeText("You help out at the coffee shop for a little bit, and are given $20 for your troubles.");
 					writeSpeech("chef", "", "Thank you so much for your help, playerF. I wish I could give you more, but I still need to pay this month's electric bills.");
-					data.story.time = "night";
-					data.story.money +=10;
+					data.player.money +=20;
 					updateMenu();
-					writeTransition("homePlayerRoom", "Finish for the day");
+					data.player.time = "Night";
+					writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 				break;
 				case 2:
-					writeText("You help out at the coffee shop for a little bit, and are given $10 for your troubles. The air within the cafe is tense, however.");
+					writeText("You help out at the coffee shop for a little bit, and are given $20 for your troubles. The air within the cafe is tense, however.");
 					writeSpeech("chef", "", "Thank you for your help playerF.");
-					data.story.time = "night";
-					data.story.money +=10;
+					data.player.money +=20;
 					updateMenu();
-					writeTransition("homePlayerRoom", "Finish for the day");
+					data.player.time = "Night";
+					writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 				break;
 				case 3:
 					writeBig("images/real/general/handjob5.gif");
-					writeText("You 'help' out at the coffee shop by providing flavor for the customers. You earn $15.");
+					writeText("You 'help' out at the coffee shop by providing flavor for the customers. You earn $40.");
 					writeSpeech("chef", "", "Thank you for your help playerF.");
-					data.story.time = "night";
-					data.story.money +=15;
+					data.player.money +=40;
 					updateMenu();
-					writeTransition("homePlayerRoom", "Finish for the day");
+					data.player.time = "Night";
+					writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 				break;
 				case 4:
 					writeBig("images/real/general/handjob5.gif");
-					writeText("You 'help' out at the coffee shop by providing flavor for the customers. You earn $15.");
+					writeText("You 'help' out at the coffee shop by providing flavor for the customers. You earn $40.");
 					writeSpeech("chef", "", "Thank you for your help playerF.");
-					data.story.time = "night";
-					data.story.money +=15;
+					data.player.money +=40;
 					updateMenu();
-					writeTransition("homePlayerRoom", "Finish for the day");
+					data.player.time = "Night";
+					writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
 				break;
 			}
 			break;
@@ -1996,11 +2081,13 @@ function writeScene(scene) {
 			writeTransition("alexisQuo", "Go back");
 			break;
 		}
-		//System
-		
-		//Navigation
-		
 		//Dom route exotic shop stuff
+		case "exoticCorruptionHub": {
+			checkForCorruptions("exotic");
+			writeTransition("morning", "Just go to sleep");
+			writeTransition("sleep", "Alter someone else");
+			break;
+		}
 		case "exoticShop0": {
 			writeBig("images/real/adriana/profile1.jpg");
 			writeSpeech("exotic", "", "Hey, welcome back. Gonna buy something this time?.");
@@ -2050,6 +2137,12 @@ function writeScene(scene) {
 			break;
 		}
 		//Dom route clothing store stuff
+		case "clothingCorruptionHub": {
+			checkForCorruptions("clothing");
+			writeTransition("morning", "Just go to sleep");
+			writeTransition("sleep", "Alter someone else");
+			break;
+		}
 		case "clothingShopIntro": {
 			writeBig("images/real/general/danny.jpg");
 			addFlag("player", scene);
@@ -2095,6 +2188,12 @@ function writeScene(scene) {
 			writeFunction("changeLocation(data.player.location)", "Finish");
 		}
 		//Dom route candy shop stuff
+		case "candyCorruptionHub": {
+			checkForCorruptions("candy");
+			writeTransition("morning", "Just go to sleep");
+			writeTransition("sleep", "Alter someone else");
+			break;
+		}
 		case "candyShopIntro": {
 			addFlag("player", scene);
 			writeText("Ticket in hand you walk through the candy shop's door, a little bell jingling as you do. The cashier looks over towards you with a forced smile, which quickly turns into a genuine one as she spies the bit of gold paper in your hand.");
@@ -2111,6 +2210,365 @@ function writeScene(scene) {
 			writeSpeech("candy", "", "Hehe, I can tell you'll be nursing a sweet tooth today. Interested in anything?");
 			loadShop("candy");
 			writeFunction("changeLocation(data.player.location)", "Go back outside");
+			break;
+		}
+		//Skill improvements
+		case "skill1": {
+			writeEvent(scene);
+			data.player.skill += 1;
+			data.story.time = "Night";
+			writeFunction("changeLocation('homePlayerRoom')", "Finish for the day");
+			break;
+		}
+		
+		//Ending
+		case "ending": {
+			if (data.player.route == "dom") {
+				endingChoices = {family: 1, friend: 1, teacher: 1, chef: 1, office: 1, sub: 0,}
+				writeMed("images/real/lisa/profile1.jpg");
+				document.getElementById('output').innerHTML += `
+					<button type="button" id="familyButton1" onclick="changeEnding('family', 1)">Loving Family</button>
+					<button type="button" id="familyButton2" onclick="changeEnding('family', 2)">LOCKED</button>
+					<button type="button" id="familyButton3" onclick="changeEnding('family', 3)">LOCKED</button>
+				`;
+				if (checkTrust('mom') > 2 && checkTrust('sister') > 2) {
+					document.getElementById('familyButton2').innerHTML = 'Stress Relief Sister';
+					endingsLocked.family2 = false;
+					if (checkTrust('mom') > 3 && checkTrust('sister') > 3) {
+						document.getElementById('familyButton3').innerHTML = 'Camwhore Mother';
+						endingsLocked.family3 = false;
+					}
+					else {
+						endingsLocked.family3 = true;
+					}
+				}
+				else {
+					endingsLocked.family2 = true;
+					endingsLocked.family3 = true;
+				}
+				writeText("<b>momF & sisterF: <span id='familyEnd'>Loving Family</span></b>");
+				writeMed("images/real/riley/profile1.jpg");
+				writeText("<b>friendF: <span id='friendEnd'>App Companion</span></b>");
+				document.getElementById('output').innerHTML += `
+					<button type="button" id="friendButton1" onclick="changeEnding('friend', 1)">App Companion</button>
+					<button type="button" id="friendButton2" onclick="changeEnding('friend', 2)">LOCKED</button>
+					<button type="button" id="friendButton3" onclick="changeEnding('friend', 3)">LOCKED</button>
+				`;
+				if (galleryCheck("friend4") == true) {
+					document.getElementById('friendButton2').innerHTML = "Honey, I'm Home!";
+					endingsLocked.friend2 = false;
+					if (galleryCheck("friend5") == true) {
+						document.getElementById('friendButton3').innerHTML = 'App Companion';
+						endingsLocked.friend3 = false;
+					}
+					else {
+						endingsLocked.friend3 = true;
+					}
+				}
+				else {
+					endingsLocked.friend2 = true;
+					endingsLocked.friend3 = true;
+				}
+				writeMed("images/real/kendra/profile1.jpg");
+				writeText("<b>teacherF: <span id='teacherEnd'>Kinder Teacher</span></b>");
+				document.getElementById('output').innerHTML += `
+					<button type="button" id="teacherButton1" onclick="changeEnding('teacher', 1)">Kinder Teacher</button>
+					<button type="button" id="teacherButton2" onclick="changeEnding('teacher', 2)">LOCKED</button>
+					<button type="button" id="teacherButton3" onclick="changeEnding('teacher', 3)">LOCKED</button>
+				`;
+				if (galleryCheck("teacher3") == true) {
+					document.getElementById('teacherButton2').innerHTML = 'Personal Pet';
+					endingsLocked.teacher2 = false;
+					if (galleryCheck("friend5") == true) {
+						document.getElementById('teacherButton3').innerHTML = 'Donated Urinal';
+						endingsLocked.teacher3 = false;
+					}
+					else {
+						endingsLocked.teacher3 = true;
+					}
+				}
+				else {
+					endingsLocked.teacher2 = true;
+					endingsLocked.teacher3 = true;
+				}
+				writeMed("images/real/ava/profile1.jpg");
+				writeText("<b>chefF: <span id='chefEnd'>Entrepreneur</span></b>");
+				document.getElementById('output').innerHTML += `
+					<button type="button" id="chefButton1" onclick="changeEnding('chef', 1)">Entrepreneur</button>
+					<button type="button" id="chefButton2" onclick="changeEnding('chef', 2)">LOCKED</button>
+					<button type="button" id="chefButton3" onclick="changeEnding('chef', 3)">LOCKED</button>
+				`;
+				if (galleryCheck("chef2") == true) {
+					document.getElementById('chefButton2').innerHTML = 'Volunteer Work';
+					endingsLocked.chef2 = false;
+					if (galleryCheck("chef3") == true) {
+						document.getElementById('chefButton3').innerHTML = 'Cumguzzler Cafe';
+						endingsLocked.chef3 = false;
+					}
+					else {
+						endingsLocked.chef3 = true;
+					}
+				}
+				else {
+					endingsLocked.chef2 = true;
+					endingsLocked.chef3 = true;
+				}
+				writeMed("images/real/alexis/profile1.jpg");
+				writeText("<b>officeF: <span id='officeEnd'>Secretive CEO</span></b>");
+				document.getElementById('output').innerHTML += `
+					<button type="button" id="officeButton1" onclick="changeEnding('office', 1)">Secretive CEO</button>
+					<button type="button" id="officeButton2" onclick="changeEnding('office', 2)">LOCKED</button>
+					<button type="button" id="officeButton3" onclick="changeEnding('office', 3)">LOCKED</button>
+				`;
+				if (galleryCheck("office3") == true) {
+					document.getElementById('officeButton2').innerHTML = 'Public Fixture';
+					endingsLocked.office2 = false;
+					if (galleryCheck("office4") == true) {
+						document.getElementById('officeButton3').innerHTML = 'Fruits of Progress';
+						endingsLocked.office3 = false;
+					}
+					else {
+						endingsLocked.office3 = true;
+					}
+				}
+				else {
+					endingsLocked.office2 = true;
+					endingsLocked.office3 = true;
+				}
+				writeTransition("endingDom", "Proceed");
+			}
+			else {
+				sceneTransition("endingSub1");
+			}
+			break;
+		}
+		case "endingDom": {
+			switch (endingChoices.family) {
+				case 1:
+				writeBig("images/real/general/family1.gif");
+				writeSpeech("mom", "", "Glrk, glrk, glrk~!");
+				writeSpeech("sister", "", "Mwah~!<br>Master, you taste delicious! But you've been fucking mom's mouth for forever! Will you fuck my ass again soon?");
+				writeText("You grab her by the hair and shove her face back against your ass. She gets the message and obediently goes back to rimming you.");
+				writeText("Life is stress free now that you've got two loyal sex slaves willing to work to provide for you while you freely laze about. With the app, you can take up any hobby at will in moments, maybe you'll use your new skills to make a game?");
+				writeText("Regardless, nowadays you pass the time by getting your rocks off. You grab "+data.story.motherName+" by the hair and start jackhammering your shaft down her throat.");
+				writeText("She's gotten a lot better at managing her breath, as shown by how she's still consciously licking while you're balls deep and cumming inside of her.");
+				writeText("sisterF's tongue inside you also helps drag out the orgasm, this really is the life.");
+				if (galleryCheck("mom6") == true) {
+					writeSpeech("player", "", "Nnnngh... Fuck, need to piss now.");
+					writeText(""+data.story.motherName+" was just about ready to try sliding off your cock to take a breath, but that idea is thrown right out the window.");
+					writeText("Her body is begging for breath, but she isn't budging as you start relieving yourself down her throat. She starts shaking a little, either having a hands free orgasm from drinking your piss, or she's starting to lose consciousness.");
+					writeSpeech("sister", "", "Aww...");
+					writeText("sisterF sighs with equal parts hunger and disappointment.");
+					writeSpeech("player", "", "Don't worry, I'll save some for your ass too.");
+				}
+				break;
+				case 2:
+					writeSpeech("player", "", "I'm home!");
+					writeText("You're welcomed by the sounds of muffled moans coming from the living room.");
+					writeSpeech("mom", "", "Welcome... Ngh... <br> Welcome back~!");
+					writeBig("images/real/general/family2.gif");
+					writeSpeech("player", "", "Having fun?");
+					writeSpeech("mom", "", "Nngh... I was, until she got distracted. Stupid fucking bitch can't even eat pussy properly!");
+					writeText(""+data.story.motherName+" decides to motivate sisterF by slapping her palm against sisterF's cunt, hard.");
+					writeSpeech("sister", "", "MMMM!");
+					writeText("sisterF arches her back and her legs shake as the 'punishment' is enough to get her squirting on the floor. You can see her asshole clench around the fat dildo currently packed inside her.");
+					writeSpeech("mom", "", "Nnn... That's more like it, she's focused again.");
+					writeText("While "+data.story.motherName+" is grinding against your sister's face, you start to slip out of your clothes. You've had a long day too, time for you to get some fun with your toy.");
+				break;
+				case 3:
+					writeSpeech("mom", "", "Hey everyone, welcome back to my stream!");
+					writeText("The chatbox comes alive with more than a few excited commentors ready for the show to begin.");
+					writeSpeech("mom", "", "We had a little bit of trouble getting all this to work, but I'm really glad the administrators had a change of heart. <br> The site has a very strict no-adult-content policy, but my son was able to change their minds so that we can bring you this special show today!");
+					writeText("A few *bing* noises play.");
+					writeSpeech("mom", "", "Oh my, so many donations already! The first is by BabeWizz63, he says 'shut your whore mouth and take off that top already'.");
+					writeText("Almost as if programmed, "+data.story.motherName+" is already taking off her thin tanktop. She isn't wearing a bra, so her massive pair of breasts bounce unimpeded once free.");
+					writeSpeech("mom", "", "Now boys, you already know the rules, right?");
+					writeText("From beneath the desk "+data.story.motherName+" pulls out an absolute monster of a dildo, complete with a head lined with rough-looking bumps designed to turn a cunt into a gaping well-fucked hole.");
+					writeSpeech("mom", "", "Any donation over $50 and I need to do everything you tell me, down to the letter. Try not to ruin me, okay?");
+					writeText("The chat log starts flying at a blazing speed. "+data.story.motherName+" licks her lips and her pussy throbs as she starts reading through the list of commands to follow.");
+					writeText("With her new job as a streaming-site camwhore, you haven't been short on cash for years. She's happy to offer her body for you, of course. But she's also getting off on the thought of all these men watching her.");
+					writeText("From fat slobs who want nothing more than to turn her into a wreck, to newly-made men busting their first nut to her ruining herself, nothing quite gets her off like seeing that view count go into the hundreds of thousands while she's kissing her toy with her cervix.");
+				break;
+			}
+			writeText("...");
+			switch (endingChoices.friend) {
+				case 1:
+					writeBig("images/real/general/solo3.gif");
+					writeSpeech("friend", "", "It's so sensitive... So this is what's it's like... <br>You're sure I'll be able to go back?");
+					writeSpeech("player", "", "Positive. Now that I've gotten the hang of it, you can go back and forth whenever you want.");
+					writeText("friendF spreads her legs, showing off her new womanhood.");
+					writeSpeech("friend", "", "I always thought they were overrated, but I gotta admit... <br>It's definitely awakening something inside me.");
+					writeSpeech("player", "", "You ready for this?");
+					writeSpeech("friend", "", "Absolutely.");
+					writeText("You press your head against her entrance, and push in.");
+					writeSpeech("friend", "", "Nnnngh~");
+					writeText("You might have exaggerated a few aspects, like the sensitivity, and dulled the pain a little to make her first time feel special.");
+					writeSpeech("friend", "", "Guuuh... Fuck, how does anyone get anything done?");
+					writeText("she traces lines along her abdomen, enjoying the tingling sensation of her new womb.");
+					writeSpeech("friend", "", "Cmon then, what are you waiting for?");
+					writeText("She gives you a cheeky smile before pulling you into a kiss. This is the first day of the rest of a long, happy life.");
+				break;
+				case 2:
+					writeSpeech("player", "", "friendF? I'm back!");
+					writeSpeech("friend", "", "In the kitchen, honey!");
+					writeText("You close the door and walk in. This is the third dinner date she's invited you on, and you're always excited to see what she's prepared.");
+					writeText("And you aren't just talking about the food.");
+					writeText("You turn the corner into the kitchen as she places a wooden spoon into a drying rack.");
+					writeSpeech("friend", "", "You're early.");
+					writeText("She's naked except for her cooking apron, and she makes sure to take an extra bit of time shaking her full ass at you as she undoes the knot.");
+					writeSpeech("player", "", "I think I'm right on time for the best part.");
+					writeText("You don't tend to use the app all that much these days, enjoying a peaceful life with your girlfriend is all you really need.");
+					writeSpeech("friend", "", "It won't be ready for at least an hour. How do you expect to pass the time?");
+					writeText("It helps that she's gorgeous, and has an ass that could milk your dick to an orgasm in seconds.");
+					writeText("Life these days is nice and peaceful, and you're glad you have someone to share it with.");
+				break;
+				case 3:
+					writeSpeech("friend", "", "You're quite the repeat offender, aren't you? So desperate for your punishment, little pervert?");
+					writeSpeech("???", "none", "N-no ma'am! I'm a g-good boy!");
+					writeSpeech("friend", "", "Oh really? Because Sasha said she caught you with an erection while she was eating, and you couldn't take your eyes off her cock. Was she lying?");
+					writeSpeech("???", "none", "B-but miss! She pinned me down, and was rubbing herself against my face!");
+					writeSpeech("friend", "", "And so what? She was rubbing her fat cock against your face, and you were completely soft?");
+					writeText("The boy remains silent. He's shivering a little, his flaccid dicklette hanging out for the world to see.");
+					writeSpeech("friend", "", "I'll make you a deal. If you really aren't some pathetic little pervert, you'll have no problem staying soft, yeah? If you can stay soft until I'm done with you, you can go right home. You'll even get some of your inches back for good behavior.");
+					writeText("The boy perks up at this, eager to reclaim some of his lost manhood. friendF slides her underwear out of the way to let her fat cock dangle free, and rubs it against the boi's penis.");
+					writeSpeech("friend", "", "You're doing well, try not to imaging what'll happen if you fail though. Your prick is too small for more shrinking, I'll just have you turned into a total buttslut instead. <br>You'd like that, wouldn't you? Being turned into a total slut for fat cock?");
+					writeText("The boi bites his lip, sweat forming on his forehead as he desperately tries to think of something, anything else.");
+					writeText("It's been over two weeks since his last orgasm since he just can't seem to get the technique right to reach a hands free one. He's pent up, but his shaft is still flaccid by the end of the teasing.");
+					writeSpeech("friend", "", "Oh my, you have quite the will, don't you? Alright then, you can go.");
+					writeSpeech("???", "none", "R-really? And my d-dick?");
+					writeSpeech("friend", "", "Of course! Just one last thing though, need to talk to the principal. Honey?");
+					writeText("You hear her voice and walk over to the 'discipline' room. You don't bother wearing pants on the job, so your massive shaft is hanging freely.");
+					writeText("When you walk into the room, the boi doesn't even look you in the eye. His gaze is locked on your shaft, ten times as large as his, and you're completely soft.");
+					writeSpeech("friend", "", "Oh no! And you were so close too.");
+					writeText("His little dicklette is standing at attention, leaking a streak of precum as his eyes glaze over staring at your cock.");
+					writeSpeech("friend", "", "Hello? Are you even listening? Well, whatever. Honey, we've got another that needs buttslut training.");
+					writeText("Some days are harder than others as the new principal, but you've never given anything less than 100% to students needing your 'guidance'.");
+				break;
+			}
+			writeText("...");
+			switch (endingChoices.teacher) {
+				case 1:
+					writeSpeech("teacher", "", "And who can tell me the name of this conquistador?");
+					writeText("A dozen hands excitedly shoot up.");
+					writeSpeech("teacher", "", "Thomas?");
+					writeSpeech("Thomas", "none", "Cortez, ma'am!");
+					writeSpeech("teacher", "", "Very good, you've been reading ahead! Alright, go ahead.");
+					writeText("In the last few months teacherF has had a complete change of heart. Where once she was a cynical, naggy stick in the mud, now she's patient and beloved by her students.");
+					writeText("Male students, specifically. teacherF's classes have become predominantly male by a wide margin, the reasons for that become clear when teacherF bends over to present her reward.");
+					writeText("And the student doesn't hesitate. She isn't wearing underwear, and he's already hard.");
+					writeBig("images/real/general/teacher3-1.gif");
+					writeText("For as effective as she is at getting them to do the research, more and more of class time is being spend on fuck-frenzy orgies lately.");
+				break;
+				case 2:
+					writeSpeech("player", "", "I'm heading out!");
+					writeSpeech("mom", "", "Okay, have a good time sweetie! <br>Oh, I think teacherF needs a walk before you go!");
+					writeText("As you approach the door, teacherF excitedly perks up and comes over to you with her tongue hanging out.");
+					writeSpeech("player", "", "Aww, you wanna play, girl?");
+					writeText("You roll her over and start fingering her snatch. Her personality is a lot better now that she's so stupidly obedient.");
+					writeSpeech("player", "", "Good girl! Cum for me, go ahead! And after that I'll take you out to the park to play with everyone again.");
+					writeText("She grits her teeth and starts shaking like she's having a seizure while squirting all down the hallway. Her pussylips clench around your fingers before her body goes slack.");
+					writeSpeech("player", "", "Good doggie.");
+				break;
+				case 3:
+					writeSpeech("player", "", "Oh hey, an email from school.");
+					writeText("Dear playerF,");
+					writeText("I'd like to thank you once again for your generous donation. We weren't sure at first how to respond to your gift, we don't often receive donations in the form of urinals, but they've proven themselves thus far to be of an exceptionally high-quality.");
+					writeText("Normally I'd hesitate to describe natters as obscene as this topic, but I'll hope you'll forgive my rambling. We receive feedback almost every week from students, it's almost as if we're being coerced to talk about how wonderful they are, and how often they're used."); 
+					writeText("I'm not quite sure where to start. Hygiene in our male students has gone mostly up, due to how thoroughly they clean their dicks after pissing. Some have made a game about going days without washing though, but boys will be boys. Aggression and bullying have gone down as well, and even some faculty have spoken about how refreshed they feel about abusing the pair.");
+					writeText("In addition, we've also enacted a policy to post videos of the use to several pornography-distribution websites as an additional source of income. Your generous donation has earned over several thousand dollars of income for the school!");
+					writeText("Obviously they're just inanimate objects, but sometimes it almost feels like they enjoy the treatment. My husband is relieving himself right now, and I know he'd tell you how grateful he is if he had the chance.");
+					writeText("If you have the opportunity, I was wondering if you were interested in selling more? I know the PTA wouldn't hesitate to approve funding for every bathroom in the school to be equipped like this.");
+					writeText("Thank you for your time, and for the lovely set of 'Piss Drunk Whore' and 'Bitch Sissy' model urinals.");
+				break;
+			}
+			writeText("...");
+			switch (endingChoices.chef) {
+				case 1:
+					writeSpeech("chef", "", "T-that'll be $2.95 sir.");
+					writeSpeech("???", "none", "Here.");
+					writeText("He drops the cash on the counter, and chefF slowly picks it up with shaking hands.");
+					writeText("She hears the bell jingle as you open the door.");
+					writeSpeech("chef", "", "C-closing time soon, what can I-");
+					writeSpeech("player", "", "You're not looking to great. You alright?");
+					writeText("She shoots straight up as she hears your voice.");
+					writeSpeech("chef", "", "playerF! Thank god, please, I need it....");
+					writeSpeech("player", "", "Oh? What exactly do you need?");
+					writeText("She leans in, taking in a shuddering breath.");
+					writeSpeech("chef", "", "C-cum... I need your cum, please.");
+					writeSpeech("player", "", "And how much do you need it, exactly?");
+					writeText("She looks from side to side before leaning back. The cafe is still busy, but nobody's looking at her.");
+					writeText("She spreads her legs, showing the large patch of wetness soaked into her leggings.");
+					writeSpeech("player", "", "Oh my, you're quite needy. Still, you were the one who decided on our agreement. No cum while you're working. You know how you get when you drink it.");
+					writeSpeech("chef", "", "P-please! I can't wait any more!");
+					writeText("That attracted some attention, several patrons are staring now.");
+					writeSpeech("player", "", "Fine, fine. I thought you'd be like this. I brought a cup with me, just take small sips and-");
+					writeText("She snatches the cup out of your hands and starts drinking from it. The effects are immediate, her shaking stops and her body relaxes.");
+					writeText("But the most obvious effect shows itself when she takes her first gulp. Her body is so twisted, so built around guzzling your cum, that she starts cumming in the spot.");
+					writeText("At first she's just rubbing herself and taking moans between swallows, but when she starts squirting through her pants is when she has the attention of everyone in the cafe.");
+					writeText("She winces in embarrassment when she realizes what's happening, but doesn't even think to stop. You start to leave to avoid any awkward questions, but you do hear a tearing sound behind you as chefF rips open her leggings to better play with herself."); 
+					writeText("It seems like she's broken at this point, probably for the best. She could make a lot more money and get her fix at the same time if she just relaxed and went with the flow.");
+				break;
+				case 2:
+					writeSpeech("player", "", "Thank you, come again! Don't miss out on our deal on Tuesday!");
+					writeText("The woman waves goodbye, eager to return later.");
+					writeSpeech("chef", "", "Thanks again so much, playerF. I don't know what I'd do-");
+					writeText("You don't wait for her to finish before you grab her and tear open her top.");
+					writeSpeech("chef", "", "O-oh my, you can't wait even one minute for me to close the blinds?");
+					writeSpeech("player", "", "Let them watch.");
+					writeBig("images/real/general/chef2.gif");
+					writeSpeech("chef", "", "O-oough!");
+					writeText("You don't volunteer too often anymore, you don't really need to, but chefF always finds a way to make it worth your while.");
+					writeSpeech("chef", "", "H-harder! Fuck me up and use me like a comdom!");
+					writeText("And she's been rewarding you extra well ever since you agreed to her plan for Tuesday, the special 'get one brutal cunt-busting fuck with every drink' event.");
+					writeSpeech("chef", "", "Nnnngh more! Yes!");
+					writeText("She's already squirting, but you aren't anywhere near done yet. You'll need to up your stamina for Tuesday, anyways. Sixteen rounds should be enough prep for the day.");
+				break;
+				case 3:
+					writeBig("images/real/general/cumshot1.gif");
+					writeSpeech("chef", "", "And that's one mocha sperm-latte and one pure-sperm expresso. Enjoy!");
+					writeText("The woman nodded and carefully took the mugs over to her seat. Her 'expresso' was just a cup with jizz in it, but it was as precious as gold to her.");
+					writeSpeech("???", "none", "Mmmph, fuck. How did I go so long without this place?");
+					writeText("You've been working as a supplier here for weeks now in your spare time. Take a pop rock, pump out enough jizz to fill a bathtub, and enjoy the sounds of women fingering themselves while they chug your dickmilk.");
+					writeText("But it isn't enough for her. This latest customer is a lot thirstier than the rest.");
+					writeText("Slowly, she lifts her skirt to reveal her bare pussy beneath, and takes the mug of jizz. She tips it, pouring your cum onto her bare pussy and fingerfucks herself with her other hand.");
+					writeText("She's cumming in seconds, and she isn't alone. Other girls catch sight of it, and excitedly lick their lips as they imagine what that must feel like.");
+					writeText("Looks like you're gonna be busy today.");
+				break;
+			}
+			writeText("...");
+			switch (endingChoices.office) {
+				case 1:
+					writeSpeech("???", "none", "And so that's how we can increase efficiency in marketing by 20%.<br>... officeF?");
+					writeSpeech("office", "", "Glurk... Glurk... *pop*!<br>Mmm, sorry stud, what was that?");
+					writeText("officeF had shattered her glass ceiling weeks ago and became the CEO of a major company. With her very 'hands-on' reward structure for efficient employees, she had achieved a remarkably low turnover ratio.");
+					writeText("Nothing got her hotter than seeing her company hang just at the edge of making it into the Fortune 500. Nothing except for a fat dick, of course.");
+					writeText("At first it was a secret. An office fling here and there, but soon enough officeF was the one offering blowjobs around the water cooler. Walking into the men's bathrooms naked. Heading into the conference room early and having an employee blindfold her and tie her to the ceiling to hang naked like the sex toy she is."); 
+					writeText("Honestly, if it weren't for the fact that seeing profit graphs make her squirt like a firehose, she'd be tempted to just make herself a permanent office sextoy to be passed around and abused.");
+				break;
+				case 2:
+					writeText("Somewhere in the shadier parts of town, a rumor is circulating.");
+					writeBig("images/real/general/analSquirt1.gif");
+					writeText("Rumors of a woman who would do absolutely anything in exchange for even the nastiest fuck.");
+					writeBig("images/real/general/office1.gif");
+					writeText("She's already given up the keys to her house and car, and burned her clothes to show how willing she is.");
+					writeBig("images/real/general/office2.gif");
+					writeText("They say if you head down the dark alleyway at night and let your dick out, she'll be able to smell it wherever you are. No matter how clean, although the rumors say she prefers them unwashed.");
+					writeText("They say she's too voracious for any one man, that you'll need at least five grown men to fuck her into unconsciousness. God help you if she finds you alone.");
+				break;
+				case 3:
+					writeSpeech("office", "", "Here they are, sir. The latest batch.");
+					writeText("officeF opens up a briefcase. Since she reached the top of the corporate ladder under your supervision, she's devoted the entire company towards understanding and replicating the app's body-modifying effects.");
+					writeSpeech("player", "", "It looks... Goopy. Have you tested it?");
+					writeSpeech("office", "", "Plenty of tests, it's been shown to reduce a woman to a squirting mess in seconds with just one taste.");
+					writeSpeech("player", "", "No, I mean have <b>you</b> tested it.");
+					writeSpeech("office", "", "I... I couldn't just use myself as a test subject sir, I'm much too valuable for that, righ-");
+					writeText("You shut her up by forcing the mixture into her mouth, and she meekly swallows.");
+					writeText("The effects are immediate. Her eyes glaze over, and she's standing bow-legged as juice drips from between her legs.");
+					writeSpeech("office", "", "C-cock! Fuck! Pusshy wants cawk!");
+					writeSpeech("player", "", "Huh, should've asked if it was permanent. Oh well. Alright, bend over.");
+				break;
+			}
+			writeTransition("credits", "The End");
 			break;
 		}
 		
@@ -2680,34 +3138,35 @@ function writeEvent(scene) {
 			writeText("...");
 			writeText("Riley guides Sean into the room and takes a seat on the bed.");
 			writeSpeech("friend", "", "So, you gonna take your pants off or what?");
-			writeSpeech("Sean", "scripts/gamefiles/none.png", "Damn, you are forward today. Ready for some real... Ugh.");
+			writeSpeech("Sean", "none", "Damn, you are forward today. Ready for some real... Ugh.");
 			writeText("He stumbles, he's been off balance since friendF suddenly started picking up on his texts a few hours ago.");
 			writeText("Dizzy? Here, try this.");
 			writeText("Riley passes him a piece of taffy, and Sean eats it without thinking.");
-			writeSpeech("Sean", "scripts/gamefiles/none.png", "<i>Whoa, everything's feeling... Taller? And when did my skin get so smooth?</i>");
+			writeSpeech("Sean", "none", "<i>Whoa, everything's feeling... Taller? And when did my skin get so smooth?</i>");
 			writeText("He's mostly on autopilot through whatever is fogging up his brain, not even registering friendF tapping on the wall.");
 			writeText("Sean struggles, he's having a much harder time getting his pants down past his ass than usual, and his hips seem almost... Wider? ");
-			writeSpeech("Sean", "scripts/gamefiles/none.png", "Hey uh, can you give me a hand real quick?");
+			writeSpeech("Sean", "none", "Hey uh, can you give me a hand real quick?");
 			writeText("His attention is quickly drawn away as you open the door and enter the room.");
 			if (data.story.bodytype == 1) {
-				writeSpeech("Sean", "scripts/gamefiles/none.png", "Wha- What the fuck? Is this your boyfriend?");
+				writeSpeech("Sean", "none", "Wha- What the fuck? Is this your boyfriend?");
 				writeSpeech("friend", "", "God damnit, hurry your ass up.");
 				writeText("friendF grabs Seans pants and pulls them down past his feminine curves, you can hear something tear as she does. ");
 			}
 			else {
-				writeSpeech("Sean", "scripts/gamefiles/none.png", "Oh, uh... Hey. You here to join in? Well, I hope you two think you're ready for some of <b>this</b>!");
+				writeSpeech("Sean", "none", "Oh, uh... Hey. You here to join in? Well, I hope you two think you're ready for some of <b>this</b>!");
 				writeText("With a hard pull, he manages to force his pants down, you can hear them tearing as he does.");
 			}
 			writeText("His tiny dick hangs exposed to the three of you, him with a look of shock, friendF having a giggle, and you give a look of satisfaction at a job well done.");
-			writeSpeech("Sean", "scripts/gamefiles/none.png", "Wha... What the fuck is going on? What kind of games are the two of you playing?");
+			writeSpeech("Sean", "none", "Wha... What the fuck is going on? What kind of games are the two of you playing?");
 			writeSpeech("friend", "", "So what's the plan playerF? You wanna take him, or can I?");
+			addendum = true;
 			document.getElementById('output').innerHTML += `
-				<p class="choiceText" onclick="addendum('riley1')">
+				<p class="choiceText" onclick="writeAddendum('friend5A')">
 					You go ahead
 				</p>
 			`;
 			document.getElementById('output').innerHTML += `
-				<p class="choiceText" onclick="addendum('riley2')">
+				<p class="choiceText" onclick="writeAddendum('friend5B')">
 					I'll take him
 				</p>
 			`;
@@ -2836,10 +3295,10 @@ function writeEvent(scene) {
 			writeText("Fucking her all over her house proves to be a nice distraction as you wait for her husband to arrive. You've fucked her on all her couches, on the beds, and stuffed a dildo into her cunt like she was some erotic pincushion.");
 			writeText("You hear the front door opening, and a disgruntled voice yell out 'I'm home!'");
 			writeText("He walks into the living room smelling strongly of booze. teacherF isn't naked or covered with cum or anything, so he doesn't she's been having sex for the last hour, despite her disheveled clothes and unkempt hair.");
-			writeSpeech("teacherF's Husband", "scripts/gamefiles/none.png", "Hey, I need another fifty to pay off my tab.");
+			writeSpeech("teacherF's Husband", "none", "Hey, I need another fifty to pay off my tab.");
 			writeText("teacherF is slowly coming back to her senses. Her previously dreamy and relaxed expression is fading into a bitter, cynical one.");
 			writeSpeech("teacher", "", "Get a job already and get paid a fifty. Or more. Spend it on booze all you want, but I'm not burning any more of my money on you.");
-			writeSpeech("teacherF's Husband", "scripts/gamefiles/none.png", "Bitch! I asked nicely, and this is the thanks I get?");
+			writeSpeech("teacherF's Husband", "none", "Bitch! I asked nicely, and this is the thanks I get?");
 			writeText("Oookay, this is awkward. You'd wanted to fuck teacherF in front of her husband, but they pretty clearly want eachother to go fuck themselves.");
 			writeSpeech("teacher", "", "Nicely means please, thank you, or showing event the tiniest amount of respect for onc-");
 			writeText("He slaps her, hard. Hard enough to knock her over, and then hits her again when she looks back up at him.");
@@ -2947,9 +3406,9 @@ function writeEvent(scene) {
 			break;
 		}
 		case "chef3": {
-			writeSpeech("Tired College Student", "scripts/gamefiles/none.png", "What the hell? Closed? In the middle of the day?<br>Man, come on, I need my coffee!");
+			writeSpeech("Tired College Student", "none", "What the hell? Closed? In the middle of the day?<br>Man, come on, I need my coffee!");
 			writeText("The man knocks on the glass door a few time, but no one answers.");
-			writeSpeech("Tired College Student", "scripts/gamefiles/none.png", "Fuck... Guess nobody's here.");
+			writeSpeech("Tired College Student", "none", "Fuck... Guess nobody's here.");
 			writeText("...");
 			writeBig("images/real/general/chef3-1.gif");
 			writeText("Meanwhile, inside the store chefF is a little distracted.");
@@ -3203,6 +3662,30 @@ function writeEvent(scene) {
 				writeSpeech("clothes", "", "Oooh, this one would look great on you!");
 				writeText("And just like that, she's switched gears.");
 			}
+			break;
+		}
+		case "skill1": {
+			writeText("The exact nature of how to master the app is something that's been escaping you. Usage for even basic functions is actually pretty difficult.");
+			writeText("It's time for a practical test where you can just focus on exploring possibilities. You have a sit down in a secluded spot where you can still see the area with foot traffic. No cameras, and no pedestrians to see you, you're free to start experimenting.");
+			writeText("The best way to learn once you're already at an advanced level is to set a goal that seems out of reach to learn your limitations, so that's what you'll do.");
+			writeText("...");
+			writeText("Four hours later you've gone over every command the app can perform and you must have altered over sixty people by now. You've become faster and more efficient.");
+			writeSpecial("Your skill with the app has improved to the level of 'master'!");
+			writeText("And now, to enjoy the fruits of your research.");
+			writeText("There's a young woman sitting atop a brick wall across the street from you. She's completely unaware that that her friend grew six cup sizes during their conversation.");
+			writeText("It's time to get started. You pull a silicone sex toy out of your bag, and start working with the app.");
+			writeText("After a long series of commands and calculations you press the head of your dick against the opening if the toy, and the woman across the street yelps in surprise.");
+			writeBig("images/real/general/misc5-1.gif");
+			writeText("She spreads her legs as her cunt is spread open by an invisible force, and soon a bulge is visible on her midsection as you hilt yourself in the toy.");
+			writeText("She can't hide what's going on anymore, and you can hear her panicked, desperate moans over the murmurs of the confused crowd growing around her.");
+			writeText("Some are just gawking, others are pretending not to notice. A police officer walks by as you begin fucking the toy with a fervor.");
+			writeBig("images/real/general/misc5-2.gif");
+			writeText("She loses control of herself and squirts hard enough to soak her pants in the throes of an orgasm.");
+			writeText("You begin to cum into the toy, enjoying the knowledge that she can feel every spurt.");
+			writeText("You aren't too cruel though. As you clean up and leave the scene you mess with the cop's mind and libido, making sure that the girl will get a chance to get out of this situation without a record.");
+			writeText("...");
+			writeText("That was a huge amount of work, you don't think you'll ever take on a task like that again.");
+			writeText("Still, your abilities have improved astronomically. Options for corruption that were previously out of reach are now available to you.");
 			break;
 		}
 		default: {

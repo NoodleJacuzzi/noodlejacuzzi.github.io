@@ -4,6 +4,18 @@ var randNum;
 var tempScene = "";
 var activeWindow = "";
 var definitionArray = [];
+var endingsLocked = {
+	family2: false,
+	family3: false,
+	friend2: false,
+	friend3: false,
+	teacher2: false,
+	teacher3: false,
+	chef2: false,
+	chef3: false,
+	office2: false,
+	office3: false,
+}
 
 var data = {
 	player: {
@@ -758,7 +770,7 @@ var encounterDomArray = [
 		requirements: `
 			?trust sister 2;
 			?location homeSisterRoom;
-			?item toy;
+			?item adultToy;
 			!flag player sister2;
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
@@ -768,7 +780,7 @@ var encounterDomArray = [
 		requirements: `
 			?trust sister 2;
 			?location homeSisterRoom;
-			?item toy;
+			!item adultToy;
 			!flag player sister2;
 		`, altName: "", altImage: "", altColor: "", type: "message", top: 55, left: 60,
 	},
@@ -817,7 +829,7 @@ var encounterDomArray = [
 			?location homeSisterRoom;
 			!flag player sister4A;
 			!item plug pops;
-		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+		`, altName: "", altImage: "", altColor: "", type: "message", top: 55, left: 60,
 	},
 	{character: "sister", 
 		index: "sister4B", 
@@ -828,7 +840,7 @@ var encounterDomArray = [
 			?flag player sister4A;
 			!flag player sister4B;
 			?item horseToy;
-			?item stretchyTaffy;
+			?item stretchTaffy;
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 	{character: "sister", 
@@ -840,7 +852,7 @@ var encounterDomArray = [
 			?flag player sister4A;
 			!flag player sister4B;
 			!item horse toy;
-		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+		`, altName: "", altImage: "", altColor: "", type: "message", top: 55, left: 60,
 	},
 	{character: "sister", 
 		index: "sister4BMissingItems", 
@@ -851,7 +863,7 @@ var encounterDomArray = [
 			?flag player sister4A;
 			!flag player sister4B;
 			!item stretchy taffy;
-		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+		`, altName: "", altImage: "", altColor: "", type: "message", top: 55, left: 60,
 	},
 	{character: "sister", 
 		index: "sister4Fail", 
@@ -943,6 +955,62 @@ var encounterDomArray = [
 			?location school;
 			!flag player friend3;
 			!item caramel melts;
+		`, altName: "", altImage: "", altColor: "", type: "message", top: 55, left: 60,
+	},
+	{character: "friend", 
+		index: "friend3Fail", 
+		text: "", 
+		requirements: `
+			?trust friend 3;
+			?location school;
+			?flag player friend3;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "friend", 
+		index: "friend4", 
+		text: "", 
+		requirements: `
+			?trust friend 4;
+			?location school;
+			!flag player friend4;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "friend", 
+		index: "friend4Fail", 
+		text: "", 
+		requirements: `
+			?trust friend 4;
+			?location school;
+			?flag player friend4;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "friend", 
+		index: "friend5", 
+		text: "", 
+		requirements: `
+			?trust friend 5;
+			?location school;
+			!flag player friend5;
+			?item stretchTaffy;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "friend", 
+		index: "friend5MissingItems", 
+		text: "friendF is here, she's waiting for you.", 
+		requirements: `
+			?trust friend 5;
+			?location school;
+			!flag player friend5;
+			!item stretchTaffy;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "friend", 
+		index: "friend5Fail", 
+		text: "", 
+		requirements: `
+			?trust friend 5;
+			?location school;
+			?flag player friend5;
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 
@@ -1210,7 +1278,7 @@ var encounterDomArray = [
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 	{character: "exotic", 
-		index: "exoticShop3", 
+		index: "exoticShop2", 
 		text: "Enter the Exotic Shop", 
 		requirements: `
 			?location streets;
@@ -1259,6 +1327,17 @@ var encounterDomArray = [
 			?location streets;
 			?flag player candyShopIntro;
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	
+	{character: "mom", 
+		index: "skill1", 
+		text: "Practice with the Human Alteration App", 
+		requirements: `
+			?location streets;
+			!flag player skill1;
+			?item onahole;
+			?skill 2;
+		`, altName: "Skill Improvement", altImage: "scripts/gamefiles/profiles/skill.jpg", altColor: "", type: "", top: 55, left: 60,
 	},
 ];
 
@@ -2181,6 +2260,151 @@ function renameCharacter(target, scene) {
 	sceneTransition(scene);
 }
 
+function changeEnding(c, n) {
+	switch (c) {
+		case "family": {
+			endingChoices.family = n;
+			switch (n) {
+				case 1:
+					document.getElementById('familyEnd').innerHTML = 'Loving Family';
+					if (picturesDisabled == false) {
+						document.getElementById('images/real/lisa/profile1.jpg').src = 'images/real/lisa/profile1.jpg';
+					}
+				break;
+				case 2:
+					if (endingsLocked.family2 == false) {
+						document.getElementById('familyEnd').innerHTML = 'Stress Relief Sister';
+						if (picturesDisabled == false) {
+						document.getElementById('images/real/lisa/profile1.jpg').src = 'images/real/jean/profile2.jpg';
+						}
+					}
+				break;
+				case 3:
+					if (endingsLocked.family3 == false) {
+						document.getElementById('familyEnd').innerHTML = 'Camwhore Mother';
+						if (picturesDisabled == false) {
+						document.getElementById('images/real/lisa/profile1.jpg').src = 'images/real/lisa/profile5.jpg';
+						}
+					}
+				break;
+			}
+			break;
+		}
+		case "friend": {
+			endingChoices.friend = n;
+			switch (n) {
+				case 1:
+					document.getElementById('friendEnd').innerHTML = 'Genderswapped';
+					if (picturesDisabled == false) {
+					document.getElementById('images/real/riley/profile1.jpg').src = 'images/real/riley/profile1.jpg';
+					}
+				break;
+				case 2:
+					if (endingsLocked.friend2 == false) {
+						document.getElementById('friendEnd').innerHTML = "Honey, I'm Home!";
+						if (picturesDisabled == false) {
+						document.getElementById('images/real/riley/profile1.jpg').src = 'images/real/riley/profile3.jpg';
+						}
+					}
+				break;
+				case 3:
+					if (endingsLocked.friend3 == false) {
+						document.getElementById('friendEnd').innerHTML = 'App Companion';
+						if (picturesDisabled == false) {
+						document.getElementById('images/real/riley/profile1.jpg').src = 'images/real/riley/profile5.jpg';
+						}
+					}
+				break;
+			}
+			break;
+		}
+		case "teacher": {
+			endingChoices.teacher = n;
+			switch (n) {
+				case 1:
+					document.getElementById('teacherEnd').innerHTML = 'Kinder Teacher';
+					if (picturesDisabled == false) {
+					document.getElementById('images/real/kendra/profile1.jpg').src = 'images/real/kendra/profile1.jpg';
+					}
+				break;
+				case 2:
+					if (endingsLocked.teacher2 == false) {
+						document.getElementById('teacherEnd').innerHTML = 'Personal Pet';
+					if (picturesDisabled == false) {
+						document.getElementById('images/real/kendra/profile1.jpg').src = 'images/real/kendra/casual2.jpg';
+					}
+					}
+				break;
+				case 3:
+					if (endingsLocked.teacher3 == false) {
+						document.getElementById('teacherEnd').innerHTML = 'Donated Urinal';
+					if (picturesDisabled == false) {
+						document.getElementById('images/real/kendra/profile1.jpg').src = 'images/real/kendra/casual4.jpg';
+					}
+					}
+				break;
+			}
+			break;
+		}
+		case "chef": {
+			endingChoices.chef = n;
+			switch (n) {
+				case 1:
+					document.getElementById('chefEnd').innerHTML = 'Entrepreneur';
+					if (picturesDisabled == false) {
+					document.getElementById('images/real/ava/profile1.jpg').src = 'images/real/ava/profile1.jpg';
+					}
+				break;
+				case 2:
+					if (endingsLocked.chef2 == false) {
+						document.getElementById('chefEnd').innerHTML = 'Volunteer Work';
+					if (picturesDisabled == false) {
+						document.getElementById('images/real/ava/profile1.jpg').src = 'images/real/ava/profile3.jpg';
+					}
+					}
+				break;
+				case 3:
+					if (endingsLocked.chef3 == false) {
+						document.getElementById('chefEnd').innerHTML = 'Cumguzzler Cafe';
+					if (picturesDisabled == false) {
+						document.getElementById('images/real/ava/profile1.jpg').src = 'images/real/ava/profile5.jpg';
+					}
+					}
+				break;
+			}
+			break;
+		}
+		case "office": {
+			endingChoices.office = n;
+			switch (n) {
+				case 1:
+					document.getElementById('officeEnd').innerHTML = 'Secretive CEO';
+					if (picturesDisabled == false) {
+					document.getElementById('images/real/alexis/profile1.jpg').src = 'images/real/alexis/profile1.jpg';
+					}
+				break;
+				case 2:
+					if (endingsLocked.office2 == false) {
+						document.getElementById('officeEnd').innerHTML = 'Public Fixture';
+					if (picturesDisabled == false) {
+						document.getElementById('images/real/alexis/profile1.jpg').src = 'images/real/alexis/profile3.jpg';
+					}
+					}
+				break;
+				case 3:
+					if (endingsLocked.office3 == false) {
+						document.getElementById('officeEnd').innerHTML = 'Fruits of Progress';
+					if (picturesDisabled == false) {
+						document.getElementById('images/real/alexis/profile1.jpg').src = 'images/real/alexis/profile4.jpg';
+					}
+					}
+				break;
+			}
+			break;
+		}
+	}
+}
+
 //Scene creation
 function checkRequirements(string) {
 	var finalResult = true;
@@ -2639,10 +2863,10 @@ function printFunctionButton(type, name, top, left, target) {
 function checkForEncounters() {
 	if (data.player.route == "dom") {
 		for (encounterIndex = 0; encounterIndex < encounterDomArray.length; encounterIndex++) {
-			console.log(encounterDomArray[encounterIndex].requirements);
+			//console.log(encounterDomArray[encounterIndex].requirements);
 			var requirements = checkRequirements(encounterDomArray[encounterIndex].requirements);
 			if (requirements != false) {
-				console.log(requirements);
+				//console.log(requirements);
 				switch (encounterDomArray[encounterIndex].type) {
 					case "button": {
 						printFunctionButton(
@@ -2662,10 +2886,10 @@ function checkForEncounters() {
 							}
 							else {
 								if (printedText.includes("MissingItems") == true) {
-									printedText = encounterDomArray[encounterIndex].character+"F is here, but you're missing something you need to take advantage of her corruption."
+									printedText = encounterDomArray[encounterIndex].character+"F is here.";
 								}
 								else {
-									printedText = encounterDomArray[encounterIndex].character+"F is here.";
+									printedText = encounterDomArray[encounterIndex].character+"F is here, but you're missing something you need to take advantage of her corruption."
 								}
 							}
 						}
@@ -2749,7 +2973,7 @@ function checkForCorruptions(name) {
 			//console.log(corruptionDomArray[corruptionIndex].requirements);
 			var requirements = checkRequirements(corruptionDomArray[corruptionIndex].requirements);
 			if (requirements != false && corruptionDomArray[corruptionIndex].character == name) {
-				console.log(requirements);
+				//console.log(requirements);
 				var finalText = corruptionDomArray[corruptionIndex].text;
 				if (corruptionDomArray[corruptionIndex].index.includes("Fail") == true) {
 					if (finalText == "") {
@@ -3205,7 +3429,7 @@ function writeMed (img, cap) {
 	}
 	if (picturesDisabled != true) {
 		document.getElementById('output').innerHTML += `
-			<img class="medPicture" src="` + img + `"`+checkForError+` title="` + cap + `">
+			<img class="medPicture" src="` + img + `"`+checkForError+` id="` + img + `" title="` + cap + `">
 			<br>
 		`;
 	}
@@ -4362,7 +4586,7 @@ function loadShop(n) {
 		if (shopArray[item].type.includes("clothes") == true) {
 			var playerBody = data.player.body.charAt(0).toUpperCase() + data.player.body.substring(1);
 			if (shopArray[item].type.includes(playerBody) != true) {
-				console.log(playerBody);
+				//console.log(playerBody);
 				finalResult = false;
 			}
 		}
@@ -4375,6 +4599,9 @@ function loadShop(n) {
 			if (checkRequirements(shopArray[item].requirements) == false) {
 				finalResult = false;
 			}
+		}
+		if (checkItem(shopArray[item].index) == true) {
+			finalResult = false;
 		}
 		if (finalResult == true) {
 			if (shopArray[item].type.includes(n) == true) {
@@ -4433,6 +4660,9 @@ function purchase(index, price) {
 		updateMenu();
 		buyItem(index);
 	}
+	else {
+		alert("You don't have enough funds!");
+	}
 	sceneTransition(data.player.currentScene);
 }
 
@@ -4473,7 +4703,7 @@ function checkItem(n) {
 	console.log("Checking for item ID " + n);
 	for (x = 0; x < data.inventory.length; x++) {
 		if (data.inventory[x].index.includes(n)) {
-			console.log("Item id " + data.inventory[0].name + " is owned");
+			console.log("Item id " + data.inventory[x].name + " is owned");
 			return true;
 			break;
 		}
