@@ -33,7 +33,7 @@ function writeScene(scene) {
 			writeTransition("camboiTest1", "Have her use a special camera dildo to show off her womb.");
 			writeTransition("camboiTest1", "Have her get off in an anal-only special.");
 			writeTransition("camboiTest1", "Have her do a public show and record it.");
-			writeSpecial("The vegetarian cheat is now active! Many scenes in the dom route have been changed to replace content involving dicks, and certain characters such as Riley and Gina have been dramatically altered!");
+			writeSpecial("The vegetarian cheat is now active! Many scenes in the dom route have been changed to replace content involving dicks, and certain characters such as Riley and clothesF have been dramatically altered!");
 		}
 		//Prologue
 		case "prologue" : {
@@ -1992,8 +1992,118 @@ function writeScene(scene) {
 		//Navigation
 		
 		//Dom route exotic shop stuff
-		//Dom route candy shop stuff
+		case "exoticShop0": {
+			writeBig("images/real/adriana/profile1.jpg");
+			writeSpeech("exotic", "", "Hey, welcome back. Gonna buy something this time?.");
+			loadShop("exotic");
+			writeFunction("changeLocation(data.player.location)", "Go back outside");
+			break;
+		}
+		case "exoticShop1": {
+			writeBig("images/real/adriana/profile2.jpg");
+			writeSpeech("exotic", "", "Yo, buy something so we have an excuse to fuck.");
+			loadShop("exotic");
+			writeFunction("changeLocation(data.player.location)", "Go back outside");
+			break;
+		}
+		case "exoticShop2": {
+			writeBig("images/real/adriana/profile3.jpg");
+			writeSpeech("exotic", "", "Yo. You even have anything left you can buy?");
+			loadShop("exotic");
+			writeFunction("changeLocation(data.player.location)", "Go back outside");
+			break;
+		}
+		case "exotic1": {
+			writeEvent(scene);
+			data.player.skill = 2;
+			writeSpecial("You've gained an advanced level of understanding of the Human Alteration App!");
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "exotic2": {
+			writeEvent(scene);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "clothingTicket": {
+			writeHTML(`
+				player Having a better selection of outfits should be nice.
+				exotic Yeah, better service too. Make sure to read the back when you get into the store.
+				player ... Cryptic. Alright, I guess.
+				exotic There's a space for a new name too. I was thinking "Gina".
+				player Who's it for?
+				exotic Oh, you'll see. Trust me.
+				t The name on the ticket is <input type="text" id="nameSubmission" value="Gina">
+			`);
+			data.player.money += 5;
+			buyItem("clothingTicket");
+			writeFunction("renameCharacter('clothes', 'clothingShopSpecial')", "Continue");
+			break;
+		}
 		//Dom route clothing store stuff
+		case "clothingShopIntro": {
+			writeBig("images/real/general/danny.jpg");
+			addFlag("player", scene);
+			if (checkFlag("player", "femalePronouns") == true) {
+				writeSpeech("clothes", "", "Hey honey! Lemme know if you find anything you need.");
+			}
+			else {
+				writeSpeech("clothes", "", "Hey brah! Lemme know if you find anything you need.");
+			}
+			loadShop("clothes");
+			writeFunction("changeLocation(data.player.location)", "Go back outside");
+			break;
+		}
+		case "clothingShopBasic": {
+			writeBig("images/real/general/danny.jpg");
+			if (checkFlag("player", "femalePronouns") == true) {
+				writeSpeech("clothes", "", "You comin' back here just to see me? Heh, lemme know if you need any help.");
+			}
+			else {
+				writeSpeech("clothes", "", "Yo, welcome back brah! Lemme know if you find anything you need.");
+			}
+			loadShop("clothes");
+			writeFunction("changeLocation(data.player.location)", "Go back outside");
+			break;
+		}
+		case "clothingShopSpecial": {
+			changeOutfit("clothes", "Gina");
+			writeEvent("clothes1");
+			setTrust("clothes", 1);
+			writeSpecial("You can now buy exotic clothes!");
+			writeFunction("changeLocation(data.player.location)", "Go back outside");
+			break;
+		}
+		case "clothingShopAdvanced": {
+			writeBig("images/real/gina/profile2.jpg");
+			writeSpeech("clothes", "", "Hey, welcome back. Lemme know if you need anything, or anyone, at all.");
+			loadShop("clothes");
+			writeFunction("changeLocation(data.player.location)", "Go back outside");
+			break;
+		}
+		case "clothes2": {
+			writeEvent(scene);
+			writeFunction("changeLocation(data.player.location)", "Finish");
+		}
+		//Dom route candy shop stuff
+		case "candyShopIntro": {
+			addFlag("player", scene);
+			writeText("Ticket in hand you walk through the candy shop's door, a little bell jingling as you do. The cashier looks over towards you with a forced smile, which quickly turns into a genuine one as she spies the bit of gold paper in your hand.");
+			writeSpeech("candy", "", "My my my, we've got a VIP in the house~! Selling treats is nice and all, but it'll be nice to sell something a little more... Well...");
+			writeText("Checking your app, you can see her name, <input type='text' id='nameSubmission' value='Candi'>.");
+			writeText("She reaches below the counter and you hear a few clicks of locks and chains, before she lifts an old-looking wooden chest onto the countertop. She opens it, and you can see an assortment of brightly-colored candies for sale inside.");
+			writeSpecial("You can now buy exotic candies!");
+			raiseTrust("candy", 1);
+			writeFunction("renameCharacter('candy', 'candyShopBasic')", "Continue");
+			break;
+		}
+		case "candyShopBasic": {
+			writeBig("scripts/gamefiles/characters/candy.jpg");
+			writeSpeech("candy", "", "Hehe, I can tell you'll be nursing a sweet tooth today. Interested in anything?");
+			loadShop("candy");
+			writeFunction("changeLocation(data.player.location)", "Go back outside");
+			break;
+		}
 		
 		
 		default: {
@@ -2952,7 +3062,7 @@ function writeEvent(scene) {
 			}
 			break;
 		}
-		case "misc1": {
+		case "exotic1": {
 			writeSpeech("player", "", "Alright, so here's the money. What exactly is this special service?");
 			writeSpeech("exotic", "", "Pants off, sit down. Now.");
 			writeText("You inwardly shrug and follow her directions, removing your pants and taking a seat on a nearby couch.");
@@ -2960,7 +3070,7 @@ function writeEvent(scene) {
 			writeText("She passes you a small passport-sized notebook, inside is a scrawling mess of notes that appear to be on the human alteration app. It covers a variety of complicated subjects with dozens of examples. With this, your understanding of how to use the app should improve!");
 			writeText("This is amazing, but why did you want me to-");
 			writeBig("images/real/general/balls2.gif");
-			writeText("Adriana's tongue runs along one of your balls before she takes it into her mouth, clearly savoring the flavor of it before she lets it out of her mouth with a *mwah!*");
+			writeText("exoticF's tongue runs along one of your balls before she takes it into her mouth, clearly savoring the flavor of it before she lets it out of her mouth with a *mwah!*");
 			writeSpeech("exotic", "", "You have a fantastic set of balls. The app really helped you out, didn't it?");
 			writeText("Wherever she touches you is left tingling like with electricity, and it is spreading throughout your cock.");
 			writeSpeech("exotic", "", "But you aren't the only one who got some benefits from them.");
@@ -2977,9 +3087,9 @@ function writeEvent(scene) {
 			writeSpeech("exotic", "", "You gonna buy something else? This isn't a hotel.");
 			break;
 		}
-		case "misc2": { 
+		case "exotic2": {
 			writeSpeech("player", "", "Alright, time for some revenge.");
-			writeText("You slam the bills down on to the counter, and Adriana looks up from filing her nails. A smile quickly forms on her face.");
+			writeText("You slam the bills down on to the counter, and exoticF looks up from filing her nails. A smile quickly forms on her face.");
 			writeText("...");
 			writeSpeech("player", "", "O-ooouh!");
 			writeBig("images/real/adriana/service1.gif");
@@ -2991,47 +3101,49 @@ function writeEvent(scene) {
 			writeText("It's time to admit your defeat. Some obstacles just aren't mean to be overcome.");
 			break;
 		}
-		case "misc3": { 
-			writeText("Checking the back of the clothing ticket, you find a QR code and a set of instructions. The basic gist of it is 'use this with the app and you'll get a much better shopping experience.' It's strange to say the least.");
-			writeSpeech("player", "", "Hey, Danny? You know of anybody named Adriana?");
-			writeSpeech("clothes", "", "Adriana? Oh, that brunette? I see her around the shops when I'm opening, can't find out where she works though. She likes to play hard to get, ya know? Like she doesn't want some of Danny's D, if you know what I'm saying.");
-			writeSpeech("player", "", "Ah, I think I understand now.");
-			writeText("Before he has a chance to say anything, you scan the QR code and Danny nearly topples over where he stands.");
-			writeSpeech("clothes", "", "Whoooa, bro! Something's, ugh, something's happening to me! Not pain, but like, something! Call like, the fire brigade or someth-UUUeah-!");
-			if (data.story.currentScene != "gallery") {
-				writeText("You've never actually seen the transformations happen directly. The transformation might get a little messy, so if you don't want to see it, you should probably <span class='choiceText' onclick='sceneTransition(`streets`)'>bail</span>.");
-			}
-			else {
-				writeText("You've never actually seen the transformations happen directly. The transformation might get a little messy, so if you don't want to see it, you should probably <span class='choiceText' onclick='sceneTransition(`gallery`)'>bail</span>.");
-			}
-			writeSpeech("clothes", "", "Bro! The hell are you standing there for? I-HRRRGH!");
+		case "exotic3": {
+			break;
+		}
+		case "clothes1": {
+			writeHTML(`
+				define danny = sp clothes; altName Danny; img scripts/gamefiles/profiles/clothes.jpg;
+				t At exoticF's insistence, you decide to head straight to the neighboring store.
+				t Checking the back of the clothing ticket, you find a QR code and a set of instructions. The basic gist of it is 'use this with the app and you'll get a much better shopping experience.' It's strange to say the least.
+				player Hey, Danny? You know of anybody named exoticF?
+				danny exoticF? Oh, that brunette? I see her around the shops when I'm opening, can't find out where she works though. She likes to play hard to get, ya know? Like she doesn't want some of Danny's D, if you know what I'm saying.
+				player Ah, I think I understand now.
+				t Before he has a chance to say anything, you scan the QR code and Danny nearly topples over where he stands.
+				danny Whoooa, bro! Something's, ugh, something's happening to me! Not pain, but like, something! Call like, the fire brigade or someth-UUUeah-!
+				t You've never actually seen the transformations happen directly. The transformation might get a little messy, so if you don't want to see it, you should probably <i><span class='color: red;' onclick='changeLocation(data.player.location)'>BAIL</span></i>.
+				danny Bro! The hell are you standing there for? I-HRRRGH!
+			`);
 			writeText("He curls up into a ball on the spot. It's hard to make sense of his expression as he flops about on his seat.");
 			writeText("Before your eyes, his body begins to change. His muscles become softer and his clothes twist atop them. His hair grows out, his entire facial structure changes, and all of this happens in the span of seconds.");
 			writeText("After he... Or she, now, is finished with her transformation she slumps on the couch while breathing raggedly.");
-			writeSpeech("Danny", "gina", "Whoa... God, I just had the weirdest-aaaaAAH!");
+			writeSpeech("clothes", "", "Whoa... God, I just had the weirdest-aaaaAAH!");
 			writeText("She grasps at her crotch like it's burning, trying to rub out some strange sensation until she pulls down her underwear bottoms and exposes her angry-looking shaft. You can see her balls pulsating quickly, probably mirroring her heartbeat.");
 			writeText("Before she can even touch it, the head of her cock explodes a thick mass of jizz out, way larger than any normal human could match.");
 			writeText("And it doesn't stop there. It isn't so much firing loads as it is leaking a solid stream out of her length, and as she bucks her hips and groans, you can see her dick getting smaller and smaller before your eyes.");
 			writeText("She'd started out pretty impressive, probably about eight inches, but now she's at less than half that. Her cum is getting clearer and thinner as this goes on.");
-			writeSpeech("Danny", "gina", "Uuuugh! More! More! Guuuuuhd!");
+			writeSpeech("clothes", "", "Uuuugh! More! More! Guuuuuhd!");
 			writeText("Her body's strength starts to give out as the stream starts to die out. She looks half conscious at best draped over the arm of her seat as her dick keeps leaking onto the floor.");
 			writeText("It looks like her transformation is complete as her dicklette hangs barely two-inches down, her balls the size of small grapes. She'll have no problem passing for a woman now.");
 			writeText("She lets out a little giggle as the last drop of cum sputters out of her dick, and seems content to soak in the afterglow.");
 			writeText("...");
-			writeText("After some time she came back to her senses and stood on shaky legs. She reintroduces herself as Gina, for some reason.");
+			writeText("After some time she came back to her senses and stood on shaky legs. She reintroduces herself as clothesF, for some reason.");
 			writeSpeech("clothes", "", "Sorry mister, I got a bit distracted there. You know, I dunno why, but you seem like a trustworthy guy. Don't tell anybody about this, but we actually have a special catalog for special customers.");
 			writeText("She leans into you and whispers into your ear.");
 			writeSpeech("clothes", "", "And there are special benefits for good customers, if you know what I mean.");
 			break;
 		}
-		case "misc4": { 
+		case "clothes2": {
 			writeText("She perks up as you hand her the bills and leafs through them for a moment.");
 			writeSpeech("player", "", "So, how are we going to-");
 			writeText("Before you can finish the second, she's stripping down.");
 			writeSpeech("player", "", "Ah, just getting right to it.");
 			writeSpeech("clothes", "", "Yes sir! Gotta give Mr. Customer his reward. Come on, get your pants off!");
 			writeText("She's already on her knees, very enthusiastic about making sure you're satisfied.");
-			if (data.story.bodytype == 2) {
+			if (data.player.body == "boi") {
 				writeSpeech("clothes", "", "Oh wow! You're just like me!");
 				writeText("She stands back up and presses her small length against yours.");
 				writeSpeech("clothes", "", "Ah! This is really nice, but we'll need something more. Maybe I should call miss Adr-");
@@ -3067,7 +3179,7 @@ function writeEvent(scene) {
 				writeText("She lifts up her forearm to compare it to your shaft, giving it a few worshipful licks too for good measure.");
 				writeSpeech("player", "", "You're a size queen, huh?");
 				writeBig("images/real/general/gina2-3.gif");
-				writeSpeech("clothes", "", "Mwah! Very much, sir! Miss Adriana got in touch with me after that weird thing from before. She promised to help stretch me out!");
+				writeSpeech("clothes", "", "Mwah! Very much, sir! Miss exoticF got in touch with me after that weird thing from before. She promised to help stretch me out!");
 				writeSpeech("player", "", "I think I'd like to see that.");
 				writeSpeech("clothes", "", "Of course! Loyal cust-Hrrrm!");
 				writeBig("images/real/general/gina2-4.gif");
@@ -3077,35 +3189,11 @@ function writeEvent(scene) {
 				writeText("Teasing you with her tongue, she slides back pulling her length out from her throat.");
 				writeBig("images/real/general/gina2-5.gif");
 				writeText("There isn't even so much as a cough as she unsheathes herself. She swallows you cum like it's a glass of juice and starts cleaning you off with her tongue.");
-				writeSpeech("clothes", "", "She doesn't answer, lowering a dollop of jizz on her fingers into her mouth while straightening out her clothes with her other hand.");
+				writeText("She doesn't answer, lowering a dollop of jizz on her fingers into her mouth while straightening out her clothes with her other hand.");
 				writeText("She shoots you a wink, and once she's cleaned off her hand something catches her eye.");
 				writeSpeech("clothes", "", "Oooh, this one would look great on you!");
 				writeText("And just like that, she's switched gears.");
 			}
-			break;
-		}
-		case "misc5": {
-			writeText("The exact nature of how to master the app is something that's been escaping you. Usage for even basic functions is actually pretty difficult.");
-			writeText("It's time for a practical test where you can just focus on exploring possibilities. You have a sit down in a secluded spot where you can still see the area with foot traffic. No cameras, and no pedestrians to see you, you're free to start experimenting.");
-			writeText("The best way to learn once you're already at an advanced level is to set a goal that seems out of reach to learn your limitations, so that's what you'll do.");
-			writeText("...");
-			writeText("Four hours later you've gone over every command the app can perform and you must have altered over sixty people by now. You've become faster and more efficient.");
-			writeSpecial("Your skill with the app has improved to the level of 'master'!");
-			writeText("And now, to enjoy the fruits of your research.");
-			writeText("There's a young woman sitting atop a brick wall across the street from you. She's completely unaware that that her friend grew six cup sizes during their conversation.");
-			writeText("It's time to get started. You pull a silicone sex toy out of your bag, and start working with the app.");
-			writeText("After a long series of commands and calculations you press the head of your dick against the opening if the toy, and the woman across the street yelps in surprise.");
-			writeBig("images/real/general/misc5-1.gif");
-			writeText("She spreads her legs as her cunt is spread open by an invisible force, and soon a bulge is visible on her midsection as you hilt yourself in the toy.");
-			writeText("She can't hide what's going on anymore, and you can hear her panicked, desperate moans over the murmurs of the confused crowd growing around her.");
-			writeText("Some are just gawking, others are pretending not to notice. A police officer walks by as you begin fucking the toy with a fervor.");
-			writeBig("images/real/general/misc5-2.gif");
-			writeText("She loses control of herself and squirts hard enough to soak her pants in the throes of an orgasm.");
-			writeText("You begin to cum into the toy, enjoying the knowledge that she can feel every spurt.");
-			writeText("You aren't too cruel though. As you clean up and leave the scene you mess with the cop's mind and libido, making sure that the girl will get a chance to get out of this situation without a record.");
-			writeText("...");
-			writeText("That was a huge amount of work, you don't think you'll ever take on a task like that again.");
-			writeText("Still, your abilities have improved astronomically. Options for corruption that were previously out of reach are now available to you.");
 			break;
 		}
 		default: {

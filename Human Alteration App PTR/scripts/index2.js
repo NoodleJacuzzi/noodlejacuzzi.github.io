@@ -529,11 +529,11 @@ var galleryArray = [
 	{index: 'chef1', name: "Creamer", hint: 'Coffee shop owner corruption level 1. Requires Creamer. Talk to her during the day.'},
 	{index: 'chef2', name: "From the Tap", hint: 'Coffee shop owner corruption level 2. Talk to her during the day.'},
 	{index: 'chef3', name: "Restaurant's Closed", hint: 'Coffee shop owner corruption level 3. Talk to her during the day.'},
-	{index: 'misc1', name: "Adriana Special", hint: 'After purchasing all three tickets, purchase the special deal in the exotic shop. Increases skill level to advanced.'},
-	{index: 'misc2', name: "Adriana Special 2", hint: 'After purchasing all other items in the exotic shop, purchase the second special deal in the exotic shop.'},
-	{index: 'misc3', name: "Gina Special", hint: 'After purchasing the clothing ticket, go to the clothing shop.'},
-	{index: 'misc4', name: "Gina Special 2", hint: 'After purchasing the clothing ticket, purchase the special deal in the clothing shop.'},
-	{index: 'misc5', name: "Human Onahole", hint: 'Go to the streets with skill level of advanced. Requires Onahole. Increases skill level to master.'},
+	{index: 'exotic1', name: "Adriana Special", hint: 'After purchasing all three tickets, purchase the special deal in the exotic shop. Increases skill level to advanced.'},
+	{index: 'exotic2', name: "Adriana Special 2", hint: 'After purchasing all other items in the exotic shop, purchase the second special deal in the exotic shop.'},
+	{index: 'clothes1', name: "Gina Special", hint: 'After purchasing the clothing ticket, go to the clothing shop.'},
+	{index: 'clothes2', name: "Gina Special 2", hint: 'After purchasing the clothing ticket, purchase the special deal in the clothing shop.'},
+	{index: 'skill1', name: "Human Onahole", hint: 'Go to the streets with skill level of advanced. Requires Onahole. Increases skill level to master.'},
 	{index: 'mom1S', name: "Sister's Experiment", hint: 'Corruption level 1. Talk to her during the day.'},
 	{index: 'mom2S', name: "Desperate Maid", hint: 'Corruption level 2. Talk to her during the day.'},
 	{index: 'mom3S', name: "Loving Milk-Tank", hint: 'Corruption level 3. Talk to her during the day.'},
@@ -744,7 +744,7 @@ var encounterDomArray = [
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 	{character: "sister", 
-		index: "sister1fail", 
+		index: "sister1Fail", 
 		text: "", 
 		requirements: `
 			?trust sister 1;
@@ -773,7 +773,7 @@ var encounterDomArray = [
 		`, altName: "", altImage: "", altColor: "", type: "message", top: 55, left: 60,
 	},
 	{character: "sister", 
-		index: "sister2fail", 
+		index: "sister2Fail", 
 		text: "", 
 		requirements: `
 			?trust sister 2;
@@ -791,7 +791,7 @@ var encounterDomArray = [
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 	{character: "sister", 
-		index: "sister3fail", 
+		index: "sister3Fail", 
 		text: "", 
 		requirements: `
 			?trust sister 3;
@@ -806,7 +806,7 @@ var encounterDomArray = [
 			?trust sister 4;
 			?location homeSisterRoom;
 			!flag player sister4A;
-			?item plug pops;
+			?item plugPops;
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 	{character: "sister", 
@@ -827,8 +827,8 @@ var encounterDomArray = [
 			?location homeSisterRoom;
 			?flag player sister4A;
 			!flag player sister4B;
-			?item horse toy;
-			?item stretchy taffy;
+			?item horseToy;
+			?item stretchyTaffy;
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 	{character: "sister", 
@@ -854,7 +854,7 @@ var encounterDomArray = [
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 	{character: "sister", 
-		index: "sister4fail", 
+		index: "sister4Fail", 
 		text: "", 
 		requirements: `
 			?trust sister 4;
@@ -932,7 +932,7 @@ var encounterDomArray = [
 			?trust friend 3;
 			?location school;
 			!flag player friend3;
-			?item caramel melts;
+			?item caramelMelts;
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 	{character: "friend", 
@@ -964,7 +964,7 @@ var encounterDomArray = [
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 	{character: "teacher", 
-		index: "teacher1fail", 
+		index: "teacher1Fail", 
 		text: "", 
 		requirements: `
 			?trust teacher 1;
@@ -982,7 +982,7 @@ var encounterDomArray = [
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 	{character: "teacher", 
-		index: "teacher2fail", 
+		index: "teacher2Fail", 
 		text: "", 
 		requirements: `
 			?trust teacher 2;
@@ -1000,7 +1000,7 @@ var encounterDomArray = [
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 	{character: "teacher", 
-		index: "teacher3fail", 
+		index: "teacher3Fail", 
 		text: "", 
 		requirements: `
 			?trust teacher 3;
@@ -1018,7 +1018,7 @@ var encounterDomArray = [
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 	{character: "teacher", 
-		index: "teacher4fail", 
+		index: "teacher4Fail", 
 		text: "", 
 		requirements: `
 			?trust teacher 4;
@@ -1036,7 +1036,7 @@ var encounterDomArray = [
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 	{character: "teacher", 
-		index: "teacher5fail", 
+		index: "teacher5Fail", 
 		text: "", 
 		requirements: `
 			?trust teacher 5;
@@ -1189,6 +1189,75 @@ var encounterDomArray = [
 			?trust office 3;
 			?location alleyway;
 			?flag player office3;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+
+	{character: "exotic", 
+		index: "exoticShop0", 
+		text: "Enter the Exotic Shop", 
+		requirements: `
+			?location streets;
+			!flag player exotic1;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "exotic", 
+		index: "exoticShop1", 
+		text: "Enter the Exotic Shop", 
+		requirements: `
+			?location streets;
+			?flag player exotic1;
+			!flag player exotic2;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "exotic", 
+		index: "exoticShop3", 
+		text: "Enter the Exotic Shop", 
+		requirements: `
+			?location streets;
+			?flag player exotic2;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "clothes", 
+		index: "clothingShopIntro", 
+		text: "Enter the Clothing Shop", 
+		requirements: `
+			?location streets;
+			!item clothingTicket;
+			!flag player clothingShopIntro;
+		`, altName: "Danny", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "clothes", 
+		index: "clothingShopBasic", 
+		text: "Enter the Clothing Shop", 
+		requirements: `
+			?location streets;
+			!item clothingTicket;
+			?flag player clothingShopIntro;
+		`, altName: "Danny", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "clothes", 
+		index: "clothingShopAdvanced", 
+		text: "Enter the Clothing Shop", 
+		requirements: `
+			?location streets;
+			?flag player clothes1;
+		`, altName: "Danny", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "candy", 
+		index: "candyShopIntro", 
+		text: "Enter the Candy Shop", 
+		requirements: `
+			?location streets;
+			?item candyTicket;
+			!flag player candyShopIntro;
+		`, altName: "???", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "candy", 
+		index: "candyShopBasic", 
+		text: "Enter the Candy Shop", 
+		requirements: `
+			?location streets;
+			?flag player candyShopIntro;
 		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
 	},
 ];
@@ -1508,8 +1577,10 @@ var shopArray = [
 	{type: "exotic", price: 5, route: "dom", index: "horseToy", name: "Horse Toy", desc: "This is the meat that can't be beat! Warning, not for the faint of heart / inflexible of body."},
 	{type: "exotic", price: 5, route: "dom", index: "onahole", name: "Onahole Toy", desc: "You're an app user, so you shouldn't need this. Unless you're feeling creative, that is."},
 	{type: "exotic", price: 5, route: "domsub", index: "candyTicket", name: "Candy Ticket", desc: "Unlocks additional exotic purchases at the Candy Shop."},
-	{type: "exotic", price: 5, route: "dom", index: "clothingTicket", name: "Clothing Ticket", desc: "Unlocks additional exotic purchases at the Clothing Store."},
-	{type: "exotic", price: 5, route: "sub", index: "beautyTicket", name: "Beauty Ticket", desc: "Unlocks additional exotic purchases at the Beauty Salon"},
+	{type: "exotic", price: 5, event: true, route: "dom", index: "clothingTicket", requirements: "!item player clothingTicket;", name: "Clothing Ticket", desc: "Unlocks additional exotic purchases at the Clothing Store."},
+	{type: "exotic", price: 5, route: "sub", index: "beautyTicket", name: "Beauty Ticket", desc: "Unlocks additional exotic purchases at the Beauty Salon."},
+	{type: "exotic", price: 5, event: true, route: "dom", index: "exotic1", requirements: "!flag player exotic1;", name: "Special Service", desc: "You know you want it ;)"},
+	{type: "exotic", price: 5, event: true, route: "dom", index: "exotic2", requirements: "?flag player exotic1;!flag player exotic2;", name: "Special Service", desc: "You know you want more ;)"},
 	
 	{type: "clothesMale", price: 5, route: "dom", index: "menShorts", name: "Button-up", desc: "a casual button-up shirt and a pair of shorts."},
 	{type: "clothesMale", price: 5, route: "dom", index: "menBlack", name: "Black", desc: "an all-black outfit."},
@@ -1546,6 +1617,7 @@ var shopArray = [
 	{type: "underwearSub", price: 5, route: "dom", index: "panties", name: "Panties", desc: "a tight pair of white panties that have been altered to cradle your balls."},
 	{type: "underwearSub", price: 5, route: "dom", index: "frilly", name: "Frilly Panties", desc: "a tight pair of frilly panties that have been altered to cradle your balls."},
 	{type: "underwearSub", price: 5, route: "dom", index: "thong", name: "Packed Thong", desc: "an extremely tight thong that barely contains your flaccid dick."},
+	{type: "clothesMaleSissyTransLewd", price: 50, event: true, route: "dom", index: "clothes2", requirements: "!flag player clothes2;", name: "Special Service", desc: "For a certain special customer ;)"},
 ];
 
 //Startup & Systems config
@@ -1566,6 +1638,7 @@ function startup() {
 
 function basicDefinitions() {
 	var quickVar = "";
+	writeHTML(`define player = sp player;`);
 	for (defIndex = 0; defIndex < data.story.length; defIndex++) {
 		writeHTML(`define `+data.story[defIndex].index+` = sp `+data.story[defIndex].index+`;`);
 	}
@@ -2773,10 +2846,10 @@ function writeHTML(text) {
 				case "sp": {
 					//Get the name of our speaker
 					var name = lines[lineCounter].split(command+` `).pop().split(`;`)[0];
-					//If "; im" is in our code we want to specify a specific profile image, so use that. Otherwise set the image variable blank so it can be automatically found.
-					if (lines[lineCounter].includes("; im")) {
-						var image = lines[lineCounter].split(`im `).pop().split(`;`)[0];
-						lines[lineCounter] = lines[lineCounter].replace(`im `+image+`; `, ``);
+					//If "; img" is in our code we want to specify a specific profile image, so use that. Otherwise set the image variable blank so it can be automatically found.
+					if (lines[lineCounter].includes("; img")) {
+						var image = lines[lineCounter].split(`img `).pop().split(`;`)[0];
+						lines[lineCounter] = lines[lineCounter].replace(`img `+image+`; `, ``);
 					}
 					else {
 						var image = "";
@@ -3242,7 +3315,7 @@ function sceneTransition(scene) {
 	tempScene = scene;
 	writeScene(scene);
 	data.player.currentScene = scene;
-	saveSlot(10);
+	//saveSlot(10);
 }
 
 function buttonGrid() {
@@ -4298,6 +4371,11 @@ function loadShop(n) {
 				finalResult = false;
 			}
 		}
+		if (shopArray[item].requirements != null) {
+			if (checkRequirements(shopArray[item].requirements) == false) {
+				finalResult = false;
+			}
+		}
 		if (finalResult == true) {
 			if (shopArray[item].type.includes(n) == true) {
 				if (checkItem(shopArray[item].name) != true) {
@@ -4308,31 +4386,44 @@ function loadShop(n) {
 					else {
 						var imageLocation = "images/real/clothes/";
 					}
-					document.getElementById('output').innerHTML += `
-						<div class = "shopItem" onclick = "purchase('`+shopArray[item].index+`', `+shopArray[item].price+`)">
-							<p class = "shopName">`+shopArray[item].name+`</p>
-							<p class = "shopDesc">`+shopArray[item].desc+`</p>
-							<p class = "shopPrice">$`+shopArray[item].price+`</p>
-							<img class ="shopImage" src="`+imageLocation+shopArray[item].index+`.jpg">
-						</div>
-						<br>
-					`;
+					if (shopArray[item].event == null) {
+						document.getElementById('output').innerHTML += `
+							<div class = "shopItem" onclick = "purchase('`+shopArray[item].index+`', `+shopArray[item].price+`)">
+								<p class = "shopName">`+shopArray[item].name+`</p>
+								<p class = "shopDesc">`+shopArray[item].desc+`</p>
+								<p class = "shopPrice">$`+shopArray[item].price+`</p>
+								<img class ="shopImage" src="`+imageLocation+shopArray[item].index+`.jpg">
+							</div>
+							<br>
+						`;
+					}
+					else {
+						document.getElementById('output').innerHTML += `
+							<div class = "shopItem" onclick = "purchaseEvent('`+shopArray[item].index+`', `+shopArray[item].price+`)">
+								<p class = "shopName">`+shopArray[item].name+`</p>
+								<p class = "shopDesc">`+shopArray[item].desc+`</p>
+								<p class = "shopPrice">$`+shopArray[item].price+`</p>
+								<img class ="shopImage" src="`+imageLocation+shopArray[item].index+`.jpg">
+							</div>
+							<br>
+						`;
+					}
 				}
 			}
 		}
 	}
 }
 
-function purchaseEventTab(name, img, price, desc) {
-	document.getElementById('output').innerHTML += `
-		<div class = "shopItem" onclick = "sceneTransition('`+name+`')">
-			<p class = "shopName">`+name+`</p>
-			<p class = "shopDesc">`+desc+`</p>
-			<p class = "shopPrice">$`+price+`</p>
-			<img class ="shopImage" src="`+img+`.jpg">
-		</div>
-		<br>
-	`;
+function purchaseEvent(index, price) {
+	if (data.player.money >= price) {
+		data.player.money -= price;
+		flashMoney();
+		updateMenu();
+		sceneTransition(index);
+	}
+	else {
+		sceneTransition(data.player.currentScene);
+	}
 }
 
 function purchase(index, price) {
@@ -4342,7 +4433,7 @@ function purchase(index, price) {
 		updateMenu();
 		buyItem(index);
 	}
-	changeLocation(data.player.location);
+	sceneTransition(data.player.currentScene);
 }
 
 function buyItem(index) {
@@ -4381,7 +4472,7 @@ function removeItem(n) {
 function checkItem(n) {
 	console.log("Checking for item ID " + n);
 	for (x = 0; x < data.inventory.length; x++) {
-		if (data.inventory[x].name.includes(n)) {
+		if (data.inventory[x].index.includes(n)) {
 			console.log("Item id " + data.inventory[0].name + " is owned");
 			return true;
 			break;
