@@ -2247,7 +2247,7 @@ function checkRequirements(string) {
 		}
 		string = string.replace(`?flag player `+check+`;`, ``);
 	}
-	while (string.includes("!flag ") == true) {
+	while (string.includes("!flag player ") == true) {
 		var check = string.split(`!flag player `).pop().split(`;`)[0];
 		if (data.player.flags.includes(check) == true) {
 			finalResult = false;
@@ -2960,7 +2960,7 @@ function writeText(text) {
 		}
 		default: {
 			document.getElementById('output').innerHTML += `
-				<p class='rawText'>` + replaceCodenames(text) + `</p>
+				<p class='rawText'>` + cullRequirements(replaceCodenames(text)) + `</p>
 			`;
 		}
 	}

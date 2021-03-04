@@ -2,8 +2,7 @@ function writeScene(scene) {
 	console.log("Now writing scene "+scene);
 	switch(scene) {
 		case "start" : {
-			writeFunction("sceneTransition('alexisTest')", "Test officeF's ownership");
-			writeFunction("sceneTransition('averyTest')", "Test camboiF's ownership");
+			writeFunction("sceneTransition('alexisTest')", "Test Alexis's ownership");
 			writeHTML(`
 			im scripts/gamefiles/logo.png
 			t Salutations friends! Human Alteration App is an adult game created by me, NoodleJacuuzi. You can find and keep up with all of my work at my <a href='https://noodlejacuzzi.github.io/index.html'>Master Index</a>
@@ -1621,7 +1620,7 @@ function writeScene(scene) {
 				writeTransition("officeModFetishes-worshipRemove", "Remove her worship fetish");
 			}
 			if (checkFlag("office", "rimming") == false) {
-				writeTransition("officeModFetishes-rimmingAdd", "Give her an rimming fetish");
+				writeTransition("officeModFetishes-rimmingAdd", "Give her a rimming fetish");
 			}
 			else {
 				writeTransition("officeModFetishes-rimmingRemove", "Remove her rimming fetish");
@@ -1647,6 +1646,7 @@ function writeScene(scene) {
 				t You've given officeF a powerful impregnation fetish, now she'll be able to cum just from the feeling of you creampieing her cunt.
 				...
 			`);
+			writeScene("alexisQuo");
 			break;
 		}
 		case "officeModFetishes-impregnationRemove": {
@@ -1655,6 +1655,7 @@ function writeScene(scene) {
 				t You've removed officeF's impregnation fetish.
 				...
 			`);
+			writeScene("alexisQuo");
 			break;
 		}
 		case "officeModFetishes-worshipAdd": {
@@ -1663,6 +1664,7 @@ function writeScene(scene) {
 				t You've given officeF a powerful cock worship fetish. Your cock is like a religious experience, she'll treat it as divine if it's in front of her face. 
 				...
 			`);
+			writeScene("alexisQuo");
 			break;
 		}
 		case "officeModFetishes-worshipRemove": {
@@ -1671,6 +1673,7 @@ function writeScene(scene) {
 				t You've removed officeF's worship fetish.
 				...
 			`);
+			writeScene("alexisQuo");
 			break;
 		}
 		case "officeModFetishes-rimmingAdd": {
@@ -1679,6 +1682,7 @@ function writeScene(scene) {
 				t You've given officeF a powerful rimming fetish, now she'll be able to get off from frenching your asshole.
 				...
 			`);
+			writeScene("alexisQuo");
 			break;
 		}
 		case "officeModFetishes-rimmingRemove": {
@@ -1687,6 +1691,7 @@ function writeScene(scene) {
 				t You've removed officeF's rimming fetish.
 				...
 			`);
+			writeScene("alexisQuo");
 			break;
 		}
 		case "officeModFetishes-masochismAdd": {
@@ -1695,6 +1700,7 @@ function writeScene(scene) {
 				t You've given officeF a powerful masochism fetish, rough play will seriously flip her switch.
 				...
 			`);
+			writeScene("alexisQuo");
 			break;
 		}
 		case "officeModFetishes-masochismRemove": {
@@ -1703,6 +1709,7 @@ function writeScene(scene) {
 				t You've removed officeF's masochism fetish.
 				...
 			`);
+			writeScene("alexisQuo");
 			break;
 		}
 		case "officeModFetishes-watersportsAdd": {
@@ -1711,6 +1718,7 @@ function writeScene(scene) {
 				t You've given officeF a powerful watersports fetish, now she'll happily take <i>all</i> your fluids.
 				...
 			`);
+			writeScene("alexisQuo");
 			break;
 		}
 		case "officeModFetishes-watersportsRemove": {
@@ -1719,6 +1727,7 @@ function writeScene(scene) {
 				t You've removed officeF's watersports fetish.
 				...
 			`);
+			writeScene("alexisQuo");
 			break;
 		}
 		case "officeModMouth": {
