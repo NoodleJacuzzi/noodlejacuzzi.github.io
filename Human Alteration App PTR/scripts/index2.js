@@ -3,6 +3,7 @@ var saveName;
 var randNum;
 var tempScene = "";
 var activeWindow = "";
+var definitionArray = [];
 
 var data = {
 	player: {
@@ -30,6 +31,7 @@ var data = {
 		font: "basic",
 		imageSize: 1,
 		fontSize: 1,
+		flags: "",
 	},
 	story: [
 		{index: "mom", name: "???", trust: 0, outfit: "Old", flags: "",},
@@ -53,16 +55,16 @@ var data = {
 
 var detailDomArray = [
 	{index: "mom", element: "otherStatus", 
-	requirements: "trust mom 0;", 
+	requirements: "?trust mom 0;", 
 	desc: "Status: Single Mother"},
 	{index: "mom", element: "otherStatus", 
-	requirements: "trust mom 1;", 
+	requirements: "?trust mom 1;", 
 	desc: "Status: Mother & Maid"},
 	{index: "mom", element: "otherStatus", 
-	requirements: "trust mom 2;", 
+	requirements: "?trust mom 2;", 
 	desc: "Status: Loyal Servant"},
 	{index: "mom", element: "otherStatus", 
-	requirements: "trust mom 4;", 
+	requirements: "?trust mom 4;", 
 	desc: "Status: Loving Cocksleeve"},
 	
 	{index: "mom", element: "otherClothes", 
@@ -496,22 +498,22 @@ var detailSubArray = [
 ]
 
 var galleryArray = [
-	{index: 'mom1', name: "Experimentation", hint: 'Complete the prologue.'},
-	{index: 'mom2', name: "Maid from Heaven", hint: 'Mom corruption level 1. This automatically triggers in the morning.'},
-	{index: 'mom3', name: "Bedhead", hint: 'Mom corruption level 2. Talk to her during the day.'},
-	{index: 'mom4', name: "Impregnation", hint: 'Mom corruption level 3 (requires skill level of advanced). Talk to her during the day.'},
-	{index: 'mom5', name: "Deep Cleaning", hint: 'Mom corruption level 4. Requires Plug Pop. Talk to her during the day.'},
-	{index: 'mom6', name: "Bathroom Break", hint: 'Watersports Content! Mom corruption level 4. Requires Fruit Gushers. Talk to her during the day.'},
-	{index: 'mom7', name: "Morning Pee", hint: 'Watersports Content! Mom corruption level 4. Automatically triggers in the mornning. Choose "stay inside".'},
+	{index: 'mom0', name: "Experimentation", hint: 'Complete the prologue.'},
+	{index: 'mom1', name: "Maid from Heaven", hint: 'Mom corruption level 1. This automatically triggers in the morning.'},
+	{index: 'mom2', name: "Bedhead", hint: 'Mom corruption level 2. Talk to her during the day.'},
+	{index: 'mom3', name: "Impregnation", hint: 'Mom corruption level 3 (requires skill level of advanced). Talk to her during the day.'},
+	{index: 'mom4A', name: "Deep Cleaning", hint: 'Mom corruption level 4. Requires Plug Pop. Talk to her during the day.'},
+	{index: 'mom4B', name: "Bathroom Break", hint: 'Watersports Content! Mom corruption level 4. Requires Fruit Gushers. Talk to her during the day.'},
+	{index: 'mom4C', name: "Morning Pee", hint: 'Watersports Content! Mom corruption level 4. Automatically triggers in the mornning. Choose "stay inside".'},
 	{index: 'sister1', name: "Unwashed", hint: 'Sister corruption level 1. Talk to her during the day.'},
 	{index: 'sister2', name: "Anal Solo", hint: 'Sister corruption level 2. Requires Adult Toy. Talk to her during the day.'},
 	{index: 'sister3', name: "Anal Full", hint: 'Sister corruption level 3 (requires skill level of advanced). Talk to her during the day.'},
-	{index: 'sister4', name: "Plugged", hint: 'Sister corruption level 4. Requires plug pop. Talk to her during the day.'},
-	{index: 'sister5', name: "Anal Horse", hint: 'Sister corruption level 4. Requires horse toy and stretchy taffy. Talk to her during the day after triggering the event "Plugged".'},
-	{index: 'sister6', name: "Family Dinner", hint: 'Sister corruption level 5 and Mom corruption level 4. Talk to her during the day.'},
-	{index: 'sister7', name: "Family Fun Time", hint: 'Sister corruption level 5 and Mom corruption level 4. Requires Pop Rocks. Talk to her during the day.'},
-	{index: 'friend1', name: "Your Confession", hint: 'Classmate corruption level 2 (requires skill level of advanced). Talk to her during the day.'},
-	{index: 'friend2', name: "Her Confession", hint: 'Classmate corruption level 2. Talk to her again after the event Confession.'},
+	{index: 'sister4A', name: "Plugged", hint: 'Sister corruption level 4. Requires plug pop. Talk to her during the day.'},
+	{index: 'sister4B', name: "Anal Horse", hint: 'Sister corruption level 4. Requires horse toy and stretchy taffy. Talk to her during the day after triggering the event "Plugged".'},
+	{index: 'sister5A', name: "Family Dinner", hint: 'Sister corruption level 5 and Mom corruption level 4. Talk to her during the day.'},
+	{index: 'sister5B', name: "Family Fun Time", hint: 'Sister corruption level 5 and Mom corruption level 4. Requires Pop Rocks. Talk to her during the day.'},
+	{index: 'friend2A', name: "Your Confession", hint: 'Classmate corruption level 2 (requires skill level of advanced). Talk to her during the day.'},
+	{index: 'friend2B', name: "Her Confession", hint: 'Classmate corruption level 2. Talk to her again after the event Confession.'},
 	{index: 'friend3', name: "Gateway Candy", hint: 'Classmate corruption level 3. Requires Caramel Melt. Talk to her during the day.'},
 	{index: 'friend4', name: "Popping Cherries", hint: 'Classmate corruption level 4. Talk to her during the day.'},
 	{index: 'friend5', name: "Tables Turned", hint: 'Classmate corruption level 5 (requires skill level of master). Requires Stretchy Taffy. Talk to her during the day.'},
@@ -643,67 +645,817 @@ var menuArray = [
 var encounterDomArray = [
 	//character: "mom", index: "", text: "momF trust 0", requirements: "?trust mom 0;", altName: "", altImage: "", altColor: "", type: "button", top: 0, left: 0,},
 	{character: "mom", index: "sleep", text: "Go to sleep", requirements: "?location homePlayerRoom;", altName: "", altImage: "", altColor: "", type: "button", top: 55, left: 60,},
-	{character: "mom", index: "", text: "You can hear your mother in her room, schlicking sounds and wanton moans easily audible through her door. You should head to bed and fix this soon.", requirements: "?location homeFoyer; !flag mom ready; ?trust mom  0;", altName: "", altImage: "", altColor: "", type: "message", top: 55, left: 60,},
-	{character: "mom", index: "mom2Fail", text: "momF is here.", requirements: "?location homeFoyer; !flag mom ready; ?trust mom  1;", altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,},
-	{character: "mom", index: "mom3", text: "momF is here. You can enjoy the results of your alteration", requirements: "?location homeFoyer; ?flag mom ready; ?trust mom  2;", altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,},
-	{character: "mom", index: "mom3Fail", text: "momF is here.", requirements: "?location homeFoyer; !flag mom ready; ?trust mom  2;", altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,},
-	{character: "mom", index: "mom4", text: "momF is here. You can enjoy the results of your alteration", requirements: "?location homeFoyer; ?flag mom ready; ?trust mom  3;", altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,},
-	{character: "mom", index: "mom4Fail", text: "momF is here.", requirements: "?location homeFoyer; !flag mom ready; ?trust mom 3;", altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,},
+	{character: "mom", 
+		index: "mom0", 
+		text: "", 
+		requirements: `
+			?trust mom 0;
+			!flag player mom0;
+			?location homeFoyer;
+		`, altName: "", altImage: "", altColor: "", type: "morning", top: 55, left: 60,
+	},
+	{character: "mom", 
+		index: "mom0Fail", 
+		text: "You can hear your mother in her room, schlicking sounds and wanton moans easily audible through her door. You should head to bed and fix this soon.", 
+		requirements: `
+			?trust mom 0;
+			?flag player mom0;
+			?location homeFoyer;
+		`, altName: "", altImage: "", altColor: "", type: "message", top: 55, left: 60,
+	},
+	{character: "mom", 
+		index: "mom1", 
+		text: "", 
+		requirements: `
+			?trust mom 1;
+			!flag player mom1;
+			?location homeFoyer;
+		`, altName: "", altImage: "", altColor: "", type: "morning", top: 55, left: 60,
+	},
+	{character: "mom", 
+		index: "mom1Fail", 
+		text: "momF is here, although you haven't corrupted her further yet.", 
+		requirements: `
+			?trust mom 1;
+			?flag player mom1;
+			?location homeFoyer;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "mom", 
+		index: "mom2", 
+		text: "momF is here.", 
+		requirements: `
+			?trust mom 2;
+			!flag player mom2;
+			?location homeFoyer;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "mom", 
+		index: "mom2Fail", 
+		text: "momF is here, although you haven't corrupted her further yet.", 
+		requirements: `
+			?trust mom 2;
+			?flag player mom2;
+			?location homeFoyer;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "mom", 
+		index: "mom3", 
+		text: "momF is here.", 
+		requirements: `
+			?trust mom 3;
+			!flag player mom3;
+			?location homeFoyer;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "mom", 
+		index: "mom3Fail", 
+		text: "momF is here, although you haven't corrupted her further yet.", 
+		requirements: `
+			?trust mom 3;
+			?flag player mom3;
+			?location homeFoyer;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "mom", 
+		index: "mom4", 
+		text: "momF is cleaning the bathroom.", 
+		requirements: `
+			?trust mom 4;
+			?location homeFoyer;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+
+	{character: "sister", 
+		index: "sister0Fail", 
+		text: "", 
+		requirements: `
+			?trust sister 0;
+			?location homeSisterRoom;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "sister", 
+		index: "sister1", 
+		text: "", 
+		requirements: `
+			?trust sister 1;
+			?location homeSisterRoom;
+			!flag player sister1;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "sister", 
+		index: "sister1fail", 
+		text: "", 
+		requirements: `
+			?trust sister 1;
+			?location homeSisterRoom;
+			?flag player sister1;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "sister", 
+		index: "sister2", 
+		text: "", 
+		requirements: `
+			?trust sister 2;
+			?location homeSisterRoom;
+			?item toy;
+			!flag player sister2;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "sister", 
+		index: "sister2MissingItems", 
+		text: "", 
+		requirements: `
+			?trust sister 2;
+			?location homeSisterRoom;
+			?item toy;
+			!flag player sister2;
+		`, altName: "", altImage: "", altColor: "", type: "message", top: 55, left: 60,
+	},
+	{character: "sister", 
+		index: "sister2fail", 
+		text: "", 
+		requirements: `
+			?trust sister 2;
+			?location homeSisterRoom;
+			?flag player sister2;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "sister", 
+		index: "sister3", 
+		text: "", 
+		requirements: `
+			?trust sister 3;
+			?location homeSisterRoom;
+			!flag player sister3;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "sister", 
+		index: "sister3fail", 
+		text: "", 
+		requirements: `
+			?trust sister 3;
+			?location homeSisterRoom;
+			?flag player sister3;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "sister", 
+		index: "sister4A", 
+		text: "", 
+		requirements: `
+			?trust sister 4;
+			?location homeSisterRoom;
+			!flag player sister4A;
+			?item plug pops;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "sister", 
+		index: "sister4AMissingItems", 
+		text: "", 
+		requirements: `
+			?trust sister 4;
+			?location homeSisterRoom;
+			!flag player sister4A;
+			!item plug pops;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "sister", 
+		index: "sister4B", 
+		text: "", 
+		requirements: `
+			?trust sister 4;
+			?location homeSisterRoom;
+			?flag player sister4A;
+			!flag player sister4B;
+			?item horse toy;
+			?item stretchy taffy;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "sister", 
+		index: "sister4BMissingItems", 
+		text: "", 
+		requirements: `
+			?trust sister 4;
+			?location homeSisterRoom;
+			?flag player sister4A;
+			!flag player sister4B;
+			!item horse toy;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "sister", 
+		index: "sister4BMissingItems", 
+		text: "", 
+		requirements: `
+			?trust sister 4;
+			?location homeSisterRoom;
+			?flag player sister4A;
+			!flag player sister4B;
+			!item stretchy taffy;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "sister", 
+		index: "sister4fail", 
+		text: "", 
+		requirements: `
+			?trust sister 4;
+			?location homeSisterRoom;
+			?flag player sister4B;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "sister", 
+		index: "sister5", 
+		text: "", 
+		requirements: `
+			?trust sister 5;
+			?location homeSisterRoom;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+
+	{character: "friend", 
+		index: "friend0Fail", 
+		text: "", 
+		requirements: `
+			?trust friend 0;
+			?location school;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "friend", 
+		index: "friend1", 
+		text: "", 
+		requirements: `
+			?trust friend 1;
+			?location school;
+			!flag player friend1;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "friend", 
+		index: "friend1Fail", 
+		text: "", 
+		requirements: `
+			?trust friend 1;
+			?location school;
+			?flag player friend1;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "friend", 
+		index: "friend2A", 
+		text: "", 
+		requirements: `
+			?trust friend 2;
+			?location school;
+			!flag player friend2A;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "friend", 
+		index: "friend2B", 
+		text: "", 
+		requirements: `
+			?trust friend 2;
+			?location school;
+			?flag player friend2A;
+			!flag player friend2B;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "friend", 
+		index: "friend2Fail", 
+		text: "", 
+		requirements: `
+			?trust friend 2;
+			?location school;
+			?flag player friend2B;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "friend", 
+		index: "friend3", 
+		text: "", 
+		requirements: `
+			?trust friend 3;
+			?location school;
+			!flag player friend3;
+			?item caramel melts;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "friend", 
+		index: "friend3MissingItems", 
+		text: "", 
+		requirements: `
+			?trust friend 3;
+			?location school;
+			!flag player friend3;
+			!item caramel melts;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+
+	{character: "teacher", 
+		index: "teacher0Fail", 
+		text: "", 
+		requirements: `
+			?trust teacher 0;
+			?location classroom;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "teacher", 
+		index: "teacher1", 
+		text: "", 
+		requirements: `
+			?trust teacher 1;
+			?location classroom;
+			!flag player teacher1;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "teacher", 
+		index: "teacher1fail", 
+		text: "", 
+		requirements: `
+			?trust teacher 1;
+			?location classroom;
+			?flag player teacher1;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "teacher", 
+		index: "teacher2", 
+		text: "", 
+		requirements: `
+			?trust teacher 2;
+			?location classroom;
+			!flag player teacher2;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "teacher", 
+		index: "teacher2fail", 
+		text: "", 
+		requirements: `
+			?trust teacher 2;
+			?location classroom;
+			?flag player teacher2;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "teacher", 
+		index: "teacher3", 
+		text: "", 
+		requirements: `
+			?trust teacher 3;
+			?location classroom;
+			!flag player teacher3;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "teacher", 
+		index: "teacher3fail", 
+		text: "", 
+		requirements: `
+			?trust teacher 3;
+			?location classroom;
+			?flag player teacher3;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "teacher", 
+		index: "teacher4", 
+		text: "", 
+		requirements: `
+			?trust teacher 4;
+			?location classroom;
+			!flag player teacher4;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "teacher", 
+		index: "teacher4fail", 
+		text: "", 
+		requirements: `
+			?trust teacher 4;
+			?location classroom;
+			?flag player teacher4;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "teacher", 
+		index: "teacher5", 
+		text: "", 
+		requirements: `
+			?trust teacher 5;
+			?location classroom;
+			!flag player teacher5;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "teacher", 
+		index: "teacher5fail", 
+		text: "", 
+		requirements: `
+			?trust teacher 5;
+			?location classroom;
+			?flag player teacher5;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+
+	{character: "chef", 
+		index: "chef0Fail", 
+		text: "", 
+		requirements: `
+			?trust chef 0;
+			?location restaurant;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "chef", 
+		index: "chef1", 
+		text: "", 
+		requirements: `
+			?trust chef 1;
+			?location restaurant;
+			!flag player chef1;
+			?item creamer;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "chef", 
+		index: "chef1MissingItems", 
+		text: "", 
+		requirements: `
+			?trust chef 1;
+			?location restaurant;
+			!flag player chef1;
+			!item creamer;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "chef", 
+		index: "chef1Fail", 
+		text: "", 
+		requirements: `
+			?trust chef 1;
+			?location restaurant;
+			?flag player chef1;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "chef", 
+		index: "chef2", 
+		text: "", 
+		requirements: `
+			?trust chef 2;
+			?location restaurant;
+			!flag player chef2;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "chef", 
+		index: "chef2Fail", 
+		text: "", 
+		requirements: `
+			?trust chef 2;
+			?location restaurant;
+			?flag player chef2;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "chef", 
+		index: "chef3", 
+		text: "", 
+		requirements: `
+			?trust chef 3;
+			?location restaurant;
+			!flag player chef3;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "chef", 
+		index: "chef3Fail", 
+		text: "", 
+		requirements: `
+			?trust chef 3;
+			?location restaurant;
+			?flag player chef3;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+
+	{character: "office", 
+		index: "office0Fail", 
+		text: "", 
+		requirements: `
+			?trust office 0;
+			?location alleyway;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "office", 
+		index: "office1", 
+		text: "", 
+		requirements: `
+			?trust office 1;
+			?location alleyway;
+			!flag player office1;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "office", 
+		index: "office1Fail", 
+		text: "", 
+		requirements: `
+			?trust office 1;
+			?location alleyway;
+			?flag player office1;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "office", 
+		index: "office2A", 
+		text: "", 
+		requirements: `
+			?trust office 2;
+			?location alleyway;
+			!flag player office2A;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "office", 
+		index: "office2B", 
+		text: "", 
+		requirements: `
+			?trust office 2;
+			?location alleyway;
+			?flag player office2A;
+			!flag player office2B;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "office", 
+		index: "office2Fail", 
+		text: "", 
+		requirements: `
+			?trust office 2;
+			?location alleyway;
+			?flag player office2B;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "office", 
+		index: "office3", 
+		text: "", 
+		requirements: `
+			?trust office 3;
+			?location alleyway;
+			!flag player office3;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+	{character: "office", 
+		index: "office3Fail", 
+		text: "", 
+		requirements: `
+			?trust office 3;
+			?location alleyway;
+			?flag player office3;
+		`, altName: "", altImage: "", altColor: "", type: "", top: 55, left: 60,
+	},
+];
+
+var corruptionDomArray = [
+	{character: "mom",
+		index: "momCorruption0",
+		text: "Start implementing your plan with the app.",
+		requirements: `
+			?trust mom 0;
+		`,
+	},
+	{character: "mom",
+		index: "momCorruption1",
+		text: "Reduce your mother's self control.",
+		requirements: `
+			?trust mom 1;
+			?flag player mom1;
+		`,
+	},
+	{character: "mom",
+		index: "momCorruption2",
+		text: "Turn up your mother's libido.",
+		requirements: `
+			?trust mom 2;
+			?flag player mom2;
+			?skill 2;
+		`,
+	},
+	{character: "mom",
+		index: "momCorruption2Fail",
+		text: "You don't have the skill to corrupt your mother further right now.",
+		requirements: `
+			?trust mom 2;
+			?flag player mom2;
+			!skill 2;
+		`,
+	},
+	{character: "mom",
+		index: "momCorruption3",
+		text: "Transform your mother into more of a proper maid.",
+		requirements: `
+			?trust mom 3;
+			?flag player mom3;
+		`,
+	},
+
+	{character: "sister",
+		index: "sisterCorruption1",
+		text: "Turn up sisterF's anal fixation.",
+		requirements: `
+			?trust sister 1;
+			?flag player sister1;
+		`,
+	},
+	{character: "sister",
+		index: "sisterCorruption2",
+		text: "Make sisterF more open to your advances.",
+		requirements: `
+			?trust sister 2;
+			?flag player sister2;
+			?skill 2;
+		`,
+	},
+	{character: "sister",
+		index: "sisterCorruption2Fail",
+		text: "",
+		requirements: `
+			?trust sister 2;
+			?flag player sister2;
+			!skill 2;
+		`,
+	},
+	{character: "sister",
+		index: "sisterCorruption3",
+		text: "Prepare sisterF for more fun.",
+		requirements: `
+			?trust sister 3;
+			?flag player sister3;
+		`,
+	},
+	{character: "sister",
+		index: "sisterCorruption4",
+		text: "Open up ` + data.story.sisterName + ` to the idea of family play.",
+		requirements: `
+			?trust sister 4;
+			?flag player sister4B;
+		`,
+	},
+
+	{character: "friend",
+		index: "friendCorruption0",
+		text: "Check friendF's statistics.",
+		requirements: `
+			?trust friend 0;
+		`,
+	},
+	{character: "friend",
+		index: "friendCorruption1",
+		text: "Make proof of the app to show friendF.",
+		requirements: `
+			?trust friend 1;
+			?flag player friend1;
+			?skill 2;
+		`,
+	},
+	{character: "friend",
+		index: "friendCorruption1Fail",
+		text: "You don't have the skill to safely prove the app's power to friendF right now.",
+		requirements: `
+			?trust friend 1;
+			?flag player friend1;
+			!skill 2;
+		`,
+	},
+	{character: "friend",
+		index: "friendCorruption2",
+		text: "Ask friendF what she'd do with the app.",
+		requirements: `
+			?trust friend 2;
+			?flag player friend2B;
+		`,
+	},
+	{character: "friend",
+		index: "friendCorruption3",
+		text: "Chat with friendF and brainstorm ideas.",
+		requirements: `
+			?trust friend 3;
+			?flag player friend3;
+		`,
+	},
+	{character: "friend",
+		index: "friendCorruption4",
+		text: "Check up on friendF",
+		requirements: `
+			?trust friend 4;
+			?flag player friend4;
+			?skill 3;
+		`,
+	},
+	{character: "friend",
+		index: "friendCorruption4Fail",
+		text: "",
+		requirements: `
+			?trust friend 1;
+			?flag player friend1;
+			!skill 3;
+		`,
+	},
+
+	{character: "teacher",
+		index: "teacherCorruption1",
+		text: "Tweak teacherF's suggestibility",
+		requirements: `
+			?trust teacher 1;
+			?flag player teacher1;
+			?skill 2;
+		`,
+	},
+	{character: "teacher",
+		index: "teacherCorruptionFail",
+		text: "",
+		requirements: `
+			?trust teacher 2;
+			?flag player teacher2;
+			!skill 2;
+		`,
+	},
+	{character: "teacher",
+		index: "teacherCorruption2",
+		text: "Mess with the class's common sense.",
+		requirements: `
+			?trust teacher 2;
+			?flag player teacher2;
+		`,
+	},
+	{character: "teacher",
+		index: "teacherCorruption3",
+		text: "Check out teacherF's private life.",
+		requirements: `
+			?trust teacher 3;
+			?flag player teacher3;
+		`,
+	},
+	{character: "teacher",
+		index: "teacherCorruption4",
+		text: "Let the whole class use teacherF (Watersports warning, optional content!)",
+		requirements: `
+			?trust teacher 4;
+			?flag player teacher4;
+			?skill 3;
+		`,
+	},
+	{character: "teacher",
+		index: "teacherCorruptionFail",
+		text: "",
+		requirements: `
+			?trust teacher 2;
+			?flag player teacher2;
+			!skill 3;
+		`,
+	},
+
+	{character: "chef",
+		index: "chefCorruption0",
+		text: "Help chefF de-stress.",
+		requirements: `
+			?trust chef 0;
+		`,
+	},
+	{character: "chef",
+		index: "chefCorruption1",
+		text: "Check up on chefF.",
+		requirements: `
+			?trust chef 1;
+			?flag player chef1;
+		`,
+	},
+	{character: "chef",
+		index: "chefCorruption2",
+		text: "Make chefF a little less dependent.",
+		requirements: `
+			?trust chef 2;
+			?flag player chef2;
+		`,
+	},
 	
-	{character: "sister", index: "sister0", text: "sisterF is here", 
-	requirements: "?location homeSisterRoom; ?trust sister 0;", 
-	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
-	{character: "sister", index: "sister1", text: "sisterF is here", 
-	requirements: "?location homeSisterRoom; ?trust sister 1; ?flag sister ready;", 
-	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
-	{character: "sister", index: "sister1Fail", text: "sisterF is here", 
-	requirements: "?location homeSisterRoom; ?trust sister 1; !flag sister ready;", 
-	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
-	
-	{character: "sister", index: "sister2", text: "sisterF is here", 
-	requirements: "?location homeSisterRoom; ?trust sister 2; ?flag sister ready; ?item adultToy;", 
-	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
-	{character: "sister", index: "sister2NoItem", text: "You don't have what you need right now.", 
-	requirements: "?location homeSisterRoom; ?trust sister 2; ?flag sister ready; !item adultToy;", 
-	altName: "", altImage: "", altColor: "", type: "message", top: 0, left: 0,},
-	{character: "sister", index: "sister2Fail", text: "sisterF is here", 
-	requirements: "?location homeSisterRoom; ?trust sister 2; !flag sister ready;", 
-	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
-	{character: "sister", index: "sister2Fail", text: "sisterF is here", 
-	requirements: "?location homeSisterRoom; ?trust sister 2; !flag sister ready;", 
-	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
-	
-	{character: "sister", index: "sister3", text: "sisterF is here", 
-	requirements: "?location homeSisterRoom; ?trust sister 3; ?flag sister ready;", 
-	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
-	{character: "sister", index: "sister3Fail", text: "sisterF is here", 
-	requirements: "?location homeSisterRoom; ?trust sister 3; !flag sister ready;", 
-	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
-	
-	{character: "sister", index: "sister4", text: "sisterF is here", 
-	requirements: "?location homeSisterRoom; ?trust sister 4; ?flag sister ready; ?item plugPop; !flag sister sister4;", 
-	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
-	{character: "sister", index: "sister4NoItem", text: "sisterF is here", 
-	requirements: "?location homeSisterRoom; ?trust sister 4; ?flag sister ready; !item plugPop; !flag sister sister4;", 
-	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
-	{character: "sister", index: "sister5", text: "sisterF is here", 
-	requirements: "?location homeSisterRoom; ?trust sister 4; ?flag sister ready; ?item horseToy; ?item stretchTaffy; ?flag sister sister4;", 
-	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
-	{character: "sister", index: "sister5NoItem", text: "You don't have what you need right now.", 
-	requirements: "?location homeSisterRoom; ?trust sister 4; ?flag sister ready; !item horseToy; ?item stretchTaffy; ?flag sister sister4;", 
-	altName: "", altImage: "", altColor: "", type: "message", top: 0, left: 0,},
-	{character: "sister", index: "sister5NoItem", text: "You don't have what you need right now.", 
-	requirements: "?location homeSisterRoom; ?trust sister 4; ?flag sister ready; ?item horseToy; !item stretchTaffy; ?flag sister sister4;", 
-	altName: "", altImage: "", altColor: "", type: "message", top: 0, left: 0,},
-	{character: "sister", index: "sister5NoItem", text: "You don't have what you need right now.", 
-	requirements: "?location homeSisterRoom; ?trust sister 4; ?flag sister ready; !item horseToy; !item stretchTaffy; ?flag sister sister4;", 
-	altName: "", altImage: "", altColor: "", type: "message", top: 0, left: 0,},
-	{character: "sister", index: "sister5Fail", text: "sisterF is here", 
-	requirements: "?location homeSisterRoom; ?trust sister 4; !flag sister ready;", 
-	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
-	{character: "sister", index: "sisterQuo", text: "sisterF is here", 
-	requirements: "?location homeSisterRoom; ?trust sister 5;", 
-	altName: "", altImage: "", altColor: "", type: "", top: 0, left: 0,},
+	{character: "office",
+		index: "officeCorruption0",
+		text: "Brainstorm ideas for what to do to officeF.",
+		requirements: `
+			?trust office 0;
+			?skill 2;
+		`,
+	},
+	{character: "office",
+		index: "officeCorruptionFail",
+		text: "",
+		requirements: `
+			?trust office 0;
+			!skill 2;
+		`,
+	},
+	{character: "office",
+		index: "officeCorruption1",
+		text: "Sluttify officeF further.",
+		requirements: `
+			?trust office 1;
+			?flag player office1;
+		`,
+	},
+	{character: "office",
+		index: "officeCorruption2",
+		text: "Change officeF's goals in life.",
+		requirements: `
+			?trust office 2B;
+			?flag player office2;
+		`,
+	},
+	{character: "office",
+		index: "officeCorruptionFail",
+		text: "",
+		requirements: `
+			?trust office 0;
+			!skill 3;
+		`,
+	},
 ];
 
 var locationArray = [
@@ -799,6 +1551,7 @@ var shopArray = [
 //Startup & Systems config
 
 function startup() {
+	basicDefinitions();
 	generateHTML();
 	saveSlot(11);
 	wrapper.scrollTop = 0;
@@ -808,6 +1561,13 @@ function startup() {
 	}
 	else{
 		sceneTransition('start');
+	}
+}
+
+function basicDefinitions() {
+	var quickVar = "";
+	for (defIndex = 0; defIndex < data.story.length; defIndex++) {
+		writeHTML(`define `+data.story[defIndex].index+` = sp `+data.story[defIndex].index+`;`);
 	}
 }
 
@@ -905,38 +1665,59 @@ function checkTrust(name) {
 
 function addFlag(character, flag) {
 	console.log(character+flag);
-	for (flagIndex = 0; flagIndex < data.story.length; flagIndex++) {
-		if (data.story[flagIndex].index == character) {
-			if (data.story[flagIndex].flags.includes(flag) == false) {
-				console.log('adding the flag named '+flag+' to '+character);
-				data.story[flagIndex].flags += flag;
+	if (character == "player") {
+		data.player.flags += flag;
+	}
+	else {
+		for (flagIndex = 0; flagIndex < data.story.length; flagIndex++) {
+			if (data.story[flagIndex].index == character) {
+				if (data.story[flagIndex].flags.includes(flag) == false) {
+					console.log('adding the flag named '+flag+' to '+character);
+					data.story[flagIndex].flags += flag;
+				}
 			}
 		}
 	}
 }
 
 function removeFlag(character, flag) {
-	for (flagIndex = 0; flagIndex < data.story.length; flagIndex++) {
-		if (data.story[flagIndex].index == character) {
-			if (data.story[flagIndex].flags.includes(flag) == true) {
-				console.log('Removing flag '+flag+' from '+character);
-				data.story[flagIndex].flags = data.story[flagIndex].flags.replace(flag, "");
-			}
-			else {
-				console.log('error! flag '+flag+' not found!');
+	if (character == "player") {
+		console.log('Removing flag '+flag+' from '+character);
+		data.player.flags = data.player.flags.replace(flag, "");
+	}
+	else {
+		for (flagIndex = 0; flagIndex < data.story.length; flagIndex++) {
+			if (data.story[flagIndex].index == character) {
+				if (data.story[flagIndex].flags.includes(flag) == true) {
+					console.log('Removing flag '+flag+' from '+character);
+					data.story[flagIndex].flags = data.story[flagIndex].flags.replace(flag, "");
+				}
+				else {
+					console.log('error! flag '+flag+' not found!');
+				}
 			}
 		}
 	}
 }
 
 function checkFlag(character, flag) {
-	for (flagIndex = 0; flagIndex < data.story.length; flagIndex++) {
-		if (data.story[flagIndex].index == character) {
-			if (data.story[flagIndex].flags.includes(flag) == true) {
-				return true;
-			}
-			else {
-				return false;
+	if (character == "player") {
+		if (data.player.flags.includes(flag) == true) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	else {
+		for (flagIndex = 0; flagIndex < data.story.length; flagIndex++) {
+			if (data.story[flagIndex].index == character) {
+				if (data.story[flagIndex].flags.includes(flag) == true) {
+					return true;
+				}
+				else {
+					return false;
+				}
 			}
 		}
 	}
@@ -1393,7 +2174,7 @@ function checkRequirements(string) {
 		}
 		string = string.replace(`?flag player `+check+`;`, ``);
 	}
-	while (string.includes("!flag player ") == true) {
+	while (string.includes("!flag ") == true) {
 		var check = string.split(`!flag player `).pop().split(`;`)[0];
 		if (data.player.flags.includes(check) == true) {
 			finalResult = false;
@@ -1453,7 +2234,7 @@ function checkRequirements(string) {
 			string = string.replace(`?flag `+corruptionTarget+` `+check+`;`, ``);
 		}
 	}
-	if (finalResult == true) {
+	if (finalResult == true || string.includes("define ") == true && string.includes("=") == true) {
 		return true;
 	}
 	else {
@@ -1801,7 +2582,21 @@ function checkForEncounters() {
 						break;
 					}
 					case "message": {
-						writeText(encounterDomArray[encounterIndex].text);
+						var printedText = encounterDomArray[encounterIndex].text;
+						if (printedText == "") {
+							if (printedText.includes("Fail") == true) {
+								printedText = encounterDomArray[encounterIndex].character+"F is here, although you haven't corrupted her further yet.";
+							}
+							else {
+								if (printedText.includes("MissingItems") == true) {
+									printedText = encounterDomArray[encounterIndex].character+"F is here, but you're missing something you need to take advantage of her corruption."
+								}
+								else {
+									printedText = encounterDomArray[encounterIndex].character+"F is here.";
+								}
+							}
+						}
+						writeText(printedText);
 						break;
 					}
 					default: {
@@ -1836,7 +2631,19 @@ function checkForEncounters() {
 						break;
 					}
 					case "message": {
-						writeText(encounterSubArray[encounterIndex].text);
+						var printedText = encounterDomArray[encounterIndex].text;
+						if (printedText.includes("Fail") == true) {
+							printedText = character+"F is here, although you haven't corrupted her further yet.";
+						}
+						else {
+							if (printedText.includes("MissingItems") == true) {
+								printedText = character+"F is here, but you're missing something you need to take advantage of her corruption."
+							}
+							else {
+								printedText = character+"F is here.";
+							}
+						}
+						writeText(printedText);
 						break;
 					}
 					default: {
@@ -1855,7 +2662,52 @@ function checkForEncounters() {
 	}
 }
 
+function checkForCorruptions(name) {
+	console.log(name);
+	for (trustIndex = 0; trustIndex < data.story.length; trustIndex++) {
+		if (data.story[trustIndex].index == name) {
+			writeMed("scripts/gamefiles/characters/"+name+data.story[trustIndex].outfit+".jpg");
+			writeCenteredText("<b>"+data.story[trustIndex].name+"</b>");
+			var girlName = data.story[trustIndex].name;
+		}
+	}
+	if (data.player.route == "dom") {
+		for (corruptionIndex = 0; corruptionIndex < corruptionDomArray.length; corruptionIndex++) {
+			//console.log(corruptionDomArray[corruptionIndex].requirements);
+			var requirements = checkRequirements(corruptionDomArray[corruptionIndex].requirements);
+			if (requirements != false && corruptionDomArray[corruptionIndex].character == name) {
+				console.log(requirements);
+				var finalText = corruptionDomArray[corruptionIndex].text;
+				if (corruptionDomArray[corruptionIndex].index.includes("Fail") == true) {
+					if (finalText == "") {
+						finalText = "You don't have the skill to corrupt "+girlName+" further."
+					}
+					writeCenteredText(finalText);
+				}
+				else {
+					writeFunction("sceneTransition('"+corruptionDomArray[corruptionIndex].index+"')", replaceCodenames(finalText));
+				}
+			}
+		}
+	}
+	else {
+	}
+}
+
 function printEncounterTab(character, scene, text, altName, altImage, altColor) {
+	if (text == "") {
+		if (scene.includes("Fail") == true) {
+			text = character+"F is here, although you haven't corrupted her further yet.";
+		}
+		else {
+			if (scene.includes("MissingItems") == true) {
+				text = character+"F is here, but you're missing something you need to take advantage of her corruption."
+			}
+			else {
+				text = character+"F is here.";
+			}
+		}
+	}
 	console.log("Now generating tab for " + character + ", linking to scene " + scene + " with the text " + text + " " +altImage);
 	writeSpeech(character, altImage, `
 	<p class="switch" onclick="sceneTransition('`+scene+`')">` + replaceCodenames(text) + `</p>`,
@@ -1867,25 +2719,54 @@ function writeHTML(text) {
 	var lines = text.split('\n');
 	//For each of these lines
 	for(var lineCounter = 0;lineCounter < lines.length;lineCounter++){
-		console.info("Now testing line "+lineCounter+", contents reading"+ lines[lineCounter]);
 		//Remove all tabs from the line, in case we use tab spacing
 		while (lines[lineCounter].includes('\t') == true) {
 			lines[lineCounter] = lines[lineCounter].replace(`\t`, ``);
 		}
-		//Check for requirements
-		var requirements = checkRequirements(lines[lineCounter]);
 		//If the line is not empty (we don't want to print empty lines)
-		if (lines[lineCounter] != "" && requirements != false) {
+		if (lines[lineCounter] != "" && checkRequirements(lines[lineCounter]) == true) {
 			//Grab the first word of the line to use as the command
-			var command = lines[lineCounter].replace(/ .*/,"");
+			var command = lines[lineCounter].replace(/ .*/,'');
 			//Depending on which command, execute different code. Convert the command to lowercase as well in case we used Sp instead of sp, as js is case-sensitive.
+			if (command == "b") {
+				writeText("<span style='color:red'>Warning! This is a depreciated shortcut! Please let noodle jacuzzi that the character "+character.index+" uses: '"+lines[lineCounter]+"'");
+			}
+			for (i = 0; i < definitionArray.length; i++) {
+				if (command.toLowerCase() == definitionArray[i].shortcut) {
+					lines[lineCounter] = lines[lineCounter].replace(definitionArray[i].shortcut, definitionArray[i].result);
+				}
+				//console.log("Shortcut replaced, line is now "+lines[lineCounter]);
+			}
+			var command = lines[lineCounter].replace(/ .*/,'');
 			switch (command.toLowerCase()) {
+				case "define": {
+					//Remove the command from the line we actually want to print.
+					var definitionShortcut = lines[lineCounter].split(`define `).pop().split(` = `)[0];
+					lines[lineCounter] = lines[lineCounter].replace(`define `+definitionShortcut+` = `, ``);
+					var definitionResult = lines[lineCounter];
+					var overWrite = false;
+					for (i = 0; i < definitionArray.length; i++) {
+						if (definitionArray[i].shortcut == definitionShortcut) {
+							overWrite = true;
+							definitionArray[i].shortcut = definitionShortcut;
+							definitionArray[i].result = definitionResult;
+						}
+					}
+					if (overWrite == false) {
+						var definition = {shortcut: definitionShortcut, result: definitionResult};
+						definitionArray.push(definition);
+					}
+					console.log("Now writing definition statement, using shortcut "+definitionShortcut+" for result "+definitionResult+", overwrite value is "+overWrite);
+					break;
+				}
 				//If the command is "t"
 				case "t": {
 					//Remove the command from the line we actually want to print.
 					lines[lineCounter] = lines[lineCounter].replace(command+` `, ``);
 					//Execute the writeText command to print everything left to the screen.
-					writeText(cullRequirements(lines[lineCounter]));
+					if (checkRequirements(lines[lineCounter]) == true) {
+						writeText(lines[lineCounter]);
+					}
 					//Don't execute any of the below switch cases.
 					break;
 				}
@@ -1919,8 +2800,9 @@ function writeHTML(text) {
 					//Remove the command from the line we actually want to print.
 					lines[lineCounter] = lines[lineCounter].replace(command+` `+name+`; `, ``);
 					//Execute the writeSpeech command to print everything we have left.
-					//TODO: Add custom colors and custom names
-					writeSpeech(name, image, cullRequirements(lines[lineCounter]), altName, altColor);
+					if (checkRequirements(lines[lineCounter]) == true) {
+						writeSpeech(name, image, cullRequirements(lines[lineCounter]), altName, altColor);
+					}
 					break;
 				}
 				case "im": {
@@ -1937,7 +2819,7 @@ function writeHTML(text) {
 					writeBig(location, caption);
 					break;
 				}
-				case "b": {
+				case "button": {
 					//Get the label of our button
 					var name = lines[lineCounter].split(`b `).pop().split(`;`)[0];
 					//Get the function we want our button to perform
@@ -1950,7 +2832,7 @@ function writeHTML(text) {
 						var argument = "";
 					}
 					//Write the button to the screen using the information we've collected.
-					writeFunction(func+"('"+argument+"')", name)
+					writeFunction(func+"('"+argument+"')", cullRequirements(name))
 					break;
 				}
 				//This is for convenience. If the line is just an elipses, replace it with a horizontal line cutting across the screen.
@@ -2363,6 +3245,39 @@ function sceneTransition(scene) {
 	saveSlot(10);
 }
 
+function buttonGrid() {
+	document.getElementById('output').innerHTML += `
+	<div id="wardrobeGrid" style="display:grid; grid-template-columns:auto auto auto auto;">
+	</div>
+	`;
+}
+
+function addButtonToGrid(character, index) {
+	for (trustIndex = 0; trustIndex < data.story.length; trustIndex++) {
+		if (data.story[trustIndex].index == character) {
+			var girlName = data.story[trustIndex].index+data.story[trustIndex].outfit;
+		}
+	}
+	document.getElementById('wardrobeGrid').innerHTML += `
+		<img class="boxButton" id="`+character+`" src="scripts/gamefiles/profiles/`+girlName+`.jpg" 
+		onclick="sceneTransition('`+index+`')",
+		onmouseover="wardrobeMouseOver('`+character+`')"
+		onmouseout="wardrobeMouseOut('`+character+`')">
+	`;
+}
+
+function wardrobeMouseOver(wardrobeImage) {
+	//console.log(document.getElementById(wardrobeImage).style.filter)
+	document.getElementById(wardrobeImage).style.filter = "brightness(100%)";
+	document.getElementById(wardrobeImage).style.boxShadow = "-5px 5px green";
+}
+
+function wardrobeMouseOut(wardrobeImage) {
+	//console.log(document.getElementById(wardrobeImage).style.filter)
+	document.getElementById(wardrobeImage).style.filter = "brightness(50%)"
+	document.getElementById(wardrobeImage).style.boxShadow = "-5px 5px grey";
+}
+
 //Creating & Deleting windows
 
 function deleteWindow() {
@@ -2396,6 +3311,22 @@ function generateWindow(type) {
 				<div id = "windowList" class="saveList">
 				</div>
 			`;
+			document.getElementById('windowList').innerHTML += `
+				<div class = "saveSlot">
+					<p id = "save109Name" class = "saveName">Manual</p>
+					<p id = "save109Button" class = "saveFileButton button" onclick = "saveTXT()">Save to .noodle file</p>
+					<input type="file" id="loadFile" onload="fileLoaded()" class = "loadFileButton button" onchange = "loadSave()"></input>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save9Name" class = "saveName">String</p>
+					<p id = "load9Button" class = "loadFileButton button" onclick = "loadString()">Load from text string</p>
+					<p id = "save9Button" class = "saveFileButton button" onclick = "saveString()">Save to text string</p>
+				</div>
+				<div class = "saveSlot">
+					<p id = "save9Name" class = "saveName">Auto</p>
+					<p class = "loadFileButton button" onClick="window.location.reload();">The game autosaves regularly while cookies are enabled. Refresh the page to load the autosave anytime.</p>
+				</div>
+			`;
 			for (saveCounter = 1; saveCounter < 9; saveCounter++) {
 				document.getElementById('windowList').innerHTML += `
 				<div class = "saveSlot">
@@ -2407,26 +3338,6 @@ function generateWindow(type) {
 				</div>
 				`;
 			}
-			document.getElementById('windowList').innerHTML += `
-				<div class = "saveSlot">
-					<p id = "save9Name" class = "saveName">Manual</p>
-					<!-- <p id = "load9Button" class = "loadFileButton button" onclick = "loadFile()">Load from text string</p>
-					<!-- <p id = "delete9Button" class = "deleteButton button" onclick = "deleteSlot(9)"></p> -->
-					<!-- <p id = "save9Button" class = "saveFileButton button" onclick = "saveFile()">Save to text string</p> -->
-					<p id = "save9Button" class = "saveFileButton button" onclick = "saveToFile()">Save to .txt file</p>
-					<input type="file" id="loadFile" onload="fileLoaded()" class = "loadFileButton button" onchange = "loadSave()"></input>
-				</div>
-				<div class = "saveSlot">
-					<p id = "save9Name" class = "saveName">String</p>
-					<p id = "load9Button" class = "loadFileButton button" onclick = "loadString()">Load from text string</p>
-					<!-- <p id = "delete9Button" class = "deleteButton button" onclick = "deleteSlot(9)"></p> -->
-					<p id = "save9Button" class = "saveFileButton button" onclick = "saveString()">Save to text string</p>
-				</div>
-				<div class = "saveSlot">
-					<p id = "save9Name" class = "saveName">Auto</p>
-					<p class = "loadFileButton button" onClick="window.location.reload();">The game autosaves regularly. Refresh the page to load the autosave anytime.</p>
-				</div>
-			`;
 			generateSave();
 			break;
 		}
@@ -2471,7 +3382,7 @@ function generateWindow(type) {
 		}
 		case "wardrobe": {
 			document.getElementById('window').innerHTML += `
-				<h1 class = "windowTitle" onclick="deleteWindow()">Inventory</h1>
+				<h1 class = "windowTitle" onclick="deleteWindow()">WARDROBE</h1>
 				<div id = "gridInventory" class="gridInventory">
 				</div>
 			`;
@@ -3052,6 +3963,7 @@ function unlockScene(n) {
 	if (unlockedScene != "") {
 		data.gallery.push(unlockedScene);
 		writeSpecial("You unlocked a new scene in the gallery!");
+		addFlag("player", n);
 	}
 	else {
 		console.log("Unlocking error, no scene named "+n+" found.");

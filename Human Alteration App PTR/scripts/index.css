@@ -91,6 +91,7 @@ hr {
 /**** Menu ****/
 div#menu {
     width: 35%;
+    max-width: 400px;
     height: 100%;
     flex:none;
     border-right: 2px solid;
@@ -882,6 +883,16 @@ img.textThumbLobotomy {
     content: '\027A4';
     padding-right: 5px;
 	cursor: pointer;
+}
+
+img.boxButton {
+    height: 150px;
+    width: 150px;
+    border-radius: 15px;
+	margin-bottom: 15px;
+    box-shadow: -5px 5px grey;
+    flex: none;
+	filter: brightness(70%);
 }
 
 /*Persona Schema*/
