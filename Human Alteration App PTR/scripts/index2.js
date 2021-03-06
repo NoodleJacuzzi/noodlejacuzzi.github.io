@@ -124,7 +124,7 @@ var detailDomArray = [
 	
 	{index: "sister", element: "otherClothes", 
 	requirements: "?trust sister 0;", 
-	desc: "Her preferred outfit is a <span class = 'selfSwitch' onclick = 'selfImage(`images/real/clothes/yogatop.jpg`)'>thin tank top and some yoga pants.</span>"},
+	desc: "Her preferred outfit is a <span class = 'selfSwitch' onclick = 'selfImage(`images/real/clothes/yogaTop.jpg`)'>thin tank top and some yoga pants.</span>"},
 	{index: "sister", element: "otherClothes", 
 	requirements: "?trust sister 3;", 
 	desc: "She's been wearing skimpier outfits lately. Today, she's wearing a <span class = 'selfSwitch' onclick = 'selfImage(`images/real/clothes/shorts.jpg`)'>thin top and even thinner shorts.</span>"},
@@ -138,7 +138,7 @@ var detailDomArray = [
 	
 	{index: "sister", element: "otherJunk", 
 	requirements: "?trust sister 0;", 
-	desc: "Lounging around the house, she's caught you staring at her <span class = 'selfSwitch' onclick = 'selfImage(`images/real/clothes/yogapants.jpg`)'>ass in yoga pants a few times</span>"},
+	desc: "Lounging around the house, she's caught you staring at her <span class = 'selfSwitch' onclick = 'selfImage(`images/real/clothes/yogaPants.jpg`)'>ass in yoga pants a few times</span>"},
 	{index: "sister", element: "otherJunk", 
 	requirements: "?trust sister 2;", 
 	desc: "Lately, you notice that her <span class = 'selfSwitch' onclick = 'selfImage(`images/real/underwear/yoga1.jpg`)'>yoga pants</span> have been getting tighter and tighter."},
@@ -535,9 +535,9 @@ var galleryArray = [
 	{index: 'teacher4', name: "Extracurricular Fun", hint: 'Teacher corruption level 4 (requires skill level of master). Talk to her during the day.'},
 	{index: 'teacher5', name: "Bathroom Duty", hint: 'Watersports content! Teacher corruption level 5. Talk to her during the day.'},
 	{index: 'office1', name: "Hidden Fantasy", hint: 'Office woman corruption level 1 (requires skill level of advanced). Talk to her during the day.'},
-	{index: 'office2', name: "Left Overnight", hint: 'Office woman corruption level 2. Talk to her during the day.'},
-	{index: 'office3', name: "Checkup", hint: 'Office woman corruption level 2. Talk to her again after the Left Overnight event.'},
-	{index: 'office4', name: "Permanent Fixture", hint: 'Office woman corruption level 3 (requires skill level of master). Talk to her during the day.'},
+	{index: 'office2A', name: "Left Overnight", hint: 'Office woman corruption level 2. Talk to her during the day.'},
+	{index: 'office2B', name: "Checkup", hint: 'Office woman corruption level 2. Talk to her again after the Left Overnight event.'},
+	{index: 'office3', name: "Permanent Fixture", hint: 'Office woman corruption level 3 (requires skill level of master). Talk to her during the day.'},
 	{index: 'chef1', name: "Creamer", hint: 'Coffee shop owner corruption level 1. Requires Creamer. Talk to her during the day.'},
 	{index: 'chef2', name: "From the Tap", hint: 'Coffee shop owner corruption level 2. Talk to her during the day.'},
 	{index: 'chef3', name: "Restaurant's Closed", hint: 'Coffee shop owner corruption level 3. Talk to her during the day.'},
@@ -1592,15 +1592,17 @@ var corruptionDomArray = [
 		index: "officeCorruption2",
 		text: "Change officeF's goals in life.",
 		requirements: `
-			?trust office 2B;
-			?flag player office2;
+			?trust office 2;
+			?flag player office2B;
+			?skill 3;
 		`,
 	},
 	{character: "office",
 		index: "officeCorruptionFail",
 		text: "",
 		requirements: `
-			?trust office 0;
+			?trust office 2;
+			?flag player office2B;
 			!skill 3;
 		`,
 	},

@@ -2186,6 +2186,7 @@ function writeScene(scene) {
 		case "clothes2": {
 			writeEvent(scene);
 			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
 		}
 		//Dom route candy shop stuff
 		case "candyCorruptionHub": {
