@@ -216,8 +216,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 				}
 				else if(checkTrust('meji') == 22 || checkTrust('meji') == 42){
 					if(data.player.hypnosis < 2){
-						writeText("You can see " +fName('meji')+ " up ahead with his friends. Unfortunately, you can't really help him just yet.");
-						writeText("Maybe the shopping district might have something to help? Their stock is pretty... <i>varied.</i>");
+						writeText("You can see " +fName('meji')+ " up ahead with his friends. Unfortunately, you can't really help him just yet - you'll need to improve your hypnotic abilities somehow.");
+						writeText("Maybe the shopping district might have something to help? Their stock is pretty... <i>varied.</i> That, or you could see if there's anything in the school library that might help?");
 						writeFunction("changeLocation(data.player.location)", "Leave him be for now");
 						break;
 					}
@@ -1282,6 +1282,21 @@ function writeEncounter(name) { //Plays the actual encounter.
 			if(checkFlag('succubus', 'newCorruption') && !checkFlag('meji','corrupt')){
 				writeText("You could probably bring up the corruption...");
 				writeFunction("writeEncounter('mejiCorruptionPrompt')", "Talk to mejiF about corruption");
+			}
+			if(checkTrust('nagatoro') > 101){
+				if (checkFlag("meji", "club") != true) {
+					writeFunction("writeEncounter('mejiJoin')","Talk to him about the crossdressing club")
+				}
+				if(!galleryCheck("mejiCC1")) {
+					//writeFunction("writeEncounter('mejiCC')","Talk to him about the crossdressing club")
+				}
+				else if(!galleryCheck("mejiCC2")) {
+					//writeFunction("writeEncounter('mejiCC')","Take him to the crossdressing club again")
+					writeSpeech("meji","","Oh, and if you want to do some more stuff at the club, just give Ash a heads-up first and I'll be right over.");
+					}
+				else {
+					//writeFunction("writeEncounter('mejiCC')","Have sex in the magical girl outfit again")
+				}
 			}
 			//writeFunction("writeEncounter('mejiFinale1')", "Tell mejiF you want to train him as your assistant");
 			writeFunction("changeLocation(data.player.location)", "Leave him to his own devices for now");
@@ -2563,9 +2578,9 @@ switch (requestType) {
 					}
 				}
 				else {
-					//console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
+					console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
 					var requirements = checkRequirements(encounterArray[number].requirements);
-					//console.log(requirements);
+					console.log(requirements);
 					if (requirements != true) {
 						finalResult = false;
 					}

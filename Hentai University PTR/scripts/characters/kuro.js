@@ -31,6 +31,7 @@ var encounterArray = [//Lists encounters as they appear on the map. Nonrepeatabl
 // {index: "kuroStoodUp", name: "kuro is leaning against the fence, a lollipop in her mouth and her phone in her hand", location: 'roof', time: "Morning", itemReq: "", trustMin: 73, trustMax: 73, type: "tab", top: 0, left: 0, day: "both",},
 {index: "kuro8", name: "kuro is sitting in front of the fence, tapping her thigh with one hand and typing on her phone with the other", location: 'roof', time: "Morning", itemReq: "", trustMin: 105, trustMax: 105, type: "tab", top: 0, left: 0, day: "both",},
 {index: "kuro9", name: "kuro is sitting in front of the fence again, typing on her phone", location: 'roof', time: "Morning", itemReq: "", trustMin: 110, trustMax: 110, type: "tab", top: 0, left: 0, day: "both",},
+{index: "kuro11", name: "kuro is up against the fence again again, idly tapping on her phone", location: 'roof', time: "Morning", itemReq: "", trustMin: 200, trustMax: 200, type: "tab", top: 0, left: 0, day: "both",},
 ]
 
 function writeEncounter(name) { //Plays the actual encounter.
@@ -40,8 +41,8 @@ function writeEncounter(name) { //Plays the actual encounter.
 	for(var i = 0; i < data.story.length; i++)
 		if(data.story[i].index == 'nikki')
 			nikkiInitial = data.story[i].fName.charAt(0);
-	switch (name) {
-		case "kuro1" : {
+		switch (name) {
+			case "kuro1" : {
 			//meeting kuro
 			document.getElementById('output').innerHTML = '';
 			writeText("As you approach to investigate, you see a member of the student council leaving the other way.");
@@ -180,7 +181,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "kuro4" : {//another roof-meeting
 			document.getElementById('output').innerHTML = '';
 			if(checkTrust('kuro') < 60){
-				if((checkTrust('kuro') == 24 || checkTrust('kuro') == 25) && (galleryCheck('kuroMoney2') == true)){
+				if((checkTrust('kuro') == 24 || checkTrust('kuro') == 25) && (checkFlag('kuro','kuroMoney2Gallery') == true)){
 					writeText("Seeing you approach, kuroF smiles up at you, but quickly returns to typing on her phone.");
 					writeSpeech("player","","You look... busy?");
 					writeSpeech("kuro","","A bit, yeah. I'm <i>totes</i> swamped today. I've got this to-do list, and I've been putting off most of it, so I gotta handle it today.");
@@ -195,7 +196,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 					writeFunction("changeLocation(data.player.location)", "Leave");
 					break;
 				}
-				else if(checkTrust('kuro') < 24 && galleryCheck('kuro2') == true && galleryCheck('kuro3') == true && (data.story[1].textEvent.includes('kuroPhone3A') == true || data.story[1].textEvent.includes('kuroPhone3B') == true)){
+				else if(checkTrust('kuro') < 24 && checkFlag('kuro','kuro2Gallery') == true && checkFlag('kuro','kuro3Gallery') == true && (data.story[1].textEvent.includes('kuroPhone3A') == true || data.story[1].textEvent.includes('kuroPhone3B') == true)){
 					writeText("kuroF smiles as you approach but jolts in place a little.");
 					writeSpeech("kuro","","Heya~! Sorry, but I- <i>hic!</i>... There's been a bit of hiccup. Can you come back tomorrow? I'm- <i>hic!</i> I'm headed home early today.");
 					writeText("She darts past you, her hand over her mouth as she continues to hiccup.");
@@ -205,14 +206,17 @@ function writeEncounter(name) { //Plays the actual encounter.
 					break;
 				}
 				writeText("As you approach her, "+fName('kuro')+" looks you over, rolling another of her lollipops in her mouth.");
-				writeSpeech("kuro","","Mm, you're a little pent-up, huh? I don't mind helping out, but there's this bag I <i>almost</i> have enough for, y'know?");
-				if(galleryCheck('kuro2') != true){
+				if(checkFlag('kuro','kuro2Gallery') && checkFlag('kuro','kuro3Gallery'))
+					writeSpeech("kuro","","Hey there *Mister Counselor~ Send me that text you mentioned whenever, my phone's always receiving.")
+				else
+					writeSpeech("kuro","","Mm, you're a little pent-up, huh? I don't mind helping out, but there's this bag I <i>almost</i> have enough for, y'know?");
+				if(checkFlag('kuro','kuro2Gallery') != true){
 					writeFunction("writeEvent('kuro2')", "Another handjob ($5)"); //REMOVE IF SEEN
 				}
-				if(galleryCheck('kuro3') != true){
+				if(checkFlag('kuro','kuro3Gallery') != true){
 					writeFunction("writeEvent('kuro3')", "Jerk off on her ($10)"); //REMOVE IF SEEN
 				}
-				if((checkTrust('kuro') < 40) && (galleryCheck("kuroMoney2") != true)){ // remove if seen
+				if((checkTrust('kuro') < 40) && (checkFlag('kuro',"kuroMoney2Gallery") != true)){ // remove if seen
 					writeFunction("loadEncounter('kuro', 'kuro4a')", "Ask about sex ($?)");
 				}
 				writeFunction("changeLocation(data.player.location)", "Leave her be");
@@ -298,7 +302,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			}
 			writeText("She fiddles with her phone a bit before sliding it between her breasts.");
 			if(checkTrust('kuro')==62){
-				if(galleryCheck('kuroMoney2')==true)
+				if(checkFlag('kuro','kuroMoney2Gallery')==true)
 					writeSpeech("kuro","","You seem a bit more confident about your <i>skills</i> this time. Got some sorta secret weapon this time?");
 				else
 					writeSpeech("kuro","","You seemed pretty confident over the phone. Got some sorta <i>secret weapon</i> this time?");
@@ -326,7 +330,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("player","","With my dick.");
 			writeText("She pauses, pouting even more.");
 			writeSpeech("kuro","","I mean, that <i>is</i> what I was implying, but wasn't that a little blunt?");
-			if(galleryCheck('kuroMoney2')==true){
+			if(checkFlag('kuro','kuroMoney2Gallery')==true){
 				writeSpeech("player","","It's not like it's the first time, and I thought you said you're feeling pent-up... But, hey, if you <i>want</i> me to play hard to get-");
 				writeSpeech("kuro","","No, that's fine!");
 				writeText("She reaches around you, resting her arms on her shoulders as she puts her face right up to yours.");
@@ -387,7 +391,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She blushes which, given how hard she's been to catch off-guard, is pretty nice.");
 			writeSpeech("kuro","","Y-Yeah. I barely remember yesterday after we started fucking, but hearing you slam the door on your way out was...");
 			writeText("Her whole body shudders slightly as she remembers the sound, her legs spreading slightly.");
-			if(!galleryCheck('kuroMoney2'))
+			if(!checkFlag('kuro','kuroMoney2Gallery'))
 				writeSpeech("kuro","","If I knew you fucked like that, I wouldn't have waited this long.");
 			else
 				writeSpeech("kuro","","God, that was so much better than the first time.");
@@ -424,7 +428,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("She blushes which, given how hard she's been to catch off-guard, is pretty nice.");
 			writeSpeech("kuro","","Y-Yeah. I barely remember yesterday after we started fucking, but hearing you slam the door on your way out was...");
 			writeText("Her whole body shudders slightly as she remembers the sound, her legs spreading slightly.");
-			if(!galleryCheck('kuroMoney2'))
+			if(!checkFlag('kuro','kuroMoney2Gallery'))
 				writeSpeech("kuro","","If I knew you fucked like that, I wouldn't have waited this long.");
 			else
 				writeSpeech("kuro","","God, that was so much better than the first time.");
@@ -1157,7 +1161,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			}
 			writeText("She smirks a little.");
 			writeSpeech("kuro","","But let's skip the chem-talk, hm? It's boring enough in class, and I'd rather get to the fun stuff~");
-			if(galleryCheck('kuroMoney2') && galleryCheck('kuro7') && galleryCheck('kuro8')){
+			if(checkFlag('kuro','kuroMoney2Gallery') && checkFlag('kuro','kuro7Gallery') && checkFlag('kuro','kuro8Gallery')){
 				writeSpecial("You've completed all of kuroF's content for this version!")
 			}
 			writeFunction("writeEncounter('kuro8a')", (checkFlag('kuro','Radicool') ? "Let's get jiggy with it" : "Let's have some fun"));
@@ -1167,7 +1171,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 		}
 		case "kuro8a" : {
 			document.getElementById('output').innerHTML = '';
-			writeFunction("writeEvent('kuro7')", "Have her blow you"+((galleryCheck('kuroMoney') || galleryCheck('kuro7')) ? " again" : ""));
+			writeFunction("writeEvent('kuro7')", "Have her blow you"+((checkFlag('kuro','kuroMoneyGallery') || checkFlag('kuro','kuro7Gallery')) ? " again" : ""));
 			writeFunction("writeEvent('kuro8')", "Fuck her in a swimsuit");
 			writeFunction("writeEncounter('kuroMoneyRedo')", "Use hypnosis to make her think you're buying an hour");
 			writeFunction("writeEncounter('kuro8aa')", "Never mind");
@@ -1219,7 +1223,7 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeText("The two of you stand up, putting away her books as kuroF is quiet for a few moments.");
 			writeSpeech("kuro","","...So, like, what d'you wanna do? I'm not super used to pivoting from books to sex, so...");
 			writeSpeech("player","","We'll have to head somewhere a bit more private, but...");
-			writeFunction("writeEvent('kuro7')", "Have her blow you"+(galleryCheck('kuroMoney') ? " again" : ""));
+			writeFunction("writeEvent('kuro7')", "Have her blow you"+(checkFlag('kuro','kuroMoneyGallery') ? " again" : ""));
 			writeFunction("writeEvent('kuro8')", "Fuck her in a swimsuit");
 			writeFunction("writeEncounter('kuroMoneyRedo')", "Use hypnosis to make her think you're buying an hour");
 			writeFunction("writeEncounter('kuroJustStudy')", "That was it, actually");
@@ -1260,16 +1264,14 @@ function writeEncounter(name) { //Plays the actual encounter.
 			writeSpeech("kuro","","Heyhey~! How's it going? Did you come up just to see me, or...");
 			writeText("Her smile widens further.");
 			writeSpeech("kuro","","Did you come up to <i>feel</i> me~?");
-			if(galleryCheck('kuroMoney2') && galleryCheck('kuro7') && galleryCheck('kuro8')){
-				writeSpecial("You've completed all of kuroF's content for this version!")
-			}
+			writeFunction("writeEncounter('kuro10')","Discuss whether she has any future career plans")
 			writeFunction("writeEncounter('kuro9a')", (checkFlag('kuro','Radicool') ? "Let's get jiggy with it" : "Let's have some fun"));
 			writeFunction("changeLocation(data.player.location)", "Finish");
 			break;
 		}
 		case "kuro9a" : {
 			document.getElementById('output').innerHTML = '';
-			writeFunction("writeEvent('kuro7')", "Have her blow you"+((galleryCheck('kuroMoney') || galleryCheck('kuro7')) ? " again" : ""));
+			writeFunction("writeEvent('kuro7')", "Have her blow you"+((checkFlag('kuro','kuroMoneyGallery') || checkFlag('kuro','kuro7Gallery')) ? " again" : ""));
 			writeFunction("writeEvent('kuro8')", "Fuck her in a swimsuit");
 			writeFunction("writeEncounter('kuroMoneyRedo')", "Use hypnosis to make her think you're buying an hour");
 			writeFunction("writeEncounter('kuro9aa')", "Never mind");
@@ -1278,8 +1280,101 @@ function writeEncounter(name) { //Plays the actual encounter.
 		case "kuro9aa" : {
 			document.getElementById('output').innerHTML = '';
 			writeSpeech("kuro","","So, what's up? Were you looking to have a bit of <i>fun~?</i>");
+			writeFunction("writeEncounter('kuro10')","Discuss whether she has any future career plans")
 			writeFunction("writeEncounter('kuro8a')", (checkFlag('kuro','Radicool') ? "Let's get jiggy with it" : "Let's have some fun"));
 			writeFunction("changeLocation(data.player.location)", "Another time");
+			break;
+		}
+		case "kuro10" : {
+			document.getElementById('output').innerHTML = '';
+			setTrust('kuro',200);
+			writeHTML(`
+				sp player; Actually, I wanted to discuss whether you have any career plans. We mentioned it a little while back.
+				t kuroF raises an eyebrow quizically, before shrugging.
+				sp kuro; I mean, sorta? Nothing, like, <i>really</i> long-term, but I've been looking into a couple things. Most of 'em involve staying around here, near the uni, though.
+				sp player; Oh? Any specific examples?
+				t kuroF exhales slowly, thinking it over.
+				sp kuro; Well, aside from a short bit that I thought about working at this nearby cafe, I actually spoke with the principal a while back about doing a bit of work here on campus, so that's a thing. They comp your tuition if you do, which would get some extra spending money, y'know?
+				t She crosses her arms, leaning against the fence.
+				sp kuro; Ended up choosing not to since I'd have to deal with the prudes in the student council, but now that I think about it...
+				t A wicked grin plays across her face as she looks over you.
+				sp kuro; I bet having a faculty-member like you on my side would make them a bit more 'tolerable', if you catch my drift~
+				sp player; I think I do. What sort of work were you thinking about?
+				sp kuro; Back then, it was as little as I could get away with, since I wasn't that interested in helping out any of the teachers or anything... but with you around~?
+				t kuroF steps towards you, leaning her chest against yours with a smug grin.
+				sp kuro; I'd love to be your <i>assistant</i> around here, save a bit of cash in the process, and get some nice, <i>deep</i> counseling on my <i>future prospects~</i>
+				sp player; That's one way to phrase it, at least.
+				t She laughs again, her breasts bouncing slightly against you as she does.
+				sp kuro; Well, if you're ever interested in putting me in a slightly more permanent place below you, I'd be happy to serve~
+				t Her hands trail along you side for a moment as she hums gently, leaning into you more.
+				sp kuro; In the meantime, though, how 'bout you and me have a bit of fun? I <i>really</i> haven't been subtle about being in the mood today~
+				`);
+			writeFunction("writeEvent('kuro7')", "Have her blow you"+((checkFlag('kuro','kuroMoney') || checkFlag('kuro','kuro7Gallery')) ? " again" : ""));
+			writeFunction("writeEvent('kuro8')", "Fuck her in a swimsuit");
+			writeFunction("writeEncounter('kuroMoneyRedo')", "Use hypnosis to make her think you're buying an hour");
+			writeFunction("writeEncounter('kuro10a')", "Some other time");
+			break;
+		}
+		case "kuro10a" : {
+			document.getElementById('output').innerHTML = '';
+			writeHTML(`
+				sp player; Unfortunately, it'll have to be another time. I've got some business to handle today.
+				t kuroF pouts a bit, but ultimately nods with a small sigh.
+				sp kuro; Darn, and I put so much work into those entendres too. In that case, good luck with whatever you've gotta handle, *Mister Counselor~
+				t She leans in to kiss on the cheek... before then blowing gently on your ear, sending a small shiver along your body.
+				sp kuro; I look forward to next time~
+				sp player; Same here, kuroF.
+				`);
+			writeFunction("changeLocation(data.player.location)", "Continue");
+			break;
+		}
+		case "kuroFlashForward" : {
+			document.getElementById('output').innerHTML = '';
+			writeText("It's been around 8 months since you took kuroF as your 'assistant', and things... honestly haven't changed much. The only real difference is that, while you previously had the faculty's trust as an employee, kuroF helped you get more trust from the other students.");
+			writeText("Which basically means that you're spending even less time filing paperwork, and more time seducing and hypnotizing girls around the campus. You've kept busy, for sure.");
+			writeSpeech("kuro","","Yo, *Mister Counselor!");
+			writeText("Your focus is pulled to the door as kuroF steps in, holding a small folder in one hand and toying with her hair with the other.");
+			writeSpeech("kuro","","I got those files from the principal about the new girls. They're all pretty cute, but there's a couple in here that are <i>total</i> hotties. Worth discussing with coachF when she comes in for your meeting in, like... five minutes or something.");
+			writeSpeech("player","","Perfect, I'll take a look at those when I can.");
+			writeText("Placing it on your desk, she gives you a wry grin.");
+			writeSpeech("kuro","","You don't happen to have a cute little minx underneath this desk of yours, do you~?");
+			writeSpeech("player","","Well, I don't right <i>now,</i> but if you'd like to change that...");
+			writeText("She winks at you and circles around the desk.");
+			writeSpeech("kuro","","I'll make sure that meeting doesn't get too boring~");
+			writeText("kuroF gives you a deep kiss on the lips before kneeling down and looking up at you with a sensual smile.");
+			writeSpeech("kuro","","Here's to a lot more fun soon, *Master~");
+			writeText("Your hand goes to her hair as she gets started, your body relaxing in your seat as enjoy the moment...");
+			writeText("...");
+			writeFunction("loadEncounter('system', 'credits')", "The End");
+			break;
+		}
+		case "kuro11" : {
+			document.getElementById('output').innerHTML = '';
+			writeText("kuroF perks up visibly as she hears you shut the roof-door behind you.");
+			writeSpeech("kuro","","Welcome welcome, cutie~! How's it going? Did you come up just to talk to me about my plans again, or...");
+			writeText("Her smile widens further.");
+			writeSpeech("kuro","","Did you maybe come up for some <i>fun~?</i>");
+			writeFunction("writeEncounter('kuro12')","Talk about taking her as your assistant")
+			writeFunction("writeEncounter('kuro9a')", (checkFlag('kuro','Radicool') ? "Let's get jiggy with it" : "Let's have some fun"));
+			writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "kuro12" : {
+			document.getElementById('output').innerHTML = '';
+			writeSpeech("player","","I was thinking more along the lines of talking to you about becoming my assistant here.");
+			writeSpeech("kuro","","I mean, I think it's pretty clear I'd be up for it.");
+			writeText("She takes a moment to think, before a slightly more serious expressions goes across her face.");
+			writeSpeech("kuro","","And, uh... I do get that I'll actually be expected to do stuff, too. Not sure if that came across when I was flirting last time.");
+			writeSpeech("player","","I figured you did.");
+			writeText("She pauses to think for a moment.");
+			writeSpeech("kuro","","If you're offering, I'd be happy to go through whatever hoops I've gotta. You'll have to tell me what to sign and stuff, but I'd be glad for it.");
+			writeText("You take a moment to think about whether you want to offer the position now. It'd probably take a bit of time to actually teach her how things work, and you'd have to spend even longer explaining the whole hypnosis thing in a way that makes sense for her...");
+			writeFunction("writeEvent('kuro9')", "Go for it");
+			writeFunction("changeLocation(data.player.location)", "Hold off for now");
+			break;
+		}
+		case "kuro13" : {
+			document.getElementById('output').innerHTML = '';
 			break;
 		}
 			/*
@@ -1378,6 +1473,7 @@ var eventArray = [ //Lists the events of the character for unlocking and replayi
 {index: "kuro6", name: "Taking Her Home, and in Many Positions"},
 {index: "kuro7", name: "Getting a Blowjob"},
 {index: "kuro8", name: "Getting Wet in a Swimsuit"},
+{index: "kuro9", name: "Celebrating a New Assistant"},
 //Secondary Route
 {index: "kuro5", name: "Cuck-Route: Watching and Jerking"},
 ];
@@ -1385,10 +1481,13 @@ var eventArray = [ //Lists the events of the character for unlocking and replayi
 function writeEvent(name) { //Plays the actual event.
 	document.getElementById('output').innerHTML = '';
 	wrapper.scrollTop = 0;
+	if(!checkFlag('kuro',name+"Gallery"))
+		addFlag('kuro',name+"Gallery");
 	var nikkiInitial = "";
-	for(var i = 0; i < data.story.length; i++)
+	for(var i = 0; i < data.story.length; i++){
 		if(data.story[i].index == 'nikki')
 			nikkiInitial = data.story[i].fName.charAt(0);
+	}
 	switch (name) {
 		case "kuro1" : {
 			document.getElementById('output').innerHTML = '';
@@ -1639,7 +1738,7 @@ function writeEvent(name) { //Plays the actual event.
 			break;
 		}
 		case "kuroMoney2" : {
-			if((galleryCheck("kuroMoney1") != true) && (data.player.location != 'gallery')){
+			if((checkFlag('kuro',"kuroMoney1Gallery") != true) && (data.player.location != 'gallery')){
 				writeEvent("kuroMoney1");
 				document.getElementById('output').innerHTML = '';
 				wrapper.scrollTop = 0;
@@ -1960,6 +2059,18 @@ function writeEvent(name) { //Plays the actual event.
 			writeSpeech("kuro","","I'm gonna keep this lil' outfit ready for next time, hun~...");
 			if(data.player.location != 'gallery')
 				writeFunction("changeLocation(data.player.location)", "Finish");
+			break;
+		}
+		case "kuro9" : {
+			if(data.player.location != 'gallery'){
+
+			}
+			writeHTML(`
+				im 10-1.jpg
+				im 10-2.jpg
+				im 10-3.jpg
+				im 10-4.jpg
+				`);
 			break;
 		}
 	}
@@ -2940,7 +3051,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 			}
 			case "kuroReward1" : {
 				writePhoneImage("images/kuro/7-4.jpg", "InConclusion, Art by Enoshima Iki");
-				if(galleryCheck('kuro7') && galleryCheck('kuro8')){
+				if(checkFlag('kuro','kuro7Gallery') && checkFlag('kuro','kuro8Gallery')){
 					writePhoneSpeech("kuro", "", "You've finished all of "+fName('kuro')+"'s content for this version, congratulations!");
 				}
 				else{
@@ -2953,7 +3064,7 @@ function writePhoneEvent(name) { //Plays the relevant phone event
 				break;
 			}
 			case "kuroReward1A" : {
-				if(galleryCheck("kuroMoney2")){
+				if(checkFlag('kuro',"kuroMoney2Gallery")){
 					writePhoneImage("images/kuro/7-4.jpg", "InConclusion, Art by Enoshima Iki");
 					writePhoneSpeech("kuro", "", "You've finished all of "+fName('kuro')+"'s content for this version, congratulations!");
 				}
@@ -3059,9 +3170,9 @@ switch (requestType) {
 					}
 				}
 				else {
-					//console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
+					console.log("Now examining encounter entry "+encounterArray[number].index+encounterArray[number].requirements);
 					var requirements = checkRequirements(encounterArray[number].requirements);
-					//console.log(requirements);
+					console.log(requirements);
 					if (requirements != true) {
 						finalResult = false;
 					}
@@ -3101,24 +3212,24 @@ switch (requestType) {
 			if (newItems[item].price != 0) {
 				if (newItems[item].key == false) {
 					document.getElementById('output').innerHTML += `
-						<div class = "shopItem" onclick = "purchase('`+newItems[item].name+`','`+newItems[item].image+`','`+newItems[item].price+`','`+newItems[item].key+`')">
-							<p class = "shopName">`+newItems[item].name+`</p>
-							<p class = "shopDesc">`+newItems[item].description+`</p>
-							<p class = "shopPrice">$`+newItems[item].price+`</p>
-							<img class ="shopImage" src="`+newItems[item].image+`">
-						</div>
-						<br>
+					<div class = "shopItem" onclick = "purchase('`+newItems[item].name+`','`+newItems[item].image+`','`+newItems[item].price+`','`+newItems[item].key+`')">
+					<p class = "shopName">`+newItems[item].name+`</p>
+					<p class = "shopDesc">`+newItems[item].description+`</p>
+					<p class = "shopPrice">$`+newItems[item].price+`</p>
+					<img class ="shopImage" src="`+newItems[item].image+`">
+					</div>
+					<br>
 					`;
 				}
 				else {
 					if (checkItem(newItems[item].name) == false) {
 						document.getElementById('output').innerHTML += `
 						<div class = "shopItem" onclick = "purchase('`+newItems[item].name+`','`+newItems[item].image+`','`+newItems[item].price+`','`+newItems[item].key+`')">
-								<p class = "shopName">`+newItems[item].name+`</p>
-								<p class = "shopDesc">`+newItems[item].description+`</p>
-								<p class = "shopPrice">$`+newItems[item].price+`</p>
-								<img class ="shopImage" src="`+newItems[item].image+`">
-							</div>
+						<p class = "shopName">`+newItems[item].name+`</p>
+						<p class = "shopDesc">`+newItems[item].description+`</p>
+						<p class = "shopPrice">$`+newItems[item].price+`</p>
+						<img class ="shopImage" src="`+newItems[item].image+`">
+						</div>
 						<br>
 						`;
 					}
@@ -3141,13 +3252,13 @@ switch (requestType) {
 					//If the character has no unread texts
 					//If the character does not have this text in their text history
 					if (
-					data.story[phoneHistoryCheck].unreadText != true &&
-					data.story[phoneHistoryCheck].textHistory.includes(phoneArray[number].index) != true &&
-					data.story[phoneHistoryCheck].textEvent != phoneArray[number].index
-					) {
+						data.story[phoneHistoryCheck].unreadText != true &&
+						data.story[phoneHistoryCheck].textHistory.includes(phoneArray[number].index) != true &&
+						data.story[phoneHistoryCheck].textEvent != phoneArray[number].index
+						) {
 						//If the phone record is using the old system...
-						if (phoneArray[number].trust != null) {
-							var finalResult = false;
+					if (phoneArray[number].trust != null) {
+						var finalResult = false;
 							if (checkTrust(character.index) == phoneArray[number].trust) { //if the player's trust with the character meets the text requirement
 								for (phoneEventCheck = 0; phoneEventCheck < data.story.length; phoneEventCheck++) { //go through the characters
 									if (data.story[phoneEventCheck].index == character.index) { //check what text is currently assigned to the character

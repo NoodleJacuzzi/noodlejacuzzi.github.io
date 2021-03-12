@@ -320,7 +320,7 @@ var detailDomArray = [
 	desc: ""},
 	{index: "clothes", element: "otherStatus", 
 	requirements: "?trust clothes 1;", 
-	desc: ""},
+	desc: "Transformed Shopkeep"},
 	
 	{index: "clothes", element: "otherClothes", 
 	requirements: "?trust clothes 0;", 
@@ -348,7 +348,13 @@ var detailDomArray = [
 	
 	{index: "exotic", element: "otherStatus", 
 	requirements: "?trust exotic 0;", 
-	desc: ""},
+	desc: "Status: Mysterious Businesswoman"},
+	{index: "exotic", element: "otherStatus", 
+	requirements: "?trust exotic 1;", 
+	desc: "Status: Occasional Fuckbuddy"},
+	{index: "exotic", element: "otherStatus", 
+	requirements: "?trust exotic 0;", 
+	desc: "Status: Lewd Shopkeep"},
 	
 	{index: "exotic", element: "otherClothes", 
 	requirements: "?trust exotic 0;", 
@@ -363,8 +369,8 @@ var detailDomArray = [
 	desc: ""},
 	
 	{index: "candy", element: "otherStatus", 
-	requirements: "?trust candy 0;", 
-	desc: ""},
+	requirements: "?trustMin candy 0;", 
+	desc: "Candyshop Owner"},
 	
 	{index: "candy", element: "otherClothes", 
 	requirements: "?trust candy 0;", 
@@ -1606,6 +1612,8 @@ var corruptionDomArray = [
 			!skill 3;
 		`,
 	},
+	
+	
 ];
 
 var locationArray = [

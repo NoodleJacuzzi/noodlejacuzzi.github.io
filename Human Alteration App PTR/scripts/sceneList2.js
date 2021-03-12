@@ -3096,7 +3096,7 @@ function writeEvent(scene) {
 			writeText("She's taking slow, deep breaths through mouth and squirming, rubbing her legs together.");
 			writeSpeech("player", "", "Here, lemme see.");
 			writeText("You hold up a finger and she takes it into her mouth. You start rubbing it against against the back of her throat, but instead of gagging, she starts moaning, and you can see her erection tent her skirt as she begins to suck on your digit.");
-			writeSpeech("player", "", "Alright, time for training to begin.");
+			writeSpeech("player", "", "Alright, time for training to begin. I brought a dildo, let's see if we can't train you into a proper buttslut.");
 			writeText("...");
 			writeBig("images/real/general/friend3-1.gif");
 			writeText("Fifteen minutes in and there's no trace of a dislike of anal. If anything, there's a strong hatred of breathing as she starts taking down your cock again.");
@@ -3120,6 +3120,7 @@ function writeEvent(scene) {
 			writeSpeech("friend", "", "You are too. You should speak up more, you could probably make friends with everybody in class if you just said hi. <br>Alright, dinner done, drinks finished. Come on.");
 			writeText("She pulls you away from the table into her room and plops down onto the bed.");
 			writeSpeech("friend", "", "Alright, work your magic. Show me the life of a buttslut!");
+			writeText("...");
 			writeText("It isn't as quick as she hopes, luckily you did most if the heavy lifting last night. She relaxes patiently on the bed as you make dozens of tweaks. A few of them are more to test your limits, and she squeaks when you push the sensitivity of her rim to 100 for a second.");
 			writeText("You set the phone aside, finished, and grab a handful off her asscheek.");
 			writeSpeech("friend", "", "Ah! Oh wow, you really did a thorough job, huh?");
